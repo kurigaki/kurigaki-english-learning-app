@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { speakWord, speakSentence, isSpeechSynthesisSupported, stopSpeaking } from "@/lib/audio";
+import { speakWord, speakSentence, isSpeechSynthesisSupported, stopSpeaking, speakWordWithVariant } from "@/lib/audio";
+import { PronunciationVariant } from "@/types";
 
 type SpeakButtonProps = {
   text: string;
@@ -9,6 +10,7 @@ type SpeakButtonProps = {
   slow?: boolean;
   size?: "sm" | "md" | "lg";
   className?: string;
+  variant?: PronunciationVariant; // UK/US発音切り替え
 };
 
 export const SpeakButton = ({
@@ -17,6 +19,7 @@ export const SpeakButton = ({
   slow = false,
   size = "md",
   className = "",
+  variant,
 }: SpeakButtonProps) => {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isSupported, setIsSupported] = useState(true);
@@ -40,6 +43,9 @@ export const SpeakButton = ({
 
     if (type === "sentence") {
       speakSentence(text, { slow, onEnd });
+    } else if (variant) {
+      // UK/US発音バリアントが指定されている場合
+      speakWordWithVariant(text, variant, { slow, onEnd });
     } else {
       speakWord(text, { slow, onEnd });
     }
