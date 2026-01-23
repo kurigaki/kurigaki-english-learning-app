@@ -64,6 +64,7 @@ export type Question = {
     word: string;
     meaning: string;
     example?: string;
+    exampleJa?: string;  // 例文の日本語訳
     imageUrl?: string;
     category?: string;
   };
