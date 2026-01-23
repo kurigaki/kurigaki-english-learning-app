@@ -195,4 +195,15 @@ body {
     25% { transform: translateX(-8px); }
     75% { transform: translateX(8px); }
   }
+
+  /* 全問正解時のバウンスアニメーション */
+  .animate-perfect-bounce {
+    animation: perfect-bounce 0.6s ease-out;
+  }
+  @keyframes perfect-bounce {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(0.95); }
+    75% { transform: scale(1.1); }
+  }
 }
