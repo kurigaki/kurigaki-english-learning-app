@@ -1,4 +1,4 @@
-import { PartOfSpeech, WordExample, WordColumn } from "@/types";
+import { PartOfSpeech, WordExample, WordColumn, PronunciationData } from "@/types";
 
 // 難易度: 1=初級, 2=初中級, 3=中級, 4=中上級, 5=上級
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
@@ -22,7 +22,7 @@ export type Word = {
   difficulty: Difficulty;
   category: Category;
   // 拡張フィールド（オプション）
-  pronunciation?: string;
+  pronunciation?: string | PronunciationData; // UK/US発音切り替え対応
   partOfSpeech?: PartOfSpeech;
   examples?: WordExample[];
   synonyms?: string[];
@@ -64,7 +64,10 @@ export const words: Word[] = [
     example: "Please check my schedule.",
     difficulty: 1,
     category: "business",
-    pronunciation: "/ˈskedʒuːl/",
+    pronunciation: {
+      us: "/ˈskedʒuːl/",
+      uk: "/ˈʃedjuːl/",
+    },
     partOfSpeech: "noun",
     examples: [
       { en: "Please check my schedule.", ja: "私の予定を確認してください。", context: "オフィス" },
