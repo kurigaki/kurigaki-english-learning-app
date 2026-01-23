@@ -204,21 +204,32 @@ function getQuestionDisplay(question: Question): string {
   }
 }
 
-// fill-blank問題の日本語訳を取得
-function getTranslationForFillBlank(wordId: number, exampleSentence?: string): string {
+// 例文の日本語訳と単語の意味を取得
+type TranslationInfo = {
+  sentenceJa: string | null; // 例文の日本語訳
+  wordMeaning: string;       // 単語の意味
+};
+
+function getTranslationInfo(wordId: number, exampleSentence?: string): TranslationInfo {
   const fullWordData = words.find((w) => w.id === wordId);
-  if (!fullWordData) return "";
+  if (!fullWordData) return { sentenceJa: null, wordMeaning: "" };
+
+  let sentenceJa: string | null = null;
 
   // examples配列から該当する例文の日本語訳を探す
   if (fullWordData.examples && fullWordData.examples.length > 0 && exampleSentence) {
     const matchingExample = fullWordData.examples.find(
       (ex) => ex.en.toLowerCase() === exampleSentence.toLowerCase()
     );
-    if (matchingExample) return matchingExample.ja;
+    if (matchingExample) {
+      sentenceJa = matchingExample.ja;
+    }
   }
 
-  // フォールバック: 単語の意味を表示
-  return fullWordData.meaning;
+  return {
+    sentenceJa,
+    wordMeaning: fullWordData.meaning,
+  };
 }
 
 const STREAK_MILESTONES = [3, 7, 14, 30, 50, 100];
@@ -750,21 +761,27 @@ export default function QuizPage() {
                 </div>
               )}
               {/* 穴埋め問題の和訳表示トグル */}
-              {currentQuestion.type === "fill-blank" && selected === null && (
-                <div className="mt-2 text-center">
-                  <button
-                    onClick={() => setShowTranslation(!showTranslation)}
-                    className="text-xs text-primary-500 hover:text-primary-600 underline transition-colors"
-                  >
-                    {showTranslation ? "和訳を隠す" : "和訳を表示"}
-                  </button>
-                  {showTranslation && (
-                    <p className="mt-1 text-xs text-slate-600 bg-slate-50 rounded-lg p-2">
-                      {getTranslationForFillBlank(currentQuestion.word.id, currentQuestion.word.example)}
-                    </p>
-                  )}
-                </div>
-              )}
+              {currentQuestion.type === "fill-blank" && selected === null && (() => {
+                const translationInfo = getTranslationInfo(currentQuestion.word.id, currentQuestion.word.example);
+                return (
+                  <div className="mt-2 text-center">
+                    <button
+                      onClick={() => setShowTranslation(!showTranslation)}
+                      className="text-xs text-primary-500 hover:text-primary-600 underline transition-colors"
+                    >
+                      {showTranslation ? "和訳を隠す" : "和訳を表示"}
+                    </button>
+                    {showTranslation && (
+                      <div className="mt-1 text-xs text-slate-600 bg-slate-50 rounded-lg p-2 space-y-1">
+                        {translationInfo.sentenceJa && (
+                          <p>📝 {translationInfo.sentenceJa}</p>
+                        )}
+                        <p>💡 {currentQuestion.word.word}: {translationInfo.wordMeaning}</p>
+                      </div>
+                    )}
+                  </div>
+                );
+              })()}
             </div>
 
             {/* Choices */}
@@ -842,11 +859,17 @@ export default function QuizPage() {
                     />
                   )}
                 </div>
-                {!isCorrect && currentQuestion.word.example && (
-                  <p className="mt-2 text-xs bg-white/70 rounded-lg p-2 border border-slate-200">
-                    {currentQuestion.word.example}
-                  </p>
-                )}
+                {!isCorrect && currentQuestion.word.example && (() => {
+                  const translationInfo = getTranslationInfo(currentQuestion.word.id, currentQuestion.word.example);
+                  return (
+                    <div className="mt-2 text-xs bg-white/70 rounded-lg p-2 border border-slate-200 space-y-1">
+                      <p className="text-slate-700">{currentQuestion.word.example}</p>
+                      {translationInfo.sentenceJa && (
+                        <p className="text-slate-500">→ {translationInfo.sentenceJa}</p>
+                      )}
+                    </div>
+                  );
+                })()}
               </Card>
 
               <Button onClick={handleNext} fullWidth>
