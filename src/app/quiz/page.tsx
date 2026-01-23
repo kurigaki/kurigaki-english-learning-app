@@ -9,7 +9,7 @@ import { Question, QuestionType, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
 import { AchievementUnlockPopup } from "@/components/features/achievements/AchievementUnlockPopup";
 import { PerfectScorePopup } from "@/components/features/quiz";
-import { speakWord, speakSentence, isSpeechSynthesisSupported } from "@/lib/audio";
+import { speakWord, isSpeechSynthesisSupported } from "@/lib/audio";
 import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
 import {
   saveQuizResultState,
@@ -320,13 +320,8 @@ export default function QuizPage() {
           // 英単語を読み上げ
           speakWord(currentQuestion.word.word);
           break;
-        case "fill-blank":
-          // 穴埋め問題の場合は例文を読み上げ
-          if (currentQuestion.word.example) {
-            speakSentence(currentQuestion.word.example);
-          }
-          break;
-        // ja-to-en の場合は日本語なので読み上げなし
+        // fill-blank: 自動再生なし（手動の音声ボタンで再生可能）
+        // ja-to-en: 日本語なので読み上げなし
       }
     }, 300);
 
