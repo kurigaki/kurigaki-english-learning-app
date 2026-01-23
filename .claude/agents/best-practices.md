@@ -16,6 +16,7 @@
 | 状態管理 | React State + localStorage |
 | 音声再生 | Web Speech API |
 | 画像 | Unsplash + Next/Image |
+| テスト | Vitest + Testing Library |
 
 ---
 
@@ -315,7 +316,70 @@ const onClick = (v: string) => { ... };
 
 ---
 
-## 14. 将来の拡張に向けた設計
+## 14. テスト規約
+
+### 14.1 TDD（テスト駆動開発）
+
+```
+1. Red:    失敗するテストを書く
+2. Green:  テストを通す最小限のコードを書く
+3. Refactor: コードを改善する（テストは通ったまま）
+```
+
+### 14.2 テストファイルの配置
+
+```
+src/
+├── lib/
+│   ├── storage.ts
+│   └── __tests__/
+│       └── storage.test.ts     # ユーティリティのテスト
+├── components/
+│   └── ui/
+│       ├── Button.tsx
+│       └── __tests__/
+│           └── Button.test.tsx  # コンポーネントのテスト
+```
+
+### 14.3 テストの書き方
+
+```typescript
+// Good: 意図が明確なテスト名
+describe("storage", () => {
+  describe("getUserData", () => {
+    it("should return default user data when no data exists", () => {
+      // Arrange
+      localStorage.clear();
+
+      // Act
+      const userData = storage.getUserData();
+
+      // Assert
+      expect(userData.streak).toBe(0);
+    });
+  });
+});
+
+// Bad: 曖昧なテスト名
+it("works", () => { ... });
+```
+
+### 14.4 コマンド
+
+```bash
+# 全テスト実行
+npm run test
+
+# Watchモード（開発時推奨）
+npm run test:watch
+
+# カバレッジ付き実行
+npm run test:coverage
+```
+
+---
+
+## 15. 将来の拡張に向けた設計
 
 ### 14.1 型定義での事前準備
 
