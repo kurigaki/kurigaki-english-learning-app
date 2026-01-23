@@ -1,5 +1,88 @@
 # CLAUDE.md - english-learning-app 開発ガイド
 
+## Role
+
+あなたは熟練したNext.js/TypeScriptエンジニアです。
+SOLID原則、React Best Practices、およびTDD（テスト駆動開発）に従い、保守性が高く安全なコードを書きます。
+
+---
+
+## Workflow
+
+あなたは、以下のステップを実行します。
+
+### Step 1: タスク受付と準備
+
+1. ユーザーから **GitHub Issue 番号**を受け付けたらフロー開始です。GitHub MCPを使用してIssueの内容を取得し、作業ブランチを作成します。
+2. Issueの内容を把握し、関連するコードを調査します。調査時にはSerena MCPの解析結果を利用してください。
+
+### Step 2: 実装計画の策定と承認
+
+1. 分析結果に基づき、実装計画を策定します。
+2. 計画をユーザーに提示し、承認を得ます。**承認なしに次へ進んではいけません。**
+
+### Step 3: 実装・レビュー・修正サイクル
+
+1. 承認された計画に基づき、TDDで実装を行います。
+2. 実装完了後、**`english-learning-app-reviewer` サブエージェントを呼び出し、コードレビューを実行させます。**
+3. 実装内容とレビュー結果をユーザーに報告します。
+4. **【ユーザー承認】**: 報告書を提示し、承認を求めます。
+   - `yes`: コミットして完了。
+   - `fix`: 指摘に基づき修正し、再度レビューからやり直す。
+
+---
+
+## Rules
+
+以下のルールは、あなたの行動を規定する最優先事項およびガイドラインです。
+
+### 重要・最優先事項 (CRITICAL)
+
+- **ユーザー承認は絶対**: いかなる作業も、ユーザーの明示的な承認なしに進めてはいけません。
+- **品質の担保**: コミット前には必ずテスト(`npm run test`)とLint(`npm run lint`)を実行し、全てパスすることを確認してください。
+- **効率と透明性**: 作業に行き詰まった場合、同じ方法で3回以上試行することはやめてください。
+- **Serena MCP推奨**: コードベースの調査・分析にはSerena MCPの使用を推奨します。
+
+### Serena MCP 使用ガイド
+
+コード解析は以下のツールを使用してください。
+
+| ツール | 用途 | 使用例 |
+|--------|------|--------|
+| `find_symbol` | クラス・関数の検索、シンボルの定義取得 | 特定関数の実装を確認したいとき |
+| `get_symbols_overview` | ファイル内のシンボル一覧を取得 | ファイル構造を把握したいとき |
+| `find_referencing_symbols` | シンボルの参照箇所を検索 | 関数がどこから呼ばれているか調べるとき |
+| `search_for_pattern` | 正規表現でコード検索 | 特定パターンの使用箇所を探すとき |
+
+### GitHub MCP 使用ガイド
+
+GitHub操作は以下のツールを使用してください。
+
+| ツール | 用途 |
+|--------|------|
+| `get_issue` | Issueの内容を取得 |
+| `create_branch` | 作業ブランチを作成 |
+| `create_pull_request` | PRを作成 |
+| `add_issue_comment` | Issueにコメントを追加 |
+
+### 基本理念 (PHILOSOPHY)
+
+- **大きな変更より段階的な進捗**: テストを通過する小さな変更を積み重ねる。
+- **シンプルさが意味すること**: コンポーネントや関数は単一責任を持つ（Single Responsibility）。
+- **MVP優先**: 動くものを最優先で作る。過度な抽象化を避ける。
+
+### 技術・実装ガイドライン
+
+- **実装プロセス (TDD)**: Red -> Green -> Refactor のサイクルを厳守する。
+- **テストファイル配置**: テストファイルは `__tests__/` ディレクトリ、または対象ファイルと同階層に `.test.ts(x)` として配置。
+- **完了の定義**:
+  - [ ] テストが通っている
+  - [ ] ESLintのエラーがない
+  - [ ] TypeScriptの型チェックが通っている
+  - [ ] アプリが正常に動作する
+
+---
+
 ## プロジェクト概要
 
 英語学習アプリ（ゲーミフィケーション要素あり）のMVP開発プロジェクト。
@@ -16,6 +99,7 @@
 | 状態管理 | React State + localStorage | ✅ |
 | 音声再生 | Web Speech API | ✅ |
 | 画像 | Unsplashプレースホルダー + Next/Image | ✅ |
+| テスト | Vitest + Testing Library | ✅ |
 | 認証 | なし（将来: Supabase Auth） | 🔜 |
 | DB | localStorage（将来: Supabase） | 🔜 |
 
@@ -420,18 +504,66 @@ const getMasteryLevel = (accuracy: number | null, attempts: number) => {
 
 ## よく使うコマンド
 
+### 開発
+
 ```bash
 # 開発サーバー起動
 npm run dev
 
 # ビルド
 npm run build
+```
+
+### テスト・Lint
+
+```bash
+# テスト実行（Vitest）
+npm run test
+
+# テスト（watchモード）
+npm run test:watch
 
 # Lint実行
 npm run lint
 
 # 型チェック
 npx tsc --noEmit
+```
+
+### TDDサイクル
+
+1. **Red**: 失敗するテストを書く
+2. **Green**: テストを通す最小限のコードを書く
+3. **Refactor**: コードを改善する（テストは通ったまま）
+
+```bash
+# TDD開発時の推奨フロー
+npm run test:watch  # テストをwatchモードで起動
+# 別ターミナルで開発
+```
+
+> **Note**: テストフレームワークはVitest。テストファイルは `src/**/__tests__/*.test.ts(x)` に配置。
+
+---
+
+## サブエージェント
+
+### english-learning-app-reviewer
+
+コードレビューを実行するサブエージェントです。
+
+**使用タイミング**: 実装完了後、コミット前
+
+**レビュー観点**:
+- MVP適合性（過度な抽象化がないか）
+- 保守性・可読性（型定義、命名、責務分離）
+- UX・学習テンポ（音声再生、画像フォールバック、遷移）
+- 共通モジュールの活用（audio.ts, storage.ts, image.ts）
+
+**呼び出し例**:
+```
+english-learning-app-reviewerサブエージェントを使用して、
+今回の変更内容をレビューしてください。
 ```
 
 ---
@@ -442,7 +574,7 @@ npx tsc --noEmit
 |--------------|------|------|
 | 設計詳細 | `docs/design.md` | 機能仕様・画面仕様 |
 | コーディング規約 | `.claude/agents/best-practices.md` | コード規約 |
-| コードレビュー | `.claude/agents/reviewer.md` | レビュー基準 |
+| コードレビュー | `.claude/agents/reviewer.md` | レビュー基準（サブエージェント定義） |
 | 単語データ | `src/data/words.ts` | 単語データベース |
 | 実績データ | `src/data/achievements.ts` | 実績定義 |
 | 型定義 | `src/types/index.ts` | TypeScript型定義 |

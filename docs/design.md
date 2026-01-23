@@ -502,13 +502,20 @@ const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLeve
 - **MVP**: 認証なし（一人プレイ前提）
 - **将来**: Supabase Auth導入予定
 
-### 7.3 画像・音声
+### 7.3 テスト
+
+- **フレームワーク**: Vitest + Testing Library
+- **配置**: `src/**/__tests__/*.test.ts(x)`
+- **モック**: Web Speech API, localStorageは`vitest.setup.ts`で設定済み
+- **実行**: `npm run test` / `npm run test:watch`
+
+### 7.4 画像・音声
 
 - **画像**: コンセプトベース画像選択（単語名→キーワード→カテゴリの順でフォールバック）
 - **音声**: Web Speech API（ブラウザ内蔵）
 - **画像拡張**: 単語データに`imageUrl`/`imageKeyword`フィールドを追加可能
 
-### 7.4 単語データ
+### 7.5 単語データ
 
 - **現在**: `src/data/words.ts`に静的定義
 - **将来**: DB管理、外部API連携予定
