@@ -205,19 +205,32 @@ export const storage = {
   },
 
   // レベルアップに必要なXPを計算
-  getXpProgress: (userData: UserData): { current: number; required: number; percentage: number } => {
-    const previousLevelXp = userData.level > 1
-      ? Array.from({ length: userData.level - 1 }, (_, i) => getRequiredXpForLevel(i + 1)).reduce((a, b) => a + b, 0)
-      : 0;
-    const currentLevelXp = userData.totalXp - previousLevelXp;
-    const requiredForNext = getRequiredXpForLevel(userData.level);
+  getXpProgress: (userData: UserData): {
+    current: number;
+    required: number;
+    percentage: number;
+  } => {
+    const requiredForCurrentLevel = getRequiredXpForLevel(userData.level);
+    const previousLevelTotalXp =
+      userData.level > 1
+        ? Array.from({ length: userData.level - 1 }, (_, i) =>
+            getRequiredXpForLevel(i + 1)
+          ).reduce((a, b) => a + b, 0)
+        : 0;
+
+    const rawCurrentXp = userData.totalXp - previousLevelTotalXp;
+    const currentXp = Math.max(0, rawCurrentXp);
 
     return {
-      current: currentLevelXp,
-      required: requiredForNext,
-      percentage: Math.min(100, Math.round((currentLevelXp / requiredForNext) * 100)),
+      current: currentXp,
+      required: requiredForCurrentLevel,
+      percentage: Math.min(
+        100,
+        Math.round((currentXp / requiredForCurrentLevel) * 100)
+      ),
     };
   },
+
 
   // デイリー目標の達成状況
   getDailyProgress: (userData: UserData): { current: number; goal: number; percentage: number; completed: boolean } => {
