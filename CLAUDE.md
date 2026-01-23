@@ -234,11 +234,13 @@ type WordExtended = {
   id: number;
   word: string;
   meaning: string;
+  example?: string;           // 例文（英語）
+  exampleJa?: string;         // 例文の日本語訳
   category: string;
   difficulty: number;
   pronunciation?: string | PronunciationData; // UK/US発音切り替え対応
   partOfSpeech?: PartOfSpeech;
-  examples?: WordExample[];
+  examples?: WordExample[];   // 複数の例文（詳細形式）
   synonyms?: string[];
   antonyms?: string[];
   column?: WordColumn;
