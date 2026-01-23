@@ -101,6 +101,7 @@ function generateQuestion(word: Word, allWords: Word[]): Question {
     word: word.word,
     meaning: word.meaning,
     example: word.example,
+    exampleJa: word.exampleJa,
     category: word.category,
   };
 
@@ -216,8 +217,12 @@ function getTranslationInfo(wordId: number, exampleSentence?: string): Translati
 
   let sentenceJa: string | null = null;
 
-  // examples配列から該当する例文の日本語訳を探す
-  if (fullWordData.examples && fullWordData.examples.length > 0 && exampleSentence) {
+  // 1. exampleJaフィールドを優先的に使用
+  if (fullWordData.exampleJa) {
+    sentenceJa = fullWordData.exampleJa;
+  }
+  // 2. なければexamples配列から該当する例文の日本語訳を探す
+  else if (fullWordData.examples && fullWordData.examples.length > 0 && exampleSentence) {
     const matchingExample = fullWordData.examples.find(
       (ex) => ex.en.toLowerCase() === exampleSentence.toLowerCase()
     );
@@ -705,30 +710,30 @@ export default function QuizPage() {
   const isFillBlank = currentQuestion.type === "fill-blank";
 
   return (
-    <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+    <div className="h-[calc(100vh-64px)] px-3 sm:px-4 py-2 sm:py-3 flex flex-col">
       <div className="max-w-md w-full mx-auto flex flex-col h-full">
         {/* 上部固定: Progress & Score */}
         <div className="flex-shrink-0">
-          <div className="mb-3">
+          <div className="mb-2">
             <ProgressBar current={currentIndex + 1} total={questions.length} />
           </div>
 
-          <div className="flex justify-center gap-2 mb-3">
-            <div className="inline-flex items-center gap-1.5 bg-white rounded-full px-3 py-1.5 shadow-card border border-primary-100">
-              <span className="text-lg">✨</span>
-              <span className="font-bold text-primary-500">{score}</span>
+          <div className="flex justify-center gap-2 mb-2">
+            <div className="inline-flex items-center gap-1 bg-white rounded-full px-2 py-1 shadow-card border border-primary-100">
+              <span className="text-base">✨</span>
+              <span className="font-bold text-primary-500 text-sm">{score}</span>
               <span className="text-slate-400 text-xs">正解</span>
             </div>
             {combo >= 2 && (
-              <div className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 shadow-lg ${
+              <div className={`inline-flex items-center gap-1 rounded-full px-2 py-1 shadow-lg ${
                 combo >= 5
                   ? "bg-gradient-to-r from-orange-500 to-red-500"
                   : combo >= 3
                     ? "bg-gradient-to-r from-accent-500 to-primary-500"
                     : "bg-gradient-to-r from-blue-400 to-primary-400"
               }`}>
-                <span className="text-lg">{combo >= 5 ? "🔥" : "⚡"}</span>
-                <span className="font-bold text-white">{combo}</span>
+                <span className="text-base">{combo >= 5 ? "🔥" : "⚡"}</span>
+                <span className="font-bold text-white text-sm">{combo}</span>
                 <span className="text-white/90 text-xs font-medium">連続!</span>
               </div>
             )}
@@ -737,17 +742,17 @@ export default function QuizPage() {
 
         {/* 中央: Question Card */}
         <div className="flex-1 min-h-0 overflow-y-auto">
-          <Card className="h-full flex flex-col">
+          <Card className="h-full flex flex-col p-3 sm:p-4">
             {/* カテゴリ表示（コンパクト） */}
             {currentQuestion.word.category && (
-              <div className={`w-full h-14 mb-3 rounded-xl bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100 flex-shrink-0`}>
-                <span className="text-3xl">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
+              <div className={`w-full h-10 sm:h-14 mb-2 rounded-xl bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100 flex-shrink-0`}>
+                <span className="text-2xl sm:text-3xl">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
               </div>
             )}
 
-            <div className="text-center mb-4 flex-shrink-0">
-              <p className="text-xs text-slate-400 mb-1">{getQuestionPrompt(currentQuestion.type)}</p>
-              <h2 className={`font-bold text-gradient ${isFillBlank ? "text-lg leading-relaxed" : "text-3xl"}`}>
+            <div className="text-center mb-2 sm:mb-4 flex-shrink-0">
+              <p className="text-xs text-slate-400 mb-0.5">{getQuestionPrompt(currentQuestion.type)}</p>
+              <h2 className={`font-bold text-gradient ${isFillBlank ? "text-base sm:text-lg leading-relaxed" : "text-2xl sm:text-3xl"}`}>
                 {questionDisplay}
               </h2>
               {currentQuestion.type === "en-to-ja" && (
@@ -771,13 +776,15 @@ export default function QuizPage() {
                     >
                       {showTranslation ? "和訳を隠す" : "和訳を表示"}
                     </button>
-                    {showTranslation && (
-                      <div className="mt-1 text-xs text-slate-600 bg-slate-50 rounded-lg p-2 space-y-1">
-                        {translationInfo.sentenceJa && (
-                          <p>📝 {translationInfo.sentenceJa}</p>
-                        )}
-                        <p>💡 {currentQuestion.word.word}: {translationInfo.wordMeaning}</p>
-                      </div>
+                    {showTranslation && translationInfo.sentenceJa && (
+                      <p className="mt-1 text-xs text-slate-600 bg-slate-50 rounded-lg p-2">
+                        {translationInfo.sentenceJa}
+                      </p>
+                    )}
+                    {showTranslation && !translationInfo.sentenceJa && (
+                      <p className="mt-1 text-xs text-slate-400 bg-slate-50 rounded-lg p-2">
+                        （和訳データなし）
+                      </p>
                     )}
                   </div>
                 );
@@ -785,7 +792,7 @@ export default function QuizPage() {
             </div>
 
             {/* Choices */}
-            <div className="space-y-2 flex-1">
+            <div className="space-y-1.5 sm:space-y-2 flex-1">
               {currentQuestion.choices.map((choice, index) => {
                 let buttonClass = "choice-btn";
 
@@ -802,13 +809,13 @@ export default function QuizPage() {
                     key={index}
                     onClick={() => handleSelect(choice)}
                     disabled={selected !== null}
-                    className={`${buttonClass} py-3`}
+                    className={`${buttonClass} py-2 sm:py-3`}
                   >
                     <span className="flex items-center gap-2">
-                      <span className="w-7 h-7 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0">
                         {String.fromCharCode(65 + index)}
                       </span>
-                      <span className="text-sm">{choice}</span>
+                      <span className="text-xs sm:text-sm">{choice}</span>
                     </span>
                   </button>
                 );
@@ -818,20 +825,20 @@ export default function QuizPage() {
         </div>
 
         {/* 下部固定: Result & Next */}
-        <div className="flex-shrink-0 mt-3">
+        <div className="flex-shrink-0 mt-2">
           {selected !== null ? (
             <div className={`${isCorrect ? "animate-pop-in" : "animate-shake"}`}>
-              <Card className={`mb-2 p-3 ${
+              <Card className={`mb-2 p-2 sm:p-3 ${
                 isCorrect
                   ? "bg-gradient-to-r from-success-50 to-green-50 border-success-300"
                   : "bg-gradient-to-r from-error-50 to-red-50 border-error-300"
               } border-2`}>
-                <div className="flex items-center gap-3">
-                  <span className={`text-3xl ${isCorrect ? "animate-bounce" : ""}`}>
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className={`text-2xl sm:text-3xl ${isCorrect ? "animate-bounce" : ""}`}>
                     {isCorrect ? (combo >= 3 ? "🔥" : "🎉") : "😢"}
                   </span>
-                  <div className="flex-1">
-                    <p className={`text-lg font-bold ${isCorrect ? "text-success-600" : "text-error-600"}`}>
+                  <div className="flex-1 min-w-0">
+                    <p className={`text-base sm:text-lg font-bold ${isCorrect ? "text-success-600" : "text-error-600"}`}>
                       {isCorrect ? (
                         combo >= 5 ? `${combo}連続! すごい!` :
                         combo >= 3 ? `${combo}連続正解!` : "正解!"
@@ -842,7 +849,7 @@ export default function QuizPage() {
                     )}
                     {!isCorrect && (
                       <div className="text-xs text-slate-600">
-                        <p>
+                        <p className="truncate">
                           正解: <span className="text-primary-600 font-bold">{currentQuestion.correctAnswer}</span>
                           {currentQuestion.type !== "en-to-ja" && (
                             <span className="text-slate-500 ml-1">({currentQuestion.word.meaning})</span>
@@ -862,10 +869,10 @@ export default function QuizPage() {
                 {!isCorrect && currentQuestion.word.example && (() => {
                   const translationInfo = getTranslationInfo(currentQuestion.word.id, currentQuestion.word.example);
                   return (
-                    <div className="mt-2 text-xs bg-white/70 rounded-lg p-2 border border-slate-200 space-y-1">
-                      <p className="text-slate-700">{currentQuestion.word.example}</p>
+                    <div className="mt-1.5 text-xs bg-white/70 rounded-lg p-1.5 sm:p-2 border border-slate-200 space-y-0.5">
+                      <p className="text-slate-700 line-clamp-2">{currentQuestion.word.example}</p>
                       {translationInfo.sentenceJa && (
-                        <p className="text-slate-500">→ {translationInfo.sentenceJa}</p>
+                        <p className="text-slate-500 line-clamp-2">→ {translationInfo.sentenceJa}</p>
                       )}
                     </div>
                   );
@@ -877,7 +884,7 @@ export default function QuizPage() {
               </Button>
             </div>
           ) : (
-            <div className="h-[100px]" />
+            <div className="h-[80px] sm:h-[100px]" />
           )}
         </div>
       </div>
