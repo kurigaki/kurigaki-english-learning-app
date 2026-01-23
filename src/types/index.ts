@@ -22,6 +22,15 @@ export type WordExample = {
   context?: string; // 使用シーン（ビジネス、日常会話など）
 };
 
+// 発音データ（UK/US切り替え対応）
+export type PronunciationData = {
+  us: string;   // US発音記号 (例: /ˈskedʒuːl/)
+  uk?: string;  // UK発音記号 (例: /ˈʃedjuːl/) - 差がある場合のみ
+};
+
+// 発音バリアント
+export type PronunciationVariant = "us" | "uk";
+
 // 単語コラム
 export type WordColumn = {
   title: string;
