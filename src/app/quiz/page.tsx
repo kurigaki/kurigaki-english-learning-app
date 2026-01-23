@@ -699,158 +699,169 @@ export default function QuizPage() {
   const isFillBlank = currentQuestion.type === "fill-blank";
 
   return (
-    <div className="min-h-[calc(100vh-64px)] px-4 py-8">
-      <div className="max-w-md mx-auto">
-        {/* Progress */}
-        <div className="mb-6">
-          <ProgressBar current={currentIndex + 1} total={questions.length} />
+    <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+      <div className="max-w-md w-full mx-auto flex flex-col h-full">
+        {/* 上部固定: Progress & Score */}
+        <div className="flex-shrink-0">
+          <div className="mb-3">
+            <ProgressBar current={currentIndex + 1} total={questions.length} />
+          </div>
+
+          <div className="flex justify-center gap-2 mb-3">
+            <div className="inline-flex items-center gap-1.5 bg-white rounded-full px-3 py-1.5 shadow-card border border-primary-100">
+              <span className="text-lg">✨</span>
+              <span className="font-bold text-primary-500">{score}</span>
+              <span className="text-slate-400 text-xs">正解</span>
+            </div>
+            {combo >= 2 && (
+              <div className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 shadow-lg ${
+                combo >= 5
+                  ? "bg-gradient-to-r from-orange-500 to-red-500"
+                  : combo >= 3
+                    ? "bg-gradient-to-r from-accent-500 to-primary-500"
+                    : "bg-gradient-to-r from-blue-400 to-primary-400"
+              }`}>
+                <span className="text-lg">{combo >= 5 ? "🔥" : "⚡"}</span>
+                <span className="font-bold text-white">{combo}</span>
+                <span className="text-white/90 text-xs font-medium">連続!</span>
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Score & Combo Badge */}
-        <div className="flex justify-center gap-3 mb-4">
-          <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-card border border-primary-100">
-            <span className="text-xl animate-float-bounce">✨</span>
-            <span className="font-bold text-primary-500 text-lg">{score}</span>
-            <span className="text-slate-400 text-sm">正解</span>
-          </div>
-          {combo >= 2 && (
-            <div className={`inline-flex items-center gap-2 rounded-full px-4 py-2 shadow-lg animate-pop-in ${
-              combo >= 5
-                ? "bg-gradient-to-r from-orange-500 to-red-500 animate-glow"
-                : combo >= 3
-                  ? "bg-gradient-to-r from-accent-500 to-primary-500"
-                  : "bg-gradient-to-r from-blue-400 to-primary-400"
-            }`}>
-              <span className="text-xl">{combo >= 5 ? "🔥" : "⚡"}</span>
-              <span className="font-bold text-white text-lg">{combo}</span>
-              <span className="text-white/90 text-sm font-medium">連続!</span>
-            </div>
-          )}
-        </div>
-
-        {/* Question Card */}
-        <Card className="mb-6">
-          {/* カテゴリ表示（画像の代わり） */}
-          {currentQuestion.word.category && (
-            <div className={`w-full h-20 mb-4 rounded-xl bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100`}>
-              <span className="text-4xl">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
-            </div>
-          )}
-
-          <div className="text-center mb-8">
-            <p className="text-sm text-slate-400 mb-2">{getQuestionPrompt(currentQuestion.type)}</p>
-            <h2 className={`font-bold text-gradient ${isFillBlank ? "text-xl leading-relaxed" : "text-4xl"}`}>
-              {questionDisplay}
-            </h2>
-            {currentQuestion.type === "en-to-ja" && (
-              <div className="mt-3">
-                <SpeakButton text={currentQuestion.word.word} size="md" />
+        {/* 中央: Question Card */}
+        <div className="flex-1 min-h-0 overflow-y-auto">
+          <Card className="h-full flex flex-col">
+            {/* カテゴリ表示（コンパクト） */}
+            {currentQuestion.word.category && (
+              <div className={`w-full h-14 mb-3 rounded-xl bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100 flex-shrink-0`}>
+                <span className="text-3xl">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
               </div>
             )}
-            {currentQuestion.type === "fill-blank" && currentQuestion.word.example && (
-              <div className="mt-3">
-                <SpeakButton text={currentQuestion.word.example} type="sentence" size="sm" />
-              </div>
-            )}
-            {/* 穴埋め問題の和訳表示トグル */}
-            {currentQuestion.type === "fill-blank" && selected === null && (
-              <div className="mt-3 text-center">
-                <button
-                  onClick={() => setShowTranslation(!showTranslation)}
-                  className="text-sm text-primary-500 hover:text-primary-600 underline transition-colors"
-                >
-                  {showTranslation ? "和訳を隠す" : "和訳を表示"}
-                </button>
-                {showTranslation && (
-                  <p className="mt-2 text-sm text-slate-600 bg-slate-50 rounded-lg p-3">
-                    {getTranslationForFillBlank(currentQuestion.word.id, currentQuestion.word.example)}
-                  </p>
-                )}
-              </div>
-            )}
-          </div>
 
-          {/* Choices */}
-          <div className="space-y-3">
-            {currentQuestion.choices.map((choice, index) => {
-              let buttonClass = "choice-btn";
-
-              if (selected !== null) {
-                if (choice === currentQuestion.correctAnswer) {
-                  buttonClass = "choice-btn choice-btn-correct";
-                } else if (choice === selected) {
-                  buttonClass = "choice-btn choice-btn-wrong";
-                }
-              }
-
-              return (
-                <button
-                  key={index}
-                  onClick={() => handleSelect(choice)}
-                  disabled={selected !== null}
-                  className={buttonClass}
-                >
-                  <span className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-sm font-bold">
-                      {String.fromCharCode(65 + index)}
-                    </span>
-                    <span>{choice}</span>
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-        </Card>
-
-        {/* Result & Next */}
-        {selected !== null && (
-          <div className={`text-center ${isCorrect ? "animate-pop-in" : "animate-shake"}`}>
-            <Card className={`mb-4 ${
-              isCorrect
-                ? "bg-gradient-to-r from-success-50 to-green-50 border-success-300 correct-celebration"
-                : "bg-gradient-to-r from-error-50 to-red-50 border-error-300 wrong-shake"
-            } border-2`}>
-              <div className="flex items-center justify-center gap-4">
-                <span className={`text-5xl ${isCorrect ? "animate-bounce" : ""}`}>
-                  {isCorrect ? (combo >= 3 ? "🔥" : "🎉") : "😢"}
-                </span>
-                <div>
-                  <p className={`text-2xl font-bold ${isCorrect ? "text-success-600" : "text-error-600"}`}>
-                    {isCorrect ? (
-                      combo >= 5 ? `${combo}連続! すごい!` :
-                      combo >= 3 ? `${combo}連続正解!` : "正解!"
-                    ) : "不正解..."}
-                  </p>
-                  {isCorrect && combo >= 2 && (
-                    <p className="text-sm text-accent-500 font-medium">+{10 + (combo > 2 ? 5 : 0)} XP</p>
-                  )}
-                  {!isCorrect && (
-                    <div className="text-sm text-slate-600 mt-2">
-                      <p className="font-medium">
-                        正解: <span className="text-primary-600 font-bold">{currentQuestion.correctAnswer}</span>
-                        {currentQuestion.type !== "en-to-ja" && (
-                          <span className="text-slate-500 ml-1">({currentQuestion.word.meaning})</span>
-                        )}
-                      </p>
-                      <div className="flex justify-center mt-1">
-                        <SpeakButton text={currentQuestion.word.word} size="sm" />
-                      </div>
-                      {currentQuestion.word.example && (
-                        <p className="mt-2 text-xs bg-white/70 rounded-lg p-2 border border-slate-200">
-                          {currentQuestion.word.example}
-                        </p>
-                      )}
-                    </div>
+            <div className="text-center mb-4 flex-shrink-0">
+              <p className="text-xs text-slate-400 mb-1">{getQuestionPrompt(currentQuestion.type)}</p>
+              <h2 className={`font-bold text-gradient ${isFillBlank ? "text-lg leading-relaxed" : "text-3xl"}`}>
+                {questionDisplay}
+              </h2>
+              {currentQuestion.type === "en-to-ja" && (
+                <div className="mt-2">
+                  <SpeakButton text={currentQuestion.word.word} size="md" />
+                </div>
+              )}
+              {currentQuestion.type === "fill-blank" && currentQuestion.word.example && (
+                <div className="mt-2">
+                  <SpeakButton text={currentQuestion.word.example} type="sentence" size="sm" />
+                </div>
+              )}
+              {/* 穴埋め問題の和訳表示トグル */}
+              {currentQuestion.type === "fill-blank" && selected === null && (
+                <div className="mt-2 text-center">
+                  <button
+                    onClick={() => setShowTranslation(!showTranslation)}
+                    className="text-xs text-primary-500 hover:text-primary-600 underline transition-colors"
+                  >
+                    {showTranslation ? "和訳を隠す" : "和訳を表示"}
+                  </button>
+                  {showTranslation && (
+                    <p className="mt-1 text-xs text-slate-600 bg-slate-50 rounded-lg p-2">
+                      {getTranslationForFillBlank(currentQuestion.word.id, currentQuestion.word.example)}
+                    </p>
                   )}
                 </div>
-              </div>
-            </Card>
+              )}
+            </div>
 
-            <Button onClick={handleNext} fullWidth className="animate-slide-up">
-              {currentIndex + 1 >= questions.length ? "結果を見る" : "次の問題へ"}
-            </Button>
-          </div>
-        )}
+            {/* Choices */}
+            <div className="space-y-2 flex-1">
+              {currentQuestion.choices.map((choice, index) => {
+                let buttonClass = "choice-btn";
+
+                if (selected !== null) {
+                  if (choice === currentQuestion.correctAnswer) {
+                    buttonClass = "choice-btn choice-btn-correct";
+                  } else if (choice === selected) {
+                    buttonClass = "choice-btn choice-btn-wrong";
+                  }
+                }
+
+                return (
+                  <button
+                    key={index}
+                    onClick={() => handleSelect(choice)}
+                    disabled={selected !== null}
+                    className={`${buttonClass} py-3`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span className="w-7 h-7 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        {String.fromCharCode(65 + index)}
+                      </span>
+                      <span className="text-sm">{choice}</span>
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </Card>
+        </div>
+
+        {/* 下部固定: Result & Next */}
+        <div className="flex-shrink-0 mt-3">
+          {selected !== null ? (
+            <div className={`${isCorrect ? "animate-pop-in" : "animate-shake"}`}>
+              <Card className={`mb-2 p-3 ${
+                isCorrect
+                  ? "bg-gradient-to-r from-success-50 to-green-50 border-success-300"
+                  : "bg-gradient-to-r from-error-50 to-red-50 border-error-300"
+              } border-2`}>
+                <div className="flex items-center gap-3">
+                  <span className={`text-3xl ${isCorrect ? "animate-bounce" : ""}`}>
+                    {isCorrect ? (combo >= 3 ? "🔥" : "🎉") : "😢"}
+                  </span>
+                  <div className="flex-1">
+                    <p className={`text-lg font-bold ${isCorrect ? "text-success-600" : "text-error-600"}`}>
+                      {isCorrect ? (
+                        combo >= 5 ? `${combo}連続! すごい!` :
+                        combo >= 3 ? `${combo}連続正解!` : "正解!"
+                      ) : "不正解..."}
+                    </p>
+                    {isCorrect && combo >= 2 && (
+                      <p className="text-xs text-accent-500 font-medium">+{10 + (combo > 2 ? 5 : 0)} XP</p>
+                    )}
+                    {!isCorrect && (
+                      <div className="text-xs text-slate-600">
+                        <p>
+                          正解: <span className="text-primary-600 font-bold">{currentQuestion.correctAnswer}</span>
+                          {currentQuestion.type !== "en-to-ja" && (
+                            <span className="text-slate-500 ml-1">({currentQuestion.word.meaning})</span>
+                          )}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                  {!isCorrect && (
+                    <SpeakButton
+                      text={currentQuestion.word.example || currentQuestion.word.word}
+                      type={currentQuestion.word.example ? "sentence" : "word"}
+                      size="sm"
+                    />
+                  )}
+                </div>
+                {!isCorrect && currentQuestion.word.example && (
+                  <p className="mt-2 text-xs bg-white/70 rounded-lg p-2 border border-slate-200">
+                    {currentQuestion.word.example}
+                  </p>
+                )}
+              </Card>
+
+              <Button onClick={handleNext} fullWidth>
+                {currentIndex + 1 >= questions.length ? "結果を見る" : "次の問題へ"}
+              </Button>
+            </div>
+          ) : (
+            <div className="h-[100px]" />
+          )}
+        </div>
       </div>
     </div>
   );
