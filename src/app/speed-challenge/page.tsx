@@ -8,6 +8,7 @@ import { Card, Button, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
 import { AchievementUnlockPopup } from "@/components/features/achievements/AchievementUnlockPopup";
+import { PerfectScorePopup } from "@/components/features/quiz";
 import { speakWord, isSpeechSynthesisSupported } from "@/lib/audio";
 import {
   AnsweredWord,
@@ -101,6 +102,7 @@ export default function SpeedChallengePage() {
   const [isNewHighScore, setIsNewHighScore] = useState(false);
   const [showingAchievement, setShowingAchievement] = useState<Achievement | null>(null);
   const [pendingAchievements, setPendingAchievements] = useState<Achievement[]>([]);
+  const [showPerfectScore, setShowPerfectScore] = useState(false);
   const [feedback, setFeedback] = useState<{ correct: boolean; show: boolean } | null>(null);
   const [answeredWords, setAnsweredWords] = useState<AnsweredWord[]>([]);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -184,6 +186,11 @@ export default function SpeedChallengePage() {
       setPendingAchievements(newAchievements);
       setShowingAchievement(newAchievements[0]);
     }
+
+    // 全問正解の場合はパーフェクトスコアポップアップを表示
+    if (finalScore > 0 && finalScore === finalTotal) {
+      setShowPerfectScore(true);
+    }
   }, [maxCombo]);
 
   const startGame = useCallback(() => {
@@ -200,6 +207,7 @@ export default function SpeedChallengePage() {
     setIsNewHighScore(false);
     setFeedback(null);
     setAnsweredWords([]);
+    setShowPerfectScore(false);
     scoreRef.current = 0;
     totalQuestionsRef.current = 0;
     answeredWordsRef.current = [];
@@ -240,6 +248,11 @@ export default function SpeedChallengePage() {
 
     const correct = choice === question.correctAnswer;
     setTotalQuestions((t) => t + 1);
+
+    // ja-to-en問題で選択した英単語を読み上げ（正誤に関わらず、音と文字の結びつけ）
+    if (question.type === "ja-to-en" && isSpeechSynthesisSupported()) {
+      speakWord(choice);
+    }
 
     // 回答した単語を追跡
     setAnsweredWords((prev) => [
@@ -426,64 +439,68 @@ export default function SpeedChallengePage() {
     const accuracy = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
 
     return (
-      <div className="min-h-[calc(100vh-64px)] px-4 py-8 flex items-center justify-center">
-        <Card className="max-w-md w-full text-center">
-          {isNewHighScore && (
-            <div className="mb-4 p-4 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl border-2 border-yellow-300 animate-bounce">
-              <span className="text-4xl">🎉</span>
-              <p className="text-xl font-bold text-yellow-700 mt-2">
-                新記録達成！
-              </p>
-            </div>
-          )}
+      <div className="h-[calc(100vh-64px)] px-4 py-4 flex flex-col">
+        <div className="max-w-md w-full mx-auto flex flex-col h-full">
+          {/* 上部固定: スコアサマリー */}
+          <div className="flex-shrink-0 text-center bg-white rounded-3xl shadow-card p-4 mb-3">
+            {isNewHighScore && (
+              <div className="mb-3 p-2 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-xl border border-yellow-300">
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-2xl">🎉</span>
+                  <p className="text-sm font-bold text-yellow-700">新記録達成！</p>
+                </div>
+              </div>
+            )}
 
-          <div className="mb-4">
-            <span className="text-7xl">{message.emoji}</span>
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="text-4xl">{message.emoji}</span>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">{message.text}</h1>
+                <p className="text-gray-500 text-sm">タイムアップ！</p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-xl p-3 mb-3">
+              <div className="text-4xl font-bold text-gradient">{score}</div>
+              <p className="text-gray-600 text-sm">スコア</p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-2">
+              <div className="bg-gray-50 rounded-lg p-2">
+                <p className="text-lg font-bold text-gray-700">{totalQuestions}</p>
+                <p className="text-[10px] text-gray-400">回答数</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-2">
+                <p className="text-lg font-bold text-gray-700">{accuracy}%</p>
+                <p className="text-[10px] text-gray-400">正答率</p>
+              </div>
+              <div className="bg-gray-50 rounded-lg p-2">
+                <p className="text-lg font-bold text-gray-700">{maxCombo}</p>
+                <p className="text-[10px] text-gray-400">最大コンボ</p>
+              </div>
+            </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">{message.text}</h1>
-          <p className="text-gray-500 mb-6">タイムアップ！</p>
 
-          <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-6 mb-6">
-            <div className="text-6xl font-bold text-gradient mb-2">{score}</div>
-            <p className="text-gray-600">スコア</p>
-          </div>
-
-          <div className="grid grid-cols-3 gap-3 mb-6">
-            <div className="bg-gray-50 rounded-xl p-3">
-              <p className="text-2xl font-bold text-gray-700">{totalQuestions}</p>
-              <p className="text-xs text-gray-400">回答数</p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-3">
-              <p className="text-2xl font-bold text-gray-700">{accuracy}%</p>
-              <p className="text-xs text-gray-400">正答率</p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-3">
-              <p className="text-2xl font-bold text-gray-700">{maxCombo}</p>
-              <p className="text-xs text-gray-400">最大コンボ</p>
-            </div>
-          </div>
-
-          {/* 出題された全単語一覧 */}
+          {/* 中央スクロール可能エリア: 出題された全単語一覧 */}
           {answeredWords.length > 0 && (
-            <div className="mb-6">
-              <p className="text-sm text-gray-500 mb-3">
+            <div className="flex-1 overflow-y-auto min-h-0 mb-3 bg-white rounded-2xl shadow-card p-3">
+              <p className="text-sm text-gray-500 mb-2">
                 出題単語一覧（タップで詳細）
               </p>
-              <div className="space-y-2 max-h-60 overflow-y-auto">
+              <div className="space-y-2">
                 {answeredWords.map((word, index) => (
                   <Link
                     key={`${word.id}-${index}`}
                     href={`/word/${word.id}?from=speed`}
-                    className={`flex items-center justify-between p-3 rounded-xl border transition-all hover:scale-[1.02] group ${
+                    className={`flex items-center justify-between p-2 rounded-xl border transition-all hover:scale-[1.02] group ${
                       word.correct
                         ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-200"
                         : "bg-gradient-to-r from-red-50 to-orange-50 border-red-200"
                     }`}
                   >
-                    <div className="flex items-center gap-3">
-                      {/* 正誤アイコン */}
+                    <div className="flex items-center gap-2">
                       <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                        className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
                           word.correct
                             ? "bg-green-100 text-green-600"
                             : "bg-red-100 text-red-600"
@@ -493,14 +510,14 @@ export default function SpeedChallengePage() {
                       </div>
                       <SpeakButton text={word.word} size="sm" />
                       <div className="text-left">
-                        <p className="font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+                        <p className="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">
                           {word.word}
                         </p>
                         <p className="text-xs text-gray-500">{word.meaning}</p>
                       </div>
                     </div>
                     <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
@@ -510,7 +527,8 @@ export default function SpeedChallengePage() {
             </div>
           )}
 
-          <div className="space-y-3">
+          {/* 下部固定: アクションボタン */}
+          <div className="flex-shrink-0 space-y-2">
             <Button fullWidth onClick={startGame}>
               もう一度挑戦
             </Button>
@@ -520,12 +538,20 @@ export default function SpeedChallengePage() {
               </Button>
             </Link>
           </div>
-        </Card>
+        </div>
 
         {showingAchievement && (
           <AchievementUnlockPopup
             achievement={showingAchievement}
             onClose={handleAchievementClose}
+          />
+        )}
+
+        {/* 全問正解ポップアップ */}
+        {showPerfectScore && (
+          <PerfectScorePopup
+            mode="speed"
+            onClose={() => setShowPerfectScore(false)}
           />
         )}
       </div>
