@@ -8,6 +8,7 @@ import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
 import { AchievementUnlockPopup } from "@/components/features/achievements/AchievementUnlockPopup";
+import { PerfectScorePopup } from "@/components/features/quiz";
 import { speakWord, speakSentence, isSpeechSynthesisSupported } from "@/lib/audio";
 import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
 import {
@@ -203,6 +204,23 @@ function getQuestionDisplay(question: Question): string {
   }
 }
 
+// fill-blank問題の日本語訳を取得
+function getTranslationForFillBlank(wordId: number, exampleSentence?: string): string {
+  const fullWordData = words.find((w) => w.id === wordId);
+  if (!fullWordData) return "";
+
+  // examples配列から該当する例文の日本語訳を探す
+  if (fullWordData.examples && fullWordData.examples.length > 0 && exampleSentence) {
+    const matchingExample = fullWordData.examples.find(
+      (ex) => ex.en.toLowerCase() === exampleSentence.toLowerCase()
+    );
+    if (matchingExample) return matchingExample.ja;
+  }
+
+  // フォールバック: 単語の意味を表示
+  return fullWordData.meaning;
+}
+
 const STREAK_MILESTONES = [3, 7, 14, 30, 50, 100];
 
 function getStreakMilestone(streak: number, previousStreak: number): number | null {
@@ -242,10 +260,12 @@ export default function QuizPage() {
   const [combo, setCombo] = useState(0);
   const [maxCombo, setMaxCombo] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
+  const [showTranslation, setShowTranslation] = useState(false);
   const [answeredWords, setAnsweredWords] = useState<AnsweredWord[]>([]);
   const [sessionResult, setSessionResult] = useState<SessionResult | null>(null);
   const [showingAchievement, setShowingAchievement] = useState<Achievement | null>(null);
   const [pendingAchievements, setPendingAchievements] = useState<Achievement[]>([]);
+  const [showPerfectScore, setShowPerfectScore] = useState(false);
   const [isRestoredFromSession, setIsRestoredFromSession] = useState(false);
 
   const currentQuestion = questions[currentIndex];
@@ -329,6 +349,8 @@ export default function QuizPage() {
     setSessionResult(null);
     setAnsweredWords([]);
     setIsRestoredFromSession(false);
+    setShowTranslation(false);
+    setShowPerfectScore(false);
     // 自動再生済みの記録をリセット
     hasAutoPlayedRef.current = new Set();
   }, []);
@@ -347,6 +369,11 @@ export default function QuizPage() {
     setSelected(choice);
     const correct = choice === currentQuestion.correctAnswer;
     setIsCorrect(correct);
+
+    // ja-to-en問題で選択した英単語を読み上げ（正誤に関わらず、音と文字の結びつけ）
+    if (currentQuestion.type === "ja-to-en" && isSpeechSynthesisSupported()) {
+      speakWord(choice);
+    }
     // 全単語の結果を記録
     setAnsweredWords((prev) => [
       ...prev,
@@ -426,10 +453,16 @@ export default function QuizPage() {
 
       setSessionResult(result);
       setIsFinished(true);
+
+      // 全問正解の場合はパーフェクトスコアポップアップを表示
+      if (score === questions.length) {
+        setShowPerfectScore(true);
+      }
     } else {
       setCurrentIndex((prev) => prev + 1);
       setSelected(null);
       setIsCorrect(null);
+      setShowTranslation(false);
     }
   };
 
@@ -475,159 +508,163 @@ export default function QuizPage() {
       : [];
 
     return (
-      <div className="min-h-[calc(100vh-64px)] px-4 py-8 flex items-center justify-center">
-        <Card className="max-w-md w-full text-center">
-          {/* ストリークマイルストーン達成 */}
-          {streakMilestoneMessage && (
-            <div className="mb-4 p-4 bg-gradient-to-r from-orange-100 via-red-100 to-pink-100 rounded-2xl border-2 border-orange-300 animate-pulse">
-              <span className="text-5xl">{streakMilestoneMessage.emoji}</span>
-              <p className="text-xl font-bold text-orange-700 mt-2">
-                {streakMilestoneMessage.title}
-              </p>
-              <p className="text-orange-600 text-sm">
-                {streakMilestoneMessage.description}
-              </p>
-            </div>
-          )}
+      <div className="h-[calc(100vh-64px)] px-4 py-4 flex flex-col">
+        <div className="max-w-md w-full mx-auto flex flex-col h-full">
+          {/* 上部固定: スコアサマリー */}
+          <div className="flex-shrink-0 text-center bg-white rounded-3xl shadow-card p-4 mb-3">
+            {/* ストリークマイルストーン達成（コンパクト表示） */}
+            {streakMilestoneMessage && (
+              <div className="mb-3 p-2 bg-gradient-to-r from-orange-100 via-red-100 to-pink-100 rounded-xl border border-orange-300">
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-2xl">{streakMilestoneMessage.emoji}</span>
+                  <p className="text-sm font-bold text-orange-700">{streakMilestoneMessage.title}</p>
+                </div>
+              </div>
+            )}
 
-          {/* レベルアップ表示 */}
-          {leveledUp && (
-            <div className="mb-4 p-4 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-2xl border-2 border-yellow-300 animate-pulse">
-              <span className="text-4xl">🎊</span>
-              <p className="text-xl font-bold text-yellow-700 mt-2">
-                レベルアップ!
-              </p>
-              <p className="text-yellow-600">
-                Lv.{sessionResult?.previousLevel} → Lv.{sessionResult?.newLevel}
-              </p>
-            </div>
-          )}
+            {/* レベルアップ表示（コンパクト表示） */}
+            {leveledUp && (
+              <div className="mb-3 p-2 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-xl border border-yellow-300">
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-2xl">🎊</span>
+                  <p className="text-sm font-bold text-yellow-700">
+                    レベルアップ! Lv.{sessionResult?.previousLevel} → Lv.{sessionResult?.newLevel}
+                  </p>
+                </div>
+              </div>
+            )}
 
-          <div className="animate-bounce-slow mb-4">
-            <span className="text-7xl">{message.emoji}</span>
-          </div>
-          <h1 className="text-3xl font-bold text-slate-800 mb-2">{message.text}</h1>
-          <p className="text-slate-500 mb-6">セッション完了!</p>
-
-          <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-2xl p-6 mb-6">
-            <div className="text-5xl font-bold text-gradient mb-2">
-              {score} / {totalQuestions}
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <span className="text-4xl">{message.emoji}</span>
+              <div>
+                <h1 className="text-2xl font-bold text-slate-800">{message.text}</h1>
+                <p className="text-slate-500 text-sm">セッション完了!</p>
+              </div>
             </div>
-            <p className="text-slate-600">正答率 {percentage}%</p>
-            {maxCombo >= 3 && (
-              <p className="text-sm text-accent-500 mt-2">
-                最大コンボ: {maxCombo}連続正解!
-              </p>
+
+            <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-xl p-3">
+              <div className="flex items-center justify-center gap-4">
+                <div>
+                  <div className="text-3xl font-bold text-gradient">
+                    {score} / {totalQuestions}
+                  </div>
+                  <p className="text-slate-600 text-sm">正答率 {percentage}%</p>
+                </div>
+                {maxCombo >= 3 && (
+                  <div className="text-center border-l border-slate-200 pl-4">
+                    <div className="text-2xl font-bold text-accent-500">{maxCombo}</div>
+                    <p className="text-xs text-accent-400">最大コンボ</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* XP・ストリーク・デイリー目標（コンパクト） */}
+            {sessionResult && (
+              <div className="grid grid-cols-3 gap-2 mt-3">
+                <div className="bg-gradient-to-br from-purple-100 to-purple-50 rounded-lg p-2">
+                  <span className="text-lg">✨</span>
+                  <p className="text-sm font-bold text-purple-600">+{sessionResult.earnedXp}</p>
+                  <p className="text-[10px] text-purple-400">XP</p>
+                </div>
+                <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-lg p-2">
+                  <span className="text-lg">🔥</span>
+                  <p className="text-sm font-bold text-orange-600">{sessionResult.streak}</p>
+                  <p className="text-[10px] text-orange-400">日連続</p>
+                </div>
+                <div className={`rounded-lg p-2 ${
+                  sessionResult.dailyProgress.completed
+                    ? "bg-gradient-to-br from-green-100 to-green-50"
+                    : "bg-gradient-to-br from-blue-100 to-blue-50"
+                }`}>
+                  <span className="text-lg">{sessionResult.dailyProgress.completed ? "🏆" : "🎯"}</span>
+                  <p className={`text-sm font-bold ${
+                    sessionResult.dailyProgress.completed ? "text-green-600" : "text-blue-600"
+                  }`}>
+                    {sessionResult.dailyProgress.current}/{sessionResult.dailyProgress.goal}
+                  </p>
+                  <p className={`text-[10px] ${
+                    sessionResult.dailyProgress.completed ? "text-green-400" : "text-blue-400"
+                  }`}>
+                    {sessionResult.dailyProgress.completed ? "達成!" : "目標"}
+                  </p>
+                </div>
+              </div>
             )}
           </div>
 
-          {/* XP・ストリーク・デイリー目標 */}
-          {sessionResult && (
-            <div className="grid grid-cols-3 gap-3 mb-6">
-              {/* XP獲得 */}
-              <div className="bg-gradient-to-br from-purple-100 to-purple-50 rounded-xl p-3">
-                <span className="text-2xl">✨</span>
-                <p className="text-xl font-bold text-purple-600">+{sessionResult.earnedXp}</p>
-                <p className="text-xs text-purple-400">XP獲得</p>
-              </div>
-
-              {/* ストリーク */}
-              <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl p-3">
-                <span className="text-2xl">🔥</span>
-                <p className="text-xl font-bold text-orange-600">{sessionResult.streak}</p>
-                <p className="text-xs text-orange-400">日連続</p>
-              </div>
-
-              {/* デイリー目標 */}
-              <div className={`rounded-xl p-3 ${
-                sessionResult.dailyProgress.completed
-                  ? "bg-gradient-to-br from-green-100 to-green-50"
-                  : "bg-gradient-to-br from-blue-100 to-blue-50"
-              }`}>
-                <span className="text-2xl">{sessionResult.dailyProgress.completed ? "🏆" : "🎯"}</span>
-                <p className={`text-xl font-bold ${
-                  sessionResult.dailyProgress.completed ? "text-green-600" : "text-blue-600"
-                }`}>
-                  {sessionResult.dailyProgress.current}/{sessionResult.dailyProgress.goal}
-                </p>
-                <p className={`text-xs ${
-                  sessionResult.dailyProgress.completed ? "text-green-400" : "text-blue-400"
-                }`}>
-                  {sessionResult.dailyProgress.completed ? "達成!" : "今日の目標"}
-                </p>
-              </div>
-            </div>
-          )}
-
-          {/* 新しく獲得した実績 */}
-          {newAchievements.length > 0 && (
-            <div className="mb-6">
-              <p className="text-sm text-gray-500 mb-3">新しい実績を獲得!</p>
-              <div className="space-y-2">
-                {newAchievements.map((achievement) => (
-                  <div
-                    key={achievement.id}
-                    className="flex items-center gap-3 p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200"
-                  >
-                    <span className="text-3xl">{achievement.icon}</span>
-                    <div className="text-left">
-                      <p className="font-bold text-gray-900">{achievement.name}</p>
-                      <p className="text-xs text-gray-500">{achievement.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* 出題された全単語一覧 */}
-          {answeredWords.length > 0 && (
-            <div className="mb-6">
-              <p className="text-sm text-gray-500 mb-3">
-                出題単語一覧（タップで詳細）
-              </p>
-              <div className="space-y-2">
-                {answeredWords.map((word) => (
-                  <Link
-                    key={`${word.id}-${word.word}`}
-                    href={`/word/${word.id}?from=quiz`}
-                    className={`flex items-center justify-between p-3 rounded-xl border transition-all hover:scale-[1.02] group ${
-                      word.correct
-                        ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-200"
-                        : "bg-gradient-to-r from-red-50 to-orange-50 border-red-200"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      {/* 正誤アイコン */}
-                      <div
-                        className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
-                          word.correct
-                            ? "bg-green-100 text-green-600"
-                            : "bg-red-100 text-red-600"
-                        }`}
-                      >
-                        {word.correct ? "✓" : "✗"}
-                      </div>
-                      <SpeakButton text={word.word} size="sm" />
+          {/* 中央スクロール可能エリア */}
+          <div className="flex-1 overflow-y-auto min-h-0 mb-3">
+            {/* 新しく獲得した実績 */}
+            {newAchievements.length > 0 && (
+              <div className="mb-3 bg-white rounded-2xl shadow-card p-3">
+                <p className="text-sm text-gray-500 mb-2">新しい実績を獲得!</p>
+                <div className="space-y-2">
+                  {newAchievements.map((achievement) => (
+                    <div
+                      key={achievement.id}
+                      className="flex items-center gap-3 p-2 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200"
+                    >
+                      <span className="text-2xl">{achievement.icon}</span>
                       <div className="text-left">
-                        <p className="font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
-                          {word.word}
-                        </p>
-                        <p className="text-xs text-gray-500">{word.meaning}</p>
+                        <p className="font-bold text-gray-900 text-sm">{achievement.name}</p>
+                        <p className="text-xs text-gray-500">{achievement.description}</p>
                       </div>
                     </div>
-                    <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </Link>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          <div className="space-y-3">
+            {/* 出題された全単語一覧 */}
+            {answeredWords.length > 0 && (
+              <div className="bg-white rounded-2xl shadow-card p-3">
+                <p className="text-sm text-gray-500 mb-2">
+                  出題単語一覧（タップで詳細）
+                </p>
+                <div className="space-y-2">
+                  {answeredWords.map((word) => (
+                    <Link
+                      key={`${word.id}-${word.word}`}
+                      href={`/word/${word.id}?from=quiz`}
+                      className={`flex items-center justify-between p-2 rounded-xl border transition-all hover:scale-[1.02] group ${
+                        word.correct
+                          ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-200"
+                          : "bg-gradient-to-r from-red-50 to-orange-50 border-red-200"
+                      }`}
+                    >
+                      <div className="flex items-center gap-2">
+                        <div
+                          className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                            word.correct
+                              ? "bg-green-100 text-green-600"
+                              : "bg-red-100 text-red-600"
+                          }`}
+                        >
+                          {word.correct ? "✓" : "✗"}
+                        </div>
+                        <SpeakButton text={word.word} size="sm" />
+                        <div className="text-left">
+                          <p className="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">
+                            {word.word}
+                          </p>
+                          <p className="text-xs text-gray-500">{word.meaning}</p>
+                        </div>
+                      </div>
+                      <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* 下部固定: アクションボタン */}
+          <div className="flex-shrink-0 space-y-2">
             <Button fullWidth onClick={startNewSession}>
               もう1セット挑戦
             </Button>
@@ -637,13 +674,21 @@ export default function QuizPage() {
               </Button>
             </Link>
           </div>
-        </Card>
+        </div>
 
         {/* 実績解除ポップアップ */}
         {showingAchievement && (
           <AchievementUnlockPopup
             achievement={showingAchievement}
             onClose={handleAchievementClose}
+          />
+        )}
+
+        {/* 全問正解ポップアップ */}
+        {showPerfectScore && (
+          <PerfectScorePopup
+            mode="quiz"
+            onClose={() => setShowPerfectScore(false)}
           />
         )}
       </div>
@@ -705,6 +750,22 @@ export default function QuizPage() {
             {currentQuestion.type === "fill-blank" && currentQuestion.word.example && (
               <div className="mt-3">
                 <SpeakButton text={currentQuestion.word.example} type="sentence" size="sm" />
+              </div>
+            )}
+            {/* 穴埋め問題の和訳表示トグル */}
+            {currentQuestion.type === "fill-blank" && selected === null && (
+              <div className="mt-3 text-center">
+                <button
+                  onClick={() => setShowTranslation(!showTranslation)}
+                  className="text-sm text-primary-500 hover:text-primary-600 underline transition-colors"
+                >
+                  {showTranslation ? "和訳を隠す" : "和訳を表示"}
+                </button>
+                {showTranslation && (
+                  <p className="mt-2 text-sm text-slate-600 bg-slate-50 rounded-lg p-3">
+                    {getTranslationForFillBlank(currentQuestion.word.id, currentQuestion.word.example)}
+                  </p>
+                )}
               </div>
             )}
           </div>
