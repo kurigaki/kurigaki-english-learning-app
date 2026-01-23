@@ -9,6 +9,12 @@ import { Question, QuestionType, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
 import { AchievementUnlockPopup } from "@/components/features/achievements/AchievementUnlockPopup";
 import { speakWord, isSpeechSynthesisSupported } from "@/lib/audio";
+import {
+  AnsweredWord,
+  saveSpeedResultState,
+  getSpeedResultState,
+  clearSpeedResultState,
+} from "@/lib/speed-session";
 
 const TIME_LIMIT = 30; // 30秒
 
@@ -96,9 +102,11 @@ export default function SpeedChallengePage() {
   const [showingAchievement, setShowingAchievement] = useState<Achievement | null>(null);
   const [pendingAchievements, setPendingAchievements] = useState<Achievement[]>([]);
   const [feedback, setFeedback] = useState<{ correct: boolean; show: boolean } | null>(null);
+  const [answeredWords, setAnsweredWords] = useState<AnsweredWord[]>([]);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const scoreRef = useRef(0);
   const totalQuestionsRef = useRef(0);
+  const answeredWordsRef = useRef<AnsweredWord[]>([]);
 
   // Refを同期
   useEffect(() => {
@@ -110,13 +118,30 @@ export default function SpeedChallengePage() {
   }, [totalQuestions]);
 
   useEffect(() => {
+    answeredWordsRef.current = answeredWords;
+  }, [answeredWords]);
+
+  // ハイスコア取得とセッション復元
+  useEffect(() => {
     const hs = storage.getSpeedChallengeHighScore();
     setHighScore(hs);
+
+    // 保存されたリザルト状態を復元（単語詳細から戻ってきた場合）
+    const savedState = getSpeedResultState();
+    if (savedState) {
+      setScore(savedState.score);
+      setTotalQuestions(savedState.totalQuestions);
+      setMaxCombo(savedState.maxCombo);
+      setIsNewHighScore(savedState.isNewHighScore);
+      setAnsweredWords(savedState.answeredWords);
+      setGameState("finished");
+    }
   }, []);
 
   const endGame = useCallback(() => {
     const finalScore = scoreRef.current;
     const finalTotal = totalQuestionsRef.current;
+    const finalAnsweredWords = answeredWordsRef.current;
 
     setGameState("finished");
 
@@ -130,10 +155,20 @@ export default function SpeedChallengePage() {
 
     // ハイスコアチェック
     const prevHighScore = storage.getSpeedChallengeHighScore();
-    if (finalScore > prevHighScore) {
+    const newHighScore = finalScore > prevHighScore;
+    if (newHighScore) {
       setIsNewHighScore(true);
       setHighScore(finalScore);
     }
+
+    // セッション状態を保存（単語詳細から戻ってきた際に復元するため）
+    saveSpeedResultState({
+      score: finalScore,
+      totalQuestions: finalTotal,
+      maxCombo: maxCombo,
+      isNewHighScore: newHighScore,
+      answeredWords: finalAnsweredWords,
+    });
 
     // 実績チェック
     const newAchievementIds = storage.checkAndUnlockAchievements({
@@ -149,9 +184,12 @@ export default function SpeedChallengePage() {
       setPendingAchievements(newAchievements);
       setShowingAchievement(newAchievements[0]);
     }
-  }, []);
+  }, [maxCombo]);
 
   const startGame = useCallback(() => {
+    // 前回のセッション状態をクリア
+    clearSpeedResultState();
+
     setGameState("playing");
     setTimeLeft(TIME_LIMIT);
     setScore(0);
@@ -161,8 +199,10 @@ export default function SpeedChallengePage() {
     setUsedWordIds(new Set());
     setIsNewHighScore(false);
     setFeedback(null);
+    setAnsweredWords([]);
     scoreRef.current = 0;
     totalQuestionsRef.current = 0;
+    answeredWordsRef.current = [];
     const firstQuestion = getNextQuestion(new Set());
     setQuestion(firstQuestion);
     setUsedWordIds(new Set([firstQuestion.word.id]));
@@ -200,6 +240,17 @@ export default function SpeedChallengePage() {
 
     const correct = choice === question.correctAnswer;
     setTotalQuestions((t) => t + 1);
+
+    // 回答した単語を追跡
+    setAnsweredWords((prev) => [
+      ...prev,
+      {
+        id: question.word.id,
+        word: question.word.word,
+        meaning: question.word.meaning,
+        correct,
+      },
+    ]);
 
     // フィードバック表示
     setFeedback({ correct, show: true });
@@ -412,12 +463,59 @@ export default function SpeedChallengePage() {
             </div>
           </div>
 
+          {/* 出題された全単語一覧 */}
+          {answeredWords.length > 0 && (
+            <div className="mb-6">
+              <p className="text-sm text-gray-500 mb-3">
+                出題単語一覧（タップで詳細）
+              </p>
+              <div className="space-y-2 max-h-60 overflow-y-auto">
+                {answeredWords.map((word, index) => (
+                  <Link
+                    key={`${word.id}-${index}`}
+                    href={`/word/${word.id}?from=speed`}
+                    className={`flex items-center justify-between p-3 rounded-xl border transition-all hover:scale-[1.02] group ${
+                      word.correct
+                        ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-200"
+                        : "bg-gradient-to-r from-red-50 to-orange-50 border-red-200"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      {/* 正誤アイコン */}
+                      <div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                          word.correct
+                            ? "bg-green-100 text-green-600"
+                            : "bg-red-100 text-red-600"
+                        }`}
+                      >
+                        {word.correct ? "✓" : "✗"}
+                      </div>
+                      <SpeakButton text={word.word} size="sm" />
+                      <div className="text-left">
+                        <p className="font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+                          {word.word}
+                        </p>
+                        <p className="text-xs text-gray-500">{word.meaning}</p>
+                      </div>
+                    </div>
+                    <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           <div className="space-y-3">
             <Button fullWidth onClick={startGame}>
               もう一度挑戦
             </Button>
             <Link href="/" className="block">
-              <Button variant="secondary" fullWidth>
+              <Button variant="secondary" fullWidth onClick={() => clearSpeedResultState()}>
                 ホームに戻る
               </Button>
             </Link>
