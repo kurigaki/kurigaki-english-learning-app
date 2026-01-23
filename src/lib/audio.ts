@@ -1,5 +1,7 @@
 // Web Speech API を使用した音声再生ユーティリティ
 
+import type { PronunciationVariant } from "@/types";
+
 export type VoiceLanguage = "en-US" | "en-GB" | "ja-JP";
 
 // ブラウザがWeb Speech APIをサポートしているかチェック
@@ -146,7 +148,8 @@ export function isSpeaking(): boolean {
 }
 
 // 音声が読み込まれるのを待つ（初回アクセス時に必要な場合がある）
-export function waitForVoices(): Promise<SpeechSynthesisVoice[]> {
+// timeout: 最大待機時間（ミリ秒）。デフォルト1000ms
+export function waitForVoices(timeout = 1000): Promise<SpeechSynthesisVoice[]> {
   return new Promise((resolve) => {
     if (!isSpeechSynthesisSupported()) {
       resolve([]);
@@ -159,8 +162,49 @@ export function waitForVoices(): Promise<SpeechSynthesisVoice[]> {
       return;
     }
 
+    // タイムアウト処理
+    const timeoutId = setTimeout(() => {
+      resolve([]);
+    }, timeout);
+
     window.speechSynthesis.onvoiceschanged = () => {
+      clearTimeout(timeoutId);
       resolve(window.speechSynthesis.getVoices());
     };
+  });
+}
+
+// 音声初期化状態を管理
+let voicesInitialized = false;
+let voicesPromise: Promise<SpeechSynthesisVoice[]> | null = null;
+
+// 音声が利用可能になるまで待機し、初期化を確認
+export async function ensureVoicesLoaded(): Promise<boolean> {
+  if (voicesInitialized) return true;
+  if (!isSpeechSynthesisSupported()) return false;
+
+  if (!voicesPromise) {
+    voicesPromise = waitForVoices();
+  }
+
+  const voices = await voicesPromise;
+  voicesInitialized = voices.length > 0;
+  return voicesInitialized;
+}
+
+// UK/US発音を切り替えて英単語を読み上げる
+export function speakWordWithVariant(
+  word: string,
+  variant: PronunciationVariant,
+  options?: {
+    slow?: boolean;
+    onEnd?: () => void;
+  }
+): void {
+  speak(word, {
+    rate: options?.slow ? 0.7 : 0.9,
+    pitch: 1,
+    language: variant === "uk" ? "en-GB" : "en-US",
+    onEnd: options?.onEnd,
   });
 }
