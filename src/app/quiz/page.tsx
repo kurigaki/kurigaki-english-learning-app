@@ -792,7 +792,7 @@ export default function QuizPage() {
             </div>
 
             {/* Choices */}
-            <div className="space-y-1.5 sm:space-y-2 flex-1">
+            <div className="space-y-1 sm:space-y-1.5 flex-1">
               {currentQuestion.choices.map((choice, index) => {
                 let buttonClass = "choice-btn";
 
@@ -809,10 +809,10 @@ export default function QuizPage() {
                     key={index}
                     onClick={() => handleSelect(choice)}
                     disabled={selected !== null}
-                    className={`${buttonClass} py-2 sm:py-3`}
+                    className={`${buttonClass} py-1.5 sm:py-2`}
                   >
-                    <span className="flex items-center gap-2">
-                      <span className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0">
+                    <span className="flex items-center gap-1.5 sm:gap-2">
+                      <span className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-xs font-bold flex-shrink-0">
                         {String.fromCharCode(65 + index)}
                       </span>
                       <span className="text-xs sm:text-sm">{choice}</span>
@@ -825,20 +825,20 @@ export default function QuizPage() {
         </div>
 
         {/* 下部固定: Result & Next */}
-        <div className="flex-shrink-0 mt-2">
+        <div className="flex-shrink-0 mt-1 sm:mt-2">
           {selected !== null ? (
             <div className={`${isCorrect ? "animate-pop-in" : "animate-shake"}`}>
-              <Card className={`mb-2 p-2 sm:p-3 ${
+              <Card className={`mb-1.5 sm:mb-2 p-1.5 sm:p-2 ${
                 isCorrect
                   ? "bg-gradient-to-r from-success-50 to-green-50 border-success-300"
                   : "bg-gradient-to-r from-error-50 to-red-50 border-error-300"
               } border-2`}>
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <span className={`text-2xl sm:text-3xl ${isCorrect ? "animate-bounce" : ""}`}>
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <span className={`text-xl sm:text-2xl ${isCorrect ? "animate-bounce" : ""}`}>
                     {isCorrect ? (combo >= 3 ? "🔥" : "🎉") : "😢"}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className={`text-base sm:text-lg font-bold ${isCorrect ? "text-success-600" : "text-error-600"}`}>
+                    <p className={`text-sm sm:text-base font-bold ${isCorrect ? "text-success-600" : "text-error-600"}`}>
                       {isCorrect ? (
                         combo >= 5 ? `${combo}連続! すごい!` :
                         combo >= 3 ? `${combo}連続正解!` : "正解!"
@@ -869,10 +869,10 @@ export default function QuizPage() {
                 {!isCorrect && currentQuestion.word.example && (() => {
                   const translationInfo = getTranslationInfo(currentQuestion.word.id, currentQuestion.word.example);
                   return (
-                    <div className="mt-1.5 text-xs bg-white/70 rounded-lg p-1.5 sm:p-2 border border-slate-200 space-y-0.5">
-                      <p className="text-slate-700 line-clamp-2">{currentQuestion.word.example}</p>
+                    <div className="mt-1 text-xs bg-white/70 rounded p-1 sm:p-1.5 border border-slate-200">
+                      <p className="text-slate-700 line-clamp-1">{currentQuestion.word.example}</p>
                       {translationInfo.sentenceJa && (
-                        <p className="text-slate-500 line-clamp-2">→ {translationInfo.sentenceJa}</p>
+                        <p className="text-slate-500 line-clamp-1">→ {translationInfo.sentenceJa}</p>
                       )}
                     </div>
                   );
@@ -884,7 +884,7 @@ export default function QuizPage() {
               </Button>
             </div>
           ) : (
-            <div className="h-[80px] sm:h-[100px]" />
+            <div className="h-[60px] sm:h-[80px]" />
           )}
         </div>
       </div>
