@@ -1,0 +1,166 @@
+// Web Speech API を使用した音声再生ユーティリティ
+
+export type VoiceLanguage = "en-US" | "en-GB" | "ja-JP";
+
+// ブラウザがWeb Speech APIをサポートしているかチェック
+export function isSpeechSynthesisSupported(): boolean {
+  return typeof window !== "undefined" && "speechSynthesis" in window;
+}
+
+// 利用可能な音声を取得
+export function getAvailableVoices(): SpeechSynthesisVoice[] {
+  if (!isSpeechSynthesisSupported()) return [];
+  return window.speechSynthesis.getVoices();
+}
+
+// 特定の言語の音声を取得
+export function getVoicesForLanguage(language: VoiceLanguage): SpeechSynthesisVoice[] {
+  const voices = getAvailableVoices();
+  return voices.filter((voice) => voice.lang.startsWith(language.split("-")[0]));
+}
+
+// 英語音声を取得（優先: ネイティブ音声）
+export function getEnglishVoice(): SpeechSynthesisVoice | null {
+  const voices = getAvailableVoices();
+
+  // 優先順位: en-US > en-GB > その他の英語
+  const usVoice = voices.find((v) => v.lang === "en-US" && !v.localService);
+  if (usVoice) return usVoice;
+
+  const gbVoice = voices.find((v) => v.lang === "en-GB" && !v.localService);
+  if (gbVoice) return gbVoice;
+
+  // ローカル音声
+  const localUsVoice = voices.find((v) => v.lang === "en-US");
+  if (localUsVoice) return localUsVoice;
+
+  const localGbVoice = voices.find((v) => v.lang === "en-GB");
+  if (localGbVoice) return localGbVoice;
+
+  // その他の英語
+  const anyEnglish = voices.find((v) => v.lang.startsWith("en"));
+  return anyEnglish || null;
+}
+
+// テキストを読み上げる
+export function speak(
+  text: string,
+  options?: {
+    rate?: number; // 速度 (0.1 - 10, default: 1)
+    pitch?: number; // ピッチ (0 - 2, default: 1)
+    volume?: number; // 音量 (0 - 1, default: 1)
+    voice?: SpeechSynthesisVoice;
+    language?: VoiceLanguage;
+    onEnd?: () => void;
+    onError?: (error: SpeechSynthesisErrorEvent) => void;
+  }
+): SpeechSynthesisUtterance | null {
+  if (!isSpeechSynthesisSupported()) {
+    console.warn("Speech synthesis is not supported in this browser.");
+    return null;
+  }
+
+  // 既存の読み上げをキャンセル
+  window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  // オプション設定
+  utterance.rate = options?.rate ?? 1;
+  utterance.pitch = options?.pitch ?? 1;
+  utterance.volume = options?.volume ?? 1;
+
+  // 音声を設定
+  if (options?.voice) {
+    utterance.voice = options.voice;
+  } else {
+    const voice = getEnglishVoice();
+    if (voice) {
+      utterance.voice = voice;
+    }
+  }
+
+  // 言語を設定
+  if (options?.language) {
+    utterance.lang = options.language;
+  } else {
+    utterance.lang = "en-US";
+  }
+
+  // イベントハンドラ
+  if (options?.onEnd) {
+    utterance.onend = options.onEnd;
+  }
+
+  if (options?.onError) {
+    utterance.onerror = options.onError;
+  }
+
+  window.speechSynthesis.speak(utterance);
+  return utterance;
+}
+
+// 英単語を読み上げる（最適化された設定）
+export function speakWord(
+  word: string,
+  options?: {
+    slow?: boolean; // ゆっくり読み上げ
+    onEnd?: () => void;
+  }
+): void {
+  speak(word, {
+    rate: options?.slow ? 0.7 : 0.9, // 学習用にやや遅め
+    pitch: 1,
+    language: "en-US",
+    onEnd: options?.onEnd,
+  });
+}
+
+// 例文を読み上げる
+export function speakSentence(
+  sentence: string,
+  options?: {
+    slow?: boolean;
+    onEnd?: () => void;
+  }
+): void {
+  speak(sentence, {
+    rate: options?.slow ? 0.7 : 0.85, // 例文は少しゆっくり
+    pitch: 1,
+    language: "en-US",
+    onEnd: options?.onEnd,
+  });
+}
+
+// 読み上げを停止
+export function stopSpeaking(): void {
+  if (isSpeechSynthesisSupported()) {
+    window.speechSynthesis.cancel();
+  }
+}
+
+// 読み上げ中かどうか
+export function isSpeaking(): boolean {
+  if (!isSpeechSynthesisSupported()) return false;
+  return window.speechSynthesis.speaking;
+}
+
+// 音声が読み込まれるのを待つ（初回アクセス時に必要な場合がある）
+export function waitForVoices(): Promise<SpeechSynthesisVoice[]> {
+  return new Promise((resolve) => {
+    if (!isSpeechSynthesisSupported()) {
+      resolve([]);
+      return;
+    }
+
+    const voices = window.speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      resolve(voices);
+      return;
+    }
+
+    window.speechSynthesis.onvoiceschanged = () => {
+      resolve(window.speechSynthesis.getVoices());
+    };
+  });
+}
