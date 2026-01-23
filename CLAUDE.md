@@ -81,6 +81,40 @@ GitHub操作は以下のツールを使用してください。
   - [ ] TypeScriptの型チェックが通っている
   - [ ] アプリが正常に動作する
 
+### コミット方針（重要）
+
+- **小さく意味のある単位でコミット**: 複数の変更を1コミットにまとめない
+- **明確なコミットメッセージ**: 内容が分かるメッセージを付ける
+- **squash（まとめコミット）禁止**: 各コミットは独立して意味を持つようにする
+- **コミット後の報告**: 以下を必ず報告する
+  - 作成したコミットメッセージ一覧
+  - 変更内容の簡単な要約
+  - 安全のためにあえて変更しなかった点
+
+### 安全面のルール（重要）
+
+- **指示されていない挙動変更は禁止**: 明示的に依頼された変更のみ行う
+- **既存の公開仕様を維持**: 既存のAPI・props・ルーティング・公開仕様は削除／リネームしない
+- **関係ないリファクタリング禁止**: 今回の修正と関係ないコードの改善は行わない
+- **影響の大きい変更は提案のみ**: 実装せずTODOコメントで提案する
+- **判断に迷う場合は質問**: 勝手に実装せず、ユーザーに確認する
+
+### ブランチ・ロールバック方針
+
+- **影響が小さい変更**: 現在のブランチに直接コミットしてOK
+- **以下に関係する変更は分けてコミット**:
+  - 音声再生（読み上げ）
+  - スコア・コンボ計算
+  - 出題ロジック
+- **コミット単位で簡単に戻せる状態を維持**: 各コミットは独立して動作可能にする
+
+### バグ修正時の説明ルール
+
+バグ修正を行った場合、コミットメッセージまたはコメントに以下を簡潔に記載:
+
+- **原因**: なぜ起きていたか
+- **対応**: どう直したか
+
 ---
 
 ## プロジェクト概要
@@ -151,6 +185,9 @@ src/
 │       │   ├── AchievementCard.tsx
 │       │   ├── AchievementList.tsx
 │       │   └── AchievementUnlockPopup.tsx
+│       ├── quiz/                 # クイズ機能
+│       │   ├── PerfectScorePopup.tsx  # 全問正解ポップアップ
+│       │   └── index.ts
 │       └── word-detail/          # 単語詳細機能
 │           ├── WordHeader.tsx
 │           ├── WordImage.tsx
@@ -186,6 +223,12 @@ type QuizMode = "normal" | "speed-challenge";
 // 品詞
 type PartOfSpeech = "noun" | "verb" | "adjective" | "adverb" | "preposition" | "conjunction";
 
+// 発音データ（UK/US切り替え対応）
+type PronunciationData = {
+  us: string;   // US発音記号 (例: /ˈskedʒuːl/)
+  uk?: string;  // UK発音記号 (例: /ˈʃedjuːl/) - 差がある場合のみ
+};
+
 // 単語データ（拡張版）
 type WordExtended = {
   id: number;
@@ -193,7 +236,7 @@ type WordExtended = {
   meaning: string;
   category: string;
   difficulty: number;
-  pronunciation?: string;
+  pronunciation?: string | PronunciationData; // UK/US発音切り替え対応
   partOfSpeech?: PartOfSpeech;
   examples?: WordExample[];
   synonyms?: string[];
@@ -246,7 +289,7 @@ type UserData = {
 | クイズリザルト | 回答した全単語リスト | ✅ |
 | 学習履歴（苦手単語タブ） | 苦手単語リスト | ✅ |
 | 学習履歴（履歴タブ） | 回答履歴リスト | ✅ |
-| スピードチャレンジリザルト | 正解/不正解単語リスト | 🔜 |
+| スピードチャレンジリザルト | 正解/不正解単語リスト | ✅ |
 
 ### 実装パターン
 
@@ -281,6 +324,9 @@ isSpeechSynthesisSupported(): boolean
 // 単語の発音
 speakWord(word: string, options?: { slow?: boolean; onEnd?: () => void }): void
 
+// UK/US発音切り替えで単語を読み上げ
+speakWordWithVariant(word: string, variant: "us" | "uk", options?: { slow?: boolean; onEnd?: () => void }): void
+
 // 例文の読み上げ
 speakSentence(sentence: string, options?: { slow?: boolean; onEnd?: () => void }): void
 
@@ -289,6 +335,26 @@ isSpeaking(): boolean
 
 // 再生停止
 stopSpeaking(): void
+
+// 音声が利用可能になるまで待機
+waitForVoices(timeout?: number): Promise<SpeechSynthesisVoice[]>
+
+// 音声初期化を確認
+ensureVoicesLoaded(): Promise<boolean>
+```
+
+### UK/US発音切り替え
+
+単語詳細画面では、UK/US発音の切り替えが可能です。
+
+```typescript
+type PronunciationData = {
+  us: string;   // US発音記号 (例: /ˈskedʒuːl/)
+  uk?: string;  // UK発音記号 (例: /ˈʃedjuːl/) - 差がある場合のみ
+};
+
+// SpeakButtonでvariantを指定
+<SpeakButton text={word} variant="uk" />
 ```
 
 ### 自動再生の実装パターン
@@ -479,6 +545,34 @@ const getMasteryLevel = (accuracy: number | null, attempts: number) => {
   return "learning";
 };
 ```
+
+---
+
+## クイズ機能
+
+### 問題タイプ
+
+| タイプ | 説明 | 自動読み上げ |
+|--------|------|--------------|
+| en-to-ja | 英語→日本語選択 | 英単語を読み上げ |
+| ja-to-en | 日本語→英語選択 | 選択した英単語を読み上げ |
+| fill-blank | 穴埋め問題 | 例文全体を読み上げ |
+
+### 穴埋め問題の和訳表示
+
+穴埋め問題では「和訳を表示」ボタンで日本語訳を確認できます。
+
+- 例文の日本語訳がある場合はそれを表示
+- ない場合は単語の意味をフォールバック表示
+- 回答後は自動で非表示
+
+### 全問正解フィードバック（PerfectScorePopup）
+
+クイズ・スピードチャレンジで全問正解した場合、専用のポップアップを表示します。
+
+- アニメーション付きの祝福メッセージ
+- 3秒後に自動クローズ
+- タップでも閉じられる
 
 ---
 
