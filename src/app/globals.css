@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F0F9FF;
+  --foreground: #1E293B;
+}
+
+body {
+  color: var(--foreground);
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0E7FF 100%);
+  min-height: 100vh;
+}
+
+@layer components {
+  /* Primary Button */
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600
+           text-white font-bold py-3 px-8 rounded-2xl
+           shadow-button hover:shadow-card-hover
+           transform hover:-translate-y-0.5
+           transition-all duration-200 ease-out
+           active:scale-95;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply bg-white text-primary-600 font-bold py-3 px-8 rounded-2xl
+           border-2 border-primary-200
+           shadow-card hover:shadow-card-hover hover:border-primary-300
+           transform hover:-translate-y-0.5
+           transition-all duration-200 ease-out
+           active:scale-95;
+  }
+
+  /* Ghost Button */
+  .btn-ghost {
+    @apply text-primary-500 font-medium py-2 px-4 rounded-xl
+           hover:bg-primary-50 transition-colors duration-200;
+  }
+
+  /* Card */
+  .card {
+    @apply bg-white rounded-3xl shadow-card p-6
+           transition-all duration-200 ease-out;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover hover:-translate-y-1;
+  }
+
+  /* Stats Card */
+  .stats-card {
+    @apply bg-gradient-to-br from-white to-primary-50/50
+           rounded-2xl p-4 text-center
+           border border-primary-100/50;
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    @apply h-3 bg-primary-100 rounded-full overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-gradient-to-r from-primary-400 to-accent-400 rounded-full
+           transition-all duration-500 ease-out;
+  }
+
+  /* Choice Button (Quiz) */
+  .choice-btn {
+    @apply w-full py-4 px-5 rounded-2xl text-left font-medium
+           bg-white border-2 border-primary-100
+           shadow-sm hover:shadow-card hover:border-primary-300
+           transform hover:-translate-y-0.5
+           transition-all duration-200 ease-out
+           active:scale-[0.98];
+  }
+
+  .choice-btn-correct {
+    @apply bg-gradient-to-r from-success-400 to-success-500
+           text-white border-success-500 shadow-lg;
+  }
+
+  .choice-btn-wrong {
+    @apply bg-gradient-to-r from-error-400 to-error-500
+           text-white border-error-500 shadow-lg;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-success {
+    @apply bg-success-100 text-success-600;
+  }
+
+  .badge-error {
+    @apply bg-error-100 text-error-600;
+  }
+
+  /* Header */
+  .header {
+    @apply bg-white/80 backdrop-blur-md border-b border-primary-100
+           sticky top-0 z-50;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 to-accent-500
+           bg-clip-text text-transparent;
+  }
+
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-orange-500 to-pink-500
+           bg-clip-text text-transparent;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* ポップなホバーエフェクト */
+  .hover-pop {
+    @apply transform transition-all duration-200 ease-out;
+  }
+  .hover-pop:hover {
+    @apply -translate-y-1 scale-105;
+  }
+  .hover-pop:active {
+    @apply scale-95;
+  }
+
+  /* グラデーション背景 */
+  .bg-fun-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .bg-warm-gradient {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+
+  .bg-cool-gradient {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  .bg-success-gradient {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  }
+
+  /* キラキラエフェクト */
+  .sparkle {
+    position: relative;
+  }
+  .sparkle::after {
+    content: "✨";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 12px;
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(180deg); }
+  }
+
+  /* 正解時のパーティクル効果用 */
+  .correct-celebration {
+    animation: celebrate 0.5s ease-out;
+  }
+  @keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+
+  /* 不正解時のシェイク */
+  .wrong-shake {
+    animation: wrong-shake 0.4s ease-in-out;
+  }
+  @keyframes wrong-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+  }
+}
