@@ -30,10 +30,11 @@ export default function WordDetailPage() {
     accuracy: number | null;
     totalAttempts: number;
   }>({ accuracy: null, totalAttempts: 0 });
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   const word = words.find((w) => w.id === wordId);
 
-  // 学習履歴から記憶度を計算
+  // 学習履歴から記憶度を計算し、ブックマーク状態を取得
   useEffect(() => {
     if (!word) return;
     const statsMap = storage.getWordStats();
@@ -44,7 +45,15 @@ export default function WordDetailPage() {
         totalAttempts: stats.totalAttempts,
       });
     }
+    setIsBookmarked(storage.isWordBookmarked(word.id));
   }, [word]);
+
+  // ブックマークの切り替え
+  const handleToggleBookmark = () => {
+    if (!word) return;
+    const newState = storage.toggleBookmark(word.id);
+    setIsBookmarked(newState);
+  };
 
   // 戻るボタンの処理
   const handleBack = () => {
@@ -66,6 +75,10 @@ export default function WordDetailPage() {
         // 苦手単語画面に戻る
         router.push("/weak-words");
         break;
+      case "wordlist":
+        // 単語帳画面に戻る
+        router.push("/word-list");
+        break;
       default:
         // それ以外はブラウザの履歴を使用
         router.back();
@@ -83,6 +96,8 @@ export default function WordDetailPage() {
         return "学習履歴に戻る";
       case "weak":
         return "苦手単語に戻る";
+      case "wordlist":
+        return "単語帳に戻る";
       default:
         return "戻る";
     }
@@ -140,14 +155,39 @@ export default function WordDetailPage() {
         </button>
 
         <Card className="overflow-hidden">
-          {/* カテゴリ・難易度バッジ */}
-          <div className="flex items-center gap-2 mb-4">
-            <span className="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-full">
-              {categoryLabels[word.category]}
-            </span>
-            <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
-              {difficultyLabels[word.difficulty]}
-            </span>
+          {/* カテゴリ・難易度バッジ・ブックマーク */}
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <span className="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-full">
+                {categoryLabels[word.category]}
+              </span>
+              <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
+                {difficultyLabels[word.difficulty]}
+              </span>
+            </div>
+            <button
+              onClick={handleToggleBookmark}
+              className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                isBookmarked
+                  ? "bg-yellow-100 text-yellow-700"
+                  : "bg-slate-100 text-slate-500 hover:bg-yellow-50 hover:text-yellow-600"
+              }`}
+            >
+              <svg
+                className="w-4 h-4"
+                fill={isBookmarked ? "currentColor" : "none"}
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                />
+              </svg>
+              {isBookmarked ? "保存済み" : "保存"}
+            </button>
           </div>
 
           {/* イメージ画像 */}

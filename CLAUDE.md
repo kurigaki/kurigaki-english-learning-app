@@ -514,6 +514,13 @@ const storage = {
   getSpeedChallengeResults(): SpeedChallengeResult[]
   addSpeedChallengeResult(result: SpeedChallengeResult): void
   getSpeedChallengeHighScore(): number
+
+  // ブックマーク
+  getBookmarkedWordIds(): number[]
+  isWordBookmarked(wordId: number): boolean
+  addBookmark(wordId: number): void
+  removeBookmark(wordId: number): void
+  toggleBookmark(wordId: number): boolean
 }
 ```
 

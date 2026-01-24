@@ -5,6 +5,7 @@ const STORAGE_KEY = "learning_records";
 const USER_DATA_KEY = "user_data";
 const ACHIEVEMENTS_KEY = "unlocked_achievements";
 const SPEED_RESULTS_KEY = "speed_challenge_results";
+const BOOKMARKS_KEY = "bookmarked_words";
 const DEFAULT_USER_ID = "default";
 
 export type WordStats = {
@@ -402,5 +403,41 @@ export const storage = {
     return results.reduce((best, current) =>
       current.score > best.score ? current : best
     );
+  },
+
+  // ブックマーク管理
+  getBookmarkedWordIds: (): number[] => {
+    if (typeof window === "undefined") return [];
+    const data = localStorage.getItem(BOOKMARKS_KEY);
+    return data ? JSON.parse(data) : [];
+  },
+
+  isWordBookmarked: (wordId: number): boolean => {
+    const bookmarks = storage.getBookmarkedWordIds();
+    return bookmarks.includes(wordId);
+  },
+
+  addBookmark: (wordId: number): void => {
+    const bookmarks = storage.getBookmarkedWordIds();
+    if (!bookmarks.includes(wordId)) {
+      bookmarks.push(wordId);
+      localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(bookmarks));
+    }
+  },
+
+  removeBookmark: (wordId: number): void => {
+    const bookmarks = storage.getBookmarkedWordIds();
+    const filtered = bookmarks.filter((id) => id !== wordId);
+    localStorage.setItem(BOOKMARKS_KEY, JSON.stringify(filtered));
+  },
+
+  toggleBookmark: (wordId: number): boolean => {
+    if (storage.isWordBookmarked(wordId)) {
+      storage.removeBookmark(wordId);
+      return false;
+    } else {
+      storage.addBookmark(wordId);
+      return true;
+    }
   },
 };
