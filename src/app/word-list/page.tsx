@@ -17,6 +17,7 @@ type WordWithStats = {
   mastery: MasteryLevel;
   accuracy: number | null;
   attempts: number;
+  isBookmarked: boolean;
 };
 
 type SortOption = "default" | "alphabetical" | "alphabetical-desc" | "accuracy" | "accuracy-desc" | "attempts" | "difficulty";
@@ -66,14 +67,16 @@ export default function WordListPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category | "all">("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | "all">("all");
+  const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
   const [sortOption, setSortOption] = useState<SortOption>("default");
   const [wordsWithStats, setWordsWithStats] = useState<WordWithStats[]>([]);
   const [isMounted, setIsMounted] = useState(false);
 
-  // Load word stats on mount
+  // Load word stats and bookmarks on mount
   useEffect(() => {
     setIsMounted(true);
     const statsMap = storage.getWordStats();
+    const bookmarkedIds = storage.getBookmarkedWordIds();
 
     const enrichedWords: WordWithStats[] = words.map((word) => {
       const stats = statsMap.get(word.id);
@@ -89,15 +92,33 @@ export default function WordListPage() {
         mastery: getMasteryLevel(accuracy, attempts),
         accuracy,
         attempts,
+        isBookmarked: bookmarkedIds.includes(word.id),
       };
     });
 
     setWordsWithStats(enrichedWords);
   }, []);
 
-  // Filter words based on search, category, and difficulty
+  // Toggle bookmark for a word
+  const toggleBookmark = (wordId: number, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const newIsBookmarked = storage.toggleBookmark(wordId);
+    setWordsWithStats((prev) =>
+      prev.map((w) =>
+        w.id === wordId ? { ...w, isBookmarked: newIsBookmarked } : w
+      )
+    );
+  };
+
+  // Filter words based on search, category, difficulty, and bookmarks
   const filteredWords = useMemo(() => {
     let filtered = wordsWithStats.filter((word) => {
+      // Bookmark filter
+      if (showBookmarksOnly && !word.isBookmarked) {
+        return false;
+      }
+
       // Category filter
       if (selectedCategory !== "all" && word.category !== selectedCategory) {
         return false;
@@ -150,7 +171,7 @@ export default function WordListPage() {
     }
 
     return filtered;
-  }, [wordsWithStats, selectedCategory, selectedDifficulty, searchQuery, sortOption]);
+  }, [wordsWithStats, selectedCategory, selectedDifficulty, showBookmarksOnly, searchQuery, sortOption]);
 
   // Group words by category
   const groupedWords = useMemo(() => {
@@ -174,7 +195,8 @@ export default function WordListPage() {
     const mastered = wordsWithStats.filter((w) => w.mastery === "mastered").length;
     const learning = wordsWithStats.filter((w) => w.mastery === "learning" || w.mastery === "familiar").length;
     const newWords = wordsWithStats.filter((w) => w.mastery === "new").length;
-    return { total, mastered, learning, newWords };
+    const bookmarked = wordsWithStats.filter((w) => w.isBookmarked).length;
+    return { total, mastered, learning, newWords, bookmarked };
   }, [wordsWithStats]);
 
   return (
@@ -272,6 +294,33 @@ export default function WordListPage() {
           </div>
         </div>
 
+        {/* Bookmark Filter */}
+        <div className="mb-4">
+          <button
+            onClick={() => setShowBookmarksOnly(!showBookmarksOnly)}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              showBookmarksOnly
+                ? "bg-yellow-500 text-white shadow-md"
+                : "bg-white text-slate-600 border border-slate-200 hover:border-yellow-400"
+            }`}
+          >
+            <svg
+              className="w-4 h-4"
+              fill={showBookmarksOnly ? "currentColor" : "none"}
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+              />
+            </svg>
+            ブックマーク ({stats.bookmarked})
+          </button>
+        </div>
+
         {/* Difficulty Filter & Sort */}
         <div className="mb-6 flex flex-wrap gap-3 items-center">
           {/* Difficulty Filter */}
@@ -324,6 +373,7 @@ export default function WordListPage() {
         {/* Results count */}
         <p className="text-sm text-slate-500 mb-4">
           {filteredWords.length}語
+          {showBookmarksOnly && " (ブックマークのみ)"}
           {searchQuery && ` (「${searchQuery}」で検索)`}
           {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
         </p>
@@ -346,8 +396,31 @@ export default function WordListPage() {
                       href={`/word/${word.id}?from=wordlist`}
                       className="flex items-center justify-between p-3 hover:bg-slate-50 transition-colors group first:rounded-t-xl last:rounded-b-xl"
                     >
-                      <div className="flex items-center gap-3 flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-1 min-w-0">
                         <SpeakButton text={word.word} size="sm" />
+                        <button
+                          onClick={(e) => toggleBookmark(word.id, e)}
+                          className={`p-1.5 rounded-lg transition-colors ${
+                            word.isBookmarked
+                              ? "text-yellow-500 hover:text-yellow-600"
+                              : "text-slate-300 hover:text-yellow-400"
+                          }`}
+                          title={word.isBookmarked ? "ブックマーク解除" : "ブックマークに追加"}
+                        >
+                          <svg
+                            className="w-4 h-4"
+                            fill={word.isBookmarked ? "currentColor" : "none"}
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                            />
+                          </svg>
+                        </button>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
                             <p className="font-bold text-slate-800 group-hover:text-primary-600 transition-colors truncate">
@@ -387,6 +460,7 @@ export default function WordListPage() {
                     setSearchQuery("");
                     setSelectedCategory("all");
                     setSelectedDifficulty("all");
+                    setShowBookmarksOnly(false);
                     setSortOption("default");
                   }}
                   className="mt-4 text-primary-500 hover:underline"
