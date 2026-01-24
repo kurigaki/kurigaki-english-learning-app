@@ -145,6 +145,30 @@ export const storage = {
 
     const userData = JSON.parse(data) as UserData;
 
+    // データ整合性チェック: totalXpは0以上
+    if (typeof userData.totalXp !== "number" || userData.totalXp < 0) {
+      userData.totalXp = 0;
+    }
+
+    // データ整合性チェック: levelは1以上かつtotalXpと整合
+    if (typeof userData.level !== "number" || userData.level < 1) {
+      userData.level = 1;
+    }
+
+    // レベルとXPの整合性を再計算（不正なデータを修復）
+    let correctLevel = 1;
+    while (userData.totalXp >= getRequiredXpForLevel(correctLevel)) {
+      correctLevel++;
+    }
+    if (userData.level !== correctLevel) {
+      userData.level = correctLevel;
+    }
+
+    // streakは0以上
+    if (typeof userData.streak !== "number" || userData.streak < 0) {
+      userData.streak = 0;
+    }
+
     // 日付が変わっていたら今日の正解数をリセット
     if (!isToday(userData.todayDate)) {
       userData.todayCorrect = 0;
@@ -210,19 +234,26 @@ export const storage = {
     required: number;
     percentage: number;
   } => {
-    const requiredForCurrentLevel = getRequiredXpForLevel(userData.level);
-    const previousLevelTotalXp = (userData.level - 1) * 100;
+    // 安全なデータを確保
+    const safeLevel = Math.max(1, userData.level || 1);
+    const safeTotalXp = Math.max(0, userData.totalXp || 0);
 
-    const rawCurrentXp = userData.totalXp - previousLevelTotalXp;
-    const currentXp = Math.max(0, rawCurrentXp);
+    const requiredForCurrentLevel = getRequiredXpForLevel(safeLevel);
+    const previousLevelThreshold = (safeLevel - 1) * 100;
+
+    // 現在のレベル内での進捗（0以上を保証）
+    const currentXp = Math.max(0, safeTotalXp - previousLevelThreshold);
+
+    // パーセンテージ（0-100の範囲を保証）
+    const percentage = Math.max(0, Math.min(
+      100,
+      Math.round((currentXp / requiredForCurrentLevel) * 100)
+    ));
 
     return {
       current: currentXp,
       required: requiredForCurrentLevel,
-      percentage: Math.min(
-        100,
-        Math.round((currentXp / requiredForCurrentLevel) * 100)
-      ),
+      percentage,
     };
   },
 
