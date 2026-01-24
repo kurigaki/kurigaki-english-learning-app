@@ -501,8 +501,8 @@ const storage = {
   getMasteredWordCount(): number
 
   // XP・レベル
-  recordStudySession(correct: number, total: number): { xpEarned: number; ... }
-  getXpProgress(): { currentXp: number; requiredXp: number; progress: number }
+  recordStudySession(correct: number, comboBonus?: number): UserData
+  getXpProgress(userData: UserData): { current: number; required: number; percentage: number }
 
   // 実績
   getUnlockedAchievements(): UnlockedAchievement[]
