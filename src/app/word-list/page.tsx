@@ -19,6 +19,18 @@ type WordWithStats = {
   attempts: number;
 };
 
+type SortOption = "default" | "alphabetical" | "alphabetical-desc" | "accuracy" | "accuracy-desc" | "attempts" | "difficulty";
+
+const sortLabels: Record<SortOption, string> = {
+  default: "デフォルト",
+  alphabetical: "アルファベット順 (A→Z)",
+  "alphabetical-desc": "アルファベット順 (Z→A)",
+  accuracy: "正答率が低い順",
+  "accuracy-desc": "正答率が高い順",
+  attempts: "学習回数が多い順",
+  difficulty: "難易度順",
+};
+
 const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLevel => {
   if (attempts === 0 || accuracy === null) return "new";
   if (accuracy >= 80 && attempts >= 3) return "mastered";
@@ -53,6 +65,8 @@ const categoryLabelMap: Record<Category | "all", string> = {
 export default function WordListPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category | "all">("all");
+  const [selectedDifficulty, setSelectedDifficulty] = useState<number | "all">("all");
+  const [sortOption, setSortOption] = useState<SortOption>("default");
   const [wordsWithStats, setWordsWithStats] = useState<WordWithStats[]>([]);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -81,11 +95,16 @@ export default function WordListPage() {
     setWordsWithStats(enrichedWords);
   }, []);
 
-  // Filter words based on search and category
+  // Filter words based on search, category, and difficulty
   const filteredWords = useMemo(() => {
-    return wordsWithStats.filter((word) => {
+    let filtered = wordsWithStats.filter((word) => {
       // Category filter
       if (selectedCategory !== "all" && word.category !== selectedCategory) {
+        return false;
+      }
+
+      // Difficulty filter
+      if (selectedDifficulty !== "all" && word.difficulty !== selectedDifficulty) {
         return false;
       }
 
@@ -100,7 +119,38 @@ export default function WordListPage() {
 
       return true;
     });
-  }, [wordsWithStats, selectedCategory, searchQuery]);
+
+    // Sort
+    if (sortOption !== "default") {
+      filtered = [...filtered].sort((a, b) => {
+        switch (sortOption) {
+          case "alphabetical":
+            return a.word.localeCompare(b.word);
+          case "alphabetical-desc":
+            return b.word.localeCompare(a.word);
+          case "accuracy":
+            // Null values (unstudied) go to the end
+            if (a.accuracy === null && b.accuracy === null) return 0;
+            if (a.accuracy === null) return 1;
+            if (b.accuracy === null) return -1;
+            return a.accuracy - b.accuracy;
+          case "accuracy-desc":
+            if (a.accuracy === null && b.accuracy === null) return 0;
+            if (a.accuracy === null) return 1;
+            if (b.accuracy === null) return -1;
+            return b.accuracy - a.accuracy;
+          case "attempts":
+            return b.attempts - a.attempts;
+          case "difficulty":
+            return a.difficulty - b.difficulty;
+          default:
+            return 0;
+        }
+      });
+    }
+
+    return filtered;
+  }, [wordsWithStats, selectedCategory, selectedDifficulty, searchQuery, sortOption]);
 
   // Group words by category
   const groupedWords = useMemo(() => {
@@ -204,7 +254,7 @@ export default function WordListPage() {
         </div>
 
         {/* Category Filter */}
-        <div className="mb-6 overflow-x-auto pb-2">
+        <div className="mb-4 overflow-x-auto pb-2">
           <div className="flex gap-2">
             {categories.map((category) => (
               <button
@@ -222,9 +272,60 @@ export default function WordListPage() {
           </div>
         </div>
 
+        {/* Difficulty Filter & Sort */}
+        <div className="mb-6 flex flex-wrap gap-3 items-center">
+          {/* Difficulty Filter */}
+          <div className="flex items-center gap-2">
+            <span className="text-sm text-slate-500">難易度:</span>
+            <div className="flex gap-1">
+              <button
+                onClick={() => setSelectedDifficulty("all")}
+                className={`px-3 py-1 rounded-lg text-sm font-medium transition-all ${
+                  selectedDifficulty === "all"
+                    ? "bg-slate-700 text-white"
+                    : "bg-white text-slate-600 border border-slate-200 hover:border-slate-400"
+                }`}
+              >
+                全て
+              </button>
+              {[1, 2, 3, 4, 5].map((level) => (
+                <button
+                  key={level}
+                  onClick={() => setSelectedDifficulty(level)}
+                  className={`w-8 h-8 rounded-lg text-sm font-medium transition-all ${
+                    selectedDifficulty === level
+                      ? "bg-amber-500 text-white"
+                      : "bg-white text-slate-600 border border-slate-200 hover:border-amber-400"
+                  }`}
+                >
+                  {level}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Sort Dropdown */}
+          <div className="flex items-center gap-2 ml-auto">
+            <span className="text-sm text-slate-500">並び替え:</span>
+            <select
+              value={sortOption}
+              onChange={(e) => setSortOption(e.target.value as SortOption)}
+              className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-400"
+            >
+              {Object.entries(sortLabels).map(([value, label]) => (
+                <option key={value} value={value}>
+                  {label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
         {/* Results count */}
         <p className="text-sm text-slate-500 mb-4">
-          {filteredWords.length}語 {searchQuery && `(「${searchQuery}」で検索)`}
+          {filteredWords.length}語
+          {searchQuery && ` (「${searchQuery}」で検索)`}
+          {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
         </p>
 
         {/* Word List */}
@@ -248,7 +349,7 @@ export default function WordListPage() {
                       <div className="flex items-center gap-3 flex-1 min-w-0">
                         <SpeakButton text={word.word} size="sm" />
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 flex-wrap">
                             <p className="font-bold text-slate-800 group-hover:text-primary-600 transition-colors truncate">
                               {word.word}
                             </p>
@@ -258,6 +359,9 @@ export default function WordListPage() {
                               } ${masteryConfig[word.mastery].color}`}
                             >
                               {masteryConfig[word.mastery].label}
+                            </span>
+                            <span className="text-xs text-amber-500" title={`難易度 ${word.difficulty}`}>
+                              {"★".repeat(word.difficulty)}{"☆".repeat(5 - word.difficulty)}
                             </span>
                           </div>
                           <p className="text-sm text-slate-500 truncate">{word.meaning}</p>
@@ -282,6 +386,8 @@ export default function WordListPage() {
                   onClick={() => {
                     setSearchQuery("");
                     setSelectedCategory("all");
+                    setSelectedDifficulty("all");
+                    setSortOption("default");
                   }}
                   className="mt-4 text-primary-500 hover:underline"
                 >
