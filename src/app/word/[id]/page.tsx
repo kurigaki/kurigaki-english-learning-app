@@ -109,7 +109,10 @@ export default function WordDetailPage() {
 
   // 例文データを変換（例文がある場合）
   const examples = word.examples || (word.example
-    ? [{ en: word.example, ja: "" }]
+    ? [{
+        en: word.example,
+        ja: word.exampleJa ?? "",
+      }]
     : []);
 
   return (
