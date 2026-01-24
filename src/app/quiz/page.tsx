@@ -284,6 +284,26 @@ export default function QuizPage() {
   const [showPerfectScore, setShowPerfectScore] = useState(false);
   const [isRestoredFromSession, setIsRestoredFromSession] = useState(false);
 
+  // Enterキーで「次の問題へ」進む
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "Enter") return;
+      if (selected === null) return;
+      if (isFinished) return;
+
+      e.preventDefault();
+      handleNext();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selected, isFinished]);
+
+
+
   const currentQuestion = questions[currentIndex];
   const hasAutoPlayedRef = useRef<Set<number>>(new Set());
 
