@@ -734,11 +734,11 @@ export default function QuizPage() {
       <div className="max-w-md w-full mx-auto flex flex-col h-full">
         {/* 上部固定: Progress & Score */}
         <div className="flex-shrink-0">
-          <div className="mb-2">
+          <div className="mb-1 sm:mb-2">
             <ProgressBar current={currentIndex + 1} total={questions.length} />
           </div>
 
-          <div className="flex justify-center gap-2 mb-2">
+          <div className="flex justify-center gap-2 mb-1 sm:mb-2">
             <div className="inline-flex items-center gap-1 bg-white rounded-full px-2 py-1 shadow-card border border-primary-100">
               <span className="text-base">✨</span>
               <span className="font-bold text-primary-500 text-sm">{score}</span>
@@ -760,19 +760,19 @@ export default function QuizPage() {
           </div>
         </div>
 
-        {/* 中央: Question Card */}
-        <div className="flex-1 min-h-0 overflow-y-auto">
-          <Card className="h-full flex flex-col p-3 sm:p-4">
+        {/* 中央: Question Card - コンテンツに応じた自動高さ */}
+        <div className="flex-shrink-0">
+          <Card className="flex flex-col p-2 sm:p-3">
             {/* カテゴリ表示（コンパクト） */}
             {currentQuestion.word.category && (
-              <div className={`w-full h-10 sm:h-14 mb-2 rounded-xl bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100 flex-shrink-0`}>
-                <span className="text-2xl sm:text-3xl">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
+              <div className={`w-full h-8 sm:h-12 mb-1.5 sm:mb-2 rounded-lg bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100`}>
+                <span className="text-xl sm:text-2xl">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
               </div>
             )}
 
-            <div className="text-center mb-2 sm:mb-4 flex-shrink-0">
+            <div className="text-center mb-1.5 sm:mb-3">
               <p className="text-xs text-slate-400 mb-0.5">{getQuestionPrompt(currentQuestion.type)}</p>
-              <h2 className={`font-bold text-gradient ${isFillBlank ? "text-base sm:text-lg leading-relaxed" : "text-2xl sm:text-3xl"}`}>
+              <h2 className={`font-bold text-gradient ${isFillBlank ? "text-sm sm:text-base leading-relaxed" : "text-xl sm:text-2xl"}`}>
                 {questionDisplay}
               </h2>
               {currentQuestion.type === "en-to-ja" && (
@@ -811,8 +811,8 @@ export default function QuizPage() {
               })()}
             </div>
 
-            {/* Choices */}
-            <div className="space-y-1 sm:space-y-1.5 flex-1">
+            {/* Choices - flex-1を削除してコンテンツ分だけの高さに */}
+            <div className="space-y-1 sm:space-y-1.5">
               {currentQuestion.choices.map((choice, index) => {
                 let buttonClass = "choice-btn";
 
@@ -903,9 +903,7 @@ export default function QuizPage() {
                 {currentIndex + 1 >= questions.length ? "結果を見る" : "次の問題へ"}
               </Button>
             </div>
-          ) : (
-            <div className="h-[60px] sm:h-[80px]" />
-          )}
+          ) : null}
         </div>
       </div>
     </div>
