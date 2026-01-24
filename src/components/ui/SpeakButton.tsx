@@ -1,7 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { speakWord, speakSentence, isSpeechSynthesisSupported, stopSpeaking, speakWordWithVariant } from "@/lib/audio";
+import {
+  speakWord,
+  speakSentence,
+  isSpeechSynthesisSupported,
+  stopSpeaking,
+  speakWordWithVariant,
+} from "@/lib/audio";
 import { PronunciationVariant } from "@/types";
 
 type SpeakButtonProps = {
@@ -10,7 +16,7 @@ type SpeakButtonProps = {
   slow?: boolean;
   size?: "sm" | "md" | "lg";
   className?: string;
-  variant?: PronunciationVariant; // UK/US発音切り替え
+  variant?: PronunciationVariant;
 };
 
 export const SpeakButton = ({
@@ -28,7 +34,10 @@ export const SpeakButton = ({
     setIsSupported(isSpeechSynthesisSupported());
   }, []);
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+
     if (isSpeaking) {
       stopSpeaking();
       setIsSpeaking(false);
@@ -44,7 +53,6 @@ export const SpeakButton = ({
     if (type === "sentence") {
       speakSentence(text, { slow, onEnd });
     } else if (variant) {
-      // UK/US発音バリアントが指定されている場合
       speakWordWithVariant(text, variant, { slow, onEnd });
     } else {
       speakWord(text, { slow, onEnd });
@@ -69,9 +77,10 @@ export const SpeakButton = ({
         inline-flex items-center justify-center
         rounded-full
         transition-all duration-200
-        ${isSpeaking
-          ? "bg-primary-500 text-white scale-110"
-          : "bg-primary-100 text-primary-600 hover:bg-primary-200"
+        ${
+          isSpeaking
+            ? "bg-primary-500 text-white scale-110"
+            : "bg-primary-100 text-primary-600 hover:bg-primary-200"
         }
         ${className}
       `}
