@@ -211,12 +211,7 @@ export const storage = {
     percentage: number;
   } => {
     const requiredForCurrentLevel = getRequiredXpForLevel(userData.level);
-    const previousLevelTotalXp =
-      userData.level > 1
-        ? Array.from({ length: userData.level - 1 }, (_, i) =>
-            getRequiredXpForLevel(i + 1)
-          ).reduce((a, b) => a + b, 0)
-        : 0;
+    const previousLevelTotalXp = (userData.level - 1) * 100;
 
     const rawCurrentXp = userData.totalXp - previousLevelTotalXp;
     const currentXp = Math.max(0, rawCurrentXp);
