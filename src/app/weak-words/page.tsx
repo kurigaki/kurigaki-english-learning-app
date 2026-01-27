@@ -61,52 +61,43 @@ export default function WeakWordsPage() {
     return "text-yellow-600 bg-yellow-100";
   };
 
-  const formatDate = (dateStr: string | null) => {
-    if (!dateStr) return "---";
-    const date = new Date(dateStr);
-    return date.toLocaleDateString("ja-JP", {
-      month: "short",
-      day: "numeric",
-    });
-  };
-
   if (!isMounted) {
     return (
-      <div className="min-h-[calc(100vh-64px)] px-4 py-8 flex items-center justify-center">
+      <div className="h-[calc(100vh-64px)] px-4 py-3 flex items-center justify-center">
         <p className="text-slate-500">読み込み中...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-[calc(100vh-64px)] px-4 py-6">
-      <div className="max-w-2xl mx-auto">
-        {/* ヘッダー */}
-        <div className="mb-6">
+    <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+      <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
+        {/* 上部固定: ヘッダー */}
+        <div className="flex-shrink-0 mb-2">
           <Link
             href="/"
-            className="flex items-center gap-1 text-slate-500 hover:text-slate-700 mb-4 transition-colors"
+            className="flex items-center gap-1 text-slate-500 hover:text-slate-700 mb-2 transition-colors text-sm"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             <span>戻る</span>
           </Link>
-          <h1 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
-            <span className="text-3xl">📝</span>
+          <h1 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+            <span className="text-2xl">📝</span>
             苦手な単語
           </h1>
-          <p className="text-slate-500 mt-1">
-            正答率70%未満の単語一覧（{weakWords.length}語）
+          <p className="text-slate-500 text-sm">
+            正答率70%未満（{weakWords.length}語）
           </p>
         </div>
 
-        {/* ソートオプション */}
+        {/* 上部固定: ソートオプション */}
         {weakWords.length > 0 && (
-          <div className="flex gap-2 mb-4">
+          <div className="flex-shrink-0 flex gap-1.5 mb-2">
             <button
               onClick={() => setSortBy("accuracy")}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                 sortBy === "accuracy"
                   ? "bg-primary-500 text-white"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -116,7 +107,7 @@ export default function WeakWordsPage() {
             </button>
             <button
               onClick={() => setSortBy("recent")}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
                 sortBy === "recent"
                   ? "bg-primary-500 text-white"
                   : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -127,61 +118,60 @@ export default function WeakWordsPage() {
           </div>
         )}
 
-        {/* 単語がない場合 */}
+        {/* 中央スクロール: 単語リスト */}
         {weakWords.length === 0 ? (
-          <Card className="text-center py-12">
-            <span className="text-6xl mb-4 block">🎉</span>
-            <h2 className="text-xl font-bold text-slate-800 mb-2">
-              苦手な単語はありません！
-            </h2>
-            <p className="text-slate-500 mb-6">
-              クイズに挑戦して、学習を続けましょう。
-            </p>
-            <Link href="/quiz">
-              <Button>クイズに挑戦</Button>
-            </Link>
-          </Card>
+          <div className="flex-1 flex items-center justify-center">
+            <Card className="text-center py-8">
+              <span className="text-5xl mb-3 block">🎉</span>
+              <h2 className="text-lg font-bold text-slate-800 mb-2">
+                苦手な単語はありません！
+              </h2>
+              <p className="text-slate-500 text-sm mb-4">
+                クイズに挑戦して、学習を続けましょう。
+              </p>
+              <Link href="/quiz">
+                <Button>クイズに挑戦</Button>
+              </Link>
+            </Card>
+          </div>
         ) : (
           <>
-            {/* 苦手単語リスト */}
-            <div className="space-y-3 mb-6">
+            <div className="flex-1 overflow-y-auto min-h-0 space-y-2">
               {weakWords.map((word) => (
-                <Link key={word.id} href={`/word/${word.id}`}>
+                <Link key={word.id} href={`/word/${word.id}?from=weak`}>
                   <Card
                     hover
-                    className="flex items-center gap-4 group"
+                    className="flex items-center gap-3 group !p-3"
                   >
                     {/* 正答率バッジ */}
                     <div
-                      className={`w-14 h-14 rounded-xl flex flex-col items-center justify-center ${getAccuracyColor(
+                      className={`w-12 h-12 rounded-lg flex flex-col items-center justify-center ${getAccuracyColor(
                         word.stats.accuracy
                       )}`}
                     >
-                      <span className="text-lg font-bold">{word.stats.accuracy}%</span>
+                      <span className="text-base font-bold">{word.stats.accuracy}%</span>
                       <span className="text-xs opacity-70">正答率</span>
                     </div>
 
                     {/* 単語情報 */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <h3 className="font-bold text-slate-800 group-hover:text-primary-600 transition-colors">
+                        <h3 className="font-bold text-sm text-slate-800 group-hover:text-primary-600 transition-colors">
                           {word.word}
                         </h3>
                         <SpeakButton text={word.word} size="sm" />
                       </div>
-                      <p className="text-slate-500 text-sm truncate">{word.meaning}</p>
-                      <div className="flex items-center gap-3 mt-1 text-xs text-slate-400">
+                      <p className="text-slate-500 text-xs truncate">{word.meaning}</p>
+                      <div className="flex items-center gap-2 mt-0.5 text-xs text-slate-400">
                         <span>{categoryLabels[word.category]}</span>
                         <span>·</span>
-                        <span>{word.stats.totalAttempts}回回答</span>
-                        <span>·</span>
-                        <span>最終: {formatDate(word.stats.lastStudiedAt)}</span>
+                        <span>{word.stats.totalAttempts}回</span>
                       </div>
                     </div>
 
                     {/* 矢印 */}
                     <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
@@ -190,22 +180,21 @@ export default function WeakWordsPage() {
               ))}
             </div>
 
-            {/* 復習ボタン */}
-            <Card className="bg-gradient-to-r from-primary-50 to-accent-50 border border-primary-100">
-              <div className="text-center">
-                <p className="text-slate-600 mb-4">
-                  苦手な単語を重点的に復習しましょう
-                </p>
-                <Link href="/quiz">
-                  <Button fullWidth>
-                    苦手単語を復習する
-                  </Button>
-                </Link>
-                <p className="text-xs text-slate-400 mt-2">
-                  クイズでは苦手単語が優先的に出題されます
-                </p>
-              </div>
-            </Card>
+            {/* 下部固定: 復習ボタン */}
+            <div className="flex-shrink-0 pt-2">
+              <Card className="!p-3 bg-gradient-to-r from-primary-50 to-accent-50 border border-primary-100">
+                <div className="text-center">
+                  <Link href="/quiz">
+                    <Button fullWidth size="sm">
+                      苦手単語を復習する
+                    </Button>
+                  </Link>
+                  <p className="text-xs text-slate-400 mt-1">
+                    クイズでは苦手単語が優先的に出題されます
+                  </p>
+                </div>
+              </Card>
+            </div>
           </>
         )}
       </div>

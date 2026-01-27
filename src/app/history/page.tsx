@@ -110,38 +110,37 @@ export default function HistoryPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] px-4 py-8">
-      <div className="max-w-2xl mx-auto">
-        {/* Page Header */}
-        <div className="mb-6">
-          <h1 className="text-3xl font-bold text-slate-800 flex items-center gap-3">
-            <span className="text-4xl">📊</span>
+    <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+      <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
+        {/* 上部固定: ヘッダー */}
+        <div className="flex-shrink-0 mb-2">
+          <h1 className="text-xl font-bold text-slate-800 flex items-center gap-2">
+            <span className="text-2xl">📊</span>
             学習統計
           </h1>
-          <p className="text-slate-500 mt-2">あなたの学習の記録と分析</p>
         </div>
 
-        {/* Today's Stats */}
-        <Card className="mb-6 bg-gradient-to-r from-primary-50 to-accent-50">
-          <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+        {/* 上部固定: 今日の学習 */}
+        <Card className="flex-shrink-0 mb-2 !p-3 bg-gradient-to-r from-primary-50 to-accent-50">
+          <h2 className="text-sm font-bold text-slate-700 mb-2 flex items-center gap-1">
             <span>🔥</span> 今日の学習
           </h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-2">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary-600">{todayStats.total}</div>
-              <div className="text-sm text-slate-500">回答数</div>
+              <div className="text-xl font-bold text-primary-600">{todayStats.total}</div>
+              <div className="text-xs text-slate-500">回答数</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-success-600">{todayStats.correct}</div>
-              <div className="text-sm text-slate-500">正解数</div>
+              <div className="text-xl font-bold text-success-600">{todayStats.correct}</div>
+              <div className="text-xs text-slate-500">正解数</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent-600">{todayStats.rate}%</div>
-              <div className="text-sm text-slate-500">正答率</div>
+              <div className="text-xl font-bold text-accent-600">{todayStats.rate}%</div>
+              <div className="text-xs text-slate-500">正答率</div>
             </div>
           </div>
           {todayStats.total === 0 && (
-            <div className="mt-4 text-center">
+            <div className="mt-2 text-center">
               <Link href="/quiz">
                 <Button size="sm">今日の学習を始める</Button>
               </Link>
@@ -149,8 +148,8 @@ export default function HistoryPage() {
           )}
         </Card>
 
-        {/* Tab Navigation */}
-        <div className="flex gap-2 mb-6">
+        {/* 上部固定: タブ */}
+        <div className="flex-shrink-0 flex gap-1.5 mb-2">
           {[
             { id: "overview" as const, label: "概要", icon: "📈" },
             { id: "weak" as const, label: "苦手単語", icon: "💪" },
@@ -159,17 +158,20 @@ export default function HistoryPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-2 px-4 rounded-xl font-medium transition-all ${
+              className={`flex-1 py-1.5 px-2 rounded-lg text-sm font-medium transition-all ${
                 activeTab === tab.id
-                  ? "bg-primary-500 text-white shadow-md"
+                  ? "bg-primary-500 text-white shadow-sm"
                   : "bg-white text-slate-600 hover:bg-primary-50"
               }`}
             >
-              <span className="mr-1">{tab.icon}</span>
+              <span className="mr-0.5">{tab.icon}</span>
               {tab.label}
             </button>
           ))}
         </div>
+
+        {/* 中央スクロール: タブコンテンツ */}
+        <div className="flex-1 overflow-y-auto min-h-0">
 
         {/* Overview Tab */}
         {activeTab === "overview" && (
@@ -289,92 +291,93 @@ export default function HistoryPage() {
           </Card>
         )}
 
-        {/* History Tab */}
-        {activeTab === "history" && (
-          <Card padding="none">
-            <div className="p-4 border-b border-primary-100">
-              <h2 className="font-bold text-slate-700 flex items-center gap-2">
-                <span>📝</span> 回答履歴
-              </h2>
-            </div>
-
-            {records.length === 0 ? (
-              <div className="p-12 text-center">
-                <span className="text-5xl mb-4 block">📚</span>
-                <p className="text-slate-500 mb-4">まだ学習履歴がありません</p>
-                <Link href="/quiz">
-                  <Button size="sm">クイズを始める</Button>
-                </Link>
+          {/* History Tab */}
+          {activeTab === "history" && (
+            <Card padding="none">
+              <div className="p-3 border-b border-primary-100">
+                <h2 className="text-sm font-bold text-slate-700 flex items-center gap-2">
+                  <span>📝</span> 回答履歴
+                </h2>
               </div>
-            ) : (
-              <div className="divide-y divide-primary-50 max-h-96 overflow-y-auto">
-                {records.slice(0, 50).map((record) => {
-                  const wordId = getWordIdByWord(record.word);
-                  const content = (
-                    <>
-                      <div className="flex items-center gap-4">
-                        <div
-                          className={`
-                            w-10 h-10 rounded-xl flex items-center justify-center text-lg
-                            ${record.correct
-                              ? "bg-success-100 text-success-500"
-                              : "bg-error-100 text-error-500"
-                            }
-                          `}
-                        >
-                          {record.correct ? "✓" : "✗"}
-                        </div>
-                        <SpeakButton text={record.word} size="sm" />
-                        <div>
-                          <p className="font-bold text-slate-800 group-hover:text-primary-600 transition-colors">{record.word}</p>
-                          <p className="text-sm text-slate-500">{record.meaning}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        {record.questionType && (
-                          <span className="text-xs bg-slate-100 text-slate-500 px-2 py-1 rounded">
-                            {questionTypeLabels[record.questionType]}
-                          </span>
-                        )}
-                        <span className="text-sm text-slate-400">
-                          {formatDate(record.studiedAt)}
-                        </span>
-                        {wordId && (
-                          <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
+
+              {records.length === 0 ? (
+                <div className="p-8 text-center">
+                  <span className="text-4xl mb-3 block">📚</span>
+                  <p className="text-slate-500 text-sm mb-3">まだ学習履歴がありません</p>
+                  <Link href="/quiz">
+                    <Button size="sm">クイズを始める</Button>
+                  </Link>
+                </div>
+              ) : (
+                <div className="divide-y divide-primary-50">
+                  {records.slice(0, 50).map((record) => {
+                    const wordId = getWordIdByWord(record.word);
+                    const content = (
+                      <>
+                        <div className="flex items-center gap-2">
+                          <div
+                            className={`
+                              w-8 h-8 rounded-lg flex items-center justify-center text-sm
+                              ${record.correct
+                                ? "bg-success-100 text-success-500"
+                                : "bg-error-100 text-error-500"
+                              }
+                            `}
+                          >
+                            {record.correct ? "✓" : "✗"}
                           </div>
-                        )}
+                          <SpeakButton text={record.word} size="sm" />
+                          <div className="flex-1 min-w-0">
+                            <p className="font-bold text-sm text-slate-800 group-hover:text-primary-600 transition-colors truncate">{record.word}</p>
+                            <p className="text-xs text-slate-500 truncate">{record.meaning}</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          {record.questionType && (
+                            <span className="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">
+                              {questionTypeLabels[record.questionType]}
+                            </span>
+                          )}
+                          <span className="text-xs text-slate-400">
+                            {formatDate(record.studiedAt)}
+                          </span>
+                          {wordId && (
+                            <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
+                          )}
+                        </div>
+                      </>
+                    );
+
+                    return wordId ? (
+                      <Link
+                        key={record.id}
+                        href={`/word/${wordId}`}
+                        className="p-2.5 flex items-center justify-between hover:bg-primary-50/50 transition-colors group"
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      <div
+                        key={record.id}
+                        className="p-2.5 flex items-center justify-between"
+                      >
+                        {content}
                       </div>
-                    </>
-                  );
+                    );
+                  })}
+                </div>
+              )}
+            </Card>
+          )}
+        </div>
 
-                  return wordId ? (
-                    <Link
-                      key={record.id}
-                      href={`/word/${wordId}`}
-                      className="p-4 flex items-center justify-between hover:bg-primary-50/50 transition-colors group"
-                    >
-                      {content}
-                    </Link>
-                  ) : (
-                    <div
-                      key={record.id}
-                      className="p-4 flex items-center justify-between"
-                    >
-                      {content}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </Card>
-        )}
-
-        {/* Clear Button */}
+        {/* 下部固定: クリアボタン */}
         {records.length > 0 && (
-          <div className="mt-6 text-center">
+          <div className="flex-shrink-0 pt-2 text-center">
             <Button
               variant="ghost"
               size="sm"
@@ -386,8 +389,8 @@ export default function HistoryPage() {
                 }
               }}
             >
-              <span className="flex items-center gap-2 text-error-500">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span className="flex items-center gap-1 text-error-500 text-xs">
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                 </svg>
                 履歴をクリア

@@ -200,10 +200,10 @@ export default function WordListPage() {
   }, [wordsWithStats]);
 
   return (
-    <div className="min-h-[calc(100vh-64px)] px-4 py-6">
-      <div className="max-w-2xl mx-auto">
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-6">
+    <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+      <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
+        {/* 上部固定: ヘッダー */}
+        <div className="flex-shrink-0 flex items-center gap-3 mb-2">
           <Link
             href="/"
             className="text-slate-500 hover:text-slate-700 transition-colors"
@@ -212,45 +212,46 @@ export default function WordListPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </Link>
-          <h1 className="text-2xl font-bold text-slate-800">単語帳</h1>
+          <h1 className="text-xl font-bold text-slate-800">単語帳</h1>
         </div>
 
-        {/* Stats Summary */}
+        {/* 上部固定: 統計サマリー */}
         {isMounted && (
-          <Card className="mb-6 bg-gradient-to-r from-primary-50 to-accent-50">
+          <Card className="flex-shrink-0 mb-2 !p-3 bg-gradient-to-r from-primary-50 to-accent-50">
             <div className="grid grid-cols-4 gap-2 text-center">
               <div>
-                <p className="text-2xl font-bold text-slate-700">{stats.total}</p>
+                <p className="text-lg font-bold text-slate-700">{stats.total}</p>
                 <p className="text-xs text-slate-500">全単語</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-green-600">{stats.mastered}</p>
+                <p className="text-lg font-bold text-green-600">{stats.mastered}</p>
                 <p className="text-xs text-slate-500">習得済</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-blue-600">{stats.learning}</p>
+                <p className="text-lg font-bold text-blue-600">{stats.learning}</p>
                 <p className="text-xs text-slate-500">学習中</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-slate-400">{stats.newWords}</p>
+                <p className="text-lg font-bold text-slate-400">{stats.newWords}</p>
                 <p className="text-xs text-slate-500">未学習</p>
               </div>
             </div>
           </Card>
         )}
 
-        {/* Search */}
-        <div className="mb-4">
+        {/* 上部固定: 検索・フィルター */}
+        <div className="flex-shrink-0 space-y-2 mb-2">
+          {/* Search */}
           <div className="relative">
             <input
               type="text"
               placeholder="単語・意味で検索..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 pl-10 bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+              className="w-full px-3 py-2 pl-9 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
             />
             <svg
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -267,81 +268,76 @@ export default function WordListPage() {
                 onClick={() => setSearchQuery("")}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
             )}
           </div>
-        </div>
 
-        {/* Category Filter */}
-        <div className="mb-4 overflow-x-auto pb-2">
-          <div className="flex gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
-                  selectedCategory === category
-                    ? "bg-primary-500 text-white shadow-md"
-                    : "bg-white text-slate-600 border border-slate-200 hover:border-primary-300"
-                }`}
-              >
-                {categoryLabelMap[category]}
-              </button>
-            ))}
+          {/* Category Filter */}
+          <div className="overflow-x-auto pb-1 -mx-1 px-1">
+            <div className="flex gap-1.5">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                    selectedCategory === category
+                      ? "bg-primary-500 text-white shadow-sm"
+                      : "bg-white text-slate-600 border border-slate-200 hover:border-primary-300"
+                  }`}
+                >
+                  {categoryLabelMap[category]}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Bookmark Filter */}
-        <div className="mb-4">
-          <button
-            onClick={() => setShowBookmarksOnly(!showBookmarksOnly)}
-            className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
-              showBookmarksOnly
-                ? "bg-yellow-500 text-white shadow-md"
-                : "bg-white text-slate-600 border border-slate-200 hover:border-yellow-400"
-            }`}
-          >
-            <svg
-              className="w-4 h-4"
-              fill={showBookmarksOnly ? "currentColor" : "none"}
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* Filters Row: Bookmark + Difficulty + Sort */}
+          <div className="flex flex-wrap gap-2 items-center">
+            {/* Bookmark Filter */}
+            <button
+              onClick={() => setShowBookmarksOnly(!showBookmarksOnly)}
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium transition-all ${
+                showBookmarksOnly
+                  ? "bg-yellow-500 text-white shadow-sm"
+                  : "bg-white text-slate-600 border border-slate-200 hover:border-yellow-400"
+              }`}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-              />
-            </svg>
-            ブックマーク ({stats.bookmarked})
-          </button>
-        </div>
+              <svg
+                className="w-3 h-3"
+                fill={showBookmarksOnly ? "currentColor" : "none"}
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                />
+              </svg>
+              {stats.bookmarked}
+            </button>
 
-        {/* Difficulty Filter & Sort */}
-        <div className="mb-6 flex flex-wrap gap-3 items-center">
-          {/* Difficulty Filter */}
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-slate-500">難易度:</span>
-            <div className="flex gap-1">
+            {/* Difficulty Filter */}
+            <div className="flex items-center gap-1">
               <button
                 onClick={() => setSelectedDifficulty("all")}
-                className={`px-3 py-1 rounded-lg text-sm font-medium transition-all ${
+                className={`px-2 py-1 rounded-lg text-xs font-medium transition-all ${
                   selectedDifficulty === "all"
                     ? "bg-slate-700 text-white"
                     : "bg-white text-slate-600 border border-slate-200 hover:border-slate-400"
                 }`}
               >
-                全て
+                全難易度
               </button>
               {[1, 2, 3, 4, 5].map((level) => (
                 <button
                   key={level}
                   onClick={() => setSelectedDifficulty(level)}
-                  className={`w-8 h-8 rounded-lg text-sm font-medium transition-all ${
+                  className={`w-6 h-6 rounded text-xs font-medium transition-all ${
                     selectedDifficulty === level
                       ? "bg-amber-500 text-white"
                       : "bg-white text-slate-600 border border-slate-200 hover:border-amber-400"
@@ -351,15 +347,12 @@ export default function WordListPage() {
                 </button>
               ))}
             </div>
-          </div>
 
-          {/* Sort Dropdown */}
-          <div className="flex items-center gap-2 ml-auto">
-            <span className="text-sm text-slate-500">並び替え:</span>
+            {/* Sort Dropdown */}
             <select
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value as SortOption)}
-              className="px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-400"
+              className="ml-auto px-2 py-1 bg-white border border-slate-200 rounded-lg text-xs text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-400"
             >
               {Object.entries(sortLabels).map(([value, label]) => (
                 <option key={value} value={value}>
@@ -368,19 +361,19 @@ export default function WordListPage() {
               ))}
             </select>
           </div>
+
+          {/* Results count */}
+          <p className="text-xs text-slate-500">
+            {filteredWords.length}語
+            {showBookmarksOnly && " (ブックマーク)"}
+            {searchQuery && ` (「${searchQuery}」)`}
+            {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
+          </p>
         </div>
 
-        {/* Results count */}
-        <p className="text-sm text-slate-500 mb-4">
-          {filteredWords.length}語
-          {showBookmarksOnly && " (ブックマークのみ)"}
-          {searchQuery && ` (「${searchQuery}」で検索)`}
-          {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
-        </p>
-
-        {/* Word List */}
+        {/* 中央スクロール: Word List */}
         {isMounted && (
-          <div className="space-y-6">
+          <div className="flex-1 overflow-y-auto min-h-0 space-y-4">
             {Object.entries(groupedWords).map(([category, categoryWords]) => (
               <div key={category}>
                 {selectedCategory === "all" && (
@@ -452,9 +445,9 @@ export default function WordListPage() {
             ))}
 
             {filteredWords.length === 0 && (
-              <Card className="text-center py-12">
-                <span className="text-5xl mb-4 block">🔍</span>
-                <p className="text-slate-500">該当する単語が見つかりません</p>
+              <Card className="text-center py-8">
+                <span className="text-4xl mb-3 block">🔍</span>
+                <p className="text-slate-500 text-sm">該当する単語が見つかりません</p>
                 <button
                   onClick={() => {
                     setSearchQuery("");
@@ -463,7 +456,7 @@ export default function WordListPage() {
                     setShowBookmarksOnly(false);
                     setSortOption("default");
                   }}
-                  className="mt-4 text-primary-500 hover:underline"
+                  className="mt-3 text-sm text-primary-500 hover:underline"
                 >
                   フィルタをクリア
                 </button>
