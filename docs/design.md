@@ -1014,6 +1014,47 @@ type SpeedChallengeResult = {
 | カード内パディング | `p-4` → `!p-3` |
 | タブ・バッジ | `py-2` → `py-1.5` |
 
+### 絵文字アイコンの表示パターン
+
+絵文字とテキストを並べて表示する際、縦位置のズレを防ぐため以下のルールに従う。
+
+**原因**: 絵文字は通常のテキストより行高(line-height)が大きく、flexbox の `items-center` だけでは視覚的な中央揃えができない。
+
+**解決策**: `globals.css` に定義された `emoji-icon` クラスを使用する。
+
+```css
+/* globals.css */
+.emoji-icon {
+  @apply inline-flex items-center justify-center leading-none;
+}
+```
+
+**使用パターン**:
+
+```tsx
+// 見出しでアイコンとテキストを並べる場合
+<h2 className="flex items-center gap-2">
+  <span className="emoji-icon">📈</span>
+  <span>あなたの学習状況</span>
+</h2>
+
+// サイズ指定がある場合
+<span className="text-2xl emoji-icon">🔥</span>
+
+// アニメーションと組み合わせる場合
+<span className="animate-float emoji-icon">⭐</span>
+
+// コンテナ内で中央配置する場合
+<div className="flex items-center justify-center">
+  <span className="text-6xl emoji-icon">⚡</span>
+</div>
+```
+
+**重要なルール**:
+- 絵文字とテキストを同じ行に表示する際は、必ず両方を`<span>`で囲む
+- 絵文字側には必ず `emoji-icon` クラスを付ける
+- flex コンテナ内の絵文字は `emoji-icon` で行高を安定させる
+
 ---
 
 ## 11. 将来拡張に向けた設計方針
