@@ -584,6 +584,30 @@ const getMasteryLevel = (accuracy: number | null, attempts: number) => {
 - 3秒後に自動クローズ
 - タップでも閉じられる
 
+### カスタムクイズ機能
+
+クイズ開始前に出題範囲をカスタマイズできます。
+
+**フェーズ管理**:
+```typescript
+type QuizPhase = "setup" | "quiz" | "result";
+```
+
+**設定項目**:
+```typescript
+type QuizSettings = {
+  categories: Category[];      // 空配列は「全カテゴリ」
+  difficulties: number[];      // 空配列は「全難易度」
+  includeBookmarksOnly: boolean;
+};
+```
+
+**フロー**:
+1. 設定画面でカテゴリ・難易度・ブックマークを選択
+2. 対象単語数をプレビュー表示
+3. 「開始」で選択した条件でクイズ開始
+4. リザルト画面から「同じ設定で再挑戦」or「設定変更」
+
 ---
 
 ## ゲーミフィケーション機能
