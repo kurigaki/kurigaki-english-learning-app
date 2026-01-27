@@ -446,7 +446,7 @@ export default function WordListPage() {
 
             {filteredWords.length === 0 && (
               <Card className="text-center py-8">
-                <span className="text-4xl mb-3 block">🔍</span>
+                <span className="text-4xl mb-3 block emoji-icon">🔍</span>
                 <p className="text-slate-500 text-sm">該当する単語が見つかりません</p>
                 <button
                   onClick={() => {

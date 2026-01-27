@@ -778,7 +778,7 @@ export default function QuizPage() {
             {streakMilestoneMessage && (
               <div className="mb-3 p-2 bg-gradient-to-r from-orange-100 via-red-100 to-pink-100 rounded-xl border border-orange-300">
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-2xl">{streakMilestoneMessage.emoji}</span>
+                  <span className="text-2xl emoji-icon">{streakMilestoneMessage.emoji}</span>
                   <p className="text-sm font-bold text-orange-700">{streakMilestoneMessage.title}</p>
                 </div>
               </div>
@@ -788,7 +788,7 @@ export default function QuizPage() {
             {leveledUp && (
               <div className="mb-3 p-2 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-xl border border-yellow-300">
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-2xl">🎊</span>
+                  <span className="text-2xl emoji-icon">🎊</span>
                   <p className="text-sm font-bold text-yellow-700">
                     レベルアップ! Lv.{sessionResult?.previousLevel} → Lv.{sessionResult?.newLevel}
                   </p>
@@ -797,7 +797,7 @@ export default function QuizPage() {
             )}
 
             <div className="flex items-center justify-center gap-3 mb-2">
-              <span className="text-4xl">{message.emoji}</span>
+              <span className="text-4xl emoji-icon">{message.emoji}</span>
               <div>
                 <h1 className="text-2xl font-bold text-slate-800">{message.text}</h1>
                 <p className="text-slate-500 text-sm">セッション完了!</p>
@@ -825,12 +825,12 @@ export default function QuizPage() {
             {sessionResult && (
               <div className="grid grid-cols-3 gap-2 mt-3">
                 <div className="bg-gradient-to-br from-purple-100 to-purple-50 rounded-lg p-2">
-                  <span className="text-lg">✨</span>
+                  <span className="text-lg emoji-icon">✨</span>
                   <p className="text-sm font-bold text-purple-600">+{sessionResult.earnedXp}</p>
                   <p className="text-[10px] text-purple-400">XP</p>
                 </div>
                 <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-lg p-2">
-                  <span className="text-lg">🔥</span>
+                  <span className="text-lg emoji-icon">🔥</span>
                   <p className="text-sm font-bold text-orange-600">{sessionResult.streak}</p>
                   <p className="text-[10px] text-orange-400">日連続</p>
                 </div>
@@ -839,7 +839,7 @@ export default function QuizPage() {
                     ? "bg-gradient-to-br from-green-100 to-green-50"
                     : "bg-gradient-to-br from-blue-100 to-blue-50"
                 }`}>
-                  <span className="text-lg">{sessionResult.dailyProgress.completed ? "🏆" : "🎯"}</span>
+                  <span className="text-lg emoji-icon">{sessionResult.dailyProgress.completed ? "🏆" : "🎯"}</span>
                   <p className={`text-sm font-bold ${
                     sessionResult.dailyProgress.completed ? "text-green-600" : "text-blue-600"
                   }`}>
@@ -867,7 +867,7 @@ export default function QuizPage() {
                       key={achievement.id}
                       className="flex items-center gap-3 p-2 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200"
                     >
-                      <span className="text-2xl">{achievement.icon}</span>
+                      <span className="text-2xl emoji-icon">{achievement.icon}</span>
                       <div className="text-left">
                         <p className="font-bold text-gray-900 text-sm">{achievement.name}</p>
                         <p className="text-xs text-gray-500">{achievement.description}</p>
@@ -977,7 +977,7 @@ export default function QuizPage() {
 
           <div className="flex justify-center gap-2 mb-1 sm:mb-2">
             <div className="inline-flex items-center gap-1 bg-white rounded-full px-2 py-1 shadow-card border border-primary-100">
-              <span className="text-base">✨</span>
+              <span className="text-base emoji-icon">✨</span>
               <span className="font-bold text-primary-500 text-sm">{score}</span>
               <span className="text-slate-400 text-xs">正解</span>
             </div>
@@ -989,7 +989,7 @@ export default function QuizPage() {
                     ? "bg-gradient-to-r from-accent-500 to-primary-500"
                     : "bg-gradient-to-r from-blue-400 to-primary-400"
               }`}>
-                <span className="text-base">{combo >= 5 ? "🔥" : "⚡"}</span>
+                <span className="text-base emoji-icon">{combo >= 5 ? "🔥" : "⚡"}</span>
                 <span className="font-bold text-white text-sm">{combo}</span>
                 <span className="text-white/90 text-xs font-medium">連続!</span>
               </div>
@@ -1003,7 +1003,7 @@ export default function QuizPage() {
             {/* カテゴリ表示（コンパクト） */}
             {currentQuestion.word.category && (
               <div className={`w-full h-8 sm:h-12 mb-1.5 sm:mb-2 rounded-lg bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100`}>
-                <span className="text-xl sm:text-2xl">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
+                <span className="text-xl sm:text-2xl emoji-icon">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
               </div>
             )}
 

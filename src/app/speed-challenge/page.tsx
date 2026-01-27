@@ -304,7 +304,7 @@ export default function SpeedChallengePage() {
       <div className="h-[calc(100vh-64px)] px-4 py-3 flex items-center justify-center">
         <Card className="max-w-md w-full text-center !p-5">
           <div className="mb-4">
-            <span className="text-6xl">⚡</span>
+            <span className="text-6xl emoji-icon">⚡</span>
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-1">
             スピードチャレンジ
@@ -320,15 +320,15 @@ export default function SpeedChallengePage() {
 
           <div className="space-y-2 text-left mb-5">
             <div className="flex items-center gap-2">
-              <span className="text-xl">1️⃣</span>
+              <span className="text-xl emoji-icon">1️⃣</span>
               <p className="text-gray-600 text-sm">正解するとスコア+1</p>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xl">2️⃣</span>
+              <span className="text-xl emoji-icon">2️⃣</span>
               <p className="text-gray-600 text-sm">5連続正解でボーナス+1</p>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xl">3️⃣</span>
+              <span className="text-xl emoji-icon">3️⃣</span>
               <p className="text-gray-600 text-sm">不正解でもどんどん次へ！</p>
             </div>
           </div>
@@ -356,14 +356,14 @@ export default function SpeedChallengePage() {
               <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full ${
                 isLowTime ? "bg-red-100 animate-pulse" : "bg-gray-100"
               }`}>
-                <span className="text-lg">⏱️</span>
+                <span className="text-lg emoji-icon">⏱️</span>
                 <span className={`text-xl font-bold ${isLowTime ? "text-red-600" : "text-gray-700"}`}>
                   {timeLeft}
                 </span>
               </div>
 
               <div className="flex items-center gap-1.5 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-3 py-1.5 rounded-full">
-                <span className="text-lg">⭐</span>
+                <span className="text-lg emoji-icon">⭐</span>
                 <span className="text-xl font-bold">{score}</span>
               </div>
             </div>
@@ -448,14 +448,14 @@ export default function SpeedChallengePage() {
             {isNewHighScore && (
               <div className="mb-3 p-2 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-xl border border-yellow-300">
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-2xl">🎉</span>
+                  <span className="text-2xl emoji-icon">🎉</span>
                   <p className="text-sm font-bold text-yellow-700">新記録達成！</p>
                 </div>
               </div>
             )}
 
             <div className="flex items-center justify-center gap-3 mb-3">
-              <span className="text-4xl">{message.emoji}</span>
+              <span className="text-4xl emoji-icon">{message.emoji}</span>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">{message.text}</h1>
                 <p className="text-gray-500 text-sm">タイムアップ！</p>
