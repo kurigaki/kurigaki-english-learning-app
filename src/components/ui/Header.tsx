@@ -19,7 +19,7 @@ export const Header = () => {
       <div className="max-w-4xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl">📚</span>
+            <span className="text-2xl emoji-icon">📚</span>
             <span className="font-bold text-lg text-gradient">English App</span>
           </Link>
 
@@ -39,7 +39,7 @@ export const Header = () => {
                     }
                   `}
                 >
-                  <span>{item.icon}</span>
+                  <span className="emoji-icon">{item.icon}</span>
                   <span className="hidden sm:inline">{item.label}</span>
                 </Link>
               );

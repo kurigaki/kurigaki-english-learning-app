@@ -82,9 +82,9 @@ export const PerfectScorePopup = ({ mode, onClose }: PerfectScorePopupProps) => 
 
             {/* 星の装飾 */}
             <div className="flex justify-center gap-2 text-3xl">
-              <span className="animate-float">⭐</span>
-              <span className="animate-float" style={{ animationDelay: "0.2s" }}>🌟</span>
-              <span className="animate-float" style={{ animationDelay: "0.4s" }}>⭐</span>
+              <span className="animate-float emoji-icon">⭐</span>
+              <span className="animate-float emoji-icon" style={{ animationDelay: "0.2s" }}>🌟</span>
+              <span className="animate-float emoji-icon" style={{ animationDelay: "0.4s" }}>⭐</span>
             </div>
 
             {/* 閉じるヒント */}

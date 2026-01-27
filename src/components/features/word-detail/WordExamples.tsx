@@ -33,7 +33,8 @@ export const WordExamples = ({ examples, targetWord }: WordExamplesProps) => {
   return (
     <div className="py-6 border-b border-gray-100">
       <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
-        <span>📝</span> 例文
+        <span className="emoji-icon">📝</span>
+        <span>例文</span>
       </h2>
       <div className="space-y-4">
         {examples.map((example, index) => (

@@ -66,7 +66,8 @@ export const WordRelations = ({ synonyms, antonyms }: WordRelationsProps) => {
       {hasSynonyms && (
         <div className="mb-4">
           <h3 className="text-sm font-medium text-slate-500 mb-2 flex items-center gap-1">
-            <span>🔗</span> 類義語
+            <span className="emoji-icon">🔗</span>
+            <span>類義語</span>
           </h3>
           <div className="flex flex-wrap gap-2">
             {synonyms.map((word) => renderWordChip(word, "synonym"))}
@@ -78,7 +79,8 @@ export const WordRelations = ({ synonyms, antonyms }: WordRelationsProps) => {
       {hasAntonyms && (
         <div>
           <h3 className="text-sm font-medium text-slate-500 mb-2 flex items-center gap-1">
-            <span>↔️</span> 対義語
+            <span className="emoji-icon">↔️</span>
+            <span>対義語</span>
           </h3>
           <div className="flex flex-wrap gap-2">
             {antonyms.map((word) => renderWordChip(word, "antonym"))}
