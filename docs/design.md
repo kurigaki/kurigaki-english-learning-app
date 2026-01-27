@@ -924,6 +924,98 @@ type SpeedChallengeResult = {
 
 ---
 
+## 10.5 レスポンシブデザイン
+
+### 基本方針
+
+- **PCでもスマホでも1画面に収まる**: リスト系画面は固定ヘッダー・固定フッターとスクロール可能な中央エリアで構成
+- **詳細画面は自然なスクロール**: 情報量が多いページは`min-h`でスクロール可能に
+
+### レイアウトパターン
+
+#### Viewport-Fit Layout（リスト・ナビゲーション系画面）
+
+スクロールなしで全要素にアクセスできる構造。以下の画面に適用:
+
+| 画面 | パス | 適用 |
+|------|------|------|
+| クイズ設定 | /quiz (setup) | ✅ |
+| クイズ問題 | /quiz (quiz) | ✅ |
+| クイズリザルト | /quiz (result) | ✅ |
+| スピードチャレンジ（準備） | /speed-challenge (ready) | ✅ |
+| スピードチャレンジ（プレイ） | /speed-challenge (playing) | ✅ |
+| スピードチャレンジ（リザルト） | /speed-challenge (result) | ✅ |
+| 単語帳 | /word-list | ✅ |
+| 学習履歴 | /history | ✅ |
+| 苦手単語 | /weak-words | ✅ |
+| 実績 | /achievements | ✅ |
+
+**CSS構造:**
+
+```tsx
+<div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+  <div className="max-w-{size} w-full mx-auto flex flex-col h-full">
+    {/* 上部固定: ヘッダー・フィルター等 */}
+    <div className="flex-shrink-0 mb-2">
+      {/* 固定表示のコンテンツ */}
+    </div>
+
+    {/* 中央スクロール可能エリア */}
+    <div className="flex-1 overflow-y-auto min-h-0">
+      {/* リスト等のスクロールコンテンツ */}
+    </div>
+
+    {/* 下部固定: アクションボタン等（オプション） */}
+    <div className="flex-shrink-0 pt-2">
+      {/* ボタン等 */}
+    </div>
+  </div>
+</div>
+```
+
+**重要なCSSプロパティ:**
+
+| プロパティ | 用途 |
+|-----------|------|
+| `h-[calc(100vh-64px)]` | ヘッダー（64px）を除いた高さ |
+| `flex flex-col` | 縦方向のフレックスレイアウト |
+| `flex-shrink-0` | 固定サイズ（縮小しない） |
+| `flex-1` | 残りスペースを埋める |
+| `overflow-y-auto` | 縦方向スクロール有効 |
+| `min-h-0` | フレックスアイテムの縮小を許可 |
+
+#### Scrollable Content Layout（詳細・ダッシュボード系画面）
+
+情報量が多く、自然なスクロールが適切な画面:
+
+| 画面 | パス | 理由 |
+|------|------|------|
+| ホーム | / | ダッシュボード型で多数のカードを配置 |
+| 単語詳細 | /word/[id] | 例文・関連語・コラム等の詳細情報 |
+
+**CSS構造:**
+
+```tsx
+<div className="min-h-[calc(100vh-64px)] px-4 py-6">
+  <div className="max-w-{size} mx-auto">
+    {/* コンテンツ（自然にスクロール） */}
+  </div>
+</div>
+```
+
+### コンパクト化のポイント
+
+| 項目 | 変更内容 |
+|------|----------|
+| パディング | `py-8` → `py-3` |
+| マージン | `mb-4` → `mb-2` |
+| フォントサイズ | `text-2xl` → `text-lg` |
+| ボタン | `size="md"` → `size="sm"` |
+| カード内パディング | `p-4` → `!p-3` |
+| タブ・バッジ | `py-2` → `py-1.5` |
+
+---
+
 ## 11. 将来拡張に向けた設計方針
 
 ### 11.1 データ拡張
