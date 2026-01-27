@@ -579,10 +579,10 @@ export default function QuizPage() {
     const filteredPreview = filterWordsBySettings(words, quizSettings);
 
     return (
-      <div className="min-h-[calc(100vh-64px)] px-4 py-6">
-        <div className="max-w-md mx-auto">
-          {/* ヘッダー */}
-          <div className="flex items-center gap-3 mb-6">
+      <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+        <div className="max-w-md w-full mx-auto flex flex-col h-full">
+          {/* 上部固定: ヘッダー */}
+          <div className="flex-shrink-0 flex items-center gap-3 mb-3">
             <Link
               href="/"
               className="text-slate-500 hover:text-slate-700 transition-colors"
@@ -591,142 +591,148 @@ export default function QuizPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </Link>
-            <h1 className="text-2xl font-bold text-slate-800">クイズ設定</h1>
+            <h1 className="text-xl font-bold text-slate-800">クイズ設定</h1>
           </div>
 
-          <Card className="mb-6">
-            <h2 className="text-lg font-bold text-slate-700 mb-4">カテゴリを選択</h2>
-            <div className="flex flex-wrap gap-2">
-              {ALL_CATEGORIES.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => {
-                    setQuizSettings((prev) => ({
-                      ...prev,
-                      categories: prev.categories.includes(category)
-                        ? prev.categories.filter((c) => c !== category)
-                        : [...prev.categories, category],
-                    }));
-                  }}
-                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                    quizSettings.categories.includes(category)
-                      ? "bg-primary-500 text-white"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                  }`}
-                >
-                  {categoryLabels[category]}
-                </button>
-              ))}
-            </div>
-            <p className="text-xs text-slate-400 mt-2">
-              {quizSettings.categories.length === 0
-                ? "全カテゴリから出題"
-                : `${quizSettings.categories.length}カテゴリ選択中`}
-            </p>
-          </Card>
-
-          <Card className="mb-6">
-            <h2 className="text-lg font-bold text-slate-700 mb-4">難易度を選択</h2>
-            <div className="flex gap-2">
-              {[1, 2, 3, 4, 5].map((level) => (
-                <button
-                  key={level}
-                  onClick={() => {
-                    setQuizSettings((prev) => ({
-                      ...prev,
-                      difficulties: prev.difficulties.includes(level)
-                        ? prev.difficulties.filter((d) => d !== level)
-                        : [...prev.difficulties, level],
-                    }));
-                  }}
-                  className={`w-12 h-12 rounded-lg text-lg font-bold transition-all ${
-                    quizSettings.difficulties.includes(level)
-                      ? "bg-amber-500 text-white"
-                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                  }`}
-                >
-                  {level}
-                </button>
-              ))}
-            </div>
-            <p className="text-xs text-slate-400 mt-2">
-              {quizSettings.difficulties.length === 0
-                ? "全難易度から出題"
-                : `難易度${quizSettings.difficulties.sort().join(", ")}を選択中`}
-            </p>
-          </Card>
-
-          <Card className="mb-6">
-            <button
-              onClick={() => {
-                setQuizSettings((prev) => ({
-                  ...prev,
-                  includeBookmarksOnly: !prev.includeBookmarksOnly,
-                }));
-              }}
-              className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${
-                quizSettings.includeBookmarksOnly
-                  ? "bg-yellow-100 text-yellow-700"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-              }`}
-            >
-              <div className="flex items-center gap-3">
-                <svg
-                  className="w-5 h-5"
-                  fill={quizSettings.includeBookmarksOnly ? "currentColor" : "none"}
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                  />
-                </svg>
-                <span className="font-medium">ブックマークのみ</span>
+          {/* 中央スクロール可能エリア */}
+          <div className="flex-1 overflow-y-auto min-h-0 space-y-3">
+            <Card className="!p-4">
+              <h2 className="text-sm font-bold text-slate-700 mb-2">カテゴリを選択</h2>
+              <div className="flex flex-wrap gap-1.5">
+                {ALL_CATEGORIES.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => {
+                      setQuizSettings((prev) => ({
+                        ...prev,
+                        categories: prev.categories.includes(category)
+                          ? prev.categories.filter((c) => c !== category)
+                          : [...prev.categories, category],
+                      }));
+                    }}
+                    className={`px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                      quizSettings.categories.includes(category)
+                        ? "bg-primary-500 text-white"
+                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    }`}
+                  >
+                    {categoryLabels[category]}
+                  </button>
+                ))}
               </div>
-              <span className="text-sm">({bookmarkedCount}語)</span>
-            </button>
-          </Card>
+              <p className="text-xs text-slate-400 mt-1.5">
+                {quizSettings.categories.length === 0
+                  ? "全カテゴリから出題"
+                  : `${quizSettings.categories.length}カテゴリ選択中`}
+              </p>
+            </Card>
 
-          {/* プレビュー */}
-          <div className="text-center mb-6">
-            <p className="text-lg font-bold text-slate-700">
-              対象: <span className="text-primary-600">{filteredPreview.length}語</span>
-            </p>
-            {filteredPreview.length < QUESTIONS_PER_SESSION && filteredPreview.length > 0 && (
-              <p className="text-sm text-amber-600 mt-1">
-                ※ {filteredPreview.length}問のみ出題されます
+            <Card className="!p-4">
+              <h2 className="text-sm font-bold text-slate-700 mb-2">難易度を選択</h2>
+              <div className="flex gap-1.5">
+                {[1, 2, 3, 4, 5].map((level) => (
+                  <button
+                    key={level}
+                    onClick={() => {
+                      setQuizSettings((prev) => ({
+                        ...prev,
+                        difficulties: prev.difficulties.includes(level)
+                          ? prev.difficulties.filter((d) => d !== level)
+                          : [...prev.difficulties, level],
+                      }));
+                    }}
+                    className={`w-10 h-10 rounded-lg text-base font-bold transition-all ${
+                      quizSettings.difficulties.includes(level)
+                        ? "bg-amber-500 text-white"
+                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    }`}
+                  >
+                    {level}
+                  </button>
+                ))}
+              </div>
+              <p className="text-xs text-slate-400 mt-1.5">
+                {quizSettings.difficulties.length === 0
+                  ? "全難易度から出題"
+                  : `難易度${quizSettings.difficulties.sort().join(", ")}を選択中`}
               </p>
-            )}
-            {filteredPreview.length === 0 && (
-              <p className="text-sm text-red-500 mt-1">
-                条件に合う単語がありません
-              </p>
-            )}
+            </Card>
+
+            <Card className="!p-4">
+              <button
+                onClick={() => {
+                  setQuizSettings((prev) => ({
+                    ...prev,
+                    includeBookmarksOnly: !prev.includeBookmarksOnly,
+                  }));
+                }}
+                className={`w-full flex items-center justify-between p-2.5 rounded-lg transition-all ${
+                  quizSettings.includeBookmarksOnly
+                    ? "bg-yellow-100 text-yellow-700"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <svg
+                    className="w-4 h-4"
+                    fill={quizSettings.includeBookmarksOnly ? "currentColor" : "none"}
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                    />
+                  </svg>
+                  <span className="text-sm font-medium">ブックマークのみ</span>
+                </div>
+                <span className="text-xs">({bookmarkedCount}語)</span>
+              </button>
+            </Card>
           </div>
 
-          {/* 開始ボタン */}
-          <Button
-            fullWidth
-            onClick={() => startNewSession(quizSettings)}
-            disabled={filteredPreview.length === 0}
-          >
-            {filteredPreview.length === 0 ? "単語がありません" : `${Math.min(filteredPreview.length, QUESTIONS_PER_SESSION)}問で開始`}
-          </Button>
+          {/* 下部固定: プレビュー＋ボタン */}
+          <div className="flex-shrink-0 pt-3 space-y-2">
+            {/* プレビュー */}
+            <div className="text-center">
+              <p className="text-base font-bold text-slate-700">
+                対象: <span className="text-primary-600">{filteredPreview.length}語</span>
+              </p>
+              {filteredPreview.length < QUESTIONS_PER_SESSION && filteredPreview.length > 0 && (
+                <p className="text-xs text-amber-600">
+                  ※ {filteredPreview.length}問のみ出題されます
+                </p>
+              )}
+              {filteredPreview.length === 0 && (
+                <p className="text-xs text-red-500">
+                  条件に合う単語がありません
+                </p>
+              )}
+            </div>
 
-          {/* 設定リセット */}
-          {(quizSettings.categories.length > 0 ||
-            quizSettings.difficulties.length > 0 ||
-            quizSettings.includeBookmarksOnly) && (
-            <button
-              onClick={() => setQuizSettings(defaultQuizSettings)}
-              className="w-full mt-3 text-sm text-slate-500 hover:text-slate-700"
+            {/* 開始ボタン */}
+            <Button
+              fullWidth
+              onClick={() => startNewSession(quizSettings)}
+              disabled={filteredPreview.length === 0}
             >
-              設定をリセット
-            </button>
-          )}
+              {filteredPreview.length === 0 ? "単語がありません" : `${Math.min(filteredPreview.length, QUESTIONS_PER_SESSION)}問で開始`}
+            </Button>
+
+            {/* 設定リセット */}
+            {(quizSettings.categories.length > 0 ||
+              quizSettings.difficulties.length > 0 ||
+              quizSettings.includeBookmarksOnly) && (
+              <button
+                onClick={() => setQuizSettings(defaultQuizSettings)}
+                className="w-full text-xs text-slate-500 hover:text-slate-700"
+              >
+                設定をリセット
+              </button>
+            )}
+          </div>
         </div>
       </div>
     );
