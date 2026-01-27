@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
-import { words, Word } from "@/data/words";
+import { words, Word, Category, categoryLabels } from "@/data/words";
 import { storage } from "@/lib/storage";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, Achievement } from "@/types";
@@ -20,6 +20,28 @@ import {
 } from "@/lib/quiz-session";
 
 const QUESTIONS_PER_SESSION = 10;
+
+// クイズフェーズの型
+type QuizPhase = "setup" | "quiz" | "result";
+
+// クイズ設定の型
+type QuizSettings = {
+  categories: Category[];  // 空配列は「全カテゴリ」
+  difficulties: number[];  // 空配列は「全難易度」
+  includeBookmarksOnly: boolean;
+};
+
+const defaultQuizSettings: QuizSettings = {
+  categories: [],
+  difficulties: [],
+  includeBookmarksOnly: false,
+};
+
+// カテゴリリスト
+const ALL_CATEGORIES: Category[] = [
+  "business", "office", "travel", "shopping",
+  "finance", "technology", "daily", "communication",
+];
 
 // 問題タイプの出題比率
 const QUESTION_TYPE_WEIGHTS: { type: QuestionType; weight: number }[] = [
@@ -132,6 +154,29 @@ function generateQuestion(word: Word, allWords: Word[]): Question {
   }
 }
 
+// 設定に基づいて単語をフィルタリング
+function filterWordsBySettings(allWords: Word[], settings: QuizSettings): Word[] {
+  let filtered = allWords;
+
+  // カテゴリフィルター
+  if (settings.categories.length > 0) {
+    filtered = filtered.filter((w) => settings.categories.includes(w.category));
+  }
+
+  // 難易度フィルター
+  if (settings.difficulties.length > 0) {
+    filtered = filtered.filter((w) => settings.difficulties.includes(w.difficulty));
+  }
+
+  // ブックマークのみ
+  if (settings.includeBookmarksOnly) {
+    const bookmarkedIds = storage.getBookmarkedWordIds();
+    filtered = filtered.filter((w) => bookmarkedIds.includes(w.id));
+  }
+
+  return filtered;
+}
+
 // セッション構成比率
 const SESSION_COMPOSITION = {
   weakWords: 0.4,    // 苦手単語 40%
@@ -139,14 +184,14 @@ const SESSION_COMPOSITION = {
   reviewWords: 0.3,  // 復習単語 30%
 };
 
-function generateSessionQuestions(allWords: Word[], count: number): Question[] {
+function generateSessionQuestions(targetWords: Word[], allWords: Word[], count: number): Question[] {
   const weakWordIds = storage.getWeakWords(70);
   const studiedWordIds = storage.getStudiedWordIds();
 
-  // カテゴリ別に単語を分類
-  const weakWords = allWords.filter((w) => weakWordIds.includes(w.id));
-  const newWords = allWords.filter((w) => !studiedWordIds.includes(w.id));
-  const reviewWords = allWords.filter(
+  // targetWordsからカテゴリ別に単語を分類
+  const weakWords = targetWords.filter((w) => weakWordIds.includes(w.id));
+  const newWords = targetWords.filter((w) => !studiedWordIds.includes(w.id));
+  const reviewWords = targetWords.filter(
     (w) => studiedWordIds.includes(w.id) && !weakWordIds.includes(w.id)
   );
 
@@ -170,7 +215,7 @@ function generateSessionQuestions(allWords: Word[], count: number): Question[] {
 
   if (selected.length < count) {
     const selectedIds = new Set(selected.map((w) => w.id));
-    const remaining = allWords.filter((w) => !selectedIds.has(w.id));
+    const remaining = targetWords.filter((w) => !selectedIds.has(w.id));
     const additional = shuffleAndTake(remaining, count - selected.length);
     selected = [...selected, ...additional];
   }
@@ -268,6 +313,10 @@ function getStreakMilestoneMessage(milestone: number): { emoji: string; title: s
 }
 
 export default function QuizPage() {
+  // クイズフェーズ管理
+  const [phase, setPhase] = useState<QuizPhase>("setup");
+  const [quizSettings, setQuizSettings] = useState<QuizSettings>(defaultQuizSettings);
+
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
@@ -317,6 +366,7 @@ export default function QuizPage() {
       setSessionResult(savedState.sessionResult);
       setIsFinished(true);
       setIsRestoredFromSession(true);
+      setPhase("result");
       // 復元後、状態をクリア（ページリロード時は新しいセッションになるように）
       // 注: 詳細画面から戻ってきた時のために、状態はクリアしない
     }
@@ -364,12 +414,26 @@ export default function QuizPage() {
     return () => clearTimeout(timeoutId);
   }, [currentQuestion, currentIndex, selected]);
 
-  const startNewSession = useCallback(() => {
+  const startNewSession = useCallback((settings: QuizSettings = defaultQuizSettings) => {
     // 新しいセッション開始時は保存された状態をクリア
     clearQuizResultState();
 
-    const newQuestions = generateSessionQuestions(words, QUESTIONS_PER_SESSION);
+    // 設定に基づいて単語をフィルタリング
+    const targetWords = filterWordsBySettings(words, settings);
+
+    // フィルター後の単語数が少なすぎる場合の対応
+    const questionCount = Math.min(QUESTIONS_PER_SESSION, targetWords.length);
+
+    if (questionCount === 0) {
+      // 該当する単語がない場合は設定画面に戻す
+      setPhase("setup");
+      return;
+    }
+
+    const newQuestions = generateSessionQuestions(targetWords, words, questionCount);
     setQuestions(newQuestions);
+    setQuizSettings(settings);
+    setPhase("quiz");
     setCurrentIndex(0);
     setScore(0);
     setCombo(0);
@@ -386,13 +450,14 @@ export default function QuizPage() {
     hasAutoPlayedRef.current = new Set();
   }, []);
 
-  // 初回ロード時（復元されていない場合のみ）
+  // 初回ロード時：復元されていない場合はsetup画面を表示
   useEffect(() => {
     const savedState = getQuizResultState();
     if (!savedState) {
-      startNewSession();
+      // 設定画面から開始
+      setPhase("setup");
     }
-  }, [startNewSession]);
+  }, []);
 
   const handleSelect = (choice: string) => {
     if (selected !== null || !currentQuestion) return;
@@ -484,6 +549,7 @@ export default function QuizPage() {
 
       setSessionResult(result);
       setIsFinished(true);
+      setPhase("result");
 
       // 全問正解の場合はパーフェクトスコアポップアップを表示
       if (score === questions.length) {
@@ -507,7 +573,166 @@ export default function QuizPage() {
     }
   };
 
-  if (!isFinished && questions.length === 0) {
+  // 設定画面
+  if (phase === "setup") {
+    const bookmarkedCount = storage.getBookmarkedWordIds().length;
+    const filteredPreview = filterWordsBySettings(words, quizSettings);
+
+    return (
+      <div className="min-h-[calc(100vh-64px)] px-4 py-6">
+        <div className="max-w-md mx-auto">
+          {/* ヘッダー */}
+          <div className="flex items-center gap-3 mb-6">
+            <Link
+              href="/"
+              className="text-slate-500 hover:text-slate-700 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </Link>
+            <h1 className="text-2xl font-bold text-slate-800">クイズ設定</h1>
+          </div>
+
+          <Card className="mb-6">
+            <h2 className="text-lg font-bold text-slate-700 mb-4">カテゴリを選択</h2>
+            <div className="flex flex-wrap gap-2">
+              {ALL_CATEGORIES.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => {
+                    setQuizSettings((prev) => ({
+                      ...prev,
+                      categories: prev.categories.includes(category)
+                        ? prev.categories.filter((c) => c !== category)
+                        : [...prev.categories, category],
+                    }));
+                  }}
+                  className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                    quizSettings.categories.includes(category)
+                      ? "bg-primary-500 text-white"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {categoryLabels[category]}
+                </button>
+              ))}
+            </div>
+            <p className="text-xs text-slate-400 mt-2">
+              {quizSettings.categories.length === 0
+                ? "全カテゴリから出題"
+                : `${quizSettings.categories.length}カテゴリ選択中`}
+            </p>
+          </Card>
+
+          <Card className="mb-6">
+            <h2 className="text-lg font-bold text-slate-700 mb-4">難易度を選択</h2>
+            <div className="flex gap-2">
+              {[1, 2, 3, 4, 5].map((level) => (
+                <button
+                  key={level}
+                  onClick={() => {
+                    setQuizSettings((prev) => ({
+                      ...prev,
+                      difficulties: prev.difficulties.includes(level)
+                        ? prev.difficulties.filter((d) => d !== level)
+                        : [...prev.difficulties, level],
+                    }));
+                  }}
+                  className={`w-12 h-12 rounded-lg text-lg font-bold transition-all ${
+                    quizSettings.difficulties.includes(level)
+                      ? "bg-amber-500 text-white"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  {level}
+                </button>
+              ))}
+            </div>
+            <p className="text-xs text-slate-400 mt-2">
+              {quizSettings.difficulties.length === 0
+                ? "全難易度から出題"
+                : `難易度${quizSettings.difficulties.sort().join(", ")}を選択中`}
+            </p>
+          </Card>
+
+          <Card className="mb-6">
+            <button
+              onClick={() => {
+                setQuizSettings((prev) => ({
+                  ...prev,
+                  includeBookmarksOnly: !prev.includeBookmarksOnly,
+                }));
+              }}
+              className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${
+                quizSettings.includeBookmarksOnly
+                  ? "bg-yellow-100 text-yellow-700"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+              }`}
+            >
+              <div className="flex items-center gap-3">
+                <svg
+                  className="w-5 h-5"
+                  fill={quizSettings.includeBookmarksOnly ? "currentColor" : "none"}
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                  />
+                </svg>
+                <span className="font-medium">ブックマークのみ</span>
+              </div>
+              <span className="text-sm">({bookmarkedCount}語)</span>
+            </button>
+          </Card>
+
+          {/* プレビュー */}
+          <div className="text-center mb-6">
+            <p className="text-lg font-bold text-slate-700">
+              対象: <span className="text-primary-600">{filteredPreview.length}語</span>
+            </p>
+            {filteredPreview.length < QUESTIONS_PER_SESSION && filteredPreview.length > 0 && (
+              <p className="text-sm text-amber-600 mt-1">
+                ※ {filteredPreview.length}問のみ出題されます
+              </p>
+            )}
+            {filteredPreview.length === 0 && (
+              <p className="text-sm text-red-500 mt-1">
+                条件に合う単語がありません
+              </p>
+            )}
+          </div>
+
+          {/* 開始ボタン */}
+          <Button
+            fullWidth
+            onClick={() => startNewSession(quizSettings)}
+            disabled={filteredPreview.length === 0}
+          >
+            {filteredPreview.length === 0 ? "単語がありません" : `${Math.min(filteredPreview.length, QUESTIONS_PER_SESSION)}問で開始`}
+          </Button>
+
+          {/* 設定リセット */}
+          {(quizSettings.categories.length > 0 ||
+            quizSettings.difficulties.length > 0 ||
+            quizSettings.includeBookmarksOnly) && (
+            <button
+              onClick={() => setQuizSettings(defaultQuizSettings)}
+              className="w-full mt-3 text-sm text-slate-500 hover:text-slate-700"
+            >
+              設定をリセット
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  if (phase !== "result" && questions.length === 0) {
     return (
       <div className="min-h-[calc(100vh-64px)] px-4 py-8 flex items-center justify-center">
         <p className="text-slate-500">読み込み中...</p>
@@ -515,7 +740,7 @@ export default function QuizPage() {
     );
   }
 
-  if (isFinished) {
+  if (phase === "result" || isFinished) {
     const totalQuestions = answeredWords.length || questions.length;
     const percentage = Math.round((score / totalQuestions) * 100);
     const getMessage = () => {
@@ -696,11 +921,17 @@ export default function QuizPage() {
 
           {/* 下部固定: アクションボタン */}
           <div className="flex-shrink-0 space-y-2">
-            <Button fullWidth onClick={startNewSession}>
-              もう1セット挑戦
+            <Button fullWidth onClick={() => startNewSession(quizSettings)}>
+              同じ設定でもう1セット
+            </Button>
+            <Button variant="secondary" fullWidth onClick={() => {
+              clearQuizResultState();
+              setPhase("setup");
+            }}>
+              設定を変更して挑戦
             </Button>
             <Link href="/" className="block">
-              <Button variant="secondary" fullWidth onClick={() => clearQuizResultState()}>
+              <Button variant="ghost" fullWidth onClick={() => clearQuizResultState()}>
                 ホームに戻る
               </Button>
             </Link>
