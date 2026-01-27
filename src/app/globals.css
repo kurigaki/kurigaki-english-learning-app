@@ -108,6 +108,11 @@ body {
 }
 
 @layer utilities {
+  /* 絵文字アイコン用スタイル: テキストとの垂直方向の配置を安定させる */
+  .emoji-icon {
+    @apply inline-flex items-center justify-center leading-none;
+  }
+
   .text-balance {
     text-wrap: balance;
   }
