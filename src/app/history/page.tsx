@@ -115,15 +115,16 @@ export default function HistoryPage() {
         {/* 上部固定: ヘッダー */}
         <div className="flex-shrink-0 mb-2">
           <h1 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-            <span className="text-2xl">📊</span>
-            学習統計
+            <span className="text-2xl emoji-icon">📊</span>
+            <span>学習統計</span>
           </h1>
         </div>
 
         {/* 上部固定: 今日の学習 */}
         <Card className="flex-shrink-0 mb-2 !p-3 bg-gradient-to-r from-primary-50 to-accent-50">
           <h2 className="text-sm font-bold text-slate-700 mb-2 flex items-center gap-1">
-            <span>🔥</span> 今日の学習
+            <span className="emoji-icon">🔥</span>
+            <span>今日の学習</span>
           </h2>
           <div className="grid grid-cols-3 gap-2">
             <div className="text-center">
@@ -158,14 +159,14 @@ export default function HistoryPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-1.5 px-2 rounded-lg text-sm font-medium transition-all ${
+              className={`flex-1 py-1.5 px-2 rounded-lg text-sm font-medium transition-all inline-flex items-center justify-center gap-1 ${
                 activeTab === tab.id
                   ? "bg-primary-500 text-white shadow-sm"
                   : "bg-white text-slate-600 hover:bg-primary-50"
               }`}
             >
-              <span className="mr-0.5">{tab.icon}</span>
-              {tab.label}
+              <span className="emoji-icon">{tab.icon}</span>
+              <span>{tab.label}</span>
             </button>
           ))}
         </div>
@@ -179,7 +180,8 @@ export default function HistoryPage() {
             {/* Overall Stats */}
             <Card>
               <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
-                <span>📊</span> 全体統計
+                <span className="emoji-icon">📊</span>
+                <span>全体統計</span>
               </h2>
               <div className="grid grid-cols-3 gap-4 mb-6">
                 <StatsCard label="総回答数" value={overallStats.total} color="primary" />
@@ -208,7 +210,8 @@ export default function HistoryPage() {
             {/* Type Stats */}
             <Card>
               <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
-                <span>🎯</span> 問題タイプ別
+                <span className="emoji-icon">🎯</span>
+                <span>問題タイプ別</span>
               </h2>
               <div className="space-y-4">
                 {(Object.entries(typeStats) as [QuestionType, { total: number; correct: number }][]).map(
@@ -243,11 +246,12 @@ export default function HistoryPage() {
         {activeTab === "weak" && (
           <Card>
             <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
-              <span>💪</span> 苦手単語 ({weakWords.length}語)
+              <span className="emoji-icon">💪</span>
+              <span>苦手単語 ({weakWords.length}語)</span>
             </h2>
             {weakWords.length === 0 ? (
               <div className="text-center py-8">
-                <span className="text-5xl mb-4 block">🎉</span>
+                <span className="text-5xl mb-4 block emoji-icon">🎉</span>
                 <p className="text-slate-500">苦手な単語はありません!</p>
                 <p className="text-sm text-slate-400 mt-1">この調子で頑張りましょう</p>
               </div>
@@ -296,13 +300,14 @@ export default function HistoryPage() {
             <Card padding="none">
               <div className="p-3 border-b border-primary-100">
                 <h2 className="text-sm font-bold text-slate-700 flex items-center gap-2">
-                  <span>📝</span> 回答履歴
+                  <span className="emoji-icon">📝</span>
+                  <span>回答履歴</span>
                 </h2>
               </div>
 
               {records.length === 0 ? (
                 <div className="p-8 text-center">
-                  <span className="text-4xl mb-3 block">📚</span>
+                  <span className="text-4xl mb-3 block emoji-icon">📚</span>
                   <p className="text-slate-500 text-sm mb-3">まだ学習履歴がありません</p>
                   <Link href="/quiz">
                     <Button size="sm">クイズを始める</Button>

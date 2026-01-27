@@ -107,7 +107,7 @@ export default function WordDetailPage() {
     return (
       <div className="min-h-[calc(100vh-64px)] px-4 py-8 flex items-center justify-center">
         <Card className="max-w-md w-full text-center">
-          <span className="text-6xl mb-4 block">😵</span>
+          <span className="text-6xl mb-4 block emoji-icon">😵</span>
           <h1 className="text-2xl font-bold text-slate-800 mb-2">
             単語が見つかりません
           </h1>
@@ -246,7 +246,8 @@ export default function WordDetailPage() {
           {word.synonyms && word.synonyms.length > 0 && (
             <div className="py-4 border-b border-gray-100">
               <h3 className="text-sm font-medium text-slate-500 mb-2 flex items-center gap-1">
-                <span>🔗</span> 関連語
+                <span className="emoji-icon">🔗</span>
+                <span>関連語</span>
               </h3>
               <p className="text-slate-400 text-sm italic">関連語は今後追加予定です</p>
             </div>

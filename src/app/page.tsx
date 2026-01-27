@@ -70,7 +70,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="text-center mb-8">
           <div className="inline-block animate-float mb-4">
-            <span className="text-6xl">📚</span>
+            <span className="text-6xl emoji-icon">📚</span>
           </div>
           <h1 className="text-4xl font-bold mb-3">
             <span className="text-gradient">英単語マスター</span>
@@ -95,7 +95,7 @@ export default function Home() {
               {/* ストリーク */}
               <div className="text-center">
                 <div className="w-14 h-14 mx-auto mb-2 bg-gradient-to-br from-orange-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
-                  <span className="text-2xl">🔥</span>
+                  <span className="text-2xl emoji-icon">🔥</span>
                 </div>
                 <p className="text-lg font-bold text-orange-600">{userProgress.streak}日</p>
                 <p className="text-xs text-slate-500">連続</p>
@@ -108,7 +108,7 @@ export default function Home() {
                     ? "bg-gradient-to-br from-green-400 to-green-500"
                     : "bg-gradient-to-br from-blue-400 to-blue-500"
                 }`}>
-                  <span className="text-2xl">{userProgress.dailyProgress.completed ? "🏆" : "🎯"}</span>
+                  <span className="text-2xl emoji-icon">{userProgress.dailyProgress.completed ? "🏆" : "🎯"}</span>
                 </div>
                 <p className={`text-lg font-bold ${
                   userProgress.dailyProgress.completed ? "text-green-600" : "text-blue-600"
@@ -139,7 +139,8 @@ export default function Home() {
         {isMounted && stats.total > 0 && (
           <Card className="mb-6">
             <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
-              <span>📈</span> あなたの学習状況
+              <span className="emoji-icon">📈</span>
+              <span>あなたの学習状況</span>
             </h2>
             <div className="grid grid-cols-3 gap-4">
               <StatsCard label="総回答数" value={stats.total} color="primary" />
@@ -282,7 +283,8 @@ export default function Home() {
           <Card className="mb-8">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-bold text-slate-700 flex items-center gap-2">
-                <span>🎖️</span> 最近の実績
+                <span className="emoji-icon">🎖️</span>
+                <span>最近の実績</span>
               </h2>
               <Link href="/achievements" className="text-sm text-primary-500 hover:underline">
                 すべて見る →
@@ -294,7 +296,7 @@ export default function Home() {
                   key={achievement.id}
                   className="flex items-center gap-3 p-3 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100"
                 >
-                  <span className="text-3xl">{achievement.icon}</span>
+                  <span className="text-3xl emoji-icon">{achievement.icon}</span>
                   <div className="flex-1">
                     <p className="font-bold text-gray-900">{achievement.name}</p>
                     <p className="text-xs text-gray-500">{achievement.description}</p>
@@ -311,7 +313,7 @@ export default function Home() {
         {/* Motivation Message */}
         <Card className="bg-gradient-to-r from-primary-50 to-accent-50 border border-primary-100">
           <div className="flex items-center gap-4">
-            <span className="text-4xl">💪</span>
+            <span className="text-4xl emoji-icon">💪</span>
             <div>
               <p className="font-bold text-slate-700">今日も頑張ろう!</p>
               <p className="text-sm text-slate-500">

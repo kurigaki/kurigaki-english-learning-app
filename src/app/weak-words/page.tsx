@@ -84,8 +84,8 @@ export default function WeakWordsPage() {
             <span>戻る</span>
           </Link>
           <h1 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-            <span className="text-2xl">📝</span>
-            苦手な単語
+            <span className="text-2xl emoji-icon">📝</span>
+            <span>苦手な単語</span>
           </h1>
           <p className="text-slate-500 text-sm">
             正答率70%未満（{weakWords.length}語）
@@ -122,7 +122,7 @@ export default function WeakWordsPage() {
         {weakWords.length === 0 ? (
           <div className="flex-1 flex items-center justify-center">
             <Card className="text-center py-8">
-              <span className="text-5xl mb-3 block">🎉</span>
+              <span className="text-5xl mb-3 block emoji-icon">🎉</span>
               <h2 className="text-lg font-bold text-slate-800 mb-2">
                 苦手な単語はありません！
               </h2>
