@@ -20,7 +20,8 @@ export const WordColumn = ({ column }: WordColumnProps) => {
   return (
     <div className="py-6">
       <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
-        <span>📚</span> コラム
+        <span className="emoji-icon">📚</span>
+        <span>コラム</span>
       </h2>
       <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-5 rounded-2xl border border-purple-100">
         {/* タイトル */}

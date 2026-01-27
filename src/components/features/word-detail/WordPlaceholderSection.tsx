@@ -18,7 +18,8 @@ export const WordPlaceholderSection = ({
   return (
     <div className="py-4 border-b border-gray-100">
       <h3 className="text-sm font-medium text-slate-500 mb-2 flex items-center gap-1">
-        <span>{emoji}</span> {title}
+        <span className="emoji-icon">{emoji}</span>
+        <span>{title}</span>
       </h3>
       {hasContent ? (
         <p className="text-slate-700 leading-relaxed">{content}</p>

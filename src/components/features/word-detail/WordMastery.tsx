@@ -48,7 +48,7 @@ export const WordMastery = ({ accuracy, totalAttempts }: WordMasteryProps) => {
   return (
     <div className="flex items-center justify-between py-4 border-b border-gray-100">
       <div className="flex items-center gap-3">
-        <span className="text-2xl">{config.emoji}</span>
+        <span className="text-2xl emoji-icon">{config.emoji}</span>
         <div>
           <p className={`font-bold ${config.color}`}>{config.label}</p>
           <p className="text-xs text-slate-400">
