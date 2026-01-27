@@ -156,6 +156,36 @@ GitHub操作は以下のツールを使用してください。
 - 型定義は `src/types/index.ts` に集約
 - 単語データは `src/data/words.ts` に静的定義
 
+### レスポンシブデザイン
+
+PCでもスマホでも1画面に収まるよう、以下のレイアウトパターンを使用:
+
+**Viewport-Fit Layout（リスト・ナビゲーション系画面）**
+
+```tsx
+<div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+  <div className="max-w-{size} w-full mx-auto flex flex-col h-full">
+    <div className="flex-shrink-0">{/* 上部固定 */}</div>
+    <div className="flex-1 overflow-y-auto min-h-0">{/* スクロール可能 */}</div>
+    <div className="flex-shrink-0">{/* 下部固定 */}</div>
+  </div>
+</div>
+```
+
+- **適用画面**: クイズ設定/問題/リザルト、スピードチャレンジ、単語帳、学習履歴、苦手単語、実績
+
+**Scrollable Content Layout（詳細・ダッシュボード系画面）**
+
+```tsx
+<div className="min-h-[calc(100vh-64px)] px-4 py-6">
+  {/* 自然にスクロール */}
+</div>
+```
+
+- **適用画面**: ホーム、単語詳細
+
+詳細は `docs/design.md` の「10.5 レスポンシブデザイン」を参照。
+
 ---
 
 ## ファイル構成
