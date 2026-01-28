@@ -221,6 +221,7 @@ src/
 │   ├── word/[id]/page.tsx        # 単語詳細
 │   ├── word-list/page.tsx        # 単語帳（検索・フィルター・ソート）
 │   ├── weak-words/page.tsx       # 苦手単語一覧
+│   ├── bookmarks/page.tsx        # ブックマーク一覧
 │   ├── history/page.tsx          # 学習履歴（タブ: 概要/苦手単語/履歴）
 │   └── achievements/page.tsx     # 実績一覧
 ├── components/
@@ -343,6 +344,7 @@ type UserData = {
 | 学習履歴（苦手単語タブ） | 苦手単語リスト | ✅ |
 | 学習履歴（履歴タブ） | 回答履歴リスト | ✅ |
 | スピードチャレンジリザルト | 正解/不正解単語リスト | ✅ |
+| ブックマーク一覧 | ブックマーク済み単語リスト | ✅ |
 
 ### 実装パターン
 
