@@ -349,7 +349,7 @@ export default function QuizPage() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [selected, isFinished]);
+  }, [selected, isFinished, handleNext]);
 
 
 
@@ -501,7 +501,7 @@ export default function QuizPage() {
     });
   };
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (currentIndex + 1 >= questions.length) {
       // セッション完了時にXP・レベル・ストリークを記録
       const previousUserData = storage.getUserData();
@@ -561,7 +561,7 @@ export default function QuizPage() {
       setIsCorrect(null);
       setShowTranslation(false);
     }
-  };
+  }, [currentIndex, questions.length, score, maxCombo]);
 
   const handleAchievementClose = () => {
     const remaining = pendingAchievements.slice(1);
