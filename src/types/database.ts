@@ -24,6 +24,7 @@ export type Database = {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       learning_records: {
         Row: {
@@ -56,6 +57,7 @@ export type Database = {
           correct?: boolean;
           studied_at?: string;
         };
+        Relationships: [];
       };
       user_data: {
         Row: {
@@ -91,6 +93,7 @@ export type Database = {
           today_correct?: number;
           today_date?: string | null;
         };
+        Relationships: [];
       };
       unlocked_achievements: {
         Row: {
@@ -111,6 +114,7 @@ export type Database = {
           achievement_id?: string;
           unlocked_at?: string;
         };
+        Relationships: [];
       };
       speed_challenge_results: {
         Row: {
@@ -140,6 +144,7 @@ export type Database = {
           time_limit?: number;
           played_at?: string;
         };
+        Relationships: [];
       };
       bookmarks: {
         Row: {
@@ -160,8 +165,13 @@ export type Database = {
           word_id?: number;
           created_at?: string;
         };
+        Relationships: [];
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
+    Enums: Record<string, never>;
+    CompositeTypes: Record<string, never>;
   };
 };
 
