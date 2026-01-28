@@ -53,7 +53,9 @@ export const UserMenu = () => {
   // ローディング中
   if (isLoading) {
     return (
-      <div className="w-9 h-9 rounded-full bg-slate-200 animate-pulse" />
+      <div className="h-10 px-4 rounded-xl bg-slate-100 animate-pulse flex items-center">
+        <div className="w-6 h-6 rounded-full bg-slate-200" />
+      </div>
     );
   }
 
@@ -62,11 +64,10 @@ export const UserMenu = () => {
     return (
       <Link
         href="/login"
-        className="flex items-center justify-center w-9 h-9 rounded-full bg-slate-200 hover:bg-slate-300 transition-colors"
-        aria-label="ログイン"
+        className="flex items-center gap-2 h-10 px-4 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-medium text-sm transition-colors"
       >
         <svg
-          className="w-5 h-5 text-slate-500"
+          className="w-5 h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -75,9 +76,10 @@ export const UserMenu = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth={2}
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
           />
         </svg>
+        <span>ログイン</span>
       </Link>
     );
   }
@@ -96,22 +98,43 @@ export const UserMenu = () => {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center w-9 h-9 rounded-full overflow-hidden bg-primary-100 hover:bg-primary-200 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        className="flex items-center gap-2 h-10 pl-1 pr-3 rounded-xl bg-slate-100 hover:bg-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label="ユーザーメニュー"
       >
-        {avatarUrl ? (
-          <Image
-            src={avatarUrl}
-            alt={displayName}
-            width={36}
-            height={36}
-            className="w-full h-full object-cover"
+        {/* アバター */}
+        <div className="w-8 h-8 rounded-full overflow-hidden bg-primary-100 flex items-center justify-center flex-shrink-0">
+          {avatarUrl ? (
+            <Image
+              src={avatarUrl}
+              alt={displayName}
+              width={32}
+              height={32}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <span className="text-sm font-bold text-primary-600">{initial}</span>
+          )}
+        </div>
+        {/* 名前（PC表示） */}
+        <span className="hidden sm:block text-sm font-medium text-slate-700 max-w-[100px] truncate">
+          {user.profile?.display_name || "マイページ"}
+        </span>
+        {/* ドロップダウン矢印 */}
+        <svg
+          className={`w-4 h-4 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
           />
-        ) : (
-          <span className="text-sm font-bold text-primary-600">{initial}</span>
-        )}
+        </svg>
       </button>
 
       {isOpen && (
