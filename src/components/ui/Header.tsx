@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { UserMenu } from "./UserMenu";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -25,28 +26,31 @@ export const Header = () => {
             <span className="font-bold text-lg text-gradient">English App</span>
           </Link>
 
-          <nav className="flex items-center gap-1">
-            {navItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`
-                    flex items-center gap-1.5 px-4 py-2 rounded-xl
-                    text-sm font-medium transition-all duration-200
-                    ${isActive
-                      ? "bg-primary-100 text-primary-600"
-                      : "text-slate-600 hover:bg-primary-50 hover:text-primary-500"
-                    }
-                  `}
-                >
-                  <span className="emoji-icon">{item.icon}</span>
-                  <span className="hidden sm:inline">{item.label}</span>
-                </Link>
-              );
-            })}
-          </nav>
+          <div className="flex items-center gap-2">
+            <nav className="flex items-center gap-1">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`
+                      flex items-center gap-1.5 px-4 py-2 rounded-xl
+                      text-sm font-medium transition-all duration-200
+                      ${isActive
+                        ? "bg-primary-100 text-primary-600"
+                        : "text-slate-600 hover:bg-primary-50 hover:text-primary-500"
+                      }
+                    `}
+                  >
+                    <span className="emoji-icon">{item.icon}</span>
+                    <span className="hidden sm:inline">{item.label}</span>
+                  </Link>
+                );
+              })}
+            </nav>
+            <UserMenu />
+          </div>
         </div>
       </div>
     </header>
