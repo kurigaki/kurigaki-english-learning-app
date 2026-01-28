@@ -79,6 +79,10 @@ export default function WordDetailPage() {
         // 単語帳画面に戻る
         router.push("/word-list");
         break;
+      case "bookmarks":
+        // ブックマーク画面に戻る
+        router.push("/bookmarks");
+        break;
       default:
         // それ以外はブラウザの履歴を使用
         router.back();
@@ -98,6 +102,8 @@ export default function WordDetailPage() {
         return "苦手単語に戻る";
       case "wordlist":
         return "単語帳に戻る";
+      case "bookmarks":
+        return "ブックマークに戻る";
       default:
         return "戻る";
     }
