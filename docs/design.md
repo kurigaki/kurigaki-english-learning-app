@@ -344,6 +344,7 @@ type QuizResultState = {
 | 学習履歴（苦手単語タブ） | 苦手単語リスト | ✅ |
 | 学習履歴（履歴タブ） | 回答履歴リスト | ✅ |
 | 苦手単語一覧 | 単語リスト | ✅ |
+| ブックマーク一覧 | ブックマーク済み単語リスト | ✅ |
 | スピードチャレンジリザルト | 正解/不正解単語リスト | ✅ |
 | 単語帳 | 単語一覧 | ✅ |
 | ホーム | 今日の単語など | 🔜 |
@@ -351,12 +352,13 @@ type QuizResultState = {
 ### 遷移パターン
 
 ```
-/quiz（リザルト）      → /word/[id]?from=quiz     → /quiz（リザルトに復帰）
-/history（苦手単語）   → /word/[id]?from=history  → /history
-/history（履歴）       → /word/[id]?from=history  → /history
-/weak-words           → /word/[id]?from=weak     → /weak-words
-/speed-challenge      → /word/[id]?from=speed    → /speed-challenge
-/word-list           → /word/[id]?from=wordlist  → /word-list
+/quiz（リザルト）      → /word/[id]?from=quiz      → /quiz（リザルトに復帰）
+/history（苦手単語）   → /word/[id]?from=history   → /history
+/history（履歴）       → /word/[id]?from=history   → /history
+/weak-words           → /word/[id]?from=weak      → /weak-words
+/bookmarks            → /word/[id]?from=bookmarks → /bookmarks
+/speed-challenge      → /word/[id]?from=speed     → /speed-challenge
+/word-list           → /word/[id]?from=wordlist   → /word-list
 ```
 
 #### `from`クエリパラメータの動作
@@ -367,6 +369,7 @@ type QuizResultState = {
 | speed | /speed-challenge | リザルトに戻る |
 | history | /history | 学習履歴に戻る |
 | weak | /weak-words | 苦手単語に戻る |
+| bookmarks | /bookmarks | ブックマークに戻る |
 | wordlist | /word-list | 単語帳に戻る |
 | (なし) | router.back() | 戻る |
 
@@ -564,7 +567,8 @@ const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLeve
 
 | 機能 | 説明 | 実装場所 |
 |------|------|----------|
-| ブックマーク追加/解除 | 単語をお気に入りに登録/解除 | 単語帳・単語詳細 |
+| ブックマーク追加/解除 | 単語をお気に入りに登録/解除 | 単語帳・単語詳細・ブックマーク一覧 |
+| ブックマーク一覧 | ブックマーク済み単語を一覧表示 | /bookmarks |
 | ブックマークフィルター | ブックマーク済み単語のみ表示 | 単語帳 |
 | ブックマーク数表示 | 現在のブックマーク数を表示 | 単語帳 |
 
@@ -597,6 +601,41 @@ toggleBookmark(wordId: number): boolean // 切り替え（新状態を返す）
 
 - ヘッダー右上に「保存」ボタン
 - 保存済みの場合は「保存済み」表示（黄色背景）
+
+#### ブックマーク一覧画面 (`/bookmarks`)
+
+ブックマーク済み単語を一覧で確認・管理できる専用画面。
+
+**レイアウト**: Viewport-Fit Layout パターン
+
+**画面構成**:
+
+| エリア | 内容 |
+|--------|------|
+| 上部固定 | ヘッダー（タイトル「ブックマーク」、単語数） |
+| 上部固定 | ソートボタン（登録順/名前順/難易度順） |
+| 中央スクロール | ブックマーク単語リスト |
+| 下部固定 | クイズ誘導カード |
+
+**各単語の表示項目**:
+- 難易度バッジ（Lv.1〜4）
+- 単語名・意味
+- カテゴリ
+- 読み上げボタン（SpeakButton）
+- ブックマーク解除ボタン（🔖アイコン）
+- 詳細遷移矢印
+
+**ソートオプション**:
+- 登録順（デフォルト）: 最後にブックマークした順
+- 名前順: アルファベット昇順
+- 難易度順: Lv.1 → Lv.4
+
+**空の場合**:
+- メッセージ「ブックマークがありません」
+- 単語帳への誘導ボタン
+
+**遷移**:
+- `/bookmarks` → `/word/[id]?from=bookmarks` → `/bookmarks`
 
 ---
 
@@ -948,6 +987,7 @@ type SpeedChallengeResult = {
 | 単語帳 | /word-list | ✅ |
 | 学習履歴 | /history | ✅ |
 | 苦手単語 | /weak-words | ✅ |
+| ブックマーク | /bookmarks | ✅ |
 | 実績 | /achievements | ✅ |
 
 **CSS構造:**
