@@ -333,6 +333,69 @@ export default function QuizPage() {
   const [showPerfectScore, setShowPerfectScore] = useState(false);
   const [isRestoredFromSession, setIsRestoredFromSession] = useState(false);
 
+  // 次の問題へ進む / クイズ終了処理
+  const handleNext = useCallback(() => {
+    if (currentIndex + 1 >= questions.length) {
+      // セッション完了時にXP・レベル・ストリークを記録
+      const previousUserData = storage.getUserData();
+      const previousLevel = previousUserData.level;
+      const previousStreak = previousUserData.streak;
+      const updatedUserData = storage.recordStudySession(score, maxCombo);
+      const dailyProgress = storage.getDailyProgress(updatedUserData);
+
+      const earnedXp = (score * 10) + (maxCombo * 5); // XP_PER_CORRECT + combo bonus
+
+      // 実績チェック
+      const totalQuestions = storage.getRecords().length;
+      const masteredWords = storage.getMasteredWordCount();
+      const newAchievementIds = storage.checkAndUnlockAchievements({
+        totalQuestions,
+        maxCombo,
+        streak: updatedUserData.streak,
+        masteredWords,
+        level: updatedUserData.level,
+      });
+
+      const newAchievements = newAchievementIds
+        .map((id) => getAchievementById(id))
+        .filter((a): a is Achievement => a !== undefined);
+
+      // 実績ポップアップ表示用にキュー
+      if (newAchievements.length > 0) {
+        setPendingAchievements(newAchievements);
+        setShowingAchievement(newAchievements[0]);
+      }
+
+      const result: SessionResult = {
+        earnedXp,
+        newLevel: updatedUserData.level,
+        previousLevel,
+        streak: updatedUserData.streak,
+        previousStreak,
+        dailyProgress: {
+          current: dailyProgress.current,
+          goal: dailyProgress.goal,
+          completed: dailyProgress.completed,
+        },
+        newAchievementIds,
+      };
+
+      setSessionResult(result);
+      setIsFinished(true);
+      setPhase("result");
+
+      // 全問正解の場合はパーフェクトスコアポップアップを表示
+      if (score === questions.length) {
+        setShowPerfectScore(true);
+      }
+    } else {
+      setCurrentIndex((prev) => prev + 1);
+      setSelected(null);
+      setIsCorrect(null);
+      setShowTranslation(false);
+    }
+  }, [currentIndex, questions.length, score, maxCombo]);
+
   // Enterキーで「次の問題へ」進む
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -500,68 +563,6 @@ export default function QuizPage() {
       correct,
     });
   };
-
-  const handleNext = useCallback(() => {
-    if (currentIndex + 1 >= questions.length) {
-      // セッション完了時にXP・レベル・ストリークを記録
-      const previousUserData = storage.getUserData();
-      const previousLevel = previousUserData.level;
-      const previousStreak = previousUserData.streak;
-      const updatedUserData = storage.recordStudySession(score, maxCombo);
-      const dailyProgress = storage.getDailyProgress(updatedUserData);
-
-      const earnedXp = (score * 10) + (maxCombo * 5); // XP_PER_CORRECT + combo bonus
-
-      // 実績チェック
-      const totalQuestions = storage.getRecords().length;
-      const masteredWords = storage.getMasteredWordCount();
-      const newAchievementIds = storage.checkAndUnlockAchievements({
-        totalQuestions,
-        maxCombo,
-        streak: updatedUserData.streak,
-        masteredWords,
-        level: updatedUserData.level,
-      });
-
-      const newAchievements = newAchievementIds
-        .map((id) => getAchievementById(id))
-        .filter((a): a is Achievement => a !== undefined);
-
-      // 実績ポップアップ表示用にキュー
-      if (newAchievements.length > 0) {
-        setPendingAchievements(newAchievements);
-        setShowingAchievement(newAchievements[0]);
-      }
-
-      const result: SessionResult = {
-        earnedXp,
-        newLevel: updatedUserData.level,
-        previousLevel,
-        streak: updatedUserData.streak,
-        previousStreak,
-        dailyProgress: {
-          current: dailyProgress.current,
-          goal: dailyProgress.goal,
-          completed: dailyProgress.completed,
-        },
-        newAchievementIds,
-      };
-
-      setSessionResult(result);
-      setIsFinished(true);
-      setPhase("result");
-
-      // 全問正解の場合はパーフェクトスコアポップアップを表示
-      if (score === questions.length) {
-        setShowPerfectScore(true);
-      }
-    } else {
-      setCurrentIndex((prev) => prev + 1);
-      setSelected(null);
-      setIsCorrect(null);
-      setShowTranslation(false);
-    }
-  }, [currentIndex, questions.length, score, maxCombo]);
 
   const handleAchievementClose = () => {
     const remaining = pendingAchievements.slice(1);
