@@ -10,6 +10,7 @@ export const Header = () => {
     { href: "/", label: "ホーム", icon: "🏠" },
     { href: "/quiz", label: "クイズ", icon: "📝" },
     { href: "/speed-challenge", label: "スピード", icon: "⚡" },
+    { href: "/word-list", label: "単語帳", icon: "📖" },
     { href: "/achievements", label: "実績", icon: "🏆" },
     { href: "/history", label: "履歴", icon: "📊" },
     { href: "/bookmarks", label: "ブックマーク", icon: "🔖" },

@@ -257,6 +257,30 @@ export default function Home() {
             </Link>
           </Card>
 
+          {/* 単語帳 */}
+          <Card hover className="group border-2 border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50">
+            <Link href="/word-list" className="block">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform">
+                  📖
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-slate-800 mb-1">
+                    単語帳
+                  </h3>
+                  <p className="text-slate-500 text-sm">
+                    {words.length}語の単語を検索・閲覧
+                  </p>
+                </div>
+                <div className="text-emerald-400 group-hover:translate-x-1 transition-transform">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </Card>
+
           {/* 苦手単語 */}
           <Card hover className="group border-2 border-red-200 bg-gradient-to-r from-red-50 to-orange-50">
             <Link href="/weak-words" className="block">
