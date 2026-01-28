@@ -12,6 +12,7 @@ export const Header = () => {
     { href: "/speed-challenge", label: "スピード", icon: "⚡" },
     { href: "/achievements", label: "実績", icon: "🏆" },
     { href: "/history", label: "履歴", icon: "📊" },
+    { href: "/bookmarks", label: "ブックマーク", icon: "🔖" },
   ];
 
   return (

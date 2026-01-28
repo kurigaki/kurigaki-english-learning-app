@@ -21,6 +21,7 @@ export default function Home() {
   const [speedHighScore, setSpeedHighScore] = useState(0);
   const [recentAchievements, setRecentAchievements] = useState<(Achievement & { unlockedAt: string })[]>([]);
   const [achievementProgress, setAchievementProgress] = useState({ unlocked: 0, total: 0 });
+  const [bookmarkCount, setBookmarkCount] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -62,6 +63,9 @@ export default function Home() {
       unlocked: unlocked.length,
       total: ACHIEVEMENTS.length,
     });
+
+    // ブックマーク数
+    setBookmarkCount(storage.getBookmarkedWordIds().length);
   }, []);
 
   return (
@@ -269,6 +273,32 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="text-red-400 group-hover:translate-x-1 transition-transform">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </Card>
+
+          {/* ブックマーク */}
+          <Card hover className="group border-2 border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
+            <Link href="/bookmarks" className="block">
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform">
+                  🔖
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-slate-800 mb-1">
+                    ブックマーク
+                  </h3>
+                  <p className="text-slate-500 text-sm">
+                    {bookmarkCount > 0
+                      ? `${bookmarkCount}語を保存中`
+                      : "気になる単語を保存しよう"}
+                  </p>
+                </div>
+                <div className="text-amber-400 group-hover:translate-x-1 transition-transform">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
