@@ -17,6 +17,7 @@ import type {
   ProfileUpdateData,
 } from "@/types/auth";
 import { getAuthErrorMessage } from "@/types/auth";
+import { syncLocalDataToSupabase, isSyncCompleted } from "./data-sync";
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
@@ -28,6 +29,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isSyncing, setIsSyncing] = useState(false);
 
   // プロフィールを取得
   const fetchProfile = useCallback(
@@ -117,6 +119,21 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }
 
         setProfile(userProfile);
+
+        // ログイン時にlocalStorageのデータをSupabaseに同期
+        if (event === "SIGNED_IN" && !isSyncCompleted(session.user.id)) {
+          setIsSyncing(true);
+          try {
+            const result = await syncLocalDataToSupabase(session.user.id);
+            if (!result.success && result.error) {
+              console.warn("データ同期に失敗しました:", result.error);
+            }
+          } catch (error) {
+            console.error("データ同期エラー:", error);
+          } finally {
+            setIsSyncing(false);
+          }
+        }
       } else {
         setUser(null);
         setProfile(null);
@@ -266,7 +283,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
           profile,
         }
       : null,
-    isLoading,
+    isLoading: isLoading || isSyncing,
     isAuthenticated: Boolean(user),
     signIn,
     signUp,
