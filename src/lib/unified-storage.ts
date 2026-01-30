@@ -1,13 +1,14 @@
 /**
  * 統合ストレージモジュール
- * ログイン中: Supabaseを使用（端末間同期）
- * 未ログイン: localStorageを使用（端末ローカル）
+ * ログイン中 & 同期完了: Supabaseを使用（端末間同期）
+ * 未ログイン or 同期未完了: localStorageを使用（端末ローカル）
  * 接続エラー時: localStorageにフォールバック
  */
 
 import { getCurrentUserId, isLoggedIn } from "./user-session";
 import { storage } from "./storage";
 import { supabaseStorage } from "./supabase/database";
+import { isSyncCompleted } from "./data-sync";
 import type { UserData, WordStats } from "./storage";
 import type {
   LearningRecord,
@@ -18,6 +19,22 @@ import type {
 import { ACHIEVEMENTS } from "@/data/achievements";
 
 /**
+ * Supabaseを使用すべきかどうかを判定
+ * ログイン中かつ同期完了済みの場合のみSupabaseを使用
+ */
+function shouldUseSupabase(): boolean {
+  const userId = getCurrentUserId();
+  if (!userId) return false;
+
+  // 同期が完了していない場合はlocalStorageを使用
+  if (!isSyncCompleted(userId)) {
+    return false;
+  }
+
+  return true;
+}
+
+/**
  * Supabase操作をラップしてエラー時にlocalStorageにフォールバック
  */
 async function withFallback<T>(
@@ -25,8 +42,8 @@ async function withFallback<T>(
   localOp: () => T,
   operationName: string
 ): Promise<T> {
-  const userId = getCurrentUserId();
-  if (!userId) {
+  // Supabaseを使用すべきでない場合はlocalStorageを使用
+  if (!shouldUseSupabase()) {
     return localOp();
   }
 
@@ -74,7 +91,7 @@ export const unifiedStorage = {
 
   clearRecords: async (): Promise<void> => {
     const userId = getCurrentUserId();
-    if (userId) {
+    if (userId && shouldUseSupabase()) {
       try {
         await supabaseStorage.clearRecords(userId);
         return;
@@ -144,7 +161,7 @@ export const unifiedStorage = {
 
   saveUserData: async (userData: UserData): Promise<void> => {
     const userId = getCurrentUserId();
-    if (userId) {
+    if (userId && shouldUseSupabase()) {
       try {
         await supabaseStorage.saveUserData(userId, userData);
         return;
@@ -161,11 +178,12 @@ export const unifiedStorage = {
     comboBonus: number = 0
   ): Promise<UserData> => {
     const userId = getCurrentUserId();
+    const useSupabase = shouldUseSupabase();
 
     // まず現在のユーザーデータを取得
     let userData: UserData;
     try {
-      userData = userId
+      userData = (userId && useSupabase)
         ? await supabaseStorage.getUserData(userId)
         : storage.getUserData();
     } catch (error) {
@@ -219,7 +237,7 @@ export const unifiedStorage = {
     userData.lastStudyDate = today;
 
     // 保存
-    if (userId) {
+    if (userId && useSupabase) {
       try {
         await supabaseStorage.saveUserData(userId, userData);
       } catch (error) {
@@ -434,7 +452,7 @@ export const unifiedStorage = {
 
   addBookmark: async (wordId: number): Promise<void> => {
     const userId = getCurrentUserId();
-    if (userId) {
+    if (userId && shouldUseSupabase()) {
       try {
         await supabaseStorage.addBookmark(userId, wordId);
         return;
@@ -447,7 +465,7 @@ export const unifiedStorage = {
 
   removeBookmark: async (wordId: number): Promise<void> => {
     const userId = getCurrentUserId();
-    if (userId) {
+    if (userId && shouldUseSupabase()) {
       try {
         await supabaseStorage.removeBookmark(userId, wordId);
         return;
