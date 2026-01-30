@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { words, Word, Category, categoryLabels } from "@/data/words";
-import { storage } from "@/lib/storage";
+import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
@@ -155,7 +155,11 @@ function generateQuestion(word: Word, allWords: Word[]): Question {
 }
 
 // 設定に基づいて単語をフィルタリング
-function filterWordsBySettings(allWords: Word[], settings: QuizSettings): Word[] {
+function filterWordsBySettings(
+  allWords: Word[],
+  settings: QuizSettings,
+  bookmarkedIds: number[]
+): Word[] {
   let filtered = allWords;
 
   // カテゴリフィルター
@@ -170,7 +174,6 @@ function filterWordsBySettings(allWords: Word[], settings: QuizSettings): Word[]
 
   // ブックマークのみ
   if (settings.includeBookmarksOnly) {
-    const bookmarkedIds = storage.getBookmarkedWordIds();
     filtered = filtered.filter((w) => bookmarkedIds.includes(w.id));
   }
 
@@ -184,9 +187,13 @@ const SESSION_COMPOSITION = {
   reviewWords: 0.3,  // 復習単語 30%
 };
 
-function generateSessionQuestions(targetWords: Word[], allWords: Word[], count: number): Question[] {
-  const weakWordIds = storage.getWeakWords(70);
-  const studiedWordIds = storage.getStudiedWordIds();
+function generateSessionQuestions(
+  targetWords: Word[],
+  allWords: Word[],
+  count: number,
+  weakWordIds: number[],
+  studiedWordIds: number[]
+): Question[] {
 
   // targetWordsからカテゴリ別に単語を分類
   const weakWords = targetWords.filter((w) => weakWordIds.includes(w.id));
@@ -333,22 +340,43 @@ export default function QuizPage() {
   const [showPerfectScore, setShowPerfectScore] = useState(false);
   const [isRestoredFromSession, setIsRestoredFromSession] = useState(false);
 
+  // ストレージから取得するデータの状態
+  const [bookmarkedIds, setBookmarkedIds] = useState<number[]>([]);
+  const [weakWordIds, setWeakWordIds] = useState<number[]>([]);
+  const [studiedWordIds, setStudiedWordIds] = useState<number[]>([]);
+
+  // 初期データをロード
+  useEffect(() => {
+    const loadData = async () => {
+      const [bookmarks, weaks, studied] = await Promise.all([
+        unifiedStorage.getBookmarkedWordIds(),
+        unifiedStorage.getWeakWords(70),
+        unifiedStorage.getStudiedWordIds(),
+      ]);
+      setBookmarkedIds(bookmarks);
+      setWeakWordIds(weaks);
+      setStudiedWordIds(studied);
+    };
+    loadData();
+  }, []);
+
   // 次の問題へ進む / クイズ終了処理
-  const handleNext = useCallback(() => {
+  const handleNext = useCallback(async () => {
     if (currentIndex + 1 >= questions.length) {
       // セッション完了時にXP・レベル・ストリークを記録
-      const previousUserData = storage.getUserData();
+      const previousUserData = await unifiedStorage.getUserData();
       const previousLevel = previousUserData.level;
       const previousStreak = previousUserData.streak;
-      const updatedUserData = storage.recordStudySession(score, maxCombo);
-      const dailyProgress = storage.getDailyProgress(updatedUserData);
+      const updatedUserData = await unifiedStorage.recordStudySession(score, maxCombo);
+      const dailyProgress = unifiedStorage.getDailyProgress(updatedUserData);
 
       const earnedXp = (score * 10) + (maxCombo * 5); // XP_PER_CORRECT + combo bonus
 
       // 実績チェック
-      const totalQuestions = storage.getRecords().length;
-      const masteredWords = storage.getMasteredWordCount();
-      const newAchievementIds = storage.checkAndUnlockAchievements({
+      const records = await unifiedStorage.getRecords();
+      const totalQuestions = records.length;
+      const masteredWords = await unifiedStorage.getMasteredWordCount();
+      const newAchievementIds = await unifiedStorage.checkAndUnlockAchievements({
         totalQuestions,
         maxCombo,
         streak: updatedUserData.streak,
@@ -482,7 +510,7 @@ export default function QuizPage() {
     clearQuizResultState();
 
     // 設定に基づいて単語をフィルタリング
-    const targetWords = filterWordsBySettings(words, settings);
+    const targetWords = filterWordsBySettings(words, settings, bookmarkedIds);
 
     // フィルター後の単語数が少なすぎる場合の対応
     const questionCount = Math.min(QUESTIONS_PER_SESSION, targetWords.length);
@@ -493,7 +521,7 @@ export default function QuizPage() {
       return;
     }
 
-    const newQuestions = generateSessionQuestions(targetWords, words, questionCount);
+    const newQuestions = generateSessionQuestions(targetWords, words, questionCount, weakWordIds, studiedWordIds);
     setQuestions(newQuestions);
     setQuizSettings(settings);
     setPhase("quiz");
@@ -511,7 +539,7 @@ export default function QuizPage() {
     setShowPerfectScore(false);
     // 自動再生済みの記録をリセット
     hasAutoPlayedRef.current = new Set();
-  }, []);
+  }, [bookmarkedIds, weakWordIds, studiedWordIds]);
 
   // 初回ロード時：復元されていない場合はsetup画面を表示
   useEffect(() => {
@@ -555,7 +583,7 @@ export default function QuizPage() {
       setCombo(0);
     }
 
-    storage.addRecord({
+    unifiedStorage.addRecord({
       wordId: currentQuestion.word.id,
       word: currentQuestion.word.word,
       meaning: currentQuestion.word.meaning,
@@ -576,8 +604,8 @@ export default function QuizPage() {
 
   // 設定画面
   if (phase === "setup") {
-    const bookmarkedCount = storage.getBookmarkedWordIds().length;
-    const filteredPreview = filterWordsBySettings(words, quizSettings);
+    const bookmarkedCount = bookmarkedIds.length;
+    const filteredPreview = filterWordsBySettings(words, quizSettings, bookmarkedIds);
 
     return (
       <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">

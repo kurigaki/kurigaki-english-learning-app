@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Card, StatsCard } from "@/components/ui";
-import { storage } from "@/lib/storage";
+import { unifiedStorage } from "@/lib/unified-storage";
 import { words } from "@/data/words";
 import { Achievement } from "@/types";
 import { ACHIEVEMENTS, getAchievementById } from "@/data/achievements";
@@ -26,46 +26,54 @@ export default function Home() {
 
   useEffect(() => {
     setIsMounted(true);
-    const records = storage.getRecords();
-    const correct = records.filter((r) => r.correct).length;
-    setStats({
-      total: records.length,
-      correct,
-      rate: records.length > 0 ? Math.round((correct / records.length) * 100) : 0,
-    });
 
-    // ユーザーデータを取得
-    const userData = storage.getUserData();
-    setUserProgress({
-      level: userData.level,
-      streak: userData.streak,
-      xpProgress: storage.getXpProgress(userData),
-      dailyProgress: storage.getDailyProgress(userData),
-    });
+    const loadData = async () => {
+      // 学習記録を取得
+      const records = await unifiedStorage.getRecords();
+      const correct = records.filter((r) => r.correct).length;
+      setStats({
+        total: records.length,
+        correct,
+        rate: records.length > 0 ? Math.round((correct / records.length) * 100) : 0,
+      });
 
-    // スピードチャレンジのハイスコア
-    setSpeedHighScore(storage.getSpeedChallengeHighScore());
+      // ユーザーデータを取得
+      const userData = await unifiedStorage.getUserData();
+      setUserProgress({
+        level: userData.level,
+        streak: userData.streak,
+        xpProgress: unifiedStorage.getXpProgress(userData),
+        dailyProgress: unifiedStorage.getDailyProgress(userData),
+      });
 
-    // 最近獲得した実績（最新3件）
-    const unlocked = storage.getUnlockedAchievements();
-    const recentWithDetails = unlocked
-      .sort((a, b) => new Date(b.unlockedAt).getTime() - new Date(a.unlockedAt).getTime())
-      .slice(0, 3)
-      .map((ua) => {
-        const achievement = getAchievementById(ua.achievementId);
-        return achievement ? { ...achievement, unlockedAt: ua.unlockedAt } : null;
-      })
-      .filter((a): a is Achievement & { unlockedAt: string } => a !== null);
-    setRecentAchievements(recentWithDetails);
+      // スピードチャレンジのハイスコア
+      const highScore = await unifiedStorage.getSpeedChallengeHighScore();
+      setSpeedHighScore(highScore);
 
-    // 実績進捗
-    setAchievementProgress({
-      unlocked: unlocked.length,
-      total: ACHIEVEMENTS.length,
-    });
+      // 最近獲得した実績（最新3件）
+      const unlocked = await unifiedStorage.getUnlockedAchievements();
+      const recentWithDetails = unlocked
+        .sort((a, b) => new Date(b.unlockedAt).getTime() - new Date(a.unlockedAt).getTime())
+        .slice(0, 3)
+        .map((ua) => {
+          const achievement = getAchievementById(ua.achievementId);
+          return achievement ? { ...achievement, unlockedAt: ua.unlockedAt } : null;
+        })
+        .filter((a): a is Achievement & { unlockedAt: string } => a !== null);
+      setRecentAchievements(recentWithDetails);
 
-    // ブックマーク数
-    setBookmarkCount(storage.getBookmarkedWordIds().length);
+      // 実績進捗
+      setAchievementProgress({
+        unlocked: unlocked.length,
+        total: ACHIEVEMENTS.length,
+      });
+
+      // ブックマーク数
+      const bookmarks = await unifiedStorage.getBookmarkedWordIds();
+      setBookmarkCount(bookmarks.length);
+    };
+
+    loadData();
   }, []);
 
   return (

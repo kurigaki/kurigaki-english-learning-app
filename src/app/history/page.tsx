@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { storage, WordStats } from "@/lib/storage";
+import { unifiedStorage } from "@/lib/unified-storage";
+import type { WordStats } from "@/lib/storage";
 import { LearningRecord, QuestionType } from "@/types";
 import { words } from "@/data/words";
 import { Card, StatsCard, Button, SpeakButton } from "@/components/ui";
@@ -21,9 +22,13 @@ export default function HistoryPage() {
 
   useEffect(() => {
     setIsMounted(true);
-    const data = storage.getRecords();
-    setRecords([...data].reverse());
-    setWordStats(storage.getWordStats());
+    const loadData = async () => {
+      const data = await unifiedStorage.getRecords();
+      setRecords([...data].reverse());
+      const stats = await unifiedStorage.getWordStats();
+      setWordStats(stats);
+    };
+    loadData();
   }, []);
 
   const todayStats = useMemo(() => {
@@ -388,7 +393,7 @@ export default function HistoryPage() {
               size="sm"
               onClick={() => {
                 if (confirm("学習履歴をすべて削除しますか？")) {
-                  storage.clearRecords();
+                  unifiedStorage.clearRecords();
                   setRecords([]);
                   setWordStats(new Map());
                 }

@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { words, Word } from "@/data/words";
-import { storage } from "@/lib/storage";
+import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, Button, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
@@ -125,8 +125,11 @@ export default function SpeedChallengePage() {
 
   // ハイスコア取得とセッション復元
   useEffect(() => {
-    const hs = storage.getSpeedChallengeHighScore();
-    setHighScore(hs);
+    const loadHighScore = async () => {
+      const hs = await unifiedStorage.getSpeedChallengeHighScore();
+      setHighScore(hs);
+    };
+    loadHighScore();
 
     // 保存されたリザルト状態を復元（単語詳細から戻ってきた場合）
     const savedState = getSpeedResultState();
@@ -140,7 +143,7 @@ export default function SpeedChallengePage() {
     }
   }, []);
 
-  const endGame = useCallback(() => {
+  const endGame = useCallback(async () => {
     const finalScore = scoreRef.current;
     const finalTotal = totalQuestionsRef.current;
     const finalAnsweredWords = answeredWordsRef.current;
@@ -148,7 +151,7 @@ export default function SpeedChallengePage() {
     setGameState("finished");
 
     // 結果を保存
-    storage.addSpeedChallengeResult({
+    await unifiedStorage.addSpeedChallengeResult({
       score: finalScore,
       correctCount: finalScore,
       totalQuestions: finalTotal,
@@ -156,7 +159,7 @@ export default function SpeedChallengePage() {
     });
 
     // ハイスコアチェック
-    const prevHighScore = storage.getSpeedChallengeHighScore();
+    const prevHighScore = await unifiedStorage.getSpeedChallengeHighScore();
     const newHighScore = finalScore > prevHighScore;
     if (newHighScore) {
       setIsNewHighScore(true);
@@ -173,7 +176,7 @@ export default function SpeedChallengePage() {
     });
 
     // 実績チェック
-    const newAchievementIds = storage.checkAndUnlockAchievements({
+    const newAchievementIds = await unifiedStorage.checkAndUnlockAchievements({
       speedScore: finalScore,
       isSpeedChallenge: true,
     });
