@@ -14,6 +14,37 @@ function getToday(): string {
   return new Date().toISOString().split("T")[0];
 }
 
+/**
+ * Supabaseエラーがフォールバックすべきエラーかどうかを判定
+ * テーブルが存在しない、接続エラーなどはフォールバックすべき
+ */
+function shouldFallback(error: { code?: string; message?: string }): boolean {
+  // テーブルが存在しない
+  if (error.code === "PGRST205" || error.code === "42P01") return true;
+  // 接続エラー
+  if (error.message?.includes("Failed to fetch")) return true;
+  if (error.message?.includes("NetworkError")) return true;
+  if (error.message?.includes("connection")) return true;
+  // その他のPostgRESTエラー（スキーマ関連）
+  if (error.code?.startsWith("PGRST")) return true;
+  return false;
+}
+
+/**
+ * Supabaseエラーを処理し、必要に応じて例外をthrow
+ */
+function handleSupabaseError(
+  error: { code?: string; message?: string },
+  operationName: string
+): void {
+  if (shouldFallback(error)) {
+    console.warn(`[SupabaseStorage] ${operationName} failed, will fallback:`, error);
+    throw new Error(`Supabase operation failed: ${operationName} - ${error.message || error.code}`);
+  }
+  // それ以外のエラーはログのみ（データなしなど）
+  console.error(`[SupabaseStorage] ${operationName} error:`, error);
+}
+
 // LearningRecord型（Supabaseから取得した後の変換用）
 export type LearningRecord = {
   id: string;
@@ -75,12 +106,13 @@ function toLocalSpeedResult(data: DbSpeedChallengeResult): SpeedChallengeResult 
 
 /**
  * Supabaseストレージ操作
+ * エラー時はthrowしてunified-storageのフォールバックを発動させる
  */
 export const supabaseStorage = {
   // 学習記録
   async getRecords(userId: string): Promise<LearningRecord[]> {
     const supabase = getSupabaseClient();
-    if (!supabase) return [];
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("learning_records")
@@ -89,8 +121,8 @@ export const supabaseStorage = {
       .order("studied_at", { ascending: false });
 
     if (error) {
-      console.error("学習記録の取得に失敗:", error);
-      return [];
+      handleSupabaseError(error, "getRecords");
+      return []; // フォールバック不要なエラーの場合は空配列を返す
     }
 
     return ((data || []) as DbLearningRecord[]).map(toLocalRecord);
@@ -107,7 +139,7 @@ export const supabaseStorage = {
     }
   ): Promise<LearningRecord | null> {
     const supabase = getSupabaseClient();
-    if (!supabase) return null;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("learning_records")
@@ -123,7 +155,7 @@ export const supabaseStorage = {
       .single();
 
     if (error) {
-      console.error("学習記録の追加に失敗:", error);
+      handleSupabaseError(error, "addRecord");
       return null;
     }
 
@@ -132,7 +164,7 @@ export const supabaseStorage = {
 
   async clearRecords(userId: string): Promise<boolean> {
     const supabase = getSupabaseClient();
-    if (!supabase) return false;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { error } = await supabase
       .from("learning_records")
@@ -140,7 +172,7 @@ export const supabaseStorage = {
       .eq("user_id", userId);
 
     if (error) {
-      console.error("学習記録の削除に失敗:", error);
+      handleSupabaseError(error, "clearRecords");
       return false;
     }
 
@@ -224,7 +256,7 @@ export const supabaseStorage = {
       todayDate: null,
     };
 
-    if (!supabase) return defaultData;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("user_data")
@@ -233,12 +265,18 @@ export const supabaseStorage = {
       .single();
 
     if (error) {
+      // データが存在しない場合は作成を試みる
       if (error.code === "PGRST116") {
-        // データが存在しない場合は作成
-        await supabaseStorage.saveUserData(userId, defaultData);
-        return defaultData;
+        try {
+          await supabaseStorage.saveUserData(userId, defaultData);
+          return defaultData;
+        } catch {
+          // saveも失敗した場合はフォールバックさせる
+          throw new Error("Failed to create user data");
+        }
       }
-      console.error("ユーザーデータの取得に失敗:", error);
+      // その他のエラーはフォールバック判定
+      handleSupabaseError(error, "getUserData");
       return defaultData;
     }
 
@@ -256,7 +294,7 @@ export const supabaseStorage = {
 
   async saveUserData(userId: string, userData: UserData): Promise<boolean> {
     const supabase = getSupabaseClient();
-    if (!supabase) return false;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { error } = await supabase.from("user_data").upsert(
       {
@@ -273,7 +311,7 @@ export const supabaseStorage = {
     );
 
     if (error) {
-      console.error("ユーザーデータの保存に失敗:", error);
+      handleSupabaseError(error, "saveUserData");
       return false;
     }
 
@@ -283,7 +321,7 @@ export const supabaseStorage = {
   // 実績
   async getUnlockedAchievements(userId: string): Promise<UnlockedAchievement[]> {
     const supabase = getSupabaseClient();
-    if (!supabase) return [];
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("unlocked_achievements")
@@ -291,7 +329,7 @@ export const supabaseStorage = {
       .eq("user_id", userId);
 
     if (error) {
-      console.error("実績の取得に失敗:", error);
+      handleSupabaseError(error, "getUnlockedAchievements");
       return [];
     }
 
@@ -303,7 +341,7 @@ export const supabaseStorage = {
     achievementId: string
   ): Promise<UnlockedAchievement | null> {
     const supabase = getSupabaseClient();
-    if (!supabase) return null;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("unlocked_achievements")
@@ -315,11 +353,11 @@ export const supabaseStorage = {
       .single();
 
     if (error) {
+      // 既に存在する場合は正常
       if (error.code === "23505") {
-        // 既に存在する場合
         return null;
       }
-      console.error("実績の解除に失敗:", error);
+      handleSupabaseError(error, "unlockAchievement");
       return null;
     }
 
@@ -331,7 +369,7 @@ export const supabaseStorage = {
     achievementId: string
   ): Promise<boolean> {
     const supabase = getSupabaseClient();
-    if (!supabase) return false;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("unlocked_achievements")
@@ -340,14 +378,19 @@ export const supabaseStorage = {
       .eq("achievement_id", achievementId)
       .single();
 
-    if (error) return false;
+    if (error) {
+      // PGRST116はデータなし（= 未解除）
+      if (error.code === "PGRST116") return false;
+      handleSupabaseError(error, "isAchievementUnlocked");
+      return false;
+    }
     return Boolean(data);
   },
 
   // スピードチャレンジ
   async getSpeedChallengeResults(userId: string): Promise<SpeedChallengeResult[]> {
     const supabase = getSupabaseClient();
-    if (!supabase) return [];
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("speed_challenge_results")
@@ -356,7 +399,7 @@ export const supabaseStorage = {
       .order("played_at", { ascending: false });
 
     if (error) {
-      console.error("スピードチャレンジ結果の取得に失敗:", error);
+      handleSupabaseError(error, "getSpeedChallengeResults");
       return [];
     }
 
@@ -368,7 +411,7 @@ export const supabaseStorage = {
     result: Omit<SpeedChallengeResult, "id" | "playedAt">
   ): Promise<SpeedChallengeResult | null> {
     const supabase = getSupabaseClient();
-    if (!supabase) return null;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("speed_challenge_results")
@@ -383,7 +426,7 @@ export const supabaseStorage = {
       .single();
 
     if (error) {
-      console.error("スピードチャレンジ結果の追加に失敗:", error);
+      handleSupabaseError(error, "addSpeedChallengeResult");
       return null;
     }
 
@@ -399,7 +442,7 @@ export const supabaseStorage = {
   // ブックマーク
   async getBookmarkedWordIds(userId: string): Promise<number[]> {
     const supabase = getSupabaseClient();
-    if (!supabase) return [];
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("bookmarks")
@@ -407,7 +450,7 @@ export const supabaseStorage = {
       .eq("user_id", userId);
 
     if (error) {
-      console.error("ブックマークの取得に失敗:", error);
+      handleSupabaseError(error, "getBookmarkedWordIds");
       return [];
     }
 
@@ -416,7 +459,7 @@ export const supabaseStorage = {
 
   async isWordBookmarked(userId: string, wordId: number): Promise<boolean> {
     const supabase = getSupabaseClient();
-    if (!supabase) return false;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { data, error } = await supabase
       .from("bookmarks")
@@ -425,13 +468,18 @@ export const supabaseStorage = {
       .eq("word_id", wordId)
       .single();
 
-    if (error) return false;
+    if (error) {
+      // PGRST116はデータなし（= ブックマークされていない）
+      if (error.code === "PGRST116") return false;
+      handleSupabaseError(error, "isWordBookmarked");
+      return false;
+    }
     return Boolean(data);
   },
 
   async addBookmark(userId: string, wordId: number): Promise<boolean> {
     const supabase = getSupabaseClient();
-    if (!supabase) return false;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { error } = await supabase.from("bookmarks").insert({
       user_id: userId,
@@ -439,11 +487,11 @@ export const supabaseStorage = {
     });
 
     if (error) {
+      // 既に存在する場合は正常
       if (error.code === "23505") {
-        // 既に存在する場合
         return true;
       }
-      console.error("ブックマークの追加に失敗:", error);
+      handleSupabaseError(error, "addBookmark");
       return false;
     }
 
@@ -452,7 +500,7 @@ export const supabaseStorage = {
 
   async removeBookmark(userId: string, wordId: number): Promise<boolean> {
     const supabase = getSupabaseClient();
-    if (!supabase) return false;
+    if (!supabase) throw new Error("Supabase client not available");
 
     const { error } = await supabase
       .from("bookmarks")
@@ -461,7 +509,7 @@ export const supabaseStorage = {
       .eq("word_id", wordId);
 
     if (error) {
-      console.error("ブックマークの削除に失敗:", error);
+      handleSupabaseError(error, "removeBookmark");
       return false;
     }
 
