@@ -1049,29 +1049,51 @@ type SpeedChallengeResult = {
 
 | 画面サイズ | 表示内容 |
 |-----------|---------|
-| **PC (md以上)** | 全ナビアイコンを横並び表示、ラベルはlg以上で表示 |
-| **スマホ (md未満)** | ハンバーガーメニューでナビゲーションを折りたたみ |
+| **PC (md以上)** | 主要ナビ5つ（ホーム、クイズ、スピード、単語帳、実績）を横並び表示、ラベルはlg以上で表示 |
+| **スマホ (md未満)** | ハンバーガーメニューで全ナビゲーションを折りたたみ |
 
-**ユーザーメニュー:**
+**ナビゲーションアイテムの分類:**
 
-| 状態 | 表示 |
-|------|------|
-| 未ログイン | 「ログイン」ボタン（青色、目立つデザイン） |
-| ログイン済み | アバター + 名前 + ドロップダウン矢印 |
+| 分類 | アイテム | 表示場所 |
+|------|---------|---------|
+| 主要ナビ | ホーム、クイズ、スピード、単語帳、実績 | PC: ヘッダー横並び / スマホ: ハンバーガーメニュー |
+| サブナビ | 履歴、ブックマーク、お知らせ | UserMenuドロップダウン内（常時） |
+
+**ユーザーメニュー（UserMenu）:**
+
+| 状態 | ボタン表示 | ドロップダウン内容 |
+|------|-----------|------------------|
+| 未ログイン | ユーザーアイコン + 矢印 | ログイン・新規登録ボタン + サブナビ（履歴・ブックマーク・お知らせ） |
+| ログイン済み | アバター + 矢印 | ユーザー情報 + プロフィール編集 + サブナビ + ログアウト |
 
 **CSS構造:**
 
 ```tsx
+// Header.tsx
+const primaryNavItems = [
+  { href: "/", label: "ホーム", icon: "🏠" },
+  { href: "/quiz", label: "クイズ", icon: "📝" },
+  { href: "/speed-challenge", label: "スピード", icon: "⚡" },
+  { href: "/word-list", label: "単語帳", icon: "📖" },
+  { href: "/achievements", label: "実績", icon: "🏆" },
+];
+
+const allNavItems = [
+  ...primaryNavItems,
+  { href: "/history", label: "履歴", icon: "📊" },
+  { href: "/bookmarks", label: "ブックマーク", icon: "🔖" },
+];
+
 {/* PC用ナビゲーション（md以上で表示） */}
 <div className="hidden md:flex items-center gap-2">
-  <nav>{/* ナビアイテム */}</nav>
+  <nav>{/* primaryNavItems */}</nav>
   <UserMenu />
 </div>
 
 {/* スマホ用（md未満で表示） */}
 <div className="flex md:hidden items-center gap-2">
   <UserMenu />
-  <button>{/* ハンバーガーメニュー */}</button>
+  <button>{/* ハンバーガーメニュー: allNavItems */}</button>
 </div>
 ```
 
