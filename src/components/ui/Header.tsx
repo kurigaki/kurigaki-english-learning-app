@@ -10,12 +10,18 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const navItems = [
+  // PC版ヘッダーに表示するナビ（優先度高）
+  const primaryNavItems = [
     { href: "/", label: "ホーム", icon: "🏠" },
     { href: "/quiz", label: "クイズ", icon: "📝" },
     { href: "/speed-challenge", label: "スピード", icon: "⚡" },
     { href: "/word-list", label: "単語帳", icon: "📖" },
     { href: "/achievements", label: "実績", icon: "🏆" },
+  ];
+
+  // スマホ版ハンバーガーメニューに表示する全ナビ
+  const allNavItems = [
+    ...primaryNavItems,
     { href: "/history", label: "履歴", icon: "📊" },
     { href: "/bookmarks", label: "ブックマーク", icon: "🔖" },
   ];
@@ -72,7 +78,7 @@ export const Header = () => {
           {/* PC用ナビゲーション（md以上で表示） */}
           <div className="hidden md:flex items-center gap-2">
             <nav className="flex items-center gap-1">
-              {navItems.map((item) => {
+              {primaryNavItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link
@@ -146,7 +152,7 @@ export const Header = () => {
             className="md:hidden mt-3 bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden"
           >
             <nav className="py-2">
-              {navItems.map((item) => {
+              {allNavItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link
