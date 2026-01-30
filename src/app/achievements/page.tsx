@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { UnlockedAchievement } from "@/types";
 import { ACHIEVEMENTS } from "@/data/achievements";
-import { storage } from "@/lib/storage";
+import { unifiedStorage } from "@/lib/unified-storage";
 import { AchievementList } from "@/components/features/achievements/AchievementList";
 import { ProgressBar } from "@/components/ui";
 
@@ -14,9 +14,12 @@ export default function AchievementsPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const unlocked = storage.getUnlockedAchievements();
-    setUnlockedAchievements(unlocked);
-    setIsLoading(false);
+    const loadData = async () => {
+      const unlocked = await unifiedStorage.getUnlockedAchievements();
+      setUnlockedAchievements(unlocked);
+      setIsLoading(false);
+    };
+    loadData();
   }, []);
 
   if (isLoading) {

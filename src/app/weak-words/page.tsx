@@ -4,7 +4,8 @@ import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
-import { storage, WordStats } from "@/lib/storage";
+import { unifiedStorage } from "@/lib/unified-storage";
+import type { WordStats } from "@/lib/storage";
 import { words, Word, categoryLabels } from "@/data/words";
 
 type WeakWord = Word & {
@@ -16,8 +17,8 @@ export default function WeakWordsPage() {
   const [sortBy, setSortBy] = useState<"accuracy" | "recent">("accuracy");
   const [isMounted, setIsMounted] = useState(false);
 
-  const loadWeakWords = useCallback(() => {
-    const statsMap = storage.getWordStats();
+  const loadWeakWords = useCallback(async () => {
+    const statsMap = await unifiedStorage.getWordStats();
     const weak: WeakWord[] = [];
 
     statsMap.forEach((stats, wordId) => {

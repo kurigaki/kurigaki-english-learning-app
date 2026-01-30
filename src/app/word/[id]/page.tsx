@@ -14,7 +14,7 @@ import {
   WordPlaceholderSection,
 } from "@/components/features/word-detail";
 import { categoryLabels, difficultyLabels } from "@/data/words";
-import { storage } from "@/lib/storage";
+import { unifiedStorage } from "@/lib/unified-storage";
 import { useEffect, useState } from "react";
 
 export default function WordDetailPage() {
@@ -37,21 +37,25 @@ export default function WordDetailPage() {
   // 学習履歴から記憶度を計算し、ブックマーク状態を取得
   useEffect(() => {
     if (!word) return;
-    const statsMap = storage.getWordStats();
-    const stats = statsMap.get(word.id);
-    if (stats) {
-      setMasteryData({
-        accuracy: stats.accuracy,
-        totalAttempts: stats.totalAttempts,
-      });
-    }
-    setIsBookmarked(storage.isWordBookmarked(word.id));
+    const loadData = async () => {
+      const statsMap = await unifiedStorage.getWordStats();
+      const stats = statsMap.get(word.id);
+      if (stats) {
+        setMasteryData({
+          accuracy: stats.accuracy,
+          totalAttempts: stats.totalAttempts,
+        });
+      }
+      const bookmarked = await unifiedStorage.isWordBookmarked(word.id);
+      setIsBookmarked(bookmarked);
+    };
+    loadData();
   }, [word]);
 
   // ブックマークの切り替え
-  const handleToggleBookmark = () => {
+  const handleToggleBookmark = async () => {
     if (!word) return;
-    const newState = storage.toggleBookmark(word.id);
+    const newState = await unifiedStorage.toggleBookmark(word.id);
     setIsBookmarked(newState);
   };
 

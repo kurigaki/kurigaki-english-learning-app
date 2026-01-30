@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { words, categoryLabels, Category } from "@/data/words";
-import { storage } from "@/lib/storage";
+import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, SpeakButton } from "@/components/ui";
 
 type MasteryLevel = "new" | "learning" | "familiar" | "mastered";
@@ -75,41 +75,44 @@ export default function WordListPage() {
   // Load word stats and bookmarks on mount
   useEffect(() => {
     setIsMounted(true);
-    const statsMap = storage.getWordStats();
-    const bookmarkedIds = storage.getBookmarkedWordIds();
+    const loadData = async () => {
+      const statsMap = await unifiedStorage.getWordStats();
+      const bookmarkedIds = await unifiedStorage.getBookmarkedWordIds();
 
-    const enrichedWords: WordWithStats[] = words.map((word) => {
-      const stats = statsMap.get(word.id);
-      const accuracy = stats?.accuracy ?? null;
-      const attempts = stats?.totalAttempts ?? 0;
+      const enrichedWords: WordWithStats[] = words.map((word) => {
+        const stats = statsMap.get(word.id);
+        const accuracy = stats?.accuracy ?? null;
+        const attempts = stats?.totalAttempts ?? 0;
 
-      return {
-        id: word.id,
-        word: word.word,
-        meaning: word.meaning,
-        category: word.category,
-        difficulty: word.difficulty,
-        mastery: getMasteryLevel(accuracy, attempts),
-        accuracy,
-        attempts,
-        isBookmarked: bookmarkedIds.includes(word.id),
-      };
-    });
+        return {
+          id: word.id,
+          word: word.word,
+          meaning: word.meaning,
+          category: word.category,
+          difficulty: word.difficulty,
+          mastery: getMasteryLevel(accuracy, attempts),
+          accuracy,
+          attempts,
+          isBookmarked: bookmarkedIds.includes(word.id),
+        };
+      });
 
-    setWordsWithStats(enrichedWords);
+      setWordsWithStats(enrichedWords);
+    };
+    loadData();
   }, []);
 
   // Toggle bookmark for a word
-  const toggleBookmark = (wordId: number, e: React.MouseEvent) => {
+  const toggleBookmark = useCallback(async (wordId: number, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    const newIsBookmarked = storage.toggleBookmark(wordId);
+    const newIsBookmarked = await unifiedStorage.toggleBookmark(wordId);
     setWordsWithStats((prev) =>
       prev.map((w) =>
         w.id === wordId ? { ...w, isBookmarked: newIsBookmarked } : w
       )
     );
-  };
+  }, []);
 
   // Filter words based on search, category, difficulty, and bookmarks
   const filteredWords = useMemo(() => {

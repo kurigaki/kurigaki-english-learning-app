@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
-import { storage } from "@/lib/storage";
+import { unifiedStorage } from "@/lib/unified-storage";
 import { words, Word, categoryLabels, difficultyLabels } from "@/data/words";
 
 type SortOption = "added" | "name" | "difficulty";
@@ -14,8 +14,8 @@ export default function BookmarksPage() {
   const [sortBy, setSortBy] = useState<SortOption>("added");
   const [isMounted, setIsMounted] = useState(false);
 
-  const loadBookmarks = useCallback(() => {
-    const bookmarkedIds = storage.getBookmarkedWordIds();
+  const loadBookmarks = useCallback(async () => {
+    const bookmarkedIds = await unifiedStorage.getBookmarkedWordIds();
     const bookmarked: Word[] = [];
 
     // IDの順序を保持するためにmapを使用（登録順）
@@ -48,10 +48,10 @@ export default function BookmarksPage() {
     }
   }, [sortBy, isMounted, loadBookmarks]);
 
-  const handleRemoveBookmark = (wordId: number, e: React.MouseEvent) => {
+  const handleRemoveBookmark = async (wordId: number, e: React.MouseEvent) => {
     e.preventDefault(); // Linkのナビゲーションを防ぐ
     e.stopPropagation();
-    storage.removeBookmark(wordId);
+    await unifiedStorage.removeBookmark(wordId);
     loadBookmarks();
   };
 
