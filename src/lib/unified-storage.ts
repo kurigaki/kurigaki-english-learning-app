@@ -35,23 +35,36 @@ function shouldUseSupabase(): boolean {
 }
 
 /**
+ * localStorageの操作を安全に実行（エラー時はデフォルト値を返す）
+ */
+function safeLocalOp<T>(localOp: () => T, defaultValue: T, operationName: string): T {
+  try {
+    return localOp();
+  } catch (error) {
+    console.error(`[UnifiedStorage] localStorage ${operationName} failed:`, error);
+    return defaultValue;
+  }
+}
+
+/**
  * Supabase操作をラップしてエラー時にlocalStorageにフォールバック
  */
 async function withFallback<T>(
   supabaseOp: () => Promise<T>,
   localOp: () => T,
+  defaultValue: T,
   operationName: string
 ): Promise<T> {
   // Supabaseを使用すべきでない場合はlocalStorageを使用
   if (!shouldUseSupabase()) {
-    return localOp();
+    return safeLocalOp(localOp, defaultValue, operationName);
   }
 
   try {
     return await supabaseOp();
   } catch (error) {
     console.warn(`[UnifiedStorage] ${operationName} failed, falling back to localStorage:`, error);
-    return localOp();
+    return safeLocalOp(localOp, defaultValue, operationName);
   }
 }
 
@@ -68,6 +81,7 @@ export const unifiedStorage = {
         return await supabaseStorage.getRecords(userId);
       },
       () => storage.getRecords(),
+      [],
       "getRecords"
     );
   },
@@ -85,6 +99,7 @@ export const unifiedStorage = {
         return await supabaseStorage.addRecord(userId, record);
       },
       () => storage.addRecord(record),
+      null,
       "addRecord"
     );
   },
@@ -99,7 +114,11 @@ export const unifiedStorage = {
         console.warn("[UnifiedStorage] clearRecords failed, falling back to localStorage:", error);
       }
     }
-    storage.clearRecords();
+    try {
+      storage.clearRecords();
+    } catch (error) {
+      console.error("[UnifiedStorage] localStorage clearRecords failed:", error);
+    }
   },
 
   // 単語統計
@@ -110,6 +129,7 @@ export const unifiedStorage = {
         return await supabaseStorage.getWordStats(userId);
       },
       () => storage.getWordStats(),
+      new Map<number, WordStats>(),
       "getWordStats"
     );
   },
@@ -121,6 +141,7 @@ export const unifiedStorage = {
         return await supabaseStorage.getWeakWords(userId, threshold);
       },
       () => storage.getWeakWords(threshold),
+      [],
       "getWeakWords"
     );
   },
@@ -132,6 +153,7 @@ export const unifiedStorage = {
         return await supabaseStorage.getStudiedWordIds(userId);
       },
       () => storage.getStudiedWordIds(),
+      [],
       "getStudiedWordIds"
     );
   },
@@ -143,18 +165,29 @@ export const unifiedStorage = {
         return await supabaseStorage.getMasteredWordCount(userId);
       },
       () => storage.getMasteredWordCount(),
+      0,
       "getMasteredWordCount"
     );
   },
 
   // ユーザーデータ
   getUserData: async (): Promise<UserData> => {
+    const defaultUserData: UserData = {
+      streak: 0,
+      lastStudyDate: null,
+      totalXp: 0,
+      level: 1,
+      dailyGoal: 10,
+      todayCorrect: 0,
+      todayDate: null,
+    };
     return withFallback(
       async () => {
         const userId = getCurrentUserId()!;
         return await supabaseStorage.getUserData(userId);
       },
       () => storage.getUserData(),
+      defaultUserData,
       "getUserData"
     );
   },
@@ -169,7 +202,11 @@ export const unifiedStorage = {
         console.warn("[UnifiedStorage] saveUserData failed, falling back to localStorage:", error);
       }
     }
-    storage.saveUserData(userData);
+    try {
+      storage.saveUserData(userData);
+    } catch (error) {
+      console.error("[UnifiedStorage] localStorage saveUserData failed:", error);
+    }
   },
 
   // 学習セッション記録（XP・レベル・ストリーク更新）
@@ -180,6 +217,16 @@ export const unifiedStorage = {
     const userId = getCurrentUserId();
     const useSupabase = shouldUseSupabase();
 
+    const defaultUserData: UserData = {
+      streak: 0,
+      lastStudyDate: null,
+      totalXp: 0,
+      level: 1,
+      dailyGoal: 10,
+      todayCorrect: 0,
+      todayDate: null,
+    };
+
     // まず現在のユーザーデータを取得
     let userData: UserData;
     try {
@@ -187,8 +234,13 @@ export const unifiedStorage = {
         ? await supabaseStorage.getUserData(userId)
         : storage.getUserData();
     } catch (error) {
-      console.warn("[UnifiedStorage] getUserData failed in recordStudySession, using localStorage:", error);
-      userData = storage.getUserData();
+      console.warn("[UnifiedStorage] getUserData failed in recordStudySession, using default:", error);
+      try {
+        userData = storage.getUserData();
+      } catch (localError) {
+        console.error("[UnifiedStorage] localStorage also failed, using default:", localError);
+        userData = { ...defaultUserData };
+      }
     }
 
     const today = new Date().toISOString().split("T")[0];
@@ -236,16 +288,24 @@ export const unifiedStorage = {
     // 最終学習日を更新
     userData.lastStudyDate = today;
 
-    // 保存
+    // 保存（エラーでも処理を継続 - UIには更新されたuserDataを返す）
     if (userId && useSupabase) {
       try {
         await supabaseStorage.saveUserData(userId, userData);
       } catch (error) {
-        console.warn("[UnifiedStorage] saveUserData failed in recordStudySession, using localStorage:", error);
-        storage.saveUserData(userData);
+        console.warn("[UnifiedStorage] saveUserData failed in recordStudySession, trying localStorage:", error);
+        try {
+          storage.saveUserData(userData);
+        } catch (localError) {
+          console.error("[UnifiedStorage] localStorage save also failed:", localError);
+        }
       }
     } else {
-      storage.saveUserData(userData);
+      try {
+        storage.saveUserData(userData);
+      } catch (error) {
+        console.error("[UnifiedStorage] localStorage save failed:", error);
+      }
     }
 
     return userData;
@@ -275,6 +335,7 @@ export const unifiedStorage = {
         return await supabaseStorage.getUnlockedAchievements(userId);
       },
       () => storage.getUnlockedAchievements(),
+      [],
       "getUnlockedAchievements"
     );
   },
@@ -288,6 +349,7 @@ export const unifiedStorage = {
         return await supabaseStorage.unlockAchievement(userId, achievementId);
       },
       () => storage.unlockAchievement(achievementId),
+      null,
       "unlockAchievement"
     );
   },
@@ -299,6 +361,7 @@ export const unifiedStorage = {
         return await supabaseStorage.isAchievementUnlocked(userId, achievementId);
       },
       () => storage.isAchievementUnlocked(achievementId),
+      false,
       "isAchievementUnlocked"
     );
   },
@@ -391,6 +454,7 @@ export const unifiedStorage = {
         return await supabaseStorage.getSpeedChallengeResults(userId);
       },
       () => storage.getSpeedChallengeResults(),
+      [],
       "getSpeedChallengeResults"
     );
   },
@@ -404,6 +468,7 @@ export const unifiedStorage = {
         return await supabaseStorage.addSpeedChallengeResult(userId, result);
       },
       () => storage.addSpeedChallengeResult(result),
+      null,
       "addSpeedChallengeResult"
     );
   },
@@ -415,6 +480,7 @@ export const unifiedStorage = {
         return await supabaseStorage.getSpeedChallengeHighScore(userId);
       },
       () => storage.getSpeedChallengeHighScore(),
+      0,
       "getSpeedChallengeHighScore"
     );
   },
@@ -435,6 +501,7 @@ export const unifiedStorage = {
         return await supabaseStorage.getBookmarkedWordIds(userId);
       },
       () => storage.getBookmarkedWordIds(),
+      [],
       "getBookmarkedWordIds"
     );
   },
@@ -446,6 +513,7 @@ export const unifiedStorage = {
         return await supabaseStorage.isWordBookmarked(userId, wordId);
       },
       () => storage.isWordBookmarked(wordId),
+      false,
       "isWordBookmarked"
     );
   },
@@ -460,7 +528,11 @@ export const unifiedStorage = {
         console.warn("[UnifiedStorage] addBookmark failed, falling back to localStorage:", error);
       }
     }
-    storage.addBookmark(wordId);
+    try {
+      storage.addBookmark(wordId);
+    } catch (error) {
+      console.error("[UnifiedStorage] localStorage addBookmark failed:", error);
+    }
   },
 
   removeBookmark: async (wordId: number): Promise<void> => {
@@ -473,7 +545,11 @@ export const unifiedStorage = {
         console.warn("[UnifiedStorage] removeBookmark failed, falling back to localStorage:", error);
       }
     }
-    storage.removeBookmark(wordId);
+    try {
+      storage.removeBookmark(wordId);
+    } catch (error) {
+      console.error("[UnifiedStorage] localStorage removeBookmark failed:", error);
+    }
   },
 
   toggleBookmark: async (wordId: number): Promise<boolean> => {
@@ -483,6 +559,7 @@ export const unifiedStorage = {
         return await supabaseStorage.toggleBookmark(userId, wordId);
       },
       () => storage.toggleBookmark(wordId),
+      false,
       "toggleBookmark"
     );
   },
