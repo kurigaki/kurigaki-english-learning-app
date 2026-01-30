@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/database";
+import { applyWebLocksPolyfill } from "./web-locks-polyfill";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -18,12 +19,27 @@ export function getSupabaseClient() {
     return null;
   }
 
+  // ブラウザ環境でのみクライアントを作成
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  // Web Locks APIのポリフィルを適用（AbortError回避）
+  applyWebLocksPolyfill();
+
   if (!supabaseClient) {
     supabaseClient = createClient<Database>(supabaseUrl, supabaseAnonKey, {
       auth: {
         autoRefreshToken: true,
         persistSession: true,
-        detectSessionInUrl: true,
+        detectSessionInUrl: false,
+        flowType: "implicit",
+        storageKey: "english-app-auth",
+      },
+      global: {
+        headers: {
+          "X-Client-Info": "english-learning-app",
+        },
       },
     });
   }

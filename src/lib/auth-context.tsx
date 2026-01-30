@@ -84,6 +84,16 @@ export function AuthProvider({ children }: AuthProviderProps) {
       return;
     }
 
+    let isMounted = true;
+
+    // タイムアウト: 5秒後に強制的にローディングを解除
+    const timeoutId = setTimeout(() => {
+      if (isMounted) {
+        console.warn("認証初期化がタイムアウトしました");
+        setIsLoading(false);
+      }
+    }, 5000);
+
     // 現在のセッションを確認
     const initializeAuth = async () => {
       try {
@@ -91,15 +101,26 @@ export function AuthProvider({ children }: AuthProviderProps) {
           data: { session },
         } = await supabase.auth.getSession();
 
+        if (!isMounted) return;
+
         if (session?.user) {
           setUser(session.user);
           const userProfile = await fetchProfile(session.user.id);
-          setProfile(userProfile);
+          if (isMounted) {
+            setProfile(userProfile);
+          }
         }
       } catch (error) {
+        // AbortErrorは無視
+        if (error instanceof Error && error.name === "AbortError") {
+          return;
+        }
         console.error("認証初期化エラー:", error);
       } finally {
-        setIsLoading(false);
+        clearTimeout(timeoutId);
+        if (isMounted) {
+          setIsLoading(false);
+        }
       }
     };
 
@@ -109,39 +130,59 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (session?.user) {
-        setUser(session.user);
-        let userProfile = await fetchProfile(session.user.id);
+      // アンマウント後は処理しない
+      if (!isMounted) return;
 
-        // 新規登録時はプロフィールを作成
-        if (!userProfile && event === "SIGNED_IN") {
-          userProfile = await createProfile(session.user.id);
-        }
+      try {
+        if (session?.user) {
+          setUser(session.user);
+          let userProfile = await fetchProfile(session.user.id);
 
-        setProfile(userProfile);
+          // アンマウント後は処理しない
+          if (!isMounted) return;
 
-        // ログイン時にlocalStorageのデータをSupabaseに同期
-        if (event === "SIGNED_IN" && !isSyncCompleted(session.user.id)) {
-          setIsSyncing(true);
-          try {
-            const result = await syncLocalDataToSupabase(session.user.id);
-            if (!result.success && result.error) {
-              console.warn("データ同期に失敗しました:", result.error);
-            }
-          } catch (error) {
-            console.error("データ同期エラー:", error);
-          } finally {
-            setIsSyncing(false);
+          // 新規登録時はプロフィールを作成
+          if (!userProfile && event === "SIGNED_IN") {
+            userProfile = await createProfile(session.user.id);
           }
+
+          if (isMounted) {
+            setProfile(userProfile);
+          }
+
+          // ログイン時にlocalStorageのデータをSupabaseに同期
+          if (event === "SIGNED_IN" && !isSyncCompleted(session.user.id)) {
+            setIsSyncing(true);
+            try {
+              const result = await syncLocalDataToSupabase(session.user.id);
+              if (!result.success && result.error) {
+                console.warn("データ同期に失敗しました:", result.error);
+              }
+            } catch (error) {
+              if (error instanceof Error && error.name === "AbortError") return;
+              console.error("データ同期エラー:", error);
+            } finally {
+              if (isMounted) {
+                setIsSyncing(false);
+              }
+            }
+          }
+        } else {
+          setUser(null);
+          setProfile(null);
         }
-      } else {
-        setUser(null);
-        setProfile(null);
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      } catch (error) {
+        if (error instanceof Error && error.name === "AbortError") return;
+        console.error("認証状態変更エラー:", error);
       }
-      setIsLoading(false);
     });
 
     return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
       subscription.unsubscribe();
     };
   }, [fetchProfile, createProfile]);
