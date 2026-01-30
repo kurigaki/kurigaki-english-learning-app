@@ -348,14 +348,19 @@ export default function QuizPage() {
   // 初期データをロード
   useEffect(() => {
     const loadData = async () => {
-      const [bookmarks, weaks, studied] = await Promise.all([
-        unifiedStorage.getBookmarkedWordIds(),
-        unifiedStorage.getWeakWords(70),
-        unifiedStorage.getStudiedWordIds(),
-      ]);
-      setBookmarkedIds(bookmarks);
-      setWeakWordIds(weaks);
-      setStudiedWordIds(studied);
+      try {
+        const [bookmarks, weaks, studied] = await Promise.all([
+          unifiedStorage.getBookmarkedWordIds(),
+          unifiedStorage.getWeakWords(70),
+          unifiedStorage.getStudiedWordIds(),
+        ]);
+        setBookmarkedIds(bookmarks);
+        setWeakWordIds(weaks);
+        setStudiedWordIds(studied);
+      } catch (error) {
+        console.error("[Quiz] Failed to load initial data:", error);
+        // エラー時は空の配列のままにする（クイズは動作する）
+      }
     };
     loadData();
   }, []);
@@ -363,30 +368,66 @@ export default function QuizPage() {
   // 次の問題へ進む / クイズ終了処理
   const handleNext = useCallback(async () => {
     if (currentIndex + 1 >= questions.length) {
-      // セッション完了時にXP・レベル・ストリークを記録
-      const previousUserData = await unifiedStorage.getUserData();
-      const previousLevel = previousUserData.level;
-      const previousStreak = previousUserData.streak;
-      const updatedUserData = await unifiedStorage.recordStudySession(score, maxCombo);
-      const dailyProgress = unifiedStorage.getDailyProgress(updatedUserData);
+      // セッション完了時の処理（エラーが発生してもリザルト画面は表示する）
+      let sessionResult: SessionResult | null = null;
+      let newAchievements: Achievement[] = [];
 
-      const earnedXp = (score * 10) + (maxCombo * 5); // XP_PER_CORRECT + combo bonus
+      try {
+        // セッション完了時にXP・レベル・ストリークを記録
+        const previousUserData = await unifiedStorage.getUserData();
+        const previousLevel = previousUserData.level;
+        const previousStreak = previousUserData.streak;
+        const updatedUserData = await unifiedStorage.recordStudySession(score, maxCombo);
+        const dailyProgress = unifiedStorage.getDailyProgress(updatedUserData);
 
-      // 実績チェック
-      const records = await unifiedStorage.getRecords();
-      const totalQuestions = records.length;
-      const masteredWords = await unifiedStorage.getMasteredWordCount();
-      const newAchievementIds = await unifiedStorage.checkAndUnlockAchievements({
-        totalQuestions,
-        maxCombo,
-        streak: updatedUserData.streak,
-        masteredWords,
-        level: updatedUserData.level,
-      });
+        const earnedXp = (score * 10) + (maxCombo * 5); // XP_PER_CORRECT + combo bonus
 
-      const newAchievements = newAchievementIds
-        .map((id) => getAchievementById(id))
-        .filter((a): a is Achievement => a !== undefined);
+        // 実績チェック
+        const records = await unifiedStorage.getRecords();
+        const totalQuestions = records.length;
+        const masteredWords = await unifiedStorage.getMasteredWordCount();
+        const newAchievementIds = await unifiedStorage.checkAndUnlockAchievements({
+          totalQuestions,
+          maxCombo,
+          streak: updatedUserData.streak,
+          masteredWords,
+          level: updatedUserData.level,
+        });
+
+        newAchievements = newAchievementIds
+          .map((id) => getAchievementById(id))
+          .filter((a): a is Achievement => a !== undefined);
+
+        sessionResult = {
+          earnedXp,
+          newLevel: updatedUserData.level,
+          previousLevel,
+          streak: updatedUserData.streak,
+          previousStreak,
+          dailyProgress: {
+            current: dailyProgress.current,
+            goal: dailyProgress.goal,
+            completed: dailyProgress.completed,
+          },
+          newAchievementIds,
+        };
+      } catch (error) {
+        console.error("[Quiz] Error during session completion:", error);
+        // エラー時もデフォルト値でリザルト画面を表示
+        sessionResult = {
+          earnedXp: score * 10 + maxCombo * 5,
+          newLevel: 1,
+          previousLevel: 1,
+          streak: 1,
+          previousStreak: 0,
+          dailyProgress: {
+            current: score,
+            goal: 10,
+            completed: score >= 10,
+          },
+          newAchievementIds: [],
+        };
+      }
 
       // 実績ポップアップ表示用にキュー
       if (newAchievements.length > 0) {
@@ -394,21 +435,7 @@ export default function QuizPage() {
         setShowingAchievement(newAchievements[0]);
       }
 
-      const result: SessionResult = {
-        earnedXp,
-        newLevel: updatedUserData.level,
-        previousLevel,
-        streak: updatedUserData.streak,
-        previousStreak,
-        dailyProgress: {
-          current: dailyProgress.current,
-          goal: dailyProgress.goal,
-          completed: dailyProgress.completed,
-        },
-        newAchievementIds,
-      };
-
-      setSessionResult(result);
+      setSessionResult(sessionResult);
       setIsFinished(true);
       setPhase("result");
 
@@ -583,12 +610,15 @@ export default function QuizPage() {
       setCombo(0);
     }
 
+    // 学習記録を保存（エラーは無視 - UIの動作に影響させない）
     unifiedStorage.addRecord({
       wordId: currentQuestion.word.id,
       word: currentQuestion.word.word,
       meaning: currentQuestion.word.meaning,
       questionType: currentQuestion.type,
       correct,
+    }).catch((error) => {
+      console.error("[Quiz] Failed to add record:", error);
     });
   };
 
