@@ -755,6 +755,7 @@ english-learning-app-reviewerサブエージェントを使用して、
 | 設計詳細 | `docs/design.md` | 機能仕様・画面仕様 |
 | コーディング規約 | `.claude/agents/best-practices.md` | コード規約 |
 | コードレビュー | `.claude/agents/reviewer.md` | レビュー基準（サブエージェント定義） |
+| Supabaseセットアップ | `supabase/README.md` | DB設定・マイグレーション手順 |
 | 単語データ | `src/data/words.ts` | 単語データベース |
 | 実績データ | `src/data/achievements.ts` | 実績定義 |
 | 型定義 | `src/types/index.ts` | TypeScript型定義 |

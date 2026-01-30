@@ -911,6 +911,57 @@ type SpeedChallengeResult = {
 };
 ```
 
+### 8.6 統合ストレージとデータ同期
+
+#### 概要
+
+アプリはログイン状態に応じて、データの保存先を自動的に切り替えます：
+
+| 状態 | 保存先 | 特徴 |
+|------|--------|------|
+| 未ログイン | localStorage | 端末ローカル、同期なし |
+| ログイン中 | Supabase | 端末間同期、クラウド保存 |
+| 接続エラー時 | localStorage | 自動フォールバック |
+
+#### 統合ストレージ（`src/lib/unified-storage.ts`）
+
+`storage.ts` と同じインターフェースを提供し、内部で保存先を自動切り替え：
+
+```typescript
+import { unifiedStorage } from "@/lib/unified-storage";
+
+// 使用例（全ページ共通）
+const records = await unifiedStorage.getRecords();
+const userData = await unifiedStorage.getUserData();
+await unifiedStorage.addRecord({ ... });
+```
+
+#### データ同期（`src/lib/data-sync.ts`）
+
+初回ログイン時に、localStorageのデータをSupabaseに同期：
+
+| 同期対象 | マージ戦略 |
+|----------|-----------|
+| 学習記録 | IDで重複チェック、新規のみ追加 |
+| ユーザーデータ | 高い値を優先（XP, レベル, ストリーク） |
+| 実績 | Union（両方の実績を統合） |
+| スピードチャレンジ結果 | IDで重複チェック、新規のみ追加 |
+| ブックマーク | Union（両方のブックマークを統合） |
+
+#### Supabase設定
+
+テーブル作成用のSQLは `supabase/migrations/001_initial_schema.sql` を参照。
+
+必要なテーブル:
+- `profiles` - ユーザープロフィール
+- `user_data` - レベル、XP、ストリーク
+- `learning_records` - 学習記録
+- `unlocked_achievements` - 解除済み実績
+- `speed_challenge_results` - スピードチャレンジ結果
+- `bookmarks` - ブックマーク
+
+> **Note**: Supabaseが設定されていない場合でも、アプリはlocalStorageで正常に動作します。
+
 ---
 
 ## 9. コンポーネント構成
