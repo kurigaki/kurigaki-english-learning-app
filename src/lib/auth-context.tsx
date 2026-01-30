@@ -18,6 +18,7 @@ import type {
 } from "@/types/auth";
 import { getAuthErrorMessage } from "@/types/auth";
 import { syncLocalDataToSupabase, isSyncCompleted } from "./data-sync";
+import { setCurrentUserId } from "./user-session";
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
@@ -30,6 +31,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isSyncing, setIsSyncing] = useState(false);
+
+  // ユーザーセッションを同期（ストレージモジュールがユーザーIDを参照できるように）
+  useEffect(() => {
+    setCurrentUserId(user?.id ?? null);
+  }, [user]);
 
   // プロフィールを取得
   const fetchProfile = useCallback(
