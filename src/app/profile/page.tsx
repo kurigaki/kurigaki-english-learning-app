@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useAuth, useSupabaseAvailable } from "@/lib/auth-context";
 import { AvatarUpload } from "@/components/features/auth";
 import { Card, Button } from "@/components/ui";
+import { deleteAvatar } from "@/lib/supabase/storage";
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -68,6 +69,26 @@ export default function ProfilePage() {
       setMessage({
         type: "error",
         text: result.error || "アバターの更新に失敗しました",
+      });
+    }
+  };
+
+  const handleAvatarRemove = async () => {
+    if (!user) return;
+
+    // Storageから画像を削除
+    await deleteAvatar(user.id);
+
+    // DBのavatar_urlをnullに更新
+    const result = await updateProfile({ avatarUrl: null });
+
+    if (result.success) {
+      await refreshProfile();
+      setMessage({ type: "success", text: "アバターを初期画像に戻しました" });
+    } else {
+      setMessage({
+        type: "error",
+        text: result.error || "アバターの削除に失敗しました",
       });
     }
   };
@@ -137,6 +158,7 @@ export default function ProfilePage() {
                 currentAvatarUrl={user.profile?.avatar_url || null}
                 displayName={currentDisplayName}
                 onUploadComplete={handleAvatarUpload}
+                onRemove={handleAvatarRemove}
               />
             </div>
 

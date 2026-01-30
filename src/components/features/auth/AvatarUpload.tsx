@@ -10,6 +10,7 @@ type AvatarUploadProps = {
   currentAvatarUrl: string | null;
   displayName: string;
   onUploadComplete: (url: string) => void;
+  onRemove?: () => void;
 };
 
 export const AvatarUpload = ({
@@ -17,8 +18,10 @@ export const AvatarUpload = ({
   currentAvatarUrl,
   displayName,
   onUploadComplete,
+  onRemove,
 }: AvatarUploadProps) => {
   const [isUploading, setIsUploading] = useState(false);
+  const [isRemoving, setIsRemoving] = useState(false);
   const [error, setError] = useState("");
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -66,6 +69,23 @@ export const AvatarUpload = ({
     fileInputRef.current?.click();
   };
 
+  const handleRemove = async () => {
+    if (!onRemove) return;
+
+    setIsRemoving(true);
+    setError("");
+    try {
+      await onRemove();
+      setPreviewUrl(null);
+    } catch {
+      setError("画像の削除に失敗しました");
+    } finally {
+      setIsRemoving(false);
+    }
+  };
+
+  const isProcessing = isUploading || isRemoving;
+
   return (
     <div className="flex flex-col items-center gap-4">
       {/* アバター表示 */}
@@ -84,8 +104,8 @@ export const AvatarUpload = ({
           )}
         </div>
 
-        {/* アップロード中のオーバーレイ */}
-        {isUploading && (
+        {/* 処理中のオーバーレイ */}
+        {isProcessing && (
           <div className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center">
             <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin" />
           </div>
@@ -99,17 +119,31 @@ export const AvatarUpload = ({
         accept="image/jpeg,image/png,image/gif,image/webp"
         onChange={handleFileSelect}
         className="hidden"
-        disabled={isUploading}
+        disabled={isProcessing}
       />
 
-      <Button
-        variant="secondary"
-        size="sm"
-        onClick={handleButtonClick}
-        disabled={isUploading}
-      >
-        {isUploading ? "アップロード中..." : "画像を変更"}
-      </Button>
+      <div className="flex flex-col gap-2">
+        <Button
+          variant="secondary"
+          size="sm"
+          onClick={handleButtonClick}
+          disabled={isProcessing}
+        >
+          {isUploading ? "アップロード中..." : "画像を変更"}
+        </Button>
+
+        {currentAvatarUrl && onRemove && (
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleRemove}
+            disabled={isProcessing}
+            className="text-slate-500 hover:text-red-600"
+          >
+            {isRemoving ? "削除中..." : "初期画像に戻す"}
+          </Button>
+        )}
+      </div>
 
       {error && <p className="text-sm text-red-600">{error}</p>}
 

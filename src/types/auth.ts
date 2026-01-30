@@ -34,7 +34,7 @@ export type AuthResult = {
 // プロフィール更新データ
 export type ProfileUpdateData = {
   displayName?: string;
-  avatarUrl?: string;
+  avatarUrl?: string | null;
 };
 
 // 認証エラーコード
