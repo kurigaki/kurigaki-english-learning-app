@@ -18,7 +18,7 @@ import type {
 } from "@/types/auth";
 import { getAuthErrorMessage } from "@/types/auth";
 import { syncLocalDataToSupabase, isSyncCompleted } from "./data-sync";
-import { setCurrentUserId } from "./user-session";
+import { setCurrentUserId, setAuthTimedOut, resetAuthState } from "./user-session";
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
@@ -96,6 +96,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const timeoutId = setTimeout(() => {
       if (isMounted) {
         console.warn("認証初期化がタイムアウトしました");
+        // 認証タイムアウトフラグを設定（Supabaseを使用せずlocalStorageモードで動作）
+        setAuthTimedOut(true);
         setIsLoading(false);
       }
     }, 5000);
@@ -259,6 +261,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
     await supabase.auth.signOut();
     setUser(null);
     setProfile(null);
+    // 認証状態をリセット（次回ログイン時に正常に動作するように）
+    resetAuthState();
   }, []);
 
   // プロフィール更新

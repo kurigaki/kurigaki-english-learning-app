@@ -922,9 +922,12 @@ type SpeedChallengeResult = {
 | 未ログイン | localStorage | 端末ローカル、同期なし |
 | ログイン中 & 同期完了 | Supabase | 端末間同期、クラウド保存 |
 | ログイン中 & 同期未完了 | localStorage | 同期が完了するまでローカルデータを使用 |
+| 認証タイムアウト | localStorage | 5秒以内に認証が完了しない場合、localStorageモードで動作 |
 | 接続エラー時 | localStorage | 自動フォールバック |
 
-> **重要**: 同期が完了していない状態でSupabaseを使用すると、localStorageにある既存データにアクセスできなくなる問題を防ぐため、同期完了後にのみSupabaseを使用します。
+> **重要**:
+> - 同期が完了していない状態でSupabaseを使用すると、localStorageにある既存データにアクセスできなくなる問題を防ぐため、同期完了後にのみSupabaseを使用します。
+> - 認証初期化が5秒以内に完了しない場合、ネットワーク問題やサービス障害と判断し、localStorageモードで動作します。これによりユーザーは学習を継続できます。
 
 #### 統合ストレージ（`src/lib/unified-storage.ts`）
 
