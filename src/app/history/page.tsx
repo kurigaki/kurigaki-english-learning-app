@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
+import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import type { WordStats } from "@/lib/storage";
 import { LearningRecord, QuestionType } from "@/types";
@@ -15,21 +16,30 @@ const questionTypeLabels: Record<QuestionType, string> = {
 };
 
 export default function HistoryPage() {
+  // isLoading: 認証初期化中はデータを読み込まない（Supabaseセッションが未準備のため）
+  const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
   const [records, setRecords] = useState<LearningRecord[]>([]);
   const [wordStats, setWordStats] = useState<Map<number, WordStats>>(new Map());
   const [isMounted, setIsMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<"overview" | "weak" | "history">("overview");
 
+  const loadData = useCallback(async () => {
+    const data = await unifiedStorage.getRecords();
+    setRecords([...data].reverse());
+    const stats = await unifiedStorage.getWordStats();
+    setWordStats(stats);
+  }, []);
+
   useEffect(() => {
     setIsMounted(true);
-    const loadData = async () => {
-      const data = await unifiedStorage.getRecords();
-      setRecords([...data].reverse());
-      const stats = await unifiedStorage.getWordStats();
-      setWordStats(stats);
-    };
-    loadData();
   }, []);
+
+  // 認証初期化完了後にデータを再取得（認証中はSupabaseセッションが未準備のため待機）
+  useEffect(() => {
+    if (!isAuthLoading) {
+      loadData();
+    }
+  }, [isAuthLoading, isAuthenticated, loadData]);
 
   const todayStats = useMemo(() => {
     const today = new Date().toDateString();
