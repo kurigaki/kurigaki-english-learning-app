@@ -262,7 +262,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     return () => {
       isMounted = false;
-      clearTimeout(timeoutId);
       subscription.unsubscribe();
     };
   }, [fetchProfile, createProfile]);
