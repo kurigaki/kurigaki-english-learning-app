@@ -171,10 +171,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
               aud: "authenticated",
               created_at: "",
             } as import("@supabase/supabase-js").User);
-            const userProfile = await fetchProfile(recovered.userId);
-            if (isMounted) {
-              setProfile(userProfile);
-            }
+            // タイムアウト復元時はプロファイル取得をスキップ（Supabaseが応答しないため）
+            // プロファイルはnullのまま、基本的なユーザー情報で動作
+            console.log("[Auth] タイムアウト復元完了（プロファイルはスキップ）");
           } else {
             console.log("[Auth] セッション復元失敗、ログアウト状態");
             setAuthTimedOut(true);
