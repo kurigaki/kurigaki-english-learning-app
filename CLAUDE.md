@@ -726,6 +726,147 @@ npm run test:watch  # テストをwatchモードで起動
 
 ---
 
+## トラブルシューティング
+
+### Next.js キャッシュ問題
+
+UIが崩れる、エラーが発生する場合は、キャッシュをクリアして再起動:
+
+```bash
+# サーバー停止
+pkill -f "next" 2>/dev/null
+
+# キャッシュクリア
+rm -rf .next node_modules/.cache
+
+# 再起動
+npm run dev
+```
+
+**ブラウザ側のキャッシュクリア**も必要:
+- ハードリロード: `Ctrl+Shift+R` (Mac: `Cmd+Shift+R`)
+- または DevTools (F12) → Network → 「Disable cache」→ リロード
+
+### 認証・データ同期の注意点
+
+**AuthGuard による認証待機**:
+- `AuthGuard` コンポーネントが認証完了まで全ページをローディング画面でブロック
+- これにより、Supabaseセッションが復元される前にページが表示されることを防ぐ
+- 複数タブを開いても、各タブで認証が完了してからページが表示される
+
+```typescript
+// src/app/layout.tsx
+<AuthProvider>
+  <Header />
+  <main>
+    <AuthGuard>{children}</AuthGuard>  {/* ★認証完了まで待機 */}
+  </main>
+</AuthProvider>
+```
+
+**auth-context.tsx の認証フロー**:
+1. `getSessionWithTimeout()` で初期セッションを取得（3秒タイムアウト）
+2. タイムアウト時は `tryRecoverSessionFromStorage()` でlocalStorageから復元を試みる
+3. `onAuthStateChange` でログイン/ログアウトを監視
+4. セッションがあれば `setCurrentUserId()` でユーザーIDを設定
+5. `isLoading` が `false` になったら認証完了（AuthGuardが解除される）
+
+**getSession() タイムアウトとリカバリー**:
+```typescript
+// Promise.raceで3秒タイムアウトを実装
+const getSessionWithTimeout = async (timeoutMs: number) => {
+  const timeoutPromise = new Promise((resolve) => {
+    setTimeout(() => resolve({ data: { session: null }, error: new Error("timeout") }), timeoutMs);
+  });
+  return Promise.race([supabase.auth.getSession(), timeoutPromise]);
+};
+
+// タイムアウト時はlocalStorageから直接セッションを復元
+const tryRecoverSessionFromStorage = () => {
+  // Supabaseのauth-tokenキー（sb-*-auth-token）を検索
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key?.includes("auth-token")) {
+      const parsed = JSON.parse(localStorage.getItem(key));
+      if (parsed?.user?.id) return { userId: parsed.user.id, email: parsed.user.email };
+    }
+  }
+  return null;
+};
+```
+
+**noopLock によるWeb Locks回避**:
+```typescript
+// src/lib/supabase/client.ts
+const noopLock = async (name, timeout, fn) => await fn();
+
+createClient(url, key, {
+  auth: { lock: noopLock }  // Web Locks APIのデッドロックを回避
+});
+```
+
+**unifiedStorageを使用するページの実装パターン**:
+```typescript
+// 認証状態を監視し、変更時にデータを再取得
+// ★重要: isLoading（認証初期化中）をチェックし、Supabaseセッション準備完了を待つ
+const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
+
+const loadData = useCallback(async () => {
+  const data = await unifiedStorage.getData();
+  setData(data);
+}, []);
+
+// 認証初期化完了後にデータを再取得（認証中はSupabaseセッションが未準備のため待機）
+useEffect(() => {
+  if (!isAuthLoading) {
+    loadData();
+  }
+}, [isAuthLoading, isAuthenticated, loadData]);
+```
+
+**なぜ `isAuthLoading` のチェックが必要か**:
+1. 新しいタブを開くと、Supabaseセッションの復元は非同期で行われる
+2. `isAuthLoading` が `true` の間は、Supabaseセッションが未準備
+3. この状態でSupabaseにクエリすると、RLS（Row Level Security）により空データが返る
+4. `isAuthLoading` が `false` になるまで待機することで、正しいデータが取得できる
+
+**対応済みページ**: page.tsx, history, bookmarks, achievements, weak-words
+
+### 複数タブ問題のデバッグ
+
+**症状**: 新しいタブを開くとデータが空になる、またはログアウト状態になる
+
+**考えられる原因**:
+1. **getSession() ハング**: Web Locks APIのデッドロックでgetSession()が完了しない
+2. **タイムアウト後の復元失敗**: localStorageからセッションを復元できない
+3. **認証完了前のデータ読み込み**: `getCurrentUserId()` が `null` を返す
+
+**デバッグ用ログ**:
+- `[Auth] initializeAuth開始` - 認証初期化開始
+- `[Auth] getSession呼び出し前` - getSession()を呼び出す直前
+- `[Auth] getSessionエラー/タイムアウト:` - 3秒タイムアウトまたはエラー
+- `[Auth] localStorageから認証データ発見:` - リカバリー成功
+- `[Auth] ユーザーセッション検出:` - 正常なセッション取得
+
+**チェックポイント**:
+1. コンソールで `[Auth]` ログを確認し、どこで処理が止まっているか特定
+2. ページが `isAuthLoading` を確認し、認証完了後にデータを取得しているか
+3. `noopLock` が設定されているか（`src/lib/supabase/client.ts`）
+4. localStorage に `sb-*-auth-token` キーが存在するか
+
+**正しい実装**:
+```typescript
+const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
+
+useEffect(() => {
+  if (!isAuthLoading) {  // ★認証完了を待つ
+    loadData();
+  }
+}, [isAuthLoading, isAuthenticated, loadData]);
+```
+
+---
+
 ## サブエージェント
 
 ### english-learning-app-reviewer
