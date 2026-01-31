@@ -1,6 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/types/database";
-import { applyWebLocksPolyfill } from "./web-locks-polyfill";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
@@ -14,6 +13,18 @@ if (!supabaseUrl || !supabaseAnonKey) {
 // シングルトンパターンでクライアントを管理
 let supabaseClient: ReturnType<typeof createClient<Database>> | null = null;
 
+/**
+ * ロックなしで即座にコールバックを実行するカスタムロック関数
+ * Web Locks APIによるデッドロックを回避するため
+ */
+const noopLock = async <R>(
+  _name: string,
+  _acquireTimeout: number,
+  fn: () => Promise<R>
+): Promise<R> => {
+  return await fn();
+};
+
 export function getSupabaseClient() {
   if (!supabaseUrl || !supabaseAnonKey) {
     return null;
@@ -24,9 +35,6 @@ export function getSupabaseClient() {
     return null;
   }
 
-  // Web Locks APIのポリフィルを適用（AbortError回避）
-  applyWebLocksPolyfill();
-
   if (!supabaseClient) {
     supabaseClient = createClient<Database>(supabaseUrl, supabaseAnonKey, {
       auth: {
@@ -35,6 +43,8 @@ export function getSupabaseClient() {
         detectSessionInUrl: false,
         flowType: "implicit",
         storageKey: "english-app-auth",
+        // カスタムロック関数でWeb Locksのデッドロックを回避
+        lock: noopLock,
       },
       global: {
         headers: {
