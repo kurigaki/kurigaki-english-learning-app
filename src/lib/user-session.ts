@@ -1,6 +1,9 @@
 /**
  * ユーザーセッション管理
  * ストレージモジュールが現在のユーザーIDを参照するためのシングルトン
+ *
+ * 注意: 各タブは独立して認証状態を管理する（localStorageでの共有は行わない）
+ * これにより、認証状態の競合を防ぎ、各タブが正しくSupabaseセッションを使用できる
  */
 
 let currentUserId: string | null = null;
@@ -18,7 +21,6 @@ export function setCurrentUserId(userId: string | null): void {
  * 認証がタイムアウトした場合はnullを返す（localStorageを強制使用）
  */
 export function getCurrentUserId(): string | null {
-  // 認証がタイムアウトした場合はSupabaseを使用しない
   if (authTimedOut) {
     return null;
   }
