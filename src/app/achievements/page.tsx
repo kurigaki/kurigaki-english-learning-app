@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import { useAuth } from "@/lib/auth-context";
 import { UnlockedAchievement } from "@/types";
 import { ACHIEVEMENTS } from "@/data/achievements";
 import { unifiedStorage } from "@/lib/unified-storage";
@@ -8,19 +9,25 @@ import { AchievementList } from "@/components/features/achievements/AchievementL
 import { ProgressBar } from "@/components/ui";
 
 export default function AchievementsPage() {
+  // isLoading: 認証初期化中はデータを読み込まない（Supabaseセッションが未準備のため）
+  const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
   const [unlockedAchievements, setUnlockedAchievements] = useState<
     UnlockedAchievement[]
   >([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const loadData = async () => {
-      const unlocked = await unifiedStorage.getUnlockedAchievements();
-      setUnlockedAchievements(unlocked);
-      setIsLoading(false);
-    };
-    loadData();
+  const loadData = useCallback(async () => {
+    const unlocked = await unifiedStorage.getUnlockedAchievements();
+    setUnlockedAchievements(unlocked);
+    setIsLoading(false);
   }, []);
+
+  // 認証初期化完了後にデータを再取得（認証中はSupabaseセッションが未準備のため待機）
+  useEffect(() => {
+    if (!isAuthLoading) {
+      loadData();
+    }
+  }, [isAuthLoading, isAuthenticated, loadData]);
 
   if (isLoading) {
     return (

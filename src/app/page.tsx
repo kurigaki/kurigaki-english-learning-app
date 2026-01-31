@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Card, StatsCard } from "@/components/ui";
+import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { words } from "@/data/words";
 import { Achievement } from "@/types";
@@ -16,6 +17,9 @@ type UserProgress = {
 };
 
 export default function Home() {
+  // 認証状態を監視（認証状態が変わったらデータを再取得するため）
+  // isLoading: 認証初期化中はデータを読み込まない（Supabaseセッションが未準備のため）
+  const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
   const [stats, setStats] = useState({ total: 0, correct: 0, rate: 0 });
   const [userProgress, setUserProgress] = useState<UserProgress | null>(null);
   const [speedHighScore, setSpeedHighScore] = useState(0);
@@ -24,57 +28,62 @@ export default function Home() {
   const [bookmarkCount, setBookmarkCount] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
 
+  const loadData = useCallback(async () => {
+    // 学習記録を取得
+    const records = await unifiedStorage.getRecords();
+    const correct = records.filter((r) => r.correct).length;
+    setStats({
+      total: records.length,
+      correct,
+      rate: records.length > 0 ? Math.round((correct / records.length) * 100) : 0,
+    });
+
+    // ユーザーデータを取得
+    const userData = await unifiedStorage.getUserData();
+    setUserProgress({
+      level: userData.level,
+      streak: userData.streak,
+      xpProgress: unifiedStorage.getXpProgress(userData),
+      dailyProgress: unifiedStorage.getDailyProgress(userData),
+    });
+
+    // スピードチャレンジのハイスコア
+    const highScore = await unifiedStorage.getSpeedChallengeHighScore();
+    setSpeedHighScore(highScore);
+
+    // 最近獲得した実績（最新3件）
+    const unlocked = await unifiedStorage.getUnlockedAchievements();
+    const recentWithDetails = unlocked
+      .sort((a, b) => new Date(b.unlockedAt).getTime() - new Date(a.unlockedAt).getTime())
+      .slice(0, 3)
+      .map((ua) => {
+        const achievement = getAchievementById(ua.achievementId);
+        return achievement ? { ...achievement, unlockedAt: ua.unlockedAt } : null;
+      })
+      .filter((a): a is Achievement & { unlockedAt: string } => a !== null);
+    setRecentAchievements(recentWithDetails);
+
+    // 実績進捗
+    setAchievementProgress({
+      unlocked: unlocked.length,
+      total: ACHIEVEMENTS.length,
+    });
+
+    // ブックマーク数
+    const bookmarks = await unifiedStorage.getBookmarkedWordIds();
+    setBookmarkCount(bookmarks.length);
+  }, []);
+
   useEffect(() => {
     setIsMounted(true);
-
-    const loadData = async () => {
-      // 学習記録を取得
-      const records = await unifiedStorage.getRecords();
-      const correct = records.filter((r) => r.correct).length;
-      setStats({
-        total: records.length,
-        correct,
-        rate: records.length > 0 ? Math.round((correct / records.length) * 100) : 0,
-      });
-
-      // ユーザーデータを取得
-      const userData = await unifiedStorage.getUserData();
-      setUserProgress({
-        level: userData.level,
-        streak: userData.streak,
-        xpProgress: unifiedStorage.getXpProgress(userData),
-        dailyProgress: unifiedStorage.getDailyProgress(userData),
-      });
-
-      // スピードチャレンジのハイスコア
-      const highScore = await unifiedStorage.getSpeedChallengeHighScore();
-      setSpeedHighScore(highScore);
-
-      // 最近獲得した実績（最新3件）
-      const unlocked = await unifiedStorage.getUnlockedAchievements();
-      const recentWithDetails = unlocked
-        .sort((a, b) => new Date(b.unlockedAt).getTime() - new Date(a.unlockedAt).getTime())
-        .slice(0, 3)
-        .map((ua) => {
-          const achievement = getAchievementById(ua.achievementId);
-          return achievement ? { ...achievement, unlockedAt: ua.unlockedAt } : null;
-        })
-        .filter((a): a is Achievement & { unlockedAt: string } => a !== null);
-      setRecentAchievements(recentWithDetails);
-
-      // 実績進捗
-      setAchievementProgress({
-        unlocked: unlocked.length,
-        total: ACHIEVEMENTS.length,
-      });
-
-      // ブックマーク数
-      const bookmarks = await unifiedStorage.getBookmarkedWordIds();
-      setBookmarkCount(bookmarks.length);
-    };
-
-    loadData();
   }, []);
+
+  // 認証初期化完了後にデータを再取得（認証中はSupabaseセッションが未準備のため待機）
+  useEffect(() => {
+    if (!isAuthLoading) {
+      loadData();
+    }
+  }, [isAuthLoading, isAuthenticated, loadData]);
 
   return (
     <div className="min-h-[calc(100vh-64px)] px-4 py-8">
