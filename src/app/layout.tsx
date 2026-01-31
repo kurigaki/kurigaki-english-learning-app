@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/ui";
 import { AuthProvider } from "@/lib/auth-context";
+import { AuthGuard } from "@/components/AuthGuard";
 
 export const metadata: Metadata = {
   title: "English Learning App",
@@ -18,7 +19,9 @@ export default function RootLayout({
       <body className="min-h-screen">
         <AuthProvider>
           <Header />
-          <main>{children}</main>
+          <main>
+            <AuthGuard>{children}</AuthGuard>
+          </main>
         </AuthProvider>
       </body>
     </html>
