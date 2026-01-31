@@ -34,6 +34,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   // ユーザーセッションを同期（ストレージモジュールがユーザーIDを参照できるように）
   useEffect(() => {
+    if (user?.id) {
+      // 認証成功時はタイムアウトフラグをリセット（Supabase使用を許可）
+      setAuthTimedOut(false);
+    }
     setCurrentUserId(user?.id ?? null);
   }, [user]);
 
@@ -256,9 +260,17 @@ export function AuthProvider({ children }: AuthProviderProps) {
   // ログアウト
   const signOut = useCallback(async () => {
     const supabase = getSupabaseClient();
-    if (!supabase) return;
 
-    await supabase.auth.signOut();
+    // Supabaseからサインアウト（利用可能な場合）
+    if (supabase) {
+      try {
+        await supabase.auth.signOut();
+      } catch (error) {
+        console.error("サインアウトエラー:", error);
+      }
+    }
+
+    // ローカル状態は必ずクリア（Supabaseの可否に関わらず）
     setUser(null);
     setProfile(null);
     // 認証状態をリセット（次回ログイン時に正常に動作するように）

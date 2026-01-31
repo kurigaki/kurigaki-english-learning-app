@@ -3,11 +3,10 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useAuth, useSupabaseAvailable } from "@/lib/auth-context";
+import { useAuth } from "@/lib/auth-context";
 
 export const UserMenu = () => {
   const { user, isLoading, isAuthenticated, signOut } = useAuth();
-  const isSupabaseAvailable = useSupabaseAvailable();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -54,7 +53,8 @@ export const UserMenu = () => {
     );
   }
 
-  const isLoggedIn = isSupabaseAvailable && isAuthenticated && user;
+  // 認証状態はisAuthenticatedとuserで判定（Supabase可否に依存しない）
+  const isLoggedIn = isAuthenticated && user;
   const displayName = isLoggedIn
     ? user.profile?.display_name || user.email || "ユーザー"
     : "メニュー";
