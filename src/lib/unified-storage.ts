@@ -1,14 +1,15 @@
 /**
  * 統合ストレージモジュール
- * ログイン中 & 同期完了: Supabaseを使用（端末間同期）
- * 未ログイン or 同期未完了: localStorageを使用（端末ローカル）
+ * ログイン中: Supabaseを使用（端末間同期）
+ * 未ログイン: localStorageを使用（端末ローカル）
  * 接続エラー時: localStorageにフォールバック
+ *
+ * Note: 初回ログイン時はlocalStorageのデータをSupabaseに同期（data-sync.ts）
  */
 
 import { getCurrentUserId, isLoggedIn } from "./user-session";
 import { storage } from "./storage";
 import { supabaseStorage } from "./supabase/database";
-import { isSyncCompleted } from "./data-sync";
 import type { UserData, WordStats } from "./storage";
 import type {
   LearningRecord,
@@ -20,18 +21,13 @@ import { ACHIEVEMENTS } from "@/data/achievements";
 
 /**
  * Supabaseを使用すべきかどうかを判定
- * ログイン中かつ同期完了済みの場合のみSupabaseを使用
+ * ログイン中であればSupabaseを使用（端末間でデータを同期）
+ *
+ * Note: 初回ログイン時のlocalStorage→Supabase同期は別途data-sync.tsで処理
  */
 function shouldUseSupabase(): boolean {
   const userId = getCurrentUserId();
-  if (!userId) return false;
-
-  // 同期が完了していない場合はlocalStorageを使用
-  if (!isSyncCompleted(userId)) {
-    return false;
-  }
-
-  return true;
+  return userId !== null;
 }
 
 /**
