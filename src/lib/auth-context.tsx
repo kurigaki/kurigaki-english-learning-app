@@ -151,65 +151,88 @@ export function AuthProvider({ children }: AuthProviderProps) {
     // 現在のセッションを確認
     const initializeAuth = async () => {
       console.log("[Auth] initializeAuth開始");
-      try {
-        console.log("[Auth] getSession呼び出し前");
-        const { data: { session }, error } = await getSessionWithTimeout(3000);
 
-        if (!isMounted) return;
+      // ステップ1: まずlocalStorageからセッションを即座に復元（UIを素早く表示）
+      const cachedSession = tryRecoverSessionFromStorage();
+      if (cachedSession) {
+        console.log("[Auth] localStorageからセッションを即座に復元:", cachedSession.userId);
+        // 即座にユーザー状態を設定（UIがすぐにログイン状態を表示）
+        setIsTimeoutRecovery(true);
+        setAuthTimedOut(true); // localStorageモードで開始
+        setCurrentUserId(cachedSession.userId);
+        setUser({
+          id: cachedSession.userId,
+          email: cachedSession.email,
+          app_metadata: {},
+          user_metadata: {},
+          aud: "authenticated",
+          created_at: "",
+        } as import("@supabase/supabase-js").User);
+        // ローディング完了（ユーザーはすぐに操作可能）
+        if (isMounted) {
+          setIsLoading(false);
+          console.log("[Auth] 即座復元完了、isLoading=false");
+        }
 
-        if (error) {
-          console.warn("[Auth] getSessionエラー/タイムアウト:", error.message);
+        // ステップ2: バックグラウンドでSupabaseセッションを確認
+        try {
+          console.log("[Auth] バックグラウンドでgetSession開始");
+          const { data: { session }, error } = await getSessionWithTimeout(3000);
 
-          // タイムアウト時はlocalStorageから復元を試みる
-          const recovered = tryRecoverSessionFromStorage();
-          if (recovered) {
-            console.log("[Auth] localStorageからセッション復元:", recovered.userId);
-            // タイムアウト復元モードを有効化（localStorageモードを維持）
-            setIsTimeoutRecovery(true);
-            setAuthTimedOut(true); // localStorageモードを強制
-            setCurrentUserId(recovered.userId);
-            // 部分的なユーザー情報を設定
-            setUser({
-              id: recovered.userId,
-              email: recovered.email,
-              app_metadata: {},
-              user_metadata: {},
-              aud: "authenticated",
-              created_at: "",
-            } as import("@supabase/supabase-js").User);
-            // タイムアウト復元時はプロファイル取得をスキップ（Supabaseが応答しないため）
-            // プロファイルはnullのまま、基本的なユーザー情報で動作
-            console.log("[Auth] タイムアウト復元完了（localStorageモードで動作）");
+          if (!isMounted) return;
+
+          if (!error && session?.user) {
+            console.log("[Auth] Supabaseセッション確認成功、Supabaseモードに切り替え");
+            setIsTimeoutRecovery(false);
+            setAuthTimedOut(false);
+            setCurrentUserId(session.user.id);
+            setUser(session.user);
+            const userProfile = await fetchProfile(session.user.id);
+            if (isMounted) {
+              setProfile(userProfile);
+            }
           } else {
-            console.log("[Auth] セッション復元失敗、ログアウト状態");
-            setAuthTimedOut(true);
+            console.log("[Auth] Supabaseセッション確認失敗/タイムアウト、localStorageモード継続");
+            // localStorageモードを継続（既に設定済み）
+          }
+        } catch (error) {
+          if (error instanceof Error && error.name === "AbortError") return;
+          console.log("[Auth] バックグラウンドセッション確認エラー、localStorageモード継続");
+        }
+      } else {
+        // localStorageにセッションがない場合は通常のフロー
+        try {
+          console.log("[Auth] getSession呼び出し前");
+          const { data: { session }, error } = await getSessionWithTimeout(3000);
+
+          if (!isMounted) return;
+
+          if (error) {
+            console.log("[Auth] getSessionエラー/タイムアウト、セッションなし");
+            setCurrentUserId(null);
+          } else if (session?.user) {
+            console.log("[Auth] ユーザーセッション検出:", session.user.id);
+            setIsTimeoutRecovery(false);
+            setCurrentUserId(session.user.id);
+            setAuthTimedOut(false);
+            setUser(session.user);
+            const userProfile = await fetchProfile(session.user.id);
+            if (isMounted) {
+              setProfile(userProfile);
+            }
+          } else {
+            console.log("[Auth] セッションなし");
             setCurrentUserId(null);
           }
-        } else if (session?.user) {
-          console.log("[Auth] ユーザーセッション検出:", session.user.id);
-          // 正常なセッション取得時はタイムアウト復元モードを解除
-          setIsTimeoutRecovery(false);
-          setCurrentUserId(session.user.id);
-          setAuthTimedOut(false);
-          setUser(session.user);
-          const userProfile = await fetchProfile(session.user.id);
-          if (isMounted) {
-            setProfile(userProfile);
-          }
-        } else {
-          console.log("[Auth] セッションなし");
+        } catch (error) {
+          if (error instanceof Error && error.name === "AbortError") return;
+          console.error("認証初期化エラー:", error);
           setCurrentUserId(null);
-        }
-      } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") {
-          return;
-        }
-        console.error("認証初期化エラー:", error);
-        setCurrentUserId(null);
-      } finally {
-        if (isMounted) {
-          console.log("[Auth] initializeAuth完了、isLoading=false");
-          setIsLoading(false);
+        } finally {
+          if (isMounted) {
+            console.log("[Auth] initializeAuth完了、isLoading=false");
+            setIsLoading(false);
+          }
         }
       }
     };
