@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-import { useAuth } from "@/lib/auth-context";
 import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { unifiedStorage } from "@/lib/unified-storage";
@@ -14,7 +13,6 @@ type WeakWord = Word & {
 };
 
 export default function WeakWordsPage() {
-  const { isLoading: isAuthLoading, isAuthenticated } = useAuth();
   const [weakWords, setWeakWords] = useState<WeakWord[]>([]);
   const [sortBy, setSortBy] = useState<"accuracy" | "recent">("accuracy");
   const [isMounted, setIsMounted] = useState(false);
@@ -49,14 +47,14 @@ export default function WeakWordsPage() {
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
-
-  // 認証初期化完了後、または認証状態・ソート順が変わったらデータを再取得
-  // loadWeakWordsはsortByに依存しているため、sortBy変更時も自動で再実行される
-  useEffect(() => {
-    if (isAuthLoading || !isMounted) return;
     loadWeakWords();
-  }, [isAuthLoading, isAuthenticated, isMounted, loadWeakWords]);
+  }, [loadWeakWords]);
+
+  useEffect(() => {
+    if (isMounted) {
+      loadWeakWords();
+    }
+  }, [sortBy, isMounted, loadWeakWords]);
 
   const getAccuracyColor = (accuracy: number) => {
     if (accuracy < 30) return "text-red-600 bg-red-100";
