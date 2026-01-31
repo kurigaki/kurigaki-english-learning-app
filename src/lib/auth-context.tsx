@@ -31,15 +31,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isSyncing, setIsSyncing] = useState(false);
+  // タイムアウト復元モードかどうか（Supabaseが応答しないため、localStorageモードを維持）
+  const [isTimeoutRecovery, setIsTimeoutRecovery] = useState(false);
 
   // ユーザーセッションを同期（ストレージモジュールがユーザーIDを参照できるように）
   useEffect(() => {
     if (user?.id) {
-      // 認証成功時はタイムアウトフラグをリセット（Supabase使用を許可）
-      setAuthTimedOut(false);
+      // タイムアウト復元モードでない場合のみ、Supabase使用を許可
+      if (!isTimeoutRecovery) {
+        setAuthTimedOut(false);
+      }
     }
     setCurrentUserId(user?.id ?? null);
-  }, [user]);
+  }, [user, isTimeoutRecovery]);
 
   // プロフィールを取得
   const fetchProfile = useCallback(
@@ -160,8 +164,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
           const recovered = tryRecoverSessionFromStorage();
           if (recovered) {
             console.log("[Auth] localStorageからセッション復元:", recovered.userId);
+            // タイムアウト復元モードを有効化（localStorageモードを維持）
+            setIsTimeoutRecovery(true);
+            setAuthTimedOut(true); // localStorageモードを強制
             setCurrentUserId(recovered.userId);
-            setAuthTimedOut(false);
             // 部分的なユーザー情報を設定
             setUser({
               id: recovered.userId,
@@ -173,7 +179,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
             } as import("@supabase/supabase-js").User);
             // タイムアウト復元時はプロファイル取得をスキップ（Supabaseが応答しないため）
             // プロファイルはnullのまま、基本的なユーザー情報で動作
-            console.log("[Auth] タイムアウト復元完了（プロファイルはスキップ）");
+            console.log("[Auth] タイムアウト復元完了（localStorageモードで動作）");
           } else {
             console.log("[Auth] セッション復元失敗、ログアウト状態");
             setAuthTimedOut(true);
@@ -181,6 +187,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
           }
         } else if (session?.user) {
           console.log("[Auth] ユーザーセッション検出:", session.user.id);
+          // 正常なセッション取得時はタイムアウト復元モードを解除
+          setIsTimeoutRecovery(false);
           setCurrentUserId(session.user.id);
           setAuthTimedOut(false);
           setUser(session.user);
@@ -216,6 +224,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       try {
         if (session?.user) {
+          // 正常なログイン/セッション取得時はタイムアウト復元モードを解除
+          setIsTimeoutRecovery(false);
           setCurrentUserId(session.user.id);
           setAuthTimedOut(false);
           setUser(session.user);
@@ -339,6 +349,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     // ローカル状態は必ずクリア（Supabaseの可否に関わらず）
     setUser(null);
     setProfile(null);
+    setIsTimeoutRecovery(false);
     // 認証状態をリセット（次回ログイン時に正常に動作するように）
     resetAuthState();
   }, []);
