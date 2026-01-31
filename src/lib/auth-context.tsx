@@ -96,41 +96,112 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     let isMounted = true;
 
-    // タイムアウト: 5秒後に強制的にローディングを解除
-    const timeoutId = setTimeout(() => {
-      if (isMounted) {
-        console.warn("認証初期化がタイムアウトしました");
-        // 認証タイムアウトフラグを設定（Supabaseを使用せずlocalStorageモードで動作）
-        setAuthTimedOut(true);
-        setIsLoading(false);
+    // タイムアウト付きでgetSessionを呼び出す
+    const getSessionWithTimeout = async (timeoutMs: number) => {
+      const timeoutPromise = new Promise<{ data: { session: null }; error: Error }>((resolve) => {
+        setTimeout(() => {
+          resolve({
+            data: { session: null },
+            error: new Error("getSession timeout"),
+          });
+        }, timeoutMs);
+      });
+
+      return Promise.race([
+        supabase.auth.getSession(),
+        timeoutPromise,
+      ]);
+    };
+
+    // localStorageから直接セッションを復元する試み
+    const tryRecoverSessionFromStorage = (): { userId: string; email?: string } | null => {
+      try {
+        // Supabaseが使用する可能性のあるすべてのキーパターンを検索
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (!key) continue;
+
+          // Supabaseのauth tokenキーパターンをチェック
+          // フォーマット: sb-<project-ref>-auth-token または english-app-auth
+          if (key.includes("auth-token") || key === "english-app-auth") {
+            const stored = localStorage.getItem(key);
+            if (!stored) continue;
+
+            try {
+              const parsed = JSON.parse(stored);
+              if (parsed?.user?.id) {
+                console.log("[Auth] localStorageから認証データ発見:", key);
+                return { userId: parsed.user.id, email: parsed.user.email };
+              }
+            } catch {
+              // JSON解析失敗は無視
+            }
+          }
+        }
+        return null;
+      } catch {
+        return null;
       }
-    }, 5000);
+    };
 
     // 現在のセッションを確認
     const initializeAuth = async () => {
+      console.log("[Auth] initializeAuth開始");
       try {
-        const {
-          data: { session },
-        } = await supabase.auth.getSession();
+        console.log("[Auth] getSession呼び出し前");
+        const { data: { session }, error } = await getSessionWithTimeout(3000);
 
         if (!isMounted) return;
 
-        if (session?.user) {
+        if (error) {
+          console.warn("[Auth] getSessionエラー/タイムアウト:", error.message);
+
+          // タイムアウト時はlocalStorageから復元を試みる
+          const recovered = tryRecoverSessionFromStorage();
+          if (recovered) {
+            console.log("[Auth] localStorageからセッション復元:", recovered.userId);
+            setCurrentUserId(recovered.userId);
+            setAuthTimedOut(false);
+            // 部分的なユーザー情報を設定
+            setUser({
+              id: recovered.userId,
+              email: recovered.email,
+              app_metadata: {},
+              user_metadata: {},
+              aud: "authenticated",
+              created_at: "",
+            } as import("@supabase/supabase-js").User);
+            const userProfile = await fetchProfile(recovered.userId);
+            if (isMounted) {
+              setProfile(userProfile);
+            }
+          } else {
+            console.log("[Auth] セッション復元失敗、ログアウト状態");
+            setAuthTimedOut(true);
+            setCurrentUserId(null);
+          }
+        } else if (session?.user) {
+          console.log("[Auth] ユーザーセッション検出:", session.user.id);
+          setCurrentUserId(session.user.id);
+          setAuthTimedOut(false);
           setUser(session.user);
           const userProfile = await fetchProfile(session.user.id);
           if (isMounted) {
             setProfile(userProfile);
           }
+        } else {
+          console.log("[Auth] セッションなし");
+          setCurrentUserId(null);
         }
       } catch (error) {
-        // AbortErrorは無視
         if (error instanceof Error && error.name === "AbortError") {
           return;
         }
         console.error("認証初期化エラー:", error);
+        setCurrentUserId(null);
       } finally {
-        clearTimeout(timeoutId);
         if (isMounted) {
+          console.log("[Auth] initializeAuth完了、isLoading=false");
           setIsLoading(false);
         }
       }
@@ -138,22 +209,21 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     initializeAuth();
 
-    // 認証状態の変更を監視
+    // 認証状態の変更を監視（ログイン/ログアウト時）
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
-      // アンマウント後は処理しない
       if (!isMounted) return;
 
       try {
         if (session?.user) {
+          setCurrentUserId(session.user.id);
+          setAuthTimedOut(false);
           setUser(session.user);
           let userProfile = await fetchProfile(session.user.id);
 
-          // アンマウント後は処理しない
           if (!isMounted) return;
 
-          // 新規登録時はプロフィールを作成
           if (!userProfile && event === "SIGNED_IN") {
             userProfile = await createProfile(session.user.id);
           }
@@ -180,11 +250,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
             }
           }
         } else {
+          setCurrentUserId(null);
           setUser(null);
           setProfile(null);
-        }
-        if (isMounted) {
-          setIsLoading(false);
         }
       } catch (error) {
         if (error instanceof Error && error.name === "AbortError") return;
