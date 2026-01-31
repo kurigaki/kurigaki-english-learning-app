@@ -1,11 +1,21 @@
 /**
  * Web Locks API のポリフィル
  * Supabase Auth JSのAbortError問題を回避するため
+ *
+ * 注意: このポリフィルはロックを実際には取得せず、即座にコールバックを実行する
  */
 
 export function applyWebLocksPolyfill() {
   if (typeof window === "undefined") return;
   if (typeof navigator === "undefined") return;
+
+  // ネイティブのWeb Locks APIが利用可能な場合はポリフィルを適用しない
+  // これにより、複数タブ間でのセッション管理が正常に動作する
+  if (navigator.locks && typeof navigator.locks.request === "function") {
+    // ネイティブAPIが存在する場合は何もしない
+    console.log("[WebLocksPolyfill] Native Web Locks API available, skipping polyfill");
+    return;
+  }
 
   // 既にポリフィルが適用されている場合はスキップ
   if ((navigator.locks as unknown as { _polyfilled?: boolean })?._polyfilled) {
@@ -29,30 +39,8 @@ export function applyWebLocksPolyfill() {
         ? callbackOrOptions
         : maybeCallback!;
 
-      // ifAvailableオプションがある場合の処理
-      const options = typeof callbackOrOptions === "object" ? callbackOrOptions : {};
-      if (options.ifAvailable) {
-        // ifAvailableの場合はnullを返すことが許容される
-        try {
-          return await callback(createMockLock(name)) as T;
-        } catch (error) {
-          if (error instanceof Error && error.name === "AbortError") {
-            return undefined as T;
-          }
-          throw error;
-        }
-      }
-
-      try {
-        // 通常のリクエストではモックLockを渡す
-        return await callback(createMockLock(name)) as T;
-      } catch (error) {
-        // AbortErrorを無視
-        if (error instanceof Error && error.name === "AbortError") {
-          return undefined as T;
-        }
-        throw error;
-      }
+      // コールバックを即座に実行
+      return await callback(createMockLock(name)) as T;
     },
     query: async () => ({
       held: [],
@@ -70,5 +58,5 @@ export function applyWebLocksPolyfill() {
     configurable: true,
   });
 
-  console.log("[WebLocksPolyfill] Applied");
+  console.log("[WebLocksPolyfill] Applied (fallback mode)");
 }
