@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
-import { useAuth } from "@/lib/auth-context";
+import { useEffect, useState } from "react";
 import { UnlockedAchievement } from "@/types";
 import { ACHIEVEMENTS } from "@/data/achievements";
 import { unifiedStorage } from "@/lib/unified-storage";
@@ -9,23 +8,19 @@ import { AchievementList } from "@/components/features/achievements/AchievementL
 import { ProgressBar } from "@/components/ui";
 
 export default function AchievementsPage() {
-  const { isLoading: isAuthLoading, isAuthenticated } = useAuth();
   const [unlockedAchievements, setUnlockedAchievements] = useState<
     UnlockedAchievement[]
   >([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const loadData = useCallback(async () => {
-    const unlocked = await unifiedStorage.getUnlockedAchievements();
-    setUnlockedAchievements(unlocked);
-    setIsLoading(false);
-  }, []);
-
-  // 認証初期化完了後、または認証状態が変わったらデータを再取得
   useEffect(() => {
-    if (isAuthLoading) return;
+    const loadData = async () => {
+      const unlocked = await unifiedStorage.getUnlockedAchievements();
+      setUnlockedAchievements(unlocked);
+      setIsLoading(false);
+    };
     loadData();
-  }, [isAuthLoading, isAuthenticated, loadData]);
+  }, []);
 
   if (isLoading) {
     return (

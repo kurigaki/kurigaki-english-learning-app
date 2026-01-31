@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-import { useAuth } from "@/lib/auth-context";
 import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { unifiedStorage } from "@/lib/unified-storage";
@@ -11,7 +10,6 @@ import { words, Word, categoryLabels, difficultyLabels } from "@/data/words";
 type SortOption = "added" | "name" | "difficulty";
 
 export default function BookmarksPage() {
-  const { isLoading: isAuthLoading, isAuthenticated } = useAuth();
   const [bookmarkedWords, setBookmarkedWords] = useState<Word[]>([]);
   const [sortBy, setSortBy] = useState<SortOption>("added");
   const [isMounted, setIsMounted] = useState(false);
@@ -41,14 +39,14 @@ export default function BookmarksPage() {
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
-
-  // 認証初期化完了後、または認証状態・ソート順が変わったらデータを再取得
-  // loadBookmarksはsortByに依存しているため、sortBy変更時も自動で再実行される
-  useEffect(() => {
-    if (isAuthLoading || !isMounted) return;
     loadBookmarks();
-  }, [isAuthLoading, isAuthenticated, isMounted, loadBookmarks]);
+  }, [loadBookmarks]);
+
+  useEffect(() => {
+    if (isMounted) {
+      loadBookmarks();
+    }
+  }, [sortBy, isMounted, loadBookmarks]);
 
   const handleRemoveBookmark = async (wordId: number, e: React.MouseEvent) => {
     e.preventDefault(); // Linkのナビゲーションを防ぐ

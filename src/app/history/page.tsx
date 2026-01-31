@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
-import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import type { WordStats } from "@/lib/storage";
 import { LearningRecord, QuestionType } from "@/types";
@@ -16,28 +15,21 @@ const questionTypeLabels: Record<QuestionType, string> = {
 };
 
 export default function HistoryPage() {
-  const { isLoading: isAuthLoading, isAuthenticated } = useAuth();
   const [records, setRecords] = useState<LearningRecord[]>([]);
   const [wordStats, setWordStats] = useState<Map<number, WordStats>>(new Map());
   const [isMounted, setIsMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<"overview" | "weak" | "history">("overview");
 
-  const loadData = useCallback(async () => {
-    const data = await unifiedStorage.getRecords();
-    setRecords([...data].reverse());
-    const stats = await unifiedStorage.getWordStats();
-    setWordStats(stats);
-  }, []);
-
   useEffect(() => {
     setIsMounted(true);
-  }, []);
-
-  // 認証初期化完了後、または認証状態が変わったらデータを再取得
-  useEffect(() => {
-    if (isAuthLoading) return;
+    const loadData = async () => {
+      const data = await unifiedStorage.getRecords();
+      setRecords([...data].reverse());
+      const stats = await unifiedStorage.getWordStats();
+      setWordStats(stats);
+    };
     loadData();
-  }, [isAuthLoading, isAuthenticated, loadData]);
+  }, []);
 
   const todayStats = useMemo(() => {
     const today = new Date().toDateString();
