@@ -38,7 +38,8 @@ export function getSupabaseClient() {
   if (!supabaseClient) {
     supabaseClient = createClient<Database>(supabaseUrl, supabaseAnonKey, {
       auth: {
-        autoRefreshToken: true,
+        // トークンの自動リフレッシュを無効化（手動で直接API経由でリフレッシュ）
+        autoRefreshToken: false,
         persistSession: true,
         detectSessionInUrl: false,
         flowType: "implicit",

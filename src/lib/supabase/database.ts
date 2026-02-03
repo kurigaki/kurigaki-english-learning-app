@@ -1,4 +1,3 @@
-import { getSupabaseClient } from "./client";
 import type { QuestionType, UnlockedAchievement, SpeedChallengeResult } from "@/types";
 import type { UserData, WordStats } from "@/lib/storage";
 import type {
@@ -8,6 +7,202 @@ import type {
   DbSpeedChallengeResult,
   DbBookmark,
 } from "@/types/database";
+
+// 環境変数から取得
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+/**
+ * localStorageからセッション情報を取得
+ */
+function getStoredSession(): { accessToken: string; refreshToken: string; expiresAt: number } | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const stored = localStorage.getItem("english-app-auth");
+    if (!stored) return null;
+    const parsed = JSON.parse(stored);
+    return {
+      accessToken: parsed?.access_token || null,
+      refreshToken: parsed?.refresh_token || null,
+      expiresAt: parsed?.expires_at || 0,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * localStorageのセッション情報を更新
+ */
+function updateStoredSession(accessToken: string, refreshToken: string, expiresAt: number): void {
+  if (typeof window === "undefined") return;
+  try {
+    const stored = localStorage.getItem("english-app-auth");
+    if (!stored) return;
+    const parsed = JSON.parse(stored);
+    parsed.access_token = accessToken;
+    parsed.refresh_token = refreshToken;
+    parsed.expires_at = expiresAt;
+    localStorage.setItem("english-app-auth", JSON.stringify(parsed));
+  } catch {
+    // 無視
+  }
+}
+
+/**
+ * トークンをリフレッシュ
+ */
+async function refreshAccessToken(refreshToken: string): Promise<{ accessToken: string; refreshToken: string; expiresAt: number } | null> {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return null;
+
+  try {
+    const response = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`, {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ refresh_token: refreshToken }),
+    });
+
+    if (!response.ok) return null;
+
+    const data = await response.json();
+    return {
+      accessToken: data.access_token,
+      refreshToken: data.refresh_token,
+      expiresAt: data.expires_at,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * 有効なアクセストークンを取得（必要に応じてリフレッシュ）
+ */
+async function getValidAccessToken(): Promise<string | null> {
+  const session = getStoredSession();
+  if (!session?.accessToken) return null;
+
+  // トークンの有効期限をチェック（30秒の余裕を持つ）
+  const now = Math.floor(Date.now() / 1000);
+  if (session.expiresAt && session.expiresAt - 30 < now) {
+    // トークンが期限切れまたは期限切れ間近 - リフレッシュを試みる
+    if (session.refreshToken) {
+      const newSession = await refreshAccessToken(session.refreshToken);
+      if (newSession) {
+        updateStoredSession(newSession.accessToken, newSession.refreshToken, newSession.expiresAt);
+        return newSession.accessToken;
+      }
+    }
+    // リフレッシュ失敗 - 古いトークンを試す（まだ有効かもしれない）
+  }
+
+  return session.accessToken;
+}
+
+/**
+ * Supabaseクライアントをバイパスして直接REST APIを呼び出す
+ * これにより、クライアント内部のブロッキング問題を回避
+ */
+async function directSupabaseQuery<T>(
+  table: string,
+  queryParams: string,
+  options?: {
+    method?: "GET" | "POST" | "PATCH" | "DELETE";
+    body?: Record<string, unknown>;
+    single?: boolean;
+    returnData?: boolean; // POSTで作成したデータを返す
+    upsert?: boolean; // UPSERT操作
+  }
+): Promise<{ data: T | null; error: { code?: string; message?: string } | null }> {
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+    return { data: null, error: { message: "Supabase not configured" } };
+  }
+
+  const accessToken = await getValidAccessToken();
+  if (!accessToken) {
+    return { data: null, error: { message: "No access token" } };
+  }
+
+  const method = options?.method || "GET";
+  const url = `${SUPABASE_URL}/rest/v1/${table}?${queryParams}`;
+
+  try {
+    const headers: Record<string, string> = {
+      "apikey": SUPABASE_ANON_KEY,
+      "Authorization": `Bearer ${accessToken}`,
+      "Content-Type": "application/json",
+    };
+
+    if (options?.single) {
+      headers["Accept"] = "application/vnd.pgrst.object+json";
+    }
+
+    if (options?.returnData) {
+      headers["Prefer"] = "return=representation";
+    }
+
+    if (options?.upsert) {
+      headers["Prefer"] = "resolution=merge-duplicates" + (options.returnData ? ",return=representation" : "");
+    }
+
+    const response = await fetch(url, {
+      method,
+      headers,
+      body: options?.body ? JSON.stringify(options.body) : undefined,
+    });
+
+    // 401エラーの場合、トークンリフレッシュを試みて再リクエスト
+    if (response.status === 401) {
+      const session = getStoredSession();
+      if (session?.refreshToken) {
+        const newSession = await refreshAccessToken(session.refreshToken);
+        if (newSession) {
+          updateStoredSession(newSession.accessToken, newSession.refreshToken, newSession.expiresAt);
+          // 新しいトークンで再試行
+          headers["Authorization"] = `Bearer ${newSession.accessToken}`;
+          const retryResponse = await fetch(url, {
+            method,
+            headers,
+            body: options?.body ? JSON.stringify(options.body) : undefined,
+          });
+          if (retryResponse.ok) {
+            const contentType = retryResponse.headers.get("content-type");
+            if (contentType?.includes("application/json") || contentType?.includes("application/vnd.pgrst")) {
+              const data = await retryResponse.json();
+              return { data: data as T, error: null };
+            }
+            return { data: null, error: null };
+          }
+        }
+      }
+      return { data: null, error: { code: "401", message: "Unauthorized - please re-login" } };
+    }
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      let errorData;
+      try {
+        errorData = JSON.parse(errorText);
+      } catch {
+        errorData = { message: errorText };
+      }
+      return { data: null, error: errorData };
+    }
+
+    const contentType = response.headers.get("content-type");
+    if (contentType?.includes("application/json") || contentType?.includes("application/vnd.pgrst")) {
+      const data = await response.json();
+      return { data: data as T, error: null };
+    }
+
+    return { data: null, error: null };
+  } catch (err) {
+    return { data: null, error: { message: (err as Error).message } };
+  }
+}
 
 // ユーティリティ関数
 function getToday(): string {
@@ -111,21 +306,17 @@ function toLocalSpeedResult(data: DbSpeedChallengeResult): SpeedChallengeResult 
 export const supabaseStorage = {
   // 学習記録
   async getRecords(userId: string): Promise<LearningRecord[]> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<DbLearningRecord[]>(
+      "learning_records",
+      `user_id=eq.${userId}&order=studied_at.desc`
+    );
 
-    const { data, error } = await supabase
-      .from("learning_records")
-      .select("*")
-      .eq("user_id", userId)
-      .order("studied_at", { ascending: false });
-
-    if (error) {
-      handleSupabaseError(error, "getRecords");
-      return []; // フォールバック不要なエラーの場合は空配列を返す
+    if (result.error) {
+      handleSupabaseError(result.error, "getRecords");
+      return [];
     }
 
-    return ((data || []) as DbLearningRecord[]).map(toLocalRecord);
+    return (result.data || []).map(toLocalRecord);
   },
 
   async addRecord(
@@ -138,41 +329,41 @@ export const supabaseStorage = {
       correct: boolean;
     }
   ): Promise<LearningRecord | null> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<DbLearningRecord>(
+      "learning_records",
+      "select=*",
+      {
+        method: "POST",
+        body: {
+          user_id: userId,
+          word_id: record.wordId,
+          word: record.word,
+          meaning: record.meaning,
+          question_type: record.questionType,
+          correct: record.correct,
+        },
+        returnData: true,
+        single: true,
+      }
+    );
 
-    const { data, error } = await supabase
-      .from("learning_records")
-      .insert({
-        user_id: userId,
-        word_id: record.wordId,
-        word: record.word,
-        meaning: record.meaning,
-        question_type: record.questionType,
-        correct: record.correct,
-      })
-      .select()
-      .single();
-
-    if (error) {
-      handleSupabaseError(error, "addRecord");
+    if (result.error) {
+      handleSupabaseError(result.error, "addRecord");
       return null;
     }
 
-    return toLocalRecord(data as DbLearningRecord);
+    return result.data ? toLocalRecord(result.data) : null;
   },
 
   async clearRecords(userId: string): Promise<boolean> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<null>(
+      "learning_records",
+      `user_id=eq.${userId}`,
+      { method: "DELETE" }
+    );
 
-    const { error } = await supabase
-      .from("learning_records")
-      .delete()
-      .eq("user_id", userId);
-
-    if (error) {
-      handleSupabaseError(error, "clearRecords");
+    if (result.error) {
+      handleSupabaseError(result.error, "clearRecords");
       return false;
     }
 
@@ -245,7 +436,6 @@ export const supabaseStorage = {
 
   // ユーザーデータ
   async getUserData(userId: string): Promise<UserData> {
-    const supabase = getSupabaseClient();
     const defaultData: UserData = {
       streak: 0,
       lastStudyDate: null,
@@ -256,31 +446,37 @@ export const supabaseStorage = {
       todayDate: null,
     };
 
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<DbUserData>(
+      "user_data",
+      `user_id=eq.${userId}`,
+      { single: true }
+    );
 
-    const { data, error } = await supabase
-      .from("user_data")
-      .select("*")
-      .eq("user_id", userId)
-      .single();
-
-    if (error) {
+    if (result.error) {
       // データが存在しない場合は作成を試みる
-      if (error.code === "PGRST116") {
+      if ((result.error as { code?: string }).code === "PGRST116") {
         try {
           await supabaseStorage.saveUserData(userId, defaultData);
           return defaultData;
         } catch {
-          // saveも失敗した場合はフォールバックさせる
           throw new Error("Failed to create user data");
         }
       }
-      // その他のエラーはフォールバック判定
-      handleSupabaseError(error, "getUserData");
+      handleSupabaseError(result.error, "getUserData");
       return defaultData;
     }
 
-    const userData = toLocalUserData(data as DbUserData);
+    if (!result.data) {
+      // データが存在しない場合は作成を試みる
+      try {
+        await supabaseStorage.saveUserData(userId, defaultData);
+        return defaultData;
+      } catch {
+        throw new Error("Failed to create user data");
+      }
+    }
+
+    const userData = toLocalUserData(result.data);
 
     // 日付が変わっていたら今日の正解数をリセット
     const today = getToday();
@@ -293,25 +489,27 @@ export const supabaseStorage = {
   },
 
   async saveUserData(userId: string, userData: UserData): Promise<boolean> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
-
-    const { error } = await supabase.from("user_data").upsert(
+    const result = await directSupabaseQuery<null>(
+      "user_data",
+      "on_conflict=user_id",
       {
-        user_id: userId,
-        streak: userData.streak,
-        last_study_date: userData.lastStudyDate,
-        total_xp: userData.totalXp,
-        level: userData.level,
-        daily_goal: userData.dailyGoal,
-        today_correct: userData.todayCorrect,
-        today_date: userData.todayDate,
-      },
-      { onConflict: "user_id" }
+        method: "POST",
+        body: {
+          user_id: userId,
+          streak: userData.streak,
+          last_study_date: userData.lastStudyDate,
+          total_xp: userData.totalXp,
+          level: userData.level,
+          daily_goal: userData.dailyGoal,
+          today_correct: userData.todayCorrect,
+          today_date: userData.todayDate,
+        },
+        upsert: true,
+      }
     );
 
-    if (error) {
-      handleSupabaseError(error, "saveUserData");
+    if (result.error) {
+      handleSupabaseError(result.error, "saveUserData");
       return false;
     }
 
@@ -320,117 +518,110 @@ export const supabaseStorage = {
 
   // 実績
   async getUnlockedAchievements(userId: string): Promise<UnlockedAchievement[]> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<DbUnlockedAchievement[]>(
+      "unlocked_achievements",
+      `user_id=eq.${userId}`
+    );
 
-    const { data, error } = await supabase
-      .from("unlocked_achievements")
-      .select("*")
-      .eq("user_id", userId);
-
-    if (error) {
-      handleSupabaseError(error, "getUnlockedAchievements");
+    if (result.error) {
+      handleSupabaseError(result.error, "getUnlockedAchievements");
       return [];
     }
 
-    return ((data || []) as DbUnlockedAchievement[]).map(toLocalAchievement);
+    return (result.data || []).map(toLocalAchievement);
   },
 
   async unlockAchievement(
     userId: string,
     achievementId: string
   ): Promise<UnlockedAchievement | null> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<DbUnlockedAchievement>(
+      "unlocked_achievements",
+      "select=*",
+      {
+        method: "POST",
+        body: {
+          user_id: userId,
+          achievement_id: achievementId,
+        },
+        returnData: true,
+        single: true,
+      }
+    );
 
-    const { data, error } = await supabase
-      .from("unlocked_achievements")
-      .insert({
-        user_id: userId,
-        achievement_id: achievementId,
-      })
-      .select()
-      .single();
-
-    if (error) {
+    if (result.error) {
       // 既に存在する場合は正常
-      if (error.code === "23505") {
+      if (result.error.code === "23505") {
         return null;
       }
-      handleSupabaseError(error, "unlockAchievement");
+      handleSupabaseError(result.error, "unlockAchievement");
       return null;
     }
 
-    return toLocalAchievement(data as DbUnlockedAchievement);
+    return result.data ? toLocalAchievement(result.data) : null;
   },
 
   async isAchievementUnlocked(
     userId: string,
     achievementId: string
   ): Promise<boolean> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<{ id: string }>(
+      "unlocked_achievements",
+      `user_id=eq.${userId}&achievement_id=eq.${achievementId}&select=id`,
+      { single: true }
+    );
 
-    const { data, error } = await supabase
-      .from("unlocked_achievements")
-      .select("id")
-      .eq("user_id", userId)
-      .eq("achievement_id", achievementId)
-      .single();
-
-    if (error) {
+    if (result.error) {
       // PGRST116はデータなし（= 未解除）
-      if (error.code === "PGRST116") return false;
-      handleSupabaseError(error, "isAchievementUnlocked");
+      if ((result.error as { code?: string }).code === "PGRST116") return false;
+      handleSupabaseError(result.error, "isAchievementUnlocked");
       return false;
     }
-    return Boolean(data);
+    return Boolean(result.data);
   },
 
   // スピードチャレンジ
   async getSpeedChallengeResults(userId: string): Promise<SpeedChallengeResult[]> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<DbSpeedChallengeResult[]>(
+      "speed_challenge_results",
+      `user_id=eq.${userId}&order=played_at.desc`
+    );
 
-    const { data, error } = await supabase
-      .from("speed_challenge_results")
-      .select("*")
-      .eq("user_id", userId)
-      .order("played_at", { ascending: false });
-
-    if (error) {
-      handleSupabaseError(error, "getSpeedChallengeResults");
+    if (result.error) {
+      handleSupabaseError(result.error, "getSpeedChallengeResults");
       return [];
     }
 
-    return ((data || []) as DbSpeedChallengeResult[]).map(toLocalSpeedResult);
+    return (result.data || []).map(toLocalSpeedResult);
   },
 
   async addSpeedChallengeResult(
     userId: string,
-    result: Omit<SpeedChallengeResult, "id" | "playedAt">
+    resultData: Omit<SpeedChallengeResult, "id" | "playedAt">
   ): Promise<SpeedChallengeResult | null> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<DbSpeedChallengeResult>(
+      "speed_challenge_results",
+      "select=*",
+      {
+        method: "POST",
+        body: {
+          user_id: userId,
+          score: resultData.score,
+          correct_count: resultData.correctCount,
+          total_questions: resultData.totalQuestions,
+          time_limit: resultData.timeLimit,
+        },
+        returnData: true,
+        single: true,
+      }
+    );
 
-    const { data, error } = await supabase
-      .from("speed_challenge_results")
-      .insert({
-        user_id: userId,
-        score: result.score,
-        correct_count: result.correctCount,
-        total_questions: result.totalQuestions,
-        time_limit: result.timeLimit,
-      })
-      .select()
-      .single();
-
-    if (error) {
-      handleSupabaseError(error, "addSpeedChallengeResult");
+    if (result.error) {
+      handleSupabaseError(result.error, "addSpeedChallengeResult");
       return null;
     }
 
-    return toLocalSpeedResult(data as DbSpeedChallengeResult);
+    return result.data ? toLocalSpeedResult(result.data) : null;
   },
 
   async getSpeedChallengeHighScore(userId: string): Promise<number> {
@@ -441,57 +632,54 @@ export const supabaseStorage = {
 
   // ブックマーク
   async getBookmarkedWordIds(userId: string): Promise<number[]> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<Pick<DbBookmark, "word_id">[]>(
+      "bookmarks",
+      `user_id=eq.${userId}&select=word_id`
+    );
 
-    const { data, error } = await supabase
-      .from("bookmarks")
-      .select("word_id")
-      .eq("user_id", userId);
-
-    if (error) {
-      handleSupabaseError(error, "getBookmarkedWordIds");
+    if (result.error) {
+      handleSupabaseError(result.error, "getBookmarkedWordIds");
       return [];
     }
 
-    return (data || []).map((d: Pick<DbBookmark, "word_id">) => d.word_id);
+    return (result.data || []).map((d) => d.word_id);
   },
 
   async isWordBookmarked(userId: string, wordId: number): Promise<boolean> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<{ id: string }>(
+      "bookmarks",
+      `user_id=eq.${userId}&word_id=eq.${wordId}&select=id`,
+      { single: true }
+    );
 
-    const { data, error } = await supabase
-      .from("bookmarks")
-      .select("id")
-      .eq("user_id", userId)
-      .eq("word_id", wordId)
-      .single();
-
-    if (error) {
+    if (result.error) {
       // PGRST116はデータなし（= ブックマークされていない）
-      if (error.code === "PGRST116") return false;
-      handleSupabaseError(error, "isWordBookmarked");
+      if ((result.error as { code?: string }).code === "PGRST116") return false;
+      handleSupabaseError(result.error, "isWordBookmarked");
       return false;
     }
-    return Boolean(data);
+    return Boolean(result.data);
   },
 
   async addBookmark(userId: string, wordId: number): Promise<boolean> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<null>(
+      "bookmarks",
+      "",
+      {
+        method: "POST",
+        body: {
+          user_id: userId,
+          word_id: wordId,
+        },
+      }
+    );
 
-    const { error } = await supabase.from("bookmarks").insert({
-      user_id: userId,
-      word_id: wordId,
-    });
-
-    if (error) {
+    if (result.error) {
       // 既に存在する場合は正常
-      if (error.code === "23505") {
+      if (result.error.code === "23505") {
         return true;
       }
-      handleSupabaseError(error, "addBookmark");
+      handleSupabaseError(result.error, "addBookmark");
       return false;
     }
 
@@ -499,17 +687,14 @@ export const supabaseStorage = {
   },
 
   async removeBookmark(userId: string, wordId: number): Promise<boolean> {
-    const supabase = getSupabaseClient();
-    if (!supabase) throw new Error("Supabase client not available");
+    const result = await directSupabaseQuery<null>(
+      "bookmarks",
+      `user_id=eq.${userId}&word_id=eq.${wordId}`,
+      { method: "DELETE" }
+    );
 
-    const { error } = await supabase
-      .from("bookmarks")
-      .delete()
-      .eq("user_id", userId)
-      .eq("word_id", wordId);
-
-    if (error) {
-      handleSupabaseError(error, "removeBookmark");
+    if (result.error) {
+      handleSupabaseError(result.error, "removeBookmark");
       return false;
     }
 
