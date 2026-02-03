@@ -7,7 +7,7 @@
  * Note: 初回ログイン時はlocalStorageのデータをSupabaseに同期（data-sync.ts）
  */
 
-import { getCurrentUserId, isLoggedIn } from "./user-session";
+import { getCurrentUserId, isLoggedIn, isAuthTimedOut } from "./user-session";
 import { storage } from "./storage";
 import { supabaseStorage } from "./supabase/database";
 import type { UserData, WordStats } from "./storage";
@@ -21,13 +21,18 @@ import { ACHIEVEMENTS } from "@/data/achievements";
 
 /**
  * Supabaseを使用すべきかどうかを判定
- * ログイン中であればSupabaseを使用（端末間でデータを同期）
+ * ログイン中かつ認証がタイムアウトしていない場合にSupabaseを使用
  *
  * Note: 初回ログイン時のlocalStorage→Supabase同期は別途data-sync.tsで処理
+ * Note: 認証タイムアウト時はlocalStorageを使用（Supabaseへの接続が不安定なため）
  */
 function shouldUseSupabase(): boolean {
   const userId = getCurrentUserId();
-  return userId !== null;
+  const timedOut = isAuthTimedOut();
+  const result = userId !== null && !timedOut;
+  console.log("[UnifiedStorage] shouldUseSupabase:", "userId=" + userId, "isAuthTimedOut=" + timedOut, "result=" + result);
+  // ユーザーIDがあり、かつ認証がタイムアウトしていない場合のみSupabaseを使用
+  return result;
 }
 
 /**
@@ -43,25 +48,49 @@ function safeLocalOp<T>(localOp: () => T, defaultValue: T, operationName: string
 }
 
 /**
- * Supabase操作をラップしてエラー時にlocalStorageにフォールバック
+ * Supabase操作をラップしてエラー/タイムアウト時にlocalStorageにフォールバック
+ * リトライ機能付き（初回接続は時間がかかる場合がある）
  */
 async function withFallback<T>(
   supabaseOp: () => Promise<T>,
   localOp: () => T,
   defaultValue: T,
-  operationName: string
+  operationName: string,
+  timeoutMs: number = 15000,
+  maxRetries: number = 2
 ): Promise<T> {
   // Supabaseを使用すべきでない場合はlocalStorageを使用
   if (!shouldUseSupabase()) {
     return safeLocalOp(localOp, defaultValue, operationName);
   }
 
-  try {
-    return await supabaseOp();
-  } catch (error) {
-    console.warn(`[UnifiedStorage] ${operationName} failed, falling back to localStorage:`, error);
-    return safeLocalOp(localOp, defaultValue, operationName);
+  let lastError: Error | null = null;
+
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      // タイムアウト付きでSupabase操作を実行
+      const timeoutPromise = new Promise<never>((_, reject) => {
+        setTimeout(() => reject(new Error(`${operationName} timeout`)), timeoutMs);
+      });
+
+      const result = await Promise.race([supabaseOp(), timeoutPromise]);
+      // 成功した場合は結果を返す
+      if (attempt > 0) {
+        console.log(`[UnifiedStorage] ${operationName} succeeded on retry ${attempt}`);
+      }
+      return result;
+    } catch (error) {
+      lastError = error as Error;
+      if (attempt < maxRetries - 1) {
+        console.log(`[UnifiedStorage] ${operationName} failed (attempt ${attempt + 1}/${maxRetries}), retrying...`);
+        // 少し待ってからリトライ
+        await new Promise(resolve => setTimeout(resolve, 1000));
+      }
+    }
   }
+
+  console.warn(`[UnifiedStorage] ${operationName} failed after ${maxRetries} attempts, falling back to localStorage:`, lastError);
+  return safeLocalOp(localOp, defaultValue, operationName);
 }
 
 /**

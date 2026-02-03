@@ -18,20 +18,20 @@ export function setCurrentUserId(userId: string | null): void {
 
 /**
  * 現在のユーザーIDを取得
- * 認証がタイムアウトした場合はnullを返す（localStorageを強制使用）
+ * 認証状態に関係なく、設定されたユーザーIDを返す
+ * （タイムアウト判定はisAuthTimedOut()で別途行う）
  */
 export function getCurrentUserId(): string | null {
-  if (authTimedOut) {
-    return null;
-  }
   return currentUserId;
 }
 
 /**
  * ログイン中かどうかを確認
+ * ユーザーIDが設定されていればログイン中と判定
+ * （タイムアウト状態でもログイン中として扱う）
  */
 export function isLoggedIn(): boolean {
-  return currentUserId !== null && !authTimedOut;
+  return currentUserId !== null;
 }
 
 /**
