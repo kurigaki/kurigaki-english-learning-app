@@ -795,15 +795,41 @@ const tryRecoverSessionFromStorage = () => {
 };
 ```
 
-**noopLock によるWeb Locks回避**:
+**直接REST API使用によるデッドロック回避**:
+
+複数タブ問題を根本的に解決するため、Supabaseクライアントの一部機能を直接REST APIで代替しています：
+
 ```typescript
 // src/lib/supabase/client.ts
-const noopLock = async (name, timeout, fn) => await fn();
-
 createClient(url, key, {
-  auth: { lock: noopLock }  // Web Locks APIのデッドロックを回避
+  auth: {
+    autoRefreshToken: false,  // 手動でリフレッシュ（デッドロック回避）
+    lock: noopLock,           // Web Locks APIを無効化
+  }
 });
+
+// src/lib/supabase/database.ts - 直接REST APIでデータ取得
+async function supabaseRequest<T>(endpoint: string, options?: RequestInit): Promise<T> {
+  const accessToken = await getValidAccessToken();  // 必要に応じてリフレッシュ
+  const response = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, {
+    headers: {
+      "apikey": SUPABASE_ANON_KEY,
+      "Authorization": `Bearer ${accessToken}`,
+    },
+    ...options,
+  });
+  return response.json();
+}
 ```
+
+**この方式のメリット**:
+- Supabaseクライアントの内部状態に依存しない
+- Web Locks APIのデッドロックを完全に回避
+- トークンリフレッシュを明示的に制御可能
+
+**注意点**:
+- localStorageのトークンが期限切れの場合、手動リフレッシュが必要
+- Supabaseのキー形式が変更された場合は対応が必要
 
 **unifiedStorageを使用するページの実装パターン**:
 ```typescript
@@ -840,19 +866,20 @@ useEffect(() => {
 1. **getSession() ハング**: Web Locks APIのデッドロックでgetSession()が完了しない
 2. **タイムアウト後の復元失敗**: localStorageからセッションを復元できない
 3. **認証完了前のデータ読み込み**: `getCurrentUserId()` が `null` を返す
+4. **トークン期限切れ**: アクセストークンが期限切れでリフレッシュが必要
 
 **デバッグ用ログ**:
 - `[Auth] initializeAuth開始` - 認証初期化開始
-- `[Auth] getSession呼び出し前` - getSession()を呼び出す直前
-- `[Auth] getSessionエラー/タイムアウト:` - 3秒タイムアウトまたはエラー
+- `[Auth] tryRecoverSessionFromStorage:` - localStorageからの復元試行
 - `[Auth] localStorageから認証データ発見:` - リカバリー成功
-- `[Auth] ユーザーセッション検出:` - 正常なセッション取得
+- `[Auth] fetchProfile開始（直接API）:` - プロフィール取得（REST API経由）
+- `[UnifiedStorage] shouldUseSupabase:` - Supabase/localStorage切り替え判定
 
 **チェックポイント**:
 1. コンソールで `[Auth]` ログを確認し、どこで処理が止まっているか特定
 2. ページが `isAuthLoading` を確認し、認証完了後にデータを取得しているか
-3. `noopLock` が設定されているか（`src/lib/supabase/client.ts`）
-4. localStorage に `sb-*-auth-token` キーが存在するか
+3. localStorage に `english-app-auth` キーが存在するか
+4. トークンの `expires_at` が現在時刻より未来か
 
 **正しい実装**:
 ```typescript
