@@ -10,6 +10,14 @@ export const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
+  // デバッグ: 認証状態をログ（文字列化して確実に中身を表示）
+  console.log("[UserMenu] 認証状態:",
+    "isLoading=" + isLoading,
+    "isAuthenticated=" + isAuthenticated,
+    "hasUser=" + !!user,
+    "userId=" + user?.id
+  );
+
   // クリック外側でメニューを閉じる
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
