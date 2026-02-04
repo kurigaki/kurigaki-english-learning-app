@@ -266,20 +266,20 @@ type QuizResultState = {
 #### 実装パターン（Tailwind CSS）
 
 ```tsx
-<div className="h-[calc(100vh-64px)] px-4 py-4 flex flex-col">
+<div className="main-content px-3 py-2 flex flex-col">
   <div className="max-w-md w-full mx-auto flex flex-col h-full">
     {/* 上部固定: スコアサマリー */}
-    <div className="flex-shrink-0 bg-white rounded-3xl shadow-card p-4 mb-3">
+    <div className="flex-shrink-0 bg-white rounded-3xl shadow-card p-3 mb-2">
       {/* スコア表示 */}
     </div>
 
     {/* 中央スクロール可能エリア */}
-    <div className="flex-1 overflow-y-auto min-h-0 mb-3">
+    <div className="flex-1 overflow-y-auto min-h-0 mb-2">
       {/* 単語リスト、実績など */}
     </div>
 
     {/* 下部固定: アクションボタン */}
-    <div className="flex-shrink-0 space-y-2">
+    <div className="flex-shrink-0 space-y-1.5">
       <Button fullWidth>もう一度挑戦</Button>
       <Button variant="secondary" fullWidth>ホームに戻る</Button>
     </div>
@@ -288,7 +288,7 @@ type QuizResultState = {
 ```
 
 **ポイント:**
-- `h-[calc(100vh-64px)]`: ヘッダー（64px）を除いた高さを確保
+- `main-content`: ヘッダーを除いた高さ + iOS Safe Area対応
 - `flex-shrink-0`: 上部・下部を固定サイズに
 - `flex-1 overflow-y-auto min-h-0`: 中央部分のみスクロール可能
 
@@ -1027,11 +1027,46 @@ await unifiedStorage.addRecord({ ... });
 - **PCでもスマホでも1画面に収まる**: リスト系画面は固定ヘッダー・固定フッターとスクロール可能な中央エリアで構成
 - **詳細画面は自然なスクロール**: 情報量が多いページは`min-h`でスクロール可能に
 
+### CSS変数とユーティリティクラス
+
+`globals.css`で定義されたCSS変数とユーティリティクラスを使用して、一貫したレイアウトを実現:
+
+```css
+:root {
+  --header-height: 52px;
+  --main-height: calc(100vh - var(--header-height));
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ヘッダー */
+.header {
+  height: var(--header-height);
+  padding-top: var(--safe-area-top);
+}
+
+/* 1画面完結型レイアウト用 */
+.main-content {
+  height: var(--main-height);
+  padding-bottom: var(--safe-area-bottom);
+}
+
+/* スクロール可能なレイアウト用 */
+.main-content-scroll {
+  min-height: var(--main-height);
+  padding-bottom: var(--safe-area-bottom);
+}
+```
+
+**iOS Safe Area対応:**
+- `env(safe-area-inset-*)` でノッチ・ホームインジケータを考慮
+- `viewport-fit: cover` を `layout.tsx` で設定済み
+
 ### レイアウトパターン
 
 #### Viewport-Fit Layout（リスト・ナビゲーション系画面）
 
-スクロールなしで全要素にアクセスできる構造。以下の画面に適用:
+`main-content`クラスを使用。スクロールなしで全要素にアクセスできる構造。以下の画面に適用:
 
 | 画面 | パス | 適用 |
 |------|------|------|
@@ -1050,10 +1085,10 @@ await unifiedStorage.addRecord({ ... });
 **CSS構造:**
 
 ```tsx
-<div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+<div className="main-content px-3 py-2 flex flex-col">
   <div className="max-w-{size} w-full mx-auto flex flex-col h-full">
     {/* 上部固定: ヘッダー・フィルター等 */}
-    <div className="flex-shrink-0 mb-2">
+    <div className="flex-shrink-0 mb-1.5">
       {/* 固定表示のコンテンツ */}
     </div>
 
@@ -1063,7 +1098,7 @@ await unifiedStorage.addRecord({ ... });
     </div>
 
     {/* 下部固定: アクションボタン等（オプション） */}
-    <div className="flex-shrink-0 pt-2">
+    <div className="flex-shrink-0 pt-1.5">
       {/* ボタン等 */}
     </div>
   </div>
@@ -1074,7 +1109,7 @@ await unifiedStorage.addRecord({ ... });
 
 | プロパティ | 用途 |
 |-----------|------|
-| `h-[calc(100vh-64px)]` | ヘッダー（64px）を除いた高さ |
+| `main-content` | ヘッダーを除いた高さ + Safe Area対応 |
 | `flex flex-col` | 縦方向のフレックスレイアウト |
 | `flex-shrink-0` | 固定サイズ（縮小しない） |
 | `flex-1` | 残りスペースを埋める |
@@ -1083,17 +1118,21 @@ await unifiedStorage.addRecord({ ... });
 
 #### Scrollable Content Layout（詳細・ダッシュボード系画面）
 
-情報量が多く、自然なスクロールが適切な画面:
+`main-content-scroll`クラスを使用。情報量が多く、自然なスクロールが適切な画面:
 
 | 画面 | パス | 理由 |
 |------|------|------|
 | ホーム | / | ダッシュボード型で多数のカードを配置 |
 | 単語詳細 | /word/[id] | 例文・関連語・コラム等の詳細情報 |
+| ログイン | /login | フォーム中心のシンプルな画面 |
+| 新規登録 | /register | フォーム中心のシンプルな画面 |
+| プロフィール | /profile | ユーザー情報編集フォーム |
+| アップデート情報 | /updates | 更新履歴リスト |
 
 **CSS構造:**
 
 ```tsx
-<div className="min-h-[calc(100vh-64px)] px-4 py-6">
+<div className="main-content-scroll px-4 py-6">
   <div className="max-w-{size} mx-auto">
     {/* コンテンツ（自然にスクロール） */}
   </div>
