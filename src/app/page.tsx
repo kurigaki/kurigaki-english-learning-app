@@ -86,7 +86,7 @@ export default function Home() {
   }, [isAuthLoading, isAuthenticated, loadData]);
 
   return (
-    <div className="min-h-[calc(100vh-64px)] px-4 py-8">
+    <div className="main-content-scroll px-4 py-6">
       <div className="max-w-2xl mx-auto">
         {/* Hero Section */}
         <div className="text-center mb-8">

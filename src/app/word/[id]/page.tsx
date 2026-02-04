@@ -115,7 +115,7 @@ export default function WordDetailPage() {
 
   if (!word) {
     return (
-      <div className="min-h-[calc(100vh-64px)] px-4 py-8 flex items-center justify-center">
+      <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
         <Card className="max-w-md w-full text-center">
           <span className="text-6xl mb-4 block emoji-icon">😵</span>
           <h1 className="text-2xl font-bold text-slate-800 mb-2">
@@ -141,7 +141,7 @@ export default function WordDetailPage() {
     : []);
 
   return (
-    <div className="min-h-[calc(100vh-64px)] px-4 py-6">
+    <div className="main-content-scroll px-4 py-6">
       <div className="max-w-lg mx-auto">
         {/* 戻るボタン */}
         <button

@@ -96,7 +96,7 @@ export default function ProfilePage() {
   // Supabaseが利用不可の場合
   if (!isSupabaseAvailable) {
     return (
-      <div className="min-h-[calc(100vh-64px)] px-4 py-8 flex items-center justify-center">
+      <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
         <Card className="max-w-md w-full p-8 text-center">
           <h1 className="text-xl font-bold text-slate-900 mb-4">
             認証機能は現在利用できません
@@ -112,7 +112,7 @@ export default function ProfilePage() {
   // ローディング中
   if (isLoading || !isAuthenticated || !user) {
     return (
-      <div className="min-h-[calc(100vh-64px)] px-4 py-8 flex items-center justify-center">
+      <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin" />
       </div>
     );
@@ -121,7 +121,7 @@ export default function ProfilePage() {
   const currentDisplayName = user.profile?.display_name || user.email || "ユーザー";
 
   return (
-    <div className="min-h-[calc(100vh-64px)] px-4 py-8">
+    <div className="main-content-scroll px-4 py-8">
       <div className="max-w-lg mx-auto">
         <div className="mb-6">
           <Link
