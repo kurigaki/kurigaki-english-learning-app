@@ -301,7 +301,7 @@ export default function HistoryPage() {
                   </Link>
                 ))}
                 <div className="pt-4 text-center">
-                  <Link href="/quiz">
+                  <Link href="/quiz?weakOnly=true">
                     <Button>苦手単語を復習する</Button>
                   </Link>
                 </div>

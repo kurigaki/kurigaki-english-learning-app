@@ -188,13 +188,13 @@ export default function WeakWordsPage() {
             <div className="flex-shrink-0 pt-2">
               <Card className="!p-3 bg-gradient-to-r from-primary-50 to-accent-50 border border-primary-100">
                 <div className="text-center">
-                  <Link href="/quiz">
+                  <Link href="/quiz?weakOnly=true">
                     <Button fullWidth size="sm">
                       苦手単語を復習する
                     </Button>
                   </Link>
                   <p className="text-xs text-slate-400 mt-1">
-                    クイズでは苦手単語が優先的に出題されます
+                    苦手単語だけを集中的に復習します
                   </p>
                 </div>
               </Card>
