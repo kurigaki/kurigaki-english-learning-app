@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { words, Word, Category, categoryLabels } from "@/data/words";
 import { unifiedStorage } from "@/lib/unified-storage";
@@ -320,6 +321,11 @@ function getStreakMilestoneMessage(milestone: number): { emoji: string; title: s
 }
 
 export default function QuizPage() {
+  // URLパラメータを取得
+  const searchParams = useSearchParams();
+  const reviewWordId = searchParams.get("wordId");  // 特定の単語を復習
+  const weakOnly = searchParams.get("weakOnly");    // 苦手単語のみ
+
   // クイズフェーズ管理
   const [phase, setPhase] = useState<QuizPhase>("setup");
   const [quizSettings, setQuizSettings] = useState<QuizSettings>(defaultQuizSettings);
@@ -344,6 +350,7 @@ export default function QuizPage() {
   const [bookmarkedIds, setBookmarkedIds] = useState<number[]>([]);
   const [weakWordIds, setWeakWordIds] = useState<number[]>([]);
   const [studiedWordIds, setStudiedWordIds] = useState<number[]>([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   // 初期データをロード
   useEffect(() => {
@@ -361,6 +368,7 @@ export default function QuizPage() {
         console.error("[Quiz] Failed to load initial data:", error);
         // エラー時は空の配列のままにする（クイズは動作する）
       }
+      setDataLoaded(true);
     };
     loadData();
   }, []);
@@ -532,12 +540,28 @@ export default function QuizPage() {
     return () => clearTimeout(timeoutId);
   }, [currentQuestion, currentIndex, selected]);
 
-  const startNewSession = useCallback((settings: QuizSettings = defaultQuizSettings) => {
+  /**
+   * 新しいクイズセッションを開始
+   * @param settings クイズ設定
+   * @param options.priorityWordId この単語を必ず含める（単語詳細からの復習用）
+   * @param options.weakOnlyMode 苦手単語のみで構成（苦手単語一覧からの復習用）
+   */
+  const startNewSession = useCallback((
+    settings: QuizSettings = defaultQuizSettings,
+    options?: { priorityWordId?: number; weakOnlyMode?: boolean }
+  ) => {
     // 新しいセッション開始時は保存された状態をクリア
     clearQuizResultState();
 
-    // 設定に基づいて単語をフィルタリング
-    const targetWords = filterWordsBySettings(words, settings, bookmarkedIds);
+    let targetWords: Word[];
+
+    // 苦手単語のみモード
+    if (options?.weakOnlyMode && weakWordIds.length > 0) {
+      targetWords = words.filter((w) => weakWordIds.includes(w.id));
+    } else {
+      // 設定に基づいて単語をフィルタリング
+      targetWords = filterWordsBySettings(words, settings, bookmarkedIds);
+    }
 
     // フィルター後の単語数が少なすぎる場合の対応
     const questionCount = Math.min(QUESTIONS_PER_SESSION, targetWords.length);
@@ -548,7 +572,32 @@ export default function QuizPage() {
       return;
     }
 
-    const newQuestions = generateSessionQuestions(targetWords, words, questionCount, weakWordIds, studiedWordIds);
+    let newQuestions: Question[];
+
+    // 優先単語が指定されている場合、その単語を必ず含める
+    if (options?.priorityWordId) {
+      const priorityWord = words.find((w) => w.id === options.priorityWordId);
+      if (priorityWord) {
+        // 優先単語の問題を生成
+        const priorityQuestion = generateQuestion(priorityWord, words);
+        // 残りの問題を生成（優先単語を除外）
+        const remainingTargetWords = targetWords.filter((w) => w.id !== options.priorityWordId);
+        const remainingQuestions = generateSessionQuestions(
+          remainingTargetWords,
+          words,
+          questionCount - 1,
+          weakWordIds,
+          studiedWordIds
+        );
+        // 優先単語を最初に配置
+        newQuestions = [priorityQuestion, ...remainingQuestions];
+      } else {
+        newQuestions = generateSessionQuestions(targetWords, words, questionCount, weakWordIds, studiedWordIds);
+      }
+    } else {
+      newQuestions = generateSessionQuestions(targetWords, words, questionCount, weakWordIds, studiedWordIds);
+    }
+
     setQuestions(newQuestions);
     setQuizSettings(settings);
     setPhase("quiz");
@@ -568,14 +617,36 @@ export default function QuizPage() {
     hasAutoPlayedRef.current = new Set();
   }, [bookmarkedIds, weakWordIds, studiedWordIds]);
 
-  // 初回ロード時：復元されていない場合はsetup画面を表示
+  // 初回ロード時：URLパラメータまたは保存状態に基づいて処理
   useEffect(() => {
+    // データロードが完了するまで待機
+    if (!dataLoaded) return;
+
     const savedState = getQuizResultState();
-    if (!savedState) {
-      // 設定画面から開始
-      setPhase("setup");
+    if (savedState) {
+      // 保存された状態がある場合はそれを復元（既存の動作）
+      return;
     }
-  }, []);
+
+    // URLパラメータによる自動開始
+    if (reviewWordId) {
+      // 特定の単語を復習（単語詳細画面からの遷移）
+      const wordIdNum = parseInt(reviewWordId, 10);
+      if (!isNaN(wordIdNum) && words.some((w) => w.id === wordIdNum)) {
+        startNewSession(defaultQuizSettings, { priorityWordId: wordIdNum });
+        return;
+      }
+    }
+
+    if (weakOnly === "true" && weakWordIds.length > 0) {
+      // 苦手単語のみモード（苦手単語一覧からの遷移）
+      startNewSession(defaultQuizSettings, { weakOnlyMode: true });
+      return;
+    }
+
+    // パラメータがない場合は設定画面から開始
+    setPhase("setup");
+  }, [dataLoaded, reviewWordId, weakOnly, weakWordIds, startNewSession]);
 
   const handleSelect = (choice: string) => {
     if (selected !== null || !currentQuestion) return;
