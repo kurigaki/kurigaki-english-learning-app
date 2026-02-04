@@ -1034,27 +1034,72 @@ await unifiedStorage.addRecord({ ... });
 ```css
 :root {
   --header-height: 52px;
-  --main-height: calc(100vh - var(--header-height));
   --safe-area-top: env(safe-area-inset-top, 0px);
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  /* フォールバック（100vh） */
+  --main-height: calc(100vh - var(--header-height) - var(--safe-area-top) - var(--safe-area-bottom));
 }
 
-/* ヘッダー */
+/* svh対応ブラウザ向け（iOS Safari 15.4+） */
+@supports (height: 100svh) {
+  :root {
+    --main-height: calc(100svh - var(--header-height) - var(--safe-area-top) - var(--safe-area-bottom));
+  }
+}
+
+/* ヘッダー: Safe Area Top を含めた高さ */
 .header {
-  height: var(--header-height);
+  min-height: calc(var(--header-height) + var(--safe-area-top));
   padding-top: var(--safe-area-top);
 }
 
 /* 1画面完結型レイアウト用 */
 .main-content {
   height: var(--main-height);
-  padding-bottom: var(--safe-area-bottom);
+  overflow: hidden;
 }
 
 /* スクロール可能なレイアウト用 */
 .main-content-scroll {
   min-height: var(--main-height);
   padding-bottom: var(--safe-area-bottom);
+}
+```
+
+### 実機とPC検証ツール差分対策
+
+**問題**: PC検証ツール（モバイル表示）では1画面に収まるが、実機（iPhone）では縦スクロールが発生する
+
+**原因**:
+
+| 原因 | 詳細 |
+|------|------|
+| `100vh` の iOS Safari 問題 | `100vh` = アドレスバーが隠れた状態の高さ（Large Viewport）<br>実際の表示領域はアドレスバー分だけ小さい |
+| Safe Area の未考慮 | ノッチ（約47px）・ホームバー（約34px）の領域が height 計算に含まれていない |
+| box-sizing の影響 | padding を追加すると要素の実際の高さが増加する |
+
+**解決策**: Dynamic Viewport Units (svh/dvh/lvh) を使用
+
+| 単位 | 説明 | 用途 |
+|------|------|------|
+| `svh` | Small Viewport Height（アドレスバー表示時） | **推奨**: 常に見える領域、安定した高さ |
+| `dvh` | Dynamic Viewport Height（動的に変化） | アドレスバー操作に追従（リフローが発生する可能性） |
+| `lvh` | Large Viewport Height（アドレスバー非表示時） | 従来の `vh` と同等 |
+
+**ブラウザサポート**:
+- iOS Safari 15.4+ (2022年3月〜)
+- Chrome 108+ (2022年11月〜)
+- Firefox 101+ (2022年5月〜)
+- Edge 108+ (2022年12月〜)
+
+**フォールバック戦略**:
+```css
+/* 1. 旧ブラウザ向けフォールバック（100vh） */
+--main-height: calc(100vh - ...);
+
+/* 2. svh対応ブラウザ向け */
+@supports (height: 100svh) {
+  --main-height: calc(100svh - ...);
 }
 ```
 
