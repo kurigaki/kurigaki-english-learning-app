@@ -31,7 +31,7 @@ export default function AchievementsPage() {
 
   if (isLoading) {
     return (
-      <div className="h-[calc(100vh-64px)] bg-gray-50 flex items-center justify-center">
+      <div className="main-content bg-gray-50 flex items-center justify-center">
         <div className="text-gray-500">読み込み中...</div>
       </div>
     );
@@ -70,19 +70,19 @@ export default function AchievementsPage() {
   };
 
   return (
-    <div className="h-[calc(100vh-64px)] bg-gray-50 flex flex-col">
+    <div className="main-content bg-gray-50 flex flex-col">
       {/* 上部固定: ヘッダー */}
-      <div className="flex-shrink-0 bg-gradient-to-br from-primary-500 to-primary-600 text-white px-4 py-4">
-        <h1 className="text-xl font-bold mb-1">実績</h1>
-        <p className="text-primary-100 text-xs mb-3">
+      <div className="flex-shrink-0 bg-gradient-to-br from-primary-500 to-primary-600 text-white px-3 py-3">
+        <h1 className="text-lg font-bold mb-0.5">実績</h1>
+        <p className="text-primary-100 text-[10px] mb-2">
           学習を続けて実績を集めよう！
         </p>
 
         {/* 全体進捗 */}
-        <div className="bg-white/20 rounded-lg p-3">
+        <div className="bg-white/20 rounded-md p-2">
           <div className="flex justify-between items-center mb-1">
-            <span className="text-sm font-medium">全体進捗</span>
-            <span className="text-base font-bold">
+            <span className="text-xs font-medium">全体進捗</span>
+            <span className="text-sm font-bold">
               {unlockedCount} / {totalAchievements}
             </span>
           </div>
@@ -91,33 +91,33 @@ export default function AchievementsPage() {
       </div>
 
       {/* 上部固定: レアリティ別サマリー */}
-      <div className="flex-shrink-0 px-4 -mt-3 mb-2">
-        <div className="bg-white rounded-lg shadow-sm p-3 grid grid-cols-4 gap-1">
+      <div className="flex-shrink-0 px-3 -mt-2 mb-1.5">
+        <div className="bg-white rounded-md shadow-sm p-2 grid grid-cols-4 gap-1">
           <div className="text-center">
-            <div className="text-lg mb-0.5">⬜</div>
-            <div className="text-xs text-gray-500">ノーマル</div>
-            <div className="text-xs font-bold text-gray-700">
+            <div className="text-base mb-0.5">⬜</div>
+            <div className="text-[10px] text-gray-500">ノーマル</div>
+            <div className="text-[10px] font-bold text-gray-700">
               {rarityStats.common.unlocked}/{rarityStats.common.total}
             </div>
           </div>
           <div className="text-center">
-            <div className="text-lg mb-0.5">🟦</div>
-            <div className="text-xs text-gray-500">レア</div>
-            <div className="text-xs font-bold text-blue-600">
+            <div className="text-base mb-0.5">🟦</div>
+            <div className="text-[10px] text-gray-500">レア</div>
+            <div className="text-[10px] font-bold text-blue-600">
               {rarityStats.rare.unlocked}/{rarityStats.rare.total}
             </div>
           </div>
           <div className="text-center">
-            <div className="text-lg mb-0.5">🟪</div>
-            <div className="text-xs text-gray-500">エピック</div>
-            <div className="text-xs font-bold text-purple-600">
+            <div className="text-base mb-0.5">🟪</div>
+            <div className="text-[10px] text-gray-500">エピック</div>
+            <div className="text-[10px] font-bold text-purple-600">
               {rarityStats.epic.unlocked}/{rarityStats.epic.total}
             </div>
           </div>
           <div className="text-center">
-            <div className="text-lg mb-0.5">🟨</div>
-            <div className="text-xs text-gray-500">伝説</div>
-            <div className="text-xs font-bold text-yellow-600">
+            <div className="text-base mb-0.5">🟨</div>
+            <div className="text-[10px] text-gray-500">伝説</div>
+            <div className="text-[10px] font-bold text-yellow-600">
               {rarityStats.legendary.unlocked}/{rarityStats.legendary.total}
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function AchievementsPage() {
       </div>
 
       {/* 中央スクロール: 実績一覧 */}
-      <div className="flex-1 overflow-y-auto min-h-0 px-4 pb-4">
+      <div className="flex-1 overflow-y-auto min-h-0 px-3 pb-3">
         <AchievementList unlockedAchievements={unlockedAchievements} />
       </div>
     </div>

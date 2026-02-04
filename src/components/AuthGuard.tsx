@@ -16,7 +16,7 @@ export function AuthGuard({ children }: AuthGuardProps) {
 
   if (isLoading) {
     return (
-      <div className="min-h-[calc(100vh-64px)] flex items-center justify-center bg-slate-50">
+      <div className="main-content-scroll flex items-center justify-center bg-slate-50">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-primary-500 border-t-transparent mb-4"></div>
           <p className="text-slate-600">読み込み中...</p>

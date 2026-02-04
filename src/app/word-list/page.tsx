@@ -203,47 +203,47 @@ export default function WordListPage() {
   }, [wordsWithStats]);
 
   return (
-    <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+    <div className="main-content px-3 py-2 flex flex-col">
       <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
         {/* 上部固定: ヘッダー */}
-        <div className="flex-shrink-0 flex items-center gap-3 mb-2">
+        <div className="flex-shrink-0 flex items-center gap-2 mb-1.5">
           <Link
             href="/"
             className="text-slate-500 hover:text-slate-700 transition-colors"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </Link>
-          <h1 className="text-xl font-bold text-slate-800">単語帳</h1>
+          <h1 className="text-lg font-bold text-slate-800">単語帳</h1>
         </div>
 
         {/* 上部固定: 統計サマリー */}
         {isMounted && (
-          <Card className="flex-shrink-0 mb-2 !p-3 bg-gradient-to-r from-primary-50 to-accent-50">
-            <div className="grid grid-cols-4 gap-2 text-center">
+          <Card className="flex-shrink-0 mb-1.5 !p-2 bg-gradient-to-r from-primary-50 to-accent-50">
+            <div className="grid grid-cols-4 gap-1.5 text-center">
               <div>
-                <p className="text-lg font-bold text-slate-700">{stats.total}</p>
-                <p className="text-xs text-slate-500">全単語</p>
+                <p className="text-base font-bold text-slate-700">{stats.total}</p>
+                <p className="text-[10px] text-slate-500">全単語</p>
               </div>
               <div>
-                <p className="text-lg font-bold text-green-600">{stats.mastered}</p>
-                <p className="text-xs text-slate-500">習得済</p>
+                <p className="text-base font-bold text-green-600">{stats.mastered}</p>
+                <p className="text-[10px] text-slate-500">習得済</p>
               </div>
               <div>
-                <p className="text-lg font-bold text-blue-600">{stats.learning}</p>
-                <p className="text-xs text-slate-500">学習中</p>
+                <p className="text-base font-bold text-blue-600">{stats.learning}</p>
+                <p className="text-[10px] text-slate-500">学習中</p>
               </div>
               <div>
-                <p className="text-lg font-bold text-slate-400">{stats.newWords}</p>
-                <p className="text-xs text-slate-500">未学習</p>
+                <p className="text-base font-bold text-slate-400">{stats.newWords}</p>
+                <p className="text-[10px] text-slate-500">未学習</p>
               </div>
             </div>
           </Card>
         )}
 
         {/* 上部固定: 検索・フィルター */}
-        <div className="flex-shrink-0 space-y-2 mb-2">
+        <div className="flex-shrink-0 space-y-1.5 mb-1.5">
           {/* Search */}
           <div className="relative">
             <input
@@ -251,7 +251,7 @@ export default function WordListPage() {
               placeholder="単語・意味で検索..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-3 py-2 pl-9 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+              className="w-full px-2.5 py-1.5 pl-8 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
             />
             <svg
               className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"

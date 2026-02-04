@@ -108,7 +108,7 @@ export default function HistoryPage() {
 
   if (!isMounted) {
     return (
-      <div className="min-h-[calc(100vh-64px)] flex items-center justify-center">
+      <div className="main-content flex items-center justify-center">
         <div className="animate-pulse text-primary-500">読み込み中...</div>
       </div>
     );
@@ -125,38 +125,38 @@ export default function HistoryPage() {
   };
 
   return (
-    <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+    <div className="main-content px-3 py-2 flex flex-col">
       <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
         {/* 上部固定: ヘッダー */}
-        <div className="flex-shrink-0 mb-2">
-          <h1 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-            <span className="text-2xl emoji-icon">📊</span>
+        <div className="flex-shrink-0 mb-1.5">
+          <h1 className="text-lg font-bold text-slate-800 flex items-center gap-1.5">
+            <span className="text-xl emoji-icon">📊</span>
             <span>学習統計</span>
           </h1>
         </div>
 
         {/* 上部固定: 今日の学習 */}
-        <Card className="flex-shrink-0 mb-2 !p-3 bg-gradient-to-r from-primary-50 to-accent-50">
-          <h2 className="text-sm font-bold text-slate-700 mb-2 flex items-center gap-1">
+        <Card className="flex-shrink-0 mb-1.5 !p-2 bg-gradient-to-r from-primary-50 to-accent-50">
+          <h2 className="text-xs font-bold text-slate-700 mb-1.5 flex items-center gap-1">
             <span className="emoji-icon">🔥</span>
             <span>今日の学習</span>
           </h2>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-3 gap-1.5">
             <div className="text-center">
-              <div className="text-xl font-bold text-primary-600">{todayStats.total}</div>
-              <div className="text-xs text-slate-500">回答数</div>
+              <div className="text-lg font-bold text-primary-600">{todayStats.total}</div>
+              <div className="text-[10px] text-slate-500">回答数</div>
             </div>
             <div className="text-center">
-              <div className="text-xl font-bold text-success-600">{todayStats.correct}</div>
-              <div className="text-xs text-slate-500">正解数</div>
+              <div className="text-lg font-bold text-success-600">{todayStats.correct}</div>
+              <div className="text-[10px] text-slate-500">正解数</div>
             </div>
             <div className="text-center">
-              <div className="text-xl font-bold text-accent-600">{todayStats.rate}%</div>
-              <div className="text-xs text-slate-500">正答率</div>
+              <div className="text-lg font-bold text-accent-600">{todayStats.rate}%</div>
+              <div className="text-[10px] text-slate-500">正答率</div>
             </div>
           </div>
           {todayStats.total === 0 && (
-            <div className="mt-2 text-center">
+            <div className="mt-1.5 text-center">
               <Link href="/quiz">
                 <Button size="sm">今日の学習を始める</Button>
               </Link>
@@ -165,7 +165,7 @@ export default function HistoryPage() {
         </Card>
 
         {/* 上部固定: タブ */}
-        <div className="flex-shrink-0 flex gap-1.5 mb-2">
+        <div className="flex-shrink-0 flex gap-1 mb-1.5">
           {[
             { id: "overview" as const, label: "概要", icon: "📈" },
             { id: "weak" as const, label: "苦手単語", icon: "💪" },
@@ -174,13 +174,13 @@ export default function HistoryPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-1.5 px-2 rounded-lg text-sm font-medium transition-all inline-flex items-center justify-center gap-1 ${
+              className={`flex-1 py-1 px-1.5 rounded-md text-xs font-medium transition-all inline-flex items-center justify-center gap-0.5 ${
                 activeTab === tab.id
                   ? "bg-primary-500 text-white shadow-sm"
                   : "bg-white text-slate-600 hover:bg-primary-50"
               }`}
             >
-              <span className="emoji-icon">{tab.icon}</span>
+              <span className="emoji-icon text-sm">{tab.icon}</span>
               <span>{tab.label}</span>
             </button>
           ))}

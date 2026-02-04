@@ -304,39 +304,39 @@ export default function SpeedChallengePage() {
   // 準備画面
   if (gameState === "ready") {
     return (
-      <div className="h-[calc(100vh-64px)] px-4 py-3 flex items-center justify-center">
-        <Card className="max-w-md w-full text-center !p-5">
-          <div className="mb-4">
-            <span className="text-6xl emoji-icon">⚡</span>
+      <div className="main-content px-3 py-2 flex items-center justify-center">
+        <Card className="max-w-md w-full text-center !p-4">
+          <div className="mb-3">
+            <span className="text-5xl emoji-icon">⚡</span>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-1">
+          <h1 className="text-xl font-bold text-gray-900 mb-1">
             スピードチャレンジ
           </h1>
-          <p className="text-gray-500 text-sm mb-4">
+          <p className="text-gray-500 text-xs mb-3">
             {TIME_LIMIT}秒間で何問正解できるか挑戦！
           </p>
 
-          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-3 mb-4">
-            <p className="text-xs text-gray-500 mb-0.5">ハイスコア</p>
-            <p className="text-3xl font-bold text-orange-600">{highScore}</p>
+          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-2 mb-3">
+            <p className="text-[10px] text-gray-500 mb-0.5">ハイスコア</p>
+            <p className="text-2xl font-bold text-orange-600">{highScore}</p>
           </div>
 
-          <div className="space-y-2 text-left mb-5">
-            <div className="flex items-center gap-2">
-              <span className="text-xl emoji-icon">1️⃣</span>
-              <p className="text-gray-600 text-sm">正解するとスコア+1</p>
+          <div className="space-y-1.5 text-left mb-4">
+            <div className="flex items-center gap-1.5">
+              <span className="text-lg emoji-icon">1️⃣</span>
+              <p className="text-gray-600 text-xs">正解するとスコア+1</p>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl emoji-icon">2️⃣</span>
-              <p className="text-gray-600 text-sm">5連続正解でボーナス+1</p>
+            <div className="flex items-center gap-1.5">
+              <span className="text-lg emoji-icon">2️⃣</span>
+              <p className="text-gray-600 text-xs">5連続正解でボーナス+1</p>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl emoji-icon">3️⃣</span>
-              <p className="text-gray-600 text-sm">不正解でもどんどん次へ！</p>
+            <div className="flex items-center gap-1.5">
+              <span className="text-lg emoji-icon">3️⃣</span>
+              <p className="text-gray-600 text-xs">不正解でもどんどん次へ！</p>
             </div>
           </div>
 
-          <Button fullWidth onClick={startGame} className="text-base py-3">
+          <Button fullWidth onClick={startGame}>
             スタート！
           </Button>
         </Card>
@@ -351,28 +351,28 @@ export default function SpeedChallengePage() {
     const isLowTime = timeLeft <= 10;
 
     return (
-      <div className="h-[calc(100vh-64px)] px-4 py-3 flex flex-col">
+      <div className="main-content px-2 py-1.5 flex flex-col">
         <div className="max-w-md w-full mx-auto flex flex-col h-full">
           {/* 上部固定: タイマー & スコア */}
-          <div className="flex-shrink-0">
-            <div className="flex justify-between items-center mb-2">
-              <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full ${
+          <div className="flex-shrink-0 mb-1">
+            <div className="flex justify-between items-center mb-1">
+              <div className={`flex items-center gap-1 px-2 py-1 rounded-full ${
                 isLowTime ? "bg-red-100 animate-pulse" : "bg-gray-100"
               }`}>
-                <span className="text-lg emoji-icon">⏱️</span>
-                <span className={`text-xl font-bold ${isLowTime ? "text-red-600" : "text-gray-700"}`}>
+                <span className="text-base emoji-icon">⏱️</span>
+                <span className={`text-lg font-bold ${isLowTime ? "text-red-600" : "text-gray-700"}`}>
                   {timeLeft}
                 </span>
               </div>
 
-              <div className="flex items-center gap-1.5 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-3 py-1.5 rounded-full">
-                <span className="text-lg emoji-icon">⭐</span>
-                <span className="text-xl font-bold">{score}</span>
+              <div className="flex items-center gap-1 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-2 py-1 rounded-full">
+                <span className="text-base emoji-icon">⭐</span>
+                <span className="text-lg font-bold">{score}</span>
               </div>
             </div>
 
             {/* タイムバー */}
-            <div className="h-1.5 bg-gray-200 rounded-full mb-2 overflow-hidden">
+            <div className="h-1 bg-gray-200 rounded-full mb-1 overflow-hidden">
               <div
                 className={`h-full transition-all duration-1000 ease-linear ${
                   isLowTime ? "bg-red-500" : "bg-gradient-to-r from-primary-400 to-accent-400"
@@ -383,8 +383,8 @@ export default function SpeedChallengePage() {
 
             {/* コンボ */}
             {combo >= 2 && (
-              <div className="text-center mb-2">
-                <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-white text-sm font-bold ${
+              <div className="text-center">
+                <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-white text-xs font-bold ${
                   combo >= 5 ? "bg-gradient-to-r from-orange-500 to-red-500 animate-bounce" : "bg-gradient-to-r from-blue-500 to-primary-500"
                 }`}>
                   {combo >= 5 ? "🔥" : "⚡"} {combo}連続正解！
@@ -394,32 +394,32 @@ export default function SpeedChallengePage() {
           </div>
 
           {/* 中央: 問題カード */}
-          <Card className={`flex-shrink-0 !p-4 transition-all ${
+          <Card className={`flex-1 !p-3 transition-all flex flex-col ${
             feedback?.show
               ? feedback.correct
-                ? "ring-4 ring-green-400 bg-green-50"
-                : "ring-4 ring-red-400 bg-red-50"
+                ? "ring-2 ring-green-400 bg-green-50"
+                : "ring-2 ring-red-400 bg-red-50"
               : ""
           }`}>
-            <div className="text-center mb-4">
-              <p className="text-xs text-gray-400 mb-1">
+            <div className="text-center mb-2">
+              <p className="text-[10px] text-gray-400 mb-0.5">
                 {isEnToJa ? "この単語の意味は?" : "この意味の英単語は?"}
               </p>
-              <div className="flex items-center justify-center gap-2">
-                <h2 className="text-3xl font-bold text-gradient">
+              <div className="flex items-center justify-center gap-1.5">
+                <h2 className="text-2xl font-bold text-gradient">
                   {isEnToJa ? question.word.word : question.word.meaning}
                 </h2>
-                {isEnToJa && <SpeakButton text={question.word.word} size="md" />}
+                {isEnToJa && <SpeakButton text={question.word.word} size="sm" />}
               </div>
             </div>
 
             {/* 選択肢 */}
-            <div className="grid grid-cols-2 gap-2">
+            <div className="flex-1 grid grid-cols-2 gap-1.5 content-center">
               {question.choices.map((choice, index) => (
                 <button
                   key={`${question.word.id}-${index}`}
                   onClick={() => handleSelect(choice)}
-                  className="p-3 text-left text-sm bg-white border-2 border-gray-200 rounded-xl font-medium hover:border-primary-400 hover:bg-primary-50 active:scale-95 transition-all"
+                  className="p-2 text-left text-xs bg-white border-2 border-gray-200 rounded-lg font-medium hover:border-primary-400 hover:bg-primary-50 active:scale-95 transition-all"
                 >
                   {choice}
                 </button>
@@ -444,68 +444,68 @@ export default function SpeedChallengePage() {
     const accuracy = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
 
     return (
-      <div className="h-[calc(100vh-64px)] px-4 py-4 flex flex-col">
+      <div className="main-content px-3 py-2 flex flex-col">
         <div className="max-w-md w-full mx-auto flex flex-col h-full">
           {/* 上部固定: スコアサマリー */}
-          <div className="flex-shrink-0 text-center bg-white rounded-3xl shadow-card p-4 mb-3">
+          <div className="flex-shrink-0 text-center bg-white rounded-2xl shadow-card p-3 mb-2">
             {isNewHighScore && (
-              <div className="mb-3 p-2 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-xl border border-yellow-300">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-2xl emoji-icon">🎉</span>
-                  <p className="text-sm font-bold text-yellow-700">新記録達成！</p>
+              <div className="mb-2 p-1.5 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg border border-yellow-300">
+                <div className="flex items-center justify-center gap-1.5">
+                  <span className="text-xl emoji-icon">🎉</span>
+                  <p className="text-xs font-bold text-yellow-700">新記録達成！</p>
                 </div>
               </div>
             )}
 
-            <div className="flex items-center justify-center gap-3 mb-3">
-              <span className="text-4xl emoji-icon">{message.emoji}</span>
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className="text-3xl emoji-icon">{message.emoji}</span>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">{message.text}</h1>
-                <p className="text-gray-500 text-sm">タイムアップ！</p>
+                <h1 className="text-xl font-bold text-gray-900">{message.text}</h1>
+                <p className="text-gray-500 text-xs">タイムアップ！</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-xl p-3 mb-3">
-              <div className="text-4xl font-bold text-gradient">{score}</div>
-              <p className="text-gray-600 text-sm">スコア</p>
+            <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg p-2 mb-2">
+              <div className="text-3xl font-bold text-gradient">{score}</div>
+              <p className="text-gray-600 text-xs">スコア</p>
             </div>
 
-            <div className="grid grid-cols-3 gap-2">
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-lg font-bold text-gray-700">{totalQuestions}</p>
-                <p className="text-[10px] text-gray-400">回答数</p>
+            <div className="grid grid-cols-3 gap-1.5">
+              <div className="bg-gray-50 rounded-md p-1.5">
+                <p className="text-base font-bold text-gray-700">{totalQuestions}</p>
+                <p className="text-[9px] text-gray-400">回答数</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-lg font-bold text-gray-700">{accuracy}%</p>
-                <p className="text-[10px] text-gray-400">正答率</p>
+              <div className="bg-gray-50 rounded-md p-1.5">
+                <p className="text-base font-bold text-gray-700">{accuracy}%</p>
+                <p className="text-[9px] text-gray-400">正答率</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-2">
-                <p className="text-lg font-bold text-gray-700">{maxCombo}</p>
-                <p className="text-[10px] text-gray-400">最大コンボ</p>
+              <div className="bg-gray-50 rounded-md p-1.5">
+                <p className="text-base font-bold text-gray-700">{maxCombo}</p>
+                <p className="text-[9px] text-gray-400">最大コンボ</p>
               </div>
             </div>
           </div>
 
           {/* 中央スクロール可能エリア: 出題された全単語一覧 */}
           {answeredWords.length > 0 && (
-            <div className="flex-1 overflow-y-auto min-h-0 mb-3 bg-white rounded-2xl shadow-card p-3">
-              <p className="text-sm text-gray-500 mb-2">
+            <div className="flex-1 overflow-y-auto min-h-0 mb-2 bg-white rounded-xl shadow-card p-2">
+              <p className="text-xs text-gray-500 mb-1.5">
                 出題単語一覧（タップで詳細）
               </p>
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 {answeredWords.map((word, index) => (
                   <Link
                     key={`${word.id}-${index}`}
                     href={`/word/${word.id}?from=speed`}
-                    className={`flex items-center justify-between p-2 rounded-xl border transition-all hover:scale-[1.02] group ${
+                    className={`flex items-center justify-between p-1.5 rounded-lg border transition-all hover:scale-[1.02] group ${
                       word.correct
                         ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-200"
                         : "bg-gradient-to-r from-red-50 to-orange-50 border-red-200"
                     }`}
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5">
                       <div
-                        className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                        className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
                           word.correct
                             ? "bg-green-100 text-green-600"
                             : "bg-red-100 text-red-600"
@@ -515,14 +515,14 @@ export default function SpeedChallengePage() {
                       </div>
                       <SpeakButton text={word.word} size="sm" />
                       <div className="text-left">
-                        <p className="font-bold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">
+                        <p className="font-bold text-gray-900 text-xs group-hover:text-primary-600 transition-colors">
                           {word.word}
                         </p>
-                        <p className="text-xs text-gray-500">{word.meaning}</p>
+                        <p className="text-[10px] text-gray-500">{word.meaning}</p>
                       </div>
                     </div>
                     <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
@@ -533,7 +533,7 @@ export default function SpeedChallengePage() {
           )}
 
           {/* 下部固定: アクションボタン */}
-          <div className="flex-shrink-0 space-y-2">
+          <div className="flex-shrink-0 space-y-1.5">
             <Button fullWidth onClick={startGame}>
               もう一度挑戦
             </Button>
