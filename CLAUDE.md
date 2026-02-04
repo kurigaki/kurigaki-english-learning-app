@@ -660,6 +660,35 @@ type QuizSettings = {
 3. 「開始」で選択した条件でクイズ開始
 4. リザルト画面から「同じ設定で再挑戦」or「設定変更」
 
+### 復習機能（URLパラメータによる自動開始）
+
+特定の単語や苦手単語を復習するためのURLパラメータをサポートしています。
+
+**URLパラメータ**:
+| パラメータ | 説明 | 例 |
+|-----------|------|-----|
+| `wordId` | 特定の単語を最初に出題 | `/quiz?wordId=42` |
+| `weakOnly` | 苦手単語のみで構成 | `/quiz?weakOnly=true` |
+
+**使用箇所**:
+- 単語詳細画面の「この単語を復習する」ボタン → `/quiz?wordId=${word.id}`
+- 苦手単語一覧の「苦手単語を復習する」ボタン → `/quiz?weakOnly=true`
+- 学習履歴の「苦手単語を復習する」ボタン → `/quiz?weakOnly=true`
+
+**実装**:
+```typescript
+// quiz/page.tsx
+const searchParams = useSearchParams();
+const reviewWordId = searchParams.get("wordId");
+const weakOnly = searchParams.get("weakOnly");
+
+// startNewSessionのオプション
+startNewSession(settings, {
+  priorityWordId: wordIdNum,  // この単語を最初に出題
+  weakOnlyMode: true,         // 苦手単語のみ
+});
+```
+
 ---
 
 ## ゲーミフィケーション機能
