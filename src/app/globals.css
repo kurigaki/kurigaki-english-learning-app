@@ -7,17 +7,40 @@
   --foreground: #1E293B;
   /* ヘッダー高さ: py-3(24px) + コンテンツ(28px) = 52px */
   --header-height: 52px;
-  /* メインコンテンツの高さ計算用 */
-  --main-height: calc(100vh - var(--header-height));
   /* Safe Area考慮（iOS対応） */
   --safe-area-top: env(safe-area-inset-top, 0px);
   --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+
+  /*
+   * Viewport Height の計算（実機とPC検証ツールの差分対策）
+   *
+   * 問題: iOS Safari では 100vh = アドレスバーが隠れた状態の高さ
+   *       実際の表示領域はアドレスバー分だけ小さい
+   *
+   * 解決策: Dynamic Viewport Units (dvh) を使用
+   * - dvh: アドレスバーの表示/非表示に応じて動的に変化
+   * - svh: アドレスバー表示時の高さ（最小 = Small Viewport）
+   * - lvh: アドレスバー非表示時の高さ（最大 = Large Viewport = 従来の vh）
+   *
+   * フォールバック順序:
+   * 1. 100svh - iOS Safari 15.4+ で最も安定（Small Viewport = 常に見える領域）
+   * 2. 100vh  - 旧ブラウザ用フォールバック
+   */
+  --main-height: calc(100vh - var(--header-height) - var(--safe-area-top) - var(--safe-area-bottom));
+}
+
+/* svh をサポートするブラウザ向け（iOS Safari 15.4+, Chrome 108+, Firefox 101+） */
+@supports (height: 100svh) {
+  :root {
+    --main-height: calc(100svh - var(--header-height) - var(--safe-area-top) - var(--safe-area-bottom));
+  }
 }
 
 body {
   color: var(--foreground);
   background: linear-gradient(135deg, #F0F9FF 0%, #E0E7FF 100%);
   min-height: 100vh;
+  min-height: 100svh; /* iOS Safari 対応 */
 }
 
 @layer components {
@@ -107,23 +130,45 @@ body {
     @apply bg-error-100 text-error-600;
   }
 
-  /* Header */
+  /*
+   * Header
+   *
+   * Safe Area Top（ノッチ領域）を考慮した高さ計算:
+   * - コンテンツ領域: --header-height (52px)
+   * - ノッチ領域: --safe-area-top (iPhoneでは約47px)
+   * - 合計: min-height で確保（box-sizing の影響を受けない）
+   */
   .header {
     @apply bg-white/80 backdrop-blur-md border-b border-primary-100
            sticky top-0 z-50;
-    height: var(--header-height);
+    min-height: calc(var(--header-height) + var(--safe-area-top));
     padding-top: var(--safe-area-top);
   }
 
-  /* メインコンテンツ領域（1画面完結型） */
+  /*
+   * メインコンテンツ領域（1画面完結型）
+   *
+   * 使用場面: クイズ、スピードチャレンジ、単語帳など
+   * 特徴: スクロールなしで全要素にアクセス可能
+   *
+   * 注意: --main-height は safe-area を含めて計算済みのため、
+   *       追加の padding-bottom は不要
+   */
   .main-content {
     height: var(--main-height);
-    padding-bottom: var(--safe-area-bottom);
+    /* overflow-hidden で子要素のはみ出しを防止 */
+    overflow: hidden;
   }
 
-  /* メインコンテンツ領域（スクロール許可型） */
+  /*
+   * メインコンテンツ領域（スクロール許可型）
+   *
+   * 使用場面: ホーム、単語詳細、ログインなど
+   * 特徴: コンテンツが多い場合は自然にスクロール
+   */
   .main-content-scroll {
     min-height: var(--main-height);
+    /* スクロール時のホームバー領域確保 */
     padding-bottom: var(--safe-area-bottom);
   }
 }
