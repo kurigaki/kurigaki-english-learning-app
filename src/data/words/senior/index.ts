@@ -5,6 +5,11 @@ import { senior1B4Words } from "./senior1-b4";
 import { senior1B5Words } from "./senior1-b5";
 import { senior1B6Words } from "./senior1-b6";
 import { senior2Words } from "./senior2";
+import { senior2B2Words } from "./senior2-b2";
+import { senior2B3Words } from "./senior2-b3";
+import { senior2B4Words } from "./senior2-b4";
+import { senior2B5Words } from "./senior2-b5";
+import { senior2B6Words } from "./senior2-b6";
 import { senior3Words } from "./senior3";
 import { WordV2 } from "../types";
 
@@ -18,9 +23,14 @@ const allSenior1Words: WordV2[] = [
   ...senior1B6Words,
 ];
 
-// 高校2年 全単語
+// 高校2年 全単語（オリジナル + 追加バッチ）
 const allSenior2Words: WordV2[] = [
   ...senior2Words,
+  ...senior2B2Words,
+  ...senior2B3Words,
+  ...senior2B4Words,
+  ...senior2B5Words,
+  ...senior2B6Words,
 ];
 
 // 高校3年 全単語
@@ -38,6 +48,7 @@ export const seniorWords: WordV2[] = [
 // 学年別エクスポート
 export { senior1Words, senior2Words, senior3Words };
 export { senior1B2Words, senior1B3Words, senior1B4Words, senior1B5Words, senior1B6Words };
+export { senior2B2Words, senior2B3Words, senior2B4Words, senior2B5Words, senior2B6Words };
 
 // 学年別単語数
 export const seniorWordCounts = {
