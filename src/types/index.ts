@@ -4,16 +4,8 @@ export type QuestionType = "en-to-ja" | "ja-to-en" | "fill-blank";
 // クイズモード
 export type QuizMode = "normal" | "speed";
 
-// 品詞
-export type PartOfSpeech =
-  | "noun"        // 名詞
-  | "verb"        // 動詞
-  | "adjective"   // 形容詞
-  | "adverb"      // 副詞
-  | "preposition" // 前置詞
-  | "conjunction" // 接続詞
-  | "pronoun"     // 代名詞
-  | "interjection"; // 間投詞
+// 品詞（5種に簡素化）
+export type PartOfSpeech = "noun" | "verb" | "adjective" | "adverb" | "other";
 
 // 例文
 export type WordExample = {
