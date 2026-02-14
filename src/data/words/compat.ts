@@ -1,17 +1,40 @@
 /**
- * Compatibility adapter: V2 word data → legacy Word interface
+ * Compatibility adapter: new Word data → legacy Word interface
  *
  * Provides the same export names as the old src/data/words.ts so that
  * UI pages can switch imports with zero logic changes.
  */
-import { uniqueWords, Word as WordV2 } from "./index";
-import type { ExtendedCategory } from "./types";
+import { allWords, Word as InternalWord, Course } from "./index";
 import type { PartOfSpeech, PronunciationData, WordExample, WordColumn } from "@/types";
 
-// Re-export Category as the union of all ExtendedCategory values
-export type Category = ExtendedCategory;
+// Re-export Course as CourseType for backward compatibility
+export type CourseType = Course;
 
-// Difficulty now supports 1-7
+// Category union (simplified: one default per course)
+export type Category =
+  | "business"
+  | "office"
+  | "travel"
+  | "shopping"
+  | "finance"
+  | "technology"
+  | "daily"
+  | "communication"
+  | "school"
+  | "family"
+  | "hobby"
+  | "nature"
+  | "health"
+  | "food"
+  | "sports"
+  | "culture"
+  | "greeting"
+  | "emotion"
+  | "opinion"
+  | "request"
+  | "smalltalk";
+
+// Difficulty supports 1-7
 export type Difficulty = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 // Legacy-compatible Word type (singular `category` field)
@@ -33,29 +56,41 @@ export type Word = {
   imageKeyword?: string;
 };
 
-// Convert V2 word to legacy-compatible format
-function toLegacyWord(w: WordV2): Word {
+// course+stage → difficulty マッピング
+const DIFFICULTY_MAP: Record<string, number> = {
+  "junior:1": 1, "junior:2": 2, "junior:3": 3,
+  "senior:1": 4, "senior:2": 4, "senior:3": 5,
+  "eiken:5": 1, "eiken:4": 2, "eiken:3": 3, "eiken:pre2": 4, "eiken:2": 5, "eiken:pre1": 6, "eiken:1": 7,
+  "toeic:500": 3, "toeic:600": 4, "toeic:700": 5, "toeic:800": 6, "toeic:900": 7,
+  "conversation:1": 1, "conversation:2": 2, "conversation:3": 4, "conversation:4": 5, "conversation:5": 7,
+};
+
+// course → default category マッピング
+const CATEGORY_MAP: Record<Course, Category> = {
+  junior: "school",
+  senior: "school",
+  toeic: "business",
+  eiken: "daily",
+  general: "daily",
+  business: "business",
+  conversation: "communication",
+};
+
+// Convert new word to legacy-compatible format
+function toLegacyWord(w: InternalWord): Word {
   return {
     id: w.id,
     word: w.word,
     meaning: w.meaning,
     example: w.example,
-    exampleJa: w.exampleJa,
-    difficulty: w.difficulty as Difficulty,
-    category: w.categories[0] ?? "daily",
-    pronunciation: w.pronunciation,
-    partOfSpeech: w.partOfSpeech,
-    examples: w.examples,
-    synonyms: w.synonyms,
-    antonyms: w.antonyms,
-    column: w.column,
-    imageUrl: w.imageUrl,
-    imageKeyword: w.imageKeyword,
+    difficulty: (DIFFICULTY_MAP[`${w.course}:${w.stage}`] ?? 3) as Difficulty,
+    category: CATEGORY_MAP[w.course] ?? "daily",
+    partOfSpeech: w.partOfSpeech as PartOfSpeech,
   };
 }
 
 // All words in legacy-compatible format
-export const words: Word[] = uniqueWords.map(toLegacyWord);
+export const words: Word[] = allWords.map(toLegacyWord);
 
 // Category labels (21 categories)
 export const categoryLabels: Record<Category, string> = {
@@ -95,4 +130,3 @@ export const difficultyLabels: Record<Difficulty, string> = {
 
 // Re-export V2 utilities for pages that need course filtering
 export { getWordsByCourse } from "./index";
-export type { CourseType } from "./types";
