@@ -92,3 +92,7 @@ export const difficultyLabels: Record<Difficulty, string> = {
   6: "難関・準1級",
   7: "最難関・1級",
 };
+
+// Re-export V2 utilities for pages that need course filtering
+export { getWordsByCourse } from "./index";
+export type { CourseType } from "./types";
