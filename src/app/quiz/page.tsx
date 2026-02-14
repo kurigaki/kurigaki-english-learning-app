@@ -4,6 +4,9 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { words, Word, Category, categoryLabels } from "@/data/words/compat";
+import { getWordsByCourse } from "@/data/words";
+import { COURSE_DEFINITIONS } from "@/data/words/courses";
+import type { CourseType } from "@/data/words/types";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, Achievement } from "@/types";
@@ -27,12 +30,16 @@ type QuizPhase = "setup" | "quiz" | "result";
 
 // クイズ設定の型
 type QuizSettings = {
+  courseType: CourseType | null;   // null は「全コース」
+  courseLevel: string | null;      // null は「全レベル」
   categories: Category[];  // 空配列は「全カテゴリ」
   difficulties: number[];  // 空配列は「全難易度」
   includeBookmarksOnly: boolean;
 };
 
 const defaultQuizSettings: QuizSettings = {
+  courseType: null,
+  courseLevel: null,
   categories: [],
   difficulties: [],
   includeBookmarksOnly: false,
@@ -165,6 +172,13 @@ function filterWordsBySettings(
   bookmarkedIds: number[]
 ): Word[] {
   let filtered = allWords;
+
+  // コースフィルター
+  if (settings.courseType) {
+    const courseWords = getWordsByCourse(settings.courseType, settings.courseLevel ?? undefined);
+    const courseIds = new Set(courseWords.map((w) => w.id));
+    filtered = filtered.filter((w) => courseIds.has(w.id));
+  }
 
   // カテゴリフィルター
   if (settings.categories.length > 0) {
@@ -729,6 +743,74 @@ export default function QuizPage() {
 
           {/* 中央スクロール可能エリア */}
           <div className="flex-1 overflow-y-auto min-h-0 space-y-2">
+            <Card className="!p-3">
+              <h2 className="text-xs font-bold text-slate-700 mb-1.5">コースを選択</h2>
+              <div className="flex flex-wrap gap-1 mb-1.5">
+                <button
+                  onClick={() => setQuizSettings((prev) => ({ ...prev, courseType: null, courseLevel: null }))}
+                  className={`px-2 py-1 rounded-md text-xs font-medium transition-all ${
+                    quizSettings.courseType === null
+                      ? "bg-primary-500 text-white"
+                      : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  }`}
+                >
+                  全コース
+                </button>
+                {(Object.keys(COURSE_DEFINITIONS) as CourseType[]).map((ct) => (
+                  <button
+                    key={ct}
+                    onClick={() => setQuizSettings((prev) => ({
+                      ...prev,
+                      courseType: prev.courseType === ct ? null : ct,
+                      courseLevel: null,
+                    }))}
+                    className={`px-2 py-1 rounded-md text-xs font-medium transition-all ${
+                      quizSettings.courseType === ct
+                        ? "bg-primary-500 text-white"
+                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    }`}
+                  >
+                    {COURSE_DEFINITIONS[ct].name}
+                  </button>
+                ))}
+              </div>
+              {quizSettings.courseType && (
+                <div className="flex flex-wrap gap-1">
+                  <button
+                    onClick={() => setQuizSettings((prev) => ({ ...prev, courseLevel: null }))}
+                    className={`px-2 py-0.5 rounded text-[11px] font-medium transition-all ${
+                      quizSettings.courseLevel === null
+                        ? "bg-accent-500 text-white"
+                        : "bg-slate-50 text-slate-500 hover:bg-slate-100"
+                    }`}
+                  >
+                    全レベル
+                  </button>
+                  {COURSE_DEFINITIONS[quizSettings.courseType].levels.map((lvl) => (
+                    <button
+                      key={lvl.level}
+                      onClick={() => setQuizSettings((prev) => ({
+                        ...prev,
+                        courseLevel: prev.courseLevel === lvl.level ? null : lvl.level,
+                      }))}
+                      className={`px-2 py-0.5 rounded text-[11px] font-medium transition-all ${
+                        quizSettings.courseLevel === lvl.level
+                          ? "bg-accent-500 text-white"
+                          : "bg-slate-50 text-slate-500 hover:bg-slate-100"
+                      }`}
+                    >
+                      {lvl.displayName}
+                    </button>
+                  ))}
+                </div>
+              )}
+              <p className="text-[10px] text-slate-400 mt-1">
+                {quizSettings.courseType === null
+                  ? "全コースから出題"
+                  : `${COURSE_DEFINITIONS[quizSettings.courseType].name}${quizSettings.courseLevel ? ` - ${COURSE_DEFINITIONS[quizSettings.courseType].levels.find((l) => l.level === quizSettings.courseLevel)?.displayName}` : ""}`}
+              </p>
+            </Card>
+
             <Card className="!p-3">
               <h2 className="text-xs font-bold text-slate-700 mb-1.5">カテゴリを選択</h2>
               <div className="flex flex-wrap gap-1">
