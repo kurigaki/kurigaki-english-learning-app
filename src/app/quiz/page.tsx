@@ -15,6 +15,7 @@ import { AchievementUnlockPopup } from "@/components/features/achievements/Achie
 import { PerfectScorePopup } from "@/components/features/quiz";
 import { speakWord, isSpeechSynthesisSupported } from "@/lib/audio";
 import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
+import { shuffleArray, pickRandom } from "@/lib/shuffle";
 import {
   saveQuizResultState,
   getQuizResultState,
@@ -73,23 +74,23 @@ function selectQuestionType(): QuestionType {
 }
 
 function generateChoicesForEnToJa(correctWord: Word, allWords: Word[]): string[] {
-  const wrongWords = allWords
-    .filter((w) => w.id !== correctWord.id)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3);
+  const wrongWords = pickRandom(
+    allWords.filter((w) => w.id !== correctWord.id),
+    3
+  );
 
   const choices = [correctWord.meaning, ...wrongWords.map((w) => w.meaning)];
-  return choices.sort(() => Math.random() - 0.5);
+  return shuffleArray(choices);
 }
 
 function generateChoicesForJaToEn(correctWord: Word, allWords: Word[]): string[] {
-  const wrongWords = allWords
-    .filter((w) => w.id !== correctWord.id)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3);
+  const wrongWords = pickRandom(
+    allWords.filter((w) => w.id !== correctWord.id),
+    3
+  );
 
   const choices = [correctWord.word, ...wrongWords.map((w) => w.word)];
-  return choices.sort(() => Math.random() - 0.5);
+  return shuffleArray(choices);
 }
 
 /**
@@ -226,14 +227,9 @@ function generateSessionQuestions(
   const targetReview = count - targetWeak - targetNew;
 
   // 各カテゴリからランダムに選択
-  const shuffleAndTake = (arr: Word[], n: number): Word[] => {
-    const shuffled = [...arr].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, n);
-  };
-
-  const selectedWeak = shuffleAndTake(weakWords, targetWeak);
-  const selectedNew = shuffleAndTake(newWords, targetNew);
-  const selectedReview = shuffleAndTake(reviewWords, targetReview);
+  const selectedWeak = pickRandom(weakWords, targetWeak);
+  const selectedNew = pickRandom(newWords, targetNew);
+  const selectedReview = pickRandom(reviewWords, targetReview);
 
   // 足りない分を他のカテゴリで補充
   let selected = [...selectedWeak, ...selectedNew, ...selectedReview];
@@ -241,12 +237,12 @@ function generateSessionQuestions(
   if (selected.length < count) {
     const selectedIds = new Set(selected.map((w) => w.id));
     const remaining = targetWords.filter((w) => !selectedIds.has(w.id));
-    const additional = shuffleAndTake(remaining, count - selected.length);
+    const additional = pickRandom(remaining, count - selected.length);
     selected = [...selected, ...additional];
   }
 
   // シャッフルして問題を生成
-  const shuffledSelected = selected.sort(() => Math.random() - 0.5);
+  const shuffledSelected = shuffleArray(selected);
   return shuffledSelected.map((word) => generateQuestion(word, allWords));
 }
 
