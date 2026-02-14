@@ -2,7 +2,9 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { words, categoryLabels, Category } from "@/data/words/compat";
+import type { Course, Stage } from "@/data/words/types";
+import { COURSE_DEFINITIONS } from "@/data/words/courses";
+import { words, categoryLabels, Category, getWordsByCourse } from "@/data/words/compat";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, SpeakButton } from "@/components/ui";
 
@@ -64,6 +66,8 @@ export default function WordListPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category | "all">("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | "all">("all");
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [selectedStage, setSelectedStage] = useState<Stage | null>(null);
   const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
   const [sortOption, setSortOption] = useState<SortOption>("default");
   const [wordsWithStats, setWordsWithStats] = useState<WordWithStats[]>([]);
@@ -111,9 +115,23 @@ export default function WordListPage() {
     );
   }, []);
 
+  // Course word IDs (shared between filteredWords and stats)
+  const courseWordIds = useMemo(() => {
+    if (!selectedCourse) return null;
+    const courseWords = getWordsByCourse(selectedCourse, selectedStage ?? undefined);
+    return new Set(courseWords.map((w) => w.id));
+  }, [selectedCourse, selectedStage]);
+
   // Filter words based on search, category, difficulty, and bookmarks
   const filteredWords = useMemo(() => {
-    let filtered = wordsWithStats.filter((word) => {
+    let filtered = wordsWithStats;
+
+    // Course filter
+    if (courseWordIds) {
+      filtered = filtered.filter((w) => courseWordIds.has(w.id));
+    }
+
+    filtered = filtered.filter((word) => {
       // Bookmark filter
       if (showBookmarksOnly && !word.isBookmarked) {
         return false;
@@ -171,12 +189,12 @@ export default function WordListPage() {
     }
 
     return filtered;
-  }, [wordsWithStats, selectedCategory, selectedDifficulty, showBookmarksOnly, searchQuery, sortOption]);
+  }, [wordsWithStats, courseWordIds, selectedCategory, selectedDifficulty, showBookmarksOnly, searchQuery, sortOption]);
 
   // Group words by category
   const groupedWords = useMemo(() => {
-    if (selectedCategory !== "all") {
-      return { [selectedCategory]: filteredWords };
+    if (selectedCategory !== "all" || selectedCourse !== null) {
+      return { [selectedCategory !== "all" ? selectedCategory : "all"]: filteredWords };
     }
 
     const grouped: Record<string, WordWithStats[]> = {};
@@ -187,17 +205,27 @@ export default function WordListPage() {
       grouped[word.category].push(word);
     }
     return grouped;
-  }, [filteredWords, selectedCategory]);
+  }, [filteredWords, selectedCategory, selectedCourse]);
 
   // Stats summary
   const stats = useMemo(() => {
-    const total = wordsWithStats.length;
-    const mastered = wordsWithStats.filter((w) => w.mastery === "mastered").length;
-    const learning = wordsWithStats.filter((w) => w.mastery === "learning" || w.mastery === "familiar").length;
-    const newWords = wordsWithStats.filter((w) => w.mastery === "new").length;
-    const bookmarked = wordsWithStats.filter((w) => w.isBookmarked).length;
+    const baseWords = courseWordIds
+      ? wordsWithStats.filter((w) => courseWordIds.has(w.id))
+      : wordsWithStats;
+    const total = baseWords.length;
+    const mastered = baseWords.filter((w) => w.mastery === "mastered").length;
+    const learning = baseWords.filter((w) => w.mastery === "learning" || w.mastery === "familiar").length;
+    const newWords = baseWords.filter((w) => w.mastery === "new").length;
+    const bookmarked = baseWords.filter((w) => w.isBookmarked).length;
     return { total, mastered, learning, newWords, bookmarked };
-  }, [wordsWithStats]);
+  }, [wordsWithStats, courseWordIds]);
+
+  const courseLabel = selectedCourse
+    ? COURSE_DEFINITIONS[selectedCourse].name
+    : null;
+  const stageLabel = selectedCourse && selectedStage
+    ? COURSE_DEFINITIONS[selectedCourse].stages.find((s) => s.stage === selectedStage)?.displayName
+    : null;
 
   return (
     <div className="main-content px-3 py-2 flex flex-col">
@@ -272,6 +300,64 @@ export default function WordListPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
+            )}
+          </div>
+
+          {/* Course Filter */}
+          <div>
+            <div className="flex flex-wrap gap-1 mb-1">
+              <button
+                onClick={() => { setSelectedCourse(null); setSelectedStage(null); }}
+                className={`px-2 py-0.5 rounded-md text-[11px] font-medium transition-all ${
+                  selectedCourse === null
+                    ? "bg-primary-500 text-white"
+                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                全コース
+              </button>
+              {(Object.keys(COURSE_DEFINITIONS) as Course[])
+                .filter((ct) => COURSE_DEFINITIONS[ct].stages.length > 0)
+                .map((ct) => (
+                  <button
+                    key={ct}
+                    onClick={() => { setSelectedCourse(selectedCourse === ct ? null : ct); setSelectedStage(null); }}
+                    className={`px-2 py-0.5 rounded-md text-[11px] font-medium transition-all ${
+                      selectedCourse === ct
+                        ? "bg-primary-500 text-white"
+                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    }`}
+                  >
+                    {COURSE_DEFINITIONS[ct].name}
+                  </button>
+                ))}
+            </div>
+            {selectedCourse && (
+              <div className="flex flex-wrap gap-1">
+                <button
+                  onClick={() => setSelectedStage(null)}
+                  className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-all ${
+                    selectedStage === null
+                      ? "bg-accent-500 text-white"
+                      : "bg-slate-50 text-slate-500 hover:bg-slate-100"
+                  }`}
+                >
+                  全レベル
+                </button>
+                {COURSE_DEFINITIONS[selectedCourse].stages.map((stg) => (
+                  <button
+                    key={stg.stage}
+                    onClick={() => setSelectedStage(selectedStage === stg.stage ? null : stg.stage)}
+                    className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-all ${
+                      selectedStage === stg.stage
+                        ? "bg-accent-500 text-white"
+                        : "bg-slate-50 text-slate-500 hover:bg-slate-100"
+                    }`}
+                  >
+                    {stg.displayName}
+                  </button>
+                ))}
+              </div>
             )}
           </div>
 
@@ -367,6 +453,7 @@ export default function WordListPage() {
             {filteredWords.length}語
             {showBookmarksOnly && " (ブックマーク)"}
             {searchQuery && ` (「${searchQuery}」)`}
+            {courseLabel && ` / ${courseLabel}${stageLabel ? ` - ${stageLabel}` : ""}`}
             {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
           </p>
         </div>
@@ -376,7 +463,7 @@ export default function WordListPage() {
           <div className="flex-1 overflow-y-auto min-h-0 space-y-4">
             {Object.entries(groupedWords).map(([category, categoryWords]) => (
               <div key={category}>
-                {selectedCategory === "all" && (
+                {selectedCategory === "all" && selectedCourse === null && (
                   <h2 className="text-sm font-bold text-slate-500 mb-3 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-primary-400" />
                     {categoryLabelMap[category as Category]} ({categoryWords.length})
@@ -451,6 +538,8 @@ export default function WordListPage() {
                 <button
                   onClick={() => {
                     setSearchQuery("");
+                    setSelectedCourse(null);
+                    setSelectedStage(null);
                     setSelectedCategory("all");
                     setSelectedDifficulty("all");
                     setShowBookmarksOnly(false);
