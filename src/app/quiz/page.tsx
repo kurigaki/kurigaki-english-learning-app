@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { words, Word, Category, categoryLabels, getWordsByCourse } from "@/data/words/compat";
-import type { CourseType } from "@/data/words/compat";
+import type { Course, Stage } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
@@ -30,16 +30,16 @@ type QuizPhase = "setup" | "quiz" | "result";
 
 // クイズ設定の型
 type QuizSettings = {
-  courseType: CourseType | null;   // null は「全コース」
-  courseLevel: string | null;      // null は「全レベル」
+  course: Course | null;   // null は「全コース」
+  stage: Stage | null;     // null は「全ステージ」
   categories: Category[];  // 空配列は「全カテゴリ」
   difficulties: number[];  // 空配列は「全難易度」
   includeBookmarksOnly: boolean;
 };
 
 const defaultQuizSettings: QuizSettings = {
-  courseType: null,
-  courseLevel: null,
+  course: null,
+  stage: null,
   categories: [],
   difficulties: [],
   includeBookmarksOnly: false,
@@ -174,8 +174,8 @@ function filterWordsBySettings(
   let filtered = allWords;
 
   // コースフィルター
-  if (settings.courseType) {
-    const courseWords = getWordsByCourse(settings.courseType, settings.courseLevel ?? undefined);
+  if (settings.course) {
+    const courseWords = getWordsByCourse(settings.course, settings.stage ?? undefined);
     const courseIds = new Set(courseWords.map((w) => w.id));
     filtered = filtered.filter((w) => courseIds.has(w.id));
   }
@@ -742,25 +742,25 @@ export default function QuizPage() {
               <h2 className="text-xs font-bold text-slate-700 mb-1.5">コースを選択</h2>
               <div className="flex flex-wrap gap-1 mb-1.5">
                 <button
-                  onClick={() => setQuizSettings((prev) => ({ ...prev, courseType: null, courseLevel: null }))}
+                  onClick={() => setQuizSettings((prev) => ({ ...prev, course: null, stage: null }))}
                   className={`px-2 py-1 rounded-md text-xs font-medium transition-all ${
-                    quizSettings.courseType === null
+                    quizSettings.course === null
                       ? "bg-primary-500 text-white"
                       : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                   }`}
                 >
                   全コース
                 </button>
-                {(Object.keys(COURSE_DEFINITIONS) as CourseType[]).map((ct) => (
+                {(Object.keys(COURSE_DEFINITIONS) as Course[]).filter((ct) => COURSE_DEFINITIONS[ct].stages.length > 0).map((ct) => (
                   <button
                     key={ct}
                     onClick={() => setQuizSettings((prev) => ({
                       ...prev,
-                      courseType: prev.courseType === ct ? null : ct,
-                      courseLevel: null,
+                      course: prev.course === ct ? null : ct,
+                      stage: null,
                     }))}
                     className={`px-2 py-1 rounded-md text-xs font-medium transition-all ${
-                      quizSettings.courseType === ct
+                      quizSettings.course === ct
                         ? "bg-primary-500 text-white"
                         : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                     }`}
@@ -769,40 +769,40 @@ export default function QuizPage() {
                   </button>
                 ))}
               </div>
-              {quizSettings.courseType && (
+              {quizSettings.course && (
                 <div className="flex flex-wrap gap-1">
                   <button
-                    onClick={() => setQuizSettings((prev) => ({ ...prev, courseLevel: null }))}
+                    onClick={() => setQuizSettings((prev) => ({ ...prev, stage: null }))}
                     className={`px-2 py-0.5 rounded text-[11px] font-medium transition-all ${
-                      quizSettings.courseLevel === null
+                      quizSettings.stage === null
                         ? "bg-accent-500 text-white"
                         : "bg-slate-50 text-slate-500 hover:bg-slate-100"
                     }`}
                   >
                     全レベル
                   </button>
-                  {COURSE_DEFINITIONS[quizSettings.courseType].levels.map((lvl) => (
+                  {COURSE_DEFINITIONS[quizSettings.course].stages.map((stg) => (
                     <button
-                      key={lvl.level}
+                      key={stg.stage}
                       onClick={() => setQuizSettings((prev) => ({
                         ...prev,
-                        courseLevel: prev.courseLevel === lvl.level ? null : lvl.level,
+                        stage: prev.stage === stg.stage ? null : stg.stage,
                       }))}
                       className={`px-2 py-0.5 rounded text-[11px] font-medium transition-all ${
-                        quizSettings.courseLevel === lvl.level
+                        quizSettings.stage === stg.stage
                           ? "bg-accent-500 text-white"
                           : "bg-slate-50 text-slate-500 hover:bg-slate-100"
                       }`}
                     >
-                      {lvl.displayName}
+                      {stg.displayName}
                     </button>
                   ))}
                 </div>
               )}
               <p className="text-[10px] text-slate-400 mt-1">
-                {quizSettings.courseType === null
+                {quizSettings.course === null
                   ? "全コースから出題"
-                  : `${COURSE_DEFINITIONS[quizSettings.courseType].name}${quizSettings.courseLevel ? ` - ${COURSE_DEFINITIONS[quizSettings.courseType].levels.find((l) => l.level === quizSettings.courseLevel)?.displayName}` : ""}`}
+                  : `${COURSE_DEFINITIONS[quizSettings.course].name}${quizSettings.stage ? ` - ${COURSE_DEFINITIONS[quizSettings.course].stages.find((s) => s.stage === quizSettings.stage)?.displayName}` : ""}`}
               </p>
             </Card>
 
