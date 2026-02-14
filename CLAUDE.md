@@ -288,7 +288,7 @@ src/
 │   ├── quiz/page.tsx             # クイズに挑戦
 │   ├── speed-challenge/page.tsx  # スピードチャレンジ
 │   ├── word/[id]/page.tsx        # 単語詳細
-│   ├── word-list/page.tsx        # 単語帳（検索・フィルター・ソート）
+│   ├── word-list/page.tsx        # 単語帳（コース・カテゴリ・難易度フィルター・検索・ソート）
 │   ├── weak-words/page.tsx       # 苦手単語一覧
 │   ├── bookmarks/page.tsx        # ブックマーク一覧
 │   ├── history/page.tsx          # 学習履歴（タブ: 概要/苦手単語/履歴）
