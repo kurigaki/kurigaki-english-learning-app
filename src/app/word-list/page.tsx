@@ -48,14 +48,11 @@ const masteryConfig: Record<MasteryLevel, { label: string; color: string; bg: st
 
 const categories: (Category | "all")[] = [
   "all",
-  "business",
-  "office",
-  "travel",
-  "shopping",
-  "finance",
-  "technology",
-  "daily",
-  "communication",
+  "daily", "school", "family", "food", "hobby",
+  "nature", "health", "sports", "culture",
+  "business", "office", "travel", "shopping",
+  "finance", "technology", "communication",
+  "greeting", "emotion", "opinion", "request", "smalltalk",
 ];
 
 const categoryLabelMap: Record<Category | "all", string> = {
@@ -336,7 +333,7 @@ export default function WordListPage() {
               >
                 全難易度
               </button>
-              {[1, 2, 3, 4, 5].map((level) => (
+              {[1, 2, 3, 4, 5, 6, 7].map((level) => (
                 <button
                   key={level}
                   onClick={() => setSelectedDifficulty(level)}
