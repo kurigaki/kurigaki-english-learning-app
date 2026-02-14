@@ -10,6 +10,7 @@ import { getAchievementById } from "@/data/achievements";
 import { AchievementUnlockPopup } from "@/components/features/achievements/AchievementUnlockPopup";
 import { PerfectScorePopup } from "@/components/features/quiz";
 import { speakWord, isSpeechSynthesisSupported } from "@/lib/audio";
+import { shuffleArray, pickRandom } from "@/lib/shuffle";
 import {
   AnsweredWord,
   saveSpeedResultState,
@@ -36,21 +37,21 @@ function selectQuestionType(): QuestionType {
 }
 
 function generateChoicesForEnToJa(correctWord: Word, allWords: Word[]): string[] {
-  const wrongWords = allWords
-    .filter((w) => w.id !== correctWord.id)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3);
+  const wrongWords = pickRandom(
+    allWords.filter((w) => w.id !== correctWord.id),
+    3
+  );
   const choices = [correctWord.meaning, ...wrongWords.map((w) => w.meaning)];
-  return choices.sort(() => Math.random() - 0.5);
+  return shuffleArray(choices);
 }
 
 function generateChoicesForJaToEn(correctWord: Word, allWords: Word[]): string[] {
-  const wrongWords = allWords
-    .filter((w) => w.id !== correctWord.id)
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3);
+  const wrongWords = pickRandom(
+    allWords.filter((w) => w.id !== correctWord.id),
+    3
+  );
   const choices = [correctWord.word, ...wrongWords.map((w) => w.word)];
-  return choices.sort(() => Math.random() - 0.5);
+  return shuffleArray(choices);
 }
 
 function generateQuestion(word: Word, allWords: Word[]): Question {
