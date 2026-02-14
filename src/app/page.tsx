@@ -5,7 +5,9 @@ import { useEffect, useState, useCallback } from "react";
 import { Card, StatsCard } from "@/components/ui";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
-import { words } from "@/data/words/compat";
+import { words, getWordsByCourse } from "@/data/words/compat";
+import type { Course } from "@/data/words/types";
+import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { Achievement } from "@/types";
 import { ACHIEVEMENTS, getAchievementById } from "@/data/achievements";
 
@@ -14,6 +16,13 @@ type UserProgress = {
   streak: number;
   xpProgress: { current: number; required: number; percentage: number };
   dailyProgress: { current: number; goal: number; percentage: number; completed: boolean };
+};
+
+type CourseProgress = {
+  course: Course;
+  name: string;
+  totalWords: number;
+  masteredWords: number;
 };
 
 export default function Home() {
@@ -26,6 +35,8 @@ export default function Home() {
   const [recentAchievements, setRecentAchievements] = useState<(Achievement & { unlockedAt: string })[]>([]);
   const [achievementProgress, setAchievementProgress] = useState({ unlocked: 0, total: 0 });
   const [bookmarkCount, setBookmarkCount] = useState(0);
+  const [courseProgressList, setCourseProgressList] = useState<CourseProgress[]>([]);
+  const [weakWordCount, setWeakWordCount] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
 
   const loadData = useCallback(async () => {
@@ -72,6 +83,37 @@ export default function Home() {
     // ブックマーク数
     const bookmarks = await unifiedStorage.getBookmarkedWordIds();
     setBookmarkCount(bookmarks.length);
+
+    // コース別学習進捗
+    const statsMap = await unifiedStorage.getWordStats();
+    const progressList: CourseProgress[] = (Object.keys(COURSE_DEFINITIONS) as Course[])
+      .filter((c) => COURSE_DEFINITIONS[c].stages.length > 0)
+      .map((c) => {
+        const courseWords = getWordsByCourse(c);
+        let masteredWords = 0;
+        for (const w of courseWords) {
+          const s = statsMap.get(w.id);
+          if (s && s.totalAttempts >= 3 && s.accuracy >= 80) {
+            masteredWords++;
+          }
+        }
+        return {
+          course: c,
+          name: COURSE_DEFINITIONS[c].name,
+          totalWords: courseWords.length,
+          masteredWords,
+        };
+      });
+    setCourseProgressList(progressList);
+
+    // 苦手単語数（getWeakWords のデフォルト閾値 70 と合わせる）
+    let weakCount = 0;
+    statsMap.forEach((s) => {
+      if (s.totalAttempts > 0 && s.accuracy < 70) {
+        weakCount++;
+      }
+    });
+    setWeakWordCount(weakCount);
   }, []);
 
   useEffect(() => {
@@ -156,6 +198,67 @@ export default function Home() {
           </Card>
         )}
 
+        {/* Course Progress Section */}
+        {isMounted && courseProgressList.length > 0 && (
+          <Card className="mb-6">
+            <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+              <span className="emoji-icon">📚</span>
+              <span>コース別進捗</span>
+            </h2>
+            <div className="grid grid-cols-2 gap-3">
+              {courseProgressList.map((cp) => {
+                const percentage = cp.totalWords > 0
+                  ? Math.round((cp.masteredWords / cp.totalWords) * 100)
+                  : 0;
+                return (
+                  <Link
+                    key={cp.course}
+                    href={`/quiz?course=${cp.course}`}
+                    className="block p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-100"
+                  >
+                    <p className="text-sm font-bold text-slate-700 mb-1">{cp.name}</p>
+                    <p className="text-xs text-slate-500 mb-2">
+                      {cp.masteredWords}/{cp.totalWords}語 習得
+                    </p>
+                    <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-primary-400 to-primary-500 rounded-full transition-all duration-500"
+                        style={{ width: `${percentage}%` }}
+                      />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </Card>
+        )}
+
+        {/* Recommended Review */}
+        {isMounted && weakWordCount > 0 && (
+          <Card hover className="mb-6 group border-2 border-red-200 bg-gradient-to-r from-red-50 to-orange-50">
+            <Link href="/quiz?weakOnly=true" className="block">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-red-500 rounded-xl flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                  <span className="emoji-icon">🔄</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-base font-bold text-slate-800">
+                    苦手な{weakWordCount}語を復習しよう
+                  </h3>
+                  <p className="text-xs text-slate-500">
+                    正答率が低い単語を重点的に練習
+                  </p>
+                </div>
+                <div className="text-red-400 group-hover:translate-x-1 transition-transform">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
+          </Card>
+        )}
+
         {/* Stats Section */}
         {isMounted && stats.total > 0 && (
           <Card className="mb-6">
@@ -185,7 +288,7 @@ export default function Home() {
                     クイズに挑戦
                   </h3>
                   <p className="text-slate-500 text-sm">
-                    {words.length}語の単語クイズで実力チェック
+                    コースを選んでクイズに挑戦
                   </p>
                 </div>
                 <div className="text-primary-400 group-hover:translate-x-1 transition-transform">
@@ -286,7 +389,7 @@ export default function Home() {
                     単語帳
                   </h3>
                   <p className="text-slate-500 text-sm">
-                    {words.length}語の単語を検索・閲覧
+                    {words.length}語の単語をコース別に閲覧
                   </p>
                 </div>
                 <div className="text-emerald-400 group-hover:translate-x-1 transition-transform">
