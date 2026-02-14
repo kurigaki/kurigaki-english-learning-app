@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校2年 / 英検2級 追加単語 Batch 6: 混合（名詞・動詞・形容詞・その他）
-export const senior2B6Words: WordV2[] = [
+export const senior2B6Words: Word[] = [
   { id: 22421, word: "aesthetic", meaning: "美的な; 審美的な", example: "The building has great aesthetic appeal.", exampleJa: "その建物は素晴らしい美的魅力を持っています。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["culture", "daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/esˈθetɪk/" },
   { id: 22422, word: "benevolent", meaning: "慈悲深い; 善意の", example: "The benevolent donor gave millions to charity.", exampleJa: "慈悲深い寄付者は何百万ドルも慈善事業に寄付しました。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["emotion", "daily"], frequencyRank: "B", partOfSpeech: "adjective", pronunciation: "/bəˈnevələnt/" },
   { id: 22423, word: "cataclysm", meaning: "大変動; 大災害", example: "The war was a cataclysm for the region.", exampleJa: "その戦争はその地域にとって大変動でした。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["nature", "culture"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˈkætəklɪzəm/" },

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学2年 / 英検4級 追加単語 Batch 2: 名詞（抽象概念・社会・場所）
-export const junior2B2Words: WordV2[] = [
+export const junior2B2Words: Word[] = [
   { id: 12001, word: "accident", meaning: "事故", example: "There was a car accident.", exampleJa: "車の事故がありました。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["daily"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈæksɪdənt/" },
   { id: 12002, word: "advice", meaning: "助言; アドバイス", example: "Thank you for your advice.", exampleJa: "アドバイスをありがとうございます。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["communication"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ədˈvaɪs/" },
   { id: 12003, word: "age", meaning: "年齢; 時代", example: "What is your age?", exampleJa: "あなたの年齢はいくつですか？", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["daily"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/eɪdʒ/" },

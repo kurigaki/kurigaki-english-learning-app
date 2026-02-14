@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 英検3級レベル（中学卒業）- 15語
-export const eiken3Words: WordV2[] = [
+export const eiken3Words: Word[] = [
   {
     id: 3201,
     word: "advantage",

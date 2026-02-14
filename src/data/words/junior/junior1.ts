@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学1年レベル（基礎語彙）- 35語
-export const junior1Words: WordV2[] = [
+export const junior1Words: Word[] = [
   {
     id: 1001,
     word: "apple",

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校3年 / 英検準1級〜2級 追加単語 Batch 2: 名詞（学術・社会・抽象概念）
-export const senior3B2Words: WordV2[] = [
+export const senior3B2Words: Word[] = [
   { id: 23001, word: "acquisition", meaning: "取得; 習得; 買収", example: "The acquisition of the company was completed.", exampleJa: "その会社の買収が完了しました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 5, categories: ["business", "finance"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˌækwɪˈzɪʃən/" },
   { id: 23002, word: "adversary", meaning: "敵; 対戦相手", example: "He viewed his business competitor as a worthy adversary.", exampleJa: "彼はビジネスの競争相手を立派な敵とみなしました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 6, categories: ["communication", "culture"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˈædvərseri/" },
   { id: 23003, word: "allegiance", meaning: "忠誠; 忠義", example: "They pledged allegiance to the flag.", exampleJa: "彼らは国旗に忠誠を誓いました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 6, categories: ["culture", "communication"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/əˈliːdʒəns/" },

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学1年 / 英検5級 追加単語 Batch 3: 名詞（学校・家族・家・衣類・場所）
-export const junior1B3Words: WordV2[] = [
+export const junior1B3Words: Word[] = [
   {
     id: 11101,
     word: "pen",

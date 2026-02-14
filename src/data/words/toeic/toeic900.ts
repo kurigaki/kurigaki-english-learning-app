@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC900点レベル - 20語
-export const toeic900Words: WordV2[] = [
+export const toeic900Words: Word[] = [
   {
     id: 4401,
     word: "adjudicate",

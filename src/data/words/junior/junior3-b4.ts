@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学3年 / 英検3級 追加単語 Batch 4: 動詞（行動・思考・変化）
-export const junior3B4Words: WordV2[] = [
+export const junior3B4Words: Word[] = [
   { id: 13211, word: "edit", meaning: "編集する", example: "She edited the article carefully.", exampleJa: "彼女は記事を丁寧に編集しました。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["communication", "technology"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/ˈedɪt/" },
   { id: 13212, word: "educate", meaning: "教育する", example: "Parents should educate their children.", exampleJa: "親は子供を教育すべきです。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["school", "family"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/ˈedʒukeɪt/" },
   { id: 13213, word: "eliminate", meaning: "排除する; 取り除く", example: "We need to eliminate waste.", exampleJa: "無駄を排除する必要があります。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["daily"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/ɪˈlɪmɪneɪt/" },

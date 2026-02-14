@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC600点レベル 追加単語 Batch 3: 実務・コミュニケーション（80語）
-export const toeic600B3Words: WordV2[] = [
+export const toeic600B3Words: Word[] = [
   { id: 40601, word: "abrupt", meaning: "突然の; 不意の; 無愛想な", example: "There was an abrupt change in plans.", exampleJa: "計画に突然の変更がありました。", courses: [{ courseType: "toeic", level: "toeic600", displayName: "TOEIC600" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 4, categories: ["business", "daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/əˈbrʌpt/" },
   { id: 40602, word: "accommodate", meaning: "収容する; 対応する; 宿泊させる", example: "The hotel can accommodate 200 guests.", exampleJa: "そのホテルは200名を収容できます。", courses: [{ courseType: "toeic", level: "toeic600", displayName: "TOEIC600" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 4, categories: ["travel", "business"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈkɑːmədeɪt/" },
   { id: 40603, word: "accrue", meaning: "生じる; 蓄積する", example: "Interest accrues on the outstanding balance.", exampleJa: "未払い残高に利息が発生します。", courses: [{ courseType: "toeic", level: "toeic600", displayName: "TOEIC600" }], difficulty: 4, categories: ["finance", "business"], frequencyRank: "B", partOfSpeech: "verb", pronunciation: "/əˈkruː/" },

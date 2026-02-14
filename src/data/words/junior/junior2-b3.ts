@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学2年 / 英検4級 追加単語 Batch 3: 動詞
-export const junior2B3Words: WordV2[] = [
+export const junior2B3Words: Word[] = [
   { id: 12101, word: "accept", meaning: "受け入れる", example: "I accept your invitation.", exampleJa: "あなたの招待を受け入れます。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["communication"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əkˈsept/" },
   { id: 12102, word: "achieve", meaning: "達成する", example: "She achieved her goal.", exampleJa: "彼女は目標を達成しました。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["daily"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈtʃiːv/" },
   { id: 12103, word: "add", meaning: "加える; 追加する", example: "Add some sugar to the tea.", exampleJa: "紅茶に砂糖を加えてください。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["food", "daily"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/æd/" },

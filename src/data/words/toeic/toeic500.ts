@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC500点レベル - 20語
-export const toeic500Words: WordV2[] = [
+export const toeic500Words: Word[] = [
   {
     id: 4001,
     word: "appointment",

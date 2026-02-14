@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学3年 / 英検3級 追加単語 Batch 5: 形容詞 + 副詞
-export const junior3B5Words: WordV2[] = [
+export const junior3B5Words: Word[] = [
   { id: 13316, word: "absolute", meaning: "絶対的な; 完全な", example: "It was an absolute success.", exampleJa: "それは完全な成功でした。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈæbsəluːt/" },
   { id: 13317, word: "abstract", meaning: "抽象的な", example: "Abstract art can be hard to understand.", exampleJa: "抽象芸術は理解しにくいことがあります。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["culture"], frequencyRank: "B", partOfSpeech: "adjective", pronunciation: "/ˈæbstrækt/" },
   { id: 13318, word: "actual", meaning: "実際の", example: "The actual cost was higher than expected.", exampleJa: "実際の費用は予想より高かったです。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈæktʃuəl/" },

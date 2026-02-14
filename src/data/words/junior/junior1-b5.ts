@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学1年 / 英検5級 追加単語 Batch 5: 形容詞・副詞
-export const junior1B5Words: WordV2[] = [
+export const junior1B5Words: Word[] = [
   { id: 11301, word: "big", meaning: "大きい", example: "That is a big dog.", exampleJa: "あれは大きな犬です。", courses: [{ courseType: "junior", level: "junior1", displayName: "中学1年" }, { courseType: "eiken", level: "eiken5", displayName: "英検5級" }], difficulty: 1, categories: ["daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/bɪɡ/" },
   { id: 11302, word: "small", meaning: "小さい", example: "I have a small cat.", exampleJa: "小さな猫を飼っています。", courses: [{ courseType: "junior", level: "junior1", displayName: "中学1年" }, { courseType: "eiken", level: "eiken5", displayName: "英検5級" }], difficulty: 1, categories: ["daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/smɔːl/" },
   { id: 11303, word: "long", meaning: "長い", example: "She has long hair.", exampleJa: "彼女は長い髪をしています。", courses: [{ courseType: "junior", level: "junior1", displayName: "中学1年" }, { courseType: "eiken", level: "eiken5", displayName: "英検5級" }], difficulty: 1, categories: ["daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/lɔːŋ/" },

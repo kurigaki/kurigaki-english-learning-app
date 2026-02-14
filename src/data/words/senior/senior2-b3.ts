@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校2年 / 英検2級 追加単語 Batch 3: 動詞（学術・ビジネス・社会）
-export const senior2B3Words: WordV2[] = [
+export const senior2B3Words: Word[] = [
   { id: 22106, word: "abolish", meaning: "廃止する", example: "The government decided to abolish the old law.", exampleJa: "政府はその古い法律を廃止することを決めました。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["culture", "communication"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈbɑːlɪʃ/" },
   { id: 22107, word: "accelerate", meaning: "加速する; 促進する", example: "The car accelerated rapidly.", exampleJa: "車は急速に加速しました。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }, { courseType: "toeic", level: "toeic700", displayName: "TOEIC700" }], difficulty: 5, categories: ["daily", "business"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əkˈseləreɪt/" },
   { id: 22108, word: "accommodate", meaning: "収容する; 順応する", example: "The hotel can accommodate 200 guests.", exampleJa: "そのホテルは200人の客を収容できます。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }, { courseType: "toeic", level: "toeic700", displayName: "TOEIC700" }], difficulty: 5, categories: ["travel", "business"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈkɑːmədeɪt/" },

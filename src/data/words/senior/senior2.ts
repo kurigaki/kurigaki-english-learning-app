@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校2年レベル（中上級語彙）- 35語
-export const senior2Words: WordV2[] = [
+export const senior2Words: Word[] = [
   {
     id: 2101,
     word: "acknowledge",

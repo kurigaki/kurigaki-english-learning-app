@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC800点レベル 追加単語 Batch 2: 上級ビジネス・専門用語（80語）
-export const toeic800B2Words: WordV2[] = [
+export const toeic800B2Words: Word[] = [
   { id: 40301, word: "abreast", meaning: "並んで; 遅れずについて", example: "Keep abreast of the latest developments.", exampleJa: "最新の動向を把握してください。", courses: [{ courseType: "toeic", level: "toeic800", displayName: "TOEIC800" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 6, categories: ["business", "communication"], frequencyRank: "B", partOfSpeech: "adverb", pronunciation: "/əˈbrest/" },
   { id: 40302, word: "acumen", meaning: "洞察力; 鋭い判断力", example: "Her business acumen led to rapid growth.", exampleJa: "彼女のビジネスの洞察力が急成長をもたらしました。", courses: [{ courseType: "toeic", level: "toeic800", displayName: "TOEIC800" }], difficulty: 6, categories: ["business", "office"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˈækjəmən/" },
   { id: 40303, word: "adjunct", meaning: "付属物; 非常勤の", example: "He works as an adjunct professor.", exampleJa: "彼は非常勤教授として働いています。", courses: [{ courseType: "toeic", level: "toeic800", displayName: "TOEIC800" }], difficulty: 6, categories: ["school", "business"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˈædʒʌŋkt/" },

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校3年 / 英検準1級〜2級 追加単語 Batch 6: 混合（応用・実用・学際的語彙）
-export const senior3B6Words: WordV2[] = [
+export const senior3B6Words: Word[] = [
   { id: 23411, word: "abolition", meaning: "廃止; 撤廃; 廃絶", example: "The abolition of slavery was a historic achievement.", exampleJa: "奴隷制の廃止は歴史的な偉業でした。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 6, categories: ["culture", "communication"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˌæbəˈlɪʃən/" },
   { id: 23412, word: "abstain", meaning: "控える; 棄権する; 慎む", example: "Several members abstained from voting.", exampleJa: "数名のメンバーが投票を棄権しました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 6, categories: ["culture", "communication"], frequencyRank: "B", partOfSpeech: "verb", pronunciation: "/əbˈsteɪn/" },
   { id: 23413, word: "affirmative", meaning: "肯定的な; 積極的な", example: "She gave an affirmative response.", exampleJa: "彼女は肯定的な返答をしました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 6, categories: ["communication", "business"], frequencyRank: "B", partOfSpeech: "adjective", pronunciation: "/əˈfɜːrmətɪv/" },

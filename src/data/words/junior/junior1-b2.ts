@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学1年 / 英検5級 追加単語 Batch 2: 名詞（動物・食べ物・自然・身体）
-export const junior1B2Words: WordV2[] = [
+export const junior1B2Words: Word[] = [
   {
     id: 11001,
     word: "bird",

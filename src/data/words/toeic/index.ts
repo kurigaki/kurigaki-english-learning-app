@@ -13,10 +13,10 @@ import { toeic800B3Words } from "./toeic800-b3";
 import { toeic900Words } from "./toeic900";
 import { toeic900B2Words } from "./toeic900-b2";
 import { toeic900B3Words } from "./toeic900-b3";
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEICコース全単語
-export const toeicWords: WordV2[] = [
+export const toeicWords: Word[] = [
   ...toeic500Words,
   ...toeic500B2Words,
   ...toeic500B3Words,

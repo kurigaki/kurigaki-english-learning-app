@@ -5,10 +5,10 @@ import { eikenPre2Words } from "./eikenPre2";
 import { eiken2Words } from "./eiken2";
 import { eikenPre1Words } from "./eikenPre1";
 import { eiken1Words } from "./eiken1";
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 英検コース全単語
-export const eikenWords: WordV2[] = [
+export const eikenWords: Word[] = [
   ...eiken5Words,
   ...eiken4Words,
   ...eiken3Words,

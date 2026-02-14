@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 英検準1級レベル（大学中級）- 15語
-export const eikenPre1Words: WordV2[] = [
+export const eikenPre1Words: Word[] = [
   {
     id: 3501,
     word: "advocate",

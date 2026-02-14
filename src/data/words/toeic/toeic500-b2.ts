@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC500点レベル 追加単語 Batch 2: ビジネス基礎・日常（80語）
-export const toeic500B2Words: WordV2[] = [
+export const toeic500B2Words: Word[] = [
   { id: 40021, word: "application", meaning: "応募; 申請; アプリ", example: "Please submit your application by Friday.", exampleJa: "金曜日までに申請書を提出してください。", courses: [{ courseType: "toeic", level: "toeic500", displayName: "TOEIC500" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["business", "technology"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˌæplɪˈkeɪʃən/" },
   { id: 40022, word: "available", meaning: "利用できる; 入手可能な", example: "The room is available next week.", exampleJa: "その部屋は来週利用できます。", courses: [{ courseType: "toeic", level: "toeic500", displayName: "TOEIC500" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["business", "daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/əˈveɪləbəl/" },
   { id: 40023, word: "benefit", meaning: "利益; 手当; 恩恵", example: "The company offers great benefits.", exampleJa: "その会社は素晴らしい福利厚生を提供しています。", courses: [{ courseType: "toeic", level: "toeic500", displayName: "TOEIC500" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["business", "finance"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈbenɪfɪt/" },

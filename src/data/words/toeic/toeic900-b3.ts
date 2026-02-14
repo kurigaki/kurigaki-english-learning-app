@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC900点レベル 追加単語 Batch 3: 最上級ビジネス・学術・法律用語（80語）
-export const toeic900B3Words: WordV2[] = [
+export const toeic900B3Words: Word[] = [
   { id: 40901, word: "abscond", meaning: "逃亡する; 失踪する", example: "The treasurer absconded with company funds.", exampleJa: "会計担当者が会社の資金を持って逃亡しました。", courses: [{ courseType: "toeic", level: "toeic900", displayName: "TOEIC900" }, { courseType: "eiken", level: "eiken1", displayName: "英検1級" }], difficulty: 7, categories: ["business", "finance"], frequencyRank: "C", partOfSpeech: "verb", pronunciation: "/əbˈskɑːnd/" },
   { id: 40902, word: "accrue", meaning: "生じる; 蓄積する", example: "Interest will accrue over time.", exampleJa: "利息は時間とともに蓄積されます。", courses: [{ courseType: "toeic", level: "toeic900", displayName: "TOEIC900" }, { courseType: "eiken", level: "eiken1", displayName: "英検1級" }], difficulty: 7, categories: ["finance", "business"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈkruː/" },
   { id: 40903, word: "adjunct", meaning: "付属物; 補助的な; 非常勤の", example: "He works as an adjunct professor.", exampleJa: "彼は非常勤教授として働いています。", courses: [{ courseType: "toeic", level: "toeic900", displayName: "TOEIC900" }], difficulty: 7, categories: ["school", "business"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˈædʒʌŋkt/" },

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校1年 / 英検準2級 追加単語 Batch 4: 動詞（行動・思考・変化）
-export const senior1B4Words: WordV2[] = [
+export const senior1B4Words: Word[] = [
   { id: 21211, word: "expose", meaning: "さらす; 暴露する", example: "The report exposed corruption in the government.", exampleJa: "その報告書は政府の汚職を暴露しました。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["communication", "daily"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/ɪkˈspoʊz/" },
   { id: 21212, word: "flourish", meaning: "繁栄する; 栄える", example: "The business flourished under her leadership.", exampleJa: "彼女のリーダーシップの下でビジネスは繁栄しました。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["business", "daily"], frequencyRank: "B", partOfSpeech: "verb", pronunciation: "/ˈflɜːrɪʃ/" },
   { id: 21213, word: "forecast", meaning: "予測する; 予報", example: "Economists forecast a recession.", exampleJa: "経済学者は景気後退を予測しました。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }, { courseType: "toeic", level: "toeic600", displayName: "TOEIC600" }], difficulty: 4, categories: ["finance", "nature"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/ˈfɔːrkæst/" },

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学3年 / 英検3級 追加単語 Batch 2: 名詞（日常・社会・学術）
-export const junior3B2Words: WordV2[] = [
+export const junior3B2Words: Word[] = [
   { id: 13001, word: "ability", meaning: "能力", example: "She has the ability to solve problems.", exampleJa: "彼女は問題を解決する能力があります。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["daily", "school"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/əˈbɪləti/" },
   { id: 13002, word: "absence", meaning: "不在; 欠席", example: "His absence was noticed by everyone.", exampleJa: "彼の不在はみんなに気づかれました。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["school"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˈæbsəns/" },
   { id: 13003, word: "access", meaning: "アクセス; 利用する権利", example: "Do you have access to the internet?", exampleJa: "インターネットへのアクセスはありますか？", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["technology", "daily"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈækses/" },

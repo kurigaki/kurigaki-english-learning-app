@@ -16,10 +16,10 @@ import { senior3B3Words } from "./senior3-b3";
 import { senior3B4Words } from "./senior3-b4";
 import { senior3B5Words } from "./senior3-b5";
 import { senior3B6Words } from "./senior3-b6";
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校1年 全単語（オリジナル + 追加バッチ）
-const allSenior1Words: WordV2[] = [
+const allSenior1Words: Word[] = [
   ...senior1Words,
   ...senior1B2Words,
   ...senior1B3Words,
@@ -29,7 +29,7 @@ const allSenior1Words: WordV2[] = [
 ];
 
 // 高校2年 全単語（オリジナル + 追加バッチ）
-const allSenior2Words: WordV2[] = [
+const allSenior2Words: Word[] = [
   ...senior2Words,
   ...senior2B2Words,
   ...senior2B3Words,
@@ -39,7 +39,7 @@ const allSenior2Words: WordV2[] = [
 ];
 
 // 高校3年 全単語（オリジナル + 追加バッチ）
-const allSenior3Words: WordV2[] = [
+const allSenior3Words: Word[] = [
   ...senior3Words,
   ...senior3B2Words,
   ...senior3B3Words,
@@ -49,7 +49,7 @@ const allSenior3Words: WordV2[] = [
 ];
 
 // 高校英語コース全単語
-export const seniorWords: WordV2[] = [
+export const seniorWords: Word[] = [
   ...allSenior1Words,
   ...allSenior2Words,
   ...allSenior3Words,

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学1年 / 英検5級 追加単語 Batch 6: 日常・趣味・スポーツ・前置詞・代名詞・その他
-export const junior1B6Words: WordV2[] = [
+export const junior1B6Words: Word[] = [
   { id: 11401, word: "soccer", meaning: "サッカー", example: "I play soccer after school.", exampleJa: "放課後サッカーをします。", courses: [{ courseType: "junior", level: "junior1", displayName: "中学1年" }, { courseType: "eiken", level: "eiken5", displayName: "英検5級" }], difficulty: 1, categories: ["sports"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈsɑːkər/" },
   { id: 11402, word: "baseball", meaning: "野球", example: "Baseball is popular in Japan.", exampleJa: "野球は日本で人気です。", courses: [{ courseType: "junior", level: "junior1", displayName: "中学1年" }, { courseType: "eiken", level: "eiken5", displayName: "英検5級" }], difficulty: 1, categories: ["sports"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈbeɪsbɔːl/" },
   { id: 11403, word: "basketball", meaning: "バスケットボール", example: "We play basketball in the gym.", exampleJa: "体育館でバスケットボールをします。", courses: [{ courseType: "junior", level: "junior1", displayName: "中学1年" }, { courseType: "eiken", level: "eiken5", displayName: "英検5級" }], difficulty: 1, categories: ["sports"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈbæskɪtbɔːl/" },

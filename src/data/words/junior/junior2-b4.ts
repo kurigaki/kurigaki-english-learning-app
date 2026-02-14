@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学2年 / 英検4級 追加単語 Batch 4: 形容詞・副詞
-export const junior2B4Words: WordV2[] = [
+export const junior2B4Words: Word[] = [
   { id: 12201, word: "abroad", meaning: "海外に; 海外で", example: "She studied abroad.", exampleJa: "彼女は海外で勉強しました。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["travel"], frequencyRank: "A", partOfSpeech: "adverb", pronunciation: "/əˈbrɔːd/" },
   { id: 12202, word: "absent", meaning: "欠席の", example: "He was absent from school.", exampleJa: "彼は学校を欠席しました。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["school"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈæbsənt/" },
   { id: 12203, word: "active", meaning: "活発な; 積極的な", example: "She is very active in sports.", exampleJa: "彼女はスポーツにとても積極的です。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["sports", "daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈæktɪv/" },
