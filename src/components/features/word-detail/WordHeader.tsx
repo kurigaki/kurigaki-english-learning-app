@@ -16,10 +16,7 @@ const partOfSpeechLabels: Record<PartOfSpeech, string> = {
   verb: "動詞",
   adjective: "形容詞",
   adverb: "副詞",
-  preposition: "前置詞",
-  conjunction: "接続詞",
-  pronoun: "代名詞",
-  interjection: "間投詞",
+  other: "その他",
 };
 
 // 発音記号を取得する関数
