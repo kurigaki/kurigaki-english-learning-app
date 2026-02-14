@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { SpeakButton } from "@/components/ui/SpeakButton";
-import { words } from "@/data/words";
+import { words } from "@/data/words/compat";
 
 type WordRelationsProps = {
   synonyms?: string[];

@@ -6,7 +6,7 @@ import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import type { WordStats } from "@/lib/storage";
 import { LearningRecord, QuestionType } from "@/types";
-import { words } from "@/data/words";
+import { words } from "@/data/words/compat";
 import { Card, StatsCard, Button, SpeakButton } from "@/components/ui";
 
 const questionTypeLabels: Record<QuestionType, string> = {

@@ -7,7 +7,7 @@ import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { unifiedStorage } from "@/lib/unified-storage";
 import type { WordStats } from "@/lib/storage";
-import { words, Word, categoryLabels } from "@/data/words";
+import { words, Word, categoryLabels } from "@/data/words/compat";
 
 type WeakWord = Word & {
   stats: WordStats;
