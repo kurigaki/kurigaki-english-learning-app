@@ -40,8 +40,11 @@ const defaultQuizSettings: QuizSettings = {
 
 // カテゴリリスト
 const ALL_CATEGORIES: Category[] = [
+  "daily", "school", "family", "food", "hobby",
+  "nature", "health", "sports", "culture",
   "business", "office", "travel", "shopping",
-  "finance", "technology", "daily", "communication",
+  "finance", "technology", "communication",
+  "greeting", "emotion", "opinion", "request", "smalltalk",
 ];
 
 // 問題タイプの出題比率
@@ -760,7 +763,7 @@ export default function QuizPage() {
             <Card className="!p-3">
               <h2 className="text-xs font-bold text-slate-700 mb-1.5">難易度を選択</h2>
               <div className="flex gap-1">
-                {[1, 2, 3, 4, 5].map((level) => (
+                {[1, 2, 3, 4, 5, 6, 7].map((level) => (
                   <button
                     key={level}
                     onClick={() => {
