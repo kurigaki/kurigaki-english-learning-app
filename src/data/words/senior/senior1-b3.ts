@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校1年 / 英検準2級 追加単語 Batch 3: 名詞（ビジネス・日常）+ 動詞（基本）
-export const senior1B3Words: WordV2[] = [
+export const senior1B3Words: Word[] = [
   { id: 21106, word: "obstacle", meaning: "障害; 障害物", example: "Lack of funding is a major obstacle.", exampleJa: "資金不足は大きな障害です。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["daily", "business"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈɑːbstəkəl/" },
   { id: 21107, word: "opponent", meaning: "対戦相手; 反対者", example: "She defeated her opponent in the final round.", exampleJa: "彼女は決勝で対戦相手を倒しました。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["sports", "communication"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/əˈpoʊnənt/" },
   { id: 21108, word: "outcome", meaning: "結果; 成果", example: "The outcome of the experiment was unexpected.", exampleJa: "実験の結果は予想外でした。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }, { courseType: "toeic", level: "toeic600", displayName: "TOEIC600" }], difficulty: 4, categories: ["business", "school"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈaʊtkʌm/" },

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校3年 / 英検準1級〜2級 追加単語 Batch 4: 形容詞・副詞（特性・程度・態度・状態）
-export const senior3B4Words: WordV2[] = [
+export const senior3B4Words: Word[] = [
   { id: 23211, word: "absurd", meaning: "ばかげた; 不合理な", example: "The idea seemed absurd at first.", exampleJa: "その考えは最初はばかげているように思えました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["communication", "daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/əbˈsɜːrd/" },
   { id: 23212, word: "acute", meaning: "深刻な; 鋭い; 急性の", example: "There is an acute shortage of teachers.", exampleJa: "教師の深刻な不足があります。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["health", "school"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/əˈkjuːt/" },
   { id: 23213, word: "adverse", meaning: "不利な; 有害な; 逆の", example: "The project faced adverse conditions.", exampleJa: "そのプロジェクトは不利な条件に直面しました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }, { courseType: "toeic", level: "toeic800", displayName: "TOEIC800" }], difficulty: 5, categories: ["business", "daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈædvɜːrs/" },

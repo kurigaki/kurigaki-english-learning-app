@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校3年 / 英検準1級〜2級 追加単語 Batch 5: 混合（学術・社会・自然科学・思考）
-export const senior3B5Words: WordV2[] = [
+export const senior3B5Words: Word[] = [
   { id: 23306, word: "analogy", meaning: "類似; 類推; たとえ", example: "He drew an analogy between the human brain and a computer.", exampleJa: "彼は人間の脳とコンピュータの類似点を指摘しました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["school", "communication"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/əˈnælədʒi/" },
   { id: 23307, word: "apparatus", meaning: "装置; 機構; 器具一式", example: "The fire department brought their apparatus to the scene.", exampleJa: "消防署は現場に装置を持ち込みました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["technology", "daily"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˌæpəˈrætəs/" },
   { id: 23308, word: "brevity", meaning: "簡潔さ; 短さ; 手短さ", example: "Brevity is the soul of wit.", exampleJa: "簡潔は機知の魂です。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 6, categories: ["communication", "culture"], frequencyRank: "C", partOfSpeech: "noun", pronunciation: "/ˈbrevəti/" },

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC700点レベル 追加単語 Batch 2: 上級ビジネス・専門（80語）
-export const toeic700B2Words: WordV2[] = [
+export const toeic700B2Words: Word[] = [
   { id: 40201, word: "abide", meaning: "従う; 守る; 耐える", example: "All employees must abide by the rules.", exampleJa: "全従業員は規則を守らなければなりません。", courses: [{ courseType: "toeic", level: "toeic700", displayName: "TOEIC700" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["business", "office"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈbaɪd/" },
   { id: 40202, word: "abolish", meaning: "廃止する; 撤廃する", example: "The policy was abolished last year.", exampleJa: "その方針は昨年廃止されました。", courses: [{ courseType: "toeic", level: "toeic700", displayName: "TOEIC700" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["business", "communication"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈbɑːlɪʃ/" },
   { id: 40203, word: "accreditation", meaning: "認定; 認可", example: "The university received accreditation.", exampleJa: "その大学は認定を受けました。", courses: [{ courseType: "toeic", level: "toeic700", displayName: "TOEIC700" }], difficulty: 5, categories: ["school", "business"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/əˌkredɪˈteɪʃən/" },

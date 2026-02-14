@@ -3,10 +3,10 @@ import { convElementaryWords } from "./elementary";
 import { convIntermediateWords } from "./intermediate";
 import { convAdvancedWords } from "./advanced";
 import { convNativeWords } from "./native";
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 英会話コース全単語
-export const conversationWords: WordV2[] = [
+export const conversationWords: Word[] = [
   ...convBeginnerWords,
   ...convElementaryWords,
   ...convIntermediateWords,

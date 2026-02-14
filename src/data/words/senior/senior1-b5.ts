@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校1年 / 英検準2級 追加単語 Batch 5: 形容詞 + 副詞
-export const senior1B5Words: WordV2[] = [
+export const senior1B5Words: Word[] = [
   { id: 21316, word: "deliberate", meaning: "意図的な; 慎重な", example: "It was a deliberate act of kindness.", exampleJa: "それは意図的な親切の行為でした。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["communication", "daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/dɪˈlɪbərət/" },
   { id: 21317, word: "dense", meaning: "密集した; 濃い", example: "The forest was too dense to walk through.", exampleJa: "森はあまりに密集していて歩けませんでした。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["nature"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/dens/" },
   { id: 21318, word: "dependent", meaning: "依存している; 〜次第の", example: "The outcome is dependent on many factors.", exampleJa: "結果は多くの要素に左右されます。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["daily", "business"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/dɪˈpendənt/" },

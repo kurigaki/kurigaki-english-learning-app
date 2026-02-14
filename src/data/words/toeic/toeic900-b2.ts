@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC900点レベル 追加単語 Batch 2: 最上級ビジネス・専門用語（80語）
-export const toeic900B2Words: WordV2[] = [
+export const toeic900B2Words: Word[] = [
   { id: 40401, word: "abdicate", meaning: "退位する; 放棄する", example: "The CEO abdicated his responsibilities.", exampleJa: "CEOは責任を放棄しました。", courses: [{ courseType: "toeic", level: "toeic900", displayName: "TOEIC900" }, { courseType: "eiken", level: "eiken1", displayName: "英検1級" }], difficulty: 7, categories: ["business", "communication"], frequencyRank: "B", partOfSpeech: "verb", pronunciation: "/ˈæbdɪkeɪt/" },
   { id: 40402, word: "abscond", meaning: "逃亡する; 持ち逃げする", example: "The treasurer absconded with the funds.", exampleJa: "会計係が資金を持ち逃げしました。", courses: [{ courseType: "toeic", level: "toeic900", displayName: "TOEIC900" }], difficulty: 7, categories: ["finance", "business"], frequencyRank: "C", partOfSpeech: "verb", pronunciation: "/əbˈskɑːnd/" },
   { id: 40403, word: "acquiesce", meaning: "黙認する; 従う", example: "The board acquiesced to the proposal.", exampleJa: "取締役会はその提案を黙認しました。", courses: [{ courseType: "toeic", level: "toeic900", displayName: "TOEIC900" }, { courseType: "eiken", level: "eiken1", displayName: "英検1級" }], difficulty: 7, categories: ["business", "communication"], frequencyRank: "B", partOfSpeech: "verb", pronunciation: "/ˌækwiˈes/" },

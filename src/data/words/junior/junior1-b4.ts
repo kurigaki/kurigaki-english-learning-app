@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学1年 / 英検5級 追加単語 Batch 4: 動詞
-export const junior1B4Words: WordV2[] = [
+export const junior1B4Words: Word[] = [
   {
     id: 11201,
     word: "come",

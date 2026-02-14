@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校1年 / 英検準2級 追加単語 Batch 6: 混合（名詞・動詞・形容詞・その他）
-export const senior1B6Words: WordV2[] = [
+export const senior1B6Words: Word[] = [
   { id: 21421, word: "phenomenon", meaning: "現象", example: "This phenomenon has attracted worldwide attention.", exampleJa: "この現象は世界的な注目を集めました。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["school", "nature"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/fɪˈnɑːmɪnɑːn/" },
   { id: 21422, word: "portfolio", meaning: "作品集; 有価証券", example: "She showed her design portfolio to the interviewer.", exampleJa: "彼女は面接官にデザインのポートフォリオを見せました。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }, { courseType: "toeic", level: "toeic600", displayName: "TOEIC600" }], difficulty: 4, categories: ["business", "finance"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/pɔːrtˈfoʊlioʊ/" },
   { id: 21423, word: "predecessor", meaning: "前任者; 先行するもの", example: "The new model is much better than its predecessor.", exampleJa: "新モデルは前のモデルよりずっと優れています。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["business", "daily"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˈpredəsesər/" },

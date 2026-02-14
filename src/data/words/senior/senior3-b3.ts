@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校3年 / 英検準1級〜2級 追加単語 Batch 3: 動詞（行為・変化・思考・社会）
-export const senior3B3Words: WordV2[] = [
+export const senior3B3Words: Word[] = [
   { id: 23106, word: "abolish", meaning: "廃止する; 撤廃する", example: "The law was abolished last year.", exampleJa: "その法律は昨年廃止されました。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["culture", "communication"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈbɑːlɪʃ/" },
   { id: 23107, word: "accommodate", meaning: "収容する; 適応させる; 対応する", example: "The hall can accommodate 300 people.", exampleJa: "そのホールは300人を収容できます。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }, { courseType: "toeic", level: "toeic800", displayName: "TOEIC800" }], difficulty: 5, categories: ["business", "travel"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈkɑːmədeɪt/" },
   { id: 23108, word: "accumulate", meaning: "蓄積する; 積み重ねる", example: "Dust accumulates on surfaces over time.", exampleJa: "ほこりは時間とともに表面に蓄積します。", courses: [{ courseType: "senior", level: "senior3", displayName: "高校3年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["daily", "finance"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈkjuːmjəleɪt/" },

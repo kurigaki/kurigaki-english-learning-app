@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校1年 / 英検準2級 追加単語 Batch 2: 名詞（学術・社会・抽象）
-export const senior1B2Words: WordV2[] = [
+export const senior1B2Words: Word[] = [
   { id: 21001, word: "accommodation", meaning: "宿泊施設; 適応", example: "We booked accommodation near the station.", exampleJa: "駅の近くに宿泊施設を予約しました。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["travel", "daily"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/əˌkɑːməˈdeɪʃən/" },
   { id: 21002, word: "administration", meaning: "管理; 行政", example: "The administration decided to change the policy.", exampleJa: "行政はその方針を変更することを決めました。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["business", "daily"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ədˌmɪnɪˈstreɪʃən/" },
   { id: 21003, word: "agriculture", meaning: "農業", example: "Agriculture plays a vital role in the economy.", exampleJa: "農業は経済において重要な役割を果たしています。", courses: [{ courseType: "senior", level: "senior1", displayName: "高校1年" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 4, categories: ["nature", "business"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈæɡrɪkʌltʃər/" },

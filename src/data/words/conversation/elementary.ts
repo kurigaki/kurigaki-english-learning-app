@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 英会話 初級レベル - 20語
-export const convElementaryWords: WordV2[] = [
+export const convElementaryWords: Word[] = [
   {
     id: 5101,
     word: "actually",

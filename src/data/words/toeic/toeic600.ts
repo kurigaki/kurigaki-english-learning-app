@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC600点レベル - 20語
-export const toeic600Words: WordV2[] = [
+export const toeic600Words: Word[] = [
   {
     id: 4101,
     word: "comply",

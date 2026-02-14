@@ -3,10 +3,10 @@ import { seniorWords, seniorWordCounts } from "./senior";
 import { eikenWords, eikenWordCounts } from "./eiken";
 import { toeicWords, toeicWordCounts } from "./toeic";
 import { conversationWords, conversationWordCounts } from "./conversation";
-import { WordV2, CourseType, ExtendedCategory } from "./types";
+import { Word, CourseType, ExtendedCategory } from "./types";
 
 // 全コースの単語を統合
-export const allWordsV2: WordV2[] = [
+export const allWords: Word[] = [
   ...juniorWords,
   ...seniorWords,
   ...eikenWords,
@@ -15,8 +15,8 @@ export const allWordsV2: WordV2[] = [
 ];
 
 // 重複を除去した全単語（同じIDの単語は1つだけ含める）
-export const uniqueWordsV2: WordV2[] = Array.from(
-  new Map(allWordsV2.map((word) => [word.id, word])).values()
+export const uniqueWords: Word[] = Array.from(
+  new Map(allWords.map((word) => [word.id, word])).values()
 );
 
 // 全単語数
@@ -26,16 +26,16 @@ export const totalWordCounts = {
   eiken: eikenWordCounts,
   toeic: toeicWordCounts,
   conversation: conversationWordCounts,
-  all: allWordsV2.length,
-  unique: uniqueWordsV2.length,
+  all: allWords.length,
+  unique: uniqueWords.length,
 };
 
 // コース別フィルタ関数
 export function getWordsByCourse(
   courseType: CourseType,
   level?: string
-): WordV2[] {
-  return uniqueWordsV2.filter((w) =>
+): Word[] {
+  return uniqueWords.filter((w) =>
     w.courses.some(
       (c) => c.courseType === courseType && (!level || c.level === level)
     )
@@ -46,20 +46,20 @@ export function getWordsByCourse(
 export function getWordsByDifficulty(
   minDifficulty: number,
   maxDifficulty: number
-): WordV2[] {
-  return uniqueWordsV2.filter(
+): Word[] {
+  return uniqueWords.filter(
     (w) => w.difficulty >= minDifficulty && w.difficulty <= maxDifficulty
   );
 }
 
 // カテゴリでフィルタ
-export function getWordsByCategory(category: ExtendedCategory): WordV2[] {
-  return uniqueWordsV2.filter((w) => w.categories.includes(category));
+export function getWordsByCategory(category: ExtendedCategory): Word[] {
+  return uniqueWords.filter((w) => w.categories.includes(category));
 }
 
 // 頻度ランクでフィルタ
-export function getWordsByFrequency(ranks: string[]): WordV2[] {
-  return uniqueWordsV2.filter((w) => ranks.includes(w.frequencyRank));
+export function getWordsByFrequency(ranks: string[]): Word[] {
+  return uniqueWords.filter((w) => ranks.includes(w.frequencyRank));
 }
 
 // 型とコース定義のエクスポート

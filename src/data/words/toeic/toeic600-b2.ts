@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC600点レベル 追加単語 Batch 2: 中級ビジネス・実務（80語）
-export const toeic600B2Words: WordV2[] = [
+export const toeic600B2Words: Word[] = [
   { id: 40101, word: "accomplish", meaning: "達成する; 成し遂げる", example: "We accomplished our sales target.", exampleJa: "売上目標を達成しました。", courses: [{ courseType: "toeic", level: "toeic600", displayName: "TOEIC600" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 4, categories: ["business", "daily"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈkɑːmplɪʃ/" },
   { id: 40102, word: "accumulate", meaning: "蓄積する; 積み重なる", example: "Interest will accumulate over time.", exampleJa: "利息は時間とともに蓄積します。", courses: [{ courseType: "toeic", level: "toeic600", displayName: "TOEIC600" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 4, categories: ["finance", "business"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈkjuːmjəleɪt/" },
   { id: 40103, word: "acknowledge", meaning: "認める; 承認する", example: "Please acknowledge receipt of this email.", exampleJa: "このメールの受領を確認してください。", courses: [{ courseType: "toeic", level: "toeic600", displayName: "TOEIC600" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 4, categories: ["communication", "business"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əkˈnɑːlɪdʒ/" },

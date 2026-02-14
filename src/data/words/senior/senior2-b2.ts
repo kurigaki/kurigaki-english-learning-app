@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校2年 / 英検2級 追加単語 Batch 2: 名詞（学術・社会・抽象）
-export const senior2B2Words: WordV2[] = [
+export const senior2B2Words: Word[] = [
   { id: 22001, word: "abundance", meaning: "豊富; 多量", example: "There is an abundance of natural resources.", exampleJa: "天然資源が豊富にあります。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["nature", "daily"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/əˈbʌndəns/" },
   { id: 22002, word: "accomplishment", meaning: "達成; 業績", example: "Graduating from college was a great accomplishment.", exampleJa: "大学卒業は大きな業績でした。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }, { courseType: "toeic", level: "toeic700", displayName: "TOEIC700" }], difficulty: 5, categories: ["business", "school"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/əˈkɑːmplɪʃmənt/" },
   { id: 22003, word: "addiction", meaning: "中毒; 依存症", example: "Social media addiction is a growing concern.", exampleJa: "SNS依存症は増大する懸念です。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["health", "technology"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/əˈdɪkʃən/" },

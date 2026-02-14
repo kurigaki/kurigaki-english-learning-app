@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校2年 / 英検2級 追加単語 Batch 4: 形容詞・副詞
-export const senior2B4Words: WordV2[] = [
+export const senior2B4Words: Word[] = [
   { id: 22211, word: "abundant", meaning: "豊富な; 大量の", example: "The region has abundant natural resources.", exampleJa: "その地域には豊富な天然資源があります。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["nature", "daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/əˈbʌndənt/" },
   { id: 22212, word: "acute", meaning: "鋭い; 深刻な; 急性の", example: "There is an acute shortage of housing.", exampleJa: "住宅の深刻な不足があります。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["health", "daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/əˈkjuːt/" },
   { id: 22213, word: "adverse", meaning: "不利な; 有害な", example: "The drug may have adverse effects.", exampleJa: "その薬には有害な副作用があるかもしれません。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }, { courseType: "toeic", level: "toeic800", displayName: "TOEIC800" }], difficulty: 5, categories: ["health", "business"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈædvɜːrs/" },

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学3年 / 英検3級 追加単語 Batch 6: 混合（名詞・動詞・形容詞・その他）
-export const junior3B6Words: WordV2[] = [
+export const junior3B6Words: Word[] = [
   { id: 13421, word: "passage", meaning: "通路; 一節; 文章", example: "Read the passage carefully.", exampleJa: "その文章を注意深く読みなさい。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["school"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈpæsɪdʒ/" },
   { id: 13422, word: "passion", meaning: "情熱; 熱意", example: "She has a passion for music.", exampleJa: "彼女は音楽に情熱を持っています。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["emotion", "hobby"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈpæʃən/" },
   { id: 13423, word: "patience", meaning: "忍耐; 辛抱", example: "Teaching requires a lot of patience.", exampleJa: "教えることには多くの忍耐が必要です。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["emotion", "school"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈpeɪʃəns/" },

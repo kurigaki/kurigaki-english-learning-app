@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学2年 / 英検4級 追加単語 Batch 5: 形容詞・副詞（続き）& 混合
-export const junior2B5Words: WordV2[] = [
+export const junior2B5Words: Word[] = [
   { id: 12301, word: "hardly", meaning: "ほとんど～ない", example: "I can hardly hear you.", exampleJa: "ほとんど聞こえません。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["communication"], frequencyRank: "A", partOfSpeech: "adverb", pronunciation: "/ˈhɑːrdli/" },
   { id: 12302, word: "healthy", meaning: "健康な", example: "Eat healthy food.", exampleJa: "健康的な食べ物を食べなさい。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["health", "food"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈhelθi/" },
   { id: 12303, word: "heavy", meaning: "重い", example: "This bag is heavy.", exampleJa: "このバッグは重いです。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈhevi/" },

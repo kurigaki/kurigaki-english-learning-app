@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学3年 / 英検3級 追加単語 Batch 3: 名詞（自然・文化・抽象）+ 動詞（基本）
-export const junior3B3Words: WordV2[] = [
+export const junior3B3Words: Word[] = [
   { id: 13106, word: "gesture", meaning: "身振り; ジェスチャー", example: "He made a gesture with his hand.", exampleJa: "彼は手で身振りをしました。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["communication"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˈdʒestʃər/" },
   { id: 13107, word: "globe", meaning: "地球; 地球儀", example: "People travel all around the globe.", exampleJa: "人々は世界中を旅します。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["nature", "travel"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ɡloʊb/" },
   { id: 13108, word: "grammar", meaning: "文法", example: "Good grammar is important for writing.", exampleJa: "正しい文法は文章を書くのに大切です。", courses: [{ courseType: "junior", level: "junior3", displayName: "中学3年" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["school"], frequencyRank: "A", partOfSpeech: "noun", pronunciation: "/ˈɡræmər/" },

@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 英検2級レベル（高校卒業）- 15語
-export const eiken2Words: WordV2[] = [
+export const eiken2Words: Word[] = [
   {
     id: 3401,
     word: "abolish",

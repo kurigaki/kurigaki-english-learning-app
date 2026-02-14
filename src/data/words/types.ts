@@ -47,10 +47,10 @@ export type ExtendedCategory =
 export type FrequencyRank = "A" | "B" | "C" | "D";
 
 // 拡張難易度（1-7）
-export type DifficultyV2 = 1 | 2 | 3 | 4 | 5 | 6 | 7;
+export type Difficulty = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
-// 拡張単語データ（V2）
-export type WordV2 = {
+// 単語データ
+export type Word = {
   id: number;
   word: string;
   meaning: string;
@@ -61,7 +61,7 @@ export type WordV2 = {
   courses: CourseLevel[];
 
   // 難易度（1-7に拡張）
-  difficulty: DifficultyV2;
+  difficulty: Difficulty;
 
   // カテゴリ（複数指定可能）
   categories: ExtendedCategory[];
@@ -89,7 +89,7 @@ export type CourseLevelDefinition = {
   level: string;
   displayName: string;
   targetVocab: number;
-  difficulty: DifficultyV2;
+  difficulty: Difficulty;
 };
 
 export type CourseDefinition = {

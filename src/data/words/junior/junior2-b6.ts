@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 中学2年 / 英検4級 追加単語 Batch 6: 残りの単語（形容詞・副詞・その他）
-export const junior2B6Words: WordV2[] = [
+export const junior2B6Words: Word[] = [
   { id: 12401, word: "rapid", meaning: "急速な", example: "The city had rapid growth.", exampleJa: "その都市は急成長しました。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈræpɪd/" },
   { id: 12402, word: "rapidly", meaning: "急速に", example: "Technology is changing rapidly.", exampleJa: "技術は急速に変化しています。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["technology"], frequencyRank: "A", partOfSpeech: "adverb", pronunciation: "/ˈræpɪdli/" },
   { id: 12403, word: "rare", meaning: "珍しい; まれな", example: "This is a rare opportunity.", exampleJa: "これは珍しい機会です。", courses: [{ courseType: "junior", level: "junior2", displayName: "中学2年" }, { courseType: "eiken", level: "eiken4", displayName: "英検4級" }], difficulty: 2, categories: ["daily"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/rer/" },

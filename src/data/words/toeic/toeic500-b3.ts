@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC500点レベル 追加単語 Batch 3: 日常ビジネス・生活（80語）
-export const toeic500B3Words: WordV2[] = [
+export const toeic500B3Words: Word[] = [
   { id: 40501, word: "accompany", meaning: "同行する; 付随する", example: "I will accompany you to the meeting.", exampleJa: "会議にご一緒します。", courses: [{ courseType: "toeic", level: "toeic500", displayName: "TOEIC500" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["business", "daily"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/əˈkʌmpəni/" },
   { id: 40502, word: "accurate", meaning: "正確な; 精密な", example: "The data must be accurate.", exampleJa: "データは正確でなければなりません。", courses: [{ courseType: "toeic", level: "toeic500", displayName: "TOEIC500" }, { courseType: "eiken", level: "eikenPre2", displayName: "英検準2級" }], difficulty: 3, categories: ["business", "technology"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/ˈækjərət/" },
   { id: 40503, word: "additional", meaning: "追加の; さらなる", example: "Are there any additional costs?", exampleJa: "追加の費用はありますか？", courses: [{ courseType: "toeic", level: "toeic500", displayName: "TOEIC500" }, { courseType: "eiken", level: "eiken3", displayName: "英検3級" }], difficulty: 3, categories: ["business", "finance"], frequencyRank: "A", partOfSpeech: "adjective", pronunciation: "/əˈdɪʃənəl/" },

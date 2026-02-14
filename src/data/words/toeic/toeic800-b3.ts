@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC800点レベル 追加単語 Batch 3: 上級専門・法務・経営（80語）
-export const toeic800B3Words: WordV2[] = [
+export const toeic800B3Words: Word[] = [
   { id: 40801, word: "abstraction", meaning: "抽象; 抽象概念", example: "The idea is still an abstraction.", exampleJa: "そのアイデアはまだ抽象的です。", courses: [{ courseType: "toeic", level: "toeic800", displayName: "TOEIC800" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 6, categories: ["business", "technology"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/æbˈstrækʃən/" },
   { id: 40802, word: "adjudication", meaning: "裁定; 判決", example: "The adjudication process took several weeks.", exampleJa: "裁定プロセスに数週間かかりました。", courses: [{ courseType: "toeic", level: "toeic800", displayName: "TOEIC800" }], difficulty: 6, categories: ["business", "communication"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/əˌdʒuːdɪˈkeɪʃən/" },
   { id: 40803, word: "adversary", meaning: "敵; 対抗者; 相手方", example: "The company viewed them as an adversary.", exampleJa: "その会社は彼らを対抗者と見なしました。", courses: [{ courseType: "toeic", level: "toeic800", displayName: "TOEIC800" }, { courseType: "eiken", level: "eikenPre1", displayName: "英検準1級" }], difficulty: 6, categories: ["business", "communication"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ˈædvərseri/" },

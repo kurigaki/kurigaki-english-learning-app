@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC700点レベル 追加単語 Batch 3: 高度ビジネス実務（80語）
-export const toeic700B3Words: WordV2[] = [
+export const toeic700B3Words: Word[] = [
   { id: 40701, word: "abstain", meaning: "棄権する; 控える", example: "Three board members abstained from voting.", exampleJa: "3名の取締役が投票を棄権しました。", courses: [{ courseType: "toeic", level: "toeic700", displayName: "TOEIC700" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["business", "communication"], frequencyRank: "B", partOfSpeech: "verb", pronunciation: "/əbˈsteɪn/" },
   { id: 40702, word: "accession", meaning: "就任; 加盟; 取得", example: "His accession to the presidency was smooth.", exampleJa: "彼の社長就任は順調でした。", courses: [{ courseType: "toeic", level: "toeic700", displayName: "TOEIC700" }], difficulty: 5, categories: ["business", "communication"], frequencyRank: "B", partOfSpeech: "noun", pronunciation: "/ækˈseʃən/" },
   { id: 40703, word: "adjudicate", meaning: "裁定する; 判定する", example: "A panel will adjudicate the claims.", exampleJa: "委員会がその請求を裁定します。", courses: [{ courseType: "toeic", level: "toeic700", displayName: "TOEIC700" }], difficulty: 5, categories: ["business", "communication"], frequencyRank: "B", partOfSpeech: "verb", pronunciation: "/əˈdʒuːdɪkeɪt/" },

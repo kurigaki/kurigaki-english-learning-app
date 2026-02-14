@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // TOEIC800点レベル - 20語
-export const toeic800Words: WordV2[] = [
+export const toeic800Words: Word[] = [
   {
     id: 4301,
     word: "alleviate",

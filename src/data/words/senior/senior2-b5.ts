@@ -1,7 +1,7 @@
-import { WordV2 } from "../types";
+import { Word } from "../types";
 
 // 高校2年 / 英検2級 追加単語 Batch 5: 動詞・名詞（日常・学術・応用）
-export const senior2B5Words: WordV2[] = [
+export const senior2B5Words: Word[] = [
   { id: 22316, word: "retaliate", meaning: "報復する; 仕返しする", example: "They retaliated against the attack.", exampleJa: "彼らは攻撃に対して報復しました。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["culture", "daily"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/rɪˈtælieɪt/" },
   { id: 22317, word: "revolve", meaning: "回転する; 中心に展開する", example: "The discussion revolved around budget cuts.", exampleJa: "議論は予算削減を中心に展開しました。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["communication", "school"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/rɪˈvɑːlv/" },
   { id: 22318, word: "scrutinize", meaning: "精査する; 綿密に調べる", example: "The committee scrutinized every detail.", exampleJa: "委員会はあらゆる詳細を精査しました。", courses: [{ courseType: "senior", level: "senior2", displayName: "高校2年" }, { courseType: "eiken", level: "eiken2", displayName: "英検2級" }], difficulty: 5, categories: ["business", "communication"], frequencyRank: "A", partOfSpeech: "verb", pronunciation: "/ˈskruːtɪnaɪz/" },
