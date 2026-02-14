@@ -2,7 +2,7 @@
 
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { words } from "@/data/words";
+import { words, categoryLabels, difficultyLabels } from "@/data/words/compat";
 import { Card, Button } from "@/components/ui";
 import {
   WordHeader,
@@ -13,7 +13,6 @@ import {
   WordImage,
   WordPlaceholderSection,
 } from "@/components/features/word-detail";
-import { categoryLabels, difficultyLabels } from "@/data/words";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { useEffect, useState } from "react";
 

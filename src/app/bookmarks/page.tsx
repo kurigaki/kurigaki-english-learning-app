@@ -6,7 +6,7 @@ import { useAuth } from "@/lib/auth-context";
 import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { unifiedStorage } from "@/lib/unified-storage";
-import { words, Word, categoryLabels, difficultyLabels } from "@/data/words";
+import { words, Word, categoryLabels, difficultyLabels } from "@/data/words/compat";
 
 type SortOption = "added" | "name" | "difficulty";
 

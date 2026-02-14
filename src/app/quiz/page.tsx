@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { words, Word, Category, categoryLabels } from "@/data/words";
+import { words, Word, Category, categoryLabels } from "@/data/words/compat";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, Achievement } from "@/types";

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { words, categoryLabels, Category } from "@/data/words";
+import { words, categoryLabels, Category } from "@/data/words/compat";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, SpeakButton } from "@/components/ui";
 

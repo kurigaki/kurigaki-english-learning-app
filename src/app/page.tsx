@@ -5,7 +5,7 @@ import { useEffect, useState, useCallback } from "react";
 import { Card, StatsCard } from "@/components/ui";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
-import { words } from "@/data/words";
+import { words } from "@/data/words/compat";
 import { Achievement } from "@/types";
 import { ACHIEVEMENTS, getAchievementById } from "@/data/achievements";
 
