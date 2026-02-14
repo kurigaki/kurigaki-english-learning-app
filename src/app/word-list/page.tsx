@@ -427,7 +427,7 @@ export default function WordListPage() {
                               {masteryConfig[word.mastery].label}
                             </span>
                             <span className="text-xs text-amber-500" title={`難易度 ${word.difficulty}`}>
-                              {"★".repeat(word.difficulty)}{"☆".repeat(5 - word.difficulty)}
+                              {"★".repeat(word.difficulty)}{"☆".repeat(7 - word.difficulty)}
                             </span>
                           </div>
                           <p className="text-sm text-slate-500 truncate">{word.meaning}</p>

@@ -3,10 +3,9 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { words, Word, Category, categoryLabels } from "@/data/words/compat";
-import { getWordsByCourse } from "@/data/words";
+import { words, Word, Category, categoryLabels, getWordsByCourse } from "@/data/words/compat";
+import type { CourseType } from "@/data/words/compat";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
-import type { CourseType } from "@/data/words/types";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, Achievement } from "@/types";
