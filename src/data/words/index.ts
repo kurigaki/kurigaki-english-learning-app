@@ -1,74 +1,32 @@
-import { juniorWords, juniorWordCounts } from "./junior";
-import { seniorWords, seniorWordCounts } from "./senior";
-import { eikenWords, eikenWordCounts } from "./eiken";
-import { toeicWords, toeicWordCounts } from "./toeic";
-import { conversationWords, conversationWordCounts } from "./conversation";
-import { Word, CourseType, ExtendedCategory } from "./types";
+import { juniorWords as _juniorWords } from "./junior";
+import { seniorWords as _seniorWords } from "./senior";
+import { toeicWords as _toeicWords } from "./toeic";
+import { eikenWords as _eikenWords } from "./eiken";
+import { conversationWords as _conversationWords } from "./conversation";
+import { Word, Course, Stage } from "./types";
+
+// 型アサーション（データファイルは型注釈なしで定義、ここで型を付与）
+export const juniorWords = _juniorWords as Word[];
+export const seniorWords = _seniorWords as Word[];
+export const toeicWords = _toeicWords as Word[];
+export const eikenWords = _eikenWords as Word[];
+export const conversationWords = _conversationWords as Word[];
 
 // 全コースの単語を統合
 export const allWords: Word[] = [
   ...juniorWords,
   ...seniorWords,
-  ...eikenWords,
   ...toeicWords,
+  ...eikenWords,
   ...conversationWords,
 ];
 
-// 重複を除去した全単語（同じIDの単語は1つだけ含める）
-export const uniqueWords: Word[] = Array.from(
-  new Map(allWords.map((word) => [word.id, word])).values()
-);
-
-// 全単語数
-export const totalWordCounts = {
-  junior: juniorWordCounts,
-  senior: seniorWordCounts,
-  eiken: eikenWordCounts,
-  toeic: toeicWordCounts,
-  conversation: conversationWordCounts,
-  all: allWords.length,
-  unique: uniqueWords.length,
-};
-
-// コース別フィルタ関数
-export function getWordsByCourse(
-  courseType: CourseType,
-  level?: string
-): Word[] {
-  return uniqueWords.filter((w) =>
-    w.courses.some(
-      (c) => c.courseType === courseType && (!level || c.level === level)
-    )
+// コース別フィルタ
+export function getWordsByCourse(course: Course, stage?: Stage): Word[] {
+  return allWords.filter(
+    (w) => w.course === course && (!stage || w.stage === stage)
   );
 }
 
-// 難易度でフィルタ
-export function getWordsByDifficulty(
-  minDifficulty: number,
-  maxDifficulty: number
-): Word[] {
-  return uniqueWords.filter(
-    (w) => w.difficulty >= minDifficulty && w.difficulty <= maxDifficulty
-  );
-}
-
-// カテゴリでフィルタ
-export function getWordsByCategory(category: ExtendedCategory): Word[] {
-  return uniqueWords.filter((w) => w.categories.includes(category));
-}
-
-// 頻度ランクでフィルタ
-export function getWordsByFrequency(ranks: string[]): Word[] {
-  return uniqueWords.filter((w) => ranks.includes(w.frequencyRank));
-}
-
-// 型とコース定義のエクスポート
+// 型のエクスポート
 export * from "./types";
-export * from "./courses";
-
-// 各コースのエクスポート
-export * from "./junior";
-export * from "./senior";
-export * from "./eiken";
-export * from "./toeic";
-export * from "./conversation";
