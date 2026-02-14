@@ -106,6 +106,19 @@ export const CATEGORY_IMAGE_URLS: Record<string, string> = {
   technology: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=250&fit=crop",
   daily: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=400&h=250&fit=crop",
   communication: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=400&h=250&fit=crop",
+  school: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=250&fit=crop",
+  family: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=400&h=250&fit=crop",
+  hobby: "https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=250&fit=crop",
+  nature: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=250&fit=crop",
+  health: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=250&fit=crop",
+  food: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=250&fit=crop",
+  sports: "https://images.unsplash.com/photo-1461896836934-bd45ba47ecee?w=400&h=250&fit=crop",
+  culture: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=250&fit=crop",
+  greeting: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=250&fit=crop",
+  emotion: "https://images.unsplash.com/photo-1508963493744-76fce69379c0?w=400&h=250&fit=crop",
+  opinion: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?w=400&h=250&fit=crop",
+  request: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=250&fit=crop",
+  smalltalk: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400&h=250&fit=crop",
 };
 
 // カテゴリごとの絵文字フォールバック
@@ -118,6 +131,19 @@ export const CATEGORY_EMOJIS: Record<string, string> = {
   technology: "💻",
   daily: "🏠",
   communication: "💬",
+  school: "🏫",
+  family: "👨‍👩‍👧",
+  hobby: "🎮",
+  nature: "🌿",
+  health: "🏥",
+  food: "🍽️",
+  sports: "⚽",
+  culture: "🎨",
+  greeting: "👋",
+  emotion: "💭",
+  opinion: "🗣️",
+  request: "🙏",
+  smalltalk: "☕",
 };
 
 // カテゴリごとのグラデーションカラー
@@ -130,6 +156,19 @@ export const CATEGORY_GRADIENTS: Record<string, string> = {
   technology: "from-violet-50 to-purple-50",
   daily: "from-amber-50 to-yellow-50",
   communication: "from-orange-50 to-red-50",
+  school: "from-blue-50 to-sky-50",
+  family: "from-rose-50 to-pink-50",
+  hobby: "from-fuchsia-50 to-purple-50",
+  nature: "from-green-50 to-emerald-50",
+  health: "from-teal-50 to-cyan-50",
+  food: "from-orange-50 to-amber-50",
+  sports: "from-lime-50 to-green-50",
+  culture: "from-indigo-50 to-violet-50",
+  greeting: "from-yellow-50 to-amber-50",
+  emotion: "from-pink-50 to-fuchsia-50",
+  opinion: "from-sky-50 to-blue-50",
+  request: "from-amber-50 to-orange-50",
+  smalltalk: "from-stone-50 to-slate-100",
 };
 
 /**
