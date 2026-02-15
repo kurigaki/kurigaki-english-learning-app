@@ -18,6 +18,7 @@ import type {
   SpeedChallengeResult,
 } from "@/types";
 import { ACHIEVEMENTS } from "@/data/achievements";
+import type { SrsProgress } from "./srs";
 
 /**
  * Supabaseを使用すべきかどうかを判定
@@ -586,6 +587,56 @@ export const unifiedStorage = {
       () => storage.toggleBookmark(wordId),
       false,
       "toggleBookmark"
+    );
+  },
+
+  // === SRS（間隔反復学習）===
+
+  getSrsProgressAll: async (): Promise<SrsProgress[]> => {
+    return withFallback(
+      async () => {
+        const userId = getCurrentUserId()!;
+        return await supabaseStorage.getSrsProgressAll(userId);
+      },
+      () => storage.getSrsProgressAll(),
+      [],
+      "getSrsProgressAll"
+    );
+  },
+
+  getSrsProgress: async (wordId: number): Promise<SrsProgress | null> => {
+    return withFallback(
+      async () => {
+        const userId = getCurrentUserId()!;
+        return await supabaseStorage.getSrsProgress(userId, wordId);
+      },
+      () => storage.getSrsProgress(wordId),
+      null,
+      "getSrsProgress"
+    );
+  },
+
+  saveSrsProgress: async (progress: SrsProgress): Promise<void> => {
+    return withFallback(
+      async () => {
+        const userId = getCurrentUserId()!;
+        await supabaseStorage.saveSrsProgress(userId, progress);
+      },
+      () => storage.saveSrsProgress(progress),
+      undefined,
+      "saveSrsProgress"
+    );
+  },
+
+  getDueWords: async (): Promise<SrsProgress[]> => {
+    return withFallback(
+      async () => {
+        const userId = getCurrentUserId()!;
+        return await supabaseStorage.getDueWords(userId);
+      },
+      () => storage.getDueWords(),
+      [],
+      "getDueWords"
     );
   },
 
