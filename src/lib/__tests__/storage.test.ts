@@ -155,4 +155,78 @@ describe("storage", () => {
       expect(progress.percentage).toBe(50);
     });
   });
+
+  describe("SRS progress", () => {
+    it("getSrsProgressAll returns empty array when no data", () => {
+      expect(storage.getSrsProgressAll()).toEqual([]);
+    });
+
+    it("saveSrsProgress and getSrsProgress round-trip", () => {
+      const progress = {
+        wordId: 42,
+        easeFactor: 2.5,
+        intervalDays: 1,
+        repetitions: 1,
+        nextReviewDate: "2026-02-16",
+        status: "learning" as const,
+        lastReviewedDate: "2026-02-15",
+      };
+      storage.saveSrsProgress(progress);
+
+      const retrieved = storage.getSrsProgress(42);
+      expect(retrieved).toEqual(progress);
+    });
+
+    it("saveSrsProgress updates existing progress", () => {
+      const progress = {
+        wordId: 42,
+        easeFactor: 2.5,
+        intervalDays: 1,
+        repetitions: 1,
+        nextReviewDate: "2026-02-16",
+        status: "learning" as const,
+        lastReviewedDate: "2026-02-15",
+      };
+      storage.saveSrsProgress(progress);
+      storage.saveSrsProgress({ ...progress, intervalDays: 6, repetitions: 2 });
+
+      const all = storage.getSrsProgressAll();
+      expect(all).toHaveLength(1);
+      expect(all[0].intervalDays).toBe(6);
+    });
+
+    it("getSrsProgress returns null for unknown word", () => {
+      expect(storage.getSrsProgress(999)).toBeNull();
+    });
+
+    it("getDueWords returns only due words", () => {
+      const today = new Date().toISOString().split("T")[0];
+      const future = new Date();
+      future.setDate(future.getDate() + 5);
+      const futureStr = future.toISOString().split("T")[0];
+
+      storage.saveSrsProgress({
+        wordId: 1,
+        easeFactor: 2.5,
+        intervalDays: 1,
+        repetitions: 1,
+        nextReviewDate: today,
+        status: "learning",
+        lastReviewedDate: "2026-02-14",
+      });
+      storage.saveSrsProgress({
+        wordId: 2,
+        easeFactor: 2.5,
+        intervalDays: 6,
+        repetitions: 2,
+        nextReviewDate: futureStr,
+        status: "review",
+        lastReviewedDate: "2026-02-10",
+      });
+
+      const due = storage.getDueWords();
+      expect(due).toHaveLength(1);
+      expect(due[0].wordId).toBe(1);
+    });
+  });
 });
