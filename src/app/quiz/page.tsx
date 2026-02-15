@@ -339,6 +339,7 @@ export default function QuizPage() {
   const reviewWordId = searchParams.get("wordId");  // 特定の単語を復習
   const weakOnly = searchParams.get("weakOnly");    // 苦手単語のみ
   const srsReview = searchParams.get("srsReview");  // SRS復習モード
+  const courseParam = searchParams.get("course");    // コース指定
 
   // クイズフェーズ管理
   const [phase, setPhase] = useState<QuizPhase>("setup");
@@ -667,6 +668,12 @@ export default function QuizPage() {
       }
     }
 
+    if (courseParam && Object.keys(COURSE_DEFINITIONS).includes(courseParam)) {
+      // コース指定（ホーム画面のコース別進捗からの遷移）
+      startNewSession({ ...defaultQuizSettings, course: courseParam as Course });
+      return;
+    }
+
     if (srsReview === "true" && srsWordIds.length > 0) {
       // SRS復習モード（ホーム画面からの遷移）
       startNewSession(defaultQuizSettings, { srsReviewMode: true });
@@ -681,7 +688,7 @@ export default function QuizPage() {
 
     // パラメータがない場合は設定画面から開始
     setPhase("setup");
-  }, [dataLoaded, reviewWordId, weakOnly, srsReview, weakWordIds, srsWordIds, startNewSession]);
+  }, [dataLoaded, reviewWordId, weakOnly, srsReview, courseParam, weakWordIds, srsWordIds, startNewSession]);
 
   const handleSelect = (choice: string) => {
     if (selected !== null || !currentQuestion) return;
