@@ -167,6 +167,41 @@ export type Database = {
         };
         Relationships: [];
       };
+      srs_progress: {
+        Row: {
+          id: string;
+          user_id: string;
+          word_id: number;
+          ease_factor: number;
+          interval_days: number;
+          repetitions: number;
+          next_review_date: string | null;
+          status: string;
+          last_reviewed_date: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          word_id: number;
+          ease_factor?: number;
+          interval_days?: number;
+          repetitions?: number;
+          next_review_date?: string | null;
+          status?: string;
+          last_reviewed_date?: string | null;
+        };
+        Update: {
+          ease_factor?: number;
+          interval_days?: number;
+          repetitions?: number;
+          next_review_date?: string | null;
+          status?: string;
+          last_reviewed_date?: string | null;
+        };
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;
@@ -200,3 +235,8 @@ export type DbSpeedChallengeResultInsert = Database["public"]["Tables"]["speed_c
 // ブックマーク型（Supabase用）
 export type DbBookmark = Database["public"]["Tables"]["bookmarks"]["Row"];
 export type DbBookmarkInsert = Database["public"]["Tables"]["bookmarks"]["Insert"];
+
+// SRS進捗型（Supabase用）
+export type DbSrsProgress = Database["public"]["Tables"]["srs_progress"]["Row"];
+export type DbSrsProgressInsert = Database["public"]["Tables"]["srs_progress"]["Insert"];
+export type DbSrsProgressUpdate = Database["public"]["Tables"]["srs_progress"]["Update"];
