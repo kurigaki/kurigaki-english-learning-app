@@ -22,6 +22,7 @@ import {
   AnsweredWord,
   SessionResult,
 } from "@/lib/quiz-session";
+import { getInitialSrsProgress, calculateSm2, answerQualityFromResult } from "@/lib/srs";
 
 const QUESTIONS_PER_SESSION = 10;
 
@@ -337,6 +338,7 @@ export default function QuizPage() {
   const searchParams = useSearchParams();
   const reviewWordId = searchParams.get("wordId");  // 特定の単語を復習
   const weakOnly = searchParams.get("weakOnly");    // 苦手単語のみ
+  const srsReview = searchParams.get("srsReview");  // SRS復習モード
 
   // クイズフェーズ管理
   const [phase, setPhase] = useState<QuizPhase>("setup");
@@ -362,20 +364,26 @@ export default function QuizPage() {
   const [bookmarkedIds, setBookmarkedIds] = useState<number[]>([]);
   const [weakWordIds, setWeakWordIds] = useState<number[]>([]);
   const [studiedWordIds, setStudiedWordIds] = useState<number[]>([]);
+  const [srsWordIds, setSrsWordIds] = useState<number[]>([]);
   const [dataLoaded, setDataLoaded] = useState(false);
+
+  // 回答開始時刻を記録（SRS quality計算用）
+  const questionStartTimeRef = useRef<number>(Date.now());
 
   // 初期データをロード
   useEffect(() => {
     const loadData = async () => {
       try {
-        const [bookmarks, weaks, studied] = await Promise.all([
+        const [bookmarks, weaks, studied, dueWords] = await Promise.all([
           unifiedStorage.getBookmarkedWordIds(),
           unifiedStorage.getWeakWords(70),
           unifiedStorage.getStudiedWordIds(),
+          unifiedStorage.getDueWords(),
         ]);
         setBookmarkedIds(bookmarks);
         setWeakWordIds(weaks);
         setStudiedWordIds(studied);
+        setSrsWordIds(dueWords.map((p) => p.wordId));
       } catch (error) {
         console.error("[Quiz] Failed to load initial data:", error);
         // エラー時は空の配列のままにする（クイズは動作する）
@@ -524,6 +532,11 @@ export default function QuizPage() {
   }, [isFinished, isRestoredFromSession, score, maxCombo, answeredWords, sessionResult]);
 
   // 問題出題時の自動読み上げ
+  // 問題切り替え時に回答開始時刻をリセット（SRS quality計算用）
+  useEffect(() => {
+    questionStartTimeRef.current = Date.now();
+  }, [currentIndex]);
+
   useEffect(() => {
     if (!currentQuestion || !isSpeechSynthesisSupported()) return;
 
@@ -557,18 +570,22 @@ export default function QuizPage() {
    * @param settings クイズ設定
    * @param options.priorityWordId この単語を必ず含める（単語詳細からの復習用）
    * @param options.weakOnlyMode 苦手単語のみで構成（苦手単語一覧からの復習用）
+   * @param options.srsReviewMode SRS復習対象単語のみで構成
    */
   const startNewSession = useCallback((
     settings: QuizSettings = defaultQuizSettings,
-    options?: { priorityWordId?: number; weakOnlyMode?: boolean }
+    options?: { priorityWordId?: number; weakOnlyMode?: boolean; srsReviewMode?: boolean }
   ) => {
     // 新しいセッション開始時は保存された状態をクリア
     clearQuizResultState();
 
     let targetWords: Word[];
 
+    // SRS復習モード
+    if (options?.srsReviewMode && srsWordIds.length > 0) {
+      targetWords = words.filter((w) => srsWordIds.includes(w.id));
     // 苦手単語のみモード
-    if (options?.weakOnlyMode && weakWordIds.length > 0) {
+    } else if (options?.weakOnlyMode && weakWordIds.length > 0) {
       targetWords = words.filter((w) => weakWordIds.includes(w.id));
     } else {
       // 設定に基づいて単語をフィルタリング
@@ -627,7 +644,7 @@ export default function QuizPage() {
     setShowPerfectScore(false);
     // 自動再生済みの記録をリセット
     hasAutoPlayedRef.current = new Set();
-  }, [bookmarkedIds, weakWordIds, studiedWordIds]);
+  }, [bookmarkedIds, weakWordIds, studiedWordIds, srsWordIds]);
 
   // 初回ロード時：URLパラメータまたは保存状態に基づいて処理
   useEffect(() => {
@@ -650,6 +667,12 @@ export default function QuizPage() {
       }
     }
 
+    if (srsReview === "true" && srsWordIds.length > 0) {
+      // SRS復習モード（ホーム画面からの遷移）
+      startNewSession(defaultQuizSettings, { srsReviewMode: true });
+      return;
+    }
+
     if (weakOnly === "true" && weakWordIds.length > 0) {
       // 苦手単語のみモード（苦手単語一覧からの遷移）
       startNewSession(defaultQuizSettings, { weakOnlyMode: true });
@@ -658,7 +681,7 @@ export default function QuizPage() {
 
     // パラメータがない場合は設定画面から開始
     setPhase("setup");
-  }, [dataLoaded, reviewWordId, weakOnly, weakWordIds, startNewSession]);
+  }, [dataLoaded, reviewWordId, weakOnly, srsReview, weakWordIds, srsWordIds, startNewSession]);
 
   const handleSelect = (choice: string) => {
     if (selected !== null || !currentQuestion) return;
@@ -703,6 +726,20 @@ export default function QuizPage() {
     }).catch((error) => {
       console.error("[Quiz] Failed to add record:", error);
     });
+
+    // SRS進捗を更新（エラーは無視 - UIの動作に影響させない）
+    const responseTimeMs = Date.now() - questionStartTimeRef.current;
+    const quality = answerQualityFromResult(correct, responseTimeMs);
+    (async () => {
+      try {
+        const existing = await unifiedStorage.getSrsProgress(currentQuestion.word.id);
+        const current = existing ?? getInitialSrsProgress(currentQuestion.word.id);
+        const updated = calculateSm2(current, quality);
+        await unifiedStorage.saveSrsProgress(updated);
+      } catch (error) {
+        console.error("[Quiz] Failed to update SRS progress:", error);
+      }
+    })();
   };
 
   const handleAchievementClose = () => {
