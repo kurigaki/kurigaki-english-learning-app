@@ -1,11 +1,13 @@
 import { LearningRecord, QuestionType, UnlockedAchievement, SpeedChallengeResult } from "@/types";
 import { ACHIEVEMENTS, getAchievementById } from "@/data/achievements";
+import { type SrsProgress, isDueForReview } from "./srs";
 
 const STORAGE_KEY = "learning_records";
 const USER_DATA_KEY = "user_data";
 const ACHIEVEMENTS_KEY = "unlocked_achievements";
 const SPEED_RESULTS_KEY = "speed_challenge_results";
 const BOOKMARKS_KEY = "bookmarked_words";
+const SRS_PROGRESS_KEY = "srs_progress";
 const DEFAULT_USER_ID = "default";
 
 export type WordStats = {
@@ -439,5 +441,45 @@ export const storage = {
       storage.addBookmark(wordId);
       return true;
     }
+  },
+
+  // === SRS（間隔反復学習）===
+
+  /** 全SRS進捗データを取得 */
+  getSrsProgressAll: (): SrsProgress[] => {
+    if (typeof window === "undefined") return [];
+    try {
+      const data = localStorage.getItem(SRS_PROGRESS_KEY);
+      return data ? JSON.parse(data) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  /** 特定単語のSRS進捗を取得 */
+  getSrsProgress: (wordId: number): SrsProgress | null => {
+    if (typeof window === "undefined") return null;
+    const all = storage.getSrsProgressAll();
+    return all.find((p) => p.wordId === wordId) ?? null;
+  },
+
+  /** SRS進捗を保存（既存があれば更新、なければ追加） */
+  saveSrsProgress: (progress: SrsProgress): void => {
+    if (typeof window === "undefined") return;
+    const all = storage.getSrsProgressAll();
+    const idx = all.findIndex((p) => p.wordId === progress.wordId);
+    if (idx >= 0) {
+      all[idx] = progress;
+    } else {
+      all.push(progress);
+    }
+    localStorage.setItem(SRS_PROGRESS_KEY, JSON.stringify(all));
+  },
+
+  /** 今日復習すべき単語のSRS進捗を取得 */
+  getDueWords: (): SrsProgress[] => {
+    if (typeof window === "undefined") return [];
+    const all = storage.getSrsProgressAll();
+    return all.filter(isDueForReview);
   },
 };
