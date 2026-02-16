@@ -218,7 +218,7 @@ export default function Home() {
                 return (
                   <Link
                     key={cp.course}
-                    href={`/quiz?course=${cp.course}`}
+                    href={`/word-list?course=${cp.course}&mastery=mastered`}
                     className="block p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-100"
                   >
                     <p className="text-sm font-bold text-slate-700 mb-1">{cp.name}</p>
