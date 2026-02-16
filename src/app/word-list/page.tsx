@@ -1,14 +1,15 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Course, Stage } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { words, categoryLabels, Category, getWordsByCourse } from "@/data/words/compat";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, SpeakButton } from "@/components/ui";
-
-type MasteryLevel = "new" | "learning" | "familiar" | "mastered";
+import { getMasteryLevel } from "@/types";
+import type { MasteryLevel } from "@/types";
 
 type WordWithStats = {
   id: number;
@@ -34,18 +35,11 @@ const sortLabels: Record<SortOption, string> = {
   difficulty: "難易度順",
 };
 
-const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLevel => {
-  if (attempts === 0 || accuracy === null) return "new";
-  if (accuracy >= 80 && attempts >= 3) return "mastered";
-  if (accuracy >= 60) return "familiar";
-  return "learning";
-};
-
-const masteryConfig: Record<MasteryLevel, { label: string; color: string; bg: string }> = {
-  new: { label: "未学習", color: "text-slate-500", bg: "bg-slate-100" },
-  learning: { label: "学習中", color: "text-orange-600", bg: "bg-orange-100" },
-  familiar: { label: "習得中", color: "text-blue-600", bg: "bg-blue-100" },
-  mastered: { label: "習得済", color: "text-green-600", bg: "bg-green-100" },
+const masteryConfig: Record<MasteryLevel, { label: string; color: string; bg: string; activeBg: string }> = {
+  new: { label: "未学習", color: "text-slate-500", bg: "bg-slate-100", activeBg: "bg-slate-500" },
+  learning: { label: "学習中", color: "text-orange-600", bg: "bg-orange-100", activeBg: "bg-orange-500" },
+  familiar: { label: "習得中", color: "text-blue-600", bg: "bg-blue-100", activeBg: "bg-blue-500" },
+  mastered: { label: "習得済", color: "text-green-600", bg: "bg-green-100", activeBg: "bg-green-500" },
 };
 
 const categories: (Category | "all")[] = [
@@ -63,12 +57,21 @@ const categoryLabelMap: Record<Category | "all", string> = {
 };
 
 export default function WordListPage() {
+  const searchParams = useSearchParams();
+  const initialMastery = (searchParams.get("mastery") as MasteryLevel | null) ?? "all";
+  const initialCourse = (searchParams.get("course") as Course | null);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category | "all">("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | "all">("all");
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(
+    initialCourse && Object.keys(COURSE_DEFINITIONS).includes(initialCourse) ? initialCourse : null
+  );
   const [selectedStage, setSelectedStage] = useState<Stage | null>(null);
   const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
+  const [selectedMastery, setSelectedMastery] = useState<MasteryLevel | "all">(
+    ["new", "learning", "familiar", "mastered"].includes(initialMastery) ? initialMastery as MasteryLevel : "all"
+  );
   const [sortOption, setSortOption] = useState<SortOption>("default");
   const [wordsWithStats, setWordsWithStats] = useState<WordWithStats[]>([]);
   const [isMounted, setIsMounted] = useState(false);
@@ -137,6 +140,11 @@ export default function WordListPage() {
         return false;
       }
 
+      // Mastery filter
+      if (selectedMastery !== "all" && word.mastery !== selectedMastery) {
+        return false;
+      }
+
       // Category filter
       if (selectedCategory !== "all" && word.category !== selectedCategory) {
         return false;
@@ -189,7 +197,7 @@ export default function WordListPage() {
     }
 
     return filtered;
-  }, [wordsWithStats, courseWordIds, selectedCategory, selectedDifficulty, showBookmarksOnly, searchQuery, sortOption]);
+  }, [wordsWithStats, courseWordIds, selectedCategory, selectedDifficulty, showBookmarksOnly, selectedMastery, searchQuery, sortOption]);
 
   // Group words by category
   const groupedWords = useMemo(() => {
@@ -407,6 +415,31 @@ export default function WordListPage() {
               {stats.bookmarked}
             </button>
 
+            {/* Mastery Filter */}
+            <div className="flex items-center gap-1">
+              {([
+                { key: "all" as const, label: "全て" },
+                { key: "mastered" as const, label: "習得済" },
+                { key: "familiar" as const, label: "習得中" },
+                { key: "learning" as const, label: "学習中" },
+                { key: "new" as const, label: "未学習" },
+              ] as const).map(({ key, label }) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedMastery(key)}
+                  className={`px-2 py-1 rounded-full text-xs font-medium transition-all ${
+                    selectedMastery === key
+                      ? key === "all"
+                        ? "bg-slate-700 text-white"
+                        : `${masteryConfig[key].activeBg} text-white shadow-sm`
+                      : "bg-white text-slate-600 border border-slate-200 hover:border-slate-400"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
             {/* Difficulty Filter */}
             <div className="flex items-center gap-1">
               <button
@@ -452,6 +485,7 @@ export default function WordListPage() {
           <p className="text-xs text-slate-500">
             {filteredWords.length}語
             {showBookmarksOnly && " (ブックマーク)"}
+            {selectedMastery !== "all" && ` (${masteryConfig[selectedMastery].label})`}
             {searchQuery && ` (「${searchQuery}」)`}
             {courseLabel && ` / ${courseLabel}${stageLabel ? ` - ${stageLabel}` : ""}`}
             {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
@@ -543,6 +577,7 @@ export default function WordListPage() {
                     setSelectedCategory("all");
                     setSelectedDifficulty("all");
                     setShowBookmarksOnly(false);
+                    setSelectedMastery("all");
                     setSortOption("default");
                   }}
                   className="mt-3 text-sm text-primary-500 hover:underline"
