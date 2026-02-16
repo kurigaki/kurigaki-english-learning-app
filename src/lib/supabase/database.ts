@@ -441,7 +441,7 @@ export const supabaseStorage = {
     const statsMap = await supabaseStorage.getWordStats(userId);
     let count = 0;
     statsMap.forEach((stats) => {
-      if (stats.accuracy >= 80 && stats.totalAttempts >= 2) {
+      if (stats.accuracy >= 80 && stats.totalAttempts >= 3) {
         count++;
       }
     });
