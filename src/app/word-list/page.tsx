@@ -1,14 +1,15 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Course, Stage } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { words, categoryLabels, Category, getWordsByCourse } from "@/data/words/compat";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, SpeakButton } from "@/components/ui";
-
-type MasteryLevel = "new" | "learning" | "familiar" | "mastered";
+import { getMasteryLevel } from "@/types";
+import type { MasteryLevel } from "@/types";
 
 type WordWithStats = {
   id: number;
@@ -34,18 +35,11 @@ const sortLabels: Record<SortOption, string> = {
   difficulty: "難易度順",
 };
 
-const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLevel => {
-  if (attempts === 0 || accuracy === null) return "new";
-  if (accuracy >= 80 && attempts >= 3) return "mastered";
-  if (accuracy >= 60) return "familiar";
-  return "learning";
-};
-
-const masteryConfig: Record<MasteryLevel, { label: string; color: string; bg: string }> = {
-  new: { label: "未学習", color: "text-slate-500", bg: "bg-slate-100" },
-  learning: { label: "学習中", color: "text-orange-600", bg: "bg-orange-100" },
-  familiar: { label: "習得中", color: "text-blue-600", bg: "bg-blue-100" },
-  mastered: { label: "習得済", color: "text-green-600", bg: "bg-green-100" },
+const masteryConfig: Record<MasteryLevel, { label: string; color: string; bg: string; activeBg: string }> = {
+  new: { label: "未学習", color: "text-slate-500", bg: "bg-slate-100", activeBg: "bg-slate-500" },
+  learning: { label: "苦手", color: "text-orange-600", bg: "bg-orange-100", activeBg: "bg-orange-500" },
+  familiar: { label: "あと少し", color: "text-blue-600", bg: "bg-blue-100", activeBg: "bg-blue-500" },
+  mastered: { label: "習得済", color: "text-green-600", bg: "bg-green-100", activeBg: "bg-green-500" },
 };
 
 const categories: (Category | "all")[] = [
@@ -63,15 +57,25 @@ const categoryLabelMap: Record<Category | "all", string> = {
 };
 
 export default function WordListPage() {
+  const searchParams = useSearchParams();
+  const initialMastery = (searchParams.get("mastery") as MasteryLevel | null) ?? "all";
+  const initialCourse = (searchParams.get("course") as Course | null);
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Category | "all">("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | "all">("all");
-  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(
+    initialCourse && Object.keys(COURSE_DEFINITIONS).includes(initialCourse) ? initialCourse : null
+  );
   const [selectedStage, setSelectedStage] = useState<Stage | null>(null);
   const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
+  const [selectedMastery, setSelectedMastery] = useState<MasteryLevel | "all">(
+    ["new", "learning", "familiar", "mastered"].includes(initialMastery) ? initialMastery as MasteryLevel : "all"
+  );
   const [sortOption, setSortOption] = useState<SortOption>("default");
   const [wordsWithStats, setWordsWithStats] = useState<WordWithStats[]>([]);
   const [isMounted, setIsMounted] = useState(false);
+  const [showLegend, setShowLegend] = useState(false);
 
   // Load word stats and bookmarks on mount
   useEffect(() => {
@@ -137,6 +141,11 @@ export default function WordListPage() {
         return false;
       }
 
+      // Mastery filter
+      if (selectedMastery !== "all" && word.mastery !== selectedMastery) {
+        return false;
+      }
+
       // Category filter
       if (selectedCategory !== "all" && word.category !== selectedCategory) {
         return false;
@@ -189,7 +198,7 @@ export default function WordListPage() {
     }
 
     return filtered;
-  }, [wordsWithStats, courseWordIds, selectedCategory, selectedDifficulty, showBookmarksOnly, searchQuery, sortOption]);
+  }, [wordsWithStats, courseWordIds, selectedCategory, selectedDifficulty, showBookmarksOnly, selectedMastery, searchQuery, sortOption]);
 
   // Group words by category
   const groupedWords = useMemo(() => {
@@ -214,10 +223,11 @@ export default function WordListPage() {
       : wordsWithStats;
     const total = baseWords.length;
     const mastered = baseWords.filter((w) => w.mastery === "mastered").length;
-    const learning = baseWords.filter((w) => w.mastery === "learning" || w.mastery === "familiar").length;
+    const familiar = baseWords.filter((w) => w.mastery === "familiar").length;
+    const learning = baseWords.filter((w) => w.mastery === "learning").length;
     const newWords = baseWords.filter((w) => w.mastery === "new").length;
     const bookmarked = baseWords.filter((w) => w.isBookmarked).length;
-    return { total, mastered, learning, newWords, bookmarked };
+    return { total, mastered, familiar, learning, newWords, bookmarked };
   }, [wordsWithStats, courseWordIds]);
 
   const courseLabel = selectedCourse
@@ -245,26 +255,49 @@ export default function WordListPage() {
 
         {/* 上部固定: 統計サマリー */}
         {isMounted && (
-          <Card className="flex-shrink-0 mb-1.5 !p-2 bg-gradient-to-r from-primary-50 to-accent-50">
-            <div className="grid grid-cols-4 gap-1.5 text-center">
-              <div>
-                <p className="text-base font-bold text-slate-700">{stats.total}</p>
-                <p className="text-[10px] text-slate-500">全単語</p>
+          <div className="flex-shrink-0 mb-1.5">
+            <Card className="!p-2 bg-gradient-to-r from-primary-50 to-accent-50">
+              <div className="relative">
+                <button
+                  onClick={() => setShowLegend(!showLegend)}
+                  className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center rounded-full text-[10px] font-bold text-slate-400 hover:text-slate-600 hover:bg-white/60 transition-colors"
+                  title={showLegend ? "凡例を閉じる" : "凡例を表示"}
+                >
+                  ?
+                </button>
+                <div className="grid grid-cols-5 gap-1 text-center">
+                  <div>
+                    <p className="text-base font-bold text-slate-700">{stats.total}</p>
+                    <p className="text-[10px] text-slate-500">全単語</p>
+                  </div>
+                  <div>
+                    <p className="text-base font-bold text-green-600">{stats.mastered}</p>
+                    <p className="text-[10px] text-slate-500">習得済</p>
+                  </div>
+                  <div>
+                    <p className="text-base font-bold text-blue-600">{stats.familiar}</p>
+                    <p className="text-[10px] text-slate-500">あと少し</p>
+                  </div>
+                  <div>
+                    <p className="text-base font-bold text-orange-600">{stats.learning}</p>
+                    <p className="text-[10px] text-slate-500">苦手</p>
+                  </div>
+                  <div>
+                    <p className="text-base font-bold text-slate-400">{stats.newWords}</p>
+                    <p className="text-[10px] text-slate-500">未学習</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-base font-bold text-green-600">{stats.mastered}</p>
-                <p className="text-[10px] text-slate-500">習得済</p>
+            </Card>
+            {showLegend && (
+              <div className="mt-1 px-2 py-1.5 bg-white border border-slate-200 rounded-lg text-[11px] text-slate-600 space-y-0.5">
+                <p><span className="emoji-icon">✅</span> <span className="font-medium">習得済</span>: 正答率80%以上 &amp; 3回以上学習</p>
+                <p><span className="emoji-icon">💡</span> <span className="font-medium">あと少し</span>: 正答率60%以上</p>
+                <p><span className="emoji-icon">📖</span> <span className="font-medium">苦手</span>: 正答率60%未満</p>
+                <p><span className="emoji-icon">🆕</span> <span className="font-medium">未学習</span>: まだ学習していません</p>
               </div>
-              <div>
-                <p className="text-base font-bold text-blue-600">{stats.learning}</p>
-                <p className="text-[10px] text-slate-500">学習中</p>
-              </div>
-              <div>
-                <p className="text-base font-bold text-slate-400">{stats.newWords}</p>
-                <p className="text-[10px] text-slate-500">未学習</p>
-              </div>
-            </div>
-          </Card>
+            )}
+          </div>
         )}
 
         {/* 上部固定: 検索・フィルター */}
@@ -407,6 +440,31 @@ export default function WordListPage() {
               {stats.bookmarked}
             </button>
 
+            {/* Mastery Filter */}
+            <div className="flex items-center gap-1">
+              {([
+                { key: "all" as const, label: "全て" },
+                { key: "mastered" as const, label: "習得済" },
+                { key: "familiar" as const, label: "あと少し" },
+                { key: "learning" as const, label: "苦手" },
+                { key: "new" as const, label: "未学習" },
+              ] as const).map(({ key, label }) => (
+                <button
+                  key={key}
+                  onClick={() => setSelectedMastery(key)}
+                  className={`px-2 py-1 rounded-full text-xs font-medium transition-all ${
+                    selectedMastery === key
+                      ? key === "all"
+                        ? "bg-slate-700 text-white"
+                        : `${masteryConfig[key].activeBg} text-white shadow-sm`
+                      : "bg-white text-slate-600 border border-slate-200 hover:border-slate-400"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
             {/* Difficulty Filter */}
             <div className="flex items-center gap-1">
               <button
@@ -452,6 +510,7 @@ export default function WordListPage() {
           <p className="text-xs text-slate-500">
             {filteredWords.length}語
             {showBookmarksOnly && " (ブックマーク)"}
+            {selectedMastery !== "all" && ` (${masteryConfig[selectedMastery].label})`}
             {searchQuery && ` (「${searchQuery}」)`}
             {courseLabel && ` / ${courseLabel}${stageLabel ? ` - ${stageLabel}` : ""}`}
             {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
@@ -543,6 +602,7 @@ export default function WordListPage() {
                     setSelectedCategory("all");
                     setSelectedDifficulty("all");
                     setShowBookmarksOnly(false);
+                    setSelectedMastery("all");
                     setSortOption("default");
                   }}
                   className="mt-3 text-sm text-primary-500 hover:underline"

@@ -6,7 +6,9 @@ import type {
   DbUnlockedAchievement,
   DbSpeedChallengeResult,
   DbBookmark,
+  DbSrsProgress,
 } from "@/types/database";
+import type { SrsProgress, SrsStatus } from "@/lib/srs";
 
 // 環境変数から取得
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -299,6 +301,18 @@ function toLocalSpeedResult(data: DbSpeedChallengeResult): SpeedChallengeResult 
   };
 }
 
+function toLocalSrsProgress(data: DbSrsProgress): SrsProgress {
+  return {
+    wordId: data.word_id,
+    easeFactor: data.ease_factor,
+    intervalDays: data.interval_days,
+    repetitions: data.repetitions,
+    nextReviewDate: data.next_review_date,
+    status: data.status as SrsStatus,
+    lastReviewedDate: data.last_reviewed_date,
+  };
+}
+
 /**
  * Supabaseストレージ操作
  * エラー時はthrowしてunified-storageのフォールバックを発動させる
@@ -427,7 +441,7 @@ export const supabaseStorage = {
     const statsMap = await supabaseStorage.getWordStats(userId);
     let count = 0;
     statsMap.forEach((stats) => {
-      if (stats.accuracy >= 80 && stats.totalAttempts >= 2) {
+      if (stats.accuracy >= 80 && stats.totalAttempts >= 3) {
         count++;
       }
     });
@@ -710,5 +724,75 @@ export const supabaseStorage = {
       await supabaseStorage.addBookmark(userId, wordId);
       return true;
     }
+  },
+
+  // === SRS（間隔反復学習）===
+
+  async getSrsProgressAll(userId: string): Promise<SrsProgress[]> {
+    const result = await directSupabaseQuery<DbSrsProgress[]>(
+      "srs_progress",
+      `user_id=eq.${userId}&select=*`
+    );
+
+    if (result.error) {
+      handleSupabaseError(result.error, "getSrsProgressAll");
+      return [];
+    }
+
+    return (result.data || []).map(toLocalSrsProgress);
+  },
+
+  async getSrsProgress(userId: string, wordId: number): Promise<SrsProgress | null> {
+    const result = await directSupabaseQuery<DbSrsProgress>(
+      "srs_progress",
+      `user_id=eq.${userId}&word_id=eq.${wordId}&select=*`,
+      { single: true }
+    );
+
+    if (result.error || !result.data) {
+      return null;
+    }
+
+    return toLocalSrsProgress(result.data);
+  },
+
+  async saveSrsProgress(userId: string, progress: SrsProgress): Promise<void> {
+    const result = await directSupabaseQuery(
+      "srs_progress",
+      "on_conflict=user_id,word_id",
+      {
+        method: "POST",
+        body: {
+          user_id: userId,
+          word_id: progress.wordId,
+          ease_factor: progress.easeFactor,
+          interval_days: progress.intervalDays,
+          repetitions: progress.repetitions,
+          next_review_date: progress.nextReviewDate,
+          status: progress.status,
+          last_reviewed_date: progress.lastReviewedDate,
+        },
+        upsert: true,
+      }
+    );
+
+    if (result.error) {
+      handleSupabaseError(result.error, "saveSrsProgress");
+    }
+  },
+
+  async getDueWords(userId: string): Promise<SrsProgress[]> {
+    const today = new Date().toISOString().split("T")[0];
+    const result = await directSupabaseQuery<DbSrsProgress[]>(
+      "srs_progress",
+      `user_id=eq.${userId}&next_review_date=lte.${today}&status=neq.new&select=*`
+    );
+
+    if (result.error) {
+      handleSupabaseError(result.error, "getDueWords");
+      return [];
+    }
+
+    return (result.data || []).map(toLocalSrsProgress);
   },
 };

@@ -97,6 +97,17 @@ export type UnlockedAchievement = {
   unlockedAt: string; // ISO 8601形式
 };
 
+// 記憶度レベル
+export type MasteryLevel = "new" | "learning" | "familiar" | "mastered";
+
+// 記憶度判定（accuracy >= 80 && attempts >= 3 で習得済み）
+export const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLevel => {
+  if (attempts === 0 || accuracy === null) return "new";
+  if (accuracy >= 80 && attempts >= 3) return "mastered";
+  if (accuracy >= 60) return "familiar";
+  return "learning";
+};
+
 // スピードチャレンジ結果
 export type SpeedChallengeResult = {
   id: string;
