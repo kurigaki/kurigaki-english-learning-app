@@ -37,6 +37,7 @@ export default function Home() {
   const [bookmarkCount, setBookmarkCount] = useState(0);
   const [courseProgressList, setCourseProgressList] = useState<CourseProgress[]>([]);
   const [weakWordCount, setWeakWordCount] = useState(0);
+  const [srsReviewCount, setSrsReviewCount] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
 
   const loadData = useCallback(async () => {
@@ -114,6 +115,10 @@ export default function Home() {
       }
     });
     setWeakWordCount(weakCount);
+
+    // SRS復習対象単語数
+    const dueWords = await unifiedStorage.getDueWords();
+    setSrsReviewCount(dueWords.length);
   }, []);
 
   useEffect(() => {
@@ -213,7 +218,7 @@ export default function Home() {
                 return (
                   <Link
                     key={cp.course}
-                    href={`/quiz?course=${cp.course}`}
+                    href={`/word-list?course=${cp.course}&mastery=mastered`}
                     className="block p-3 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-100"
                   >
                     <p className="text-sm font-bold text-slate-700 mb-1">{cp.name}</p>
@@ -230,6 +235,32 @@ export default function Home() {
                 );
               })}
             </div>
+          </Card>
+        )}
+
+        {/* SRS Review */}
+        {isMounted && srsReviewCount > 0 && (
+          <Card hover className="mb-6 group border-2 border-primary-200 bg-gradient-to-r from-primary-50 to-accent-50">
+            <Link href="/quiz?srsReview=true" className="block">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform">
+                  <span className="emoji-icon">🧠</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-base font-bold text-slate-800">
+                    今日の復習: {srsReviewCount}語
+                  </h3>
+                  <p className="text-xs text-slate-500">
+                    最適なタイミングで復習して記憶を定着
+                  </p>
+                </div>
+                <div className="text-primary-400 group-hover:translate-x-1 transition-transform">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </Link>
           </Card>
         )}
 

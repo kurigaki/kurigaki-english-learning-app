@@ -1,17 +1,11 @@
 "use client";
 
-type MasteryLevel = "new" | "learning" | "familiar" | "mastered";
+import { getMasteryLevel } from "@/types";
+import type { MasteryLevel } from "@/types";
 
 type WordMasteryProps = {
   accuracy: number | null; // 0-100 or null if not studied
   totalAttempts: number;
-};
-
-const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLevel => {
-  if (attempts === 0 || accuracy === null) return "new";
-  if (accuracy >= 80 && attempts >= 3) return "mastered";
-  if (accuracy >= 60) return "familiar";
-  return "learning";
 };
 
 const MASTERY_CONFIG: Record<MasteryLevel, { label: string; emoji: string; color: string; bgColor: string }> = {
