@@ -26,13 +26,29 @@
    * 1. 100svh - iOS Safari 15.4+ で最も安定（Small Viewport = 常に見える領域）
    * 2. 100vh  - 旧ブラウザ用フォールバック
    */
+  /* ボトムナビ高さ（モバイルのみ） */
+  --bottom-nav-height: 56px;
+
+  /* デスクトップ: ボトムナビなし */
   --main-height: calc(100vh - var(--header-height) - var(--safe-area-top) - var(--safe-area-bottom));
+}
+
+/* モバイル: ボトムナビ分を引く */
+@media (max-width: 767px) {
+  :root {
+    --main-height: calc(100vh - var(--header-height) - var(--bottom-nav-height) - var(--safe-area-top) - var(--safe-area-bottom));
+  }
 }
 
 /* svh をサポートするブラウザ向け（iOS Safari 15.4+, Chrome 108+, Firefox 101+） */
 @supports (height: 100svh) {
   :root {
     --main-height: calc(100svh - var(--header-height) - var(--safe-area-top) - var(--safe-area-bottom));
+  }
+  @media (max-width: 767px) {
+    :root {
+      --main-height: calc(100svh - var(--header-height) - var(--bottom-nav-height) - var(--safe-area-top) - var(--safe-area-bottom));
+    }
   }
 }
 
@@ -170,6 +186,13 @@ body {
     min-height: var(--main-height);
     /* スクロール時のホームバー領域確保 */
     padding-bottom: var(--safe-area-bottom);
+  }
+
+  /* モバイル: ボトムナビ分の余白を追加（コンテンツが隠れないように） */
+  @media (max-width: 767px) {
+    .main-content-scroll {
+      padding-bottom: calc(var(--bottom-nav-height) + var(--safe-area-bottom));
+    }
   }
 }
 

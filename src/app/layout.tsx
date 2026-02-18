@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Header } from "@/components/ui";
+import { Header, BottomNav } from "@/components/ui";
 import { AuthProvider } from "@/lib/auth-context";
 import { AuthGuard } from "@/components/AuthGuard";
 
@@ -29,6 +29,7 @@ export default function RootLayout({
           <main className="relative">
             <AuthGuard>{children}</AuthGuard>
           </main>
+          <BottomNav />
         </AuthProvider>
       </body>
     </html>
