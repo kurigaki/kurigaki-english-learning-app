@@ -5,6 +5,8 @@
 :root {
   --background: #F0F9FF;
   --foreground: #1E293B;
+  --card-bg: #ffffff;
+  --card-border: rgba(79, 70, 229, 0.1);
   /* ヘッダー高さ: py-3(24px) + コンテンツ(28px) = 52px */
   --header-height: 52px;
   /* Safe Area考慮（iOS対応） */
@@ -52,11 +54,23 @@
   }
 }
 
+.dark {
+  --background: #0F172A;
+  --foreground: #E2E8F0;
+  --card-bg: #1E293B;
+  --card-border: rgba(100, 116, 139, 0.3);
+}
+
 body {
   color: var(--foreground);
   background: linear-gradient(135deg, #F0F9FF 0%, #E0E7FF 100%);
   min-height: 100vh;
   min-height: 100svh; /* iOS Safari 対応 */
+}
+
+.dark body,
+:is(.dark) body {
+  background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
 }
 
 @layer components {
@@ -77,19 +91,23 @@ body {
            shadow-card hover:shadow-card-hover hover:border-primary-300
            transform hover:-translate-y-0.5
            transition-all duration-200 ease-out
-           active:scale-95;
+           active:scale-95
+           dark:bg-slate-800 dark:text-primary-400 dark:border-slate-600
+           dark:hover:border-primary-400;
   }
 
   /* Ghost Button */
   .btn-ghost {
     @apply text-primary-500 font-medium py-2 px-4 rounded-xl
-           hover:bg-primary-50 transition-colors duration-200;
+           hover:bg-primary-50 transition-colors duration-200
+           dark:text-primary-400 dark:hover:bg-primary-900/30;
   }
 
   /* Card */
   .card {
     @apply bg-white rounded-3xl shadow-card p-6
-           transition-all duration-200 ease-out;
+           transition-all duration-200 ease-out
+           dark:bg-slate-800 dark:shadow-black/20;
   }
 
   .card-hover {
@@ -100,12 +118,15 @@ body {
   .stats-card {
     @apply bg-gradient-to-br from-white to-primary-50/50
            rounded-2xl p-4 text-center
-           border border-primary-100/50;
+           border border-primary-100/50
+           dark:from-slate-800 dark:to-slate-700
+           dark:border-slate-600;
   }
 
   /* Progress Bar */
   .progress-bar {
-    @apply h-3 bg-primary-100 rounded-full overflow-hidden;
+    @apply h-3 bg-primary-100 rounded-full overflow-hidden
+           dark:bg-slate-700;
   }
 
   .progress-bar-fill {
@@ -120,7 +141,9 @@ body {
            shadow-sm hover:shadow-card hover:border-primary-300
            transform hover:-translate-y-0.5
            transition-all duration-200 ease-out
-           active:scale-[0.98];
+           active:scale-[0.98]
+           dark:bg-slate-800 dark:border-slate-600
+           dark:hover:border-primary-400;
   }
 
   .choice-btn-correct {
@@ -139,11 +162,13 @@ body {
   }
 
   .badge-success {
-    @apply bg-success-100 text-success-600;
+    @apply bg-success-100 text-success-600
+           dark:bg-success-500/20 dark:text-success-400;
   }
 
   .badge-error {
-    @apply bg-error-100 text-error-600;
+    @apply bg-error-100 text-error-600
+           dark:bg-error-500/20 dark:text-error-400;
   }
 
   /*
@@ -156,7 +181,8 @@ body {
    */
   .header {
     @apply bg-white/80 backdrop-blur-md border-b border-primary-100
-           sticky top-0 z-50;
+           sticky top-0 z-50
+           dark:bg-slate-900/80 dark:border-slate-700;
     min-height: calc(var(--header-height) + var(--safe-area-top));
     padding-top: var(--safe-area-top);
   }
