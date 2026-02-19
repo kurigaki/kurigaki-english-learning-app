@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header, BottomNav } from "@/components/ui";
 import { AuthProvider } from "@/lib/auth-context";
 import { AuthGuard } from "@/components/AuthGuard";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "English Learning App",
@@ -22,15 +23,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <body className="min-h-screen overflow-x-hidden">
-        <AuthProvider>
-          <Header />
-          <main className="relative">
-            <AuthGuard>{children}</AuthGuard>
-          </main>
-          <BottomNav />
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <Header />
+            <main className="relative">
+              <AuthGuard>{children}</AuthGuard>
+            </main>
+            <BottomNav />
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
