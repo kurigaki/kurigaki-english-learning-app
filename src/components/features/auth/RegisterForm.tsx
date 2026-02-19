@@ -47,7 +47,7 @@ export const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {error && (
-        <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+        <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/40 rounded-xl text-red-600 dark:text-red-400 text-sm">
           {error}
         </div>
       )}
@@ -122,7 +122,7 @@ export const RegisterForm = () => {
         既にアカウントをお持ちの方は{" "}
         <Link
           href="/login"
-          className="text-primary-600 hover:text-primary-700 font-medium"
+          className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium"
         >
           ログイン
         </Link>

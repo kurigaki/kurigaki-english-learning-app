@@ -136,22 +136,22 @@ export default function HistoryPage() {
         </div>
 
         {/* 上部固定: 今日の学習 */}
-        <Card className="flex-shrink-0 mb-1.5 !p-2 bg-gradient-to-r from-primary-50 to-accent-50">
+        <Card className="flex-shrink-0 mb-1.5 !p-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20">
           <h2 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-1.5 flex items-center gap-1">
             <span className="emoji-icon">🔥</span>
             <span>今日の学習</span>
           </h2>
           <div className="grid grid-cols-3 gap-1.5">
             <div className="text-center">
-              <div className="text-lg font-bold text-primary-600">{todayStats.total}</div>
+              <div className="text-lg font-bold text-primary-600 dark:text-primary-400">{todayStats.total}</div>
               <div className="text-[10px] text-slate-500 dark:text-slate-400">回答数</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-bold text-success-600">{todayStats.correct}</div>
+              <div className="text-lg font-bold text-success-600 dark:text-success-400">{todayStats.correct}</div>
               <div className="text-[10px] text-slate-500 dark:text-slate-400">正解数</div>
             </div>
             <div className="text-center">
-              <div className="text-lg font-bold text-accent-600">{todayStats.rate}%</div>
+              <div className="text-lg font-bold text-accent-600 dark:text-accent-400">{todayStats.rate}%</div>
               <div className="text-[10px] text-slate-500 dark:text-slate-400">正答率</div>
             </div>
           </div>
@@ -376,7 +376,7 @@ export default function HistoryPage() {
                       <Link
                         key={record.id}
                         href={`/word/${wordId}`}
-                        className="p-2.5 flex items-center justify-between hover:bg-primary-50 dark:hover:bg-primary-900/30/50 transition-colors group"
+                        className="p-2.5 flex items-center justify-between hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors group"
                       >
                         {content}
                       </Link>

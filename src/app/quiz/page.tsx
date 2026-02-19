@@ -945,15 +945,15 @@ export default function QuizPage() {
             {/* プレビュー */}
             <div className="text-center">
               <p className="text-sm font-bold text-slate-700 dark:text-slate-200">
-                対象: <span className="text-primary-600">{filteredPreview.length}語</span>
+                対象: <span className="text-primary-600 dark:text-primary-400">{filteredPreview.length}語</span>
               </p>
               {filteredPreview.length < QUESTIONS_PER_SESSION && filteredPreview.length > 0 && (
-                <p className="text-[10px] text-amber-600">
+                <p className="text-[10px] text-amber-600 dark:text-amber-400">
                   ※ {filteredPreview.length}問のみ出題されます
                 </p>
               )}
               {filteredPreview.length === 0 && (
-                <p className="text-[10px] text-red-500">
+                <p className="text-[10px] text-red-500 dark:text-red-400">
                   条件に合う単語がありません
                 </p>
               )}
@@ -1023,20 +1023,20 @@ export default function QuizPage() {
           <div className="flex-shrink-0 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-card p-3 mb-2">
             {/* ストリークマイルストーン達成（コンパクト表示） */}
             {streakMilestoneMessage && (
-              <div className="mb-2 p-1.5 bg-gradient-to-r from-orange-100 via-red-100 to-pink-100 rounded-lg border border-orange-300">
+              <div className="mb-2 p-1.5 bg-gradient-to-r from-orange-100 via-red-100 to-pink-100 dark:from-orange-900/30 dark:via-red-900/30 dark:to-pink-900/30 rounded-lg border border-orange-300 dark:border-orange-800/40">
                 <div className="flex items-center justify-center gap-1.5">
                   <span className="text-xl emoji-icon">{streakMilestoneMessage.emoji}</span>
-                  <p className="text-xs font-bold text-orange-700">{streakMilestoneMessage.title}</p>
+                  <p className="text-xs font-bold text-orange-700 dark:text-orange-300">{streakMilestoneMessage.title}</p>
                 </div>
               </div>
             )}
 
             {/* レベルアップ表示（コンパクト表示） */}
             {leveledUp && (
-              <div className="mb-2 p-1.5 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg border border-yellow-300">
+              <div className="mb-2 p-1.5 bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 rounded-lg border border-yellow-300 dark:border-yellow-800/40">
                 <div className="flex items-center justify-center gap-1.5">
                   <span className="text-xl emoji-icon">🎊</span>
-                  <p className="text-xs font-bold text-yellow-700">
+                  <p className="text-xs font-bold text-yellow-700 dark:text-yellow-300">
                     レベルアップ! Lv.{sessionResult?.previousLevel} → Lv.{sessionResult?.newLevel}
                   </p>
                 </div>
@@ -1051,7 +1051,7 @@ export default function QuizPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg p-2">
+            <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-lg p-2">
               <div className="flex items-center justify-center gap-3">
                 <div>
                   <div className="text-2xl font-bold text-gradient">
@@ -1071,29 +1071,29 @@ export default function QuizPage() {
             {/* XP・ストリーク・デイリー目標（コンパクト） */}
             {sessionResult && (
               <div className="grid grid-cols-3 gap-1.5 mt-2">
-                <div className="bg-gradient-to-br from-purple-100 to-purple-50 rounded-md p-1.5">
+                <div className="bg-gradient-to-br from-purple-100 to-purple-50 dark:from-purple-900/30 dark:to-purple-900/20 rounded-md p-1.5">
                   <span className="text-base emoji-icon">✨</span>
-                  <p className="text-xs font-bold text-purple-600">+{sessionResult.earnedXp}</p>
-                  <p className="text-[9px] text-purple-400">XP</p>
+                  <p className="text-xs font-bold text-purple-600 dark:text-purple-300">+{sessionResult.earnedXp}</p>
+                  <p className="text-[9px] text-purple-400 dark:text-purple-400">XP</p>
                 </div>
-                <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-md p-1.5">
+                <div className="bg-gradient-to-br from-orange-100 to-orange-50 dark:from-orange-900/30 dark:to-orange-900/20 rounded-md p-1.5">
                   <span className="text-base emoji-icon">🔥</span>
-                  <p className="text-xs font-bold text-orange-600">{sessionResult.streak}</p>
-                  <p className="text-[9px] text-orange-400">日連続</p>
+                  <p className="text-xs font-bold text-orange-600 dark:text-orange-300">{sessionResult.streak}</p>
+                  <p className="text-[9px] text-orange-400 dark:text-orange-400">日連続</p>
                 </div>
                 <div className={`rounded-md p-1.5 ${
                   sessionResult.dailyProgress.completed
-                    ? "bg-gradient-to-br from-green-100 to-green-50"
-                    : "bg-gradient-to-br from-blue-100 to-blue-50"
+                    ? "bg-gradient-to-br from-green-100 to-green-50 dark:from-green-900/30 dark:to-green-900/20"
+                    : "bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-900/20"
                 }`}>
                   <span className="text-base emoji-icon">{sessionResult.dailyProgress.completed ? "🏆" : "🎯"}</span>
                   <p className={`text-xs font-bold ${
-                    sessionResult.dailyProgress.completed ? "text-green-600" : "text-blue-600"
+                    sessionResult.dailyProgress.completed ? "text-green-600 dark:text-green-400" : "text-blue-600 dark:text-blue-400"
                   }`}>
                     {sessionResult.dailyProgress.current}/{sessionResult.dailyProgress.goal}
                   </p>
                   <p className={`text-[9px] ${
-                    sessionResult.dailyProgress.completed ? "text-green-400" : "text-blue-400"
+                    sessionResult.dailyProgress.completed ? "text-green-400 dark:text-green-500" : "text-blue-400 dark:text-blue-500"
                   }`}>
                     {sessionResult.dailyProgress.completed ? "達成!" : "目標"}
                   </p>
@@ -1112,7 +1112,7 @@ export default function QuizPage() {
                   {newAchievements.map((achievement) => (
                     <div
                       key={achievement.id}
-                      className="flex items-center gap-2 p-1.5 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200"
+                      className="flex items-center gap-2 p-1.5 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800/40"
                     >
                       <span className="text-xl emoji-icon">{achievement.icon}</span>
                       <div className="text-left">
@@ -1138,16 +1138,16 @@ export default function QuizPage() {
                       href={`/word/${word.id}?from=quiz`}
                       className={`flex items-center justify-between p-1.5 rounded-lg border transition-all hover:scale-[1.02] group ${
                         word.correct
-                          ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-200"
-                          : "bg-gradient-to-r from-red-50 to-orange-50 border-red-200"
+                          ? "bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800/40"
+                          : "bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border-red-200 dark:border-red-800/40"
                       }`}
                     >
                       <div className="flex items-center gap-1.5">
                         <div
                           className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
                             word.correct
-                              ? "bg-green-100 text-green-600"
-                              : "bg-red-100 text-red-600"
+                              ? "bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400"
+                              : "bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400"
                           }`}
                         >
                           {word.correct ? "✓" : "✗"}
@@ -1354,7 +1354,7 @@ export default function QuizPage() {
                     {!isCorrect && (
                       <div className="text-[10px] text-slate-600 dark:text-slate-300">
                         <p className="truncate">
-                          正解: <span className="text-primary-600 font-bold">{currentQuestion.correctAnswer}</span>
+                          正解: <span className="text-primary-600 dark:text-primary-400 font-bold">{currentQuestion.correctAnswer}</span>
                           {currentQuestion.type !== "en-to-ja" && (
                             <span className="text-slate-500 dark:text-slate-400 ml-1">({currentQuestion.word.meaning})</span>
                           )}
