@@ -23,10 +23,10 @@ export default function LoginPage() {
     return (
       <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
         <Card className="max-w-md w-full p-8 text-center">
-          <h1 className="text-xl font-bold text-slate-900 mb-4">
+          <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             認証機能は現在利用できません
           </h1>
-          <p className="text-slate-600">
+          <p className="text-slate-600 dark:text-slate-300">
             Supabaseの設定が完了していないため、認証機能を利用できません。
             ローカルストレージを使用して学習を続けることができます。
           </p>
@@ -48,8 +48,8 @@ export default function LoginPage() {
     <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
       <Card className="max-w-md w-full p-8">
         <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold text-slate-900 mb-2">ログイン</h1>
-          <p className="text-slate-600">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">ログイン</h1>
+          <p className="text-slate-600 dark:text-slate-300">
             アカウントにログインして学習を続けましょう
           </p>
         </div>

@@ -36,7 +36,7 @@ const sortLabels: Record<SortOption, string> = {
 };
 
 const masteryConfig: Record<MasteryLevel, { label: string; color: string; bg: string; activeBg: string }> = {
-  new: { label: "未学習", color: "text-slate-500", bg: "bg-slate-100", activeBg: "bg-slate-500" },
+  new: { label: "未学習", color: "text-slate-500 dark:text-slate-400", bg: "bg-slate-100 dark:bg-slate-700", activeBg: "bg-slate-500" },
   learning: { label: "苦手", color: "text-orange-600", bg: "bg-orange-100", activeBg: "bg-orange-500" },
   familiar: { label: "あと少し", color: "text-blue-600", bg: "bg-blue-100", activeBg: "bg-blue-500" },
   mastered: { label: "習得済", color: "text-green-600", bg: "bg-green-100", activeBg: "bg-green-500" },
@@ -244,13 +244,13 @@ export default function WordListPage() {
         <div className="flex-shrink-0 flex items-center gap-2 mb-1.5">
           <Link
             href="/"
-            className="text-slate-500 hover:text-slate-700 transition-colors"
+            className="text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 dark:text-slate-200 transition-colors"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </Link>
-          <h1 className="text-lg font-bold text-slate-800">単語帳</h1>
+          <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100">単語帳</h1>
         </div>
 
         {/* 上部固定: 統計サマリー */}
@@ -260,37 +260,37 @@ export default function WordListPage() {
               <div className="relative">
                 <button
                   onClick={() => setShowLegend(!showLegend)}
-                  className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center rounded-full text-[10px] font-bold text-slate-400 hover:text-slate-600 hover:bg-white/60 transition-colors"
+                  className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center rounded-full text-[10px] font-bold text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-white/60 transition-colors"
                   title={showLegend ? "凡例を閉じる" : "凡例を表示"}
                 >
                   ?
                 </button>
                 <div className="grid grid-cols-5 gap-1 text-center">
                   <div>
-                    <p className="text-base font-bold text-slate-700">{stats.total}</p>
-                    <p className="text-[10px] text-slate-500">全単語</p>
+                    <p className="text-base font-bold text-slate-700 dark:text-slate-200">{stats.total}</p>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400">全単語</p>
                   </div>
                   <div>
                     <p className="text-base font-bold text-green-600">{stats.mastered}</p>
-                    <p className="text-[10px] text-slate-500">習得済</p>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400">習得済</p>
                   </div>
                   <div>
                     <p className="text-base font-bold text-blue-600">{stats.familiar}</p>
-                    <p className="text-[10px] text-slate-500">あと少し</p>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400">あと少し</p>
                   </div>
                   <div>
                     <p className="text-base font-bold text-orange-600">{stats.learning}</p>
-                    <p className="text-[10px] text-slate-500">苦手</p>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400">苦手</p>
                   </div>
                   <div>
-                    <p className="text-base font-bold text-slate-400">{stats.newWords}</p>
-                    <p className="text-[10px] text-slate-500">未学習</p>
+                    <p className="text-base font-bold text-slate-400 dark:text-slate-500">{stats.newWords}</p>
+                    <p className="text-[10px] text-slate-500 dark:text-slate-400">未学習</p>
                   </div>
                 </div>
               </div>
             </Card>
             {showLegend && (
-              <div className="mt-1 px-2 py-1.5 bg-white border border-slate-200 rounded-lg text-[11px] text-slate-600 space-y-0.5">
+              <div className="mt-1 px-2 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[11px] text-slate-600 dark:text-slate-300 space-y-0.5">
                 <p><span className="emoji-icon">✅</span> <span className="font-medium">習得済</span>: 正答率80%以上 &amp; 3回以上学習</p>
                 <p><span className="emoji-icon">💡</span> <span className="font-medium">あと少し</span>: 正答率60%以上</p>
                 <p><span className="emoji-icon">📖</span> <span className="font-medium">苦手</span>: 正答率60%未満</p>
@@ -309,10 +309,10 @@ export default function WordListPage() {
               placeholder="単語・意味で検索..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-2.5 py-1.5 pl-8 bg-white border border-slate-200 rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+              className="w-full px-2.5 py-1.5 pl-8 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
             />
             <svg
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-slate-500"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -327,7 +327,7 @@ export default function WordListPage() {
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -344,7 +344,7 @@ export default function WordListPage() {
                 className={`px-2 py-0.5 rounded-md text-[11px] font-medium transition-all ${
                   selectedCourse === null
                     ? "bg-primary-500 text-white"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
                 }`}
               >
                 全コース
@@ -358,7 +358,7 @@ export default function WordListPage() {
                     className={`px-2 py-0.5 rounded-md text-[11px] font-medium transition-all ${
                       selectedCourse === ct
                         ? "bg-primary-500 text-white"
-                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                        : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
                     }`}
                   >
                     {COURSE_DEFINITIONS[ct].name}
@@ -372,7 +372,7 @@ export default function WordListPage() {
                   className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-all ${
                     selectedStage === null
                       ? "bg-accent-500 text-white"
-                      : "bg-slate-50 text-slate-500 hover:bg-slate-100"
+                      : "bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700"
                   }`}
                 >
                   全レベル
@@ -384,7 +384,7 @@ export default function WordListPage() {
                     className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-all ${
                       selectedStage === stg.stage
                         ? "bg-accent-500 text-white"
-                        : "bg-slate-50 text-slate-500 hover:bg-slate-100"
+                        : "bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700"
                     }`}
                   >
                     {stg.displayName}
@@ -404,7 +404,7 @@ export default function WordListPage() {
                   className={`px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
                     selectedCategory === category
                       ? "bg-primary-500 text-white shadow-sm"
-                      : "bg-white text-slate-600 border border-slate-200 hover:border-primary-300"
+                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary-300"
                   }`}
                 >
                   {categoryLabelMap[category]}
@@ -421,7 +421,7 @@ export default function WordListPage() {
               className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium transition-all ${
                 showBookmarksOnly
                   ? "bg-yellow-500 text-white shadow-sm"
-                  : "bg-white text-slate-600 border border-slate-200 hover:border-yellow-400"
+                  : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-yellow-400"
               }`}
             >
               <svg
@@ -457,7 +457,7 @@ export default function WordListPage() {
                       ? key === "all"
                         ? "bg-slate-700 text-white"
                         : `${masteryConfig[key].activeBg} text-white shadow-sm`
-                      : "bg-white text-slate-600 border border-slate-200 hover:border-slate-400"
+                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-400"
                   }`}
                 >
                   {label}
@@ -472,7 +472,7 @@ export default function WordListPage() {
                 className={`px-2 py-1 rounded-lg text-xs font-medium transition-all ${
                   selectedDifficulty === "all"
                     ? "bg-slate-700 text-white"
-                    : "bg-white text-slate-600 border border-slate-200 hover:border-slate-400"
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-400"
                 }`}
               >
                 全難易度
@@ -484,7 +484,7 @@ export default function WordListPage() {
                   className={`w-6 h-6 rounded text-xs font-medium transition-all ${
                     selectedDifficulty === level
                       ? "bg-amber-500 text-white"
-                      : "bg-white text-slate-600 border border-slate-200 hover:border-amber-400"
+                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-amber-400"
                   }`}
                 >
                   {level}
@@ -496,7 +496,7 @@ export default function WordListPage() {
             <select
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value as SortOption)}
-              className="ml-auto px-2 py-1 bg-white border border-slate-200 rounded-lg text-xs text-slate-700 focus:outline-none focus:ring-2 focus:ring-primary-400"
+              className="ml-auto px-2 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
             >
               {Object.entries(sortLabels).map(([value, label]) => (
                 <option key={value} value={value}>
@@ -507,7 +507,7 @@ export default function WordListPage() {
           </div>
 
           {/* Results count */}
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-slate-500 dark:text-slate-400">
             {filteredWords.length}語
             {showBookmarksOnly && " (ブックマーク)"}
             {selectedMastery !== "all" && ` (${masteryConfig[selectedMastery].label})`}
@@ -523,17 +523,17 @@ export default function WordListPage() {
             {Object.entries(groupedWords).map(([category, categoryWords]) => (
               <div key={category}>
                 {selectedCategory === "all" && selectedCourse === null && (
-                  <h2 className="text-sm font-bold text-slate-500 mb-3 flex items-center gap-2">
+                  <h2 className="text-sm font-bold text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-primary-400" />
                     {categoryLabelMap[category as Category]} ({categoryWords.length})
                   </h2>
                 )}
-                <Card className="divide-y divide-slate-100">
+                <Card className="divide-y divide-slate-100 dark:divide-slate-700">
                   {categoryWords.map((word) => (
                     <Link
                       key={word.id}
                       href={`/word/${word.id}?from=wordlist`}
-                      className="flex items-center justify-between p-3 hover:bg-slate-50 transition-colors group first:rounded-t-xl last:rounded-b-xl"
+                      className="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-xl last:rounded-b-xl"
                     >
                       <div className="flex items-center gap-2 flex-1 min-w-0">
                         <SpeakButton text={word.word} size="sm" />
@@ -562,7 +562,7 @@ export default function WordListPage() {
                         </button>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
-                            <p className="font-bold text-slate-800 group-hover:text-primary-600 transition-colors truncate">
+                            <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate">
                               {word.word}
                             </p>
                             <span
@@ -576,10 +576,10 @@ export default function WordListPage() {
                               {"★".repeat(word.difficulty)}{"☆".repeat(7 - word.difficulty)}
                             </span>
                           </div>
-                          <p className="text-sm text-slate-500 truncate">{word.meaning}</p>
+                          <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
                         </div>
                       </div>
-                      <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all ml-2">
+                      <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all ml-2">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
@@ -593,7 +593,7 @@ export default function WordListPage() {
             {filteredWords.length === 0 && (
               <Card className="text-center py-8">
                 <span className="text-4xl mb-3 block emoji-icon">🔍</span>
-                <p className="text-slate-500 text-sm">該当する単語が見つかりません</p>
+                <p className="text-slate-500 dark:text-slate-400 text-sm">該当する単語が見つかりません</p>
                 <button
                   onClick={() => {
                     setSearchQuery("");

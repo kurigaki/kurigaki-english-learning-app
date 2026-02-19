@@ -129,7 +129,7 @@ export default function HistoryPage() {
       <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
         {/* 上部固定: ヘッダー */}
         <div className="flex-shrink-0 mb-1.5">
-          <h1 className="text-lg font-bold text-slate-800 flex items-center gap-1.5">
+          <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-1.5">
             <span className="text-xl emoji-icon">📊</span>
             <span>学習統計</span>
           </h1>
@@ -137,22 +137,22 @@ export default function HistoryPage() {
 
         {/* 上部固定: 今日の学習 */}
         <Card className="flex-shrink-0 mb-1.5 !p-2 bg-gradient-to-r from-primary-50 to-accent-50">
-          <h2 className="text-xs font-bold text-slate-700 mb-1.5 flex items-center gap-1">
+          <h2 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-1.5 flex items-center gap-1">
             <span className="emoji-icon">🔥</span>
             <span>今日の学習</span>
           </h2>
           <div className="grid grid-cols-3 gap-1.5">
             <div className="text-center">
               <div className="text-lg font-bold text-primary-600">{todayStats.total}</div>
-              <div className="text-[10px] text-slate-500">回答数</div>
+              <div className="text-[10px] text-slate-500 dark:text-slate-400">回答数</div>
             </div>
             <div className="text-center">
               <div className="text-lg font-bold text-success-600">{todayStats.correct}</div>
-              <div className="text-[10px] text-slate-500">正解数</div>
+              <div className="text-[10px] text-slate-500 dark:text-slate-400">正解数</div>
             </div>
             <div className="text-center">
               <div className="text-lg font-bold text-accent-600">{todayStats.rate}%</div>
-              <div className="text-[10px] text-slate-500">正答率</div>
+              <div className="text-[10px] text-slate-500 dark:text-slate-400">正答率</div>
             </div>
           </div>
           {todayStats.total === 0 && (
@@ -177,7 +177,7 @@ export default function HistoryPage() {
               className={`flex-1 py-1 px-1.5 rounded-md text-xs font-medium transition-all inline-flex items-center justify-center gap-0.5 ${
                 activeTab === tab.id
                   ? "bg-primary-500 text-white shadow-sm"
-                  : "bg-white text-slate-600 hover:bg-primary-50"
+                  : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-900/30"
               }`}
             >
               <span className="emoji-icon text-sm">{tab.icon}</span>
@@ -194,7 +194,7 @@ export default function HistoryPage() {
           <div className="space-y-6">
             {/* Overall Stats */}
             <Card>
-              <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-4 flex items-center gap-2">
                 <span className="emoji-icon">📊</span>
                 <span>全体統計</span>
               </h2>
@@ -206,17 +206,17 @@ export default function HistoryPage() {
 
               {/* Progress Bar */}
               <div className="mt-4">
-                <div className="flex justify-between text-sm text-slate-600 mb-2">
+                <div className="flex justify-between text-sm text-slate-600 dark:text-slate-300 mb-2">
                   <span>学習進捗</span>
                   <span>{overallStats.uniqueWords} / {overallStats.totalWords} 単語</span>
                 </div>
-                <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
+                <div className="h-3 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full transition-all duration-500"
                     style={{ width: `${(overallStats.uniqueWords / overallStats.totalWords) * 100}%` }}
                   />
                 </div>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
                   {Math.round((overallStats.uniqueWords / overallStats.totalWords) * 100)}% の単語を学習済み
                 </p>
               </div>
@@ -224,7 +224,7 @@ export default function HistoryPage() {
 
             {/* Type Stats */}
             <Card>
-              <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-4 flex items-center gap-2">
                 <span className="emoji-icon">🎯</span>
                 <span>問題タイプ別</span>
               </h2>
@@ -235,12 +235,12 @@ export default function HistoryPage() {
                     return (
                       <div key={type}>
                         <div className="flex justify-between text-sm mb-1">
-                          <span className="text-slate-600">{questionTypeLabels[type]}</span>
-                          <span className="text-slate-500">
+                          <span className="text-slate-600 dark:text-slate-300">{questionTypeLabels[type]}</span>
+                          <span className="text-slate-500 dark:text-slate-400">
                             {stats.correct}/{stats.total} ({rate}%)
                           </span>
                         </div>
-                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                           <div
                             className={`h-full rounded-full transition-all duration-500 ${
                               rate >= 80 ? "bg-success-500" : rate >= 60 ? "bg-accent-500" : "bg-error-400"
@@ -260,15 +260,15 @@ export default function HistoryPage() {
         {/* Weak Words Tab */}
         {activeTab === "weak" && (
           <Card>
-            <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-4 flex items-center gap-2">
               <span className="emoji-icon">💪</span>
               <span>苦手単語 ({weakWords.length}語)</span>
             </h2>
             {weakWords.length === 0 ? (
               <div className="text-center py-8">
                 <span className="text-5xl mb-4 block emoji-icon">🎉</span>
-                <p className="text-slate-500">苦手な単語はありません!</p>
-                <p className="text-sm text-slate-400 mt-1">この調子で頑張りましょう</p>
+                <p className="text-slate-500 dark:text-slate-400">苦手な単語はありません!</p>
+                <p className="text-sm text-slate-400 dark:text-slate-500 mt-1">この調子で頑張りましょう</p>
               </div>
             ) : (
               <div className="space-y-3">
@@ -276,13 +276,13 @@ export default function HistoryPage() {
                   <Link
                     key={word.id}
                     href={`/word/${word.id}`}
-                    className="flex items-center justify-between p-3 bg-slate-50 rounded-xl hover:bg-primary-50 transition-colors group"
+                    className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
                       <SpeakButton text={word.word} size="sm" />
                       <div>
-                        <p className="font-bold text-slate-800 group-hover:text-primary-600 transition-colors">{word.word}</p>
-                        <p className="text-sm text-slate-500">{word.meaning}</p>
+                        <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors">{word.word}</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">{word.meaning}</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -290,9 +290,9 @@ export default function HistoryPage() {
                         <p className={`font-bold ${word.accuracy < 50 ? "text-error-500" : "text-accent-500"}`}>
                           {word.accuracy}%
                         </p>
-                        <p className="text-xs text-slate-400">{word.attempts}回挑戦</p>
+                        <p className="text-xs text-slate-400 dark:text-slate-500">{word.attempts}回挑戦</p>
                       </div>
-                      <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
+                      <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
@@ -314,7 +314,7 @@ export default function HistoryPage() {
           {activeTab === "history" && (
             <Card padding="none">
               <div className="p-3 border-b border-primary-100">
-                <h2 className="text-sm font-bold text-slate-700 flex items-center gap-2">
+                <h2 className="text-sm font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
                   <span className="emoji-icon">📝</span>
                   <span>回答履歴</span>
                 </h2>
@@ -323,13 +323,13 @@ export default function HistoryPage() {
               {records.length === 0 ? (
                 <div className="p-8 text-center">
                   <span className="text-4xl mb-3 block emoji-icon">📚</span>
-                  <p className="text-slate-500 text-sm mb-3">まだ学習履歴がありません</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm mb-3">まだ学習履歴がありません</p>
                   <Link href="/quiz">
                     <Button size="sm">クイズを始める</Button>
                   </Link>
                 </div>
               ) : (
-                <div className="divide-y divide-primary-50">
+                <div className="divide-y divide-primary-50 dark:divide-slate-700">
                   {records.slice(0, 50).map((record) => {
                     const wordId = getWordIdByWord(record.word);
                     const content = (
@@ -348,21 +348,21 @@ export default function HistoryPage() {
                           </div>
                           <SpeakButton text={record.word} size="sm" />
                           <div className="flex-1 min-w-0">
-                            <p className="font-bold text-sm text-slate-800 group-hover:text-primary-600 transition-colors truncate">{record.word}</p>
-                            <p className="text-xs text-slate-500 truncate">{record.meaning}</p>
+                            <p className="font-bold text-sm text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate">{record.word}</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{record.meaning}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
                           {record.questionType && (
-                            <span className="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">
+                            <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded">
                               {questionTypeLabels[record.questionType]}
                             </span>
                           )}
-                          <span className="text-xs text-slate-400">
+                          <span className="text-xs text-slate-400 dark:text-slate-500">
                             {formatDate(record.studiedAt)}
                           </span>
                           {wordId && (
-                            <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
+                            <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                               </svg>
@@ -376,7 +376,7 @@ export default function HistoryPage() {
                       <Link
                         key={record.id}
                         href={`/word/${wordId}`}
-                        className="p-2.5 flex items-center justify-between hover:bg-primary-50/50 transition-colors group"
+                        className="p-2.5 flex items-center justify-between hover:bg-primary-50 dark:hover:bg-primary-900/30/50 transition-colors group"
                       >
                         {content}
                       </Link>

@@ -31,8 +31,8 @@ export default function AchievementsPage() {
 
   if (isLoading) {
     return (
-      <div className="main-content bg-gray-50 flex items-center justify-center">
-        <div className="text-gray-500">読み込み中...</div>
+      <div className="main-content bg-slate-50 dark:bg-slate-800/50 flex items-center justify-center">
+        <div className="text-slate-500 dark:text-slate-400">読み込み中...</div>
       </div>
     );
   }
@@ -70,7 +70,7 @@ export default function AchievementsPage() {
   };
 
   return (
-    <div className="main-content bg-gray-50 flex flex-col">
+    <div className="main-content bg-slate-50 dark:bg-slate-800/50 flex flex-col">
       {/* 上部固定: ヘッダー */}
       <div className="flex-shrink-0 bg-gradient-to-br from-primary-500 to-primary-600 text-white px-3 py-3">
         <h1 className="text-lg font-bold mb-0.5">実績</h1>
@@ -92,31 +92,31 @@ export default function AchievementsPage() {
 
       {/* 上部固定: レアリティ別サマリー */}
       <div className="flex-shrink-0 px-3 -mt-2 mb-1.5">
-        <div className="bg-white rounded-md shadow-sm p-2 grid grid-cols-4 gap-1">
+        <div className="bg-white dark:bg-slate-800 rounded-md shadow-sm p-2 grid grid-cols-4 gap-1">
           <div className="text-center">
             <div className="text-base mb-0.5">⬜</div>
-            <div className="text-[10px] text-gray-500">ノーマル</div>
-            <div className="text-[10px] font-bold text-gray-700">
+            <div className="text-[10px] text-slate-500 dark:text-slate-400">ノーマル</div>
+            <div className="text-[10px] font-bold text-slate-700 dark:text-slate-200">
               {rarityStats.common.unlocked}/{rarityStats.common.total}
             </div>
           </div>
           <div className="text-center">
             <div className="text-base mb-0.5">🟦</div>
-            <div className="text-[10px] text-gray-500">レア</div>
+            <div className="text-[10px] text-slate-500 dark:text-slate-400">レア</div>
             <div className="text-[10px] font-bold text-blue-600">
               {rarityStats.rare.unlocked}/{rarityStats.rare.total}
             </div>
           </div>
           <div className="text-center">
             <div className="text-base mb-0.5">🟪</div>
-            <div className="text-[10px] text-gray-500">エピック</div>
+            <div className="text-[10px] text-slate-500 dark:text-slate-400">エピック</div>
             <div className="text-[10px] font-bold text-purple-600">
               {rarityStats.epic.unlocked}/{rarityStats.epic.total}
             </div>
           </div>
           <div className="text-center">
             <div className="text-base mb-0.5">🟨</div>
-            <div className="text-[10px] text-gray-500">伝説</div>
+            <div className="text-[10px] text-slate-500 dark:text-slate-400">伝説</div>
             <div className="text-[10px] font-bold text-yellow-600">
               {rarityStats.legendary.unlocked}/{rarityStats.legendary.total}
             </div>
