@@ -131,12 +131,12 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-1">
                   <span className="text-sm emoji-icon">🔥</span>
-                  <span className="text-sm font-bold text-orange-600">{userProgress.streak}</span>
+                  <span className="text-sm font-bold text-orange-600 dark:text-orange-400">{userProgress.streak}</span>
                   <span className="text-xs text-slate-500 dark:text-slate-400">日</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <span className="text-sm emoji-icon">{userProgress.dailyProgress.completed ? "✅" : "🎯"}</span>
-                  <span className={`text-sm font-bold ${userProgress.dailyProgress.completed ? "text-green-600" : "text-blue-600"}`}>
+                  <span className={`text-sm font-bold ${userProgress.dailyProgress.completed ? "text-green-600 dark:text-green-400" : "text-blue-600 dark:text-blue-400"}`}>
                     {userProgress.dailyProgress.current}/{userProgress.dailyProgress.goal}
                   </span>
                 </div>
@@ -180,8 +180,8 @@ export default function Home() {
 
         {/* 3. SRS復習 / 苦手復習（条件付き） */}
         {isMounted && srsReviewCount > 0 && (
-          <Card hover className="group border-2 border-primary-200 bg-gradient-to-r from-primary-50 to-accent-50" padding="sm">
-            <Link href="/quiz?srsReview=true" className="block">
+          <Card hover className="group border-2 border-primary-200 dark:border-primary-800/40 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20" padding="sm">
+            <Link href="/review?mode=srs" className="block">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
                   <span className="emoji-icon">🧠</span>
@@ -205,8 +205,8 @@ export default function Home() {
         )}
 
         {isMounted && weakWordCount > 0 && (
-          <Card hover className="group border-2 border-red-200 bg-gradient-to-r from-red-50 to-orange-50" padding="sm">
-            <Link href="/quiz?weakOnly=true" className="block">
+          <Card hover className="group border-2 border-red-200 dark:border-red-800/40 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20" padding="sm">
+            <Link href="/review?mode=weak" className="block">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-red-400 to-red-500 rounded-xl flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
                   <span className="emoji-icon">🔄</span>
@@ -232,12 +232,12 @@ export default function Home() {
         {/* 4. クイックアクション行: スピチャレ + 単語帳 */}
         <div className="grid grid-cols-2 gap-3">
           <Link href="/speed-challenge" className="block">
-            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-2xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group h-full">
+            <div className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border-2 border-yellow-200 dark:border-yellow-800/40 rounded-2xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group h-full">
               <div className="text-2xl mb-2 group-hover:scale-110 transition-transform inline-block">⚡</div>
               <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">スピードチャレンジ</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                 {speedHighScore > 0 ? (
-                  <>ハイスコア: <span className="text-orange-600 font-bold">{speedHighScore}</span></>
+                  <>ハイスコア: <span className="text-orange-600 dark:text-orange-400 font-bold">{speedHighScore}</span></>
                 ) : (
                   "30秒で何問正解できる？"
                 )}
@@ -245,7 +245,7 @@ export default function Home() {
             </div>
           </Link>
           <Link href="/word-list" className="block">
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-2xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group h-full">
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border-2 border-emerald-200 dark:border-emerald-800/40 rounded-2xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group h-full">
               <div className="text-2xl mb-2 group-hover:scale-110 transition-transform inline-block">📖</div>
               <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">単語帳</h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{words.length}語をコース別に閲覧</p>
@@ -253,7 +253,29 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* 5. コース別進捗（折りたたみ式） */}
+        {/* 5. サブ機能ショートカット: 実績 / ブックマーク / 苦手単語 */}
+        <div className="grid grid-cols-3 gap-3">
+          <Link href="/achievements" className="block">
+            <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl p-3 text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+              <div className="text-2xl mb-1 group-hover:scale-110 transition-transform inline-block">🏆</div>
+              <h3 className="text-xs font-bold text-slate-800 dark:text-slate-100">実績</h3>
+            </div>
+          </Link>
+          <Link href="/bookmarks" className="block">
+            <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl p-3 text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+              <div className="text-2xl mb-1 group-hover:scale-110 transition-transform inline-block">🔖</div>
+              <h3 className="text-xs font-bold text-slate-800 dark:text-slate-100">ブックマーク</h3>
+            </div>
+          </Link>
+          <Link href="/weak-words" className="block">
+            <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl p-3 text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+              <div className="text-2xl mb-1 group-hover:scale-110 transition-transform inline-block">📝</div>
+              <h3 className="text-xs font-bold text-slate-800 dark:text-slate-100">苦手単語</h3>
+            </div>
+          </Link>
+        </div>
+
+        {/* 6. コース別進捗（折りたたみ式） */}
         {isMounted && courseProgressList.length > 0 && (
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
             <button
@@ -292,7 +314,7 @@ export default function Home() {
                       <p className="text-[10px] text-slate-500 dark:text-slate-400 mb-1.5">
                         {cp.masteredWords}/{cp.totalWords}語
                       </p>
-                      <div className="h-1 bg-slate-200 rounded-full overflow-hidden">
+                      <div className="h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                         <div
                           className="h-full bg-gradient-to-r from-primary-400 to-primary-500 rounded-full transition-all duration-500"
                           style={{ width: `${percentage}%` }}
@@ -306,7 +328,7 @@ export default function Home() {
           </div>
         )}
 
-        {/* 6. 学習統計サマリー */}
+        {/* 7. 学習統計サマリー */}
         {isMounted && stats.total > 0 && (
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-4">
             <h2 className="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3 flex items-center gap-2">
@@ -321,7 +343,7 @@ export default function Home() {
           </div>
         )}
 
-        {/* 7. 最近の実績 */}
+        {/* 8. 最近の実績 */}
         {isMounted && recentAchievements.length > 0 && (
           <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-4">
             <div className="flex items-center justify-between mb-3">
