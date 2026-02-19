@@ -90,7 +90,7 @@ export const AvatarUpload = ({
     <div className="flex flex-col items-center gap-4">
       {/* アバター表示 */}
       <div className="relative">
-        <div className="w-24 h-24 rounded-full overflow-hidden bg-primary-100 flex items-center justify-center">
+        <div className="w-24 h-24 rounded-full overflow-hidden bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center">
           {avatarUrl ? (
             <Image
               src={avatarUrl}
@@ -100,7 +100,7 @@ export const AvatarUpload = ({
               className="w-full h-full object-cover"
             />
           ) : (
-            <span className="text-3xl font-bold text-primary-600">{initial}</span>
+            <span className="text-3xl font-bold text-primary-600 dark:text-primary-400">{initial}</span>
           )}
         </div>
 
@@ -145,7 +145,7 @@ export const AvatarUpload = ({
         )}
       </div>
 
-      {error && <p className="text-sm text-red-600">{error}</p>}
+      {error && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
 
       <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
         JPEG, PNG, GIF, WebP形式

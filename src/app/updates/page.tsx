@@ -15,7 +15,7 @@ export default function UpdatesPage() {
         <div className="mb-6">
           <Link
             href="/"
-            className="text-primary-600 hover:text-primary-700 text-sm mb-2 inline-block"
+            className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 text-sm mb-2 inline-block"
           >
             ← ホームに戻る
           </Link>
@@ -52,7 +52,7 @@ export default function UpdatesPage() {
                         </span>
                       )}
                     </div>
-                    <h2 className="text-lg font-bold mt-1">{update.title}</h2>
+                    <h2 className="text-lg font-bold mt-1 text-slate-800 dark:text-slate-100">{update.title}</h2>
                   </div>
                   <span className="text-sm text-slate-400 dark:text-slate-500 whitespace-nowrap">
                     {formatUpdateDate(update.date)}
