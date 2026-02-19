@@ -60,9 +60,9 @@ export default function WeakWordsPage() {
   }, [isAuthLoading, isAuthenticated, loadWeakWords]);
 
   const getAccuracyColor = (accuracy: number) => {
-    if (accuracy < 30) return "text-red-600 bg-red-100";
-    if (accuracy < 50) return "text-orange-600 bg-orange-100";
-    return "text-yellow-600 bg-yellow-100";
+    if (accuracy < 30) return "text-red-600 bg-red-100 dark:text-red-400 dark:bg-red-900/40";
+    if (accuracy < 50) return "text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900/40";
+    return "text-yellow-600 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/40";
   };
 
   if (!isMounted) {
@@ -186,7 +186,7 @@ export default function WeakWordsPage() {
 
             {/* 下部固定: 復習ボタン */}
             <div className="flex-shrink-0 pt-1.5">
-              <Card className="!p-2 bg-gradient-to-r from-primary-50 to-accent-50 border border-primary-100">
+              <Card className="!p-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border border-primary-100 dark:border-primary-800/30">
                 <div className="text-center">
                   <Link href="/quiz?weakOnly=true">
                     <Button fullWidth size="sm">

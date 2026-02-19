@@ -18,20 +18,20 @@ const MASTERY_CONFIG: Record<MasteryLevel, { label: string; emoji: string; color
   learning: {
     label: "学習中",
     emoji: "📖",
-    color: "text-orange-600",
-    bgColor: "bg-orange-100",
+    color: "text-orange-600 dark:text-orange-400",
+    bgColor: "bg-orange-100 dark:bg-orange-900/40",
   },
   familiar: {
     label: "習得中",
     emoji: "📝",
-    color: "text-blue-600",
-    bgColor: "bg-blue-100",
+    color: "text-blue-600 dark:text-blue-400",
+    bgColor: "bg-blue-100 dark:bg-blue-900/40",
   },
   mastered: {
     label: "習得済み",
     emoji: "✅",
-    color: "text-green-600",
-    bgColor: "bg-green-100",
+    color: "text-green-600 dark:text-green-400",
+    bgColor: "bg-green-100 dark:bg-green-900/40",
   },
 };
 
@@ -53,7 +53,7 @@ export const WordMastery = ({ accuracy, totalAttempts }: WordMasteryProps) => {
       {/* 記憶度バー */}
       {totalAttempts > 0 && (
         <div className="w-24">
-          <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+          <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
             <div
               className={`h-full ${level === "mastered" ? "bg-green-500" : level === "familiar" ? "bg-blue-500" : "bg-orange-500"}`}
               style={{ width: `${accuracy ?? 0}%` }}

@@ -37,9 +37,9 @@ const sortLabels: Record<SortOption, string> = {
 
 const masteryConfig: Record<MasteryLevel, { label: string; color: string; bg: string; activeBg: string }> = {
   new: { label: "未学習", color: "text-slate-500 dark:text-slate-400", bg: "bg-slate-100 dark:bg-slate-700", activeBg: "bg-slate-500" },
-  learning: { label: "苦手", color: "text-orange-600", bg: "bg-orange-100", activeBg: "bg-orange-500" },
-  familiar: { label: "あと少し", color: "text-blue-600", bg: "bg-blue-100", activeBg: "bg-blue-500" },
-  mastered: { label: "習得済", color: "text-green-600", bg: "bg-green-100", activeBg: "bg-green-500" },
+  learning: { label: "苦手", color: "text-orange-600 dark:text-orange-400", bg: "bg-orange-100 dark:bg-orange-900/40", activeBg: "bg-orange-500" },
+  familiar: { label: "あと少し", color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-100 dark:bg-blue-900/40", activeBg: "bg-blue-500" },
+  mastered: { label: "習得済", color: "text-green-600 dark:text-green-400", bg: "bg-green-100 dark:bg-green-900/40", activeBg: "bg-green-500" },
 };
 
 const categories: (Category | "all")[] = [
@@ -256,7 +256,7 @@ export default function WordListPage() {
         {/* 上部固定: 統計サマリー */}
         {isMounted && (
           <div className="flex-shrink-0 mb-1.5">
-            <Card className="!p-2 bg-gradient-to-r from-primary-50 to-accent-50">
+            <Card className="!p-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20">
               <div className="relative">
                 <button
                   onClick={() => setShowLegend(!showLegend)}
@@ -271,15 +271,15 @@ export default function WordListPage() {
                     <p className="text-[10px] text-slate-500 dark:text-slate-400">全単語</p>
                   </div>
                   <div>
-                    <p className="text-base font-bold text-green-600">{stats.mastered}</p>
+                    <p className="text-base font-bold text-green-600 dark:text-green-400">{stats.mastered}</p>
                     <p className="text-[10px] text-slate-500 dark:text-slate-400">習得済</p>
                   </div>
                   <div>
-                    <p className="text-base font-bold text-blue-600">{stats.familiar}</p>
+                    <p className="text-base font-bold text-blue-600 dark:text-blue-400">{stats.familiar}</p>
                     <p className="text-[10px] text-slate-500 dark:text-slate-400">あと少し</p>
                   </div>
                   <div>
-                    <p className="text-base font-bold text-orange-600">{stats.learning}</p>
+                    <p className="text-base font-bold text-orange-600 dark:text-orange-400">{stats.learning}</p>
                     <p className="text-[10px] text-slate-500 dark:text-slate-400">苦手</p>
                   </div>
                   <div>
