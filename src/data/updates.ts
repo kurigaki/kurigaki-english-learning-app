@@ -14,23 +14,48 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 > = {
   feature: {
     label: "新機能",
-    bgColor: "bg-green-100",
-    textColor: "text-green-700",
+    bgColor: "bg-green-100 dark:bg-green-900/30",
+    textColor: "text-green-700 dark:text-green-300",
   },
   improvement: {
     label: "改善",
-    bgColor: "bg-blue-100",
-    textColor: "text-blue-700",
+    bgColor: "bg-blue-100 dark:bg-blue-900/30",
+    textColor: "text-blue-700 dark:text-blue-300",
   },
   fix: {
     label: "修正",
-    bgColor: "bg-amber-100",
-    textColor: "text-amber-700",
+    bgColor: "bg-amber-100 dark:bg-amber-900/30",
+    textColor: "text-amber-700 dark:text-amber-300",
   },
 };
 
 // アップデート履歴（新しい順）
 export const APP_UPDATES: AppUpdate[] = [
+  {
+    date: "2026-02-19",
+    version: "1.8.0",
+    title: "ナビゲーション改善・復習フロー強化・ダークモード修正",
+    content: [
+      "ナビゲーションを整理し「スピードチャレンジ」「履歴」を直接1タップでアクセス可能に",
+      "右上メニューからテーマ（ライト/ダーク/システム）を即切り替えできるように",
+      "「今日の復習」「苦手単語」タップ時に単語一覧で確認してからクイズを始められるように",
+      "実績・ブックマーク・苦手単語へのショートカットをホーム画面に追加",
+      "ダークモードで一部テキストが読みにくかった問題を修正",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-02-19",
+    version: "1.7.0",
+    title: "ダークモード対応",
+    content: [
+      "ライトモード・ダークモード・システム設定連動の3種類のテーマを切り替えられるように",
+      "「その他」メニューからいつでもテーマを変更可能",
+      "システム設定に従うモードでは、お使いのデバイスのOS設定に自動で合わせて表示",
+      "全画面のカラーパレットをダークモードに最適化し、夜間や暗い場所での学習も快適に",
+    ],
+    category: "feature",
+  },
   {
     date: "2026-02-18",
     version: "1.6.0",
