@@ -98,10 +98,10 @@ export default function ProfilePage() {
     return (
       <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
         <Card className="max-w-md w-full p-8 text-center">
-          <h1 className="text-xl font-bold text-slate-900 mb-4">
+          <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             認証機能は現在利用できません
           </h1>
-          <p className="text-slate-600">
+          <p className="text-slate-600 dark:text-slate-300">
             Supabaseの設定が完了していないため、プロフィール機能を利用できません。
           </p>
         </Card>
@@ -126,7 +126,7 @@ export default function ProfilePage() {
         <div className="mb-6">
           <Link
             href="/"
-            className="text-slate-500 hover:text-slate-700 text-sm flex items-center gap-1"
+            className="text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 dark:text-slate-200 text-sm flex items-center gap-1"
           >
             <span>←</span>
             <span>ホームに戻る</span>
@@ -134,7 +134,7 @@ export default function ProfilePage() {
         </div>
 
         <Card className="p-8">
-          <h1 className="text-2xl font-bold text-slate-900 mb-8 text-center">
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 text-center">
             プロフィール編集
           </h1>
 
@@ -166,7 +166,7 @@ export default function ProfilePage() {
             <div>
               <label
                 htmlFor="displayName"
-                className="block text-sm font-medium text-slate-700 mb-2"
+                className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2"
               >
                 表示名
               </label>
@@ -175,24 +175,24 @@ export default function ProfilePage() {
                 type="text"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
                 placeholder="表示名を入力"
                 maxLength={50}
               />
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 他のユーザーに表示される名前です（50文字以内）
               </p>
             </div>
 
             {/* メールアドレス（読み取り専用） */}
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2">
                 メールアドレス
               </label>
-              <div className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-500">
+              <div className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl text-slate-500 dark:text-slate-400">
                 {user.email}
               </div>
-              <p className="text-xs text-slate-500 mt-1">
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 メールアドレスは変更できません
               </p>
             </div>

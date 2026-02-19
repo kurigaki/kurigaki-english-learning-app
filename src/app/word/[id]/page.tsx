@@ -117,10 +117,10 @@ export default function WordDetailPage() {
       <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
         <Card className="max-w-md w-full text-center">
           <span className="text-6xl mb-4 block emoji-icon">😵</span>
-          <h1 className="text-2xl font-bold text-slate-800 mb-2">
+          <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">
             単語が見つかりません
           </h1>
-          <p className="text-slate-500 mb-6">
+          <p className="text-slate-500 dark:text-slate-400 mb-6">
             指定された単語は存在しないか、削除された可能性があります。
           </p>
           <Link href="/">
@@ -145,7 +145,7 @@ export default function WordDetailPage() {
         {/* 戻るボタン */}
         <button
           onClick={handleBack}
-          className="flex items-center gap-1 text-slate-500 hover:text-slate-700 mb-4 transition-colors"
+          className="flex items-center gap-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 dark:text-slate-200 mb-4 transition-colors"
         >
           <svg
             className="w-5 h-5"
@@ -167,7 +167,7 @@ export default function WordDetailPage() {
           {/* カテゴリ・難易度バッジ・ブックマーク */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <span className="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-full">
+              <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full">
                 {categoryLabels[word.category]}
               </span>
               <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
@@ -179,7 +179,7 @@ export default function WordDetailPage() {
               className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                 isBookmarked
                   ? "bg-yellow-100 text-yellow-700"
-                  : "bg-slate-100 text-slate-500 hover:bg-yellow-50 hover:text-yellow-600"
+                  : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-yellow-50 hover:text-yellow-600"
               }`}
             >
               <svg
@@ -253,12 +253,12 @@ export default function WordDetailPage() {
 
           {/* 関連語 */}
           {word.synonyms && word.synonyms.length > 0 && (
-            <div className="py-4 border-b border-gray-100">
-              <h3 className="text-sm font-medium text-slate-500 mb-2 flex items-center gap-1">
+            <div className="py-4 border-b border-gray-100 dark:border-gray-700">
+              <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1">
                 <span className="emoji-icon">🔗</span>
                 <span>関連語</span>
               </h3>
-              <p className="text-slate-400 text-sm italic">関連語は今後追加予定です</p>
+              <p className="text-slate-400 dark:text-slate-500 text-sm italic">関連語は今後追加予定です</p>
             </div>
           )}
 
@@ -304,7 +304,7 @@ export default function WordDetailPage() {
         {/* 関連単語への誘導 */}
         {word.synonyms && word.synonyms.length > 0 && (
           <div className="mt-6">
-            <p className="text-sm text-slate-500 text-center">
+            <p className="text-sm text-slate-500 dark:text-slate-400 text-center">
               類義語をタップして、関連する単語も学習しましょう
             </p>
           </div>

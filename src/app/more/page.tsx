@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ThemeSwitcher } from "@/components/ui";
 
 const menuItems = [
   {
@@ -37,14 +38,14 @@ export default function MorePage() {
   return (
     <div className="main-content-scroll px-4 py-6">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-2xl font-bold text-slate-800 mb-6">その他</h1>
+        <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-6">その他</h1>
 
         <div className="space-y-3">
           {menuItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 group"
+              className="flex items-center gap-4 p-4 bg-white dark:bg-slate-800 rounded-2xl shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 group"
             >
               <div
                 className={`w-12 h-12 bg-gradient-to-br ${item.gradient} rounded-xl flex items-center justify-center text-2xl shadow-md group-hover:scale-110 transition-transform`}
@@ -52,16 +53,28 @@ export default function MorePage() {
                 <span className="emoji-icon">{item.icon}</span>
               </div>
               <div className="flex-1">
-                <h2 className="text-base font-bold text-slate-800">{item.label}</h2>
-                <p className="text-sm text-slate-500">{item.description}</p>
+                <h2 className="text-base font-bold text-slate-800 dark:text-slate-100">{item.label}</h2>
+                <p className="text-sm text-slate-500 dark:text-slate-400">{item.description}</p>
               </div>
-              <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
+              <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </div>
             </Link>
           ))}
+        </div>
+
+        {/* テーマ設定 */}
+        <div className="mt-8 bg-white dark:bg-slate-800 rounded-2xl shadow-card p-4">
+          <h2 className="text-base font-bold text-slate-800 dark:text-slate-100 mb-3 flex items-center gap-2">
+            <span className="emoji-icon">🎨</span>
+            <span>テーマ設定</span>
+          </h2>
+          <div className="flex items-center justify-between">
+            <p className="text-sm text-slate-500 dark:text-slate-400">表示モードを切り替え</p>
+            <ThemeSwitcher />
+          </div>
         </div>
       </div>
     </div>

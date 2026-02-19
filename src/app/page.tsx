@@ -120,19 +120,19 @@ export default function Home() {
       <div className="max-w-2xl mx-auto space-y-4">
         {/* 1. ミニステータスバー */}
         {isMounted && userProgress && (
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 px-4 py-3">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 px-4 py-3">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-1.5">
                   <span className="w-7 h-7 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center text-xs font-bold text-white shadow-sm">
                     {userProgress.level}
                   </span>
-                  <span className="text-xs text-slate-500">Lv.</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">Lv.</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <span className="text-sm emoji-icon">🔥</span>
                   <span className="text-sm font-bold text-orange-600">{userProgress.streak}</span>
-                  <span className="text-xs text-slate-500">日</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">日</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <span className="text-sm emoji-icon">{userProgress.dailyProgress.completed ? "✅" : "🎯"}</span>
@@ -144,11 +144,11 @@ export default function Home() {
             </div>
             {/* XPバー */}
             <div>
-              <div className="flex justify-between text-[10px] text-slate-400 mb-0.5">
+              <div className="flex justify-between text-[10px] text-slate-400 dark:text-slate-500 mb-0.5">
                 <span>Lv.{userProgress.level} → Lv.{userProgress.level + 1}</span>
                 <span>{userProgress.xpProgress.current}/{userProgress.xpProgress.required} XP</span>
               </div>
-              <div className="h-1.5 bg-slate-100 rounded-full overflow-hidden">
+              <div className="h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-purple-500 to-purple-400 rounded-full transition-all duration-500"
                   style={{ width: `${userProgress.xpProgress.percentage}%` }}
@@ -187,10 +187,10 @@ export default function Home() {
                   <span className="emoji-icon">🧠</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-sm font-bold text-slate-800">
+                  <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">
                     今日の復習: {srsReviewCount}語
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     最適なタイミングで復習して記憶を定着
                   </p>
                 </div>
@@ -212,10 +212,10 @@ export default function Home() {
                   <span className="emoji-icon">🔄</span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-sm font-bold text-slate-800">
+                  <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">
                     苦手な{weakWordCount}語を復習しよう
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     正答率が低い単語を重点的に練習
                   </p>
                 </div>
@@ -234,8 +234,8 @@ export default function Home() {
           <Link href="/speed-challenge" className="block">
             <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-200 rounded-2xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group h-full">
               <div className="text-2xl mb-2 group-hover:scale-110 transition-transform inline-block">⚡</div>
-              <h3 className="text-sm font-bold text-slate-800">スピードチャレンジ</h3>
-              <p className="text-xs text-slate-500 mt-0.5">
+              <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">スピードチャレンジ</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                 {speedHighScore > 0 ? (
                   <>ハイスコア: <span className="text-orange-600 font-bold">{speedHighScore}</span></>
                 ) : (
@@ -247,28 +247,28 @@ export default function Home() {
           <Link href="/word-list" className="block">
             <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-2xl p-4 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group h-full">
               <div className="text-2xl mb-2 group-hover:scale-110 transition-transform inline-block">📖</div>
-              <h3 className="text-sm font-bold text-slate-800">単語帳</h3>
-              <p className="text-xs text-slate-500 mt-0.5">{words.length}語をコース別に閲覧</p>
+              <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">単語帳</h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{words.length}語をコース別に閲覧</p>
             </div>
           </Link>
         </div>
 
         {/* 5. コース別進捗（折りたたみ式） */}
         {isMounted && courseProgressList.length > 0 && (
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
             <button
               onClick={() => setIsCourseOpen(!isCourseOpen)}
-              className="w-full flex items-center justify-between px-4 py-3 hover:bg-slate-50 transition-colors"
+              className="w-full flex items-center justify-between px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
             >
               <div className="flex items-center gap-2">
                 <span className="emoji-icon">📚</span>
-                <span className="text-sm font-bold text-slate-700">コース別進捗</span>
-                <span className="text-xs text-slate-500">
+                <span className="text-sm font-bold text-slate-700 dark:text-slate-200">コース別進捗</span>
+                <span className="text-xs text-slate-500 dark:text-slate-400">
                   ({totalMastered}/{totalWordsInCourses}語 習得)
                 </span>
               </div>
               <svg
-                className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${isCourseOpen ? "rotate-180" : ""}`}
+                className={`w-4 h-4 text-slate-400 dark:text-slate-500 transition-transform duration-200 ${isCourseOpen ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -286,10 +286,10 @@ export default function Home() {
                     <Link
                       key={cp.course}
                       href={`/word-list?course=${cp.course}&mastery=mastered`}
-                      className="block p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-100"
+                      className="block p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors border border-slate-100 dark:border-slate-700"
                     >
-                      <p className="text-xs font-bold text-slate-700 mb-0.5">{cp.name}</p>
-                      <p className="text-[10px] text-slate-500 mb-1.5">
+                      <p className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-0.5">{cp.name}</p>
+                      <p className="text-[10px] text-slate-500 dark:text-slate-400 mb-1.5">
                         {cp.masteredWords}/{cp.totalWords}語
                       </p>
                       <div className="h-1 bg-slate-200 rounded-full overflow-hidden">
@@ -308,8 +308,8 @@ export default function Home() {
 
         {/* 6. 学習統計サマリー */}
         {isMounted && stats.total > 0 && (
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-4">
-            <h2 className="text-sm font-bold text-slate-700 mb-3 flex items-center gap-2">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-4">
+            <h2 className="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3 flex items-center gap-2">
               <span className="emoji-icon">📈</span>
               <span>学習状況</span>
             </h2>
@@ -323,9 +323,9 @@ export default function Home() {
 
         {/* 7. 最近の実績 */}
         {isMounted && recentAchievements.length > 0 && (
-          <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-4">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-4">
             <div className="flex items-center justify-between mb-3">
-              <h2 className="text-sm font-bold text-slate-700 flex items-center gap-2">
+              <h2 className="text-sm font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
                 <span className="emoji-icon">🎖️</span>
                 <span>最近の実績</span>
               </h2>
@@ -337,14 +337,14 @@ export default function Home() {
               {recentAchievements.map((achievement) => (
                 <div
                   key={achievement.id}
-                  className="flex items-center gap-3 p-2.5 bg-gradient-to-r from-gray-50 to-white rounded-xl border border-gray-100"
+                  className="flex items-center gap-3 p-2.5 bg-gradient-to-r from-slate-50 to-white dark:from-slate-800 dark:to-slate-700 rounded-xl border border-slate-100 dark:border-slate-700"
                 >
                   <span className="text-2xl emoji-icon">{achievement.icon}</span>
                   <div className="flex-1 min-w-0">
-                    <p className="font-bold text-sm text-gray-900 truncate">{achievement.name}</p>
-                    <p className="text-xs text-gray-500 truncate">{achievement.description}</p>
+                    <p className="font-bold text-sm text-gray-900 dark:text-gray-100 truncate">{achievement.name}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{achievement.description}</p>
                   </div>
-                  <span className="text-[10px] text-gray-400 flex-shrink-0">
+                  <span className="text-[10px] text-gray-400 dark:text-gray-500 flex-shrink-0">
                     {new Date(achievement.unlockedAt).toLocaleDateString("ja-JP")}
                   </span>
                 </div>

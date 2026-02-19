@@ -68,7 +68,7 @@ export default function BookmarksPage() {
   if (!isMounted) {
     return (
       <div className="main-content flex items-center justify-center">
-        <p className="text-slate-500">読み込み中...</p>
+        <p className="text-slate-500 dark:text-slate-400">読み込み中...</p>
       </div>
     );
   }
@@ -80,18 +80,18 @@ export default function BookmarksPage() {
         <div className="flex-shrink-0 mb-1.5">
           <Link
             href="/"
-            className="flex items-center gap-0.5 text-slate-500 hover:text-slate-700 mb-1 transition-colors text-xs"
+            className="flex items-center gap-0.5 text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 dark:text-slate-200 mb-1 transition-colors text-xs"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             <span>戻る</span>
           </Link>
-          <h1 className="text-lg font-bold text-slate-800 flex items-center gap-1.5">
+          <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-1.5">
             <span className="text-xl emoji-icon">🔖</span>
             <span>ブックマーク</span>
           </h1>
-          <p className="text-slate-500 text-xs">
+          <p className="text-slate-500 dark:text-slate-400 text-xs">
             {bookmarkedWords.length}語を保存中
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function BookmarksPage() {
               className={`px-2 py-1 rounded-full text-[10px] font-medium transition-colors ${
                 sortBy === "added"
                   ? "bg-primary-500 text-white"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
               }`}
             >
               登録順
@@ -114,7 +114,7 @@ export default function BookmarksPage() {
               className={`px-2 py-1 rounded-full text-[10px] font-medium transition-colors ${
                 sortBy === "name"
                   ? "bg-primary-500 text-white"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
               }`}
             >
               名前順
@@ -124,7 +124,7 @@ export default function BookmarksPage() {
               className={`px-2 py-1 rounded-full text-[10px] font-medium transition-colors ${
                 sortBy === "difficulty"
                   ? "bg-primary-500 text-white"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
               }`}
             >
               難易度順
@@ -137,10 +137,10 @@ export default function BookmarksPage() {
           <div className="flex-1 flex items-center justify-center">
             <Card className="text-center py-6">
               <span className="text-4xl mb-2 block emoji-icon">📚</span>
-              <h2 className="text-base font-bold text-slate-800 mb-1.5">
+              <h2 className="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5">
                 ブックマークがありません
               </h2>
-              <p className="text-slate-500 text-xs mb-3">
+              <p className="text-slate-500 dark:text-slate-400 text-xs mb-3">
                 単語詳細画面や単語帳から<br />
                 お気に入りの単語をブックマークしましょう。
               </p>
@@ -173,13 +173,13 @@ export default function BookmarksPage() {
                     {/* 単語情報 */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5">
-                        <h3 className="font-bold text-xs text-slate-800 group-hover:text-primary-600 transition-colors">
+                        <h3 className="font-bold text-xs text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors">
                           {word.word}
                         </h3>
                         <SpeakButton text={word.word} size="sm" />
                       </div>
-                      <p className="text-slate-500 text-[10px] truncate">{word.meaning}</p>
-                      <div className="flex items-center gap-1.5 mt-0.5 text-[10px] text-slate-400">
+                      <p className="text-slate-500 dark:text-slate-400 text-[10px] truncate">{word.meaning}</p>
+                      <div className="flex items-center gap-1.5 mt-0.5 text-[10px] text-slate-400 dark:text-slate-500">
                         <span>{categoryLabels[word.category]}</span>
                       </div>
                     </div>
@@ -196,7 +196,7 @@ export default function BookmarksPage() {
                     </button>
 
                     {/* 矢印 */}
-                    <div className="text-slate-400 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
+                    <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
@@ -215,7 +215,7 @@ export default function BookmarksPage() {
                       ブックマーク単語でクイズ
                     </Button>
                   </Link>
-                  <p className="text-[10px] text-slate-400 mt-0.5">
+                  <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-0.5">
                     クイズ設定で「ブックマークのみ」を選択できます
                   </p>
                 </div>
