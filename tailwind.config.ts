@@ -6,6 +6,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/data/**/*.{js,ts}",
   ],
   theme: {
     extend: {
@@ -19,6 +20,8 @@ const config: Config = {
           500: "#4F46E5",
           600: "#4338CA",
           700: "#3730A3",
+          800: "#312E81",
+          900: "#1E1B4B",
         },
         accent: {
           50: "#ECFEFF",
@@ -28,6 +31,9 @@ const config: Config = {
           400: "#22D3EE",
           500: "#06B6D4",
           600: "#0891B2",
+          700: "#0E7490",
+          800: "#155E75",
+          900: "#164E63",
         },
         success: {
           50: "#ECFDF5",
