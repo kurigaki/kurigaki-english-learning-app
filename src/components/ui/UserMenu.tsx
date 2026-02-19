@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useAuth } from "@/lib/auth-context";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export const UserMenu = () => {
   const { user, isLoading, isAuthenticated, signOut } = useAuth();
@@ -68,36 +69,16 @@ export const UserMenu = () => {
     await signOut();
   };
 
-  // 共通のナビゲーションアイテム（PC版では非表示のページへのリンク）
-  const commonNavItems = [
-    {
-      href: "/history",
-      label: "学習履歴",
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      ),
-    },
-    {
-      href: "/bookmarks",
-      label: "ブックマーク",
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-        </svg>
-      ),
-    },
-    {
-      href: "/updates",
-      label: "お知らせ",
-      icon: (
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-        </svg>
-      ),
-    },
-  ];
+  // お知らせへのリンク（ナビゲーション項目は各ナビに任せ、ここではアカウント設定に特化）
+  const notificationItem = {
+    href: "/updates",
+    label: "お知らせ",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+      </svg>
+    ),
+  };
 
   return (
     <div className="relative" ref={menuRef}>
@@ -118,7 +99,7 @@ export const UserMenu = () => {
         {isLoggedIn ? (
           <>
             {/* ログイン済み: アバター */}
-            <div className="w-8 h-8 rounded-full overflow-hidden bg-primary-100 flex items-center justify-center flex-shrink-0">
+            <div className="w-8 h-8 rounded-full overflow-hidden bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center flex-shrink-0">
               {avatarUrl ? (
                 <Image
                   src={avatarUrl}
@@ -128,7 +109,7 @@ export const UserMenu = () => {
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <span className="text-sm font-bold text-primary-600">{initial}</span>
+                <span className="text-sm font-bold text-primary-600 dark:text-primary-400">{initial}</span>
               )}
             </div>
           </>
@@ -173,7 +154,7 @@ export const UserMenu = () => {
               {/* ログイン済み: ユーザー情報 */}
               <div className="px-4 py-3 border-b border-slate-100 dark:border-slate-700">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full overflow-hidden bg-primary-100 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full overflow-hidden bg-primary-100 dark:bg-primary-900/40 flex items-center justify-center flex-shrink-0">
                     {avatarUrl ? (
                       <Image
                         src={avatarUrl}
@@ -183,7 +164,7 @@ export const UserMenu = () => {
                         className="w-full h-full object-cover"
                       />
                     ) : (
-                      <span className="text-lg font-bold text-primary-600">
+                      <span className="text-lg font-bold text-primary-600 dark:text-primary-400">
                         {initial}
                       </span>
                     )}
@@ -276,19 +257,27 @@ export const UserMenu = () => {
             </>
           )}
 
-          {/* 共通ナビゲーション（履歴・ブックマーク・お知らせ） */}
+          {/* テーマ切り替え */}
+          <div className="px-4 py-2.5 border-b border-slate-100 dark:border-slate-700">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+                <span className="emoji-icon">🎨</span>
+                テーマ
+              </span>
+              <ThemeSwitcher />
+            </div>
+          </div>
+
+          {/* お知らせ */}
           <nav className="py-1">
-            {commonNavItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700 transition-colors"
-              >
-                <span className="text-slate-400 dark:text-slate-500">{item.icon}</span>
-                {item.label}
-              </Link>
-            ))}
+            <Link
+              href={notificationItem.href}
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700 transition-colors"
+            >
+              <span className="text-slate-400 dark:text-slate-500">{notificationItem.icon}</span>
+              {notificationItem.label}
+            </Link>
           </nav>
 
           {/* ログアウト（ログイン時のみ） */}

@@ -103,21 +103,21 @@ export default function AchievementsPage() {
           <div className="text-center">
             <div className="text-base mb-0.5">🟦</div>
             <div className="text-[10px] text-slate-500 dark:text-slate-400">レア</div>
-            <div className="text-[10px] font-bold text-blue-600">
+            <div className="text-[10px] font-bold text-blue-600 dark:text-blue-400">
               {rarityStats.rare.unlocked}/{rarityStats.rare.total}
             </div>
           </div>
           <div className="text-center">
             <div className="text-base mb-0.5">🟪</div>
             <div className="text-[10px] text-slate-500 dark:text-slate-400">エピック</div>
-            <div className="text-[10px] font-bold text-purple-600">
+            <div className="text-[10px] font-bold text-purple-600 dark:text-purple-400">
               {rarityStats.epic.unlocked}/{rarityStats.epic.total}
             </div>
           </div>
           <div className="text-center">
             <div className="text-base mb-0.5">🟨</div>
             <div className="text-[10px] text-slate-500 dark:text-slate-400">伝説</div>
-            <div className="text-[10px] font-bold text-yellow-600">
+            <div className="text-[10px] font-bold text-yellow-600 dark:text-yellow-400">
               {rarityStats.legendary.unlocked}/{rarityStats.legendary.total}
             </div>
           </div>

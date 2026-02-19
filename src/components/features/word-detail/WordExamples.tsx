@@ -21,7 +21,7 @@ export const WordExamples = ({ examples, targetWord }: WordExamplesProps) => {
     return parts.map((part, index) => {
       if (part.toLowerCase() === word.toLowerCase()) {
         return (
-          <span key={index} className="font-bold text-primary-600 bg-primary-50 px-1 rounded">
+          <span key={index} className="font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-1 rounded">
             {part}
           </span>
         );

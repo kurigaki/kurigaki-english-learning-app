@@ -317,9 +317,9 @@ export default function SpeedChallengePage() {
             {TIME_LIMIT}秒間で何問正解できるか挑戦！
           </p>
 
-          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-2 mb-3">
+          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg p-2 mb-3">
             <p className="text-[10px] text-slate-500 dark:text-slate-400 mb-0.5">ハイスコア</p>
-            <p className="text-2xl font-bold text-orange-600">{highScore}</p>
+            <p className="text-2xl font-bold text-orange-600 dark:text-orange-400">{highScore}</p>
           </div>
 
           <div className="space-y-1.5 text-left mb-4">
@@ -358,10 +358,10 @@ export default function SpeedChallengePage() {
           <div className="flex-shrink-0 mb-1">
             <div className="flex justify-between items-center mb-1">
               <div className={`flex items-center gap-1 px-2 py-1 rounded-full ${
-                isLowTime ? "bg-red-100 animate-pulse" : "bg-slate-100 dark:bg-slate-800"
+                isLowTime ? "bg-red-100 dark:bg-red-900/40 animate-pulse" : "bg-slate-100 dark:bg-slate-800"
               }`}>
                 <span className="text-base emoji-icon">⏱️</span>
-                <span className={`text-lg font-bold ${isLowTime ? "text-red-600" : "text-slate-700 dark:text-slate-200"}`}>
+                <span className={`text-lg font-bold ${isLowTime ? "text-red-600 dark:text-red-400" : "text-slate-700 dark:text-slate-200"}`}>
                   {timeLeft}
                 </span>
               </div>
@@ -398,8 +398,8 @@ export default function SpeedChallengePage() {
           <Card className={`flex-1 !p-3 transition-all flex flex-col ${
             feedback?.show
               ? feedback.correct
-                ? "ring-2 ring-green-400 bg-green-50"
-                : "ring-2 ring-red-400 bg-red-50"
+                ? "ring-2 ring-green-400 bg-green-50 dark:bg-green-900/20"
+                : "ring-2 ring-red-400 bg-red-50 dark:bg-red-900/20"
               : ""
           }`}>
             <div className="text-center mb-2">
@@ -450,10 +450,10 @@ export default function SpeedChallengePage() {
           {/* 上部固定: スコアサマリー */}
           <div className="flex-shrink-0 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-card p-3 mb-2">
             {isNewHighScore && (
-              <div className="mb-2 p-1.5 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg border border-yellow-300">
+              <div className="mb-2 p-1.5 bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 rounded-lg border border-yellow-300 dark:border-yellow-800/40">
                 <div className="flex items-center justify-center gap-1.5">
                   <span className="text-xl emoji-icon">🎉</span>
-                  <p className="text-xs font-bold text-yellow-700">新記録達成！</p>
+                  <p className="text-xs font-bold text-yellow-700 dark:text-yellow-300">新記録達成！</p>
                 </div>
               </div>
             )}
@@ -466,7 +466,7 @@ export default function SpeedChallengePage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg p-2 mb-2">
+            <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-lg p-2 mb-2">
               <div className="text-3xl font-bold text-gradient">{score}</div>
               <p className="text-slate-600 dark:text-slate-300 text-xs">スコア</p>
             </div>
@@ -500,16 +500,16 @@ export default function SpeedChallengePage() {
                     href={`/word/${word.id}?from=speed`}
                     className={`flex items-center justify-between p-1.5 rounded-lg border transition-all hover:scale-[1.02] group ${
                       word.correct
-                        ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-200"
-                        : "bg-gradient-to-r from-red-50 to-orange-50 border-red-200"
+                        ? "bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800/40"
+                        : "bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border-red-200 dark:border-red-800/40"
                     }`}
                   >
                     <div className="flex items-center gap-1.5">
                       <div
                         className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
                           word.correct
-                            ? "bg-green-100 text-green-600"
-                            : "bg-red-100 text-red-600"
+                            ? "bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400"
+                            : "bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400"
                         }`}
                       >
                         {word.correct ? "✓" : "✗"}
