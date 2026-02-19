@@ -23,8 +23,8 @@ export const AchievementCard = ({
     return (
       <div
         className={`flex items-center gap-2 p-2 rounded-lg border-2 ${
-          unlocked ? borderColor : "border-gray-200"
-        } ${unlocked ? "bg-white" : "bg-gray-50"}`}
+          unlocked ? borderColor : "border-slate-200 dark:border-slate-700"
+        } ${unlocked ? "bg-white dark:bg-slate-800" : "bg-slate-50 dark:bg-slate-800/50"}`}
       >
         <span className={`text-2xl ${!unlocked && "grayscale opacity-50"}`}>
           {achievement.icon}
@@ -32,7 +32,7 @@ export const AchievementCard = ({
         <div className="flex-1 min-w-0">
           <p
             className={`text-sm font-medium truncate ${
-              unlocked ? "text-gray-900" : "text-gray-400"
+              unlocked ? "text-slate-900 dark:text-slate-100" : "text-slate-400 dark:text-slate-500"
             }`}
           >
             {achievement.name}
@@ -57,8 +57,8 @@ export const AchievementCard = ({
     <div
       className={`relative p-4 rounded-xl border-2 transition-all ${
         unlocked
-          ? `${borderColor} bg-white shadow-sm hover:shadow-md`
-          : "border-gray-200 bg-gray-50"
+          ? `${borderColor} bg-white dark:bg-slate-800 shadow-sm hover:shadow-md`
+          : "border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50"
       }`}
     >
       {unlocked && achievement.rarity === "legendary" && (
@@ -74,7 +74,7 @@ export const AchievementCard = ({
           <div className="flex items-center gap-2 mb-1">
             <h3
               className={`font-bold ${
-                unlocked ? "text-gray-900" : "text-gray-400"
+                unlocked ? "text-slate-900 dark:text-slate-100" : "text-slate-400 dark:text-slate-500"
               }`}
             >
               {achievement.name}
@@ -91,13 +91,13 @@ export const AchievementCard = ({
           </div>
           <p
             className={`text-sm ${
-              unlocked ? "text-gray-600" : "text-gray-400"
+              unlocked ? "text-slate-600 dark:text-slate-300" : "text-slate-400 dark:text-slate-500"
             }`}
           >
             {achievement.description}
           </p>
           {unlocked && unlockedAt && (
-            <p className="text-xs text-gray-400 mt-2">
+            <p className="text-xs text-slate-400 dark:text-slate-500 mt-2">
               {new Date(unlockedAt).toLocaleDateString("ja-JP")} に獲得
             </p>
           )}

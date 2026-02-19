@@ -55,7 +55,7 @@ export const WordHeader = ({
   const pronunciationText = getPronunciationText(pronunciation, variant);
 
   return (
-    <div className="text-center pb-6 border-b border-gray-100">
+    <div className="text-center pb-6 border-b border-slate-100 dark:border-slate-700">
       {/* 単語 */}
       <div className="flex items-center justify-center gap-3 mb-2">
         <h1 className="text-4xl font-bold text-gradient">{word}</h1>
@@ -64,13 +64,13 @@ export const WordHeader = ({
       {/* UK/US切り替えトグルと発音ボタン */}
       <div className="flex items-center justify-center gap-3 mb-4">
         {showVariantToggle && (
-          <div className="flex rounded-full bg-slate-100 p-1">
+          <div className="flex rounded-full bg-slate-100 dark:bg-slate-700 p-1">
             <button
               onClick={() => setVariant("us")}
               className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                 variant === "us"
                   ? "bg-primary-500 text-white"
-                  : "text-slate-600 hover:text-slate-800"
+                  : "text-slate-600 hover:text-slate-800 dark:text-slate-100"
               }`}
             >
               US
@@ -80,7 +80,7 @@ export const WordHeader = ({
               className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                 variant === "uk"
                   ? "bg-primary-500 text-white"
-                  : "text-slate-600 hover:text-slate-800"
+                  : "text-slate-600 hover:text-slate-800 dark:text-slate-100"
               }`}
             >
               UK
@@ -95,7 +95,7 @@ export const WordHeader = ({
       </div>
 
       {/* 発音記号・品詞 */}
-      <div className="flex items-center justify-center gap-2 text-slate-500 mb-4">
+      <div className="flex items-center justify-center gap-2 text-slate-500 dark:text-slate-400 mb-4">
         {pronunciationText && (
           <span className="text-lg">{pronunciationText}</span>
         )}
@@ -108,7 +108,7 @@ export const WordHeader = ({
       </div>
 
       {/* 意味 */}
-      <p className="text-2xl font-medium text-slate-800">{meaning}</p>
+      <p className="text-2xl font-medium text-slate-800 dark:text-slate-100">{meaning}</p>
     </div>
   );
 };

@@ -54,7 +54,7 @@ export const PerfectScorePopup = ({ mode, onClose }: PerfectScorePopupProps) => 
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="bg-white rounded-2xl p-8 shadow-2xl border-4 border-yellow-400 max-w-sm mx-4">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-2xl border-4 border-yellow-400 max-w-sm mx-4">
           {/* 装飾的な背景 */}
           <div className="absolute inset-0 overflow-hidden rounded-2xl">
             <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br from-yellow-400 via-orange-400 to-pink-400 opacity-20 blur-2xl" />
@@ -73,12 +73,12 @@ export const PerfectScorePopup = ({ mode, onClose }: PerfectScorePopupProps) => 
             </h2>
 
             {/* サブタイトル */}
-            <p className="text-2xl font-bold text-gray-900 mb-2">
+            <p className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">
               {message.subtitle}
             </p>
 
             {/* 説明 */}
-            <p className="text-gray-600 mb-4">{message.description}</p>
+            <p className="text-slate-600 dark:text-slate-300 mb-4">{message.description}</p>
 
             {/* 星の装飾 */}
             <div className="flex justify-center gap-2 text-3xl">
@@ -88,7 +88,7 @@ export const PerfectScorePopup = ({ mode, onClose }: PerfectScorePopupProps) => 
             </div>
 
             {/* 閉じるヒント */}
-            <p className="text-xs text-gray-400 mt-4">
+            <p className="text-xs text-slate-400 dark:text-slate-500 mt-4">
               タップして閉じる
             </p>
           </div>

@@ -47,11 +47,11 @@ export const WordImage = ({
   if (!effectiveImageUrl || hasError) {
     return (
       <div
-        className={`w-full ${sizeClass} rounded-2xl bg-gradient-to-br ${gradientClass} flex flex-col items-center justify-center mb-6 border border-slate-100`}
+        className={`w-full ${sizeClass} rounded-2xl bg-gradient-to-br ${gradientClass} flex flex-col items-center justify-center mb-6 border border-slate-100 dark:border-slate-700`}
       >
         <span className={`${size === "sm" ? "text-4xl" : "text-6xl"}`}>{fallbackEmoji}</span>
         {size !== "sm" && (
-          <span className="text-xs text-slate-400 mt-2">イメージ画像</span>
+          <span className="text-xs text-slate-400 dark:text-slate-500 mt-2">イメージ画像</span>
         )}
       </div>
     );

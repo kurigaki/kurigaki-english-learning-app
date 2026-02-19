@@ -19,7 +19,7 @@ export const WordColumn = ({ column }: WordColumnProps) => {
 
   return (
     <div className="py-6">
-      <h2 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+      <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-4 flex items-center gap-2">
         <span className="emoji-icon">📚</span>
         <span>コラム</span>
       </h2>
@@ -28,7 +28,7 @@ export const WordColumn = ({ column }: WordColumnProps) => {
         <h3 className="font-bold text-purple-800 mb-3">{column.title}</h3>
 
         {/* 本文 */}
-        <p className="text-slate-700 leading-relaxed whitespace-pre-wrap">
+        <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-wrap">
           {displayContent}
         </p>
 

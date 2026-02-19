@@ -55,7 +55,7 @@ export const RegisterForm = () => {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-slate-700 mb-2"
+          className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2"
         >
           メールアドレス
         </label>
@@ -64,7 +64,7 @@ export const RegisterForm = () => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
           placeholder="example@email.com"
           disabled={isLoading}
           autoComplete="email"
@@ -74,7 +74,7 @@ export const RegisterForm = () => {
       <div>
         <label
           htmlFor="password"
-          className="block text-sm font-medium text-slate-700 mb-2"
+          className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2"
         >
           パスワード
         </label>
@@ -83,7 +83,7 @@ export const RegisterForm = () => {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
           placeholder="6文字以上"
           disabled={isLoading}
           autoComplete="new-password"
@@ -93,7 +93,7 @@ export const RegisterForm = () => {
       <div>
         <label
           htmlFor="confirmPassword"
-          className="block text-sm font-medium text-slate-700 mb-2"
+          className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-2"
         >
           パスワード（確認）
         </label>
@@ -102,7 +102,7 @@ export const RegisterForm = () => {
           type="password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
-          className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
           placeholder="パスワードを再入力"
           disabled={isLoading}
           autoComplete="new-password"
@@ -118,7 +118,7 @@ export const RegisterForm = () => {
         {isLoading ? "登録中..." : "新規登録"}
       </Button>
 
-      <p className="text-center text-sm text-slate-600">
+      <p className="text-center text-sm text-slate-600 dark:text-slate-300">
         既にアカウントをお持ちの方は{" "}
         <Link
           href="/login"

@@ -12,8 +12,8 @@ const MASTERY_CONFIG: Record<MasteryLevel, { label: string; emoji: string; color
   new: {
     label: "未学習",
     emoji: "🆕",
-    color: "text-slate-500",
-    bgColor: "bg-slate-100",
+    color: "text-slate-500 dark:text-slate-400",
+    bgColor: "bg-slate-100 dark:bg-slate-700",
   },
   learning: {
     label: "学習中",
@@ -40,12 +40,12 @@ export const WordMastery = ({ accuracy, totalAttempts }: WordMasteryProps) => {
   const config = MASTERY_CONFIG[level];
 
   return (
-    <div className="flex items-center justify-between py-4 border-b border-gray-100">
+    <div className="flex items-center justify-between py-4 border-b border-slate-100 dark:border-slate-700">
       <div className="flex items-center gap-3">
         <span className="text-2xl emoji-icon">{config.emoji}</span>
         <div>
           <p className={`font-bold ${config.color}`}>{config.label}</p>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-slate-400 dark:text-slate-500">
             {totalAttempts > 0 ? `${totalAttempts}回学習 / 正答率${accuracy ?? 0}%` : "まだ学習していません"}
           </p>
         </div>
