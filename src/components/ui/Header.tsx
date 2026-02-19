@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UserMenu } from "./UserMenu";
-import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -15,7 +14,6 @@ export const Header = () => {
     { href: "/speed-challenge", label: "スピード", icon: "⚡" },
     { href: "/word-list", label: "単語帳", icon: "📖" },
     { href: "/history", label: "履歴", icon: "📊" },
-    { href: "/achievements", label: "実績", icon: "🏆" },
   ];
 
   return (
@@ -54,7 +52,6 @@ export const Header = () => {
                 );
               })}
             </nav>
-            <ThemeSwitcher className="hidden lg:flex" />
             <UserMenu />
           </div>
 
