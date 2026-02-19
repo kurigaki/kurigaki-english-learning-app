@@ -29,7 +29,7 @@ export const BottomNav = () => {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200"
+      className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 dark:bg-slate-900/95 dark:border-slate-700"
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       aria-label="メインナビゲーション"
     >
@@ -41,7 +41,7 @@ export const BottomNav = () => {
               key={item.href}
               href={item.href}
               className={`flex flex-col items-center justify-center flex-1 h-full transition-colors ${
-                active ? "text-primary-600" : "text-slate-400"
+                active ? "text-primary-600 dark:text-primary-400" : "text-slate-400 dark:text-slate-500"
               }`}
               {...(active ? { "aria-current": "page" as const } : {})}
             >

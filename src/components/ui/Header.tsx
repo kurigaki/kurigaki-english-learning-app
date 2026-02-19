@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UserMenu } from "./UserMenu";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -42,8 +43,8 @@ export const Header = () => {
                       flex items-center gap-1.5 px-3 py-2 rounded-xl
                       text-sm font-medium transition-all duration-200
                       ${isActive
-                        ? "bg-primary-100 text-primary-600"
-                        : "text-slate-600 hover:bg-primary-50 hover:text-primary-500"
+                        ? "bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400"
+                        : "text-slate-600 hover:bg-primary-50 hover:text-primary-500 dark:text-slate-300 dark:hover:bg-primary-900/30"
                       }
                     `}
                   >
@@ -53,6 +54,7 @@ export const Header = () => {
                 );
               })}
             </nav>
+            <ThemeSwitcher className="hidden lg:flex" />
             <UserMenu />
           </div>
 

@@ -18,9 +18,12 @@ const variantStyles: Record<ButtonVariant, string> = {
   secondary: `bg-white text-primary-600 font-bold
               border-2 border-primary-200 shadow-md
               hover:shadow-lg hover:border-primary-400 hover:-translate-y-1 hover:bg-primary-50/50
-              active:scale-95`,
+              active:scale-95
+              dark:bg-slate-800 dark:text-primary-400 dark:border-slate-600
+              dark:hover:border-primary-400`,
   ghost: `text-primary-500 font-medium
-          hover:bg-primary-50 hover:text-primary-600`,
+          hover:bg-primary-50 hover:text-primary-600
+          dark:text-primary-400 dark:hover:bg-primary-900/30`,
   danger: `bg-gradient-to-r from-error-400 to-error-500
            text-white font-bold shadow-lg shadow-error-500/30
            hover:shadow-xl hover:shadow-error-500/40 hover:-translate-y-1

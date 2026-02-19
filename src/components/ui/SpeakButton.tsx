@@ -80,7 +80,7 @@ export const SpeakButton = ({
         ${
           isSpeaking
             ? "bg-primary-500 text-white scale-110"
-            : "bg-primary-100 text-primary-600 hover:bg-primary-200"
+            : "bg-primary-100 text-primary-600 hover:bg-primary-200 dark:bg-primary-900/30 dark:text-primary-400 dark:hover:bg-primary-800/40"
         }
         ${className}
       `}

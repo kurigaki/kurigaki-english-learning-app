@@ -14,10 +14,10 @@ const sizeStyles = {
 
 const variantStyles = {
   default: {
-    bg: "bg-primary-100",
+    bg: "bg-primary-100 dark:bg-slate-700",
     bar: "bg-gradient-to-r from-primary-400 to-accent-400",
-    labelText: "text-slate-500",
-    percentText: "text-primary-500",
+    labelText: "text-slate-500 dark:text-slate-400",
+    percentText: "text-primary-500 dark:text-primary-400",
   },
   white: {
     bg: "bg-white/30",
