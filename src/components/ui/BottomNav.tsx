@@ -6,21 +6,15 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { href: "/", label: "ホーム", icon: "🏠" },
   { href: "/quiz", label: "クイズ", icon: "📝" },
+  { href: "/speed-challenge", label: "スピード", icon: "⚡" },
   { href: "/word-list", label: "単語帳", icon: "📖" },
   { href: "/history", label: "履歴", icon: "📊" },
-  { href: "/more", label: "その他", icon: "⋯" },
 ];
-
-// 「その他」メニューに含まれるパス（これらのパスではmoreをアクティブ表示）
-const moreSubPaths = ["/more", "/achievements", "/bookmarks", "/weak-words"];
 
 export const BottomNav = () => {
   const pathname = usePathname();
 
   const isActive = (href: string) => {
-    if (href === "/more") {
-      return moreSubPaths.some((p) => pathname === p || pathname.startsWith(p + "/"));
-    }
     if (href === "/") {
       return pathname === "/";
     }

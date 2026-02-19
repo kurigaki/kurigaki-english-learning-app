@@ -33,9 +33,9 @@ describe("BottomNav", () => {
     render(<BottomNav />);
     expect(screen.getByText("ホーム")).toBeInTheDocument();
     expect(screen.getByText("クイズ")).toBeInTheDocument();
+    expect(screen.getByText("スピード")).toBeInTheDocument();
     expect(screen.getByText("単語帳")).toBeInTheDocument();
     expect(screen.getByText("履歴")).toBeInTheDocument();
-    expect(screen.getByText("その他")).toBeInTheDocument();
   });
 
   it("renders correct hrefs", () => {
@@ -43,7 +43,7 @@ describe("BottomNav", () => {
     const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
     const links = nav.querySelectorAll("a");
     const hrefs = Array.from(links).map((link) => link.getAttribute("href"));
-    expect(hrefs).toEqual(["/", "/quiz", "/word-list", "/history", "/more"]);
+    expect(hrefs).toEqual(["/", "/quiz", "/speed-challenge", "/word-list", "/history"]);
   });
 
   it("marks home as active when pathname is /", () => {
@@ -61,10 +61,12 @@ describe("BottomNav", () => {
     expect(homeLink).not.toHaveAttribute("aria-current");
   });
 
-  it("marks more as active for /achievements path", () => {
-    vi.mocked(usePathname).mockReturnValue("/achievements");
+  it("marks speed as active when pathname is /speed-challenge", () => {
+    vi.mocked(usePathname).mockReturnValue("/speed-challenge");
     render(<BottomNav />);
-    const moreLink = screen.getByText("その他").closest("a");
-    expect(moreLink).toHaveAttribute("aria-current", "page");
+    const speedLink = screen.getByText("スピード").closest("a");
+    expect(speedLink).toHaveAttribute("aria-current", "page");
+    const homeLink = screen.getByText("ホーム").closest("a");
+    expect(homeLink).not.toHaveAttribute("aria-current");
   });
 });
