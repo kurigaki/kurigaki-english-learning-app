@@ -46,10 +46,10 @@ export const AchievementList = ({
     <div className="space-y-8">
       {categories.map((category) => (
         <div key={category}>
-          <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
             <span className="w-1 h-6 bg-primary-500 rounded-full" />
             {CATEGORY_LABELS[category]}
-            <span className="text-sm font-normal text-gray-500">
+            <span className="text-sm font-normal text-slate-500 dark:text-slate-400">
               (
               {
                 groupedAchievements[category].filter((a) =>

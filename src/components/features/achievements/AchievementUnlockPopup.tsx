@@ -62,7 +62,7 @@ export const AchievementUnlockPopup = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className={`bg-white rounded-2xl p-6 shadow-2xl border-4 ${borderColor} max-w-sm mx-4`}
+          className={`bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-2xl border-4 ${borderColor} max-w-sm mx-4`}
         >
           {/* 装飾的な背景 */}
           <div className="absolute inset-0 overflow-hidden rounded-2xl">
@@ -88,12 +88,12 @@ export const AchievementUnlockPopup = ({
             </div>
 
             {/* 実績名 */}
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">
               {achievement.name}
             </h2>
 
             {/* 説明 */}
-            <p className="text-gray-600 mb-4">{achievement.description}</p>
+            <p className="text-slate-600 dark:text-slate-300 mb-4">{achievement.description}</p>
 
             {/* レアリティ */}
             <span
@@ -103,7 +103,7 @@ export const AchievementUnlockPopup = ({
             </span>
 
             {/* 閉じるヒント */}
-            <p className="text-xs text-gray-400 mt-4">
+            <p className="text-xs text-slate-400 dark:text-slate-500 mt-4">
               タップして閉じる
             </p>
           </div>

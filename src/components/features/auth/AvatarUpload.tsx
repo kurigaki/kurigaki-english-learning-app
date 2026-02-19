@@ -138,7 +138,7 @@ export const AvatarUpload = ({
             size="sm"
             onClick={handleRemove}
             disabled={isProcessing}
-            className="text-slate-500 hover:text-red-600"
+            className="text-slate-500 dark:text-slate-400 hover:text-red-600"
           >
             {isRemoving ? "削除中..." : "初期画像に戻す"}
           </Button>
@@ -147,7 +147,7 @@ export const AvatarUpload = ({
 
       {error && <p className="text-sm text-red-600">{error}</p>}
 
-      <p className="text-xs text-slate-500 text-center">
+      <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
         JPEG, PNG, GIF, WebP形式
         <br />
         2MB以下

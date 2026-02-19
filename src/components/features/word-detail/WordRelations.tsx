@@ -31,8 +31,8 @@ export const WordRelations = ({ synonyms, antonyms }: WordRelationsProps) => {
     `;
     const colorClasses =
       type === "synonym"
-        ? "bg-blue-50 text-blue-700 hover:bg-blue-100"
-        : "bg-orange-50 text-orange-700 hover:bg-orange-100";
+        ? "bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-900/50"
+        : "bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-900/30 dark:text-orange-300 dark:hover:bg-orange-900/50";
 
     const content = (
       <>
@@ -61,11 +61,11 @@ export const WordRelations = ({ synonyms, antonyms }: WordRelationsProps) => {
   };
 
   return (
-    <div className="py-6 border-b border-gray-100">
+    <div className="py-6 border-b border-slate-100 dark:border-slate-700">
       {/* 類義語 */}
       {hasSynonyms && (
         <div className="mb-4">
-          <h3 className="text-sm font-medium text-slate-500 mb-2 flex items-center gap-1">
+          <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1">
             <span className="emoji-icon">🔗</span>
             <span>類義語</span>
           </h3>
@@ -78,7 +78,7 @@ export const WordRelations = ({ synonyms, antonyms }: WordRelationsProps) => {
       {/* 対義語 */}
       {hasAntonyms && (
         <div>
-          <h3 className="text-sm font-medium text-slate-500 mb-2 flex items-center gap-1">
+          <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1">
             <span className="emoji-icon">↔️</span>
             <span>対義語</span>
           </h3>
