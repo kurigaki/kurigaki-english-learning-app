@@ -336,9 +336,10 @@ function getStreakMilestoneMessage(milestone: number): { emoji: string; title: s
 export default function QuizPage() {
   // URLパラメータを取得
   const searchParams = useSearchParams();
-  const reviewWordId = searchParams.get("wordId");  // 特定の単語を復習
-  const weakOnly = searchParams.get("weakOnly");    // 苦手単語のみ
-  const srsReview = searchParams.get("srsReview");  // SRS復習モード
+  const reviewWordId = searchParams.get("wordId");      // 特定の単語を復習
+  const weakOnly = searchParams.get("weakOnly");        // 苦手単語のみ
+  const srsReview = searchParams.get("srsReview");      // SRS復習モード
+  const bookmarksOnly = searchParams.get("bookmarksOnly"); // ブックマーク単語のみ
 
   // クイズフェーズ管理
   const [phase, setPhase] = useState<QuizPhase>("setup");
@@ -679,9 +680,18 @@ export default function QuizPage() {
       return;
     }
 
+    if (bookmarksOnly === "true") {
+      // ブックマーク単語のみモード（ブックマーク一覧からの遷移）
+      const validBookmarked = bookmarkedIds.filter((id) => words.some((w) => w.id === id));
+      if (validBookmarked.length > 0) {
+        startNewSession({ ...defaultQuizSettings, includeBookmarksOnly: true });
+        return;
+      }
+    }
+
     // パラメータがない場合は設定画面から開始
     setPhase("setup");
-  }, [dataLoaded, reviewWordId, weakOnly, srsReview, weakWordIds, srsWordIds, startNewSession]);
+  }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, weakWordIds, srsWordIds, bookmarkedIds, startNewSession]);
 
   const handleSelect = (choice: string) => {
     if (selected !== null || !currentQuestion) return;
@@ -754,7 +764,7 @@ export default function QuizPage() {
 
   // 設定画面
   if (phase === "setup") {
-    const bookmarkedCount = bookmarkedIds.length;
+    const bookmarkedCount = bookmarkedIds.filter((id) => words.some((w) => w.id === id)).length;
     const filteredPreview = filterWordsBySettings(words, quizSettings, bookmarkedIds);
 
     return (
