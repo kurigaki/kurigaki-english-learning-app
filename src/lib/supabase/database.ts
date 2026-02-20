@@ -208,7 +208,8 @@ async function directSupabaseQuery<T>(
 
 // ユーティリティ関数
 function getToday(): string {
-  return new Date().toISOString().split("T")[0];
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
 /**
@@ -782,7 +783,7 @@ export const supabaseStorage = {
   },
 
   async getDueWords(userId: string): Promise<SrsProgress[]> {
-    const today = new Date().toISOString().split("T")[0];
+    const today = getToday();
     const result = await directSupabaseQuery<DbSrsProgress[]>(
       "srs_progress",
       `user_id=eq.${userId}&next_review_date=lte.${today}&status=neq.new&select=*`

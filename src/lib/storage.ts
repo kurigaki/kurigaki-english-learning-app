@@ -44,15 +44,18 @@ const XP_PER_CORRECT = 10;
 const XP_PER_COMBO_BONUS = 5;
 const getRequiredXpForLevel = (level: number) => level * 100;
 
+function toLocalDateStr(date: Date): string {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+}
+
 function getToday(): string {
-  return new Date().toISOString().split("T")[0];
+  return toLocalDateStr(new Date());
 }
 
 function isYesterday(dateStr: string): boolean {
-  const date = new Date(dateStr);
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
-  return date.toISOString().split("T")[0] === yesterday.toISOString().split("T")[0];
+  return dateStr === toLocalDateStr(yesterday);
 }
 
 function isToday(dateStr: string | null): boolean {
