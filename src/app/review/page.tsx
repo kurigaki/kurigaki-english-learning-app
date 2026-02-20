@@ -9,6 +9,7 @@ import { words as allWords, categoryLabels } from "@/data/words/compat";
 import { SpeakButton, Card } from "@/components/ui";
 import type { Word } from "@/data/words/compat";
 import type { SrsStatus } from "@/lib/srs";
+import { isWeakWord } from "@/types";
 
 type ReviewMode = "srs" | "weak";
 
@@ -46,7 +47,7 @@ function ReviewPageContent() {
       const statsMap = await unifiedStorage.getWordStats();
       const result: ReviewWord[] = [];
       statsMap.forEach((stats, wordId) => {
-        if (stats.accuracy < 70 && stats.totalAttempts >= 1) {
+        if (isWeakWord(stats.accuracy, stats.totalAttempts)) {
           const word = allWords.find((w) => w.id === wordId);
           if (word) {
             result.push({ ...word, accuracy: stats.accuracy, attempts: stats.totalAttempts });

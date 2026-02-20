@@ -160,7 +160,7 @@ export const unifiedStorage = {
     );
   },
 
-  getWeakWords: async (threshold: number = 70): Promise<number[]> => {
+  getWeakWords: async (threshold: number = 60): Promise<number[]> => {
     return withFallback(
       async () => {
         const userId = getCurrentUserId()!;
