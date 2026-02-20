@@ -122,7 +122,7 @@ export const storage = {
     return statsMap;
   },
 
-  getWeakWords: (threshold: number = 70): number[] => {
+  getWeakWords: (threshold: number = 60): number[] => {
     const statsMap = storage.getWordStats();
     const weakWordIds: number[] = [];
 

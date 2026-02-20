@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import type { WordStats } from "@/lib/storage";
-import { LearningRecord, QuestionType, Achievement } from "@/types";
+import { LearningRecord, QuestionType, Achievement, isWeakWord } from "@/types";
 import { words, getWordsByCourse } from "@/data/words/compat";
 import type { Course } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
@@ -131,7 +131,7 @@ export default function HistoryPage() {
   const weakWords = useMemo(() => {
     const weak: { id: number; word: string; meaning: string; accuracy: number; attempts: number }[] = [];
     wordStats.forEach((stats) => {
-      if (stats.accuracy < 70 && stats.totalAttempts >= 1) {
+      if (isWeakWord(stats.accuracy, stats.totalAttempts)) {
         const wordData = words.find((w) => w.id === stats.wordId);
         if (wordData) {
           weak.push({

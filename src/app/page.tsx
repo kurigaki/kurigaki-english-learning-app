@@ -5,6 +5,7 @@ import { useEffect, useState, useCallback } from "react";
 import { Card } from "@/components/ui";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
+import { isWeakWord } from "@/types";
 
 type UserProgress = {
   level: number;
@@ -32,7 +33,7 @@ export default function Home() {
     const statsMap = await unifiedStorage.getWordStats();
     let weakCount = 0;
     statsMap.forEach((s) => {
-      if (s.totalAttempts > 0 && s.accuracy < 70) {
+      if (isWeakWord(s.accuracy, s.totalAttempts)) {
         weakCount++;
       }
     });
