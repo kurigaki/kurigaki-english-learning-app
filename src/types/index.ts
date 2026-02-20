@@ -4,6 +4,9 @@ export type QuestionType = "en-to-ja" | "ja-to-en" | "fill-blank";
 // クイズモード
 export type QuizMode = "normal" | "speed";
 
+// レビューモード
+export type ReviewMode = "srs" | "weak";
+
 // 品詞（5種に簡素化）
 export type PartOfSpeech = "noun" | "verb" | "adjective" | "adverb" | "other";
 
