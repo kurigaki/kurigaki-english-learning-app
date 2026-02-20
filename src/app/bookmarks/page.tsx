@@ -210,14 +210,11 @@ export default function BookmarksPage() {
             <div className="flex-shrink-0 pt-1.5">
               <Card className="!p-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border border-primary-100 dark:border-primary-800/30">
                 <div className="text-center">
-                  <Link href="/quiz">
+                  <Link href="/quiz?bookmarksOnly=true">
                     <Button fullWidth size="sm">
                       ブックマーク単語でクイズ
                     </Button>
                   </Link>
-                  <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-0.5">
-                    クイズ設定で「ブックマークのみ」を選択できます
-                  </p>
                 </div>
               </Card>
             </div>
