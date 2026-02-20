@@ -7,6 +7,9 @@ import {
   type SrsProgress,
 } from "../srs";
 
+const toLocalDateStr = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
 describe("srs - SM-2 algorithm", () => {
   describe("getInitialSrsProgress", () => {
     it("returns default SRS progress for a word", () => {
@@ -113,7 +116,7 @@ describe("srs - SM-2 algorithm", () => {
       today.setHours(0, 0, 0, 0);
       const expected = new Date(today);
       expected.setDate(expected.getDate() + result.intervalDays);
-      const expectedStr = expected.toISOString().split("T")[0];
+      const expectedStr = toLocalDateStr(expected);
 
       expect(result.nextReviewDate).toBe(expectedStr);
     });
@@ -126,7 +129,7 @@ describe("srs - SM-2 algorithm", () => {
     });
 
     it("returns true when nextReviewDate is today", () => {
-      const today = new Date().toISOString().split("T")[0];
+      const today = toLocalDateStr(new Date());
       const progress: SrsProgress = {
         ...getInitialSrsProgress(1),
         nextReviewDate: today,
@@ -140,7 +143,7 @@ describe("srs - SM-2 algorithm", () => {
       past.setDate(past.getDate() - 3);
       const progress: SrsProgress = {
         ...getInitialSrsProgress(1),
-        nextReviewDate: past.toISOString().split("T")[0],
+        nextReviewDate: toLocalDateStr(past),
         status: "review",
       };
       expect(isDueForReview(progress)).toBe(true);
@@ -151,7 +154,7 @@ describe("srs - SM-2 algorithm", () => {
       future.setDate(future.getDate() + 5);
       const progress: SrsProgress = {
         ...getInitialSrsProgress(1),
-        nextReviewDate: future.toISOString().split("T")[0],
+        nextReviewDate: toLocalDateStr(future),
         status: "review",
       };
       expect(isDueForReview(progress)).toBe(false);
@@ -162,7 +165,7 @@ describe("srs - SM-2 algorithm", () => {
       past.setDate(past.getDate() - 1);
       const progress: SrsProgress = {
         ...getInitialSrsProgress(1),
-        nextReviewDate: past.toISOString().split("T")[0],
+        nextReviewDate: toLocalDateStr(past),
         status: "mastered",
       };
       // mastered words are still reviewable when due

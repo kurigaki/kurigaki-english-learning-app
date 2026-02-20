@@ -1,6 +1,9 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { storage } from "../storage";
 
+const toLocalDateStr = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
 describe("storage", () => {
   beforeEach(() => {
     localStorage.clear();
@@ -200,10 +203,10 @@ describe("storage", () => {
     });
 
     it("getDueWords returns only due words", () => {
-      const today = new Date().toISOString().split("T")[0];
+      const today = toLocalDateStr(new Date());
       const future = new Date();
       future.setDate(future.getDate() + 5);
-      const futureStr = future.toISOString().split("T")[0];
+      const futureStr = toLocalDateStr(future);
 
       storage.saveSrsProgress({
         wordId: 1,
