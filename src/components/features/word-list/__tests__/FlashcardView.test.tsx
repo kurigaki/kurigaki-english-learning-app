@@ -4,7 +4,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import FlashcardView from "../FlashcardView";
-import type { FlashcardWord } from "../FlashcardView";
+import type { FlashcardWord } from "@/types";
 
 // unifiedStorage をモック
 vi.mock("@/lib/unified-storage", () => ({
