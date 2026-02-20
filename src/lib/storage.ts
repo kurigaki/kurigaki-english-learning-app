@@ -122,7 +122,7 @@ export const storage = {
     return statsMap;
   },
 
-  getWeakWords: (threshold: number = 70): number[] => {
+  getWeakWords: (threshold: number = 60): number[] => {
     const statsMap = storage.getWordStats();
     const weakWordIds: number[] = [];
 
@@ -481,5 +481,38 @@ export const storage = {
     if (typeof window === "undefined") return [];
     const all = storage.getSrsProgressAll();
     return all.filter(isDueForReview);
+  },
+
+  /**
+   * 現在の単語リストに存在しない孤立データを削除する。
+   *
+   * 削除対象:
+   * - learning_records: validWordIds に含まれない wordId の学習記録
+   * - srs_progress:     validWordIds に含まれない wordId の SRS スケジュール
+   *
+   * @param validWordIds 現在有効な単語 ID の配列
+   * @returns 削除したエントリ数 { records, srsEntries }
+   */
+  cleanupOrphanedData: (validWordIds: number[]): { records: number; srsEntries: number } => {
+    if (typeof window === "undefined") return { records: 0, srsEntries: 0 };
+    const validSet = new Set(validWordIds);
+
+    // learning_records のクリーンアップ
+    const records = storage.getRecords();
+    const filteredRecords = records.filter((r) => validSet.has(r.wordId));
+    const deletedRecords = records.length - filteredRecords.length;
+    if (deletedRecords > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(filteredRecords));
+    }
+
+    // SRS 進捗のクリーンアップ
+    const srsAll = storage.getSrsProgressAll();
+    const filteredSrs = srsAll.filter((p) => validSet.has(p.wordId));
+    const deletedSrs = srsAll.length - filteredSrs.length;
+    if (deletedSrs > 0) {
+      localStorage.setItem(SRS_PROGRESS_KEY, JSON.stringify(filteredSrs));
+    }
+
+    return { records: deletedRecords, srsEntries: deletedSrs };
   },
 };

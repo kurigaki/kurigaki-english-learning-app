@@ -108,6 +108,21 @@ export const getMasteryLevel = (accuracy: number | null, attempts: number): Mast
   return "learning";
 };
 
+/**
+ * 「苦手単語」の判定ヘルパー（閾値: 正答率 60% 未満）
+ *
+ * ─ getMasteryLevel との違い ─
+ * getMasteryLevel は "new" / "learning" / "familiar" / "mastered" の
+ * 4段階ラベルを返し、単語帳の色分けや記憶度表示に使います。
+ * isWeakWord は「復習が必要かどうか」という boolean の判定に特化しており、
+ * 苦手単語リストのフィルタリング・カウントに使います。
+ *
+ * 閾値を getMasteryLevel の "learning"（accuracy < 60）と揃えることで、
+ * 単語帳で「苦手」と表示される単語とホーム・苦手単語ページの数が一致します。
+ */
+export const isWeakWord = (accuracy: number | null, attempts: number): boolean =>
+  attempts >= 1 && accuracy !== null && accuracy < 60;
+
 // スピードチャレンジ結果
 export type SpeedChallengeResult = {
   id: string;
