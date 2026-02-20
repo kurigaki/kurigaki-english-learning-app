@@ -419,7 +419,7 @@ export const supabaseStorage = {
     return statsMap;
   },
 
-  async getWeakWords(userId: string, threshold: number = 70): Promise<number[]> {
+  async getWeakWords(userId: string, threshold: number = 60): Promise<number[]> {
     const statsMap = await supabaseStorage.getWordStats(userId);
     const weakWordIds: number[] = [];
 

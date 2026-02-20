@@ -8,6 +8,7 @@ import { SpeakButton } from "@/components/ui/SpeakButton";
 import { unifiedStorage } from "@/lib/unified-storage";
 import type { WordStats } from "@/lib/storage";
 import { words, Word, categoryLabels } from "@/data/words/compat";
+import { isWeakWord } from "@/types";
 
 type WeakWord = Word & {
   stats: WordStats;
@@ -25,8 +26,7 @@ export default function WeakWordsPage() {
     const weak: WeakWord[] = [];
 
     statsMap.forEach((stats, wordId) => {
-      // 正答率70%未満を苦手とみなす
-      if (stats.accuracy < 70 && stats.totalAttempts >= 1) {
+      if (isWeakWord(stats.accuracy, stats.totalAttempts)) {
         const word = words.find((w) => w.id === wordId);
         if (word) {
           weak.push({ ...word, stats });
@@ -92,7 +92,7 @@ export default function WeakWordsPage() {
             <span>苦手な単語</span>
           </h1>
           <p className="text-slate-500 dark:text-slate-400 text-xs">
-            正答率70%未満（{weakWords.length}語）
+            正答率60%未満（{weakWords.length}語）
           </p>
         </div>
 

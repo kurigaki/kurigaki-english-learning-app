@@ -5,8 +5,11 @@ import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import type { WordStats } from "@/lib/storage";
-import { LearningRecord, QuestionType } from "@/types";
-import { words } from "@/data/words/compat";
+import { LearningRecord, QuestionType, Achievement, isWeakWord } from "@/types";
+import { words, getWordsByCourse } from "@/data/words/compat";
+import type { Course } from "@/data/words/types";
+import { COURSE_DEFINITIONS } from "@/data/words/courses";
+import { getAchievementById } from "@/data/achievements";
 import { Card, StatsCard, Button, SpeakButton } from "@/components/ui";
 
 const questionTypeLabels: Record<QuestionType, string> = {
@@ -15,19 +18,63 @@ const questionTypeLabels: Record<QuestionType, string> = {
   "fill-blank": "穴埋め",
 };
 
+type CourseProgress = {
+  course: Course;
+  name: string;
+  totalWords: number;
+  masteredWords: number;
+};
+
 export default function HistoryPage() {
   // isLoading: 認証初期化中はデータを読み込まない（Supabaseセッションが未準備のため）
   const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
   const [records, setRecords] = useState<LearningRecord[]>([]);
   const [wordStats, setWordStats] = useState<Map<number, WordStats>>(new Map());
+  const [courseProgressList, setCourseProgressList] = useState<CourseProgress[]>([]);
+  const [recentAchievements, setRecentAchievements] = useState<(Achievement & { unlockedAt: string })[]>([]);
+  const [speedHighScore, setSpeedHighScore] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState<"overview" | "weak" | "history">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "weak" | "history" | "progress">("overview");
 
   const loadData = useCallback(async () => {
     const data = await unifiedStorage.getRecords();
     setRecords([...data].reverse());
-    const stats = await unifiedStorage.getWordStats();
-    setWordStats(stats);
+    const statsMap = await unifiedStorage.getWordStats();
+    setWordStats(statsMap);
+
+    const highScore = await unifiedStorage.getSpeedChallengeHighScore();
+    setSpeedHighScore(highScore);
+
+    const unlocked = await unifiedStorage.getUnlockedAchievements();
+    const recentWithDetails = unlocked
+      .sort((a, b) => new Date(b.unlockedAt).getTime() - new Date(a.unlockedAt).getTime())
+      .slice(0, 3)
+      .map((ua) => {
+        const achievement = getAchievementById(ua.achievementId);
+        return achievement ? { ...achievement, unlockedAt: ua.unlockedAt } : null;
+      })
+      .filter((a): a is Achievement & { unlockedAt: string } => a !== null);
+    setRecentAchievements(recentWithDetails);
+
+    const progressList: CourseProgress[] = (Object.keys(COURSE_DEFINITIONS) as Course[])
+      .filter((c) => COURSE_DEFINITIONS[c].stages.length > 0)
+      .map((c) => {
+        const courseWords = getWordsByCourse(c);
+        let masteredWords = 0;
+        for (const w of courseWords) {
+          const s = statsMap.get(w.id);
+          if (s && s.totalAttempts >= 3 && s.accuracy >= 80) {
+            masteredWords++;
+          }
+        }
+        return {
+          course: c,
+          name: COURSE_DEFINITIONS[c].name,
+          totalWords: courseWords.length,
+          masteredWords,
+        };
+      });
+    setCourseProgressList(progressList);
   }, []);
 
   useEffect(() => {
@@ -84,7 +131,7 @@ export default function HistoryPage() {
   const weakWords = useMemo(() => {
     const weak: { id: number; word: string; meaning: string; accuracy: number; attempts: number }[] = [];
     wordStats.forEach((stats) => {
-      if (stats.accuracy < 70 && stats.totalAttempts >= 1) {
+      if (isWeakWord(stats.accuracy, stats.totalAttempts)) {
         const wordData = words.find((w) => w.id === stats.wordId);
         if (wordData) {
           weak.push({
@@ -99,6 +146,9 @@ export default function HistoryPage() {
     });
     return weak.sort((a, b) => a.accuracy - b.accuracy);
   }, [wordStats]);
+
+  const totalMastered = courseProgressList.reduce((sum, cp) => sum + cp.masteredWords, 0);
+  const totalWordsInCourses = courseProgressList.reduce((sum, cp) => sum + cp.totalWords, 0);
 
   // 履歴の単語IDを取得するヘルパー関数
   const getWordIdByWord = (wordStr: string): number | null => {
@@ -170,11 +220,12 @@ export default function HistoryPage() {
             { id: "overview" as const, label: "概要", icon: "📈" },
             { id: "weak" as const, label: "苦手単語", icon: "💪" },
             { id: "history" as const, label: "履歴", icon: "📝" },
+            { id: "progress" as const, label: "進捗", icon: "📚" },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-1 px-1.5 rounded-md text-xs font-medium transition-all inline-flex items-center justify-center gap-0.5 ${
+              className={`flex-1 py-1 px-1 rounded-md text-xs font-medium transition-all inline-flex items-center justify-center gap-0.5 whitespace-nowrap ${
                 activeTab === tab.id
                   ? "bg-primary-500 text-white shadow-sm"
                   : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-900/30"
@@ -392,6 +443,105 @@ export default function HistoryPage() {
                 </div>
               )}
             </Card>
+          )}
+
+          {/* Progress Tab */}
+          {activeTab === "progress" && (
+            <div className="space-y-4">
+              {/* コース別進捗 */}
+              {courseProgressList.length > 0 && (
+                <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
+                  <div className="px-4 py-3 border-b border-slate-100 dark:border-slate-700">
+                    <div className="flex items-center gap-2">
+                      <span className="emoji-icon">📚</span>
+                      <span className="text-sm font-bold text-slate-700 dark:text-slate-200">コース別進捗</span>
+                      <span className="text-xs text-slate-500 dark:text-slate-400">
+                        ({totalMastered}/{totalWordsInCourses}語 習得)
+                      </span>
+                    </div>
+                  </div>
+                  <div className="px-4 pb-3 pt-2 grid grid-cols-2 gap-2">
+                    {courseProgressList.map((cp) => {
+                      const percentage = cp.totalWords > 0
+                        ? Math.round((cp.masteredWords / cp.totalWords) * 100)
+                        : 0;
+                      return (
+                        <Link
+                          key={cp.course}
+                          href={`/word-list?course=${cp.course}&mastery=mastered`}
+                          className="block p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors border border-slate-100 dark:border-slate-700"
+                        >
+                          <p className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-0.5">{cp.name}</p>
+                          <p className="text-[10px] text-slate-500 dark:text-slate-400 mb-1.5">
+                            {cp.masteredWords}/{cp.totalWords}語
+                          </p>
+                          <div className="h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-primary-400 to-primary-500 rounded-full transition-all duration-500"
+                              style={{ width: `${percentage}%` }}
+                            />
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* スピードチャレンジ ハイスコア */}
+              {speedHighScore > 0 && (
+                <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="emoji-icon">⚡</span>
+                    <span className="text-sm font-bold text-slate-700 dark:text-slate-200">スピードチャレンジ</span>
+                  </div>
+                  <span className="font-bold text-orange-500">
+                    {speedHighScore} <span className="text-xs font-normal text-slate-500 dark:text-slate-400">pt</span>
+                  </span>
+                </div>
+              )}
+
+              {/* 最近の実績 */}
+              {recentAchievements.length > 0 && (
+                <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <h2 className="text-sm font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
+                      <span className="emoji-icon">🎖️</span>
+                      <span>最近の実績</span>
+                    </h2>
+                    <Link href="/achievements" className="text-xs text-primary-500 hover:underline">
+                      すべて見る →
+                    </Link>
+                  </div>
+                  <div className="space-y-2">
+                    {recentAchievements.map((achievement) => (
+                      <div
+                        key={achievement.id}
+                        className="flex items-center gap-3 p-2.5 bg-gradient-to-r from-slate-50 to-white dark:from-slate-800 dark:to-slate-700 rounded-xl border border-slate-100 dark:border-slate-700"
+                      >
+                        <span className="text-2xl emoji-icon">{achievement.icon}</span>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-bold text-sm text-gray-900 dark:text-gray-100 truncate">{achievement.name}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{achievement.description}</p>
+                        </div>
+                        <span className="text-[10px] text-gray-400 dark:text-gray-500 flex-shrink-0">
+                          {new Date(achievement.unlockedAt).toLocaleDateString("ja-JP")}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* データなしメッセージ */}
+              {overallStats.total === 0 && recentAchievements.length === 0 && (
+                <div className="text-center py-8">
+                  <span className="text-5xl mb-4 block emoji-icon">📚</span>
+                  <p className="text-slate-500 dark:text-slate-400">まだ学習データがありません</p>
+                  <p className="text-sm text-slate-400 dark:text-slate-500 mt-1">クイズを始めて進捗を記録しよう</p>
+                </div>
+              )}
+            </div>
           )}
         </div>
 
