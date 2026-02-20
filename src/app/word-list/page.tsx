@@ -75,7 +75,6 @@ export default function WordListPage() {
   const [sortOption, setSortOption] = useState<SortOption>("default");
   const [wordsWithStats, setWordsWithStats] = useState<WordWithStats[]>([]);
   const [isMounted, setIsMounted] = useState(false);
-  const [showLegend, setShowLegend] = useState(false);
 
   // Load word stats and bookmarks on mount
   useEffect(() => {
@@ -253,53 +252,6 @@ export default function WordListPage() {
           <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100">単語帳</h1>
         </div>
 
-        {/* 上部固定: 統計サマリー */}
-        {isMounted && (
-          <div className="flex-shrink-0 mb-1.5">
-            <Card className="!p-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20">
-              <div className="relative">
-                <button
-                  onClick={() => setShowLegend(!showLegend)}
-                  className="absolute -top-0.5 -right-0.5 w-5 h-5 flex items-center justify-center rounded-full text-[10px] font-bold text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-white/60 transition-colors"
-                  title={showLegend ? "凡例を閉じる" : "凡例を表示"}
-                >
-                  ?
-                </button>
-                <div className="grid grid-cols-5 gap-1 text-center">
-                  <div>
-                    <p className="text-base font-bold text-slate-700 dark:text-slate-200">{stats.total}</p>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400">全単語</p>
-                  </div>
-                  <div>
-                    <p className="text-base font-bold text-green-600 dark:text-green-400">{stats.mastered}</p>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400">習得済</p>
-                  </div>
-                  <div>
-                    <p className="text-base font-bold text-blue-600 dark:text-blue-400">{stats.familiar}</p>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400">あと少し</p>
-                  </div>
-                  <div>
-                    <p className="text-base font-bold text-orange-600 dark:text-orange-400">{stats.learning}</p>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400">苦手</p>
-                  </div>
-                  <div>
-                    <p className="text-base font-bold text-slate-400 dark:text-slate-500">{stats.newWords}</p>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400">未学習</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
-            {showLegend && (
-              <div className="mt-1 px-2 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-[11px] text-slate-600 dark:text-slate-300 space-y-0.5">
-                <p><span className="emoji-icon">✅</span> <span className="font-medium">習得済</span>: 正答率80%以上 &amp; 3回以上学習</p>
-                <p><span className="emoji-icon">💡</span> <span className="font-medium">あと少し</span>: 正答率60%以上</p>
-                <p><span className="emoji-icon">📖</span> <span className="font-medium">苦手</span>: 正答率60%未満</p>
-                <p><span className="emoji-icon">🆕</span> <span className="font-medium">未学習</span>: まだ学習していません</p>
-              </div>
-            )}
-          </div>
-        )}
-
         {/* 上部固定: 検索・フィルター */}
         <div className="flex-shrink-0 space-y-1.5 mb-1.5">
           {/* Search */}
@@ -443,12 +395,12 @@ export default function WordListPage() {
             {/* Mastery Filter */}
             <div className="flex items-center gap-1">
               {([
-                { key: "all" as const, label: "全て" },
-                { key: "mastered" as const, label: "習得済" },
-                { key: "familiar" as const, label: "あと少し" },
-                { key: "learning" as const, label: "苦手" },
-                { key: "new" as const, label: "未学習" },
-              ] as const).map(({ key, label }) => (
+                { key: "all" as const, label: "全て", count: stats.total },
+                { key: "mastered" as const, label: "習得済", count: stats.mastered },
+                { key: "familiar" as const, label: "あと少し", count: stats.familiar },
+                { key: "learning" as const, label: "苦手", count: stats.learning },
+                { key: "new" as const, label: "未学習", count: stats.newWords },
+              ] as const).map(({ key, label, count }) => (
                 <button
                   key={key}
                   onClick={() => setSelectedMastery(key)}
@@ -460,7 +412,7 @@ export default function WordListPage() {
                       : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-400"
                   }`}
                 >
-                  {label}
+                  {label}{isMounted && count > 0 && <span className="ml-1 opacity-70">({count})</span>}
                 </button>
               ))}
             </div>
@@ -571,9 +523,6 @@ export default function WordListPage() {
                               } ${masteryConfig[word.mastery].color}`}
                             >
                               {masteryConfig[word.mastery].label}
-                            </span>
-                            <span className="text-xs text-amber-500" title={`難易度 ${word.difficulty}`}>
-                              {"★".repeat(word.difficulty)}{"☆".repeat(7 - word.difficulty)}
                             </span>
                           </div>
                           <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>

@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-02-20",
+    version: "1.13.0",
+    title: "単語帳を見やすく改善",
+    content: [
+      "単語リストの各行から難易度★を削除し、単語名・意味が広く表示されるように",
+      "上部の統計カード（全単語/習得済/あと少し）を削除してスッキリ",
+      "記憶度フィルターに件数を統合（例: 「苦手 (45)」）し、統計が一目でわかるように",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-02-20",
     version: "1.12.0",
     title: "「今日の復習」が何度でも再挑戦できるように",
     content: [
