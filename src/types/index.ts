@@ -103,6 +103,16 @@ export type UnlockedAchievement = {
 // 記憶度レベル
 export type MasteryLevel = "new" | "learning" | "familiar" | "mastered";
 
+// フラッシュカード表示用の単語データ
+export type FlashcardWord = {
+  id: number;
+  word: string;
+  meaning: string;
+  mastery: MasteryLevel;
+  example?: string;
+  exampleJa?: string;
+};
+
 // 記憶度判定（accuracy >= 80 && attempts >= 3 で習得済み）
 export const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLevel => {
   if (attempts === 0 || accuracy === null) return "new";

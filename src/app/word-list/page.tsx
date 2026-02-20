@@ -131,37 +131,14 @@ export default function WordListPage() {
     return new Set(courseWords.map((w) => w.id));
   }, [selectedCourse, selectedStage]);
 
-  // Filter words based on search, category, difficulty, and bookmarks
-  const filteredWords = useMemo(() => {
-    let filtered = wordsWithStats;
-
-    // Course filter
-    if (courseWordIds) {
-      filtered = filtered.filter((w) => courseWordIds.has(w.id));
-    }
-
-    filtered = filtered.filter((word) => {
-      // Bookmark filter
-      if (showBookmarksOnly && !word.isBookmarked) {
-        return false;
-      }
-
-      // Mastery filter
-      if (selectedMastery !== "all" && word.mastery !== selectedMastery) {
-        return false;
-      }
-
-      // Category filter
-      if (selectedCategory !== "all" && word.category !== selectedCategory) {
-        return false;
-      }
-
-      // Difficulty filter
-      if (selectedDifficulty !== "all" && word.difficulty !== selectedDifficulty) {
-        return false;
-      }
-
-      // Search filter
+  // selectedMastery を除く全フィルターを適用したベースリスト
+  // filteredWords と filteredMasteryCounts の両方がこれを使用
+  const baseFilteredWords = useMemo(() => {
+    return wordsWithStats.filter((word) => {
+      if (courseWordIds && !courseWordIds.has(word.id)) return false;
+      if (showBookmarksOnly && !word.isBookmarked) return false;
+      if (selectedCategory !== "all" && word.category !== selectedCategory) return false;
+      if (selectedDifficulty !== "all" && word.difficulty !== selectedDifficulty) return false;
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         return (
@@ -169,9 +146,18 @@ export default function WordListPage() {
           word.meaning.toLowerCase().includes(query)
         );
       }
-
       return true;
     });
+  }, [wordsWithStats, courseWordIds, showBookmarksOnly, selectedCategory, selectedDifficulty, searchQuery]);
+
+  // Filter words based on search, category, difficulty, bookmarks, and mastery
+  const filteredWords = useMemo(() => {
+    let filtered = baseFilteredWords;
+
+    // Mastery filter
+    if (selectedMastery !== "all") {
+      filtered = filtered.filter((word) => word.mastery === selectedMastery);
+    }
 
     // Sort
     if (sortOption !== "default") {
@@ -203,7 +189,7 @@ export default function WordListPage() {
     }
 
     return filtered;
-  }, [wordsWithStats, courseWordIds, selectedCategory, selectedDifficulty, showBookmarksOnly, selectedMastery, searchQuery, sortOption]);
+  }, [baseFilteredWords, selectedMastery, sortOption]);
 
   // Group words by category
   const groupedWords = useMemo(() => {
@@ -235,27 +221,14 @@ export default function WordListPage() {
     return { total, mastered, familiar, learning, newWords, bookmarked };
   }, [wordsWithStats, courseWordIds]);
 
-  // 全フィルター（selectedMastery除く）適用後の記憶度別件数（記憶度フィルターの精度改善）
-  const filteredMasteryCounts = useMemo(() => {
-    const base = wordsWithStats.filter((w) => {
-      if (courseWordIds && !courseWordIds.has(w.id)) return false;
-      if (showBookmarksOnly && !w.isBookmarked) return false;
-      if (selectedCategory !== "all" && w.category !== selectedCategory) return false;
-      if (selectedDifficulty !== "all" && w.difficulty !== selectedDifficulty) return false;
-      if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        return w.word.toLowerCase().includes(q) || w.meaning.toLowerCase().includes(q);
-      }
-      return true;
-    });
-    return {
-      total:    base.length,
-      mastered: base.filter((w) => w.mastery === "mastered").length,
-      familiar: base.filter((w) => w.mastery === "familiar").length,
-      learning: base.filter((w) => w.mastery === "learning").length,
-      newWords: base.filter((w) => w.mastery === "new").length,
-    };
-  }, [wordsWithStats, courseWordIds, showBookmarksOnly, selectedCategory, selectedDifficulty, searchQuery]);
+  // baseFilteredWords から記憶度別件数を集計（記憶度フィルターボタンの件数表示に使用）
+  const filteredMasteryCounts = useMemo(() => ({
+    total:    baseFilteredWords.length,
+    mastered: baseFilteredWords.filter((w) => w.mastery === "mastered").length,
+    familiar: baseFilteredWords.filter((w) => w.mastery === "familiar").length,
+    learning: baseFilteredWords.filter((w) => w.mastery === "learning").length,
+    newWords: baseFilteredWords.filter((w) => w.mastery === "new").length,
+  }), [baseFilteredWords]);
 
   const courseLabel = selectedCourse
     ? COURSE_DEFINITIONS[selectedCourse].name

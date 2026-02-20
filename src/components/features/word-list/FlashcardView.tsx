@@ -11,16 +11,7 @@ import {
   getInitialSrsProgress,
 } from "@/lib/srs";
 import type { SrsProgress } from "@/lib/srs";
-import type { MasteryLevel } from "@/types";
-
-export type FlashcardWord = {
-  id: number;
-  word: string;
-  meaning: string;
-  mastery: MasteryLevel;
-  example?: string;
-  exampleJa?: string;
-};
+import type { FlashcardWord } from "@/types";
 
 type Props = {
   words: FlashcardWord[];
@@ -35,6 +26,8 @@ export default function FlashcardView({ words, onExit }: Props) {
   const [ratedIds, setRatedIds] = useState<Set<number>>(new Set());
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
+  // 再生済みインデックスを記録（同一カードへの戻り操作では再生しない）
+  const hasAutoPlayedRef = useRef<Set<number>>(new Set());
 
   // SRS進捗の初期ロード
   useEffect(() => {
@@ -43,9 +36,11 @@ export default function FlashcardView({ words, onExit }: Props) {
     });
   }, []);
 
-  // カード切り替え時に自動読み上げ
+  // カード切り替え時に自動読み上げ（同一カードへの戻り操作では再生しない）
   useEffect(() => {
     if (!isSpeechSynthesisSupported() || words.length === 0) return;
+    if (hasAutoPlayedRef.current.has(currentIndex)) return;
+    hasAutoPlayedRef.current.add(currentIndex);
     const id = setTimeout(() => speakWord(words[currentIndex].word), 200);
     return () => clearTimeout(id);
   }, [currentIndex, words]);
@@ -169,7 +164,7 @@ export default function FlashcardView({ words, onExit }: Props) {
 
       {/* カード */}
       <div
-        className={`flex-1 card-flip-container cursor-pointer select-none ${
+        className={`flex-1 h-full card-flip-container cursor-pointer select-none ${
           slideDir === "left"
             ? "animate-slide-out-left"
             : slideDir === "right"
