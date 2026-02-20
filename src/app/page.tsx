@@ -43,7 +43,7 @@ export default function Home() {
     });
     setWeakWordCount(weakCount);
 
-    const dueWords = await unifiedStorage.getDueWords();
+    const dueWords = await unifiedStorage.getDailyReviewBatch();
     setSrsReviewCount(dueWords.length);
   }, []);
 

@@ -104,7 +104,7 @@ function ReviewPageContent() {
   const loadWords = useCallback(async () => {
     setIsLoading(true);
     if (mode === "srs") {
-      const dueWords = await unifiedStorage.getDueWords();
+      const dueWords = await unifiedStorage.getDailyReviewBatch();
       const dueMap = new Map(dueWords.map((p) => [p.wordId, p]));
       const result: ReviewWord[] = allWords
         .filter((w) => dueMap.has(w.id))
