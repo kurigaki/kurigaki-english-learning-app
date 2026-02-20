@@ -21,7 +21,7 @@ export default function LoginPage() {
   // Supabaseが利用不可の場合
   if (!isSupabaseAvailable) {
     return (
-      <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
+      <div className="main-content-scroll px-4 pt-8 flex items-center justify-center">
         <Card className="max-w-md w-full p-8 text-center">
           <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">
             認証機能は現在利用できません
@@ -38,14 +38,14 @@ export default function LoginPage() {
   // ローディング中またはリダイレクト待ち
   if (isLoading || isAuthenticated) {
     return (
-      <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
+      <div className="main-content-scroll px-4 pt-8 flex items-center justify-center">
         <div className="w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin" />
       </div>
     );
   }
 
   return (
-    <div className="main-content-scroll px-4 py-8 flex items-center justify-center">
+    <div className="main-content-scroll px-4 pt-8 flex items-center justify-center">
       <Card className="max-w-md w-full p-8">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">ログイン</h1>

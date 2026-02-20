@@ -62,7 +62,7 @@ export default function Home() {
   }, [isAuthLoading, isAuthenticated, loadData]);
 
   return (
-    <div className="main-content-scroll px-4 py-4">
+    <div className="main-content-scroll px-4 pt-4">
       <div className="max-w-2xl mx-auto space-y-4">
         {/* 1. ミニステータスバー */}
         {isMounted && userProgress && (
