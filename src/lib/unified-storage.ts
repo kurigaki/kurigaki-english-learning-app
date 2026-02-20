@@ -642,6 +642,50 @@ export const unifiedStorage = {
   },
 
   /**
+   * 当日の復習バッチを返す。
+   *
+   * 初回呼び出し時に getDueWords() で対象単語 ID を取得し localStorage にキャッシュする。
+   * 同日中は常にキャッシュ済みのリストを返すため、復習後に SRS が更新されても
+   * ホームカードが消えず、何度でも同日中に再挑戦できる。
+   * 日付が変わると自動的にリセットされ、新しい復習リストを生成する。
+   */
+  getDailyReviewBatch: async (): Promise<SrsProgress[]> => {
+    const BATCH_KEY = "srs_daily_batch";
+    const today = new Date().toISOString().split("T")[0];
+
+    if (typeof window !== "undefined") {
+      try {
+        const cached = localStorage.getItem(BATCH_KEY);
+        if (cached) {
+          const { date, wordIds }: { date: string; wordIds: number[] } = JSON.parse(cached);
+          if (date === today && wordIds.length > 0) {
+            // キャッシュ済みの単語 ID に対応する最新の SRS 進捗を返す
+            const all = await unifiedStorage.getSrsProgressAll();
+            const batchSet = new Set(wordIds);
+            return all.filter((p) => batchSet.has(p.wordId));
+          }
+        }
+      } catch {
+        // キャッシュ読み取り失敗時は通常の getDueWords() にフォールバック
+      }
+    }
+
+    // 当日初回: getDueWords() で取得してキャッシュ
+    const dueWords = await unifiedStorage.getDueWords();
+    if (typeof window !== "undefined" && dueWords.length > 0) {
+      try {
+        localStorage.setItem(
+          BATCH_KEY,
+          JSON.stringify({ date: today, wordIds: dueWords.map((p) => p.wordId) })
+        );
+      } catch {
+        // キャッシュ保存失敗は無視
+      }
+    }
+    return dueWords;
+  },
+
+  /**
    * 現在の単語リストに存在しない孤立データを localStorage から削除する。
    * アプリ起動時に自動実行され、削除済み単語セットの残骸を掃除する。
    *

@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-02-20",
+    version: "1.12.0",
+    title: "「今日の復習」が何度でも再挑戦できるように",
+    content: [
+      "復習後にホームへ戻っても「今日の復習」カードが消えなくなった",
+      "同日中は何度でも同じ復習リストに再挑戦できるように改善",
+      "SRSの学習スケジュールは引き続き正確に更新される（明日以降は正しく反映）",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-02-20",
     version: "1.11.0",
     title: "ホームに「今日の単語」を追加",
     content: [
