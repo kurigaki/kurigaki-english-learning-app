@@ -8,6 +8,9 @@ import {
 } from "../review-quiz";
 import type { Word } from "@/data/words/compat";
 
+const toLocalDateStr = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
 // テスト用単語データ
 const makeWord = (id: number, word: string, meaning: string): Word =>
   ({
@@ -71,17 +74,12 @@ describe("generateReviewChoices", () => {
 });
 
 describe("formatNextReviewDate", () => {
-  const todayStr = () => {
-    const d = new Date();
-    d.setHours(0, 0, 0, 0);
-    return d.toISOString().split("T")[0];
-  };
+  const todayStr = () => toLocalDateStr(new Date());
 
   const daysLater = (n: number) => {
     const d = new Date();
-    d.setHours(0, 0, 0, 0);
     d.setDate(d.getDate() + n);
-    return d.toISOString().split("T")[0];
+    return toLocalDateStr(d);
   };
 
   it("returns '今日' when nextReviewDate is today", () => {
@@ -133,7 +131,7 @@ describe("saveReviewSession / getReviewSession / clearReviewSession", () => {
     // 昨日の日付でセッションを直接 sessionStorage に書き込む
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
-    const yesterdayStr = yesterday.toISOString().split("T")[0];
+    const yesterdayStr = toLocalDateStr(yesterday);
     sessionStorage.setItem(
       "review_page_session",
       JSON.stringify({ data: { score: 5 }, date: yesterdayStr })
