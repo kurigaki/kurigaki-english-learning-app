@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-02-20",
+    version: "1.11.0",
+    title: "ホームに「今日の単語」を追加",
+    content: [
+      "毎日3語の「今日の単語」をホーム画面に表示（日付が変わるたびに自動更新）",
+      "単語をタップすると詳細画面で発音・例文・意味を確認できる",
+      "同じ日は何度開いても同じ3語が表示される（再現性あり）",
+    ],
+    category: "feature",
+  },
+  {
+    date: "2026-02-20",
     version: "1.10.0",
     title: "SRS復習がクイズ形式に！結果画面で次回復習日を確認",
     content: [
