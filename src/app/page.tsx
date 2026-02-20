@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useState, useCallback } from "react";
-import { Card } from "@/components/ui";
+import { Card, SpeakButton } from "@/components/ui";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
-import { words } from "@/data/words/compat";
+import { words, categoryLabels } from "@/data/words/compat";
 import { isWeakWord } from "@/types";
+import { pickDailyWords } from "@/lib/daily-words";
+import type { Word } from "@/data/words/compat";
 
 type UserProgress = {
   level: number;
@@ -20,6 +22,7 @@ export default function Home() {
   const [userProgress, setUserProgress] = useState<UserProgress | null>(null);
   const [weakWordCount, setWeakWordCount] = useState(0);
   const [srsReviewCount, setSrsReviewCount] = useState(0);
+  const [dailyWords, setDailyWords] = useState<Word[]>([]);
   const [isMounted, setIsMounted] = useState(false);
 
   const loadData = useCallback(async () => {
@@ -46,6 +49,8 @@ export default function Home() {
 
   useEffect(() => {
     setIsMounted(true);
+    const today = new Date().toISOString().split("T")[0];
+    setDailyWords(pickDailyWords(words, today, 3));
   }, []);
 
   useEffect(() => {
@@ -170,7 +175,47 @@ export default function Home() {
           </Card>
         )}
 
-        {/* 4. サブ機能ショートカット: 実績 / ブックマーク / 苦手単語 */}
+        {/* 4. 今日の単語 */}
+        {isMounted && dailyWords.length > 0 && (
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-base emoji-icon">📅</span>
+              <h2 className="text-sm font-bold text-slate-700 dark:text-slate-300">今日の単語</h2>
+            </div>
+            <Card className="divide-y divide-slate-100 dark:divide-slate-700 !p-0">
+              {dailyWords.map((word) => (
+                <Link
+                  key={word.id}
+                  href={`/word/${word.id}`}
+                  className="flex items-center gap-3 px-3 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-3xl last:rounded-b-3xl"
+                >
+                  <SpeakButton text={word.word} size="sm" />
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                        {word.word}
+                      </p>
+                      <span className="text-[10px] text-slate-400 dark:text-slate-500">
+                        {categoryLabels[word.category] ?? word.category}
+                      </span>
+                    </div>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+                  </div>
+                  <svg
+                    className="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-primary-400 group-hover:translate-x-0.5 transition-all flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              ))}
+            </Card>
+          </div>
+        )}
+
+        {/* 5. サブ機能ショートカット: 実績 / ブックマーク / 苦手単語 */}
         <div className="grid grid-cols-3 gap-3">
           <Link href="/achievements" className="block">
             <div className="bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl p-3 text-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
