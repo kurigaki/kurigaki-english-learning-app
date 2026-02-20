@@ -365,35 +365,35 @@ export default function WordListPage() {
             </div>
           </div>
 
-          {/* Filters Row: Bookmark + Difficulty + Sort */}
-          <div className="flex flex-wrap gap-2 items-center">
-            {/* Bookmark Filter */}
-            <button
-              onClick={() => setShowBookmarksOnly(!showBookmarksOnly)}
-              className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium transition-all ${
-                showBookmarksOnly
-                  ? "bg-yellow-500 text-white shadow-sm"
-                  : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-yellow-400"
-              }`}
-            >
-              <svg
-                className="w-3 h-3"
-                fill={showBookmarksOnly ? "currentColor" : "none"}
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                />
-              </svg>
-              {stats.bookmarked}
-            </button>
-
-            {/* Mastery Filter */}
+          {/* Filters Row 1: Bookmark + Mastery（横スクロール・折り返しなし） */}
+          <div className="overflow-x-auto pb-0.5 -mx-1 px-1">
             <div className="flex items-center gap-1">
+              {/* Bookmark Filter */}
+              <button
+                onClick={() => setShowBookmarksOnly(!showBookmarksOnly)}
+                className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap flex-shrink-0 transition-all ${
+                  showBookmarksOnly
+                    ? "bg-yellow-500 text-white shadow-sm"
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-yellow-400"
+                }`}
+              >
+                <svg
+                  className="w-3 h-3"
+                  fill={showBookmarksOnly ? "currentColor" : "none"}
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                  />
+                </svg>
+                {stats.bookmarked}
+              </button>
+              <span className="w-px h-4 bg-slate-200 dark:bg-slate-700 flex-shrink-0" />
+              {/* Mastery Filter */}
               {([
                 { key: "all" as const, label: "全て", count: stats.total },
                 { key: "mastered" as const, label: "習得済", count: stats.mastered },
@@ -404,7 +404,7 @@ export default function WordListPage() {
                 <button
                   key={key}
                   onClick={() => setSelectedMastery(key)}
-                  className={`px-2 py-1 rounded-full text-xs font-medium transition-all ${
+                  className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap flex-shrink-0 transition-all ${
                     selectedMastery === key
                       ? key === "all"
                         ? "bg-slate-700 text-white"
@@ -416,39 +416,42 @@ export default function WordListPage() {
                 </button>
               ))}
             </div>
+          </div>
 
-            {/* Difficulty Filter */}
-            <div className="flex items-center gap-1">
-              <button
-                onClick={() => setSelectedDifficulty("all")}
-                className={`px-2 py-1 rounded-lg text-xs font-medium transition-all ${
-                  selectedDifficulty === "all"
-                    ? "bg-slate-700 text-white"
-                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-400"
-                }`}
-              >
-                全難易度
-              </button>
-              {[1, 2, 3, 4, 5, 6, 7].map((level) => (
+          {/* Filters Row 2: Difficulty（横スクロール） + Sort（右端固定） */}
+          <div className="flex items-center gap-1.5">
+            <div className="overflow-x-auto flex-1 pb-0.5 -mx-1 px-1">
+              <div className="flex items-center gap-1">
                 <button
-                  key={level}
-                  onClick={() => setSelectedDifficulty(level)}
-                  className={`w-6 h-6 rounded text-xs font-medium transition-all ${
-                    selectedDifficulty === level
-                      ? "bg-amber-500 text-white"
-                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-amber-400"
+                  onClick={() => setSelectedDifficulty("all")}
+                  className={`px-2 py-1 rounded-lg text-xs font-medium whitespace-nowrap flex-shrink-0 transition-all ${
+                    selectedDifficulty === "all"
+                      ? "bg-slate-700 text-white"
+                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-400"
                   }`}
                 >
-                  {level}
+                  難易度
                 </button>
-              ))}
+                {[1, 2, 3, 4, 5, 6, 7].map((level) => (
+                  <button
+                    key={level}
+                    onClick={() => setSelectedDifficulty(level)}
+                    className={`w-6 h-6 rounded flex-shrink-0 text-xs font-medium transition-all ${
+                      selectedDifficulty === level
+                        ? "bg-amber-500 text-white"
+                        : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-amber-400"
+                    }`}
+                  >
+                    {level}
+                  </button>
+                ))}
+              </div>
             </div>
-
             {/* Sort Dropdown */}
             <select
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value as SortOption)}
-              className="ml-auto px-2 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+              className="flex-shrink-0 px-2 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-xs text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
             >
               {Object.entries(sortLabels).map(([value, label]) => (
                 <option key={value} value={value}>
