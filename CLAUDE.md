@@ -156,6 +156,25 @@ GitHub操作は以下のツールを使用してください。
 - 型定義は `src/types/index.ts` に集約
 - 単語データは `src/data/words.ts` に静的定義
 
+### 日付文字列のタイムゾーン
+
+"YYYY-MM-DD" 形式の日付文字列は **必ずローカルタイムゾーン基準** で生成する。
+
+**NG（UTC基準）**:
+```typescript
+new Date().toISOString().split("T")[0]  // 日本では0〜9時が前日の日付になる
+```
+
+**OK（ローカルタイムゾーン基準）**:
+```typescript
+const d = new Date();
+const dateStr = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+```
+
+**適用箇所**: ストリーク計算、SRS復習日、今日の単語、デイリーバッチキャッシュなど「日付の境界」に関わる全処理。
+
+> **注意**: `studiedAt`・`unlockedAt` などのタイムスタンプ（比較に使わず記録のみ）はUTC ISO文字列のままで構わない。
+
 ### レスポンシブデザイン
 
 PCでもスマホでも1画面に収まるよう、以下のレイアウトパターンを使用:
