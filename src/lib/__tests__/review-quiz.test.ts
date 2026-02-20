@@ -1,7 +1,10 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeEach } from "vitest";
 import {
   generateReviewChoices,
   formatNextReviewDate,
+  saveReviewSession,
+  getReviewSession,
+  clearReviewSession,
 } from "../review-quiz";
 import type { Word } from "@/data/words/compat";
 
@@ -100,5 +103,41 @@ describe("formatNextReviewDate", () => {
 
   it("returns '未設定' when null", () => {
     expect(formatNextReviewDate(null)).toBe("未設定");
+  });
+});
+
+describe("saveReviewSession / getReviewSession / clearReviewSession", () => {
+  beforeEach(() => {
+    // 各テスト前にセッションをクリア
+    clearReviewSession();
+  });
+
+  it("保存したデータを同日中に取得できる", () => {
+    const data = { score: 3, reviewWords: [], answeredResults: [] };
+    saveReviewSession(data);
+    const result = getReviewSession<typeof data>();
+    expect(result).toEqual(data);
+  });
+
+  it("セッションがない場合は null を返す", () => {
+    expect(getReviewSession()).toBeNull();
+  });
+
+  it("clearReviewSession 後は null を返す", () => {
+    saveReviewSession({ score: 1 });
+    clearReviewSession();
+    expect(getReviewSession()).toBeNull();
+  });
+
+  it("昨日保存されたセッションは期限切れとして null を返す", () => {
+    // 昨日の日付でセッションを直接 sessionStorage に書き込む
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const yesterdayStr = yesterday.toISOString().split("T")[0];
+    sessionStorage.setItem(
+      "review_page_session",
+      JSON.stringify({ data: { score: 5 }, date: yesterdayStr })
+    );
+    expect(getReviewSession()).toBeNull();
   });
 });

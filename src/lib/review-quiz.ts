@@ -51,23 +51,29 @@ export function formatNextReviewDate(nextReviewDate: string | null): string {
 // ===== セッション保存（単語詳細遷移後に結果画面を復元するため） =====
 
 const REVIEW_SESSION_KEY = "review_page_session";
-const REVIEW_SESSION_EXPIRY_MS = 30 * 60 * 1000; // 30分
 
 type ReviewSessionEnvelope = {
   data: unknown;
-  timestamp: number;
+  /** 保存時の日付 "YYYY-MM-DD"。日付が変わったら期限切れとして扱う */
+  date: string;
 };
+
+/** 今日の日付を "YYYY-MM-DD" 形式で返す */
+function todayStr(): string {
+  return new Date().toISOString().split("T")[0];
+}
 
 /**
  * 結果フェーズの状態を sessionStorage に保存する。
  * 単語詳細画面から戻ってきた際に結果画面を復元するために使用。
+ * セッションは同日中（日付が変わるまで）有効。
  */
 export function saveReviewSession(state: unknown): void {
   if (typeof window === "undefined") return;
   try {
     const envelope: ReviewSessionEnvelope = {
       data: state,
-      timestamp: Date.now(),
+      date: todayStr(),
     };
     sessionStorage.setItem(REVIEW_SESSION_KEY, JSON.stringify(envelope));
   } catch (e) {
@@ -77,7 +83,7 @@ export function saveReviewSession(state: unknown): void {
 
 /**
  * sessionStorage からセッション状態を取得する。
- * 有効期限切れの場合は null を返す。
+ * 保存日が今日と異なる（日付をまたいだ）場合は null を返す。
  */
 export function getReviewSession<T>(): T | null {
   if (typeof window === "undefined") return null;
@@ -85,7 +91,7 @@ export function getReviewSession<T>(): T | null {
     const stored = sessionStorage.getItem(REVIEW_SESSION_KEY);
     if (!stored) return null;
     const envelope: ReviewSessionEnvelope = JSON.parse(stored);
-    if (Date.now() - envelope.timestamp > REVIEW_SESSION_EXPIRY_MS) {
+    if (envelope.date !== todayStr()) {
       clearReviewSession();
       return null;
     }
