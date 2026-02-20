@@ -18,6 +18,7 @@ import type {
   SpeedChallengeResult,
 } from "@/types";
 import { ACHIEVEMENTS } from "@/data/achievements";
+import { words } from "@/data/words/compat";
 import type { SrsProgress } from "./srs";
 
 /**
@@ -638,6 +639,18 @@ export const unifiedStorage = {
       [],
       "getDueWords"
     );
+  },
+
+  /**
+   * 現在の単語リストに存在しない孤立データを localStorage から削除する。
+   * アプリ起動時に自動実行され、削除済み単語セットの残骸を掃除する。
+   *
+   * Supabase 側は unified-storage 経由での削除を行わない
+   * （Supabase は RLS でユーザーデータが分離されており、孤立データの影響が軽微なため）。
+   */
+  cleanupOrphanedData: (): { records: number; srsEntries: number } => {
+    const validWordIds = words.map((w) => w.id);
+    return storage.cleanupOrphanedData(validWordIds);
   },
 
   // ヘルパー: ログイン状態を確認

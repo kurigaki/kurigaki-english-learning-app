@@ -50,6 +50,8 @@ export default function Home() {
 
   useEffect(() => {
     if (!isAuthLoading) {
+      // 削除済み単語の孤立データを自動クリーンアップしてからデータ取得
+      unifiedStorage.cleanupOrphanedData();
       loadData();
     }
   }, [isAuthLoading, isAuthenticated, loadData]);
