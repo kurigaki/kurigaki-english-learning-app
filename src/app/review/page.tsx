@@ -402,7 +402,7 @@ function ReviewPageContent() {
 
     return (
       <div className="main-content px-3 py-2 flex flex-col">
-        <div className="max-w-2xl w-full mx-auto flex flex-col h-full gap-3">
+        <div className="max-w-2xl w-full mx-auto flex flex-col h-full gap-2">
 
           {/* ヘッダー：戻るボタン + タイトル + 進捗 */}
           <div className="flex-shrink-0 flex items-center gap-2">
@@ -430,7 +430,7 @@ function ReviewPageContent() {
           </div>
 
           {/* 問題カード */}
-          <Card className="flex-shrink-0 text-center py-6 px-4">
+          <Card className="flex-shrink-0 text-center py-3 px-4">
             <p className="text-xs text-slate-400 dark:text-slate-500 mb-3">この単語の意味は？</p>
             <div className="flex items-center justify-center gap-3">
               <SpeakButton text={currentWord.word} size="md" />
@@ -518,7 +518,7 @@ function ReviewPageContent() {
 
     return (
       <div className="main-content px-3 py-2 flex flex-col">
-        <div className="max-w-2xl w-full mx-auto flex flex-col h-full gap-3">
+        <div className="max-w-2xl w-full mx-auto flex flex-col h-full gap-2">
 
           {/* ヘッダー */}
           <div className="flex-shrink-0 flex items-center gap-2">

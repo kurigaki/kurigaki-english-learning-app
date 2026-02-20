@@ -242,21 +242,21 @@ export default function HistoryPage() {
 
         {/* Overview Tab */}
         {activeTab === "overview" && (
-          <div className="space-y-6">
+          <div className="space-y-3">
             {/* Overall Stats */}
             <Card>
-              <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-2 flex items-center gap-2">
                 <span className="emoji-icon">📊</span>
                 <span>全体統計</span>
               </h2>
-              <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-3 gap-2 mb-3">
                 <StatsCard label="総回答数" value={overallStats.total} color="primary" />
                 <StatsCard label="正解数" value={overallStats.correct} color="success" />
                 <StatsCard label="正答率" value={`${overallStats.rate}%`} color="accent" />
               </div>
 
               {/* Progress Bar */}
-              <div className="mt-4">
+              <div className="mt-2">
                 <div className="flex justify-between text-sm text-slate-600 dark:text-slate-300 mb-2">
                   <span>学習進捗</span>
                   <span>{overallStats.uniqueWords} / {overallStats.totalWords} 単語</span>
@@ -275,11 +275,11 @@ export default function HistoryPage() {
 
             {/* Type Stats */}
             <Card>
-              <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-2 flex items-center gap-2">
                 <span className="emoji-icon">🎯</span>
                 <span>問題タイプ別</span>
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-2">
                 {(Object.entries(typeStats) as [QuestionType, { total: number; correct: number }][]).map(
                   ([type, stats]) => {
                     const rate = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
