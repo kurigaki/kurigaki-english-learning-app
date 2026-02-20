@@ -1296,7 +1296,7 @@ export default function QuizPage() {
             </div>
 
             {/* Choices - flex-1でスペースを均等に使う */}
-            <div className="flex-1 flex flex-col justify-center space-y-1">
+            <div className="flex-1 flex flex-col justify-evenly gap-1">
               {currentQuestion.choices.map((choice, index) => {
                 let buttonClass = "choice-btn";
 
