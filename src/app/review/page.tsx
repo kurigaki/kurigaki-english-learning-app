@@ -14,7 +14,13 @@ import {
   calculateSm2,
   answerQualityFromResult,
 } from "@/lib/srs";
-import { generateReviewChoices, formatNextReviewDate } from "@/lib/review-quiz";
+import {
+  generateReviewChoices,
+  formatNextReviewDate,
+  saveReviewSession,
+  getReviewSession,
+  clearReviewSession,
+} from "@/lib/review-quiz";
 import { speakWord, isSpeechSynthesisSupported } from "@/lib/audio";
 import { isWeakWord } from "@/types";
 import type { ReviewMode } from "@/types";
@@ -33,6 +39,13 @@ type AnsweredResult = {
   word: ReviewWord;
   correct: boolean;
   updatedProgress: SrsProgress;
+};
+
+// 単語詳細遷移後に結果画面を復元するための保存型
+type ReviewPageSession = {
+  reviewWords: ReviewWord[];
+  answeredResults: AnsweredResult[];
+  score: number;
 };
 
 // ===== 定数 =====
@@ -58,6 +71,9 @@ function ReviewPageContent() {
   // ----- フェーズ管理 -----
   const [phase, setPhase] = useState<ReviewPhase>("list");
 
+  // 単語詳細から戻ってきたときにセッションから復元したかどうか
+  const [isRestoredFromSession, setIsRestoredFromSession] = useState(false);
+
   // ----- クイズフェーズの状態 -----
   const [currentIndex, setCurrentIndex] = useState(0);
   const [choices, setChoices] = useState<string[]>([]);
@@ -67,6 +83,21 @@ function ReviewPageContent() {
   const [answeredResults, setAnsweredResults] = useState<AnsweredResult[]>([]);
   const questionStartTimeRef = useRef<number>(Date.now());
   const hasAutoPlayedRef = useRef<Set<number>>(new Set());
+
+  // ===== マウント時：セッション復元（単語詳細から戻ってきた場合） =====
+
+  useEffect(() => {
+    const saved = getReviewSession<ReviewPageSession>();
+    if (saved) {
+      setReviewWords(saved.reviewWords);
+      setAnsweredResults(saved.answeredResults);
+      setScore(saved.score);
+      setPhase("result");
+      setIsLoading(false);
+      setIsRestoredFromSession(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // マウント時1回のみ実行
 
   // ===== 単語の読み込み =====
 
@@ -97,10 +128,12 @@ function ReviewPageContent() {
   }, [mode]);
 
   useEffect(() => {
+    // セッションから復元済みの場合はストレージからの再読み込みをスキップ
+    if (isRestoredFromSession) return;
     if (!isAuthLoading) {
       loadWords();
     }
-  }, [isAuthLoading, isAuthenticated, loadWords]);
+  }, [isAuthLoading, isAuthenticated, isRestoredFromSession, loadWords]);
 
   // ===== クイズ開始 =====
 
@@ -186,6 +219,12 @@ function ReviewPageContent() {
     ]);
   }, [selected, currentWord]);
 
+  // 結果フェーズ遷移時にセッション保存（単語詳細から戻ってきたときに復元できるよう）
+  useEffect(() => {
+    if (phase !== "result" || isRestoredFromSession) return;
+    saveReviewSession({ reviewWords, answeredResults, score } satisfies ReviewPageSession);
+  }, [phase, isRestoredFromSession, reviewWords, answeredResults, score]);
+
   // ===== 次の問題へ =====
 
   const handleNext = useCallback(() => {
@@ -212,6 +251,7 @@ function ReviewPageContent() {
   // ===== 再挑戦 =====
 
   const handleRetry = useCallback(() => {
+    clearReviewSession();
     // 結果から不正解だった単語だけ再セット
     const wrongWords = answeredResults
       .filter((r) => !r.correct)
@@ -226,6 +266,7 @@ function ReviewPageContent() {
     setIsCorrect(null);
     setScore(0);
     setAnsweredResults([]);
+    setIsRestoredFromSession(false);
     hasAutoPlayedRef.current = new Set();
     questionStartTimeRef.current = Date.now();
     // 選択肢は useEffect が reviewWords/currentIndex の変化を検知して生成する
@@ -366,7 +407,7 @@ function ReviewPageContent() {
           {/* ヘッダー：戻るボタン + タイトル + 進捗 */}
           <div className="flex-shrink-0 flex items-center gap-2">
             <button
-              onClick={() => setPhase("list")}
+              onClick={() => { clearReviewSession(); setPhase("list"); }}
               className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
               aria-label="リストに戻る"
             >

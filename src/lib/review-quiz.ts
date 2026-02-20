@@ -1,8 +1,9 @@
 /**
  * /review ページ専用のクイズユーティリティ
  *
- * SRS復習・苦手単語復習で使用する en-to-ja 問題生成と
- * 次回復習日の表示フォーマットを提供する。
+ * SRS復習・苦手単語復習で使用する en-to-ja 問題生成、
+ * 次回復習日の表示フォーマット、
+ * 単語詳細への遷移後に結果状態を復元するためのセッション保存機能を提供する。
  */
 
 import { shuffleArray, pickRandom } from "@/lib/shuffle";
@@ -45,4 +46,65 @@ export function formatNextReviewDate(nextReviewDate: string | null): string {
   if (diffDays <= 0) return "今日";
   if (diffDays === 1) return "明日";
   return `${diffDays}日後`;
+}
+
+// ===== セッション保存（単語詳細遷移後に結果画面を復元するため） =====
+
+const REVIEW_SESSION_KEY = "review_page_session";
+const REVIEW_SESSION_EXPIRY_MS = 30 * 60 * 1000; // 30分
+
+type ReviewSessionEnvelope = {
+  data: unknown;
+  timestamp: number;
+};
+
+/**
+ * 結果フェーズの状態を sessionStorage に保存する。
+ * 単語詳細画面から戻ってきた際に結果画面を復元するために使用。
+ */
+export function saveReviewSession(state: unknown): void {
+  if (typeof window === "undefined") return;
+  try {
+    const envelope: ReviewSessionEnvelope = {
+      data: state,
+      timestamp: Date.now(),
+    };
+    sessionStorage.setItem(REVIEW_SESSION_KEY, JSON.stringify(envelope));
+  } catch (e) {
+    console.warn("[Review] Failed to save session:", e);
+  }
+}
+
+/**
+ * sessionStorage からセッション状態を取得する。
+ * 有効期限切れの場合は null を返す。
+ */
+export function getReviewSession<T>(): T | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const stored = sessionStorage.getItem(REVIEW_SESSION_KEY);
+    if (!stored) return null;
+    const envelope: ReviewSessionEnvelope = JSON.parse(stored);
+    if (Date.now() - envelope.timestamp > REVIEW_SESSION_EXPIRY_MS) {
+      clearReviewSession();
+      return null;
+    }
+    return envelope.data as T;
+  } catch (e) {
+    console.warn("[Review] Failed to get session:", e);
+    return null;
+  }
+}
+
+/**
+ * セッション状態を削除する。
+ * ユーザーが明示的にリストへ戻るか再挑戦を始めた際に呼び出す。
+ */
+export function clearReviewSession(): void {
+  if (typeof window === "undefined") return;
+  try {
+    sessionStorage.removeItem(REVIEW_SESSION_KEY);
+  } catch (e) {
+    console.warn("[Review] Failed to clear session:", e);
+  }
 }
