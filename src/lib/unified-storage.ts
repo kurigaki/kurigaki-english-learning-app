@@ -270,13 +270,14 @@ export const unifiedStorage = {
       }
     }
 
-    const today = new Date().toISOString().split("T")[0];
+    const toLocalDateStr = (d: Date) =>
+      `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    const today = toLocalDateStr(new Date());
     const isToday = (dateStr: string | null): boolean => dateStr === today;
     const isYesterday = (dateStr: string): boolean => {
-      const date = new Date(dateStr);
       const yesterday = new Date();
       yesterday.setDate(yesterday.getDate() - 1);
-      return date.toISOString().split("T")[0] === yesterday.toISOString().split("T")[0];
+      return dateStr === toLocalDateStr(yesterday);
     };
 
     // ストリーク更新
@@ -651,7 +652,8 @@ export const unifiedStorage = {
    */
   getDailyReviewBatch: async (): Promise<SrsProgress[]> => {
     const BATCH_KEY = "srs_daily_batch";
-    const today = new Date().toISOString().split("T")[0];
+    const d = new Date();
+    const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 
     if (typeof window !== "undefined") {
       try {

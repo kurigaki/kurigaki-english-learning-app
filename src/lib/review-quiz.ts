@@ -58,9 +58,10 @@ type ReviewSessionEnvelope = {
   date: string;
 };
 
-/** 今日の日付を "YYYY-MM-DD" 形式で返す */
+/** 今日の日付をローカルタイムゾーンで "YYYY-MM-DD" 形式で返す */
 function todayStr(): string {
-  return new Date().toISOString().split("T")[0];
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
 /**

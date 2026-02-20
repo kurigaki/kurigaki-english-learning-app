@@ -17,6 +17,11 @@ export type SrsProgress = {
   lastReviewedDate: string | null; // 最終復習日
 };
 
+/** Date をローカルタイムゾーンで "YYYY-MM-DD" 形式に変換する */
+function toLocalDateStr(date: Date): string {
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+}
+
 /** 新規単語のデフォルトSRS進捗を返す */
 export function getInitialSrsProgress(wordId: number): SrsProgress {
   return {
@@ -87,9 +92,9 @@ export function calculateSm2(current: SrsProgress, quality: number): SrsProgress
   today.setHours(0, 0, 0, 0);
   const nextDate = new Date(today);
   nextDate.setDate(nextDate.getDate() + newInterval);
-  const nextReviewDate = nextDate.toISOString().split("T")[0];
+  const nextReviewDate = toLocalDateStr(nextDate);
 
-  const todayStr = today.toISOString().split("T")[0];
+  const todayStr = toLocalDateStr(today);
 
   return {
     wordId: current.wordId,
@@ -113,7 +118,7 @@ export function isDueForReview(progress: SrsProgress): boolean {
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const todayStr = today.toISOString().split("T")[0];
+  const todayStr = toLocalDateStr(today);
 
   return progress.nextReviewDate <= todayStr;
 }
