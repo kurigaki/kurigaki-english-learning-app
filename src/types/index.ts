@@ -52,6 +52,15 @@ export type WordExtended = {
   etymology?: string;          // 語源
 };
 
+/**
+ * 単語拡張データ（word-extensions.ts のマップ値型）
+ * WordExtended のうち、静的データとして管理するフィールドのみ抽出したもの。
+ */
+export type WordExtension = Pick<
+  WordExtended,
+  "coreImage" | "usage" | "synonymDifference" | "englishDefinition" | "etymology"
+>;
+
 // クイズの問題
 export type Question = {
   word: {

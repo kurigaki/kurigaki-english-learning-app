@@ -6,6 +6,7 @@
  */
 import { allWords, Word as InternalWord, Course } from "./index";
 import type { PartOfSpeech, PronunciationData, WordExample, WordColumn } from "@/types";
+import { wordExtensions } from "../word-extensions";
 
 // Re-export Course as CourseType for backward compatibility
 export type CourseType = Course;
@@ -54,6 +55,11 @@ export type Word = {
   column?: WordColumn;
   imageUrl?: string;
   imageKeyword?: string;
+  coreImage?: string;
+  usage?: string;
+  synonymDifference?: string;
+  englishDefinition?: string;
+  etymology?: string;
 };
 
 // course+stage → difficulty マッピング
@@ -78,6 +84,7 @@ const CATEGORY_MAP: Record<Course, Category> = {
 
 // Convert new word to legacy-compatible format
 function toLegacyWord(w: InternalWord): Word {
+  const ext = wordExtensions.get(w.id);
   return {
     id: w.id,
     word: w.word,
@@ -86,6 +93,11 @@ function toLegacyWord(w: InternalWord): Word {
     difficulty: (DIFFICULTY_MAP[`${w.course}:${w.stage}`] ?? 3) as Difficulty,
     category: CATEGORY_MAP[w.course] ?? "daily",
     partOfSpeech: w.partOfSpeech as PartOfSpeech,
+    coreImage: ext?.coreImage,
+    usage: ext?.usage,
+    synonymDifference: ext?.synonymDifference,
+    englishDefinition: ext?.englishDefinition,
+    etymology: ext?.etymology,
   };
 }
 
