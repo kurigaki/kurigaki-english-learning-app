@@ -78,14 +78,14 @@ describe("wordExtensions", () => {
     });
 
     it("拡張データが存在しない単語のフィールドは undefined になる", () => {
-      // apple (10001) は拡張データなし
-      const apple = words.find((w) => w.id === 10001);
-      expect(apple).toBeDefined();
-      expect(apple?.coreImage).toBeUndefined();
-      expect(apple?.usage).toBeUndefined();
-      expect(apple?.synonymDifference).toBeUndefined();
-      expect(apple?.englishDefinition).toBeUndefined();
-      expect(apple?.etymology).toBeUndefined();
+      // bakery (10531) は手書き拡張データなし（Junior Stage 2 バッチは削除済み）
+      const bakery = words.find((w) => w.id === 10531);
+      expect(bakery).toBeDefined();
+      expect(bakery?.coreImage).toBeUndefined();
+      expect(bakery?.usage).toBeUndefined();
+      expect(bakery?.synonymDifference).toBeUndefined();
+      expect(bakery?.englishDefinition).toBeUndefined();
+      expect(bakery?.etymology).toBeUndefined();
     });
 
     it("複数の拡張データ単語がすべて正しくマージされている", () => {
