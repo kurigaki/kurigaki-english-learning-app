@@ -90,6 +90,77 @@ describe("FlashcardView", () => {
     expect(screen.getByTestId("btn-next")).toBeDisabled();
   });
 
+  it("裏面をクリックすると表面に戻ること", async () => {
+    render(<FlashcardView words={mockWords} onExit={onExit} />);
+    // 表面をクリックして裏面へ
+    fireEvent.click(screen.getByRole("button", { name: "カードをめくる" }));
+    expect(screen.getByRole("button", { name: "カードを戻す" })).toBeInTheDocument();
+    // 裏面をクリックして表面へ戻る
+    fireEvent.click(screen.getByRole("button", { name: "カードを戻す" }));
+    expect(screen.getByRole("button", { name: "カードをめくる" })).toBeInTheDocument();
+  });
+
+  it("「リストに戻る」ボタンクリック時に現在の単語IDを引数として onExit が呼ばれること", () => {
+    render(<FlashcardView words={mockWords} onExit={onExit} />);
+    // 初期カードは mockWords[0] (id: 1, word: "schedule")
+    fireEvent.click(screen.getByRole("button", { name: /リストに戻る/ }));
+    expect(onExit).toHaveBeenCalledWith(1);
+  });
+
+  it("「知ってた」ボタンクリック時に saveSrsProgress が呼ばれること", async () => {
+    const { unifiedStorage } = await import("@/lib/unified-storage");
+    render(<FlashcardView words={mockWords} onExit={onExit} />);
+    // フリップして裏面を表示
+    fireEvent.click(screen.getByRole("button", { name: "カードをめくる" }));
+    fireEvent.click(screen.getByTestId("btn-knew"));
+    await waitFor(() => {
+      expect(unifiedStorage.saveSrsProgress).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it("「わからなかった」ボタンクリック時に saveSrsProgress が呼ばれること", async () => {
+    const { unifiedStorage } = await import("@/lib/unified-storage");
+    render(<FlashcardView words={mockWords} onExit={onExit} />);
+    fireEvent.click(screen.getByRole("button", { name: "カードをめくる" }));
+    fireEvent.click(screen.getByTestId("btn-unknown"));
+    await waitFor(() => {
+      expect(unifiedStorage.saveSrsProgress).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it("initialIndex を渡すと指定したカードから始まること", () => {
+    render(<FlashcardView words={mockWords} onExit={onExit} initialIndex={2} />);
+    expect(screen.getByTestId("card-front-word")).toHaveTextContent("budget");
+    // 最後のカードなので「次へ」は disabled
+    expect(screen.getByTestId("btn-next")).toBeDisabled();
+  });
+
+  it("words が空のときに空状態UIが表示されること", () => {
+    render(<FlashcardView words={[]} onExit={onExit} />);
+    expect(screen.getByText("表示できる単語がありません")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /リストに戻る/ })).toBeInTheDocument();
+  });
+
+  it("「詳細を見る」クリック時に onDetailView が現在のインデックスで呼ばれること", () => {
+    const onDetailView = vi.fn();
+    render(<FlashcardView words={mockWords} onExit={onExit} onDetailView={onDetailView} />);
+    // フリップして裏面を表示
+    fireEvent.click(screen.getByRole("button", { name: "カードをめくる" }));
+    // 「詳細を見る」をクリック
+    fireEvent.click(screen.getByRole("link", { name: /詳細を見る/ }));
+    expect(onDetailView).toHaveBeenCalledWith(0);
+  });
+
+  it("最後のカードを評価するとセッション完了画面が表示されること", async () => {
+    render(<FlashcardView words={mockWords} onExit={onExit} initialIndex={2} />);
+    // 最後のカード（budget）をフリップして評価
+    fireEvent.click(screen.getByRole("button", { name: "カードをめくる" }));
+    fireEvent.click(screen.getByTestId("btn-knew"));
+    await waitFor(() => {
+      expect(screen.getByText("セッション完了！")).toBeInTheDocument();
+    });
+  });
+
   it("カード切り替え後にフリップ状態がリセットされること（表面が表示）", async () => {
     render(<FlashcardView words={mockWords} onExit={onExit} />);
     // フリップ
