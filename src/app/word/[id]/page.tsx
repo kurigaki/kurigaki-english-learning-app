@@ -3,6 +3,8 @@
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { words, categoryLabels, difficultyLabels } from "@/data/words/compat";
+import { allWords } from "@/data/words";
+import { getWordExtension } from "@/data/word-extensions";
 import { Card, Button } from "@/components/ui";
 import {
   WordHeader,
@@ -32,6 +34,8 @@ export default function WordDetailPage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const word = words.find((w) => w.id === wordId);
+  const internalWord = allWords.find((w) => w.id === wordId);
+  const wordExt = internalWord ? getWordExtension(internalWord) : undefined;
 
   // 学習履歴から記憶度を計算し、ブックマーク状態を取得
   useEffect(() => {
@@ -230,6 +234,7 @@ export default function WordDetailPage() {
           <WordPlaceholderSection
             title="コアイメージ"
             emoji="💡"
+            content={word.coreImage ?? wordExt?.coreImage}
             placeholder="この単語のコアイメージは今後追加予定です"
           />
 
@@ -237,6 +242,7 @@ export default function WordDetailPage() {
           <WordPlaceholderSection
             title="使い方"
             emoji="📝"
+            content={word.usage ?? wordExt?.usage}
             placeholder="この単語の使い方解説は今後追加予定です"
           />
 
@@ -247,25 +253,15 @@ export default function WordDetailPage() {
           <WordPlaceholderSection
             title="類義語との違い"
             emoji="🔍"
-            content={word.column?.content?.includes("vs") ? word.column.content : undefined}
+            content={word.synonymDifference ?? wordExt?.synonymDifference}
             placeholder="類義語との使い分けは今後追加予定です"
           />
-
-          {/* 関連語 */}
-          {word.synonyms && word.synonyms.length > 0 && (
-            <div className="py-4 border-b border-gray-100 dark:border-gray-700">
-              <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1">
-                <span className="emoji-icon">🔗</span>
-                <span>関連語</span>
-              </h3>
-              <p className="text-slate-400 dark:text-slate-500 text-sm italic">関連語は今後追加予定です</p>
-            </div>
-          )}
 
           {/* 英英定義 */}
           <WordPlaceholderSection
             title="英英定義"
             emoji="🇬🇧"
+            content={word.englishDefinition ?? wordExt?.englishDefinition}
             placeholder="英語による定義は今後追加予定です"
           />
 
@@ -273,7 +269,7 @@ export default function WordDetailPage() {
           <WordPlaceholderSection
             title="語源"
             emoji="📜"
-            content={word.column?.title?.includes("語源") ? word.column.content : undefined}
+            content={word.etymology ?? wordExt?.etymology}
             placeholder="語源解説は今後追加予定です"
           />
 
