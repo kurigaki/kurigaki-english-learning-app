@@ -15,19 +15,26 @@ import type { FlashcardWord } from "@/types";
 
 type Props = {
   words: FlashcardWord[];
-  onExit: () => void;
+  onExit: (currentWordId?: number) => void;
+  initialIndex?: number;
+  onDetailView?: (index: number) => void;
 };
 
-export default function FlashcardView({ words, onExit }: Props) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function FlashcardView({ words, onExit, initialIndex, onDetailView }: Props) {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex ?? 0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [slideDir, setSlideDir] = useState<"left" | "right" | null>(null);
   const [srsMap, setSrsMap] = useState<Map<number, SrsProgress>>(new Map());
   const [ratedIds, setRatedIds] = useState<Set<number>>(new Set());
+  const [isSessionComplete, setIsSessionComplete] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
   // 再生済みインデックスを記録（同一カードへの戻り操作では再生しない）
   const hasAutoPlayedRef = useRef<Set<number>>(new Set());
+
+  // currentIndex が words の範囲を超えないよう安全なインデックスを導出
+  // (詳細画面から戻った直後など、words がまだ空の場合も考慮)
+  const safeCurrentIndex = words.length > 0 ? Math.min(currentIndex, words.length - 1) : 0;
 
   // SRS進捗の初期ロード
   useEffect(() => {
@@ -39,11 +46,11 @@ export default function FlashcardView({ words, onExit }: Props) {
   // カード切り替え時に自動読み上げ（同一カードへの戻り操作では再生しない）
   useEffect(() => {
     if (!isSpeechSynthesisSupported() || words.length === 0) return;
-    if (hasAutoPlayedRef.current.has(currentIndex)) return;
-    hasAutoPlayedRef.current.add(currentIndex);
-    const id = setTimeout(() => speakWord(words[currentIndex].word), 200);
+    if (hasAutoPlayedRef.current.has(safeCurrentIndex)) return;
+    hasAutoPlayedRef.current.add(safeCurrentIndex);
+    const id = setTimeout(() => speakWord(words[safeCurrentIndex].word), 200);
     return () => clearTimeout(id);
-  }, [currentIndex, words]);
+  }, [safeCurrentIndex, words]);
 
   const navigate = (dir: "prev" | "next") => {
     if (slideDir) return;
@@ -63,14 +70,18 @@ export default function FlashcardView({ words, onExit }: Props) {
   };
 
   const handleRate = async (correct: boolean) => {
-    const word = words[currentIndex];
+    const word = words[safeCurrentIndex];
     const current = srsMap.get(word.id) ?? getInitialSrsProgress(word.id);
     const quality = answerQualityFromResult(correct);
     const newProgress = calculateSm2(current, quality);
     await unifiedStorage.saveSrsProgress(newProgress);
     setSrsMap((prev) => new Map(prev).set(word.id, newProgress));
     setRatedIds((prev) => new Set(prev).add(word.id));
-    navigate("next");
+    if (safeCurrentIndex >= words.length - 1) {
+      setIsSessionComplete(true);
+    } else {
+      navigate("next");
+    }
   };
 
   const handleSkip = () => {
@@ -95,6 +106,28 @@ export default function FlashcardView({ words, onExit }: Props) {
     else if (dx > THRESHOLD) navigate("prev");
   };
 
+  if (isSessionComplete) {
+    return (
+      <div className="flex flex-col items-center justify-center h-full gap-6 text-center">
+        <span className="text-5xl emoji-icon">🎉</span>
+        <div>
+          <p className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-1">
+            セッション完了！
+          </p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            {words.length}枚のカードをすべて評価しました
+          </p>
+        </div>
+        <button
+          onClick={() => onExit(words[safeCurrentIndex]?.id)}
+          className="px-6 py-2.5 rounded-xl bg-primary-500 text-white font-medium hover:bg-primary-600 transition-colors"
+        >
+          リストに戻る
+        </button>
+      </div>
+    );
+  }
+
   if (words.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-full gap-4">
@@ -102,7 +135,7 @@ export default function FlashcardView({ words, onExit }: Props) {
           表示できる単語がありません
         </p>
         <button
-          onClick={onExit}
+          onClick={() => onExit()}
           className="text-primary-500 hover:underline text-sm"
         >
           リストに戻る
@@ -111,18 +144,18 @@ export default function FlashcardView({ words, onExit }: Props) {
     );
   }
 
-  const currentWord = words[currentIndex];
+  const currentWord = words[safeCurrentIndex];
   const isRated = ratedIds.has(currentWord.id);
-  const progressPct = Math.round(((currentIndex + 1) / words.length) * 100);
-  const isFirst = currentIndex === 0;
-  const isLast = currentIndex === words.length - 1;
+  const progressPct = Math.round(((safeCurrentIndex + 1) / words.length) * 100);
+  const isFirst = safeCurrentIndex === 0;
+  const isLast = safeCurrentIndex === words.length - 1;
 
   return (
     <div className="flex flex-col h-full">
       {/* ヘッダー行 */}
       <div className="flex-shrink-0 flex items-center justify-between mb-2">
         <button
-          onClick={onExit}
+          onClick={() => onExit(currentWord.id)}
           className="flex items-center gap-1 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors text-sm"
         >
           <svg
@@ -147,7 +180,7 @@ export default function FlashcardView({ words, onExit }: Props) {
             </span>
           )}
           <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-            {currentIndex + 1} / {words.length}
+            {safeCurrentIndex + 1} / {words.length}
           </span>
         </div>
       </div>
@@ -200,10 +233,9 @@ export default function FlashcardView({ words, onExit }: Props) {
             </p>
           </div>
 
-          {/* 裏面 */}
+          {/* 裏面 - クリックで表面に戻る（ボタン・リンク以外の領域） */}
           <div
             className="card-flip-face card-flip-back bg-white dark:bg-slate-800 rounded-2xl shadow-card border border-primary-100 dark:border-slate-700 flex flex-col items-center justify-center gap-3 p-6"
-            onClick={(e) => e.stopPropagation()}
           >
             <p
               className="text-xl font-bold text-slate-800 dark:text-slate-100 text-center"
@@ -223,9 +255,10 @@ export default function FlashcardView({ words, onExit }: Props) {
                 )}
               </div>
             )}
+            <p className="text-xs text-slate-300 dark:text-slate-600">タップで表に戻る</p>
 
-            {/* SRS評価ボタン */}
-            <div className="flex gap-2 mt-2 w-full">
+            {/* SRS評価ボタン - クリックが上位コンテナに伝播しないよう停止 */}
+            <div className="flex gap-2 mt-2 w-full" onClick={(e) => e.stopPropagation()}>
               <button
                 data-testid="btn-knew"
                 onClick={() => handleRate(true)}
@@ -242,7 +275,7 @@ export default function FlashcardView({ words, onExit }: Props) {
               </button>
             </div>
 
-            <div className="flex items-center gap-3 w-full justify-center">
+            <div className="flex items-center gap-3 w-full justify-center" onClick={(e) => e.stopPropagation()}>
               <button
                 onClick={handleSkip}
                 className="text-xs text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
@@ -252,7 +285,10 @@ export default function FlashcardView({ words, onExit }: Props) {
               <span className="text-slate-200 dark:text-slate-700">|</span>
               <Link
                 href={`/word/${currentWord.id}?from=wordlist`}
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onDetailView?.(safeCurrentIndex);
+                }}
                 className="text-xs text-primary-500 hover:underline"
               >
                 詳細を見る →
