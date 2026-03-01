@@ -6,12 +6,19 @@ import { useAuth } from "@/lib/auth-context";
 import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { unifiedStorage } from "@/lib/unified-storage";
+import { saveWeakWordSort, getAndClearWeakWordSort } from "@/lib/navigation-state";
 import type { WordStats } from "@/lib/storage";
 import { words, Word, categoryLabels } from "@/data/words/compat";
 import { isWeakWord } from "@/types";
 
 type WeakWord = Word & {
   stats: WordStats;
+};
+
+const getAccuracyColor = (accuracy: number): string => {
+  if (accuracy < 30) return "text-red-600 bg-red-100 dark:text-red-400 dark:bg-red-900/40";
+  if (accuracy < 50) return "text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900/40";
+  return "text-yellow-600 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/40";
 };
 
 export default function WeakWordsPage() {
@@ -50,6 +57,9 @@ export default function WeakWordsPage() {
 
   useEffect(() => {
     setIsMounted(true);
+    // 単語詳細から戻った際にソート状態を復元
+    const saved = getAndClearWeakWordSort();
+    if (saved) setSortBy(saved);
   }, []);
 
   // 認証初期化完了後にデータを再取得（認証中はSupabaseセッションが未準備のため待機）
@@ -58,12 +68,6 @@ export default function WeakWordsPage() {
       loadWeakWords();
     }
   }, [isAuthLoading, isAuthenticated, loadWeakWords]);
-
-  const getAccuracyColor = (accuracy: number) => {
-    if (accuracy < 30) return "text-red-600 bg-red-100 dark:text-red-400 dark:bg-red-900/40";
-    if (accuracy < 50) return "text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900/40";
-    return "text-yellow-600 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/40";
-  };
 
   if (!isMounted) {
     return (
@@ -142,7 +146,7 @@ export default function WeakWordsPage() {
           <>
             <div className="flex-1 overflow-y-auto min-h-0 space-y-1.5">
               {weakWords.map((word) => (
-                <Link key={word.id} href={`/word/${word.id}?from=weak`}>
+                <Link key={word.id} href={`/word/${word.id}?from=weak`} onClick={() => saveWeakWordSort(sortBy)}>
                   <Card
                     hover
                     className="flex items-center gap-2 group !p-2"

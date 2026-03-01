@@ -6,9 +6,17 @@ import { useAuth } from "@/lib/auth-context";
 import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { unifiedStorage } from "@/lib/unified-storage";
+import { saveBookmarkSort, getAndClearBookmarkSort } from "@/lib/navigation-state";
 import { words, Word, categoryLabels, difficultyLabels } from "@/data/words/compat";
 
 type SortOption = "added" | "name" | "difficulty";
+
+const getDifficultyColor = (difficulty: number): string => {
+  if (difficulty === 1) return "text-green-600 bg-green-100 dark:text-green-400 dark:bg-green-900/40";
+  if (difficulty === 2) return "text-blue-600 bg-blue-100 dark:text-blue-400 dark:bg-blue-900/40";
+  if (difficulty === 3) return "text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900/40";
+  return "text-red-600 bg-red-100 dark:text-red-400 dark:bg-red-900/40";
+};
 
 export default function BookmarksPage() {
   // isLoading: 認証初期化中はデータを読み込まない（Supabaseセッションが未準備のため）
@@ -42,6 +50,9 @@ export default function BookmarksPage() {
 
   useEffect(() => {
     setIsMounted(true);
+    // 単語詳細から戻った際にソート状態を復元
+    const saved = getAndClearBookmarkSort();
+    if (saved) setSortBy(saved);
   }, []);
 
   // 認証初期化完了後にデータを再取得（認証中はSupabaseセッションが未準備のため待機）
@@ -56,13 +67,6 @@ export default function BookmarksPage() {
     e.stopPropagation();
     await unifiedStorage.removeBookmark(wordId);
     loadBookmarks();
-  };
-
-  const getDifficultyColor = (difficulty: number) => {
-    if (difficulty === 1) return "text-green-600 bg-green-100 dark:text-green-400 dark:bg-green-900/40";
-    if (difficulty === 2) return "text-blue-600 bg-blue-100 dark:text-blue-400 dark:bg-blue-900/40";
-    if (difficulty === 3) return "text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900/40";
-    return "text-red-600 bg-red-100 dark:text-red-400 dark:bg-red-900/40";
   };
 
   if (!isMounted) {
@@ -153,7 +157,7 @@ export default function BookmarksPage() {
           <>
             <div className="flex-1 overflow-y-auto min-h-0 space-y-1.5">
               {bookmarkedWords.map((word) => (
-                <Link key={word.id} href={`/word/${word.id}?from=bookmarks`}>
+                <Link key={word.id} href={`/word/${word.id}?from=bookmarks`} onClick={() => saveBookmarkSort(sortBy)}>
                   <Card
                     hover
                     className="flex items-center gap-2 group !p-2"
