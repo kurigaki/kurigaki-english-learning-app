@@ -132,11 +132,46 @@ function escapeRegex(str: string): string {
 }
 
 /**
- * 穴あき例文を生成
+ * 穴あき例文を生成（リスニング問題・回答後の表示に使用）
  */
 function createFillBlankSentence(example: string, word: string): string {
   const regex = new RegExp(`\\b${escapeRegex(word)}\\b`, "gi");
   return example.replace(regex, "_____");
+}
+
+// 書き取り問題のインライン入力用パーツ
+type DictationPart =
+  | { kind: "text"; content: string }
+  | { kind: "blank"; wordIndex: number };
+
+/**
+ * 例文を「テキスト部分」と「入力ブランク部分」に分割する（書き取り問題用）
+ * "Please stand up and leave." + "stand up"
+ * → [{text:"Please "}, {blank:0}, {text:" "}, {blank:1}, {text:" and leave."}]
+ */
+function parseDictationParts(example: string, word: string): DictationPart[] {
+  const escaped = escapeRegex(word);
+  const regex = new RegExp(`\\b${escaped}\\b`, "gi");
+  const match = regex.exec(example);
+  if (!match) return [{ kind: "text", content: example }];
+
+  const parts: DictationPart[] = [];
+
+  if (match.index > 0) {
+    parts.push({ kind: "text", content: example.slice(0, match.index) });
+  }
+
+  // フレーズ内の単語を個別のブランクに分割（例: "stand up" → blank[0], blank[1]）
+  const matchedWords = match[0].split(/\s+/);
+  matchedWords.forEach((_, i) => {
+    if (i > 0) parts.push({ kind: "text", content: " " });
+    parts.push({ kind: "blank", wordIndex: i });
+  });
+
+  const after = example.slice(match.index + match[0].length);
+  if (after) parts.push({ kind: "text", content: after });
+
+  return parts;
 }
 
 function generateQuestion(word: Word, allWords: Word[], ratios: QuestionTypeRatios): Question {
@@ -587,7 +622,8 @@ export default function QuizPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
-  const [dictationInput, setDictationInput] = useState(""); // 書き取り問題の入力値
+  const [dictationInputs, setDictationInputs] = useState<string[]>([]); // 書き取り問題の入力値（ブランクごと）
+  const dictationInputRefs = useRef<(HTMLInputElement | null)[]>([]);  // Tabキー移動用
   const [score, setScore] = useState(0);
   const [combo, setCombo] = useState(0);
   const [maxCombo, setMaxCombo] = useState(0);
@@ -716,7 +752,8 @@ export default function QuizPage() {
       setSelected(null);
       setIsCorrect(null);
       setShowTranslation(false);
-      setDictationInput("");
+      setDictationInputs([]);
+      dictationInputRefs.current = [];
     }
   }, [currentIndex, questions.length, score, maxCombo]);
 
@@ -889,7 +926,8 @@ export default function QuizPage() {
     setIsFinished(false);
     setSelected(null);
     setIsCorrect(null);
-    setDictationInput("");
+    setDictationInputs([]);
+    dictationInputRefs.current = [];
     setSessionResult(null);
     setAnsweredWords([]);
     setIsRestoredFromSession(false);
@@ -1017,14 +1055,20 @@ export default function QuizPage() {
     processAnswer(choice, correct);
   };
 
-  // 書き取り問題の回答を処理（大文字小文字を無視して比較）
+  // 書き取り問題の回答を処理（大文字小文字を無視・複数ブランク対応）
   const handleDictationSubmit = () => {
     if (selected !== null || !currentQuestion) return;
-    const trimmed = dictationInput.trim();
-    if (!trimmed) return;
 
-    const correct = trimmed.toLowerCase() === currentQuestion.correctAnswer.toLowerCase();
-    processAnswer(trimmed, correct);
+    const answerWords = currentQuestion.correctAnswer.split(/\s+/);
+    // 全ブランクが入力されているか確認
+    const allFilled = answerWords.every((_, i) => (dictationInputs[i] ?? "").trim() !== "");
+    if (!allFilled) return;
+
+    const correct = answerWords.every(
+      (w, i) => (dictationInputs[i] ?? "").trim().toLowerCase() === w.toLowerCase()
+    );
+    const answerText = dictationInputs.map((s) => s.trim()).join(" ");
+    processAnswer(answerText, correct);
   };
 
   const handleAchievementClose = () => {
@@ -1561,6 +1605,13 @@ export default function QuizPage() {
   const questionDisplay = getQuestionDisplay(currentQuestion);
   const isSentenceType = currentQuestion.type === "listening" || currentQuestion.type === "dictation";
 
+  // 書き取り問題: 例文をパーツに分割（ブランク数チェックにも使用）
+  const dictationParts =
+    currentQuestion.type === "dictation" && currentQuestion.word.example
+      ? parseDictationParts(currentQuestion.word.example, currentQuestion.word.word)
+      : [];
+  const dictationBlankCount = dictationParts.filter((p) => p.kind === "blank").length;
+
   return (
     <div className="main-content px-2 py-1.5 flex flex-col">
       <div className="max-w-md w-full mx-auto flex flex-col h-full">
@@ -1604,9 +1655,60 @@ export default function QuizPage() {
 
             <div className="text-center mb-1">
               <p className="text-[10px] text-slate-400 dark:text-slate-500 mb-0.5">{getQuestionPrompt(currentQuestion.type)}</p>
-              <h2 className={`font-bold text-gradient ${isSentenceType ? "text-xs leading-relaxed" : "text-lg"}`}>
-                {questionDisplay}
-              </h2>
+
+              {/* 書き取り問題（未回答時）: 例文中にインライン入力フィールドを埋め込む */}
+              {currentQuestion.type === "dictation" && selected === null && dictationBlankCount > 0 ? (
+                <div className="flex flex-wrap items-baseline justify-center gap-x-0.5 gap-y-2 font-bold text-sm text-slate-700 dark:text-slate-200 leading-loose px-1">
+                  {dictationParts.map((part, i) => {
+                    if (part.kind === "text") {
+                      return <span key={i} className="text-gradient">{part.content}</span>;
+                    }
+                    const wordIndex = part.wordIndex;
+                    const correctWord = currentQuestion.correctAnswer.split(/\s+/)[wordIndex] ?? "";
+                    return (
+                      <input
+                        key={i}
+                        ref={(el) => { dictationInputRefs.current[wordIndex] = el; }}
+                        type="text"
+                        value={dictationInputs[wordIndex] ?? ""}
+                        onChange={(e) => {
+                          setDictationInputs((prev) => {
+                            const next = [...prev];
+                            next[wordIndex] = e.target.value;
+                            return next;
+                          });
+                        }}
+                        onKeyDown={(e) => {
+                          const answerWords = currentQuestion.correctAnswer.split(/\s+/);
+                          if (e.key === "Tab") {
+                            e.preventDefault();
+                            // 次のブランクへ移動（最後のブランクから最初に戻る）
+                            const nextIdx = (wordIndex + 1) % answerWords.length;
+                            dictationInputRefs.current[nextIdx]?.focus();
+                          } else if (e.key === "Enter") {
+                            e.stopPropagation();
+                            handleDictationSubmit();
+                          }
+                        }}
+                        className="border-b-2 border-primary-400 dark:border-primary-500 bg-transparent text-center text-base leading-[1.4] font-bold text-primary-700 dark:text-primary-300 focus:outline-none focus:border-primary-600 dark:focus:border-primary-400 transition-colors"
+                        style={{
+                          width: `${Math.max(4, correctWord.length + 2)}ch`,
+                          // text-base (16px) で iOS 自動ズームを防ぐ（font-size < 16px で発生）
+                        }}
+                        autoComplete="off"
+                        autoCorrect="off"
+                        autoCapitalize="none"
+                        spellCheck={false}
+                        inputMode="text"
+                      />
+                    );
+                  })}
+                </div>
+              ) : (
+                <h2 className={`font-bold text-gradient ${isSentenceType ? "text-xs leading-relaxed" : "text-lg"}`}>
+                  {questionDisplay}
+                </h2>
+              )}
               {currentQuestion.type === "en-to-ja" && (
                 <div className="mt-1">
                   <SpeakButton text={currentQuestion.word.word} size="sm" />
@@ -1639,38 +1741,23 @@ export default function QuizPage() {
               })()}
             </div>
 
-            {/* 書き取り問題: テキスト入力UI */}
+            {/* 書き取り問題: 回答ボタン（入力フィールドは問題文にインライン埋め込み） */}
             {currentQuestion.type === "dictation" ? (
-              <div className="flex-1 flex flex-col justify-center gap-2">
+              <div className="flex-1 flex flex-col justify-end gap-2 pb-1">
                 {selected === null ? (
-                  <>
-                    <input
-                      type="text"
-                      value={dictationInput}
-                      onChange={(e) => setDictationInput(e.target.value)}
-                      onKeyDown={(e) => {
-                        if (e.key === "Enter") {
-                          e.stopPropagation();
-                          handleDictationSubmit();
-                        }
-                      }}
-                      placeholder="英単語を入力..."
-                      autoFocus
-                      autoComplete="off"
-                      autoCorrect="off"
-                      autoCapitalize="none"
-                      spellCheck={false}
-                      className="w-full border-2 border-slate-200 dark:border-slate-600 rounded-xl px-3 py-2 text-sm text-center text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-800 focus:outline-none focus:border-primary-400 transition-colors"
-                    />
-                    <Button
-                      fullWidth
-                      size="sm"
-                      onClick={handleDictationSubmit}
-                      disabled={!dictationInput.trim()}
-                    >
-                      回答する
-                    </Button>
-                  </>
+                  <Button
+                    fullWidth
+                    size="sm"
+                    onClick={handleDictationSubmit}
+                    disabled={
+                    dictationBlankCount === 0 ||
+                    !currentQuestion.correctAnswer
+                      .split(/\s+/)
+                      .every((_, i) => (dictationInputs[i] ?? "").trim() !== "")
+                  }
+                  >
+                    回答する
+                  </Button>
                 ) : (
                   <div className="text-center">
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5">あなたの回答</p>
