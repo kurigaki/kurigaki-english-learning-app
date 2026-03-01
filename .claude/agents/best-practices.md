@@ -79,7 +79,7 @@ const handleClick = (e: any) => { ... };
 
 ```typescript
 // Good: 明確なユニオン型
-type QuestionType = "en-to-ja" | "ja-to-en" | "fill-blank";
+type QuestionType = "en-to-ja" | "ja-to-en" | "listening" | "dictation";
 type MasteryLevel = "new" | "learning" | "familiar" | "mastered";
 
 // Bad: 曖昧な string 型
