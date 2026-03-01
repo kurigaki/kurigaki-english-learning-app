@@ -72,26 +72,33 @@ function selectQuestionTypeWithRatios(
   ratios: QuestionTypeRatios,
   hasExample: boolean
 ): QuestionType {
-  const pool: { type: QuestionType; weight: number }[] = [
-    { type: "en-to-ja", weight: ratios.enToJa },
-    { type: "ja-to-en", weight: ratios.jaToEn },
+  // weight > 0 のみに絞る。
+  // - 0 を含めると Math.random()=0 のとき weight=0 のエントリが誤選択される
+  // - 例文のない単語は listening / dictation を除外
+  const pool = [
+    { type: "en-to-ja" as QuestionType, weight: ratios.enToJa },
+    { type: "ja-to-en" as QuestionType, weight: ratios.jaToEn },
     ...(hasExample
       ? [
           { type: "listening" as QuestionType, weight: ratios.listening },
           { type: "dictation" as QuestionType, weight: ratios.dictation },
         ]
       : []),
-  ];
+  ].filter((p) => p.weight > 0);
+
+  // 全タイプが 0 の場合: 例文なし単語で listening/dictation=100% など
+  if (pool.length === 0) return "en-to-ja";
 
   const total = pool.reduce((s, p) => s + p.weight, 0);
-  if (total === 0) return "en-to-ja";
-
   let random = Math.random() * total;
+
   for (const { type, weight } of pool) {
     random -= weight;
     if (random <= 0) return type;
   }
-  return "en-to-ja";
+  // 浮動小数点誤差で random がわずかに正のまま残るケースへの安全策。
+  // "en-to-ja" をハードコードせず、最後の要素（最大確率のタイプ）を返す。
+  return pool[pool.length - 1].type;
 }
 
 function generateChoicesForEnToJa(correctWord: Word, allWords: Word[]): string[] {
