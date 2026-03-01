@@ -7,6 +7,7 @@
 import { allWords, Word as InternalWord, Course } from "./index";
 import type { PartOfSpeech, PronunciationData, WordExample, WordColumn } from "@/types";
 import { wordExtensions } from "../word-extensions";
+import { exampleJaOverrides } from "../example-ja-overrides";
 
 // Re-export Course as CourseType for backward compatibility
 export type CourseType = Course;
@@ -90,6 +91,7 @@ function toLegacyWord(w: InternalWord): Word {
     word: w.word,
     meaning: w.meaning,
     example: w.example,
+    exampleJa: exampleJaOverrides.get(w.id),
     difficulty: (DIFFICULTY_MAP[`${w.course}:${w.stage}`] ?? 3) as Difficulty,
     category: CATEGORY_MAP[w.course] ?? "daily",
     partOfSpeech: w.partOfSpeech as PartOfSpeech,
