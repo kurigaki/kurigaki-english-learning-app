@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className="min-h-screen overflow-x-hidden">
+      <body className="overflow-x-hidden">
         <ThemeProvider>
           <AuthProvider>
             <Header />
