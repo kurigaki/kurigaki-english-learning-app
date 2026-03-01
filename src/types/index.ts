@@ -1,5 +1,13 @@
 // 問題タイプ
-export type QuestionType = "en-to-ja" | "ja-to-en" | "fill-blank";
+export type QuestionType = "en-to-ja" | "ja-to-en" | "listening" | "dictation";
+
+// 問題タイプの出題比率（0〜100 の重みづけ、内部で正規化）
+export type QuestionTypeRatios = {
+  enToJa: number;    // A: 英語→日本語
+  jaToEn: number;    // B: 日本語→英語
+  listening: number; // C: リスニング（例文の空欄選択）
+  dictation: number; // D: 書き取り（例文の空欄入力）
+};
 
 // クイズモード
 export type QuizMode = "normal" | "speed";
