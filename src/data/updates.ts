@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-01",
+    version: "1.18.0",
+    title: "クイズにリスニング・書き取り問題タイプを追加",
+    content: [
+      "穴埋め問題を「リスニング（選択式）」と「書き取り（キーボード入力式）」の2タイプに刷新",
+      "リスニング・書き取りはどちらも例文全体を自動読み上げ（音声ボタンで手動再生も可）",
+      "クイズ設定画面で各問題タイプの出題比率をスライダーで調整可能（デフォルトは均等25%）",
+    ],
+    category: "feature",
+  },
+  {
+    date: "2026-03-01",
     version: "1.17.0",
     title: "単語詳細に全単語コアイメージ・語源解説を追加",
     content: [
