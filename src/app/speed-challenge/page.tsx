@@ -353,7 +353,7 @@ export default function SpeedChallengePage() {
 
     return (
       <div className="main-content px-2 py-1.5 flex flex-col">
-        <div className="max-w-md w-full mx-auto flex flex-col h-full">
+        <div className="max-w-md w-full mx-auto flex flex-col">
           {/* 上部固定: タイマー & スコア */}
           <div className="flex-shrink-0 mb-1">
             <div className="flex justify-between items-center mb-1">
@@ -395,7 +395,7 @@ export default function SpeedChallengePage() {
           </div>
 
           {/* 中央: 問題カード */}
-          <Card className={`flex-1 !p-3 transition-all flex flex-col ${
+          <Card className={`!p-3 transition-all flex flex-col ${
             feedback?.show
               ? feedback.correct
                 ? "ring-2 ring-green-400 bg-green-50 dark:bg-green-900/20"
@@ -415,7 +415,7 @@ export default function SpeedChallengePage() {
             </div>
 
             {/* 選択肢 */}
-            <div className="flex-1 grid grid-cols-2 gap-1.5 content-center">
+            <div className="grid grid-cols-2 gap-1.5 mt-2">
               {question.choices.map((choice, index) => (
                 <button
                   key={`${question.word.id}-${index}`}
