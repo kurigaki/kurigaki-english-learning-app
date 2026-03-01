@@ -136,6 +136,16 @@ export const getMasteryLevel = (accuracy: number | null, attempts: number): Mast
 export const isWeakWord = (accuracy: number | null, attempts: number): boolean =>
   attempts >= 1 && accuracy !== null && accuracy < 60;
 
+// 単語帳のソートオプション
+export type WordListSortOption =
+  | "default"
+  | "alphabetical"
+  | "alphabetical-desc"
+  | "accuracy"
+  | "accuracy-desc"
+  | "attempts"
+  | "difficulty";
+
 // スピードチャレンジ結果
 export type SpeedChallengeResult = {
   id: string;
