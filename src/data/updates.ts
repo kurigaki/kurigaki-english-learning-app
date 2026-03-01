@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-01",
+    version: "1.17.0",
+    title: "単語詳細に全単語コアイメージ・語源解説を追加",
+    content: [
+      "単語詳細画面の「コアイメージ」「使い方」「類義語との違い」「英英定義」「語源」セクションに、全単語でコンテンツを表示",
+      "TOEIC 500 全180語に手書きの詳細解説（コアイメージ・語源・類義語比較など）を追加",
+      "単語データ品質を改善：TOEIC コースに混入していた基礎語（today・month・color など8語）を削除",
+    ],
+    category: "feature",
+  },
+  {
+    date: "2026-03-01",
     version: "1.16.0",
     title: "単語帳にフラッシュカードモードを追加",
     content: [

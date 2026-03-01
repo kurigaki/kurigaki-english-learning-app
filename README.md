@@ -54,6 +54,7 @@ src/
 
 - [CLAUDE.md](./CLAUDE.md) - Development guide
 - [docs/design.md](./docs/design.md) - Design specifications
+- [docs/vocabulary-policy.md](./docs/vocabulary-policy.md) - Vocabulary coverage and data quality policy
 
 ## License
 
