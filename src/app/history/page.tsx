@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
+import { saveHistoryTab, getAndClearHistoryTab } from "@/lib/navigation-state";
 import type { WordStats } from "@/lib/storage";
 import { LearningRecord, QuestionType, Achievement, isWeakWord } from "@/types";
 import { words, getWordsByCourse } from "@/data/words/compat";
@@ -23,6 +24,16 @@ type CourseProgress = {
   name: string;
   totalWords: number;
   masteredWords: number;
+};
+
+const formatDate = (isoString: string): string => {
+  const date = new Date(isoString);
+  return date.toLocaleString("ja-JP", {
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 };
 
 export default function HistoryPage() {
@@ -79,6 +90,9 @@ export default function HistoryPage() {
 
   useEffect(() => {
     setIsMounted(true);
+    // 単語詳細から戻った際にタブ状態を復元
+    const saved = getAndClearHistoryTab();
+    if (saved) setActiveTab(saved);
   }, []);
 
   // 認証初期化完了後にデータを再取得（認証中はSupabaseセッションが未準備のため待機）
@@ -164,15 +178,6 @@ export default function HistoryPage() {
     );
   }
 
-  const formatDate = (isoString: string) => {
-    const date = new Date(isoString);
-    return date.toLocaleString("ja-JP", {
-      month: "numeric",
-      day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-  };
 
   return (
     <div className="main-content px-3 py-2 flex flex-col">
@@ -326,7 +331,8 @@ export default function HistoryPage() {
                 {weakWords.map((word) => (
                   <Link
                     key={word.id}
-                    href={`/word/${word.id}`}
+                    href={`/word/${word.id}?from=history`}
+                    onClick={() => saveHistoryTab(activeTab)}
                     className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
@@ -426,7 +432,8 @@ export default function HistoryPage() {
                     return wordId ? (
                       <Link
                         key={record.id}
-                        href={`/word/${wordId}`}
+                        href={`/word/${wordId}?from=history`}
+                        onClick={() => saveHistoryTab(activeTab)}
                         className="p-2.5 flex items-center justify-between hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors group"
                       >
                         {content}
