@@ -326,4 +326,32 @@ body {
     50% { transform: scale(0.95); }
     75% { transform: scale(1.1); }
   }
+
+  /* 3Dカードフリップ */
+  .card-flip-container {
+    perspective: 1000px;
+  }
+  .card-flip-inner {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-flip-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .card-flip-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+  }
+  .card-flip-back {
+    transform: rotateY(180deg);
+  }
+
+  /* カード切り替えアニメーション */
+  @keyframes slide-out-left  { to { transform: translateX(-48px); opacity: 0; } }
+  @keyframes slide-out-right { to { transform: translateX(48px);  opacity: 0; } }
+  .animate-slide-out-left  { animation: slide-out-left  0.18s ease-in forwards; }
+  .animate-slide-out-right { animation: slide-out-right 0.18s ease-in forwards; }
 }

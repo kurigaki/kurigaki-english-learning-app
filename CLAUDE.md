@@ -307,7 +307,7 @@ src/
 │   ├── quiz/page.tsx             # クイズに挑戦
 │   ├── speed-challenge/page.tsx  # スピードチャレンジ
 │   ├── word/[id]/page.tsx        # 単語詳細
-│   ├── word-list/page.tsx        # 単語帳（コース・カテゴリ・難易度フィルター・検索・ソート）
+│   ├── word-list/page.tsx        # 単語帳（コース・カテゴリ・難易度フィルター・検索・ソート・フラッシュカードモード）
 │   ├── weak-words/page.tsx       # 苦手単語一覧
 │   ├── bookmarks/page.tsx        # ブックマーク一覧
 │   ├── history/page.tsx          # 学習履歴（タブ: 概要/苦手単語/履歴）
@@ -328,6 +328,8 @@ src/
 │       ├── quiz/                 # クイズ機能
 │       │   ├── PerfectScorePopup.tsx  # 全問正解ポップアップ
 │       │   └── index.ts
+│       ├── word-list/            # 単語帳機能
+│       │   └── FlashcardView.tsx # フラッシュカードモード（SRS連動）
 │       └── word-detail/          # 単語詳細機能
 │           ├── WordHeader.tsx
 │           ├── WordImage.tsx
@@ -341,7 +343,9 @@ src/
 │   ├── audio.ts                  # 音声再生（Web Speech API）
 │   ├── storage.ts                # localStorage管理
 │   ├── image.ts                  # 画像URL/コンセプト画像管理
-│   └── quiz-session.ts           # クイズセッション状態永続化
+│   ├── quiz-session.ts           # クイズセッション状態永続化
+│   ├── flashcard-session.ts      # フラッシュカードセッション状態永続化（30分有効期限）
+│   └── navigation-state.ts       # ページナビゲーション状態（タブ・ソート順の復元）
 ├── data/                         # 静的データ
 │   ├── words.ts                  # 単語データベース
 │   └── achievements.ts           # 実績定義
