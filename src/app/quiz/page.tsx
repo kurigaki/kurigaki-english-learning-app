@@ -55,7 +55,7 @@ const defaultQuizSettings: QuizSettings = {
   typeRatios: { ...defaultTypeRatios },
 };
 
-// カテゴリリスト
+// カテゴリリスト（loadQuizSettings のバリデーションで参照するため先に定義）
 const ALL_CATEGORIES: Category[] = [
   "daily", "school", "family", "food", "hobby",
   "nature", "health", "sports", "culture",
@@ -63,6 +63,80 @@ const ALL_CATEGORIES: Category[] = [
   "finance", "technology", "communication",
   "greeting", "emotion", "opinion", "request", "smalltalk",
 ];
+
+// ─── クイズ設定の永続化 ──────────────────────────────────────────────────────
+
+const QUIZ_SETTINGS_KEY = "english-app-quiz-settings";
+
+// COURSE_DEFINITIONS から導出（Course 型の追加・削除に自動追従する）
+const VALID_COURSES = new Set<string>(Object.keys(COURSE_DEFINITIONS));
+// COURSE_DEFINITIONS の各コースが持つ全 Stage を収集
+const VALID_STAGES = new Set<string>(
+  Object.values(COURSE_DEFINITIONS).flatMap((def) => def.stages.map((s) => s.stage))
+);
+
+/** クイズ設定を localStorage に保存する */
+function saveQuizSettings(settings: QuizSettings): void {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(QUIZ_SETTINGS_KEY, JSON.stringify(settings));
+  } catch (e) {
+    console.warn("[Quiz] Failed to save quiz settings:", e);
+  }
+}
+
+/**
+ * localStorage からクイズ設定を復元する。
+ * データが存在しない・破損している場合は defaultQuizSettings を返す。
+ */
+function loadQuizSettings(): QuizSettings {
+  if (typeof window === "undefined") return { ...defaultQuizSettings };
+  try {
+    const raw = localStorage.getItem(QUIZ_SETTINGS_KEY);
+    if (!raw) return { ...defaultQuizSettings };
+
+    const parsed = JSON.parse(raw) as unknown;
+    if (typeof parsed !== "object" || parsed === null) return { ...defaultQuizSettings };
+    const p = parsed as Record<string, unknown>;
+
+    const course = typeof p.course === "string" && VALID_COURSES.has(p.course)
+      ? (p.course as Course) : null;
+    const stage  = typeof p.stage  === "string" && VALID_STAGES.has(p.stage)
+      ? (p.stage  as Stage)  : null;
+
+    const categories = Array.isArray(p.categories)
+      ? (p.categories as unknown[]).filter((c): c is Category =>
+          typeof c === "string" && (ALL_CATEGORIES as string[]).includes(c)
+        )
+      : [];
+
+    const difficulties = Array.isArray(p.difficulties)
+      ? (p.difficulties as unknown[]).filter(
+          (d): d is number => typeof d === "number" && d >= 1 && d <= 7
+        )
+      : [];
+
+    const includeBookmarksOnly =
+      typeof p.includeBookmarksOnly === "boolean" ? p.includeBookmarksOnly : false;
+
+    const tr = typeof p.typeRatios === "object" && p.typeRatios !== null
+      ? (p.typeRatios as Record<string, unknown>)
+      : {};
+    const typeRatios: QuestionTypeRatios = {
+      enToJa:    typeof tr.enToJa    === "number" ? tr.enToJa    : defaultTypeRatios.enToJa,
+      jaToEn:    typeof tr.jaToEn    === "number" ? tr.jaToEn    : defaultTypeRatios.jaToEn,
+      listening: typeof tr.listening === "number" ? tr.listening : defaultTypeRatios.listening,
+      dictation: typeof tr.dictation === "number" ? tr.dictation : defaultTypeRatios.dictation,
+    };
+
+    return { course, stage, categories, difficulties, includeBookmarksOnly, typeRatios };
+  } catch (e) {
+    console.warn("[Quiz] Failed to load quiz settings:", e);
+    return { ...defaultQuizSettings };
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 /**
  * 比率設定と例文の有無に基づいて問題タイプを選択する。
@@ -623,7 +697,7 @@ export default function QuizPage() {
 
   // クイズフェーズ管理
   const [phase, setPhase] = useState<QuizPhase>("setup");
-  const [quizSettings, setQuizSettings] = useState<QuizSettings>(defaultQuizSettings);
+  const [quizSettings, setQuizSettings] = useState<QuizSettings>(() => loadQuizSettings());
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -675,6 +749,11 @@ export default function QuizPage() {
     };
     loadData();
   }, []);
+
+  // クイズ設定が変わるたびに localStorage へ保存
+  useEffect(() => {
+    saveQuizSettings(quizSettings);
+  }, [quizSettings]);
 
   // 次の問題へ進む / クイズ終了処理
   const handleNext = useCallback(async () => {
@@ -956,6 +1035,9 @@ export default function QuizPage() {
     }
 
     // URLパラメータによる自動開始
+    // ※ URLパラメータ起動（復習・苦手・SRS）はコース/カテゴリ/難易度フィルターを
+    //    使わず全単語対象で起動する（defaultQuizSettings を渡す）。
+    //    出題比率(typeRatios)もデフォルト均等配分を使用する仕様。
     if (reviewWordId) {
       // 特定の単語を復習（単語詳細画面からの遷移）
       const wordIdNum = parseInt(reviewWordId, 10);

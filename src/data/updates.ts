@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-01",
+    version: "1.19.0",
+    title: "クイズ設定を自動保存・次回に引き継ぎ",
+    content: [
+      "コース・カテゴリ・難易度・ブックマークのみ・出題比率などの設定を自動保存",
+      "次回クイズ画面を開いたとき、前回の設定がそのまま復元される",
+      "「設定をリセット」ボタンでいつでも初期状態に戻せる",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-01",
     version: "1.18.0",
     title: "クイズにリスニング・書き取り問題タイプを追加",
     content: [
