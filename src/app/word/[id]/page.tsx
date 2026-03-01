@@ -3,6 +3,8 @@
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { words, categoryLabels, difficultyLabels } from "@/data/words/compat";
+import { allWords } from "@/data/words";
+import { getWordExtension } from "@/data/word-extensions";
 import { Card, Button } from "@/components/ui";
 import {
   WordHeader,
@@ -32,6 +34,8 @@ export default function WordDetailPage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const word = words.find((w) => w.id === wordId);
+  const internalWord = allWords.find((w) => w.id === wordId);
+  const wordExt = internalWord ? getWordExtension(internalWord) : undefined;
 
   // 学習履歴から記憶度を計算し、ブックマーク状態を取得
   useEffect(() => {
@@ -230,7 +234,7 @@ export default function WordDetailPage() {
           <WordPlaceholderSection
             title="コアイメージ"
             emoji="💡"
-            content={word.coreImage}
+            content={word.coreImage ?? wordExt?.coreImage}
             placeholder="この単語のコアイメージは今後追加予定です"
           />
 
@@ -238,7 +242,7 @@ export default function WordDetailPage() {
           <WordPlaceholderSection
             title="使い方"
             emoji="📝"
-            content={word.usage}
+            content={word.usage ?? wordExt?.usage}
             placeholder="この単語の使い方解説は今後追加予定です"
           />
 
@@ -249,7 +253,7 @@ export default function WordDetailPage() {
           <WordPlaceholderSection
             title="類義語との違い"
             emoji="🔍"
-            content={word.synonymDifference}
+            content={word.synonymDifference ?? wordExt?.synonymDifference}
             placeholder="類義語との使い分けは今後追加予定です"
           />
 
@@ -257,7 +261,7 @@ export default function WordDetailPage() {
           <WordPlaceholderSection
             title="英英定義"
             emoji="🇬🇧"
-            content={word.englishDefinition}
+            content={word.englishDefinition ?? wordExt?.englishDefinition}
             placeholder="英語による定義は今後追加予定です"
           />
 
@@ -265,7 +269,7 @@ export default function WordDetailPage() {
           <WordPlaceholderSection
             title="語源"
             emoji="📜"
-            content={word.etymology}
+            content={word.etymology ?? wordExt?.etymology}
             placeholder="語源解説は今後追加予定です"
           />
 
