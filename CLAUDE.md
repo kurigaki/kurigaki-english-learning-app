@@ -359,7 +359,7 @@ src/
 
 ```typescript
 // 問題タイプ
-type QuestionType = "en-to-ja" | "ja-to-en" | "fill-blank";
+type QuestionType = "en-to-ja" | "ja-to-en" | "listening" | "dictation";
 
 // クイズモード
 type QuizMode = "normal" | "speed-challenge";
@@ -710,15 +710,40 @@ const getMasteryLevel = (accuracy: number | null, attempts: number) => {
 |--------|------|--------------|
 | en-to-ja | 英語→日本語選択 | 英単語を読み上げ |
 | ja-to-en | 日本語→英語選択 | 選択した英単語を読み上げ |
-| fill-blank | 穴埋め問題 | 例文全体を読み上げ |
+| listening | 例文リスニング（選択式） | 例文全文を読み上げ |
+| dictation | 書き取り（キーボード入力式） | 例文全文を読み上げ |
 
-### 穴埋め問題の和訳表示
+> ⚠️ 旧タイプ `fill-blank` は廃止。過去の学習記録との互換性のため履歴画面では「穴埋め(旧)」として表示。
 
-穴埋め問題では「和訳を表示」ボタンで日本語訳を確認できます。
+### 問題タイプの出題比率
 
-- 例文の日本語訳がある場合はそれを表示
-- ない場合は単語の意味をフォールバック表示
-- 回答後は自動で非表示
+クイズ設定画面で各タイプの出題比率（0〜100の重みづけ、内部で正規化）をスライダーで調整可能。
+
+```typescript
+type QuestionTypeRatios = {
+  enToJa: number;    // A: 英語→日本語
+  jaToEn: number;    // B: 日本語→英語
+  listening: number; // C: リスニング（例文の空欄選択）
+  dictation: number; // D: 書き取り（例文の空欄入力）
+};
+// デフォルト: 各25%均等
+```
+
+- 例文のない単語は `listening` / `dictation` を除外して `en-to-ja` / `ja-to-en` にフォールバック
+
+### リスニング・書き取り問題の共通仕様
+
+- 出題と同時に例文全体を自動読み上げ（300ms遅延）
+- 「音声」ボタンで例文を再生
+- 「和訳を表示」ボタンで例文の日本語訳を表示（回答前のみ）
+  - 例文の日本語訳がある場合はそれを表示
+  - ない場合は自動生成ヒントを表示
+
+### 書き取り問題の回答判定
+
+- 大文字・小文字を区別しない（case-insensitive）
+- 前後の空白を無視（trim）
+- Enter キーで送信可能
 
 ### 全問正解フィードバック（PerfectScorePopup）
 
