@@ -6,17 +6,20 @@ import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { saveHistoryTab, getAndClearHistoryTab } from "@/lib/navigation-state";
 import type { WordStats } from "@/lib/storage";
-import { LearningRecord, QuestionType, Achievement, isWeakWord } from "@/types";
+import { LearningRecord, Achievement, isWeakWord } from "@/types";
 import { words, getWordsByCourse } from "@/data/words/compat";
 import type { Course } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { getAchievementById } from "@/data/achievements";
 import { Card, StatsCard, Button, SpeakButton } from "@/components/ui";
 
-const questionTypeLabels: Record<QuestionType, string> = {
+// レガシーの "fill-blank" も表示できるように string インデックスで定義
+const questionTypeLabels: Record<string, string> = {
   "en-to-ja": "英→日",
   "ja-to-en": "日→英",
-  "fill-blank": "穴埋め",
+  "fill-blank": "穴埋め(旧)",  // 旧データとの互換性
+  "listening": "リスニング",
+  "dictation": "書き取り",
 };
 
 type CourseProgress = {
@@ -127,14 +130,18 @@ export default function HistoryPage() {
   }), [records, wordStats]);
 
   const typeStats = useMemo(() => {
-    const stats: Record<QuestionType, { total: number; correct: number }> = {
+    // レガシーの "fill-blank" も含め、全タイプを string キーで管理
+    const stats: Record<string, { total: number; correct: number }> = {
       "en-to-ja": { total: 0, correct: 0 },
       "ja-to-en": { total: 0, correct: 0 },
-      "fill-blank": { total: 0, correct: 0 },
+      "listening": { total: 0, correct: 0 },
+      "dictation": { total: 0, correct: 0 },
+      "fill-blank": { total: 0, correct: 0 }, // 旧データとの互換性
     };
 
     for (const record of records) {
       const type = record.questionType || "en-to-ja";
+      if (!stats[type]) stats[type] = { total: 0, correct: 0 };
       stats[type].total++;
       if (record.correct) stats[type].correct++;
     }
@@ -285,13 +292,13 @@ export default function HistoryPage() {
                 <span>問題タイプ別</span>
               </h2>
               <div className="space-y-2">
-                {(Object.entries(typeStats) as [QuestionType, { total: number; correct: number }][]).map(
+                {(Object.entries(typeStats) as [string, { total: number; correct: number }][]).filter(([, stats]) => stats.total > 0).map(
                   ([type, stats]) => {
                     const rate = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
                     return (
                       <div key={type}>
                         <div className="flex justify-between text-sm mb-1">
-                          <span className="text-slate-600 dark:text-slate-300">{questionTypeLabels[type]}</span>
+                          <span className="text-slate-600 dark:text-slate-300">{questionTypeLabels[type] ?? type}</span>
                           <span className="text-slate-500 dark:text-slate-400">
                             {stats.correct}/{stats.total} ({rate}%)
                           </span>
