@@ -1703,7 +1703,7 @@ export default function QuizPage() {
 
   return (
     <div className="main-content px-2 py-1.5 flex flex-col">
-      <div className="max-w-md w-full mx-auto flex flex-col h-full">
+      <div className="max-w-md w-full mx-auto flex flex-col">
         {/* 上部固定: Progress & Score */}
         <div className="flex-shrink-0 mb-1">
           <div className="mb-1">
@@ -1732,9 +1732,9 @@ export default function QuizPage() {
           </div>
         </div>
 
-        {/* 中央: Question Card - flex-1でスペースを埋める */}
-        <div className="flex-1 min-h-0 flex flex-col">
-          <Card className="flex flex-col p-2 h-full">
+        {/* 中央: Question Card */}
+        <div>
+          <Card className="flex flex-col p-2">
             {/* カテゴリ表示（コンパクト） */}
             {currentQuestion.word.category && (
               <div className={`w-full h-7 mb-1 rounded-md bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100 dark:border-slate-700`}>
@@ -1832,7 +1832,7 @@ export default function QuizPage() {
 
             {/* 書き取り問題: 回答ボタン（入力フィールドは問題文にインライン埋め込み） */}
             {currentQuestion.type === "dictation" ? (
-              <div className="flex-1 flex flex-col justify-end gap-2 pb-1">
+              <div className="flex flex-col gap-2 mt-2">
                 {selected === null ? (
                   <Button
                     fullWidth
@@ -1858,7 +1858,7 @@ export default function QuizPage() {
               </div>
             ) : (
               /* リスニング・英→日・日→英: 選択肢ボタン */
-              <div className="flex-1 flex flex-col justify-evenly gap-1">
+              <div className="flex flex-col gap-2 mt-2">
                 {currentQuestion.choices.map((choice, index) => {
                   let buttonClass = "choice-btn";
 
