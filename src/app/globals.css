@@ -16,18 +16,17 @@
   /*
    * Viewport Height の計算（実機とPC検証ツールの差分対策）
    *
-   * 問題: iOS Safari では 100vh = アドレスバーが隠れた状態の高さ
+   * 問題: iOS Safari では 100vh = アドレスバーが隠れた状態の高さ（Large Viewport）
    *       実際の表示領域はアドレスバー分だけ小さい
    *
-   * 解決策: Dynamic Viewport Units (dvh) を使用
-   * - dvh: アドレスバー・キーボード両方を考慮して動的に変化（最優先）
-   * - svh: アドレスバー表示時の固定高（キーボード非対応）
-   * - lvh: アドレスバー非表示時の高さ（最大 = Large Viewport = 従来の vh）
+   * 解決策: svh（Small Viewport Height）を使用
+   * - svh: アドレスバーが表示された状態の高さ（常に安定した最小値）
+   * - dvh は使わない: アドレスバーの表示/非表示でレイアウトが動的に変化して
+   *         画面がジャンプして見えるため
    *
    * フォールバック順序:
-   * 1. 100dvh - iOS Safari 15.4+ でキーボード表示時もスクロールしない（最優先）
-   * 2. 100svh - dvh 非対応ブラウザ向けフォールバック（同世代なのでほぼ不使用）
-   * 3. 100vh  - 旧ブラウザ用フォールバック
+   * 1. 100svh - iOS Safari 15.4+ で安定（Small Viewport = 常に見える領域）
+   * 2. 100vh  - 旧ブラウザ用フォールバック
    */
   /* ボトムナビ高さ（モバイルのみ） */
   --bottom-nav-height: 56px;
@@ -55,26 +54,6 @@
   }
 }
 
-/*
- * dvh をサポートするブラウザ向け（svh と同世代: iOS Safari 15.4+, Chrome 108+）
- * svh より後に書くことで上書きし、dvh を優先的に使用する。
- *
- * dvh を使う理由:
- *   キーボードが表示されると dvh が自動的に縮小し、コンテナが
- *   キーボード上の空間にぴったり収まる。
- *   → iOS が window をスクロールしなくなる
- *   → 上部のプログレスバー（◯/10）が隠れない
- */
-@supports (height: 100dvh) {
-  :root {
-    --main-height: calc(100dvh - var(--header-height) - var(--safe-area-top) - var(--safe-area-bottom));
-  }
-  @media (max-width: 767px) {
-    :root {
-      --main-height: calc(100dvh - var(--header-height) - var(--bottom-nav-height) - var(--safe-area-top) - var(--safe-area-bottom));
-    }
-  }
-}
 
 .dark {
   --background: #0F172A;
