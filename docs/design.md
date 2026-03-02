@@ -1056,12 +1056,17 @@ await unifiedStorage.addRecord({ ... });
 | パス | 説明 | 状態 |
 |------|------|------|
 | `/` | ホーム画面 | ✅ |
-| `/quiz` | クイズに挑戦 | ✅ |
+| `/quiz` | クイズに挑戦（setup/quiz/result フェーズ） | ✅ |
+| `/review` | SRS・苦手単語の予習リスト（mode=srs/weak） | ✅ |
 | `/speed-challenge` | スピードチャレンジ | ✅ |
 | `/word/[id]` | 単語詳細画面 | ✅ |
+| `/word-list` | 単語帳（検索・フィルター・ソート・フラッシュカード） | ✅ |
 | `/weak-words` | 苦手単語一覧 | ✅ |
+| `/bookmarks` | ブックマーク一覧 | ✅ |
 | `/history` | 学習統計（タブ: 概要/苦手単語/履歴） | ✅ |
 | `/achievements` | 実績一覧 | ✅ |
+| `/updates` | お知らせ（アップデート情報） | ✅ |
+| `/profile` | プロフィール編集 | ✅ |
 
 ---
 
