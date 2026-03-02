@@ -103,7 +103,9 @@ function toLegacyWord(w: InternalWord): Word {
     pronunciation: ext?.pronunciation,
     examples: ext?.examples,
     relatedWords: ext?.relatedWords,
-    // TODO: synonyms/antonyms も ext から取得できるが、現状 WordExtension に含まれていないため未対応
+    synonyms: ext?.synonyms,
+    antonyms: ext?.antonyms,
+    column: ext?.column,
     coreImage: ext?.coreImage,
     usage: ext?.usage,
     synonymDifference: ext?.synonymDifference,

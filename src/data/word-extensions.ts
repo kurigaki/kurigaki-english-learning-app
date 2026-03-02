@@ -28,6 +28,13 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "15世紀フランス語 appointement（合意・取り決め）から。appoint（指定する）＋ -ment（名詞化）。ラテン語 ad punctum（ある点に向かって）も関連。",
       relatedWords: ["meeting", "booking", "reservation", "schedule"],
+      synonyms: ["meeting", "engagement", "booking"],
+      antonyms: ["cancellation"],
+      column: {
+        title: "「アポ」の正体と appointment vs appoint の混同に注意",
+        content:
+          `日本語の「アポを取る」は appointment の略から来ています。ただし、似た単語 appoint（任命する・指定する）とは別語なので注意。"I appointed him manager."（彼をマネージャーに任命した）の appoint と appointment は形は似ていますが、日常会話で「予約」として使う appointment は "make/have/cancel an appointment" のフレーズごと覚えるのが最短です。`,
+      },
       examples: [
         {
           en: "I have a doctor's appointment at 3 p.m. today.",
@@ -63,6 +70,13 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "ラテン語 confirmare（強固にする）から。con-（完全に）＋ firmare（強固にする・firm と同語源）。",
       relatedWords: ["verify", "check", "approve", "validate"],
+      synonyms: ["verify", "approve", "validate"],
+      antonyms: ["cancel", "deny", "reject"],
+      column: {
+        title: "\"Please confirm receipt.\" — メール定番フレーズの意味",
+        content:
+          "\"Please confirm receipt of this email.\"（このメールを受け取ったことをご確認ください）は、ビジネスメールで頻出の定型表現です。confirm は単に「確かめる」だけでなく、「相手にも確認させる」という相互確認のニュアンスを持ちます。check（調べる）より公式で強い意味なので、重要な書類や契約の確認には confirm を使いましょう。",
+      },
       examples: [
         {
           en: "Please confirm your reservation at least 24 hours in advance.",
@@ -98,6 +112,12 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "ラテン語 departire（分ける）から。de-（離れて）＋ partire（分ける・part と同語源）。フランス語 département を経て英語に入った。",
       relatedWords: ["division", "section", "team", "unit"],
+      synonyms: ["division", "section", "unit", "branch"],
+      column: {
+        title: "department store の「dept.」はここから",
+        content:
+          "デパート（department store）の「department」は「売り場」の意味です。食品売り場・衣料売り場など、機能ごとに分かれた区画が department。会社の「部署（営業部・人事部）」と店舗の「売り場」で同じ単語を使います。また、よく \"Which department are you in?\"（どちらのご部署ですか？）と聞かれるので、自分の部署名を英語で言えるようにしておくと便利です。",
+      },
       examples: [
         {
           en: "She transferred to the marketing department last April.",
@@ -133,6 +153,13 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "employ（雇う）＋ -ee（される側の人）。フランス語 employé から。-ee は法的・正式な文書でよく使われる接尾辞（trainee, interviewee など）。",
       relatedWords: ["employer", "staff", "worker", "colleague"],
+      synonyms: ["staff", "worker", "personnel"],
+      antonyms: ["employer", "boss", "manager"],
+      column: {
+        title: "employee と employer — -ee/-er で「される側」「する側」",
+        content:
+          "employ（雇う）に接尾辞をつけると意味が変わります。-ee はそのアクションを「される人」（employee = 雇われる人）、-er/-or は「する人」（employer = 雇う人）を表します。同じパターンが interview → interviewee（面接される人）/ interviewer（面接する人）にも使われます。TOEIC では employer（雇用主）も頻出なので、ペアで覚えましょう。",
+      },
       examples: [
         {
           en: "All employees are required to attend the safety training.",
@@ -168,6 +195,13 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "フランス語 envois（送付品）の複数形から。en-（中に）＋ voie（道・方法）が語源。16世紀から商業用語として使われてきた。",
       relatedWords: ["receipt", "bill", "payment", "statement"],
+      synonyms: ["bill", "statement", "charge"],
+      antonyms: ["receipt", "payment"],
+      column: {
+        title: "invoice（請求書）vs receipt（領収書）— 方向が逆！",
+        content:
+          "invoice と receipt はよく混同されますが、お金の流れの方向が真逆です。invoice は「これを払ってください」という請求書（支払い前）、receipt は「受け取りました」という領収書（支払い後）。TOEIC のメール問題で \"attach the invoice\"（請求書を添付する）と \"issue a receipt\"（領収書を発行する）が頻出です。会計部門（accounting department）とやり取りする場面でほぼ必ず登場します。",
+      },
       examples: [
         {
           en: "Please send the invoice to our accounting department.",
@@ -203,6 +237,12 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "イタリア語 maneggiare（手で扱う・馬を操る）から。ラテン語 manus（手）が語源。",
       relatedWords: ["supervise", "lead", "direct", "oversee"],
+      synonyms: ["handle", "oversee", "supervise"],
+      column: {
+        title: "\"manage to do\" — 「なんとか〜できた」が重要用法",
+        content:
+          "manage は「管理する」だけではありません。\"manage to do\"（なんとか〜することができた）という表現は TOEIC でも日常英会話でも頻出です。「I managed to finish it on time.」（なんとか時間内に終えられた）のように、困難を乗り越えた達成感を表します。\"could\"（できた）より苦労した感じが出るので、使い分けを意識してみましょう。",
+      },
       examples: [
         {
           en: "She has been managing the sales team for three years.",
@@ -238,6 +278,13 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "ラテン語 opportunitas から。ob portum venire（港に向かって吹く風）が語源で、「帆に向かって吹く好機の風」というイメージ。",
       relatedWords: ["chance", "possibility", "occasion", "prospect"],
+      synonyms: ["chance", "occasion", "opening"],
+      antonyms: ["obstacle", "threat", "setback"],
+      column: {
+        title: "\"once-in-a-lifetime opportunity\" — 定番フレーズを丸ごと覚える",
+        content:
+          "opportunity は単独よりも決まり文句で使われることが多い単語です。\"take the opportunity to do\"（〜する機会を利用する）、\"miss an opportunity\"（機会を逃す）、\"once-in-a-lifetime opportunity\"（一生に一度のチャンス）は TOEIC のメール・広告文でよく見かけます。job opportunity（求人）というひとかたまりで求人広告にも登場するので、opportunity が出たらまず「何のための機会？」を押さえましょう。",
+      },
       examples: [
         {
           en: "This internship is a great opportunity to gain real work experience.",
@@ -273,6 +320,13 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "古フランス語 purchacier（追求する・手に入れようとする）から。ラテン語 pro-（前に）＋ capere（捕まえる）の意。",
       relatedWords: ["buy", "acquire", "obtain", "payment"],
+      synonyms: ["buy", "acquire", "obtain"],
+      antonyms: ["sell", "return", "refund"],
+      column: {
+        title: "purchase は buy の格上げ版 — TOEIC では purchase order が頻出",
+        content:
+          "purchase と buy はほぼ同義ですが、purchase の方がフォーマルです。\"buy a coffee\"（コーヒーを買う）は自然ですが、\"purchase a coffee\" は大げさに聞こえます。一方、ビジネス文書では purchase が標準。特に \"purchase order\"（発注書・PO）は TOEIC の書類問題で頻出なので、略語 \"PO\" と合わせて覚えておきましょう。",
+      },
       examples: [
         {
           en: "You can purchase tickets online or at the box office.",
@@ -308,6 +362,13 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "ラテン語 reservare（取っておく）から。re-（後のために）＋ servare（保存する）。フランス語 réservation を経て英語に。",
       relatedWords: ["booking", "appointment", "confirm", "cancel"],
+      synonyms: ["booking", "appointment"],
+      antonyms: ["cancellation", "walk-in"],
+      column: {
+        title: "reservation vs appointment — 「場所の予約」か「人との面会予約」かで使い分け",
+        content:
+          "日本語では両方「予約」ですが、英語では使い分けが必要です。reservation はホテル・レストラン・飛行機など「席・部屋・資源」を確保するとき。appointment は医師・弁護士・美容師など「人との面会」を取り決めるとき。\"restaurant reservation\"（レストラン予約）と \"doctor's appointment\"（医師の予約）はセットで覚えましょう。",
+      },
       examples: [
         {
           en: "I'd like to make a reservation for two at 7 p.m.",
@@ -345,6 +406,12 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "UK発音 /ˈʃedjuːl/ はラテン語→古フランス語→中英語の経路を踏む。US発音 /ˈskedʒuːl/ はギリシア語 skhedē を経由したより古い形から。",
       ],
       relatedWords: ["timetable", "plan", "agenda", "calendar"],
+      synonyms: ["timetable", "plan", "agenda"],
+      column: {
+        title: "UK と US で発音が違う！ schedule の読み方",
+        content:
+          "schedule は英米で発音が大きく異なります。アメリカ英語では /ˈskedʒuːl/（スケジュール）、イギリス英語では /ˈʃedjuːl/（シェジュール）。どちらも正しく、TOEIC のリスニングでは両方の発音が出るので、UK 音声に慣れておくと有利です。動詞として \"The meeting is scheduled for Friday.\"（会議は金曜日に予定されている）のように使うことも多いので、名詞・動詞の両方を練習しましょう。",
+      },
       examples: [
         {
           en: "The project schedule has been updated due to unexpected delays.",
@@ -7465,5 +7532,8 @@ export function getWordExtension(word: ExtensionSourceWord): WordExtension {
     examples: manual?.examples,
     relatedWords: manual?.relatedWords,
     pronunciation: manual?.pronunciation,
+    synonyms: manual?.synonyms,
+    antonyms: manual?.antonyms,
+    column: manual?.column,
   };
 }
