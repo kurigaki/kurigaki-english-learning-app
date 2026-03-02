@@ -170,10 +170,15 @@ export default function WordDetailPage() {
         <Card className="overflow-hidden">
           {/* カテゴリ・難易度バッジ・ブックマーク */}
           <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full">
-                {categoryLabels[word.category]}
-              </span>
+            <div className="flex flex-wrap items-center gap-2">
+              {(word.categories ?? [word.category]).map((cat) => (
+                <span
+                  key={cat}
+                  className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full"
+                >
+                  {categoryLabels[cat]}
+                </span>
+              ))}
               <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
                 {difficultyLabels[word.difficulty]}
               </span>
@@ -238,6 +243,13 @@ export default function WordDetailPage() {
             placeholder="この単語のコアイメージは今後追加予定です"
           />
 
+          {/* 関連語・類義語・対義語 */}
+          <WordRelations
+            synonyms={word.synonyms}
+            antonyms={word.antonyms}
+            relatedWords={word.relatedWords}
+          />
+
           {/* 使い方 */}
           <WordPlaceholderSection
             title="使い方"
@@ -245,9 +257,6 @@ export default function WordDetailPage() {
             content={word.usage ?? wordExt?.usage}
             placeholder="この単語の使い方解説は今後追加予定です"
           />
-
-          {/* 類義語・対義語 */}
-          <WordRelations synonyms={word.synonyms} antonyms={word.antonyms} />
 
           {/* 類義語との違い */}
           <WordPlaceholderSection
@@ -265,7 +274,7 @@ export default function WordDetailPage() {
             placeholder="英語による定義は今後追加予定です"
           />
 
-          {/* 語源 */}
+          {/* 語源（配列対応：複数語源をリスト表示） */}
           <WordPlaceholderSection
             title="語源"
             emoji="📜"
