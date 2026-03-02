@@ -9,9 +9,14 @@ describe("wordExtensions", () => {
       expect(wordExtensions.size).toBeGreaterThan(0);
     });
 
-    it("全エントリのフィールドが string 型または undefined である", () => {
+    it("全エントリのフィールドが期待する型または undefined である", () => {
       const stringOrUndefined = (v: unknown) =>
         v === undefined || typeof v === "string";
+      // etymology は string | string[] | undefined を許容
+      const etymologyValid = (v: unknown) =>
+        v === undefined ||
+        typeof v === "string" ||
+        (Array.isArray(v) && v.every((item) => typeof item === "string"));
 
       wordExtensions.forEach((ext: WordExtension, id: number) => {
         expect(stringOrUndefined(ext.coreImage), `id=${id} coreImage`).toBe(
@@ -26,9 +31,7 @@ describe("wordExtensions", () => {
           stringOrUndefined(ext.englishDefinition),
           `id=${id} englishDefinition`
         ).toBe(true);
-        expect(stringOrUndefined(ext.etymology), `id=${id} etymology`).toBe(
-          true
-        );
+        expect(etymologyValid(ext.etymology), `id=${id} etymology`).toBe(true);
       });
     });
 

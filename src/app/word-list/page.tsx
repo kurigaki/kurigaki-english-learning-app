@@ -15,6 +15,7 @@ import {
   saveFlashcardSession, getFlashcardSession, clearFlashcardSession,
   saveWordListFilter, getWordListFilter, clearWordListFilter,
 } from "@/lib/flashcard-session";
+import { saveWordNavState } from "@/lib/word-nav-state";
 
 type WordWithStats = {
   id: number;
@@ -600,17 +601,20 @@ export default function WordListPage() {
                           id={`word-item-${word.id}`}
                           key={word.id}
                           href={`/word/${word.id}?from=wordlist`}
-                          onClick={() => saveWordListFilter({
-                            selectedCourse,
-                            selectedStage,
-                            selectedCategory,
-                            selectedDifficulty,
-                            selectedMastery,
-                            searchQuery,
-                            showBookmarksOnly,
-                            sortOption,
-                            scrollTop: listScrollRef.current?.scrollTop ?? 0,
-                          })}
+                          onClick={() => {
+                            saveWordListFilter({
+                              selectedCourse,
+                              selectedStage,
+                              selectedCategory,
+                              selectedDifficulty,
+                              selectedMastery,
+                              searchQuery,
+                              showBookmarksOnly,
+                              sortOption,
+                              scrollTop: listScrollRef.current?.scrollTop ?? 0,
+                            });
+                            saveWordNavState(filteredWords.map((w) => w.id), "wordlist");
+                          }}
                           className="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-xl last:rounded-b-xl"
                         >
                           <div className="flex items-center gap-2 flex-1 min-w-0">

@@ -16,6 +16,7 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
   [
     30001,
     {
+      pronunciation: { us: "/əˈpɔɪntmənt/", uk: "/əˈpɔɪntmənt/" },
       coreImage:
         "「特定の時間・場所で誰かと会う」という約束を取り決めた状態がコアイメージ。医師の診察予約や会議予約など、公式・ビジネス的なニュアンスがある。",
       usage:
@@ -25,13 +26,51 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       englishDefinition:
         "An arrangement to meet someone at a particular time and place, especially for a professional or official purpose.",
       etymology:
-        "15世紀フランス語 appointement（合意・取り決め）から。appoint（指定する）＋ -ment（名詞化）。",
+        "15世紀フランス語 appointement（合意・取り決め）から。appoint（指定する）＋ -ment（名詞化）。ラテン語 ad punctum（ある点に向かって）も関連。",
+      relatedWords: ["meeting", "booking", "reservation", "schedule"],
+      relatedWordEntries: [
+        { word: "meeting", partOfSpeech: "名", meaning: "会議・集まり" },
+        { word: "booking", partOfSpeech: "名", meaning: "予約（場所・サービス）" },
+        { word: "reservation", partOfSpeech: "名", meaning: "席・部屋の予約" },
+        { word: "schedule", partOfSpeech: "名/動", meaning: "予定・スケジュール" },
+        { word: "cancellation", partOfSpeech: "名", meaning: "キャンセル・取り消し", isAntonym: true },
+      ],
+      synonyms: ["meeting", "engagement", "booking"],
+      synonymDifferenceEntries: [
+        { word: "meeting", description: "会議・打ち合わせ全般に使う広い語。appointment より informal なニュアンス。" },
+        { word: "engagement", description: "改まった公式の約束・予定。appointment よりフォーマルで、スケジュール上の「コミットメント」。" },
+        { word: "booking", description: "主に施設・席・サービスの予約。appointment は人との面会、booking は場所・資源の確保。" },
+      ],
+      antonyms: ["cancellation"],
+      column: {
+        title: "「アポ」の正体と appointment vs appoint の混同に注意",
+        content:
+          `日本語の「アポを取る」は appointment の略から来ています。ただし、似た単語 appoint（任命する・指定する）とは別語なので注意。"I appointed him manager."（彼をマネージャーに任命した）の appoint と appointment は形は似ていますが、日常会話で「予約」として使う appointment は "make/have/cancel an appointment" のフレーズごと覚えるのが最短です。`,
+      },
+      examples: [
+        {
+          en: "I have a doctor's appointment at 3 p.m. today.",
+          ja: "今日の午後3時に医師の予約があります。",
+          context: "医療",
+        },
+        {
+          en: "She made an appointment to see the financial advisor next week.",
+          ja: "彼女は来週、ファイナンシャルアドバイザーとの面談を予約した。",
+          context: "ビジネス",
+        },
+        {
+          en: "Could you reschedule my appointment to Friday afternoon?",
+          ja: "予約を金曜の午後に変更していただけますか？",
+          context: "日常",
+        },
+      ],
     },
   ],
   // confirm (30002)
   [
     30002,
     {
+      pronunciation: { us: "/kənˈfɜːrm/", uk: "/kənˈfɜːm/" },
       coreImage:
         "すでにある情報・約束・事実を「はっきり確かめる・確認する」行為がコアイメージ。疑いを払拭し、確実にする。",
       usage:
@@ -42,12 +81,51 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "To state or show that something is definitely true or correct; to make an arrangement or appointment certain.",
       etymology:
         "ラテン語 confirmare（強固にする）から。con-（完全に）＋ firmare（強固にする・firm と同語源）。",
+      relatedWords: ["verify", "check", "approve", "validate"],
+      relatedWordEntries: [
+        { word: "verify", partOfSpeech: "動", meaning: "証拠で正確さを検証する" },
+        { word: "check", partOfSpeech: "動", meaning: "調べる・確認する（軽めのニュアンス）" },
+        { word: "approve", partOfSpeech: "動", meaning: "公式に承認する" },
+        { word: "validate", partOfSpeech: "動", meaning: "有効性・正当性を確認する" },
+        { word: "cancel", partOfSpeech: "動", meaning: "キャンセルする・取り消す", isAntonym: true },
+        { word: "deny", partOfSpeech: "動", meaning: "否定する・否認する", isAntonym: true },
+      ],
+      synonyms: ["verify", "approve", "validate"],
+      synonymDifferenceEntries: [
+        { word: "verify", description: "証拠や比較によって正確さを客観的に証明する。より技術的・公式な場面で使う。" },
+        { word: "approve", description: "権限を持つ立場が公式に認める・許可する。confirm より「許可」のニュアンスが強い。" },
+        { word: "validate", description: "フォームの入力値・許可証・チケットなどの有効性を確認する場面で多い。" },
+      ],
+      antonyms: ["cancel", "deny", "reject"],
+      column: {
+        title: "\"Please confirm receipt.\" — メール定番フレーズの意味",
+        content:
+          "\"Please confirm receipt of this email.\"（このメールを受け取ったことをご確認ください）は、ビジネスメールで頻出の定型表現です。confirm は単に「確かめる」だけでなく、「相手にも確認させる」という相互確認のニュアンスを持ちます。check（調べる）より公式で強い意味なので、重要な書類や契約の確認には confirm を使いましょう。",
+      },
+      examples: [
+        {
+          en: "Please confirm your reservation at least 24 hours in advance.",
+          ja: "少なくとも24時間前に予約を確認してください。",
+          context: "旅行・サービス",
+        },
+        {
+          en: "The manager confirmed that the project would start next month.",
+          ja: "マネージャーは、プロジェクトが来月開始されることを確認した。",
+          context: "ビジネス",
+        },
+        {
+          en: "Can you confirm receipt of the documents I sent yesterday?",
+          ja: "昨日送った書類を受け取ったことを確認していただけますか？",
+          context: "オフィス",
+        },
+      ],
     },
   ],
   // department (30003)
   [
     30003,
     {
+      pronunciation: { us: "/dɪˈpɑːrtmənt/", uk: "/dɪˈpɑːtmənt/" },
       coreImage:
         "「組織や機能を分割した一区画・部門」がコアイメージ。会社の部署（営業部・開発部など）や、デパートの売り場（食品売り場など）を指す。",
       usage:
@@ -58,12 +136,48 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "A section of a large organization or building, such as a government, business, or store.",
       etymology:
         "ラテン語 departire（分ける）から。de-（離れて）＋ partire（分ける・part と同語源）。フランス語 département を経て英語に入った。",
+      relatedWords: ["division", "section", "team", "unit"],
+      relatedWordEntries: [
+        { word: "division", partOfSpeech: "名", meaning: "（より大きな）事業部門" },
+        { word: "section", partOfSpeech: "名", meaning: "課・セクション（比較的小さな単位）" },
+        { word: "team", partOfSpeech: "名", meaning: "チーム" },
+        { word: "unit", partOfSpeech: "名", meaning: "ユニット・機能単位" },
+      ],
+      synonyms: ["division", "section", "unit", "branch"],
+      synonymDifferenceEntries: [
+        { word: "division", description: "department より大きい組織単位。国際事業部・消費者事業部など。" },
+        { word: "section", description: "department より小さい単位。部の中の「課」や「係」に相当。" },
+        { word: "unit", description: "機能的なまとまり全般を指す柔軟な語。部署・部隊・単位など幅広く使える。" },
+      ],
+      column: {
+        title: "department store の「dept.」はここから",
+        content:
+          "デパート（department store）の「department」は「売り場」の意味です。食品売り場・衣料売り場など、機能ごとに分かれた区画が department。会社の「部署（営業部・人事部）」と店舗の「売り場」で同じ単語を使います。また、よく \"Which department are you in?\"（どちらのご部署ですか？）と聞かれるので、自分の部署名を英語で言えるようにしておくと便利です。",
+      },
+      examples: [
+        {
+          en: "She transferred to the marketing department last April.",
+          ja: "彼女は昨年4月にマーケティング部へ異動した。",
+          context: "職場",
+        },
+        {
+          en: "The IT department handles all technical issues in the company.",
+          ja: "IT部門は会社内の技術的な問題をすべて担当する。",
+          context: "ビジネス",
+        },
+        {
+          en: "Please direct all inquiries to the customer service department.",
+          ja: "お問い合わせはすべてカスタマーサービス部門にお願いします。",
+          context: "顧客対応",
+        },
+      ],
     },
   ],
   // employee (30004)
   [
     30004,
     {
+      pronunciation: { us: "/ɪmˈplɔɪiː/", uk: "/ɪmˈplɔɪiː/" },
       coreImage:
         "「他者（employer=雇用主）に雇われて働く人」がコアイメージ。雇用契約のある会社員・従業員を指す正式な語。",
       usage:
@@ -74,12 +188,52 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "A person who is paid to work for a company or organization.",
       etymology:
         "employ（雇う）＋ -ee（される側の人）。フランス語 employé から。-ee は法的・正式な文書でよく使われる接尾辞（trainee, interviewee など）。",
+      relatedWords: ["employer", "staff", "worker", "colleague"],
+      relatedWordEntries: [
+        { word: "employer", partOfSpeech: "名", meaning: "雇用主・使用者", isAntonym: true },
+        { word: "staff", partOfSpeech: "名", meaning: "スタッフ（組織全体を集合的に指す）" },
+        { word: "worker", partOfSpeech: "名", meaning: "働く人（フリーランス含む広い語）" },
+        { word: "colleague", partOfSpeech: "名", meaning: "同僚" },
+        { word: "employ", partOfSpeech: "動", meaning: "雇う" },
+        { word: "employment", partOfSpeech: "名", meaning: "雇用・就業" },
+        { word: "unemployed", partOfSpeech: "形", meaning: "失業した", isAntonym: true },
+      ],
+      synonyms: ["staff", "worker", "personnel"],
+      synonymDifferenceEntries: [
+        { word: "worker", description: "雇用契約の有無を問わず「仕事をする人」全般。フリーランスや請負業者も含む。" },
+        { word: "staff", description: "組織のメンバーを集合的に指す語。\"The staff is helpful.\" のように不可算名詞扱いも多い。" },
+        { word: "personnel", description: "人事・人材管理の文脈で使う。HR（人事部）や軍隊の「人員」など。" },
+      ],
+      antonyms: ["employer", "boss", "manager"],
+      column: {
+        title: "employee と employer — -ee/-er で「される側」「する側」",
+        content:
+          "employ（雇う）に接尾辞をつけると意味が変わります。-ee はそのアクションを「される人」（employee = 雇われる人）、-er/-or は「する人」（employer = 雇う人）を表します。同じパターンが interview → interviewee（面接される人）/ interviewer（面接する人）にも使われます。TOEIC では employer（雇用主）も頻出なので、ペアで覚えましょう。",
+      },
+      examples: [
+        {
+          en: "All employees are required to attend the safety training.",
+          ja: "全従業員が安全研修への参加を求められています。",
+          context: "職場",
+        },
+        {
+          en: "The company offers health insurance to all full-time employees.",
+          ja: "この会社はすべての正社員に健康保険を提供している。",
+          context: "福利厚生",
+        },
+        {
+          en: "Employee satisfaction is closely linked to company productivity.",
+          ja: "従業員満足度は会社の生産性と密接に関係している。",
+          context: "マネジメント",
+        },
+      ],
     },
   ],
   // invoice (30005)
   [
     30005,
     {
+      pronunciation: { us: "/ˈɪnvɔɪs/", uk: "/ˈɪnvɔɪs/" },
       coreImage:
         "「商品・サービスの提供後、代金を請求するための正式な書類」がコアイメージ。金額・品目・支払条件などが記載されたビジネス文書。",
       usage:
@@ -90,12 +244,50 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "A document sent by a seller to a buyer that lists goods or services provided and the amount of money owed.",
       etymology:
         "フランス語 envois（送付品）の複数形から。en-（中に）＋ voie（道・方法）が語源。16世紀から商業用語として使われてきた。",
+      relatedWords: ["receipt", "bill", "payment", "statement"],
+      relatedWordEntries: [
+        { word: "receipt", partOfSpeech: "名", meaning: "領収書（支払い後に発行）", isAntonym: true },
+        { word: "bill", partOfSpeech: "名", meaning: "請求書（日常的・一般的な語）" },
+        { word: "payment", partOfSpeech: "名", meaning: "支払い・代金", isAntonym: true },
+        { word: "statement", partOfSpeech: "名", meaning: "取引明細書" },
+        { word: "issue", partOfSpeech: "動", meaning: "発行する（請求書を発行する）" },
+      ],
+      synonyms: ["bill", "statement", "charge"],
+      synonymDifferenceEntries: [
+        { word: "bill", description: "電気代・レストランの勘定など、日常的な場面にも使う一般的な請求書。invoice より informal。" },
+        { word: "statement", description: "一定期間内の取引をまとめた明細書。銀行・クレジットカードの明細がこれ。" },
+        { word: "receipt", description: "支払い完了後の領収書。invoice（支払い前）と方向が逆なので注意。" },
+      ],
+      antonyms: ["receipt", "payment"],
+      column: {
+        title: "invoice（請求書）vs receipt（領収書）— 方向が逆！",
+        content:
+          "invoice と receipt はよく混同されますが、お金の流れの方向が真逆です。invoice は「これを払ってください」という請求書（支払い前）、receipt は「受け取りました」という領収書（支払い後）。TOEIC のメール問題で \"attach the invoice\"（請求書を添付する）と \"issue a receipt\"（領収書を発行する）が頻出です。会計部門（accounting department）とやり取りする場面でほぼ必ず登場します。",
+      },
+      examples: [
+        {
+          en: "Please send the invoice to our accounting department.",
+          ja: "請求書を経理部門に送付してください。",
+          context: "経理",
+        },
+        {
+          en: "The invoice must be paid within 30 days of the issue date.",
+          ja: "請求書は発行日から30日以内に支払う必要があります。",
+          context: "経理・支払い",
+        },
+        {
+          en: "I noticed an error on the invoice — the quantity is incorrect.",
+          ja: "請求書に誤りを見つけました—数量が間違っています。",
+          context: "ビジネスコミュニケーション",
+        },
+      ],
     },
   ],
   // manage (30006)
   [
     30006,
     {
+      pronunciation: { us: "/ˈmænɪdʒ/", uk: "/ˈmænɪdʒ/" },
       coreImage:
         "困難な状況や複数のことをうまくコントロールして「なんとか切り盛りする」イメージ。人やリソースを管理する場合も、「何とかやり遂げる」場合にも使える。",
       usage:
@@ -106,12 +298,50 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "To be in charge of an organization or group of people; to succeed in doing something despite difficulties.",
       etymology:
         "イタリア語 maneggiare（手で扱う・馬を操る）から。ラテン語 manus（手）が語源。",
+      relatedWords: ["supervise", "lead", "direct", "oversee"],
+      relatedWordEntries: [
+        { word: "supervise", partOfSpeech: "動", meaning: "直接監督・指導する" },
+        { word: "lead", partOfSpeech: "動", meaning: "率いる・リードする" },
+        { word: "direct", partOfSpeech: "動", meaning: "指揮する・指示する" },
+        { word: "oversee", partOfSpeech: "動", meaning: "全体を高い視点で監督する" },
+        { word: "management", partOfSpeech: "名", meaning: "管理・経営" },
+        { word: "manager", partOfSpeech: "名", meaning: "管理者・マネージャー" },
+      ],
+      synonyms: ["handle", "oversee", "supervise"],
+      synonymDifferenceEntries: [
+        { word: "handle", description: "問題や状況に対処する。manage より限定的・一時的なニュアンス。" },
+        { word: "oversee", description: "全体の進捗を高い視点から監督する。manage より「見守る」感覚が強い。" },
+        { word: "supervise", description: "部下の仕事を直接監督・指導する。manage より密接な監督関係を含む。" },
+      ],
+      column: {
+        title: "\"manage to do\" — 「なんとか〜できた」が重要用法",
+        content:
+          "manage は「管理する」だけではありません。\"manage to do\"（なんとか〜することができた）という表現は TOEIC でも日常英会話でも頻出です。「I managed to finish it on time.」（なんとか時間内に終えられた）のように、困難を乗り越えた達成感を表します。\"could\"（できた）より苦労した感じが出るので、使い分けを意識してみましょう。",
+      },
+      examples: [
+        {
+          en: "She has been managing the sales team for three years.",
+          ja: "彼女は3年間、営業チームを管理してきた。",
+          context: "マネジメント",
+        },
+        {
+          en: "He managed to finish the report before the deadline.",
+          ja: "彼は締め切り前になんとかレポートを仕上げた。",
+          context: "達成・業務",
+        },
+        {
+          en: "It's hard to manage multiple projects at the same time.",
+          ja: "複数のプロジェクトを同時に管理するのは大変だ。",
+          context: "プロジェクト管理",
+        },
+      ],
     },
   ],
   // opportunity (30007)
   [
     30007,
     {
+      pronunciation: { us: "/ˌɑːpərˈtuːnɪti/", uk: "/ˌɒpəˈtjuːnɪti/" },
       coreImage:
         "「何かを達成するための好ましい状況・チャンス」がコアイメージ。その時に行動しなければ失われる、一時的な好機。",
       usage:
@@ -122,12 +352,51 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "A time or situation that makes it possible for you to do something you want to do.",
       etymology:
         "ラテン語 opportunitas から。ob portum venire（港に向かって吹く風）が語源で、「帆に向かって吹く好機の風」というイメージ。",
+      relatedWords: ["chance", "possibility", "occasion", "prospect"],
+      relatedWordEntries: [
+        { word: "chance", partOfSpeech: "名", meaning: "機会・可能性（より口語的）" },
+        { word: "possibility", partOfSpeech: "名", meaning: "可能性・見込み" },
+        { word: "occasion", partOfSpeech: "名", meaning: "特定の場・機会" },
+        { word: "prospect", partOfSpeech: "名", meaning: "見込み・将来の展望" },
+        { word: "obstacle", partOfSpeech: "名", meaning: "障害・妨げ", isAntonym: true },
+        { word: "threat", partOfSpeech: "名", meaning: "脅威・リスク", isAntonym: true },
+      ],
+      synonyms: ["chance", "occasion", "opening"],
+      synonymDifferenceEntries: [
+        { word: "chance", description: "偶然のチャンスや確率（40% chance）の意味も持つ。opportunity より口語的で広い語。" },
+        { word: "occasion", description: "特定の出来事・場・状況を指す。「機会」より「場」の意味に近い場合が多い。" },
+        { word: "opening", description: "就職の空きポジション、または何かを始められる隙間・機会。\" job opening\"（求人）でよく使う。" },
+      ],
+      antonyms: ["obstacle", "threat", "setback"],
+      column: {
+        title: "\"once-in-a-lifetime opportunity\" — 定番フレーズを丸ごと覚える",
+        content:
+          "opportunity は単独よりも決まり文句で使われることが多い単語です。\"take the opportunity to do\"（〜する機会を利用する）、\"miss an opportunity\"（機会を逃す）、\"once-in-a-lifetime opportunity\"（一生に一度のチャンス）は TOEIC のメール・広告文でよく見かけます。job opportunity（求人）というひとかたまりで求人広告にも登場するので、opportunity が出たらまず「何のための機会？」を押さえましょう。",
+      },
+      examples: [
+        {
+          en: "This internship is a great opportunity to gain real work experience.",
+          ja: "このインターンシップは実際の職業経験を積む素晴らしい機会だ。",
+          context: "キャリア",
+        },
+        {
+          en: "We should take this opportunity to expand into the Asian market.",
+          ja: "この機会を利用してアジア市場へ進出すべきだ。",
+          context: "ビジネス戦略",
+        },
+        {
+          en: "Don't miss the opportunity — it won't come around again.",
+          ja: "チャンスを逃すな—もう二度と来ないかもしれない。",
+          context: "日常",
+        },
+      ],
     },
   ],
   // purchase (30008)
   [
     30008,
     {
+      pronunciation: { us: "/ˈpɜːrtʃəs/", uk: "/ˈpɜːtʃəs/" },
       coreImage:
         "「代金を支払って物やサービスを手に入れる」行為がコアイメージ。buy よりフォーマルなビジネス・法律用語。",
       usage:
@@ -138,12 +407,51 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "To buy something, especially something significant; something that has been bought.",
       etymology:
         "古フランス語 purchacier（追求する・手に入れようとする）から。ラテン語 pro-（前に）＋ capere（捕まえる）の意。",
+      relatedWords: ["buy", "acquire", "obtain", "payment"],
+      relatedWordEntries: [
+        { word: "buy", partOfSpeech: "動", meaning: "買う（より口語的）" },
+        { word: "acquire", partOfSpeech: "動", meaning: "取得する・獲得する（大規模・正式）" },
+        { word: "obtain", partOfSpeech: "動", meaning: "入手する・手に入れる（努力・手続きを経て）" },
+        { word: "sell", partOfSpeech: "動", meaning: "売る", isAntonym: true },
+        { word: "return", partOfSpeech: "動/名", meaning: "返品する・返品", isAntonym: true },
+        { word: "purchaser", partOfSpeech: "名", meaning: "購入者・買い手" },
+      ],
+      synonyms: ["buy", "acquire", "obtain"],
+      synonymDifferenceEntries: [
+        { word: "buy", description: "日常的な「買う」。purchase はより正式・書面的な表現。\"buy a coffee\" は自然だが \"purchase a coffee\" は大げさ。" },
+        { word: "acquire", description: "会社の買収・資産の取得など、より大規模・正式な場面で使う。" },
+        { word: "obtain", description: "努力・手続きを経て手に入れる。物・情報・許可証など幅広く使える。" },
+      ],
+      antonyms: ["sell", "return", "refund"],
+      column: {
+        title: "purchase は buy の格上げ版 — TOEIC では purchase order が頻出",
+        content:
+          "purchase と buy はほぼ同義ですが、purchase の方がフォーマルです。\"buy a coffee\"（コーヒーを買う）は自然ですが、\"purchase a coffee\" は大げさに聞こえます。一方、ビジネス文書では purchase が標準。特に \"purchase order\"（発注書・PO）は TOEIC の書類問題で頻出なので、略語 \"PO\" と合わせて覚えておきましょう。",
+      },
+      examples: [
+        {
+          en: "You can purchase tickets online or at the box office.",
+          ja: "チケットはオンラインまたはチケット売り場で購入できます。",
+          context: "イベント・サービス",
+        },
+        {
+          en: "All purchases over $100 are eligible for free shipping.",
+          ja: "100ドルを超えるすべての購入品は送料無料の対象です。",
+          context: "eコマース",
+        },
+        {
+          en: "The company made a major purchase of new manufacturing equipment.",
+          ja: "その会社は新しい製造設備を大規模に購入した。",
+          context: "ビジネス",
+        },
+      ],
     },
   ],
   // reservation (30009)
   [
     30009,
     {
+      pronunciation: { us: "/ˌrezərˈveɪʃən/", uk: "/ˌrezəˈveɪʃən/" },
       coreImage:
         "「席・部屋・テーブルなど場所や資源を、特定の時間のために確保する」ことがコアイメージ。資源の「確保・予約」に焦点を当てた語。",
       usage:
@@ -154,12 +462,50 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "An arrangement to have something such as a seat, room, or table kept for your use at a future time.",
       etymology:
         "ラテン語 reservare（取っておく）から。re-（後のために）＋ servare（保存する）。フランス語 réservation を経て英語に。",
+      relatedWords: ["booking", "appointment", "confirm", "cancel"],
+      relatedWordEntries: [
+        { word: "booking", partOfSpeech: "名/動", meaning: "予約（英国英語でよく使う）" },
+        { word: "appointment", partOfSpeech: "名", meaning: "人との面会の予約（医師・美容師など）" },
+        { word: "confirm", partOfSpeech: "動", meaning: "予約を確認・確定する" },
+        { word: "reserve", partOfSpeech: "動", meaning: "事前に確保する・予約する" },
+        { word: "cancellation", partOfSpeech: "名", meaning: "キャンセル・取り消し", isAntonym: true },
+        { word: "walk-in", partOfSpeech: "名", meaning: "予約なし（飛び込み）", isAntonym: true },
+      ],
+      synonyms: ["booking", "appointment"],
+      synonymDifferenceEntries: [
+        { word: "booking", description: "reservation の同義語。主に英国英語でよく使われる。\"hotel booking\"（ホテル予約）など。" },
+        { word: "appointment", description: "医師・弁護士・美容師など「人との面会」に使う。reservation は場所・席の確保。" },
+      ],
+      antonyms: ["cancellation", "walk-in"],
+      column: {
+        title: "reservation vs appointment — 「場所の予約」か「人との面会予約」かで使い分け",
+        content:
+          "日本語では両方「予約」ですが、英語では使い分けが必要です。reservation はホテル・レストラン・飛行機など「席・部屋・資源」を確保するとき。appointment は医師・弁護士・美容師など「人との面会」を取り決めるとき。\"restaurant reservation\"（レストラン予約）と \"doctor's appointment\"（医師の予約）はセットで覚えましょう。",
+      },
+      examples: [
+        {
+          en: "I'd like to make a reservation for two at 7 p.m.",
+          ja: "午後7時に2名の予約をしたいのですが。",
+          context: "レストラン",
+        },
+        {
+          en: "The hotel reservation was made three months in advance.",
+          ja: "ホテルの予約は3か月前に取られた。",
+          context: "旅行",
+        },
+        {
+          en: "Do you have a reservation under the name of Smith?",
+          ja: "スミスという名義の予約はありますか？",
+          context: "チェックイン",
+        },
+      ],
     },
   ],
   // schedule (30010)
   [
     30010,
     {
+      pronunciation: { us: "/ˈskedʒuːl/", uk: "/ˈʃedjuːl/" },
       coreImage:
         "「何かを行う時間・順序を事前に計画したリスト」がコアイメージ。予定表・時刻表・工程表など、時間軸に沿った計画を表す。",
       usage:
@@ -168,8 +514,47 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "schedule vs timetable: schedule は個人や組織の予定全般に使う広い語。timetable は電車・授業など固定した時間割に使うことが多い。",
       englishDefinition:
         "A plan that lists the times when activities or events will happen; to arrange for something to happen at a particular time.",
-      etymology:
+      etymology: [
         "ラテン語 schedula（小さなメモ・紙片）から。中世英語を経て現代の「予定表」の意味に発展。",
+        "UK発音 /ˈʃedjuːl/ はラテン語→古フランス語→中英語の経路を踏む。US発音 /ˈskedʒuːl/ はギリシア語 skhedē を経由したより古い形から。",
+      ],
+      relatedWords: ["timetable", "plan", "agenda", "calendar"],
+      relatedWordEntries: [
+        { word: "plan", partOfSpeech: "名/動", meaning: "計画（より広い概念）" },
+        { word: "timetable", partOfSpeech: "名", meaning: "時刻表・授業時間割（固定的な時間表）" },
+        { word: "agenda", partOfSpeech: "名", meaning: "会議の議題リスト・行動計画" },
+        { word: "calendar", partOfSpeech: "名", meaning: "カレンダー・日程表" },
+        { word: "reschedule", partOfSpeech: "動", meaning: "予定を変更する" },
+        { word: "scheduled", partOfSpeech: "形", meaning: "予定された・定期的な" },
+      ],
+      synonyms: ["timetable", "plan", "agenda"],
+      synonymDifferenceEntries: [
+        { word: "plan", description: "schedule より広い概念。時間軸がなくてもよい。schedule は特に時間配分を伴う計画。" },
+        { word: "timetable", description: "電車・授業など固定した時間表。schedule は更新・調整可能だが timetable はより固定的。" },
+        { word: "agenda", description: "会議の議題・行動リスト。schedule は「いつ」、agenda は「何を」の内容に焦点がある。" },
+      ],
+      column: {
+        title: "UK と US で発音が違う！ schedule の読み方",
+        content:
+          "schedule は英米で発音が大きく異なります。アメリカ英語では /ˈskedʒuːl/（スケジュール）、イギリス英語では /ˈʃedjuːl/（シェジュール）。どちらも正しく、TOEIC のリスニングでは両方の発音が出るので、UK 音声に慣れておくと有利です。動詞として \"The meeting is scheduled for Friday.\"（会議は金曜日に予定されている）のように使うことも多いので、名詞・動詞の両方を練習しましょう。",
+      },
+      examples: [
+        {
+          en: "The project schedule has been updated due to unexpected delays.",
+          ja: "予期せぬ遅延のため、プロジェクトのスケジュールが更新された。",
+          context: "プロジェクト管理",
+        },
+        {
+          en: "Please schedule a meeting with the client for next Tuesday.",
+          ja: "来週の火曜日にクライアントとの会議を設定してください。",
+          context: "ビジネス",
+        },
+        {
+          en: "I have a very tight schedule this week — no free time at all.",
+          ja: "今週はスケジュールが非常にタイトで、全く自由な時間がない。",
+          context: "日常",
+        },
+      ],
     },
   ],
   // apply (30011)
@@ -7258,6 +7643,7 @@ function buildGeneratedExtension(word: ExtensionSourceWord): WordExtension {
 /**
  * 既存の手動拡張を優先し、不足フィールドのみ自動補完する。
  * 単語詳細画面で全語に5セクションを表示できるようにするための統一アクセサ。
+ * examples / relatedWords / pronunciation は手動データのみ（自動生成なし）。
  */
 export function getWordExtension(word: ExtensionSourceWord): WordExtension {
   const manual = wordExtensions.get(word.id);
@@ -7268,5 +7654,12 @@ export function getWordExtension(word: ExtensionSourceWord): WordExtension {
     synonymDifference: manual?.synonymDifference ?? generated.synonymDifference,
     englishDefinition: manual?.englishDefinition ?? generated.englishDefinition,
     etymology: manual?.etymology ?? generated.etymology,
+    // 以下は手動データのみ（未設定の単語では undefined）
+    examples: manual?.examples,
+    relatedWords: manual?.relatedWords,
+    pronunciation: manual?.pronunciation,
+    synonyms: manual?.synonyms,
+    antonyms: manual?.antonyms,
+    column: manual?.column,
   };
 }

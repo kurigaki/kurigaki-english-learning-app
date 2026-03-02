@@ -17,6 +17,7 @@ import {
   getSpeedResultState,
   clearSpeedResultState,
 } from "@/lib/speed-session";
+import { saveWordNavState } from "@/lib/word-nav-state";
 
 const TIME_LIMIT = 30; // 30秒
 
@@ -498,6 +499,7 @@ export default function SpeedChallengePage() {
                   <Link
                     key={`${word.id}-${index}`}
                     href={`/word/${word.id}?from=speed`}
+                    onClick={() => saveWordNavState(answeredWords.map((w) => w.id), "speed")}
                     className={`flex items-center justify-between p-1.5 rounded-lg border transition-all hover:scale-[1.02] group ${
                       word.correct
                         ? "bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800/40"

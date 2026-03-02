@@ -7,6 +7,7 @@ import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { saveBookmarkSort, getAndClearBookmarkSort } from "@/lib/navigation-state";
+import { saveWordNavState } from "@/lib/word-nav-state";
 import { words, Word, categoryLabels, difficultyLabels } from "@/data/words/compat";
 
 type SortOption = "added" | "name" | "difficulty";
@@ -157,7 +158,7 @@ export default function BookmarksPage() {
           <>
             <div className="flex-1 overflow-y-auto min-h-0 space-y-1.5">
               {bookmarkedWords.map((word) => (
-                <Link key={word.id} href={`/word/${word.id}?from=bookmarks`} onClick={() => saveBookmarkSort(sortBy)}>
+                <Link key={word.id} href={`/word/${word.id}?from=bookmarks`} onClick={() => { saveBookmarkSort(sortBy); saveWordNavState(bookmarkedWords.map((w) => w.id), "bookmarks"); }}>
                   <Card
                     hover
                     className="flex items-center gap-2 group !p-2"

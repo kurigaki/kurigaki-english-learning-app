@@ -72,9 +72,19 @@ export function speak(
   utterance.pitch = options?.pitch ?? 1;
   utterance.volume = options?.volume ?? 1;
 
-  // 音声を設定
+  // 音声を設定（language が指定された場合はその言語の音声を優先探索）
   if (options?.voice) {
     utterance.voice = options.voice;
+  } else if (options?.language && options.language !== "en-US") {
+    // UK など en-US 以外が指定された場合: 対応 voice を優先し、なければ en-US にフォールバック
+    const voices = getAvailableVoices();
+    const voice =
+      voices.find((v) => v.lang === options.language && !v.localService) ??
+      voices.find((v) => v.lang === options.language) ??
+      getEnglishVoice();
+    if (voice) {
+      utterance.voice = voice;
+    }
   } else {
     const voice = getEnglishVoice();
     if (voice) {

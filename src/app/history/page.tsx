@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { saveHistoryTab, getAndClearHistoryTab } from "@/lib/navigation-state";
+import { saveWordNavState } from "@/lib/word-nav-state";
 import type { WordStats } from "@/lib/storage";
 import { LearningRecord, Achievement, isWeakWord } from "@/types";
 import { words, getWordsByCourse } from "@/data/words/compat";
@@ -339,7 +340,7 @@ export default function HistoryPage() {
                   <Link
                     key={word.id}
                     href={`/word/${word.id}?from=history`}
-                    onClick={() => saveHistoryTab(activeTab)}
+                    onClick={() => { saveHistoryTab(activeTab); saveWordNavState(weakWords.map((w) => w.id), "history"); }}
                     className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors group"
                   >
                     <div className="flex items-center gap-3">
@@ -440,7 +441,15 @@ export default function HistoryPage() {
                       <Link
                         key={record.id}
                         href={`/word/${wordId}?from=history`}
-                        onClick={() => saveHistoryTab(activeTab)}
+                        onClick={() => {
+                          saveHistoryTab(activeTab);
+                          const historyWordIds = Array.from(new Set(
+                            records.slice(0, 50)
+                              .map((r) => getWordIdByWord(r.word))
+                              .filter((id): id is number => id !== null)
+                          ));
+                          saveWordNavState(historyWordIds, "history");
+                        }}
                         className="p-2.5 flex items-center justify-between hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors group"
                       >
                         {content}
