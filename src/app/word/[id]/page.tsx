@@ -16,6 +16,7 @@ import {
   WordPlaceholderSection,
 } from "@/components/features/word-detail";
 import { unifiedStorage } from "@/lib/unified-storage";
+import { getWordNavState } from "@/lib/word-nav-state";
 import { useEffect, useState } from "react";
 
 export default function WordDetailPage() {
@@ -26,6 +27,17 @@ export default function WordDetailPage() {
 
   // 遷移元を取得（quiz, history, weak-words など）
   const fromPage = searchParams.get("from");
+
+  // 前後ナビゲーション状態（sessionStorage から取得）
+  // useState 遅延初期化でマウント時に一度だけ読み込む（← → で遷移すると新規マウントになるため）
+  const [navState] = useState(() => getWordNavState());
+  const currentNavIndex = navState ? navState.wordIds.indexOf(wordId) : -1;
+  const prevNavWordId =
+    navState && currentNavIndex > 0 ? navState.wordIds[currentNavIndex - 1] : null;
+  const nextNavWordId =
+    navState && currentNavIndex >= 0 && currentNavIndex < navState.wordIds.length - 1
+      ? navState.wordIds[currentNavIndex + 1]
+      : null;
 
   const [masteryData, setMasteryData] = useState<{
     accuracy: number | null;
@@ -149,7 +161,7 @@ export default function WordDetailPage() {
         {/* 戻るボタン */}
         <button
           onClick={handleBack}
-          className="flex items-center gap-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 dark:text-slate-200 mb-4 transition-colors"
+          className="flex items-center gap-1 text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 dark:text-slate-200 mb-3 transition-colors"
         >
           <svg
             className="w-5 h-5"
@@ -166,6 +178,53 @@ export default function WordDetailPage() {
           </svg>
           <span>{getBackLabel()}</span>
         </button>
+
+        {/* 前後ナビゲーションバー（リストから遷移した場合のみ表示） */}
+        {(prevNavWordId !== null || nextNavWordId !== null) && (
+          <div className="flex items-center justify-between mb-4 bg-slate-50 dark:bg-slate-800 rounded-xl px-3 py-2">
+            {prevNavWordId !== null ? (
+              <Link
+                href={`/word/${prevNavWordId}${fromPage ? `?from=${fromPage}` : ""}`}
+                className="flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                前の単語
+              </Link>
+            ) : (
+              <span className="text-sm text-slate-300 dark:text-slate-600 flex items-center gap-1">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+                前の単語
+              </span>
+            )}
+            {navState && currentNavIndex >= 0 && (
+              <span className="text-xs text-slate-400 dark:text-slate-500 tabular-nums">
+                {currentNavIndex + 1} / {navState.wordIds.length}
+              </span>
+            )}
+            {nextNavWordId !== null ? (
+              <Link
+                href={`/word/${nextNavWordId}${fromPage ? `?from=${fromPage}` : ""}`}
+                className="flex items-center gap-1 text-sm font-medium text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+              >
+                次の単語
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            ) : (
+              <span className="text-sm text-slate-300 dark:text-slate-600 flex items-center gap-1">
+                次の単語
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            )}
+          </div>
+        )}
 
         <Card className="overflow-hidden">
           {/* カテゴリ・難易度バッジ・ブックマーク */}
