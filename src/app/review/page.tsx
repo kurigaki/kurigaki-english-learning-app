@@ -50,6 +50,9 @@ type ReviewPageSession = {
 
 // ===== 定数 =====
 
+/** quiz/page.tsx の QUESTIONS_PER_SESSION と合わせること */
+const QUESTIONS_PER_SESSION = 10;
+
 const srsStatusConfig: Record<SrsStatus, { label: string; color: string }> = {
   new:      { label: "新規",   color: "text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700" },
   learning: { label: "学習中", color: "text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/40" },
@@ -134,20 +137,6 @@ function ReviewPageContent() {
       loadWords();
     }
   }, [isAuthLoading, isAuthenticated, isRestoredFromSession, loadWords]);
-
-  // ===== クイズ開始 =====
-
-  const startQuiz = useCallback(() => {
-    setCurrentIndex(0);
-    setSelected(null);
-    setIsCorrect(null);
-    setScore(0);
-    setAnsweredResults([]);
-    hasAutoPlayedRef.current = new Set();
-    questionStartTimeRef.current = Date.now();
-    // 選択肢は useEffect（phase/currentIndex の変化を監視）が生成するため、ここでは設定しない
-    setPhase("quiz");
-  }, []);
 
   // ===== 問題切り替え時の処理 =====
 
@@ -381,13 +370,15 @@ function ReviewPageContent() {
           {/* クイズ開始ボタン */}
           {!isLoading && reviewWords.length > 0 && (
             <div className="flex-shrink-0 pt-3">
-              <button
-                onClick={startQuiz}
+              <Link
+                href={isSrs ? "/quiz?srsReview=true" : "/quiz?weakOnly=true"}
                 className="w-full py-3.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold rounded-2xl shadow-button hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
               >
                 <span className="emoji-icon">{icon}</span>
-                クイズを始める（{reviewWords.length}語）
-              </button>
+                {reviewWords.length <= QUESTIONS_PER_SESSION
+                  ? `クイズを始める（${reviewWords.length}問）`
+                  : `クイズを始める（${QUESTIONS_PER_SESSION}問 / 全${reviewWords.length}語から）`}
+              </Link>
             </div>
           )}
         </div>
