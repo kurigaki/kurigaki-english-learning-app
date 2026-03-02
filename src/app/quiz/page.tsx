@@ -162,7 +162,14 @@ function selectQuestionTypeWithRatios(
   ].filter((p) => p.weight > 0);
 
   // 全タイプが 0 の場合: 例文なし単語で listening/dictation=100% など
-  if (pool.length === 0) return "en-to-ja";
+  // enToJa / jaToEn の ratio でフォールバック（両方 0 なら均等に選択）
+  if (pool.length === 0) {
+    const enToJaWeight = ratios.enToJa || 1;
+    const jaToEnWeight = ratios.jaToEn || 1;
+    return Math.random() * (enToJaWeight + jaToEnWeight) < enToJaWeight
+      ? "en-to-ja"
+      : "ja-to-en";
+  }
 
   const total = pool.reduce((s, p) => s + p.weight, 0);
   let random = Math.random() * total;
@@ -283,9 +290,11 @@ function generateQuestion(word: Word, allWords: Word[], ratios: QuestionTypeRati
   const hasExample = selectedExample !== null;
   let type = selectQuestionTypeWithRatios(ratios, hasExample);
 
-  // listening / dictation は例文が必要。例文なしなら en-to-ja / ja-to-en にフォールバック
+  // listening / dictation は例文が必要。例文なしなら enToJa/jaToEn の ratio でフォールバック
   if ((type === "listening" || type === "dictation") && !hasExample) {
-    type = Math.random() > 0.5 ? "en-to-ja" : "ja-to-en";
+    const enToJaWeight = ratios.enToJa || 1;
+    const jaToEnWeight = ratios.jaToEn || 1;
+    type = Math.random() * (enToJaWeight + jaToEnWeight) < enToJaWeight ? "en-to-ja" : "ja-to-en";
   }
 
   const wordData = {
@@ -730,6 +739,7 @@ export default function QuizPage() {
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [dictationInputs, setDictationInputs] = useState<string[]>([]); // 書き取り問題の入力値（ブランクごと）
   const dictationInputRefs = useRef<(HTMLInputElement | null)[]>([]);  // Tabキー移動用
+  const handleSelectRef = useRef<(choice: string) => void>(() => {});   // キーボード選択用の安定した参照
   const [score, setScore] = useState(0);
   const [combo, setCombo] = useState(0);
   const [maxCombo, setMaxCombo] = useState(0);
@@ -760,7 +770,7 @@ export default function QuizPage() {
           unifiedStorage.getBookmarkedWordIds(),
           unifiedStorage.getWeakWords(70),
           unifiedStorage.getStudiedWordIds(),
-          unifiedStorage.getDueWords(),
+          unifiedStorage.getDailyReviewBatch(),
         ]);
         setBookmarkedIds(bookmarks);
         setWeakWordIds(weaks);
@@ -868,25 +878,38 @@ export default function QuizPage() {
     }
   }, [currentIndex, questions.length, score, maxCombo]);
 
-  // Enterキーで「次の問題へ」進む（書き取り入力フィールド内は除外）
+  // キーボード操作: A〜Dで選択肢を選択 / Enterで次の問題へ（書き取り入力フィールド内は除外）
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key !== "Enter") return;
       // テキスト入力中（書き取り問題の入力フォーム）は除外
       if (e.target instanceof HTMLInputElement) return;
-      if (selected === null) return;
       if (isFinished) return;
+      // キーリピート（長押し）は無視: state 更新が非同期のため複数回実行されてしまうのを防ぐ
+      if (e.repeat) return;
 
-      e.preventDefault();
-      handleNext();
+      // Enterキーで「次の問題へ」（回答後のみ）
+      if (e.key === "Enter") {
+        if (selected === null) return;
+        e.preventDefault();
+        handleNext();
+        return;
+      }
+
+      // A〜Dキーで選択肢を選択（未回答かつ選択式問題のみ）
+      if (selected !== null) return;
+      const q = questions[currentIndex]; // currentQuestion は TDZ のため直接参照
+      if (!q || q.type === "dictation") return;
+
+      const keyIndex = ["a", "b", "c", "d"].indexOf(e.key.toLowerCase());
+      if (keyIndex !== -1 && q.choices[keyIndex] !== undefined) {
+        e.preventDefault();
+        handleSelectRef.current(q.choices[keyIndex]); // ref 経由で最新の handleSelect を呼ぶ
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [selected, isFinished, handleNext]);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selected, isFinished, handleNext, questions, currentIndex]);
 
 
 
@@ -962,6 +985,7 @@ export default function QuizPage() {
     return () => clearTimeout(timeoutId);
   }, [currentQuestion, currentIndex, selected]);
 
+
   /**
    * 新しいクイズセッションを開始
    * @param settings クイズ設定
@@ -977,6 +1001,7 @@ export default function QuizPage() {
     clearQuizResultState();
 
     let targetWords: Word[];
+    const ratios = settings.typeRatios ?? defaultTypeRatios;
 
     // SRS復習モード
     if (options?.srsReviewMode && srsWordIds.length > 0) {
@@ -989,6 +1014,16 @@ export default function QuizPage() {
       targetWords = filterWordsBySettings(words, settings, bookmarkedIds);
     }
 
+    // listening / dictation のみ設定（enToJa=0 かつ jaToEn=0）の場合、
+    // 穴あき可能な例文を持つ単語のみに絞る。
+    // こうしないと例文のない単語で enToJa/jaToEn にフォールバックしてしまう。
+    if (ratios.enToJa === 0 && ratios.jaToEn === 0) {
+      const sentenceCapable = targetWords.filter((w) => selectFillBlankExample(w) !== null);
+      if (sentenceCapable.length > 0) {
+        targetWords = sentenceCapable;
+      }
+    }
+
     // フィルター後の単語数が少なすぎる場合の対応
     const questionCount = Math.min(QUESTIONS_PER_SESSION, targetWords.length);
 
@@ -999,8 +1034,6 @@ export default function QuizPage() {
     }
 
     let newQuestions: Question[];
-
-    const ratios = settings.typeRatios ?? defaultTypeRatios;
 
     // 優先単語が指定されている場合、その単語を必ず含める
     if (options?.priorityWordId) {
@@ -1168,6 +1201,8 @@ export default function QuizPage() {
 
     processAnswer(choice, correct);
   };
+  // キーボード useEffect が常に最新の handleSelect を参照できるよう ref を更新
+  handleSelectRef.current = handleSelect;
 
   // 書き取り問題の回答を処理（大文字小文字を無視・複数ブランク対応）
   const handleDictationSubmit = () => {
@@ -1782,9 +1817,10 @@ export default function QuizPage() {
                     const correctWord = currentQuestion.correctAnswer.split(/\s+/)[wordIndex] ?? "";
                     return (
                       <input
-                        key={i}
+                        key={`${currentIndex}-${i}`}
                         ref={(el) => { dictationInputRefs.current[wordIndex] = el; }}
                         type="text"
+                        autoFocus={wordIndex === 0}
                         value={dictationInputs[wordIndex] ?? ""}
                         onChange={(e) => {
                           setDictationInputs((prev) => {
