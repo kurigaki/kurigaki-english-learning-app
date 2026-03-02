@@ -8,11 +8,11 @@ import type { Course, Stage } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
-import { Question, QuestionType, Achievement } from "@/types";
+import { Question, QuestionType, QuestionTypeRatios, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
 import { AchievementUnlockPopup } from "@/components/features/achievements/AchievementUnlockPopup";
 import { PerfectScorePopup } from "@/components/features/quiz";
-import { speakWord, isSpeechSynthesisSupported } from "@/lib/audio";
+import { speakWord, speakSentence, isSpeechSynthesisSupported } from "@/lib/audio";
 import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
 import { shuffleArray, pickRandom } from "@/lib/shuffle";
 import {
@@ -37,6 +37,14 @@ type QuizSettings = {
   categories: Category[];  // 空配列は「全カテゴリ」
   difficulties: number[];  // 空配列は「全難易度」
   includeBookmarksOnly: boolean;
+  typeRatios: QuestionTypeRatios;
+};
+
+const defaultTypeRatios: QuestionTypeRatios = {
+  enToJa: 25,
+  jaToEn: 25,
+  listening: 25,
+  dictation: 25,
 };
 
 const defaultQuizSettings: QuizSettings = {
@@ -45,9 +53,10 @@ const defaultQuizSettings: QuizSettings = {
   categories: [],
   difficulties: [],
   includeBookmarksOnly: false,
+  typeRatios: { ...defaultTypeRatios },
 };
 
-// カテゴリリスト
+// カテゴリリスト（loadQuizSettings のバリデーションで参照するため先に定義）
 const ALL_CATEGORIES: Category[] = [
   "daily", "school", "family", "food", "hobby",
   "nature", "health", "sports", "culture",
@@ -56,22 +65,115 @@ const ALL_CATEGORIES: Category[] = [
   "greeting", "emotion", "opinion", "request", "smalltalk",
 ];
 
-// 問題タイプの出題比率
-const QUESTION_TYPE_WEIGHTS: { type: QuestionType; weight: number }[] = [
-  { type: "en-to-ja", weight: 50 },
-  { type: "ja-to-en", weight: 30 },
-  { type: "fill-blank", weight: 20 },
-];
+// ─── クイズ設定の永続化 ──────────────────────────────────────────────────────
 
-function selectQuestionType(): QuestionType {
-  const totalWeight = QUESTION_TYPE_WEIGHTS.reduce((sum, q) => sum + q.weight, 0);
-  let random = Math.random() * totalWeight;
+const QUIZ_SETTINGS_KEY = "english-app-quiz-settings";
 
-  for (const { type, weight } of QUESTION_TYPE_WEIGHTS) {
+// COURSE_DEFINITIONS から導出（Course 型の追加・削除に自動追従する）
+const VALID_COURSES = new Set<string>(Object.keys(COURSE_DEFINITIONS));
+// COURSE_DEFINITIONS の各コースが持つ全 Stage を収集
+const VALID_STAGES = new Set<string>(
+  Object.values(COURSE_DEFINITIONS).flatMap((def) => def.stages.map((s) => s.stage))
+);
+
+/** クイズ設定を localStorage に保存する */
+function saveQuizSettings(settings: QuizSettings): void {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.setItem(QUIZ_SETTINGS_KEY, JSON.stringify(settings));
+  } catch (e) {
+    console.warn("[Quiz] Failed to save quiz settings:", e);
+  }
+}
+
+/**
+ * localStorage からクイズ設定を復元する。
+ * データが存在しない・破損している場合は defaultQuizSettings を返す。
+ */
+function loadQuizSettings(): QuizSettings {
+  if (typeof window === "undefined") return { ...defaultQuizSettings };
+  try {
+    const raw = localStorage.getItem(QUIZ_SETTINGS_KEY);
+    if (!raw) return { ...defaultQuizSettings };
+
+    const parsed = JSON.parse(raw) as unknown;
+    if (typeof parsed !== "object" || parsed === null) return { ...defaultQuizSettings };
+    const p = parsed as Record<string, unknown>;
+
+    const course = typeof p.course === "string" && VALID_COURSES.has(p.course)
+      ? (p.course as Course) : null;
+    const stage  = typeof p.stage  === "string" && VALID_STAGES.has(p.stage)
+      ? (p.stage  as Stage)  : null;
+
+    const categories = Array.isArray(p.categories)
+      ? (p.categories as unknown[]).filter((c): c is Category =>
+          typeof c === "string" && (ALL_CATEGORIES as string[]).includes(c)
+        )
+      : [];
+
+    const difficulties = Array.isArray(p.difficulties)
+      ? (p.difficulties as unknown[]).filter(
+          (d): d is number => typeof d === "number" && d >= 1 && d <= 7
+        )
+      : [];
+
+    const includeBookmarksOnly =
+      typeof p.includeBookmarksOnly === "boolean" ? p.includeBookmarksOnly : false;
+
+    const tr = typeof p.typeRatios === "object" && p.typeRatios !== null
+      ? (p.typeRatios as Record<string, unknown>)
+      : {};
+    const typeRatios: QuestionTypeRatios = {
+      enToJa:    typeof tr.enToJa    === "number" ? tr.enToJa    : defaultTypeRatios.enToJa,
+      jaToEn:    typeof tr.jaToEn    === "number" ? tr.jaToEn    : defaultTypeRatios.jaToEn,
+      listening: typeof tr.listening === "number" ? tr.listening : defaultTypeRatios.listening,
+      dictation: typeof tr.dictation === "number" ? tr.dictation : defaultTypeRatios.dictation,
+    };
+
+    return { course, stage, categories, difficulties, includeBookmarksOnly, typeRatios };
+  } catch (e) {
+    console.warn("[Quiz] Failed to load quiz settings:", e);
+    return { ...defaultQuizSettings };
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+/**
+ * 比率設定と例文の有無に基づいて問題タイプを選択する。
+ * 例文のない単語は listening / dictation を除外して選択する。
+ */
+function selectQuestionTypeWithRatios(
+  ratios: QuestionTypeRatios,
+  hasExample: boolean
+): QuestionType {
+  // weight > 0 のみに絞る。
+  // - 0 を含めると Math.random()=0 のとき weight=0 のエントリが誤選択される
+  // - 例文のない単語は listening / dictation を除外
+  const pool = [
+    { type: "en-to-ja" as QuestionType, weight: ratios.enToJa },
+    { type: "ja-to-en" as QuestionType, weight: ratios.jaToEn },
+    ...(hasExample
+      ? [
+          { type: "listening" as QuestionType, weight: ratios.listening },
+          { type: "dictation" as QuestionType, weight: ratios.dictation },
+        ]
+      : []),
+  ].filter((p) => p.weight > 0);
+
+  // 全タイプが 0 の場合: 例文なし単語で listening/dictation=100% など
+  if (pool.length === 0) return "en-to-ja";
+
+  const total = pool.reduce((s, p) => s + p.weight, 0);
+  let random = Math.random() * total;
+
+  for (const { type, weight } of pool) {
     random -= weight;
     if (random <= 0) return type;
   }
-  return "en-to-ja";
+  // 浮動小数点誤差で random がわずかに正のまま残るケースへの安全策。
+  // "en-to-ja" をハードコードせず、最後の要素（最大確率のタイプ）を返す。
+  return pool[pool.length - 1].type;
 }
 
 function generateChoicesForEnToJa(correctWord: Word, allWords: Word[]): string[] {
@@ -112,7 +214,7 @@ function escapeRegex(str: string): string {
 }
 
 /**
- * 穴あき例文を生成
+ * 穴あき例文を生成（リスニング問題・回答後の表示に使用）
  */
 function createFillBlankSentence(example: string, word: string): string {
   const regex = new RegExp(`\\b${escapeRegex(word)}\\b`, "gi");
@@ -120,8 +222,8 @@ function createFillBlankSentence(example: string, word: string): string {
 }
 
 /**
- * fill-blank 用の例文を選択する。
- * word.examples[] があればその中から単語が含まれるものをランダムに選択する。
+ * リスニング/書き取り問題用の例文を選択する。
+ * word.examples[] がある場合は穴あき可能なものをランダムに選択する。
  * なければ従来の word.example にフォールバック。
  */
 function selectFillBlankExample(word: Word): { example: string; exampleJa: string | undefined } | null {
@@ -140,23 +242,57 @@ function selectFillBlankExample(word: Word): { example: string; exampleJa: strin
   return null;
 }
 
-function generateQuestion(word: Word, allWords: Word[]): Question {
-  let type = selectQuestionType();
+// 書き取り問題のインライン入力用パーツ
+type DictationPart =
+  | { kind: "text"; content: string }
+  | { kind: "blank"; wordIndex: number };
 
-  // 穴あき問題の検証（examples[] を考慮）
-  let selectedExample: { example: string; exampleJa: string | undefined } | null = null;
-  if (type === "fill-blank") {
-    selectedExample = selectFillBlankExample(word);
-    if (!selectedExample) {
-      // 有効な例文がなければ別の問題タイプへ
-      type = Math.random() > 0.5 ? "en-to-ja" : "ja-to-en";
-    }
+/**
+ * 例文を「テキスト部分」と「入力ブランク部分」に分割する（書き取り問題用）
+ * "Please stand up and leave." + "stand up"
+ * → [{text:"Please "}, {blank:0}, {text:" "}, {blank:1}, {text:" and leave."}]
+ */
+function parseDictationParts(example: string, word: string): DictationPart[] {
+  const escaped = escapeRegex(word);
+  const regex = new RegExp(`\\b${escaped}\\b`, "gi");
+  const match = regex.exec(example);
+  if (!match) return [{ kind: "text", content: example }];
+
+  const parts: DictationPart[] = [];
+
+  if (match.index > 0) {
+    parts.push({ kind: "text", content: example.slice(0, match.index) });
+  }
+
+  // フレーズ内の単語を個別のブランクに分割（例: "stand up" → blank[0], blank[1]）
+  const matchedWords = match[0].split(/\s+/);
+  matchedWords.forEach((_, i) => {
+    if (i > 0) parts.push({ kind: "text", content: " " });
+    parts.push({ kind: "blank", wordIndex: i });
+  });
+
+  const after = example.slice(match.index + match[0].length);
+  if (after) parts.push({ kind: "text", content: after });
+
+  return parts;
+}
+
+function generateQuestion(word: Word, allWords: Word[], ratios: QuestionTypeRatios): Question {
+  // examples[] を考慮した例文選択（hasExample の判定も改善）
+  const selectedExample = selectFillBlankExample(word);
+  const hasExample = selectedExample !== null;
+  let type = selectQuestionTypeWithRatios(ratios, hasExample);
+
+  // listening / dictation は例文が必要。例文なしなら en-to-ja / ja-to-en にフォールバック
+  if ((type === "listening" || type === "dictation") && !hasExample) {
+    type = Math.random() > 0.5 ? "en-to-ja" : "ja-to-en";
   }
 
   const wordData = {
     id: word.id,
     word: word.word,
     meaning: word.meaning,
+    // examples[] があれば選択された例文を使用し、なければ従来の word.example にフォールバック
     example: selectedExample?.example ?? word.example,
     exampleJa: selectedExample?.exampleJa ?? word.exampleJa,
     category: word.category,
@@ -179,11 +315,21 @@ function generateQuestion(word: Word, allWords: Word[]): Question {
         correctAnswer: word.word,
       };
 
-    case "fill-blank":
+    case "listening":
+      // 選択式（リスニング）: 例文の空欄に入る単語を4択で選ぶ
       return {
         word: wordData,
-        type: "fill-blank",
+        type: "listening",
         choices: generateChoicesForJaToEn(word, allWords),
+        correctAnswer: word.word,
+      };
+
+    case "dictation":
+      // 入力式（書き取り）: 例文の空欄に入る単語をキーボードで入力
+      return {
+        word: wordData,
+        type: "dictation",
+        choices: [],
         correctAnswer: word.word,
       };
   }
@@ -234,7 +380,8 @@ function generateSessionQuestions(
   allWords: Word[],
   count: number,
   weakWordIds: number[],
-  studiedWordIds: number[]
+  studiedWordIds: number[],
+  ratios: QuestionTypeRatios
 ): Question[] {
 
   // targetWordsからカテゴリ別に単語を分類
@@ -266,7 +413,7 @@ function generateSessionQuestions(
 
   // シャッフルして問題を生成
   const shuffledSelected = shuffleArray(selected);
-  return shuffledSelected.map((word) => generateQuestion(word, allWords));
+  return shuffledSelected.map((word) => generateQuestion(word, allWords, ratios));
 }
 
 function getQuestionPrompt(type: QuestionType): string {
@@ -275,8 +422,10 @@ function getQuestionPrompt(type: QuestionType): string {
       return "この単語の意味は?";
     case "ja-to-en":
       return "この意味の英単語は?";
-    case "fill-blank":
-      return "空欄に入る単語は?";
+    case "listening":
+      return "音声を聞いて、空欄に入る単語は?";
+    case "dictation":
+      return "空欄に入る英単語を入力してください";
   }
 }
 
@@ -286,7 +435,8 @@ function getQuestionDisplay(question: Question): string {
       return question.word.word;
     case "ja-to-en":
       return question.word.meaning;
-    case "fill-blank":
+    case "listening":
+    case "dictation":
       // 穴あき例文を生成
       return question.word.example
         ? createFillBlankSentence(question.word.example, question.word.word)
@@ -517,7 +667,7 @@ function getTranslationInfo(wordId: number, exampleSentence?: string): Translati
   if (!sentenceJa && fullWordData.exampleJa) {
     sentenceJa = fullWordData.exampleJa;
   }
-  // 3. 未登録時は日本語のみの簡易ヒントを生成
+  // 3. それもなければ日本語のみの簡易ヒントを生成
   if (!sentenceJa && exampleSentence) {
     sentenceJa = toJapaneseHint(
       exampleSentence,
@@ -572,12 +722,14 @@ export default function QuizPage() {
 
   // クイズフェーズ管理
   const [phase, setPhase] = useState<QuizPhase>("setup");
-  const [quizSettings, setQuizSettings] = useState<QuizSettings>(defaultQuizSettings);
+  const [quizSettings, setQuizSettings] = useState<QuizSettings>(() => loadQuizSettings());
 
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [dictationInputs, setDictationInputs] = useState<string[]>([]); // 書き取り問題の入力値（ブランクごと）
+  const dictationInputRefs = useRef<(HTMLInputElement | null)[]>([]);  // Tabキー移動用
   const [score, setScore] = useState(0);
   const [combo, setCombo] = useState(0);
   const [maxCombo, setMaxCombo] = useState(0);
@@ -622,6 +774,11 @@ export default function QuizPage() {
     };
     loadData();
   }, []);
+
+  // クイズ設定が変わるたびに localStorage へ保存
+  useEffect(() => {
+    saveQuizSettings(quizSettings);
+  }, [quizSettings]);
 
   // 次の問題へ進む / クイズ終了処理
   const handleNext = useCallback(async () => {
@@ -706,13 +863,17 @@ export default function QuizPage() {
       setSelected(null);
       setIsCorrect(null);
       setShowTranslation(false);
+      setDictationInputs([]);
+      dictationInputRefs.current = [];
     }
   }, [currentIndex, questions.length, score, maxCombo]);
 
-  // Enterキーで「次の問題へ」進む
+  // Enterキーで「次の問題へ」進む（書き取り入力フィールド内は除外）
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key !== "Enter") return;
+      // テキスト入力中（書き取り問題の入力フォーム）は除外
+      if (e.target instanceof HTMLInputElement) return;
       if (selected === null) return;
       if (isFinished) return;
 
@@ -787,7 +948,13 @@ export default function QuizPage() {
           // 英単語を読み上げ
           speakWord(currentQuestion.word.word);
           break;
-        // fill-blank: 自動再生なし（手動の音声ボタンで再生可能）
+        case "listening":
+        case "dictation":
+          // 例文全体を読み上げ
+          if (currentQuestion.word.example) {
+            speakSentence(currentQuestion.word.example);
+          }
+          break;
         // ja-to-en: 日本語なので読み上げなし
       }
     }, 300);
@@ -833,12 +1000,14 @@ export default function QuizPage() {
 
     let newQuestions: Question[];
 
+    const ratios = settings.typeRatios ?? defaultTypeRatios;
+
     // 優先単語が指定されている場合、その単語を必ず含める
     if (options?.priorityWordId) {
       const priorityWord = words.find((w) => w.id === options.priorityWordId);
       if (priorityWord) {
         // 優先単語の問題を生成
-        const priorityQuestion = generateQuestion(priorityWord, words);
+        const priorityQuestion = generateQuestion(priorityWord, words, ratios);
         // 残りの問題を生成（優先単語を除外）
         const remainingTargetWords = targetWords.filter((w) => w.id !== options.priorityWordId);
         const remainingQuestions = generateSessionQuestions(
@@ -846,15 +1015,16 @@ export default function QuizPage() {
           words,
           questionCount - 1,
           weakWordIds,
-          studiedWordIds
+          studiedWordIds,
+          ratios
         );
         // 優先単語を最初に配置
         newQuestions = [priorityQuestion, ...remainingQuestions];
       } else {
-        newQuestions = generateSessionQuestions(targetWords, words, questionCount, weakWordIds, studiedWordIds);
+        newQuestions = generateSessionQuestions(targetWords, words, questionCount, weakWordIds, studiedWordIds, ratios);
       }
     } else {
-      newQuestions = generateSessionQuestions(targetWords, words, questionCount, weakWordIds, studiedWordIds);
+      newQuestions = generateSessionQuestions(targetWords, words, questionCount, weakWordIds, studiedWordIds, ratios);
     }
 
     setQuestions(newQuestions);
@@ -867,6 +1037,8 @@ export default function QuizPage() {
     setIsFinished(false);
     setSelected(null);
     setIsCorrect(null);
+    setDictationInputs([]);
+    dictationInputRefs.current = [];
     setSessionResult(null);
     setAnsweredWords([]);
     setIsRestoredFromSession(false);
@@ -888,6 +1060,9 @@ export default function QuizPage() {
     }
 
     // URLパラメータによる自動開始
+    // ※ URLパラメータ起動（復習・苦手・SRS）はコース/カテゴリ/難易度フィルターを
+    //    使わず全単語対象で起動する（defaultQuizSettings を渡す）。
+    //    出題比率(typeRatios)もデフォルト均等配分を使用する仕様。
     if (reviewWordId) {
       // 特定の単語を復習（単語詳細画面からの遷移）
       const wordIdNum = parseInt(reviewWordId, 10);
@@ -922,18 +1097,18 @@ export default function QuizPage() {
     setPhase("setup");
   }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, weakWordIds, srsWordIds, bookmarkedIds, startNewSession]);
 
-  const handleSelect = (choice: string) => {
-    if (selected !== null || !currentQuestion) return;
+  /**
+   * 回答を処理する共通ロジック。
+   * handleSelect / handleDictationSubmit 両方から呼び出される。
+   * @param answerText ユーザーが入力/選択した回答文字列
+   * @param correct    正誤判定結果
+   */
+  const processAnswer = (answerText: string, correct: boolean) => {
+    if (!currentQuestion) return;
 
-    setSelected(choice);
-    const correct = choice === currentQuestion.correctAnswer;
+    setSelected(answerText);
     setIsCorrect(correct);
 
-    // ja-to-en問題で選択した英単語を読み上げ（正誤に関わらず、音と文字の結びつけ）
-    if (currentQuestion.type === "ja-to-en" && isSpeechSynthesisSupported()) {
-      speakWord(choice);
-    }
-    // 全単語の結果を記録
     setAnsweredWords((prev) => [
       ...prev,
       {
@@ -979,6 +1154,35 @@ export default function QuizPage() {
         console.error("[Quiz] Failed to update SRS progress:", error);
       }
     })();
+  };
+
+  const handleSelect = (choice: string) => {
+    if (selected !== null || !currentQuestion) return;
+
+    const correct = choice === currentQuestion.correctAnswer;
+
+    // ja-to-en問題で選択した英単語を読み上げ（正誤に関わらず、音と文字の結びつけ）
+    if (currentQuestion.type === "ja-to-en" && isSpeechSynthesisSupported()) {
+      speakWord(choice);
+    }
+
+    processAnswer(choice, correct);
+  };
+
+  // 書き取り問題の回答を処理（大文字小文字を無視・複数ブランク対応）
+  const handleDictationSubmit = () => {
+    if (selected !== null || !currentQuestion) return;
+
+    const answerWords = currentQuestion.correctAnswer.split(/\s+/);
+    // 全ブランクが入力されているか確認
+    const allFilled = answerWords.every((_, i) => (dictationInputs[i] ?? "").trim() !== "");
+    if (!allFilled) return;
+
+    const correct = answerWords.every(
+      (w, i) => (dictationInputs[i] ?? "").trim().toLowerCase() === w.toLowerCase()
+    );
+    const answerText = dictationInputs.map((s) => s.trim()).join(" ");
+    processAnswer(answerText, correct);
   };
 
   const handleAchievementClose = () => {
@@ -1177,6 +1381,68 @@ export default function QuizPage() {
                 <span className="text-xs">({bookmarkedCount}語)</span>
               </button>
             </Card>
+
+            {/* 問題タイプの出題比率 */}
+            <Card className="!p-3">
+              <h2 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-2">問題タイプの出題比率</h2>
+              {(() => {
+                const ratios = quizSettings.typeRatios;
+                const total = ratios.enToJa + ratios.jaToEn + ratios.listening + ratios.dictation;
+                const toPercent = (v: number) => total > 0 ? Math.round((v / total) * 100) : 0;
+                const typeItems: { key: keyof QuestionTypeRatios; label: string; color: string }[] = [
+                  { key: "enToJa",    label: "A 英→日",    color: "accent" },
+                  { key: "jaToEn",    label: "B 日→英",    color: "primary" },
+                  { key: "listening", label: "C リスニング", color: "green" },
+                  { key: "dictation", label: "D 書き取り",  color: "orange" },
+                ];
+                return (
+                  <div className="space-y-2">
+                    {typeItems.map(({ key, label }) => {
+                      const value = ratios[key];
+                      const pct = toPercent(value);
+                      return (
+                        <div key={key} className="flex items-center gap-2">
+                          <span className="text-[11px] text-slate-600 dark:text-slate-300 w-20 flex-shrink-0">{label}</span>
+                          <input
+                            type="range"
+                            min={0}
+                            max={100}
+                            step={5}
+                            value={value}
+                            onChange={(e) =>
+                              setQuizSettings((prev) => ({
+                                ...prev,
+                                typeRatios: { ...prev.typeRatios, [key]: parseInt(e.target.value) },
+                              }))
+                            }
+                            className="flex-1 h-1.5 accent-primary-500"
+                          />
+                          <span className="text-[11px] font-bold text-primary-600 dark:text-primary-400 w-8 text-right flex-shrink-0">
+                            {pct}%
+                          </span>
+                        </div>
+                      );
+                    })}
+                    {total === 0 && (
+                      <p className="text-[10px] text-amber-600 dark:text-amber-400">
+                        ※ 全て0の場合は「英→日」のみで出題されます
+                      </p>
+                    )}
+                    <button
+                      onClick={() =>
+                        setQuizSettings((prev) => ({
+                          ...prev,
+                          typeRatios: { ...defaultTypeRatios },
+                        }))
+                      }
+                      className="text-[10px] text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+                    >
+                      均等に戻す（各25%）
+                    </button>
+                  </div>
+                );
+              })()}
+            </Card>
           </div>
 
           {/* 下部固定: プレビュー＋ボタン */}
@@ -1210,7 +1476,8 @@ export default function QuizPage() {
             {/* 設定リセット */}
             {(quizSettings.categories.length > 0 ||
               quizSettings.difficulties.length > 0 ||
-              quizSettings.includeBookmarksOnly) && (
+              quizSettings.includeBookmarksOnly ||
+              quizSettings.course !== null) && (
               <button
                 onClick={() => setQuizSettings(defaultQuizSettings)}
                 className="w-full text-[10px] text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 dark:text-slate-200"
@@ -1451,11 +1718,18 @@ export default function QuizPage() {
   }
 
   const questionDisplay = getQuestionDisplay(currentQuestion);
-  const isFillBlank = currentQuestion.type === "fill-blank";
+  const isSentenceType = currentQuestion.type === "listening" || currentQuestion.type === "dictation";
+
+  // 書き取り問題: 例文をパーツに分割（ブランク数チェックにも使用）
+  const dictationParts =
+    currentQuestion.type === "dictation" && currentQuestion.word.example
+      ? parseDictationParts(currentQuestion.word.example, currentQuestion.word.word)
+      : [];
+  const dictationBlankCount = dictationParts.filter((p) => p.kind === "blank").length;
 
   return (
     <div className="main-content px-2 py-1.5 flex flex-col">
-      <div className="max-w-md w-full mx-auto flex flex-col h-full">
+      <div className="max-w-md w-full mx-auto flex flex-col">
         {/* 上部固定: Progress & Score */}
         <div className="flex-shrink-0 mb-1">
           <div className="mb-1">
@@ -1484,9 +1758,9 @@ export default function QuizPage() {
           </div>
         </div>
 
-        {/* 中央: Question Card - flex-1でスペースを埋める */}
-        <div className="flex-1 min-h-0 flex flex-col">
-          <Card className="flex flex-col p-2 h-full">
+        {/* 中央: Question Card */}
+        <div>
+          <Card className="flex flex-col p-2">
             {/* カテゴリ表示（コンパクト） */}
             {currentQuestion.word.category && (
               <div className={`w-full h-7 mb-1 rounded-md bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100 dark:border-slate-700`}>
@@ -1496,21 +1770,73 @@ export default function QuizPage() {
 
             <div className="text-center mb-1">
               <p className="text-[10px] text-slate-400 dark:text-slate-500 mb-0.5">{getQuestionPrompt(currentQuestion.type)}</p>
-              <h2 className={`font-bold text-gradient ${isFillBlank ? "text-xs leading-relaxed" : "text-lg"}`}>
-                {questionDisplay}
-              </h2>
+
+              {/* 書き取り問題（未回答時）: 例文中にインライン入力フィールドを埋め込む */}
+              {currentQuestion.type === "dictation" && selected === null && dictationBlankCount > 0 ? (
+                <div className="flex flex-wrap items-baseline justify-center gap-x-0.5 gap-y-2 font-bold text-sm text-slate-700 dark:text-slate-200 leading-loose px-1">
+                  {dictationParts.map((part, i) => {
+                    if (part.kind === "text") {
+                      return <span key={i} className="text-gradient">{part.content}</span>;
+                    }
+                    const wordIndex = part.wordIndex;
+                    const correctWord = currentQuestion.correctAnswer.split(/\s+/)[wordIndex] ?? "";
+                    return (
+                      <input
+                        key={i}
+                        ref={(el) => { dictationInputRefs.current[wordIndex] = el; }}
+                        type="text"
+                        value={dictationInputs[wordIndex] ?? ""}
+                        onChange={(e) => {
+                          setDictationInputs((prev) => {
+                            const next = [...prev];
+                            next[wordIndex] = e.target.value;
+                            return next;
+                          });
+                        }}
+                        onKeyDown={(e) => {
+                          const answerWords = currentQuestion.correctAnswer.split(/\s+/);
+                          if (e.key === "Tab") {
+                            e.preventDefault();
+                            // 次のブランクへ移動（最後のブランクから最初に戻る）
+                            const nextIdx = (wordIndex + 1) % answerWords.length;
+                            dictationInputRefs.current[nextIdx]?.focus();
+                          } else if (e.key === "Enter") {
+                            e.stopPropagation();
+                            handleDictationSubmit();
+                          }
+                        }}
+                        className="border-b-2 border-primary-400 dark:border-primary-500 bg-transparent text-center text-base leading-[1.4] font-bold text-primary-700 dark:text-primary-300 focus:outline-none focus:border-primary-600 dark:focus:border-primary-400 transition-colors"
+                        style={{
+                          width: `${Math.max(4, correctWord.length + 2)}ch`,
+                          // text-base (16px) で iOS 自動ズームを防ぐ（font-size < 16px で発生）
+                        }}
+                        autoComplete="off"
+                        autoCorrect="off"
+                        autoCapitalize="none"
+                        spellCheck={false}
+                        inputMode="text"
+                      />
+                    );
+                  })}
+                </div>
+              ) : (
+                <h2 className={`font-bold text-gradient ${isSentenceType ? "text-xs leading-relaxed" : "text-lg"}`}>
+                  {questionDisplay}
+                </h2>
+              )}
               {currentQuestion.type === "en-to-ja" && (
                 <div className="mt-1">
                   <SpeakButton text={currentQuestion.word.word} size="sm" />
                 </div>
               )}
-              {currentQuestion.type === "fill-blank" && currentQuestion.word.example && (
+              {/* リスニング・書き取り: 例文音声ボタン */}
+              {isSentenceType && currentQuestion.word.example && (
                 <div className="mt-1">
                   <SpeakButton text={currentQuestion.word.example} type="sentence" size="sm" />
                 </div>
               )}
-              {/* 穴埋め問題の和訳表示トグル */}
-              {currentQuestion.type === "fill-blank" && selected === null && (() => {
+              {/* リスニング・書き取り: 和訳表示トグル */}
+              {isSentenceType && selected === null && (() => {
                 const translationInfo = getTranslationInfo(currentQuestion.word.id, currentQuestion.word.example);
                 return (
                   <div className="mt-1 text-center">
@@ -1530,36 +1856,64 @@ export default function QuizPage() {
               })()}
             </div>
 
-            {/* Choices - flex-1でスペースを均等に使う */}
-            <div className="flex-1 flex flex-col justify-evenly gap-1">
-              {currentQuestion.choices.map((choice, index) => {
-                let buttonClass = "choice-btn";
-
-                if (selected !== null) {
-                  if (choice === currentQuestion.correctAnswer) {
-                    buttonClass = "choice-btn choice-btn-correct";
-                  } else if (choice === selected) {
-                    buttonClass = "choice-btn choice-btn-wrong";
+            {/* 書き取り問題: 回答ボタン（入力フィールドは問題文にインライン埋め込み） */}
+            {currentQuestion.type === "dictation" ? (
+              <div className="flex flex-col gap-2 mt-2">
+                {selected === null ? (
+                  <Button
+                    fullWidth
+                    size="sm"
+                    onClick={handleDictationSubmit}
+                    disabled={
+                    dictationBlankCount === 0 ||
+                    !currentQuestion.correctAnswer
+                      .split(/\s+/)
+                      .every((_, i) => (dictationInputs[i] ?? "").trim() !== "")
                   }
-                }
-
-                return (
-                  <button
-                    key={index}
-                    onClick={() => handleSelect(choice)}
-                    disabled={selected !== null}
-                    className={`${buttonClass} py-1.5`}
                   >
-                    <span className="flex items-center gap-1.5">
-                      <span className="w-5 h-5 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-[10px] font-bold flex-shrink-0">
-                        {String.fromCharCode(65 + index)}
+                    回答する
+                  </Button>
+                ) : (
+                  <div className="text-center">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5">あなたの回答</p>
+                    <p className={`text-sm font-bold ${isCorrect ? "text-success-600 dark:text-success-400" : "text-error-600 dark:text-error-400"}`}>
+                      {selected}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ) : (
+              /* リスニング・英→日・日→英: 選択肢ボタン */
+              <div className="flex flex-col gap-2 mt-2">
+                {currentQuestion.choices.map((choice, index) => {
+                  let buttonClass = "choice-btn";
+
+                  if (selected !== null) {
+                    if (choice === currentQuestion.correctAnswer) {
+                      buttonClass = "choice-btn choice-btn-correct";
+                    } else if (choice === selected) {
+                      buttonClass = "choice-btn choice-btn-wrong";
+                    }
+                  }
+
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => handleSelect(choice)}
+                      disabled={selected !== null}
+                      className={`${buttonClass} py-1.5`}
+                    >
+                      <span className="flex items-center gap-1.5">
+                        <span className="w-5 h-5 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-[10px] font-bold flex-shrink-0">
+                          {String.fromCharCode(65 + index)}
+                        </span>
+                        <span className="text-xs">{choice}</span>
                       </span>
-                      <span className="text-xs">{choice}</span>
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </Card>
         </div>
 
