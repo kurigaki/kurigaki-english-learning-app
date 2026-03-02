@@ -16,6 +16,7 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
   [
     30001,
     {
+      pronunciation: { us: "/əˈpɔɪntmənt/", uk: "/əˈpɔɪntmənt/" },
       coreImage:
         "「特定の時間・場所で誰かと会う」という約束を取り決めた状態がコアイメージ。医師の診察予約や会議予約など、公式・ビジネス的なニュアンスがある。",
       usage:
@@ -25,13 +26,32 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       englishDefinition:
         "An arrangement to meet someone at a particular time and place, especially for a professional or official purpose.",
       etymology:
-        "15世紀フランス語 appointement（合意・取り決め）から。appoint（指定する）＋ -ment（名詞化）。",
+        "15世紀フランス語 appointement（合意・取り決め）から。appoint（指定する）＋ -ment（名詞化）。ラテン語 ad punctum（ある点に向かって）も関連。",
+      relatedWords: ["meeting", "booking", "reservation", "schedule"],
+      examples: [
+        {
+          en: "I have a doctor's appointment at 3 p.m. today.",
+          ja: "今日の午後3時に医師の予約があります。",
+          context: "医療",
+        },
+        {
+          en: "She made an appointment to see the financial advisor next week.",
+          ja: "彼女は来週、ファイナンシャルアドバイザーとの面談を予約した。",
+          context: "ビジネス",
+        },
+        {
+          en: "Could you reschedule my appointment to Friday afternoon?",
+          ja: "予約を金曜の午後に変更していただけますか？",
+          context: "日常",
+        },
+      ],
     },
   ],
   // confirm (30002)
   [
     30002,
     {
+      pronunciation: { us: "/kənˈfɜːrm/", uk: "/kənˈfɜːm/" },
       coreImage:
         "すでにある情報・約束・事実を「はっきり確かめる・確認する」行為がコアイメージ。疑いを払拭し、確実にする。",
       usage:
@@ -42,12 +62,31 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "To state or show that something is definitely true or correct; to make an arrangement or appointment certain.",
       etymology:
         "ラテン語 confirmare（強固にする）から。con-（完全に）＋ firmare（強固にする・firm と同語源）。",
+      relatedWords: ["verify", "check", "approve", "validate"],
+      examples: [
+        {
+          en: "Please confirm your reservation at least 24 hours in advance.",
+          ja: "少なくとも24時間前に予約を確認してください。",
+          context: "旅行・サービス",
+        },
+        {
+          en: "The manager confirmed that the project would start next month.",
+          ja: "マネージャーは、プロジェクトが来月開始されることを確認した。",
+          context: "ビジネス",
+        },
+        {
+          en: "Can you confirm receipt of the documents I sent yesterday?",
+          ja: "昨日送った書類を受け取ったことを確認していただけますか？",
+          context: "オフィス",
+        },
+      ],
     },
   ],
   // department (30003)
   [
     30003,
     {
+      pronunciation: { us: "/dɪˈpɑːrtmənt/", uk: "/dɪˈpɑːtmənt/" },
       coreImage:
         "「組織や機能を分割した一区画・部門」がコアイメージ。会社の部署（営業部・開発部など）や、デパートの売り場（食品売り場など）を指す。",
       usage:
@@ -58,12 +97,31 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "A section of a large organization or building, such as a government, business, or store.",
       etymology:
         "ラテン語 departire（分ける）から。de-（離れて）＋ partire（分ける・part と同語源）。フランス語 département を経て英語に入った。",
+      relatedWords: ["division", "section", "team", "unit"],
+      examples: [
+        {
+          en: "She transferred to the marketing department last April.",
+          ja: "彼女は昨年4月にマーケティング部へ異動した。",
+          context: "職場",
+        },
+        {
+          en: "The IT department handles all technical issues in the company.",
+          ja: "IT部門は会社内の技術的な問題をすべて担当する。",
+          context: "ビジネス",
+        },
+        {
+          en: "Please direct all inquiries to the customer service department.",
+          ja: "お問い合わせはすべてカスタマーサービス部門にお願いします。",
+          context: "顧客対応",
+        },
+      ],
     },
   ],
   // employee (30004)
   [
     30004,
     {
+      pronunciation: { us: "/ɪmˈplɔɪiː/", uk: "/ɪmˈplɔɪiː/" },
       coreImage:
         "「他者（employer=雇用主）に雇われて働く人」がコアイメージ。雇用契約のある会社員・従業員を指す正式な語。",
       usage:
@@ -74,12 +132,31 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "A person who is paid to work for a company or organization.",
       etymology:
         "employ（雇う）＋ -ee（される側の人）。フランス語 employé から。-ee は法的・正式な文書でよく使われる接尾辞（trainee, interviewee など）。",
+      relatedWords: ["employer", "staff", "worker", "colleague"],
+      examples: [
+        {
+          en: "All employees are required to attend the safety training.",
+          ja: "全従業員が安全研修への参加を求められています。",
+          context: "職場",
+        },
+        {
+          en: "The company offers health insurance to all full-time employees.",
+          ja: "この会社はすべての正社員に健康保険を提供している。",
+          context: "福利厚生",
+        },
+        {
+          en: "Employee satisfaction is closely linked to company productivity.",
+          ja: "従業員満足度は会社の生産性と密接に関係している。",
+          context: "マネジメント",
+        },
+      ],
     },
   ],
   // invoice (30005)
   [
     30005,
     {
+      pronunciation: { us: "/ˈɪnvɔɪs/", uk: "/ˈɪnvɔɪs/" },
       coreImage:
         "「商品・サービスの提供後、代金を請求するための正式な書類」がコアイメージ。金額・品目・支払条件などが記載されたビジネス文書。",
       usage:
@@ -90,12 +167,31 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "A document sent by a seller to a buyer that lists goods or services provided and the amount of money owed.",
       etymology:
         "フランス語 envois（送付品）の複数形から。en-（中に）＋ voie（道・方法）が語源。16世紀から商業用語として使われてきた。",
+      relatedWords: ["receipt", "bill", "payment", "statement"],
+      examples: [
+        {
+          en: "Please send the invoice to our accounting department.",
+          ja: "請求書を経理部門に送付してください。",
+          context: "経理",
+        },
+        {
+          en: "The invoice must be paid within 30 days of the issue date.",
+          ja: "請求書は発行日から30日以内に支払う必要があります。",
+          context: "経理・支払い",
+        },
+        {
+          en: "I noticed an error on the invoice — the quantity is incorrect.",
+          ja: "請求書に誤りを見つけました—数量が間違っています。",
+          context: "ビジネスコミュニケーション",
+        },
+      ],
     },
   ],
   // manage (30006)
   [
     30006,
     {
+      pronunciation: { us: "/ˈmænɪdʒ/", uk: "/ˈmænɪdʒ/" },
       coreImage:
         "困難な状況や複数のことをうまくコントロールして「なんとか切り盛りする」イメージ。人やリソースを管理する場合も、「何とかやり遂げる」場合にも使える。",
       usage:
@@ -106,12 +202,31 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "To be in charge of an organization or group of people; to succeed in doing something despite difficulties.",
       etymology:
         "イタリア語 maneggiare（手で扱う・馬を操る）から。ラテン語 manus（手）が語源。",
+      relatedWords: ["supervise", "lead", "direct", "oversee"],
+      examples: [
+        {
+          en: "She has been managing the sales team for three years.",
+          ja: "彼女は3年間、営業チームを管理してきた。",
+          context: "マネジメント",
+        },
+        {
+          en: "He managed to finish the report before the deadline.",
+          ja: "彼は締め切り前になんとかレポートを仕上げた。",
+          context: "達成・業務",
+        },
+        {
+          en: "It's hard to manage multiple projects at the same time.",
+          ja: "複数のプロジェクトを同時に管理するのは大変だ。",
+          context: "プロジェクト管理",
+        },
+      ],
     },
   ],
   // opportunity (30007)
   [
     30007,
     {
+      pronunciation: { us: "/ˌɑːpərˈtuːnɪti/", uk: "/ˌɒpəˈtjuːnɪti/" },
       coreImage:
         "「何かを達成するための好ましい状況・チャンス」がコアイメージ。その時に行動しなければ失われる、一時的な好機。",
       usage:
@@ -122,12 +237,31 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "A time or situation that makes it possible for you to do something you want to do.",
       etymology:
         "ラテン語 opportunitas から。ob portum venire（港に向かって吹く風）が語源で、「帆に向かって吹く好機の風」というイメージ。",
+      relatedWords: ["chance", "possibility", "occasion", "prospect"],
+      examples: [
+        {
+          en: "This internship is a great opportunity to gain real work experience.",
+          ja: "このインターンシップは実際の職業経験を積む素晴らしい機会だ。",
+          context: "キャリア",
+        },
+        {
+          en: "We should take this opportunity to expand into the Asian market.",
+          ja: "この機会を利用してアジア市場へ進出すべきだ。",
+          context: "ビジネス戦略",
+        },
+        {
+          en: "Don't miss the opportunity — it won't come around again.",
+          ja: "チャンスを逃すな—もう二度と来ないかもしれない。",
+          context: "日常",
+        },
+      ],
     },
   ],
   // purchase (30008)
   [
     30008,
     {
+      pronunciation: { us: "/ˈpɜːrtʃəs/", uk: "/ˈpɜːtʃəs/" },
       coreImage:
         "「代金を支払って物やサービスを手に入れる」行為がコアイメージ。buy よりフォーマルなビジネス・法律用語。",
       usage:
@@ -138,12 +272,31 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "To buy something, especially something significant; something that has been bought.",
       etymology:
         "古フランス語 purchacier（追求する・手に入れようとする）から。ラテン語 pro-（前に）＋ capere（捕まえる）の意。",
+      relatedWords: ["buy", "acquire", "obtain", "payment"],
+      examples: [
+        {
+          en: "You can purchase tickets online or at the box office.",
+          ja: "チケットはオンラインまたはチケット売り場で購入できます。",
+          context: "イベント・サービス",
+        },
+        {
+          en: "All purchases over $100 are eligible for free shipping.",
+          ja: "100ドルを超えるすべての購入品は送料無料の対象です。",
+          context: "eコマース",
+        },
+        {
+          en: "The company made a major purchase of new manufacturing equipment.",
+          ja: "その会社は新しい製造設備を大規模に購入した。",
+          context: "ビジネス",
+        },
+      ],
     },
   ],
   // reservation (30009)
   [
     30009,
     {
+      pronunciation: { us: "/ˌrezərˈveɪʃən/", uk: "/ˌrezəˈveɪʃən/" },
       coreImage:
         "「席・部屋・テーブルなど場所や資源を、特定の時間のために確保する」ことがコアイメージ。資源の「確保・予約」に焦点を当てた語。",
       usage:
@@ -154,12 +307,31 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "An arrangement to have something such as a seat, room, or table kept for your use at a future time.",
       etymology:
         "ラテン語 reservare（取っておく）から。re-（後のために）＋ servare（保存する）。フランス語 réservation を経て英語に。",
+      relatedWords: ["booking", "appointment", "confirm", "cancel"],
+      examples: [
+        {
+          en: "I'd like to make a reservation for two at 7 p.m.",
+          ja: "午後7時に2名の予約をしたいのですが。",
+          context: "レストラン",
+        },
+        {
+          en: "The hotel reservation was made three months in advance.",
+          ja: "ホテルの予約は3か月前に取られた。",
+          context: "旅行",
+        },
+        {
+          en: "Do you have a reservation under the name of Smith?",
+          ja: "スミスという名義の予約はありますか？",
+          context: "チェックイン",
+        },
+      ],
     },
   ],
   // schedule (30010)
   [
     30010,
     {
+      pronunciation: { us: "/ˈskedʒuːl/", uk: "/ˈʃedjuːl/" },
       coreImage:
         "「何かを行う時間・順序を事前に計画したリスト」がコアイメージ。予定表・時刻表・工程表など、時間軸に沿った計画を表す。",
       usage:
@@ -168,8 +340,28 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "schedule vs timetable: schedule は個人や組織の予定全般に使う広い語。timetable は電車・授業など固定した時間割に使うことが多い。",
       englishDefinition:
         "A plan that lists the times when activities or events will happen; to arrange for something to happen at a particular time.",
-      etymology:
+      etymology: [
         "ラテン語 schedula（小さなメモ・紙片）から。中世英語を経て現代の「予定表」の意味に発展。",
+        "UK発音 /ˈʃedjuːl/ はラテン語→古フランス語→中英語の経路を踏む。US発音 /ˈskedʒuːl/ はギリシア語 skhedē を経由したより古い形から。",
+      ],
+      relatedWords: ["timetable", "plan", "agenda", "calendar"],
+      examples: [
+        {
+          en: "The project schedule has been updated due to unexpected delays.",
+          ja: "予期せぬ遅延のため、プロジェクトのスケジュールが更新された。",
+          context: "プロジェクト管理",
+        },
+        {
+          en: "Please schedule a meeting with the client for next Tuesday.",
+          ja: "来週の火曜日にクライアントとの会議を設定してください。",
+          context: "ビジネス",
+        },
+        {
+          en: "I have a very tight schedule this week — no free time at all.",
+          ja: "今週はスケジュールが非常にタイトで、全く自由な時間がない。",
+          context: "日常",
+        },
+      ],
     },
   ],
   // apply (30011)
@@ -7258,6 +7450,7 @@ function buildGeneratedExtension(word: ExtensionSourceWord): WordExtension {
 /**
  * 既存の手動拡張を優先し、不足フィールドのみ自動補完する。
  * 単語詳細画面で全語に5セクションを表示できるようにするための統一アクセサ。
+ * examples / relatedWords / pronunciation は手動データのみ（自動生成なし）。
  */
 export function getWordExtension(word: ExtensionSourceWord): WordExtension {
   const manual = wordExtensions.get(word.id);
@@ -7268,5 +7461,9 @@ export function getWordExtension(word: ExtensionSourceWord): WordExtension {
     synonymDifference: manual?.synonymDifference ?? generated.synonymDifference,
     englishDefinition: manual?.englishDefinition ?? generated.englishDefinition,
     etymology: manual?.etymology ?? generated.etymology,
+    // 以下は手動データのみ（未設定の単語では undefined）
+    examples: manual?.examples,
+    relatedWords: manual?.relatedWords,
+    pronunciation: manual?.pronunciation,
   };
 }
