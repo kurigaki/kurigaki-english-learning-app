@@ -2,33 +2,17 @@
 
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { WordExample } from "@/types";
+import { WordText } from "./WordText";
 
 type WordExamplesProps = {
   examples: WordExample[];
-  targetWord: string;
+  currentWord: string;
 };
 
-export const WordExamples = ({ examples, targetWord }: WordExamplesProps) => {
+export const WordExamples = ({ examples, currentWord }: WordExamplesProps) => {
   if (examples.length === 0) {
     return null;
   }
-
-  // 対象単語をハイライトする
-  const highlightWord = (sentence: string, word: string) => {
-    const regex = new RegExp(`\\b(${word})\\b`, "gi");
-    const parts = sentence.split(regex);
-
-    return parts.map((part, index) => {
-      if (part.toLowerCase() === word.toLowerCase()) {
-        return (
-          <span key={index} className="font-bold text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/30 px-1 rounded">
-            {part}
-          </span>
-        );
-      }
-      return part;
-    });
-  };
 
   return (
     <div className="py-6 border-b border-slate-100 dark:border-slate-700">
@@ -46,7 +30,7 @@ export const WordExamples = ({ examples, targetWord }: WordExamplesProps) => {
               <div className="flex-1">
                 {/* 英語例文 */}
                 <p className="text-lg text-slate-800 dark:text-slate-100 leading-relaxed mb-2">
-                  {highlightWord(example.en, targetWord)}
+                  <WordText text={example.en} currentWord={currentWord} />
                 </p>
                 {/* 日本語訳 */}
                 <p className="text-slate-500 dark:text-slate-400">{example.ja}</p>

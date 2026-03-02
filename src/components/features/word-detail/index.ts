@@ -6,3 +6,4 @@ export { WordMastery } from "./WordMastery";
 export { WordImage } from "./WordImage";
 export { WordPlaceholderSection } from "./WordPlaceholderSection";
 export { WordSynonymDiff } from "./WordSynonymDiff";
+export { WordText } from "./WordText";

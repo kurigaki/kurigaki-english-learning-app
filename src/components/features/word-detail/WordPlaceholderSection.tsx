@@ -1,10 +1,11 @@
-"use client";
+import { WordText } from "./WordText";
 
 type WordPlaceholderSectionProps = {
   title: string;
   emoji: string;
   content?: string | string[];
   placeholder?: string;
+  currentWord: string;
 };
 
 export const WordPlaceholderSection = ({
@@ -12,6 +13,7 @@ export const WordPlaceholderSection = ({
   emoji,
   content,
   placeholder = "今後追加予定",
+  currentWord,
 }: WordPlaceholderSectionProps) => {
   const hasContent = Array.isArray(content)
     ? content.length > 0
@@ -28,12 +30,14 @@ export const WordPlaceholderSection = ({
           <ol className="list-decimal list-inside space-y-2">
             {content.map((item, i) => (
               <li key={i} className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                {item}
+                <WordText text={item} currentWord={currentWord} />
               </li>
             ))}
           </ol>
         ) : (
-          <p className="text-slate-700 dark:text-slate-200 leading-relaxed">{content}</p>
+          <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+            <WordText text={content as string} currentWord={currentWord} />
+          </p>
         )
       ) : (
         <p className="text-slate-400 dark:text-slate-500 text-sm italic">{placeholder}</p>
