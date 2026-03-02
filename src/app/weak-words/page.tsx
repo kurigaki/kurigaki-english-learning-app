@@ -7,6 +7,7 @@ import { Card, Button } from "@/components/ui";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { saveWeakWordSort, getAndClearWeakWordSort } from "@/lib/navigation-state";
+import { saveWordNavState } from "@/lib/word-nav-state";
 import type { WordStats } from "@/lib/storage";
 import { words, Word, categoryLabels } from "@/data/words/compat";
 import { isWeakWord } from "@/types";
@@ -146,7 +147,7 @@ export default function WeakWordsPage() {
           <>
             <div className="flex-1 overflow-y-auto min-h-0 space-y-1.5">
               {weakWords.map((word) => (
-                <Link key={word.id} href={`/word/${word.id}?from=weak`} onClick={() => saveWeakWordSort(sortBy)}>
+                <Link key={word.id} href={`/word/${word.id}?from=weak`} onClick={() => { saveWeakWordSort(sortBy); saveWordNavState(weakWords.map((w) => w.id), "weak"); }}>
                   <Card
                     hover
                     className="flex items-center gap-2 group !p-2"

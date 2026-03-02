@@ -23,6 +23,7 @@ import {
   SessionResult,
 } from "@/lib/quiz-session";
 import { getInitialSrsProgress, calculateSm2, answerQualityFromResult } from "@/lib/srs";
+import { saveWordNavState } from "@/lib/word-nav-state";
 
 const QUESTIONS_PER_SESSION = 10;
 
@@ -1374,6 +1375,7 @@ export default function QuizPage() {
                     <Link
                       key={`${word.id}-${word.word}`}
                       href={`/word/${word.id}?from=quiz`}
+                      onClick={() => saveWordNavState(answeredWords.map((w) => w.id), "quiz")}
                       className={`flex items-center justify-between p-1.5 rounded-lg border transition-all hover:scale-[1.02] group ${
                         word.correct
                           ? "bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800/40"
