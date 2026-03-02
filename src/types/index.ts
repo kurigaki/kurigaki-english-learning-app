@@ -65,6 +65,9 @@ export type WordExtension = Pick<
   | "etymology"
   | "examples"
   | "relatedWords"
+  | "synonyms"
+  | "antonyms"
+  | "column"
 > & {
   pronunciation?: string | PronunciationData; // US/UK 発音対応
 };
