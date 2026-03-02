@@ -1,13 +1,5 @@
 // 問題タイプ
-export type QuestionType = "en-to-ja" | "ja-to-en" | "listening" | "dictation";
-
-// 問題タイプの出題比率（0〜100 の重みづけ、内部で正規化）
-export type QuestionTypeRatios = {
-  enToJa: number;    // A: 英語→日本語
-  jaToEn: number;    // B: 日本語→英語
-  listening: number; // C: リスニング（例文の空欄選択）
-  dictation: number; // D: 書き取り（例文の空欄入力）
-};
+export type QuestionType = "en-to-ja" | "ja-to-en" | "fill-blank";
 
 // クイズモード
 export type QuizMode = "normal" | "speed";
@@ -44,7 +36,7 @@ export type WordColumn = {
 
 // 拡張単語データ
 export type WordExtended = {
-  pronunciation?: string;      // 発音記号
+  pronunciation?: string | PronunciationData; // 発音記号（US/UK対応）
   partOfSpeech?: PartOfSpeech; // 品詞
   audioUrl?: string;           // 音声ファイルURL（将来対応用）
   imageUrl?: string;           // イメージ画像URL
@@ -57,7 +49,7 @@ export type WordExtended = {
   usage?: string;              // 使い方説明
   synonymDifference?: string;  // 類義語との違い
   englishDefinition?: string;  // 英英定義
-  etymology?: string;          // 語源
+  etymology?: string | string[]; // 語源（複数ある場合は配列）
 };
 
 /**
@@ -66,8 +58,16 @@ export type WordExtended = {
  */
 export type WordExtension = Pick<
   WordExtended,
-  "coreImage" | "usage" | "synonymDifference" | "englishDefinition" | "etymology"
->;
+  | "coreImage"
+  | "usage"
+  | "synonymDifference"
+  | "englishDefinition"
+  | "etymology"
+  | "examples"
+  | "relatedWords"
+> & {
+  pronunciation?: string | PronunciationData; // US/UK 発音対応
+};
 
 // クイズの問題
 export type Question = {
