@@ -264,7 +264,7 @@ export default function WordDetailPage() {
 
             {/* 例文 */}
             {examples.length > 0 && (
-              <WordExamples examples={examples} targetWord={word.word} />
+              <WordExamples examples={examples} currentWord={word.word} />
             )}
 
             {/* コアイメージ */}
@@ -273,12 +273,13 @@ export default function WordDetailPage() {
               emoji="💡"
               content={word.coreImage ?? wordExt?.coreImage}
               placeholder="この単語のコアイメージは今後追加予定です"
+              currentWord={word.word}
             />
 
-            {/* 関連語・類義語 */}
+            {/* 関連語 */}
             <WordRelations
-              synonyms={word.synonyms}
               relatedWordEntries={word.relatedWordEntries}
+              currentWord={word.word}
             />
 
             {/* 使い方 */}
@@ -287,17 +288,19 @@ export default function WordDetailPage() {
               emoji="📝"
               content={word.usage ?? wordExt?.usage}
               placeholder="この単語の使い方解説は今後追加予定です"
+              currentWord={word.word}
             />
 
             {/* 類義語との違い（構造化データがあればリスト表示、なければプレーンテキスト） */}
             {(word.synonymDifferenceEntries && word.synonymDifferenceEntries.length > 0) ? (
-              <WordSynonymDiff entries={word.synonymDifferenceEntries} />
+              <WordSynonymDiff entries={word.synonymDifferenceEntries} currentWord={word.word} />
             ) : (
               <WordPlaceholderSection
                 title="類義語との違い"
                 emoji="🔍"
                 content={word.synonymDifference ?? wordExt?.synonymDifference}
                 placeholder="類義語との使い分けは今後追加予定です"
+                currentWord={word.word}
               />
             )}
 
@@ -307,6 +310,7 @@ export default function WordDetailPage() {
               emoji="🇬🇧"
               content={word.englishDefinition ?? wordExt?.englishDefinition}
               placeholder="英語による定義は今後追加予定です"
+              currentWord={word.word}
             />
 
             {/* 語源（配列対応：複数語源をリスト表示） */}
@@ -315,10 +319,11 @@ export default function WordDetailPage() {
               emoji="📜"
               content={word.etymology ?? wordExt?.etymology}
               placeholder="語源解説は今後追加予定です"
+              currentWord={word.word}
             />
 
             {/* コラム */}
-            {word.column && <WordColumn column={word.column} />}
+            {word.column && <WordColumn column={word.column} currentWord={word.word} />}
 
             {/* アクションボタン */}
             <div className="pt-6 space-y-3">
@@ -344,14 +349,6 @@ export default function WordDetailPage() {
             </div>
           </Card>
 
-          {/* 関連単語への誘導 */}
-          {word.synonyms && word.synonyms.length > 0 && (
-            <div className="mt-6">
-              <p className="text-sm text-slate-500 dark:text-slate-400 text-center">
-                類義語をタップして、関連する単語も学習しましょう
-              </p>
-            </div>
-          )}
         </div>
       </div>
 
