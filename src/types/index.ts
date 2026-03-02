@@ -1,13 +1,5 @@
 // 問題タイプ
-export type QuestionType = "en-to-ja" | "ja-to-en" | "listening" | "dictation";
-
-// 問題タイプの出題比率（0〜100 の重みづけ、内部で正規化）
-export type QuestionTypeRatios = {
-  enToJa: number;    // A: 英語→日本語
-  jaToEn: number;    // B: 日本語→英語
-  listening: number; // C: リスニング（例文の空欄選択）
-  dictation: number; // D: 書き取り（例文の空欄入力）
-};
+export type QuestionType = "en-to-ja" | "ja-to-en" | "fill-blank";
 
 // クイズモード
 export type QuizMode = "normal" | "speed";
@@ -42,9 +34,23 @@ export type WordColumn = {
   tips?: string[];             // 覚え方のヒント
 };
 
+// 関連語エントリ（品詞・意味付き）
+export type RelatedWordEntry = {
+  word: string;
+  partOfSpeech: string;  // "名", "形", "動", "副" など（日本語略称）
+  meaning: string;
+  isAntonym?: boolean;   // true なら ↔ プレフィックスで表示
+};
+
+// 類義語の違いエントリ（構造化）
+export type SynonymDifferenceEntry = {
+  word: string;
+  description: string;
+};
+
 // 拡張単語データ
 export type WordExtended = {
-  pronunciation?: string;      // 発音記号
+  pronunciation?: string | PronunciationData; // 発音記号（US/UK対応）
   partOfSpeech?: PartOfSpeech; // 品詞
   audioUrl?: string;           // 音声ファイルURL（将来対応用）
   imageUrl?: string;           // イメージ画像URL
@@ -53,11 +59,13 @@ export type WordExtended = {
   antonyms?: string[];         // 対義語
   column?: WordColumn;         // 学習コラム
   coreImage?: string;          // コアイメージ説明
-  relatedWords?: string[];     // 関連語
+  relatedWords?: string[];     // 関連語（後方互換）
+  relatedWordEntries?: RelatedWordEntry[]; // 品詞・意味付き関連語
   usage?: string;              // 使い方説明
-  synonymDifference?: string;  // 類義語との違い
+  synonymDifference?: string;  // 類義語との違い（後方互換）
+  synonymDifferenceEntries?: SynonymDifferenceEntry[]; // 類義語の違い（構造化）
   englishDefinition?: string;  // 英英定義
-  etymology?: string;          // 語源
+  etymology?: string | string[]; // 語源（複数ある場合は配列）
 };
 
 /**
@@ -66,8 +74,21 @@ export type WordExtended = {
  */
 export type WordExtension = Pick<
   WordExtended,
-  "coreImage" | "usage" | "synonymDifference" | "englishDefinition" | "etymology"
->;
+  | "coreImage"
+  | "usage"
+  | "synonymDifference"
+  | "synonymDifferenceEntries"
+  | "englishDefinition"
+  | "etymology"
+  | "examples"
+  | "relatedWords"
+  | "relatedWordEntries"
+  | "synonyms"
+  | "antonyms"
+  | "column"
+> & {
+  pronunciation?: string | PronunciationData; // US/UK 発音対応
+};
 
 // クイズの問題
 export type Question = {
