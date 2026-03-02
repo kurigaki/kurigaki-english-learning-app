@@ -14,6 +14,7 @@ import {
   WordMastery,
   WordImage,
   WordPlaceholderSection,
+  WordSynonymDiff,
 } from "@/components/features/word-detail";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { getWordNavState } from "@/lib/word-nav-state";
@@ -274,11 +275,10 @@ export default function WordDetailPage() {
               placeholder="この単語のコアイメージは今後追加予定です"
             />
 
-            {/* 関連語・類義語・対義語 */}
+            {/* 関連語・類義語 */}
             <WordRelations
               synonyms={word.synonyms}
-              antonyms={word.antonyms}
-              relatedWords={word.relatedWords}
+              relatedWordEntries={word.relatedWordEntries}
             />
 
             {/* 使い方 */}
@@ -289,13 +289,17 @@ export default function WordDetailPage() {
               placeholder="この単語の使い方解説は今後追加予定です"
             />
 
-            {/* 類義語との違い */}
-            <WordPlaceholderSection
-              title="類義語との違い"
-              emoji="🔍"
-              content={word.synonymDifference ?? wordExt?.synonymDifference}
-              placeholder="類義語との使い分けは今後追加予定です"
-            />
+            {/* 類義語との違い（構造化データがあればリスト表示、なければプレーンテキスト） */}
+            {(word.synonymDifferenceEntries && word.synonymDifferenceEntries.length > 0) ? (
+              <WordSynonymDiff entries={word.synonymDifferenceEntries} />
+            ) : (
+              <WordPlaceholderSection
+                title="類義語との違い"
+                emoji="🔍"
+                content={word.synonymDifference ?? wordExt?.synonymDifference}
+                placeholder="類義語との使い分けは今後追加予定です"
+              />
+            )}
 
             {/* 英英定義 */}
             <WordPlaceholderSection

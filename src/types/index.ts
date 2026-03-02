@@ -34,6 +34,20 @@ export type WordColumn = {
   tips?: string[];             // 覚え方のヒント
 };
 
+// 関連語エントリ（品詞・意味付き）
+export type RelatedWordEntry = {
+  word: string;
+  partOfSpeech: string;  // "名", "形", "動", "副" など（日本語略称）
+  meaning: string;
+  isAntonym?: boolean;   // true なら ↔ プレフィックスで表示
+};
+
+// 類義語の違いエントリ（構造化）
+export type SynonymDifferenceEntry = {
+  word: string;
+  description: string;
+};
+
 // 拡張単語データ
 export type WordExtended = {
   pronunciation?: string | PronunciationData; // 発音記号（US/UK対応）
@@ -45,9 +59,11 @@ export type WordExtended = {
   antonyms?: string[];         // 対義語
   column?: WordColumn;         // 学習コラム
   coreImage?: string;          // コアイメージ説明
-  relatedWords?: string[];     // 関連語
+  relatedWords?: string[];     // 関連語（後方互換）
+  relatedWordEntries?: RelatedWordEntry[]; // 品詞・意味付き関連語
   usage?: string;              // 使い方説明
-  synonymDifference?: string;  // 類義語との違い
+  synonymDifference?: string;  // 類義語との違い（後方互換）
+  synonymDifferenceEntries?: SynonymDifferenceEntry[]; // 類義語の違い（構造化）
   englishDefinition?: string;  // 英英定義
   etymology?: string | string[]; // 語源（複数ある場合は配列）
 };
@@ -61,10 +77,12 @@ export type WordExtension = Pick<
   | "coreImage"
   | "usage"
   | "synonymDifference"
+  | "synonymDifferenceEntries"
   | "englishDefinition"
   | "etymology"
   | "examples"
   | "relatedWords"
+  | "relatedWordEntries"
   | "synonyms"
   | "antonyms"
   | "column"

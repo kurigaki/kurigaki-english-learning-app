@@ -5,7 +5,7 @@
  * UI pages can switch imports with zero logic changes.
  */
 import { allWords, Word as InternalWord, Course } from "./index";
-import type { PartOfSpeech, PronunciationData, WordExample, WordColumn } from "@/types";
+import type { PartOfSpeech, PronunciationData, WordExample, WordColumn, RelatedWordEntry, SynonymDifferenceEntry } from "@/types";
 import { wordExtensions } from "../word-extensions";
 import { exampleJaOverrides } from "../example-ja-overrides";
 import { categoryOverrides } from "../category-overrides";
@@ -55,13 +55,15 @@ export type Word = {
   examples?: WordExample[];
   synonyms?: string[];
   antonyms?: string[];
-  relatedWords?: string[];    // 関連語
+  relatedWords?: string[];                    // 関連語（後方互換）
+  relatedWordEntries?: RelatedWordEntry[];     // 品詞・意味付き関連語
   column?: WordColumn;
   imageUrl?: string;
   imageKeyword?: string;
   coreImage?: string;
   usage?: string;
-  synonymDifference?: string;
+  synonymDifference?: string;                         // 類義語との違い（後方互換）
+  synonymDifferenceEntries?: SynonymDifferenceEntry[]; // 類義語の違い（構造化）
   englishDefinition?: string;
   etymology?: string | string[]; // 複数語源対応
 };
@@ -103,12 +105,14 @@ function toLegacyWord(w: InternalWord): Word {
     pronunciation: ext?.pronunciation,
     examples: ext?.examples,
     relatedWords: ext?.relatedWords,
+    relatedWordEntries: ext?.relatedWordEntries,
     synonyms: ext?.synonyms,
     antonyms: ext?.antonyms,
     column: ext?.column,
     coreImage: ext?.coreImage,
     usage: ext?.usage,
     synonymDifference: ext?.synonymDifference,
+    synonymDifferenceEntries: ext?.synonymDifferenceEntries,
     englishDefinition: ext?.englishDefinition,
     etymology: ext?.etymology,
   };
