@@ -28,7 +28,19 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "15世紀フランス語 appointement（合意・取り決め）から。appoint（指定する）＋ -ment（名詞化）。ラテン語 ad punctum（ある点に向かって）も関連。",
       relatedWords: ["meeting", "booking", "reservation", "schedule"],
+      relatedWordEntries: [
+        { word: "meeting", partOfSpeech: "名", meaning: "会議・集まり" },
+        { word: "booking", partOfSpeech: "名", meaning: "予約（場所・サービス）" },
+        { word: "reservation", partOfSpeech: "名", meaning: "席・部屋の予約" },
+        { word: "schedule", partOfSpeech: "名/動", meaning: "予定・スケジュール" },
+        { word: "cancellation", partOfSpeech: "名", meaning: "キャンセル・取り消し", isAntonym: true },
+      ],
       synonyms: ["meeting", "engagement", "booking"],
+      synonymDifferenceEntries: [
+        { word: "meeting", description: "会議・打ち合わせ全般に使う広い語。appointment より informal なニュアンス。" },
+        { word: "engagement", description: "改まった公式の約束・予定。appointment よりフォーマルで、スケジュール上の「コミットメント」。" },
+        { word: "booking", description: "主に施設・席・サービスの予約。appointment は人との面会、booking は場所・資源の確保。" },
+      ],
       antonyms: ["cancellation"],
       column: {
         title: "「アポ」の正体と appointment vs appoint の混同に注意",
@@ -70,7 +82,20 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "ラテン語 confirmare（強固にする）から。con-（完全に）＋ firmare（強固にする・firm と同語源）。",
       relatedWords: ["verify", "check", "approve", "validate"],
+      relatedWordEntries: [
+        { word: "verify", partOfSpeech: "動", meaning: "証拠で正確さを検証する" },
+        { word: "check", partOfSpeech: "動", meaning: "調べる・確認する（軽めのニュアンス）" },
+        { word: "approve", partOfSpeech: "動", meaning: "公式に承認する" },
+        { word: "validate", partOfSpeech: "動", meaning: "有効性・正当性を確認する" },
+        { word: "cancel", partOfSpeech: "動", meaning: "キャンセルする・取り消す", isAntonym: true },
+        { word: "deny", partOfSpeech: "動", meaning: "否定する・否認する", isAntonym: true },
+      ],
       synonyms: ["verify", "approve", "validate"],
+      synonymDifferenceEntries: [
+        { word: "verify", description: "証拠や比較によって正確さを客観的に証明する。より技術的・公式な場面で使う。" },
+        { word: "approve", description: "権限を持つ立場が公式に認める・許可する。confirm より「許可」のニュアンスが強い。" },
+        { word: "validate", description: "フォームの入力値・許可証・チケットなどの有効性を確認する場面で多い。" },
+      ],
       antonyms: ["cancel", "deny", "reject"],
       column: {
         title: "\"Please confirm receipt.\" — メール定番フレーズの意味",
@@ -112,7 +137,18 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "ラテン語 departire（分ける）から。de-（離れて）＋ partire（分ける・part と同語源）。フランス語 département を経て英語に入った。",
       relatedWords: ["division", "section", "team", "unit"],
+      relatedWordEntries: [
+        { word: "division", partOfSpeech: "名", meaning: "（より大きな）事業部門" },
+        { word: "section", partOfSpeech: "名", meaning: "課・セクション（比較的小さな単位）" },
+        { word: "team", partOfSpeech: "名", meaning: "チーム" },
+        { word: "unit", partOfSpeech: "名", meaning: "ユニット・機能単位" },
+      ],
       synonyms: ["division", "section", "unit", "branch"],
+      synonymDifferenceEntries: [
+        { word: "division", description: "department より大きい組織単位。国際事業部・消費者事業部など。" },
+        { word: "section", description: "department より小さい単位。部の中の「課」や「係」に相当。" },
+        { word: "unit", description: "機能的なまとまり全般を指す柔軟な語。部署・部隊・単位など幅広く使える。" },
+      ],
       column: {
         title: "department store の「dept.」はここから",
         content:
@@ -153,7 +189,21 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "employ（雇う）＋ -ee（される側の人）。フランス語 employé から。-ee は法的・正式な文書でよく使われる接尾辞（trainee, interviewee など）。",
       relatedWords: ["employer", "staff", "worker", "colleague"],
+      relatedWordEntries: [
+        { word: "employer", partOfSpeech: "名", meaning: "雇用主・使用者", isAntonym: true },
+        { word: "staff", partOfSpeech: "名", meaning: "スタッフ（組織全体を集合的に指す）" },
+        { word: "worker", partOfSpeech: "名", meaning: "働く人（フリーランス含む広い語）" },
+        { word: "colleague", partOfSpeech: "名", meaning: "同僚" },
+        { word: "employ", partOfSpeech: "動", meaning: "雇う" },
+        { word: "employment", partOfSpeech: "名", meaning: "雇用・就業" },
+        { word: "unemployed", partOfSpeech: "形", meaning: "失業した", isAntonym: true },
+      ],
       synonyms: ["staff", "worker", "personnel"],
+      synonymDifferenceEntries: [
+        { word: "worker", description: "雇用契約の有無を問わず「仕事をする人」全般。フリーランスや請負業者も含む。" },
+        { word: "staff", description: "組織のメンバーを集合的に指す語。\"The staff is helpful.\" のように不可算名詞扱いも多い。" },
+        { word: "personnel", description: "人事・人材管理の文脈で使う。HR（人事部）や軍隊の「人員」など。" },
+      ],
       antonyms: ["employer", "boss", "manager"],
       column: {
         title: "employee と employer — -ee/-er で「される側」「する側」",
@@ -195,7 +245,19 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "フランス語 envois（送付品）の複数形から。en-（中に）＋ voie（道・方法）が語源。16世紀から商業用語として使われてきた。",
       relatedWords: ["receipt", "bill", "payment", "statement"],
+      relatedWordEntries: [
+        { word: "receipt", partOfSpeech: "名", meaning: "領収書（支払い後に発行）", isAntonym: true },
+        { word: "bill", partOfSpeech: "名", meaning: "請求書（日常的・一般的な語）" },
+        { word: "payment", partOfSpeech: "名", meaning: "支払い・代金", isAntonym: true },
+        { word: "statement", partOfSpeech: "名", meaning: "取引明細書" },
+        { word: "issue", partOfSpeech: "動", meaning: "発行する（請求書を発行する）" },
+      ],
       synonyms: ["bill", "statement", "charge"],
+      synonymDifferenceEntries: [
+        { word: "bill", description: "電気代・レストランの勘定など、日常的な場面にも使う一般的な請求書。invoice より informal。" },
+        { word: "statement", description: "一定期間内の取引をまとめた明細書。銀行・クレジットカードの明細がこれ。" },
+        { word: "receipt", description: "支払い完了後の領収書。invoice（支払い前）と方向が逆なので注意。" },
+      ],
       antonyms: ["receipt", "payment"],
       column: {
         title: "invoice（請求書）vs receipt（領収書）— 方向が逆！",
@@ -237,7 +299,20 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "イタリア語 maneggiare（手で扱う・馬を操る）から。ラテン語 manus（手）が語源。",
       relatedWords: ["supervise", "lead", "direct", "oversee"],
+      relatedWordEntries: [
+        { word: "supervise", partOfSpeech: "動", meaning: "直接監督・指導する" },
+        { word: "lead", partOfSpeech: "動", meaning: "率いる・リードする" },
+        { word: "direct", partOfSpeech: "動", meaning: "指揮する・指示する" },
+        { word: "oversee", partOfSpeech: "動", meaning: "全体を高い視点で監督する" },
+        { word: "management", partOfSpeech: "名", meaning: "管理・経営" },
+        { word: "manager", partOfSpeech: "名", meaning: "管理者・マネージャー" },
+      ],
       synonyms: ["handle", "oversee", "supervise"],
+      synonymDifferenceEntries: [
+        { word: "handle", description: "問題や状況に対処する。manage より限定的・一時的なニュアンス。" },
+        { word: "oversee", description: "全体の進捗を高い視点から監督する。manage より「見守る」感覚が強い。" },
+        { word: "supervise", description: "部下の仕事を直接監督・指導する。manage より密接な監督関係を含む。" },
+      ],
       column: {
         title: "\"manage to do\" — 「なんとか〜できた」が重要用法",
         content:
@@ -278,7 +353,20 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "ラテン語 opportunitas から。ob portum venire（港に向かって吹く風）が語源で、「帆に向かって吹く好機の風」というイメージ。",
       relatedWords: ["chance", "possibility", "occasion", "prospect"],
+      relatedWordEntries: [
+        { word: "chance", partOfSpeech: "名", meaning: "機会・可能性（より口語的）" },
+        { word: "possibility", partOfSpeech: "名", meaning: "可能性・見込み" },
+        { word: "occasion", partOfSpeech: "名", meaning: "特定の場・機会" },
+        { word: "prospect", partOfSpeech: "名", meaning: "見込み・将来の展望" },
+        { word: "obstacle", partOfSpeech: "名", meaning: "障害・妨げ", isAntonym: true },
+        { word: "threat", partOfSpeech: "名", meaning: "脅威・リスク", isAntonym: true },
+      ],
       synonyms: ["chance", "occasion", "opening"],
+      synonymDifferenceEntries: [
+        { word: "chance", description: "偶然のチャンスや確率（40% chance）の意味も持つ。opportunity より口語的で広い語。" },
+        { word: "occasion", description: "特定の出来事・場・状況を指す。「機会」より「場」の意味に近い場合が多い。" },
+        { word: "opening", description: "就職の空きポジション、または何かを始められる隙間・機会。\" job opening\"（求人）でよく使う。" },
+      ],
       antonyms: ["obstacle", "threat", "setback"],
       column: {
         title: "\"once-in-a-lifetime opportunity\" — 定番フレーズを丸ごと覚える",
@@ -320,7 +408,20 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "古フランス語 purchacier（追求する・手に入れようとする）から。ラテン語 pro-（前に）＋ capere（捕まえる）の意。",
       relatedWords: ["buy", "acquire", "obtain", "payment"],
+      relatedWordEntries: [
+        { word: "buy", partOfSpeech: "動", meaning: "買う（より口語的）" },
+        { word: "acquire", partOfSpeech: "動", meaning: "取得する・獲得する（大規模・正式）" },
+        { word: "obtain", partOfSpeech: "動", meaning: "入手する・手に入れる（努力・手続きを経て）" },
+        { word: "sell", partOfSpeech: "動", meaning: "売る", isAntonym: true },
+        { word: "return", partOfSpeech: "動/名", meaning: "返品する・返品", isAntonym: true },
+        { word: "purchaser", partOfSpeech: "名", meaning: "購入者・買い手" },
+      ],
       synonyms: ["buy", "acquire", "obtain"],
+      synonymDifferenceEntries: [
+        { word: "buy", description: "日常的な「買う」。purchase はより正式・書面的な表現。\"buy a coffee\" は自然だが \"purchase a coffee\" は大げさ。" },
+        { word: "acquire", description: "会社の買収・資産の取得など、より大規模・正式な場面で使う。" },
+        { word: "obtain", description: "努力・手続きを経て手に入れる。物・情報・許可証など幅広く使える。" },
+      ],
       antonyms: ["sell", "return", "refund"],
       column: {
         title: "purchase は buy の格上げ版 — TOEIC では purchase order が頻出",
@@ -362,7 +463,19 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
       etymology:
         "ラテン語 reservare（取っておく）から。re-（後のために）＋ servare（保存する）。フランス語 réservation を経て英語に。",
       relatedWords: ["booking", "appointment", "confirm", "cancel"],
+      relatedWordEntries: [
+        { word: "booking", partOfSpeech: "名/動", meaning: "予約（英国英語でよく使う）" },
+        { word: "appointment", partOfSpeech: "名", meaning: "人との面会の予約（医師・美容師など）" },
+        { word: "confirm", partOfSpeech: "動", meaning: "予約を確認・確定する" },
+        { word: "reserve", partOfSpeech: "動", meaning: "事前に確保する・予約する" },
+        { word: "cancellation", partOfSpeech: "名", meaning: "キャンセル・取り消し", isAntonym: true },
+        { word: "walk-in", partOfSpeech: "名", meaning: "予約なし（飛び込み）", isAntonym: true },
+      ],
       synonyms: ["booking", "appointment"],
+      synonymDifferenceEntries: [
+        { word: "booking", description: "reservation の同義語。主に英国英語でよく使われる。\"hotel booking\"（ホテル予約）など。" },
+        { word: "appointment", description: "医師・弁護士・美容師など「人との面会」に使う。reservation は場所・席の確保。" },
+      ],
       antonyms: ["cancellation", "walk-in"],
       column: {
         title: "reservation vs appointment — 「場所の予約」か「人との面会予約」かで使い分け",
@@ -406,7 +519,20 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
         "UK発音 /ˈʃedjuːl/ はラテン語→古フランス語→中英語の経路を踏む。US発音 /ˈskedʒuːl/ はギリシア語 skhedē を経由したより古い形から。",
       ],
       relatedWords: ["timetable", "plan", "agenda", "calendar"],
+      relatedWordEntries: [
+        { word: "plan", partOfSpeech: "名/動", meaning: "計画（より広い概念）" },
+        { word: "timetable", partOfSpeech: "名", meaning: "時刻表・授業時間割（固定的な時間表）" },
+        { word: "agenda", partOfSpeech: "名", meaning: "会議の議題リスト・行動計画" },
+        { word: "calendar", partOfSpeech: "名", meaning: "カレンダー・日程表" },
+        { word: "reschedule", partOfSpeech: "動", meaning: "予定を変更する" },
+        { word: "scheduled", partOfSpeech: "形", meaning: "予定された・定期的な" },
+      ],
       synonyms: ["timetable", "plan", "agenda"],
+      synonymDifferenceEntries: [
+        { word: "plan", description: "schedule より広い概念。時間軸がなくてもよい。schedule は特に時間配分を伴う計画。" },
+        { word: "timetable", description: "電車・授業など固定した時間表。schedule は更新・調整可能だが timetable はより固定的。" },
+        { word: "agenda", description: "会議の議題・行動リスト。schedule は「いつ」、agenda は「何を」の内容に焦点がある。" },
+      ],
       column: {
         title: "UK と US で発音が違う！ schedule の読み方",
         content:
