@@ -338,6 +338,8 @@ src/
 │           ├── WordRelations.tsx
 │           ├── WordColumn.tsx
 │           ├── WordPlaceholderSection.tsx
+│           ├── WordSynonymDiff.tsx   # 類義語との違い（構造化リスト）
+│           ├── WordText.tsx          # テキスト内英単語リンク化
 │           └── index.ts
 ├── lib/                          # ユーティリティ
 │   ├── audio.ts                  # 音声再生（Web Speech API）
@@ -345,7 +347,8 @@ src/
 │   ├── image.ts                  # 画像URL/コンセプト画像管理
 │   ├── quiz-session.ts           # クイズセッション状態永続化
 │   ├── flashcard-session.ts      # フラッシュカードセッション状態永続化（30分有効期限）
-│   └── navigation-state.ts       # ページナビゲーション状態（タブ・ソート順の復元）
+│   ├── navigation-state.ts       # ページナビゲーション状態（タブ・ソート順の復元）
+│   └── word-lookup.ts            # 語彙DBルックアップ（単語→IDのO(1)検索）
 ├── data/                         # 静的データ
 │   ├── words.ts                  # 単語データベース
 │   └── achievements.ts           # 実績定義
@@ -680,14 +683,15 @@ const storage = {
 | 単語・発音・品詞 | ✅ | WordHeader |
 | 記憶度 | ✅ | WordMastery |
 | 例文 | ✅ | WordExamples |
-| 類義語・対義語 | ✅ | WordRelations |
-| コラム | ✅ | WordColumn |
 | コアイメージ | 🔜 | WordPlaceholderSection |
+| 関連語 | ✅ | WordRelations |
 | 使い方 | 🔜 | WordPlaceholderSection |
-| 類義語との違い | 🔜 | WordPlaceholderSection |
+| 類義語との違い | ✅ | WordSynonymDiff（構造化）/ WordPlaceholderSection（テキスト） |
 | 英英定義 | 🔜 | WordPlaceholderSection |
 | 語源 | 🔜 | WordPlaceholderSection |
-| 関連語 | 🔜 | WordPlaceholderSection |
+| コラム | ✅ | WordColumn |
+
+> **テキスト内リンク**: 例文・使い方・類義語との違い・英英定義・語源・コラムのテキスト内に登場する英単語は `WordText` コンポーネントにより自動リンク化される。現在の単語は青色表示、語彙DB登録済みの他単語は点線アンダーライン付きリンクで遷移可能。
 
 ### 記憶度の計算
 
