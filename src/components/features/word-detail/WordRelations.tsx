@@ -15,7 +15,10 @@ export const WordRelations = ({ synonyms, antonyms, relatedWords }: WordRelation
   const hasAntonyms = antonyms && antonyms.length > 0;
   const hasRelatedWords = relatedWords && relatedWords.length > 0;
 
-  if (!hasSynonyms && !hasAntonyms && !hasRelatedWords) {
+  // 関連語セクション: relatedWords + antonyms を統合表示
+  const showRelatedSection = hasRelatedWords || hasAntonyms;
+
+  if (!hasSynonyms && !showRelatedSection) {
     return null;
   }
 
@@ -38,9 +41,12 @@ export const WordRelations = ({ synonyms, antonyms, relatedWords }: WordRelation
         ? "bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-900/30 dark:text-orange-300 dark:hover:bg-orange-900/50"
         : "bg-green-50 text-green-700 hover:bg-green-100 dark:bg-green-900/30 dark:text-green-300 dark:hover:bg-green-900/50";
 
+    // 対義語チップには「↔ 」プレフィックスを付与
+    const label = type === "antonym" ? `↔ ${word}` : word;
+
     const content = (
       <>
-        <span>{word}</span>
+        <span>{label}</span>
         <SpeakButton text={word} size="sm" className="!w-5 !h-5" />
       </>
     );
@@ -48,7 +54,7 @@ export const WordRelations = ({ synonyms, antonyms, relatedWords }: WordRelation
     if (wordId) {
       return (
         <Link
-          key={word}
+          key={`${type}-${word}`}
           href={`/word/${wordId}`}
           className={`${baseClasses} ${colorClasses} cursor-pointer`}
         >
@@ -58,7 +64,7 @@ export const WordRelations = ({ synonyms, antonyms, relatedWords }: WordRelation
     }
 
     return (
-      <span key={word} className={`${baseClasses} ${colorClasses}`}>
+      <span key={`${type}-${word}`} className={`${baseClasses} ${colorClasses}`}>
         {content}
       </span>
     );
@@ -66,41 +72,29 @@ export const WordRelations = ({ synonyms, antonyms, relatedWords }: WordRelation
 
   return (
     <div className="py-6 border-b border-slate-100 dark:border-slate-700">
-      {/* 関連語 */}
-      {hasRelatedWords && (
+      {/* 関連語（relatedWords + antonyms を統合） */}
+      {showRelatedSection && (
         <div className="mb-4">
           <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1">
             <span className="emoji-icon">🌐</span>
             <span>関連語</span>
           </h3>
           <div className="flex flex-wrap gap-2">
-            {relatedWords.map((word) => renderWordChip(word, "related"))}
+            {relatedWords?.map((word) => renderWordChip(word, "related"))}
+            {antonyms?.map((word) => renderWordChip(word, "antonym"))}
           </div>
         </div>
       )}
 
       {/* 類義語 */}
       {hasSynonyms && (
-        <div className="mb-4">
+        <div>
           <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1">
             <span className="emoji-icon">🔗</span>
             <span>類義語</span>
           </h3>
           <div className="flex flex-wrap gap-2">
             {synonyms.map((word) => renderWordChip(word, "synonym"))}
-          </div>
-        </div>
-      )}
-
-      {/* 対義語 */}
-      {hasAntonyms && (
-        <div>
-          <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1">
-            <span className="emoji-icon">↔️</span>
-            <span>対義語</span>
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {antonyms.map((word) => renderWordChip(word, "antonym"))}
           </div>
         </div>
       )}
