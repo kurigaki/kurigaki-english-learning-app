@@ -8,6 +8,7 @@ import { allWords, Word as InternalWord, Course } from "./index";
 import type { PartOfSpeech, PronunciationData, WordExample, WordColumn } from "@/types";
 import { wordExtensions } from "../word-extensions";
 import { exampleJaOverrides } from "../example-ja-overrides";
+import { categoryOverrides } from "../category-overrides";
 
 // Re-export Course as CourseType for backward compatibility
 export type CourseType = Course;
@@ -48,11 +49,13 @@ export type Word = {
   exampleJa?: string;
   difficulty: Difficulty;
   category: Category;
+  categories?: Category[];    // 複数カテゴリ（あれば）
   pronunciation?: string | PronunciationData;
   partOfSpeech?: PartOfSpeech;
   examples?: WordExample[];
   synonyms?: string[];
   antonyms?: string[];
+  relatedWords?: string[];    // 関連語
   column?: WordColumn;
   imageUrl?: string;
   imageKeyword?: string;
@@ -60,7 +63,7 @@ export type Word = {
   usage?: string;
   synonymDifference?: string;
   englishDefinition?: string;
-  etymology?: string;
+  etymology?: string | string[]; // 複数語源対応
 };
 
 // course+stage → difficulty マッピング
@@ -85,7 +88,7 @@ const CATEGORY_MAP: Record<Course, Category> = {
 
 // Convert new word to legacy-compatible format
 function toLegacyWord(w: InternalWord): Word {
-  const ext = wordExtensions.get(w.id);
+  const ext = wordExtensions.get(w.id);  // 手動データのみ（自動生成は word/[id]/page.tsx の getWordExtension() に任せる）
   return {
     id: w.id,
     word: w.word,
@@ -94,7 +97,13 @@ function toLegacyWord(w: InternalWord): Word {
     exampleJa: exampleJaOverrides.get(w.id),
     difficulty: (DIFFICULTY_MAP[`${w.course}:${w.stage}`] ?? 3) as Difficulty,
     category: CATEGORY_MAP[w.course] ?? "daily",
+    // string[] → Category[] キャスト（category-overrides.ts は循環インポート回避のため string[] を使用。typo は実行時まで検出されない点に注意）
+    categories: categoryOverrides.get(w.id) as Category[] | undefined,
     partOfSpeech: w.partOfSpeech as PartOfSpeech,
+    pronunciation: ext?.pronunciation,
+    examples: ext?.examples,
+    relatedWords: ext?.relatedWords,
+    // TODO: synonyms/antonyms も ext から取得できるが、現状 WordExtension に含まれていないため未対応
     coreImage: ext?.coreImage,
     usage: ext?.usage,
     synonymDifference: ext?.synonymDifference,
