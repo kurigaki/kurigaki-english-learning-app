@@ -6,7 +6,16 @@
 import type { MasteryLevel, WordListSortOption } from "@/types";
 import type { Course, Stage } from "@/data/words/types";
 import type { Category } from "@/data/words/compat";
+import type { ManualMasteryLevel } from "@/lib/storage";
 import { SESSION_EXPIRY_MS } from "@/lib/navigation-state";
+
+export type WordListAccuracyFilter =
+  | "all"
+  | "unattempted"
+  | "0-33"
+  | "34-66"
+  | "67-99"
+  | "100";
 
 export type FlashcardSessionState = {
   currentIndex: number;
@@ -14,7 +23,10 @@ export type FlashcardSessionState = {
   selectedStage: Stage | null;
   selectedCategory: Category | "all";
   selectedDifficulty: number | "all";
-  selectedMastery: MasteryLevel | "all";
+  selectedMemory?: ManualMasteryLevel | "all";
+  selectedAccuracy?: WordListAccuracyFilter;
+  selectedMastery?: MasteryLevel | "all"; // legacy
+  flashcardWordIds?: number[];
   searchQuery: string;
   showBookmarksOnly: boolean;
   sortOption: WordListSortOption;
@@ -79,6 +91,26 @@ export function clearFlashcardSession(): void {
   } catch (e) {
     console.warn("Failed to clear flashcard session state:", e);
   }
+}
+
+/**
+ * 任意画面から単語帳のフラッシュカードを即開始するためのクイック保存
+ */
+export function saveQuickFlashcardSession(wordIds: number[]): void {
+  if (typeof window === "undefined") return;
+  saveFlashcardSession({
+    currentIndex: 0,
+    selectedCourse: null,
+    selectedStage: null,
+    selectedCategory: "all",
+    selectedDifficulty: "all",
+    selectedMemory: "all",
+    selectedAccuracy: "all",
+    flashcardWordIds: wordIds,
+    searchQuery: "",
+    showBookmarksOnly: false,
+    sortOption: "default",
+  });
 }
 
 // ── 単語帳リストモード用フィルター保存 ──────────────────────────

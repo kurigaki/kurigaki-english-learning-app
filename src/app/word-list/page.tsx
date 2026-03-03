@@ -10,8 +10,11 @@ import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, SpeakButton } from "@/components/ui";
 import { getMasteryLevel } from "@/types";
 import type { MasteryLevel, WordListSortOption } from "@/types";
+import type { ManualMasteryLevel } from "@/lib/storage";
+import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import FlashcardView from "@/components/features/word-list/FlashcardView";
 import {
+  type WordListAccuracyFilter,
   saveFlashcardSession, getFlashcardSession, clearFlashcardSession,
   saveWordListFilter, getWordListFilter, clearWordListFilter,
 } from "@/lib/flashcard-session";
@@ -44,12 +47,23 @@ const sortLabels: Record<SortOption, string> = {
   difficulty: "難易度順",
 };
 
-const masteryConfig: Record<MasteryLevel, { label: string; color: string; bg: string; activeBg: string }> = {
-  new: { label: "未学習", color: "text-slate-500 dark:text-slate-400", bg: "bg-slate-100 dark:bg-slate-700", activeBg: "bg-slate-500" },
-  learning: { label: "苦手", color: "text-orange-600 dark:text-orange-400", bg: "bg-orange-100 dark:bg-orange-900/40", activeBg: "bg-orange-500" },
-  familiar: { label: "あと少し", color: "text-blue-600 dark:text-blue-400", bg: "bg-blue-100 dark:bg-blue-900/40", activeBg: "bg-blue-500" },
-  mastered: { label: "習得済", color: "text-green-600 dark:text-green-400", bg: "bg-green-100 dark:bg-green-900/40", activeBg: "bg-green-500" },
-};
+const memoryFilterOptions: { key: ManualMasteryLevel | "all"; label: string }[] = [
+  { key: "all", label: "全て" },
+  { key: "remembered", label: "覚えた" },
+  { key: "almost", label: "ほぼ覚えた" },
+  { key: "vague", label: "うろ覚え" },
+  { key: "weak", label: "苦手" },
+  { key: "unlearned", label: "未学習" },
+];
+
+const accuracyFilterOptions: { key: WordListAccuracyFilter; label: string }[] = [
+  { key: "all", label: "全て" },
+  { key: "100", label: "100%" },
+  { key: "67-99", label: "67-99%" },
+  { key: "34-66", label: "34-66%" },
+  { key: "0-33", label: "0-33%" },
+  { key: "unattempted", label: "未回答" },
+];
 
 const categories: (Category | "all")[] = [
   "all",
@@ -61,8 +75,16 @@ const categories: (Category | "all")[] = [
 ];
 
 const categoryLabelMap: Record<Category | "all", string> = {
-  all: "すべて",
+  all: "全て",
   ...categoryLabels,
+};
+
+const mapLegacyMasteryToMemory = (legacy: MasteryLevel | "all"): ManualMasteryLevel | "all" => {
+  if (legacy === "new") return "unlearned";
+  if (legacy === "learning") return "weak";
+  if (legacy === "familiar") return "almost";
+  if (legacy === "mastered") return "remembered";
+  return "all";
 };
 
 export default function WordListPage() {
@@ -78,14 +100,17 @@ export default function WordListPage() {
   );
   const [selectedStage, setSelectedStage] = useState<Stage | null>(null);
   const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
-  const [selectedMastery, setSelectedMastery] = useState<MasteryLevel | "all">(
-    ["new", "learning", "familiar", "mastered"].includes(initialMastery) ? initialMastery as MasteryLevel : "all"
+  const [selectedMemory, setSelectedMemory] = useState<ManualMasteryLevel | "all">(
+    mapLegacyMasteryToMemory(["new", "learning", "familiar", "mastered"].includes(initialMastery) ? initialMastery as MasteryLevel : "all")
   );
+  const [selectedAccuracy, setSelectedAccuracy] = useState<WordListAccuracyFilter>("all");
   const [sortOption, setSortOption] = useState<SortOption>("default");
   const [wordsWithStats, setWordsWithStats] = useState<WordWithStats[]>([]);
+  const [manualMasteryById, setManualMasteryById] = useState<Record<number, ManualMasteryLevel>>({});
   const [isMounted, setIsMounted] = useState(false);
   const [isFlashcardMode, setIsFlashcardMode] = useState(false);
   const [flashcardInitialIndex, setFlashcardInitialIndex] = useState(0);
+  const [flashcardWordIds, setFlashcardWordIds] = useState<number[] | null>(null);
   // スクロール位置の保存・復元用
   const listScrollRef = useRef<HTMLDivElement>(null);
   const pendingScrollTopRef = useRef<number | null>(null);
@@ -100,11 +125,16 @@ export default function WordListPage() {
       clearFlashcardSession();
       setIsFlashcardMode(true);
       setFlashcardInitialIndex(flashcardSession.currentIndex);
+      setFlashcardWordIds(flashcardSession.flashcardWordIds ?? null);
       setSelectedCourse(flashcardSession.selectedCourse);
       setSelectedStage(flashcardSession.selectedStage);
       setSelectedCategory(flashcardSession.selectedCategory);
       setSelectedDifficulty(flashcardSession.selectedDifficulty);
-      setSelectedMastery(flashcardSession.selectedMastery);
+      setSelectedMemory(
+        flashcardSession.selectedMemory ??
+        mapLegacyMasteryToMemory(flashcardSession.selectedMastery ?? "all")
+      );
+      setSelectedAccuracy(flashcardSession.selectedAccuracy ?? "all");
       setSearchQuery(flashcardSession.searchQuery);
       setShowBookmarksOnly(flashcardSession.showBookmarksOnly);
       setSortOption(flashcardSession.sortOption);
@@ -119,7 +149,11 @@ export default function WordListPage() {
     setSelectedStage(filterSession.selectedStage);
     setSelectedCategory(filterSession.selectedCategory);
     setSelectedDifficulty(filterSession.selectedDifficulty);
-    setSelectedMastery(filterSession.selectedMastery);
+    setSelectedMemory(
+      filterSession.selectedMemory ??
+      mapLegacyMasteryToMemory(filterSession.selectedMastery ?? "all")
+    );
+    setSelectedAccuracy(filterSession.selectedAccuracy ?? "all");
     setSearchQuery(filterSession.searchQuery);
     setShowBookmarksOnly(filterSession.showBookmarksOnly);
     setSortOption(filterSession.sortOption);
@@ -133,8 +167,11 @@ export default function WordListPage() {
   useEffect(() => {
     setIsMounted(true);
     const loadData = async () => {
-      const statsMap = await unifiedStorage.getWordStats();
-      const bookmarkedIds = await unifiedStorage.getBookmarkedWordIds();
+      const [statsMap, bookmarkedIds, manualMap] = await Promise.all([
+        unifiedStorage.getWordStats(),
+        unifiedStorage.getBookmarkedWordIds(),
+        unifiedStorage.getManualMasteryMap(),
+      ]);
 
       const enrichedWords: WordWithStats[] = words.map((word) => {
         const stats = statsMap.get(word.id);
@@ -158,8 +195,48 @@ export default function WordListPage() {
       });
 
       setWordsWithStats(enrichedWords);
+      setManualMasteryById(manualMap);
     };
     loadData();
+  }, []);
+
+  const resolveMastery = useCallback((word: WordWithStats): MasteryLevel => {
+    const manual = manualMasteryById[word.id];
+    if (manual) {
+      if (manual === "unlearned") return word.attempts === 0 ? "new" : word.mastery;
+      if (manual === "remembered") return "mastered";
+      if (manual === "almost") return "familiar";
+      if (manual === "vague") return "learning";
+      return "learning"; // weak
+    }
+    return word.mastery;
+  }, [manualMasteryById]);
+
+  const getDisplayedManualMastery = useCallback((word: WordWithStats): ManualMasteryLevel => {
+    const manual = manualMasteryById[word.id];
+    if (manual && !(manual === "unlearned" && word.attempts > 0)) {
+      return manual;
+    }
+    if (word.attempts === 0) return "unlearned";
+    if (word.accuracy === null || word.accuracy < 34) return "weak";
+    if (word.accuracy < 67) return "vague";
+    if (word.accuracy < 100) return "almost";
+    return "remembered";
+  }, [manualMasteryById]);
+
+  const handleManualMasteryChange = useCallback(async (wordId: number, mastery: ManualMasteryLevel) => {
+    setManualMasteryById((prev) => ({ ...prev, [wordId]: mastery }));
+    await unifiedStorage.setManualMastery(wordId, mastery);
+  }, []);
+
+  const matchesAccuracyFilter = useCallback((word: WordWithStats, filter: WordListAccuracyFilter): boolean => {
+    if (filter === "all") return true;
+    if (filter === "unattempted") return word.attempts === 0;
+    if (word.attempts === 0 || word.accuracy === null) return false;
+    if (filter === "0-33") return word.accuracy < 34;
+    if (filter === "34-66") return word.accuracy >= 34 && word.accuracy < 67;
+    if (filter === "67-99") return word.accuracy >= 67 && word.accuracy < 100;
+    return word.accuracy === 100;
   }, []);
 
   // データ読み込み完了後、保留中のスクロール位置を適用
@@ -199,8 +276,8 @@ export default function WordListPage() {
     return new Set(courseWords.map((w) => w.id));
   }, [selectedCourse, selectedStage]);
 
-  // selectedMastery を除く全フィルターを適用したベースリスト
-  // filteredWords と filteredMasteryCounts の両方がこれを使用
+  // 正答率・記憶度フィルターを除く全フィルターを適用したベースリスト
+  // filteredWords / filteredAccuracyCounts / filteredMemoryCounts の共通母集団
   const baseFilteredWords = useMemo(() => {
     return wordsWithStats.filter((word) => {
       if (courseWordIds && !courseWordIds.has(word.id)) return false;
@@ -223,13 +300,18 @@ export default function WordListPage() {
     });
   }, [wordsWithStats, courseWordIds, showBookmarksOnly, selectedCategory, selectedDifficulty, searchQuery]);
 
-  // Filter words based on search, category, difficulty, bookmarks, and mastery
+  // Filter words based on search, category, difficulty, bookmarks, accuracy, and memory
   const filteredWords = useMemo(() => {
     let filtered = baseFilteredWords;
 
-    // Mastery filter
-    if (selectedMastery !== "all") {
-      filtered = filtered.filter((word) => word.mastery === selectedMastery);
+    // Accuracy filter
+    if (selectedAccuracy !== "all") {
+      filtered = filtered.filter((word) => matchesAccuracyFilter(word, selectedAccuracy));
+    }
+
+    // Memory filter
+    if (selectedMemory !== "all") {
+      filtered = filtered.filter((word) => getDisplayedManualMastery(word) === selectedMemory);
     }
 
     // Sort
@@ -262,13 +344,21 @@ export default function WordListPage() {
     }
 
     return filtered;
-  }, [baseFilteredWords, selectedMastery, sortOption]);
+  }, [baseFilteredWords, selectedAccuracy, selectedMemory, sortOption, matchesAccuracyFilter, getDisplayedManualMastery]);
 
   // wordId → filteredWords 内インデックスの逆引き Map（フラッシュカード開始位置に使用）
   const wordIndexMap = useMemo(
     () => new Map(filteredWords.map((w, i) => [w.id, i])),
     [filteredWords]
   );
+
+  const flashcardWords = useMemo(() => {
+    if (!flashcardWordIds || flashcardWordIds.length === 0) return filteredWords;
+    const byId = new Map(wordsWithStats.map((w) => [w.id, w]));
+    return flashcardWordIds
+      .map((id) => byId.get(id))
+      .filter((w): w is WordWithStats => Boolean(w));
+  }, [flashcardWordIds, wordsWithStats, filteredWords]);
 
   // Group words by category
   const groupedWords = useMemo(() => {
@@ -292,22 +382,33 @@ export default function WordListPage() {
       ? wordsWithStats.filter((w) => courseWordIds.has(w.id))
       : wordsWithStats;
     const total = baseWords.length;
-    const mastered = baseWords.filter((w) => w.mastery === "mastered").length;
-    const familiar = baseWords.filter((w) => w.mastery === "familiar").length;
-    const learning = baseWords.filter((w) => w.mastery === "learning").length;
-    const newWords = baseWords.filter((w) => w.mastery === "new").length;
+    const mastered = baseWords.filter((w) => resolveMastery(w) === "mastered").length;
+    const familiar = baseWords.filter((w) => resolveMastery(w) === "familiar").length;
+    const learning = baseWords.filter((w) => resolveMastery(w) === "learning").length;
+    const newWords = baseWords.filter((w) => resolveMastery(w) === "new").length;
     const bookmarked = baseWords.filter((w) => w.isBookmarked).length;
     return { total, mastered, familiar, learning, newWords, bookmarked };
-  }, [wordsWithStats, courseWordIds]);
+  }, [wordsWithStats, courseWordIds, resolveMastery]);
+
+  // baseFilteredWords から正答率別件数を集計（正答率フィルターボタンの件数表示に使用）
+  const filteredAccuracyCounts = useMemo(() => ({
+    all: baseFilteredWords.length,
+    unattempted: baseFilteredWords.filter((w) => w.attempts === 0).length,
+    "0-33": baseFilteredWords.filter((w) => w.attempts > 0 && w.accuracy !== null && w.accuracy < 34).length,
+    "34-66": baseFilteredWords.filter((w) => w.attempts > 0 && w.accuracy !== null && w.accuracy >= 34 && w.accuracy < 67).length,
+    "67-99": baseFilteredWords.filter((w) => w.attempts > 0 && w.accuracy !== null && w.accuracy >= 67 && w.accuracy < 100).length,
+    "100": baseFilteredWords.filter((w) => w.accuracy === 100).length,
+  }), [baseFilteredWords]);
 
   // baseFilteredWords から記憶度別件数を集計（記憶度フィルターボタンの件数表示に使用）
-  const filteredMasteryCounts = useMemo(() => ({
-    total:    baseFilteredWords.length,
-    mastered: baseFilteredWords.filter((w) => w.mastery === "mastered").length,
-    familiar: baseFilteredWords.filter((w) => w.mastery === "familiar").length,
-    learning: baseFilteredWords.filter((w) => w.mastery === "learning").length,
-    newWords: baseFilteredWords.filter((w) => w.mastery === "new").length,
-  }), [baseFilteredWords]);
+  const filteredMemoryCounts = useMemo(() => ({
+    all: baseFilteredWords.length,
+    unlearned: baseFilteredWords.filter((w) => getDisplayedManualMastery(w) === "unlearned").length,
+    weak: baseFilteredWords.filter((w) => getDisplayedManualMastery(w) === "weak").length,
+    vague: baseFilteredWords.filter((w) => getDisplayedManualMastery(w) === "vague").length,
+    almost: baseFilteredWords.filter((w) => getDisplayedManualMastery(w) === "almost").length,
+    remembered: baseFilteredWords.filter((w) => getDisplayedManualMastery(w) === "remembered").length,
+  }), [baseFilteredWords, getDisplayedManualMastery]);
 
   const courseLabel = selectedCourse
     ? COURSE_DEFINITIONS[selectedCourse].name
@@ -379,32 +480,60 @@ export default function WordListPage() {
 
           {/* Course Filter */}
           <div>
-            <div className="flex flex-wrap gap-1 mb-1">
-              <button
-                onClick={() => { setSelectedCourse(null); setSelectedStage(null); }}
-                className={`px-2 py-0.5 rounded-md text-[11px] font-medium transition-all ${
-                  selectedCourse === null
-                    ? "bg-primary-500 text-white"
-                    : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
-                }`}
-              >
-                全コース
-              </button>
-              {(Object.keys(COURSE_DEFINITIONS) as Course[])
-                .filter((ct) => COURSE_DEFINITIONS[ct].stages.length > 0)
-                .map((ct) => (
+            <div className="flex items-center gap-1 mb-1">
+              <span className="text-[11px] font-medium text-slate-600 dark:text-slate-300 px-1 whitespace-nowrap">コース</span>
+              <div className="overflow-x-auto flex-1 pb-0.5 -mx-1 px-1">
+                <div className="flex items-center gap-1">
                   <button
-                    key={ct}
-                    onClick={() => { setSelectedCourse(selectedCourse === ct ? null : ct); setSelectedStage(null); }}
-                    className={`px-2 py-0.5 rounded-md text-[11px] font-medium transition-all ${
-                      selectedCourse === ct
+                    onClick={() => { setSelectedCourse(null); setSelectedStage(null); }}
+                    className={`px-2 py-0.5 rounded-md text-[11px] font-medium whitespace-nowrap transition-all ${
+                      selectedCourse === null
                         ? "bg-primary-500 text-white"
                         : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
                     }`}
                   >
-                    {COURSE_DEFINITIONS[ct].name}
+                    全コース
                   </button>
-                ))}
+                  {(Object.keys(COURSE_DEFINITIONS) as Course[])
+                    .filter((ct) => COURSE_DEFINITIONS[ct].stages.length > 0)
+                    .map((ct) => (
+                      <button
+                        key={ct}
+                        onClick={() => { setSelectedCourse(selectedCourse === ct ? null : ct); setSelectedStage(null); }}
+                        className={`px-2 py-0.5 rounded-md text-[11px] font-medium whitespace-nowrap transition-all ${
+                          selectedCourse === ct
+                            ? "bg-primary-500 text-white"
+                            : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
+                        }`}
+                      >
+                        {COURSE_DEFINITIONS[ct].name}
+                      </button>
+                    ))}
+                </div>
+              </div>
+              <button
+                onClick={() => setShowBookmarksOnly(!showBookmarksOnly)}
+                className={`ml-auto flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                  showBookmarksOnly
+                    ? "bg-yellow-500 text-white shadow-sm"
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-yellow-400"
+                }`}
+              >
+                <svg
+                  className="w-3 h-3"
+                  fill={showBookmarksOnly ? "currentColor" : "none"}
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                  />
+                </svg>
+                ブックマークのみ ({stats.bookmarked})
+              </button>
             </div>
             {selectedCourse && (
               <div className="flex flex-wrap gap-1">
@@ -436,90 +565,87 @@ export default function WordListPage() {
           </div>
 
           {/* Category Filter */}
-          <div className="overflow-x-auto pb-1 -mx-1 px-1">
-            <div className="flex gap-1.5">
-              {categories.map((category) => (
+          <div className="flex items-center gap-1">
+            <span className="text-[11px] font-medium text-slate-600 dark:text-slate-300 px-1 whitespace-nowrap">カテゴリ</span>
+            <div className="overflow-x-auto pb-1 -mx-1 px-1 flex-1">
+              <div className="flex gap-1.5">
+                {categories.map((category) => (
+                  <button
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                      selectedCategory === category
+                        ? "bg-primary-500 text-white shadow-sm"
+                        : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary-300"
+                    }`}
+                  >
+                    {categoryLabelMap[category]}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Filters Row 1: 正答率（横スクロール） */}
+          <div className="overflow-x-auto pb-0.5 -mx-1 px-1">
+            <div className="flex items-center gap-1">
+              <span className="text-[11px] font-medium text-slate-600 dark:text-slate-300 px-1 whitespace-nowrap">正答率</span>
+              {accuracyFilterOptions.map(({ key, label }) => (
                 <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
-                    selectedCategory === category
+                  key={key}
+                  onClick={() => setSelectedAccuracy(key)}
+                  className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap flex-shrink-0 transition-all ${
+                    selectedAccuracy === key
                       ? "bg-primary-500 text-white shadow-sm"
                       : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary-300"
                   }`}
                 >
-                  {categoryLabelMap[category]}
+                  {label}
+                  {isMounted && filteredAccuracyCounts[key] > 0 && (
+                    <span className="ml-1 opacity-70">({filteredAccuracyCounts[key]})</span>
+                  )}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Filters Row 1: Bookmark + Mastery（横スクロール・折り返しなし） */}
+          {/* Filters Row 2: 記憶度（横スクロール） */}
           <div className="overflow-x-auto pb-0.5 -mx-1 px-1">
             <div className="flex items-center gap-1">
-              {/* Bookmark Filter */}
-              <button
-                onClick={() => setShowBookmarksOnly(!showBookmarksOnly)}
-                className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium whitespace-nowrap flex-shrink-0 transition-all ${
-                  showBookmarksOnly
-                    ? "bg-yellow-500 text-white shadow-sm"
-                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-yellow-400"
-                }`}
-              >
-                <svg
-                  className="w-3 h-3"
-                  fill={showBookmarksOnly ? "currentColor" : "none"}
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                  />
-                </svg>
-                {stats.bookmarked}
-              </button>
-              <span className="w-px h-4 bg-slate-200 dark:bg-slate-700 flex-shrink-0" />
-              {/* Mastery Filter */}
-              {([
-                { key: "all" as const, label: "全て", count: filteredMasteryCounts.total },
-                { key: "mastered" as const, label: "習得済", count: filteredMasteryCounts.mastered },
-                { key: "familiar" as const, label: "あと少し", count: filteredMasteryCounts.familiar },
-                { key: "learning" as const, label: "苦手", count: filteredMasteryCounts.learning },
-                { key: "new" as const, label: "未学習", count: filteredMasteryCounts.newWords },
-              ] as const).map(({ key, label, count }) => (
+              <span className="text-[11px] font-medium text-slate-600 dark:text-slate-300 px-1 whitespace-nowrap">記憶度</span>
+              {memoryFilterOptions.map(({ key, label }) => (
                 <button
                   key={key}
-                  onClick={() => setSelectedMastery(key)}
+                  onClick={() => setSelectedMemory(key)}
                   className={`px-2 py-1 rounded-full text-xs font-medium whitespace-nowrap flex-shrink-0 transition-all ${
-                    selectedMastery === key
-                      ? key === "all"
-                        ? "bg-slate-700 text-white"
-                        : `${masteryConfig[key].activeBg} text-white shadow-sm`
-                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-400"
+                    selectedMemory === key
+                      ? "bg-primary-500 text-white shadow-sm"
+                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary-300"
                   }`}
                 >
-                  {label}{isMounted && count > 0 && <span className="ml-1 opacity-70">({count})</span>}
+                  {label}
+                  {isMounted && filteredMemoryCounts[key] > 0 && (
+                    <span className="ml-1 opacity-70">({filteredMemoryCounts[key]})</span>
+                  )}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Filters Row 2: Difficulty（横スクロール） + Sort（右端固定） */}
+          {/* Filters Row 3: Difficulty（横スクロール） + Sort（右端固定） */}
           <div className="flex items-center gap-1.5">
             <div className="overflow-x-auto flex-1 pb-0.5 -mx-1 px-1">
               <div className="flex items-center gap-1">
+                <span className="text-[11px] font-medium text-slate-600 dark:text-slate-300 px-1 whitespace-nowrap">難易度</span>
                 <button
                   onClick={() => setSelectedDifficulty("all")}
                   className={`px-2 py-1 rounded-lg text-xs font-medium whitespace-nowrap flex-shrink-0 transition-all ${
                     selectedDifficulty === "all"
-                      ? "bg-slate-700 text-white"
-                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-slate-400"
+                      ? "bg-primary-500 text-white shadow-sm"
+                      : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary-300"
                   }`}
                 >
-                  難易度
+                  全て
                 </button>
                 {[1, 2, 3, 4, 5, 6, 7].map((level) => (
                   <button
@@ -527,8 +653,8 @@ export default function WordListPage() {
                     onClick={() => setSelectedDifficulty(level)}
                     className={`w-6 h-6 rounded flex-shrink-0 text-xs font-medium transition-all ${
                       selectedDifficulty === level
-                        ? "bg-amber-500 text-white"
-                        : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-amber-400"
+                        ? "bg-primary-500 text-white shadow-sm"
+                        : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary-300"
                     }`}
                   >
                     {level}
@@ -554,7 +680,8 @@ export default function WordListPage() {
           <p className="text-xs text-slate-500 dark:text-slate-400">
             {filteredWords.length}語
             {showBookmarksOnly && " (ブックマーク)"}
-            {selectedMastery !== "all" && ` (${masteryConfig[selectedMastery].label})`}
+            {selectedAccuracy !== "all" && ` (正答率: ${accuracyFilterOptions.find((o) => o.key === selectedAccuracy)?.label})`}
+            {selectedMemory !== "all" && ` (記憶度: ${memoryFilterOptions.find((o) => o.key === selectedMemory)?.label})`}
             {searchQuery && ` (「${searchQuery}」)`}
             {courseLabel && ` / ${courseLabel}${stageLabel ? ` - ${stageLabel}` : ""}`}
             {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
@@ -565,7 +692,7 @@ export default function WordListPage() {
         {isFlashcardMode ? (
           <div className="flex-1 min-h-0">
             <FlashcardView
-              words={filteredWords}
+              words={flashcardWords}
               initialIndex={flashcardInitialIndex}
               onExit={(currentWordId) => {
                 if (currentWordId !== undefined) {
@@ -573,6 +700,7 @@ export default function WordListPage() {
                 }
                 setIsFlashcardMode(false);
                 setFlashcardInitialIndex(0);
+                setFlashcardWordIds(null);
               }}
               onDetailView={(index) => {
                 saveFlashcardSession({
@@ -581,7 +709,8 @@ export default function WordListPage() {
                   selectedStage,
                   selectedCategory,
                   selectedDifficulty,
-                  selectedMastery,
+                  selectedMemory,
+                  selectedAccuracy,
                   searchQuery,
                   showBookmarksOnly,
                   sortOption,
@@ -604,25 +733,10 @@ export default function WordListPage() {
                     )}
                     <Card className="divide-y divide-slate-100 dark:divide-slate-700">
                       {categoryWords.map((word) => (
-                        <Link
+                        <div
                           id={`word-item-${word.id}`}
                           key={word.id}
-                          href={`/word/${word.id}?from=wordlist`}
-                          onClick={() => {
-                            saveWordListFilter({
-                              selectedCourse,
-                              selectedStage,
-                              selectedCategory,
-                              selectedDifficulty,
-                              selectedMastery,
-                              searchQuery,
-                              showBookmarksOnly,
-                              sortOption,
-                              scrollTop: listScrollRef.current?.scrollTop ?? 0,
-                            });
-                            saveWordNavState(filteredWords.map((w) => w.id), "wordlist");
-                          }}
-                          className="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-xl last:rounded-b-xl"
+                          className="flex items-center gap-2 p-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-xl last:rounded-b-xl"
                         >
                           <div className="flex items-center gap-2 flex-1 min-w-0">
                             <SpeakButton text={word.word} size="sm" />
@@ -650,9 +764,7 @@ export default function WordListPage() {
                               </svg>
                             </button>
                             <button
-                              onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
+                              onClick={() => {
                                 const index = wordIndexMap.get(word.id) ?? 0;
                                 setFlashcardInitialIndex(index);
                                 setIsFlashcardMode(true);
@@ -662,28 +774,63 @@ export default function WordListPage() {
                             >
                               <span className="text-xs emoji-icon">🃏</span>
                             </button>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center gap-2 flex-wrap">
-                                <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate">
-                                  {word.word}
-                                </p>
-                                <span
-                                  className={`px-2 py-0.5 text-xs font-medium rounded-full ${
-                                    masteryConfig[word.mastery].bg
-                                  } ${masteryConfig[word.mastery].color}`}
-                                >
-                                  {masteryConfig[word.mastery].label}
-                                </span>
+                            <Link
+                              href={`/word/${word.id}?from=wordlist`}
+                              onClick={() => {
+                                saveWordListFilter({
+                                  selectedCourse,
+                                  selectedStage,
+                                  selectedCategory,
+                                  selectedDifficulty,
+                                  selectedMemory,
+                                  selectedAccuracy,
+                                  searchQuery,
+                                  showBookmarksOnly,
+                                  sortOption,
+                                  scrollTop: listScrollRef.current?.scrollTop ?? 0,
+                                });
+                                saveWordNavState(filteredWords.map((w) => w.id), "wordlist");
+                              }}
+                              className="flex items-center justify-between flex-1 min-w-0 group/link"
+                            >
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <p className="font-bold text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 transition-colors truncate">
+                                    {word.word}
+                                  </p>
+                                </div>
+                                <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
                               </div>
-                              <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+                              <div className="text-slate-400 dark:text-slate-500 group-hover/link:text-primary-500 group-hover/link:translate-x-1 transition-all">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                              </div>
+                            </Link>
+                          </div>
+                          <div className="w-[170px] flex-shrink-0">
+                            <div className="flex items-center gap-1 justify-end">
+                              <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                                正答率 {word.accuracy !== null ? `${word.accuracy}%` : "-"}
+                              </span>
+                              <select
+                                value={getDisplayedManualMastery(word)}
+                                onChange={(e) => {
+                                  handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel);
+                                }}
+                                className="text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                              >
+                                {MANUAL_MASTERY_OPTIONS_ORDERED
+                                  .filter((opt) => word.attempts === 0 || opt.key !== "unlearned")
+                                  .map((opt) => (
+                                  <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                                    {opt.label}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
                           </div>
-                          <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all ml-2">
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </div>
-                        </Link>
+                        </div>
                       ))}
                     </Card>
                   </div>
@@ -701,7 +848,8 @@ export default function WordListPage() {
                         setSelectedCategory("all");
                         setSelectedDifficulty("all");
                         setShowBookmarksOnly(false);
-                        setSelectedMastery("all");
+                        setSelectedMemory("all");
+                        setSelectedAccuracy("all");
                         setSortOption("default");
                       }}
                       className="mt-3 text-sm text-primary-500 hover:underline"

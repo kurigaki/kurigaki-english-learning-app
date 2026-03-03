@@ -8,7 +8,7 @@
  */
 
 import { getCurrentUserId, isLoggedIn, isAuthTimedOut } from "./user-session";
-import { storage } from "./storage";
+import { storage, type ManualMasteryLevel } from "./storage";
 import { supabaseStorage } from "./supabase/database";
 import type { UserData, WordStats } from "./storage";
 import type {
@@ -32,7 +32,6 @@ function shouldUseSupabase(): boolean {
   const userId = getCurrentUserId();
   const timedOut = isAuthTimedOut();
   const result = userId !== null && !timedOut;
-  console.log("[UnifiedStorage] shouldUseSupabase:", "userId=" + userId, "isAuthTimedOut=" + timedOut, "result=" + result);
   // ユーザーIDがあり、かつ認証がタイムアウトしていない場合のみSupabaseを使用
   return result;
 }
@@ -78,12 +77,14 @@ async function withFallback<T>(
       const result = await Promise.race([supabaseOp(), timeoutPromise]);
       // 成功した場合は結果を返す
       if (attempt > 0) {
+        // リトライ成功は接続品質の把握に有用なため維持
         console.log(`[UnifiedStorage] ${operationName} succeeded on retry ${attempt}`);
       }
       return result;
     } catch (error) {
       lastError = error as Error;
       if (attempt < maxRetries - 1) {
+        // リトライ状況は本番でも監視したいため維持
         console.log(`[UnifiedStorage] ${operationName} failed (attempt ${attempt + 1}/${maxRetries}), retrying...`);
         // 少し待ってからリトライ
         await new Promise(resolve => setTimeout(resolve, 1000));
@@ -590,6 +591,33 @@ export const unifiedStorage = {
       false,
       "toggleBookmark"
     );
+  },
+
+  // 手動記憶度（学習者が明示的に設定する習得度）
+  getManualMasteryMap: async (): Promise<Record<number, ManualMasteryLevel>> => {
+    try {
+      return storage.getManualMasteryMap();
+    } catch (error) {
+      console.error("[UnifiedStorage] getManualMasteryMap failed:", error);
+      return {};
+    }
+  },
+
+  getManualMastery: async (wordId: number): Promise<ManualMasteryLevel | null> => {
+    try {
+      return storage.getManualMastery(wordId);
+    } catch (error) {
+      console.error("[UnifiedStorage] getManualMastery failed:", error);
+      return null;
+    }
+  },
+
+  setManualMastery: async (wordId: number, mastery: ManualMasteryLevel): Promise<void> => {
+    try {
+      storage.setManualMastery(wordId, mastery);
+    } catch (error) {
+      console.error("[UnifiedStorage] setManualMastery failed:", error);
+    }
   },
 
   // === SRS（間隔反復学習）===
