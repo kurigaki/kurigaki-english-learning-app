@@ -8,6 +8,8 @@
 
 import type { WordExtension } from "@/types";
 import type { Word as BaseWord } from "./words/types";
+import { allWords } from "./words";
+import { exampleJaOverrides } from "./example-ja-overrides";
 
 export const wordExtensions: Map<number, WordExtension> = new Map([
   // ── TOEIC 500 ──────────────────────────────────────────────────────────────
@@ -7562,8 +7564,42 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
 
 type ExtensionSourceWord = Pick<
   BaseWord,
-  "id" | "word" | "meaning" | "partOfSpeech" | "course" | "stage"
+  "id" | "word" | "meaning" | "partOfSpeech" | "course" | "stage" | "example"
 >;
+
+const ALL_SOURCE_WORDS: ExtensionSourceWord[] = allWords;
+
+const COURSE_CONTEXT_LABEL: Record<ExtensionSourceWord["course"], string> = {
+  junior: "中学英語",
+  senior: "高校英語",
+  toeic: "ビジネス",
+  eiken: "英検",
+  conversation: "会話",
+  general: "一般",
+  business: "ビジネス",
+};
+
+const PART_OF_SPEECH_LABEL: Record<ExtensionSourceWord["partOfSpeech"], string> = {
+  noun: "名",
+  verb: "動",
+  adjective: "形",
+  adverb: "副",
+  other: "他",
+};
+
+const wordsBySurface = new Map<string, ExtensionSourceWord[]>();
+const wordsByPrimaryMeaning = new Map<string, ExtensionSourceWord[]>();
+const wordBySurface = new Map<string, ExtensionSourceWord>();
+
+for (const w of ALL_SOURCE_WORDS) {
+  const key = w.word.toLowerCase();
+  const meaningKey = pickPrimaryMeaning(w.meaning).toLowerCase();
+  if (!wordsBySurface.has(key)) wordsBySurface.set(key, []);
+  wordsBySurface.get(key)!.push(w);
+  if (!wordsByPrimaryMeaning.has(meaningKey)) wordsByPrimaryMeaning.set(meaningKey, []);
+  wordsByPrimaryMeaning.get(meaningKey)!.push(w);
+  if (!wordBySurface.has(key)) wordBySurface.set(key, w);
+}
 
 function pickPrimaryMeaning(meaning: string): string {
   const primary = meaning
@@ -7640,6 +7676,179 @@ function buildGeneratedExtension(word: ExtensionSourceWord): WordExtension {
   };
 }
 
+function buildGeneratedExamples(word: ExtensionSourceWord): NonNullable<WordExtension["examples"]> {
+  const examples: NonNullable<WordExtension["examples"]> = [];
+  const seen = new Set<string>();
+  const push = (en: string | undefined, ja: string | undefined, context: string) => {
+    if (!en) return;
+    const normalized = en.trim().toLowerCase();
+    if (!normalized || seen.has(normalized)) return;
+    seen.add(normalized);
+    examples.push({
+      en,
+      ja: ja ?? "",
+      context,
+    });
+  };
+
+  const sameSurface = wordsBySurface.get(word.word.toLowerCase()) ?? [];
+  for (const candidate of sameSurface) {
+    if (examples.length >= 3) break;
+    push(
+      candidate.example,
+      exampleJaOverrides.get(candidate.id),
+      COURSE_CONTEXT_LABEL[candidate.course]
+    );
+  }
+
+  if (examples.length < 3 && word.example) {
+    push(word.example, exampleJaOverrides.get(word.id), COURSE_CONTEXT_LABEL[word.course]);
+  }
+
+  const m = pickPrimaryMeaning(word.meaning);
+  const fallbackByPos: Array<{ en: string; ja: string; context: string }> =
+    word.partOfSpeech === "verb"
+      ? [
+          {
+            en: `I try to ${word.word} every day.`,
+            ja: `私は毎日${m}ようにしています。`,
+            context: "学習",
+          },
+          {
+            en: `She can ${word.word} this task well.`,
+            ja: `彼女はこの課題をうまく${m}ことができます。`,
+            context: "実践",
+          },
+        ]
+      : word.partOfSpeech === "adjective"
+        ? [
+            {
+              en: `The result was ${word.word}.`,
+              ja: `その結果は${m}状態でした。`,
+              context: "説明",
+            },
+            {
+              en: `It seems ${word.word} to me.`,
+              ja: `私にはそれが${m}ように見えます。`,
+              context: "判断",
+            },
+          ]
+        : word.partOfSpeech === "adverb"
+          ? [
+              {
+                en: `He answered ${word.word} in class.`,
+                ja: `彼は授業で${m}答えました。`,
+                context: "授業",
+              },
+              {
+                en: `We moved ${word.word} to finish on time.`,
+                ja: `私たちは時間内に終えるため${m}動きました。`,
+                context: "行動",
+              },
+            ]
+          : word.partOfSpeech === "noun"
+            ? [
+                {
+                  en: `This ${word.word} is important for daily communication.`,
+                  ja: `この${m}は日常のコミュニケーションで重要です。`,
+                  context: "日常",
+                },
+                {
+                  en: `We discussed the ${word.word} in today's lesson.`,
+                  ja: `私たちは今日の授業でこの${m}について話し合いました。`,
+                  context: "授業",
+                },
+              ]
+            : [
+                {
+                  en: `We often use "${word.word}" in conversation.`,
+                  ja: `私たちは会話で「${word.word}」をよく使います。`,
+                  context: "会話",
+                },
+                {
+                  en: `Please learn how to use "${word.word}" naturally.`,
+                  ja: `「${word.word}」を自然に使えるように学習してください。`,
+                  context: "学習",
+                },
+              ];
+
+  for (const f of fallbackByPos) {
+    if (examples.length >= 3) break;
+    push(f.en, f.ja, f.context);
+  }
+
+  return examples.slice(0, 3);
+}
+
+function buildGeneratedRelatedWordEntries(
+  word: ExtensionSourceWord
+): NonNullable<WordExtension["relatedWordEntries"]> {
+  const entries: NonNullable<WordExtension["relatedWordEntries"]> = [];
+  const seen = new Set<string>([word.word.toLowerCase()]);
+  const push = (candidate: ExtensionSourceWord, isAntonym = false) => {
+    const key = candidate.word.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    entries.push({
+      word: candidate.word,
+      partOfSpeech: PART_OF_SPEECH_LABEL[candidate.partOfSpeech],
+      meaning: pickPrimaryMeaning(candidate.meaning),
+      isAntonym,
+    });
+  };
+
+  const meaningKey = pickPrimaryMeaning(word.meaning).toLowerCase();
+  const sameMeaning = wordsByPrimaryMeaning.get(meaningKey) ?? [];
+  for (const candidate of sameMeaning) {
+    if (entries.length >= 4) break;
+    push(candidate);
+  }
+
+  if (entries.length < 4) {
+    const sameCoursePos = ALL_SOURCE_WORDS.filter(
+      (w) =>
+        w.course === word.course &&
+        w.partOfSpeech === word.partOfSpeech &&
+        w.id !== word.id
+    );
+    for (const candidate of sameCoursePos) {
+      if (entries.length >= 4) break;
+      push(candidate);
+    }
+  }
+
+  return entries.slice(0, 4);
+}
+
+function buildGeneratedSynonymDifferenceEntries(
+  word: ExtensionSourceWord,
+  relatedEntries: NonNullable<WordExtension["relatedWordEntries"]>
+): NonNullable<WordExtension["synonymDifferenceEntries"]> {
+  return relatedEntries
+    .filter((e) => !e.isAntonym)
+    .slice(0, 3)
+    .map((e) => ({
+      word: e.word,
+      description:
+        `${e.word} は ${word.word} と近い意味で使われるが、文脈・語調・一緒に使う語の組み合わせが異なる。` +
+        `例文で置き換えて自然さを確認するのが効果的。`,
+    }));
+}
+
+function buildGeneratedColumn(
+  word: ExtensionSourceWord,
+  generated: WordExtension
+): NonNullable<WordExtension["column"]> {
+  return {
+    title: `${word.word} の使い分けメモ`,
+    content:
+      `${generated.coreImage}\n\n` +
+      `${generated.usage}\n\n` +
+      `学習のポイント: ${word.word} は品詞と文型を固定して反復すると定着しやすい。` +
+      `関連語との違いは例文単位で比較して確認する。`,
+  };
+}
+
 /**
  * 既存の手動拡張を優先し、不足フィールドのみ自動補完する。
  * 単語詳細画面で全語に5セクションを表示できるようにするための統一アクセサ。
@@ -7648,18 +7857,47 @@ function buildGeneratedExtension(word: ExtensionSourceWord): WordExtension {
 export function getWordExtension(word: ExtensionSourceWord): WordExtension {
   const manual = wordExtensions.get(word.id);
   const generated = buildGeneratedExtension(word);
+  const generatedExamples = buildGeneratedExamples(word);
+  const generatedRelatedEntries = buildGeneratedRelatedWordEntries(word);
+  const generatedSynonymEntries = buildGeneratedSynonymDifferenceEntries(
+    word,
+    generatedRelatedEntries
+  );
+  const generatedColumn = buildGeneratedColumn(word, generated);
+
+  const manualRelatedEntries =
+    manual?.relatedWordEntries ??
+    (manual?.relatedWords?.map((rw) => {
+      const matched = wordBySurface.get(rw.toLowerCase());
+      return {
+        word: rw,
+        partOfSpeech: matched ? PART_OF_SPEECH_LABEL[matched.partOfSpeech] : "他",
+        meaning: matched ? pickPrimaryMeaning(matched.meaning) : "関連語",
+      };
+    }) ?? []);
+
+  const mergedRelatedEntries =
+    manualRelatedEntries.length > 0 ? manualRelatedEntries : generatedRelatedEntries;
+
   return {
     coreImage: manual?.coreImage ?? generated.coreImage,
     usage: manual?.usage ?? generated.usage,
     synonymDifference: manual?.synonymDifference ?? generated.synonymDifference,
     englishDefinition: manual?.englishDefinition ?? generated.englishDefinition,
     etymology: manual?.etymology ?? generated.etymology,
-    // 以下は手動データのみ（未設定の単語では undefined）
-    examples: manual?.examples,
-    relatedWords: manual?.relatedWords,
+    examples: manual?.examples ?? generatedExamples,
+    relatedWords:
+      manual?.relatedWords ??
+      mergedRelatedEntries.map((entry) => entry.word),
+    relatedWordEntries: mergedRelatedEntries,
     pronunciation: manual?.pronunciation,
-    synonyms: manual?.synonyms,
+    synonyms:
+      manual?.synonyms ??
+      (manual?.synonymDifferenceEntries?.map((entry) => entry.word) ??
+        generatedSynonymEntries.map((entry) => entry.word)),
     antonyms: manual?.antonyms,
-    column: manual?.column,
+    column: manual?.column ?? generatedColumn,
+    synonymDifferenceEntries:
+      manual?.synonymDifferenceEntries ?? generatedSynonymEntries,
   };
 }
