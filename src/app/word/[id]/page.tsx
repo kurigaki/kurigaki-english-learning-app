@@ -149,12 +149,15 @@ export default function WordDetailPage() {
   }
 
   // 例文データを変換（例文がある場合）
-  const examples = word.examples || (word.example
-    ? [{
-        en: word.example,
-        ja: word.exampleJa ?? "",
-      }]
-    : []);
+  const examples =
+    word.examples ??
+    wordExt?.examples ??
+    (word.example
+      ? [{
+          en: word.example,
+          ja: word.exampleJa ?? "",
+        }]
+      : []);
 
   // ナビゲーション状態が有効かどうか（スティッキー底部バーの表示判定）
   const hasBottomNav = navState !== null && currentNavIndex >= 0;
@@ -252,7 +255,7 @@ export default function WordDetailPage() {
             <WordHeader
               word={word.word}
               meaning={word.meaning}
-              pronunciation={word.pronunciation}
+              pronunciation={word.pronunciation ?? wordExt?.pronunciation}
               partOfSpeech={word.partOfSpeech}
             />
 
@@ -278,7 +281,7 @@ export default function WordDetailPage() {
 
             {/* 関連語 */}
             <WordRelations
-              relatedWordEntries={word.relatedWordEntries}
+              relatedWordEntries={word.relatedWordEntries ?? wordExt?.relatedWordEntries}
               currentWord={word.word}
             />
 
@@ -292,8 +295,12 @@ export default function WordDetailPage() {
             />
 
             {/* 類義語との違い（構造化データがあればリスト表示、なければプレーンテキスト） */}
-            {(word.synonymDifferenceEntries && word.synonymDifferenceEntries.length > 0) ? (
-              <WordSynonymDiff entries={word.synonymDifferenceEntries} currentWord={word.word} />
+            {((word.synonymDifferenceEntries ?? wordExt?.synonymDifferenceEntries) &&
+              (word.synonymDifferenceEntries ?? wordExt?.synonymDifferenceEntries)!.length > 0) ? (
+              <WordSynonymDiff
+                entries={(word.synonymDifferenceEntries ?? wordExt?.synonymDifferenceEntries)!}
+                currentWord={word.word}
+              />
             ) : (
               <WordPlaceholderSection
                 title="類義語との違い"
@@ -323,7 +330,7 @@ export default function WordDetailPage() {
             />
 
             {/* コラム */}
-            {word.column && <WordColumn column={word.column} currentWord={word.word} />}
+            <WordColumn column={word.column ?? wordExt?.column} currentWord={word.word} />
 
             {/* アクションボタン */}
             <div className="pt-6 space-y-3">
