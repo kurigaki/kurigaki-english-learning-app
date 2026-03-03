@@ -125,20 +125,20 @@ export default function Home() {
           </div>
         </Link>
 
-        {/* 3. SRS復習 / 苦手復習（条件付き） */}
-        {isMounted && srsReviewCount > 0 && (
-          <Card hover className="group border-2 border-primary-200 dark:border-primary-800/40 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20" padding="sm">
+        {/* 3. SRS復習 / 苦手復習（常時表示） */}
+        {isMounted && (
+          <Card hover className={`group border-2 ${srsReviewCount > 0 ? "border-primary-200 dark:border-primary-800/40 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20" : "border-slate-200 dark:border-slate-700"}`} padding="sm">
             <Link href="/review?mode=srs" className="block">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform ${srsReviewCount > 0 ? "bg-gradient-to-br from-primary-400 to-primary-500" : "bg-slate-200 dark:bg-slate-700"}`}>
                   <span className="emoji-icon">🧠</span>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">
-                    今日の復習: {srsReviewCount}語
+                    {srsReviewCount > 0 ? `今日の復習: ${srsReviewCount}語` : "今日の復習: 完了"}
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400">
-                    最適なタイミングで復習して記憶を定着
+                    {srsReviewCount > 0 ? "最適なタイミングで復習して記憶を定着" : "今日の分はすべて終わっています"}
                   </p>
                 </div>
                 <div className="text-primary-400 group-hover:translate-x-1 transition-transform">
@@ -151,19 +151,19 @@ export default function Home() {
           </Card>
         )}
 
-        {isMounted && weakWordCount > 0 && (
-          <Card hover className="group border-2 border-red-200 dark:border-red-800/40 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20" padding="sm">
+        {isMounted && (
+          <Card hover className={`group border-2 ${weakWordCount > 0 ? "border-red-200 dark:border-red-800/40 bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20" : "border-slate-200 dark:border-slate-700"}`} padding="sm">
             <Link href="/review?mode=weak" className="block">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-red-400 to-red-500 rounded-xl flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform">
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-md group-hover:scale-110 transition-transform ${weakWordCount > 0 ? "bg-gradient-to-br from-red-400 to-red-500" : "bg-slate-200 dark:bg-slate-700"}`}>
                   <span className="emoji-icon">🔄</span>
                 </div>
                 <div className="flex-1">
                   <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100">
-                    苦手な{weakWordCount}語を復習しよう
+                    {weakWordCount > 0 ? `苦手な${weakWordCount}語を復習しよう` : "苦手な単語はありません"}
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400">
-                    正答率が低い単語を重点的に練習
+                    {weakWordCount > 0 ? "正答率が低い単語を重点的に練習" : "まだ学習記録がないか、全問正解中です"}
                   </p>
                 </div>
                 <div className="text-red-400 group-hover:translate-x-1 transition-transform">

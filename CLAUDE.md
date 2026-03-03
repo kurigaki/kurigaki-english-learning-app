@@ -311,7 +311,9 @@ src/
 │   ├── weak-words/page.tsx       # 苦手単語一覧
 │   ├── bookmarks/page.tsx        # ブックマーク一覧
 │   ├── history/page.tsx          # 学習履歴（タブ: 概要/苦手単語/履歴）
-│   └── achievements/page.tsx     # 実績一覧
+│   ├── achievements/page.tsx     # 実績一覧
+│   ├── review/page.tsx           # SRS・苦手単語復習（list フェーズで予習→クイズへ遷移）
+│   └── updates/page.tsx          # お知らせ（アップデート情報一覧）
 ├── components/
 │   ├── ui/                       # 汎用UIコンポーネント
 │   │   ├── Button.tsx
@@ -748,6 +750,30 @@ type QuestionTypeRatios = {
 - 大文字・小文字を区別しない（case-insensitive）
 - 前後の空白を無視（trim）
 - Enter キーで送信可能
+- 問題表示時に最初の空欄を自動フォーカス（`key={\`${currentIndex}-${i}\``} と `autoFocus` で実装）
+
+### キーボード操作
+
+クイズ画面全体でキーボード操作が可能：
+
+| キー | 動作 |
+|------|------|
+| `A` / `B` / `C` / `D` | 選択肢を選択（en-to-ja・ja-to-en・listening） |
+| `Enter` | 回答後に次の問題へ進む |
+
+- `e.repeat` チェックで長押しによる誤送信を防止
+- `dictation` タイプでは A〜D キーは無効（テキスト入力優先）
+
+### 1セッションの問題数
+
+```typescript
+const QUESTIONS_PER_SESSION = 10; // quiz/page.tsx と review/page.tsx で同値を定義
+```
+
+- 対象単語が 10 語未満の場合はその語数がそのまま出題数になる
+- `review/page.tsx` の「クイズを始める」ボタンには実際の出題問数を表示：
+  - 10 語以下: `クイズを始める（N問）`
+  - 10 語超: `クイズを始める（10問 / 全N語から）`
 
 ### 全問正解フィードバック（PerfectScorePopup）
 
@@ -790,11 +816,12 @@ type QuizSettings = {
 |-----------|------|-----|
 | `wordId` | 特定の単語を最初に出題 | `/quiz?wordId=42` |
 | `weakOnly` | 苦手単語のみで構成 | `/quiz?weakOnly=true` |
+| `srsReview` | SRS復習対象単語のみで構成 | `/quiz?srsReview=true` |
 
 **使用箇所**:
 - 単語詳細画面の「この単語を復習する」ボタン → `/quiz?wordId=${word.id}`
-- 苦手単語一覧の「苦手単語を復習する」ボタン → `/quiz?weakOnly=true`
-- 学習履歴の「苦手単語を復習する」ボタン → `/quiz?weakOnly=true`
+- ホーム「苦手単語の復習」→ `/review?mode=weak` → 予習リストの「クイズを始める」→ `/quiz?weakOnly=true`
+- ホーム「今日の復習」→ `/review?mode=srs` → 予習リストの「クイズを始める」→ `/quiz?srsReview=true`
 
 **実装**:
 ```typescript
@@ -802,13 +829,43 @@ type QuizSettings = {
 const searchParams = useSearchParams();
 const reviewWordId = searchParams.get("wordId");
 const weakOnly = searchParams.get("weakOnly");
+const srsReview = searchParams.get("srsReview");
 
 // startNewSessionのオプション
 startNewSession(settings, {
   priorityWordId: wordIdNum,  // この単語を最初に出題
   weakOnlyMode: true,         // 苦手単語のみ
+  srsReviewMode: true,        // SRS復習対象のみ（getDailyReviewBatch使用）
 });
 ```
+
+### /review ページ（SRS・苦手単語の予習リスト）
+
+ホームの「今日の復習」「苦手単語の復習」カードからアクセスされる中間ページ。
+クイズ自体は quiz/page.tsx に委譲するため、list フェーズのみ担当。
+
+```
+/review?mode=srs   → SRS復習対象の単語一覧を表示
+/review?mode=weak  → 苦手単語（正答率60%未満）の一覧を表示
+```
+
+- **フェーズ**: `list`（予習）→ 「クイズを始める」で `/quiz?srsReview=true` or `/quiz?weakOnly=true` へ遷移
+- **list フェーズ**: 単語ごとのSRSステータス（新規/学習中/復習/習得済）または正答率を表示
+- SRS は `getDailyReviewBatch()`（当日キャッシュ）を使用し、quiz/page.tsx と同じ単語セットを返す
+
+### ホーム画面のSRS・苦手単語カード（常時表示）
+
+```typescript
+// page.tsx — 件数が 0 でもカードを表示し、状態に応じてスタイル変化
+{isMounted && (
+  <Card hover className={srsReviewCount > 0 ? "border-primary-200 ..." : "border-slate-200 ..."}>
+    {srsReviewCount > 0 ? `今日の復習: ${srsReviewCount}語` : "今日の復習: 完了"}
+  </Card>
+)}
+```
+
+- 0件: グレー背景 + 「完了」または「なし」メッセージ
+- 1件以上: カラー背景 + 件数表示
 
 ---
 
