@@ -20,6 +20,16 @@
 - 信頼ソース由来でないテンプレート生成語は採用しない
 - `junior` には中学課程で扱わない語彙（過度に専門的・稀少な語）を入れない
 
+## Category Classification Policy
+- カテゴリは `src/data/words/compat.ts` で一元生成する
+- 1語に対して複数カテゴリを許可する（`categories`）
+- UI上の主カテゴリは `category`（先頭カテゴリ）を使用するが、検索・フィルタは `categories` 全体で判定する
+- 英語キーワード判定は「部分一致」ではなく「単語一致/フレーズ一致」を採用する
+  - 例: `app` は `app` にのみ一致させ、`apple` や `happy` への誤判定を禁止
+- コース基底カテゴリ（`toeic -> business` 等）は初期候補に使うが、語義に合わないカテゴリが優先されないように正規化ルールを適用する
+- 明確な誤分類は `src/data/category-overrides.ts` で上書きする
+- `category-overrides.ts` は推定カテゴリへの「追加」ではなく「最終カテゴリの上書き」として扱う
+
 ## Course-Fit Filters (Rebuild Rules)
 - 非 `conversation` コースはフレーズ語を除外する（空白・ハイフン・スラッシュを含む `word` は不採用）
 - 禁止語（公序良俗・学習用途不適切語）は全コースで不採用にする
