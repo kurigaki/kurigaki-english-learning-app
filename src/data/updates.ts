@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-03",
+    version: "1.23.0",
+    title: "全コースのカテゴリ監査を完了（分類精度を改善）",
+    content: [
+      "junior / senior / eiken / toeic / conversation の全対象語でカテゴリ未設定を解消しました",
+      "カテゴリ判定の誤分類を手動監査で修正し、語義に沿ったカテゴリへ再配置しました",
+      "句表現（例: run を含む慣用句）で部分一致により意図しないカテゴリに入る問題を防止しました",
+      "クイズ設定「カテゴリを選択」での学習導線が、実際の語彙テーマと一致しやすくなりました",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-03",
     version: "1.22.0",
     title: "クイズのキーボード操作・復習フロー改善",
     content: [

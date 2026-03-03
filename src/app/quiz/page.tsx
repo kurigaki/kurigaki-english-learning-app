@@ -361,7 +361,12 @@ function filterWordsBySettings(
 
   // カテゴリフィルター
   if (settings.categories.length > 0) {
-    filtered = filtered.filter((w) => settings.categories.includes(w.category));
+    filtered = filtered.filter((w) => {
+      const wordCategories = w.categories && w.categories.length > 0
+        ? w.categories
+        : [w.category];
+      return settings.categories.some((c) => wordCategories.includes(c));
+    });
   }
 
   // 難易度フィルター
