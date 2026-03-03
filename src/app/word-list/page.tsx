@@ -22,6 +22,7 @@ type WordWithStats = {
   word: string;
   meaning: string;
   category: Category;
+  categories?: Category[];
   difficulty: number;
   mastery: MasteryLevel;
   accuracy: number | null;
@@ -145,6 +146,7 @@ export default function WordListPage() {
           word: word.word,
           meaning: word.meaning,
           category: word.category,
+          categories: word.categories,
           difficulty: word.difficulty,
           mastery: getMasteryLevel(accuracy, attempts),
           accuracy,
@@ -203,7 +205,12 @@ export default function WordListPage() {
     return wordsWithStats.filter((word) => {
       if (courseWordIds && !courseWordIds.has(word.id)) return false;
       if (showBookmarksOnly && !word.isBookmarked) return false;
-      if (selectedCategory !== "all" && word.category !== selectedCategory) return false;
+      if (selectedCategory !== "all") {
+        const wordCategories = word.categories && word.categories.length > 0
+          ? word.categories
+          : [word.category];
+        if (!wordCategories.includes(selectedCategory)) return false;
+      }
       if (selectedDifficulty !== "all" && word.difficulty !== selectedDifficulty) return false;
       if (searchQuery) {
         const query = searchQuery.toLowerCase();

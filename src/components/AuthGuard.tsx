@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuth } from "@/lib/auth-context";
+import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 
 type AuthGuardProps = {
@@ -13,8 +14,21 @@ type AuthGuardProps = {
  */
 export function AuthGuard({ children }: AuthGuardProps) {
   const { isLoading } = useAuth();
+  const [forcePassThrough, setForcePassThrough] = useState(false);
 
-  if (isLoading) {
+  // 認証初期化が長引いても全画面ブロックを避ける（再発防止）
+  useEffect(() => {
+    if (!isLoading) {
+      setForcePassThrough(false);
+      return;
+    }
+    const timer = setTimeout(() => {
+      setForcePassThrough(true);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, [isLoading]);
+
+  if (isLoading && !forcePassThrough) {
     return (
       <div className="main-content-scroll flex items-center justify-center bg-slate-50">
         <div className="text-center">
