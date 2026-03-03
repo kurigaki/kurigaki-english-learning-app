@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { WordExample } from "@/types";
-import { WordText } from "./WordText";
+import { findWordId } from "@/lib/word-lookup";
 
 type WordExamplesProps = {
   examples: WordExample[];
@@ -13,6 +14,84 @@ export const WordExamples = ({ examples, currentWord }: WordExamplesProps) => {
   if (examples.length === 0) {
     return null;
   }
+
+  const escapeRegExp = (value: string) =>
+    value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+  const renderSegmentWithLinks = (text: string, keyPrefix: string) => {
+    const tokenRegex = /([a-zA-Z]+(?:'[a-zA-Z]+)*)|([^a-zA-Z]+)/g;
+    const nodes: React.ReactNode[] = [];
+    let m: RegExpExecArray | null;
+    let i = 0;
+    tokenRegex.lastIndex = 0;
+
+    while ((m = tokenRegex.exec(text)) !== null) {
+      const englishToken = m[1];
+      const otherToken = m[2];
+      if (englishToken !== undefined) {
+        const wordId = findWordId(englishToken);
+        if (wordId !== null) {
+          nodes.push(
+            <Link
+              key={`${keyPrefix}-link-${i}`}
+              href={`/word/${wordId}`}
+              className="border-b border-dashed border-slate-500 dark:border-slate-400 hover:opacity-70 transition-opacity"
+            >
+              {englishToken}
+            </Link>
+          );
+        } else {
+          nodes.push(<span key={`${keyPrefix}-text-${i}`}>{englishToken}</span>);
+        }
+      } else {
+        nodes.push(<span key={`${keyPrefix}-sep-${i}`}>{otherToken}</span>);
+      }
+      i++;
+    }
+    return nodes;
+  };
+
+  // 例文専用: currentWord を強調し、currentWord に含まれる部分語はリンク化しない
+  const renderExampleSentence = (sentence: string, targetWord: string) => {
+    const normalizedTarget = targetWord.trim();
+    if (!normalizedTarget) return sentence;
+
+    const regex = new RegExp(escapeRegExp(normalizedTarget), "gi");
+    const nodes: React.ReactNode[] = [];
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+    let blockIndex = 0;
+    regex.lastIndex = 0;
+
+    while ((match = regex.exec(sentence)) !== null) {
+      const start = match.index;
+      const end = start + match[0].length;
+
+      if (start > lastIndex) {
+        const before = sentence.slice(lastIndex, start);
+        nodes.push(...renderSegmentWithLinks(before, `before-${blockIndex}`));
+      }
+
+      nodes.push(
+        <span
+          key={`target-${blockIndex}`}
+          className="font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/30 px-1 rounded"
+        >
+          {sentence.slice(start, end)}
+        </span>
+      );
+
+      lastIndex = end;
+      blockIndex++;
+    }
+
+    if (lastIndex < sentence.length) {
+      const tail = sentence.slice(lastIndex);
+      nodes.push(...renderSegmentWithLinks(tail, "tail"));
+    }
+
+    return nodes.length > 0 ? nodes : renderSegmentWithLinks(sentence, "full");
+  };
 
   return (
     <div className="py-6 border-b border-slate-100 dark:border-slate-700">
@@ -30,7 +109,7 @@ export const WordExamples = ({ examples, currentWord }: WordExamplesProps) => {
               <div className="flex-1">
                 {/* 英語例文 */}
                 <p className="text-lg text-slate-800 dark:text-slate-100 leading-relaxed mb-2">
-                  <WordText text={example.en} currentWord={currentWord} />
+                  {renderExampleSentence(example.en, currentWord)}
                 </p>
                 {/* 日本語訳 */}
                 <p className="text-slate-500 dark:text-slate-400">{example.ja}</p>
