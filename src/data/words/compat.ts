@@ -163,7 +163,10 @@ const ENGLISH_CATEGORY_KEYWORDS: Record<Category, string[]> = {
     "food", "eat", "drink", "breakfast", "lunch", "dinner", "meal", "cook",
     "restaurant", "fruit", "vegetable", "rice", "bread",
   ],
-  sports: ["sport", "soccer", "baseball", "basketball", "tennis", "run", "swim", "athlete"],
+  sports: [
+    "sport", "soccer", "baseball", "basketball", "tennis", "swim", "athlete",
+    "running", "runner", "marathon", "coach", "stadium", "league", "tournament", "match",
+  ],
   culture: ["culture", "history", "language", "festival", "tradition", "religion", "museum"],
   greeting: ["hello", "hi", "good morning", "good evening", "good night", "thank you", "sorry"],
   emotion: ["happy", "sad", "angry", "glad", "afraid", "worry", "excited", "feeling"],
@@ -191,8 +194,32 @@ const JAPANESE_CATEGORY_KEYWORDS: Partial<Record<Category, string[]>> = {
   smalltalk: ["雑談", "調子", "ところで"],
 };
 
-const includesAny = (text: string, keywords: string[]): boolean =>
+const includesAnySubstring = (text: string, keywords: string[]): boolean =>
   keywords.some((k) => text.includes(k));
+
+function normalizeEnglishText(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9'\s]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function includesAnyEnglish(text: string, keywords: string[]): boolean {
+  const normalized = normalizeEnglishText(text);
+  if (!normalized) return false;
+  const tokens = new Set(normalized.split(" "));
+  const padded = ` ${normalized} `;
+
+  return keywords.some((k) => {
+    const key = normalizeEnglishText(k);
+    if (!key) return false;
+    // 単語は完全一致で判定し、"app" が "apple"/"happy" に誤ヒットしないようにする
+    if (!key.includes(" ")) return tokens.has(key);
+    // フレーズは前後空白付きで判定
+    return padded.includes(` ${key} `);
+  });
+}
 
 function normalizeCategories(categories: Category[]): Category[] {
   const unique = new Set<Category>(categories);
@@ -214,7 +241,7 @@ function inferCategories(word: InternalWord): Category[] {
 
   // lexical match (English)
   (Object.keys(ENGLISH_CATEGORY_KEYWORDS) as Category[]).forEach((category) => {
-    if (includesAny(textEn, ENGLISH_CATEGORY_KEYWORDS[category])) {
+    if (includesAnyEnglish(textEn, ENGLISH_CATEGORY_KEYWORDS[category])) {
       result.push(category);
     }
   });
@@ -222,7 +249,7 @@ function inferCategories(word: InternalWord): Category[] {
   // lexical match (Japanese meaning)
   (Object.keys(JAPANESE_CATEGORY_KEYWORDS) as Category[]).forEach((category) => {
     const keywords = JAPANESE_CATEGORY_KEYWORDS[category];
-    if (keywords && includesAny(textJa, keywords)) {
+    if (keywords && includesAnySubstring(textJa, keywords)) {
       result.push(category);
     }
   });
@@ -230,26 +257,26 @@ function inferCategories(word: InternalWord): Category[] {
   // conversation-specific refinements
   if (word.course === "conversation") {
     if (
-      includesAny(lowerWord, ENGLISH_CATEGORY_KEYWORDS.greeting) ||
-      includesAny(lowerExample, ENGLISH_CATEGORY_KEYWORDS.greeting)
+      includesAnyEnglish(lowerWord, ENGLISH_CATEGORY_KEYWORDS.greeting) ||
+      includesAnyEnglish(lowerExample, ENGLISH_CATEGORY_KEYWORDS.greeting)
     ) {
       result.push("greeting");
     }
     if (
-      includesAny(lowerWord, ENGLISH_CATEGORY_KEYWORDS.request) ||
-      includesAny(lowerExample, ENGLISH_CATEGORY_KEYWORDS.request)
+      includesAnyEnglish(lowerWord, ENGLISH_CATEGORY_KEYWORDS.request) ||
+      includesAnyEnglish(lowerExample, ENGLISH_CATEGORY_KEYWORDS.request)
     ) {
       result.push("request");
     }
     if (
-      includesAny(lowerWord, ENGLISH_CATEGORY_KEYWORDS.opinion) ||
-      includesAny(lowerExample, ENGLISH_CATEGORY_KEYWORDS.opinion)
+      includesAnyEnglish(lowerWord, ENGLISH_CATEGORY_KEYWORDS.opinion) ||
+      includesAnyEnglish(lowerExample, ENGLISH_CATEGORY_KEYWORDS.opinion)
     ) {
       result.push("opinion");
     }
     if (
-      includesAny(lowerWord, ENGLISH_CATEGORY_KEYWORDS.emotion) ||
-      includesAny(lowerExample, ENGLISH_CATEGORY_KEYWORDS.emotion)
+      includesAnyEnglish(lowerWord, ENGLISH_CATEGORY_KEYWORDS.emotion) ||
+      includesAnyEnglish(lowerExample, ENGLISH_CATEGORY_KEYWORDS.emotion)
     ) {
       result.push("emotion");
     }
@@ -270,10 +297,10 @@ function toLegacyWord(w: InternalWord): Word {
   const ext = wordExtensions.get(w.id);  // 手動データのみ（自動生成は word/[id]/page.tsx の getWordExtension() に任せる）
   const inferredCategories = inferCategories(w);
   const overrideCategories = categoryOverrides.get(w.id) as Category[] | undefined;
-  const mergedCategories = normalizeCategories([
-    ...(overrideCategories ?? []),
-    ...inferredCategories,
-  ]);
+  // 手動オーバーライドは最終判断として扱う（誤推定カテゴリを混在させない）
+  const mergedCategories = overrideCategories && overrideCategories.length > 0
+    ? normalizeCategories(overrideCategories)
+    : normalizeCategories(inferredCategories);
   const primaryCategory =
     mergedCategories[0] ?? CATEGORY_MAP[w.course] ?? "daily";
 
