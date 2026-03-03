@@ -34,6 +34,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
   // タイムアウト復元モードかどうか（Supabaseが応答しないため、localStorageモードを維持）
   const [isTimeoutRecovery, setIsTimeoutRecovery] = useState(false);
 
+  // 同期処理が外部要因でハングした場合でも画面全体を止めないためのタイムアウト
+  const withTimeout = useCallback(
+    async <T,>(promise: Promise<T>, timeoutMs: number, label: string): Promise<T> => {
+      return await Promise.race([
+        promise,
+        new Promise<T>((_, reject) =>
+          setTimeout(() => reject(new Error(`${label} timeout (${timeoutMs}ms)`)), timeoutMs)
+        ),
+      ]);
+    },
+    []
+  );
+
   // ユーザーセッションを同期（ストレージモジュールがユーザーIDを参照できるように）
   useEffect(() => {
     if (user?.id) {
@@ -44,6 +57,17 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
     setCurrentUserId(user?.id ?? null);
   }, [user, isTimeoutRecovery]);
+
+  // 念のためのフェイルセーフ:
+  // 何らかの理由で認証初期化が完了しない場合でも、画面全体の読み込み中を解除する
+  useEffect(() => {
+    if (!isLoading) return;
+    const timer = setTimeout(() => {
+      console.warn("[Auth] 初期化が長時間継続したため、isLoadingを強制解除");
+      setIsLoading(false);
+    }, 8000);
+    return () => clearTimeout(timer);
+  }, [isLoading]);
 
   // プロフィールを取得（直接REST API使用）
   const fetchProfile = useCallback(
@@ -219,7 +243,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       // ステップ2: Supabaseセッションを確認（タイムアウト付き）
       try {
         console.log("[Auth] getSession開始");
-        const { data: { session }, error } = await getSessionWithTimeout(3000);
+        const { data: { session }, error } = await getSessionWithTimeout(1500);
 
         if (!isMounted) return;
 
@@ -230,12 +254,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
           setAuthTimedOut(false);
           setCurrentUserId(session.user.id);
           setUser(session.user);
-          const userProfile = await fetchProfile(session.user.id);
-          if (isMounted) {
-            setProfile(userProfile);
-            setIsLoading(false);
-            console.log("[Auth] Supabaseセッション復元完了、isLoading=false");
-          }
+          // 初期表示を優先し、プロフィール取得は非同期で反映
+          setIsLoading(false);
+          console.log("[Auth] Supabaseセッション復元完了、isLoading=false");
+          void fetchProfile(session.user.id).then((userProfile) => {
+            if (isMounted) setProfile(userProfile);
+          });
         } else if (authCompletedByEvent) {
           // onAuthStateChangeで既に認証完了している
           console.log("[Auth] onAuthStateChangeで既に認証完了、スキップ");
@@ -257,24 +281,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
             console.log("[Auth] localStorageから復元完了、isLoading=false");
           }
         } else {
-          // セッションなし - onAuthStateChangeのSIGNED_INを待つ
-          console.log("[Auth] getSessionでセッションなし、onAuthStateChangeを待機");
-          // 2秒待ってもonAuthStateChangeでSIGNED_INが来なければ、未認証として処理
-          await new Promise(resolve => setTimeout(resolve, 2000));
-          if (!isMounted) return;
-          if (authCompletedByEvent) {
-            console.log("[Auth] 待機後、onAuthStateChangeで認証完了を確認");
-          } else {
-            console.log("[Auth] 待機後もセッションなし、未認証として処理");
-            setCurrentUserId(null);
-            if (isMounted) {
-              setIsLoading(false);
-            }
+          // セッションなしの場合は待機せず未認証として即時表示
+          console.log("[Auth] getSessionでセッションなし、未認証として処理");
+          setCurrentUserId(null);
+          if (isMounted) {
+            setIsLoading(false);
           }
         }
       } catch (error) {
-        if (error instanceof Error && error.name === "AbortError") return;
-        console.log("[Auth] セッション確認エラー");
+        if (error instanceof Error && error.name === "AbortError") {
+          console.warn("[Auth] セッション確認が中断されました。未認証として継続します。");
+        } else {
+          console.log("[Auth] セッション確認エラー");
+        }
         // onAuthStateChangeで既に認証完了している場合はスキップ
         if (authCompletedByEvent) {
           console.log("[Auth] onAuthStateChangeで既に認証完了、エラー処理スキップ");
@@ -339,7 +358,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
           if (event === "SIGNED_IN" && !isSyncCompleted(session.user.id)) {
             setIsSyncing(true);
             try {
-              const result = await syncLocalDataToSupabase(session.user.id);
+              const result = await withTimeout(
+                syncLocalDataToSupabase(session.user.id),
+                10000,
+                "data-sync"
+              );
               if (!result.success && result.error) {
                 console.warn("データ同期に失敗しました:", result.error);
               }
@@ -375,7 +398,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
       isMounted = false;
       subscription.unsubscribe();
     };
-  }, [fetchProfile, createProfile]);
+  }, [fetchProfile, createProfile, withTimeout]);
 
   // ログイン
   const signIn = useCallback(
@@ -525,7 +548,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
           profile,
         }
       : null,
-    isLoading: isLoading || isSyncing,
+    // 認証初期化のみ全体ガード対象。同期処理中はアプリ利用を止めない。
+    isLoading,
     isAuthenticated: Boolean(user),
     signIn,
     signUp,
@@ -538,6 +562,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   console.log("[AuthContext] 提供値:",
     "hasUser=" + !!user,
     "userId=" + user?.id,
+    "isSyncing=" + isSyncing,
     "isLoading=" + value.isLoading,
     "isAuthenticated=" + value.isAuthenticated
   );

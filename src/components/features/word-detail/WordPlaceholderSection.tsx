@@ -21,10 +21,21 @@ export const WordPlaceholderSection = ({
 
   return (
     <div className="py-4 border-b border-gray-100 dark:border-gray-700">
-      <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-2 flex items-center gap-1">
-        <span className="emoji-icon">{emoji}</span>
-        <span>{title}</span>
-      </h3>
+      <div className="mb-2 flex items-center justify-between gap-2">
+        <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 flex items-center gap-1">
+          <span className="emoji-icon">{emoji}</span>
+          <span>{title}</span>
+        </h3>
+        <span
+          className={`text-[10px] px-2 py-0.5 rounded-full ${
+            hasContent
+              ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300"
+              : "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300"
+          }`}
+        >
+          {hasContent ? "登録済み" : "準備中"}
+        </span>
+      </div>
       {hasContent ? (
         Array.isArray(content) ? (
           <ol className="list-decimal list-inside space-y-2">
