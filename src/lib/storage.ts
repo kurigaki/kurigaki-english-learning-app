@@ -8,7 +8,9 @@ const ACHIEVEMENTS_KEY = "unlocked_achievements";
 const SPEED_RESULTS_KEY = "speed_challenge_results";
 const BOOKMARKS_KEY = "bookmarked_words";
 const SRS_PROGRESS_KEY = "srs_progress";
+const MANUAL_MASTERY_KEY = "manual_mastery";
 const DEFAULT_USER_ID = "default";
+export type ManualMasteryLevel = "unlearned" | "weak" | "vague" | "almost" | "remembered";
 
 export type WordStats = {
   wordId: number;
@@ -444,6 +446,52 @@ export const storage = {
       storage.addBookmark(wordId);
       return true;
     }
+  },
+
+  // 手動記憶度（学習者が明示的に設定する習得度）
+  getManualMasteryMap: (): Record<number, ManualMasteryLevel> => {
+    if (typeof window === "undefined") return {};
+    try {
+      const raw = localStorage.getItem(MANUAL_MASTERY_KEY);
+      if (!raw) return {};
+      const parsed = JSON.parse(raw) as Record<string, unknown>;
+      const next: Record<number, ManualMasteryLevel> = {};
+      for (const [k, v] of Object.entries(parsed)) {
+        const id = Number(k);
+        if (Number.isNaN(id)) continue;
+        // 旧データ互換: learning/familiar/mastered を新しい4段階へ移行
+        if (v === "learning") {
+          next[id] = "weak";
+          continue;
+        }
+        if (v === "familiar") {
+          next[id] = "almost";
+          continue;
+        }
+        if (v === "mastered") {
+          next[id] = "remembered";
+          continue;
+        }
+        if (v === "unlearned" || v === "weak" || v === "vague" || v === "almost" || v === "remembered") {
+          next[id] = v;
+        }
+      }
+      return next;
+    } catch {
+      return {};
+    }
+  },
+
+  getManualMastery: (wordId: number): ManualMasteryLevel | null => {
+    const map = storage.getManualMasteryMap();
+    return map[wordId] ?? null;
+  },
+
+  setManualMastery: (wordId: number, mastery: ManualMasteryLevel): void => {
+    if (typeof window === "undefined") return;
+    const map = storage.getManualMasteryMap();
+    map[wordId] = mastery;
+    localStorage.setItem(MANUAL_MASTERY_KEY, JSON.stringify(map));
   },
 
   // === SRS（間隔反復学習）===

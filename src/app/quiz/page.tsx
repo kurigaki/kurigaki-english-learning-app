@@ -10,6 +10,8 @@ import { unifiedStorage } from "@/lib/unified-storage";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, QuestionTypeRatios, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
+import type { ManualMasteryLevel } from "@/lib/storage";
+import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import { AchievementUnlockPopup } from "@/components/features/achievements/AchievementUnlockPopup";
 import { PerfectScorePopup } from "@/components/features/quiz";
 import { speakWord, speakSentence, isSpeechSynthesisSupported } from "@/lib/audio";
@@ -750,6 +752,9 @@ export default function QuizPage() {
   const [maxCombo, setMaxCombo] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [showTranslation, setShowTranslation] = useState(false);
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [wordStatsById, setWordStatsById] = useState<Map<number, { accuracy: number | null; attempts: number }>>(new Map());
+  const [manualMasteryById, setManualMasteryById] = useState<Record<number, ManualMasteryLevel>>({});
   const [answeredWords, setAnsweredWords] = useState<AnsweredWord[]>([]);
   const [sessionResult, setSessionResult] = useState<SessionResult | null>(null);
   const [showingAchievement, setShowingAchievement] = useState<Achievement | null>(null);
@@ -766,6 +771,8 @@ export default function QuizPage() {
 
   // 回答開始時刻を記録（SRS quality計算用）
   const questionStartTimeRef = useRef<number>(Date.now());
+  // セッション開始時刻（結果画面の解答時間表示用）
+  const sessionStartTimeRef = useRef<number>(Date.now());
 
   // 初期データをロード
   useEffect(() => {
@@ -865,6 +872,8 @@ export default function QuizPage() {
         setShowingAchievement(newAchievements[0]);
       }
 
+      const finishedElapsedSeconds = Math.max(1, Math.round((Date.now() - sessionStartTimeRef.current) / 1000));
+      setElapsedSeconds(finishedElapsedSeconds);
       setSessionResult(sessionResult);
       setIsFinished(true);
       setPhase("result");
@@ -928,6 +937,7 @@ export default function QuizPage() {
       setScore(savedState.score);
       setMaxCombo(savedState.maxCombo);
       setAnsweredWords(savedState.answeredWords);
+      setElapsedSeconds(savedState.elapsedSeconds ?? 0);
       setSessionResult(savedState.sessionResult);
       setIsFinished(true);
       setIsRestoredFromSession(true);
@@ -944,11 +954,38 @@ export default function QuizPage() {
         score,
         totalQuestions: answeredWords.length,
         maxCombo,
+        elapsedSeconds,
         answeredWords,
         sessionResult,
       });
     }
-  }, [isFinished, isRestoredFromSession, score, maxCombo, answeredWords, sessionResult]);
+  }, [isFinished, isRestoredFromSession, score, maxCombo, elapsedSeconds, answeredWords, sessionResult]);
+
+  // リザルト画面表示時に「正答率」と「手動記憶度」を読み込む
+  useEffect(() => {
+    if ((phase !== "result" && !isFinished) || answeredWords.length === 0) return;
+    let active = true;
+    (async () => {
+      const [statsMap, manualMap] = await Promise.all([
+        unifiedStorage.getWordStats(),
+        unifiedStorage.getManualMasteryMap(),
+      ]);
+      if (!active) return;
+      const reduced = new Map<number, { accuracy: number | null; attempts: number }>();
+      answeredWords.forEach((w) => {
+        const s = statsMap.get(w.id);
+        reduced.set(w.id, {
+          accuracy: s?.accuracy ?? null,
+          attempts: s?.totalAttempts ?? 0,
+        });
+      });
+      setWordStatsById(reduced);
+      setManualMasteryById(manualMap);
+    })();
+    return () => {
+      active = false;
+    };
+  }, [phase, isFinished, answeredWords]);
 
   // 問題出題時の自動読み上げ
   // 問題切り替え時に回答開始時刻をリセット（SRS quality計算用）
@@ -1079,12 +1116,50 @@ export default function QuizPage() {
     dictationInputRefs.current = [];
     setSessionResult(null);
     setAnsweredWords([]);
+    setElapsedSeconds(0);
     setIsRestoredFromSession(false);
     setShowTranslation(false);
     setShowPerfectScore(false);
+    sessionStartTimeRef.current = Date.now();
     // 自動再生済みの記録をリセット
     hasAutoPlayedRef.current = new Set();
   }, [bookmarkedIds, weakWordIds, studiedWordIds, srsWordIds]);
+
+  /**
+   * 指定された単語IDリストで再チャレンジセッションを開始する。
+   * リザルト画面の「同じ10問」「間違えた問題だけ」に使用。
+   */
+  const startRetrySessionWithWordIds = useCallback((wordIds: number[]) => {
+    const ratios = quizSettings.typeRatios ?? defaultTypeRatios;
+    const retryWords = wordIds
+      .map((id) => words.find((w) => w.id === id))
+      .filter((w): w is Word => !!w);
+
+    if (retryWords.length === 0) return;
+
+    clearQuizResultState();
+
+    const retryQuestions = retryWords.map((w) => generateQuestion(w, words, ratios));
+    setQuestions(retryQuestions);
+    setPhase("quiz");
+    setCurrentIndex(0);
+    setScore(0);
+    setCombo(0);
+    setMaxCombo(0);
+    setIsFinished(false);
+    setSelected(null);
+    setIsCorrect(null);
+    setDictationInputs([]);
+    dictationInputRefs.current = [];
+    setSessionResult(null);
+    setAnsweredWords([]);
+    setElapsedSeconds(0);
+    setIsRestoredFromSession(false);
+    setShowTranslation(false);
+    setShowPerfectScore(false);
+    sessionStartTimeRef.current = Date.now();
+    hasAutoPlayedRef.current = new Set();
+  }, [quizSettings.typeRatios]);
 
   // 初回ロード時：URLパラメータまたは保存状態に基づいて処理
   useEffect(() => {
@@ -1542,6 +1617,26 @@ export default function QuizPage() {
   if (phase === "result" || isFinished) {
     const totalQuestions = answeredWords.length || questions.length;
     const percentage = Math.round((score / totalQuestions) * 100);
+    const sameQuestionIds = answeredWords.map((w) => w.id);
+    const wrongQuestionIds = answeredWords.filter((w) => !w.correct).map((w) => w.id);
+    const getDisplayedMastery = (wordId: number): ManualMasteryLevel => {
+      const manual = manualMasteryById[wordId];
+      const stats = wordStatsById.get(wordId);
+      const attempts = stats?.attempts ?? 0;
+      if (manual && !(manual === "unlearned" && attempts > 0)) return manual;
+      const accuracy = stats?.accuracy ?? 0;
+      if (attempts === 0) return "unlearned";
+      if (accuracy < 34) return "weak";
+      if (accuracy < 67) return "vague";
+      if (accuracy < 100) return "almost";
+      return "remembered";
+    };
+
+    const handleManualMasteryChange = async (wordId: number, mastery: ManualMasteryLevel) => {
+      setManualMasteryById((prev) => ({ ...prev, [wordId]: mastery }));
+      await unifiedStorage.setManualMastery(wordId, mastery);
+    };
+
     const getMessage = () => {
       if (percentage === 100) return { emoji: "🎉", text: "パーフェクト!" };
       if (percentage >= 80) return { emoji: "🌟", text: "素晴らしい!" };
@@ -1604,6 +1699,9 @@ export default function QuizPage() {
                     {score} / {totalQuestions}
                   </div>
                   <p className="text-slate-600 dark:text-slate-300 text-xs">正答率 {percentage}%</p>
+                  {elapsedSeconds > 0 && (
+                    <p className="text-slate-500 dark:text-slate-400 text-[11px] mt-0.5">解答時間 {elapsedSeconds}秒</p>
+                  )}
                 </div>
                 {maxCombo >= 3 && (
                   <div className="text-center border-l border-slate-200 dark:border-slate-700 pl-3">
@@ -1679,40 +1777,68 @@ export default function QuizPage() {
                 </p>
                 <div className="space-y-1.5">
                   {answeredWords.map((word) => (
-                    <Link
+                    <div
                       key={`${word.id}-${word.word}`}
-                      href={`/word/${word.id}?from=quiz`}
-                      onClick={() => saveWordNavState(answeredWords.map((w) => w.id), "quiz")}
-                      className={`flex items-center justify-between p-1.5 rounded-lg border transition-all hover:scale-[1.02] group ${
+                      className={`flex items-center gap-2 p-1.5 rounded-lg border ${
                         word.correct
                           ? "bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800/40"
                           : "bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border-red-200 dark:border-red-800/40"
                       }`}
                     >
-                      <div className="flex items-center gap-1.5">
-                        <div
-                          className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
-                            word.correct
-                              ? "bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400"
-                              : "bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400"
-                          }`}
+                      <Link
+                        href={`/word/${word.id}?from=quiz`}
+                        onClick={() => saveWordNavState(answeredWords.map((w) => w.id), "quiz")}
+                        className="flex items-center justify-between flex-1 min-w-0 transition-all hover:scale-[1.01] group"
+                      >
+                        <div className="flex items-center gap-1.5 min-w-0">
+                          <div
+                            className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold ${
+                              word.correct
+                                ? "bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400"
+                                : "bg-red-100 dark:bg-red-900/40 text-red-600 dark:text-red-400"
+                            }`}
+                          >
+                            {word.correct ? "✓" : "✗"}
+                          </div>
+                          <SpeakButton text={word.word} size="sm" />
+                          <div className="text-left min-w-0">
+                            <p className="font-bold text-gray-900 dark:text-gray-100 text-xs group-hover:text-primary-600 transition-colors truncate">
+                              {word.word}
+                            </p>
+                            <p className="text-[10px] text-gray-500 dark:text-gray-400 truncate">{word.meaning}</p>
+                          </div>
+                        </div>
+                        <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </Link>
+                      <div className="w-[140px] flex-shrink-0">
+                        <div className="flex items-center gap-1">
+                          <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                            正答率 {wordStatsById.get(word.id)?.accuracy !== null && wordStatsById.get(word.id)?.accuracy !== undefined
+                              ? `${wordStatsById.get(word.id)?.accuracy}%`
+                              : "-"}
+                          </span>
+                        <select
+                          value={getDisplayedMastery(word.id)}
+                          onChange={(e) =>
+                            handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)
+                          }
+                          className="w-full min-w-0 text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
                         >
-                          {word.correct ? "✓" : "✗"}
-                        </div>
-                        <SpeakButton text={word.word} size="sm" />
-                        <div className="text-left">
-                          <p className="font-bold text-gray-900 dark:text-gray-100 text-xs group-hover:text-primary-600 transition-colors">
-                            {word.word}
-                          </p>
-                          <p className="text-[10px] text-gray-500 dark:text-gray-400">{word.meaning}</p>
+                          {MANUAL_MASTERY_OPTIONS_ORDERED
+                            .filter((opt) => (wordStatsById.get(word.id)?.attempts ?? 0) === 0 || opt.key !== "unlearned")
+                            .map((opt) => (
+                            <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                              {opt.label}
+                            </option>
+                          ))}
+                        </select>
                         </div>
                       </div>
-                      <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
-                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </div>
-                    </Link>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -1721,20 +1847,51 @@ export default function QuizPage() {
 
           {/* 下部固定: アクションボタン */}
           <div className="flex-shrink-0 space-y-1.5">
-            <Button fullWidth onClick={() => startNewSession(quizSettings)}>
-              同じ設定でもう1セット
+            <Button
+              fullWidth
+              onClick={() => startRetrySessionWithWordIds(sameQuestionIds)}
+              disabled={sameQuestionIds.length === 0}
+            >
+              同じ{sameQuestionIds.length}問に再チャレンジ
             </Button>
-            <Button variant="secondary" fullWidth onClick={() => {
-              clearQuizResultState();
-              setPhase("setup");
-            }}>
-              設定を変更して挑戦
+            <Button
+              fullWidth
+              variant="secondary"
+              onClick={() => startRetrySessionWithWordIds(wrongQuestionIds)}
+              disabled={wrongQuestionIds.length === 0}
+            >
+              間違えた問題を復習
+              {wrongQuestionIds.length > 0 ? `（${wrongQuestionIds.length}問）` : ""}
             </Button>
-            <Link href="/" className="block">
-              <Button variant="ghost" fullWidth onClick={() => clearQuizResultState()}>
-                ホームに戻る
+            <div className="grid grid-cols-3 gap-1.5">
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  clearQuizResultState();
+                  setPhase("setup");
+                }}
+                className="!px-1 !bg-amber-100 !text-amber-800 !border-amber-300 hover:!bg-amber-200 dark:!bg-amber-900/30 dark:!text-amber-200 dark:!border-amber-700"
+              >
+                設定変更
               </Button>
-            </Link>
+              <Link href="/" className="block">
+                <Button
+                  variant="secondary"
+                  fullWidth
+                  onClick={() => clearQuizResultState()}
+                  className="!px-1 !bg-slate-100 !text-slate-700 !border-slate-300 hover:!bg-slate-200 dark:!bg-slate-700 dark:!text-slate-100 dark:!border-slate-500"
+                >
+                  ホーム
+                </Button>
+              </Link>
+              <Button
+                variant="secondary"
+                onClick={() => startNewSession(quizSettings)}
+                className="!px-1 !bg-emerald-100 !text-emerald-800 !border-emerald-300 hover:!bg-emerald-200 dark:!bg-emerald-900/30 dark:!text-emerald-200 dark:!border-emerald-700"
+              >
+                同設定で再挑戦
+              </Button>
+            </div>
           </div>
         </div>
 

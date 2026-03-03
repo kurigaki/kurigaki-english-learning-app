@@ -1,50 +1,54 @@
 "use client";
 
-import { getMasteryLevel } from "@/types";
-import type { MasteryLevel } from "@/types";
+import type { ManualMasteryLevel } from "@/lib/storage";
+import { memoryLevelBarClass, memoryLevelLabels, getAutoMemoryLevel } from "@/lib/memory-level";
 
 type WordMasteryProps = {
   accuracy: number | null; // 0-100 or null if not studied
   totalAttempts: number;
+  manualLevel?: ManualMasteryLevel | null;
 };
 
-const MASTERY_CONFIG: Record<MasteryLevel, { label: string; emoji: string; color: string; bgColor: string }> = {
-  new: {
-    label: "未学習",
-    emoji: "🆕",
-    color: "text-slate-500 dark:text-slate-400",
-    bgColor: "bg-slate-100 dark:bg-slate-700",
-  },
-  learning: {
-    label: "学習中",
-    emoji: "📖",
-    color: "text-orange-600 dark:text-orange-400",
-    bgColor: "bg-orange-100 dark:bg-orange-900/40",
-  },
-  familiar: {
-    label: "習得中",
-    emoji: "📝",
-    color: "text-blue-600 dark:text-blue-400",
-    bgColor: "bg-blue-100 dark:bg-blue-900/40",
-  },
-  mastered: {
-    label: "習得済み",
-    emoji: "✅",
-    color: "text-green-600 dark:text-green-400",
-    bgColor: "bg-green-100 dark:bg-green-900/40",
-  },
+const MASTERY_EMOJI: Record<ManualMasteryLevel, string> = {
+  unlearned: "🆕",
+  weak: "📖",
+  vague: "📝",
+  almost: "💡",
+  remembered: "✅",
 };
 
-export const WordMastery = ({ accuracy, totalAttempts }: WordMasteryProps) => {
-  const level = getMasteryLevel(accuracy, totalAttempts);
-  const config = MASTERY_CONFIG[level];
+// 静的定義（Tailwind が本番ビルドで正しくスキャンできるよう完全なクラス名で記述）
+const MASTERY_TEXT_COLOR: Record<ManualMasteryLevel, string> = {
+  unlearned: "text-slate-500 dark:text-slate-400",
+  weak:      "text-red-600 dark:text-red-400",
+  vague:     "text-yellow-500 dark:text-yellow-400",
+  almost:    "text-lime-600 dark:text-lime-400",
+  remembered:"text-cyan-600 dark:text-cyan-400",
+};
+
+// 記憶度バーの幅（%）: remembered=100%, almost=67%, vague=34%, weak=5%, unlearned=0%
+const MASTERY_BAR_WIDTH: Record<ManualMasteryLevel, number> = {
+  unlearned: 0,
+  weak: 5,
+  vague: 34,
+  almost: 67,
+  remembered: 100,
+};
+
+export const WordMastery = ({ accuracy, totalAttempts, manualLevel = null }: WordMasteryProps) => {
+  const level: ManualMasteryLevel =
+    manualLevel ?? getAutoMemoryLevel(accuracy, totalAttempts);
+  const emoji = MASTERY_EMOJI[level];
+  const textColorClass = MASTERY_TEXT_COLOR[level];
+  const barColorClass = memoryLevelBarClass[level];
+  const barWidth = totalAttempts > 0 ? MASTERY_BAR_WIDTH[level] : 0;
 
   return (
     <div className="flex items-center justify-between py-4 border-b border-slate-100 dark:border-slate-700">
       <div className="flex items-center gap-3">
-        <span className="text-2xl emoji-icon">{config.emoji}</span>
+        <span className="text-2xl emoji-icon">{emoji}</span>
         <div>
-          <p className={`font-bold ${config.color}`}>{config.label}</p>
+          <p className={`font-bold ${textColorClass}`}>{memoryLevelLabels[level]}</p>
           <p className="text-xs text-slate-400 dark:text-slate-500">
             {totalAttempts > 0 ? `${totalAttempts}回学習 / 正答率${accuracy ?? 0}%` : "まだ学習していません"}
           </p>
@@ -55,8 +59,8 @@ export const WordMastery = ({ accuracy, totalAttempts }: WordMasteryProps) => {
         <div className="w-24">
           <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
             <div
-              className={`h-full ${level === "mastered" ? "bg-green-500" : level === "familiar" ? "bg-blue-500" : "bg-orange-500"}`}
-              style={{ width: `${accuracy ?? 0}%` }}
+              className={`h-full ${barColorClass} transition-all duration-500`}
+              style={{ width: `${barWidth}%` }}
             />
           </div>
         </div>
