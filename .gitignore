@@ -11,6 +11,8 @@
 
 # next.js
 /.next/
+/.next-build/
+/.next-dev/
 /out/
 
 # production
@@ -39,6 +41,7 @@ next-env.d.ts
 .mcp.json
 .serena/
 .claude/settings.local.json
+.claude/worktrees/
 
 # IDE
 .idea/
