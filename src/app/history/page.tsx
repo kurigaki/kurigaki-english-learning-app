@@ -6,13 +6,19 @@ import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { saveHistoryTab, getAndClearHistoryTab } from "@/lib/navigation-state";
 import { saveWordNavState } from "@/lib/word-nav-state";
-import type { WordStats } from "@/lib/storage";
+import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 import { LearningRecord, Achievement, isWeakWord } from "@/types";
 import { words, getWordsByCourse } from "@/data/words/compat";
 import type { Course } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { getAchievementById } from "@/data/achievements";
 import { Card, StatsCard, Button, SpeakButton } from "@/components/ui";
+import {
+  resolveMemoryLevel,
+  memoryLevelLabels,
+  memoryLevelBarClass,
+} from "@/lib/memory-level";
+import { MANUAL_MASTERY_OPTIONS_ORDERED, getDisplayedManualMastery } from "@/lib/manual-mastery";
 
 // レガシーの "fill-blank" も表示できるように string インデックスで定義
 const questionTypeLabels: Record<string, string> = {
@@ -23,11 +29,19 @@ const questionTypeLabels: Record<string, string> = {
   "dictation": "書き取り",
 };
 
+const DISPLAY_MEMORY_LEVEL_ORDER = [
+  "remembered",
+  "almost",
+  "vague",
+  "weak",
+  "unlearned",
+] as const;
+
 type CourseProgress = {
   course: Course;
   name: string;
   totalWords: number;
-  masteredWords: number;
+  memoryCounts: Record<"unlearned" | "weak" | "vague" | "almost" | "remembered", number>;
 };
 
 const formatDate = (isoString: string): string => {
@@ -45,6 +59,7 @@ export default function HistoryPage() {
   const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
   const [records, setRecords] = useState<LearningRecord[]>([]);
   const [wordStats, setWordStats] = useState<Map<number, WordStats>>(new Map());
+  const [manualMemoryById, setManualMemoryById] = useState<Record<number, ManualMasteryLevel>>({});
   const [courseProgressList, setCourseProgressList] = useState<CourseProgress[]>([]);
   const [recentAchievements, setRecentAchievements] = useState<(Achievement & { unlockedAt: string })[]>([]);
   const [speedHighScore, setSpeedHighScore] = useState(0);
@@ -52,10 +67,14 @@ export default function HistoryPage() {
   const [activeTab, setActiveTab] = useState<"overview" | "weak" | "history" | "progress">("overview");
 
   const loadData = useCallback(async () => {
-    const data = await unifiedStorage.getRecords();
+    const [data, statsMap, manualMap] = await Promise.all([
+      unifiedStorage.getRecords(),
+      unifiedStorage.getWordStats(),
+      unifiedStorage.getManualMasteryMap(),
+    ]);
     setRecords([...data].reverse());
-    const statsMap = await unifiedStorage.getWordStats();
     setWordStats(statsMap);
+    setManualMemoryById(manualMap);
 
     const highScore = await unifiedStorage.getSpeedChallengeHighScore();
     setSpeedHighScore(highScore);
@@ -75,18 +94,22 @@ export default function HistoryPage() {
       .filter((c) => COURSE_DEFINITIONS[c].stages.length > 0)
       .map((c) => {
         const courseWords = getWordsByCourse(c);
-        let masteredWords = 0;
+        const memoryCounts: Record<"unlearned" | "weak" | "vague" | "almost" | "remembered", number> = {
+          unlearned: 0,
+          weak: 0,
+          vague: 0,
+          almost: 0,
+          remembered: 0,
+        };
         for (const w of courseWords) {
-          const s = statsMap.get(w.id);
-          if (s && s.totalAttempts >= 3 && s.accuracy >= 80) {
-            masteredWords++;
-          }
+          const level = resolveMemoryLevel(w.id, statsMap, manualMap);
+          memoryCounts[level]++;
         }
         return {
           course: c,
           name: COURSE_DEFINITIONS[c].name,
           totalWords: courseWords.length,
-          masteredWords,
+          memoryCounts,
         };
       });
     setCourseProgressList(progressList);
@@ -169,13 +192,37 @@ export default function HistoryPage() {
     return weak.sort((a, b) => a.accuracy - b.accuracy);
   }, [wordStats]);
 
-  const totalMastered = courseProgressList.reduce((sum, cp) => sum + cp.masteredWords, 0);
+  const totalRemembered = courseProgressList.reduce((sum, cp) => sum + cp.memoryCounts.remembered, 0);
   const totalWordsInCourses = courseProgressList.reduce((sum, cp) => sum + cp.totalWords, 0);
+
+  const overallMemoryCounts = useMemo(() => {
+    const counts: Record<"unlearned" | "weak" | "vague" | "almost" | "remembered", number> = {
+      unlearned: 0,
+      weak: 0,
+      vague: 0,
+      almost: 0,
+      remembered: 0,
+    };
+    for (const w of words) {
+      const level = resolveMemoryLevel(w.id, wordStats, manualMemoryById);
+      counts[level]++;
+    }
+    return counts;
+  }, [wordStats, manualMemoryById]);
 
   // 履歴の単語IDを取得するヘルパー関数
   const getWordIdByWord = (wordStr: string): number | null => {
     const found = words.find((w) => w.word === wordStr);
     return found ? found.id : null;
+  };
+
+  const getDisplayedMastery = useCallback((wordId: number): ManualMasteryLevel => (
+    getDisplayedManualMastery(wordId, wordStats, manualMemoryById)
+  ), [wordStats, manualMemoryById]);
+
+  const handleManualMasteryChange = async (wordId: number, mastery: ManualMasteryLevel) => {
+    setManualMemoryById((prev) => ({ ...prev, [wordId]: mastery }));
+    await unifiedStorage.setManualMastery(wordId, mastery);
   };
 
   if (!isMounted) {
@@ -271,18 +318,43 @@ export default function HistoryPage() {
               {/* Progress Bar */}
               <div className="mt-2">
                 <div className="flex justify-between text-sm text-slate-600 dark:text-slate-300 mb-2">
-                  <span>学習進捗</span>
-                  <span>{overallStats.uniqueWords} / {overallStats.totalWords} 単語</span>
+                  <span>記憶度</span>
+                  <span>{overallStats.totalWords}語</span>
                 </div>
                 <div className="h-3 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full transition-all duration-500"
-                    style={{ width: `${(overallStats.uniqueWords / overallStats.totalWords) * 100}%` }}
-                  />
+                  <div className="h-full w-full flex">
+                    {DISPLAY_MEMORY_LEVEL_ORDER.map((level) => (
+                      <div
+                        key={`overall-${level}`}
+                        className={`${memoryLevelBarClass[level]} h-full transition-all duration-500`}
+                        style={{ width: `${(overallMemoryCounts[level] / overallStats.totalWords) * 100}%` }}
+                        title={`${memoryLevelLabels[level]}: ${overallMemoryCounts[level]}語`}
+                      />
+                    ))}
+                  </div>
                 </div>
-                <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">
-                  {Math.round((overallStats.uniqueWords / overallStats.totalWords) * 100)}% の単語を学習済み
-                </p>
+                <div className="mt-2 grid grid-cols-2 gap-1">
+                  {DISPLAY_MEMORY_LEVEL_ORDER.map((level) => (
+                    <div key={`overall-legend-${level}`} className="flex items-center justify-between text-[11px]">
+                      <span
+                        className={
+                          level === "unlearned"
+                            ? "text-slate-600 dark:text-slate-300"
+                            : level === "weak"
+                            ? "text-red-600 dark:text-red-300"
+                            : level === "vague"
+                              ? "text-yellow-700 dark:text-yellow-300"
+                              : level === "almost"
+                                ? "text-lime-700 dark:text-lime-300"
+                                : "text-cyan-700 dark:text-cyan-300"
+                        }
+                      >
+                        {memoryLevelLabels[level]}
+                      </span>
+                      <span className="text-slate-500 dark:text-slate-400">{overallMemoryCounts[level]}語</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </Card>
 
@@ -324,10 +396,17 @@ export default function HistoryPage() {
         {/* Weak Words Tab */}
         {activeTab === "weak" && (
           <Card>
-            <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 mb-4 flex items-center gap-2">
-              <span className="emoji-icon">💪</span>
-              <span>苦手単語 ({weakWords.length}語)</span>
-            </h2>
+            <div className="mb-4 flex items-center justify-between gap-2">
+              <h2 className="text-lg font-bold text-slate-700 dark:text-slate-200 flex items-center gap-2">
+                <span className="emoji-icon">💪</span>
+                <span>苦手単語 ({weakWords.length}語)</span>
+              </h2>
+              {weakWords.length > 0 && (
+                <Link href="/quiz?weakOnly=true">
+                  <Button size="sm">苦手単語を復習する</Button>
+                </Link>
+              )}
+            </div>
             {weakWords.length === 0 ? (
               <div className="text-center py-8">
                 <span className="text-5xl mb-4 block emoji-icon">🎉</span>
@@ -337,33 +416,50 @@ export default function HistoryPage() {
             ) : (
               <div className="space-y-3">
                 {weakWords.map((word) => (
-                  <Link
+                  <div
                     key={word.id}
-                    href={`/word/${word.id}?from=history`}
-                    onClick={() => { saveHistoryTab(activeTab); saveWordNavState(weakWords.map((w) => w.id), "history"); }}
-                    className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors group"
+                    className="flex items-center gap-2 p-2 rounded-lg border bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700"
                   >
-                    <div className="flex items-center gap-3">
-                      <SpeakButton text={word.word} size="sm" />
-                      <div>
-                        <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors">{word.word}</p>
-                        <p className="text-sm text-slate-500 dark:text-slate-400">{word.meaning}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="text-right">
-                        <p className={`font-bold ${word.accuracy < 50 ? "text-error-500" : "text-accent-500"}`}>
-                          {word.accuracy}%
-                        </p>
-                        <p className="text-xs text-slate-400 dark:text-slate-500">{word.attempts}回挑戦</p>
+                    <Link
+                      href={`/word/${word.id}?from=history`}
+                      onClick={() => { saveHistoryTab(activeTab); saveWordNavState(weakWords.map((w) => w.id), "history"); }}
+                      className="flex items-center justify-between flex-1 min-w-0 transition-all hover:scale-[1.01] group"
+                    >
+                      <div className="flex items-center gap-2 min-w-0">
+                        <SpeakButton text={word.word} size="sm" />
+                        <div className="min-w-0">
+                          <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate">{word.word}</p>
+                          <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+                          <p className="text-[10px] text-slate-400 dark:text-slate-500">{word.attempts}回挑戦</p>
+                        </div>
                       </div>
                       <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </div>
+                    </Link>
+                    <div className="w-[160px] flex-shrink-0">
+                      <div className="flex items-center gap-1 justify-end">
+                        <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                          正答率 {word.accuracy}%
+                        </span>
+                        <select
+                          value={getDisplayedMastery(word.id)}
+                          onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
+                          className="min-w-0 text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                        >
+                          {MANUAL_MASTERY_OPTIONS_ORDERED
+                            .filter((opt) => word.attempts === 0 || opt.key !== "unlearned")
+                            .map((opt) => (
+                              <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                                {opt.label}
+                              </option>
+                            ))}
+                        </select>
+                      </div>
                     </div>
-                  </Link>
+                  </div>
                 ))}
                 <div className="pt-4 text-center">
                   <Link href="/quiz?weakOnly=true">
@@ -397,69 +493,111 @@ export default function HistoryPage() {
                 <div className="divide-y divide-primary-50 dark:divide-slate-700">
                   {records.slice(0, 50).map((record) => {
                     const wordId = getWordIdByWord(record.word);
-                    const content = (
-                      <>
-                        <div className="flex items-center gap-2">
-                          <div
-                            className={`
-                              w-8 h-8 rounded-lg flex items-center justify-center text-sm
-                              ${record.correct
-                                ? "bg-success-100 text-success-500"
-                                : "bg-error-100 text-error-500"
-                              }
-                            `}
-                          >
-                            {record.correct ? "✓" : "✗"}
+                    const stats = wordId ? wordStats.get(wordId) : null;
+                    if (!wordId) {
+                      return (
+                        <div key={record.id} className="p-2.5 flex items-center justify-between">
+                          <div className="flex items-center gap-2 min-w-0">
+                            <div
+                              className={`
+                                w-8 h-8 rounded-lg flex items-center justify-center text-sm
+                                ${record.correct
+                                  ? "bg-success-100 text-success-500"
+                                  : "bg-error-100 text-error-500"
+                                }
+                              `}
+                            >
+                              {record.correct ? "✓" : "✗"}
+                            </div>
+                            <SpeakButton text={record.word} size="sm" />
+                            <div className="min-w-0">
+                              <p className="font-bold text-sm text-slate-800 dark:text-slate-100 truncate">{record.word}</p>
+                              <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{record.meaning}</p>
+                            </div>
                           </div>
-                          <SpeakButton text={record.word} size="sm" />
-                          <div className="flex-1 min-w-0">
-                            <p className="font-bold text-sm text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate">{record.word}</p>
-                            <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{record.meaning}</p>
+                          <div className="flex items-center gap-2">
+                            {record.questionType && (
+                              <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded">
+                                {questionTypeLabels[record.questionType]}
+                              </span>
+                            )}
+                            <span className="text-xs text-slate-400 dark:text-slate-500">
+                              {formatDate(record.studiedAt)}
+                            </span>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          {record.questionType && (
-                            <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded">
-                              {questionTypeLabels[record.questionType]}
+                      );
+                    }
+
+                    return (
+                      <div key={record.id} className="p-2.5 flex items-center gap-2">
+                        <Link
+                          href={`/word/${wordId}?from=history`}
+                          onClick={() => {
+                            saveHistoryTab(activeTab);
+                            const historyWordIds = Array.from(new Set(
+                              records.slice(0, 50)
+                                .map((r) => getWordIdByWord(r.word))
+                                .filter((id): id is number => id !== null)
+                            ));
+                            saveWordNavState(historyWordIds, "history");
+                          }}
+                          className="flex items-center justify-between flex-1 min-w-0 hover:text-primary-600 transition-colors group"
+                        >
+                          <div className="flex items-center gap-2 min-w-0">
+                            <div
+                              className={`
+                                w-8 h-8 rounded-lg flex items-center justify-center text-sm
+                                ${record.correct
+                                  ? "bg-success-100 text-success-500"
+                                  : "bg-error-100 text-error-500"
+                                }
+                              `}
+                            >
+                              {record.correct ? "✓" : "✗"}
+                            </div>
+                            <SpeakButton text={record.word} size="sm" />
+                            <div className="min-w-0">
+                              <p className="font-bold text-sm text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate">{record.word}</p>
+                              <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{record.meaning}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            {record.questionType && (
+                              <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded">
+                                {questionTypeLabels[record.questionType]}
+                              </span>
+                            )}
+                            <span className="text-xs text-slate-400 dark:text-slate-500">
+                              {formatDate(record.studiedAt)}
                             </span>
-                          )}
-                          <span className="text-xs text-slate-400 dark:text-slate-500">
-                            {formatDate(record.studiedAt)}
-                          </span>
-                          {wordId && (
                             <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                               </svg>
                             </div>
-                          )}
+                          </div>
+                        </Link>
+                        <div className="w-[160px] flex-shrink-0">
+                          <div className="flex items-center gap-1 justify-end">
+                            <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                              正答率 {stats?.accuracy !== null && stats?.accuracy !== undefined ? `${stats.accuracy}%` : "-"}
+                            </span>
+                            <select
+                              value={getDisplayedMastery(wordId)}
+                              onChange={(e) => handleManualMasteryChange(wordId, e.target.value as ManualMasteryLevel)}
+                              className="min-w-0 text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                            >
+                              {MANUAL_MASTERY_OPTIONS_ORDERED
+                                .filter((opt) => (stats?.totalAttempts ?? 0) === 0 || opt.key !== "unlearned")
+                                .map((opt) => (
+                                  <option key={`${wordId}-${record.id}-${opt.key}`} value={opt.key}>
+                                    {opt.label}
+                                  </option>
+                                ))}
+                            </select>
+                          </div>
                         </div>
-                      </>
-                    );
-
-                    return wordId ? (
-                      <Link
-                        key={record.id}
-                        href={`/word/${wordId}?from=history`}
-                        onClick={() => {
-                          saveHistoryTab(activeTab);
-                          const historyWordIds = Array.from(new Set(
-                            records.slice(0, 50)
-                              .map((r) => getWordIdByWord(r.word))
-                              .filter((id): id is number => id !== null)
-                          ));
-                          saveWordNavState(historyWordIds, "history");
-                        }}
-                        className="p-2.5 flex items-center justify-between hover:bg-primary-50 dark:hover:bg-primary-900/30 transition-colors group"
-                      >
-                        {content}
-                      </Link>
-                    ) : (
-                      <div
-                        key={record.id}
-                        className="p-2.5 flex items-center justify-between"
-                      >
-                        {content}
                       </div>
                     );
                   })}
@@ -479,30 +617,39 @@ export default function HistoryPage() {
                       <span className="emoji-icon">📚</span>
                       <span className="text-sm font-bold text-slate-700 dark:text-slate-200">コース別進捗</span>
                       <span className="text-xs text-slate-500 dark:text-slate-400">
-                        ({totalMastered}/{totalWordsInCourses}語 習得)
+                        ({totalRemembered}/{totalWordsInCourses}語 覚えた)
                       </span>
                     </div>
                   </div>
                   <div className="px-4 pb-3 pt-2 grid grid-cols-2 gap-2">
                     {courseProgressList.map((cp) => {
-                      const percentage = cp.totalWords > 0
-                        ? Math.round((cp.masteredWords / cp.totalWords) * 100)
-                        : 0;
                       return (
                         <Link
                           key={cp.course}
-                          href={`/word-list?course=${cp.course}&mastery=mastered`}
+                          href={`/word-list?course=${cp.course}`}
                           className="block p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors border border-slate-100 dark:border-slate-700"
                         >
                           <p className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-0.5">{cp.name}</p>
                           <p className="text-[10px] text-slate-500 dark:text-slate-400 mb-1.5">
-                            {cp.masteredWords}/{cp.totalWords}語
+                            {cp.totalWords}語
                           </p>
-                          <div className="h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-gradient-to-r from-primary-400 to-primary-500 rounded-full transition-all duration-500"
-                              style={{ width: `${percentage}%` }}
-                            />
+                          <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                            <div className="h-full w-full flex">
+                              {DISPLAY_MEMORY_LEVEL_ORDER.map((level) => (
+                                <div
+                                  key={`${cp.course}-${level}`}
+                                  className={`${memoryLevelBarClass[level]} h-full transition-all duration-500`}
+                                  style={{ width: `${(cp.memoryCounts[level] / cp.totalWords) * 100}%` }}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                          <div className="mt-1.5 text-[10px] text-slate-500 dark:text-slate-400 flex flex-wrap gap-1">
+                            <span className="text-cyan-700 dark:text-cyan-300">覚えた {cp.memoryCounts.remembered}</span>
+                            <span className="text-lime-700 dark:text-lime-300">ほぼ覚えた {cp.memoryCounts.almost}</span>
+                            <span className="text-yellow-700 dark:text-yellow-300">うろ覚え {cp.memoryCounts.vague}</span>
+                            <span className="text-red-600 dark:text-red-300">苦手 {cp.memoryCounts.weak}</span>
+                            <span className="text-slate-600 dark:text-slate-300">未学習 {cp.memoryCounts.unlearned}</span>
                           </div>
                         </Link>
                       );
