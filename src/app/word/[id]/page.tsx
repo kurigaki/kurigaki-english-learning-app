@@ -19,6 +19,8 @@ import {
 import { unifiedStorage } from "@/lib/unified-storage";
 import { getWordNavState } from "@/lib/word-nav-state";
 import { useEffect, useState } from "react";
+import type { ManualMasteryLevel } from "@/lib/storage";
+import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 
 export default function WordDetailPage() {
   const params = useParams();
@@ -44,6 +46,7 @@ export default function WordDetailPage() {
     accuracy: number | null;
     totalAttempts: number;
   }>({ accuracy: null, totalAttempts: 0 });
+  const [manualMastery, setManualMastery] = useState<ManualMasteryLevel | null>(null);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   const word = words.find((w) => w.id === wordId);
@@ -54,7 +57,10 @@ export default function WordDetailPage() {
   useEffect(() => {
     if (!word) return;
     const loadData = async () => {
-      const statsMap = await unifiedStorage.getWordStats();
+      const [statsMap, manual] = await Promise.all([
+        unifiedStorage.getWordStats(),
+        unifiedStorage.getManualMastery(word.id),
+      ]);
       const stats = statsMap.get(word.id);
       if (stats) {
         setMasteryData({
@@ -62,6 +68,7 @@ export default function WordDetailPage() {
           totalAttempts: stats.totalAttempts,
         });
       }
+      setManualMastery(manual);
       const bookmarked = await unifiedStorage.isWordBookmarked(word.id);
       setIsBookmarked(bookmarked);
     };
@@ -73,6 +80,23 @@ export default function WordDetailPage() {
     if (!word) return;
     const newState = await unifiedStorage.toggleBookmark(word.id);
     setIsBookmarked(newState);
+  };
+
+  const handleManualMasteryChange = async (value: ManualMasteryLevel) => {
+    if (!word) return;
+    setManualMastery(value);
+    await unifiedStorage.setManualMastery(word.id, value);
+  };
+
+  const resolveCurrentMastery = (): ManualMasteryLevel => {
+    if (manualMastery && !(manualMastery === "unlearned" && masteryData.totalAttempts > 0)) {
+      return manualMastery;
+    }
+    if (masteryData.totalAttempts === 0) return "unlearned";
+    if (masteryData.accuracy === null || masteryData.accuracy < 34) return "weak";
+    if (masteryData.accuracy < 67) return "vague";
+    if (masteryData.accuracy < 100) return "almost";
+    return "remembered";
   };
 
   // 戻るボタンの処理
@@ -263,7 +287,24 @@ export default function WordDetailPage() {
             <WordMastery
               accuracy={masteryData.accuracy}
               totalAttempts={masteryData.totalAttempts}
+              manualLevel={resolveCurrentMastery()}
             />
+            <div className="flex items-center justify-between py-3 border-b border-slate-100 dark:border-slate-700">
+              <span className="text-sm font-medium text-slate-600 dark:text-slate-300">記憶度</span>
+              <select
+                value={resolveCurrentMastery()}
+                onChange={(e) => handleManualMasteryChange(e.target.value as ManualMasteryLevel)}
+                className="text-sm px-2 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+              >
+                {MANUAL_MASTERY_OPTIONS_ORDERED
+                  .filter((opt) => masteryData.totalAttempts === 0 || opt.key !== "unlearned")
+                  .map((opt) => (
+                  <option key={opt.key} value={opt.key}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+            </div>
 
             {/* 例文 */}
             {examples.length > 0 && (

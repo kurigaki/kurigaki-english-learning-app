@@ -27,6 +27,7 @@ export type QuizResultState = {
   score: number;
   totalQuestions: number;
   maxCombo: number;
+  elapsedSeconds?: number;
   answeredWords: AnsweredWord[];
   sessionResult: SessionResult | null;
   timestamp: number; // 有効期限チェック用
