@@ -7,3 +7,4 @@ export { WordImage } from "./WordImage";
 export { WordPlaceholderSection } from "./WordPlaceholderSection";
 export { WordSynonymDiff } from "./WordSynonymDiff";
 export { WordText } from "./WordText";
+export { WordQuizHistory } from "./WordQuizHistory";
