@@ -32,6 +32,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 // アップデート履歴（新しい順）
 export const APP_UPDATES: AppUpdate[] = [
   {
+    date: "2026-03-05",
+    version: "1.25.0",
+    title: "単語詳細にクイズ履歴表示を追加・コード品質改善",
+    content: [
+      "単語詳細画面に「最近のクイズ履歴」セクションを追加しました。各問題タイプ（英→日/日→英/リスニング/書き取り）ごとの正誤と日付を確認できます",
+      "過去5件を表示し「もっと見る」で全件表示できます",
+      "クイズ・ホーム・単語詳細の各画面でロジックをカスタムフック（useQuiz / useHomeData / useWordDetail）に分離し、コードの保守性を向上しました",
+    ],
+    category: "feature",
+  },
+  {
     date: "2026-03-04",
     version: "1.24.0",
     title: "記憶度UI全画面統一・クイズリザルト強化・単語帳フィルタ改善",
