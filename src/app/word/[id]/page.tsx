@@ -1,10 +1,7 @@
 "use client";
 
-import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { words, categoryLabels, difficultyLabels } from "@/data/words/compat";
-import { allWords } from "@/data/words";
-import { getWordExtension } from "@/data/word-extensions";
+import { categoryLabels, difficultyLabels } from "@/data/words/compat";
 import { Card, Button } from "@/components/ui";
 import {
   WordHeader,
@@ -15,143 +12,31 @@ import {
   WordImage,
   WordPlaceholderSection,
   WordSynonymDiff,
+  WordQuizHistory,
 } from "@/components/features/word-detail";
-import { unifiedStorage } from "@/lib/unified-storage";
-import { getWordNavState } from "@/lib/word-nav-state";
-import { useEffect, useState } from "react";
 import type { ManualMasteryLevel } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
+import { useWordDetail } from "@/lib/hooks/useWordDetail";
 
 export default function WordDetailPage() {
-  const params = useParams();
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const wordId = Number(params.id);
-
-  // 遷移元を取得（quiz, history, weak-words など）
-  const fromPage = searchParams.get("from");
-
-  // 前後ナビゲーション状態（sessionStorage から取得）
-  // useState 遅延初期化でマウント時に一度だけ読み込む（← → で遷移すると新規マウントになるため）
-  const [navState] = useState(() => getWordNavState());
-  const currentNavIndex = navState ? navState.wordIds.indexOf(wordId) : -1;
-  const prevNavWordId =
-    navState && currentNavIndex > 0 ? navState.wordIds[currentNavIndex - 1] : null;
-  const nextNavWordId =
-    navState && currentNavIndex >= 0 && currentNavIndex < navState.wordIds.length - 1
-      ? navState.wordIds[currentNavIndex + 1]
-      : null;
-
-  const [masteryData, setMasteryData] = useState<{
-    accuracy: number | null;
-    totalAttempts: number;
-  }>({ accuracy: null, totalAttempts: 0 });
-  const [manualMastery, setManualMastery] = useState<ManualMasteryLevel | null>(null);
-  const [isBookmarked, setIsBookmarked] = useState(false);
-
-  const word = words.find((w) => w.id === wordId);
-  const internalWord = allWords.find((w) => w.id === wordId);
-  const wordExt = internalWord ? getWordExtension(internalWord) : undefined;
-
-  // 学習履歴から記憶度を計算し、ブックマーク状態を取得
-  useEffect(() => {
-    if (!word) return;
-    const loadData = async () => {
-      const [statsMap, manual] = await Promise.all([
-        unifiedStorage.getWordStats(),
-        unifiedStorage.getManualMastery(word.id),
-      ]);
-      const stats = statsMap.get(word.id);
-      if (stats) {
-        setMasteryData({
-          accuracy: stats.accuracy,
-          totalAttempts: stats.totalAttempts,
-        });
-      }
-      setManualMastery(manual);
-      const bookmarked = await unifiedStorage.isWordBookmarked(word.id);
-      setIsBookmarked(bookmarked);
-    };
-    loadData();
-  }, [word]);
-
-  // ブックマークの切り替え
-  const handleToggleBookmark = async () => {
-    if (!word) return;
-    const newState = await unifiedStorage.toggleBookmark(word.id);
-    setIsBookmarked(newState);
-  };
-
-  const handleManualMasteryChange = async (value: ManualMasteryLevel) => {
-    if (!word) return;
-    setManualMastery(value);
-    await unifiedStorage.setManualMastery(word.id, value);
-  };
-
-  const resolveCurrentMastery = (): ManualMasteryLevel => {
-    if (manualMastery && !(manualMastery === "unlearned" && masteryData.totalAttempts > 0)) {
-      return manualMastery;
-    }
-    if (masteryData.totalAttempts === 0) return "unlearned";
-    if (masteryData.accuracy === null || masteryData.accuracy < 34) return "weak";
-    if (masteryData.accuracy < 67) return "vague";
-    if (masteryData.accuracy < 100) return "almost";
-    return "remembered";
-  };
-
-  // 戻るボタンの処理
-  const handleBack = () => {
-    // 遷移元に応じて適切な画面に戻る
-    switch (fromPage) {
-      case "quiz":
-        // クイズリザルト画面に戻る
-        router.push("/quiz");
-        break;
-      case "speed":
-        // スピードチャレンジリザルト画面に戻る
-        router.push("/speed-challenge");
-        break;
-      case "history":
-        // 学習履歴画面に戻る
-        router.push("/history");
-        break;
-      case "weak":
-        // 苦手単語画面に戻る
-        router.push("/weak-words");
-        break;
-      case "wordlist":
-        // 単語帳画面に戻る
-        router.push("/word-list");
-        break;
-      case "bookmarks":
-        // ブックマーク画面に戻る
-        router.push("/bookmarks");
-        break;
-      default:
-        // それ以外はブラウザの履歴を使用
-        router.back();
-    }
-  };
-
-  // 戻り先のラベルを取得
-  const getBackLabel = () => {
-    switch (fromPage) {
-      case "quiz":
-        return "リザルトに戻る";
-      case "speed":
-        return "リザルトに戻る";
-      case "history":
-        return "学習履歴に戻る";
-      case "weak":
-        return "苦手単語に戻る";
-      case "wordlist":
-        return "単語帳に戻る";
-      case "bookmarks":
-        return "ブックマークに戻る";
-      default:
-        return "戻る";
-    }
-  };
+  const {
+    word,
+    wordExt,
+    isLoading,
+    wordStats,
+    isBookmarked,
+    quizHistory,
+    currentMastery,
+    handleToggleBookmark,
+    handleManualMasteryChange,
+    fromPage,
+    navState,
+    currentNavIndex,
+    prevNavWordId,
+    nextNavWordId,
+    handleBack,
+    getBackLabel,
+  } = useWordDetail();
 
   if (!word) {
     return (
@@ -184,7 +69,7 @@ export default function WordDetailPage() {
       : []);
 
   // ナビゲーション状態が有効かどうか（スティッキー底部バーの表示判定）
-  const hasBottomNav = navState !== null && currentNavIndex >= 0;
+  const hasBottomNav = !isLoading && navState !== null && currentNavIndex >= 0;
 
   return (
     // ナビあり: main-content(固定高さ) + 内部スクロール でスティッキー底部バーを実現
@@ -285,26 +170,29 @@ export default function WordDetailPage() {
 
             {/* 記憶度 */}
             <WordMastery
-              accuracy={masteryData.accuracy}
-              totalAttempts={masteryData.totalAttempts}
-              manualLevel={resolveCurrentMastery()}
+              accuracy={wordStats?.accuracy ?? null}
+              totalAttempts={wordStats?.totalAttempts ?? 0}
+              manualLevel={currentMastery}
             />
             <div className="flex items-center justify-between py-3 border-b border-slate-100 dark:border-slate-700">
               <span className="text-sm font-medium text-slate-600 dark:text-slate-300">記憶度</span>
               <select
-                value={resolveCurrentMastery()}
+                value={currentMastery}
                 onChange={(e) => handleManualMasteryChange(e.target.value as ManualMasteryLevel)}
                 className="text-sm px-2 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
               >
-                {MANUAL_MASTERY_OPTIONS_ORDERED
-                  .filter((opt) => masteryData.totalAttempts === 0 || opt.key !== "unlearned")
-                  .map((opt) => (
+                {MANUAL_MASTERY_OPTIONS_ORDERED.filter(
+                  (opt) => (wordStats?.totalAttempts ?? 0) === 0 || opt.key !== "unlearned"
+                ).map((opt) => (
                   <option key={opt.key} value={opt.key}>
                     {opt.label}
                   </option>
                 ))}
               </select>
             </div>
+
+            {/* クイズ履歴 */}
+            <WordQuizHistory history={quizHistory} />
 
             {/* 例文 */}
             {examples.length > 0 && (
