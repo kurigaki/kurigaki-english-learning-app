@@ -656,13 +656,14 @@ export default function SpeedChallengePage() {
 
   // 無制限モードでの自動一時停止
   useEffect(() => {
-    if (gameState === "playing" && timeLimit === 0) {
+    // 音声入力中はタイマーを止める（喋っている間に一時停止されないよう）
+    if (gameState === "playing" && timeLimit === 0 && !isListening) {
       const timer = setTimeout(() => {
         dispatch({ type: "PAUSE_GAME" });
       }, 15000); // 15秒操作がない場合
       return () => clearTimeout(timer);
     }
-  }, [gameState, timeLimit, question]); // questionが変わるとリセットされる
+  }, [gameState, timeLimit, question, isListening]); // question/isListeningが変わるとリセットされる
 
   // ハイスコア更新通知エフェクト
   useEffect(() => {
