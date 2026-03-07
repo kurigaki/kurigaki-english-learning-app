@@ -376,6 +376,9 @@ export default function SpeedChallengePage() {
   const shouldRestartRecognitionRef = useRef(false);
   // 音声認識が現在起動中かどうか（onstart/onendで更新）
   const isRecognitionRunningRef = useRef(false);
+  // onend によるリスタートタイマーの参照（null=予約なし）
+  // useEffect 側が「再開予約済みなら start() しない」ために参照する
+  const pendingRestartTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -404,6 +407,10 @@ export default function SpeedChallengePage() {
   useEffect(() => {
     return () => {
       shouldRestartRecognitionRef.current = false;
+      if (pendingRestartTimerRef.current) {
+        clearTimeout(pendingRestartTimerRef.current);
+        pendingRestartTimerRef.current = null;
+      }
       if (recognitionRef.current) {
         try { recognitionRef.current.stop(); } catch { /* ignore */ }
       }
@@ -830,26 +837,47 @@ export default function SpeedChallengePage() {
       recognition.onend = () => {
         isRecognitionRunningRef.current = false;
         setIsListening(false);
-        // shouldRestartRecognitionRef が true の場合のみ再開する
-        // （意図的な stop の場合は false になっているのでループしない）
-        // モバイル対応: 150ms 待機してから再開（即時再開は失敗することがある）
         if (shouldRestartRecognitionRef.current) {
-          setTimeout(() => {
-            if (shouldRestartRecognitionRef.current) {
+          // 既存タイマーをキャンセルしてから予約（二重スケジュール防止）
+          if (pendingRestartTimerRef.current) {
+            clearTimeout(pendingRestartTimerRef.current);
+          }
+          pendingRestartTimerRef.current = setTimeout(() => {
+            pendingRestartTimerRef.current = null;
+            // フラグが残っており、かつ起動中でない場合のみ再開
+            if (shouldRestartRecognitionRef.current && !isRecognitionRunningRef.current) {
               try { recognition.start(); } catch { /* ignore */ }
             }
-          }, 150);
+          }, 300); // モバイルで即時 start が失敗するため 300ms 待機
         }
       };
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      recognition.onerror = (event: any) => {
+        // パーミッション拒否の場合はループを止める
+        if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+          shouldRestartRecognitionRef.current = false;
+          if (pendingRestartTimerRef.current) {
+            clearTimeout(pendingRestartTimerRef.current);
+            pendingRestartTimerRef.current = null;
+          }
+        }
+        // aborted（意図的な stop）/ no-speech / network は onend に任せる
+      };
 
-      // 未起動の場合のみ start（question 変更で再実行された際は既に起動中のため不要）
-      if (!isRecognitionRunningRef.current) {
+      // 未起動かつ再開タイマーが予約されていない場合のみ start
+      // → onend がすでに再開を予約している場合は二重 start を防ぐ
+      if (!isRecognitionRunningRef.current && pendingRestartTimerRef.current === null) {
         try { recognition.start(); } catch { /* ignore */ }
       }
     } else {
       // 意図的な停止（voiceInput OFF / ゲーム終了 / ja-to-en 以外）
-      // フラグを先に落としてから stop → onend が自動再開しなくなる
+      // フラグを先に落とし、タイマーもキャンセルしてから stop
+      // → onend が発火しても自動再開しない
       shouldRestartRecognitionRef.current = false;
+      if (pendingRestartTimerRef.current) {
+        clearTimeout(pendingRestartTimerRef.current);
+        pendingRestartTimerRef.current = null;
+      }
       if (isRecognitionRunningRef.current) {
         try { recognition.stop(); } catch { /* ignore */ }
       }
