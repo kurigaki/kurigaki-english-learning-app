@@ -793,7 +793,7 @@ export default function SpeedChallengePage() {
     if (!recognitionRef.current) {
       const recognition = new SpeechRecognitionAPI();
       recognition.continuous = true;
-      recognition.interimResults = true; // 話し途中の結果も受信して即時判定（Safari ラグ軽減）
+      recognition.interimResults = false; // false: 確定結果のみ受信。PC のリアルタイム感を保ち、Android の空interim問題を回避
       recognition.lang = 'en-US';
       recognitionRef.current = recognition;
     }
@@ -820,23 +820,12 @@ export default function SpeedChallengePage() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       recognition.onresult = (event: any) => {
         const last = event.results.length - 1;
-        const result = event.results[last];
-        const transcript = result[0].transcript.trim().toLowerCase();
-        const isFinal = result.isFinal;
+        const transcript = event.results[last][0].transcript.trim().toLowerCase();
         const answer = question.correctAnswer.toLowerCase();
 
-        // 完全一致は interim/final どちらでも即判定（Safari のラグを軽減）
-        const isExactMatch = transcript === answer || transcript.includes(answer);
-        if (isExactMatch) {
-          dispatch({ type: "SET_RECOGNIZED_TEXT", payload: { text: transcript, isCorrect: true } });
-          handleSelect(question.correctAnswer);
-          return;
-        }
-
-        // ファジーマッチは確定結果 (isFinal) のみ（interim の不正確な結果を誤判定しない）
-        if (!isFinal) return;
-
         const isCorrect = (() => {
+          if (transcript === answer || transcript.includes(answer)) return true;
+
           if (speakingDifficulty === 'easy') {
             const stripArticles = (s: string) =>
               s.replace(/\b(a|an|the|to|of|in|on|at|for)\b/g, '').replace(/\s+/g, ' ').trim();
@@ -1936,7 +1925,7 @@ export default function SpeedChallengePage() {
                       {/* aria-hidden で絵文字を非インタラクティブ化し Chrome の画像長押しメニューを抑止 */}
                       <span aria-hidden="true" style={{ pointerEvents: 'none', userSelect: 'none' }}>🎙️</span>
                       <span style={{ pointerEvents: 'none', userSelect: 'none' }}>
-                        {isListening ? "聞いています" : "話す"}
+                        {isListening ? "今すぐ話して" : "話す"}
                       </span>
                     </button>
                     {recognizedText && (
