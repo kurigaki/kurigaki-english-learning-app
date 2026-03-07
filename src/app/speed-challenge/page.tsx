@@ -800,7 +800,6 @@ export default function SpeedChallengePage() {
 
     const recognition = recognitionRef.current;
     const isMobile = isMobileRef.current;
-    const isIOS = isIOSRef.current;
 
     // 文法リストの更新（認識実行中でなければ更新。実行中に更新すると Android で abort が起きる場合がある）
     if (question && !isRecognitionRunningRef.current && (window.SpeechGrammarList || window.webkitSpeechGrammarList)) {
@@ -871,12 +870,14 @@ export default function SpeedChallengePage() {
         setIsListening(false);
         if (!shouldRestartRecognitionRef.current) return;
 
-        if (isMobile && isIOS) {
-          // iOS Safari: 自動再開しない（start() のたびに通知が出るため）
-          // トグルボタンでユーザーが次回を明示的に開始する
+        if (isMobile) {
+          // モバイル全般（iOS/Android Chrome）: 自動再開しない
+          // iOS: start() のたびにシステム通知が出る
+          // Android Chrome: Chrome 55+ は setTimeout 等の非ユーザージェスチャーから
+          //   start() を呼ぶと NotAllowedError/aborted が発生し永続的にOFFになる
+          // → いずれもトグルボタンでユーザーが次回を明示的に開始する
         } else {
-          // デスクトップ + Android Chrome: タイマーで自動再開
-          // Android は無音タイムアウトで onend が発火するが通知問題がないため auto-restart OK
+          // デスクトップのみ: タイマーで自動再開
           if (pendingRestartTimerRef.current) {
             clearTimeout(pendingRestartTimerRef.current);
           }
@@ -892,13 +893,16 @@ export default function SpeedChallengePage() {
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       recognition.onerror = (event: any) => {
-        if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
+        // not-allowed / service-not-allowed: 権限エラー → 以降の自動再開を停止
+        // aborted: 非ユーザージェスチャーからの start() を Chrome Android がブロック → 同様に停止
+        if (['not-allowed', 'service-not-allowed', 'aborted'].includes(event.error)) {
           shouldRestartRecognitionRef.current = false;
           if (pendingRestartTimerRef.current) {
             clearTimeout(pendingRestartTimerRef.current);
             pendingRestartTimerRef.current = null;
           }
         }
+        // no-speech: 無音タイムアウト（モバイルで頻発）→ onend に任せる（モバイルは再開しない）
       };
 
       if (isMobile) {
