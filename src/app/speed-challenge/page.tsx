@@ -385,6 +385,10 @@ export default function SpeedChallengePage() {
   const isIOSRef = useRef(false);
   // モバイル: 話すボタンの ref（ネイティブ contextmenu を抑止するため）
   const speakButtonRef = useRef<HTMLButtonElement>(null);
+  // 音声専用セッション判定: ja-to-en問題をタップで回答した回数（音声入力有効中）
+  const tapAnswerOnVoiceQuestionRef = useRef(0);
+  // endGame(useCallback) から voiceInputEnabled を参照するための ref
+  const voiceInputEnabledRef = useRef(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -417,6 +421,9 @@ export default function SpeedChallengePage() {
     const hasApi = !!(typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition));
     setIsSpeechRecognitionSupported(hasApi && !isWebViewBrowser);
   }, []);
+
+  // voiceInputEnabled state を endGame(useCallback) から参照できるよう ref に同期
+  useEffect(() => { voiceInputEnabledRef.current = voiceInputEnabled; }, [voiceInputEnabled]);
 
   // モバイル: 話すボタンのコンテキストメニューをネイティブリスナーで抑止
   // React の onContextMenu だけでは Chrome Android で効かない場合があるため capture フェーズで処理
@@ -556,7 +563,16 @@ export default function SpeedChallengePage() {
     const { score, totalQuestions, answeredWords, maxCombo } = stateRef.current;
     const incorrectWordIds = answeredWords.filter(w => !w.correct).map(w => w.id);
 
-    // 結果を保存
+    // 音声専用セッション判定:
+    //   - 音声入力OFF → 従来通りハイスコア更新
+    //   - 音声入力ON + ja-to-en問題を一度もタップしていない → ハイスコア更新
+    //   - 音声入力ON + ja-to-en問題をタップした → ハイスコア更新しない（タップの方が速いため不公平）
+    const isVoiceOnlyRun = !voiceInputEnabledRef.current || tapAnswerOnVoiceQuestionRef.current === 0;
+
+    // ハイスコアは addSpeedChallengeResult が localStorage を更新する前に取得する
+    const prevHighScore = await unifiedStorage.getSpeedChallengeHighScore(timeLimit, mode, speakingDifficulty);
+
+    // 結果を保存（音声専用でない場合はハイスコアを更新しない）
     await unifiedStorage.addSpeedChallengeResult({
       score: score,
       correctCount: score,
@@ -566,14 +582,13 @@ export default function SpeedChallengePage() {
       incorrectWordIds: incorrectWordIds,
       mode: mode,
       difficulty: speakingDifficulty,
-    });
+    }, { updateHighScore: isVoiceOnlyRun });
 
     // 今日のランキングを取得
     const ranking = await unifiedStorage.getTodaysSpeedChallengeRanking(score, timeLimit, mode, speakingDifficulty);
 
-    // ハイスコアチェック
-    const prevHighScore = await unifiedStorage.getSpeedChallengeHighScore(timeLimit, mode, speakingDifficulty);
-    const newHighScore = score > prevHighScore;
+    // ハイスコアチェック（音声専用セッションのみ更新）
+    const newHighScore = isVoiceOnlyRun && score > prevHighScore;
     const scoreDiff = newHighScore ? score - prevHighScore : 0;
 
     // セッション状態を保存（単語詳細から戻ってきた際に復元するため）
@@ -625,6 +640,7 @@ export default function SpeedChallengePage() {
   const startGame = useCallback(() => {
     // 前回のセッション状態をクリア
     clearSpeedResultState();
+    tapAnswerOnVoiceQuestionRef.current = 0; // 音声専用判定をリセット
     setWordFilter("all");
     setHasNotifiedHighScore(false);
     setHasNotifiedCloseToHighScore(false);
@@ -856,7 +872,7 @@ export default function SpeedChallengePage() {
 
         dispatch({ type: "SET_RECOGNIZED_TEXT", payload: { text: transcript, isCorrect } });
         if (isCorrect) {
-          handleSelect(question.correctAnswer);
+          handleSelect(question.correctAnswer, 'voice');
         }
       };
 
@@ -928,8 +944,13 @@ export default function SpeedChallengePage() {
     // アンマウント時の stop は専用 useEffect([]) で実施
   }, [gameState, voiceInputEnabled, question, isSpeechRecognitionSupported, speakingDifficulty]);
 
-  const handleSelect = (choice: string) => {
+  const handleSelect = (choice: string, source: 'tap' | 'voice' = 'tap') => {
     if (!question || gameState !== "playing") return;
+
+    // 音声入力有効中に ja-to-en 問題をタップで回答した場合を記録（ハイスコア判定に使用）
+    if (source === 'tap' && voiceInputEnabled && question.type === 'ja-to-en') {
+      tapAnswerOnVoiceQuestionRef.current += 1;
+    }
 
     const correct = choice === question.correctAnswer;
 
@@ -2049,6 +2070,13 @@ export default function SpeedChallengePage() {
                     {scoreDiff > 0 && <span className="ml-1 text-orange-600 dark:text-orange-400">(+{scoreDiff})</span>}
                   </p>
                 </div>
+              </div>
+            )}
+            {voiceInputEnabled && tapAnswerOnVoiceQuestionRef.current > 0 && (
+              <div className="mb-2 p-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800/40">
+                <p className="text-xs text-blue-600 dark:text-blue-400">
+                  タップ回答 {tapAnswerOnVoiceQuestionRef.current} 問あり — 全問スピーキングで回答するとハイスコア対象になります
+                </p>
               </div>
             )}
 
