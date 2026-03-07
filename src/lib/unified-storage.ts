@@ -73,9 +73,12 @@ function addTodaysLocalScore(score: number, timeLimit: number, mode: string, dif
       data.scores = {};
     }
     const key = `${timeLimit}_${mode}_${difficulty}`;
-    if (!data.scores[key]) data.scores[key] = [];
-    data.scores[key].push(score);
-    localStorage.setItem(TODAY_RANKING_KEY, JSON.stringify(data));
+    // 同一ユーザーの複数プレイを重複カウントしないよう、当日ベストスコアのみ保持
+    const existing: number = typeof data.scores[key] === "number" ? data.scores[key] : 0;
+    if (score > existing) {
+      data.scores[key] = score;
+      localStorage.setItem(TODAY_RANKING_KEY, JSON.stringify(data));
+    }
   } catch {
     // ignore
   }
@@ -90,10 +93,9 @@ function getTodaysLocalRanking(score: number, timeLimit: number, mode: string, d
     const data = JSON.parse(stored);
     if (data.date !== today) return { rank: 1, total: 1 };
     const key = `${timeLimit}_${mode}_${difficulty}`;
-    const scores: number[] = data.scores[key] || [score];
-    const uniqueScores = Array.from(new Set(scores)).sort((a, b) => b - a);
-    const rank = uniqueScores.indexOf(score) + 1;
-    return { rank, total: scores.length };
+    // ローカルは単一ユーザーのみのため常に 1位/1人中
+    void score; void key;
+    return { rank: 1, total: 1 };
   } catch {
     return null;
   }

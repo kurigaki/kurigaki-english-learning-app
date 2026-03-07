@@ -584,8 +584,10 @@ export default function SpeedChallengePage() {
       difficulty: speakingDifficulty,
     }, { updateHighScore: isVoiceOnlyRun });
 
-    // 今日のランキングを取得
-    const ranking = await unifiedStorage.getTodaysSpeedChallengeRanking(score, timeLimit, mode, speakingDifficulty);
+    // 今日のランキングを取得（音声専用セッションのみ）
+    const ranking = isVoiceOnlyRun
+      ? await unifiedStorage.getTodaysSpeedChallengeRanking(score, timeLimit, mode, speakingDifficulty)
+      : null;
 
     // ハイスコアチェック（音声専用セッションのみ更新）
     const newHighScore = isVoiceOnlyRun && score > prevHighScore;
