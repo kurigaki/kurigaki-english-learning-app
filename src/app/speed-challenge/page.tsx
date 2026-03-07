@@ -379,6 +379,10 @@ export default function SpeedChallengePage() {
   // onend によるリスタートタイマーの参照（null=予約なし）
   // useEffect 側が「再開予約済みなら start() しない」ために参照する
   const pendingRestartTimerRef = useRef<NodeJS.Timeout | null>(null);
+  // モバイル端末かどうか（iOS/Android では tap-to-speak UI を使う）
+  const isMobileRef = useRef(false);
+  // モバイル: ユーザーがタップして話すのを待っている状態
+  const [readyToSpeak, setReadyToSpeak] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -394,6 +398,8 @@ export default function SpeedChallengePage() {
     if ('share' in navigator) {
       setIsShareSupported(true);
     }
+
+    isMobileRef.current = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -762,8 +768,9 @@ export default function SpeedChallengePage() {
 
   // 音声認識の制御
   // 【モバイル対応】iOS Safari / Android Chrome は continuous=true を無視し、
-  // 各発話後に recognition が自動終了する。onend で再開するが、
-  // useEffect cleanup の stop() と競合しないよう shouldRestartRecognitionRef で制御する。
+  // 各発話後に recognition が自動終了する。さらに iOS は start() のたびに
+  // 「マイクへのアクセスが許可されています」通知を表示するため、
+  // モバイルでは自動再開を行わず「タップして話す」ボタンでユーザーが明示的に起動する。
   useEffect(() => {
     if (!isSpeechRecognitionSupported) return;
 
@@ -777,9 +784,10 @@ export default function SpeedChallengePage() {
     }
 
     const recognition = recognitionRef.current;
+    const isMobile = isMobileRef.current;
 
-    // 文法リストの更新（選択肢をヒントとして追加）
-    if (question && (window.SpeechGrammarList || window.webkitSpeechGrammarList)) {
+    // 文法リストの更新（認識実行中でなければ更新。実行中に更新すると Android で abort が起きる場合がある）
+    if (question && !isRecognitionRunningRef.current && (window.SpeechGrammarList || window.webkitSpeechGrammarList)) {
       const SpeechGrammarListAPI = window.SpeechGrammarList || window.webkitSpeechGrammarList;
       const speechRecognitionList = new SpeechGrammarListAPI();
       const wordsToRecognize = [...question.choices, question.correctAnswer];
@@ -792,7 +800,6 @@ export default function SpeedChallengePage() {
     const shouldListen = gameState === 'playing' && voiceInputEnabled && question?.type === 'ja-to-en';
 
     if (shouldListen) {
-      // 再開意図フラグを立てる（onend での自動再開を許可）
       shouldRestartRecognitionRef.current = true;
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -830,31 +837,36 @@ export default function SpeedChallengePage() {
         }
       };
 
-      // onstart: isRecognitionRunningRef はすでに start() 直前に true にしてある
       recognition.onstart = () => { setIsListening(true); };
 
       recognition.onend = () => {
         isRecognitionRunningRef.current = false;
         setIsListening(false);
-        if (shouldRestartRecognitionRef.current) {
-          // 既存タイマーをキャンセルしてから再予約（二重スケジュール防止）
+        if (!shouldRestartRecognitionRef.current) return;
+
+        if (isMobile) {
+          // モバイル: 自動再開しない。ボタンをタップして再度話せるようにする
+          setReadyToSpeak(true);
+        } else {
+          // デスクトップ: タイマーで自動再開（既存の動作を維持）
           if (pendingRestartTimerRef.current) {
             clearTimeout(pendingRestartTimerRef.current);
           }
           pendingRestartTimerRef.current = setTimeout(() => {
             pendingRestartTimerRef.current = null;
             if (shouldRestartRecognitionRef.current && !isRecognitionRunningRef.current) {
-              // start() 直前に同期的に true → useEffect の二重 start を防ぐ
               isRecognitionRunningRef.current = true;
               try { recognition.start(); } catch { isRecognitionRunningRef.current = false; }
             }
           }, 300);
         }
       };
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       recognition.onerror = (event: any) => {
         if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
           shouldRestartRecognitionRef.current = false;
+          setReadyToSpeak(false);
           if (pendingRestartTimerRef.current) {
             clearTimeout(pendingRestartTimerRef.current);
             pendingRestartTimerRef.current = null;
@@ -862,18 +874,22 @@ export default function SpeedChallengePage() {
         }
       };
 
-      // 未起動かつ再開タイマーが予約されていない場合のみ start
-      // start() 直前に同期的に true → onstart 発火前の隙間で useEffect が
-      // 再実行されても isRecognitionRunningRef.current = true で二重 start を防ぐ
-      if (!isRecognitionRunningRef.current && pendingRestartTimerRef.current === null) {
-        isRecognitionRunningRef.current = true;
-        try { recognition.start(); } catch { isRecognitionRunningRef.current = false; }
+      if (isMobile) {
+        // モバイル: 自動起動しない。まだ起動中でなければタップ待ちを表示
+        if (!isRecognitionRunningRef.current) {
+          setReadyToSpeak(true);
+        }
+      } else {
+        // デスクトップ: 未起動かつ再開タイマーが予約されていない場合のみ自動起動
+        if (!isRecognitionRunningRef.current && pendingRestartTimerRef.current === null) {
+          isRecognitionRunningRef.current = true;
+          try { recognition.start(); } catch { isRecognitionRunningRef.current = false; }
+        }
       }
     } else {
       // 意図的な停止（voiceInput OFF / ゲーム終了 / ja-to-en 以外）
-      // フラグを先に落とし、タイマーもキャンセルしてから stop
-      // → onend が発火しても自動再開しない
       shouldRestartRecognitionRef.current = false;
+      setReadyToSpeak(false);
       if (pendingRestartTimerRef.current) {
         clearTimeout(pendingRestartTimerRef.current);
         pendingRestartTimerRef.current = null;
@@ -978,6 +994,19 @@ export default function SpeedChallengePage() {
   const handleVoiceInputToggle = () => {
     setVoiceInputEnabled(!voiceInputEnabled);
     unifiedStorage.setSpeedChallengeVoiceInput(!voiceInputEnabled);
+  };
+
+  // モバイル: ユーザーが「タップして話す」ボタンを押したときに認識を1回起動
+  const handleTapToSpeak = () => {
+    if (!recognitionRef.current || isRecognitionRunningRef.current) return;
+    setReadyToSpeak(false);
+    isRecognitionRunningRef.current = true;
+    try {
+      recognitionRef.current.start();
+    } catch {
+      isRecognitionRunningRef.current = false;
+      setReadyToSpeak(true);
+    }
   };
 
   const handleSpeakingDifficultyChange = (diff: 'normal' | 'easy') => {
@@ -1852,6 +1881,15 @@ export default function SpeedChallengePage() {
                 <h2 className="text-2xl font-bold text-gradient">
                   {isEnToJa ? question.word.word : question.word.meaning}
                 </h2>
+                {!isEnToJa && isMobileRef.current && readyToSpeak && (
+                  <button
+                    onClick={handleTapToSpeak}
+                    className="ml-2 flex items-center gap-1 px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-[10px] font-medium active:scale-95 transition-transform"
+                    title="タップして話す"
+                  >
+                    🎙️ 話す
+                  </button>
+                )}
                 {isListening && !isEnToJa && (
                   <div className="flex flex-col items-center ml-2">
                     <span className="animate-pulse text-blue-500" title="音声認識中">
