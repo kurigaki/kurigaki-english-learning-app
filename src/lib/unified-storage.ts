@@ -759,14 +759,14 @@ export const unifiedStorage = {
 
   // === スピードチャレンジ設定（localStorage のみ）===
 
-  getSpeedChallengeMode: async (): Promise<"mixed" | "en-to-ja" | "ja-to-en"> => {
+  getSpeedChallengeMode: async (): Promise<"mixed" | "en-to-ja" | "ja-to-en" | "ja-to-en-speaking"> => {
     if (typeof window === "undefined") return "mixed";
     const value = localStorage.getItem("kurigaki_speed_mode");
-    if (value === "en-to-ja" || value === "ja-to-en") return value;
+    if (value === "en-to-ja" || value === "ja-to-en" || value === "ja-to-en-speaking") return value;
     return "mixed";
   },
 
-  setSpeedChallengeMode: async (mode: "mixed" | "en-to-ja" | "ja-to-en"): Promise<void> => {
+  setSpeedChallengeMode: async (mode: "mixed" | "en-to-ja" | "ja-to-en" | "ja-to-en-speaking"): Promise<void> => {
     if (typeof window === "undefined") return;
     localStorage.setItem("kurigaki_speed_mode", mode);
   },
