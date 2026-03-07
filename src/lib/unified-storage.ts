@@ -560,15 +560,18 @@ export const unifiedStorage = {
   },
 
   addSpeedChallengeResult: async (
-    result: Omit<SpeedChallengeResult, "id" | "playedAt">
+    result: Omit<SpeedChallengeResult, "id" | "playedAt">,
+    options?: { updateHighScore?: boolean }
   ): Promise<SpeedChallengeResult | null> => {
-    // 粒度別ハイスコアを更新
-    setLocalGranularHighScore(
-      result.timeLimit,
-      result.mode ?? "mixed",
-      result.difficulty ?? "normal",
-      result.score
-    );
+    // 粒度別ハイスコアを更新（音声専用セッションでない場合はスキップ）
+    if (options?.updateHighScore !== false) {
+      setLocalGranularHighScore(
+        result.timeLimit,
+        result.mode ?? "mixed",
+        result.difficulty ?? "normal",
+        result.score
+      );
+    }
     return withFallback(
       async () => {
         const userId = getCurrentUserId()!;
