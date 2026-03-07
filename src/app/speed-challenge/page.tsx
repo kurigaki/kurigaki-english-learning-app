@@ -381,6 +381,8 @@ export default function SpeedChallengePage() {
   const pendingRestartTimerRef = useRef<NodeJS.Timeout | null>(null);
   // モバイル端末かどうか（iOS/Android ではトグルUI を使う）
   const isMobileRef = useRef(false);
+  // iOS Safari かどうか（iOS は start() のたびに通知が出るため auto-restart しない）
+  const isIOSRef = useRef(false);
   // モバイル: 話すボタンの ref（ネイティブ contextmenu を抑止するため）
   const speakButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -400,6 +402,7 @@ export default function SpeedChallengePage() {
     }
 
     isMobileRef.current = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    isIOSRef.current = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -777,10 +780,12 @@ export default function SpeedChallengePage() {
   }, [question, gameState]);
 
   // 音声認識の制御
-  // 【モバイル対応】iOS Safari / Android Chrome は continuous=true を無視し、
-  // 各発話後に recognition が自動終了する。さらに iOS は start() のたびに
-  // 「マイクへのアクセスが許可されています」通知を表示するため、
-  // モバイルでは自動再開を行わず「タップして話す」ボタンでユーザーが明示的に起動する。
+  // 【iOS】start() のたびに「マイクへのアクセスが許可されています」通知が出るため
+  //   自動再起動しない（トグルボタンでユーザーが明示的に開始）
+  // 【Android Chrome】無音タイムアウト（~1-2秒）で onend が発火する。
+  //   iOS の通知問題がないため Desktop と同じ auto-restart ロジックを適用。
+  // 【共通】interimResults=true で話し途中の interim 結果を受信し、
+  //   完全一致なら即座に正解判定（Safari のラグ軽減）
   useEffect(() => {
     if (!isSpeechRecognitionSupported) return;
 
@@ -788,13 +793,14 @@ export default function SpeedChallengePage() {
     if (!recognitionRef.current) {
       const recognition = new SpeechRecognitionAPI();
       recognition.continuous = true;
-      recognition.interimResults = false;
+      recognition.interimResults = true; // 話し途中の結果も受信して即時判定（Safari ラグ軽減）
       recognition.lang = 'en-US';
       recognitionRef.current = recognition;
     }
 
     const recognition = recognitionRef.current;
     const isMobile = isMobileRef.current;
+    const isIOS = isIOSRef.current;
 
     // 文法リストの更新（認識実行中でなければ更新。実行中に更新すると Android で abort が起きる場合がある）
     if (question && !isRecognitionRunningRef.current && (window.SpeechGrammarList || window.webkitSpeechGrammarList)) {
@@ -815,12 +821,23 @@ export default function SpeedChallengePage() {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       recognition.onresult = (event: any) => {
         const last = event.results.length - 1;
-        const transcript = event.results[last][0].transcript.trim().toLowerCase();
+        const result = event.results[last];
+        const transcript = result[0].transcript.trim().toLowerCase();
+        const isFinal = result.isFinal;
         const answer = question.correctAnswer.toLowerCase();
 
-        const isCorrect = (() => {
-          if (transcript === answer || transcript.includes(answer)) return true;
+        // 完全一致は interim/final どちらでも即判定（Safari のラグを軽減）
+        const isExactMatch = transcript === answer || transcript.includes(answer);
+        if (isExactMatch) {
+          dispatch({ type: "SET_RECOGNIZED_TEXT", payload: { text: transcript, isCorrect: true } });
+          handleSelect(question.correctAnswer);
+          return;
+        }
 
+        // ファジーマッチは確定結果 (isFinal) のみ（interim の不正確な結果を誤判定しない）
+        if (!isFinal) return;
+
+        const isCorrect = (() => {
           if (speakingDifficulty === 'easy') {
             const stripArticles = (s: string) =>
               s.replace(/\b(a|an|the|to|of|in|on|at|for)\b/g, '').replace(/\s+/g, ' ').trim();
@@ -854,10 +871,12 @@ export default function SpeedChallengePage() {
         setIsListening(false);
         if (!shouldRestartRecognitionRef.current) return;
 
-        if (isMobile) {
-          // モバイル: 自動再開しない。push-to-talk ボタンが常時表示されている
+        if (isMobile && isIOS) {
+          // iOS Safari: 自動再開しない（start() のたびに通知が出るため）
+          // トグルボタンでユーザーが次回を明示的に開始する
         } else {
-          // デスクトップ: タイマーで自動再開（既存の動作を維持）
+          // デスクトップ + Android Chrome: タイマーで自動再開
+          // Android は無音タイムアウトで onend が発火するが通知問題がないため auto-restart OK
           if (pendingRestartTimerRef.current) {
             clearTimeout(pendingRestartTimerRef.current);
           }
@@ -1003,13 +1022,20 @@ export default function SpeedChallengePage() {
   // モバイル: タップでON/OFFトグル（長押し不要 → コンテキストメニュー問題を回避）
   const handleSpeakToggle = () => {
     if (isListening) {
-      // 停止: shouldRestart を先に落としてから stop（onend で自動再開しないように）
+      // 停止: shouldRestart を先に落とし pending タイマーもキャンセルしてから stop
+      // → onend が発火しても自動再開しない
       shouldRestartRecognitionRef.current = false;
+      if (pendingRestartTimerRef.current) {
+        clearTimeout(pendingRestartTimerRef.current);
+        pendingRestartTimerRef.current = null;
+      }
       if (recognitionRef.current && isRecognitionRunningRef.current) {
         try { recognitionRef.current.stop(); } catch { /* ignore */ }
       }
     } else {
       if (!recognitionRef.current || isRecognitionRunningRef.current) return;
+      // ユーザーが再開したので restart フラグを立てる（Android auto-restart のため）
+      shouldRestartRecognitionRef.current = true;
       isRecognitionRunningRef.current = true;
       try { recognitionRef.current.start(); } catch { isRecognitionRunningRef.current = false; }
     }
