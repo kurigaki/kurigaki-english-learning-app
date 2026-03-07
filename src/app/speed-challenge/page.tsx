@@ -409,7 +409,13 @@ export default function SpeedChallengePage() {
 
   useEffect(() => {
     // 音声認識のサポート確認
-    setIsSpeechRecognitionSupported(!!(typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition)));
+    // Chrome for iOS (CriOS) / Firefox for iOS (FxiOS) は Apple の規約で WKWebView を使う。
+    // webkitSpeechRecognition は API として存在するが WKWebView では動作せず、
+    // onstart 直後に onend が発火して即OFFになるため明示的に除外する。
+    const ua = typeof window !== 'undefined' ? navigator.userAgent : '';
+    const isWebViewBrowser = /CriOS|FxiOS/i.test(ua); // Chrome/Firefox on iOS (WKWebView)
+    const hasApi = !!(typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition));
+    setIsSpeechRecognitionSupported(hasApi && !isWebViewBrowser);
   }, []);
 
   // モバイル: 話すボタンのコンテキストメニューをネイティブリスナーで抑止
@@ -1638,6 +1644,11 @@ export default function SpeedChallengePage() {
             <div className="mt-2 pt-2 border-t border-yellow-200 dark:border-yellow-800/30">
               <div className="flex justify-between items-center mb-1">
                 <p className="text-[10px] text-slate-500 dark:text-slate-400">制限時間</p>
+                {!isSpeechRecognitionSupported && isIOSRef.current && (
+                  <p className="text-[9px] text-amber-600 dark:text-amber-400">
+                    音声入力はSafariのみ対応
+                  </p>
+                )}
                 {isSpeechRecognitionSupported && (
                   <button
                     onClick={handleVoiceInputToggle}
@@ -1906,7 +1917,7 @@ export default function SpeedChallengePage() {
                 <h2 className="text-2xl font-bold text-gradient">
                   {isEnToJa ? question.word.word : question.word.meaning}
                 </h2>
-                {!isEnToJa && isMobileRef.current && voiceInputEnabled && (
+                {!isEnToJa && isMobileRef.current && isSpeechRecognitionSupported && voiceInputEnabled && (
                   <div className="flex flex-col items-center ml-2 relative">
                     {/* タップでON/OFFトグル。長押し不要なのでコンテキストメニューが出ない */}
                     <button
