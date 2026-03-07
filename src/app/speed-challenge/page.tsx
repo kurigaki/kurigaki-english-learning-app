@@ -2077,7 +2077,7 @@ export default function SpeedChallengePage() {
             {voiceInputEnabled && tapAnswerOnVoiceQuestionRef.current > 0 && (
               <div className="mb-2 p-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800/40">
                 <p className="text-xs text-blue-600 dark:text-blue-400">
-                  タップ回答 {tapAnswerOnVoiceQuestionRef.current} 問あり — 全問スピーキングで回答するとハイスコア対象になります
+                  {isMobileRef.current ? "タップ" : "クリック"}回答 {tapAnswerOnVoiceQuestionRef.current} 問あり — 全問スピーキングで回答するとハイスコア対象になります
                 </p>
               </div>
             )}
