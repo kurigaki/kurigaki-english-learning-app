@@ -21,6 +21,84 @@ import { ACHIEVEMENTS } from "@/data/achievements";
 import { words } from "@/data/words/compat";
 import type { SrsProgress } from "./srs";
 
+// === 粒度別ハイスコア（timeLimit / mode / difficulty の組み合わせ）===
+const HIGH_SCORES_KEY = "kurigaki_speed_high_scores";
+
+function getLocalGranularHighScore(timeLimit: number, mode: string, difficulty: string): number {
+  if (typeof window === "undefined") return 0;
+  try {
+    const stored = localStorage.getItem(HIGH_SCORES_KEY);
+    if (!stored) return 0;
+    const scores = JSON.parse(stored);
+    const key = `${timeLimit}_${mode}_${difficulty}`;
+    const entry = scores[key];
+    if (typeof entry === "number") return entry;
+    if (entry && typeof entry === "object" && typeof entry.score === "number") return entry.score;
+    return 0;
+  } catch {
+    return 0;
+  }
+}
+
+function setLocalGranularHighScore(timeLimit: number, mode: string, difficulty: string, score: number): void {
+  if (typeof window === "undefined") return;
+  try {
+    const stored = localStorage.getItem(HIGH_SCORES_KEY);
+    const scores = stored ? JSON.parse(stored) : {};
+    const key = `${timeLimit}_${mode}_${difficulty}`;
+    let current = 0;
+    const entry = scores[key];
+    if (typeof entry === "number") current = entry;
+    else if (entry && typeof entry === "object" && typeof entry.score === "number") current = entry.score;
+    if (score > current) {
+      scores[key] = { score, timestamp: Date.now() };
+      localStorage.setItem(HIGH_SCORES_KEY, JSON.stringify(scores));
+    }
+  } catch {
+    // ignore
+  }
+}
+
+// === 当日ランキング ===
+const TODAY_RANKING_KEY = "kurigaki_speed_today_ranking";
+
+function addTodaysLocalScore(score: number, timeLimit: number, mode: string, difficulty: string): void {
+  if (typeof window === "undefined") return;
+  const today = new Date().toLocaleDateString();
+  try {
+    const stored = localStorage.getItem(TODAY_RANKING_KEY);
+    const data = stored ? JSON.parse(stored) : { date: null, scores: {} };
+    if (data.date !== today) {
+      data.date = today;
+      data.scores = {};
+    }
+    const key = `${timeLimit}_${mode}_${difficulty}`;
+    if (!data.scores[key]) data.scores[key] = [];
+    data.scores[key].push(score);
+    localStorage.setItem(TODAY_RANKING_KEY, JSON.stringify(data));
+  } catch {
+    // ignore
+  }
+}
+
+function getTodaysLocalRanking(score: number, timeLimit: number, mode: string, difficulty: string): { rank: number; total: number } | null {
+  if (typeof window === "undefined") return null;
+  const today = new Date().toLocaleDateString();
+  try {
+    const stored = localStorage.getItem(TODAY_RANKING_KEY);
+    if (!stored) return { rank: 1, total: 1 };
+    const data = JSON.parse(stored);
+    if (data.date !== today) return { rank: 1, total: 1 };
+    const key = `${timeLimit}_${mode}_${difficulty}`;
+    const scores: number[] = data.scores[key] || [score];
+    const uniqueScores = Array.from(new Set(scores)).sort((a, b) => b - a);
+    const rank = uniqueScores.indexOf(score) + 1;
+    return { rank, total: scores.length };
+  } catch {
+    return null;
+  }
+}
+
 /**
  * Supabaseを使用すべきかどうかを判定
  * ログイン中かつ認証がタイムアウトしていない場合にSupabaseを使用
@@ -133,20 +211,15 @@ export const unifiedStorage = {
   },
 
   clearRecords: async (): Promise<void> => {
-    const userId = getCurrentUserId();
-    if (userId && shouldUseSupabase()) {
-      try {
+    return withFallback(
+      async () => {
+        const userId = getCurrentUserId()!;
         await supabaseStorage.clearRecords(userId);
-        return;
-      } catch (error) {
-        console.warn("[UnifiedStorage] clearRecords failed, falling back to localStorage:", error);
-      }
-    }
-    try {
-      storage.clearRecords();
-    } catch (error) {
-      console.error("[UnifiedStorage] localStorage clearRecords failed:", error);
-    }
+      },
+      () => storage.clearRecords(),
+      undefined,
+      "clearRecords"
+    );
   },
 
   // 単語統計
@@ -221,20 +294,15 @@ export const unifiedStorage = {
   },
 
   saveUserData: async (userData: UserData): Promise<void> => {
-    const userId = getCurrentUserId();
-    if (userId && shouldUseSupabase()) {
-      try {
+    return withFallback(
+      async () => {
+        const userId = getCurrentUserId()!;
         await supabaseStorage.saveUserData(userId, userData);
-        return;
-      } catch (error) {
-        console.warn("[UnifiedStorage] saveUserData failed, falling back to localStorage:", error);
-      }
-    }
-    try {
-      storage.saveUserData(userData);
-    } catch (error) {
-      console.error("[UnifiedStorage] localStorage saveUserData failed:", error);
-    }
+      },
+      () => storage.saveUserData(userData),
+      undefined,
+      "saveUserData"
+    );
   },
 
   // 学習セッション記録（XP・レベル・ストリーク更新）
@@ -407,9 +475,12 @@ export const unifiedStorage = {
   }): Promise<string[]> => {
     const newlyUnlocked: string[] = [];
 
+    // 一括取得してSetに変換（N+1 呼び出しを回避）
+    const unlockedList = await unifiedStorage.getUnlockedAchievements();
+    const unlockedSet = new Set(unlockedList.map((u) => u.achievementId));
+
     for (const achievement of ACHIEVEMENTS) {
-      const isUnlocked = await unifiedStorage.isAchievementUnlocked(achievement.id);
-      if (isUnlocked) continue;
+      if (unlockedSet.has(achievement.id)) continue;
 
       let shouldUnlock = false;
 
@@ -491,6 +562,13 @@ export const unifiedStorage = {
   addSpeedChallengeResult: async (
     result: Omit<SpeedChallengeResult, "id" | "playedAt">
   ): Promise<SpeedChallengeResult | null> => {
+    // 粒度別ハイスコアを更新
+    setLocalGranularHighScore(
+      result.timeLimit,
+      result.mode ?? "mixed",
+      result.difficulty ?? "normal",
+      result.score
+    );
     return withFallback(
       async () => {
         const userId = getCurrentUserId()!;
@@ -502,16 +580,45 @@ export const unifiedStorage = {
     );
   },
 
-  getSpeedChallengeHighScore: async (): Promise<number> => {
-    return withFallback(
-      async () => {
-        const userId = getCurrentUserId()!;
-        return await supabaseStorage.getSpeedChallengeHighScore(userId);
-      },
-      () => storage.getSpeedChallengeHighScore(),
-      0,
-      "getSpeedChallengeHighScore"
-    );
+  getSpeedChallengeHighScore: async (
+    timeLimit: number = 30,
+    mode: string = "mixed",
+    difficulty: string = "normal"
+  ): Promise<number> => {
+    return getLocalGranularHighScore(timeLimit, mode, difficulty);
+  },
+
+  getAllSpeedChallengeHighScores: async (): Promise<Record<string, { score: number; timestamp?: number }>> => {
+    if (typeof window === "undefined") return {};
+    try {
+      const stored = localStorage.getItem(HIGH_SCORES_KEY);
+      const parsed = stored ? JSON.parse(stored) : {};
+      const result: Record<string, { score: number; timestamp?: number }> = {};
+      for (const key in parsed) {
+        const val = parsed[key];
+        if (typeof val === "number") result[key] = { score: val };
+        else if (val && typeof val === "object" && typeof val.score === "number")
+          result[key] = { score: val.score, timestamp: val.timestamp };
+      }
+      return result;
+    } catch {
+      return {};
+    }
+  },
+
+  getTodaysSpeedChallengeRanking: async (
+    score: number,
+    timeLimit: number,
+    mode: string,
+    difficulty: string
+  ): Promise<{ rank: number; total: number } | null> => {
+    addTodaysLocalScore(score, timeLimit, mode, difficulty);
+    return getTodaysLocalRanking(score, timeLimit, mode, difficulty);
+  },
+
+  resetAllSpeedChallengeHighScores: async (): Promise<void> => {
+    if (typeof window === "undefined") return;
+    localStorage.removeItem(HIGH_SCORES_KEY);
   },
 
   getSpeedChallengeBestResult: async (): Promise<SpeedChallengeResult | null> => {
@@ -548,37 +655,27 @@ export const unifiedStorage = {
   },
 
   addBookmark: async (wordId: number): Promise<void> => {
-    const userId = getCurrentUserId();
-    if (userId && shouldUseSupabase()) {
-      try {
+    return withFallback(
+      async () => {
+        const userId = getCurrentUserId()!;
         await supabaseStorage.addBookmark(userId, wordId);
-        return;
-      } catch (error) {
-        console.warn("[UnifiedStorage] addBookmark failed, falling back to localStorage:", error);
-      }
-    }
-    try {
-      storage.addBookmark(wordId);
-    } catch (error) {
-      console.error("[UnifiedStorage] localStorage addBookmark failed:", error);
-    }
+      },
+      () => storage.addBookmark(wordId),
+      undefined,
+      "addBookmark"
+    );
   },
 
   removeBookmark: async (wordId: number): Promise<void> => {
-    const userId = getCurrentUserId();
-    if (userId && shouldUseSupabase()) {
-      try {
+    return withFallback(
+      async () => {
+        const userId = getCurrentUserId()!;
         await supabaseStorage.removeBookmark(userId, wordId);
-        return;
-      } catch (error) {
-        console.warn("[UnifiedStorage] removeBookmark failed, falling back to localStorage:", error);
-      }
-    }
-    try {
-      storage.removeBookmark(wordId);
-    } catch (error) {
-      console.error("[UnifiedStorage] localStorage removeBookmark failed:", error);
-    }
+      },
+      () => storage.removeBookmark(wordId),
+      undefined,
+      "removeBookmark"
+    );
   },
 
   toggleBookmark: async (wordId: number): Promise<boolean> => {
@@ -618,6 +715,88 @@ export const unifiedStorage = {
     } catch (error) {
       console.error("[UnifiedStorage] setManualMastery failed:", error);
     }
+  },
+
+  // === BGM / SFX 設定（localStorage のみ）===
+
+  getBgmEnabled: async (): Promise<boolean> => {
+    if (typeof window === "undefined") return true;
+    const value = localStorage.getItem("kurigaki_bgm_enabled");
+    return value !== "false";
+  },
+
+  setBgmEnabled: async (enabled: boolean): Promise<void> => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("kurigaki_bgm_enabled", String(enabled));
+  },
+
+  getBgmVolume: async (): Promise<number> => {
+    if (typeof window === "undefined") return 0.3;
+    const value = localStorage.getItem("kurigaki_bgm_volume");
+    return value ? parseFloat(value) : 0.3;
+  },
+
+  setBgmVolume: async (volume: number): Promise<void> => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("kurigaki_bgm_volume", String(volume));
+  },
+
+  getSfxEnabled: async (): Promise<boolean> => {
+    if (typeof window === "undefined") return true;
+    const value = localStorage.getItem("kurigaki_sfx_enabled");
+    return value !== "false";
+  },
+
+  setSfxEnabled: async (enabled: boolean): Promise<void> => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("kurigaki_sfx_enabled", String(enabled));
+  },
+
+  // === スピードチャレンジ設定（localStorage のみ）===
+
+  getSpeedChallengeMode: async (): Promise<"mixed" | "en-to-ja" | "ja-to-en"> => {
+    if (typeof window === "undefined") return "mixed";
+    const value = localStorage.getItem("kurigaki_speed_mode");
+    if (value === "en-to-ja" || value === "ja-to-en") return value;
+    return "mixed";
+  },
+
+  setSpeedChallengeMode: async (mode: "mixed" | "en-to-ja" | "ja-to-en"): Promise<void> => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("kurigaki_speed_mode", mode);
+  },
+
+  getSpeedChallengeTimeLimit: async (): Promise<number> => {
+    if (typeof window === "undefined") return 30;
+    const value = localStorage.getItem("kurigaki_speed_time_limit");
+    return value ? parseInt(value, 10) : 30;
+  },
+
+  setSpeedChallengeTimeLimit: async (seconds: number): Promise<void> => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("kurigaki_speed_time_limit", String(seconds));
+  },
+
+  getSpeedChallengeVoiceInput: async (): Promise<boolean> => {
+    if (typeof window === "undefined") return false;
+    const value = localStorage.getItem("kurigaki_speed_voice_input");
+    return value === "true";
+  },
+
+  setSpeedChallengeVoiceInput: async (enabled: boolean): Promise<void> => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("kurigaki_speed_voice_input", String(enabled));
+  },
+
+  getSpeedChallengeSpeakingDifficulty: async (): Promise<"normal" | "easy"> => {
+    if (typeof window === "undefined") return "normal";
+    const value = localStorage.getItem("kurigaki_speed_speaking_difficulty");
+    return value === "easy" ? "easy" : "normal";
+  },
+
+  setSpeedChallengeSpeakingDifficulty: async (difficulty: "normal" | "easy"): Promise<void> => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("kurigaki_speed_speaking_difficulty", difficulty);
   },
 
   // === SRS（間隔反復学習）===
@@ -678,6 +857,9 @@ export const unifiedStorage = {
    * ホームカードが消えず、何度でも同日中に再挑戦できる。
    * 日付が変わると自動的にリセットされ、新しい復習リストを生成する。
    */
+  // TODO: getDailyReviewBatch および getSpeedChallengeBestResult が unifiedStorage を
+  // 自己参照しているため、テスト時にモックが困難。
+  // 将来的には依存メソッドを引数注入に変更することを検討。
   getDailyReviewBatch: async (): Promise<SrsProgress[]> => {
     const BATCH_KEY = "srs_daily_batch";
     const d = new Date();

@@ -3,13 +3,8 @@
  * リザルト画面から単語詳細に遷移し、戻ってきた際にリザルト状態を復元するため
  */
 
-// 回答した単語の型
-export type AnsweredWord = {
-  id: number;
-  word: string;
-  meaning: string;
-  correct: boolean;
-};
+import type { AnsweredWord } from "@/types";
+export type { AnsweredWord };
 
 // セッション結果の型
 export type SessionResult = {
