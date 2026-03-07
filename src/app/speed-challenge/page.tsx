@@ -372,6 +372,10 @@ export default function SpeedChallengePage() {
   const sfxRef = useRef<{ correct?: HTMLAudioElement; incorrect?: HTMLAudioElement; combo?: HTMLAudioElement; highscore?: HTMLAudioElement; countdown?: HTMLAudioElement; }>({});
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const recognitionRef = useRef<any>(null);
+  // 音声認識の再開意図フラグ（true=再開したい, false=意図的に停止）
+  const shouldRestartRecognitionRef = useRef(false);
+  // 音声認識が現在起動中かどうか（onstart/onendで更新）
+  const isRecognitionRunningRef = useRef(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -394,6 +398,16 @@ export default function SpeedChallengePage() {
   useEffect(() => {
     // 音声認識のサポート確認
     setIsSpeechRecognitionSupported(!!(typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition)));
+  }, []);
+
+  // コンポーネントアンマウント時に音声認識を確実に停止
+  useEffect(() => {
+    return () => {
+      shouldRestartRecognitionRef.current = false;
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch { /* ignore */ }
+      }
+    };
   }, []);
 
   // プレイヤー詳細が閉じられたらいいね・フォロー状態をリセット
@@ -740,15 +754,18 @@ export default function SpeedChallengePage() {
   }, [question, gameState]);
 
   // 音声認識の制御
+  // 【モバイル対応】iOS Safari / Android Chrome は continuous=true を無視し、
+  // 各発話後に recognition が自動終了する。onend で再開するが、
+  // useEffect cleanup の stop() と競合しないよう shouldRestartRecognitionRef で制御する。
   useEffect(() => {
     if (!isSpeechRecognitionSupported) return;
 
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const SpeechRecognitionAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!recognitionRef.current) {
-      const recognition = new SpeechRecognition();
+      const recognition = new SpeechRecognitionAPI();
       recognition.continuous = true;
       recognition.interimResults = false;
-      recognition.lang = 'en-US'; // 英語の回答を聞き取る
+      recognition.lang = 'en-US';
       recognitionRef.current = recognition;
     }
 
@@ -756,53 +773,44 @@ export default function SpeedChallengePage() {
 
     // 文法リストの更新（選択肢をヒントとして追加）
     if (question && (window.SpeechGrammarList || window.webkitSpeechGrammarList)) {
-      const SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList;
-      const speechRecognitionList = new SpeechGrammarList();
-      // 選択肢と正解を含める
+      const SpeechGrammarListAPI = window.SpeechGrammarList || window.webkitSpeechGrammarList;
+      const speechRecognitionList = new SpeechGrammarListAPI();
       const wordsToRecognize = [...question.choices, question.correctAnswer];
       const uniqueWords = Array.from(new Set(wordsToRecognize));
-      // JSGF形式で文法を定義
       const grammar = `#JSGF V1.0; grammar choices; public <choice> = ${uniqueWords.join(' | ')} ;`;
       speechRecognitionList.addFromString(grammar, 1);
       recognition.grammars = speechRecognitionList;
     }
 
-    // ゲーム中かつ「日→英」かつ音声入力ONの場合に開始
     const shouldListen = gameState === 'playing' && voiceInputEnabled && question?.type === 'ja-to-en';
 
     if (shouldListen) {
+      // 再開意図フラグを立てる（onend での自動再開を許可）
+      shouldRestartRecognitionRef.current = true;
+
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       recognition.onresult = (event: any) => {
         const last = event.results.length - 1;
         const transcript = event.results[last][0].transcript.trim().toLowerCase();
         const answer = question.correctAnswer.toLowerCase();
-        
+
         const isCorrect = (() => {
-          // 1. 通常判定（完全一致または部分一致）
           if (transcript === answer || transcript.includes(answer)) return true;
 
-          // 2. 易しいモード判定
           if (speakingDifficulty === 'easy') {
-            // 冠詞・前置詞を除去して比較しやすくする ("the schedule" → "schedule")
             const stripArticles = (s: string) =>
               s.replace(/\b(a|an|the|to|of|in|on|at|for)\b/g, '').replace(/\s+/g, ' ').trim();
             const cleanTranscript = stripArticles(transcript);
             const cleanAnswer = stripArticles(answer);
 
-            // 許容誤差: 3文字 または 単語長の50% の大きい方（易しいモードは緩めに）
             const threshold = Math.max(3, Math.floor(cleanAnswer.length * 0.5));
 
-            // 全体での距離チェック
             if (levenshteinDistance(cleanTranscript, cleanAnswer) <= threshold) return true;
-
-            // prefix マッチ（"sched" で "schedule" を正解にする）
             if (cleanAnswer.startsWith(cleanTranscript) && cleanTranscript.length >= 3) return true;
 
-            // 単語ごとの距離チェック（"It is apple" → "apple" 部分を検出）
             const tokens = cleanTranscript.split(/\s+/);
             return tokens.some((w: string) => {
               if (levenshteinDistance(w, cleanAnswer) <= threshold) return true;
-              // 各単語のprefix マッチも試みる
               return cleanAnswer.startsWith(w) && w.length >= 3;
             });
           }
@@ -810,31 +818,46 @@ export default function SpeedChallengePage() {
         })();
 
         dispatch({ type: "SET_RECOGNIZED_TEXT", payload: { text: transcript, isCorrect } });
-
-        // 簡易的な判定（完全一致または回答が含まれているか）
         if (isCorrect) {
           handleSelect(question.correctAnswer);
         }
       };
 
-      recognition.onstart = () => setIsListening(true);
+      recognition.onstart = () => {
+        isRecognitionRunningRef.current = true;
+        setIsListening(true);
+      };
       recognition.onend = () => {
+        isRecognitionRunningRef.current = false;
         setIsListening(false);
-        // 意図せず停止した場合は再開（ゲーム中なら）
-        if (stateRef.current.gameState === 'playing' && voiceInputEnabled && stateRef.current.question?.type === 'ja-to-en') {
-          try { recognition.start(); } catch { /* ignore */ }
+        // shouldRestartRecognitionRef が true の場合のみ再開する
+        // （意図的な stop の場合は false になっているのでループしない）
+        // モバイル対応: 150ms 待機してから再開（即時再開は失敗することがある）
+        if (shouldRestartRecognitionRef.current) {
+          setTimeout(() => {
+            if (shouldRestartRecognitionRef.current) {
+              try { recognition.start(); } catch { /* ignore */ }
+            }
+          }, 150);
         }
       };
 
-      try { recognition.start(); } catch { /* ignore */ }
+      // 未起動の場合のみ start（question 変更で再実行された際は既に起動中のため不要）
+      if (!isRecognitionRunningRef.current) {
+        try { recognition.start(); } catch { /* ignore */ }
+      }
     } else {
-      recognition.stop();
+      // 意図的な停止（voiceInput OFF / ゲーム終了 / ja-to-en 以外）
+      // フラグを先に落としてから stop → onend が自動再開しなくなる
+      shouldRestartRecognitionRef.current = false;
+      if (isRecognitionRunningRef.current) {
+        try { recognition.stop(); } catch { /* ignore */ }
+      }
       setIsListening(false);
     }
 
-    return () => {
-      recognition.stop();
-    };
+    // cleanup では stop しない（question 変更時に認識を継続させるため）
+    // アンマウント時の stop は専用 useEffect([]) で実施
   }, [gameState, voiceInputEnabled, question, isSpeechRecognitionSupported, speakingDifficulty]);
 
   const handleSelect = (choice: string) => {
