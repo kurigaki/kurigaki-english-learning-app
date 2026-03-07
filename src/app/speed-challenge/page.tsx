@@ -800,7 +800,7 @@ export default function SpeedChallengePage() {
     if (!recognitionRef.current) {
       const recognition = new SpeechRecognitionAPI();
       recognition.continuous = true;
-      recognition.interimResults = false; // false: 確定結果のみ受信。PC のリアルタイム感を保ち、Android の空interim問題を回避
+      recognition.interimResults = true; // true: 話しながら部分結果を受信 → 正解なら即判定（Safari のラグ軽減）
       recognition.lang = 'en-US';
       recognitionRef.current = recognition;
     }
@@ -828,6 +828,7 @@ export default function SpeedChallengePage() {
       recognition.onresult = (event: any) => {
         const last = event.results.length - 1;
         const transcript = event.results[last][0].transcript.trim().toLowerCase();
+        if (!transcript) return; // 空の interim 結果は無視（Android で発生することがある）
         const answer = question.correctAnswer.toLowerCase();
 
         const isCorrect = (() => {
