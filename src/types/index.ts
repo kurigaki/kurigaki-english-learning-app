@@ -192,6 +192,14 @@ export type WordListSortOption =
   | "attempts"
   | "difficulty";
 
+// クイズ・スピードチャレンジで回答した単語
+export type AnsweredWord = {
+  id: number;
+  word: string;
+  meaning: string;
+  correct: boolean;
+};
+
 // スピードチャレンジ結果
 export type SpeedChallengeResult = {
   id: string;
@@ -200,4 +208,8 @@ export type SpeedChallengeResult = {
   totalQuestions: number;
   timeLimit: number; // 秒
   playedAt: string; // ISO 8601形式
+  maxCombo?: number;
+  incorrectWordIds?: number[];
+  mode?: string;
+  difficulty?: string;
 };
