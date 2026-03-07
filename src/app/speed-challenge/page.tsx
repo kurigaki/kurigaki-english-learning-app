@@ -379,8 +379,10 @@ export default function SpeedChallengePage() {
   // onend によるリスタートタイマーの参照（null=予約なし）
   // useEffect 側が「再開予約済みなら start() しない」ために参照する
   const pendingRestartTimerRef = useRef<NodeJS.Timeout | null>(null);
-  // モバイル端末かどうか（iOS/Android では push-to-talk UI を使う）
+  // モバイル端末かどうか（iOS/Android ではトグルUI を使う）
   const isMobileRef = useRef(false);
+  // モバイル: 話すボタンの ref（ネイティブ contextmenu を抑止するため）
+  const speakButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -405,6 +407,16 @@ export default function SpeedChallengePage() {
   useEffect(() => {
     // 音声認識のサポート確認
     setIsSpeechRecognitionSupported(!!(typeof window !== 'undefined' && (window.SpeechRecognition || window.webkitSpeechRecognition)));
+  }, []);
+
+  // モバイル: 話すボタンのコンテキストメニューをネイティブリスナーで抑止
+  // React の onContextMenu だけでは Chrome Android で効かない場合があるため capture フェーズで処理
+  useEffect(() => {
+    const btn = speakButtonRef.current;
+    if (!btn || !isMobileRef.current) return;
+    const prevent = (e: Event) => e.preventDefault();
+    btn.addEventListener('contextmenu', prevent, { capture: true });
+    return () => btn.removeEventListener('contextmenu', prevent, { capture: true });
   }, []);
 
   // コンポーネントアンマウント時に音声認識を確実に停止
@@ -988,21 +1000,18 @@ export default function SpeedChallengePage() {
     unifiedStorage.setSpeedChallengeVoiceInput(!voiceInputEnabled);
   };
 
-  // モバイル: 押しっぱなしで話す Push-to-Talk
-  const handleSpeakStart = (e: React.PointerEvent<HTMLButtonElement>) => {
-    e.preventDefault(); // コンテキストメニュー・テキスト選択を防ぐ
-    if (!recognitionRef.current || isRecognitionRunningRef.current) return;
-    isRecognitionRunningRef.current = true;
-    try {
-      recognitionRef.current.start();
-    } catch {
-      isRecognitionRunningRef.current = false;
-    }
-  };
-  const handleSpeakEnd = (e: React.PointerEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    if (recognitionRef.current && isRecognitionRunningRef.current) {
-      try { recognitionRef.current.stop(); } catch { /* ignore */ }
+  // モバイル: タップでON/OFFトグル（長押し不要 → コンテキストメニュー問題を回避）
+  const handleSpeakToggle = () => {
+    if (isListening) {
+      // 停止: shouldRestart を先に落としてから stop（onend で自動再開しないように）
+      shouldRestartRecognitionRef.current = false;
+      if (recognitionRef.current && isRecognitionRunningRef.current) {
+        try { recognitionRef.current.stop(); } catch { /* ignore */ }
+      }
+    } else {
+      if (!recognitionRef.current || isRecognitionRunningRef.current) return;
+      isRecognitionRunningRef.current = true;
+      try { recognitionRef.current.start(); } catch { isRecognitionRunningRef.current = false; }
     }
   };
 
@@ -1880,20 +1889,25 @@ export default function SpeedChallengePage() {
                 </h2>
                 {!isEnToJa && isMobileRef.current && voiceInputEnabled && (
                   <div className="flex flex-col items-center ml-2 relative">
+                    {/* タップでON/OFFトグル。長押し不要なのでコンテキストメニューが出ない */}
                     <button
-                      onPointerDown={handleSpeakStart}
-                      onPointerUp={handleSpeakEnd}
-                      onPointerLeave={handleSpeakEnd}
-                      onPointerCancel={handleSpeakEnd}
+                      ref={speakButtonRef}
+                      onClick={handleSpeakToggle}
                       onContextMenu={(e) => e.preventDefault()}
-                      className={`flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-medium select-none touch-none transition-colors ${
+                      style={{ WebkitTouchCallout: 'none', WebkitUserSelect: 'none', userSelect: 'none', touchAction: 'manipulation' }}
+                      className={`flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-medium transition-colors ${
                         isListening
                           ? "bg-blue-500 text-white dark:bg-blue-600"
                           : "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
                       }`}
-                      title={isListening ? "話してください" : "押しながら話す"}
+                      aria-label={isListening ? "タップして停止" : "タップして話す"}
+                      title={isListening ? "タップして停止" : "タップして話す"}
                     >
-                      🎙️ {isListening ? "聞いています" : "押して話す"}
+                      {/* aria-hidden で絵文字を非インタラクティブ化し Chrome の画像長押しメニューを抑止 */}
+                      <span aria-hidden="true" style={{ pointerEvents: 'none', userSelect: 'none' }}>🎙️</span>
+                      <span style={{ pointerEvents: 'none', userSelect: 'none' }}>
+                        {isListening ? "聞いています" : "話す"}
+                      </span>
                     </button>
                     {recognizedText && (
                       <span className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap text-[10px] px-2 py-0.5 rounded-full z-10 animate-fade-in ${
