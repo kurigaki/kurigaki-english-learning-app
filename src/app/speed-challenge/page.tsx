@@ -379,10 +379,8 @@ export default function SpeedChallengePage() {
   // onend によるリスタートタイマーの参照（null=予約なし）
   // useEffect 側が「再開予約済みなら start() しない」ために参照する
   const pendingRestartTimerRef = useRef<NodeJS.Timeout | null>(null);
-  // モバイル端末かどうか（iOS/Android では tap-to-speak UI を使う）
+  // モバイル端末かどうか（iOS/Android では push-to-talk UI を使う）
   const isMobileRef = useRef(false);
-  // モバイル: ユーザーがタップして話すのを待っている状態
-  const [readyToSpeak, setReadyToSpeak] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -845,8 +843,7 @@ export default function SpeedChallengePage() {
         if (!shouldRestartRecognitionRef.current) return;
 
         if (isMobile) {
-          // モバイル: 自動再開しない。ボタンをタップして再度話せるようにする
-          setReadyToSpeak(true);
+          // モバイル: 自動再開しない。push-to-talk ボタンが常時表示されている
         } else {
           // デスクトップ: タイマーで自動再開（既存の動作を維持）
           if (pendingRestartTimerRef.current) {
@@ -866,7 +863,6 @@ export default function SpeedChallengePage() {
       recognition.onerror = (event: any) => {
         if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
           shouldRestartRecognitionRef.current = false;
-          setReadyToSpeak(false);
           if (pendingRestartTimerRef.current) {
             clearTimeout(pendingRestartTimerRef.current);
             pendingRestartTimerRef.current = null;
@@ -875,10 +871,7 @@ export default function SpeedChallengePage() {
       };
 
       if (isMobile) {
-        // モバイル: 自動起動しない。まだ起動中でなければタップ待ちを表示
-        if (!isRecognitionRunningRef.current) {
-          setReadyToSpeak(true);
-        }
+        // モバイル: 自動起動しない。push-to-talk ボタンが常時表示されている
       } else {
         // デスクトップ: 未起動かつ再開タイマーが予約されていない場合のみ自動起動
         if (!isRecognitionRunningRef.current && pendingRestartTimerRef.current === null) {
@@ -889,7 +882,6 @@ export default function SpeedChallengePage() {
     } else {
       // 意図的な停止（voiceInput OFF / ゲーム終了 / ja-to-en 以外）
       shouldRestartRecognitionRef.current = false;
-      setReadyToSpeak(false);
       if (pendingRestartTimerRef.current) {
         clearTimeout(pendingRestartTimerRef.current);
         pendingRestartTimerRef.current = null;
@@ -996,16 +988,21 @@ export default function SpeedChallengePage() {
     unifiedStorage.setSpeedChallengeVoiceInput(!voiceInputEnabled);
   };
 
-  // モバイル: ユーザーが「タップして話す」ボタンを押したときに認識を1回起動
-  const handleTapToSpeak = () => {
+  // モバイル: 押しっぱなしで話す Push-to-Talk
+  const handleSpeakStart = (e: React.PointerEvent<HTMLButtonElement>) => {
+    e.preventDefault(); // コンテキストメニュー・テキスト選択を防ぐ
     if (!recognitionRef.current || isRecognitionRunningRef.current) return;
-    setReadyToSpeak(false);
     isRecognitionRunningRef.current = true;
     try {
       recognitionRef.current.start();
     } catch {
       isRecognitionRunningRef.current = false;
-      setReadyToSpeak(true);
+    }
+  };
+  const handleSpeakEnd = (e: React.PointerEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (recognitionRef.current && isRecognitionRunningRef.current) {
+      try { recognitionRef.current.stop(); } catch { /* ignore */ }
     }
   };
 
@@ -1881,16 +1878,35 @@ export default function SpeedChallengePage() {
                 <h2 className="text-2xl font-bold text-gradient">
                   {isEnToJa ? question.word.word : question.word.meaning}
                 </h2>
-                {!isEnToJa && isMobileRef.current && readyToSpeak && (
-                  <button
-                    onClick={handleTapToSpeak}
-                    className="ml-2 flex items-center gap-1 px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-[10px] font-medium active:scale-95 transition-transform"
-                    title="タップして話す"
-                  >
-                    🎙️ 話す
-                  </button>
+                {!isEnToJa && isMobileRef.current && voiceInputEnabled && (
+                  <div className="flex flex-col items-center ml-2 relative">
+                    <button
+                      onPointerDown={handleSpeakStart}
+                      onPointerUp={handleSpeakEnd}
+                      onPointerLeave={handleSpeakEnd}
+                      onPointerCancel={handleSpeakEnd}
+                      onContextMenu={(e) => e.preventDefault()}
+                      className={`flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-medium select-none touch-none transition-colors ${
+                        isListening
+                          ? "bg-blue-500 text-white dark:bg-blue-600"
+                          : "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+                      }`}
+                      title={isListening ? "話してください" : "押しながら話す"}
+                    >
+                      🎙️ {isListening ? "聞いています" : "押して話す"}
+                    </button>
+                    {recognizedText && (
+                      <span className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 whitespace-nowrap text-[10px] px-2 py-0.5 rounded-full z-10 animate-fade-in ${
+                        recognizedText.isCorrect
+                          ? "bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300"
+                          : "bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300"
+                      }`}>
+                        {recognizedText.text}
+                      </span>
+                    )}
+                  </div>
                 )}
-                {isListening && !isEnToJa && (
+                {isListening && !isEnToJa && !isMobileRef.current && (
                   <div className="flex flex-col items-center ml-2">
                     <span className="animate-pulse text-blue-500" title="音声認識中">
                       🎙️
