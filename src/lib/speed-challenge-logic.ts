@@ -2,7 +2,7 @@ import { words, Word } from "@/data/words/compat";
 import { Question, QuestionType } from "@/types";
 import { shuffleArray, pickRandom } from "@/lib/shuffle";
 
-export type SpeedChallengeMode = 'mixed' | 'en-to-ja' | 'ja-to-en';
+export type SpeedChallengeMode = 'mixed' | 'en-to-ja' | 'ja-to-en' | 'ja-to-en-speaking';
 
 export type Title = { emoji: string; text: string };
 
@@ -38,7 +38,7 @@ const QUESTION_TYPE_WEIGHTS: QuestionTypeWeight[] = [
 
 export function selectQuestionType(mode: SpeedChallengeMode): QuestionType {
   if (mode === 'en-to-ja') return 'en-to-ja';
-  if (mode === 'ja-to-en') return 'ja-to-en';
+  if (mode === 'ja-to-en' || mode === 'ja-to-en-speaking') return 'ja-to-en';
 
   const totalWeight = QUESTION_TYPE_WEIGHTS.reduce((sum, q) => sum + q.weight, 0);
   let random = Math.random() * totalWeight;

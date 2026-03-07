@@ -27,7 +27,7 @@ const TIME_LIMIT = 30;
 const COMBO_BONUS_THRESHOLD = 5;
 const FEEDBACK_DURATION_MS = 300;
 
-type SpeedChallengeMode = 'mixed' | 'en-to-ja' | 'ja-to-en';
+type SpeedChallengeMode = 'mixed' | 'en-to-ja' | 'ja-to-en' | 'ja-to-en-speaking';
 
 type Title = { emoji: string; text: string };
 
@@ -63,7 +63,7 @@ const QUESTION_TYPE_WEIGHTS: QuestionTypeWeight[] = [
 
 function selectQuestionType(mode: SpeedChallengeMode): QuestionType {
   if (mode === 'en-to-ja') return 'en-to-ja';
-  if (mode === 'ja-to-en') return 'ja-to-en';
+  if (mode === 'ja-to-en' || mode === 'ja-to-en-speaking') return 'ja-to-en';
 
   const totalWeight = QUESTION_TYPE_WEIGHTS.reduce((sum, q) => sum + q.weight, 0);
   let random = Math.random() * totalWeight;
@@ -563,11 +563,10 @@ export default function SpeedChallengePage() {
     const { score, totalQuestions, answeredWords, maxCombo } = stateRef.current;
     const incorrectWordIds = answeredWords.filter(w => !w.correct).map(w => w.id);
 
-    // 音声専用セッション判定:
-    //   - 音声入力OFF → 従来通りハイスコア更新
-    //   - 音声入力ON + ja-to-en問題を一度もタップしていない → ハイスコア更新
-    //   - 音声入力ON + ja-to-en問題をタップした → ハイスコア更新しない（タップの方が速いため不公平）
-    const isVoiceOnlyRun = !voiceInputEnabledRef.current || tapAnswerOnVoiceQuestionRef.current === 0;
+    // ハイスコア対象判定:
+    //   - ja-to-en-speaking モード: 全問スピーキングで回答した場合のみ対象
+    //   - その他のモード: 常に対象（タップ/クリックで競う）
+    const isVoiceOnlyRun = mode !== 'ja-to-en-speaking' || tapAnswerOnVoiceQuestionRef.current === 0;
 
     // ハイスコアは addSpeedChallengeResult が localStorage を更新する前に取得する
     const prevHighScore = await unifiedStorage.getSpeedChallengeHighScore(timeLimit, mode, speakingDifficulty);
@@ -949,8 +948,8 @@ export default function SpeedChallengePage() {
   const handleSelect = (choice: string, source: 'tap' | 'voice' = 'tap') => {
     if (!question || gameState !== "playing") return;
 
-    // 音声入力有効中に ja-to-en 問題をタップで回答した場合を記録（ハイスコア判定に使用）
-    if (source === 'tap' && voiceInputEnabled && question.type === 'ja-to-en') {
+    // スピーキングモードで ja-to-en 問題をタップで回答した場合を記録（ハイスコード判定に使用）
+    if (source === 'tap' && mode === 'ja-to-en-speaking' && question.type === 'ja-to-en') {
       tapAnswerOnVoiceQuestionRef.current += 1;
     }
 
@@ -1031,6 +1030,11 @@ export default function SpeedChallengePage() {
   const handleModeChange = (newMode: SpeedChallengeMode) => {
     setMode(newMode);
     unifiedStorage.setSpeedChallengeMode(newMode);
+    // スピーキングモード選択時は音声入力を自動ON
+    if (newMode === 'ja-to-en-speaking') {
+      setVoiceInputEnabled(true);
+      unifiedStorage.setSpeedChallengeVoiceInput(true);
+    }
   };
 
   const handleTimeLimitChange = (newLimit: number) => {
@@ -1519,13 +1523,17 @@ export default function SpeedChallengePage() {
                   </h3>
                   <div className="space-y-2">
                     {[
-                      { id: 'mixed', label: 'ミックス' },
-                      { id: 'en-to-ja', label: '英→日' },
-                      { id: 'ja-to-en', label: '日→英' }
+                      { id: 'mixed', label: 'ミックス', speaking: false },
+                      { id: 'en-to-ja', label: '英→日', speaking: false },
+                      { id: 'ja-to-en', label: '日→英', speaking: false },
+                      { id: 'ja-to-en-speaking', label: '日→英 スピーキング', speaking: true },
                     ].map((m) => (
-                      <div key={m.id} className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-lg p-2">
+                      <div key={m.id} className={`border rounded-lg p-2 ${m.speaking ? "bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700/50" : "bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800"}`}>
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-xs font-bold text-slate-600 dark:text-slate-400">{m.label}</span>
+                          <span className={`text-xs font-bold flex items-center gap-1 ${m.speaking ? "text-blue-600 dark:text-blue-400" : "text-slate-600 dark:text-slate-400"}`}>
+                            {m.speaking && <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" /></svg>}
+                            {m.label}
+                          </span>
                         </div>
                         <div className="grid grid-cols-2 gap-2">
                           {[
@@ -1645,7 +1653,7 @@ export default function SpeedChallengePage() {
             
             <div className="mt-2 pt-2 border-t border-yellow-200 dark:border-yellow-800/30">
               <p className="text-[10px] text-slate-500 dark:text-slate-400 mb-1 text-left">出題モード</p>
-              <div className="flex gap-1">
+              <div className="flex gap-1 mb-1">
                 {[
                   { id: 'mixed', label: 'ミックス' },
                   { id: 'en-to-ja', label: '英→日' },
@@ -1655,8 +1663,8 @@ export default function SpeedChallengePage() {
                     key={m.id}
                     onClick={() => handleModeChange(m.id as SpeedChallengeMode)}
                     className={`flex-1 py-1 px-2 rounded text-[10px] font-bold transition-colors ${
-                      mode === m.id 
-                        ? "bg-orange-500 text-white shadow-sm" 
+                      mode === m.id
+                        ? "bg-orange-500 text-white shadow-sm"
                         : "bg-white/50 dark:bg-black/20 text-slate-600 dark:text-slate-400 hover:bg-white/80 dark:hover:bg-black/40"
                     }`}
                   >
@@ -1664,28 +1672,61 @@ export default function SpeedChallengePage() {
                   </button>
                 ))}
               </div>
+              {/* スピーキングモード: 全幅で目立つ配置 */}
+              <button
+                onClick={() => handleModeChange('ja-to-en-speaking')}
+                className={`w-full py-1 px-2 rounded text-[10px] font-bold transition-colors flex items-center justify-center gap-1 ${
+                  mode === 'ja-to-en-speaking'
+                    ? "bg-blue-500 text-white shadow-sm"
+                    : "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-700/50 hover:bg-blue-100 dark:hover:bg-blue-900/40"
+                }`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" />
+                </svg>
+                日→英 スピーキング（全問音声でハイスコア対象）
+              </button>
             </div>
 
             <div className="mt-2 pt-2 border-t border-yellow-200 dark:border-yellow-800/30">
               <div className="flex justify-between items-center mb-1">
                 <p className="text-[10px] text-slate-500 dark:text-slate-400">制限時間</p>
-                {!isSpeechRecognitionSupported && isIOSRef.current && (
-                  <p className="text-[9px] text-amber-600 dark:text-amber-400">
-                    音声入力はSafariのみ対応
-                  </p>
-                )}
-                {isSpeechRecognitionSupported && (
-                  <button
-                    onClick={handleVoiceInputToggle}
-                    className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-colors ${
-                      voiceInputEnabled ? "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400" : "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
-                    }`}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" />
-                    </svg>
-                    音声入力 {voiceInputEnabled ? "ON" : "OFF"}
-                  </button>
+                {mode === 'ja-to-en-speaking' ? (
+                  // スピーキングモード: トグル不要、状態を表示
+                  !isSpeechRecognitionSupported ? (
+                    <p className="text-[9px] text-amber-600 dark:text-amber-400">
+                      {isIOSRef.current ? "Safari でのみ利用可" : "このブラウザは音声非対応"}
+                    </p>
+                  ) : (
+                    <span className="flex items-center gap-1 text-[9px] text-blue-600 dark:text-blue-400 font-bold">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" />
+                      </svg>
+                      音声入力 ON
+                    </span>
+                  )
+                ) : (
+                  // 通常モード: 任意の音声入力トグル
+                  <>
+                    {!isSpeechRecognitionSupported && isIOSRef.current && (
+                      <p className="text-[9px] text-amber-600 dark:text-amber-400">
+                        音声入力はSafariのみ対応
+                      </p>
+                    )}
+                    {isSpeechRecognitionSupported && (
+                      <button
+                        onClick={handleVoiceInputToggle}
+                        className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold transition-colors ${
+                          voiceInputEnabled ? "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400" : "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+                        }`}
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" />
+                        </svg>
+                        音声入力 {voiceInputEnabled ? "ON" : "OFF"}
+                      </button>
+                    )}
+                  </>
                 )}
               </div>
               <div className="flex gap-1">
@@ -2074,10 +2115,18 @@ export default function SpeedChallengePage() {
                 </div>
               </div>
             )}
-            {voiceInputEnabled && tapAnswerOnVoiceQuestionRef.current > 0 && (
+            {mode === 'ja-to-en-speaking' && tapAnswerOnVoiceQuestionRef.current > 0 && (
               <div className="mb-2 p-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800/40">
                 <p className="text-xs text-blue-600 dark:text-blue-400">
                   {isMobileRef.current ? "タップ" : "クリック"}回答 {tapAnswerOnVoiceQuestionRef.current} 問あり — 全問スピーキングで回答するとハイスコア対象になります
+                </p>
+              </div>
+            )}
+            {mode === 'ja-to-en-speaking' && tapAnswerOnVoiceQuestionRef.current === 0 && (
+              <div className="mb-2 p-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800/40">
+                <p className="text-xs text-blue-600 dark:text-blue-400 flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" /></svg>
+                  全問スピーキングで回答！ハイスコア対象
                 </p>
               </div>
             )}
