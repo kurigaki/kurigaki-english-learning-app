@@ -830,30 +830,29 @@ export default function SpeedChallengePage() {
         }
       };
 
-      recognition.onstart = () => {
-        isRecognitionRunningRef.current = true;
-        setIsListening(true);
-      };
+      // onstart: isRecognitionRunningRef はすでに start() 直前に true にしてある
+      recognition.onstart = () => { setIsListening(true); };
+
       recognition.onend = () => {
         isRecognitionRunningRef.current = false;
         setIsListening(false);
         if (shouldRestartRecognitionRef.current) {
-          // 既存タイマーをキャンセルしてから予約（二重スケジュール防止）
+          // 既存タイマーをキャンセルしてから再予約（二重スケジュール防止）
           if (pendingRestartTimerRef.current) {
             clearTimeout(pendingRestartTimerRef.current);
           }
           pendingRestartTimerRef.current = setTimeout(() => {
             pendingRestartTimerRef.current = null;
-            // フラグが残っており、かつ起動中でない場合のみ再開
             if (shouldRestartRecognitionRef.current && !isRecognitionRunningRef.current) {
-              try { recognition.start(); } catch { /* ignore */ }
+              // start() 直前に同期的に true → useEffect の二重 start を防ぐ
+              isRecognitionRunningRef.current = true;
+              try { recognition.start(); } catch { isRecognitionRunningRef.current = false; }
             }
-          }, 300); // モバイルで即時 start が失敗するため 300ms 待機
+          }, 300);
         }
       };
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       recognition.onerror = (event: any) => {
-        // パーミッション拒否の場合はループを止める
         if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
           shouldRestartRecognitionRef.current = false;
           if (pendingRestartTimerRef.current) {
@@ -861,13 +860,14 @@ export default function SpeedChallengePage() {
             pendingRestartTimerRef.current = null;
           }
         }
-        // aborted（意図的な stop）/ no-speech / network は onend に任せる
       };
 
       // 未起動かつ再開タイマーが予約されていない場合のみ start
-      // → onend がすでに再開を予約している場合は二重 start を防ぐ
+      // start() 直前に同期的に true → onstart 発火前の隙間で useEffect が
+      // 再実行されても isRecognitionRunningRef.current = true で二重 start を防ぐ
       if (!isRecognitionRunningRef.current && pendingRestartTimerRef.current === null) {
-        try { recognition.start(); } catch { /* ignore */ }
+        isRecognitionRunningRef.current = true;
+        try { recognition.start(); } catch { isRecognitionRunningRef.current = false; }
       }
     } else {
       // 意図的な停止（voiceInput OFF / ゲーム終了 / ja-to-en 以外）
