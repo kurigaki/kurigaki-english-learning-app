@@ -66,6 +66,8 @@ export function speak(
   window.speechSynthesis.cancel();
 
   const utterance = new SpeechSynthesisUtterance(text);
+  // GC 防止: モジュール変数で参照を保持（Chrome では utterance が GC されると再生が止まる）
+  _currentUtterance = utterance;
 
   // オプション設定
   utterance.rate = options?.rate ?? 1;
@@ -108,7 +110,15 @@ export function speak(
     utterance.onerror = options.onError;
   }
 
-  window.speechSynthesis.speak(utterance);
+  // Chrome の cancel() → speak() 同期バグ回避: setTimeout(0) で非同期化
+  // paused 状態のまま speak() しても無音になるため resume() も呼ぶ
+  setTimeout(() => {
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
+    window.speechSynthesis.speak(utterance);
+  }, 0);
+
   return utterance;
 }
 
@@ -118,6 +128,7 @@ export function speakWord(
   options?: {
     slow?: boolean; // ゆっくり読み上げ
     onEnd?: () => void;
+    onError?: () => void;
   }
 ): void {
   speak(word, {
@@ -125,6 +136,7 @@ export function speakWord(
     pitch: 1,
     language: "en-US",
     onEnd: options?.onEnd,
+    onError: options?.onError ? () => options.onError!() : undefined,
   });
 }
 
@@ -134,6 +146,7 @@ export function speakSentence(
   options?: {
     slow?: boolean;
     onEnd?: () => void;
+    onError?: () => void;
   }
 ): void {
   speak(sentence, {
@@ -141,6 +154,7 @@ export function speakSentence(
     pitch: 1,
     language: "en-US",
     onEnd: options?.onEnd,
+    onError: options?.onError ? () => options.onError!() : undefined,
   });
 }
 
@@ -184,6 +198,9 @@ export function waitForVoices(timeout = 1000): Promise<SpeechSynthesisVoice[]> {
   });
 }
 
+// utterance をモジュールスコープで保持（Chrome GC バグ対策）
+let _currentUtterance: SpeechSynthesisUtterance | null = null;
+
 // 音声初期化状態を管理
 let voicesInitialized = false;
 let voicesPromise: Promise<SpeechSynthesisVoice[]> | null = null;
@@ -209,6 +226,7 @@ export function speakWordWithVariant(
   options?: {
     slow?: boolean;
     onEnd?: () => void;
+    onError?: () => void;
   }
 ): void {
   speak(word, {
@@ -216,5 +234,6 @@ export function speakWordWithVariant(
     pitch: 1,
     language: variant === "uk" ? "en-GB" : "en-US",
     onEnd: options?.onEnd,
+    onError: options?.onError ? () => options.onError!() : undefined,
   });
 }

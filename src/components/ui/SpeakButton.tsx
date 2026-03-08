@@ -46,16 +46,15 @@ export const SpeakButton = ({
 
     setIsSpeaking(true);
 
-    const onEnd = () => {
-      setIsSpeaking(false);
-    };
+    const onEnd = () => setIsSpeaking(false);
+    const onError = () => setIsSpeaking(false);
 
     if (type === "sentence") {
-      speakSentence(text, { slow, onEnd });
+      speakSentence(text, { slow, onEnd, onError });
     } else if (variant) {
-      speakWordWithVariant(text, variant, { slow, onEnd });
+      speakWordWithVariant(text, variant, { slow, onEnd, onError });
     } else {
-      speakWord(text, { slow, onEnd });
+      speakWord(text, { slow, onEnd, onError });
     }
   };
 
