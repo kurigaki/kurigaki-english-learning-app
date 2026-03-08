@@ -62,7 +62,7 @@ export function speak(
     return null;
   }
 
-  // 既存の読み上げをキャンセルしてブラウザの内部状態をリセット
+  // 既存の読み上げをキャンセル
   window.speechSynthesis.cancel();
 
   const utterance = new SpeechSynthesisUtterance(text);
@@ -110,24 +110,13 @@ export function speak(
     utterance.onerror = options.onError;
   }
 
-  // iOS Safari: speak() はユーザージェスチャーのコールスタック内で同期的に呼ぶ必要がある。
-  //            setTimeout(0) でも「ユーザー操作なし」と判定されブロックされる。
-  // Chrome (desktop): cancel() → 同期 speak() でサイレントに失敗するバグがある。
-  //                   setTimeout(0) で 1 tick 待つと回避できる。
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  if (isIOS) {
-    if (window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-    }
-    window.speechSynthesis.speak(utterance);
-  } else {
-    setTimeout(() => {
-      if (window.speechSynthesis.paused) {
-        window.speechSynthesis.resume();
-      }
-      window.speechSynthesis.speak(utterance);
-    }, 0);
+  // speak() はユーザージェスチャーのコールスタック内で同期的に呼ぶ必要がある。
+  // setTimeout(0) でも iOS Safari・Chrome desktop ともに「ユーザー操作なし」と判定され
+  // ブロックされることがあるため、cancel() 後は即同期で speak() する。
+  if (window.speechSynthesis.paused) {
+    window.speechSynthesis.resume();
   }
+  window.speechSynthesis.speak(utterance);
 
   return utterance;
 }
