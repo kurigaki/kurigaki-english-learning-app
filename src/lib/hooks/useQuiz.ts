@@ -565,6 +565,8 @@ export const useQuiz = () => {
 
   useEffect(() => {
     if (inQuizSettings.audioMode !== "auto") return;
+    // 音声認識（マイク）動作中は TTS を呼ばない（競合防止）
+    if (isListening) return;
     if (!currentQuestion || !isSpeechSynthesisSupported() || selected !== null || hasAutoPlayedRef.current.has(currentIndex)) return;
     hasAutoPlayedRef.current.add(currentIndex);
     const timeoutId = setTimeout(() => {
@@ -576,7 +578,7 @@ export const useQuiz = () => {
       }
     }, 300);
     return () => clearTimeout(timeoutId);
-  }, [currentQuestion, currentIndex, selected, inQuizSettings.audioMode]);
+  }, [currentQuestion, currentIndex, selected, inQuizSettings.audioMode, isListening]);
 
   const handleAchievementClose = () => {
     const remaining = pendingAchievements.slice(1);
