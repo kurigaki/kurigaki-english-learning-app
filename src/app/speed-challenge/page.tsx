@@ -342,7 +342,7 @@ export default function SpeedChallengePage() {
   const [mode, setMode] = useState<SpeedChallengeMode>('mixed');
   const [timeLimitSetting, setTimeLimitSetting] = useState(30);
   const [voiceInputEnabled, setVoiceInputEnabled] = useState(false);
-  const [speakingDifficulty, setSpeakingDifficulty] = useState<'normal' | 'easy'>('normal');
+  const [speakingDifficulty, setSpeakingDifficulty] = useState<'strict' | 'normal' | 'easy'>('normal');
   const [rankingPeriod, setRankingPeriod] = useState<'all' | 'monthly' | 'weekly' | 'friends'>('all');
   const [hasNotifiedHighScore, setHasNotifiedHighScore] = useState(false);
   const [hasNotifiedCloseToHighScore, setHasNotifiedCloseToHighScore] = useState(false);
@@ -470,7 +470,7 @@ export default function SpeedChallengePage() {
             .eq('user_id', selectedPlayer.user_id)
             .eq('time_limit', timeLimitSetting)
             .eq('mode', mode)
-            .eq('difficulty', speakingDifficulty)
+            .eq('difficulty', mode === 'ja-to-en-speaking' ? speakingDifficulty : 'normal')
             .order('created_at', { ascending: false })
             .limit(20);
           
@@ -520,7 +520,7 @@ export default function SpeedChallengePage() {
   // ハイスコア取得とセッション復元
   useEffect(() => {
     const loadHighScore = async () => {
-      const hs = await unifiedStorage.getSpeedChallengeHighScore(timeLimitSetting, mode, speakingDifficulty);
+      const hs = await unifiedStorage.getSpeedChallengeHighScore(timeLimitSetting, mode, mode === 'ja-to-en-speaking' ? speakingDifficulty : 'normal');
       dispatch({ type: "SET_HIGH_SCORE", payload: hs });
     };
     loadHighScore();
@@ -568,8 +568,11 @@ export default function SpeedChallengePage() {
     //   - その他のモード: 常に対象（タップ/クリックで競う）
     const isVoiceOnlyRun = mode !== 'ja-to-en-speaking' || tapAnswerOnVoiceQuestionRef.current === 0;
 
+    // 非スピーキングモードは difficulty を 'normal' 固定（タップ競技に難易度差なし）
+    const effectiveDifficulty = mode === 'ja-to-en-speaking' ? speakingDifficulty : 'normal';
+
     // ハイスコアは addSpeedChallengeResult が localStorage を更新する前に取得する
-    const prevHighScore = await unifiedStorage.getSpeedChallengeHighScore(timeLimit, mode, speakingDifficulty);
+    const prevHighScore = await unifiedStorage.getSpeedChallengeHighScore(timeLimit, mode, effectiveDifficulty);
 
     // 結果を保存（音声専用でない場合はハイスコアを更新しない）
     await unifiedStorage.addSpeedChallengeResult({
@@ -580,12 +583,12 @@ export default function SpeedChallengePage() {
       maxCombo: maxCombo, // コンボ数も保存（称号判定用）
       incorrectWordIds: incorrectWordIds,
       mode: mode,
-      difficulty: speakingDifficulty,
+      difficulty: effectiveDifficulty,
     }, { updateHighScore: isVoiceOnlyRun });
 
     // 今日のランキングを取得（音声専用セッションのみ）
     const ranking = isVoiceOnlyRun
-      ? await unifiedStorage.getTodaysSpeedChallengeRanking(score, timeLimit, mode, speakingDifficulty)
+      ? await unifiedStorage.getTodaysSpeedChallengeRanking(score, timeLimit, mode, effectiveDifficulty)
       : null;
 
     // ハイスコアチェック（音声専用セッションのみ更新）
@@ -849,6 +852,10 @@ export default function SpeedChallengePage() {
         const answer = question.correctAnswer.toLowerCase();
 
         const isCorrect = (() => {
+          if (speakingDifficulty === 'strict') {
+            return transcript === answer;
+          }
+
           if (transcript === answer || transcript.includes(answer)) return true;
 
           if (speakingDifficulty === 'easy') {
@@ -1069,7 +1076,7 @@ export default function SpeedChallengePage() {
     }
   };
 
-  const handleSpeakingDifficultyChange = (diff: 'normal' | 'easy') => {
+  const handleSpeakingDifficultyChange = (diff: 'strict' | 'normal' | 'easy') => {
     setSpeakingDifficulty(diff);
     unifiedStorage.setSpeedChallengeSpeakingDifficulty(diff);
   };
@@ -1116,6 +1123,7 @@ export default function SpeedChallengePage() {
           }
         }
 
+        const effectiveDifficultyForRanking = mode === 'ja-to-en-speaking' ? speakingDifficulty : 'normal';
         // ランキング取得
         let query = supabase
           .from('speed_challenge_results')
@@ -1123,7 +1131,7 @@ export default function SpeedChallengePage() {
           // 現在の設定でフィルタリング
           .eq('time_limit', timeLimitSetting)
           .eq('mode', mode)
-          .eq('difficulty', speakingDifficulty)
+          .eq('difficulty', effectiveDifficultyForRanking)
           .order('score', { ascending: false })
           .limit(10);
         
@@ -1176,7 +1184,7 @@ export default function SpeedChallengePage() {
           .eq('user_id', user.id)
           .eq('time_limit', timeLimitSetting)
           .eq('mode', mode)
-          .eq('difficulty', speakingDifficulty)
+          .eq('difficulty', effectiveDifficultyForRanking)
           .order('score', { ascending: false })
           .limit(1)
           .single();
@@ -1198,7 +1206,7 @@ export default function SpeedChallengePage() {
             .select('*', { count: 'exact', head: true })
             .eq('time_limit', timeLimitSetting)
             .eq('mode', mode)
-            .eq('difficulty', speakingDifficulty)
+            .eq('difficulty', effectiveDifficultyForRanking)
             .gt('score', myBest.score);
           
           if (dateFilter) {
@@ -1535,14 +1543,41 @@ export default function SpeedChallengePage() {
                             {m.label}
                           </span>
                         </div>
-                        <div className="grid grid-cols-2 gap-2">
-                          {[
-                            { id: 'normal', label: '普通' },
-                            { id: 'easy', label: '易しい' }
-                          ].map((d) => {
-                            const key = `${t}_${m.id}_${d.id}`;
+                        {m.speaking ? (
+                          <div className="grid grid-cols-3 gap-1">
+                            {[
+                              { id: 'strict', label: 'ネイティブ' },
+                              { id: 'normal', label: '標準' },
+                              { id: 'easy', label: '入門' },
+                            ].map((d) => {
+                              const key = `${t}_${m.id}_${d.id}`;
+                              const entry = allHighScores[key];
+                              const hs = entry?.score || 0;
+                              const dateStr = entry?.timestamp ? new Date(entry.timestamp).toLocaleString('ja-JP', {
+                                year: 'numeric',
+                                month: 'numeric',
+                                day: 'numeric',
+                                hour: '2-digit',
+                                minute: '2-digit',
+                              }) : null;
+                              return (
+                                <div key={d.id} className="flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded">
+                                  <div className="flex flex-col items-start">
+                                    <span className="text-[10px] text-slate-500 dark:text-slate-500">{d.label}</span>
+                                    {dateStr && <span className="text-[9px] text-slate-400 leading-none">{dateStr}</span>}
+                                  </div>
+                                  <span className={`text-sm font-bold ${hs > 0 ? "text-orange-500" : "text-slate-300 dark:text-slate-600"}`}>
+                                    {hs}
+                                  </span>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        ) : (
+                          (() => {
+                            const key = `${t}_${m.id}_normal`;
                             const entry = allHighScores[key];
-                            const score = entry?.score || 0;
+                            const hs = entry?.score || 0;
                             const dateStr = entry?.timestamp ? new Date(entry.timestamp).toLocaleString('ja-JP', {
                               year: 'numeric',
                               month: 'numeric',
@@ -1550,20 +1585,19 @@ export default function SpeedChallengePage() {
                               hour: '2-digit',
                               minute: '2-digit',
                             }) : null;
-
                             return (
-                              <div key={d.id} className="flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded">
+                              <div className="flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded">
                                 <div className="flex flex-col items-start">
-                                  <span className="text-[10px] text-slate-500 dark:text-slate-500">{d.label}</span>
+                                  <span className="text-[10px] text-slate-500 dark:text-slate-500">ベスト</span>
                                   {dateStr && <span className="text-[9px] text-slate-400 leading-none">{dateStr}</span>}
                                 </div>
-                                <span className={`text-sm font-bold ${score > 0 ? "text-orange-500" : "text-slate-300 dark:text-slate-600"}`}>
-                                  {score}
+                                <span className={`text-sm font-bold ${hs > 0 ? "text-orange-500" : "text-slate-300 dark:text-slate-600"}`}>
+                                  {hs}
                                 </span>
                               </div>
                             );
-                          })}
-                        </div>
+                          })()
+                        )}
                       </div>
                     ))}
                   </div>
@@ -1748,22 +1782,27 @@ export default function SpeedChallengePage() {
                   </button>
                 ))}
               </div>
-              {isSpeechRecognitionSupported && voiceInputEnabled && (
+              {mode === 'ja-to-en-speaking' && isSpeechRecognitionSupported && (
                 <div className="flex justify-between items-center mt-2 border-t border-dashed border-slate-200 dark:border-slate-700 pt-1">
-                  <p className="text-[9px] text-slate-400">※日→英モードで有効</p>
+                  <span className="text-[9px] text-slate-500 dark:text-slate-400">判定難易度:</span>
                   <div className="flex items-center gap-1">
-                    <span className="text-[9px] text-slate-500 dark:text-slate-400">判定:</span>
-                    <button 
+                    <button
+                      onClick={() => handleSpeakingDifficultyChange('strict')}
+                      className={`px-2 py-0.5 text-[9px] rounded transition-colors ${speakingDifficulty === 'strict' ? 'bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 font-bold' : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
+                    >
+                      ネイティブ
+                    </button>
+                    <button
                       onClick={() => handleSpeakingDifficultyChange('normal')}
                       className={`px-2 py-0.5 text-[9px] rounded transition-colors ${speakingDifficulty === 'normal' ? 'bg-slate-200 dark:bg-slate-600 text-slate-800 dark:text-slate-100 font-bold' : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
                     >
-                      普通
+                      標準
                     </button>
-                    <button 
+                    <button
                       onClick={() => handleSpeakingDifficultyChange('easy')}
                       className={`px-2 py-0.5 text-[9px] rounded transition-colors ${speakingDifficulty === 'easy' ? 'bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 font-bold' : 'text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
                     >
-                      易しい
+                      入門
                     </button>
                   </div>
                 </div>
