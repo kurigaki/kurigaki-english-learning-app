@@ -44,6 +44,12 @@ export default function QuizPage() {
     handleSelect,
     handleDictationSubmit,
     handleAchievementClose,
+    isSpeechRecognitionSupported,
+    isListening,
+    recognizedText,
+    isMobile,
+    handleSpeakStart,
+    handleSpeakingSkip,
   } = useQuiz();
 
   // 設定画面
@@ -113,6 +119,12 @@ export default function QuizPage() {
       handleNext={handleNext}
       handleSelect={handleSelect}
       handleDictationSubmit={handleDictationSubmit}
+      isSpeechRecognitionSupported={isSpeechRecognitionSupported}
+      isListening={isListening}
+      recognizedText={recognizedText}
+      isMobile={isMobile}
+      handleSpeakStart={handleSpeakStart}
+      handleSpeakingSkip={handleSpeakingSkip}
     />
   );
 }
