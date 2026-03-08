@@ -5,7 +5,7 @@ import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
 import { getQuestionPrompt, getQuestionDisplay } from "@/lib/quiz/display";
 import { parseDictationParts } from "@/lib/quiz/generator";
 import { getTranslationInfo } from "@/lib/quiz/translation";
-import { InQuizSettings, SpeakingDifficulty } from "@/lib/quiz/in-quiz-settings";
+import { InQuizSettings, SpeakingDifficulty, HintMode, AutoAdvanceMode } from "@/lib/quiz/in-quiz-settings";
 
 type QuizSessionProps = {
   questions: Question[];
@@ -33,16 +33,19 @@ type QuizSessionProps = {
   setInQuizSettings: Dispatch<SetStateAction<InQuizSettings>>;
 };
 
-// シンプルなトグルスイッチ
+// トグルスイッチ（inline-flex で安定配置）
 const Toggle = ({ checked, onChange }: { checked: boolean; onChange: () => void }) => (
   <button
+    type="button"
+    role="switch"
+    aria-checked={checked}
     onClick={onChange}
-    className={`relative w-10 h-5 rounded-full transition-colors flex-shrink-0 ${
+    className={`inline-flex items-center h-5 w-10 flex-shrink-0 rounded-full transition-colors focus:outline-none ${
       checked ? "bg-primary-500" : "bg-slate-200 dark:bg-slate-600"
     }`}
   >
     <span
-      className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${
+      className={`inline-block h-4 w-4 rounded-full bg-white shadow-sm transition-transform ${
         checked ? "translate-x-5" : "translate-x-0.5"
       }`}
     />
@@ -63,6 +66,7 @@ const SegmentGroup = <T extends string | number>({
     {options.map(({ value: v, label }) => (
       <button
         key={String(v)}
+        type="button"
         onClick={() => onChange(v)}
         className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors ${
           value === v
@@ -77,15 +81,15 @@ const SegmentGroup = <T extends string | number>({
 );
 
 const DIFFICULTY_OPTIONS: { value: SpeakingDifficulty; label: string }[] = [
-  { value: "strict", label: "ネイティブ" },
-  { value: "normal", label: "標準" },
   { value: "easy", label: "入門" },
+  { value: "normal", label: "標準" },
+  { value: "strict", label: "ネイティブ" },
 ];
 
-const AUTO_ADVANCE_OPTIONS: { value: number; label: string }[] = [
-  { value: 0, label: "OFF" },
-  { value: 1000, label: "1秒後" },
-  { value: 2000, label: "2秒後" },
+const HINT_MODE_OPTIONS: { value: HintMode; label: string }[] = [
+  { value: "none", label: "なし" },
+  { value: "reveal", label: "ボタン表示" },
+  { value: "always", label: "常時表示" },
 ];
 
 export const QuizSession = ({
@@ -114,13 +118,25 @@ export const QuizSession = ({
   setInQuizSettings,
 }: QuizSessionProps) => {
   const [showSettings, setShowSettings] = useState(false);
+  const [hintRevealed, setHintRevealed] = useState(false);
 
-  // 自動で次へ進む
+  // 問題が変わったらヒント表示をリセット
   useEffect(() => {
-    if (selected === null || inQuizSettings.autoAdvanceMs === 0) return;
-    const timer = setTimeout(() => handleNext(), inQuizSettings.autoAdvanceMs);
-    return () => clearTimeout(timer);
-  }, [selected, inQuizSettings.autoAdvanceMs, handleNext]);
+    setHintRevealed(false);
+  }, [currentIndex]);
+
+  // 回答後の自動次へ
+  useEffect(() => {
+    if (selected === null) return;
+    if (inQuizSettings.autoAdvanceMode === "instant") {
+      const timer = setTimeout(() => handleNext(), 0);
+      return () => clearTimeout(timer);
+    }
+    if (inQuizSettings.autoAdvanceMode === "timed") {
+      const timer = setTimeout(() => handleNext(), inQuizSettings.autoAdvanceMs);
+      return () => clearTimeout(timer);
+    }
+  }, [selected, inQuizSettings.autoAdvanceMode, inQuizSettings.autoAdvanceMs, handleNext]);
 
   const questionDisplay = currentQuestion ? getQuestionDisplay(currentQuestion) : "";
   const isSentenceType = currentQuestion.type === "listening" || currentQuestion.type === "dictation";
@@ -131,6 +147,14 @@ export const QuizSession = ({
       ? parseDictationParts(currentQuestion.word.example, currentQuestion.word.word)
       : [];
   const dictationBlankCount = dictationParts.filter((p) => p.kind === "blank").length;
+
+  // timedモード時の表示用ラベル
+  const timedLabel = `${(inQuizSettings.autoAdvanceMs / 1000).toFixed(1)}秒後`;
+  const autoAdvanceModeOptions: { value: AutoAdvanceMode; label: string }[] = [
+    { value: "off", label: "OFF" },
+    { value: "timed", label: inQuizSettings.autoAdvanceMode === "timed" ? timedLabel : "秒数設定" },
+    { value: "instant", label: "即時" },
+  ];
 
   return (
     <div className="main-content px-2 py-1.5 flex flex-col">
@@ -162,6 +186,7 @@ export const QuizSession = ({
             )}
             {/* 設定ギアボタン */}
             <button
+              type="button"
               onClick={() => setShowSettings(true)}
               className="absolute right-0 w-7 h-7 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm"
               aria-label="クイズ設定"
@@ -213,7 +238,6 @@ export const QuizSession = ({
                           const answerWords = currentQuestion.correctAnswer.split(/\s+/);
                           if (e.key === "Tab") {
                             e.preventDefault();
-                            // 次のブランクへ移動（最後のブランクから最初に戻る）
                             const nextIdx = (wordIndex + 1) % answerWords.length;
                             dictationInputRefs.current[nextIdx]?.focus();
                           } else if (e.key === "Enter") {
@@ -222,9 +246,7 @@ export const QuizSession = ({
                           }
                         }}
                         className="border-b-2 border-primary-400 dark:border-primary-500 bg-transparent text-center text-base leading-[1.4] font-bold text-primary-700 dark:text-primary-300 focus:outline-none focus:border-primary-600 dark:focus:border-primary-400 transition-colors"
-                        style={{
-                          width: `${Math.max(4, correctWord.length + 2)}ch`,
-                        }}
+                        style={{ width: `${Math.max(4, correctWord.length + 2)}ch` }}
                         autoComplete="off"
                         autoCorrect="off"
                         autoCapitalize="none"
@@ -239,12 +261,34 @@ export const QuizSession = ({
                   {questionDisplay}
                 </h2>
               )}
-              {/* スピーキング問題: ヒント（英単語表示） */}
-              {currentQuestion.type === "speaking" && inQuizSettings.showHint && selected === null && (
-                <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
-                  💡 {currentQuestion.word.word}
-                </p>
-              )}
+
+              {/* スピーキング問題: ヒント表示 */}
+              {currentQuestion.type === "speaking" && selected === null && (() => {
+                if (inQuizSettings.hintMode === "always") {
+                  return (
+                    <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                      💡 {currentQuestion.word.word}
+                    </p>
+                  );
+                }
+                if (inQuizSettings.hintMode === "reveal") {
+                  return hintRevealed ? (
+                    <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                      💡 {currentQuestion.word.word}
+                    </p>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setHintRevealed(true)}
+                      className="text-[10px] text-primary-500 hover:text-primary-600 underline mt-0.5 transition-colors"
+                    >
+                      💡 ヒントを見る
+                    </button>
+                  );
+                }
+                return null;
+              })()}
+
               {currentQuestion.type === "en-to-ja" && (
                 <div className="mt-1">
                   <SpeakButton text={currentQuestion.word.word} size="sm" />
@@ -262,6 +306,7 @@ export const QuizSession = ({
                 return (
                   <div className="mt-1 text-center">
                     <button
+                      type="button"
                       onClick={() => setShowTranslation(!showTranslation)}
                       className="text-[10px] text-primary-500 hover:text-primary-600 underline transition-colors"
                     >
@@ -277,7 +322,7 @@ export const QuizSession = ({
               })()}
             </div>
 
-            {/* 書き取り問題: 回答ボタン（入力フィールドは問題文にインライン埋め込み） */}
+            {/* 書き取り問題: 回答ボタン */}
             {currentQuestion.type === "dictation" ? (
               <div className="flex flex-col gap-2 mt-2">
                 {selected === null ? (
@@ -286,11 +331,11 @@ export const QuizSession = ({
                     size="sm"
                     onClick={handleDictationSubmit}
                     disabled={
-                    dictationBlankCount === 0 ||
-                    !currentQuestion.correctAnswer
-                      .split(/\s+/)
-                      .every((_, i) => (dictationInputs[i] ?? "").trim() !== "")
-                  }
+                      dictationBlankCount === 0 ||
+                      !currentQuestion.correctAnswer
+                        .split(/\s+/)
+                        .every((_, i) => (dictationInputs[i] ?? "").trim() !== "")
+                    }
                   >
                     回答する
                   </Button>
@@ -310,7 +355,6 @@ export const QuizSession = ({
                   isSpeechRecognitionSupported ? (
                     /* 音声認識あり: マイク UI */
                     <div className="flex flex-col items-center gap-2">
-                      {/* 認識状態・認識テキスト表示 */}
                       <div className={`w-full text-center py-2 px-3 rounded-lg text-xs min-h-[2.5rem] flex items-center justify-center ${
                         isListening
                           ? "bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 text-blue-600 dark:text-blue-400"
@@ -331,7 +375,6 @@ export const QuizSession = ({
                           <span>ここに認識結果が表示されます</span>
                         )}
                       </div>
-                      {/* モバイル: 話すボタン / デスクトップ: もう一度ボタン */}
                       <div className="flex gap-2 w-full">
                         <Button
                           fullWidth
@@ -389,7 +432,6 @@ export const QuizSession = ({
               <div className="flex flex-col gap-2 mt-2">
                 {currentQuestion.choices.map((choice, index) => {
                   let buttonClass = "choice-btn";
-
                   if (selected !== null) {
                     if (choice === currentQuestion.correctAnswer) {
                       buttonClass = "choice-btn choice-btn-correct";
@@ -397,7 +439,6 @@ export const QuizSession = ({
                       buttonClass = "choice-btn choice-btn-wrong";
                     }
                   }
-
                   return (
                     <button
                       key={index}
@@ -489,13 +530,14 @@ export const QuizSession = ({
           onClick={() => setShowSettings(false)}
         >
           <div
-            className="w-full bg-white dark:bg-slate-800 rounded-t-2xl p-4 shadow-xl max-w-md mx-auto"
+            className="w-full bg-white dark:bg-slate-800 rounded-t-2xl p-4 pb-6 shadow-xl max-w-md mx-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* ヘッダー */}
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-sm font-bold text-slate-700 dark:text-slate-200">クイズ中の設定</h3>
               <button
+                type="button"
                 onClick={() => setShowSettings(false)}
                 className="w-7 h-7 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
               >
@@ -512,7 +554,7 @@ export const QuizSession = ({
                 <SegmentGroup
                   options={DIFFICULTY_OPTIONS}
                   value={inQuizSettings.speakingDifficulty}
-                  onChange={(v) => setInQuizSettings({ ...inQuizSettings, speakingDifficulty: v })}
+                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, speakingDifficulty: v }))}
                 />
                 <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
                   {inQuizSettings.speakingDifficulty === "strict" && "完全一致のみ正解"}
@@ -522,37 +564,61 @@ export const QuizSession = ({
               </div>
 
               {/* ヒント（英単語表示） */}
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs font-medium text-slate-600 dark:text-slate-300">ヒント（英単語を表示）</p>
-                  <p className="text-[10px] text-slate-400 dark:text-slate-500">スピーキング問題で答えの英単語を表示</p>
-                </div>
-                <Toggle
-                  checked={inQuizSettings.showHint}
-                  onChange={() => setInQuizSettings({ ...inQuizSettings, showHint: !inQuizSettings.showHint })}
+              <div>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">ヒント（英単語）</p>
+                <SegmentGroup
+                  options={HINT_MODE_OPTIONS}
+                  value={inQuizSettings.hintMode}
+                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, hintMode: v }))}
                 />
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
+                  {inQuizSettings.hintMode === "none" && "スピーキング問題でヒントを表示しない"}
+                  {inQuizSettings.hintMode === "reveal" && "ボタンを押したときだけ答えの英単語を表示"}
+                  {inQuizSettings.hintMode === "always" && "常に答えの英単語を表示"}
+                </p>
               </div>
 
               {/* 自動読み上げ */}
-              <div className="flex items-center justify-between">
-                <div>
+              <div className="flex items-center justify-between gap-4">
+                <div className="min-w-0">
                   <p className="text-xs font-medium text-slate-600 dark:text-slate-300">自動読み上げ</p>
                   <p className="text-[10px] text-slate-400 dark:text-slate-500">問題表示時に音声を自動再生</p>
                 </div>
                 <Toggle
                   checked={inQuizSettings.autoPlay}
-                  onChange={() => setInQuizSettings({ ...inQuizSettings, autoPlay: !inQuizSettings.autoPlay })}
+                  onChange={() => setInQuizSettings((prev) => ({ ...prev, autoPlay: !prev.autoPlay }))}
                 />
               </div>
 
-              {/* 自動で次へ */}
+              {/* 回答後に自動で次へ */}
               <div>
                 <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">回答後に自動で次へ進む</p>
                 <SegmentGroup
-                  options={AUTO_ADVANCE_OPTIONS}
-                  value={inQuizSettings.autoAdvanceMs}
-                  onChange={(v) => setInQuizSettings({ ...inQuizSettings, autoAdvanceMs: v })}
+                  options={autoAdvanceModeOptions}
+                  value={inQuizSettings.autoAdvanceMode}
+                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, autoAdvanceMode: v }))}
                 />
+                {inQuizSettings.autoAdvanceMode === "timed" && (
+                  <div className="flex items-center gap-3 mt-2">
+                    <input
+                      type="range"
+                      min={500}
+                      max={5000}
+                      step={500}
+                      value={inQuizSettings.autoAdvanceMs}
+                      onChange={(e) =>
+                        setInQuizSettings((prev) => ({ ...prev, autoAdvanceMs: parseInt(e.target.value) }))
+                      }
+                      className="flex-1 accent-primary-500"
+                    />
+                    <span className="text-xs font-medium text-slate-600 dark:text-slate-300 w-12 text-right tabular-nums">
+                      {(inQuizSettings.autoAdvanceMs / 1000).toFixed(1)} 秒
+                    </span>
+                  </div>
+                )}
+                {inQuizSettings.autoAdvanceMode === "instant" && (
+                  <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">解説を表示せずに次の問題へ進みます</p>
+                )}
               </div>
             </div>
           </div>
