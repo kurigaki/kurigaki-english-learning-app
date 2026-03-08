@@ -33,25 +33,6 @@ type QuizSessionProps = {
   setInQuizSettings: Dispatch<SetStateAction<InQuizSettings>>;
 };
 
-// トグルスイッチ（inline-flex で安定配置）
-const Toggle = ({ checked, onChange }: { checked: boolean; onChange: () => void }) => (
-  <button
-    type="button"
-    role="switch"
-    aria-checked={checked}
-    onClick={onChange}
-    className={`inline-flex items-center h-5 w-10 flex-shrink-0 rounded-full transition-colors focus:outline-none ${
-      checked ? "bg-primary-500" : "bg-slate-200 dark:bg-slate-600"
-    }`}
-  >
-    <span
-      className={`inline-block h-4 w-4 rounded-full bg-white shadow-sm transition-transform ${
-        checked ? "translate-x-5" : "translate-x-0.5"
-      }`}
-    />
-  </button>
-);
-
 // セグメントボタングループ
 const SegmentGroup = <T extends string | number>({
   options,
