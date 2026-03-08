@@ -793,13 +793,14 @@ export const unifiedStorage = {
     localStorage.setItem("kurigaki_speed_voice_input", String(enabled));
   },
 
-  getSpeedChallengeSpeakingDifficulty: async (): Promise<"normal" | "easy"> => {
+  getSpeedChallengeSpeakingDifficulty: async (): Promise<"strict" | "normal" | "easy"> => {
     if (typeof window === "undefined") return "normal";
     const value = localStorage.getItem("kurigaki_speed_speaking_difficulty");
-    return value === "easy" ? "easy" : "normal";
+    if (value === "strict" || value === "easy") return value;
+    return "normal";
   },
 
-  setSpeedChallengeSpeakingDifficulty: async (difficulty: "normal" | "easy"): Promise<void> => {
+  setSpeedChallengeSpeakingDifficulty: async (difficulty: "strict" | "normal" | "easy"): Promise<void> => {
     if (typeof window === "undefined") return;
     localStorage.setItem("kurigaki_speed_speaking_difficulty", difficulty);
   },
