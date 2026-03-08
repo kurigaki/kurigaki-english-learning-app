@@ -1,10 +1,11 @@
-import { Dispatch, SetStateAction, MutableRefObject } from "react";
+import { useState, useEffect, Dispatch, SetStateAction, MutableRefObject } from "react";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question } from "@/types";
 import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
 import { getQuestionPrompt, getQuestionDisplay } from "@/lib/quiz/display";
 import { parseDictationParts } from "@/lib/quiz/generator";
 import { getTranslationInfo } from "@/lib/quiz/translation";
+import { InQuizSettings, SpeakingDifficulty } from "@/lib/quiz/in-quiz-settings";
 
 type QuizSessionProps = {
   questions: Question[];
@@ -28,7 +29,64 @@ type QuizSessionProps = {
   isMobile: boolean;
   handleSpeakStart: () => void;
   handleSpeakingSkip: () => void;
+  inQuizSettings: InQuizSettings;
+  setInQuizSettings: Dispatch<SetStateAction<InQuizSettings>>;
 };
+
+// シンプルなトグルスイッチ
+const Toggle = ({ checked, onChange }: { checked: boolean; onChange: () => void }) => (
+  <button
+    onClick={onChange}
+    className={`relative w-10 h-5 rounded-full transition-colors flex-shrink-0 ${
+      checked ? "bg-primary-500" : "bg-slate-200 dark:bg-slate-600"
+    }`}
+  >
+    <span
+      className={`absolute top-0.5 w-4 h-4 rounded-full bg-white shadow-sm transition-transform ${
+        checked ? "translate-x-5" : "translate-x-0.5"
+      }`}
+    />
+  </button>
+);
+
+// セグメントボタングループ
+const SegmentGroup = <T extends string | number>({
+  options,
+  value,
+  onChange,
+}: {
+  options: { value: T; label: string }[];
+  value: T;
+  onChange: (v: T) => void;
+}) => (
+  <div className="flex gap-1.5">
+    {options.map(({ value: v, label }) => (
+      <button
+        key={String(v)}
+        onClick={() => onChange(v)}
+        className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+          value === v
+            ? "bg-primary-500 text-white"
+            : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
+        }`}
+      >
+        {label}
+      </button>
+    ))}
+  </div>
+);
+
+const DIFFICULTY_OPTIONS: { value: SpeakingDifficulty; label: string }[] = [
+  { value: "strict", label: "ネイティブ" },
+  { value: "normal", label: "標準" },
+  { value: "easy", label: "入門" },
+];
+
+const AUTO_ADVANCE_OPTIONS: { value: number; label: string }[] = [
+  { value: 0, label: "OFF" },
+  { value: 1000, label: "1秒後" },
+  { value: 2000, label: "2秒後" },
+];
 
 export const QuizSession = ({
   questions,
@@ -52,7 +110,18 @@ export const QuizSession = ({
   isMobile,
   handleSpeakStart,
   handleSpeakingSkip,
+  inQuizSettings,
+  setInQuizSettings,
 }: QuizSessionProps) => {
+  const [showSettings, setShowSettings] = useState(false);
+
+  // 自動で次へ進む
+  useEffect(() => {
+    if (selected === null || inQuizSettings.autoAdvanceMs === 0) return;
+    const timer = setTimeout(() => handleNext(), inQuizSettings.autoAdvanceMs);
+    return () => clearTimeout(timer);
+  }, [selected, inQuizSettings.autoAdvanceMs, handleNext]);
+
   const questionDisplay = currentQuestion ? getQuestionDisplay(currentQuestion) : "";
   const isSentenceType = currentQuestion.type === "listening" || currentQuestion.type === "dictation";
 
@@ -72,7 +141,7 @@ export const QuizSession = ({
             <ProgressBar current={currentIndex + 1} total={questions.length} />
           </div>
 
-          <div className="flex justify-center gap-1.5">
+          <div className="relative flex justify-center gap-1.5 items-center">
             <div className="inline-flex items-center gap-1 bg-white dark:bg-slate-800 rounded-full px-2 py-0.5 shadow-card border border-primary-100">
               <span className="text-sm emoji-icon">✨</span>
               <span className="font-bold text-primary-500 text-xs">{score}</span>
@@ -91,6 +160,16 @@ export const QuizSession = ({
                 <span className="text-white/90 text-[10px] font-medium">連続!</span>
               </div>
             )}
+            {/* 設定ギアボタン */}
+            <button
+              onClick={() => setShowSettings(true)}
+              className="absolute right-0 w-7 h-7 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm"
+              aria-label="クイズ設定"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+              </svg>
+            </button>
           </div>
         </div>
 
@@ -159,6 +238,12 @@ export const QuizSession = ({
                 <h2 className={`font-bold text-gradient ${isSentenceType ? "text-xs leading-relaxed" : "text-lg"}`}>
                   {questionDisplay}
                 </h2>
+              )}
+              {/* スピーキング問題: ヒント（英単語表示） */}
+              {currentQuestion.type === "speaking" && inQuizSettings.showHint && selected === null && (
+                <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                  💡 {currentQuestion.word.word}
+                </p>
               )}
               {currentQuestion.type === "en-to-ja" && (
                 <div className="mt-1">
@@ -396,6 +481,83 @@ export const QuizSession = ({
           ) : null}
         </div>
       </div>
+
+      {/* クイズ中設定パネル */}
+      {showSettings && (
+        <div
+          className="fixed inset-0 z-50 flex items-end bg-black/40"
+          onClick={() => setShowSettings(false)}
+        >
+          <div
+            className="w-full bg-white dark:bg-slate-800 rounded-t-2xl p-4 shadow-xl max-w-md mx-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* ヘッダー */}
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-sm font-bold text-slate-700 dark:text-slate-200">クイズ中の設定</h3>
+              <button
+                onClick={() => setShowSettings(false)}
+                className="w-7 h-7 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              {/* スピーキング難易度 */}
+              <div>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">スピーキング難易度</p>
+                <SegmentGroup
+                  options={DIFFICULTY_OPTIONS}
+                  value={inQuizSettings.speakingDifficulty}
+                  onChange={(v) => setInQuizSettings({ ...inQuizSettings, speakingDifficulty: v })}
+                />
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
+                  {inQuizSettings.speakingDifficulty === "strict" && "完全一致のみ正解"}
+                  {inQuizSettings.speakingDifficulty === "normal" && "発音が近ければ正解（標準）"}
+                  {inQuizSettings.speakingDifficulty === "easy" && "多少の発音のずれも正解"}
+                </p>
+              </div>
+
+              {/* ヒント（英単語表示） */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-medium text-slate-600 dark:text-slate-300">ヒント（英単語を表示）</p>
+                  <p className="text-[10px] text-slate-400 dark:text-slate-500">スピーキング問題で答えの英単語を表示</p>
+                </div>
+                <Toggle
+                  checked={inQuizSettings.showHint}
+                  onChange={() => setInQuizSettings({ ...inQuizSettings, showHint: !inQuizSettings.showHint })}
+                />
+              </div>
+
+              {/* 自動読み上げ */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-medium text-slate-600 dark:text-slate-300">自動読み上げ</p>
+                  <p className="text-[10px] text-slate-400 dark:text-slate-500">問題表示時に音声を自動再生</p>
+                </div>
+                <Toggle
+                  checked={inQuizSettings.autoPlay}
+                  onChange={() => setInQuizSettings({ ...inQuizSettings, autoPlay: !inQuizSettings.autoPlay })}
+                />
+              </div>
+
+              {/* 自動で次へ */}
+              <div>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">回答後に自動で次へ進む</p>
+                <SegmentGroup
+                  options={AUTO_ADVANCE_OPTIONS}
+                  value={inQuizSettings.autoAdvanceMs}
+                  onChange={(v) => setInQuizSettings({ ...inQuizSettings, autoAdvanceMs: v })}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
