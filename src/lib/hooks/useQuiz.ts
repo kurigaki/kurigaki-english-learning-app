@@ -564,7 +564,7 @@ export const useQuiz = () => {
   }, [currentIndex]);
 
   useEffect(() => {
-    if (!inQuizSettings.autoPlay) return;
+    if (inQuizSettings.audioMode !== "auto") return;
     if (!currentQuestion || !isSpeechSynthesisSupported() || selected !== null || hasAutoPlayedRef.current.has(currentIndex)) return;
     hasAutoPlayedRef.current.add(currentIndex);
     const timeoutId = setTimeout(() => {
@@ -576,7 +576,7 @@ export const useQuiz = () => {
       }
     }, 300);
     return () => clearTimeout(timeoutId);
-  }, [currentQuestion, currentIndex, selected, inQuizSettings.autoPlay]);
+  }, [currentQuestion, currentIndex, selected, inQuizSettings.audioMode]);
 
   const handleAchievementClose = () => {
     const remaining = pendingAchievements.slice(1);

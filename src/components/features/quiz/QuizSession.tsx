@@ -5,7 +5,7 @@ import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
 import { getQuestionPrompt, getQuestionDisplay } from "@/lib/quiz/display";
 import { parseDictationParts } from "@/lib/quiz/generator";
 import { getTranslationInfo } from "@/lib/quiz/translation";
-import { InQuizSettings, SpeakingDifficulty, HintMode, AutoAdvanceMode } from "@/lib/quiz/in-quiz-settings";
+import { InQuizSettings, SpeakingDifficulty, HintMode, AudioMode, AutoAdvanceMode } from "@/lib/quiz/in-quiz-settings";
 
 type QuizSessionProps = {
   questions: Question[];
@@ -80,10 +80,30 @@ const SegmentGroup = <T extends string | number>({
   </div>
 );
 
+// US / UK 発音ボタンを並べて表示
+const WordAudioButtons = ({ word }: { word: string }) => (
+  <div className="inline-flex items-center gap-2 mt-1">
+    <div className="flex items-center gap-0.5">
+      <SpeakButton text={word} variant="us" size="sm" />
+      <span className="text-[9px] text-slate-400 dark:text-slate-500 select-none">US</span>
+    </div>
+    <div className="flex items-center gap-0.5">
+      <SpeakButton text={word} variant="uk" size="sm" />
+      <span className="text-[9px] text-slate-400 dark:text-slate-500 select-none">UK</span>
+    </div>
+  </div>
+);
+
 const DIFFICULTY_OPTIONS: { value: SpeakingDifficulty; label: string }[] = [
   { value: "easy", label: "入門" },
   { value: "normal", label: "標準" },
   { value: "strict", label: "ネイティブ" },
+];
+
+const AUDIO_MODE_OPTIONS: { value: AudioMode; label: string }[] = [
+  { value: "off", label: "OFF" },
+  { value: "button", label: "ボタン" },
+  { value: "auto", label: "ON" },
 ];
 
 const HINT_MODE_OPTIONS: { value: HintMode; label: string }[] = [
@@ -289,13 +309,16 @@ export const QuizSession = ({
                 return null;
               })()}
 
-              {currentQuestion.type === "en-to-ja" && (
-                <div className="mt-1">
-                  <SpeakButton text={currentQuestion.word.word} size="sm" />
-                </div>
+              {/* en-to-ja: US/UK 発音ボタン */}
+              {currentQuestion.type === "en-to-ja" && inQuizSettings.audioMode !== "off" && (
+                <WordAudioButtons word={currentQuestion.word.word} />
+              )}
+              {/* speaking: US/UK 発音ボタン（発音練習の参考に） */}
+              {currentQuestion.type === "speaking" && inQuizSettings.audioMode !== "off" && selected === null && (
+                <WordAudioButtons word={currentQuestion.word.word} />
               )}
               {/* リスニング・書き取り: 例文音声ボタン */}
-              {isSentenceType && currentQuestion.word.example && (
+              {isSentenceType && currentQuestion.word.example && inQuizSettings.audioMode !== "off" && (
                 <div className="mt-1">
                   <SpeakButton text={currentQuestion.word.example} type="sentence" size="sm" />
                 </div>
@@ -578,16 +601,19 @@ export const QuizSession = ({
                 </p>
               </div>
 
-              {/* 自動読み上げ */}
-              <div className="flex items-center justify-between gap-4">
-                <div className="min-w-0">
-                  <p className="text-xs font-medium text-slate-600 dark:text-slate-300">自動読み上げ</p>
-                  <p className="text-[10px] text-slate-400 dark:text-slate-500">問題表示時に音声を自動再生</p>
-                </div>
-                <Toggle
-                  checked={inQuizSettings.autoPlay}
-                  onChange={() => setInQuizSettings((prev) => ({ ...prev, autoPlay: !prev.autoPlay }))}
+              {/* 音声 */}
+              <div>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声</p>
+                <SegmentGroup
+                  options={AUDIO_MODE_OPTIONS}
+                  value={inQuizSettings.audioMode}
+                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, audioMode: v }))}
                 />
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
+                  {inQuizSettings.audioMode === "off" && "音声ボタンを表示しない"}
+                  {inQuizSettings.audioMode === "button" && "🔊 US / UK ボタンを表示（手動再生）"}
+                  {inQuizSettings.audioMode === "auto" && "問題表示時に自動再生 + ボタン表示"}
+                </p>
               </div>
 
               {/* 回答後に自動で次へ */}

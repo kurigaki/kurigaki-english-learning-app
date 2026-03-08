@@ -3,13 +3,16 @@ export type SpeakingDifficulty = "strict" | "normal" | "easy";
 /** ヒント表示モード */
 export type HintMode = "none" | "reveal" | "always";
 
+/** 音声モード: off=なし / button=ボタン表示 / auto=自動再生+ボタン */
+export type AudioMode = "off" | "button" | "auto";
+
 /** 回答後の自動次へモード */
 export type AutoAdvanceMode = "off" | "timed" | "instant";
 
 export type InQuizSettings = {
   speakingDifficulty: SpeakingDifficulty;
   hintMode: HintMode;           // スピーキング問題のヒント表示モード
-  autoPlay: boolean;            // 問題表示時に音声を自動再生
+  audioMode: AudioMode;         // 音声再生モード
   autoAdvanceMode: AutoAdvanceMode;
   autoAdvanceMs: number;        // timedモード時の遅延（ms）
 };
@@ -17,7 +20,7 @@ export type InQuizSettings = {
 export const defaultInQuizSettings: InQuizSettings = {
   speakingDifficulty: "normal",
   hintMode: "none",
-  autoPlay: true,
+  audioMode: "auto",
   autoAdvanceMode: "off",
   autoAdvanceMs: 1500,
 };
@@ -41,6 +44,14 @@ export function loadInQuizSettings(): InQuizSettings {
       hintMode = p.showHint ? "always" : "none"; // 旧フォーマット移行
     }
 
+    // audioMode: autoPlay(boolean) からの移行も考慮
+    let audioMode: AudioMode = defaultInQuizSettings.audioMode;
+    if (p.audioMode === "off" || p.audioMode === "button" || p.audioMode === "auto") {
+      audioMode = p.audioMode;
+    } else if (typeof p.autoPlay === "boolean") {
+      audioMode = p.autoPlay ? "auto" : "off"; // 旧フォーマット移行
+    }
+
     // autoAdvanceMode: autoAdvanceMs(number) からの移行も考慮
     let autoAdvanceMode: AutoAdvanceMode = defaultInQuizSettings.autoAdvanceMode;
     if (p.autoAdvanceMode === "timed" || p.autoAdvanceMode === "instant") {
@@ -62,7 +73,7 @@ export function loadInQuizSettings(): InQuizSettings {
           ? p.speakingDifficulty
           : "normal",
       hintMode,
-      autoPlay: typeof p.autoPlay === "boolean" ? p.autoPlay : defaultInQuizSettings.autoPlay,
+      audioMode,
       autoAdvanceMode,
       autoAdvanceMs,
     };
