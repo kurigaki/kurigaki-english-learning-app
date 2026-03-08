@@ -1,17 +1,25 @@
 export type SpeakingDifficulty = "strict" | "normal" | "easy";
 
+/** ヒント表示モード */
+export type HintMode = "none" | "reveal" | "always";
+
+/** 回答後の自動次へモード */
+export type AutoAdvanceMode = "off" | "timed" | "instant";
+
 export type InQuizSettings = {
   speakingDifficulty: SpeakingDifficulty;
-  showHint: boolean;      // スピーキング問題で英単語をヒント表示
-  autoPlay: boolean;      // 問題表示時に音声を自動再生
-  autoAdvanceMs: number;  // 正解後の自動次へ（0=無効, 1000, 2000 ms）
+  hintMode: HintMode;           // スピーキング問題のヒント表示モード
+  autoPlay: boolean;            // 問題表示時に音声を自動再生
+  autoAdvanceMode: AutoAdvanceMode;
+  autoAdvanceMs: number;        // timedモード時の遅延（ms）
 };
 
 export const defaultInQuizSettings: InQuizSettings = {
   speakingDifficulty: "normal",
-  showHint: false,
+  hintMode: "none",
   autoPlay: true,
-  autoAdvanceMs: 0,
+  autoAdvanceMode: "off",
+  autoAdvanceMs: 1500,
 };
 
 const KEY = "english-app-in-quiz-settings";
@@ -22,17 +30,41 @@ export function loadInQuizSettings(): InQuizSettings {
     const raw = localStorage.getItem(KEY);
     if (!raw) return { ...defaultInQuizSettings };
     const p = JSON.parse(raw) as Record<string, unknown>;
+
+    // hintMode: showHint(boolean) からの移行も考慮
+    let hintMode: HintMode = defaultInQuizSettings.hintMode;
+    if (p.hintMode === "reveal" || p.hintMode === "always") {
+      hintMode = p.hintMode;
+    } else if (p.hintMode === "none") {
+      hintMode = "none";
+    } else if (typeof p.showHint === "boolean") {
+      hintMode = p.showHint ? "always" : "none"; // 旧フォーマット移行
+    }
+
+    // autoAdvanceMode: autoAdvanceMs(number) からの移行も考慮
+    let autoAdvanceMode: AutoAdvanceMode = defaultInQuizSettings.autoAdvanceMode;
+    if (p.autoAdvanceMode === "timed" || p.autoAdvanceMode === "instant") {
+      autoAdvanceMode = p.autoAdvanceMode;
+    } else if (p.autoAdvanceMode === "off") {
+      autoAdvanceMode = "off";
+    } else if (typeof p.autoAdvanceMs === "number" && p.autoAdvanceMs > 0) {
+      autoAdvanceMode = "timed"; // 旧フォーマット移行
+    }
+
+    const autoAdvanceMs =
+      typeof p.autoAdvanceMs === "number" && p.autoAdvanceMs >= 500 && p.autoAdvanceMs <= 5000
+        ? (p.autoAdvanceMs as number)
+        : defaultInQuizSettings.autoAdvanceMs;
+
     return {
       speakingDifficulty:
         p.speakingDifficulty === "strict" || p.speakingDifficulty === "easy"
           ? p.speakingDifficulty
           : "normal",
-      showHint: typeof p.showHint === "boolean" ? p.showHint : defaultInQuizSettings.showHint,
+      hintMode,
       autoPlay: typeof p.autoPlay === "boolean" ? p.autoPlay : defaultInQuizSettings.autoPlay,
-      autoAdvanceMs:
-        p.autoAdvanceMs === 1000 || p.autoAdvanceMs === 2000
-          ? (p.autoAdvanceMs as number)
-          : 0,
+      autoAdvanceMode,
+      autoAdvanceMs,
     };
   } catch {
     return { ...defaultInQuizSettings };
