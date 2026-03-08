@@ -10,6 +10,7 @@ const questionTypeLabels: Record<QuestionType, string> = {
   "ja-to-en": "日→英",
   listening: "リスニング",
   dictation: "書き取り",
+  speaking: "スピーキング",
 };
 
 export const WordQuizHistory = ({ history }: WordQuizHistoryProps) => {

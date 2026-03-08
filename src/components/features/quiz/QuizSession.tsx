@@ -22,6 +22,12 @@ type QuizSessionProps = {
   handleNext: () => void;
   handleSelect: (choice: string) => void;
   handleDictationSubmit: () => void;
+  isSpeechRecognitionSupported: boolean;
+  isListening: boolean;
+  recognizedText: { text: string; isCorrect: boolean } | null;
+  isMobile: boolean;
+  handleSpeakStart: () => void;
+  handleSpeakingSkip: () => void;
 };
 
 export const QuizSession = ({
@@ -40,6 +46,12 @@ export const QuizSession = ({
   handleNext,
   handleSelect,
   handleDictationSubmit,
+  isSpeechRecognitionSupported,
+  isListening,
+  recognizedText,
+  isMobile,
+  handleSpeakStart,
+  handleSpeakingSkip,
 }: QuizSessionProps) => {
   const questionDisplay = currentQuestion ? getQuestionDisplay(currentQuestion) : "";
   const isSentenceType = currentQuestion.type === "listening" || currentQuestion.type === "dictation";
@@ -197,6 +209,87 @@ export const QuizSession = ({
                   >
                     回答する
                   </Button>
+                ) : (
+                  <div className="text-center">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5">あなたの回答</p>
+                    <p className={`text-sm font-bold ${isCorrect ? "text-success-600 dark:text-success-400" : "text-error-600 dark:text-error-400"}`}>
+                      {selected}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ) : currentQuestion.type === "speaking" ? (
+              /* スピーキング問題 */
+              <div className="flex flex-col gap-2 mt-2">
+                {selected === null ? (
+                  isSpeechRecognitionSupported ? (
+                    /* 音声認識あり: マイク UI */
+                    <div className="flex flex-col items-center gap-2">
+                      {/* 認識状態・認識テキスト表示 */}
+                      <div className={`w-full text-center py-2 px-3 rounded-lg text-xs min-h-[2.5rem] flex items-center justify-center ${
+                        isListening
+                          ? "bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 text-blue-600 dark:text-blue-400"
+                          : recognizedText
+                            ? (recognizedText.isCorrect
+                                ? "bg-success-50 dark:bg-success-900/20 border border-success-200 text-success-600 dark:text-success-400"
+                                : "bg-error-50 dark:bg-error-900/20 border border-error-200 text-error-600 dark:text-error-400")
+                            : "bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-slate-400"
+                      }`}>
+                        {isListening ? (
+                          <span className="flex items-center gap-1.5">
+                            <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                            認識中...
+                          </span>
+                        ) : recognizedText ? (
+                          <span>{recognizedText.text}</span>
+                        ) : (
+                          <span>ここに認識結果が表示されます</span>
+                        )}
+                      </div>
+                      {/* モバイル: 話すボタン / デスクトップ: もう一度ボタン */}
+                      <div className="flex gap-2 w-full">
+                        <Button
+                          fullWidth
+                          size="sm"
+                          onClick={handleSpeakStart}
+                          className={isListening ? "opacity-50 pointer-events-none" : ""}
+                        >
+                          <span className="flex items-center justify-center gap-1.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" />
+                            </svg>
+                            {isMobile ? "話す" : "もう一度"}
+                          </span>
+                        </Button>
+                        <Button variant="secondary" size="sm" onClick={handleSpeakingSkip} className="flex-shrink-0">
+                          スキップ
+                        </Button>
+                      </div>
+                    </div>
+                  ) : (
+                    /* 音声認識非対応: ja-to-en 選択肢にフォールバック */
+                    <div className="flex flex-col gap-2">
+                      <p className="text-[10px] text-amber-600 dark:text-amber-400 text-center">
+                        {/iPhone|iPad|iPod/.test(typeof window !== "undefined" ? navigator.userAgent : "")
+                          ? "音声入力はSafariのみ対応"
+                          : "このブラウザは音声認識非対応"}
+                      </p>
+                      {currentQuestion.choices.map((choice, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleSelect(choice)}
+                          className="choice-btn py-1.5"
+                        >
+                          <span className="flex items-center gap-1.5">
+                            <span className="w-5 h-5 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-[10px] font-bold flex-shrink-0">
+                              {String.fromCharCode(65 + index)}
+                            </span>
+                            <span className="text-xs">{choice}</span>
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  )
                 ) : (
                   <div className="text-center">
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-0.5">あなたの回答</p>
