@@ -17,6 +17,7 @@ function selectQuestionTypeWithRatios(
   const pool = [
     { type: "en-to-ja" as QuestionType, weight: ratios.enToJa },
     { type: "ja-to-en" as QuestionType, weight: ratios.jaToEn },
+    { type: "speaking" as QuestionType, weight: ratios.speaking ?? 0 },
     ...(hasExample
       ? [
           { type: "listening" as QuestionType, weight: ratios.listening },
@@ -203,6 +204,15 @@ export function generateQuestion(word: Word, allWords: Word[], ratios: QuestionT
         word: wordData,
         type: "dictation",
         choices: [],
+        correctAnswer: word.word,
+      };
+
+    case "speaking":
+      // スピーキング: 日本語の意味を見て英語で声に出す。choices は音声非対応時の選択肢フォールバック用
+      return {
+        word: wordData,
+        type: "speaking",
+        choices: generateChoicesForJaToEn(word, allWords),
         correctAnswer: word.word,
       };
   }

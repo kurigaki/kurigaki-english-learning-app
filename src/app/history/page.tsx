@@ -27,6 +27,7 @@ const questionTypeLabels: Record<string, string> = {
   "fill-blank": "穴埋め(旧)",  // 旧データとの互換性
   "listening": "リスニング",
   "dictation": "書き取り",
+  "speaking": "スピーキング",
 };
 
 const DISPLAY_MEMORY_LEVEL_ORDER = [
@@ -160,6 +161,7 @@ export default function HistoryPage() {
       "ja-to-en": { total: 0, correct: 0 },
       "listening": { total: 0, correct: 0 },
       "dictation": { total: 0, correct: 0 },
+      "speaking":  { total: 0, correct: 0 },
       "fill-blank": { total: 0, correct: 0 }, // 旧データとの互換性
     };
 

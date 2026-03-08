@@ -18,6 +18,7 @@ export const defaultTypeRatios: QuestionTypeRatios = {
   jaToEn: 25,
   listening: 25,
   dictation: 25,
+  speaking: 0,
 };
 
 export const defaultQuizSettings: QuizSettings = {
@@ -101,6 +102,7 @@ export function loadQuizSettings(): QuizSettings {
       jaToEn:    typeof tr.jaToEn    === "number" ? tr.jaToEn    : defaultTypeRatios.jaToEn,
       listening: typeof tr.listening === "number" ? tr.listening : defaultTypeRatios.listening,
       dictation: typeof tr.dictation === "number" ? tr.dictation : defaultTypeRatios.dictation,
+      speaking:  typeof tr.speaking  === "number" ? tr.speaking  : defaultTypeRatios.speaking,
     };
 
     return { course, stage, categories, difficulties, includeBookmarksOnly, typeRatios };
