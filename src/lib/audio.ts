@@ -62,8 +62,10 @@ export function speak(
     return null;
   }
 
-  // 既存の読み上げをキャンセル
-  window.speechSynthesis.cancel();
+  // 再生中・待機中の場合のみキャンセル（unconditional cancel は iOS Safari でユーザージェスチャーチェーンを壊す場合がある）
+  if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
+    window.speechSynthesis.cancel();
+  }
 
   const utterance = new SpeechSynthesisUtterance(text);
   // GC 防止: モジュール変数で参照を保持（Chrome では utterance が GC されると再生が止まる）
@@ -110,14 +112,13 @@ export function speak(
     utterance.onerror = options.onError;
   }
 
-  // Chrome の cancel() → speak() 同期バグ回避: setTimeout(0) で非同期化
-  // paused 状態のまま speak() しても無音になるため resume() も呼ぶ
-  setTimeout(() => {
-    if (window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-    }
-    window.speechSynthesis.speak(utterance);
-  }, 0);
+  // paused 状態のまま speak() しても無音になるため、先に resume() を呼ぶ
+  // ★ setTimeout(0) は使わない — iOS Safari ではユーザージェスチャー起点の speak() が
+  //    非同期に遅延されると「ユーザー操作なし」と判定されてブロックされる
+  if (window.speechSynthesis.paused) {
+    window.speechSynthesis.resume();
+  }
+  window.speechSynthesis.speak(utterance);
 
   return utterance;
 }
@@ -199,6 +200,7 @@ export function waitForVoices(timeout = 1000): Promise<SpeechSynthesisVoice[]> {
 }
 
 // utterance をモジュールスコープで保持（Chrome GC バグ対策）
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let _currentUtterance: SpeechSynthesisUtterance | null = null;
 
 // 音声初期化状態を管理
