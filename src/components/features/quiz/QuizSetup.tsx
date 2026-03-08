@@ -219,22 +219,23 @@ export const QuizSetup = ({
             <h2 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-2">問題タイプの出題比率</h2>
             {(() => {
               const ratios = quizSettings.typeRatios;
-              const total = ratios.enToJa + ratios.jaToEn + ratios.listening + ratios.dictation;
+              const total = ratios.enToJa + ratios.jaToEn + ratios.listening + ratios.dictation + (ratios.speaking ?? 0);
               const toPercent = (v: number) => total > 0 ? Math.round((v / total) * 100) : 0;
-              const typeItems: { key: keyof QuestionTypeRatios; label: string; color: string }[] = [
-                { key: "enToJa",    label: "A 英→日",    color: "accent" },
-                { key: "jaToEn",    label: "B 日→英",    color: "primary" },
-                { key: "listening", label: "C リスニング", color: "green" },
-                { key: "dictation", label: "D 書き取り",  color: "orange" },
+              const typeItems: { key: keyof QuestionTypeRatios; label: string }[] = [
+                { key: "enToJa",    label: "A 英→日" },
+                { key: "jaToEn",    label: "B 日→英" },
+                { key: "listening", label: "C リスニング" },
+                { key: "dictation", label: "D 書き取り" },
+                { key: "speaking",  label: "E スピーキング" },
               ];
               return (
                 <div className="space-y-2">
                   {typeItems.map(({ key, label }) => {
-                    const value = ratios[key];
+                    const value = ratios[key] ?? 0;
                     const pct = toPercent(value);
                     return (
                       <div key={key} className="flex items-center gap-2">
-                        <span className="text-[11px] text-slate-600 dark:text-slate-300 w-20 flex-shrink-0">{label}</span>
+                        <span className="text-[11px] text-slate-600 dark:text-slate-300 w-24 flex-shrink-0">{label}</span>
                         <input
                           type="range"
                           min={0}
@@ -269,7 +270,7 @@ export const QuizSetup = ({
                     }
                     className="text-[10px] text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
                   >
-                    均等に戻す（各25%）
+                    デフォルトに戻す（A〜D 各25% / E 0%）
                   </button>
                 </div>
               );

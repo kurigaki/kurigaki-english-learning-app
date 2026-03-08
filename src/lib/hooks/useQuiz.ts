@@ -72,6 +72,14 @@ export const useQuiz = () => {
   const sessionStartTimeRef = useRef<number>(Date.now());
   const hasAutoPlayedRef = useRef<Set<number>>(new Set());
 
+  // === スピーキングモード: 音声認識 ===
+  const [isSpeechRecognitionSupported, setIsSpeechRecognitionSupported] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const [recognizedText, setRecognizedText] = useState<{ text: string; isCorrect: boolean } | null>(null);
+  const isMobileQuizRef = useRef(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recognitionQuizRef = useRef<any>(null);
+
   const currentQuestion = questions[currentIndex];
 
   useEffect(() => {
@@ -98,6 +106,25 @@ export const useQuiz = () => {
   useEffect(() => {
     saveQuizSettings(quizSettings);
   }, [quizSettings]);
+
+  // 音声認識のサポート確認（Chrome iOS / Firefox iOS は WKWebView のため除外）
+  useEffect(() => {
+    const ua = typeof window !== "undefined" ? navigator.userAgent : "";
+    const isWebViewBrowser = /CriOS|FxiOS/i.test(ua);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const hasApi = !!(typeof window !== "undefined" && ((window as any).SpeechRecognition || (window as any).webkitSpeechRecognition));
+    setIsSpeechRecognitionSupported(hasApi && !isWebViewBrowser);
+    isMobileQuizRef.current = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  }, []);
+
+  // アンマウント時に音声認識を停止
+  useEffect(() => {
+    return () => {
+      if (recognitionQuizRef.current) {
+        try { recognitionQuizRef.current.stop(); } catch { /* ignore */ }
+      }
+    };
+  }, []);
 
   const handleNext = useCallback(async () => {
     if (currentIndex + 1 >= questions.length) {
@@ -225,11 +252,93 @@ export const useQuiz = () => {
   const handleSelect = useCallback((choice: string) => {
     if (selected !== null || !currentQuestion) return;
     const correct = choice === currentQuestion.correctAnswer;
-    if (currentQuestion.type === "ja-to-en" && isSpeechSynthesisSupported()) {
+    if ((currentQuestion.type === "ja-to-en" || currentQuestion.type === "speaking") && isSpeechSynthesisSupported()) {
       speakWord(choice);
     }
     processAnswer(choice, correct);
   }, [selected, currentQuestion, processAnswer]);
+
+  // スピーキング問題: 音声認識を開始する（デスクトップ自動起動 / モバイル手動起動共通）
+  const startSpeakingRecognition = useCallback((question: Question) => {
+    if (!isSpeechRecognitionSupported || selected !== null) return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const SpeechRecognitionAPI = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognitionAPI) return;
+
+    if (recognitionQuizRef.current) {
+      try { recognitionQuizRef.current.stop(); } catch { /* ignore */ }
+    }
+
+    const recognition = new SpeechRecognitionAPI();
+    recognition.lang = "en-US";
+    recognition.continuous = false;
+    recognition.interimResults = true;
+    recognitionQuizRef.current = recognition;
+
+    recognition.onstart = () => setIsListening(true);
+    recognition.onend = () => setIsListening(false);
+
+    const answer = question.correctAnswer.toLowerCase();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    recognition.onresult = (event: any) => {
+      const last = event.results.length - 1;
+      const transcript = event.results[last][0].transcript.trim().toLowerCase();
+      if (!transcript) return;
+      const isMatch = transcript === answer || transcript.includes(answer);
+      setRecognizedText({ text: transcript, isCorrect: isMatch });
+      if (isMatch) {
+        processAnswer(question.correctAnswer, true);
+      }
+    };
+    recognition.onerror = () => setIsListening(false);
+
+    try { recognition.start(); } catch { /* ignore */ }
+  }, [isSpeechRecognitionSupported, selected, processAnswer]);
+
+  // デスクトップ: スピーキング問題が表示されたら自動的に音声認識を起動
+  useEffect(() => {
+    if (!isSpeechRecognitionSupported || isMobileQuizRef.current) return;
+    if (!currentQuestion || currentQuestion.type !== "speaking" || selected !== null || phase !== "quiz") return;
+
+    const timer = setTimeout(() => {
+      startSpeakingRecognition(currentQuestion);
+    }, 300);
+
+    return () => {
+      clearTimeout(timer);
+      if (recognitionQuizRef.current) {
+        try { recognitionQuizRef.current.stop(); } catch { /* ignore */ }
+      }
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, isSpeechRecognitionSupported, phase]);
+
+  // 回答済みになったら音声認識を停止
+  useEffect(() => {
+    if (selected !== null && recognitionQuizRef.current) {
+      try { recognitionQuizRef.current.stop(); } catch { /* ignore */ }
+    }
+  }, [selected]);
+
+  // 問題が変わったら認識テキストをクリア
+  useEffect(() => {
+    setRecognizedText(null);
+  }, [currentIndex]);
+
+  // モバイル用: ボタン押下で音声認識を開始
+  const handleSpeakStart = useCallback(() => {
+    if (!currentQuestion || currentQuestion.type !== "speaking") return;
+    startSpeakingRecognition(currentQuestion);
+  }, [currentQuestion, startSpeakingRecognition]);
+
+  // スピーキング問題をスキップ（不正解として進む）
+  const handleSpeakingSkip = useCallback(() => {
+    if (!currentQuestion || selected !== null) return;
+    if (recognitionQuizRef.current) {
+      try { recognitionQuizRef.current.stop(); } catch { /* ignore */ }
+    }
+    processAnswer(currentQuestion.correctAnswer, false);
+  }, [currentQuestion, selected, processAnswer]);
 
   handleSelectRef.current = handleSelect;
 
@@ -257,7 +366,7 @@ export const useQuiz = () => {
         return;
       }
 
-      if (selected !== null || !currentQuestion || currentQuestion.type === "dictation") return;
+      if (selected !== null || !currentQuestion || currentQuestion.type === "dictation" || currentQuestion.type === "speaking") return;
 
       const keyIndex = ["a", "b", "c", "d"].indexOf(e.key.toLowerCase());
       if (keyIndex !== -1 && currentQuestion.choices[keyIndex] !== undefined) {
@@ -438,6 +547,7 @@ export const useQuiz = () => {
         case "en-to-ja": speakWord(currentQuestion.word.word); break;
         case "listening":
         case "dictation": if (currentQuestion.word.example) speakSentence(currentQuestion.word.example); break;
+        // speaking: 自動読み上げなし（ユーザーが声に出して答える）
       }
     }, 300);
     return () => clearTimeout(timeoutId);
@@ -489,5 +599,11 @@ export const useQuiz = () => {
     handleSelect,
     handleDictationSubmit,
     handleAchievementClose,
+    isSpeechRecognitionSupported,
+    isListening,
+    recognizedText,
+    isMobile: isMobileQuizRef.current,
+    handleSpeakStart,
+    handleSpeakingSkip,
   };
 };

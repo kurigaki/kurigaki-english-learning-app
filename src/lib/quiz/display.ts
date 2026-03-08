@@ -11,6 +11,8 @@ export function getQuestionPrompt(type: QuestionType): string {
       return "音声を聞いて、空欄に入る単語は?";
     case "dictation":
       return "空欄に入る英単語を入力してください";
+    case "speaking":
+      return "声に出して英語で答えてください";
   }
 }
 
@@ -19,6 +21,7 @@ export function getQuestionDisplay(question: Question): string {
     case "en-to-ja":
       return question.word.word;
     case "ja-to-en":
+    case "speaking":
       return question.word.meaning;
     case "listening":
     case "dictation":
