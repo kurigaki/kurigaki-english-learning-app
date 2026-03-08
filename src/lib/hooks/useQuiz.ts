@@ -26,6 +26,8 @@ import {
   selectFillBlankExample,
 } from "@/lib/quiz/generator";
 import { speakWord, speakSentence, isSpeechSynthesisSupported } from "@/lib/audio";
+import { InQuizSettings, loadInQuizSettings, saveInQuizSettings } from "@/lib/quiz/in-quiz-settings";
+import { levenshteinDistance } from "@/lib/string-utils";
 
 const QUESTIONS_PER_SESSION = 10;
 type QuizPhase = "setup" | "quiz" | "result";
@@ -71,6 +73,15 @@ export const useQuiz = () => {
   const questionStartTimeRef = useRef<number>(Date.now());
   const sessionStartTimeRef = useRef<number>(Date.now());
   const hasAutoPlayedRef = useRef<Set<number>>(new Set());
+
+  // === クイズ中設定 ===
+  const [inQuizSettings, setInQuizSettings] = useState<InQuizSettings>(() => loadInQuizSettings());
+  const inQuizSettingsRef = useRef(inQuizSettings);
+  inQuizSettingsRef.current = inQuizSettings;
+
+  useEffect(() => {
+    saveInQuizSettings(inQuizSettings);
+  }, [inQuizSettings]);
 
   // === スピーキングモード: 音声認識 ===
   const [isSpeechRecognitionSupported, setIsSpeechRecognitionSupported] = useState(false);
@@ -284,7 +295,20 @@ export const useQuiz = () => {
       const last = event.results.length - 1;
       const transcript = event.results[last][0].transcript.trim().toLowerCase();
       if (!transcript) return;
-      const isMatch = transcript === answer || transcript.includes(answer);
+      const difficulty = inQuizSettingsRef.current.speakingDifficulty;
+      let isMatch: boolean;
+      if (difficulty === "strict") {
+        isMatch = transcript === answer;
+      } else if (difficulty === "easy") {
+        // 単語長の最大 25% の誤差を許容（最低1文字）
+        const EASY_MODE_TOLERANCE_RATIO = 0.25;
+        const strip = (s: string) => s.replace(/^(a|an|the)\s+/i, "").trim();
+        isMatch = transcript === answer
+          || transcript.includes(answer)
+          || levenshteinDistance(strip(transcript), strip(answer)) <= Math.max(1, Math.floor(answer.length * EASY_MODE_TOLERANCE_RATIO));
+      } else {
+        isMatch = transcript === answer || transcript.includes(answer);
+      }
       setRecognizedText({ text: transcript, isCorrect: isMatch });
       if (isMatch) {
         processAnswer(question.correctAnswer, true);
@@ -540,6 +564,7 @@ export const useQuiz = () => {
   }, [currentIndex]);
 
   useEffect(() => {
+    if (!inQuizSettings.autoPlay) return;
     if (!currentQuestion || !isSpeechSynthesisSupported() || selected !== null || hasAutoPlayedRef.current.has(currentIndex)) return;
     hasAutoPlayedRef.current.add(currentIndex);
     const timeoutId = setTimeout(() => {
@@ -551,7 +576,7 @@ export const useQuiz = () => {
       }
     }, 300);
     return () => clearTimeout(timeoutId);
-  }, [currentQuestion, currentIndex, selected]);
+  }, [currentQuestion, currentIndex, selected, inQuizSettings.autoPlay]);
 
   const handleAchievementClose = () => {
     const remaining = pendingAchievements.slice(1);
@@ -605,5 +630,7 @@ export const useQuiz = () => {
     isMobile: isMobileQuizRef.current,
     handleSpeakStart,
     handleSpeakingSkip,
+    inQuizSettings,
+    setInQuizSettings,
   };
 };

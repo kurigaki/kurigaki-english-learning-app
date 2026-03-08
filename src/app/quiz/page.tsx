@@ -50,6 +50,8 @@ export default function QuizPage() {
     isMobile,
     handleSpeakStart,
     handleSpeakingSkip,
+    inQuizSettings,
+    setInQuizSettings,
   } = useQuiz();
 
   // 設定画面
@@ -125,6 +127,8 @@ export default function QuizPage() {
       isMobile={isMobile}
       handleSpeakStart={handleSpeakStart}
       handleSpeakingSkip={handleSpeakingSkip}
+      inQuizSettings={inQuizSettings}
+      setInQuizSettings={setInQuizSettings}
     />
   );
 }

@@ -33,6 +33,19 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-08",
+    version: "1.30.0",
+    title: "クイズ中設定パネルを追加",
+    content: [
+      "クイズ中に⚙️ボタンから設定を変更できるようになりました",
+      "スピーキング難易度（ネイティブ/標準/入門）を問題中でも切り替えられます",
+      "ヒント機能：スピーキング問題で英単語のヒントを表示するON/OFFトグルを追加",
+      "自動読み上げON/OFFトグルを追加。クイズ中に音声を止めたい場合に使えます",
+      "回答後に自動で次へ進む機能（OFF/1秒後/2秒後）を追加",
+    ],
+    category: "feature",
+  },
+  {
+    date: "2026-03-08",
     version: "1.29.0",
     title: "クイズにスピーキングモードを追加",
     content: [
