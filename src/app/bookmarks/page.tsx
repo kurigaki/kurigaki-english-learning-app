@@ -13,6 +13,7 @@ import { words, Word, categoryLabels, difficultyLabels } from "@/data/words/comp
 import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 import { getDisplayedManualMastery, MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
+import { vocabularyBooks } from "@/lib/vocabulary-books";
 
 type SortOption = "added" | "name" | "difficulty";
 
@@ -41,14 +42,23 @@ export default function BookmarksPage() {
     ]);
     setWordStatsMap(statsMap);
     setManualMemoryById(manualMap);
-    const bookmarked: Word[] = [];
 
-    // IDの順序を保持するためにmapを使用（登録順）
-    bookmarkedIds.forEach((id) => {
-      const word = words.find((w) => w.id === id);
-      if (word) {
-        bookmarked.push(word);
-      }
+    // My単語帳の単語IDも取得し、旧ブックマークと統合（重複排除）
+    const myBooks = vocabularyBooks.getMyVocabBooks();
+    const myVocabWordIdSet = new Set<number>();
+    myBooks.forEach((book) => book.wordIds.forEach((id) => myVocabWordIdSet.add(id)));
+
+    const oldBookmarkedSet = new Set(bookmarkedIds);
+    const allWordIds = [...bookmarkedIds];
+    myVocabWordIdSet.forEach((id) => {
+      if (!oldBookmarkedSet.has(id)) allWordIds.push(id);
+    });
+
+    const wordById = new Map(words.map((w) => [w.id, w]));
+    const bookmarked: Word[] = [];
+    allWordIds.forEach((id) => {
+      const word = wordById.get(id);
+      if (word) bookmarked.push(word);
     });
 
     // ソート
@@ -85,19 +95,30 @@ export default function BookmarksPage() {
     await unifiedStorage.setManualMastery(wordId, mastery);
   }, []);
 
-  const handleRemoveBookmark = async (wordId: number, e: React.MouseEvent) => {
-    e.preventDefault(); // Linkのナビゲーションを防ぐ
+  const handleRemoveBookmark = useCallback(async (wordId: number, e: React.MouseEvent) => {
+    e.preventDefault();
     e.stopPropagation();
+    // 旧ブックマークシステムから削除
     await unifiedStorage.removeBookmark(wordId);
+    // My単語帳からも削除（全ての単語帳から）
+    const myBooks = vocabularyBooks.getMyVocabBooks();
+    myBooks.forEach((book) => {
+      if (book.wordIds.includes(wordId)) {
+        vocabularyBooks.removeWordFromBook(book.id, wordId);
+      }
+    });
     loadBookmarks();
-  };
+  }, [loadBookmarks]);
 
   const startFlashcard = useCallback((wordId: number, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    saveQuickFlashcardSession([wordId]);
-    router.push("/word-list");
-  }, [router]);
+    // 全単語リストを渡し、クリックした単語のインデックスから開始する
+    const allIds = bookmarkedWords.map((w) => w.id);
+    const startIndex = Math.max(0, allIds.indexOf(wordId));
+    saveQuickFlashcardSession(allIds, startIndex);
+    router.push("/flashcard");
+  }, [bookmarkedWords, router]);
 
   if (!isMounted) {
     return (
@@ -175,8 +196,8 @@ export default function BookmarksPage() {
                 ブックマークがありません
               </h2>
               <p className="text-slate-500 dark:text-slate-400 text-xs mb-3">
-                単語詳細画面や単語帳から<br />
-                お気に入りの単語をブックマークしましょう。
+                単語帳ページで単語を<br />
+                My単語帳に追加しましょう。
               </p>
               <Link href="/word-list">
                 <Button size="sm">単語帳を見る</Button>
@@ -230,7 +251,7 @@ export default function BookmarksPage() {
                       </div>
                     </Link>
 
-                    {/* ブックマーク解除ボタン */}
+                    {/* フラッシュカードボタン */}
                     <button
                       onClick={(e) => startFlashcard(word.id, e)}
                       className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
@@ -238,6 +259,7 @@ export default function BookmarksPage() {
                     >
                       <span className="text-xs emoji-icon">🃏</span>
                     </button>
+                    {/* ブックマーク解除ボタン */}
                     <button
                       onClick={(e) => handleRemoveBookmark(word.id, e)}
                       className="p-1.5 text-yellow-500 hover:text-yellow-600 hover:bg-yellow-50 rounded-md transition-colors"
