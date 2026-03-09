@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef, useReducer, useMemo } from "r
 import { useAuth } from "@/lib/auth-context";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { words, Word } from "@/data/words/compat";
 import Confetti from "react-confetti";
 import { unifiedStorage } from "@/lib/unified-storage";
@@ -485,7 +486,8 @@ export default function SpeedChallengePage() {
       
       fetchHistory();
     }
-  }, [selectedPlayer]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedPlayer, isAuthenticated, timeLimitSetting, mode, speakingDifficulty]);
 
   // Combo Lost表示のタイマー
   useEffect(() => {
@@ -672,7 +674,7 @@ export default function SpeedChallengePage() {
       timerRef.current = setTimeout(() => dispatch({ type: "TICK" }), 1000);
     }
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-  }, [gameState, timeLeft, timeLimit, endGame, dispatch]);
+  }, [gameState, timeLeft, timeLimit, endGame, dispatch, isSfxEnabled]);
 
   // 無制限モードでの自動一時停止
   useEffect(() => {
@@ -755,6 +757,8 @@ export default function SpeedChallengePage() {
       audio.pause();
       bgmRef.current = null;
     };
+    // BGM初期化は1回のみ（bgmVolumeは別effectで同期するため意図的に除外）
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // BGM音量を同期
@@ -950,6 +954,8 @@ export default function SpeedChallengePage() {
 
     // cleanup では stop しない（question 変更時に認識を継続させるため）
     // アンマウント時の stop は専用 useEffect([]) で実施
+    // handleSelect を deps に追加すると認識が再初期化されるため意図的に除外
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gameState, voiceInputEnabled, question, isSpeechRecognitionSupported, speakingDifficulty]);
 
   const handleSelect = (choice: string, source: 'tap' | 'voice' = 'tap') => {
@@ -1418,7 +1424,7 @@ export default function SpeedChallengePage() {
                   <div className="text-center">
                     <div className="w-16 h-16 mx-auto bg-slate-200 dark:bg-slate-700 rounded-full mb-3 overflow-hidden flex items-center justify-center">
                       {selectedPlayer.profiles?.avatar_url ? (
-                        <img src={selectedPlayer.profiles.avatar_url} alt="Avatar" className="w-full h-full object-cover" />
+                        <Image src={selectedPlayer.profiles.avatar_url} alt="Avatar" width={64} height={64} className="w-full h-full object-cover" />
                       ) : (
                         <span className="text-2xl">👤</span>
                       )}
