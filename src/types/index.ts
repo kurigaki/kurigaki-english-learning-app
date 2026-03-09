@@ -191,7 +191,20 @@ export type WordListSortOption =
   | "accuracy"
   | "accuracy-desc"
   | "attempts"
+  | "attempts-asc"
+  | "mastery-asc"
+  | "mastery-desc"
   | "difficulty";
+
+// 単語帳詳細の絞り込み設定
+export type BookDetailFilter = {
+  accuracyRange: [number, number]; // [0, 100] = 全範囲（フィルターなし）
+  daysSince: number | null;        // null = 絞り込みなし
+  masteryLevels: ("unlearned" | "weak" | "vague" | "almost" | "remembered")[]; // 空配列 = 全て表示
+};
+
+// 単語表示モード（単語帳詳細）
+export type WordDisplayMode = "both" | "hide-meaning" | "hide-word";
 
 // クイズ・スピードチャレンジで回答した単語
 export type AnsweredWord = {

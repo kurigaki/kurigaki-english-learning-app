@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { words as allWordList } from "@/data/words/compat";
@@ -13,6 +13,7 @@ import type { ManualMasteryLevel, WordStats } from "@/lib/storage";
 import { getDisplayedManualMastery, MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import { saveBookWordIds } from "@/lib/quiz-session";
 import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
+import { speakWord, stopSpeaking } from "@/lib/audio";
 import { SpeakButton } from "@/components/ui";
 import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
 import BookStudySettingsDialog, {
@@ -21,13 +22,30 @@ import BookStudySettingsDialog, {
   type SortBy,
 } from "@/components/features/word-list/BookStudySettingsDialog";
 import BookProgressBar from "@/components/features/word-list/BookProgressBar";
+import BookFilterSheet from "@/components/features/word-list/BookFilterSheet";
 import CreateBookDialog from "@/components/features/word-list/CreateBookDialog";
 import type { Course } from "@/data/words/types";
+import type { BookDetailFilter, WordDisplayMode, WordListSortOption } from "@/types";
 
 type BookWord = {
   id: number;
   word: string;
   meaning: string;
+};
+
+// 記憶度ソート用の数値マッピング
+const MASTERY_ORDER: Record<ManualMasteryLevel, number> = {
+  unlearned: 0,
+  weak: 1,
+  vague: 2,
+  almost: 3,
+  remembered: 4,
+};
+
+const DEFAULT_FILTER: BookDetailFilter = {
+  accuracyRange: [0, 100],
+  daysSince: null,
+  masteryLevels: [],
 };
 
 function resolveBookWords(
@@ -124,11 +142,32 @@ export default function BookDetailPage() {
     sortBy: "random" as SortBy,
   });
 
+  // 単語リスト表示ソート（⚙️の StudySettings とは独立）
+  const [listSortBy, setListSortBy] = useState<WordListSortOption>("default");
+
+  // 絞り込み
+  const [listFilter, setListFilter] = useState<BookDetailFilter>(DEFAULT_FILTER);
+  const [showFilterSheet, setShowFilterSheet] = useState(false);
+
+  // 表示モード
+  const [displayMode, setDisplayMode] = useState<WordDisplayMode>("both");
+
+  // 再生
+  const isPlayingRef = useRef(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [playingIndex, setPlayingIndex] = useState(-1);
+
   useEffect(() => {
     setIsMounted(true);
     setMyBooks(vocabularyBooks.getMyVocabBooks());
     setIsFavorite(vocabularyBooks.isFavoriteBook(bookId));
     vocabularyBooks.addRecentlyViewedBook(bookId);
+
+    // 保存済み学習設定の読み込み
+    const saved = vocabularyBooks.loadBookStudySettings(bookId) as StudySettings | null;
+    if (saved && saved.countMode !== undefined && saved.sortBy !== undefined) {
+      setStudySettings(saved);
+    }
 
     const loadStats = async () => {
       const [sm, mm] = await Promise.all([
@@ -141,6 +180,14 @@ export default function BookDetailPage() {
     loadStats();
   }, [bookId]);
 
+  // ページ離脱時に再生を停止
+  useEffect(() => {
+    return () => {
+      isPlayingRef.current = false;
+      stopSpeaking();
+    };
+  }, []);
+
   const bookMeta = useMemo(
     () => (isMounted ? resolveBookMeta(bookId, myBooks) : null),
     [bookId, myBooks, isMounted]
@@ -152,12 +199,77 @@ export default function BookDetailPage() {
   );
 
   const filteredWords = useMemo(() => {
-    if (!searchQuery) return bookWords;
-    const q = searchQuery.toLowerCase();
-    return bookWords.filter(
-      (w) => w.word.toLowerCase().includes(q) || w.meaning.toLowerCase().includes(q)
-    );
-  }, [bookWords, searchQuery]);
+    // 1. 検索フィルター
+    let result = !searchQuery
+      ? bookWords
+      : bookWords.filter(
+          (w) =>
+            w.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            w.meaning.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+    // 2. 正答率フィルター
+    const [accMin, accMax] = listFilter.accuracyRange;
+    if (accMin > 0 || accMax < 100) {
+      result = result.filter((w) => {
+        const acc = statsMap.get(w.id)?.accuracy ?? null;
+        if (acc === null) return accMin === 0; // 未学習は下限0のときのみ含む
+        return acc >= accMin && acc <= accMax;
+      });
+    }
+
+    // 3. 最終遭遇日フィルター
+    if (listFilter.daysSince !== null) {
+      const cutoffMs = Date.now() - listFilter.daysSince * 86400000;
+      result = result.filter((w) => {
+        const lastStudied = statsMap.get(w.id)?.lastStudiedAt ?? null;
+        if (!lastStudied) return false;
+        return new Date(lastStudied).getTime() <= cutoffMs;
+      });
+    }
+
+    // 4. 記憶度フィルター
+    if (listFilter.masteryLevels.length > 0) {
+      result = result.filter((w) => {
+        const m = getDisplayedManualMastery(w.id, statsMap, manualMap);
+        return (listFilter.masteryLevels as ManualMasteryLevel[]).includes(m);
+      });
+    }
+
+    // 5. ソート
+    if (listSortBy !== "default") {
+      result = [...result].sort((a, b) => {
+        switch (listSortBy) {
+          case "alphabetical":
+            return a.word.localeCompare(b.word);
+          case "alphabetical-desc":
+            return b.word.localeCompare(a.word);
+          case "accuracy":
+            return (statsMap.get(a.id)?.accuracy ?? -1) - (statsMap.get(b.id)?.accuracy ?? -1);
+          case "accuracy-desc":
+            return (statsMap.get(b.id)?.accuracy ?? -1) - (statsMap.get(a.id)?.accuracy ?? -1);
+          case "attempts":
+            return (statsMap.get(b.id)?.totalAttempts ?? 0) - (statsMap.get(a.id)?.totalAttempts ?? 0);
+          case "attempts-asc":
+            return (statsMap.get(a.id)?.totalAttempts ?? 0) - (statsMap.get(b.id)?.totalAttempts ?? 0);
+          case "mastery-asc":
+            return (
+              MASTERY_ORDER[getDisplayedManualMastery(a.id, statsMap, manualMap)] -
+              MASTERY_ORDER[getDisplayedManualMastery(b.id, statsMap, manualMap)]
+            );
+          case "mastery-desc":
+            return (
+              MASTERY_ORDER[getDisplayedManualMastery(b.id, statsMap, manualMap)] -
+              MASTERY_ORDER[getDisplayedManualMastery(a.id, statsMap, manualMap)]
+            );
+          default:
+            return 0;
+        }
+      });
+    }
+
+    return result;
+  }, [bookWords, searchQuery, statsMap, manualMap, listSortBy, listFilter]);
 
   const handleToggleFavorite = useCallback(() => {
     const next = vocabularyBooks.toggleFavoriteBook(bookId);
@@ -178,6 +290,41 @@ export default function BookDetailPage() {
     (wordId: number) => vocabularyBooks.getBooksForWord(wordId),
     []
   );
+
+  const isFilterActive = useMemo(
+    () =>
+      listFilter.accuracyRange[0] > 0 ||
+      listFilter.accuracyRange[1] < 100 ||
+      listFilter.daysSince !== null ||
+      listFilter.masteryLevels.length > 0,
+    [listFilter]
+  );
+
+  const handlePlay = useCallback(() => {
+    if (isPlaying) {
+      stopSpeaking();
+      isPlayingRef.current = false;
+      setIsPlaying(false);
+      setPlayingIndex(-1);
+      return;
+    }
+    const words = filteredWords;
+    const playNext = (index: number) => {
+      if (!isPlayingRef.current || index >= words.length) {
+        setIsPlaying(false);
+        setPlayingIndex(-1);
+        isPlayingRef.current = false;
+        return;
+      }
+      setPlayingIndex(index);
+      speakWord(words[index].word, {
+        onEnd: () => setTimeout(() => playNext(index + 1), 400),
+      });
+    };
+    isPlayingRef.current = true;
+    setIsPlaying(true);
+    playNext(0);
+  }, [isPlaying, filteredWords]);
 
   const handleManualMasteryChange = useCallback(async (wordId: number, mastery: ManualMasteryLevel) => {
     setManualMap((prev) => ({ ...prev, [wordId]: mastery }));
@@ -364,6 +511,67 @@ export default function BookDetailPage() {
         <BookProgressBar words={bookWords} statsMap={statsMap} manualMap={manualMap} />
       )}
 
+      {/* ツールバー（並び替え・絞り込み・表示切替・再生） */}
+      <div className="flex-shrink-0 flex items-center gap-2 px-3 py-2 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 overflow-x-auto">
+        {/* ソート */}
+        <select
+          value={listSortBy}
+          onChange={(e) => setListSortBy(e.target.value as WordListSortOption)}
+          className="text-xs py-1 px-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none flex-shrink-0"
+        >
+          <option value="default">↕ 並び順</option>
+          <option value="mastery-asc">記憶度 低→高</option>
+          <option value="mastery-desc">記憶度 高→低</option>
+          <option value="alphabetical">A → Z</option>
+          <option value="alphabetical-desc">Z → A</option>
+          <option value="attempts-asc">遭遇回数 少→多</option>
+          <option value="attempts">遭遇回数 多→少</option>
+          <option value="accuracy">正答率 低→高</option>
+          <option value="accuracy-desc">正答率 高→低</option>
+        </select>
+
+        {/* 絞り込み */}
+        <button
+          onClick={() => setShowFilterSheet(true)}
+          className={`flex items-center gap-1 px-2 py-1 rounded-lg border text-xs flex-shrink-0 transition-colors ${
+            isFilterActive
+              ? "border-primary-400 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400"
+              : "border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300"
+          }`}
+        >
+          ▽ 絞り込み{isFilterActive ? " ●" : ""}
+        </button>
+
+        {/* 表示モード */}
+        <button
+          onClick={() =>
+            setDisplayMode((m) =>
+              m === "both" ? "hide-meaning" : m === "hide-meaning" ? "hide-word" : "both"
+            )
+          }
+          className="flex items-center gap-1 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-600 text-xs flex-shrink-0 text-slate-600 dark:text-slate-300 whitespace-nowrap"
+        >
+          文A{" "}
+          {displayMode === "both"
+            ? "両方表示"
+            : displayMode === "hide-meaning"
+            ? "和訳を隠す"
+            : "単語を隠す"}
+        </button>
+
+        {/* 再生 */}
+        <button
+          onClick={handlePlay}
+          className={`flex items-center gap-1 px-2 py-1 rounded-lg border text-xs flex-shrink-0 transition-colors ${
+            isPlaying
+              ? "border-red-400 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400"
+              : "border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300"
+          }`}
+        >
+          {isPlaying ? "■ 停止" : "▶ 再生"}
+        </button>
+      </div>
+
       {/* 単語リスト */}
       <div className="flex-1 overflow-y-auto min-h-0 px-3 py-2 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-2xl mx-auto space-y-0">
@@ -383,8 +591,12 @@ export default function BookDetailPage() {
                 return (
                   <div
                     key={word.id}
-                    className={`flex items-center gap-1.5 px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors ${
+                    className={`flex items-center gap-1.5 px-3 py-2.5 transition-colors ${
                       idx !== 0 ? "border-t border-slate-100 dark:border-slate-700" : ""
+                    } ${
+                      idx === playingIndex
+                        ? "bg-primary-50 dark:bg-primary-900/20"
+                        : "hover:bg-slate-50 dark:hover:bg-slate-700/50"
                     }`}
                   >
                     {/* 左側: 操作ボタン */}
@@ -422,10 +634,22 @@ export default function BookDetailPage() {
                       className="flex items-center flex-1 min-w-0 group"
                     >
                       <div className="flex-1 min-w-0">
-                        <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate text-sm">
-                          {word.word}
-                        </p>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+                        {/* 単語（displayModeで表示切替） */}
+                        {displayMode !== "hide-word" ? (
+                          <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate text-sm">
+                            {word.word}
+                          </p>
+                        ) : (
+                          <p className="font-bold text-primary-300 dark:text-primary-700 truncate text-sm select-none">
+                            ●●●
+                          </p>
+                        )}
+                        {/* 意味（displayModeで表示切替） */}
+                        {displayMode !== "hide-meaning" ? (
+                          <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+                        ) : (
+                          <p className="text-xs text-slate-300 dark:text-slate-600 truncate select-none">- - -</p>
+                        )}
                       </div>
                       <svg className="w-4 h-4 text-slate-300 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-0.5 transition-all flex-shrink-0 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -499,7 +723,10 @@ export default function BookDetailPage() {
         <BookStudySettingsDialog
           allWordIds={filteredWords.map((w) => w.id)}
           currentSettings={studySettings}
-          onSave={(settings) => setStudySettings(settings)}
+          onSave={(settings) => {
+            setStudySettings(settings);
+            vocabularyBooks.saveBookStudySettings(bookId, settings);
+          }}
           onClose={() => setShowSettings(false)}
         />
       )}
@@ -510,6 +737,18 @@ export default function BookDetailPage() {
           defaultName={`${bookMeta.name} のコピー`}
           onCreate={handleDuplicateCreate}
           onClose={() => setShowDuplicateDialog(false)}
+        />
+      )}
+
+      {/* 絞り込みパネル */}
+      {showFilterSheet && (
+        <BookFilterSheet
+          filter={listFilter}
+          onApply={(f) => {
+            setListFilter(f);
+            setShowFilterSheet(false);
+          }}
+          onClose={() => setShowFilterSheet(false)}
         />
       )}
     </div>
