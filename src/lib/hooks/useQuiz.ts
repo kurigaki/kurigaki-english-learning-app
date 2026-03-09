@@ -9,6 +9,7 @@ import {
   saveQuizResultState,
   getQuizResultState,
   clearQuizResultState,
+  getAndClearBookWordIds,
   AnsweredWord,
   SessionResult,
 } from "@/lib/quiz-session";
@@ -38,6 +39,7 @@ export const useQuiz = () => {
   const weakOnly = searchParams.get("weakOnly");
   const srsReview = searchParams.get("srsReview");
   const bookmarksOnly = searchParams.get("bookmarksOnly");
+  const bookWordsParam = searchParams.get("bookWords");
 
   const [phase, setPhase] = useState<QuizPhase>("setup");
   const [quizSettings, setQuizSettings] = useState<QuizSettings>(() => loadQuizSettings());
@@ -533,8 +535,15 @@ export const useQuiz = () => {
         return;
       }
     }
+    if (bookWordsParam === "true") {
+      const bookWordIds = getAndClearBookWordIds();
+      if (bookWordIds && bookWordIds.length > 0) {
+        startRetrySessionWithWordIds(bookWordIds);
+        return;
+      }
+    }
     setPhase("setup");
-  }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, weakWordIds, srsWordIds, bookmarkedIds, startNewSession]);
+  }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, bookWordsParam, weakWordIds, srsWordIds, bookmarkedIds, startNewSession, startRetrySessionWithWordIds]);
 
   useEffect(() => {
     if (isFinished && !isRestoredFromSession && answeredWords.length > 0) {
