@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { categoryLabels, difficultyLabels } from "@/data/words/compat";
 import { Card, Button } from "@/components/ui";
@@ -17,6 +18,8 @@ import {
 import type { ManualMasteryLevel } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import { useWordDetail } from "@/lib/hooks/useWordDetail";
+import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
+import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
 
 export default function WordDetailPage() {
   const {
@@ -24,10 +27,8 @@ export default function WordDetailPage() {
     wordExt,
     isLoading,
     wordStats,
-    isBookmarked,
     quizHistory,
     currentMastery,
-    handleToggleBookmark,
     handleManualMasteryChange,
     fromPage,
     navState,
@@ -37,6 +38,40 @@ export default function WordDetailPage() {
     handleBack,
     getBackLabel,
   } = useWordDetail();
+
+  // ── My単語帳 state ──────────────────────────────────────────────
+  const [showBookmarkDialog, setShowBookmarkDialog] = useState(false);
+  const [myBooks, setMyBooks] = useState<MyVocabBook[]>([]);
+
+  const refreshMyBooks = useCallback(() => {
+    setMyBooks(vocabularyBooks.getMyVocabBooks());
+  }, []);
+
+  // 旧ブックマーク → My単語帳 移行（初回のみ）＋初期ロード
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const MIGRATED_KEY = "bookmark_migrated_v2";
+    if (!localStorage.getItem(MIGRATED_KEY)) {
+      try {
+        const raw = localStorage.getItem("bookmarked_words");
+        const oldIds: number[] = raw ? (JSON.parse(raw) as number[]) : [];
+        if (oldIds.length > 0) {
+          const books = vocabularyBooks.getMyVocabBooks();
+          if (books.length > 0) {
+            oldIds.forEach((id) => vocabularyBooks.addWordToBook(books[0].id, id));
+          }
+        }
+      } catch {
+        // 移行エラーは無視
+      }
+      localStorage.setItem(MIGRATED_KEY, "1");
+    }
+    refreshMyBooks();
+  }, [refreshMyBooks]);
+
+  const registeredBookIds = word
+    ? myBooks.filter((b) => b.wordIds.includes(word.id)).map((b) => b.id)
+    : [];
 
   if (!word) {
     return (
@@ -128,27 +163,18 @@ export default function WordDetailPage() {
                 </span>
               </div>
               <button
-                onClick={handleToggleBookmark}
+                onClick={() => {
+                  refreshMyBooks();
+                  setShowBookmarkDialog(true);
+                }}
                 className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
-                  isBookmarked
-                    ? "bg-yellow-100 text-yellow-700"
-                    : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-yellow-50 hover:text-yellow-600"
+                  registeredBookIds.length > 0
+                    ? "bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400"
+                    : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-600"
                 }`}
               >
-                <svg
-                  className="w-4 h-4"
-                  fill={isBookmarked ? "currentColor" : "none"}
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                  />
-                </svg>
-                {isBookmarked ? "保存済み" : "保存"}
+                <span className="emoji-icon">📚</span>
+                <span>{registeredBookIds.length > 0 ? "登録済み" : "単語帳に追加"}</span>
               </button>
             </div>
 
@@ -347,6 +373,26 @@ export default function WordDetailPage() {
             )}
           </div>
         </div>
+      )}
+
+      {/* My単語帳選択ダイアログ */}
+      {showBookmarkDialog && word && (
+        <BookmarkSelectDialog
+          wordId={word.id}
+          wordText={word.word}
+          books={myBooks}
+          registeredBookIds={registeredBookIds}
+          onToggle={(bookId) => {
+            vocabularyBooks.toggleWordInBook(bookId, word.id);
+            refreshMyBooks();
+          }}
+          onCreateBook={(name) => {
+            const newBook = vocabularyBooks.createMyVocabBook(name);
+            vocabularyBooks.addWordToBook(newBook.id, word.id);
+            refreshMyBooks();
+          }}
+          onClose={() => setShowBookmarkDialog(false)}
+        />
       )}
     </div>
   );
