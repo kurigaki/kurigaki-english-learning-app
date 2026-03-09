@@ -5,10 +5,12 @@ import { useState } from "react";
 type CreateBookDialogProps = {
   onCreate: (name: string) => void;
   onClose: () => void;
+  /** ダイアログを開いた際の初期名（複製機能などで使用） */
+  defaultName?: string;
 };
 
-export default function CreateBookDialog({ onCreate, onClose }: CreateBookDialogProps) {
-  const [name, setName] = useState("");
+export default function CreateBookDialog({ onCreate, onClose, defaultName = "" }: CreateBookDialogProps) {
+  const [name, setName] = useState(defaultName);
 
   const handleSubmit = () => {
     const trimmed = name.trim();
@@ -19,7 +21,7 @@ export default function CreateBookDialog({ onCreate, onClose }: CreateBookDialog
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center"
+      className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center"
       onClick={onClose}
     >
       <div className="absolute inset-0 bg-black/40" />
