@@ -156,23 +156,23 @@ export const vocabularyBooks = {
   },
 
   // ── 学習設定の永続化（単語帳ごと） ────────────────────────
-  saveBookStudySettings(bookId: string, settings: object): void {
+  saveBookStudySettings(bookId: string, settings: Record<string, unknown>): void {
     if (typeof window === "undefined") return;
     try {
       const raw = localStorage.getItem(BOOK_STUDY_SETTINGS_KEY);
-      const all: Record<string, object> = raw ? (JSON.parse(raw) as Record<string, object>) : {};
+      const all: Record<string, Record<string, unknown>> = raw ? (JSON.parse(raw) as Record<string, Record<string, unknown>>) : {};
       all[bookId] = settings;
       localStorage.setItem(BOOK_STUDY_SETTINGS_KEY, JSON.stringify(all));
     } catch { /* ignore */ }
   },
 
-  loadBookStudySettings(bookId: string): object | null {
+  loadBookStudySettings(bookId: string): Record<string, unknown> | null {
     if (typeof window === "undefined") return null;
     try {
       const raw = localStorage.getItem(BOOK_STUDY_SETTINGS_KEY);
       if (!raw) return null;
-      const all: Record<string, object> = JSON.parse(raw) as Record<string, object>;
-      return (all[bookId] as object) ?? null;
+      const all = JSON.parse(raw) as Record<string, Record<string, unknown>>;
+      return all[bookId] ?? null;
     } catch { return null; }
   },
 };

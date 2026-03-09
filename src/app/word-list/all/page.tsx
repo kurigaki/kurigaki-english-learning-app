@@ -50,6 +50,9 @@ const sortLabels: Record<SortOption, string> = {
   difficulty: "難易度順",
 };
 
+// 記憶度ソート用の数値マッピング（mastery-asc / mastery-desc で共有）
+const MASTERY_ORDER: Record<string, number> = { unlearned: 0, weak: 1, vague: 2, almost: 3, remembered: 4 };
+
 const memoryFilterOptions: { key: ManualMasteryLevel | "all"; label: string }[] = [
   { key: "all", label: "全て" },
   { key: "remembered", label: "覚えた" },
@@ -341,13 +344,11 @@ export default function WordListPage() {
           case "attempts-asc":
             return a.attempts - b.attempts;
           case "mastery-asc": {
-            const MASTERY_ORDER: Record<string, number> = { unlearned: 0, weak: 1, vague: 2, almost: 3, remembered: 4 };
             const aM = MASTERY_ORDER[getDisplayedManualMastery(a)] ?? 0;
             const bM = MASTERY_ORDER[getDisplayedManualMastery(b)] ?? 0;
             return aM - bM;
           }
           case "mastery-desc": {
-            const MASTERY_ORDER: Record<string, number> = { unlearned: 0, weak: 1, vague: 2, almost: 3, remembered: 4 };
             const aM = MASTERY_ORDER[getDisplayedManualMastery(a)] ?? 0;
             const bM = MASTERY_ORDER[getDisplayedManualMastery(b)] ?? 0;
             return bM - aM;

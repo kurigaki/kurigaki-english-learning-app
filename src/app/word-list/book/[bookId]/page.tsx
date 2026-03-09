@@ -610,24 +610,29 @@ export default function BookDetailPage() {
                       <span className="text-xs emoji-icon">🃏</span>
                     </button>
                     {/* ブックマーク（単語帳選択） */}
-                    <button
-                      onClick={() => setBookmarkDialog({ wordId: word.id, wordText: word.word })}
-                      className={`p-1.5 rounded-lg transition-colors flex-shrink-0 ${
-                        myBooks.some((b) => b.wordIds.includes(word.id))
-                          ? "text-yellow-500 hover:text-yellow-600"
-                          : "text-slate-300 dark:text-slate-500 hover:text-yellow-400"
-                      }`}
-                      title="単語帳に追加"
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill={myBooks.some((b) => b.wordIds.includes(word.id)) ? "currentColor" : "none"}
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                      </svg>
-                    </button>
+                    {(() => {
+                      const isInMyBook = myBooks.some((b) => b.wordIds.includes(word.id));
+                      return (
+                        <button
+                          onClick={() => setBookmarkDialog({ wordId: word.id, wordText: word.word })}
+                          className={`p-1.5 rounded-lg transition-colors flex-shrink-0 ${
+                            isInMyBook
+                              ? "text-yellow-500 hover:text-yellow-600"
+                              : "text-slate-300 dark:text-slate-500 hover:text-yellow-400"
+                          }`}
+                          title="単語帳に追加"
+                        >
+                          <svg
+                            className="w-4 h-4"
+                            fill={isInMyBook ? "currentColor" : "none"}
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                          </svg>
+                        </button>
+                      );
+                    })()}
                     {/* 単語詳細リンク */}
                     <Link
                       href={`/word/${word.id}`}
