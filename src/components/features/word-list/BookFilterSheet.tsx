@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { BookDetailFilter } from "@/types";
-
-type ManualMasteryLevel = "unlearned" | "weak" | "vague" | "almost" | "remembered";
+import type { BookDetailFilter, ManualMasteryLevel } from "@/types";
 
 const MASTERY_OPTIONS: { key: ManualMasteryLevel; label: string }[] = [
   { key: "unlearned", label: "未学習" },
@@ -68,9 +66,10 @@ export default function BookFilterSheet({ filter, onApply, onClose }: Props) {
           <h2 className="text-base font-bold text-slate-800 dark:text-slate-100">絞り込み</h2>
           <button
             onClick={onClose}
+            aria-label="閉じる"
             className="p-1.5 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
