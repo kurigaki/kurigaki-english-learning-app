@@ -27,7 +27,19 @@ export const vocabularyBooks = {
     if (typeof window === "undefined") return [];
     try {
       const raw = localStorage.getItem(MY_VOCAB_BOOKS_KEY);
-      return raw ? (JSON.parse(raw) as MyVocabBook[]) : [];
+      const books: MyVocabBook[] = raw ? (JSON.parse(raw) as MyVocabBook[]) : [];
+      // デフォルトの「My単語帳」を自動初期化（初回のみ）
+      if (books.length === 0) {
+        const defaultBook: MyVocabBook = {
+          id: generateId(),
+          name: "My単語帳",
+          wordIds: [],
+          createdAt: new Date().toISOString(),
+        };
+        localStorage.setItem(MY_VOCAB_BOOKS_KEY, JSON.stringify([defaultBook]));
+        return [defaultBook];
+      }
+      return books;
     } catch {
       return [];
     }
