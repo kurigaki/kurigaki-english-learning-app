@@ -7,12 +7,15 @@ import { words as allWordList } from "@/data/words/compat";
 import { getWordsByCourse } from "@/data/words/index";
 import { RECOMMENDED_BOOKS } from "@/data/recommended-books";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
-import { resolveBookMeta, resolveQuizHref } from "@/lib/vocab-book-meta";
+import { resolveBookMeta } from "@/lib/vocab-book-meta";
 import { unifiedStorage } from "@/lib/unified-storage";
 import type { ManualMasteryLevel, WordStats } from "@/lib/storage";
-import { getDisplayedManualMastery } from "@/lib/manual-mastery";
+import { getDisplayedManualMastery, MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
+import { saveBookWordIds } from "@/lib/quiz-session";
+import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
 import { SpeakButton } from "@/components/ui";
 import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
+import BookStudySettingsDialog from "@/components/features/word-list/BookStudySettingsDialog";
 import type { Course } from "@/data/words/types";
 
 type BookWord = {
@@ -107,6 +110,7 @@ export default function BookDetailPage() {
   const [manualMap, setManualMap] = useState<Record<number, ManualMasteryLevel>>({});
   const [searchQuery, setSearchQuery] = useState("");
   const [bookmarkDialog, setBookmarkDialog] = useState<{ wordId: number; wordText: string } | null>(null);
+  const [showSettings, setShowSettings] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -163,7 +167,41 @@ export default function BookDetailPage() {
     []
   );
 
-  const quizHref = useMemo(() => resolveQuizHref(bookId), [bookId]);
+  const handleManualMasteryChange = useCallback(async (wordId: number, mastery: ManualMasteryLevel) => {
+    setManualMap((prev) => ({ ...prev, [wordId]: mastery }));
+    await unifiedStorage.setManualMastery(wordId, mastery);
+  }, []);
+
+  // My単語帳の削除（my:uuid タイプのみ）
+  const isMyBook = bookId.startsWith("my:");
+  const handleDeleteBook = useCallback(() => {
+    const uuid = bookId.replace(/^my:/, "");
+    const name = bookMeta?.name ?? "";
+    if (confirm(`「${name}」を削除しますか？\nこの操作は取り消せません。`)) {
+      vocabularyBooks.deleteMyVocabBook(uuid);
+      router.push("/word-list");
+    }
+  }, [bookId, bookMeta, router]);
+
+  // フラッシュカード開始（特定の単語から直接）— 個別単語行の🃏ボタン用
+  const handleStartFlashcardAt = useCallback((startWordId: number) => {
+    const wordIds = filteredWords.map((w) => w.id);
+    const startIndex = Math.max(0, filteredWords.findIndex((w) => w.id === startWordId));
+    saveQuickFlashcardSession(wordIds, startIndex);
+    router.push("/flashcard");
+  }, [filteredWords, router]);
+
+  // 設定ダイアログからフラッシュカード開始
+  const handleStartFlashcardFromSettings = useCallback((wordIds: number[]) => {
+    saveQuickFlashcardSession(wordIds);
+    router.push("/flashcard");
+  }, [router]);
+
+  // 設定ダイアログからクイズ開始
+  const handleStartQuizFromSettings = useCallback((wordIds: number[]) => {
+    saveBookWordIds(wordIds);
+    router.push("/quiz?bookWords=true");
+  }, [router]);
 
   if (!isMounted) return null;
 
@@ -204,6 +242,18 @@ export default function BookDetailPage() {
               </div>
               <p className="text-white/70 text-xs mt-0.5">{bookWords.length}語</p>
             </div>
+            {/* My単語帳削除ボタン */}
+            {isMyBook && (
+              <button
+                onClick={handleDeleteBook}
+                className="p-2 rounded-full bg-white/20 hover:bg-red-500/60 transition-colors"
+                title="この単語帳を削除"
+              >
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+              </button>
+            )}
             {/* お気に入りボタン */}
             <button
               onClick={handleToggleFavorite}
@@ -263,50 +313,84 @@ export default function BookDetailPage() {
             </div>
           ) : (
             <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
-              {filteredWords.map((word, idx) => (
-                <div
-                  key={word.id}
-                  className={`flex items-center gap-2 px-3 py-3 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors ${
-                    idx !== 0 ? "border-t border-slate-100 dark:border-slate-700" : ""
-                  }`}
-                >
-                  <SpeakButton text={word.word} size="sm" />
-                  {/* ブックマーク（単語帳選択） */}
-                  <button
-                    onClick={() => setBookmarkDialog({ wordId: word.id, wordText: word.word })}
-                    className={`p-1.5 rounded-lg transition-colors flex-shrink-0 ${
-                      myBooks.some((b) => b.wordIds.includes(word.id))
-                        ? "text-yellow-500 hover:text-yellow-600"
-                        : "text-slate-300 hover:text-yellow-400"
+              {filteredWords.map((word, idx) => {
+                const stats = statsMap.get(word.id);
+                const mastery = getDisplayedManualMastery(word.id, statsMap, manualMap);
+                const hasAttempts = stats && stats.totalAttempts > 0;
+                return (
+                  <div
+                    key={word.id}
+                    className={`flex items-center gap-1.5 px-3 py-2.5 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors ${
+                      idx !== 0 ? "border-t border-slate-100 dark:border-slate-700" : ""
                     }`}
-                    title="単語帳に追加"
                   >
-                    <svg
-                      className="w-4 h-4"
-                      fill={myBooks.some((b) => b.wordIds.includes(word.id)) ? "currentColor" : "none"}
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    {/* 左側: 操作ボタン */}
+                    <SpeakButton text={word.word} size="sm" />
+                    {/* フラッシュカードボタン */}
+                    <button
+                      onClick={() => handleStartFlashcardAt(word.id)}
+                      className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
+                      title="この単語からフラッシュカード開始"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                    </svg>
-                  </button>
-                  {/* 単語詳細リンク */}
-                  <Link
-                    href={`/word/${word.id}`}
-                    className="flex items-center justify-between flex-1 min-w-0 group"
-                  >
-                    <div className="flex-1 min-w-0">
-                      <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate text-sm">
-                        {word.word}
-                      </p>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+                      <span className="text-xs emoji-icon">🃏</span>
+                    </button>
+                    {/* ブックマーク（単語帳選択） */}
+                    <button
+                      onClick={() => setBookmarkDialog({ wordId: word.id, wordText: word.word })}
+                      className={`p-1.5 rounded-lg transition-colors flex-shrink-0 ${
+                        myBooks.some((b) => b.wordIds.includes(word.id))
+                          ? "text-yellow-500 hover:text-yellow-600"
+                          : "text-slate-300 hover:text-yellow-400"
+                      }`}
+                      title="単語帳に追加"
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        fill={myBooks.some((b) => b.wordIds.includes(word.id)) ? "currentColor" : "none"}
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                      </svg>
+                    </button>
+                    {/* 単語詳細リンク */}
+                    <Link
+                      href={`/word/${word.id}`}
+                      className="flex items-center flex-1 min-w-0 group"
+                    >
+                      <div className="flex-1 min-w-0">
+                        <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate text-sm">
+                          {word.word}
+                        </p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+                      </div>
+                      <svg className="w-4 h-4 text-slate-300 group-hover:text-primary-500 group-hover:translate-x-0.5 transition-all flex-shrink-0 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    {/* 右側: 正答率・記憶度セレクト */}
+                    <div className="flex-shrink-0 flex flex-col items-end gap-0.5 ml-1">
+                      <span className="text-[10px] px-1 py-0.5 rounded bg-slate-50 dark:bg-slate-800/70 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                        {hasAttempts ? `${stats.accuracy}%` : "-"}
+                      </span>
+                      <select
+                        value={mastery}
+                        onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-[10px] px-1 py-0.5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-400 max-w-[80px]"
+                      >
+                        {MANUAL_MASTERY_OPTIONS_ORDERED
+                          .filter((opt) => !hasAttempts || opt.key !== "unlearned")
+                          .map((opt) => (
+                            <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                              {opt.label.split(" ")[0]}
+                            </option>
+                          ))}
+                      </select>
                     </div>
-                    <svg className="w-4 h-4 text-slate-300 group-hover:text-primary-500 group-hover:translate-x-0.5 transition-all flex-shrink-0 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              ))}
+                  </div>
+                );
+              })}
             </div>
           )}
         </div>
@@ -315,14 +399,21 @@ export default function BookDetailPage() {
       {/* 下部ボタン */}
       {filteredWords.length > 0 && (
         <div className="flex-shrink-0 px-4 py-3 border-t border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900">
-          <div className="max-w-2xl mx-auto">
-            <Link
-              href={quizHref}
-              className="flex items-center justify-center gap-2 w-full py-3 bg-primary-500 text-white font-bold rounded-2xl hover:bg-primary-600 transition-colors text-sm shadow-sm"
+          <div className="max-w-2xl mx-auto flex gap-2">
+            <button
+              onClick={() => setShowSettings(true)}
+              className="flex items-center justify-center gap-2 flex-1 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold rounded-2xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm"
+            >
+              <span className="emoji-icon">🃏</span>
+              フラッシュカード
+            </button>
+            <button
+              onClick={() => setShowSettings(true)}
+              className="flex items-center justify-center gap-2 flex-1 py-3 bg-primary-500 text-white font-bold rounded-2xl hover:bg-primary-600 transition-colors text-sm shadow-sm"
             >
               <span className="emoji-icon">📝</span>
-              クイズを始める ({filteredWords.length}語)
-            </Link>
+              クイズ
+            </button>
           </div>
         </div>
       )}
@@ -337,6 +428,24 @@ export default function BookDetailPage() {
           onToggle={handleBookmarkToggle}
           onCreateBook={handleCreateBook}
           onClose={() => setBookmarkDialog(null)}
+        />
+      )}
+
+      {/* 出題設定ダイアログ */}
+      {showSettings && (
+        <BookStudySettingsDialog
+          allWordIds={filteredWords.map((w) => w.id)}
+          statsMap={statsMap}
+          manualMap={manualMap}
+          onStartFlashcard={(wordIds) => {
+            setShowSettings(false);
+            handleStartFlashcardFromSettings(wordIds);
+          }}
+          onStartQuiz={(wordIds) => {
+            setShowSettings(false);
+            handleStartQuizFromSettings(wordIds);
+          }}
+          onClose={() => setShowSettings(false)}
         />
       )}
     </div>
