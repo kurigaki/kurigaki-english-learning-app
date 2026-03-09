@@ -95,11 +95,13 @@ export function clearFlashcardSession(): void {
 
 /**
  * 任意画面から単語帳のフラッシュカードを即開始するためのクイック保存
+ * @param wordIds 出題する単語IDリスト
+ * @param startIndex 開始インデックス（デフォルト: 0）
  */
-export function saveQuickFlashcardSession(wordIds: number[]): void {
+export function saveQuickFlashcardSession(wordIds: number[], startIndex = 0): void {
   if (typeof window === "undefined") return;
   saveFlashcardSession({
-    currentIndex: 0,
+    currentIndex: startIndex,
     selectedCourse: null,
     selectedStage: null,
     selectedCategory: "all",
