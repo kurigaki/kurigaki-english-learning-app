@@ -15,7 +15,13 @@ import { saveBookWordIds } from "@/lib/quiz-session";
 import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
 import { SpeakButton } from "@/components/ui";
 import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
-import BookStudySettingsDialog from "@/components/features/word-list/BookStudySettingsDialog";
+import BookStudySettingsDialog, {
+  computeWordIds,
+  type StudySettings,
+  type SortBy,
+} from "@/components/features/word-list/BookStudySettingsDialog";
+import BookProgressBar from "@/components/features/word-list/BookProgressBar";
+import CreateBookDialog from "@/components/features/word-list/CreateBookDialog";
 import type { Course } from "@/data/words/types";
 
 type BookWord = {
@@ -111,6 +117,12 @@ export default function BookDetailPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [bookmarkDialog, setBookmarkDialog] = useState<{ wordId: number; wordText: string } | null>(null);
   const [showSettings, setShowSettings] = useState(false);
+  const [showDuplicateDialog, setShowDuplicateDialog] = useState(false);
+  // 出題設定（⚙️パネルで変更、FC/クイズ開始時に使用）
+  const [studySettings, setStudySettings] = useState<StudySettings>({
+    countMode: "all",
+    sortBy: "random" as SortBy,
+  });
 
   useEffect(() => {
     setIsMounted(true);
@@ -183,6 +195,16 @@ export default function BookDetailPage() {
     }
   }, [bookId, bookMeta, router]);
 
+  // 単語帳の複製（My単語帳として保存）
+  const handleDuplicateCreate = useCallback((name: string) => {
+    const newBook = vocabularyBooks.createMyVocabBook(name);
+    for (const w of bookWords) {
+      vocabularyBooks.addWordToBook(newBook.id, w.id);
+    }
+    setMyBooks(vocabularyBooks.getMyVocabBooks());
+    router.push(`/word-list/book/my:${newBook.id}`);
+  }, [bookWords, router]);
+
   // フラッシュカード開始（特定の単語から直接）— 個別単語行の🃏ボタン用
   const handleStartFlashcardAt = useCallback((startWordId: number) => {
     const wordIds = filteredWords.map((w) => w.id);
@@ -191,17 +213,31 @@ export default function BookDetailPage() {
     router.push("/flashcard");
   }, [filteredWords, router]);
 
-  // 設定ダイアログからフラッシュカード開始
-  const handleStartFlashcardFromSettings = useCallback((wordIds: number[]) => {
+  // 現在の出題設定を使ってフラッシュカード開始（底部ボタン用）
+  const handleStartFlashcard = useCallback(() => {
+    const wordIds = computeWordIds(
+      filteredWords.map((w) => w.id),
+      studySettings.countMode,
+      studySettings.sortBy,
+      statsMap,
+      manualMap
+    );
     saveQuickFlashcardSession(wordIds);
     router.push("/flashcard");
-  }, [router]);
+  }, [filteredWords, studySettings, statsMap, manualMap, router]);
 
-  // 設定ダイアログからクイズ開始
-  const handleStartQuizFromSettings = useCallback((wordIds: number[]) => {
+  // 現在の出題設定を使ってクイズ開始（底部ボタン用）
+  const handleStartQuiz = useCallback(() => {
+    const wordIds = computeWordIds(
+      filteredWords.map((w) => w.id),
+      studySettings.countMode,
+      studySettings.sortBy,
+      statsMap,
+      manualMap
+    );
     saveBookWordIds(wordIds);
     router.push("/quiz?bookWords=true");
-  }, [router]);
+  }, [filteredWords, studySettings, statsMap, manualMap, router]);
 
   if (!isMounted) return null;
 
@@ -226,27 +262,28 @@ export default function BookDetailPage() {
       {/* ヘッダー */}
       <div className={`flex-shrink-0 bg-gradient-to-r ${bookMeta.gradientClass} px-4 pt-4 pb-3`}>
         <div className="max-w-2xl mx-auto">
-          <div className="flex items-center gap-3 mb-3">
+          <div className="flex items-center gap-2 mb-3">
             <button
               onClick={() => router.push("/word-list")}
-              className="text-white/80 hover:text-white transition-colors"
+              className="text-white/80 hover:text-white transition-colors flex-shrink-0"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
                 <span className="text-2xl emoji-icon">{bookMeta.emoji}</span>
-                <h1 className="text-lg font-bold text-white leading-tight">{bookMeta.name}</h1>
+                <h1 className="text-lg font-bold text-white leading-tight truncate">{bookMeta.name}</h1>
               </div>
               <p className="text-white/70 text-xs mt-0.5">{bookWords.length}語</p>
             </div>
+            {/* アクションボタン群 */}
             {/* My単語帳削除ボタン */}
             {isMyBook && (
               <button
                 onClick={handleDeleteBook}
-                className="p-2 rounded-full bg-white/20 hover:bg-red-500/60 transition-colors"
+                className="p-2 rounded-full bg-white/20 hover:bg-red-500/60 transition-colors flex-shrink-0"
                 title="この単語帳を削除"
               >
                 <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,10 +291,20 @@ export default function BookDetailPage() {
                 </svg>
               </button>
             )}
+            {/* 複製ボタン */}
+            <button
+              onClick={() => setShowDuplicateDialog(true)}
+              className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors flex-shrink-0"
+              title="この単語帳を複製してMy単語帳に追加"
+            >
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </button>
             {/* お気に入りボタン */}
             <button
               onClick={handleToggleFavorite}
-              className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
+              className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors flex-shrink-0"
               title={isFavorite ? "お気に入りから削除" : "お気に入りに追加"}
             >
               <svg
@@ -272,6 +319,17 @@ export default function BookDetailPage() {
                   strokeWidth={2}
                   d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
                 />
+              </svg>
+            </button>
+            {/* 設定ボタン ⚙️ */}
+            <button
+              onClick={() => setShowSettings(true)}
+              className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors flex-shrink-0"
+              title="学習設定"
+            >
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </button>
           </div>
@@ -301,8 +359,13 @@ export default function BookDetailPage() {
         </div>
       </div>
 
+      {/* 進捗バー */}
+      {bookWords.length > 0 && (
+        <BookProgressBar words={bookWords} statsMap={statsMap} manualMap={manualMap} />
+      )}
+
       {/* 単語リスト */}
-      <div className="flex-1 overflow-y-auto min-h-0 px-3 py-2">
+      <div className="flex-1 overflow-y-auto min-h-0 px-3 py-2 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-2xl mx-auto space-y-0">
           {filteredWords.length === 0 ? (
             <div className="text-center py-12">
@@ -329,7 +392,7 @@ export default function BookDetailPage() {
                     {/* フラッシュカードボタン */}
                     <button
                       onClick={() => handleStartFlashcardAt(word.id)}
-                      className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
+                      className="p-1.5 rounded-lg text-slate-300 dark:text-slate-500 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
                       title="この単語からフラッシュカード開始"
                     >
                       <span className="text-xs emoji-icon">🃏</span>
@@ -340,7 +403,7 @@ export default function BookDetailPage() {
                       className={`p-1.5 rounded-lg transition-colors flex-shrink-0 ${
                         myBooks.some((b) => b.wordIds.includes(word.id))
                           ? "text-yellow-500 hover:text-yellow-600"
-                          : "text-slate-300 hover:text-yellow-400"
+                          : "text-slate-300 dark:text-slate-500 hover:text-yellow-400"
                       }`}
                       title="単語帳に追加"
                     >
@@ -364,20 +427,20 @@ export default function BookDetailPage() {
                         </p>
                         <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
                       </div>
-                      <svg className="w-4 h-4 text-slate-300 group-hover:text-primary-500 group-hover:translate-x-0.5 transition-all flex-shrink-0 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-slate-300 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-0.5 transition-all flex-shrink-0 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </Link>
                     {/* 右側: 正答率・記憶度セレクト */}
                     <div className="flex-shrink-0 flex flex-col items-end gap-0.5 ml-1">
-                      <span className="text-[10px] px-1 py-0.5 rounded bg-slate-50 dark:bg-slate-800/70 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                      <span className="text-[10px] px-1 py-0.5 rounded bg-slate-50 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600 whitespace-nowrap">
                         {hasAttempts ? `${stats.accuracy}%` : "-"}
                       </span>
                       <select
                         value={mastery}
                         onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
                         onClick={(e) => e.stopPropagation()}
-                        className="text-[10px] px-1 py-0.5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-400 max-w-[80px]"
+                        className="text-[10px] px-1 py-0.5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-400 max-w-[80px]"
                       >
                         {MANUAL_MASTERY_OPTIONS_ORDERED
                           .filter((opt) => !hasAttempts || opt.key !== "unlearned")
@@ -396,19 +459,19 @@ export default function BookDetailPage() {
         </div>
       </div>
 
-      {/* 下部ボタン */}
+      {/* 下部ボタン（現在の設定で直接開始） */}
       {filteredWords.length > 0 && (
         <div className="flex-shrink-0 px-4 py-3 border-t border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900">
           <div className="max-w-2xl mx-auto flex gap-2">
             <button
-              onClick={() => setShowSettings(true)}
+              onClick={handleStartFlashcard}
               className="flex items-center justify-center gap-2 flex-1 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold rounded-2xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm"
             >
               <span className="emoji-icon">🃏</span>
               フラッシュカード
             </button>
             <button
-              onClick={() => setShowSettings(true)}
+              onClick={handleStartQuiz}
               className="flex items-center justify-center gap-2 flex-1 py-3 bg-primary-500 text-white font-bold rounded-2xl hover:bg-primary-600 transition-colors text-sm shadow-sm"
             >
               <span className="emoji-icon">📝</span>
@@ -431,21 +494,22 @@ export default function BookDetailPage() {
         />
       )}
 
-      {/* 出題設定ダイアログ */}
+      {/* 学習設定ダイアログ（⚙️から開く） */}
       {showSettings && (
         <BookStudySettingsDialog
           allWordIds={filteredWords.map((w) => w.id)}
-          statsMap={statsMap}
-          manualMap={manualMap}
-          onStartFlashcard={(wordIds) => {
-            setShowSettings(false);
-            handleStartFlashcardFromSettings(wordIds);
-          }}
-          onStartQuiz={(wordIds) => {
-            setShowSettings(false);
-            handleStartQuizFromSettings(wordIds);
-          }}
+          currentSettings={studySettings}
+          onSave={(settings) => setStudySettings(settings)}
           onClose={() => setShowSettings(false)}
+        />
+      )}
+
+      {/* 複製ダイアログ */}
+      {showDuplicateDialog && (
+        <CreateBookDialog
+          defaultName={`${bookMeta.name} のコピー`}
+          onCreate={handleDuplicateCreate}
+          onClose={() => setShowDuplicateDialog(false)}
         />
       )}
     </div>
