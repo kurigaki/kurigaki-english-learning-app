@@ -307,9 +307,12 @@ src/
 │   ├── quiz/page.tsx             # クイズに挑戦
 │   ├── speed-challenge/page.tsx  # スピードチャレンジ
 │   ├── word/[id]/page.tsx        # 単語詳細
-│   ├── word-list/page.tsx        # 単語帳（コース・カテゴリ・難易度フィルター・検索・ソート・フラッシュカードモード）
+│   ├── flashcard/page.tsx        # フラッシュカード専用ページ（saveQuickFlashcardSession でセッション渡し）
+│   ├── word-list/page.tsx        # 単語帳ハブ（お気に入り・最近見た・My単語帳・コース別等のカードグリッド）
+│   ├── word-list/all/page.tsx    # 単語帳フィルター一覧（コース・カテゴリ・難易度・検索・ソート・フラッシュカードモード）
+│   ├── word-list/book/[bookId]/page.tsx  # 個別単語帳（記憶度セレクト・フラッシュカード・出題設定）
 │   ├── weak-words/page.tsx       # 苦手単語一覧
-│   ├── bookmarks/page.tsx        # ブックマーク一覧
+│   ├── bookmarks/page.tsx        # ブックマーク一覧（旧ブックマーク + My単語帳を統合表示）
 │   ├── history/page.tsx          # 学習履歴（タブ: 概要/苦手単語/履歴）
 │   ├── achievements/page.tsx     # 実績一覧
 │   ├── review/page.tsx           # SRS・苦手単語復習（list フェーズで予習→クイズへ遷移）
@@ -331,7 +334,11 @@ src/
 │       │   ├── PerfectScorePopup.tsx  # 全問正解ポップアップ
 │       │   └── index.ts
 │       ├── word-list/            # 単語帳機能
-│       │   └── FlashcardView.tsx # フラッシュカードモード（SRS連動）
+│       │   ├── FlashcardView.tsx          # フラッシュカードモード（SRS連動）
+│       │   ├── VocabBookCard.tsx          # 単語帳ハブのカードコンポーネント
+│       │   ├── BookmarkSelectDialog.tsx   # My単語帳選択ダイアログ
+│       │   ├── CreateBookDialog.tsx       # My単語帳作成ダイアログ
+│       │   └── BookStudySettingsDialog.tsx # 出題設定ダイアログ（FC/クイズ共通）
 │       └── word-detail/          # 単語詳細機能
 │           ├── WordHeader.tsx
 │           ├── WordImage.tsx
@@ -347,13 +354,16 @@ src/
 │   ├── audio.ts                  # 音声再生（Web Speech API）
 │   ├── storage.ts                # localStorage管理
 │   ├── image.ts                  # 画像URL/コンセプト画像管理
-│   ├── quiz-session.ts           # クイズセッション状態永続化
+│   ├── quiz-session.ts           # クイズセッション状態永続化 + 単語帳クイズ用IDリスト管理
 │   ├── flashcard-session.ts      # フラッシュカードセッション状態永続化（30分有効期限）
 │   ├── navigation-state.ts       # ページナビゲーション状態（タブ・ソート順の復元）
-│   └── word-lookup.ts            # 語彙DBルックアップ（単語→IDのO(1)検索）
+│   ├── word-lookup.ts            # 語彙DBルックアップ（単語→IDのO(1)検索）
+│   ├── vocabulary-books.ts       # My単語帳・お気に入り・最近見た単語帳管理（localStorage）
+│   └── vocab-book-meta.ts        # bookId→表示名/emoji/gradient/quizHref を共通解決
 ├── data/                         # 静的データ
 │   ├── words.ts                  # 単語データベース
-│   └── achievements.ts           # 実績定義
+│   ├── achievements.ts           # 実績定義
+│   └── recommended-books.ts      # おすすめ単語帳定義
 └── types/
     └── index.ts                  # 型定義（集約）
 ```
@@ -604,6 +614,7 @@ hasConceptImage(keyword: string): boolean
 ## クイズセッション状態管理（`src/lib/quiz-session.ts`）
 
 リザルト画面から単語詳細に遷移し、戻ってきた際にリザルト状態を復元するための機能。
+単語帳からクイズを開始するための単語IDリスト管理も担当。
 
 ### 利用可能な関数
 
@@ -619,6 +630,12 @@ clearQuizResultState(): void
 
 // リザルト状態が存在するかチェック
 hasQuizResultState(): boolean
+
+// 単語帳クイズ用: 指定単語IDリストを sessionStorage に保存
+saveBookWordIds(wordIds: number[]): void
+
+// 単語帳クイズ用: 保存された単語IDリストを取得してクリア（一度だけ使う）
+getAndClearBookWordIds(): number[] | null
 ```
 
 ### 特徴
@@ -626,6 +643,8 @@ hasQuizResultState(): boolean
 - **sessionStorage使用**: ブラウザタブ単位で状態管理
 - **30分有効期限**: 長時間放置後は新規セッションに
 - **遷移元追跡**: `?from=quiz` クエリパラメータで戻り先を特定
+- **単語帳クイズ**: `saveBookWordIds` → `/quiz?bookWords=true` → `getAndClearBookWordIds` で
+  指定単語セットでクイズ開始（`BookStudySettingsDialog` + `useQuiz` が連携）
 
 ---
 
@@ -672,6 +691,67 @@ const storage = {
   toggleBookmark(wordId: number): boolean
 }
 ```
+
+---
+
+## フラッシュカードセッション管理（`src/lib/flashcard-session.ts`）
+
+フラッシュカード専用ページ `/flashcard` との状態共有に使用。
+
+### 利用可能な関数
+
+```typescript
+// フラッシュカードセッション状態を保存（全フィールド指定）
+saveFlashcardSession(state: Omit<FlashcardSessionState, "timestamp">): void
+
+// クイック保存（任意画面からフラッシュカードを即開始するため）
+// startIndex を省略すると 0 から開始
+saveQuickFlashcardSession(wordIds: number[], startIndex?: number): void
+
+// フラッシュカードセッション状態を取得（有効期限切れならnull）
+getFlashcardSession(): FlashcardSessionState | null
+
+// フラッシュカードセッション状態をクリア
+clearFlashcardSession(): void
+```
+
+### フラッシュカード専用ページ `/flashcard` の利用パターン
+
+```typescript
+// 1. 遷移元（単語帳詳細・ブックマーク等）でセッション保存して遷移
+saveQuickFlashcardSession(wordIds, startIndex);
+router.push("/flashcard");
+
+// 2. /flashcard がマウント時にセッション読み込み
+const session = getFlashcardSession();
+if (!session || !session.flashcardWordIds) {
+  router.replace("/word-list"); // セッションなしはハブへリダイレクト
+  return;
+}
+
+// 3. 詳細画面へ遷移するときは現在位置を更新して保存
+onDetailView={(index) => saveQuickFlashcardSession(wordIds, index)}
+```
+
+---
+
+## 出題設定ダイアログ（`BookStudySettingsDialog`）
+
+単語帳詳細ページ（`word-list/book/[bookId]/page.tsx`）の「フラッシュカード」「クイズ」ボタンから開く設定ダイアログ。フラッシュカード・クイズ共通で使用。
+
+### 設定項目
+
+| 設定 | 選択肢 | 備考 |
+|------|--------|------|
+| 出題数 | 全単語 / 任意（スライダー） | 「全単語」選択時は並び順が disabled |
+| 並び順 | ランダム / 正答率が低い順・高い順 / 記憶度が低い順・高い順 | 「全単語」→「任意」に切り替えると前回選択を維持 |
+
+### 内部ロジック
+
+- `computeWordIds(allWordIds, countMode, sortBy, statsMap, manualMap)` — ピュアな関数でソート＆スライス
+- `accuracy-asc` ソート: 未学習（統計なし）は `-1` として先頭に来る（最も苦手な単語を優先）
+- 「全単語」ラジオ選択時: `setSortBy("random")` でリセット（UIと内部状態の一致を保証）
+- Fisher-Yates シャッフルでランダム並び替え
 
 ---
 
