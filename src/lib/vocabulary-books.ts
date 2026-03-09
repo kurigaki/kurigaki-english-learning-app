@@ -15,6 +15,7 @@ export type RecentlyViewedBook = {
 const MY_VOCAB_BOOKS_KEY = "my_vocab_books";
 const FAVORITE_BOOK_IDS_KEY = "favorite_book_ids";
 const RECENTLY_VIEWED_KEY = "recently_viewed_books";
+const BOOK_STUDY_SETTINGS_KEY = "book_study_settings";
 const MAX_RECENTLY_VIEWED = 20;
 
 function generateId(): string {
@@ -27,7 +28,19 @@ export const vocabularyBooks = {
     if (typeof window === "undefined") return [];
     try {
       const raw = localStorage.getItem(MY_VOCAB_BOOKS_KEY);
-      return raw ? (JSON.parse(raw) as MyVocabBook[]) : [];
+      const books: MyVocabBook[] = raw ? (JSON.parse(raw) as MyVocabBook[]) : [];
+      // デフォルトの「My単語帳」を自動初期化（初回のみ）
+      if (books.length === 0) {
+        const defaultBook: MyVocabBook = {
+          id: generateId(),
+          name: "My単語帳",
+          wordIds: [],
+          createdAt: new Date().toISOString(),
+        };
+        localStorage.setItem(MY_VOCAB_BOOKS_KEY, JSON.stringify([defaultBook]));
+        return [defaultBook];
+      }
+      return books;
     } catch {
       return [];
     }
@@ -140,5 +153,26 @@ export const vocabularyBooks = {
     viewed.unshift({ bookId, viewedAt: new Date().toISOString() });
     const trimmed = viewed.slice(0, MAX_RECENTLY_VIEWED);
     localStorage.setItem(RECENTLY_VIEWED_KEY, JSON.stringify(trimmed));
+  },
+
+  // ── 学習設定の永続化（単語帳ごと） ────────────────────────
+  saveBookStudySettings(bookId: string, settings: Record<string, unknown>): void {
+    if (typeof window === "undefined") return;
+    try {
+      const raw = localStorage.getItem(BOOK_STUDY_SETTINGS_KEY);
+      const all: Record<string, Record<string, unknown>> = raw ? (JSON.parse(raw) as Record<string, Record<string, unknown>>) : {};
+      all[bookId] = settings;
+      localStorage.setItem(BOOK_STUDY_SETTINGS_KEY, JSON.stringify(all));
+    } catch { /* ignore */ }
+  },
+
+  loadBookStudySettings(bookId: string): Record<string, unknown> | null {
+    if (typeof window === "undefined") return null;
+    try {
+      const raw = localStorage.getItem(BOOK_STUDY_SETTINGS_KEY);
+      if (!raw) return null;
+      const all = JSON.parse(raw) as Record<string, Record<string, unknown>>;
+      return all[bookId] ?? null;
+    } catch { return null; }
   },
 };

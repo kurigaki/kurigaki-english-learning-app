@@ -309,8 +309,8 @@ src/
 │   ├── word/[id]/page.tsx        # 単語詳細
 │   ├── flashcard/page.tsx        # フラッシュカード専用ページ（saveQuickFlashcardSession でセッション渡し）
 │   ├── word-list/page.tsx        # 単語帳ハブ（お気に入り・最近見た・My単語帳・コース別等のカードグリッド）
-│   ├── word-list/all/page.tsx    # 単語帳フィルター一覧（コース・カテゴリ・難易度・検索・ソート・フラッシュカードモード）
-│   ├── word-list/book/[bookId]/page.tsx  # 個別単語帳（記憶度セレクト・フラッシュカード・出題設定）
+│   ├── word-list/all/page.tsx    # 単語帳フィルター一覧（コース・カテゴリ・難易度・検索・ソート8種・フラッシュカードモード）
+│   ├── word-list/book/[bookId]/page.tsx  # 個別単語帳（並び替え・絞り込み・表示切替・再生・記憶度セレクト・フラッシュカード・出題設定・設定永続化）
 │   ├── weak-words/page.tsx       # 苦手単語一覧
 │   ├── bookmarks/page.tsx        # ブックマーク一覧（旧ブックマーク + My単語帳を統合表示）
 │   ├── history/page.tsx          # 学習履歴（タブ: 概要/苦手単語/履歴）
@@ -338,7 +338,9 @@ src/
 │       │   ├── VocabBookCard.tsx          # 単語帳ハブのカードコンポーネント
 │       │   ├── BookmarkSelectDialog.tsx   # My単語帳選択ダイアログ
 │       │   ├── CreateBookDialog.tsx       # My単語帳作成ダイアログ
-│       │   └── BookStudySettingsDialog.tsx # 出題設定ダイアログ（FC/クイズ共通）
+│       │   ├── BookStudySettingsDialog.tsx # 出題設定ダイアログ（FC/クイズ共通）
+│       │   ├── BookFilterSheet.tsx        # 絞り込みシート（正答率・最終遭遇日・記憶度）
+│       │   └── BookProgressBar.tsx        # 単語帳詳細の進捗バー（記憶度別の色分け）
 │       └── word-detail/          # 単語詳細機能
 │           ├── WordHeader.tsx
 │           ├── WordImage.tsx
@@ -752,6 +754,64 @@ onDetailView={(index) => saveQuickFlashcardSession(wordIds, index)}
 - `accuracy-asc` ソート: 未学習（統計なし）は `-1` として先頭に来る（最も苦手な単語を優先）
 - 「全単語」ラジオ選択時: `setSortBy("random")` でリセット（UIと内部状態の一致を保証）
 - Fisher-Yates シャッフルでランダム並び替え
+
+---
+
+## 単語帳詳細の並び替え・絞り込み・表示切替・再生（`book/[bookId]/page.tsx`）
+
+### ツールバー機能
+
+個別単語帳ページには進捗バーの下にツールバーが表示されます。
+
+| 機能 | 説明 |
+|------|------|
+| ↕ 並び替え | 8種類のソートオプション（デフォルト・A→Z・Z→A・記憶度低→高/高→低・遭遇回数少→多/多→少・正答率低→高/高→低） |
+| ▽ 絞り込み | `BookFilterSheet` を開く（正答率範囲・最終遭遇日・記憶度レベル） |
+| 文A 表示切替 | `WordDisplayMode`（両方表示 / 和訳を隠す / 単語を隠す）の切り替え |
+| ▶ 再生 / ■ 停止 | 上から順に `speakWord` で逐次再生（`onEnd` コールバックチェーン） |
+
+### 設定永続化
+
+ツールバーの並び替え・出題設定ダイアログの設定は `vocabularyBooks.saveBookStudySettings(bookId, settings)` で bookId ごとに localStorage に保存され、次回訪問時に自動復元されます。
+
+```typescript
+// 保存（bookId ごとのネストで管理）
+vocabularyBooks.saveBookStudySettings(bookId, { listSortBy, countMode, sortBy });
+
+// 読込
+const saved = vocabularyBooks.loadBookStudySettings(bookId);
+if (saved) { /* saved.listSortBy など */ }
+```
+
+### 絞り込みシート（`BookFilterSheet`）
+
+| 設定 | UI | 動作 |
+|------|-----|------|
+| 正答率の範囲 | range スライダー（下限・上限） | 下限 ≤ 上限 を自動クランプ |
+| 最終遭遇日 | チェックボックス + number input | N日以上前に遭遇した単語を表示 |
+| 記憶度 | 5つのトグルボタン（pill） | 空選択 = 全て表示、選択 = AND 条件 |
+
+- フィルタが1件以上有効な場合、絞り込みボタンに「●」を表示
+- `isFilterActive` useMemo で判定
+
+### 逐次再生の実装
+
+```typescript
+const playNext = useCallback((i: number) => {
+  if (!isPlayingRef.current || i >= filteredWords.length) {
+    setIsPlaying(false);
+    setPlayingIndex(null);
+    return;
+  }
+  setPlayingIndex(i);
+  speakWord(filteredWords[i].word, {
+    onEnd: () => setTimeout(() => playNext(i + 1), 400),
+  });
+}, [filteredWords]);
+
+// アンマウント時クリーンアップ
+useEffect(() => () => { isPlayingRef.current = false; stopSpeaking(); }, []);
+```
 
 ---
 

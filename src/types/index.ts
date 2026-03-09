@@ -183,6 +183,10 @@ export const getMasteryLevel = (accuracy: number | null, attempts: number): Mast
 export const isWeakWord = (accuracy: number | null, attempts: number): boolean =>
   attempts >= 1 && accuracy !== null && accuracy < 60;
 
+// 手動記憶度レベル（@/lib/storage の ManualMasteryLevel と同一定義）
+// ※ storage.ts が @/types から import するため循環参照を避け、ここで独立して定義する
+export type ManualMasteryLevel = "unlearned" | "weak" | "vague" | "almost" | "remembered";
+
 // 単語帳のソートオプション
 export type WordListSortOption =
   | "default"
@@ -191,7 +195,20 @@ export type WordListSortOption =
   | "accuracy"
   | "accuracy-desc"
   | "attempts"
+  | "attempts-asc"
+  | "mastery-asc"
+  | "mastery-desc"
   | "difficulty";
+
+// 単語帳詳細の絞り込み設定
+export type BookDetailFilter = {
+  accuracyRange: [number, number]; // [0, 100] = 全範囲（フィルターなし）
+  daysSince: number | null;        // null = 絞り込みなし
+  masteryLevels: ManualMasteryLevel[]; // 空配列 = 全て表示
+};
+
+// 単語表示モード（単語帳詳細）
+export type WordDisplayMode = "both" | "hide-meaning" | "hide-word";
 
 // クイズ・スピードチャレンジで回答した単語
 export type AnsweredWord = {
