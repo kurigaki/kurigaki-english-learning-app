@@ -628,7 +628,7 @@ export default function HistoryPage() {
                       return (
                         <Link
                           key={cp.course}
-                          href={`/word-list?course=${cp.course}`}
+                          href={`/word-list/all?course=${cp.course}`}
                           className="block p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors border border-slate-100 dark:border-slate-700"
                         >
                           <p className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-0.5">{cp.name}</p>
