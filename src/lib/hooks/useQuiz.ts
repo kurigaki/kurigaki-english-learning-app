@@ -9,9 +9,13 @@ import {
   saveQuizResultState,
   getQuizResultState,
   clearQuizResultState,
+  saveQuizProgressState,
+  getQuizProgressState,
+  clearQuizProgressState,
   getAndClearBookWordIds,
   AnsweredWord,
   SessionResult,
+  QuizProgressState,
 } from "@/lib/quiz-session";
 import { getInitialSrsProgress, calculateSm2, answerQualityFromResult } from "@/lib/srs";
 import {
@@ -65,6 +69,7 @@ export const useQuiz = () => {
   const [pendingAchievements, setPendingAchievements] = useState<Achievement[]>([]);
   const [showPerfectScore, setShowPerfectScore] = useState(false);
   const [isRestoredFromSession, setIsRestoredFromSession] = useState(false);
+  const [savedProgress, setSavedProgress] = useState<QuizProgressState | null>(null);
 
   const [bookmarkedIds, setBookmarkedIds] = useState<number[]>([]);
   const [weakWordIds, setWeakWordIds] = useState<number[]>([]);
@@ -100,7 +105,7 @@ export const useQuiz = () => {
       try {
         const [bookmarks, weaks, studied, dueWords] = await Promise.all([
           unifiedStorage.getBookmarkedWordIds(),
-          unifiedStorage.getWeakWords(70),
+          unifiedStorage.getWeakWords(60),
           unifiedStorage.getStudiedWordIds(),
           unifiedStorage.getDailyReviewBatch(),
         ]);
@@ -137,6 +142,13 @@ export const useQuiz = () => {
         try { recognitionQuizRef.current.stop(); } catch { /* ignore */ }
       }
     };
+  }, []);
+
+  useEffect(() => {
+    const saved = getQuizProgressState();
+    if (saved) {
+      setSavedProgress(saved);
+    }
   }, []);
 
   const handleNext = useCallback(async () => {
@@ -204,6 +216,8 @@ export const useQuiz = () => {
       setSessionResult(sessionResult);
       setIsFinished(true);
       setPhase("result");
+      clearQuizProgressState();
+      setSavedProgress(null);
 
       if (score === questions.length) {
         setShowPerfectScore(true);
@@ -212,11 +226,64 @@ export const useQuiz = () => {
       setCurrentIndex((prev) => prev + 1);
       setSelected(null);
       setIsCorrect(null);
-      setShowTranslation(false);
+      setShowTranslation(inQuizSettingsRef.current.translationMode === "always");
       setDictationInputs([]);
       dictationInputRefs.current = [];
     }
   }, [currentIndex, questions.length, score, maxCombo]);
+
+  const saveProgress = useCallback(() => {
+    if (phase !== "quiz" || questions.length === 0) return false;
+    const elapsed = Math.max(1, Math.round((Date.now() - sessionStartTimeRef.current) / 1000));
+    const progressState = {
+      questions,
+      currentIndex,
+      score,
+      combo,
+      maxCombo,
+      selected,
+      isCorrect,
+      dictationInputs,
+      showTranslation,
+      answeredWords,
+      elapsedSeconds: elapsed,
+      quizSettings,
+    };
+    saveQuizProgressState(progressState);
+    setSavedProgress({ ...progressState, timestamp: Date.now() });
+    return true;
+  }, [phase, questions, currentIndex, score, combo, maxCombo, selected, isCorrect, dictationInputs, showTranslation, answeredWords, quizSettings]);
+
+  const discardSavedProgress = useCallback(() => {
+    clearQuizProgressState();
+    setSavedProgress(null);
+  }, []);
+
+  const resumeSavedProgress = useCallback(() => {
+    if (!savedProgress) return;
+    setQuestions(savedProgress.questions);
+    setQuizSettings(savedProgress.quizSettings);
+    setPhase("quiz");
+    setCurrentIndex(savedProgress.currentIndex);
+    setScore(savedProgress.score);
+    setCombo(savedProgress.combo);
+    setMaxCombo(savedProgress.maxCombo);
+    setSelected(savedProgress.selected);
+    setIsCorrect(savedProgress.isCorrect);
+    setDictationInputs(savedProgress.dictationInputs);
+    dictationInputRefs.current = [];
+    setAnsweredWords(savedProgress.answeredWords);
+    setElapsedSeconds(savedProgress.elapsedSeconds);
+    setIsFinished(false);
+    setSessionResult(null);
+    setIsRestoredFromSession(false);
+    setShowTranslation(savedProgress.showTranslation);
+    setShowPerfectScore(false);
+    hasAutoPlayedRef.current = new Set();
+    sessionStartTimeRef.current = Date.now() - savedProgress.elapsedSeconds * 1000;
+    clearQuizProgressState();
+    setSavedProgress(null);
+  }, [savedProgress]);
 
   const processAnswer = useCallback((answerText: string, correct: boolean) => {
     if (!currentQuestion) return;
@@ -410,6 +477,8 @@ export const useQuiz = () => {
     options?: { priorityWordId?: number; weakOnlyMode?: boolean; srsReviewMode?: boolean }
   ) => {
     clearQuizResultState();
+    clearQuizProgressState();
+    setSavedProgress(null);
 
     let targetWords: Word[];
     const ratios = settings.typeRatios ?? defaultQuizSettings.typeRatios;
@@ -464,7 +533,7 @@ export const useQuiz = () => {
     setAnsweredWords([]);
     setElapsedSeconds(0);
     setIsRestoredFromSession(false);
-    setShowTranslation(false);
+    setShowTranslation(inQuizSettingsRef.current.translationMode === "always");
     setShowPerfectScore(false);
     sessionStartTimeRef.current = Date.now();
     hasAutoPlayedRef.current = new Set();
@@ -476,6 +545,8 @@ export const useQuiz = () => {
     if (retryWords.length === 0) return;
 
     clearQuizResultState();
+    clearQuizProgressState();
+    setSavedProgress(null);
     const retryQuestions = retryWords.map((w) => generateQuestion(w, words, ratios));
     setQuestions(retryQuestions);
     setPhase("quiz");
@@ -492,7 +563,7 @@ export const useQuiz = () => {
     setAnsweredWords([]);
     setElapsedSeconds(0);
     setIsRestoredFromSession(false);
-    setShowTranslation(false);
+    setShowTranslation(inQuizSettingsRef.current.translationMode === "always");
     setShowPerfectScore(false);
     sessionStartTimeRef.current = Date.now();
     hasAutoPlayedRef.current = new Set();
@@ -501,7 +572,12 @@ export const useQuiz = () => {
   useEffect(() => {
     if (!dataLoaded) return;
     const savedState = getQuizResultState();
-    if (savedState) {
+    const canRestoreResult =
+      typeof window !== "undefined"
+        && window.sessionStorage.getItem("quiz-show-result") === "1";
+    if (savedState && canRestoreResult) {
+      clearQuizProgressState();
+      setSavedProgress(null);
       setScore(savedState.score);
       setMaxCombo(savedState.maxCombo);
       setAnsweredWords(savedState.answeredWords);
@@ -511,6 +587,9 @@ export const useQuiz = () => {
       setIsRestoredFromSession(true);
       setPhase("result");
       return;
+    }
+    if (savedState && !canRestoreResult) {
+      clearQuizResultState();
     }
 
     if (reviewWordId) {
@@ -542,8 +621,9 @@ export const useQuiz = () => {
         return;
       }
     }
+    if (phase === "quiz" && questions.length > 0) return;
     setPhase("setup");
-  }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, bookWordsParam, weakWordIds, srsWordIds, bookmarkedIds, startNewSession, startRetrySessionWithWordIds]);
+  }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, bookWordsParam, weakWordIds, srsWordIds, bookmarkedIds, startNewSession, startRetrySessionWithWordIds, phase, questions.length]);
 
   useEffect(() => {
     if (isFinished && !isRestoredFromSession && answeredWords.length > 0) {
@@ -573,7 +653,26 @@ export const useQuiz = () => {
   }, [currentIndex]);
 
   useEffect(() => {
-    if (inQuizSettings.audioMode !== "auto") return;
+    if (phase !== "quiz" || isFinished || questions.length === 0) return;
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      saveProgress();
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [phase, isFinished, questions.length, saveProgress]);
+
+  useEffect(() => {
+    const currentAudioMode =
+      currentQuestion?.type === "listening"
+        ? inQuizSettings.listeningAudioMode
+        : currentQuestion?.type === "dictation"
+        ? inQuizSettings.writingAudioMode
+        : currentQuestion?.type === "speaking"
+        ? inQuizSettings.speakingAudioMode
+        : inQuizSettings.readingAudioMode;
+    if (currentAudioMode !== "auto") return;
     // 音声認識（マイク）動作中は TTS を呼ばない（競合防止）
     if (isListening) return;
     if (!currentQuestion || !isSpeechSynthesisSupported() || selected !== null || hasAutoPlayedRef.current.has(currentIndex)) return;
@@ -587,7 +686,16 @@ export const useQuiz = () => {
       }
     }, 300);
     return () => clearTimeout(timeoutId);
-  }, [currentQuestion, currentIndex, selected, inQuizSettings.audioMode, isListening]);
+  }, [
+    currentQuestion,
+    currentIndex,
+    selected,
+    inQuizSettings.readingAudioMode,
+    inQuizSettings.writingAudioMode,
+    inQuizSettings.speakingAudioMode,
+    inQuizSettings.listeningAudioMode,
+    isListening,
+  ]);
 
   const handleAchievementClose = () => {
     const remaining = pendingAchievements.slice(1);
@@ -643,5 +751,9 @@ export const useQuiz = () => {
     handleSpeakingSkip,
     inQuizSettings,
     setInQuizSettings,
+    savedProgress,
+    saveProgress,
+    resumeSavedProgress,
+    discardSavedProgress,
   };
 };

@@ -859,7 +859,7 @@ const getMasteryLevel = (accuracy: number | null, attempts: number) => {
 | listening | 例文リスニング（選択式） | 例文全文を読み上げ |
 | dictation | 書き取り（キーボード入力式） | 例文全文を読み上げ |
 
-> ⚠️ 旧タイプ `fill-blank` は廃止。過去の学習記録との互換性のため履歴画面では「穴埋め(旧)」として表示。
+> 旧タイプ `fill-blank` は廃止。履歴画面の互換表示も削除済み。
 
 ### 問題タイプの出題比率
 

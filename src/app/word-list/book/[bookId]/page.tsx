@@ -284,7 +284,11 @@ export default function BookDetailPage() {
   }, []);
 
   const handleCreateBook = useCallback((name: string) => {
-    vocabularyBooks.createMyVocabBook(name);
+    const created = vocabularyBooks.createMyVocabBook(name);
+    if (!created) {
+      alert(`My単語帳は最大${vocabularyBooks.getMyVocabBookLimit()}冊まで作成できます。`);
+      return;
+    }
     setMyBooks(vocabularyBooks.getMyVocabBooks());
   }, []);
 
@@ -347,6 +351,10 @@ export default function BookDetailPage() {
   // 単語帳の複製（My単語帳として保存）
   const handleDuplicateCreate = useCallback((name: string) => {
     const newBook = vocabularyBooks.createMyVocabBook(name);
+    if (!newBook) {
+      alert(`My単語帳は最大${vocabularyBooks.getMyVocabBookLimit()}冊まで作成できます。`);
+      return;
+    }
     for (const w of bookWords) {
       vocabularyBooks.addWordToBook(newBook.id, w.id);
     }
@@ -730,6 +738,8 @@ export default function BookDetailPage() {
           onToggle={handleBookmarkToggle}
           onCreateBook={handleCreateBook}
           onClose={() => setBookmarkDialog(null)}
+          canCreate={vocabularyBooks.canCreateMyVocabBook()}
+          maxCount={vocabularyBooks.getMyVocabBookLimit()}
         />
       )}
 
@@ -752,6 +762,8 @@ export default function BookDetailPage() {
           defaultName={`${bookMeta.name} のコピー`}
           onCreate={handleDuplicateCreate}
           onClose={() => setShowDuplicateDialog(false)}
+          isDisabled={!vocabularyBooks.canCreateMyVocabBook()}
+          maxCount={vocabularyBooks.getMyVocabBookLimit()}
         />
       )}
 

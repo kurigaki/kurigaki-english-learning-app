@@ -3,7 +3,8 @@
  * リザルト画面から単語詳細に遷移し、戻ってきた際にリザルト状態を復元するため
  */
 
-import type { AnsweredWord } from "@/types";
+import type { AnsweredWord, Question } from "@/types";
+import type { QuizSettings } from "@/lib/quiz/settings";
 export type { AnsweredWord };
 
 // セッション結果の型
@@ -30,6 +31,8 @@ export type QuizResultState = {
 
 const STORAGE_KEY = "quiz_result_state";
 const EXPIRY_MS = 30 * 60 * 1000; // 30分で無効化
+const PROGRESS_KEY = "quiz_progress_state";
+const PROGRESS_EXPIRY_MS = 7 * 24 * 60 * 60 * 1000; // 7日で無効化
 
 /**
  * リザルト状態を保存
@@ -92,6 +95,67 @@ export function clearQuizResultState(): void {
  */
 export function hasQuizResultState(): boolean {
   return getQuizResultState() !== null;
+}
+
+// ─── クイズ途中の中断セーブ ──────────────────────────────────
+
+export type QuizProgressState = {
+  questions: Question[];
+  currentIndex: number;
+  score: number;
+  combo: number;
+  maxCombo: number;
+  selected: string | null;
+  isCorrect: boolean | null;
+  dictationInputs: string[];
+  showTranslation: boolean;
+  answeredWords: AnsweredWord[];
+  elapsedSeconds: number;
+  quizSettings: QuizSettings;
+  timestamp: number;
+};
+
+export function saveQuizProgressState(state: Omit<QuizProgressState, "timestamp">): void {
+  if (typeof window === "undefined") return;
+  const stateWithTimestamp: QuizProgressState = {
+    ...state,
+    timestamp: Date.now(),
+  };
+  try {
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify(stateWithTimestamp));
+  } catch (e) {
+    console.warn("Failed to save quiz progress state:", e);
+  }
+}
+
+export function getQuizProgressState(): QuizProgressState | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const stored = localStorage.getItem(PROGRESS_KEY);
+    if (!stored) return null;
+    const state: QuizProgressState = JSON.parse(stored);
+    if (Date.now() - state.timestamp > PROGRESS_EXPIRY_MS) {
+      clearQuizProgressState();
+      return null;
+    }
+    return state;
+  } catch (e) {
+    console.warn("Failed to get quiz progress state:", e);
+    return null;
+  }
+}
+
+export function clearQuizProgressState(): void {
+  if (typeof window === "undefined") return;
+  try {
+    localStorage.removeItem(PROGRESS_KEY);
+  } catch (e) {
+    console.warn("Failed to clear quiz progress state:", e);
+  }
+}
+
+export function hasQuizProgressState(): boolean {
+  return getQuizProgressState() !== null;
 }
 
 // ─── 単語帳クイズ用の単語IDリスト ───────────────────────────────────

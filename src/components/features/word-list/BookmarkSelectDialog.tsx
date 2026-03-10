@@ -12,6 +12,8 @@ type BookmarkSelectDialogProps = {
   onToggle: (bookId: string, wordId: number) => void;
   onCreateBook: (name: string) => void;
   onClose: () => void;
+  canCreate?: boolean;
+  maxCount?: number;
 };
 
 export default function BookmarkSelectDialog({
@@ -22,13 +24,15 @@ export default function BookmarkSelectDialog({
   onToggle,
   onCreateBook,
   onClose,
+  canCreate = true,
+  maxCount,
 }: BookmarkSelectDialogProps) {
   const [showCreate, setShowCreate] = useState(false);
   const [newName, setNewName] = useState("");
 
   const handleCreate = () => {
     const trimmed = newName.trim();
-    if (!trimmed) return;
+    if (!trimmed || !canCreate) return;
     onCreateBook(trimmed);
     setNewName("");
     setShowCreate(false);
@@ -120,7 +124,7 @@ export default function BookmarkSelectDialog({
             />
             <button
               onClick={handleCreate}
-              disabled={!newName.trim()}
+              disabled={!newName.trim() || !canCreate}
               className="px-4 py-2 bg-primary-500 text-white text-sm font-medium rounded-xl disabled:opacity-50 hover:bg-primary-600 transition-colors"
             >
               作成
@@ -135,13 +139,19 @@ export default function BookmarkSelectDialog({
         ) : (
           <button
             onClick={() => setShowCreate(true)}
-            className="w-full flex items-center gap-2 px-3 py-2.5 rounded-xl border border-dashed border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 hover:border-primary-400 hover:text-primary-500 transition-colors text-sm"
+            disabled={!canCreate}
+            className="w-full flex items-center gap-2 px-3 py-2.5 rounded-xl border border-dashed border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 hover:border-primary-400 hover:text-primary-500 transition-colors text-sm disabled:opacity-60"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
             </svg>
             新しいリストを作成
           </button>
+        )}
+        {!canCreate && (
+          <p className="text-[10px] text-amber-600 dark:text-amber-400 mt-2">
+            My単語帳は最大{maxCount ?? ""}冊まで作成できます。
+          </p>
         )}
       </div>
     </div>

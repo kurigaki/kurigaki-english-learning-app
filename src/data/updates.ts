@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-10",
+    version: "1.35.0",
+    title: "履歴の整理とクイズ設定の改善",
+    content: [
+      "履歴タブで、現在の語彙DBに存在しない古い学習データを自動整理するようにしました",
+      "リーディング/ライティング/スピーキング/リスニングで音声設定を個別に保持できるようになりました（スピーキングはデフォルトOFF、リスニングはデフォルトON）",
+      "複数語の穴埋め問題で、単語数に合わせて空欄を表示するようになりました",
+      "旧タイプ「fill-blank」の表示を削除しました",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-10",
     version: "1.34.0",
     title: "正答率/記憶度の表示を統一",
     content: [

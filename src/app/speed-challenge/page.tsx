@@ -2148,28 +2148,28 @@ export default function SpeedChallengePage() {
         )}
         <div className="max-w-md w-full mx-auto flex flex-col h-full">
           {/* 上部固定: スコアサマリー */}
-          <div className="flex-shrink-0 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-card p-3 mb-2">
+          <div className="flex-shrink-0 text-center bg-white dark:bg-slate-800 rounded-2xl shadow-card p-2 mb-2">
             {isNewHighScore && (
-              <div className="mb-2 p-1.5 bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 rounded-lg border border-yellow-300 dark:border-yellow-800/40 animate-bounce">
-                <div className="flex items-center justify-center gap-1.5">
-                  <span className="text-xl emoji-icon">🎉</span>
-                  <p className="text-xs font-bold text-yellow-700 dark:text-yellow-300">
-                    新記録達成！
+              <div className="mb-1 p-1 bg-gradient-to-r from-yellow-100 to-orange-100 dark:from-yellow-900/30 dark:to-orange-900/30 rounded-lg border border-yellow-300 dark:border-yellow-800/40">
+                <div className="flex items-center justify-center gap-1">
+                  <span className="text-base emoji-icon">🎉</span>
+                  <p className="text-[10px] font-bold text-yellow-700 dark:text-yellow-300">
+                    新記録
                     {scoreDiff > 0 && <span className="ml-1 text-orange-600 dark:text-orange-400">(+{scoreDiff})</span>}
                   </p>
                 </div>
               </div>
             )}
             {mode === 'ja-to-en-speaking' && tapAnswerOnVoiceQuestionRef.current > 0 && (
-              <div className="mb-2 p-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800/40">
-                <p className="text-xs text-blue-600 dark:text-blue-400">
+              <div className="mb-1 p-1 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800/40">
+                <p className="text-[10px] text-blue-600 dark:text-blue-400">
                   {isMobileRef.current ? "タップ" : "クリック"}回答 {tapAnswerOnVoiceQuestionRef.current} 問あり — 全問スピーキングで回答するとハイスコア対象になります
                 </p>
               </div>
             )}
             {mode === 'ja-to-en-speaking' && tapAnswerOnVoiceQuestionRef.current === 0 && (
-              <div className="mb-2 p-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800/40">
-                <p className="text-xs text-blue-600 dark:text-blue-400 flex items-center gap-1">
+              <div className="mb-1 p-1 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800/40">
+                <p className="text-[10px] text-blue-600 dark:text-blue-400 flex items-center gap-1">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clipRule="evenodd" /></svg>
                   全問スピーキングで回答！ハイスコア対象
                 </p>
@@ -2179,43 +2179,44 @@ export default function SpeedChallengePage() {
             <div className="flex items-center justify-center gap-2 mb-2">
               <span className="text-3xl emoji-icon">{title.emoji}</span>
               <div>
-                <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100">{title.text}</h1>
-                <p className="text-slate-500 dark:text-slate-400 text-xs">タイムアップ！</p>
-              </div>
+              <h1 className="text-lg font-bold text-slate-900 dark:text-slate-100">{title.text}</h1>
+              <p className="text-slate-500 dark:text-slate-400 text-[10px]">結果</p>
+            </div>
             </div>
 
-            <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-lg p-2 mb-2">
-              <div className="text-3xl font-bold text-gradient">{score}</div>
-              <p className="text-slate-600 dark:text-slate-300 text-xs">スコア</p>
-            </div>
-
-            {ranking && (
-              <div className="bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 rounded-lg p-2 mb-2">
-                <p className="text-xs text-slate-500 dark:text-slate-400">今日のランキング</p>
-                <p className="text-lg font-bold text-teal-600 dark:text-teal-400">
-                  {ranking.rank}
-                  <span className="text-sm font-normal">位</span> / {ranking.total}
-                  <span className="text-sm font-normal">人中</span>
-                </p>
+            <div className="grid grid-cols-2 gap-1.5 mb-2">
+              <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-lg p-1.5">
+                <p className="text-[10px] text-slate-500 dark:text-slate-400">スコア</p>
+                <p className="text-2xl font-bold text-gradient">{score}</p>
               </div>
-            )}
-
-            {/* XP & Level Up */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-2 mb-2 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="text-xl">✨</span>
-                <div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">獲得XP</p>
-                  <p className="text-lg font-bold text-blue-600 dark:text-blue-400">+{earnedXp} XP</p>
+              {ranking ? (
+                <div className="bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 rounded-lg p-1.5">
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400">今日のランキング</p>
+                  <p className="text-sm font-bold text-teal-600 dark:text-teal-400">
+                    {ranking.rank}<span className="text-[10px] font-normal">位</span> / {ranking.total}
+                  </p>
                 </div>
+              ) : (
+                <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-1.5">
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400">今日のランキング</p>
+                  <p className="text-xs font-medium text-slate-400 dark:text-slate-500">未集計</p>
+                </div>
+              )}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg p-1.5 flex items-center justify-center gap-1">
+                <span className="text-base">✨</span>
+                <p className="text-xs font-bold text-blue-600 dark:text-blue-400">+{earnedXp} XP</p>
               </div>
-              {levelUp && (
-                <div className="flex items-center gap-2 bg-yellow-100 dark:bg-yellow-900/30 px-2 py-1 rounded-lg">
-                  <span className="text-xl">🆙</span>
-                  <div>
-                    <p className="text-[10px] text-yellow-700 dark:text-yellow-400 font-bold">LEVEL UP!</p>
-                    <p className="text-xs font-bold text-yellow-800 dark:text-yellow-300">{levelUp.from} <span className="text-[10px]">→</span> {levelUp.to}</p>
-                  </div>
+              {levelUp ? (
+                <div className="bg-yellow-100 dark:bg-yellow-900/30 rounded-lg p-1.5 flex items-center justify-center gap-1">
+                  <span className="text-base">🆙</span>
+                  <p className="text-[10px] font-bold text-yellow-800 dark:text-yellow-300">
+                    Lv {levelUp.from} → {levelUp.to}
+                  </p>
+                </div>
+              ) : (
+                <div className="bg-slate-50 dark:bg-slate-800/50 rounded-lg p-1.5">
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400">レベル</p>
+                  <p className="text-xs font-medium text-slate-500 dark:text-slate-400">変化なし</p>
                 </div>
               )}
             </div>
@@ -2316,27 +2317,26 @@ export default function SpeedChallengePage() {
 
           {/* 下部固定: アクションボタン */}
           <div className="flex-shrink-0 space-y-1.5">
-            {isShareSupported && (
-              <Button variant="outline" fullWidth onClick={handleShare}>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12s-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.368a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
-                </svg>
-                結果をシェアする
-              </Button>
-            )}
             {answeredWords.some(w => !w.correct) && (
-              <Button variant="secondary" fullWidth onClick={handleRetryIncorrect}>
-                不正解の単語に再挑戦
+              <Button size="sm" variant="secondary" fullWidth onClick={handleRetryIncorrect}>
+                不正解だけを復習する
               </Button>
             )}
-            <Button fullWidth onClick={startGame}>
-              もう一度挑戦
-            </Button>
-            <Link href="/" className="block">
-              <Button variant="secondary" fullWidth onClick={() => clearSpeedResultState()}>
-                ホームに戻る
+            <div className="grid grid-cols-3 gap-1.5">
+              {isShareSupported && (
+                <Button size="sm" variant="outline" fullWidth onClick={handleShare}>
+                  共有
+                </Button>
+              )}
+              <Link href="/" className="block">
+                <Button size="sm" variant="secondary" fullWidth onClick={() => clearSpeedResultState()}>
+                  ホーム
+                </Button>
+              </Link>
+              <Button size="sm" fullWidth onClick={startGame}>
+                再挑戦
               </Button>
-            </Link>
+            </div>
           </div>
         </div>
 
