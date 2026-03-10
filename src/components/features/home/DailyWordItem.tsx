@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { SpeakButton } from "@/components/ui";
-import { categoryLabels, type Word } from "@/data/words/compat";
+import { type Word } from "@/data/words/compat";
 import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import { getAccuracyBadgeClass } from "@/lib/accuracy-style";
