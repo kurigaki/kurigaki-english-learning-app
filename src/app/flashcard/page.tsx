@@ -25,7 +25,7 @@ export default function FlashcardPage() {
     setIsMounted(true);
     const session = getFlashcardSession();
     if (!session || !session.flashcardWordIds || session.flashcardWordIds.length === 0) {
-      router.replace("/word-list");
+      router.replace("/word-list/all");
       return;
     }
     setWordIds(session.flashcardWordIds);

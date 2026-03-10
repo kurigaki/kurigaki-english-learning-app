@@ -27,27 +27,27 @@ export const COURSE_GRADIENT: Record<string, string> = {
   junior: "from-blue-400 to-indigo-500",
   senior: "from-green-400 to-teal-500",
   eiken: "from-purple-400 to-pink-500",
-  toeic: "from-orange-400 to-red-500",
-  conversation: "from-cyan-400 to-blue-500",
+  toeic: "from-emerald-600 to-cyan-700",
+  conversation: "from-fuchsia-600 to-rose-700",
   general: "from-slate-400 to-slate-600",
-  business: "from-amber-400 to-orange-500",
+  business: "from-orange-600 to-amber-700",
 };
 
 export const MASTERY_META: Record<ManualMasteryLevel, { name: string; emoji: string; gradient: string }> = {
-  weak:       { name: "苦手な単語",   emoji: "😓", gradient: "from-red-400 to-orange-500" },
-  vague:      { name: "うろ覚え単語", emoji: "🤔", gradient: "from-yellow-400 to-amber-500" },
-  almost:     { name: "忘れかけ単語", emoji: "😶", gradient: "from-blue-400 to-indigo-500" },
-  remembered: { name: "覚えた単語",   emoji: "😊", gradient: "from-green-400 to-teal-500" },
-  unlearned:  { name: "未学習の単語", emoji: "📖", gradient: "from-slate-400 to-slate-600" },
+  weak:       { name: "苦手単語",       emoji: "😓", gradient: "from-red-400 to-orange-500" },
+  vague:      { name: "うろ覚え単語",   emoji: "🤔", gradient: "from-yellow-400 to-amber-500" },
+  almost:     { name: "ほぼ覚えた単語", emoji: "😶", gradient: "from-blue-400 to-indigo-500" },
+  remembered: { name: "覚えた単語",     emoji: "😊", gradient: "from-green-400 to-teal-500" },
+  unlearned:  { name: "未学習単語",     emoji: "📖", gradient: "from-slate-400 to-slate-600" },
 };
 
 /** accuracy タイプのメタ情報。"75-100" は 75〜99% を意味し、"100" は 100% 専用 */
 export const ACCURACY_META: Record<string, { name: string; emoji: string; gradient: string }> = {
-  "0-25":   { name: "25%未満",    emoji: "😰", gradient: "from-red-400 to-red-600" },
-  "25-50":  { name: "25~50%",     emoji: "😅", gradient: "from-orange-400 to-amber-500" },
-  "50-75":  { name: "50~75%",     emoji: "🙂", gradient: "from-yellow-400 to-yellow-600" },
-  "75-100": { name: "75~99%",     emoji: "😄", gradient: "from-green-400 to-emerald-500" },
-  "100":    { name: "100%達成！",  emoji: "🎯", gradient: "from-primary-400 to-primary-600" },
+  "0-25":   { name: "25%未満",    emoji: "😰", gradient: "from-rose-600 to-rose-700" },
+  "25-50":  { name: "25~50%",     emoji: "😅", gradient: "from-orange-600 to-orange-700" },
+  "50-75":  { name: "50~75%",     emoji: "🙂", gradient: "from-amber-600 to-amber-700" },
+  "75-100": { name: "75~99%",     emoji: "😄", gradient: "from-sky-600 to-sky-700" },
+  "100":    { name: "100%達成！",  emoji: "🎯", gradient: "from-violet-600 to-violet-700" },
 };
 
 /**

@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
+import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
 import { words as allWords, categoryLabels } from "@/data/words/compat";
 import { SpeakButton, Card, ProgressBar } from "@/components/ui";
 import type { Word } from "@/data/words/compat";
@@ -27,6 +28,9 @@ import type { ReviewMode } from "@/types";
 import type { ManualMasteryLevel, WordStats } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED, getDisplayedManualMastery } from "@/lib/manual-mastery";
 import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
+import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
+import { getAccuracyBadgeClass } from "@/lib/accuracy-style";
+import { getMasteryBadgeClass } from "@/lib/mastery-style";
 
 // ===== 型定義 =====
 
@@ -76,6 +80,8 @@ function ReviewPageContent() {
   const [wordStatsMap, setWordStatsMap] = useState<Map<number, WordStats>>(new Map());
   const [manualMemoryById, setManualMemoryById] = useState<Record<number, ManualMasteryLevel>>({});
   const [bookmarkedWordIds, setBookmarkedWordIds] = useState<number[]>([]);
+  const [myBooks, setMyBooks] = useState<MyVocabBook[]>([]);
+  const [bookmarkDialog, setBookmarkDialog] = useState<{ wordId: number; wordText: string } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   // ----- フェーズ管理 -----
@@ -113,14 +119,16 @@ function ReviewPageContent() {
 
   const loadWords = useCallback(async () => {
     setIsLoading(true);
-    const [statsMap, manualMap, bookmarkedIds] = await Promise.all([
+    const [statsMap, manualMap] = await Promise.all([
       unifiedStorage.getWordStats(),
       unifiedStorage.getManualMasteryMap(),
-      unifiedStorage.getBookmarkedWordIds(),
     ]);
     setWordStatsMap(statsMap);
     setManualMemoryById(manualMap);
-    setBookmarkedWordIds(bookmarkedIds);
+    const books = vocabularyBooks.getMyVocabBooks();
+    const bookmarkedSet = new Set(books.flatMap((b) => b.wordIds));
+    setMyBooks(books);
+    setBookmarkedWordIds(Array.from(bookmarkedSet));
 
     if (mode === "srs") {
       const dueWords = await unifiedStorage.getDailyReviewBatch();
@@ -162,21 +170,36 @@ function ReviewPageContent() {
     await unifiedStorage.setManualMastery(wordId, mastery);
   }, []);
 
-  const toggleBookmark = useCallback(async (wordId: number, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const next = await unifiedStorage.toggleBookmark(wordId);
-    setBookmarkedWordIds((prev) => (
-      next ? (prev.includes(wordId) ? prev : [...prev, wordId]) : prev.filter((id) => id !== wordId)
-    ));
+  const refreshMyBooks = useCallback(() => {
+    const books = vocabularyBooks.getMyVocabBooks();
+    setMyBooks(books);
+    const bookmarkedSet = new Set(books.flatMap((b) => b.wordIds));
+    setBookmarkedWordIds(Array.from(bookmarkedSet));
   }, []);
+
+  const handleBookmarkToggle = useCallback((bookIdParam: string, wordId: number) => {
+    vocabularyBooks.toggleWordInBook(bookIdParam, wordId);
+    refreshMyBooks();
+  }, [refreshMyBooks]);
+
+  const handleCreateBook = useCallback((name: string) => {
+    vocabularyBooks.createMyVocabBook(name);
+    refreshMyBooks();
+  }, [refreshMyBooks]);
+
+  const getRegisteredBookIds = useCallback(
+    (wordId: number) => vocabularyBooks.getBooksForWord(wordId),
+    []
+  );
 
   const startFlashcard = useCallback((wordId: number, e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    saveQuickFlashcardSession([wordId]);
-    router.push("/word-list");
-  }, [router]);
+    const wordIds = reviewWords.map((w) => w.id);
+    const startIndex = Math.max(0, wordIds.indexOf(wordId));
+    saveQuickFlashcardSession(wordIds, startIndex);
+    router.push("/flashcard");
+  }, [reviewWords, router]);
 
   useEffect(() => {
     // セッションから復元済みの場合はストレージからの再読み込みをスキップ
@@ -325,7 +348,7 @@ function ReviewPageContent() {
   if (phase === "list") {
     return (
       <div className="main-content px-3 py-2 flex flex-col">
-        <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
+        <div className="max-w-4xl w-full mx-auto flex flex-col h-full">
 
           {/* ヘッダー */}
           <div className="flex-shrink-0 flex items-center gap-2 mb-2">
@@ -379,13 +402,16 @@ function ReviewPageContent() {
                     className="flex items-center gap-2 px-3 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-3xl last:rounded-b-3xl"
                   >
                     <button
-                      onClick={(e) => toggleBookmark(word.id, e)}
+                      onClick={() => {
+                        refreshMyBooks();
+                        setBookmarkDialog({ wordId: word.id, wordText: word.word });
+                      }}
                       className={`p-1.5 rounded-lg transition-colors ${
                         bookmarkedWordIds.includes(word.id)
                           ? "text-yellow-500 hover:text-yellow-600"
                           : "text-slate-300 hover:text-yellow-400"
                       }`}
-                      title={bookmarkedWordIds.includes(word.id) ? "ブックマーク解除" : "ブックマークに追加"}
+                      title="単語帳に追加"
                     >
                       <svg
                         className="w-4 h-4"
@@ -440,7 +466,7 @@ function ReviewPageContent() {
                     </Link>
                     <div className="w-[170px] flex-shrink-0">
                       <div className="flex items-center gap-1 justify-end">
-                        <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                        <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(wordStatsMap.get(word.id)?.accuracy)}`}>
                           正答率 {wordStatsMap.get(word.id)?.accuracy !== null && wordStatsMap.get(word.id)?.accuracy !== undefined
                             ? `${wordStatsMap.get(word.id)?.accuracy}%`
                             : "-"}
@@ -448,7 +474,7 @@ function ReviewPageContent() {
                         <select
                           value={getDisplayedMastery(word.id)}
                           onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
-                          className="text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                          className={`text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(getDisplayedMastery(word.id))}`}
                         >
                           {MANUAL_MASTERY_OPTIONS_ORDERED
                             .filter((opt) => (wordStatsMap.get(word.id)?.totalAttempts ?? word.attempts ?? 0) === 0 || opt.key !== "unlearned")
@@ -465,6 +491,18 @@ function ReviewPageContent() {
               </Card>
             )}
           </div>
+
+          {bookmarkDialog && (
+            <BookmarkSelectDialog
+              wordId={bookmarkDialog.wordId}
+              wordText={bookmarkDialog.wordText}
+              books={myBooks}
+              registeredBookIds={getRegisteredBookIds(bookmarkDialog.wordId)}
+              onToggle={handleBookmarkToggle}
+              onCreateBook={handleCreateBook}
+              onClose={() => setBookmarkDialog(null)}
+            />
+          )}
 
           {/* クイズ開始ボタン */}
           {!isLoading && reviewWords.length > 0 && (
@@ -492,7 +530,7 @@ function ReviewPageContent() {
 
     return (
       <div className="main-content px-3 py-2 flex flex-col">
-        <div className="max-w-2xl w-full mx-auto flex flex-col h-full gap-2">
+        <div className="max-w-4xl w-full mx-auto flex flex-col h-full gap-2">
 
           {/* ヘッダー：戻るボタン + タイトル + 進捗 */}
           <div className="flex-shrink-0 flex items-center gap-2">
@@ -608,7 +646,7 @@ function ReviewPageContent() {
 
     return (
       <div className="main-content px-3 py-2 flex flex-col">
-        <div className="max-w-2xl w-full mx-auto flex flex-col h-full gap-2">
+        <div className="max-w-4xl w-full mx-auto flex flex-col h-full gap-2">
 
           {/* ヘッダー */}
           <div className="flex-shrink-0 flex items-center gap-2">
@@ -708,7 +746,7 @@ export default function ReviewPage() {
   return (
     <Suspense fallback={
       <div className="main-content px-3 py-2 flex flex-col">
-        <div className="max-w-2xl w-full mx-auto">
+        <div className="max-w-4xl w-full mx-auto">
           <div className="h-8 w-48 bg-slate-100 dark:bg-slate-800 rounded animate-pulse mb-4" />
           <div className="space-y-2">
             {[...Array(6)].map((_, i) => (

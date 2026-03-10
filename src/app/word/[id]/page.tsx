@@ -17,6 +17,7 @@ import {
 } from "@/components/features/word-detail";
 import type { ManualMasteryLevel } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
+import { getMasteryBadgeClass } from "@/lib/mastery-style";
 import { useWordDetail } from "@/lib/hooks/useWordDetail";
 import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
@@ -205,7 +206,7 @@ export default function WordDetailPage() {
               <select
                 value={currentMastery}
                 onChange={(e) => handleManualMasteryChange(e.target.value as ManualMasteryLevel)}
-                className="text-sm px-2 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                className={`text-sm px-2 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(currentMastery)}`}
               >
                 {MANUAL_MASTERY_OPTIONS_ORDERED.filter(
                   (opt) => (wordStats?.totalAttempts ?? 0) === 0 || opt.key !== "unlearned"

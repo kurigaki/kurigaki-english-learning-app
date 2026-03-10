@@ -13,16 +13,12 @@ import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 import { words, Word, categoryLabels } from "@/data/words/compat";
 import { isWeakWord } from "@/types";
 import { getDisplayedManualMastery, MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
+import { getAccuracyBadgeClass } from "@/lib/accuracy-style";
+import { getMasteryBadgeClass } from "@/lib/mastery-style";
 import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
 
 type WeakWord = Word & {
   stats: WordStats;
-};
-
-const getAccuracyColor = (accuracy: number): string => {
-  if (accuracy < 30) return "text-red-600 bg-red-100 dark:text-red-400 dark:bg-red-900/40";
-  if (accuracy < 50) return "text-orange-600 bg-orange-100 dark:text-orange-400 dark:bg-orange-900/40";
-  return "text-yellow-600 bg-yellow-100 dark:text-yellow-400 dark:bg-yellow-900/40";
 };
 
 export default function WeakWordsPage() {
@@ -106,7 +102,7 @@ export default function WeakWordsPage() {
     e.preventDefault();
     e.stopPropagation();
     saveQuickFlashcardSession([wordId]);
-    router.push("/word-list");
+    router.push("/flashcard");
   }, [router]);
 
   if (!isMounted) {
@@ -119,7 +115,7 @@ export default function WeakWordsPage() {
 
   return (
     <div className="main-content px-3 py-2 flex flex-col">
-      <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
+      <div className="max-w-4xl w-full mx-auto flex flex-col h-full">
         {/* 上部固定: ヘッダー */}
         <div className="flex-shrink-0 mb-1.5">
           <Link
@@ -248,13 +244,13 @@ export default function WeakWordsPage() {
                   </Link>
                   <div className="w-[170px] flex-shrink-0">
                     <div className="flex items-center gap-1 justify-end">
-                      <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyColor(word.stats.accuracy)}`}>
+                      <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(word.stats.accuracy)}`}>
                         正答率 {word.stats.accuracy}%
                       </span>
                       <select
                         value={getDisplayedMastery(word.id)}
                         onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
-                        className="text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                        className={`text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(getDisplayedMastery(word.id))}`}
                       >
                         {MANUAL_MASTERY_OPTIONS_ORDERED
                           .filter((opt) => (wordStatsMap.get(word.id)?.totalAttempts ?? 0) === 0 || opt.key !== "unlearned")
