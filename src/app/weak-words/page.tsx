@@ -187,64 +187,94 @@ export default function WeakWordsPage() {
                 <Card
                   key={word.id}
                   hover
-                  className="flex items-center gap-2 group !p-2"
+                  className="flex flex-col sm:flex-row sm:items-center gap-2 group !p-2"
                 >
-                  <button
-                    onClick={(e) => toggleBookmark(word.id, e)}
-                    className={`p-1.5 rounded-lg transition-colors ${
-                      bookmarkedWordIds.includes(word.id)
-                        ? "text-yellow-500 hover:text-yellow-600"
-                        : "text-slate-300 hover:text-yellow-400"
-                    }`}
-                    title={bookmarkedWordIds.includes(word.id) ? "ブックマーク解除" : "ブックマークに追加"}
-                  >
-                    <svg
-                      className="w-4 h-4"
-                      fill={bookmarkedWordIds.includes(word.id) ? "currentColor" : "none"}
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                  <div className="flex items-start gap-2 w-full">
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      <button
+                        onClick={(e) => toggleBookmark(word.id, e)}
+                        className={`p-1.5 rounded-lg transition-colors ${
+                          bookmarkedWordIds.includes(word.id)
+                            ? "text-yellow-500 hover:text-yellow-600"
+                            : "text-slate-300 hover:text-yellow-400"
+                        }`}
+                        title={bookmarkedWordIds.includes(word.id) ? "ブックマーク解除" : "ブックマークに追加"}
+                      >
+                        <svg
+                          className="w-4 h-4"
+                          fill={bookmarkedWordIds.includes(word.id) ? "currentColor" : "none"}
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                          />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={(e) => startFlashcard(word.id, e)}
+                        className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
+                        title="この単語からフラッシュカード開始"
+                      >
+                        <span className="text-xs emoji-icon">🃏</span>
+                      </button>
+                    </div>
+                    <Link
+                      href={`/word/${word.id}?from=weak`}
+                      onClick={() => { saveWeakWordSort(sortBy); saveWordNavState(weakWords.map((w) => w.id), "weak"); }}
+                      className="flex items-start gap-2 flex-1 min-w-0 group/link"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={(e) => startFlashcard(word.id, e)}
-                    className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
-                    title="この単語からフラッシュカード開始"
-                  >
-                    <span className="text-xs emoji-icon">🃏</span>
-                  </button>
-                  <Link
-                    href={`/word/${word.id}?from=weak`}
-                    onClick={() => { saveWeakWordSort(sortBy); saveWordNavState(weakWords.map((w) => w.id), "weak"); }}
-                    className="flex items-center gap-2 flex-1 min-w-0 group/link"
-                  >
-                    <SpeakButton text={word.word} size="sm" />
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-1.5">
-                        <h3 className="font-bold text-xs text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 transition-colors">
-                          {word.word}
-                        </h3>
+                      <SpeakButton text={word.word} size="sm" />
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5">
+                          <h3 className="font-bold text-base sm:text-xs text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 transition-colors break-words">
+                            {word.word}
+                          </h3>
+                        </div>
+                        <p className="text-sm sm:text-[10px] text-slate-500 dark:text-slate-400 break-words">{word.meaning}</p>
+                        <div className="flex items-center gap-1.5 mt-0.5 text-[10px] text-slate-400 dark:text-slate-500">
+                          <span>{word.stats.totalAttempts}回</span>
+                        </div>
+                        <div
+                          className="mt-1 flex items-center gap-1 sm:hidden"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                          }}
+                          onMouseDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                          }}
+                        >
+                          <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(word.stats.accuracy)}`}>
+                            正答率 {word.stats.accuracy}%
+                          </span>
+                          <select
+                            value={getDisplayedMastery(word.id)}
+                            onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
+                            className={`text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(getDisplayedMastery(word.id))}`}
+                          >
+                            {MANUAL_MASTERY_OPTIONS_ORDERED
+                              .filter((opt) => (wordStatsMap.get(word.id)?.totalAttempts ?? 0) === 0 || opt.key !== "unlearned")
+                              .map((opt) => (
+                                <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                                  {opt.label}
+                                </option>
+                              ))}
+                          </select>
+                        </div>
                       </div>
-                      <p className="text-slate-500 dark:text-slate-400 text-[10px] truncate">{word.meaning}</p>
-                      <div className="flex items-center gap-1.5 mt-0.5 text-[10px] text-slate-400 dark:text-slate-500">
-                        <span>{categoryLabels[word.category]}</span>
-                        <span>·</span>
-                        <span>{word.stats.totalAttempts}回</span>
+                      <div className="text-slate-400 dark:text-slate-500 group-hover/link:text-primary-500 group-hover/link:translate-x-1 transition-all">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
                       </div>
-                    </div>
-                    <div className="text-slate-400 dark:text-slate-500 group-hover/link:text-primary-500 group-hover/link:translate-x-1 transition-all">
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </Link>
-                  <div className="w-[170px] flex-shrink-0">
+                    </Link>
+                  </div>
+                  <div className="hidden sm:block w-[170px] flex-shrink-0">
                     <div className="flex items-center gap-1 justify-end">
                       <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(word.stats.accuracy)}`}>
                         正答率 {word.stats.accuracy}%
