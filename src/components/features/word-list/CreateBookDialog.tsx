@@ -7,14 +7,22 @@ type CreateBookDialogProps = {
   onClose: () => void;
   /** ダイアログを開いた際の初期名（複製機能などで使用） */
   defaultName?: string;
+  isDisabled?: boolean;
+  maxCount?: number;
 };
 
-export default function CreateBookDialog({ onCreate, onClose, defaultName = "" }: CreateBookDialogProps) {
+export default function CreateBookDialog({
+  onCreate,
+  onClose,
+  defaultName = "",
+  isDisabled = false,
+  maxCount,
+}: CreateBookDialogProps) {
   const [name, setName] = useState(defaultName);
 
   const handleSubmit = () => {
     const trimmed = name.trim();
-    if (!trimmed) return;
+    if (!trimmed || isDisabled) return;
     onCreate(trimmed);
     onClose();
   };
@@ -40,8 +48,14 @@ export default function CreateBookDialog({ onCreate, onClose, defaultName = "" }
           placeholder="単語帳の名前を入力"
           autoFocus
           maxLength={30}
-          className="w-full px-3 py-2.5 text-sm border border-slate-200 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-400 mb-4"
+          disabled={isDisabled}
+          className="w-full px-3 py-2.5 text-sm border border-slate-200 dark:border-slate-600 rounded-xl bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-400 mb-4 disabled:opacity-60"
         />
+        {isDisabled && (
+          <p className="text-xs text-amber-600 dark:text-amber-400 mb-3">
+            My単語帳は最大{maxCount ?? ""}冊まで作成できます。
+          </p>
+        )}
         <div className="flex gap-2">
           <button
             onClick={onClose}
@@ -51,7 +65,7 @@ export default function CreateBookDialog({ onCreate, onClose, defaultName = "" }
           </button>
           <button
             onClick={handleSubmit}
-            disabled={!name.trim()}
+            disabled={!name.trim() || isDisabled}
             className="flex-1 py-2.5 bg-primary-500 text-white text-sm font-medium rounded-xl disabled:opacity-50 hover:bg-primary-600 transition-colors"
           >
             作成

@@ -20,11 +20,9 @@ import {
 } from "@/lib/memory-level";
 import { MANUAL_MASTERY_OPTIONS_ORDERED, getDisplayedManualMastery } from "@/lib/manual-mastery";
 
-// レガシーの "fill-blank" も表示できるように string インデックスで定義
 const questionTypeLabels: Record<string, string> = {
   "en-to-ja": "英→日",
   "ja-to-en": "日→英",
-  "fill-blank": "穴埋め(旧)",  // 旧データとの互換性
   "listening": "リスニング",
   "dictation": "書き取り",
   "speaking": "スピーキング",
@@ -66,6 +64,7 @@ export default function HistoryPage() {
   const [speedHighScore, setSpeedHighScore] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<"overview" | "weak" | "history" | "progress">("overview");
+  const hasStudyData = wordStats.size > 0;
 
   const loadData = useCallback(async () => {
     const [data, statsMap, manualMap] = await Promise.all([
@@ -155,14 +154,12 @@ export default function HistoryPage() {
   }), [records, wordStats]);
 
   const typeStats = useMemo(() => {
-    // レガシーの "fill-blank" も含め、全タイプを string キーで管理
     const stats: Record<string, { total: number; correct: number }> = {
       "en-to-ja": { total: 0, correct: 0 },
       "ja-to-en": { total: 0, correct: 0 },
       "listening": { total: 0, correct: 0 },
       "dictation": { total: 0, correct: 0 },
       "speaking":  { total: 0, correct: 0 },
-      "fill-blank": { total: 0, correct: 0 }, // 旧データとの互換性
     };
 
     for (const record of records) {
@@ -411,9 +408,13 @@ export default function HistoryPage() {
             </div>
             {weakWords.length === 0 ? (
               <div className="text-center py-8">
-                <span className="text-5xl mb-4 block emoji-icon">🎉</span>
-                <p className="text-slate-500 dark:text-slate-400">苦手な単語はありません!</p>
-                <p className="text-sm text-slate-400 dark:text-slate-500 mt-1">この調子で頑張りましょう</p>
+                <span className="text-5xl mb-4 block emoji-icon">{hasStudyData ? "🎉" : "📘"}</span>
+                <p className="text-slate-500 dark:text-slate-400">
+                  {hasStudyData ? "苦手な単語はありません!" : "まだ学習記録がありません"}
+                </p>
+                <p className="text-sm text-slate-400 dark:text-slate-500 mt-1">
+                  {hasStudyData ? "この調子で頑張りましょう" : "まずはクイズに挑戦して学習を始めましょう"}
+                </p>
               </div>
             ) : (
               <div className="space-y-3">

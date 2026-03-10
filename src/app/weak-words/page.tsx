@@ -31,6 +31,7 @@ export default function WeakWordsPage() {
   const [bookmarkedWordIds, setBookmarkedWordIds] = useState<number[]>([]);
   const [sortBy, setSortBy] = useState<"accuracy" | "recent">("accuracy");
   const [isMounted, setIsMounted] = useState(false);
+  const [hasStudyData, setHasStudyData] = useState(false);
 
   const loadWeakWords = useCallback(async () => {
     const [statsMap, manualMap, bookmarkedIds] = await Promise.all([
@@ -41,6 +42,7 @@ export default function WeakWordsPage() {
     setWordStatsMap(statsMap);
     setManualMemoryById(manualMap);
     setBookmarkedWordIds(bookmarkedIds);
+    setHasStudyData(statsMap.size > 0);
     const weak: WeakWord[] = [];
 
     statsMap.forEach((stats, wordId) => {
@@ -166,12 +168,12 @@ export default function WeakWordsPage() {
         {weakWords.length === 0 ? (
           <div className="flex-1 flex items-center justify-center">
             <Card className="text-center py-6">
-              <span className="text-4xl mb-2 block emoji-icon">🎉</span>
+              <span className="text-4xl mb-2 block emoji-icon">{hasStudyData ? "🎉" : "📘"}</span>
               <h2 className="text-base font-bold text-slate-800 dark:text-slate-100 mb-1.5">
-                苦手な単語はありません！
+                {hasStudyData ? "苦手な単語はありません！" : "まだ学習記録がありません"}
               </h2>
               <p className="text-slate-500 dark:text-slate-400 text-xs mb-3">
-                クイズに挑戦して、学習を続けましょう。
+                {hasStudyData ? "クイズに挑戦して、学習を続けましょう。" : "まずはクイズに挑戦して学習を始めましょう。"}
               </p>
               <Link href="/quiz">
                 <Button size="sm">クイズに挑戦</Button>

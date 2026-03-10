@@ -389,10 +389,16 @@ export default function WordDetailPage() {
           }}
           onCreateBook={(name) => {
             const newBook = vocabularyBooks.createMyVocabBook(name);
+            if (!newBook) {
+              alert(`My単語帳は最大${vocabularyBooks.getMyVocabBookLimit()}冊まで作成できます。`);
+              return;
+            }
             vocabularyBooks.addWordToBook(newBook.id, word.id);
             refreshMyBooks();
           }}
           onClose={() => setShowBookmarkDialog(false)}
+          canCreate={vocabularyBooks.canCreateMyVocabBook()}
+          maxCount={vocabularyBooks.getMyVocabBookLimit()}
         />
       )}
     </div>

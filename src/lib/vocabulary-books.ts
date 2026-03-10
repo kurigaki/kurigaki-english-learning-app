@@ -17,6 +17,7 @@ const FAVORITE_BOOK_IDS_KEY = "favorite_book_ids";
 const RECENTLY_VIEWED_KEY = "recently_viewed_books";
 const BOOK_STUDY_SETTINGS_KEY = "book_study_settings";
 const MAX_RECENTLY_VIEWED = 20;
+const MAX_MY_VOCAB_BOOKS = 9;
 
 function generateId(): string {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
@@ -46,8 +47,17 @@ export const vocabularyBooks = {
     }
   },
 
-  createMyVocabBook(name: string): MyVocabBook {
+  canCreateMyVocabBook(): boolean {
+    return vocabularyBooks.getMyVocabBooks().length < MAX_MY_VOCAB_BOOKS;
+  },
+
+  getMyVocabBookLimit(): number {
+    return MAX_MY_VOCAB_BOOKS;
+  },
+
+  createMyVocabBook(name: string): MyVocabBook | null {
     const books = vocabularyBooks.getMyVocabBooks();
+    if (books.length >= MAX_MY_VOCAB_BOOKS) return null;
     const newBook: MyVocabBook = {
       id: generateId(),
       name,

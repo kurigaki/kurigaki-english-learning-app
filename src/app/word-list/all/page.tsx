@@ -249,7 +249,11 @@ export default function WordListPage() {
   }, [refreshMyBooks]);
 
   const handleCreateBook = useCallback((name: string) => {
-    vocabularyBooks.createMyVocabBook(name);
+    const created = vocabularyBooks.createMyVocabBook(name);
+    if (!created) {
+      alert(`My単語帳は最大${vocabularyBooks.getMyVocabBookLimit()}冊まで作成できます。`);
+      return;
+    }
     refreshMyBooks();
   }, [refreshMyBooks]);
 
@@ -863,6 +867,8 @@ export default function WordListPage() {
             onToggle={handleBookmarkToggle}
             onCreateBook={handleCreateBook}
             onClose={() => setBookmarkDialog(null)}
+            canCreate={vocabularyBooks.canCreateMyVocabBook()}
+            maxCount={vocabularyBooks.getMyVocabBookLimit()}
           />
         )}
       </div>

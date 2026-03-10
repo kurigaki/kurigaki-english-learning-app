@@ -35,7 +35,7 @@ export default function VocabBookCard({
   return (
     <Link
       href={href}
-      className={`flex-shrink-0 w-36 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow ${
+      className={`w-full rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow ${
         cardClassName ?? "bg-slate-200 dark:bg-slate-800 border border-slate-300/80 dark:border-slate-700"
       }`}
     >
@@ -43,11 +43,11 @@ export default function VocabBookCard({
       <span className={`hidden ${gradientSafelist}`} />
 
       {/* 画像エリア */}
-      <div className={`relative h-24 bg-gradient-to-br ${gradientClass} flex items-center justify-center`}>
-        <span className="text-4xl emoji-icon drop-shadow">{emoji}</span>
+      <div className={`relative h-20 bg-gradient-to-br ${gradientClass} flex items-center justify-center`}>
+        <span className="text-3xl emoji-icon drop-shadow">{emoji}</span>
       </div>
       {/* テキストエリア */}
-      <div className={`px-2 py-2 ${bodyClassName ?? "bg-slate-200 dark:bg-slate-800"}`}>
+      <div className={`px-2 py-1.5 ${bodyClassName ?? "bg-slate-200 dark:bg-slate-800"}`}>
         <p className={`text-xs font-medium leading-snug line-clamp-2 ${
           bodyClassName ? "text-inherit" : "text-slate-800 dark:text-slate-200"
         }`}>

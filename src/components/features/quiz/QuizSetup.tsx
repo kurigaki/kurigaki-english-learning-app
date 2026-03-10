@@ -11,6 +11,7 @@ import {
   ALL_CATEGORIES,
 } from "@/lib/quiz/settings";
 import { filterWordsBySettings } from "@/lib/quiz/generator";
+import type { QuizProgressState } from "@/lib/quiz-session";
 
 const QUESTIONS_PER_SESSION = 10;
 
@@ -20,6 +21,9 @@ type QuizSetupProps = {
   startNewSession: (settings: QuizSettings) => void;
   bookmarkedIds: number[];
   words: Word[];
+  savedProgress: QuizProgressState | null;
+  onResumeSaved: () => void;
+  onDiscardSaved: () => void;
 };
 
 export const QuizSetup = ({
@@ -28,9 +32,14 @@ export const QuizSetup = ({
   startNewSession,
   bookmarkedIds,
   words,
+  savedProgress,
+  onResumeSaved,
+  onDiscardSaved,
 }: QuizSetupProps) => {
   const bookmarkedCount = bookmarkedIds.filter((id) => words.some((w) => w.id === id)).length;
   const filteredPreview = filterWordsBySettings(words, quizSettings, bookmarkedIds);
+  const savedTotal = savedProgress?.questions.length ?? 0;
+  const savedIndex = (savedProgress?.currentIndex ?? 0) + 1;
 
   return (
     <div className="main-content px-3 py-2 flex flex-col">
@@ -50,6 +59,22 @@ export const QuizSetup = ({
 
         {/* 中央スクロール可能エリア */}
         <div className="flex-1 overflow-y-auto min-h-0 space-y-2">
+          {savedProgress && (
+            <Card className="!p-3 border-2 border-primary-200 dark:border-primary-700 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20">
+              <h2 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">中断したクイズがあります</h2>
+              <p className="text-[10px] text-slate-500 dark:text-slate-400 mb-2">
+                進捗: {savedIndex} / {savedTotal} 問
+              </p>
+              <div className="flex gap-2">
+                <Button size="sm" fullWidth onClick={onResumeSaved}>
+                  再開する
+                </Button>
+                <Button size="sm" variant="secondary" fullWidth onClick={onDiscardSaved}>
+                  破棄する
+                </Button>
+              </div>
+            </Card>
+          )}
           <Card className="!p-3">
             <h2 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-1.5">コースを選択</h2>
             <div className="flex flex-wrap gap-1 mb-1.5">

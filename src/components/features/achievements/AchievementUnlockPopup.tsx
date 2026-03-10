@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import { Achievement } from "@/types";
 import { getRarityBorderColor } from "@/data/achievements";
 
@@ -14,19 +14,31 @@ export const AchievementUnlockPopup = ({
   onClose,
 }: AchievementUnlockPopupProps) => {
   const [isVisible, setIsVisible] = useState(false);
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const borderColor = getRarityBorderColor(achievement.rarity);
+
+  const handleClose = useCallback(() => {
+    setIsVisible(false);
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setTimeout(onClose, 300);
+  }, [onClose]);
 
   useEffect(() => {
     // フェードイン
     setTimeout(() => setIsVisible(true), 50);
 
     // 自動で閉じる
-    const timer = setTimeout(() => {
+    closeTimerRef.current = setTimeout(() => {
       setIsVisible(false);
       setTimeout(onClose, 300);
     }, 3000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    };
   }, [onClose]);
 
   const rarityLabel =
@@ -52,14 +64,13 @@ export const AchievementUnlockPopup = ({
       className={`fixed inset-0 flex items-center justify-center z-50 transition-opacity duration-300 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
-      onClick={onClose}
+      onClick={handleClose}
     >
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
       <div
         className={`relative transform transition-all duration-300 ${
           isVisible ? "scale-100 translate-y-0" : "scale-95 translate-y-4"
         }`}
-        onClick={(e) => e.stopPropagation()}
       >
         <div
           className={`bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-2xl border-4 ${borderColor} max-w-sm mx-4`}
