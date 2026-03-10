@@ -1,11 +1,11 @@
 import type { ManualMasteryLevel, WordStats } from "@/lib/storage";
 
 export const MANUAL_MASTERY_OPTIONS_ORDERED: { key: ManualMasteryLevel; label: string }[] = [
-  { key: "remembered", label: "覚えた (100%)" },
-  { key: "almost", label: "ほぼ覚えた (67%)" },
-  { key: "vague", label: "うろ覚え (34%)" },
-  { key: "weak", label: "苦手 (0%)" },
-  { key: "unlearned", label: "未学習" },
+  { key: "remembered", label: "覚えた単語 (100%)" },
+  { key: "almost", label: "ほぼ覚えた単語 (67%)" },
+  { key: "vague", label: "うろ覚え単語 (34%)" },
+  { key: "weak", label: "苦手単語 (0%)" },
+  { key: "unlearned", label: "未学習単語" },
 ];
 
 export function getDisplayedManualMastery(

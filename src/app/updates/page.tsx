@@ -10,7 +10,7 @@ import {
 export default function UpdatesPage() {
   return (
     <div className="main-content-scroll px-4 pt-6">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* ヘッダー */}
         <div className="mb-6">
           <Link

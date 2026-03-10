@@ -14,6 +14,8 @@ import { getDisplayedManualMastery, MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib
 import { saveBookWordIds } from "@/lib/quiz-session";
 import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
 import { speakWord, stopSpeaking } from "@/lib/audio";
+import { getAccuracyBadgeClass } from "@/lib/accuracy-style";
+import { getMasteryBadgeClass } from "@/lib/mastery-style";
 import { SpeakButton } from "@/components/ui";
 import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
 import BookStudySettingsDialog, {
@@ -408,11 +410,11 @@ export default function BookDetailPage() {
     <div className="main-content flex flex-col">
       {/* ヘッダー */}
       <div className={`flex-shrink-0 bg-gradient-to-r ${bookMeta.gradientClass} px-4 pt-4 pb-3`}>
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="flex items-center gap-2 mb-3">
             <button
               onClick={() => router.push("/word-list")}
-              className="text-white/80 hover:text-white transition-colors flex-shrink-0"
+              className="text-slate-900/80 hover:text-slate-900 dark:text-white/80 dark:hover:text-white transition-colors flex-shrink-0"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -421,9 +423,9 @@ export default function BookDetailPage() {
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
                 <span className="text-2xl emoji-icon">{bookMeta.emoji}</span>
-                <h1 className="text-lg font-bold text-white leading-tight truncate">{bookMeta.name}</h1>
+                <h1 className="text-lg font-bold text-slate-900 dark:text-white leading-tight truncate">{bookMeta.name}</h1>
               </div>
-              <p className="text-white/70 text-xs mt-0.5">{bookWords.length}語</p>
+              <p className="text-slate-900/80 dark:text-white/70 text-xs mt-0.5">{bookWords.length}語</p>
             </div>
             {/* アクションボタン群 */}
             {/* My単語帳削除ボタン */}
@@ -433,7 +435,7 @@ export default function BookDetailPage() {
                 className="p-2 rounded-full bg-white/20 hover:bg-red-500/60 transition-colors flex-shrink-0"
                 title="この単語帳を削除"
               >
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-slate-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                 </svg>
               </button>
@@ -444,7 +446,7 @@ export default function BookDetailPage() {
               className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors flex-shrink-0"
               title="この単語帳を複製してMy単語帳に追加"
             >
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-slate-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
               </svg>
             </button>
@@ -455,7 +457,7 @@ export default function BookDetailPage() {
               title={isFavorite ? "お気に入りから削除" : "お気に入りに追加"}
             >
               <svg
-                className="w-5 h-5 text-white"
+                className="w-5 h-5 text-slate-900 dark:text-white"
                 fill={isFavorite ? "currentColor" : "none"}
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -474,7 +476,7 @@ export default function BookDetailPage() {
               className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors flex-shrink-0"
               title="学習設定"
             >
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-slate-900 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
@@ -508,73 +510,79 @@ export default function BookDetailPage() {
 
       {/* 進捗バー */}
       {bookWords.length > 0 && (
-        <BookProgressBar words={bookWords} statsMap={statsMap} manualMap={manualMap} />
+        <div className="flex-shrink-0 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700">
+          <div className="max-w-4xl mx-auto">
+            <BookProgressBar words={bookWords} statsMap={statsMap} manualMap={manualMap} />
+          </div>
+        </div>
       )}
 
       {/* ツールバー（並び替え・絞り込み・表示切替・再生） */}
-      <div className="flex-shrink-0 flex items-center gap-2 px-3 py-2 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 overflow-x-auto">
-        {/* ソート */}
-        <select
-          value={listSortBy}
-          onChange={(e) => setListSortBy(e.target.value as WordListSortOption)}
-          className="text-xs py-1 px-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none flex-shrink-0"
-        >
-          <option value="default">↕ 並び順</option>
-          <option value="mastery-asc">記憶度 低→高</option>
-          <option value="mastery-desc">記憶度 高→低</option>
-          <option value="alphabetical">A → Z</option>
-          <option value="alphabetical-desc">Z → A</option>
-          <option value="attempts-asc">遭遇回数 少→多</option>
-          <option value="attempts">遭遇回数 多→少</option>
-          <option value="accuracy">正答率 低→高</option>
-          <option value="accuracy-desc">正答率 高→低</option>
-        </select>
+      <div className="flex-shrink-0 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700">
+        <div className="max-w-4xl mx-auto flex items-center gap-2 px-3 py-2 overflow-x-auto">
+          {/* ソート */}
+          <select
+            value={listSortBy}
+            onChange={(e) => setListSortBy(e.target.value as WordListSortOption)}
+            className="text-xs py-1 px-2 rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none flex-shrink-0"
+          >
+            <option value="default">↕ 並び順</option>
+            <option value="mastery-asc">記憶度 低→高</option>
+            <option value="mastery-desc">記憶度 高→低</option>
+            <option value="alphabetical">A → Z</option>
+            <option value="alphabetical-desc">Z → A</option>
+            <option value="attempts-asc">遭遇回数 少→多</option>
+            <option value="attempts">遭遇回数 多→少</option>
+            <option value="accuracy">正答率 低→高</option>
+            <option value="accuracy-desc">正答率 高→低</option>
+          </select>
 
-        {/* 絞り込み */}
-        <button
-          onClick={() => setShowFilterSheet(true)}
-          className={`flex items-center gap-1 px-2 py-1 rounded-lg border text-xs flex-shrink-0 transition-colors ${
-            isFilterActive
-              ? "border-primary-400 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400"
-              : "border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300"
-          }`}
-        >
-          ▽ 絞り込み{isFilterActive ? " ●" : ""}
-        </button>
+          {/* 絞り込み */}
+          <button
+            onClick={() => setShowFilterSheet(true)}
+            className={`flex items-center gap-1 px-2 py-1 rounded-lg border text-xs flex-shrink-0 transition-colors ${
+              isFilterActive
+                ? "border-primary-400 bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400"
+                : "border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300"
+            }`}
+          >
+            ▽ 絞り込み{isFilterActive ? " ●" : ""}
+          </button>
 
-        {/* 表示モード */}
-        <button
-          onClick={() =>
-            setDisplayMode((m) =>
-              m === "both" ? "hide-meaning" : m === "hide-meaning" ? "hide-word" : "both"
-            )
-          }
-          className="flex items-center gap-1 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-600 text-xs flex-shrink-0 text-slate-600 dark:text-slate-300 whitespace-nowrap"
-        >
-          文A{" "}
-          {displayMode === "both"
-            ? "両方表示"
-            : displayMode === "hide-meaning"
-            ? "和訳を隠す"
-            : "単語を隠す"}
-        </button>
+          {/* 表示モード */}
+          <button
+            onClick={() =>
+              setDisplayMode((m) =>
+                m === "both" ? "hide-meaning" : m === "hide-meaning" ? "hide-word" : "both"
+              )
+            }
+            className="flex items-center gap-1 px-2 py-1 rounded-lg border border-slate-200 dark:border-slate-600 text-xs flex-shrink-0 text-slate-600 dark:text-slate-300 whitespace-nowrap"
+          >
+            文A{" "}
+            {displayMode === "both"
+              ? "両方表示"
+              : displayMode === "hide-meaning"
+              ? "和訳を隠す"
+              : "単語を隠す"}
+          </button>
 
-        {/* 再生 */}
-        <button
-          onClick={handlePlay}
-          className={`flex items-center gap-1 px-2 py-1 rounded-lg border text-xs flex-shrink-0 transition-colors ${
-            isPlaying
-              ? "border-red-400 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400"
-              : "border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300"
-          }`}
-        >
-          {isPlaying ? "■ 停止" : "▶ 再生"}
-        </button>
+          {/* 再生 */}
+          <button
+            onClick={handlePlay}
+            className={`flex items-center gap-1 px-2 py-1 rounded-lg border text-xs flex-shrink-0 transition-colors ${
+              isPlaying
+                ? "border-red-400 bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400"
+                : "border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300"
+            }`}
+          >
+            {isPlaying ? "■ 停止" : "▶ 再生"}
+          </button>
+        </div>
       </div>
 
       {/* 単語リスト */}
       <div className="flex-1 overflow-y-auto min-h-0 px-3 py-2 bg-slate-50 dark:bg-slate-900">
-        <div className="max-w-2xl mx-auto space-y-0">
+        <div className="max-w-4xl mx-auto space-y-0">
           {filteredWords.length === 0 ? (
             <div className="text-center py-12">
               <span className="text-4xl emoji-icon block mb-3">🔍</span>
@@ -591,7 +599,7 @@ export default function BookDetailPage() {
                 return (
                   <div
                     key={word.id}
-                    className={`flex items-center gap-1.5 px-3 py-2.5 transition-colors ${
+                    className={`flex items-center gap-2 p-3 transition-colors ${
                       idx !== 0 ? "border-t border-slate-100 dark:border-slate-700" : ""
                     } ${
                       idx === playingIndex
@@ -661,24 +669,26 @@ export default function BookDetailPage() {
                       </svg>
                     </Link>
                     {/* 右側: 正答率・記憶度セレクト */}
-                    <div className="flex-shrink-0 flex flex-col items-end gap-0.5 ml-1">
-                      <span className="text-[10px] px-1 py-0.5 rounded bg-slate-50 dark:bg-slate-700 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600 whitespace-nowrap">
-                        {hasAttempts ? `${stats.accuracy}%` : "-"}
-                      </span>
-                      <select
-                        value={mastery}
-                        onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-[10px] px-1 py-0.5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-primary-400 max-w-[80px]"
-                      >
-                        {MANUAL_MASTERY_OPTIONS_ORDERED
-                          .filter((opt) => !hasAttempts || opt.key !== "unlearned")
-                          .map((opt) => (
-                            <option key={`${word.id}-${opt.key}`} value={opt.key}>
-                              {opt.label.split(" ")[0]}
-                            </option>
-                          ))}
-                      </select>
+                    <div className="w-[170px] flex-shrink-0">
+                      <div className="flex items-center gap-1 justify-end">
+                        <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(hasAttempts ? stats.accuracy : null)}`}>
+                          正答率 {hasAttempts ? `${stats.accuracy}%` : "-"}
+                        </span>
+                        <select
+                          value={mastery}
+                          onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
+                          onClick={(e) => e.stopPropagation()}
+                          className={`text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(mastery)}`}
+                        >
+                          {MANUAL_MASTERY_OPTIONS_ORDERED
+                            .filter((opt) => !hasAttempts || opt.key !== "unlearned")
+                            .map((opt) => (
+                              <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                                {opt.label}
+                              </option>
+                            ))}
+                        </select>
+                      </div>
                     </div>
                   </div>
                 );
@@ -691,7 +701,7 @@ export default function BookDetailPage() {
       {/* 下部ボタン（現在の設定で直接開始） */}
       {filteredWords.length > 0 && (
         <div className="flex-shrink-0 px-4 py-3 border-t border-slate-100 dark:border-slate-700 bg-white dark:bg-slate-900">
-          <div className="max-w-2xl mx-auto flex gap-2">
+          <div className="max-w-4xl mx-auto flex gap-2">
             <button
               onClick={handleStartFlashcard}
               className="flex items-center justify-center gap-2 flex-1 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold rounded-2xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm"

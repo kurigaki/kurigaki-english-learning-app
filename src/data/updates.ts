@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-10",
+    version: "1.34.0",
+    title: "正答率/記憶度の表示を統一",
+    content: [
+      "正答率バッジの判定を25%/50%/75%/100%の基準に統一しました（75〜99%は<100%として同一扱い）",
+      "記憶度（未学習/苦手/うろ覚え/ほぼ覚えた/覚えた）の色と背景を全一覧で統一しました",
+      "単語一覧・復習・ホームなどの正答率/記憶度バッジの配色を整理し、視認性を改善しました",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-10",
     version: "1.33.0",
     title: "単語帳詳細を強化 — 並び替え・絞り込み・表示切替・逐次再生",
     content: [

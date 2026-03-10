@@ -19,7 +19,7 @@ export const RECOMMENDED_BOOKS: RecommendedBook[] = [
     description: "高校受験で頻出の必須単語",
     emoji: "✏️",
     courses: ["junior"],
-    gradientClass: "from-blue-400 to-indigo-500",
+    gradientClass: "from-blue-600 to-indigo-700",
   },
   {
     id: "大学入試頻出",
@@ -27,7 +27,7 @@ export const RECOMMENDED_BOOKS: RecommendedBook[] = [
     description: "大学受験・共通テスト頻出単語",
     emoji: "🎓",
     courses: ["senior"],
-    gradientClass: "from-purple-400 to-violet-500",
+    gradientClass: "from-purple-600 to-violet-700",
   },
   {
     id: "ビジネスメール頻出",
@@ -35,7 +35,7 @@ export const RECOMMENDED_BOOKS: RecommendedBook[] = [
     description: "ビジネスメール・報告書でよく使う表現",
     emoji: "💼",
     courses: ["business"],
-    gradientClass: "from-slate-500 to-slate-700",
+    gradientClass: "from-slate-600 to-slate-800",
   },
   {
     id: "日常会話フレーズ",
@@ -43,6 +43,6 @@ export const RECOMMENDED_BOOKS: RecommendedBook[] = [
     description: "日常の英会話で使えるフレーズ集",
     emoji: "💬",
     courses: ["conversation"],
-    gradientClass: "from-green-400 to-teal-500",
+    gradientClass: "from-green-600 to-teal-700",
   },
 ];
