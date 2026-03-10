@@ -42,6 +42,9 @@ next-env.d.ts
 .serena/
 .claude/settings.local.json
 .claude/worktrees/
+.claude/launch.json
+.claire/
+PLAN.md
 
 # IDE
 .idea/
