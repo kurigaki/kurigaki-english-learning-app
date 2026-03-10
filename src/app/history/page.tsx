@@ -209,10 +209,24 @@ export default function HistoryPage() {
     return counts;
   }, [wordStats, manualMemoryById]);
 
-  // 履歴の単語IDを取得するヘルパー関数
-  const getWordIdByWord = (wordStr: string): number | null => {
-    const found = words.find((w) => w.word === wordStr);
-    return found ? found.id : null;
+  const normalizeRecordWord = (wordStr: string): string => (
+    wordStr
+      .toLowerCase()
+      .replace(/[‐‑‒–—-]/g, " ")
+      .replace(/[^a-z' ]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+  );
+
+  // 履歴の単語IDを取得するヘルパー関数（record.wordId 優先）
+  const getWordIdByRecord = (record: LearningRecord): number | null => {
+    const validId = words.some((w) => w.id === record.wordId) ? record.wordId : null;
+    if (validId !== null) return validId;
+    const direct = findWordId(record.word);
+    if (direct !== null) return direct;
+    const normalized = normalizeRecordWord(record.word);
+    if (!normalized || normalized === record.word.toLowerCase()) return null;
+    return findWordId(normalized);
   };
 
   const getDisplayedMastery = useCallback((wordId: number): ManualMasteryLevel => (
@@ -421,19 +435,47 @@ export default function HistoryPage() {
                 {weakWords.map((word) => (
                   <div
                     key={word.id}
-                    className="flex items-center gap-2 p-2 rounded-lg border bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700"
+                    className="flex flex-col sm:flex-row sm:items-center gap-2 p-2 rounded-lg border bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700"
                   >
                     <Link
                       href={`/word/${word.id}?from=history`}
                       onClick={() => { saveHistoryTab(activeTab); saveWordNavState(weakWords.map((w) => w.id), "history"); }}
-                      className="flex items-center justify-between flex-1 min-w-0 transition-all hover:scale-[1.01] group"
+                      className="flex items-start justify-between flex-1 min-w-0 transition-all hover:scale-[1.01] group gap-2"
                     >
                       <div className="flex items-center gap-2 min-w-0">
                         <SpeakButton text={word.word} size="sm" />
                         <div className="min-w-0">
-                          <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate">{word.word}</p>
-                          <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+                          <p className="font-bold text-base sm:text-sm text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors break-words">{word.word}</p>
+                          <p className="text-sm sm:text-xs text-slate-500 dark:text-slate-400 break-words">{word.meaning}</p>
                           <p className="text-[10px] text-slate-400 dark:text-slate-500">{word.attempts}回挑戦</p>
+                          <div
+                            className="mt-1 flex items-center gap-1 sm:hidden"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                            }}
+                            onMouseDown={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                            }}
+                          >
+                            <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                              正答率 {word.accuracy}%
+                            </span>
+                            <select
+                              value={getDisplayedMastery(word.id)}
+                              onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
+                              className="min-w-0 text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                            >
+                              {MANUAL_MASTERY_OPTIONS_ORDERED
+                                .filter((opt) => word.attempts === 0 || opt.key !== "unlearned")
+                                .map((opt) => (
+                                  <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                                    {opt.label}
+                                  </option>
+                                ))}
+                            </select>
+                          </div>
                         </div>
                       </div>
                       <div className="text-slate-400 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-1 transition-all">
@@ -442,7 +484,7 @@ export default function HistoryPage() {
                         </svg>
                       </div>
                     </Link>
-                    <div className="w-[160px] flex-shrink-0">
+                    <div className="hidden sm:block w-[160px] flex-shrink-0">
                       <div className="flex items-center gap-1 justify-end">
                         <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
                           正答率 {word.accuracy}%
@@ -495,7 +537,7 @@ export default function HistoryPage() {
               ) : (
                 <div className="divide-y divide-primary-50 dark:divide-slate-700">
                   {records.slice(0, 50).map((record) => {
-                    const wordId = getWordIdByWord(record.word);
+                    const wordId = getWordIdByRecord(record);
                     const stats = wordId ? wordStats.get(wordId) : null;
                     if (!wordId) {
                       return (
@@ -540,7 +582,7 @@ export default function HistoryPage() {
                             saveHistoryTab(activeTab);
                             const historyWordIds = Array.from(new Set(
                               records.slice(0, 50)
-                                .map((r) => getWordIdByWord(r.word))
+                                .map((r) => getWordIdByRecord(r))
                                 .filter((id): id is number => id !== null)
                             ));
                             saveWordNavState(historyWordIds, "history");

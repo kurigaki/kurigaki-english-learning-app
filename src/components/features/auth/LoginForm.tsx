@@ -87,6 +87,14 @@ export const LoginForm = () => {
           disabled={isLoading}
           autoComplete="current-password"
         />
+        <div className="mt-2 text-right">
+          <Link
+            href="/reset-password"
+            className="text-xs text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium"
+          >
+            パスワードを忘れた方はこちら
+          </Link>
+        </div>
       </div>
 
       <Button

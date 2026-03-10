@@ -734,43 +734,45 @@ export default function WordListPage() {
                     <div
                       id={`word-item-${word.id}`}
                       key={word.id}
-                      className="flex items-center gap-2 p-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-xl last:rounded-b-xl"
+                      className="flex flex-col sm:flex-row sm:items-center gap-2 p-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-xl last:rounded-b-xl"
                     >
-                      <div className="flex items-center gap-2 flex-1 min-w-0">
-                        <SpeakButton text={word.word} size="sm" />
-                        <button
-                          onClick={() => {
-                            refreshMyBooks();
-                            setBookmarkDialog({ wordId: word.id, wordText: word.word });
-                          }}
-                          className={`p-1.5 rounded-lg transition-colors ${
-                            word.isBookmarked
-                              ? "text-yellow-500 hover:text-yellow-600"
-                              : "text-slate-300 hover:text-yellow-400"
-                          }`}
-                          title="単語帳に追加"
-                        >
-                          <svg
-                            className="w-4 h-4"
-                            fill={word.isBookmarked ? "currentColor" : "none"}
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
+                      <div className="flex items-start gap-2 w-full">
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                          <SpeakButton text={word.word} size="sm" />
+                          <button
+                            onClick={() => {
+                              refreshMyBooks();
+                              setBookmarkDialog({ wordId: word.id, wordText: word.word });
+                            }}
+                            className={`p-1.5 rounded-lg transition-colors ${
+                              word.isBookmarked
+                                ? "text-yellow-500 hover:text-yellow-600"
+                                : "text-slate-300 hover:text-yellow-400"
+                            }`}
+                            title="単語帳に追加"
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                            />
-                          </svg>
-                        </button>
-                        <button
-                          onClick={() => handleStartFlashcardAt(word.id)}
-                          className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
-                          title="この単語からフラッシュカード開始"
-                        >
-                          <span className="text-xs emoji-icon">🃏</span>
-                        </button>
+                            <svg
+                              className="w-4 h-4"
+                              fill={word.isBookmarked ? "currentColor" : "none"}
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                              />
+                            </svg>
+                          </button>
+                          <button
+                            onClick={() => handleStartFlashcardAt(word.id)}
+                            className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
+                            title="この単語からフラッシュカード開始"
+                          >
+                            <span className="text-xs emoji-icon">🃏</span>
+                          </button>
+                        </div>
                         <Link
                           href={`/word/${word.id}?from=wordlist`}
                           onClick={() => {
@@ -788,24 +790,54 @@ export default function WordListPage() {
                             });
                             saveWordNavState(filteredWords.map((w) => w.id), "wordlist");
                           }}
-                          className="flex items-center justify-between flex-1 min-w-0 group/link"
+                          className="flex items-start justify-between gap-2 flex-1 min-w-0 group/link"
                         >
                           <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <p className="font-bold text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 transition-colors truncate">
-                                {word.word}
-                              </p>
+                            <p className="font-bold text-base sm:text-sm text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 transition-colors break-words">
+                              {word.word}
+                            </p>
+                            <p className="text-sm sm:text-xs text-slate-500 dark:text-slate-400 break-words">
+                              {word.meaning}
+                            </p>
+                            <div
+                              className="mt-1 flex items-center gap-1 sm:hidden"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                              }}
+                              onMouseDown={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                              }}
+                            >
+                              <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(word.accuracy)}`}>
+                                正答率 {word.accuracy !== null ? `${word.accuracy}%` : "-"}
+                              </span>
+                              <select
+                                value={getDisplayedManualMastery(word)}
+                                onChange={(e) => {
+                                  handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel);
+                                }}
+                                className={`text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(getDisplayedManualMastery(word))}`}
+                              >
+                                {MANUAL_MASTERY_OPTIONS_ORDERED
+                                  .filter((opt) => word.attempts === 0 || opt.key !== "unlearned")
+                                  .map((opt) => (
+                                  <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                                    {opt.label}
+                                  </option>
+                                ))}
+                              </select>
                             </div>
-                            <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
                           </div>
-                          <div className="text-slate-400 dark:text-slate-500 group-hover/link:text-primary-500 group-hover/link:translate-x-1 transition-all">
+                          <div className="text-slate-400 dark:text-slate-500 group-hover/link:text-primary-500 group-hover/link:translate-x-1 transition-all flex-shrink-0">
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                           </div>
                         </Link>
                       </div>
-                      <div className="w-[170px] flex-shrink-0">
+                      <div className="hidden sm:block w-[170px] flex-shrink-0">
                         <div className="flex items-center gap-1 justify-end">
                           <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(word.accuracy)}`}>
                             正答率 {word.accuracy !== null ? `${word.accuracy}%` : "-"}
