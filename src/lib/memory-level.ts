@@ -11,11 +11,11 @@ export const MEMORY_LEVEL_ORDER: MemoryLevel[] = [
 ];
 
 export const memoryLevelLabels: Record<MemoryLevel, string> = {
-  unlearned: "未学習",
-  weak: "苦手 (0%)",
-  vague: "うろ覚え (34%)",
-  almost: "ほぼ覚えた (67%)",
-  remembered: "覚えた (100%)",
+  unlearned: "未学習単語",
+  weak: "苦手単語 (0%)",
+  vague: "うろ覚え単語 (34%)",
+  almost: "ほぼ覚えた単語 (67%)",
+  remembered: "覚えた単語 (100%)",
 };
 
 export const memoryLevelBadgeClass: Record<MemoryLevel, string> = {
@@ -24,6 +24,14 @@ export const memoryLevelBadgeClass: Record<MemoryLevel, string> = {
   vague: "bg-yellow-100 text-yellow-700 border border-yellow-200 dark:bg-yellow-900/30 dark:text-yellow-200 dark:border-yellow-800/50",
   almost: "bg-lime-100 text-lime-700 border border-lime-200 dark:bg-lime-900/30 dark:text-lime-200 dark:border-lime-800/50",
   remembered: "bg-cyan-100 text-cyan-700 border border-cyan-200 dark:bg-cyan-900/30 dark:text-cyan-200 dark:border-cyan-800/50",
+};
+
+export const memoryLevelSurfaceClass: Record<MemoryLevel, string> = {
+  unlearned: "bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-200",
+  weak: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-200",
+  vague: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-200",
+  almost: "bg-lime-100 text-lime-700 dark:bg-lime-900/30 dark:text-lime-200",
+  remembered: "bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-200",
 };
 
 export const memoryLevelBarClass: Record<MemoryLevel, string> = {

@@ -14,7 +14,7 @@
 | 音声読み上げ | 出題時自動再生＋手動再生ボタン | ✅ |
 | イメージ画像 | カテゴリ別プレースホルダー画像表示 | ✅ |
 | 学習統計 | タブ切り替えで概要/苦手単語/履歴を表示 | ✅ |
-| 苦手単語機能 | 正答率70%未満の単語を抽出・復習 | ✅ |
+| 苦手単語機能 | 正答率60%未満の単語を抽出・復習 | ✅ |
 
 ### Phase 2: ゲーミフィケーション基盤 - 実装完了
 
@@ -414,13 +414,14 @@ type QuizResultState = {
 ### 3.2 記憶度の計算ロジック
 
 ```typescript
-type MasteryLevel = "new" | "learning" | "familiar" | "mastered";
+type MasteryLevel = "unlearned" | "weak" | "vague" | "almost" | "remembered";
 
 const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLevel => {
-  if (attempts === 0 || accuracy === null) return "new";      // 未学習
-  if (accuracy >= 80 && attempts >= 3) return "mastered";     // 習得済み
-  if (accuracy >= 60) return "familiar";                       // 習得中
-  return "learning";                                           // 学習中
+  if (attempts === 0) return "unlearned"; // 未学習
+  if (accuracy === null || accuracy < 34) return "weak"; // 苦手
+  if (accuracy < 67) return "vague"; // うろ覚え
+  if (accuracy < 100) return "almost"; // ほぼ覚えた
+  return "remembered"; // 覚えた
 };
 ```
 
@@ -523,7 +524,7 @@ const getMasteryLevel = (accuracy: number | null, attempts: number): MasteryLeve
 | カテゴリフィルター | 21カテゴリで絞り込み | ✅ |
 | コース・ステージフィルター | コース/ステージ別で絞り込み | ✅ |
 | 難易度フィルター | 難易度1〜7で絞り込み | ✅ |
-| 記憶度フィルター | 未学習/苦手/あと少し/習得済 | ✅ |
+| 記憶度フィルター | 未学習/苦手/うろ覚え/ほぼ覚えた/覚えた | ✅ |
 | ブックマークフィルター | ブックマーク済みのみ表示 | ✅ |
 | ソート | 複数の並び替えオプション | ✅ |
 | 学習状況表示 | 習得度バッジ表示 | ✅ |
@@ -743,7 +744,7 @@ toggleBookmark(wordId: number): boolean // 切り替え（新状態を返す）
 | タブ | 内容 | 単語詳細遷移 |
 |------|------|-------------|
 | 概要 | 全体統計、問題タイプ別正答率 | - |
-| 苦手単語 | 正答率70%未満の単語リスト | ✅ |
+| 苦手単語 | 正答率60%未満の単語リスト | ✅ |
 | 履歴 | 回答履歴（最新50件） | ✅ |
 
 ### 5.2 概要タブ
@@ -754,7 +755,7 @@ toggleBookmark(wordId: number): boolean // 切り替え（新状態を返す）
 
 ### 5.3 苦手単語タブ
 
-- **抽出条件**: 正答率70%未満 かつ 1回以上挑戦
+- **抽出条件**: 正答率60%未満 かつ 1回以上挑戦
 - **表示項目**: 単語、意味、正答率、挑戦回数
 - **ソート**: 正答率の低い順
 - **遷移**: タップで単語詳細画面へ
@@ -1033,7 +1034,7 @@ await unifiedStorage.addRecord({ ... });
 |--------------|------|
 | WordHeader | 単語・発音・品詞・意味 |
 | WordImage | イメージ画像（フォールバック付き） |
-| WordMastery | 記憶度表示（4段階） |
+| WordMastery | 記憶度表示（5段階） |
 | WordExamples | 例文リスト（テキスト内単語リンク付き） |
 | WordRelations | 関連語・対義語（品詞・意味付きリスト） |
 | WordSynonymDiff | 類義語との違い（構造化リスト・テキスト内単語リンク付き） |

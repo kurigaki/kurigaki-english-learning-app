@@ -4,11 +4,11 @@ import { useState } from "react";
 import type { BookDetailFilter, ManualMasteryLevel } from "@/types";
 
 const MASTERY_OPTIONS: { key: ManualMasteryLevel; label: string }[] = [
-  { key: "unlearned", label: "未学習" },
-  { key: "weak",      label: "苦手" },
-  { key: "vague",     label: "うろ覚え" },
-  { key: "almost",    label: "ほぼ覚えた" },
-  { key: "remembered",label: "覚えた" },
+  { key: "unlearned", label: "未学習単語" },
+  { key: "weak",      label: "苦手単語" },
+  { key: "vague",     label: "うろ覚え単語" },
+  { key: "almost",    label: "ほぼ覚えた単語" },
+  { key: "remembered",label: "覚えた単語" },
 ];
 
 type Props = {

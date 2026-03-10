@@ -7,6 +7,7 @@ import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { RECOMMENDED_BOOKS } from "@/data/recommended-books";
 import { vocabularyBooks, type MyVocabBook, type RecentlyViewedBook } from "@/lib/vocabulary-books";
 import { resolveBookMeta, COURSE_EMOJI, COURSE_GRADIENT, MASTERY_META, ACCURACY_META } from "@/lib/vocab-book-meta";
+import { memoryLevelBadgeClass, memoryLevelSurfaceClass } from "@/lib/memory-level";
 import VocabBookCard from "@/components/features/word-list/VocabBookCard";
 import CreateBookDialog from "@/components/features/word-list/CreateBookDialog";
 import type { Course } from "@/data/words/types";
@@ -72,21 +73,22 @@ export default function WordListHubPage() {
 
   return (
     <div className="main-content-scroll px-4 py-3 pb-24">
-      {/* 検索バー */}
-      <div className="mb-4">
-        <button
-          onClick={() => router.push("/word-list/all")}
-          className="w-full flex items-center gap-2 px-3 py-2.5 bg-slate-100 dark:bg-slate-800 rounded-2xl text-slate-400 dark:text-slate-500 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-left"
-        >
-          <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-          全単語を検索する
-        </button>
-      </div>
+      <div className="max-w-4xl mx-auto">
+        {/* 検索バー */}
+        <div className="mb-4">
+          <button
+            onClick={() => router.push("/word-list/all")}
+            className="w-full flex items-center gap-2 px-3 py-2.5 bg-slate-100 dark:bg-slate-800 rounded-2xl text-slate-400 dark:text-slate-500 text-sm hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-left"
+          >
+            <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            全単語を検索する
+          </button>
+        </div>
 
-      {!isMounted ? null : (
-        <>
+        {!isMounted ? null : (
+          <>
           {/* お気に入り */}
           <section className="mb-5">
             <div className="flex items-center justify-between mb-2 px-0.5">
@@ -198,6 +200,8 @@ export default function WordListHubPage() {
                 name={m.name}
                 emoji={m.emoji}
                 gradientClass={m.gradient}
+                cardClassName={memoryLevelBadgeClass[level as keyof typeof memoryLevelBadgeClass]}
+                bodyClassName={memoryLevelSurfaceClass[level as keyof typeof memoryLevelSurfaceClass]}
               />
             ))}
           </Section>
@@ -249,16 +253,17 @@ export default function WordListHubPage() {
               </Section>
             );
           })}
-        </>
-      )}
+          </>
+        )}
 
-      {/* My単語帳 作成ダイアログ */}
-      {showCreateDialog && (
-        <CreateBookDialog
-          onCreate={handleCreateBook}
-          onClose={() => setShowCreateDialog(false)}
-        />
-      )}
+        {/* My単語帳 作成ダイアログ */}
+        {showCreateDialog && (
+          <CreateBookDialog
+            onCreate={handleCreateBook}
+            onClose={() => setShowCreateDialog(false)}
+          />
+        )}
+      </div>
     </div>
   );
 }

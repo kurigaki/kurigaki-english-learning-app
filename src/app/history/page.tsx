@@ -238,7 +238,7 @@ export default function HistoryPage() {
 
   return (
     <div className="main-content px-3 py-2 flex flex-col">
-      <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
+      <div className="max-w-4xl w-full mx-auto flex flex-col h-full">
         {/* 上部固定: ヘッダー */}
         <div className="flex-shrink-0 mb-1.5">
           <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex items-center gap-1.5">
@@ -647,11 +647,11 @@ export default function HistoryPage() {
                             </div>
                           </div>
                           <div className="mt-1.5 text-[10px] text-slate-500 dark:text-slate-400 flex flex-wrap gap-1">
-                            <span className="text-cyan-700 dark:text-cyan-300">覚えた {cp.memoryCounts.remembered}</span>
-                            <span className="text-lime-700 dark:text-lime-300">ほぼ覚えた {cp.memoryCounts.almost}</span>
-                            <span className="text-yellow-700 dark:text-yellow-300">うろ覚え {cp.memoryCounts.vague}</span>
-                            <span className="text-red-600 dark:text-red-300">苦手 {cp.memoryCounts.weak}</span>
-                            <span className="text-slate-600 dark:text-slate-300">未学習 {cp.memoryCounts.unlearned}</span>
+                            <span className="text-cyan-700 dark:text-cyan-300">覚えた単語 {cp.memoryCounts.remembered}</span>
+                            <span className="text-lime-700 dark:text-lime-300">ほぼ覚えた単語 {cp.memoryCounts.almost}</span>
+                            <span className="text-yellow-700 dark:text-yellow-300">うろ覚え単語 {cp.memoryCounts.vague}</span>
+                            <span className="text-red-600 dark:text-red-300">苦手単語 {cp.memoryCounts.weak}</span>
+                            <span className="text-slate-600 dark:text-slate-300">未学習単語 {cp.memoryCounts.unlearned}</span>
                           </div>
                         </Link>
                       );
