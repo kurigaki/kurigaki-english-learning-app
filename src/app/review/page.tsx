@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
-import { words as allWords, categoryLabels } from "@/data/words/compat";
+import { words as allWords } from "@/data/words/compat";
 import { SpeakButton, Card, ProgressBar } from "@/components/ui";
 import type { Word } from "@/data/words/compat";
 import type { SrsStatus, SrsProgress } from "@/lib/srs";
