@@ -607,7 +607,7 @@ export default function BookDetailPage() {
                 return (
                   <div
                     key={word.id}
-                    className={`flex items-center gap-2 p-3 transition-colors ${
+                    className={`flex flex-col sm:flex-row sm:items-center gap-2 p-3 transition-colors ${
                       idx !== 0 ? "border-t border-slate-100 dark:border-slate-700" : ""
                     } ${
                       idx === playingIndex
@@ -615,69 +615,101 @@ export default function BookDetailPage() {
                         : "hover:bg-slate-50 dark:hover:bg-slate-700/50"
                     }`}
                   >
-                    {/* 左側: 操作ボタン */}
-                    <SpeakButton text={word.word} size="sm" />
-                    {/* フラッシュカードボタン */}
-                    <button
-                      onClick={() => handleStartFlashcardAt(word.id)}
-                      className="p-1.5 rounded-lg text-slate-300 dark:text-slate-500 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
-                      title="この単語からフラッシュカード開始"
-                    >
-                      <span className="text-xs emoji-icon">🃏</span>
-                    </button>
-                    {/* ブックマーク（単語帳選択） */}
-                    {(() => {
-                      const isInMyBook = myBooks.some((b) => b.wordIds.includes(word.id));
-                      return (
+                    <div className="flex items-start gap-2 w-full">
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        {/* 左側: 操作ボタン */}
+                        <SpeakButton text={word.word} size="sm" />
+                        {/* フラッシュカードボタン */}
                         <button
-                          onClick={() => setBookmarkDialog({ wordId: word.id, wordText: word.word })}
-                          className={`p-1.5 rounded-lg transition-colors flex-shrink-0 ${
-                            isInMyBook
-                              ? "text-yellow-500 hover:text-yellow-600"
-                              : "text-slate-300 dark:text-slate-500 hover:text-yellow-400"
-                          }`}
-                          title="単語帳に追加"
+                          onClick={() => handleStartFlashcardAt(word.id)}
+                          className="p-1.5 rounded-lg text-slate-300 dark:text-slate-500 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
+                          title="この単語からフラッシュカード開始"
                         >
-                          <svg
-                            className="w-4 h-4"
-                            fill={isInMyBook ? "currentColor" : "none"}
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                          </svg>
+                          <span className="text-xs emoji-icon">🃏</span>
                         </button>
-                      );
-                    })()}
-                    {/* 単語詳細リンク */}
-                    <Link
-                      href={`/word/${word.id}`}
-                      className="flex items-center flex-1 min-w-0 group"
-                    >
-                      <div className="flex-1 min-w-0">
-                        {/* 単語（displayModeで表示切替） */}
-                        {displayMode !== "hide-word" ? (
-                          <p className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors truncate text-sm">
-                            {word.word}
-                          </p>
-                        ) : (
-                          <p className="font-bold text-primary-300 dark:text-primary-700 truncate text-sm select-none">
-                            ●●●
-                          </p>
-                        )}
-                        {/* 意味（displayModeで表示切替） */}
-                        {displayMode !== "hide-meaning" ? (
-                          <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
-                        ) : (
-                          <p className="text-xs text-slate-300 dark:text-slate-600 truncate select-none">- - -</p>
-                        )}
+                        {/* ブックマーク（単語帳選択） */}
+                        {(() => {
+                          const isInMyBook = myBooks.some((b) => b.wordIds.includes(word.id));
+                          return (
+                            <button
+                              onClick={() => setBookmarkDialog({ wordId: word.id, wordText: word.word })}
+                              className={`p-1.5 rounded-lg transition-colors flex-shrink-0 ${
+                                isInMyBook
+                                  ? "text-yellow-500 hover:text-yellow-600"
+                                  : "text-slate-300 dark:text-slate-500 hover:text-yellow-400"
+                              }`}
+                              title="単語帳に追加"
+                            >
+                              <svg
+                                className="w-4 h-4"
+                                fill={isInMyBook ? "currentColor" : "none"}
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                              </svg>
+                            </button>
+                          );
+                        })()}
                       </div>
-                      <svg className="w-4 h-4 text-slate-300 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-0.5 transition-all flex-shrink-0 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </Link>
+                      {/* 単語詳細リンク */}
+                      <Link
+                        href={`/word/${word.id}`}
+                        className="flex items-start flex-1 min-w-0 group gap-2"
+                      >
+                        <div className="flex-1 min-w-0">
+                          {/* 単語（displayModeで表示切替） */}
+                          {displayMode !== "hide-word" ? (
+                            <p className="font-bold text-base sm:text-sm text-slate-800 dark:text-slate-100 group-hover:text-primary-600 transition-colors break-words">
+                              {word.word}
+                            </p>
+                          ) : (
+                            <p className="font-bold text-primary-300 dark:text-primary-700 text-sm select-none">
+                              ●●●
+                            </p>
+                          )}
+                          {/* 意味（displayModeで表示切替） */}
+                          {displayMode !== "hide-meaning" ? (
+                            <p className="text-sm sm:text-xs text-slate-500 dark:text-slate-400 break-words">{word.meaning}</p>
+                          ) : (
+                            <p className="text-xs text-slate-300 dark:text-slate-600 select-none">- - -</p>
+                          )}
+                          <div
+                            className="mt-1 flex items-center gap-1 sm:hidden"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                            }}
+                            onMouseDown={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                            }}
+                          >
+                            <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(hasAttempts ? stats.accuracy : null)}`}>
+                              正答率 {hasAttempts ? `${stats.accuracy}%` : "-"}
+                            </span>
+                            <select
+                              value={mastery}
+                              onChange={(e) => handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
+                              className={`text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(mastery)}`}
+                            >
+                              {MANUAL_MASTERY_OPTIONS_ORDERED
+                                .filter((opt) => !hasAttempts || opt.key !== "unlearned")
+                                .map((opt) => (
+                                  <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                                    {opt.label}
+                                  </option>
+                                ))}
+                            </select>
+                          </div>
+                        </div>
+                        <svg className="w-4 h-4 text-slate-300 dark:text-slate-500 group-hover:text-primary-500 group-hover:translate-x-0.5 transition-all flex-shrink-0 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
                     {/* 右側: 正答率・記憶度セレクト */}
-                    <div className="w-[170px] flex-shrink-0">
+                    <div className="hidden sm:block w-[170px] flex-shrink-0">
                       <div className="flex items-center gap-1 justify-end">
                         <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(hasAttempts ? stats.accuracy : null)}`}>
                           正答率 {hasAttempts ? `${stats.accuracy}%` : "-"}

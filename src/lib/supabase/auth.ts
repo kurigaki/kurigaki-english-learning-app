@@ -111,8 +111,15 @@ export async function sendPasswordResetEmail(
   }
 
   try {
+    const baseUrl =
+      process.env.NEXT_PUBLIC_SITE_URL
+      || process.env.NEXT_PUBLIC_APP_URL
+      || (typeof window !== "undefined" ? window.location.origin : "");
+    if (!baseUrl) {
+      return { success: false, error: "再設定用URLが設定されていません" };
+    }
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/reset-password`,
+      redirectTo: `${baseUrl}/reset-password`,
     });
 
     if (error) {

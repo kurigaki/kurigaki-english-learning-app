@@ -20,6 +20,8 @@ export type AuthContextValue = AuthState & {
   signIn: (email: string, password: string) => Promise<AuthResult>;
   signUp: (email: string, password: string) => Promise<AuthResult>;
   signOut: () => Promise<void>;
+  sendPasswordResetEmail: (email: string) => Promise<AuthResult>;
+  updatePassword: (newPassword: string) => Promise<AuthResult>;
   updateProfile: (data: ProfileUpdateData) => Promise<AuthResult>;
   refreshProfile: () => Promise<void>;
 };
