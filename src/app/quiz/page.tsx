@@ -52,7 +52,17 @@ export default function QuizPage() {
     handleSpeakingSkip,
     inQuizSettings,
     setInQuizSettings,
+    savedProgress,
+    saveProgress,
+    resumeSavedProgress,
+    discardSavedProgress,
   } = useQuiz();
+
+  const handleSuspend = () => {
+    if (saveProgress()) {
+      setPhase("setup");
+    }
+  };
 
   // 設定画面
   if (phase === "setup") {
@@ -63,6 +73,9 @@ export default function QuizPage() {
         startNewSession={startNewSession}
         bookmarkedIds={bookmarkedIds}
         words={words}
+        savedProgress={savedProgress}
+        onResumeSaved={resumeSavedProgress}
+        onDiscardSaved={discardSavedProgress}
       />
     );
   }
@@ -129,6 +142,8 @@ export default function QuizPage() {
       handleSpeakingSkip={handleSpeakingSkip}
       inQuizSettings={inQuizSettings}
       setInQuizSettings={setInQuizSettings}
+      onSuspend={handleSuspend}
+      onSaveProgress={saveProgress}
     />
   );
 }

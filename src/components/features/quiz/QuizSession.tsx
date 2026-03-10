@@ -5,7 +5,7 @@ import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
 import { getQuestionPrompt, getQuestionDisplay } from "@/lib/quiz/display";
 import { parseDictationParts } from "@/lib/quiz/generator";
 import { getTranslationInfo } from "@/lib/quiz/translation";
-import { InQuizSettings, SpeakingDifficulty, HintMode, AudioMode, AutoAdvanceMode } from "@/lib/quiz/in-quiz-settings";
+import { InQuizSettings, SpeakingDifficulty, HintMode, AudioMode, AutoAdvanceMode, TranslationMode } from "@/lib/quiz/in-quiz-settings";
 
 type QuizSessionProps = {
   questions: Question[];
@@ -31,6 +31,8 @@ type QuizSessionProps = {
   handleSpeakingSkip: () => void;
   inQuizSettings: InQuizSettings;
   setInQuizSettings: Dispatch<SetStateAction<InQuizSettings>>;
+  onSuspend: () => void;
+  onSaveProgress: () => boolean;
 };
 
 // セグメントボタングループ
@@ -93,6 +95,12 @@ const HINT_MODE_OPTIONS: { value: HintMode; label: string }[] = [
   { value: "always", label: "常時表示" },
 ];
 
+const TRANSLATION_MODE_OPTIONS: { value: TranslationMode; label: string }[] = [
+  { value: "none", label: "なし" },
+  { value: "reveal", label: "ボタン表示" },
+  { value: "always", label: "常時表示" },
+];
+
 export const QuizSession = ({
   questions,
   currentIndex,
@@ -117,6 +125,8 @@ export const QuizSession = ({
   handleSpeakingSkip,
   inQuizSettings,
   setInQuizSettings,
+  onSuspend,
+  onSaveProgress,
 }: QuizSessionProps) => {
   const [showSettings, setShowSettings] = useState(false);
   const [hintRevealed, setHintRevealed] = useState(false);
@@ -125,6 +135,27 @@ export const QuizSession = ({
   useEffect(() => {
     setHintRevealed(false);
   }, [currentIndex]);
+
+  useEffect(() => {
+    const handleLinkClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      const anchor = target?.closest("a");
+      if (!anchor) return;
+      if (anchor.target === "_blank") return;
+      const href = anchor.getAttribute("href");
+      if (!href || href.startsWith("#")) return;
+      if (window.location.pathname === href || window.location.href === anchor.href) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const ok = window.confirm("クイズをセーブして移動しますか？");
+      if (!ok) return;
+      onSaveProgress();
+      window.location.href = anchor.href;
+    };
+
+    document.addEventListener("click", handleLinkClick, true);
+    return () => document.removeEventListener("click", handleLinkClick, true);
+  }, [onSaveProgress]);
 
   // 回答後の自動次へ
   useEffect(() => {
@@ -141,6 +172,9 @@ export const QuizSession = ({
 
   const questionDisplay = currentQuestion ? getQuestionDisplay(currentQuestion) : "";
   const isSentenceType = currentQuestion.type === "listening" || currentQuestion.type === "dictation";
+  const sentenceAudioMode = currentQuestion.type === "listening"
+    ? inQuizSettings.listeningAudioMode
+    : inQuizSettings.writingAudioMode;
 
   // 書き取り問題: 例文をパーツに分割（ブランク数チェックにも使用）
   const dictationParts =
@@ -167,6 +201,17 @@ export const QuizSession = ({
           </div>
 
           <div className="relative flex justify-center gap-1.5 items-center">
+            <button
+              type="button"
+              onClick={() => {
+                if (window.confirm("クイズをセーブして中断しますか？")) {
+                  onSuspend();
+                }
+              }}
+              className="absolute left-0 px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[10px] text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+            >
+              中断
+            </button>
             <div className="inline-flex items-center gap-1 bg-white dark:bg-slate-800 rounded-full px-2 py-0.5 shadow-card border border-primary-100">
               <span className="text-sm emoji-icon">✨</span>
               <span className="font-bold text-primary-500 text-xs">{score}</span>
@@ -252,7 +297,8 @@ export const QuizSession = ({
                         autoCorrect="off"
                         autoCapitalize="none"
                         spellCheck={false}
-                        inputMode="text"
+                        inputMode="latin"
+                        lang="en"
                       />
                     );
                   })}
@@ -291,32 +337,37 @@ export const QuizSession = ({
               })()}
 
               {/* en-to-ja: US/UK 発音ボタン */}
-              {currentQuestion.type === "en-to-ja" && inQuizSettings.audioMode !== "off" && (
+              {currentQuestion.type === "en-to-ja" && inQuizSettings.readingAudioMode !== "off" && (
                 <WordAudioButtons word={currentQuestion.word.word} />
               )}
               {/* speaking: US/UK 発音ボタン（発音練習の参考に） */}
-              {currentQuestion.type === "speaking" && inQuizSettings.audioMode !== "off" && selected === null && (
+              {currentQuestion.type === "speaking" && inQuizSettings.speakingAudioMode !== "off" && selected === null && (
                 <WordAudioButtons word={currentQuestion.word.word} />
               )}
               {/* リスニング・書き取り: 例文音声ボタン */}
-              {isSentenceType && currentQuestion.word.example && inQuizSettings.audioMode !== "off" && (
+              {isSentenceType && currentQuestion.word.example && sentenceAudioMode !== "off" && (
                 <div className="mt-1">
                   <SpeakButton text={currentQuestion.word.example} type="sentence" size="sm" />
                 </div>
               )}
-              {/* リスニング・書き取り: 和訳表示トグル */}
+              {/* リスニング・書き取り: 和訳表示 */}
               {isSentenceType && selected === null && (() => {
                 const translationInfo = getTranslationInfo(currentQuestion.word.id, currentQuestion.word.example);
+                const shouldShowTranslation =
+                  inQuizSettings.translationMode === "always"
+                  || (inQuizSettings.translationMode === "reveal" && showTranslation);
                 return (
                   <div className="mt-1 text-center">
-                    <button
-                      type="button"
-                      onClick={() => setShowTranslation(!showTranslation)}
-                      className="text-[10px] text-primary-500 hover:text-primary-600 underline transition-colors"
-                    >
-                      {showTranslation ? "和訳を隠す" : "和訳を表示"}
-                    </button>
-                    {showTranslation && translationInfo.sentenceJa && (
+                    {inQuizSettings.translationMode === "reveal" && (
+                      <button
+                        type="button"
+                        onClick={() => setShowTranslation(!showTranslation)}
+                        className="text-[10px] text-primary-500 hover:text-primary-600 underline transition-colors"
+                      >
+                        {showTranslation ? "和訳を隠す" : "和訳を表示"}
+                      </button>
+                    )}
+                    {shouldShowTranslation && translationInfo.sentenceJa && (
                       <p className="mt-0.5 text-[10px] text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/50 rounded-md p-1.5">
                         {translationInfo.sentenceJa}
                       </p>
@@ -487,26 +538,22 @@ export const QuizSession = ({
                     {isCorrect && combo >= 2 && (
                       <p className="text-[10px] text-accent-500 font-medium">+{10 + (combo > 2 ? 5 : 0)} XP</p>
                     )}
-                    {!isCorrect && (
-                      <div className="text-[10px] text-slate-600 dark:text-slate-300">
-                        <p className="truncate">
-                          正解: <span className="text-primary-600 dark:text-primary-400 font-bold">{currentQuestion.correctAnswer}</span>
-                          {currentQuestion.type !== "en-to-ja" && (
-                            <span className="text-slate-500 dark:text-slate-400 ml-1">({currentQuestion.word.meaning})</span>
-                          )}
-                        </p>
-                      </div>
-                    )}
+                    <div className="text-[10px] text-slate-600 dark:text-slate-300">
+                      <p className="truncate">
+                        正解: <span className="text-primary-600 dark:text-primary-400 font-bold">{currentQuestion.correctAnswer}</span>
+                        {currentQuestion.type !== "en-to-ja" && (
+                          <span className="text-slate-500 dark:text-slate-400 ml-1">({currentQuestion.word.meaning})</span>
+                        )}
+                      </p>
+                    </div>
                   </div>
-                  {!isCorrect && (
-                    <SpeakButton
-                      text={currentQuestion.word.example || currentQuestion.word.word}
-                      type={currentQuestion.word.example ? "sentence" : "word"}
-                      size="sm"
-                    />
-                  )}
+                  <SpeakButton
+                    text={currentQuestion.word.example || currentQuestion.word.word}
+                    type={currentQuestion.word.example ? "sentence" : "word"}
+                    size="sm"
+                  />
                 </div>
-                {!isCorrect && currentQuestion.word.example && (() => {
+                {currentQuestion.word.example && (() => {
                   const translationInfo = getTranslationInfo(currentQuestion.word.id, currentQuestion.word.example);
                   return (
                     <div className="mt-1 text-[10px] bg-white/70 dark:bg-slate-800/70 rounded p-1 border border-slate-200 dark:border-slate-700">
@@ -534,7 +581,8 @@ export const QuizSession = ({
           onClick={() => setShowSettings(false)}
         >
           <div
-            className="w-full bg-white dark:bg-slate-800 rounded-t-2xl p-4 pb-6 shadow-xl max-w-md mx-auto"
+            className="w-full bg-white dark:bg-slate-800 rounded-t-2xl p-4 shadow-xl max-w-md mx-auto"
+            style={{ marginBottom: "calc(var(--bottom-nav-height) + var(--safe-area-bottom))", paddingBottom: "1.5rem" }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* ヘッダー */}
@@ -567,33 +615,96 @@ export const QuizSession = ({
                 </p>
               </div>
 
-              {/* ヒント（英単語表示） */}
+              {/* ヒント（答えの英単語） */}
               <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">ヒント（英単語）</p>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">ヒント（答えの英単語）</p>
                 <SegmentGroup
                   options={HINT_MODE_OPTIONS}
                   value={inQuizSettings.hintMode}
                   onChange={(v) => setInQuizSettings((prev) => ({ ...prev, hintMode: v }))}
                 />
                 <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-                  {inQuizSettings.hintMode === "none" && "スピーキング問題でヒントを表示しない"}
+                  {inQuizSettings.hintMode === "none" && "スピーキング問題で答えの英単語を表示しない"}
                   {inQuizSettings.hintMode === "reveal" && "ボタンを押したときだけ答えの英単語を表示"}
-                  {inQuizSettings.hintMode === "always" && "常に答えの英単語を表示"}
+                  {inQuizSettings.hintMode === "always" && "常に答えの英単語を表示する（和訳とは別）"}
                 </p>
               </div>
 
-              {/* 音声 */}
+              {/* 例文和訳 */}
               <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声</p>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">例文の和訳</p>
                 <SegmentGroup
-                  options={AUDIO_MODE_OPTIONS}
-                  value={inQuizSettings.audioMode}
-                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, audioMode: v }))}
+                  options={TRANSLATION_MODE_OPTIONS}
+                  value={inQuizSettings.translationMode}
+                  onChange={(v) => {
+                    setShowTranslation(v === "always");
+                    setInQuizSettings((prev) => ({ ...prev, translationMode: v }));
+                  }}
                 />
                 <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-                  {inQuizSettings.audioMode === "off" && "音声ボタンを表示しない"}
-                  {inQuizSettings.audioMode === "button" && "🔊 US / UK ボタンを表示（手動再生）"}
-                  {inQuizSettings.audioMode === "auto" && "問題表示時に自動再生 + ボタン表示"}
+                  {inQuizSettings.translationMode === "none" && "例文の和訳を表示しない"}
+                  {inQuizSettings.translationMode === "reveal" && "ボタンを押したときだけ和訳を表示"}
+                  {inQuizSettings.translationMode === "always" && "常に和訳を表示する"}
+                </p>
+              </div>
+
+              {/* 音声（リーディング） */}
+              <div>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声（リーディング）</p>
+                <SegmentGroup
+                  options={AUDIO_MODE_OPTIONS}
+                  value={inQuizSettings.readingAudioMode}
+                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, readingAudioMode: v }))}
+                />
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
+                  {inQuizSettings.readingAudioMode === "off" && "US / UK ボタンを表示しない"}
+                  {inQuizSettings.readingAudioMode === "button" && "🔊 US / UK ボタンを表示（手動再生）"}
+                  {inQuizSettings.readingAudioMode === "auto" && "問題表示時に自動再生 + ボタン表示"}
+                </p>
+              </div>
+
+              {/* 音声（ライティング） */}
+              <div>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声（ライティング）</p>
+                <SegmentGroup
+                  options={AUDIO_MODE_OPTIONS}
+                  value={inQuizSettings.writingAudioMode}
+                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, writingAudioMode: v }))}
+                />
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
+                  {inQuizSettings.writingAudioMode === "off" && "書き取りの音声ボタンを表示しない"}
+                  {inQuizSettings.writingAudioMode === "button" && "🔊 ボタンを表示（手動再生）"}
+                  {inQuizSettings.writingAudioMode === "auto" && "問題表示時に自動再生 + ボタン表示"}
+                </p>
+              </div>
+
+              {/* 音声（スピーキング） */}
+              <div>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声（スピーキング）</p>
+                <SegmentGroup
+                  options={AUDIO_MODE_OPTIONS}
+                  value={inQuizSettings.speakingAudioMode}
+                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, speakingAudioMode: v }))}
+                />
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
+                  {inQuizSettings.speakingAudioMode === "off" && "US / UK ボタンを表示しない（推奨）"}
+                  {inQuizSettings.speakingAudioMode === "button" && "🔊 US / UK ボタンを表示（手動再生）"}
+                  {inQuizSettings.speakingAudioMode === "auto" && "問題表示時に自動再生 + ボタン表示"}
+                </p>
+              </div>
+
+              {/* 音声（リスニング） */}
+              <div>
+                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声（リスニング）</p>
+                <SegmentGroup
+                  options={AUDIO_MODE_OPTIONS}
+                  value={inQuizSettings.listeningAudioMode}
+                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, listeningAudioMode: v }))}
+                />
+                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
+                  {inQuizSettings.listeningAudioMode === "off" && "リスニングの音声を自動再生しない"}
+                  {inQuizSettings.listeningAudioMode === "button" && "🔊 ボタンで再生（自動再生なし）"}
+                  {inQuizSettings.listeningAudioMode === "auto" && "問題表示時に自動再生 + ボタン表示（推奨）"}
                 </p>
               </div>
 

@@ -3,6 +3,9 @@ export type SpeakingDifficulty = "strict" | "normal" | "easy";
 /** ヒント表示モード */
 export type HintMode = "none" | "reveal" | "always";
 
+/** 例文和訳表示モード */
+export type TranslationMode = "none" | "reveal" | "always";
+
 /** 音声モード: off=なし / button=ボタン表示 / auto=自動再生+ボタン */
 export type AudioMode = "off" | "button" | "auto";
 
@@ -12,7 +15,11 @@ export type AutoAdvanceMode = "off" | "timed" | "instant";
 export type InQuizSettings = {
   speakingDifficulty: SpeakingDifficulty;
   hintMode: HintMode;           // スピーキング問題のヒント表示モード
-  audioMode: AudioMode;         // 音声再生モード
+  translationMode: TranslationMode; // 例文和訳の表示モード
+  readingAudioMode: AudioMode;  // 音声再生モード（リーディング）
+  writingAudioMode: AudioMode;  // 音声再生モード（ライティング）
+  speakingAudioMode: AudioMode; // 音声再生モード（スピーキング）
+  listeningAudioMode: AudioMode; // 音声再生モード（リスニング）
   autoAdvanceMode: AutoAdvanceMode;
   autoAdvanceMs: number;        // timedモード時の遅延（ms）
 };
@@ -20,7 +27,11 @@ export type InQuizSettings = {
 export const defaultInQuizSettings: InQuizSettings = {
   speakingDifficulty: "normal",
   hintMode: "none",
-  audioMode: "auto",
+  translationMode: "always",
+  readingAudioMode: "button",
+  writingAudioMode: "button",
+  speakingAudioMode: "off",
+  listeningAudioMode: "auto",
   autoAdvanceMode: "off",
   autoAdvanceMs: 1500,
 };
@@ -44,12 +55,47 @@ export function loadInQuizSettings(): InQuizSettings {
       hintMode = p.showHint ? "always" : "none"; // 旧フォーマット移行
     }
 
-    // audioMode: autoPlay(boolean) からの移行も考慮
-    let audioMode: AudioMode = defaultInQuizSettings.audioMode;
+    // audioMode: autoPlay(boolean) からの移行も考慮（旧フォーマット）
+    let legacyAudioMode: AudioMode | null = null;
     if (p.audioMode === "off" || p.audioMode === "button" || p.audioMode === "auto") {
-      audioMode = p.audioMode;
+      legacyAudioMode = p.audioMode;
     } else if (typeof p.autoPlay === "boolean") {
-      audioMode = p.autoPlay ? "auto" : "off"; // 旧フォーマット移行
+      legacyAudioMode = p.autoPlay ? "auto" : "off"; // 旧フォーマット移行
+    }
+
+    let readingAudioMode: AudioMode = defaultInQuizSettings.readingAudioMode;
+    if (p.readingAudioMode === "off" || p.readingAudioMode === "button" || p.readingAudioMode === "auto") {
+      readingAudioMode = p.readingAudioMode;
+    } else if (legacyAudioMode) {
+      readingAudioMode = legacyAudioMode;
+    }
+
+    let writingAudioMode: AudioMode = defaultInQuizSettings.writingAudioMode;
+    if (p.writingAudioMode === "off" || p.writingAudioMode === "button" || p.writingAudioMode === "auto") {
+      writingAudioMode = p.writingAudioMode;
+    } else if (legacyAudioMode) {
+      writingAudioMode = legacyAudioMode;
+    }
+
+    let speakingAudioMode: AudioMode = defaultInQuizSettings.speakingAudioMode;
+    if (p.speakingAudioMode === "off" || p.speakingAudioMode === "button" || p.speakingAudioMode === "auto") {
+      speakingAudioMode = p.speakingAudioMode;
+    }
+
+    // listeningAudioMode: 旧フォーマットからの移行（未設定はデフォルトでON）
+    let listeningAudioMode: AudioMode = defaultInQuizSettings.listeningAudioMode;
+    if (p.listeningAudioMode === "off" || p.listeningAudioMode === "button" || p.listeningAudioMode === "auto") {
+      listeningAudioMode = p.listeningAudioMode;
+    } else if (legacyAudioMode === "auto") {
+      listeningAudioMode = "auto";
+    }
+
+    // translationMode: showTranslation(boolean) からの移行も考慮
+    let translationMode: TranslationMode = defaultInQuizSettings.translationMode;
+    if (p.translationMode === "none" || p.translationMode === "reveal" || p.translationMode === "always") {
+      translationMode = p.translationMode;
+    } else if (typeof p.showTranslation === "boolean") {
+      translationMode = p.showTranslation ? "always" : "none";
     }
 
     // autoAdvanceMode: autoAdvanceMs(number) からの移行も考慮
@@ -73,7 +119,11 @@ export function loadInQuizSettings(): InQuizSettings {
           ? p.speakingDifficulty
           : "normal",
       hintMode,
-      audioMode,
+      translationMode,
+      readingAudioMode,
+      writingAudioMode,
+      speakingAudioMode,
+      listeningAudioMode,
       autoAdvanceMode,
       autoAdvanceMs,
     };

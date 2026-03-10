@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import Link from "next/link";
 import { Button, SpeakButton } from "@/components/ui";
 import { Question, Achievement } from "@/types";
@@ -57,6 +57,13 @@ export const QuizResult = ({
   onHome,
   handleAchievementClose,
 }: QuizResultProps) => {
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+    window.sessionStorage.setItem("quiz-show-result", "1");
+    return () => {
+      window.sessionStorage.removeItem("quiz-show-result");
+    };
+  }, []);
   const totalQuestions = answeredWords.length || questions.length;
   const percentage = Math.round((score / totalQuestions) * 100);
   const sameQuestionIds = answeredWords.map((w) => w.id);
@@ -79,6 +86,15 @@ export const QuizResult = ({
     ? getStreakMilestone(sessionResult.streak, sessionResult.previousStreak)
     : null;
   const streakMilestoneMessage = streakMilestone ? getStreakMilestoneMessage(streakMilestone) : null;
+  const formatElapsedTime = (seconds: number) => {
+    const totalSeconds = Math.max(0, Math.round(seconds));
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const secs = totalSeconds % 60;
+    if (hours > 0) return `${hours}時間${minutes}分${secs}秒`;
+    if (minutes > 0) return `${minutes}分${secs}秒`;
+    return `${secs}秒`;
+  };
 
   // 解除された実績を取得
   const newAchievements = sessionResult
@@ -130,7 +146,9 @@ export const QuizResult = ({
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 text-xs">正答率 {percentage}%</p>
                 {elapsedSeconds > 0 && (
-                  <p className="text-slate-500 dark:text-slate-400 text-[11px] mt-0.5">解答時間 {elapsedSeconds}秒</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-[11px] mt-0.5">
+                    解答時間 {formatElapsedTime(elapsedSeconds)}
+                  </p>
                 )}
               </div>
               {maxCombo >= 3 && (
