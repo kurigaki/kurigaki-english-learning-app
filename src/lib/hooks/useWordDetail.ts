@@ -94,7 +94,7 @@ export const useWordDetail = () => {
         router.push("/word-list");
         break;
       case "bookmarks":
-        router.push("/bookmarks");
+        router.push("/word-list/all");
         break;
       default:
         router.back();

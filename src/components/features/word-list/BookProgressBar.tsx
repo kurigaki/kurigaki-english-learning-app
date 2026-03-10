@@ -33,11 +33,11 @@ type Props = {
 };
 
 const SEGMENTS: { key: keyof ProgressCounts; color: string; label: string }[] = [
-  { key: "remembered", color: "bg-emerald-500", label: "習得" },
-  { key: "almost",     color: "bg-blue-400",    label: "ほぼ" },
-  { key: "vague",      color: "bg-amber-400",   label: "うろ覚え" },
-  { key: "weak",       color: "bg-red-400",     label: "苦手" },
-  { key: "unlearned",  color: "bg-slate-300 dark:bg-slate-600", label: "未学習" },
+  { key: "remembered", color: "bg-emerald-500", label: "覚えた単語" },
+  { key: "almost",     color: "bg-blue-400",    label: "ほぼ覚えた単語" },
+  { key: "vague",      color: "bg-amber-400",   label: "うろ覚え単語" },
+  { key: "weak",       color: "bg-red-400",     label: "苦手単語" },
+  { key: "unlearned",  color: "bg-slate-300 dark:bg-slate-600", label: "未学習単語" },
 ];
 
 export default function BookProgressBar({ words, statsMap, manualMap }: Props) {
@@ -48,7 +48,7 @@ export default function BookProgressBar({ words, statsMap, manualMap }: Props) {
   const masteredCount = progress.remembered;
 
   return (
-    <div className="px-4 py-3 bg-white dark:bg-slate-800 border-b border-slate-100 dark:border-slate-700">
+    <div className="px-4 py-3">
       {/* セグメント棒グラフ */}
       <div className="flex h-2 rounded-full overflow-hidden gap-px bg-slate-200 dark:bg-slate-700">
         {SEGMENTS.map(({ key, color }) => {

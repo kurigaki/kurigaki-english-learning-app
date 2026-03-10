@@ -3,19 +3,25 @@ import { SpeakButton } from "@/components/ui";
 import { categoryLabels, type Word } from "@/data/words/compat";
 import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
+import { getAccuracyBadgeClass } from "@/lib/accuracy-style";
+import { getMasteryBadgeClass } from "@/lib/mastery-style";
 
 type DailyWordItemProps = {
   word: Word;
+  allWordIds: number[];
+  startIndex: number;
   isBookmarked: boolean;
   stats?: WordStats;
   displayedMastery: ManualMasteryLevel;
   onToggleBookmark: (wordId: number, e: React.MouseEvent) => void;
-  onStartFlashcard: (wordId: number, e: React.MouseEvent) => void;
+  onStartFlashcard: (wordIds: number[], startIndex: number, e?: React.MouseEvent) => void;
   onMasteryChange: (wordId: number, mastery: ManualMasteryLevel) => void;
 };
 
 export const DailyWordItem = ({
   word,
+  allWordIds,
+  startIndex,
   isBookmarked,
   stats,
   displayedMastery,
@@ -51,7 +57,7 @@ export const DailyWordItem = ({
         </svg>
       </button>
       <button
-        onClick={(e) => onStartFlashcard(word.id, e)}
+        onClick={(e) => onStartFlashcard(allWordIds, startIndex, e)}
         className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
         title="この単語からフラッシュカード開始"
       >
@@ -81,7 +87,7 @@ export const DailyWordItem = ({
       </Link>
       <div className="w-[170px] flex-shrink-0">
         <div className="flex items-center gap-1 justify-end">
-          <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+          <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(stats?.accuracy)}`}>
             正答率 {stats?.accuracy !== undefined && stats?.accuracy !== null
               ? `${stats.accuracy}%`
               : "-"}
@@ -89,7 +95,7 @@ export const DailyWordItem = ({
           <select
             value={displayedMastery}
             onChange={(e) => onMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
-            className="text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+            className={`text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(displayedMastery)}`}
           >
             {MANUAL_MASTERY_OPTIONS_ORDERED
               .filter((opt) => (stats?.totalAttempts ?? 0) === 0 || opt.key !== "unlearned")

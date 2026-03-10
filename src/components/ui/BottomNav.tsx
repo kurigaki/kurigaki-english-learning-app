@@ -18,6 +18,9 @@ export const BottomNav = () => {
     if (href === "/") {
       return pathname === "/";
     }
+    if (href === "/word-list") {
+      return pathname === "/word-list" || pathname.startsWith("/word-list/");
+    }
     return pathname === href || pathname.startsWith(href + "/");
   };
 

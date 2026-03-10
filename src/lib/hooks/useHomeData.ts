@@ -90,11 +90,14 @@ export const useHomeData = () => {
     ));
   }, []);
 
-  const startFlashcard = useCallback((wordId: number, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    saveQuickFlashcardSession([wordId]);
-    router.push("/word-list");
+  const startFlashcard = useCallback((wordIds: number[], startIndex = 0, e?: React.MouseEvent) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (wordIds.length === 0) return;
+    saveQuickFlashcardSession(wordIds, startIndex);
+    router.push("/flashcard");
   }, [router]);
 
   return {

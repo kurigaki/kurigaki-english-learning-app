@@ -5,6 +5,8 @@ import { Question, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
 import type { ManualMasteryLevel, WordStats } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED, getDisplayedManualMastery } from "@/lib/manual-mastery";
+import { getAccuracyBadgeClass } from "@/lib/accuracy-style";
+import { getMasteryBadgeClass } from "@/lib/mastery-style";
 import { AchievementUnlockPopup } from "@/components/features/achievements/AchievementUnlockPopup";
 import { PerfectScorePopup } from "./PerfectScorePopup";
 import { AnsweredWord, SessionResult } from "@/lib/quiz-session";
@@ -244,7 +246,7 @@ export const QuizResult = ({
                     </Link>
                     <div className="w-[140px] flex-shrink-0">
                       <div className="flex items-center gap-1">
-                        <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
+                        <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(wordStatsById.get(word.id)?.accuracy)}`}>
                           正答率 {wordStatsById.get(word.id)?.accuracy !== null && wordStatsById.get(word.id)?.accuracy !== undefined
                             ? `${wordStatsById.get(word.id)?.accuracy}%`
                             : "-"}
@@ -254,7 +256,7 @@ export const QuizResult = ({
                         onChange={(e) =>
                           handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel)
                         }
-                        className="w-full min-w-0 text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                        className={`w-full min-w-0 text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(getDisplayedManualMastery(word.id, wordStatsById, manualMasteryById))}`}
                       >
                         {MANUAL_MASTERY_OPTIONS_ORDERED
                           .filter((opt) => (wordStatsById.get(word.id)?.totalAttempts ?? 0) === 0 || opt.key !== "unlearned")

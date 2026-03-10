@@ -32,7 +32,9 @@ export const Header = () => {
               {primaryNavItems.map((item) => {
                 const isActive = item.href === "/"
                   ? pathname === "/"
-                  : pathname === item.href || pathname.startsWith(item.href + "/");
+                  : item.href === "/word-list"
+                    ? pathname === "/word-list" || pathname.startsWith("/word-list/")
+                    : pathname === item.href || pathname.startsWith(item.href + "/");
                 return (
                   <Link
                     key={item.href}

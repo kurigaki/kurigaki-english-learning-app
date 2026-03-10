@@ -1,21 +1,24 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Course, Stage } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { words, categoryLabels, Category, getWordsByCourse } from "@/data/words/compat";
 import { unifiedStorage } from "@/lib/unified-storage";
+import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
 import { Card, SpeakButton } from "@/components/ui";
 import { getMasteryLevel } from "@/types";
 import type { MasteryLevel, WordListSortOption } from "@/types";
 import type { ManualMasteryLevel } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
-import FlashcardView from "@/components/features/word-list/FlashcardView";
+import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
+import { getAccuracyBadgeClass } from "@/lib/accuracy-style";
+import { getMasteryBadgeClass } from "@/lib/mastery-style";
 import {
   type WordListAccuracyFilter,
-  saveFlashcardSession, getFlashcardSession, clearFlashcardSession,
+  saveQuickFlashcardSession,
   saveWordListFilter, getWordListFilter, clearWordListFilter,
 } from "@/lib/flashcard-session";
 import { saveWordNavState } from "@/lib/word-nav-state";
@@ -55,11 +58,11 @@ const MASTERY_ORDER: Record<string, number> = { unlearned: 0, weak: 1, vague: 2,
 
 const memoryFilterOptions: { key: ManualMasteryLevel | "all"; label: string }[] = [
   { key: "all", label: "全て" },
-  { key: "remembered", label: "覚えた" },
-  { key: "almost", label: "ほぼ覚えた" },
-  { key: "vague", label: "うろ覚え" },
-  { key: "weak", label: "苦手" },
-  { key: "unlearned", label: "未学習" },
+  { key: "remembered", label: "覚えた単語" },
+  { key: "almost", label: "ほぼ覚えた単語" },
+  { key: "vague", label: "うろ覚え単語" },
+  { key: "weak", label: "苦手単語" },
+  { key: "unlearned", label: "未学習単語" },
 ];
 
 const accuracyFilterOptions: { key: WordListAccuracyFilter; label: string }[] = [
@@ -94,6 +97,7 @@ const mapLegacyMasteryToMemory = (legacy: MasteryLevel | "all"): ManualMasteryLe
 };
 
 export default function WordListPage() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const initialMastery = (searchParams.get("mastery") as MasteryLevel | null) ?? "all";
   const initialCourse = (searchParams.get("course") as Course | null);
@@ -113,40 +117,15 @@ export default function WordListPage() {
   const [sortOption, setSortOption] = useState<SortOption>("default");
   const [wordsWithStats, setWordsWithStats] = useState<WordWithStats[]>([]);
   const [manualMasteryById, setManualMasteryById] = useState<Record<number, ManualMasteryLevel>>({});
+  const [myBooks, setMyBooks] = useState<MyVocabBook[]>([]);
+  const [bookmarkDialog, setBookmarkDialog] = useState<{ wordId: number; wordText: string } | null>(null);
   const [isMounted, setIsMounted] = useState(false);
-  const [isFlashcardMode, setIsFlashcardMode] = useState(false);
-  const [flashcardInitialIndex, setFlashcardInitialIndex] = useState(0);
-  const [flashcardWordIds, setFlashcardWordIds] = useState<number[] | null>(null);
   // スクロール位置の保存・復元用
   const listScrollRef = useRef<HTMLDivElement>(null);
   const pendingScrollTopRef = useRef<number | null>(null);
-  // フラッシュカードから戻った際のスクロール対象単語ID
-  const pendingScrollWordIdRef = useRef<number | null>(null);
 
   // フラッシュカード・リストモード共通: 詳細画面から戻った際にフィルター状態を復元
   useEffect(() => {
-    // フラッシュカードセッションを優先確認
-    const flashcardSession = getFlashcardSession();
-    if (flashcardSession) {
-      clearFlashcardSession();
-      setIsFlashcardMode(true);
-      setFlashcardInitialIndex(flashcardSession.currentIndex);
-      setFlashcardWordIds(flashcardSession.flashcardWordIds ?? null);
-      setSelectedCourse(flashcardSession.selectedCourse);
-      setSelectedStage(flashcardSession.selectedStage);
-      setSelectedCategory(flashcardSession.selectedCategory);
-      setSelectedDifficulty(flashcardSession.selectedDifficulty);
-      setSelectedMemory(
-        flashcardSession.selectedMemory ??
-        mapLegacyMasteryToMemory(flashcardSession.selectedMastery ?? "all")
-      );
-      setSelectedAccuracy(flashcardSession.selectedAccuracy ?? "all");
-      setSearchQuery(flashcardSession.searchQuery);
-      setShowBookmarksOnly(flashcardSession.showBookmarksOnly);
-      setSortOption(flashcardSession.sortOption);
-      return;
-    }
-
     // リストモードのフィルターセッションを確認
     const filterSession = getWordListFilter();
     if (!filterSession) return;
@@ -173,11 +152,12 @@ export default function WordListPage() {
   useEffect(() => {
     setIsMounted(true);
     const loadData = async () => {
-      const [statsMap, bookmarkedIds, manualMap] = await Promise.all([
+      const [statsMap, manualMap] = await Promise.all([
         unifiedStorage.getWordStats(),
-        unifiedStorage.getBookmarkedWordIds(),
         unifiedStorage.getManualMasteryMap(),
       ]);
+      const books = vocabularyBooks.getMyVocabBooks();
+      const bookmarkedSet = new Set(books.flatMap((b) => b.wordIds));
 
       const enrichedWords: WordWithStats[] = words.map((word) => {
         const stats = statsMap.get(word.id);
@@ -194,7 +174,7 @@ export default function WordListPage() {
           mastery: getMasteryLevel(accuracy, attempts),
           accuracy,
           attempts,
-          isBookmarked: bookmarkedIds.includes(word.id),
+          isBookmarked: bookmarkedSet.has(word.id),
           example: word.example,
           exampleJa: word.exampleJa,
         };
@@ -202,6 +182,7 @@ export default function WordListPage() {
 
       setWordsWithStats(enrichedWords);
       setManualMasteryById(manualMap);
+      setMyBooks(books);
     };
     loadData();
   }, []);
@@ -253,27 +234,29 @@ export default function WordListPage() {
     listScrollRef.current.scrollTop = scrollTo;
   }, [wordsWithStats]);
 
-  // フラッシュカードから戻った際、該当単語の位置にスクロール
-  useEffect(() => {
-    if (isFlashcardMode || pendingScrollWordIdRef.current === null) return;
-    const wordId = pendingScrollWordIdRef.current;
-    pendingScrollWordIdRef.current = null;
-    requestAnimationFrame(() => {
-      document.getElementById(`word-item-${wordId}`)?.scrollIntoView({ block: "center" });
-    });
-  }, [isFlashcardMode]);
-
-  // Toggle bookmark for a word
-  const toggleBookmark = useCallback(async (wordId: number, e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    const newIsBookmarked = await unifiedStorage.toggleBookmark(wordId);
+  const refreshMyBooks = useCallback(() => {
+    const books = vocabularyBooks.getMyVocabBooks();
+    setMyBooks(books);
+    const bookmarkedSet = new Set(books.flatMap((b) => b.wordIds));
     setWordsWithStats((prev) =>
-      prev.map((w) =>
-        w.id === wordId ? { ...w, isBookmarked: newIsBookmarked } : w
-      )
+      prev.map((w) => ({ ...w, isBookmarked: bookmarkedSet.has(w.id) }))
     );
   }, []);
+
+  const handleBookmarkToggle = useCallback((bookIdParam: string, wordId: number) => {
+    vocabularyBooks.toggleWordInBook(bookIdParam, wordId);
+    refreshMyBooks();
+  }, [refreshMyBooks]);
+
+  const handleCreateBook = useCallback((name: string) => {
+    vocabularyBooks.createMyVocabBook(name);
+    refreshMyBooks();
+  }, [refreshMyBooks]);
+
+  const getRegisteredBookIds = useCallback(
+    (wordId: number) => vocabularyBooks.getBooksForWord(wordId),
+    []
+  );
 
   // Course word IDs (shared between filteredWords and stats)
   const courseWordIds = useMemo(() => {
@@ -370,13 +353,38 @@ export default function WordListPage() {
     [filteredWords]
   );
 
-  const flashcardWords = useMemo(() => {
-    if (!flashcardWordIds || flashcardWordIds.length === 0) return filteredWords;
-    const byId = new Map(wordsWithStats.map((w) => [w.id, w]));
-    return flashcardWordIds
-      .map((id) => byId.get(id))
-      .filter((w): w is WordWithStats => Boolean(w));
-  }, [flashcardWordIds, wordsWithStats, filteredWords]);
+  const handleStartFlashcardAt = useCallback((startWordId?: number) => {
+    const wordIds = filteredWords.map((w) => w.id);
+    if (wordIds.length === 0) return;
+    const startIndex = startWordId ? (wordIndexMap.get(startWordId) ?? 0) : 0;
+    saveWordListFilter({
+      selectedCourse,
+      selectedStage,
+      selectedCategory,
+      selectedDifficulty,
+      selectedMemory,
+      selectedAccuracy,
+      searchQuery,
+      showBookmarksOnly,
+      sortOption,
+      scrollTop: listScrollRef.current?.scrollTop ?? 0,
+    });
+    saveQuickFlashcardSession(wordIds, startIndex);
+    router.push("/flashcard");
+  }, [
+    filteredWords,
+    wordIndexMap,
+    selectedCourse,
+    selectedStage,
+    selectedCategory,
+    selectedDifficulty,
+    selectedMemory,
+    selectedAccuracy,
+    searchQuery,
+    showBookmarksOnly,
+    sortOption,
+    router,
+  ]);
 
   // Group words by category
   const groupedWords = useMemo(() => {
@@ -437,7 +445,7 @@ export default function WordListPage() {
 
   return (
     <div className="main-content px-3 py-2 flex flex-col">
-      <div className="max-w-2xl w-full mx-auto flex flex-col h-full">
+      <div className="max-w-4xl w-full mx-auto flex flex-col h-full">
         {/* 上部固定: ヘッダー */}
         <div className="flex-shrink-0 flex items-center gap-2 mb-1.5">
           <Link
@@ -451,7 +459,7 @@ export default function WordListPage() {
           <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex-1">単語帳</h1>
           {isMounted && filteredWords.length > 0 && (
             <button
-              onClick={() => setIsFlashcardMode(true)}
+              onClick={() => handleStartFlashcardAt()}
               className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300 text-xs font-medium hover:bg-primary-200 dark:hover:bg-primary-800/40 transition-colors flex-shrink-0"
             >
               <span className="emoji-icon">🃏</span>
@@ -706,179 +714,156 @@ export default function WordListPage() {
           </p>
         </div>
 
-        {/* フラッシュカードモード or リストモード */}
-        {isFlashcardMode ? (
-          <div className="flex-1 min-h-0">
-            <FlashcardView
-              words={flashcardWords}
-              initialIndex={flashcardInitialIndex}
-              onExit={(currentWordId) => {
-                if (currentWordId !== undefined) {
-                  pendingScrollWordIdRef.current = currentWordId;
-                }
-                setIsFlashcardMode(false);
-                setFlashcardInitialIndex(0);
-                setFlashcardWordIds(null);
-              }}
-              onDetailView={(index) => {
-                saveFlashcardSession({
-                  currentIndex: index,
-                  selectedCourse,
-                  selectedStage,
-                  selectedCategory,
-                  selectedDifficulty,
-                  selectedMemory,
-                  selectedAccuracy,
-                  searchQuery,
-                  showBookmarksOnly,
-                  sortOption,
-                });
-              }}
-            />
-          </div>
-        ) : (
-          <>
-            {/* 中央スクロール: Word List */}
-            {isMounted && (
-              <div ref={listScrollRef} className="flex-1 overflow-y-auto min-h-0 space-y-4">
-                {Object.entries(groupedWords).map(([category, categoryWords]) => (
-                  <div key={category}>
-                    {selectedCategory === "all" && selectedCourse === null && (
-                      <h2 className="text-sm font-bold text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-primary-400" />
-                        {categoryLabelMap[category as Category]} ({categoryWords.length})
-                      </h2>
-                    )}
-                    <Card className="divide-y divide-slate-100 dark:divide-slate-700">
-                      {categoryWords.map((word) => (
-                        <div
-                          id={`word-item-${word.id}`}
-                          key={word.id}
-                          className="flex items-center gap-2 p-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-xl last:rounded-b-xl"
-                        >
-                          <div className="flex items-center gap-2 flex-1 min-w-0">
-                            <SpeakButton text={word.word} size="sm" />
-                            <button
-                              onClick={(e) => toggleBookmark(word.id, e)}
-                              className={`p-1.5 rounded-lg transition-colors ${
-                                word.isBookmarked
-                                  ? "text-yellow-500 hover:text-yellow-600"
-                                  : "text-slate-300 hover:text-yellow-400"
-                              }`}
-                              title={word.isBookmarked ? "ブックマーク解除" : "ブックマークに追加"}
-                            >
-                              <svg
-                                className="w-4 h-4"
-                                fill={word.isBookmarked ? "currentColor" : "none"}
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
-                                />
-                              </svg>
-                            </button>
-                            <button
-                              onClick={() => {
-                                const index = wordIndexMap.get(word.id) ?? 0;
-                                setFlashcardInitialIndex(index);
-                                setIsFlashcardMode(true);
-                              }}
-                              className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
-                              title="この単語からフラッシュカード開始"
-                            >
-                              <span className="text-xs emoji-icon">🃏</span>
-                            </button>
-                            <Link
-                              href={`/word/${word.id}?from=wordlist`}
-                              onClick={() => {
-                                saveWordListFilter({
-                                  selectedCourse,
-                                  selectedStage,
-                                  selectedCategory,
-                                  selectedDifficulty,
-                                  selectedMemory,
-                                  selectedAccuracy,
-                                  searchQuery,
-                                  showBookmarksOnly,
-                                  sortOption,
-                                  scrollTop: listScrollRef.current?.scrollTop ?? 0,
-                                });
-                                saveWordNavState(filteredWords.map((w) => w.id), "wordlist");
-                              }}
-                              className="flex items-center justify-between flex-1 min-w-0 group/link"
-                            >
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-2 flex-wrap">
-                                  <p className="font-bold text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 transition-colors truncate">
-                                    {word.word}
-                                  </p>
-                                </div>
-                                <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
-                              </div>
-                              <div className="text-slate-400 dark:text-slate-500 group-hover/link:text-primary-500 group-hover/link:translate-x-1 transition-all">
-                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                </svg>
-                              </div>
-                            </Link>
-                          </div>
-                          <div className="w-[170px] flex-shrink-0">
-                            <div className="flex items-center gap-1 justify-end">
-                              <span className="text-[10px] px-1 py-0.5 rounded bg-white/80 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 whitespace-nowrap">
-                                正答率 {word.accuracy !== null ? `${word.accuracy}%` : "-"}
-                              </span>
-                              <select
-                                value={getDisplayedManualMastery(word)}
-                                onChange={(e) => {
-                                  handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel);
-                                }}
-                                className="text-[10px] px-1.5 py-1 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-primary-400"
-                              >
-                                {MANUAL_MASTERY_OPTIONS_ORDERED
-                                  .filter((opt) => word.attempts === 0 || opt.key !== "unlearned")
-                                  .map((opt) => (
-                                  <option key={`${word.id}-${opt.key}`} value={opt.key}>
-                                    {opt.label}
-                                  </option>
-                                ))}
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </Card>
-                  </div>
-                ))}
-
-                {filteredWords.length === 0 && (
-                  <Card className="text-center py-8">
-                    <span className="text-4xl mb-3 block emoji-icon">🔍</span>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">該当する単語が見つかりません</p>
-                    <button
-                      onClick={() => {
-                        setSearchQuery("");
-                        setSelectedCourse(null);
-                        setSelectedStage(null);
-                        setSelectedCategory("all");
-                        setSelectedDifficulty("all");
-                        setShowBookmarksOnly(false);
-                        setSelectedMemory("all");
-                        setSelectedAccuracy("all");
-                        setSortOption("default");
-                      }}
-                      className="mt-3 text-sm text-primary-500 hover:underline"
-                    >
-                      フィルタをクリア
-                    </button>
-                  </Card>
+        {/* 中央スクロール: Word List */}
+        {isMounted && (
+          <div ref={listScrollRef} className="flex-1 overflow-y-auto min-h-0 space-y-4">
+            {Object.entries(groupedWords).map(([category, categoryWords]) => (
+              <div key={category}>
+                {selectedCategory === "all" && selectedCourse === null && (
+                  <h2 className="text-sm font-bold text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-primary-400" />
+                    {categoryLabelMap[category as Category]} ({categoryWords.length})
+                  </h2>
                 )}
+                <Card className="divide-y divide-slate-100 dark:divide-slate-700">
+                  {categoryWords.map((word) => (
+                    <div
+                      id={`word-item-${word.id}`}
+                      key={word.id}
+                      className="flex items-center gap-2 p-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors group first:rounded-t-xl last:rounded-b-xl"
+                    >
+                      <div className="flex items-center gap-2 flex-1 min-w-0">
+                        <SpeakButton text={word.word} size="sm" />
+                        <button
+                          onClick={() => {
+                            refreshMyBooks();
+                            setBookmarkDialog({ wordId: word.id, wordText: word.word });
+                          }}
+                          className={`p-1.5 rounded-lg transition-colors ${
+                            word.isBookmarked
+                              ? "text-yellow-500 hover:text-yellow-600"
+                              : "text-slate-300 hover:text-yellow-400"
+                          }`}
+                          title="単語帳に追加"
+                        >
+                          <svg
+                            className="w-4 h-4"
+                            fill={word.isBookmarked ? "currentColor" : "none"}
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"
+                            />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={() => handleStartFlashcardAt(word.id)}
+                          className="p-1.5 rounded-lg text-slate-300 hover:text-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors flex-shrink-0"
+                          title="この単語からフラッシュカード開始"
+                        >
+                          <span className="text-xs emoji-icon">🃏</span>
+                        </button>
+                        <Link
+                          href={`/word/${word.id}?from=wordlist`}
+                          onClick={() => {
+                            saveWordListFilter({
+                              selectedCourse,
+                              selectedStage,
+                              selectedCategory,
+                              selectedDifficulty,
+                              selectedMemory,
+                              selectedAccuracy,
+                              searchQuery,
+                              showBookmarksOnly,
+                              sortOption,
+                              scrollTop: listScrollRef.current?.scrollTop ?? 0,
+                            });
+                            saveWordNavState(filteredWords.map((w) => w.id), "wordlist");
+                          }}
+                          className="flex items-center justify-between flex-1 min-w-0 group/link"
+                        >
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <p className="font-bold text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 transition-colors truncate">
+                                {word.word}
+                              </p>
+                            </div>
+                            <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+                          </div>
+                          <div className="text-slate-400 dark:text-slate-500 group-hover/link:text-primary-500 group-hover/link:translate-x-1 transition-all">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </Link>
+                      </div>
+                      <div className="w-[170px] flex-shrink-0">
+                        <div className="flex items-center gap-1 justify-end">
+                          <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(word.accuracy)}`}>
+                            正答率 {word.accuracy !== null ? `${word.accuracy}%` : "-"}
+                          </span>
+                          <select
+                            value={getDisplayedManualMastery(word)}
+                            onChange={(e) => {
+                              handleManualMasteryChange(word.id, e.target.value as ManualMasteryLevel);
+                            }}
+                            className={`text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(getDisplayedManualMastery(word))}`}
+                          >
+                            {MANUAL_MASTERY_OPTIONS_ORDERED
+                              .filter((opt) => word.attempts === 0 || opt.key !== "unlearned")
+                              .map((opt) => (
+                              <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                                {opt.label}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </Card>
               </div>
+            ))}
+
+            {filteredWords.length === 0 && (
+              <Card className="text-center py-8">
+                <span className="text-4xl mb-3 block emoji-icon">🔍</span>
+                <p className="text-slate-500 dark:text-slate-400 text-sm">該当する単語が見つかりません</p>
+                <button
+                  onClick={() => {
+                    setSearchQuery("");
+                    setSelectedCourse(null);
+                    setSelectedStage(null);
+                    setSelectedCategory("all");
+                    setSelectedDifficulty("all");
+                    setShowBookmarksOnly(false);
+                    setSelectedMemory("all");
+                    setSelectedAccuracy("all");
+                    setSortOption("default");
+                  }}
+                  className="mt-3 text-sm text-primary-500 hover:underline"
+                >
+                  フィルタをクリア
+                </button>
+              </Card>
             )}
-          </>
+          </div>
+        )}
+
+        {bookmarkDialog && (
+          <BookmarkSelectDialog
+            wordId={bookmarkDialog.wordId}
+            wordText={bookmarkDialog.wordText}
+            books={myBooks}
+            registeredBookIds={getRegisteredBookIds(bookmarkDialog.wordId)}
+            onToggle={handleBookmarkToggle}
+            onCreateBook={handleCreateBook}
+            onClose={() => setBookmarkDialog(null)}
+          />
         )}
       </div>
     </div>
