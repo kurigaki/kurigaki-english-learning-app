@@ -23,6 +23,7 @@ export const useHomeData = () => {
   const [userProgress, setUserProgress] = useState<UserProgress | null>(null);
   const [weakWordCount, setWeakWordCount] = useState(0);
   const [srsReviewCount, setSrsReviewCount] = useState(0);
+  const [studiedWordCount, setStudiedWordCount] = useState(0);
   const [dailyWords, setDailyWords] = useState<Word[]>([]);
   const [wordStatsMap, setWordStatsMap] = useState<Map<number, WordStats>>(new Map());
   const [manualMemoryById, setManualMemoryById] = useState<Record<number, ManualMasteryLevel>>({});
@@ -46,6 +47,7 @@ export const useHomeData = () => {
     setWordStatsMap(statsMap);
     setManualMemoryById(manualMap);
     setBookmarkedWordIds(bookmarkedIds);
+    setStudiedWordCount(statsMap.size);
     let weakCount = 0;
     statsMap.forEach((stats, wordId) => {
       if (isWeakWord(stats.accuracy, stats.totalAttempts) && words.some((w) => w.id === wordId)) {
@@ -105,6 +107,7 @@ export const useHomeData = () => {
     userProgress,
     weakWordCount,
     srsReviewCount,
+    studiedWordCount,
     dailyWords,
     wordStatsMap,
     bookmarkedWordIds,

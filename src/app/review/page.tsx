@@ -183,7 +183,11 @@ function ReviewPageContent() {
   }, [refreshMyBooks]);
 
   const handleCreateBook = useCallback((name: string) => {
-    vocabularyBooks.createMyVocabBook(name);
+    const created = vocabularyBooks.createMyVocabBook(name);
+    if (!created) {
+      alert(`My単語帳は最大${vocabularyBooks.getMyVocabBookLimit()}冊まで作成できます。`);
+      return;
+    }
     refreshMyBooks();
   }, [refreshMyBooks]);
 
@@ -336,11 +340,15 @@ function ReviewPageContent() {
   // ===== 共通ヘッダー情報 =====
 
   const isSrs = mode === "srs";
-  const title = isSrs ? "今日の復習" : "苦手単語の復習";
+  const hasStudyData = wordStatsMap.size > 0;
+  const title = isSrs ? "SRS復習（忘却タイミング）" : "苦手単語の復習";
   const icon = isSrs ? "🧠" : "🔄";
   const emptyMessage = isSrs
-    ? "今日復習すべき単語はありません"
-    : "苦手な単語はありません";
+    ? (hasStudyData ? "SRS復習の対象はありません" : "まだ学習記録がありません")
+    : (hasStudyData ? "苦手な単語はありません" : "まだ学習記録がありません");
+  const description = isSrs
+    ? "SRSが記憶が薄れる頃合いで復習を促します。クイズ形式で復習し、間隔を更新しましょう。"
+    : "正答率が低い単語を集中的に復習します。";
 
   // ===== レンダリング =====
 
@@ -373,9 +381,7 @@ function ReviewPageContent() {
 
           {/* 説明文 */}
           <p className="flex-shrink-0 text-xs text-slate-500 dark:text-slate-400 mb-2">
-            {isSrs
-              ? "記憶を定着させるタイミングです。クイズ形式で復習し、SRS間隔を更新しましょう。"
-              : "正答率が低い単語です。クイズ形式で確認しましょう。"}
+            {description}
           </p>
 
           {/* 単語リスト */}
@@ -388,7 +394,7 @@ function ReviewPageContent() {
               </div>
             ) : reviewWords.length === 0 ? (
               <Card className="text-center py-10">
-                <p className="text-4xl mb-3 emoji-icon">{isSrs ? "✅" : "🎉"}</p>
+              <p className="text-4xl mb-3 emoji-icon">{hasStudyData ? (isSrs ? "✅" : "🎉") : "📘"}</p>
                 <p className="text-slate-600 dark:text-slate-300 font-medium">{emptyMessage}</p>
                 <Link href="/" className="mt-4 inline-block text-sm text-primary-500 hover:underline">
                   ホームに戻る
@@ -501,6 +507,8 @@ function ReviewPageContent() {
               onToggle={handleBookmarkToggle}
               onCreateBook={handleCreateBook}
               onClose={() => setBookmarkDialog(null)}
+              canCreate={vocabularyBooks.canCreateMyVocabBook()}
+              maxCount={vocabularyBooks.getMyVocabBookLimit()}
             />
           )}
 

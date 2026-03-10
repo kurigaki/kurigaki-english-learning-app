@@ -13,6 +13,7 @@ export default function Home() {
     userProgress,
     weakWordCount,
     srsReviewCount,
+    studiedWordCount,
     dailyWords,
     wordStatsMap,
     bookmarkedWordIds,
@@ -32,7 +33,13 @@ export default function Home() {
         <MainAction />
 
         {/* 3. SRS復習 / 苦手復習（常時表示） */}
-        {isMounted && <ReviewShortcuts srsReviewCount={srsReviewCount} weakWordCount={weakWordCount} />}
+        {isMounted && (
+          <ReviewShortcuts
+            srsReviewCount={srsReviewCount}
+            weakWordCount={weakWordCount}
+            studiedWordCount={studiedWordCount}
+          />
+        )}
 
         {/* 4. 今日の単語 */}
         {isMounted && (

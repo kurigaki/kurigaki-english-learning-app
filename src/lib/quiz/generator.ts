@@ -90,7 +90,11 @@ function escapeRegex(str: string): string {
  */
 export function createFillBlankSentence(example: string, word: string): string {
   const regex = new RegExp(`\\b${escapeRegex(word)}\\b`, "gi");
-  return example.replace(regex, "_____");
+  return example.replace(regex, (match) => {
+    const wordCount = match.trim().split(/\s+/).filter(Boolean).length;
+    if (wordCount <= 1) return "_____";
+    return Array.from({ length: wordCount }, () => "_____").join(" ");
+  });
 }
 
 /**
