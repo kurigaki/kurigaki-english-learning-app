@@ -9,6 +9,7 @@ import { saveWordNavState } from "@/lib/word-nav-state";
 import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 import { LearningRecord, Achievement, isWeakWord } from "@/types";
 import { words, getWordsByCourse } from "@/data/words/compat";
+import { findWordId } from "@/lib/word-lookup";
 import type { Course } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { getAchievementById } from "@/data/achievements";

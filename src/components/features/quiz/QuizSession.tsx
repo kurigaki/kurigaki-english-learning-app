@@ -297,7 +297,7 @@ export const QuizSession = ({
                         autoCorrect="off"
                         autoCapitalize="none"
                         spellCheck={false}
-                        inputMode="latin"
+                        inputMode="text"
                         lang="en"
                       />
                     );
