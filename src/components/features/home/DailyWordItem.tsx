@@ -63,18 +63,45 @@ export const DailyWordItem = ({
       >
         <span className="text-xs emoji-icon">🃏</span>
       </button>
-      <Link href={`/word/${word.id}`} className="flex items-center gap-3 flex-1 min-w-0 group/link">
+      <Link href={`/word/${word.id}`} className="flex items-start gap-3 flex-1 min-w-0 group/link">
         <SpeakButton text={word.word} size="sm" />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
-            <p className="font-bold text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 dark:group-hover/link:text-primary-400 transition-colors">
+            <p className="font-bold text-base sm:text-sm text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 dark:group-hover/link:text-primary-400 transition-colors break-words">
               {word.word}
             </p>
-            <span className="text-[10px] text-slate-400 dark:text-slate-500">
-              {categoryLabels[word.category] ?? word.category}
-            </span>
           </div>
-          <p className="text-sm text-slate-500 dark:text-slate-400 truncate">{word.meaning}</p>
+          <p className="text-sm sm:text-xs text-slate-500 dark:text-slate-400 break-words">{word.meaning}</p>
+          <div
+            className="mt-1 flex items-center gap-1 sm:hidden"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+            onMouseDown={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+          >
+            <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(stats?.accuracy)}`}>
+              正答率 {stats?.accuracy !== undefined && stats?.accuracy !== null
+                ? `${stats.accuracy}%`
+                : "-"}
+            </span>
+            <select
+              value={displayedMastery}
+              onChange={(e) => onMasteryChange(word.id, e.target.value as ManualMasteryLevel)}
+              className={`text-[10px] px-1.5 py-1 rounded border focus:outline-none focus:ring-2 focus:ring-primary-400 ${getMasteryBadgeClass(displayedMastery)}`}
+            >
+              {MANUAL_MASTERY_OPTIONS_ORDERED
+                .filter((opt) => (stats?.totalAttempts ?? 0) === 0 || opt.key !== "unlearned")
+                .map((opt) => (
+                  <option key={`${word.id}-${opt.key}`} value={opt.key}>
+                    {opt.label}
+                  </option>
+                ))}
+            </select>
+          </div>
         </div>
         <svg
           className="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover/link:text-primary-400 group-hover/link:translate-x-0.5 transition-all flex-shrink-0"
@@ -85,7 +112,7 @@ export const DailyWordItem = ({
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </Link>
-      <div className="w-[170px] flex-shrink-0">
+      <div className="hidden sm:block w-[170px] flex-shrink-0">
         <div className="flex items-center gap-1 justify-end">
           <span className={`text-[10px] px-1 py-0.5 rounded border whitespace-nowrap ${getAccuracyBadgeClass(stats?.accuracy)}`}>
             正答率 {stats?.accuracy !== undefined && stats?.accuracy !== null

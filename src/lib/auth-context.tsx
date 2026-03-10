@@ -17,6 +17,7 @@ import type {
   ProfileUpdateData,
 } from "@/types/auth";
 import { getAuthErrorMessage } from "@/types/auth";
+import { sendPasswordResetEmail, updatePassword } from "@/lib/supabase/auth";
 import { syncLocalDataToSupabase, isSyncCompleted } from "./data-sync";
 import { setCurrentUserId, setAuthTimedOut, resetAuthState } from "./user-session";
 
@@ -429,6 +430,20 @@ export function AuthProvider({ children }: AuthProviderProps) {
     []
   );
 
+  const sendReset = useCallback(
+    async (email: string): Promise<AuthResult> => {
+      return await sendPasswordResetEmail(email);
+    },
+    []
+  );
+
+  const updatePasswordHandler = useCallback(
+    async (newPassword: string): Promise<AuthResult> => {
+      return await updatePassword(newPassword);
+    },
+    []
+  );
+
   // 新規登録
   const signUp = useCallback(
     async (email: string, password: string): Promise<AuthResult> => {
@@ -554,6 +569,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
     signIn,
     signUp,
     signOut,
+    sendPasswordResetEmail: sendReset,
+    updatePassword: updatePasswordHandler,
     updateProfile,
     refreshProfile,
   };
