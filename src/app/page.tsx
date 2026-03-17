@@ -34,7 +34,7 @@ export default function Home() {
 
         {/* 中断クイズバナー */}
         {isMounted && savedProgressInfo && (
-          <Link href="/quiz" className="block">
+          <Link href="/quiz/settings" className="block">
             <div className="bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-300 dark:border-amber-700 rounded-2xl p-3 flex items-center gap-3 hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors">
               <div className="w-9 h-9 bg-amber-200 dark:bg-amber-800/50 rounded-xl flex items-center justify-center flex-shrink-0">
                 <span className="text-lg emoji-icon">⚠️</span>

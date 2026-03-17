@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const MainAction = () => {
   return (
-    <Link href="/quiz" className="block">
+    <Link href="/word-list" className="block">
       <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-2xl p-5 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 group">
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform">

@@ -10,9 +10,9 @@ export const Header = () => {
   // PC版ヘッダーに表示するナビ
   const primaryNavItems = [
     { href: "/", label: "ホーム", icon: "🏠" },
-    { href: "/quiz", label: "クイズ", icon: "📝" },
+    { href: "/word-list", label: "クイズ", icon: "📝" },
     { href: "/speed-challenge", label: "スピード", icon: "⚡" },
-    { href: "/word-list", label: "単語帳", icon: "📖" },
+    { href: "/word-list/all", label: "単語帳", icon: "📖" },
     { href: "/history", label: "履歴", icon: "📊" },
   ];
 
@@ -32,8 +32,12 @@ export const Header = () => {
               {primaryNavItems.map((item) => {
                 const isActive = item.href === "/"
                   ? pathname === "/"
+                  // クイズ（/word-list 完全一致）または詳細クイズ設定（/quiz/配下）
                   : item.href === "/word-list"
-                    ? pathname === "/word-list" || pathname.startsWith("/word-list/")
+                    ? pathname === "/word-list" || pathname.startsWith("/quiz/")
+                  // 単語帳（/word-list/配下のサブページ）
+                  : item.href === "/word-list/all"
+                    ? pathname.startsWith("/word-list/")
                     : pathname === item.href || pathname.startsWith(item.href + "/");
                 return (
                   <Link
