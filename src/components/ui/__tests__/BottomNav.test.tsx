@@ -43,7 +43,7 @@ describe("BottomNav", () => {
     const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
     const links = nav.querySelectorAll("a");
     const hrefs = Array.from(links).map((link) => link.getAttribute("href"));
-    expect(hrefs).toEqual(["/", "/quiz", "/speed-challenge", "/word-list", "/history"]);
+    expect(hrefs).toEqual(["/", "/word-list", "/speed-challenge", "/word-list/all", "/history"]);
   });
 
   it("marks home as active when pathname is /", () => {
@@ -52,13 +52,27 @@ describe("BottomNav", () => {
     expect(homeLink).toHaveAttribute("aria-current", "page");
   });
 
-  it("marks quiz as active when pathname is /quiz", () => {
-    vi.mocked(usePathname).mockReturnValue("/quiz");
+  it("marks quiz as active when pathname is /word-list", () => {
+    vi.mocked(usePathname).mockReturnValue("/word-list");
     render(<BottomNav />);
     const quizLink = screen.getByText("クイズ").closest("a");
     expect(quizLink).toHaveAttribute("aria-current", "page");
     const homeLink = screen.getByText("ホーム").closest("a");
     expect(homeLink).not.toHaveAttribute("aria-current");
+  });
+
+  it("marks quiz as active when pathname is /quiz/settings", () => {
+    vi.mocked(usePathname).mockReturnValue("/quiz/settings");
+    render(<BottomNav />);
+    const quizLink = screen.getByText("クイズ").closest("a");
+    expect(quizLink).toHaveAttribute("aria-current", "page");
+  });
+
+  it("marks 単語帳 as active when pathname is /word-list/all", () => {
+    vi.mocked(usePathname).mockReturnValue("/word-list/all");
+    render(<BottomNav />);
+    const vocabLink = screen.getByText("単語帳").closest("a");
+    expect(vocabLink).toHaveAttribute("aria-current", "page");
   });
 
   it("marks speed as active when pathname is /speed-challenge", () => {

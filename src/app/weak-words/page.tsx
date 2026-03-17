@@ -175,7 +175,7 @@ export default function WeakWordsPage() {
               <p className="text-slate-500 dark:text-slate-400 text-xs mb-3">
                 {hasStudyData ? "クイズに挑戦して、学習を続けましょう。" : "まずはクイズに挑戦して学習を始めましょう。"}
               </p>
-              <Link href="/quiz">
+              <Link href="/quiz/settings">
                 <Button size="sm">クイズに挑戦</Button>
               </Link>
             </Card>
@@ -302,7 +302,7 @@ export default function WeakWordsPage() {
             <div className="flex-shrink-0 pt-1.5">
               <Card className="!p-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 border border-primary-100 dark:border-primary-800/30">
                 <div className="text-center">
-                  <Link href="/quiz?weakOnly=true">
+                  <Link href="/quiz/settings?weakOnly=true">
                     <Button fullWidth size="sm">
                       苦手単語を復習する
                     </Button>

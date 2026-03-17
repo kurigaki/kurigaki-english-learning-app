@@ -79,7 +79,7 @@ export const useWordDetail = () => {
   const handleBack = useCallback(() => {
     switch (fromPage) {
       case "quiz":
-        router.push("/quiz");
+        router.push("/quiz/settings");
         break;
       case "speed":
         router.push("/speed-challenge");

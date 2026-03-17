@@ -1242,7 +1242,7 @@ export default function SpeedChallengePage() {
     if (weakWordIds.length === 0) return;
 
     sessionStorage.setItem('quiz-custom-word-ids', JSON.stringify(weakWordIds));
-    router.push('/quiz');
+    router.push('/quiz/settings');
   };
 
   const handleShowHighScores = async () => {
@@ -1272,7 +1272,7 @@ export default function SpeedChallengePage() {
     // クイズモードで使う単語IDをセッションストレージに保存
     sessionStorage.setItem('quiz-custom-word-ids', JSON.stringify(incorrectWordIds));
     // クイズページに遷移
-    router.push('/quiz');
+    router.push('/quiz/settings');
   };
 
   const comboEffectClass = useMemo(() => {

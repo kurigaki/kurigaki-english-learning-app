@@ -111,7 +111,7 @@ export const useHomeData = () => {
   const startDailyQuiz = useCallback((wordIds: number[]) => {
     if (wordIds.length === 0) return;
     saveBookWordIds(wordIds);
-    router.push("/quiz?bookWords=true");
+    router.push("/quiz/settings?bookWords=true");
   }, [router]);
 
   return {

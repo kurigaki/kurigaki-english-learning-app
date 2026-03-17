@@ -393,7 +393,7 @@ export default function BookDetailPage() {
       manualMap
     );
     saveBookWordIds(wordIds);
-    router.push("/quiz?bookWords=true");
+    router.push("/quiz/settings?bookWords=true");
   }, [filteredWords, studySettings, statsMap, manualMap, router]);
 
   if (!isMounted) return null;
