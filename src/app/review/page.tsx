@@ -547,7 +547,7 @@ function ReviewPageContent() {
           {!isLoading && reviewWords.length > 0 && (
             <div className="flex-shrink-0 pt-3">
               <Link
-                href={isSrs ? "/quiz/settings?srsReview=true" : "/quiz/settings?weakOnly=true"}
+                href={isSrs ? "/quiz?srsReview=true" : "/quiz?weakOnly=true"}
                 className="w-full py-3.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold rounded-2xl shadow-button hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 active:scale-95 flex items-center justify-center gap-2"
               >
                 <span className="emoji-icon">{icon}</span>

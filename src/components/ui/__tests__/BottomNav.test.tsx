@@ -22,18 +22,17 @@ vi.mock("next/link", () => ({
 import { usePathname } from "next/navigation";
 
 describe("BottomNav", () => {
-  it("renders 5 navigation items", () => {
+  it("renders 4 navigation items", () => {
     render(<BottomNav />);
     const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
     const links = nav.querySelectorAll("a");
-    expect(links).toHaveLength(5);
+    expect(links).toHaveLength(4);
   });
 
   it("renders correct labels", () => {
     render(<BottomNav />);
     expect(screen.getByText("ホーム")).toBeInTheDocument();
     expect(screen.getByText("クイズ")).toBeInTheDocument();
-    expect(screen.getByText("スピード")).toBeInTheDocument();
     expect(screen.getByText("単語帳")).toBeInTheDocument();
     expect(screen.getByText("履歴")).toBeInTheDocument();
   });
@@ -43,7 +42,7 @@ describe("BottomNav", () => {
     const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
     const links = nav.querySelectorAll("a");
     const hrefs = Array.from(links).map((link) => link.getAttribute("href"));
-    expect(hrefs).toEqual(["/", "/word-list", "/speed-challenge", "/word-list/all", "/history"]);
+    expect(hrefs).toEqual(["/", "/word-list", "/word-list/all", "/history"]);
   });
 
   it("marks home as active when pathname is /", () => {
@@ -61,8 +60,8 @@ describe("BottomNav", () => {
     expect(homeLink).not.toHaveAttribute("aria-current");
   });
 
-  it("marks quiz as active when pathname is /quiz/settings", () => {
-    vi.mocked(usePathname).mockReturnValue("/quiz/settings");
+  it("marks quiz as active when pathname is /quiz", () => {
+    vi.mocked(usePathname).mockReturnValue("/quiz");
     render(<BottomNav />);
     const quizLink = screen.getByText("クイズ").closest("a");
     expect(quizLink).toHaveAttribute("aria-current", "page");
@@ -73,14 +72,5 @@ describe("BottomNav", () => {
     render(<BottomNav />);
     const vocabLink = screen.getByText("単語帳").closest("a");
     expect(vocabLink).toHaveAttribute("aria-current", "page");
-  });
-
-  it("marks speed as active when pathname is /speed-challenge", () => {
-    vi.mocked(usePathname).mockReturnValue("/speed-challenge");
-    render(<BottomNav />);
-    const speedLink = screen.getByText("スピード").closest("a");
-    expect(speedLink).toHaveAttribute("aria-current", "page");
-    const homeLink = screen.getByText("ホーム").closest("a");
-    expect(homeLink).not.toHaveAttribute("aria-current");
   });
 });

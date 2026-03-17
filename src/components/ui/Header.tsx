@@ -11,7 +11,6 @@ export const Header = () => {
   const primaryNavItems = [
     { href: "/", label: "ホーム", icon: "🏠" },
     { href: "/word-list", label: "クイズ", icon: "📝" },
-    { href: "/speed-challenge", label: "スピード", icon: "⚡" },
     { href: "/word-list/all", label: "単語帳", icon: "📖" },
     { href: "/history", label: "履歴", icon: "📊" },
   ];
@@ -34,7 +33,7 @@ export const Header = () => {
                   ? pathname === "/"
                   // クイズ（/word-list 完全一致）または詳細クイズ設定（/quiz/配下）
                   : item.href === "/word-list"
-                    ? pathname === "/word-list" || pathname.startsWith("/quiz/")
+                    ? pathname === "/word-list" || pathname === "/quiz" || pathname.startsWith("/quiz/")
                   // 単語帳（/word-list/配下のサブページ）
                   : item.href === "/word-list/all"
                     ? pathname.startsWith("/word-list/")

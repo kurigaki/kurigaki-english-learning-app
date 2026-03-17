@@ -62,7 +62,6 @@ export default function HistoryPage() {
   const [manualMemoryById, setManualMemoryById] = useState<Record<number, ManualMasteryLevel>>({});
   const [courseProgressList, setCourseProgressList] = useState<CourseProgress[]>([]);
   const [recentAchievements, setRecentAchievements] = useState<(Achievement & { unlockedAt: string })[]>([]);
-  const [speedHighScore, setSpeedHighScore] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<"overview" | "weak" | "history" | "progress">("overview");
   const hasStudyData = wordStats.size > 0;
@@ -76,9 +75,6 @@ export default function HistoryPage() {
     setRecords([...data].reverse());
     setWordStats(statsMap);
     setManualMemoryById(manualMap);
-
-    const highScore = await unifiedStorage.getSpeedChallengeHighScore();
-    setSpeedHighScore(highScore);
 
     const unlocked = await unifiedStorage.getUnlockedAchievements();
     const recentWithDetails = unlocked
@@ -281,7 +277,7 @@ export default function HistoryPage() {
           </div>
           {todayStats.total === 0 && (
             <div className="mt-1.5 text-center">
-              <Link href="/quiz/settings">
+              <Link href="/quiz">
                 <Button size="sm">今日の学習を始める</Button>
               </Link>
             </div>
@@ -416,7 +412,7 @@ export default function HistoryPage() {
                 <span>苦手単語 ({weakWords.length}語)</span>
               </h2>
               {weakWords.length > 0 && (
-                <Link href="/quiz/settings?weakOnly=true">
+                <Link href="/quiz?weakOnly=true">
                   <Button size="sm">苦手単語を復習する</Button>
                 </Link>
               )}
@@ -508,7 +504,7 @@ export default function HistoryPage() {
                   </div>
                 ))}
                 <div className="pt-4 text-center">
-                  <Link href="/quiz/settings?weakOnly=true">
+                  <Link href="/quiz?weakOnly=true">
                     <Button>苦手単語を復習する</Button>
                   </Link>
                 </div>
@@ -531,7 +527,7 @@ export default function HistoryPage() {
                 <div className="p-8 text-center">
                   <span className="text-4xl mb-3 block emoji-icon">📚</span>
                   <p className="text-slate-500 dark:text-slate-400 text-sm mb-3">まだ学習履歴がありません</p>
-                  <Link href="/quiz/settings">
+                  <Link href="/quiz">
                     <Button size="sm">クイズを始める</Button>
                   </Link>
                 </div>
@@ -701,19 +697,6 @@ export default function HistoryPage() {
                       );
                     })}
                   </div>
-                </div>
-              )}
-
-              {/* スピードチャレンジ ハイスコア */}
-              {speedHighScore > 0 && (
-                <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="emoji-icon">⚡</span>
-                    <span className="text-sm font-bold text-slate-700 dark:text-slate-200">スピードチャレンジ</span>
-                  </div>
-                  <span className="font-bold text-orange-500">
-                    {speedHighScore} <span className="text-xs font-normal text-slate-500 dark:text-slate-400">pt</span>
-                  </span>
                 </div>
               )}
 

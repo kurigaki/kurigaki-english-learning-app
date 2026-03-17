@@ -1,11 +1,12 @@
-import { useState, useEffect, Dispatch, SetStateAction, MutableRefObject } from "react";
+import { useState, useEffect, useCallback, Dispatch, SetStateAction, MutableRefObject } from "react";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question } from "@/types";
 import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
 import { getQuestionPrompt, getQuestionDisplay } from "@/lib/quiz/display";
 import { parseDictationParts } from "@/lib/quiz/generator";
 import { getTranslationInfo } from "@/lib/quiz/translation";
-import { InQuizSettings, SpeakingDifficulty, HintMode, AudioMode, AutoAdvanceMode, TranslationMode } from "@/lib/quiz/in-quiz-settings";
+import { InQuizSettings, AudioMode } from "@/lib/quiz/in-quiz-settings";
+import { speakSentence } from "@/lib/audio";
 
 type QuizSessionProps = {
   questions: Question[];
@@ -35,34 +36,6 @@ type QuizSessionProps = {
   onSaveProgress: () => boolean;
 };
 
-// セグメントボタングループ
-const SegmentGroup = <T extends string | number>({
-  options,
-  value,
-  onChange,
-}: {
-  options: { value: T; label: string }[];
-  value: T;
-  onChange: (v: T) => void;
-}) => (
-  <div className="flex gap-1.5">
-    {options.map(({ value: v, label }) => (
-      <button
-        key={String(v)}
-        type="button"
-        onClick={() => onChange(v)}
-        className={`flex-1 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-          value === v
-            ? "bg-primary-500 text-white"
-            : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600"
-        }`}
-      >
-        {label}
-      </button>
-    ))}
-  </div>
-);
-
 // US / UK 発音ボタンを並べて表示
 const WordAudioButtons = ({ word }: { word: string }) => (
   <div className="inline-flex items-center gap-2 mt-1">
@@ -77,29 +50,73 @@ const WordAudioButtons = ({ word }: { word: string }) => (
   </div>
 );
 
-const DIFFICULTY_OPTIONS: { value: SpeakingDifficulty; label: string }[] = [
-  { value: "easy", label: "入門" },
-  { value: "normal", label: "標準" },
-  { value: "strict", label: "ネイティブ" },
-];
+// 音声モード別アイコン
+const AudioIcon = ({ mode }: { mode: AudioMode }) => {
+  if (mode === "off") {
+    return (
+      <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+      </svg>
+    );
+  }
+  if (mode === "button") {
+    return (
+      <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15.536 8.464a5 5 0 010 7.072M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+      </svg>
+    );
+  }
+  return (
+    <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15.536 8.464a5 5 0 010 7.072M12.728 5.636a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+    </svg>
+  );
+};
 
-const AUDIO_MODE_OPTIONS: { value: AudioMode; label: string }[] = [
-  { value: "off", label: "OFF" },
-  { value: "button", label: "ボタン" },
-  { value: "auto", label: "ON" },
-];
+// 和訳表示アイコン（目）
+const EyeIcon = ({ open }: { open: boolean }) => open ? (
+  <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+  </svg>
+) : (
+  <svg className="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+  </svg>
+);
 
-const HINT_MODE_OPTIONS: { value: HintMode; label: string }[] = [
-  { value: "none", label: "なし" },
-  { value: "reveal", label: "ボタン表示" },
-  { value: "always", label: "常時表示" },
-];
-
-const TRANSLATION_MODE_OPTIONS: { value: TranslationMode; label: string }[] = [
-  { value: "none", label: "なし" },
-  { value: "reveal", label: "ボタン表示" },
-  { value: "always", label: "常時表示" },
-];
+// 再生回数制限付き音声ボタン
+const LimitedPlayButton = ({
+  atLimit,
+  remaining,
+  disabled,
+  onClick,
+}: {
+  atLimit: boolean;
+  remaining: number;
+  disabled: boolean;
+  onClick: () => void;
+}) => (
+  <button
+    type="button"
+    disabled={disabled || atLimit}
+    onClick={onClick}
+    className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium transition-colors ${
+      atLimit
+        ? "bg-slate-100 dark:bg-slate-700 text-slate-400 dark:text-slate-500 cursor-not-allowed"
+        : "bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 hover:bg-primary-200 dark:hover:bg-primary-800/40"
+    }`}
+  >
+    <svg className="w-3.5 h-3.5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+      {atLimit
+        ? <path d="M11 5L6 9H2v6h4l5 4V5zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+        : <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14" />
+      }
+    </svg>
+    {atLimit ? "再生終了" : `聞く（あと${remaining}回）`}
+  </button>
+);
 
 export const QuizSession = ({
   questions,
@@ -128,7 +145,6 @@ export const QuizSession = ({
   onSuspend,
   onSaveProgress,
 }: QuizSessionProps) => {
-  const [showSettings, setShowSettings] = useState(false);
   const [hintRevealed, setHintRevealed] = useState(false);
 
   // 問題が変わったらヒント表示をリセット
@@ -147,8 +163,6 @@ export const QuizSession = ({
       if (window.location.pathname === href || window.location.href === anchor.href) return;
       event.preventDefault();
       event.stopPropagation();
-      const ok = window.confirm("クイズをセーブして移動しますか？");
-      if (!ok) return;
       onSaveProgress();
       window.location.href = anchor.href;
     };
@@ -183,13 +197,95 @@ export const QuizSession = ({
       : [];
   const dictationBlankCount = dictationParts.filter((p) => p.kind === "blank").length;
 
-  // timedモード時の表示用ラベル
-  const timedLabel = `${(inQuizSettings.autoAdvanceMs / 1000).toFixed(1)}秒後`;
-  const autoAdvanceModeOptions: { value: AutoAdvanceMode; label: string }[] = [
-    { value: "off", label: "OFF" },
-    { value: "timed", label: inQuizSettings.autoAdvanceMode === "timed" ? timedLabel : "秒数設定" },
-    { value: "instant", label: "即時" },
-  ];
+  // インライン音声トグル
+  const audioModeKey =
+    currentQuestion.type === "listening" ? "listeningAudioMode"
+    : currentQuestion.type === "dictation" ? "writingAudioMode"
+    : currentQuestion.type === "speaking" ? "speakingAudioMode"
+    : "readingAudioMode";
+  const currentAudioMode = inQuizSettings[audioModeKey];
+
+  const handleAudioCycle = () => {
+    const next: AudioMode =
+      currentAudioMode === "off" ? "button" : currentAudioMode === "button" ? "auto" : "off";
+    setInQuizSettings((prev) => ({ ...prev, [audioModeKey]: next }));
+  };
+
+  // 問題タイプに応じた和訳モードを選択
+  const effectiveTranslationMode =
+    currentQuestion.type === "listening"
+      ? inQuizSettings.listeningTranslationMode
+      : inQuizSettings.writingTranslationMode;
+
+  // 書き取り問題のフォールバック
+  // 音声も和訳も OFF → 和訳を強制表示（例文を見て書き取るのが基本形）
+  const dictationForceTranslation =
+    currentQuestion.type === "dictation" &&
+    currentAudioMode === "off" &&
+    inQuizSettings.writingTranslationMode === "none";
+  // 和訳がOFF・音声あり → 音声を自動再生に昇格（聞いて書き取る練習）
+  const dictationForceAutoAudio =
+    currentQuestion.type === "dictation" &&
+    inQuizSettings.writingTranslationMode === "none" &&
+    currentAudioMode === "button";
+  const effectiveSentenceAudioMode: AudioMode =
+    dictationForceAutoAudio ? "auto" : sentenceAudioMode;
+
+  // 書き取り音声の再生回数トラッキング
+  const [dictationPlayCount, setDictationPlayCount] = useState(0);
+  useEffect(() => {
+    if (currentQuestion.type !== "dictation") return;
+    // 自動再生が発火する場合は初期カウントを1にする
+    const willAutoPlay =
+      inQuizSettings.writingAudioMode === "auto" ||
+      (inQuizSettings.writingTranslationMode === "none" && inQuizSettings.writingAudioMode === "button");
+    setDictationPlayCount(willAutoPlay ? 1 : 0);
+  // currentIndex が変わるたびにリセット
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
+
+  const dictationPlayLimit = inQuizSettings.dictationAudioPlayLimit;
+  const dictationAtPlayLimit = dictationPlayLimit !== null && dictationPlayCount >= dictationPlayLimit;
+
+  const handleDictationPlay = useCallback(() => {
+    if (dictationAtPlayLimit || !currentQuestion.word.example) return;
+    speakSentence(currentQuestion.word.example);
+    setDictationPlayCount((prev) => prev + 1);
+  }, [dictationAtPlayLimit, currentQuestion]);
+
+  // リスニング音声の再生回数トラッキング
+  const [listeningPlayCount, setListeningPlayCount] = useState(0);
+  useEffect(() => {
+    if (currentQuestion.type !== "listening") return;
+    // 自動再生が発火する場合は初期カウントを1にする
+    const willAutoPlay = inQuizSettings.listeningAudioMode === "auto";
+    setListeningPlayCount(willAutoPlay ? 1 : 0);
+  // currentIndex が変わるたびにリセット
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex]);
+
+  const listeningPlayLimit = inQuizSettings.listeningAudioPlayLimit;
+  const listeningAtPlayLimit = listeningPlayLimit !== null && listeningPlayCount >= listeningPlayLimit;
+
+  const handleListeningPlay = useCallback(() => {
+    if (listeningAtPlayLimit || !currentQuestion.word.example) return;
+    speakSentence(currentQuestion.word.example);
+    setListeningPlayCount((prev) => prev + 1);
+  }, [listeningAtPlayLimit, currentQuestion]);
+
+  // インライン訳トグル（sentence types のみ）
+  const translationModeKey =
+    currentQuestion.type === "listening" ? "listeningTranslationMode" : "writingTranslationMode";
+  const isTranslationOn = effectiveTranslationMode !== "none";
+  const handleTranslationToggle = () => {
+    if (effectiveTranslationMode === "none") {
+      setShowTranslation(true);
+      setInQuizSettings((prev) => ({ ...prev, [translationModeKey]: "always" }));
+    } else {
+      setShowTranslation(false);
+      setInQuizSettings((prev) => ({ ...prev, [translationModeKey]: "none" }));
+    }
+  };
 
   return (
     <div className="main-content px-2 py-1.5 flex flex-col">
@@ -203,11 +299,7 @@ export const QuizSession = ({
           <div className="relative flex justify-center gap-1.5 items-center">
             <button
               type="button"
-              onClick={() => {
-                if (window.confirm("クイズをセーブして中断しますか？")) {
-                  onSuspend();
-                }
-              }}
+              onClick={onSuspend}
               className="absolute left-0 px-2 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[10px] text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
             >
               中断
@@ -230,29 +322,52 @@ export const QuizSession = ({
                 <span className="text-white/90 text-[10px] font-medium">連続!</span>
               </div>
             )}
-            {/* 設定ギアボタン */}
-            <button
-              type="button"
-              onClick={() => setShowSettings(true)}
-              className="absolute right-0 w-7 h-7 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm"
-              aria-label="クイズ設定"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-              </svg>
-            </button>
           </div>
         </div>
 
         {/* 中央: Question Card */}
         <div>
           <Card className="flex flex-col p-2">
-            {/* カテゴリ表示（コンパクト） */}
-            {currentQuestion.word.category && (
-              <div className={`w-full h-7 mb-1 rounded-md bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100 dark:border-slate-700`}>
-                <span className="text-lg emoji-icon">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
-              </div>
-            )}
+            {/* カテゴリ表示 + インライン設定ボタン */}
+            <div className="flex items-center gap-1.5 mb-1">
+              {currentQuestion.word.category && (
+                <div className={`flex-1 h-7 rounded-md bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100 dark:border-slate-700`}>
+                  <span className="text-lg emoji-icon">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
+                </div>
+              )}
+              {/* 🔊 音声チップ: OFF/手動/自動 をタップで切り替え */}
+              <button
+                type="button"
+                onClick={handleAudioCycle}
+                title="音声モードを切り替え（OFF → 手動 → 自動）"
+                className={`inline-flex items-center gap-1 h-7 px-2 rounded-full text-[11px] font-semibold border transition-colors flex-shrink-0 ${
+                  currentAudioMode === "auto"
+                    ? "bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-600"
+                    : currentAudioMode === "button"
+                      ? "bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-600"
+                      : "bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300 border-slate-300 dark:border-slate-500"
+                }`}
+              >
+                <AudioIcon mode={currentAudioMode} />
+                <span>{currentAudioMode === "auto" ? "自動" : currentAudioMode === "button" ? "手動" : "OFF"}</span>
+              </button>
+              {/* 👁 和訳チップ（sentence types のみ）: ON/OFF をタップで切り替え */}
+              {isSentenceType && (
+                <button
+                  type="button"
+                  onClick={handleTranslationToggle}
+                  title={isTranslationOn ? "和訳を隠す" : "和訳を表示"}
+                  className={`inline-flex items-center gap-1 h-7 px-2 rounded-full text-[11px] font-semibold border transition-colors flex-shrink-0 ${
+                    isTranslationOn
+                      ? "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-600"
+                      : "bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300 border-slate-300 dark:border-slate-500"
+                  }`}
+                >
+                  <EyeIcon open={isTranslationOn} />
+                  <span>{isTranslationOn ? "和訳" : "和訳"}</span>
+                </button>
+              )}
+            </div>
 
             <div className="text-center mb-1">
               <p className="text-[10px] text-slate-400 dark:text-slate-500 mb-0.5">{getQuestionPrompt(currentQuestion.type)}</p>
@@ -345,35 +460,41 @@ export const QuizSession = ({
                 <WordAudioButtons word={currentQuestion.word.word} />
               )}
               {/* リスニング・書き取り: 例文音声ボタン */}
-              {isSentenceType && currentQuestion.word.example && sentenceAudioMode !== "off" && (
-                <div className="mt-1">
-                  <SpeakButton text={currentQuestion.word.example} type="sentence" size="sm" />
+              {isSentenceType && currentQuestion.word.example && effectiveSentenceAudioMode !== "off" && (
+                <div className="mt-1 flex justify-center">
+                  {currentQuestion.type === "dictation" && dictationPlayLimit !== null ? (
+                    // 書き取り: 再生回数制限付きボタン
+                    <LimitedPlayButton
+                      atLimit={dictationAtPlayLimit}
+                      remaining={dictationPlayLimit - dictationPlayCount}
+                      disabled={selected !== null}
+                      onClick={handleDictationPlay}
+                    />
+                  ) : currentQuestion.type === "listening" && listeningPlayLimit !== null ? (
+                    // リスニング: 再生回数制限付きボタン
+                    <LimitedPlayButton
+                      atLimit={listeningAtPlayLimit}
+                      remaining={listeningPlayLimit - listeningPlayCount}
+                      disabled={selected !== null}
+                      onClick={handleListeningPlay}
+                    />
+                  ) : (
+                    <SpeakButton text={currentQuestion.word.example} type="sentence" size="sm" />
+                  )}
                 </div>
               )}
               {/* リスニング・書き取り: 和訳表示 */}
               {isSentenceType && selected === null && (() => {
                 const translationInfo = getTranslationInfo(currentQuestion.word.id, currentQuestion.word.example);
                 const shouldShowTranslation =
-                  inQuizSettings.translationMode === "always"
-                  || (inQuizSettings.translationMode === "reveal" && showTranslation);
-                return (
-                  <div className="mt-1 text-center">
-                    {inQuizSettings.translationMode === "reveal" && (
-                      <button
-                        type="button"
-                        onClick={() => setShowTranslation(!showTranslation)}
-                        className="text-[10px] text-primary-500 hover:text-primary-600 underline transition-colors"
-                      >
-                        {showTranslation ? "和訳を隠す" : "和訳を表示"}
-                      </button>
-                    )}
-                    {shouldShowTranslation && translationInfo.sentenceJa && (
-                      <p className="mt-0.5 text-[10px] text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/50 rounded-md p-1.5">
-                        {translationInfo.sentenceJa}
-                      </p>
-                    )}
-                  </div>
-                );
+                  dictationForceTranslation
+                  || effectiveTranslationMode === "always"
+                  || (effectiveTranslationMode === "reveal" && showTranslation);
+                return shouldShowTranslation && translationInfo.sentenceJa ? (
+                  <p className="mt-1 text-[10px] text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/50 rounded-md p-1.5 text-center">
+                    {translationInfo.sentenceJa}
+                  </p>
+                ) : null;
               })()}
             </div>
 
@@ -574,174 +695,6 @@ export const QuizSession = ({
         </div>
       </div>
 
-      {/* クイズ中設定パネル */}
-      {showSettings && (
-        <div
-          className="fixed inset-0 z-50 flex items-end bg-black/40"
-          onClick={() => setShowSettings(false)}
-        >
-          <div
-            className="w-full bg-white dark:bg-slate-800 rounded-t-2xl p-4 shadow-xl max-w-md mx-auto"
-            style={{ marginBottom: "calc(var(--bottom-nav-height) + var(--safe-area-bottom))", paddingBottom: "1.5rem" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* ヘッダー */}
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-sm font-bold text-slate-700 dark:text-slate-200">クイズ中の設定</h3>
-              <button
-                type="button"
-                onClick={() => setShowSettings(false)}
-                className="w-7 h-7 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-            </div>
-
-            <div className="flex flex-col gap-4">
-              {/* スピーキング難易度 */}
-              <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">スピーキング難易度</p>
-                <SegmentGroup
-                  options={DIFFICULTY_OPTIONS}
-                  value={inQuizSettings.speakingDifficulty}
-                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, speakingDifficulty: v }))}
-                />
-                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-                  {inQuizSettings.speakingDifficulty === "strict" && "完全一致のみ正解"}
-                  {inQuizSettings.speakingDifficulty === "normal" && "発音が近ければ正解（標準）"}
-                  {inQuizSettings.speakingDifficulty === "easy" && "多少の発音のずれも正解"}
-                </p>
-              </div>
-
-              {/* ヒント（答えの英単語） */}
-              <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">ヒント（答えの英単語）</p>
-                <SegmentGroup
-                  options={HINT_MODE_OPTIONS}
-                  value={inQuizSettings.hintMode}
-                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, hintMode: v }))}
-                />
-                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-                  {inQuizSettings.hintMode === "none" && "スピーキング問題で答えの英単語を表示しない"}
-                  {inQuizSettings.hintMode === "reveal" && "ボタンを押したときだけ答えの英単語を表示"}
-                  {inQuizSettings.hintMode === "always" && "常に答えの英単語を表示する（和訳とは別）"}
-                </p>
-              </div>
-
-              {/* 例文和訳 */}
-              <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">例文の和訳</p>
-                <SegmentGroup
-                  options={TRANSLATION_MODE_OPTIONS}
-                  value={inQuizSettings.translationMode}
-                  onChange={(v) => {
-                    setShowTranslation(v === "always");
-                    setInQuizSettings((prev) => ({ ...prev, translationMode: v }));
-                  }}
-                />
-                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-                  {inQuizSettings.translationMode === "none" && "例文の和訳を表示しない"}
-                  {inQuizSettings.translationMode === "reveal" && "ボタンを押したときだけ和訳を表示"}
-                  {inQuizSettings.translationMode === "always" && "常に和訳を表示する"}
-                </p>
-              </div>
-
-              {/* 音声（リーディング） */}
-              <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声（リーディング）</p>
-                <SegmentGroup
-                  options={AUDIO_MODE_OPTIONS}
-                  value={inQuizSettings.readingAudioMode}
-                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, readingAudioMode: v }))}
-                />
-                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-                  {inQuizSettings.readingAudioMode === "off" && "US / UK ボタンを表示しない"}
-                  {inQuizSettings.readingAudioMode === "button" && "🔊 US / UK ボタンを表示（手動再生）"}
-                  {inQuizSettings.readingAudioMode === "auto" && "問題表示時に自動再生 + ボタン表示"}
-                </p>
-              </div>
-
-              {/* 音声（ライティング） */}
-              <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声（ライティング）</p>
-                <SegmentGroup
-                  options={AUDIO_MODE_OPTIONS}
-                  value={inQuizSettings.writingAudioMode}
-                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, writingAudioMode: v }))}
-                />
-                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-                  {inQuizSettings.writingAudioMode === "off" && "書き取りの音声ボタンを表示しない"}
-                  {inQuizSettings.writingAudioMode === "button" && "🔊 ボタンを表示（手動再生）"}
-                  {inQuizSettings.writingAudioMode === "auto" && "問題表示時に自動再生 + ボタン表示"}
-                </p>
-              </div>
-
-              {/* 音声（スピーキング） */}
-              <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声（スピーキング）</p>
-                <SegmentGroup
-                  options={AUDIO_MODE_OPTIONS}
-                  value={inQuizSettings.speakingAudioMode}
-                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, speakingAudioMode: v }))}
-                />
-                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-                  {inQuizSettings.speakingAudioMode === "off" && "US / UK ボタンを表示しない（推奨）"}
-                  {inQuizSettings.speakingAudioMode === "button" && "🔊 US / UK ボタンを表示（手動再生）"}
-                  {inQuizSettings.speakingAudioMode === "auto" && "問題表示時に自動再生 + ボタン表示"}
-                </p>
-              </div>
-
-              {/* 音声（リスニング） */}
-              <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">音声（リスニング）</p>
-                <SegmentGroup
-                  options={AUDIO_MODE_OPTIONS}
-                  value={inQuizSettings.listeningAudioMode}
-                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, listeningAudioMode: v }))}
-                />
-                <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
-                  {inQuizSettings.listeningAudioMode === "off" && "リスニングの音声を自動再生しない"}
-                  {inQuizSettings.listeningAudioMode === "button" && "🔊 ボタンで再生（自動再生なし）"}
-                  {inQuizSettings.listeningAudioMode === "auto" && "問題表示時に自動再生 + ボタン表示（推奨）"}
-                </p>
-              </div>
-
-              {/* 回答後に自動で次へ */}
-              <div>
-                <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mb-1.5">回答後に自動で次へ進む</p>
-                <SegmentGroup
-                  options={autoAdvanceModeOptions}
-                  value={inQuizSettings.autoAdvanceMode}
-                  onChange={(v) => setInQuizSettings((prev) => ({ ...prev, autoAdvanceMode: v }))}
-                />
-                {inQuizSettings.autoAdvanceMode === "timed" && (
-                  <div className="flex items-center gap-3 mt-2">
-                    <input
-                      type="range"
-                      min={500}
-                      max={5000}
-                      step={500}
-                      value={inQuizSettings.autoAdvanceMs}
-                      onChange={(e) =>
-                        setInQuizSettings((prev) => ({ ...prev, autoAdvanceMs: parseInt(e.target.value) }))
-                      }
-                      className="flex-1 accent-primary-500"
-                    />
-                    <span className="text-xs font-medium text-slate-600 dark:text-slate-300 w-12 text-right tabular-nums">
-                      {(inQuizSettings.autoAdvanceMs / 1000).toFixed(1)} 秒
-                    </span>
-                  </div>
-                )}
-                {inQuizSettings.autoAdvanceMode === "instant" && (
-                  <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">解説を表示せずに次の問題へ進みます</p>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

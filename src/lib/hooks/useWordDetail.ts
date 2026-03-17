@@ -79,7 +79,7 @@ export const useWordDetail = () => {
   const handleBack = useCallback(() => {
     switch (fromPage) {
       case "quiz":
-        router.push("/quiz/settings");
+        router.push("/quiz");
         break;
       case "speed":
         router.push("/speed-challenge");
@@ -91,7 +91,7 @@ export const useWordDetail = () => {
         router.push("/weak-words");
         break;
       case "wordlist":
-        router.push("/word-list");
+        router.push("/word-list/all");
         break;
       case "bookmarks":
         router.push("/word-list/all");
