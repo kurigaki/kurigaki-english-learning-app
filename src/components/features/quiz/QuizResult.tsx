@@ -295,23 +295,35 @@ export const QuizResult = ({
 
         {/* 下部固定: アクションボタン */}
         <div className="flex-shrink-0 space-y-1.5">
+          {/* メインCTA: 不正解あり→復習 / 全問正解→次の10問 */}
+          {wrongQuestionIds.length > 0 ? (
+            <Button
+              fullWidth
+              onClick={() => startRetrySessionWithWordIds(wrongQuestionIds)}
+            >
+              間違えた問題を復習（{wrongQuestionIds.length}問）
+            </Button>
+          ) : (
+            <Button
+              fullWidth
+              onClick={() => startNewSession(quizSettings)}
+            >
+              次の10問へ
+            </Button>
+          )}
+
+          {/* セカンダリ: 同じ問題で再挑戦 */}
           <Button
             fullWidth
+            variant="secondary"
             onClick={() => startRetrySessionWithWordIds(sameQuestionIds)}
             disabled={sameQuestionIds.length === 0}
           >
             同じ{sameQuestionIds.length}問に再チャレンジ
           </Button>
-          <Button
-            fullWidth
-            variant="secondary"
-            onClick={() => startRetrySessionWithWordIds(wrongQuestionIds)}
-            disabled={wrongQuestionIds.length === 0}
-          >
-            間違えた問題を復習
-            {wrongQuestionIds.length > 0 ? `（${wrongQuestionIds.length}問）` : ""}
-          </Button>
-          <div className="grid grid-cols-3 gap-1.5">
+
+          {/* サブ: 設定変更・ホーム */}
+          <div className="grid grid-cols-2 gap-1.5">
             <Button
               variant="secondary"
               onClick={onSettings}
@@ -329,13 +341,6 @@ export const QuizResult = ({
                 ホーム
               </Button>
             </Link>
-            <Button
-              variant="secondary"
-              onClick={() => startNewSession(quizSettings)}
-              className="!px-1 !bg-emerald-100 !text-emerald-800 !border-emerald-300 hover:!bg-emerald-200 dark:!bg-emerald-900/30 dark:!text-emerald-200 dark:!border-emerald-700"
-            >
-              同設定で再挑戦
-            </Button>
           </div>
         </div>
       </div>
