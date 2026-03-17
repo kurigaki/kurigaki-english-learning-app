@@ -24,6 +24,7 @@ export default function Home() {
     toggleBookmark,
     startFlashcard,
     startDailyQuiz,
+    discardProgress,
   } = useHomeData();
 
   return (
@@ -34,8 +35,8 @@ export default function Home() {
 
         {/* 中断クイズバナー */}
         {isMounted && savedProgressInfo && (
-          <Link href="/quiz/settings" className="block">
-            <div className="bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-300 dark:border-amber-700 rounded-2xl p-3 flex items-center gap-3 hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors">
+          <div className="bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-300 dark:border-amber-700 rounded-2xl flex items-center overflow-hidden">
+            <Link href="/quiz" className="flex-1 flex items-center gap-3 p-3 hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors">
               <div className="w-9 h-9 bg-amber-200 dark:bg-amber-800/50 rounded-xl flex items-center justify-center flex-shrink-0">
                 <span className="text-lg emoji-icon">⚠️</span>
               </div>
@@ -45,11 +46,24 @@ export default function Home() {
                   {savedProgressInfo.answeredCount} / {savedProgressInfo.total} 問 — タップして続きから再開
                 </p>
               </div>
-              <svg className="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-amber-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </div>
-          </Link>
+            </Link>
+            <button
+              onClick={() => {
+                if (window.confirm("途中のクイズを破棄しますか？この操作は元に戻せません。")) {
+                  discardProgress();
+                }
+              }}
+              className="flex-shrink-0 self-stretch px-3 border-l border-amber-300 dark:border-amber-700 text-amber-500 dark:text-amber-400 hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors flex items-center"
+              aria-label="途中クイズを破棄"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
         )}
 
         {/* 2. メインCTA: クイズに挑戦 */}

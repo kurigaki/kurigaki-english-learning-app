@@ -9,7 +9,7 @@ import type { Word } from "@/data/words/compat";
 import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 import { getDisplayedManualMastery as getDisplayedManualMasteryUtil } from "@/lib/manual-mastery";
 import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
-import { saveBookWordIds, getQuizProgressState } from "@/lib/quiz-session";
+import { saveBookWordIds, getQuizProgressState, clearQuizProgressState } from "@/lib/quiz-session";
 
 export type UserProgress = {
   level: number;
@@ -114,6 +114,11 @@ export const useHomeData = () => {
     router.push("/quiz/settings?bookWords=true");
   }, [router]);
 
+  const discardProgress = useCallback(() => {
+    clearQuizProgressState();
+    setSavedProgressInfo(null);
+  }, []);
+
   return {
     isMounted,
     userProgress,
@@ -129,5 +134,6 @@ export const useHomeData = () => {
     toggleBookmark,
     startFlashcard,
     startDailyQuiz,
+    discardProgress,
   };
 };

@@ -85,10 +85,11 @@ export function generateQuestion(word: Word, allWords: Word[], mode: SpeedChalle
   };
 }
 
-export function getNextQuestion(usedWordIds: Set<number>, mode: SpeedChallengeMode): Question {
-  const availableWords = words.filter((w) => !usedWordIds.has(w.id));
+export function getNextQuestion(usedWordIds: Set<number>, mode: SpeedChallengeMode, wordPool?: Word[]): Question {
+  const pool = wordPool && wordPool.length > 0 ? wordPool : words;
+  const availableWords = pool.filter((w) => !usedWordIds.has(w.id));
   // 全ての単語を使い切ったら、再度全体から選ぶ
-  const wordsToChooseFrom = availableWords.length > 0 ? availableWords : words;
+  const wordsToChooseFrom = availableWords.length > 0 ? availableWords : pool;
   const randomWord = wordsToChooseFrom[Math.floor(Math.random() * wordsToChooseFrom.length)];
   return generateQuestion(randomWord, words, mode);
 }

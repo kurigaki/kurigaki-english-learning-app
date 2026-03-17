@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { href: "/", label: "ホーム", icon: "🏠" },
   { href: "/word-list", label: "クイズ", icon: "📝" },
-  { href: "/speed-challenge", label: "スピード", icon: "⚡" },
   { href: "/word-list/all", label: "単語帳", icon: "📖" },
   { href: "/history", label: "履歴", icon: "📊" },
 ];
@@ -18,7 +17,7 @@ export const BottomNav = () => {
     if (href === "/") return pathname === "/";
     // クイズ（/word-list 完全一致）または詳細クイズ設定（/quiz/配下）
     if (href === "/word-list") {
-      return pathname === "/word-list" || pathname.startsWith("/quiz/");
+      return pathname === "/word-list" || pathname === "/quiz" || pathname.startsWith("/quiz/");
     }
     // 単語帳（/word-list/配下のサブページ）
     if (href === "/word-list/all") {
