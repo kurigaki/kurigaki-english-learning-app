@@ -8,10 +8,50 @@ import type { QuestionTypeRatios } from "@/types";
 import {
   QuizSettings,
   defaultQuizSettings,
+  defaultTypeRatios,
   ALL_CATEGORIES,
 } from "@/lib/quiz/settings";
 import { filterWordsBySettings } from "@/lib/quiz/generator";
 import type { QuizProgressState } from "@/lib/quiz-session";
+
+const PRESETS: { label: string; emoji: string; settings: QuizSettings }[] = [
+  {
+    label: "おまかせ",
+    emoji: "🎲",
+    settings: { ...defaultQuizSettings },
+  },
+  {
+    label: "TOEIC",
+    emoji: "💼",
+    settings: { ...defaultQuizSettings, course: "toeic" as Course },
+  },
+  {
+    label: "英検",
+    emoji: "📚",
+    settings: { ...defaultQuizSettings, course: "eiken" as Course },
+  },
+  {
+    label: "ブックマーク",
+    emoji: "⭐",
+    settings: { ...defaultQuizSettings, includeBookmarksOnly: true },
+  },
+];
+
+const isPresetActive = (preset: QuizSettings, current: QuizSettings): boolean => {
+  const sameTypeRatios =
+    preset.typeRatios.enToJa === current.typeRatios.enToJa &&
+    preset.typeRatios.jaToEn === current.typeRatios.jaToEn &&
+    preset.typeRatios.listening === current.typeRatios.listening &&
+    preset.typeRatios.dictation === current.typeRatios.dictation;
+  return (
+    preset.course === current.course &&
+    preset.stage === current.stage &&
+    preset.includeBookmarksOnly === current.includeBookmarksOnly &&
+    preset.categories.length === current.categories.length &&
+    preset.difficulties.length === current.difficulties.length &&
+    sameTypeRatios
+  );
+};
 
 const QUESTIONS_PER_SESSION = 10;
 
@@ -59,6 +99,30 @@ export const QuizSetup = ({
 
         {/* 中央スクロール可能エリア */}
         <div className="flex-1 overflow-y-auto min-h-0 space-y-2">
+          {/* プリセット */}
+          <Card className="!p-3">
+            <h2 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-2">クイックスタート</h2>
+            <div className="grid grid-cols-4 gap-1.5">
+              {PRESETS.map((preset) => {
+                const active = isPresetActive(preset.settings, quizSettings);
+                return (
+                  <button
+                    key={preset.label}
+                    onClick={() => setQuizSettings({ ...preset.settings, typeRatios: { ...defaultTypeRatios } })}
+                    className={`flex flex-col items-center gap-1 py-2 px-1 rounded-xl text-[11px] font-medium transition-all border ${
+                      active
+                        ? "bg-primary-500 text-white border-primary-500 shadow-md scale-105"
+                        : "bg-slate-50 dark:bg-slate-700 text-slate-600 dark:text-slate-300 border-slate-200 dark:border-slate-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:border-primary-200"
+                    }`}
+                  >
+                    <span className="text-lg emoji-icon">{preset.emoji}</span>
+                    <span>{preset.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </Card>
+
           {savedProgress && (
             <Card className="!p-3 border-2 border-primary-200 dark:border-primary-700 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20">
               <h2 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-1">中断したクイズがあります</h2>
