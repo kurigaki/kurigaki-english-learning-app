@@ -32,6 +32,7 @@ import {
 } from "@/lib/quiz/generator";
 import { speakWord, speakSentence, isSpeechSynthesisSupported } from "@/lib/audio";
 import { InQuizSettings, loadInQuizSettings, saveInQuizSettings } from "@/lib/quiz/in-quiz-settings";
+import { isDictationWordCorrect } from "@/lib/quiz/dictation-match";
 import { levenshteinDistance } from "@/lib/string-utils";
 
 const QUESTIONS_PER_SESSION = 10;
@@ -226,7 +227,7 @@ export const useQuiz = () => {
       setCurrentIndex((prev) => prev + 1);
       setSelected(null);
       setIsCorrect(null);
-      setShowTranslation(inQuizSettingsRef.current.translationMode === "always");
+      setShowTranslation(false);
       setDictationInputs([]);
       dictationInputRefs.current = [];
     }
@@ -261,6 +262,7 @@ export const useQuiz = () => {
 
   const resumeSavedProgress = useCallback(() => {
     if (!savedProgress) return;
+    setInQuizSettings(loadInQuizSettings());
     setQuestions(savedProgress.questions);
     setQuizSettings(savedProgress.quizSettings);
     setPhase("quiz");
@@ -441,8 +443,9 @@ export const useQuiz = () => {
     const allFilled = answerWords.every((_, i) => (dictationInputs[i] ?? "").trim() !== "");
     if (!allFilled) return;
 
+    const difficulty = inQuizSettingsRef.current.dictationDifficulty;
     const correct = answerWords.every(
-      (w, i) => (dictationInputs[i] ?? "").trim().toLowerCase() === w.toLowerCase()
+      (w, i) => isDictationWordCorrect(dictationInputs[i] ?? "", w, difficulty)
     );
     const answerText = dictationInputs.map((s) => s.trim()).join(" ");
     processAnswer(answerText, correct);
@@ -476,6 +479,7 @@ export const useQuiz = () => {
     settings: QuizSettings = defaultQuizSettings,
     options?: { priorityWordId?: number; weakOnlyMode?: boolean; srsReviewMode?: boolean }
   ) => {
+    setInQuizSettings(loadInQuizSettings());
     clearQuizResultState();
     clearQuizProgressState();
     setSavedProgress(null);
@@ -533,7 +537,7 @@ export const useQuiz = () => {
     setAnsweredWords([]);
     setElapsedSeconds(0);
     setIsRestoredFromSession(false);
-    setShowTranslation(inQuizSettingsRef.current.translationMode === "always");
+    setShowTranslation(false);
     setShowPerfectScore(false);
     sessionStartTimeRef.current = Date.now();
     hasAutoPlayedRef.current = new Set();
@@ -544,6 +548,7 @@ export const useQuiz = () => {
     const retryWords = wordIds.map((id) => words.find((w) => w.id === id)).filter((w): w is Word => !!w);
     if (retryWords.length === 0) return;
 
+    setInQuizSettings(loadInQuizSettings());
     clearQuizResultState();
     clearQuizProgressState();
     setSavedProgress(null);
@@ -563,7 +568,7 @@ export const useQuiz = () => {
     setAnsweredWords([]);
     setElapsedSeconds(0);
     setIsRestoredFromSession(false);
-    setShowTranslation(inQuizSettingsRef.current.translationMode === "always");
+    setShowTranslation(false);
     setShowPerfectScore(false);
     sessionStartTimeRef.current = Date.now();
     hasAutoPlayedRef.current = new Set();
@@ -592,25 +597,28 @@ export const useQuiz = () => {
       clearQuizResultState();
     }
 
+    // Don't reset phase if quiz is already showing result
+    if (phase === "result") return;
+
     if (reviewWordId) {
       const wordIdNum = parseInt(reviewWordId, 10);
       if (!isNaN(wordIdNum) && words.some((w) => w.id === wordIdNum)) {
-        startNewSession(defaultQuizSettings, { priorityWordId: wordIdNum });
+        startNewSession(quizSettings, { priorityWordId: wordIdNum });
         return;
       }
     }
     if (srsReview === "true" && srsWordIds.length > 0) {
-      startNewSession(defaultQuizSettings, { srsReviewMode: true });
+      startNewSession(quizSettings, { srsReviewMode: true });
       return;
     }
     if (weakOnly === "true" && weakWordIds.length > 0) {
-      startNewSession(defaultQuizSettings, { weakOnlyMode: true });
+      startNewSession(quizSettings, { weakOnlyMode: true });
       return;
     }
     if (bookmarksOnly === "true") {
       const validBookmarked = bookmarkedIds.filter((id) => words.some((w) => w.id === id));
       if (validBookmarked.length > 0) {
-        startNewSession({ ...defaultQuizSettings, includeBookmarksOnly: true });
+        startNewSession({ ...quizSettings, includeBookmarksOnly: true });
         return;
       }
     }
@@ -623,7 +631,7 @@ export const useQuiz = () => {
     }
     if (phase === "quiz" && questions.length > 0) return;
     setPhase("setup");
-  }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, bookWordsParam, weakWordIds, srsWordIds, bookmarkedIds, startNewSession, startRetrySessionWithWordIds, phase, questions.length]);
+  }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, bookWordsParam, weakWordIds, srsWordIds, bookmarkedIds, startNewSession, startRetrySessionWithWordIds, phase, questions.length, quizSettings]);
 
   useEffect(() => {
     if (isFinished && !isRestoredFromSession && answeredWords.length > 0) {
@@ -672,7 +680,13 @@ export const useQuiz = () => {
         : currentQuestion?.type === "speaking"
         ? inQuizSettings.speakingAudioMode
         : inQuizSettings.readingAudioMode;
-    if (currentAudioMode !== "auto") return;
+    // 書き取り: 和訳がOFF かつ 音声が "button" の場合は auto-play に昇格
+    const shouldAutoPlay =
+      currentAudioMode === "auto" ||
+      (currentQuestion?.type === "dictation" &&
+        inQuizSettings.writingTranslationMode === "none" &&
+        currentAudioMode === "button");
+    if (!shouldAutoPlay) return;
     // 音声認識（マイク）動作中は TTS を呼ばない（競合防止）
     if (isListening) return;
     if (!currentQuestion || !isSpeechSynthesisSupported() || selected !== null || hasAutoPlayedRef.current.has(currentIndex)) return;
@@ -694,6 +708,7 @@ export const useQuiz = () => {
     inQuizSettings.writingAudioMode,
     inQuizSettings.speakingAudioMode,
     inQuizSettings.listeningAudioMode,
+    inQuizSettings.writingTranslationMode,
     isListening,
   ]);
 
