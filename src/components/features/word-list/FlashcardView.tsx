@@ -158,26 +158,14 @@ export default function FlashcardView({ words, onExit, initialIndex, onDetailVie
           onClick={() => onExit(currentWord.id)}
           className="flex items-center gap-1 text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors text-sm"
         >
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
           リストに戻る
         </button>
         <div className="flex items-center gap-2">
           {isRated && (
-            <span className="text-xs text-green-600 dark:text-green-400 font-medium">
-              ✓ 評価済み
-            </span>
+            <span className="text-xs text-green-600 dark:text-green-400 font-medium">✓ 評価済み</span>
           )}
           <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
             {safeCurrentIndex + 1} / {words.length}
@@ -195,153 +183,132 @@ export default function FlashcardView({ words, onExit, initialIndex, onDetailVie
         </div>
       </div>
 
-      {/* カード */}
-      <div
-        className={`flex-1 h-full card-flip-container cursor-pointer select-none ${
-          slideDir === "left"
-            ? "animate-slide-out-left"
-            : slideDir === "right"
-              ? "animate-slide-out-right"
-              : ""
-        }`}
-        onClick={handleFlip}
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-        role="button"
-        tabIndex={0}
-        aria-label={isFlipped ? "カードを戻す" : "カードをめくる"}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") handleFlip();
-        }}
-      >
-        <div
-          className={`card-flip-inner w-full h-full min-h-[260px] ${isFlipped ? "is-flipped" : ""}`}
-        >
-          {/* 表面 */}
-          <div className="card-flip-face bg-white dark:bg-slate-800 rounded-2xl shadow-card border border-primary-100 dark:border-slate-700 flex flex-col items-center justify-center gap-3 p-6">
-            <div className="flex items-center gap-2">
-              <p
-                className="text-2xl font-bold text-slate-800 dark:text-slate-100"
-                data-testid="card-front-word"
-              >
-                {currentWord.word}
-              </p>
-              <SpeakButton text={currentWord.word} size="sm" />
-            </div>
-            <p className="text-xs text-slate-400 dark:text-slate-500 mt-2">
-              タップで意味を確認
-            </p>
-          </div>
+      {/* カード＋ナビゲーション（残りスペースを使い切る） */}
+      <div className="flex-1 flex flex-col min-h-0 gap-3">
+        {/* 前/次ボタン＋カードを横並びにして両脇にナビ */}
+        <div className="flex items-center gap-2 flex-1 min-h-0">
+          {/* 前へボタン */}
+          <button
+            data-testid="btn-prev"
+            onClick={() => navigate("prev")}
+            disabled={isFirst}
+            className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl transition-all disabled:opacity-20 disabled:cursor-not-allowed bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary-300 dark:hover:border-primary-600 disabled:hover:border-slate-200 dark:disabled:hover:border-slate-700"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
 
-          {/* 裏面 - クリックで表面に戻る（ボタン・リンク以外の領域） */}
+          {/* カード */}
           <div
-            className="card-flip-face card-flip-back bg-white dark:bg-slate-800 rounded-2xl shadow-card border border-primary-100 dark:border-slate-700 flex flex-col items-center justify-center gap-3 p-6"
+            className={`flex-1 h-full max-h-[420px] card-flip-container cursor-pointer select-none ${
+              slideDir === "left"
+                ? "animate-slide-out-left"
+                : slideDir === "right"
+                  ? "animate-slide-out-right"
+                  : ""
+            }`}
+            onClick={handleFlip}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+            role="button"
+            tabIndex={0}
+            aria-label={isFlipped ? "カードを戻す" : "カードをめくる"}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") handleFlip();
+            }}
           >
-            <p
-              className="text-xl font-bold text-slate-800 dark:text-slate-100 text-center"
-              data-testid="card-back-meaning"
-            >
-              {currentWord.meaning}
-            </p>
-            {currentWord.example && (
-              <div className="text-center space-y-1">
-                <p className="text-xs text-slate-500 dark:text-slate-400 italic">
-                  {currentWord.example}
-                </p>
-                {currentWord.exampleJa && (
-                  <p className="text-xs text-slate-400 dark:text-slate-500">
-                    {currentWord.exampleJa}
+            <div className={`card-flip-inner w-full h-full min-h-[240px] ${isFlipped ? "is-flipped" : ""}`}>
+              {/* 表面 */}
+              <div className="card-flip-face bg-white dark:bg-slate-800 rounded-2xl shadow-card border border-primary-100 dark:border-slate-700 flex flex-col items-center justify-center gap-3 p-6">
+                <div className="flex items-center gap-2">
+                  <p
+                    className="text-2xl font-bold text-slate-800 dark:text-slate-100"
+                    data-testid="card-front-word"
+                  >
+                    {currentWord.word}
                   </p>
-                )}
+                  <SpeakButton text={currentWord.word} size="sm" />
+                </div>
+                <p className="text-xs text-slate-400 dark:text-slate-500">タップで意味を確認</p>
               </div>
-            )}
-            <p className="text-xs text-slate-300 dark:text-slate-600">タップで表に戻る</p>
 
-            {/* SRS評価ボタン - クリックが上位コンテナに伝播しないよう停止 */}
-            <div className="flex gap-2 mt-2 w-full" onClick={(e) => e.stopPropagation()}>
-              <button
-                data-testid="btn-knew"
-                onClick={() => handleRate(true)}
-                className="flex-1 py-2 px-3 rounded-xl bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium hover:bg-green-100 dark:hover:bg-green-800/40 transition-colors"
-              >
-                知ってた 👍
-              </button>
-              <button
-                data-testid="btn-unknown"
-                onClick={() => handleRate(false)}
-                className="flex-1 py-2 px-3 rounded-xl bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-sm font-medium hover:bg-orange-100 dark:hover:bg-orange-800/40 transition-colors"
-              >
-                わからなかった 😓
-              </button>
-            </div>
+              {/* 裏面 */}
+              <div className="card-flip-face card-flip-back bg-white dark:bg-slate-800 rounded-2xl shadow-card border border-primary-100 dark:border-slate-700 flex flex-col items-center justify-center gap-2 p-5">
+                <p
+                  className="text-xl font-bold text-slate-800 dark:text-slate-100 text-center"
+                  data-testid="card-back-meaning"
+                >
+                  {currentWord.meaning}
+                </p>
+                {currentWord.example && (
+                  <div className="text-center space-y-0.5">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 italic">{currentWord.example}</p>
+                    {currentWord.exampleJa && (
+                      <p className="text-xs text-slate-400 dark:text-slate-500">{currentWord.exampleJa}</p>
+                    )}
+                  </div>
+                )}
+                <p className="text-xs text-slate-300 dark:text-slate-600">タップで表に戻る</p>
 
-            <div className="flex items-center gap-3 w-full justify-center" onClick={(e) => e.stopPropagation()}>
-              <button
-                onClick={handleSkip}
-                className="text-xs text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
-              >
-                スキップ（評価なし）
-              </button>
-              <span className="text-slate-200 dark:text-slate-700">|</span>
-              <Link
-                href={`/word/${currentWord.id}?from=wordlist`}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onDetailView?.(safeCurrentIndex);
-                }}
-                className="text-xs text-primary-500 hover:underline"
-              >
-                詳細を見る →
-              </Link>
+                {/* SRS評価ボタン */}
+                <div className="flex gap-2 w-full" onClick={(e) => e.stopPropagation()}>
+                  <button
+                    data-testid="btn-knew"
+                    onClick={() => handleRate(true)}
+                    className="flex-1 py-2 px-3 rounded-xl bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium hover:bg-green-100 dark:hover:bg-green-800/40 transition-colors"
+                  >
+                    知ってた 👍
+                  </button>
+                  <button
+                    data-testid="btn-unknown"
+                    onClick={() => handleRate(false)}
+                    className="flex-1 py-2 px-3 rounded-xl bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 text-sm font-medium hover:bg-orange-100 dark:hover:bg-orange-800/40 transition-colors"
+                  >
+                    わからなかった 😓
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-3 w-full justify-center" onClick={(e) => e.stopPropagation()}>
+                  <button
+                    onClick={handleSkip}
+                    className="text-xs text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+                  >
+                    スキップ（評価なし）
+                  </button>
+                  <span className="text-slate-200 dark:text-slate-700">|</span>
+                  <Link
+                    href={`/word/${currentWord.id}?from=wordlist`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onDetailView?.(safeCurrentIndex);
+                    }}
+                    className="text-xs text-primary-500 hover:underline"
+                  >
+                    詳細を見る →
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* 前/次ボタン */}
-      <div className="flex-shrink-0 flex items-center justify-between mt-3">
-        <button
-          data-testid="btn-prev"
-          onClick={() => navigate("prev")}
-          disabled={isFirst}
-          className="flex items-center gap-1 px-4 py-2 rounded-xl text-sm font-medium transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary-300 dark:hover:border-primary-600 disabled:hover:border-slate-200 dark:disabled:hover:border-slate-700"
-        >
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+          {/* 次へボタン */}
+          <button
+            data-testid="btn-next"
+            onClick={() => navigate("next")}
+            disabled={isLast}
+            className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl transition-all disabled:opacity-20 disabled:cursor-not-allowed bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary-300 dark:hover:border-primary-600 disabled:hover:border-slate-200 dark:disabled:hover:border-slate-700"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-          前へ
-        </button>
-        <button
-          data-testid="btn-next"
-          onClick={() => navigate("next")}
-          disabled={isLast}
-          className="flex items-center gap-1 px-4 py-2 rounded-xl text-sm font-medium transition-all disabled:opacity-30 disabled:cursor-not-allowed bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary-300 dark:hover:border-primary-600 disabled:hover:border-slate-200 dark:disabled:hover:border-slate-700"
-        >
-          次へ
-          <svg
-            className="w-4 h-4"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+
+        {/* スワイプヒント */}
+        <p className="flex-shrink-0 text-center text-[11px] text-slate-300 dark:text-slate-600">
+          ← スワイプで移動 →
+        </p>
       </div>
     </div>
   );

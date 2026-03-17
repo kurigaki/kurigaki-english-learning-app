@@ -60,7 +60,8 @@ export default function FlashcardPage() {
   if (!isMounted || !wordIds) return null;
 
   return (
-    <div className="main-content px-4 py-3 flex flex-col">
+    <div className="main-content flex flex-col">
+      <div className="max-w-4xl mx-auto w-full flex flex-col flex-1 min-h-0 px-4 py-3">
       <FlashcardView
         words={flashcardWords}
         initialIndex={initialIndex}
@@ -74,6 +75,7 @@ export default function FlashcardPage() {
           saveQuickFlashcardSession(wordIds, index);
         }}
       />
+      </div>
     </div>
   );
 }
