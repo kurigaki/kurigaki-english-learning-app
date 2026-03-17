@@ -22,18 +22,17 @@ vi.mock("next/link", () => ({
 import { usePathname } from "next/navigation";
 
 describe("BottomNav", () => {
-  it("renders 5 navigation items", () => {
+  it("renders 4 navigation items", () => {
     render(<BottomNav />);
     const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
     const links = nav.querySelectorAll("a");
-    expect(links).toHaveLength(5);
+    expect(links).toHaveLength(4);
   });
 
   it("renders correct labels", () => {
     render(<BottomNav />);
     expect(screen.getByText("ホーム")).toBeInTheDocument();
     expect(screen.getByText("クイズ")).toBeInTheDocument();
-    expect(screen.getByText("スピード")).toBeInTheDocument();
     expect(screen.getByText("単語帳")).toBeInTheDocument();
     expect(screen.getByText("履歴")).toBeInTheDocument();
   });
@@ -43,7 +42,7 @@ describe("BottomNav", () => {
     const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
     const links = nav.querySelectorAll("a");
     const hrefs = Array.from(links).map((link) => link.getAttribute("href"));
-    expect(hrefs).toEqual(["/", "/quiz", "/speed-challenge", "/word-list", "/history"]);
+    expect(hrefs).toEqual(["/", "/word-list", "/word-list/all", "/history"]);
   });
 
   it("marks home as active when pathname is /", () => {
@@ -52,8 +51,8 @@ describe("BottomNav", () => {
     expect(homeLink).toHaveAttribute("aria-current", "page");
   });
 
-  it("marks quiz as active when pathname is /quiz", () => {
-    vi.mocked(usePathname).mockReturnValue("/quiz");
+  it("marks quiz as active when pathname is /word-list", () => {
+    vi.mocked(usePathname).mockReturnValue("/word-list");
     render(<BottomNav />);
     const quizLink = screen.getByText("クイズ").closest("a");
     expect(quizLink).toHaveAttribute("aria-current", "page");
@@ -61,12 +60,17 @@ describe("BottomNav", () => {
     expect(homeLink).not.toHaveAttribute("aria-current");
   });
 
-  it("marks speed as active when pathname is /speed-challenge", () => {
-    vi.mocked(usePathname).mockReturnValue("/speed-challenge");
+  it("marks quiz as active when pathname is /quiz", () => {
+    vi.mocked(usePathname).mockReturnValue("/quiz");
     render(<BottomNav />);
-    const speedLink = screen.getByText("スピード").closest("a");
-    expect(speedLink).toHaveAttribute("aria-current", "page");
-    const homeLink = screen.getByText("ホーム").closest("a");
-    expect(homeLink).not.toHaveAttribute("aria-current");
+    const quizLink = screen.getByText("クイズ").closest("a");
+    expect(quizLink).toHaveAttribute("aria-current", "page");
+  });
+
+  it("marks 単語帳 as active when pathname is /word-list/all", () => {
+    vi.mocked(usePathname).mockReturnValue("/word-list/all");
+    render(<BottomNav />);
+    const vocabLink = screen.getByText("単語帳").closest("a");
+    expect(vocabLink).toHaveAttribute("aria-current", "page");
   });
 });

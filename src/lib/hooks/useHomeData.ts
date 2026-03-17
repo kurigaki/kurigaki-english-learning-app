@@ -9,6 +9,7 @@ import type { Word } from "@/data/words/compat";
 import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 import { getDisplayedManualMastery as getDisplayedManualMasteryUtil } from "@/lib/manual-mastery";
 import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
+import { saveBookWordIds, getQuizProgressState, clearQuizProgressState } from "@/lib/quiz-session";
 
 export type UserProgress = {
   level: number;
@@ -29,6 +30,7 @@ export const useHomeData = () => {
   const [manualMemoryById, setManualMemoryById] = useState<Record<number, ManualMasteryLevel>>({});
   const [bookmarkedWordIds, setBookmarkedWordIds] = useState<number[]>([]);
   const [isMounted, setIsMounted] = useState(false);
+  const [savedProgressInfo, setSavedProgressInfo] = useState<{ answeredCount: number; total: number } | null>(null);
 
   const loadData = useCallback(async () => {
     const userData = await unifiedStorage.getUserData();
@@ -64,7 +66,11 @@ export const useHomeData = () => {
     setIsMounted(true);
     const d = new Date();
     const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-    setDailyWords(pickDailyWords(words, today, 3));
+    setDailyWords(pickDailyWords(words, today, 10));
+    const progress = getQuizProgressState();
+    if (progress) {
+      setSavedProgressInfo({ answeredCount: progress.currentIndex + 1, total: progress.questions.length });
+    }
   }, []);
 
   useEffect(() => {
@@ -102,6 +108,17 @@ export const useHomeData = () => {
     router.push("/flashcard");
   }, [router]);
 
+  const startDailyQuiz = useCallback((wordIds: number[]) => {
+    if (wordIds.length === 0) return;
+    saveBookWordIds(wordIds);
+    router.push("/quiz/settings?bookWords=true");
+  }, [router]);
+
+  const discardProgress = useCallback(() => {
+    clearQuizProgressState();
+    setSavedProgressInfo(null);
+  }, []);
+
   return {
     isMounted,
     userProgress,
@@ -111,9 +128,12 @@ export const useHomeData = () => {
     dailyWords,
     wordStatsMap,
     bookmarkedWordIds,
+    savedProgressInfo,
     getDisplayedMastery,
     handleManualMasteryChange,
     toggleBookmark,
     startFlashcard,
+    startDailyQuiz,
+    discardProgress,
   };
 };

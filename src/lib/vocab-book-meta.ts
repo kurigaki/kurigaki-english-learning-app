@@ -113,5 +113,5 @@ export function resolveQuizHref(bookId: string): string {
   if (type === "course") return `/quiz?course=${parts[1]}&stage=${parts[2]}`;
   if (type === "mastery" && parts[1] === "weak") return `/quiz?weakOnly=true`;
   // TODO: mastery(weak以外), accuracy, recommended タイプのクイズパラメータは未実装
-  return "/quiz";
+  return "/quiz/settings";
 }

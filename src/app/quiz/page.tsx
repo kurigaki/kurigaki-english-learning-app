@@ -1,18 +1,16 @@
 "use client";
 
-import { words } from "@/data/words/compat";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { clearQuizResultState } from "@/lib/quiz-session";
 import { useQuiz } from "@/lib/hooks/useQuiz";
-import { QuizSetup } from "@/components/features/quiz/QuizSetup";
 import { QuizSession } from "@/components/features/quiz/QuizSession";
 import { QuizResult } from "@/components/features/quiz/QuizResult";
 
 export default function QuizPage() {
+  const router = useRouter();
   const {
     phase,
-    setPhase,
-    quizSettings,
-    setQuizSettings,
     questions,
     currentIndex,
     selected,
@@ -35,7 +33,6 @@ export default function QuizPage() {
     showingAchievement,
     showPerfectScore,
     setShowPerfectScore,
-    bookmarkedIds,
     dataLoaded,
     currentQuestion,
     startNewSession,
@@ -52,35 +49,38 @@ export default function QuizPage() {
     handleSpeakingSkip,
     inQuizSettings,
     setInQuizSettings,
+    quizSettings,
     savedProgress,
     saveProgress,
     resumeSavedProgress,
-    discardSavedProgress,
   } = useQuiz();
+
+  // Auto-start: when phase is still "setup" and data is loaded, start quiz automatically
+  useEffect(() => {
+    if (phase !== "setup" || !dataLoaded) return;
+    if (savedProgress) {
+      resumeSavedProgress();
+    } else {
+      startNewSession(quizSettings);
+    }
+  }, [phase, dataLoaded, savedProgress, resumeSavedProgress, startNewSession, quizSettings]);
 
   const handleSuspend = () => {
     if (saveProgress()) {
-      setPhase("setup");
+      router.push("/word-list");
     }
   };
 
-  // 設定画面
-  if (phase === "setup") {
+  // Loading screen: while waiting for auto-start
+  if (!dataLoaded || phase === "setup") {
     return (
-      <QuizSetup
-        quizSettings={quizSettings}
-        setQuizSettings={setQuizSettings}
-        startNewSession={startNewSession}
-        bookmarkedIds={bookmarkedIds}
-        words={words}
-        savedProgress={savedProgress}
-        onResumeSaved={resumeSavedProgress}
-        onDiscardSaved={discardSavedProgress}
-      />
+      <div className="main-content flex items-center justify-center">
+        <p className="text-slate-500 dark:text-slate-400">読み込み中...</p>
+      </div>
     );
   }
 
-  if (!dataLoaded || (phase !== "result" && questions.length === 0)) {
+  if (phase !== "result" && questions.length === 0) {
     return (
       <div className="main-content flex items-center justify-center">
         <p className="text-slate-500 dark:text-slate-400">読み込み中...</p>
@@ -109,7 +109,7 @@ export default function QuizPage() {
         onClearResult={() => clearQuizResultState()}
         onSettings={() => {
           clearQuizResultState();
-          setPhase("setup");
+          router.push("/word-list");
         }}
         onHome={() => clearQuizResultState()}
         handleAchievementClose={handleAchievementClose}

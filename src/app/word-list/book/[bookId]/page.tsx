@@ -11,7 +11,8 @@ import { resolveBookMeta } from "@/lib/vocab-book-meta";
 import { unifiedStorage } from "@/lib/unified-storage";
 import type { ManualMasteryLevel, WordStats } from "@/lib/storage";
 import { getDisplayedManualMastery, MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
-import { saveBookWordIds } from "@/lib/quiz-session";
+import { saveBookWordIds, getQuizProgressState, clearQuizProgressState } from "@/lib/quiz-session";
+import { saveTimeAttackContext } from "@/lib/time-attack-best";
 import { saveQuickFlashcardSession } from "@/lib/flashcard-session";
 import { speakWord, stopSpeaking } from "@/lib/audio";
 import { getAccuracyBadgeClass } from "@/lib/accuracy-style";
@@ -138,9 +139,11 @@ export default function BookDetailPage() {
   const [bookmarkDialog, setBookmarkDialog] = useState<{ wordId: number; wordText: string } | null>(null);
   const [showSettings, setShowSettings] = useState(false);
   const [showDuplicateDialog, setShowDuplicateDialog] = useState(false);
+  const [showDiscardConfirm, setShowDiscardConfirm] = useState(false);
+  const pendingQuizStartRef = useRef<(() => void) | null>(null);
   // 出題設定（⚙️パネルで変更、FC/クイズ開始時に使用）
   const [studySettings, setStudySettings] = useState<StudySettings>({
-    countMode: "all",
+    countMode: 10,
     sortBy: "random" as SortBy,
   });
 
@@ -385,6 +388,27 @@ export default function BookDetailPage() {
 
   // 現在の出題設定を使ってクイズ開始（底部ボタン用）
   const handleStartQuiz = useCallback(() => {
+    const startQuiz = () => {
+      const wordIds = computeWordIds(
+        filteredWords.map((w) => w.id),
+        studySettings.countMode,
+        studySettings.sortBy,
+        statsMap,
+        manualMap
+      );
+      saveBookWordIds(wordIds);
+      router.push("/quiz?bookWords=true");
+    };
+
+    if (getQuizProgressState()) {
+      pendingQuizStartRef.current = startQuiz;
+      setShowDiscardConfirm(true);
+    } else {
+      startQuiz();
+    }
+  }, [filteredWords, studySettings, statsMap, manualMap, router]);
+
+  const handleStartTimeAttack = useCallback(() => {
     const wordIds = computeWordIds(
       filteredWords.map((w) => w.id),
       studySettings.countMode,
@@ -392,9 +416,14 @@ export default function BookDetailPage() {
       statsMap,
       manualMap
     );
-    saveBookWordIds(wordIds);
-    router.push("/quiz?bookWords=true");
-  }, [filteredWords, studySettings, statsMap, manualMap, router]);
+    const key = `book:${bookId}`;
+    saveTimeAttackContext({
+      wordIds,
+      bestKey: key,
+      settingsLabel: bookMeta?.name ?? bookId,
+    });
+    router.push("/speed-challenge");
+  }, [filteredWords, studySettings, statsMap, manualMap, router, bookId, bookMeta]);
 
   if (!isMounted) return null;
 
@@ -756,6 +785,13 @@ export default function BookDetailPage() {
               <span className="emoji-icon">📝</span>
               クイズ
             </button>
+            <button
+              onClick={handleStartTimeAttack}
+              className="flex items-center justify-center gap-2 flex-1 py-3 bg-orange-500 text-white font-bold rounded-2xl hover:bg-orange-600 transition-colors text-sm shadow-sm"
+            >
+              <span className="emoji-icon">⚡</span>
+              タイムアタック
+            </button>
           </div>
         </div>
       )}
@@ -809,6 +845,40 @@ export default function BookDetailPage() {
           }}
           onClose={() => setShowFilterSheet(false)}
         />
+      )}
+
+      {/* 途中クイズ破棄確認ダイアログ */}
+      {showDiscardConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 w-full max-w-sm shadow-xl">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-2xl emoji-icon">⚠️</span>
+              <h2 className="text-base font-bold text-slate-800 dark:text-slate-100">前回の途中クイズがあります</h2>
+            </div>
+            <p className="text-sm text-slate-600 dark:text-slate-300 mb-5">
+              新しいクイズを始めると、前回の途中クイズは破棄されます。よろしいですか？
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setShowDiscardConfirm(false)}
+                className="flex-1 py-2.5 rounded-xl border border-slate-200 dark:border-slate-600 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              >
+                キャンセル
+              </button>
+              <button
+                onClick={() => {
+                  clearQuizProgressState();
+                  setShowDiscardConfirm(false);
+                  pendingQuizStartRef.current?.();
+                  pendingQuizStartRef.current = null;
+                }}
+                className="flex-1 py-2.5 rounded-xl bg-primary-500 text-white text-sm font-semibold hover:bg-primary-600 transition-colors"
+              >
+                破棄して開始
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

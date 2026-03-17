@@ -23,6 +23,7 @@ import {
   clearSpeedResultState,
 } from "@/lib/speed-session";
 import { saveWordNavState } from "@/lib/word-nav-state";
+import { getAndClearTimeAttackContext } from "@/lib/time-attack-best";
 
 const TIME_LIMIT = 30;
 const COMBO_BONUS_THRESHOLD = 5;
@@ -111,10 +112,11 @@ function generateQuestion(word: Word, allWords: Word[], mode: SpeedChallengeMode
   };
 }
 
-function getNextQuestion(usedWordIds: Set<number>, mode: SpeedChallengeMode): Question {
-  const availableWords = words.filter((w) => !usedWordIds.has(w.id));
+function getNextQuestion(usedWordIds: Set<number>, mode: SpeedChallengeMode, wordPool?: Word[]): Question {
+  const pool = wordPool && wordPool.length > 0 ? wordPool : words;
+  const availableWords = pool.filter((w) => !usedWordIds.has(w.id));
   // 全ての単語を使い切ったら、再度全体から選ぶ
-  const wordsToChooseFrom = availableWords.length > 0 ? availableWords : words;
+  const wordsToChooseFrom = availableWords.length > 0 ? availableWords : pool;
   const randomWord = wordsToChooseFrom[Math.floor(Math.random() * wordsToChooseFrom.length)];
   return generateQuestion(randomWord, words, mode);
 }
@@ -391,6 +393,25 @@ export default function SpeedChallengePage() {
   // endGame(useCallback) から voiceInputEnabled を参照するための ref
   const voiceInputEnabledRef = useRef(false);
 
+  // タイムアタックコンテキスト（単語帳からの出題範囲）
+  const initializedRef = useRef(false);
+  const wordPoolRef = useRef<Word[]>([]); // 空=全単語
+  const [settingsLabel, setSettingsLabel] = useState<string>("");
+
+  // 単語帳からのコンテキストを読み込む（React Strict Mode 対策で initializedRef を使用）
+  useEffect(() => {
+    if (initializedRef.current) return;
+    initializedRef.current = true;
+
+    const context = getAndClearTimeAttackContext();
+    if (context) {
+      wordPoolRef.current = context.wordIds.length > 0
+        ? words.filter((w) => context.wordIds.includes(w.id))
+        : [];
+      setSettingsLabel(context.settingsLabel);
+    }
+  }, []);
+
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({
@@ -651,7 +672,7 @@ export default function SpeedChallengePage() {
     setHasNotifiedHighScore(false);
     setHasNotifiedCloseToHighScore(false);
     setRevealedWords(new Set());
-    const firstQuestion = getNextQuestion(new Set(), mode);
+    const firstQuestion = getNextQuestion(new Set(), mode, wordPoolRef.current);
     dispatch({ type: "START_GAME", payload: { question: firstQuestion, timeLimit: timeLimitSetting } });
   }, [dispatch, mode, timeLimitSetting]);
 
@@ -1007,7 +1028,7 @@ export default function SpeedChallengePage() {
     setTimeout(() => dispatch({ type: "SET_FEEDBACK", payload: null }), FEEDBACK_DURATION_MS);
 
     // 次の問題
-    const newQuestion = getNextQuestion(usedWordIds, mode);
+    const newQuestion = getNextQuestion(usedWordIds, mode, wordPoolRef.current);
     dispatch({ type: "ANSWER", payload: { correct, answeredWord, nextQuestion: newQuestion } });
   };
 
@@ -1242,7 +1263,7 @@ export default function SpeedChallengePage() {
     if (weakWordIds.length === 0) return;
 
     sessionStorage.setItem('quiz-custom-word-ids', JSON.stringify(weakWordIds));
-    router.push('/quiz');
+    router.push('/word-list');
   };
 
   const handleShowHighScores = async () => {
@@ -1272,7 +1293,7 @@ export default function SpeedChallengePage() {
     // クイズモードで使う単語IDをセッションストレージに保存
     sessionStorage.setItem('quiz-custom-word-ids', JSON.stringify(incorrectWordIds));
     // クイズページに遷移
-    router.push('/quiz');
+    router.push('/word-list');
   };
 
   const comboEffectClass = useMemo(() => {
@@ -1635,9 +1656,13 @@ export default function SpeedChallengePage() {
           <h1 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-1">
             スピードチャレンジ
           </h1>
-          <p className="text-slate-500 dark:text-slate-400 text-xs mb-3">
+          <p className="text-slate-500 dark:text-slate-400 text-xs mb-1">
             {TIME_LIMIT}秒間で何問正解できるか挑戦！
           </p>
+          {settingsLabel && (
+            <p className="text-xs text-primary-500 mb-3">出題範囲: {settingsLabel}</p>
+          )}
+          {!settingsLabel && <div className="mb-3" />}
 
           <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg p-2 mb-3">
             <div>

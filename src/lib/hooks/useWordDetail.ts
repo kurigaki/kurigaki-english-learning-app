@@ -91,7 +91,7 @@ export const useWordDetail = () => {
         router.push("/weak-words");
         break;
       case "wordlist":
-        router.push("/word-list");
+        router.push("/word-list/all");
         break;
       case "bookmarks":
         router.push("/word-list/all");

@@ -62,7 +62,6 @@ export default function HistoryPage() {
   const [manualMemoryById, setManualMemoryById] = useState<Record<number, ManualMasteryLevel>>({});
   const [courseProgressList, setCourseProgressList] = useState<CourseProgress[]>([]);
   const [recentAchievements, setRecentAchievements] = useState<(Achievement & { unlockedAt: string })[]>([]);
-  const [speedHighScore, setSpeedHighScore] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<"overview" | "weak" | "history" | "progress">("overview");
   const hasStudyData = wordStats.size > 0;
@@ -76,9 +75,6 @@ export default function HistoryPage() {
     setRecords([...data].reverse());
     setWordStats(statsMap);
     setManualMemoryById(manualMap);
-
-    const highScore = await unifiedStorage.getSpeedChallengeHighScore();
-    setSpeedHighScore(highScore);
 
     const unlocked = await unifiedStorage.getUnlockedAchievements();
     const recentWithDetails = unlocked
@@ -701,19 +697,6 @@ export default function HistoryPage() {
                       );
                     })}
                   </div>
-                </div>
-              )}
-
-              {/* スピードチャレンジ ハイスコア */}
-              {speedHighScore > 0 && (
-                <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 p-4 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="emoji-icon">⚡</span>
-                    <span className="text-sm font-bold text-slate-700 dark:text-slate-200">スピードチャレンジ</span>
-                  </div>
-                  <span className="font-bold text-orange-500">
-                    {speedHighScore} <span className="text-xs font-normal text-slate-500 dark:text-slate-400">pt</span>
-                  </span>
                 </div>
               )}
 
