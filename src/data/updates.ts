@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-18",
+    version: "1.41.0",
+    title: "フラッシュカードのUI改善",
+    content: [
+      "フラッシュカード画面の横幅をナビゲーションバーに合わせて統一しました",
+      "前へ/次へボタンをカード両脇に配置し、カードの高さを適切に制御しました",
+      "「今日のN語でクイズを始める」ボタンの遷移先を修正しました",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-18",
     version: "1.40.0",
     title: "クイズ操作性の改善",
     content: [
