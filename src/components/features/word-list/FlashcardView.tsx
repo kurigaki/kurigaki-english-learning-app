@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { SpeakButton } from "@/components/ui";
-import { speakWord, isSpeechSynthesisSupported } from "@/lib/audio";
+import { speakWord, isSpeechSynthesisSupported, ensureVoicesLoaded } from "@/lib/audio";
 import { unifiedStorage } from "@/lib/unified-storage";
 import {
   calculateSm2,
@@ -29,8 +29,6 @@ export default function FlashcardView({ words, onExit, initialIndex, onDetailVie
   const [isSessionComplete, setIsSessionComplete] = useState(false);
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
-  // 再生済みインデックスを記録（同一カードへの戻り操作では再生しない）
-  const hasAutoPlayedRef = useRef<Set<number>>(new Set());
   // words を ref で保持（auto-play の useEffect に含めると statsMap 更新でタイマーが
   // キャンセルされ 1 枚目の音声が再生されないため）
   const wordsRef = useRef(words);
@@ -47,18 +45,17 @@ export default function FlashcardView({ words, onExit, initialIndex, onDetailVie
     });
   }, []);
 
-  // カード切り替え時に自動読み上げ（同一カードへの戻り操作では再生しない）
-  // words は ref 経由で読む：statsMap の非同期更新で words の参照が変わると
-  // cleanup でタイマーがキャンセルされ 1 枚目が再生されないバグを防ぐため
+  // カード切り替え時に自動読み上げ（前後どちらへの移動でも再生）
+  // ・words は ref 経由で読む（statsMap 更新で参照が変わってもタイマーがキャンセルされない）
+  // ・ensureVoicesLoaded() で Chrome の音声リスト非同期読み込みを待ってから再生
   useEffect(() => {
     if (!isSpeechSynthesisSupported()) return;
-    if (hasAutoPlayedRef.current.has(safeCurrentIndex)) return;
     const word = wordsRef.current[safeCurrentIndex];
     if (!word) return;
-    hasAutoPlayedRef.current.add(safeCurrentIndex);
-    const id = setTimeout(() => {
-      const w = wordsRef.current[safeCurrentIndex];
-      if (w) speakWord(w.word);
+    const wordText = word.word;
+    const id = setTimeout(async () => {
+      await ensureVoicesLoaded();
+      speakWord(wordText);
     }, 200);
     return () => clearTimeout(id);
   // eslint-disable-next-line react-hooks/exhaustive-deps
