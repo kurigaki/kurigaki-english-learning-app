@@ -31,6 +31,10 @@ export default function FlashcardView({ words, onExit, initialIndex, onDetailVie
   const touchStartY = useRef<number | null>(null);
   // 再生済みインデックスを記録（同一カードへの戻り操作では再生しない）
   const hasAutoPlayedRef = useRef<Set<number>>(new Set());
+  // words を ref で保持（auto-play の useEffect に含めると statsMap 更新でタイマーが
+  // キャンセルされ 1 枚目の音声が再生されないため）
+  const wordsRef = useRef(words);
+  wordsRef.current = words;
 
   // currentIndex が words の範囲を超えないよう安全なインデックスを導出
   // (詳細画面から戻った直後など、words がまだ空の場合も考慮)
@@ -44,13 +48,21 @@ export default function FlashcardView({ words, onExit, initialIndex, onDetailVie
   }, []);
 
   // カード切り替え時に自動読み上げ（同一カードへの戻り操作では再生しない）
+  // words は ref 経由で読む：statsMap の非同期更新で words の参照が変わると
+  // cleanup でタイマーがキャンセルされ 1 枚目が再生されないバグを防ぐため
   useEffect(() => {
-    if (!isSpeechSynthesisSupported() || words.length === 0) return;
+    if (!isSpeechSynthesisSupported()) return;
     if (hasAutoPlayedRef.current.has(safeCurrentIndex)) return;
+    const word = wordsRef.current[safeCurrentIndex];
+    if (!word) return;
     hasAutoPlayedRef.current.add(safeCurrentIndex);
-    const id = setTimeout(() => speakWord(words[safeCurrentIndex].word), 200);
+    const id = setTimeout(() => {
+      const w = wordsRef.current[safeCurrentIndex];
+      if (w) speakWord(w.word);
+    }, 200);
     return () => clearTimeout(id);
-  }, [safeCurrentIndex, words]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [safeCurrentIndex]);
 
   const navigate = (dir: "prev" | "next") => {
     if (slideDir) return;
