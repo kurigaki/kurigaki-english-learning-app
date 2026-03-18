@@ -452,14 +452,6 @@ export default function WordListPage() {
       <div className="max-w-4xl w-full mx-auto flex flex-col h-full">
         {/* 上部固定: ヘッダー */}
         <div className="flex-shrink-0 flex items-center gap-2 mb-1.5">
-          <Link
-            href="/word-list"
-            className="text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 dark:text-slate-200 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </Link>
           <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100 flex-1">単語帳</h1>
           {isMounted && filteredWords.length > 0 && (
             <button
