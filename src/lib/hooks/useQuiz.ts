@@ -464,7 +464,7 @@ export const useQuiz = () => {
 
       if (selected !== null || !currentQuestion || currentQuestion.type === "dictation" || currentQuestion.type === "speaking") return;
 
-      const keyIndex = ["a", "b", "c", "d"].indexOf(e.key.toLowerCase());
+      const keyIndex = ["1", "2", "3", "4"].indexOf(e.key);
       if (keyIndex !== -1 && currentQuestion.choices[keyIndex] !== undefined) {
         e.preventDefault();
         handleSelectRef.current(currentQuestion.choices[keyIndex]);

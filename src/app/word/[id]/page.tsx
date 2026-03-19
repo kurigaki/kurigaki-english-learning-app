@@ -292,11 +292,18 @@ export default function WordDetailPage() {
 
             {/* アクションボタン */}
             <div className="pt-6 space-y-3">
-              <Link href={`/quiz?wordId=${word.id}`}>
-                <Button fullWidth variant="primary">
-                  この単語を復習する
-                </Button>
-              </Link>
+              <div className="grid grid-cols-2 gap-2">
+                <Link href={`/quiz?wordId=${word.id}`}>
+                  <Button fullWidth variant="primary">
+                    この単語を復習する
+                  </Button>
+                </Link>
+                <Link href={`/dungeon?wordId=${word.id}`}>
+                  <Button fullWidth variant="secondary">
+                    <span className="emoji-icon">⚔️</span> ダンジョンで鍛える
+                  </Button>
+                </Link>
+              </div>
               {/* ナビなし時のみ戻るボタンをここに表示（ナビあり時は底部バーに統合） */}
               {!hasBottomNav && (
                 fromPage ? (

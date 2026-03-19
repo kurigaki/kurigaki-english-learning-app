@@ -1,12 +1,24 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { useAuth } from "@/lib/auth-context";
-import { UnlockedAchievement } from "@/types";
+import { Achievement, UnlockedAchievement } from "@/types";
 import { ACHIEVEMENTS } from "@/data/achievements";
 import { unifiedStorage } from "@/lib/unified-storage";
+import { storage } from "@/lib/storage";
 import { AchievementList } from "@/components/features/achievements/AchievementList";
 import { ProgressBar } from "@/components/ui";
+
+const CATEGORY_TABS: { id: Achievement["category"] | "all"; label: string; icon: string }[] = [
+  { id: "all", label: "全て", icon: "🏅" },
+  { id: "learning", label: "学習", icon: "📚" },
+  { id: "combo", label: "コンボ", icon: "🔥" },
+  { id: "streak", label: "連続", icon: "📅" },
+  { id: "mastery", label: "習得", icon: "📖" },
+  { id: "level", label: "Lv", icon: "🌱" },
+  { id: "speed", label: "速度", icon: "⚡" },
+  { id: "dungeon", label: "ダンジョン", icon: "⚔️" },
+];
 
 export default function AchievementsPage() {
   // isLoading: 認証初期化中はデータを読み込まない（Supabaseセッションが未準備のため）
@@ -15,6 +27,7 @@ export default function AchievementsPage() {
     UnlockedAchievement[]
   >([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeCategory, setActiveCategory] = useState<Achievement["category"] | "all">("all");
 
   const loadData = useCallback(async () => {
     const unlocked = await unifiedStorage.getUnlockedAchievements();
@@ -28,6 +41,19 @@ export default function AchievementsPage() {
       loadData();
     }
   }, [isAuthLoading, isAuthenticated, loadData]);
+
+  const dungeonProgressMap = useMemo<Record<string, { current: number; total: number }>>(() => {
+    const ds = storage.getDungeonStats();
+    return {
+      dungeon_enter:       { current: Math.min(1, ds.attempts),  total: 1 },
+      dungeon_floor3:      { current: Math.min(3, ds.maxFloor),  total: 3 },
+      dungeon_first_clear: { current: Math.min(1, ds.clears),    total: 1 },
+      dungeon_kills_10:    { current: Math.min(10, ds.kills),    total: 10 },
+      dungeon_kills_50:    { current: Math.min(50, ds.kills),    total: 50 },
+      dungeon_correct_50:  { current: Math.min(50, ds.correct),  total: 50 },
+      dungeon_tenacious:   { current: Math.min(3, ds.attempts),  total: 3 },
+    };
+  }, []);
 
   if (isLoading) {
     return (
@@ -124,9 +150,40 @@ export default function AchievementsPage() {
         </div>
       </div>
 
+      {/* カテゴリタブ */}
+      <div className="flex-shrink-0 px-3 mb-1.5">
+        <div className="flex gap-1 overflow-x-auto scrollbar-hide pb-0.5">
+          {CATEGORY_TABS.map((tab) => {
+            const tabAchievements = tab.id === "all" ? ACHIEVEMENTS : ACHIEVEMENTS.filter((a) => a.category === tab.id);
+            const tabUnlocked = tabAchievements.filter((a) => unlockedAchievements.some((ua) => ua.achievementId === a.id)).length;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveCategory(tab.id)}
+                className={`flex-shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${
+                  activeCategory === tab.id
+                    ? "bg-primary-500 text-white shadow-sm"
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-primary-50 dark:hover:bg-primary-900/20"
+                }`}
+              >
+                <span className="emoji-icon">{tab.icon}</span>
+                <span>{tab.label}</span>
+                <span className={`text-[10px] ${activeCategory === tab.id ? "text-primary-100" : "text-slate-400 dark:text-slate-500"}`}>
+                  {tabUnlocked}/{tabAchievements.length}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* 中央スクロール: 実績一覧 */}
       <div className="flex-1 overflow-y-auto min-h-0 px-3 pb-3">
-        <AchievementList unlockedAchievements={unlockedAchievements} />
+        <AchievementList
+          unlockedAchievements={unlockedAchievements}
+          filter={activeCategory}
+          progressMap={activeCategory === "dungeon" || activeCategory === "all" ? dungeonProgressMap : undefined}
+        />
       </div>
     </div>
   );
