@@ -588,7 +588,7 @@ export const QuizSession = ({
                         >
                           <span className="flex items-center gap-1.5">
                             <span className="w-5 h-5 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-[10px] font-bold flex-shrink-0">
-                              {String.fromCharCode(65 + index)}
+                              {index + 1}
                             </span>
                             <span className="text-xs">{choice}</span>
                           </span>
@@ -626,7 +626,7 @@ export const QuizSession = ({
                     >
                       <span className="flex items-center gap-1.5">
                         <span className="w-5 h-5 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-[10px] font-bold flex-shrink-0">
-                          {String.fromCharCode(65 + index)}
+                          {index + 1}
                         </span>
                         <span className="text-xs">{choice}</span>
                       </span>
