@@ -720,7 +720,7 @@ function TitleScreen({
 }
 
 // ─── Main component ────────────────────────────────────────────────
-export function DungeonGame() {
+export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) {
   const [phase, setPhase] = useState<"title" | "game">("title");
   const [questions, setQuestions] = useState<DungeonQuestion[]>([]);
 
@@ -776,6 +776,14 @@ export function DungeonGame() {
     setQuestions(qs);
     setPhase("game");
   }, []);
+
+  // initialWordId が指定された場合、タイトルをスキップして自動起動
+  const autoStartedRef = useRef(false);
+  useEffect(() => {
+    if (!initialWordId || autoStartedRef.current) return;
+    autoStartedRef.current = true;
+    handleStart("", false);
+  }, [initialWordId, handleStart]);
 
   // Start game once questions are set and phase is "game"
   const startedRef = useRef(false);
