@@ -169,6 +169,16 @@ export default function HistoryPage() {
     return stats;
   }, [records]);
 
+  // 最も苦手な問題タイプ（5回以上回答があるタイプの中で正答率が最低のもの）
+  const weakestType = useMemo(() => {
+    const candidates = (Object.entries(typeStats) as [string, { total: number; correct: number }][])
+      .filter(([, s]) => s.total >= 5)
+      .map(([type, s]) => ({ type, rate: Math.round((s.correct / s.total) * 100) }))
+      .filter((t) => t.rate < 80);
+    if (candidates.length === 0) return null;
+    return candidates.reduce((worst, cur) => cur.rate < worst.rate ? cur : worst);
+  }, [typeStats]);
+
   const weakWords = useMemo(() => {
     const weak: { id: number; word: string; meaning: string; accuracy: number; attempts: number }[] = [];
     wordStats.forEach((stats) => {
@@ -374,15 +384,46 @@ export default function HistoryPage() {
                 <span className="emoji-icon">🎯</span>
                 <span>問題タイプ別</span>
               </h2>
-              <div className="space-y-2">
-                {(Object.entries(typeStats) as [string, { total: number; correct: number }][]).filter(([, stats]) => stats.total > 0).map(
+
+              {/* 最も苦手なタイプのバナー */}
+              {weakestType && (
+                <div className="mb-3 flex items-center gap-2 p-2 rounded-lg bg-error-50 dark:bg-error-900/20 border border-error-200 dark:border-error-800">
+                  <span className="text-base emoji-icon">📢</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs font-bold text-error-700 dark:text-error-300">
+                      {questionTypeLabels[weakestType.type] ?? weakestType.type} が最も苦手です（{weakestType.rate}%）
+                    </p>
+                    <p className="text-[10px] text-error-600 dark:text-error-400">クイズ設定でこのタイプの比率を上げて練習しましょう</p>
+                  </div>
+                </div>
+              )}
+
+              <div className="space-y-2.5">
+                {(Object.entries(typeStats) as [string, { total: number; correct: number }][]).map(
                   ([type, stats]) => {
                     const rate = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
+                    const isWeakest = weakestType?.type === type;
+                    if (stats.total === 0) {
+                      return (
+                        <div key={type} className="flex items-center justify-between text-sm opacity-40">
+                          <span className="text-slate-500 dark:text-slate-400">{questionTypeLabels[type] ?? type}</span>
+                          <span className="text-[10px] text-slate-400 dark:text-slate-500 bg-slate-100 dark:bg-slate-700 px-1.5 py-0.5 rounded">未挑戦</span>
+                        </div>
+                      );
+                    }
+                    const badge = rate >= 80
+                      ? { label: "得意", cls: "bg-success-100 text-success-700 dark:bg-success-900/30 dark:text-success-300" }
+                      : rate >= 60
+                      ? { label: "普通", cls: "bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-300" }
+                      : { label: "弱い", cls: "bg-error-100 text-error-700 dark:bg-error-900/30 dark:text-error-300" };
                     return (
-                      <div key={type}>
-                        <div className="flex justify-between text-sm mb-1">
-                          <span className="text-slate-600 dark:text-slate-300">{questionTypeLabels[type] ?? type}</span>
-                          <span className="text-slate-500 dark:text-slate-400">
+                      <div key={type} className={isWeakest ? "ring-1 ring-error-300 dark:ring-error-700 rounded-lg p-1.5 -mx-1.5" : ""}>
+                        <div className="flex items-center justify-between text-sm mb-1">
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-slate-600 dark:text-slate-300">{questionTypeLabels[type] ?? type}</span>
+                            <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${badge.cls}`}>{badge.label}</span>
+                          </div>
+                          <span className="text-slate-500 dark:text-slate-400 text-xs">
                             {stats.correct}/{stats.total} ({rate}%)
                           </span>
                         </div>
@@ -399,6 +440,12 @@ export default function HistoryPage() {
                   }
                 )}
               </div>
+
+              {overallStats.total === 0 && (
+                <p className="text-center text-sm text-slate-400 dark:text-slate-500 py-4">
+                  学習記録がまだありません。クイズに挑戦してみましょう！
+                </p>
+              )}
             </Card>
           </div>
         )}
