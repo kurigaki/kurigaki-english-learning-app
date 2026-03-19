@@ -18,7 +18,9 @@ export type DungeonStats = {
   kills: number;        // 累計撃破数
   correct: number;      // 累計正解数
   clears: number;       // 累計クリア回数（B5F踏破）
-  maxFloor: number;     // 到達最高フロア
+  maxFloor: number;     // 到達最高フロア（ベスト）
+  bestKills: number;    // 1ランクの最大撃破数（ベスト）
+  bestCorrect: number;  // 1ランクの最大正解数（ベスト）
 };
 
 export type WordStats = {
@@ -576,13 +578,14 @@ export const storage = {
    */
   // ダンジョン統計管理
   getDungeonStats: (): DungeonStats => {
-    if (typeof window === "undefined") return { attempts: 0, kills: 0, correct: 0, clears: 0, maxFloor: 0 };
+    const defaults: DungeonStats = { attempts: 0, kills: 0, correct: 0, clears: 0, maxFloor: 0, bestKills: 0, bestCorrect: 0 };
+    if (typeof window === "undefined") return defaults;
     try {
       const data = localStorage.getItem(DUNGEON_STATS_KEY);
-      if (!data) return { attempts: 0, kills: 0, correct: 0, clears: 0, maxFloor: 0 };
-      return JSON.parse(data) as DungeonStats;
+      if (!data) return defaults;
+      return { ...defaults, ...(JSON.parse(data) as Partial<DungeonStats>) };
     } catch {
-      return { attempts: 0, kills: 0, correct: 0, clears: 0, maxFloor: 0 };
+      return defaults;
     }
   },
 

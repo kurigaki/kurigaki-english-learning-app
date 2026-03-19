@@ -351,21 +351,33 @@ function DungeonDeathScreen({
       <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2 }}>
         {isCleared ? "全フロアを踏破した！" : "全ての持ち物を失い、Lv1に戻った"}
       </div>
+      {death.newRecords.length > 0 && (
+        <div style={{
+          background: "#f5c84220", border: `1px solid ${DC.gold}`,
+          borderRadius: 5, padding: "6px 12px", width: "100%", maxWidth: 300,
+          fontFamily: "'Press Start 2P', monospace", fontSize: 8,
+          color: DC.gold, textAlign: "center",
+        }}>
+          🏅 NEW RECORD: {death.newRecords.join(" / ")}
+        </div>
+      )}
       <div style={{ background: DC.bg3, border: `1px solid ${DC.border2}`, borderRadius: 5, padding: 12, width: "100%", maxWidth: 300 }}>
         {[
-          ["到達フロア", `B${death.floor}F`],
-          ["レベル", `Lv${death.lv}`],
-          ["倒した敵", `${death.kills}体`],
-          ["正解数", `${death.correct}問`],
-          ["不正解数", `${death.wrong}問`],
-          ["経過ターン", `${death.turns}T`],
-        ].map(([lbl, val]) => (
-          <div key={lbl} style={{
+          ["到達フロア", `B${death.floor}F`, death.newRecords.includes("到達フロア")],
+          ["レベル", `Lv${death.lv}`, false],
+          ["倒した敵", `${death.kills}体`, death.newRecords.includes("撃破数")],
+          ["正解数", `${death.correct}問`, death.newRecords.includes("正解数")],
+          ["不正解数", `${death.wrong}問`, false],
+          ["経過ターン", `${death.turns}T`, false],
+        ].map(([lbl, val, isNew]) => (
+          <div key={lbl as string} style={{
             display: "flex", justifyContent: "space-between", fontSize: 13,
             padding: "3px 0", borderBottom: `1px solid ${DC.border}`,
           }}>
-            <span style={{ color: DC.text2 }}>{lbl}</span>
-            <span style={{ color: DC.gold, fontWeight: 700 }}>{val}</span>
+            <span style={{ color: DC.text2 }}>{lbl as string}</span>
+            <span style={{ color: isNew ? DC.gold : DC.text, fontWeight: isNew ? 700 : 400 }}>
+              {val as string}{isNew ? " ★" : ""}
+            </span>
           </div>
         ))}
       </div>

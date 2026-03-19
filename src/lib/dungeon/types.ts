@@ -118,6 +118,7 @@ export type DeathState = {
   turns: number;
   missedWords: DungeonQuestion[];
   isCleared: boolean;
+  newRecords: string[]; // この回で更新されたベスト記録名（例: "到達フロア", "撃破数", "正解数"）
 };
 
 export type DmgPop = {

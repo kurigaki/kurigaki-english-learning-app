@@ -202,14 +202,21 @@ export function useDungeon(questions: DungeonQuestion[]) {
       // XP・ストリーク更新
       const updatedUser = storage.recordStudySession(g.correct);
 
-      // ダンジョン統計更新
+      // ダンジョン統計更新 & ベストスコア判定
       const prevStats = storage.getDungeonStats();
+      const newRecords: string[] = [];
+      if (g.floor > prevStats.maxFloor) newRecords.push("到達フロア");
+      if (g.kills > prevStats.bestKills) newRecords.push("撃破数");
+      if (g.correct > prevStats.bestCorrect) newRecords.push("正解数");
+
       const dungeonStats = {
         attempts: prevStats.attempts + 1,
         kills: prevStats.kills + g.kills,
         correct: prevStats.correct + g.correct,
         clears: prevStats.clears + (isCleared ? 1 : 0),
         maxFloor: Math.max(prevStats.maxFloor, g.floor),
+        bestKills: Math.max(prevStats.bestKills, g.kills),
+        bestCorrect: Math.max(prevStats.bestCorrect, g.correct),
       };
       storage.saveDungeonStats(dungeonStats);
 
@@ -238,6 +245,7 @@ export function useDungeon(questions: DungeonQuestion[]) {
           turns: g.turn,
           missedWords: missedWordDefs,
           isCleared,
+          newRecords,
         },
       }));
     },
