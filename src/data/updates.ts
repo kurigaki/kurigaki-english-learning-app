@@ -32,6 +32,19 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 // アップデート履歴（新しい順）
 export const APP_UPDATES: AppUpdate[] = [
   {
+    date: "2026-03-20",
+    version: "1.43.0",
+    title: "WORD DUNGEON（β版）を追加",
+    content: [
+      "英語 × ローグライクの新モード「WORD DUNGEON」が登場しました（β版）",
+      "ナビゲーションの「クイズ」と「単語帳」の間から遊べます",
+      "ダンジョンを探索しながら英単語クイズで敵と戦うローグライクゲームです",
+      "冒険に失敗すると所持アイテムをすべて失い、Lv1からの再スタート（風来のシレン風）",
+      "間違えた単語は次の冒険で優先的に出題されます",
+    ],
+    category: "feature",
+  },
+  {
     date: "2026-03-19",
     version: "1.42.0",
     title: "スピードチャレンジのスコア方式を刷新",
