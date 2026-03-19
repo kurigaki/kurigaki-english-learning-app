@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, Dispatch, SetStateAction, MutableRefObject } from "react";
 import { Card, Button, ProgressBar, SpeakButton } from "@/components/ui";
 import { Question } from "@/types";
-import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image";
+// import { CATEGORY_EMOJIS, getCategoryGradient } from "@/lib/image"; // TODO: SD画像一括生成後に再有効化
 import { getQuestionPrompt, getQuestionDisplay } from "@/lib/quiz/display";
 import { parseDictationParts } from "@/lib/quiz/generator";
 import { getTranslationInfo } from "@/lib/quiz/translation";
@@ -330,11 +330,13 @@ export const QuizSession = ({
           <Card className="flex flex-col p-2">
             {/* カテゴリ表示 + インライン設定ボタン */}
             <div className="flex items-center gap-1.5 mb-1">
+              {/* TODO: Stable Diffusion 一括生成後に再有効化
               {currentQuestion.word.category && (
                 <div className={`flex-1 h-7 rounded-md bg-gradient-to-br ${getCategoryGradient(currentQuestion.word.category)} flex items-center justify-center border border-slate-100 dark:border-slate-700`}>
                   <span className="text-lg emoji-icon">{CATEGORY_EMOJIS[currentQuestion.word.category] || "📝"}</span>
                 </div>
               )}
+              */}
               {/* 🔊 音声チップ: OFF/手動/自動 をタップで切り替え */}
               <button
                 type="button"

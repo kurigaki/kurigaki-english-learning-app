@@ -479,6 +479,7 @@ export const useQuiz = () => {
     settings: QuizSettings = defaultQuizSettings,
     options?: { priorityWordId?: number; weakOnlyMode?: boolean; srsReviewMode?: boolean }
   ) => {
+    if (typeof window !== "undefined") window.sessionStorage.removeItem("quiz-show-result");
     setInQuizSettings(loadInQuizSettings());
     clearQuizResultState();
     clearQuizProgressState();
@@ -548,6 +549,7 @@ export const useQuiz = () => {
     const retryWords = wordIds.map((id) => words.find((w) => w.id === id)).filter((w): w is Word => !!w);
     if (retryWords.length === 0) return;
 
+    if (typeof window !== "undefined") window.sessionStorage.removeItem("quiz-show-result");
     setInQuizSettings(loadInQuizSettings());
     clearQuizResultState();
     clearQuizProgressState();
