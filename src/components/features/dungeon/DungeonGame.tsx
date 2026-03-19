@@ -4,6 +4,7 @@ import React, { useEffect, useState, useCallback, useRef } from "react";
 import type { DungeonQuestion, DmgPop, InventoryItem } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon } from "./useDungeon";
+import { storage } from "@/lib/storage";
 
 // ─── Color constants ───────────────────────────────────────────────
 const DC = {
@@ -565,14 +566,16 @@ function DmgPopLayer({
 function TitleScreen({
   onStart,
 }: {
-  onStart: (course: string) => void;
+  onStart: (course: string, weakOnly: boolean) => void;
 }) {
   const [course, setCourse] = useState("");
+  const [weakOnly, setWeakOnly] = useState(false);
   const [loading, setLoading] = useState(false);
+  const weakWordCount = storage.getWeakWords()?.length ?? 0;
 
   const handleStart = async () => {
     setLoading(true);
-    await onStart(course);
+    await onStart(course, weakOnly);
     setLoading(false);
   };
 
@@ -609,10 +612,11 @@ function TitleScreen({
         <select
           value={course}
           onChange={(e) => setCourse(e.target.value)}
+          disabled={weakOnly}
           style={{
-            fontFamily: "'DotGothic16', sans-serif", fontSize: 13, color: DC.text,
+            fontFamily: "'DotGothic16', sans-serif", fontSize: 13, color: weakOnly ? DC.text3 : DC.text,
             background: DC.bg3, border: `1px solid ${DC.border2}`, borderRadius: 4,
-            padding: "6px 10px", width: "100%", cursor: "pointer",
+            padding: "6px 10px", width: "100%", cursor: weakOnly ? "default" : "pointer",
             appearance: "none",
           }}
         >
@@ -620,6 +624,28 @@ function TitleScreen({
             <option key={o.value} value={o.value}>{o.label}</option>
           ))}
         </select>
+        <label style={{
+          display: "flex", alignItems: "center", gap: 6, cursor: "pointer",
+          color: weakOnly ? DC.accent2 : DC.text2,
+          fontSize: 12, fontFamily: "'DotGothic16', sans-serif",
+          background: weakOnly ? "#f5a62318" : "transparent",
+          border: `1px solid ${weakOnly ? DC.accent2 : DC.border}`,
+          borderRadius: 4, padding: "5px 10px", width: "100%",
+        }}>
+          <input
+            type="checkbox"
+            checked={weakOnly}
+            onChange={(e) => setWeakOnly(e.target.checked)}
+            style={{ accentColor: DC.accent2, width: 14, height: 14 }}
+          />
+          <span>
+            苦手単語モード
+            {weakWordCount > 0
+              ? <span style={{ color: DC.hp, marginLeft: 4 }}>({weakWordCount}語)</span>
+              : <span style={{ color: DC.text3, marginLeft: 4 }}>(なし)</span>
+            }
+          </span>
+        </label>
       </div>
 
       <button
@@ -688,8 +714,16 @@ export function DungeonGame() {
     document.head.appendChild(link);
   }, []);
 
-  const handleStart = useCallback(async (course: string) => {
-    const url = "/api/dungeon-words" + (course ? "?course=" + encodeURIComponent(course) : "");
+  const handleStart = useCallback(async (course: string, weakOnly: boolean) => {
+    let url = "/api/dungeon-words";
+    if (weakOnly) {
+      const weakIds = storage.getWeakWords();
+      if (weakIds.length > 0) {
+        url += "?wordIds=" + weakIds.join(",");
+      }
+    } else if (course) {
+      url += "?course=" + encodeURIComponent(course);
+    }
     let qs: DungeonQuestion[] = [];
     try {
       const res = await fetch(url);
