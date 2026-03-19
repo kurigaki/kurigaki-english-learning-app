@@ -41,6 +41,11 @@ body{font-family:var(--dot);color:var(--text);display:flex;flex-direction:column
 .t-info{font-size:11px;color:var(--text2);text-align:center;line-height:2.1;
   background:var(--bg3);border:1px solid var(--border);padding:12px 18px;border-radius:4px;width:100%;max-width:360px;}
 .t-info b{color:var(--text);}
+.t-course{display:flex;flex-direction:column;align-items:center;gap:5px;width:100%;max-width:260px;}
+.t-course-lbl{font-family:var(--pixel);font-size:7px;color:var(--text2);}
+.t-course-sel{font-family:var(--dot);font-size:13px;color:var(--text);background:var(--bg3);
+  border:1px solid var(--border2);border-radius:4px;padding:6px 10px;width:100%;cursor:pointer;
+  appearance:none;-webkit-appearance:none;text-align:center;}
 
 /* ===== GAME LAYOUT ===== */
 #game{display:none;flex-direction:column;width:100%;height:100dvh;max-width:640px;}
@@ -222,7 +227,19 @@ body{font-family:var(--dot);color:var(--text);display:flex;flex-direction:column
   <div class="t-hero">🗡️</div>
   <div class="t-logo">WORD DUNGEON</div>
   <div class="t-sub">〜英語で戦うローグライク〜</div>
-  <button class="t-btn" onclick="startGame()">▶ START</button>
+  <div class="t-course">
+    <label class="t-course-lbl">コース選択</label>
+    <select id="course-select" class="t-course-sel">
+      <option value="">全コース（ランダム）</option>
+      <option value="junior">中学英語</option>
+      <option value="senior">高校英語</option>
+      <option value="toeic">TOEIC</option>
+      <option value="eiken">英検</option>
+      <option value="conversation">会話</option>
+    </select>
+  </div>
+  <button class="t-btn" id="start-btn" onclick="startGame()">▶ START</button>
+  <div id="t-loading" style="display:none;font-family:var(--pixel);font-size:9px;color:var(--text2);">読み込み中…</div>
   <div class="t-info">
     <b>移動:</b> 矢印/WASD &nbsp;|&nbsp; <b>攻撃:</b> Z/Space<br>
     <b>足踏み:</b> X/. &nbsp;|&nbsp; <b>道具:</b> I<br>
@@ -347,32 +364,8 @@ body{font-family:var(--dot);color:var(--text);display:flex;flex-direction:column
 // =====================================================
 // DATA
 // =====================================================
-const QUESTIONS=[
-  {word:"apple",ans:"りんご",ch:["りんご","みかん","ぶどう","もも"]},
-  {word:"water",ans:"水",ch:["火","水","土","風"]},
-  {word:"brave",ans:"勇敢な",ch:["臆病な","勇敢な","賢い","強い"]},
-  {word:"sword",ans:"剣",ch:["盾","剣","弓","槍"]},
-  {word:"ancient",ans:"古代の",ch:["現代の","未来の","古代の","中世の"]},
-  {word:"treasure",ans:"宝物",ch:["罠","宝物","毒","呪い"]},
-  {word:"escape",ans:"逃げる",ch:["攻める","守る","逃げる","探す"]},
-  {word:"poison",ans:"毒",ch:["薬","毒","呪い","炎"]},
-  {word:"monster",ans:"怪物",ch:["英雄","魔法使い","怪物","王様"]},
-  {word:"victory",ans:"勝利",ch:["敗北","逃走","休息","勝利"]},
-  {word:"darkness",ans:"闇",ch:["光","炎","闇","霧"]},
-  {word:"courage",ans:"勇気",ch:["恐怖","勇気","怒り","悲しみ"]},
-  {word:"wisdom",ans:"知恵",ch:["力","知恵","速さ","美しさ"]},
-  {word:"silent",ans:"静かな",ch:["うるさい","静かな","速い","遅い"]},
-  {word:"danger",ans:"危険",ch:["安全","危険","平和","喜び"]},
-  {word:"protect",ans:"守る",ch:["攻める","逃げる","守る","眠る"]},
-  {word:"forest",ans:"森",ch:["海","山","森","砂漠"]},
-  {word:"shadow",ans:"影",ch:["光","影","炎","氷"]},
-  {word:"hungry",ans:"空腹の",ch:["満腹の","空腹の","眠い","疲れた"]},
-  {word:"attack",ans:"攻撃する",ch:["守る","逃げる","攻撃する","眠る"]},
-  {word:"defend",ans:"守る",ch:["攻める","守る","走る","泳ぐ"]},
-  {word:"level",ans:"レベル",ch:["経験値","レベル","体力","魔力"]},
-  {word:"floor",ans:"階",ch:["壁","床","階","天井"]},
-  {word:"stairs",ans:"階段",ch:["扉","階段","窓","壁"]},
-];
+// 単語データはAPIから取得（startGame で上書き）
+let QUESTIONS=[];
 
 // =====================================================
 // ITEMS（シレン参考・カテゴリ別）
@@ -911,7 +904,7 @@ function initiateAttack(e){
     const f=QUESTIONS.find(q=>q.word===mw);
     if(f) pool=[f,...pool.filter(q=>q.word!==mw)];
   }
-  const q=pool[Math.floor(Math.random()*Math.min(pool.length,14))];
+  const q=pool[Math.floor(Math.random()*pool.length)];
   G.quiz=q;
   G.quizAnswered=false;
 
@@ -1637,7 +1630,39 @@ function stopBGM(){
 // =====================================================
 // START
 // =====================================================
-function startGame(){
+async function startGame(){
+  const btn=document.getElementById('start-btn');
+  const loading=document.getElementById('t-loading');
+  btn.disabled=true;
+  loading.style.display='block';
+
+  const course=document.getElementById('course-select').value;
+  const url='/api/dungeon-words'+(course?'?course='+encodeURIComponent(course):'');
+  try{
+    const res=await fetch(url);
+    if(res.ok) QUESTIONS=await res.json();
+  }catch(e){
+    console.warn('単語データの取得に失敗しました。ローカルデータで起動します。',e);
+  }
+
+  // フォールバック：APIが使えない場合の最低限データ
+  if(!QUESTIONS||QUESTIONS.length===0){
+    QUESTIONS=[
+      {word:"apple",ans:"りんご",ch:["りんご","みかん","ぶどう","もも"]},
+      {word:"water",ans:"水",ch:["火","水","土","風"]},
+      {word:"brave",ans:"勇敢な",ch:["臆病な","勇敢な","賢い","強い"]},
+      {word:"ancient",ans:"古代の",ch:["現代の","未来の","古代の","中世の"]},
+      {word:"treasure",ans:"宝物",ch:["罠","宝物","毒","呪い"]},
+      {word:"escape",ans:"逃げる",ch:["攻める","守る","逃げる","探す"]},
+      {word:"monster",ans:"怪物",ch:["英雄","魔法使い","怪物","王様"]},
+      {word:"victory",ans:"勝利",ch:["敗北","逃走","休息","勝利"]},
+      {word:"courage",ans:"勇気",ch:["恐怖","勇気","怒り","悲しみ"]},
+      {word:"danger",ans:"危険",ch:["安全","危険","平和","喜び"]},
+    ];
+  }
+
+  btn.disabled=false;
+  loading.style.display='none';
   document.getElementById('title').style.display='none';
   document.getElementById('game').style.display='flex';
   initG(); initCanvas(); generateMap(); drawMap(); updateHUD();
