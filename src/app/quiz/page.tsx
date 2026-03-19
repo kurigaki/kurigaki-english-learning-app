@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { clearQuizResultState } from "@/lib/quiz-session";
+import { clearQuizResultState, getQuizResultState } from "@/lib/quiz-session";
 import { useQuiz } from "@/lib/hooks/useQuiz";
 import { QuizSession } from "@/components/features/quiz/QuizSession";
 import { QuizResult } from "@/components/features/quiz/QuizResult";
@@ -55,9 +55,17 @@ export default function QuizPage() {
     resumeSavedProgress,
   } = useQuiz();
 
-  // Auto-start: when phase is still "setup" and data is loaded, start quiz automatically
+  // Auto-start: when phase is still "setup" and data is loaded, start quiz automatically.
+  // ただし useQuiz の復元 effect と同一レンダーで実行されるレース条件を防ぐため、
+  // "quiz-show-result" フラグと savedResultState が両方存在する場合はスキップする
+  // （復元は useQuiz 側の effect が担当する）。
   useEffect(() => {
     if (phase !== "setup" || !dataLoaded) return;
+    const pendingRestore =
+      typeof window !== "undefined" &&
+      window.sessionStorage.getItem("quiz-show-result") === "1" &&
+      getQuizResultState() !== null;
+    if (pendingRestore) return;
     if (savedProgress) {
       resumeSavedProgress();
     } else {
