@@ -7,6 +7,7 @@ import { AchievementCard } from "./AchievementCard";
 type AchievementListProps = {
   unlockedAchievements: UnlockedAchievement[];
   filter?: Achievement["category"] | "all";
+  progressMap?: Record<string, { current: number; total: number }>;
 };
 
 const CATEGORY_LABELS: Record<Achievement["category"], string> = {
@@ -22,6 +23,7 @@ const CATEGORY_LABELS: Record<Achievement["category"], string> = {
 export const AchievementList = ({
   unlockedAchievements,
   filter = "all",
+  progressMap,
 }: AchievementListProps) => {
   const unlockedMap = new Map(
     unlockedAchievements.map((a) => [a.achievementId, a.unlockedAt])
@@ -67,6 +69,7 @@ export const AchievementList = ({
                 achievement={achievement}
                 unlocked={unlockedMap.has(achievement.id)}
                 unlockedAt={unlockedMap.get(achievement.id)}
+                progress={progressMap?.[achievement.id]}
               />
             ))}
           </div>
