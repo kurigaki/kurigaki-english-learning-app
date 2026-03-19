@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useEffect, useState, useCallback, useRef } from "react";
+import React, { useEffect, useState, useCallback, useRef, useMemo } from "react";
 import type { DungeonQuestion, DmgPop, InventoryItem } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon } from "./useDungeon";
-import { storage } from "@/lib/storage";
+import { storage, type DungeonRunLog } from "@/lib/storage";
 
 // ─── Color constants ───────────────────────────────────────────────
 const DC = {
@@ -335,6 +335,8 @@ function DungeonDeathScreen({
   onRetry: () => void;
 }) {
   const isCleared = death.isCleared;
+  // 過去ログ（最新1件=今回の結果を除いた直近4件）
+  const pastLogs = useMemo<DungeonRunLog[]>(() => storage.getDungeonRunLog().slice(1, 5), []);
   return (
     <div style={{
       position: "fixed", inset: 0, background: "#09090fef",
@@ -400,6 +402,32 @@ function DungeonDeathScreen({
           ))
         )}
       </div>
+      {pastLogs.length > 0 && (
+        <div style={{ width: "100%", maxWidth: 300 }}>
+          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2, marginBottom: 6, textAlign: "center" }}>
+            過去の記録
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
+            {pastLogs.map((log, i) => {
+              const d = new Date(log.playedAt);
+              const label = `${d.getMonth() + 1}/${d.getDate()} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
+              return (
+                <div key={i} style={{
+                  background: DC.bg3, border: `1px solid ${log.isCleared ? DC.gold + "40" : DC.border}`,
+                  borderRadius: 3, padding: "4px 8px",
+                  display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 11,
+                }}>
+                  <span style={{ color: DC.text3 }}>{label}</span>
+                  <span style={{ color: log.isCleared ? DC.gold : DC.text2 }}>
+                    {log.isCleared ? "🏆" : "💀"} B{log.floor}F &nbsp;{log.kills}体 &nbsp;{log.correct}問
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       <button
         onClick={onRetry}
         style={{

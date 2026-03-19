@@ -10,8 +10,20 @@ const BOOKMARKS_KEY = "bookmarked_words";
 const SRS_PROGRESS_KEY = "srs_progress";
 const MANUAL_MASTERY_KEY = "manual_mastery";
 const DUNGEON_STATS_KEY = "dungeon_stats";
+const DUNGEON_LOG_KEY = "dungeon_run_log";
+const DUNGEON_LOG_MAX = 10; // 保持する最大件数
 const DEFAULT_USER_ID = "default";
 export type ManualMasteryLevel = "unlearned" | "weak" | "vague" | "almost" | "remembered";
+
+export type DungeonRunLog = {
+  playedAt: string;     // ISO 8601形式
+  floor: number;        // 到達フロア
+  kills: number;        // 撃破数
+  correct: number;      // 正解数
+  wrong: number;        // 不正解数
+  turns: number;        // 経過ターン
+  isCleared: boolean;   // クリアしたか
+};
 
 export type DungeonStats = {
   attempts: number;     // 累計挑戦回数
@@ -592,6 +604,24 @@ export const storage = {
   saveDungeonStats: (stats: DungeonStats): void => {
     if (typeof window === "undefined") return;
     localStorage.setItem(DUNGEON_STATS_KEY, JSON.stringify(stats));
+  },
+
+  getDungeonRunLog: (): DungeonRunLog[] => {
+    if (typeof window === "undefined") return [];
+    try {
+      const data = localStorage.getItem(DUNGEON_LOG_KEY);
+      return data ? (JSON.parse(data) as DungeonRunLog[]) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  addDungeonRunLog: (entry: Omit<DungeonRunLog, "playedAt">): void => {
+    if (typeof window === "undefined") return;
+    const log = storage.getDungeonRunLog();
+    const newEntry: DungeonRunLog = { ...entry, playedAt: new Date().toISOString() };
+    const updated = [newEntry, ...log].slice(0, DUNGEON_LOG_MAX);
+    localStorage.setItem(DUNGEON_LOG_KEY, JSON.stringify(updated));
   },
 
   cleanupOrphanedData: (validWordIds: number[]): { records: number; srsEntries: number } => {

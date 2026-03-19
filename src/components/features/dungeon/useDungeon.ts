@@ -220,6 +220,16 @@ export function useDungeon(questions: DungeonQuestion[]) {
       };
       storage.saveDungeonStats(dungeonStats);
 
+      // ラン履歴を記録
+      storage.addDungeonRunLog({
+        floor: g.floor,
+        kills: g.kills,
+        correct: g.correct,
+        wrong: g.wrong,
+        turns: g.turn,
+        isCleared,
+      });
+
       // 実績チェック
       const totalRecords = storage.getRecords().length;
       const masteredWords = storage.getMasteredWordCount();
