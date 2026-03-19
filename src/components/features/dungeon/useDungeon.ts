@@ -25,6 +25,7 @@ import {
   sfxStairs,
   sfxItem,
   startBGM,
+  stopBGM,
 } from "@/lib/dungeon/audio";
 import { ITEMS_DEF, ENEMIES_DEF, MW, MH } from "@/lib/dungeon/constants";
 import { speakWord } from "@/lib/audio";
@@ -102,6 +103,7 @@ export function initGameState(missedWords: string[] = []): GameState {
     cane_sleep_charges: 4,
     cane_seal_charges: 4,
     cane_warp_charges: 2,
+    answeredQuestions: [],
   };
 }
 
@@ -241,6 +243,8 @@ export function useDungeon(questions: DungeonQuestion[]) {
         dungeonStats,
       });
 
+      stopBGM();
+
       setUiState((prev) => ({
         ...prev,
         quiz: null,
@@ -256,6 +260,7 @@ export function useDungeon(questions: DungeonQuestion[]) {
           missedWords: missedWordDefs,
           isCleared,
           newRecords,
+          answeredQuestions: g.answeredQuestions,
         },
       }));
     },
@@ -843,6 +848,9 @@ export function useDungeon(questions: DungeonQuestion[]) {
           });
         }
 
+        // 回答履歴を記録
+        g.answeredQuestions.push({ question: q, correct });
+
         if (correct) {
           g.correct++;
           g.missedWords = g.missedWords.filter((w) => w !== q.word);
@@ -939,7 +947,9 @@ export function useDungeon(questions: DungeonQuestion[]) {
       const g = gameRef.current;
       if (!g) return;
       const item = g.items.find((i) => i.id === itemId);
-      if (!item || item.count <= 0) return;
+      if (!item) return;
+      // 杖は charges が別管理なので count が 0 でも使用試行を許可
+      if (item.count <= 0 && item.cat !== "cane") return;
 
       const used = applyItem(g, itemId, {
         notify: showNotification,
@@ -947,7 +957,10 @@ export function useDungeon(questions: DungeonQuestion[]) {
       });
 
       if (used) {
-        item.count--;
+        // 杖は count を消費しない（charges で管理）
+        if (item.cat !== "cane") {
+          item.count--;
+        }
         closeItems();
         updateUI(g);
       }
@@ -986,8 +999,18 @@ export function useDungeon(questions: DungeonQuestion[]) {
       quizResult: null,
       msg: "再挑戦！ 前回の間違い単語が再出題される",
     });
-    setTimeout(() => redraw(), 50);
+    setTimeout(() => {
+      redraw();
+      startBGM();
+    }, 50);
   }, [redraw, updateUI]);
+
+  // アンマウント時にBGMを停止
+  useEffect(() => {
+    return () => {
+      stopBGM();
+    };
+  }, []);
 
   // resize
   useEffect(() => {

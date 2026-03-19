@@ -1,10 +1,14 @@
 "use client";
 
 import React, { useEffect, useState, useCallback, useRef, useMemo } from "react";
-import type { DungeonQuestion, DmgPop, InventoryItem } from "@/lib/dungeon/types";
+import Link from "next/link";
+import type { DungeonQuestion, DmgPop, InventoryItem, DeathState } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon } from "./useDungeon";
 import { storage, type DungeonRunLog } from "@/lib/storage";
+import { SpeakButton } from "@/components/ui";
+
+const DUNGEON_DEATH_KEY = "dungeon-death-state";
 
 // ─── Color constants ───────────────────────────────────────────────
 const DC = {
@@ -230,6 +234,16 @@ function DungeonQuizPanel({
   );
 }
 
+const ITEM_TABS = [
+  { cat: "all", label: "全て" },
+  { cat: "grass", label: "🌿草" },
+  { cat: "scroll", label: "📜巻物" },
+  { cat: "cane", label: "🪄杖" },
+  { cat: "food", label: "🍙食料" },
+  { cat: "jar", label: "🫙壷" },
+  { cat: "special", label: "✨特殊" },
+];
+
 function DungeonItemOverlay({
   items, itemFilter, onFilter, onUse, onClose,
 }: {
@@ -239,36 +253,84 @@ function DungeonItemOverlay({
   onUse: (id: string) => void;
   onClose: () => void;
 }) {
-  const tabs = [
-    { cat: "all", label: "全て" },
-    { cat: "grass", label: "🌿草" },
-    { cat: "scroll", label: "📜巻物" },
-    { cat: "cane", label: "🪄杖" },
-    { cat: "food", label: "🍙食料" },
-    { cat: "jar", label: "🫙壷" },
-    { cat: "special", label: "✨特殊" },
-  ];
+  const tabs = ITEM_TABS;
 
   const catLabels: Record<string, string> = {
     grass: "草", scroll: "巻物", cane: "杖", food: "食料", jar: "壷", special: "特殊",
   };
 
-  let avail = items.filter((i) => i.count > 0);
-  if (itemFilter !== "all") {
-    const ids = ITEMS_DEF.filter((d) => d.cat === itemFilter).map((d) => d.id);
-    avail = avail.filter((i) => ids.includes(i.id));
-  }
+  // 杖はcharges切れでも表示（count >= 0 かつ cat=cane のものを含む）
+  const avail = useMemo(() => {
+    let result = items.filter((i) => i.count > 0 || i.cat === "cane");
+    if (itemFilter !== "all") {
+      const ids = ITEMS_DEF.filter((d) => d.cat === itemFilter).map((d) => d.id);
+      result = result.filter((i) => ids.includes(i.id));
+    }
+    return result;
+  }, [items, itemFilter]);
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // フィルタ変更時はカーソルをリセット
+  useEffect(() => {
+    setSelectedIndex(0);
+  }, [itemFilter]);
+
+  // availが縮んだ場合にカーソルをクランプ
+  useEffect(() => {
+    if (avail.length > 0 && selectedIndex >= avail.length) {
+      setSelectedIndex(avail.length - 1);
+    }
+  }, [avail.length, selectedIndex]);
+
+  // キーボードナビゲーション
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" || e.key === "i" || e.key === "I") {
+        onClose();
+        return;
+      }
+      if (e.key === "ArrowDown" || e.key === "s" || e.key === "S") {
+        e.preventDefault();
+        setSelectedIndex((i) => Math.min(i + 1, avail.length - 1));
+        return;
+      }
+      if (e.key === "ArrowUp" || e.key === "w" || e.key === "W") {
+        e.preventDefault();
+        setSelectedIndex((i) => Math.max(i - 1, 0));
+        return;
+      }
+      if (e.key === "Enter" || e.key === "z" || e.key === "Z") {
+        if (avail.length > 0) {
+          e.preventDefault();
+          onUse(avail[selectedIndex]?.id ?? "");
+        }
+        return;
+      }
+      // 数字キー 1〜7 でタブ切り替え
+      const tabIdx = parseInt(e.key, 10) - 1;
+      if (tabIdx >= 0 && tabIdx < tabs.length) {
+        e.preventDefault();
+        onFilter(tabs[tabIdx].cat);
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [avail, selectedIndex, onClose, onUse, onFilter, tabs]);
 
   return (
     <div style={{
       position: "fixed", inset: 0, background: "#09090fee",
       display: "flex", flexDirection: "column", padding: 14, overflowY: "auto", zIndex: 50,
     }}>
-      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 11, color: DC.gold, marginBottom: 8, textAlign: "center" }}>
+      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 11, color: DC.gold, marginBottom: 4, textAlign: "center" }}>
         🎒 道具袋
       </div>
+      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text3, textAlign: "center", marginBottom: 8 }}>
+        ▲▼ / W・S で選択　Enter / Z で使用　1〜7 でタブ
+      </div>
       <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 10 }}>
-        {tabs.map((t) => (
+        {tabs.map((t, ti) => (
           <button
             key={t.cat}
             onClick={() => onFilter(t.cat)}
@@ -280,7 +342,7 @@ function DungeonItemOverlay({
               padding: "4px 8px", cursor: "pointer", borderRadius: 3,
             }}
           >
-            {t.label}
+            [{ti + 1}]{t.label}
           </button>
         ))}
       </div>
@@ -288,16 +350,28 @@ function DungeonItemOverlay({
         {avail.length === 0 ? (
           <div style={{ color: DC.text2, textAlign: "center", padding: 20, fontSize: 13 }}>該当アイテムなし</div>
         ) : (
-          avail.map((item) => {
+          avail.map((item, idx) => {
             const def = ITEMS_DEF.find((d) => d.id === item.id);
             const catLabel = catLabels[item.cat] || "";
+            const isSelected = idx === selectedIndex;
+            const isDepleted = item.count <= 0; // 杖で charges 切れ
             return (
               <div
                 key={item.id}
-                onClick={() => onUse(item.id)}
+                onClick={() => { setSelectedIndex(idx); onUse(item.id); }}
+                onMouseEnter={() => setSelectedIndex(idx)}
                 style={{
-                  background: DC.bg3, border: `1px solid ${DC.border2}`, borderRadius: 5,
-                  padding: 10, display: "flex", alignItems: "center", gap: 10, cursor: "pointer",
+                  background: isSelected ? DC.bg4 : DC.bg3,
+                  border: `1px solid ${isSelected ? DC.accent : DC.border2}`,
+                  borderRadius: 5,
+                  padding: 10,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  cursor: "pointer",
+                  opacity: isDepleted ? 0.5 : 1,
+                  outline: isSelected ? `2px solid ${DC.accent}40` : "none",
+                  transition: "background 0.1s, border-color 0.1s",
                 }}
               >
                 <div style={{ fontSize: 24 }}>{item.icon}</div>
@@ -305,10 +379,13 @@ function DungeonItemOverlay({
                   <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.gold, marginBottom: 3 }}>
                     {item.name}{" "}
                     <span style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 9, color: DC.text3, fontWeight: "normal" }}>[{catLabel}]</span>
+                    {isDepleted && <span style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 9, color: DC.hp, marginLeft: 4 }}>魔力切れ</span>}
                   </div>
                   <div style={{ fontSize: 12, color: DC.text2 }}>{def?.desc || item.desc}</div>
                 </div>
-                <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: DC.accent }}>×{item.count}</div>
+                {item.cat !== "cane" && (
+                  <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: DC.accent }}>×{item.count}</div>
+                )}
               </div>
             );
           })
@@ -329,18 +406,24 @@ function DungeonItemOverlay({
 }
 
 function DungeonDeathScreen({
-  death, onRetry,
+  death, onRetry, onBackToTitle,
 }: {
-  death: import("@/lib/dungeon/types").DeathState;
+  death: DeathState;
   onRetry: () => void;
+  onBackToTitle: () => void;
 }) {
   const isCleared = death.isCleared;
   // 過去ログ（最新1件=今回の結果を除いた直近4件）
   const pastLogs = useMemo<DungeonRunLog[]>(() => storage.getDungeonRunLog().slice(1, 5), []);
+
+  const handleWordLinkClick = useCallback(() => {
+    sessionStorage.setItem(DUNGEON_DEATH_KEY, JSON.stringify(death));
+  }, [death]);
+
   return (
     <div style={{
       position: "fixed", inset: 0, background: "#09090fef",
-      display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+      display: "flex", flexDirection: "column", alignItems: "center",
       zIndex: 200, padding: 20, gap: 10, overflowY: "auto",
     }}>
       <div style={{
@@ -348,10 +431,11 @@ function DungeonDeathScreen({
         fontSize: "clamp(16px,4.5vw,24px)",
         color: isCleared ? DC.gold : DC.hp,
         textShadow: isCleared ? "0 0 20px #f5c84260" : "0 0 20px #e0525260",
+        flexShrink: 0,
       }}>
         {isCleared ? "🏆 CLEAR!" : "💀 YOU DIED"}
       </div>
-      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2 }}>
+      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2, flexShrink: 0 }}>
         {isCleared ? "全フロアを踏破した！" : "全ての持ち物を失い、Lv1に戻った"}
       </div>
       {death.newRecords.length > 0 && (
@@ -359,12 +443,12 @@ function DungeonDeathScreen({
           background: "#f5c84220", border: `1px solid ${DC.gold}`,
           borderRadius: 5, padding: "6px 12px", width: "100%", maxWidth: 300,
           fontFamily: "'Press Start 2P', monospace", fontSize: 8,
-          color: DC.gold, textAlign: "center",
+          color: DC.gold, textAlign: "center", flexShrink: 0,
         }}>
           🏅 NEW RECORD: {death.newRecords.join(" / ")}
         </div>
       )}
-      <div style={{ background: DC.bg3, border: `1px solid ${DC.border2}`, borderRadius: 5, padding: 12, width: "100%", maxWidth: 300 }}>
+      <div style={{ background: DC.bg3, border: `1px solid ${DC.border2}`, borderRadius: 5, padding: 12, width: "100%", maxWidth: 300, flexShrink: 0 }}>
         {[
           ["到達フロア", `B${death.floor}F`, death.newRecords.includes("到達フロア")],
           ["レベル", `Lv${death.lv}`, false],
@@ -384,26 +468,64 @@ function DungeonDeathScreen({
           </div>
         ))}
       </div>
-      <div style={{ width: "100%", maxWidth: 300 }}>
-        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.accent2, marginBottom: 7, textAlign: "center" }}>
-          ⚠ 間違えた単語（次ラン優先出題）
+
+      {/* 回答した単語一覧 */}
+      <div style={{ width: "100%", maxWidth: 300, flexShrink: 0 }}>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2, marginBottom: 7, textAlign: "center" }}>
+          回答した単語
         </div>
-        {death.missedWords.length === 0 ? (
-          <div style={{ color: DC.green, textAlign: "center", padding: 8, fontSize: 13 }}>✅ 全問正解！</div>
+        {death.answeredQuestions.length === 0 ? (
+          <div style={{ color: DC.text3, textAlign: "center", padding: 8, fontSize: 13 }}>なし</div>
         ) : (
-          death.missedWords.map((q) => (
-            <div key={q.word} style={{
-              background: "#e0525210", border: "1px solid #e0525228", borderRadius: 3,
-              padding: "6px 10px", marginBottom: 4, display: "flex", justifyContent: "space-between",
-            }}>
-              <span style={{ fontSize: 15, fontWeight: 700 }}>{q.word}</span>
-              <span style={{ fontSize: 12, color: DC.text2 }}>{q.ans}</span>
-            </div>
-          ))
+          death.answeredQuestions.map((aq, idx) => {
+            const { question: q, correct } = aq;
+            const href = q.wordId !== 0 ? `/word/${q.wordId}?from=dungeon` : null;
+            const rowStyle: React.CSSProperties = {
+              background: correct ? "#52d47a10" : "#e0525210",
+              border: `1px solid ${correct ? "#52d47a28" : "#e0525228"}`,
+              borderRadius: 3,
+              padding: "6px 10px",
+              marginBottom: 4,
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+            };
+            const inner = (
+              <>
+                <span style={{
+                  fontFamily: "'Press Start 2P', monospace", fontSize: 7,
+                  color: correct ? DC.green : DC.hp, flexShrink: 0,
+                }}>
+                  {correct ? "✓" : "✗"}
+                </span>
+                <SpeakButton text={q.word} size="sm" />
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: DC.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{q.word}</div>
+                  <div style={{ fontSize: 11, color: DC.text2 }}>{q.ans}</div>
+                </div>
+                {href && (
+                  <span style={{ color: DC.text3, fontSize: 13, flexShrink: 0 }}>→</span>
+                )}
+              </>
+            );
+            return href ? (
+              <Link
+                key={idx}
+                href={href}
+                onClick={handleWordLinkClick}
+                style={{ ...rowStyle, textDecoration: "none" }}
+              >
+                {inner}
+              </Link>
+            ) : (
+              <div key={idx} style={rowStyle}>{inner}</div>
+            );
+          })
         )}
       </div>
+
       {pastLogs.length > 0 && (
-        <div style={{ width: "100%", maxWidth: 300 }}>
+        <div style={{ width: "100%", maxWidth: 300, flexShrink: 0 }}>
           <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2, marginBottom: 6, textAlign: "center" }}>
             過去の記録
           </div>
@@ -428,16 +550,28 @@ function DungeonDeathScreen({
         </div>
       )}
 
-      <button
-        onClick={onRetry}
-        style={{
-          fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: "#09090f",
-          background: DC.accent2, border: "none", padding: "13px 26px", cursor: "pointer", marginTop: 4,
-          clipPath: "polygon(4px 0%,calc(100% - 4px) 0%,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0% calc(100% - 4px),0% 4px)",
-        }}
-      >
-        ↺ 再挑戦
-      </button>
+      <div style={{ display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center", flexShrink: 0, marginTop: 4 }}>
+        <button
+          onClick={onBackToTitle}
+          style={{
+            fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.text,
+            background: DC.bg3, border: `1px solid ${DC.border2}`, padding: "12px 20px", cursor: "pointer",
+            clipPath: "polygon(4px 0%,calc(100% - 4px) 0%,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0% calc(100% - 4px),0% 4px)",
+          }}
+        >
+          ← タイトルに戻る
+        </button>
+        <button
+          onClick={onRetry}
+          style={{
+            fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: "#09090f",
+            background: DC.accent2, border: "none", padding: "12px 22px", cursor: "pointer",
+            clipPath: "polygon(4px 0%,calc(100% - 4px) 0%,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0% calc(100% - 4px),0% 4px)",
+          }}
+        >
+          ↺ 再挑戦
+        </button>
+      </div>
     </div>
   );
 }
@@ -505,7 +639,7 @@ function DungeonControls({
         </button>
         {showStairs && (
           <button style={{ ...btnStyle, borderColor: DC.accent2, color: DC.accent2 }} onClick={onStairs}>
-            <span style={{ fontSize: 15 }}>🔽</span>降りる
+            <span style={{ fontSize: 15 }}>🔽</span>降りる[Enter]
           </button>
         )}
       </div>
@@ -723,12 +857,27 @@ function TitleScreen({
 export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) {
   const [phase, setPhase] = useState<"title" | "game">("title");
   const [questions, setQuestions] = useState<DungeonQuestion[]>([]);
+  const [restoredDeath, setRestoredDeath] = useState<DeathState | null>(null);
 
   const {
     canvasRef, wrapRef, uiState, dmgPops,
     startGame, doTurn, playerAttack, doWait, answerQuiz,
     goNextFloor, useItem, openItems, closeItems, filterItems, retryGame,
   } = useDungeon(questions);
+
+  // sessionStorage からリザルト状態を復元
+  useEffect(() => {
+    const saved = sessionStorage.getItem(DUNGEON_DEATH_KEY);
+    if (saved) {
+      try {
+        const death = JSON.parse(saved) as DeathState;
+        setRestoredDeath(death);
+        setPhase("game");
+      } catch {
+        sessionStorage.removeItem(DUNGEON_DEATH_KEY);
+      }
+    }
+  }, []);
 
   // Load Google Fonts
   useEffect(() => {
@@ -742,7 +891,15 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     document.head.appendChild(link);
   }, []);
 
+  const handleBackToTitle = useCallback(() => {
+    sessionStorage.removeItem(DUNGEON_DEATH_KEY);
+    setRestoredDeath(null);
+    setPhase("title");
+    startedRef.current = false;
+  }, []);
+
   const handleStart = useCallback(async (course: string, weakOnly: boolean) => {
+    sessionStorage.removeItem(DUNGEON_DEATH_KEY);
     let url = "/api/dungeon-words";
     if (weakOnly) {
       const weakIds = storage.getWeakWords();
@@ -971,14 +1128,17 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       )}
 
       {/* Death screen */}
-      {uiState.death && (
+      {(uiState.death ?? restoredDeath) && (
         <DungeonDeathScreen
-          death={uiState.death}
+          death={(uiState.death ?? restoredDeath)!}
           onRetry={() => {
+            sessionStorage.removeItem(DUNGEON_DEATH_KEY);
+            setRestoredDeath(null);
             startedRef.current = false;
             retryGame();
             startedRef.current = true;
           }}
+          onBackToTitle={handleBackToTitle}
         />
       )}
     </div>

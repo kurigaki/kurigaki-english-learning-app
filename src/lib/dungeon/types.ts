@@ -83,6 +83,7 @@ export type GameState = {
   correct: number;
   wrong: number;
   missedWords: string[];
+  answeredQuestions: AnsweredQuestion[];
   powerUp: boolean;
   sureHit: boolean;
   onStairs: boolean;
@@ -95,6 +96,7 @@ export type GameState = {
 };
 
 export type DungeonQuestion = { wordId: number; word: string; ans: string; ch: string[] };
+export type AnsweredQuestion = { question: DungeonQuestion; correct: boolean };
 
 export type QuizState = {
   enemy: Enemy;
@@ -118,7 +120,8 @@ export type DeathState = {
   turns: number;
   missedWords: DungeonQuestion[];
   isCleared: boolean;
-  newRecords: string[]; // この回で更新されたベスト記録名（例: "到達フロア", "撃破数", "正解数"）
+  newRecords: string[];
+  answeredQuestions: AnsweredQuestion[];
 };
 
 export type DmgPop = {

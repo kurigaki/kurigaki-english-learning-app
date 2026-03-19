@@ -96,6 +96,9 @@ export const useWordDetail = () => {
       case "bookmarks":
         router.push("/word-list/all");
         break;
+      case "dungeon":
+        router.push("/dungeon");
+        break;
       default:
         router.back();
     }
@@ -109,6 +112,7 @@ export const useWordDetail = () => {
       case "weak": return "苦手単語に戻る";
       case "wordlist": return "単語帳に戻る";
       case "bookmarks": return "ブックマークに戻る";
+      case "dungeon": return "ダンジョン結果に戻る";
       default: return "戻る";
     }
   }, [fromPage]);
