@@ -687,16 +687,16 @@ export function DungeonGame() {
     }
     if (!qs || qs.length === 0) {
       qs = [
-        { word: "apple", ans: "りんご", ch: ["りんご", "みかん", "ぶどう", "もも"] },
-        { word: "water", ans: "水", ch: ["火", "水", "土", "風"] },
-        { word: "brave", ans: "勇敢な", ch: ["臆病な", "勇敢な", "賢い", "強い"] },
-        { word: "ancient", ans: "古代の", ch: ["現代の", "未来の", "古代の", "中世の"] },
-        { word: "treasure", ans: "宝物", ch: ["罠", "宝物", "毒", "呪い"] },
-        { word: "escape", ans: "逃げる", ch: ["攻める", "守る", "逃げる", "探す"] },
-        { word: "monster", ans: "怪物", ch: ["英雄", "魔法使い", "怪物", "王様"] },
-        { word: "victory", ans: "勝利", ch: ["敗北", "逃走", "休息", "勝利"] },
-        { word: "courage", ans: "勇気", ch: ["恐怖", "勇気", "怒り", "悲しみ"] },
-        { word: "danger", ans: "危険", ch: ["安全", "危険", "平和", "喜び"] },
+        { wordId: 0, word: "apple", ans: "りんご", ch: ["りんご", "みかん", "ぶどう", "もも"] },
+        { wordId: 0, word: "water", ans: "水", ch: ["火", "水", "土", "風"] },
+        { wordId: 0, word: "brave", ans: "勇敢な", ch: ["臆病な", "勇敢な", "賢い", "強い"] },
+        { wordId: 0, word: "ancient", ans: "古代の", ch: ["現代の", "未来の", "古代の", "中世の"] },
+        { wordId: 0, word: "treasure", ans: "宝物", ch: ["罠", "宝物", "毒", "呪い"] },
+        { wordId: 0, word: "escape", ans: "逃げる", ch: ["攻める", "守る", "逃げる", "探す"] },
+        { wordId: 0, word: "monster", ans: "怪物", ch: ["英雄", "魔法使い", "怪物", "王様"] },
+        { wordId: 0, word: "victory", ans: "勝利", ch: ["敗北", "逃走", "休息", "勝利"] },
+        { wordId: 0, word: "courage", ans: "勇気", ch: ["恐怖", "勇気", "怒り", "悲しみ"] },
+        { wordId: 0, word: "danger", ans: "危険", ch: ["安全", "危険", "平和", "喜び"] },
       ];
     }
     setQuestions(qs);

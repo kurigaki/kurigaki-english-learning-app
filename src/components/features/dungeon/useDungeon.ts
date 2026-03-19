@@ -28,6 +28,7 @@ import {
 } from "@/lib/dungeon/audio";
 import { ITEMS_DEF, ENEMIES_DEF, MW, MH } from "@/lib/dungeon/constants";
 import { speakWord } from "@/lib/audio";
+import { storage } from "@/lib/storage";
 
 export type UIState = {
   hp: number;
@@ -197,6 +198,19 @@ export function useDungeon(questions: DungeonQuestion[]) {
       const missedWordDefs: DungeonQuestion[] = g.missedWords
         .map((w) => questions.find((q) => q.word === w))
         .filter((q): q is DungeonQuestion => q !== undefined);
+
+      // XP・ストリーク更新
+      const updatedUser = storage.recordStudySession(g.correct);
+
+      // 実績チェック
+      const totalRecords = storage.getRecords().length;
+      const masteredWords = storage.getMasteredWordCount();
+      storage.checkAndUnlockAchievements({
+        totalQuestions: totalRecords,
+        streak: updatedUser.streak,
+        masteredWords,
+        level: updatedUser.level,
+      });
 
       setUiState((prev) => ({
         ...prev,
@@ -787,6 +801,17 @@ export function useDungeon(questions: DungeonQuestion[]) {
         let damage = 0;
         let miss = false;
         let crit = false;
+
+        // アプリの学習記録に保存（wordId=0 はフォールバック単語なのでスキップ）
+        if (q.wordId !== 0) {
+          storage.addRecord({
+            wordId: q.wordId,
+            word: q.word,
+            meaning: q.ans,
+            questionType: "en-to-ja",
+            correct,
+          });
+        }
 
         if (correct) {
           g.correct++;

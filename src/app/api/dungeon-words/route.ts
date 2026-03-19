@@ -3,6 +3,7 @@ import { allWords, getWordsByCourse } from "@/data/words";
 import type { Course, Stage } from "@/data/words/types";
 
 type DungeonQuestion = {
+  wordId: number;
   word: string;
   ans: string;
   ch: string[];
@@ -34,7 +35,7 @@ export async function GET(request: NextRequest) {
     const ans = w.meaning;
     const distractors = shuffleArray(allMeanings.filter((m) => m !== ans)).slice(0, 3);
     const ch = shuffleArray([ans, ...distractors]);
-    return { word: w.word, ans, ch };
+    return { wordId: w.id, word: w.word, ans, ch };
   });
 
   return NextResponse.json(questions);
