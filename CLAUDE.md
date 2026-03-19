@@ -1350,10 +1350,11 @@ src/components/features/dungeon/
 - ゲーム状態管理を `useDungeon.ts` フックに移行
 - iframe 廃止、`DungeonGame.tsx` コンポーネントで直接レンダリング
 
-**Phase 4: アプリ連携**
-- ダンジョンの学習記録を `storage.ts` に保存（`addRecord`）
-- XP・実績・ストリークに連動
-- 間違えた単語を苦手単語リストに反映
+**Phase 4: アプリ連携 ✅ 完了**
+- クイズ回答時に `storage.addRecord()` で学習記録を保存（wordId=0 のフォールバック単語は除外）
+- ダンジョン終了（死亡/クリア）時に `storage.recordStudySession()` でXP・ストリーク更新
+- `storage.checkAndUnlockAchievements()` で実績を自動解除
+- 間違えた単語は苦手単語リストに自動反映（`addRecord` + 正答率計算経由）
 
 ### 実装メモ
 

@@ -94,7 +94,7 @@ export type GameState = {
   cane_warp_charges: number;
 };
 
-export type DungeonQuestion = { word: string; ans: string; ch: string[] };
+export type DungeonQuestion = { wordId: number; word: string; ans: string; ch: string[] };
 
 export type QuizState = {
   enemy: Enemy;
