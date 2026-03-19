@@ -7,6 +7,7 @@ import { MainAction } from "@/components/features/home/MainAction";
 import { ReviewShortcuts } from "@/components/features/home/ReviewShortcuts";
 import { QuickLinks } from "@/components/features/home/QuickLinks";
 import { DailyWordList } from "@/components/features/home/DailyWordList";
+import { DungeonCard } from "@/components/features/home/DungeonCard";
 
 export default function Home() {
   const {
@@ -78,7 +79,10 @@ export default function Home() {
           />
         )}
 
-        {/* 4. 今日の単語 */}
+        {/* 4. ダンジョンカード */}
+        {isMounted && <DungeonCard />}
+
+        {/* 5. 今日の単語 */}
         {isMounted && (
           <DailyWordList
             words={dailyWords}
