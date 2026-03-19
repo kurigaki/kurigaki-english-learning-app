@@ -555,7 +555,24 @@ useEffect(() => {
 
 ## 画像機能（`src/lib/image.ts`）
 
-### フォールバックチェーン
+> **⚠️ 現在、イメージ画像表示は無効化中**
+> 既存の画像（Unsplash URLベース）は品質が不十分なため、`word/[id]/page.tsx` の `<WordImage>` をコメントアウトしている。
+> **Stable Diffusion (Replicate API) で全単語の画像を一括生成後に再有効化すること。**
+
+### 画像一括生成計画
+
+- **方式**: Stable Diffusion（Replicate API）でバッチ生成
+- **対象**: 全単語（現在 5,346 語、今後増加予定）
+- **単価**: 約 $0.003/枚 → 全語で $16〜20 程度
+- **生成物の配置**: `public/images/words/{wordId}.webp`（静的配信）
+- **生成スクリプト**: `scripts/generate-word-images.mjs`（未作成）
+- **前提条件**: 単語データ追加が完了してから一括実行すること
+- **再有効化手順**:
+  1. スクリプトで全単語画像を生成し `public/images/words/` に配置
+  2. `WordImage` コンポーネントが `public/images/words/{wordId}.webp` を参照するよう修正
+  3. `word/[id]/page.tsx` のコメントアウトを解除
+
+### フォールバックチェーン（再有効化後）
 
 1. **単語固有URL** (`word.imageUrl`)
 2. **キーワードベースURL** (`word.imageKeyword` → `CONCEPT_IMAGE_URLS`)
@@ -821,7 +838,7 @@ useEffect(() => () => { isPlayingRef.current = false; stopSpeaking(); }, []);
 
 | 項目 | 状態 | コンポーネント |
 |------|------|---------------|
-| イメージ画像 | ✅ | WordImage |
+| イメージ画像 | ⏸️ 無効化中（SD生成待ち） | WordImage |
 | 単語・発音・品詞 | ✅ | WordHeader |
 | 記憶度 | ✅ | WordMastery |
 | 例文 | ✅ | WordExamples |

@@ -10,7 +10,7 @@ import {
   WordRelations,
   WordColumn,
   WordMastery,
-  WordImage,
+  // WordImage, // TODO: Stable Diffusion (Replicate API) 一括生成後に再有効化
   WordPlaceholderSection,
   WordSynonymDiff,
   WordQuizHistory,
@@ -180,12 +180,14 @@ export default function WordDetailPage() {
             </div>
 
             {/* イメージ画像 */}
+            {/* TODO: Stable Diffusion (Replicate API) で全単語の画像を一括生成後に再有効化
             <WordImage
               word={word.word}
               category={word.category}
               imageUrl={word.imageUrl}
               imageKeyword={word.imageKeyword}
             />
+            */}
 
             {/* ヘッダー（単語・発音・品詞・意味） */}
             <WordHeader
