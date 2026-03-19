@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Button, SpeakButton } from "@/components/ui";
 import { Question, Achievement } from "@/types";
@@ -57,13 +57,30 @@ export const QuizResult = ({
   onHome,
   handleAchievementClose,
 }: QuizResultProps) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (typeof window === "undefined") return;
     // 単語詳細から戻ってきた時にリザルトを復元できるようにフラグをセット。
     // クリーンアップでは削除しない（単語詳細へ遷移してもフラグを保持するため）。
     // フラグのクリアは新しいクイズ開始時（startNewSession / startRetrySessionWithWordIds）に行う。
     window.sessionStorage.setItem("quiz-show-result", "1");
+
+    // 単語詳細から戻ってきた場合はスクロール位置を復元する
+    const savedScroll = window.sessionStorage.getItem("quiz-result-scroll");
+    if (savedScroll && scrollRef.current) {
+      scrollRef.current.scrollTop = parseInt(savedScroll, 10);
+    }
   }, []);
+
+  // 単語リンクをクリックする直前にスクロール位置を保存する
+  const handleWordLinkClick = useCallback((wordIds: number[]) => {
+    if (typeof window !== "undefined" && scrollRef.current) {
+      window.sessionStorage.setItem("quiz-result-scroll", String(scrollRef.current.scrollTop));
+    }
+    saveWordNavState(wordIds, "quiz");
+  }, []);
+
   const totalQuestions = answeredWords.length || questions.length;
   const percentage = Math.round((score / totalQuestions) * 100);
   const sameQuestionIds = answeredWords.map((w) => w.id);
@@ -195,7 +212,7 @@ export const QuizResult = ({
         </div>
 
         {/* 中央スクロール可能エリア */}
-        <div className="flex-1 overflow-y-auto min-h-0 mb-2">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto min-h-0 mb-2">
           {/* 新しく獲得した実績 */}
           {newAchievements.length > 0 && (
             <div className="mb-2 bg-white dark:bg-slate-800 rounded-xl shadow-card p-2">
@@ -235,7 +252,7 @@ export const QuizResult = ({
                   >
                     <Link
                       href={`/word/${word.id}?from=quiz`}
-                      onClick={() => saveWordNavState(answeredWords.map((w) => w.id), "quiz")}
+                      onClick={() => handleWordLinkClick(answeredWords.map((w) => w.id))}
                       className="flex items-center justify-between flex-1 min-w-0 transition-all hover:scale-[1.01] group"
                     >
                       <div className="flex items-center gap-1.5 min-w-0">
