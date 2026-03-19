@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-20",
+    version: "1.44.0",
+    title: "WORD DUNGEON の強化と改善",
+    content: [
+      "ダンジョン専用実績7種を追加（初挑戦・B3F到達・踏破・撃破数・正解数など）",
+      "ホーム画面にダンジョンカードを追加（ベストスコア・撃破数・正解数を表示）",
+      "ゲームオーバー/クリア時にベストスコア更新を「NEW RECORD」で表示するようになりました",
+      "タイトル画面に「苦手単語モード」を追加（苦手単語を優先的に出題）",
+    ],
+    category: "feature",
+  },
+  {
+    date: "2026-03-20",
     version: "1.43.0",
     title: "WORD DUNGEON（β版）を追加",
     content: [
