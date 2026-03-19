@@ -8,6 +8,7 @@ type AchievementCardProps = {
   unlocked: boolean;
   unlockedAt?: string;
   compact?: boolean;
+  progress?: { current: number; total: number };
 };
 
 export const AchievementCard = ({
@@ -15,6 +16,7 @@ export const AchievementCard = ({
   unlocked,
   unlockedAt,
   compact = false,
+  progress,
 }: AchievementCardProps) => {
   const rarityColor = getRarityColor(achievement.rarity);
   const borderColor = getRarityBorderColor(achievement.rarity);
@@ -100,6 +102,20 @@ export const AchievementCard = ({
             <p className="text-xs text-slate-400 dark:text-slate-500 mt-2">
               {new Date(unlockedAt).toLocaleDateString("ja-JP")} に獲得
             </p>
+          )}
+          {!unlocked && progress && progress.total > 1 && (
+            <div className="mt-2">
+              <div className="flex justify-between text-[10px] text-slate-400 dark:text-slate-500 mb-0.5">
+                <span>進捗</span>
+                <span>{progress.current} / {progress.total}</span>
+              </div>
+              <div className="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-primary-400 dark:bg-primary-500 rounded-full transition-all duration-500"
+                  style={{ width: `${Math.min(100, (progress.current / progress.total) * 100)}%` }}
+                />
+              </div>
+            </div>
           )}
         </div>
       </div>

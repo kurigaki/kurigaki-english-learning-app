@@ -271,7 +271,8 @@ function speedChallengeReducer(state: SpeedChallengeState, action: Action): Spee
       const { correct, answeredWord, nextQuestion } = action.payload;
       const newCombo = correct ? state.combo + 1 : 0;
       const points = correct ? calcPointsForCombo(newCombo) : 0;
-      const newScore = state.score + points;
+      const penalty = correct ? 0 : 10;
+      const newScore = Math.max(0, state.score + points - penalty);
       const newCorrectCount = correct ? state.correctCount + 1 : state.correctCount;
       const showComboLost = !correct && state.combo >= 2;
       const showComboMilestone = correct && newCombo > 0 && newCombo % 10 === 0 ? newCombo : null;
@@ -405,6 +406,15 @@ export default function SpeedChallengePage() {
   const tapAnswerOnVoiceQuestionRef = useRef(0);
   // endGame(useCallback) から voiceInputEnabled を参照するための ref
   const voiceInputEnabledRef = useRef(false);
+
+  // 1/2/3/4 キー回答のための ref（handleSelect は useCallback でないため）
+  const questionRef = useRef(question);
+  const gameStateRef = useRef(gameState);
+  useEffect(() => { questionRef.current = question; }, [question]);
+  useEffect(() => { gameStateRef.current = gameState; }, [gameState]);
+  // handleSelect の最新版を ref 経由で参照
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSelectRef = useRef<(choice: string, source?: any) => void>(() => {});
 
   // タイムアタックコンテキスト（単語帳からの出題範囲）
   const initializedRef = useRef(false);
@@ -1056,6 +1066,25 @@ export default function SpeedChallengePage() {
       dispatch({ type: "SET_SHOWING_ACHIEVEMENT", payload: null });
     }
   };
+
+  // handleSelect ref を常に最新に保つ
+  handleSelectRef.current = handleSelect;
+
+  // 1/2/3/4 キーで選択肢を選択（マウント時に一度だけリスナー登録）
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.repeat) return;
+      if (gameStateRef.current !== "playing" || !questionRef.current) return;
+      const idx = ["1", "2", "3", "4"].indexOf(e.key);
+      if (idx >= 0 && questionRef.current.choices[idx] !== undefined) {
+        e.preventDefault();
+        handleSelectRef.current(questionRef.current.choices[idx]);
+      }
+    };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleBgmToggle = () => {
     const newBgmState = !isBgmEnabled;
@@ -1999,9 +2028,14 @@ export default function SpeedChallengePage() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-1 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-2 py-1 rounded-full">
-                <span className="text-base emoji-icon">⭐</span>
-                <span className="text-lg font-bold">{score}</span>
+              <div className="flex items-center gap-1.5">
+                {feedback?.show && !feedback.correct && (
+                  <span className="text-xs font-bold text-red-500 animate-pulse">-10</span>
+                )}
+                <div className="flex items-center gap-1 bg-gradient-to-r from-primary-500 to-accent-500 text-white px-2 py-1 rounded-full">
+                  <span className="text-base emoji-icon">⭐</span>
+                  <span className="text-lg font-bold">{score}</span>
+                </div>
               </div>
             </div>
 
@@ -2140,14 +2174,19 @@ export default function SpeedChallengePage() {
             )}
 
             {/* 選択肢 */}
-            <div className="grid grid-cols-2 gap-1.5 mt-2">
+            <div className="flex flex-col gap-1.5 mt-2">
               {question.choices.map((choice, index) => (
                 <button
                   key={`${question.word.id}-${index}`}
                   onClick={() => handleSelect(choice)}
                   className="p-2 text-left text-xs bg-white dark:bg-slate-800 border-2 border-slate-200 dark:border-slate-700 rounded-lg font-medium hover:border-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 active:scale-95 transition-all"
                 >
-                  {choice}
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-5 h-5 rounded-full bg-primary-100 text-primary-500 flex items-center justify-center text-[10px] font-bold flex-shrink-0">
+                      {index + 1}
+                    </span>
+                    <span>{choice}</span>
+                  </span>
                 </button>
               ))}
             </div>

@@ -9,8 +9,31 @@ const SPEED_RESULTS_KEY = "speed_challenge_results";
 const BOOKMARKS_KEY = "bookmarked_words";
 const SRS_PROGRESS_KEY = "srs_progress";
 const MANUAL_MASTERY_KEY = "manual_mastery";
+const DUNGEON_STATS_KEY = "dungeon_stats";
+const DUNGEON_LOG_KEY = "dungeon_run_log";
+const DUNGEON_LOG_MAX = 10; // 保持する最大件数
 const DEFAULT_USER_ID = "default";
 export type ManualMasteryLevel = "unlearned" | "weak" | "vague" | "almost" | "remembered";
+
+export type DungeonRunLog = {
+  playedAt: string;     // ISO 8601形式
+  floor: number;        // 到達フロア
+  kills: number;        // 撃破数
+  correct: number;      // 正解数
+  wrong: number;        // 不正解数
+  turns: number;        // 経過ターン
+  isCleared: boolean;   // クリアしたか
+};
+
+export type DungeonStats = {
+  attempts: number;     // 累計挑戦回数
+  kills: number;        // 累計撃破数
+  correct: number;      // 累計正解数
+  clears: number;       // 累計クリア回数（B5F踏破）
+  maxFloor: number;     // 到達最高フロア（ベスト）
+  bestKills: number;    // 1ランクの最大撃破数（ベスト）
+  bestCorrect: number;  // 1ランクの最大正解数（ベスト）
+};
 
 export type WordStats = {
   wordId: number;
@@ -315,6 +338,7 @@ export const storage = {
     level?: number;
     speedScore?: number;
     isSpeedChallenge?: boolean;
+    dungeonStats?: DungeonStats;
   }): string[] => {
     const newlyUnlocked: string[] = [];
 
@@ -356,6 +380,26 @@ export const storage = {
             shouldUnlock = true;
           }
           break;
+        case "dungeon": {
+          const ds = context.dungeonStats;
+          if (!ds) break;
+          if (achievement.id === "dungeon_enter" && ds.attempts >= 1) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_floor3" && ds.maxFloor >= 3) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_first_clear" && ds.clears >= 1) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_kills_10" && ds.kills >= 10) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_kills_50" && ds.kills >= 50) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_correct_50" && ds.correct >= 50) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_tenacious" && ds.attempts >= 3) {
+            shouldUnlock = true;
+          }
+          break;
+        }
       }
 
       if (shouldUnlock) {
@@ -544,6 +588,42 @@ export const storage = {
    * @param validWordIds 現在有効な単語 ID の配列
    * @returns 削除したエントリ数 { records, srsEntries }
    */
+  // ダンジョン統計管理
+  getDungeonStats: (): DungeonStats => {
+    const defaults: DungeonStats = { attempts: 0, kills: 0, correct: 0, clears: 0, maxFloor: 0, bestKills: 0, bestCorrect: 0 };
+    if (typeof window === "undefined") return defaults;
+    try {
+      const data = localStorage.getItem(DUNGEON_STATS_KEY);
+      if (!data) return defaults;
+      return { ...defaults, ...(JSON.parse(data) as Partial<DungeonStats>) };
+    } catch {
+      return defaults;
+    }
+  },
+
+  saveDungeonStats: (stats: DungeonStats): void => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem(DUNGEON_STATS_KEY, JSON.stringify(stats));
+  },
+
+  getDungeonRunLog: (): DungeonRunLog[] => {
+    if (typeof window === "undefined") return [];
+    try {
+      const data = localStorage.getItem(DUNGEON_LOG_KEY);
+      return data ? (JSON.parse(data) as DungeonRunLog[]) : [];
+    } catch {
+      return [];
+    }
+  },
+
+  addDungeonRunLog: (entry: Omit<DungeonRunLog, "playedAt">): void => {
+    if (typeof window === "undefined") return;
+    const log = storage.getDungeonRunLog();
+    const newEntry: DungeonRunLog = { ...entry, playedAt: new Date().toISOString() };
+    const updated = [newEntry, ...log].slice(0, DUNGEON_LOG_MAX);
+    localStorage.setItem(DUNGEON_LOG_KEY, JSON.stringify(updated));
+  },
+
   cleanupOrphanedData: (validWordIds: number[]): { records: number; srsEntries: number } => {
     if (typeof window === "undefined") return { records: 0, srsEntries: 0 };
     const validSet = new Set(validWordIds);

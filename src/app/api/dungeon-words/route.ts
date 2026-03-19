@@ -23,9 +23,14 @@ export async function GET(request: NextRequest) {
   const course = params.get("course") as Course | null;
   const stage = params.get("stage") as Stage | null;
   const limit = Math.min(parseInt(params.get("limit") ?? "150", 10), 500);
+  const wordIdsParam = params.get("wordIds");
 
   // 出題対象単語
-  const pool = course ? getWordsByCourse(course, stage ?? undefined) : allWords;
+  let pool = course ? getWordsByCourse(course, stage ?? undefined) : allWords;
+  if (wordIdsParam) {
+    const ids = new Set(wordIdsParam.split(",").map(Number).filter((n) => !Number.isNaN(n)));
+    pool = allWords.filter((w) => ids.has(w.id));
+  }
   const selected = shuffleArray(pool).slice(0, limit);
 
   // 誤答候補：全単語の meaning から重複除去
