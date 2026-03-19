@@ -26,32 +26,39 @@ import { saveWordNavState } from "@/lib/word-nav-state";
 import { getAndClearTimeAttackContext } from "@/lib/time-attack-best";
 
 const TIME_LIMIT = 30;
-const COMBO_BONUS_THRESHOLD = 5;
 const FEEDBACK_DURATION_MS = 300;
+
+/**
+ * コンボ数に応じた獲得ポイントを計算する。
+ * combo 1: 10pt, 2: 20pt, 3: 40pt, 4: 80pt, 5以上: 160pt（上限）
+ */
+function calcPointsForCombo(combo: number): number {
+  return 10 * Math.pow(2, Math.min(combo, 5) - 1);
+}
 
 type SpeedChallengeMode = 'mixed' | 'en-to-ja' | 'ja-to-en' | 'ja-to-en-speaking';
 
 type Title = { emoji: string; text: string };
 
-function getSpeedChallengeTitle(score: number, maxCombo: number, totalQuestions: number): Title {
-  const isPerfect = totalQuestions > 0 && score === totalQuestions;
+function getSpeedChallengeTitle(score: number, maxCombo: number, correctCount: number, totalQuestions: number): Title {
+  const isPerfect = totalQuestions > 0 && correctCount === totalQuestions;
 
-  if (isPerfect && score >= 15) {
+  if (isPerfect && score >= 300) {
     return { emoji: "👑", text: "単語マスター" };
   }
-  if (score >= 25) {
+  if (score >= 600) {
     return { emoji: "🚀", text: "電光石火" };
   }
-  if (score >= 20) {
+  if (score >= 300) {
     return { emoji: "🏆", text: "スピードスター" };
   }
-  if (maxCombo >= 15 && score >= 15) {
+  if (maxCombo >= 10 && score >= 200) {
     return { emoji: "🔥", text: "コンボマスター" };
   }
-  if (score >= 10) {
+  if (score >= 100) {
     return { emoji: "⚡", text: "素晴らしい！" };
   }
-  if (score >= 5) {
+  if (score >= 50) {
     return { emoji: "👍", text: "ナイスチャレンジ！" };
   }
   return { emoji: "💪", text: "もう一歩！" };
@@ -149,7 +156,8 @@ interface SpeedChallengeState {
   gameState: GameState;
   timeLeft: number;
   timeLimit: number; // 0 = 無制限
-  score: number;
+  score: number;      // 獲得ポイント合計
+  correctCount: number; // 正解数（正答率・全問正解判定に使用）
   combo: number;
   maxCombo: number;
   question: Question | null;
@@ -177,6 +185,7 @@ const initialState: SpeedChallengeState = {
   timeLeft: TIME_LIMIT,
   timeLimit: 30,
   score: 0,
+  correctCount: 0,
   combo: 0,
   maxCombo: 0,
   question: null,
@@ -221,9 +230,11 @@ function speedChallengeReducer(state: SpeedChallengeState, action: Action): Spee
   switch (action.type) {
     case "SET_HIGH_SCORE":
       return { ...state, highScore: action.payload };
-    case "RESTORE_SESSION":
+    case "RESTORE_SESSION": {
       const { score, totalQuestions, maxCombo, isNewHighScore, answeredWords } = action.payload;
-      return { ...state, gameState: "finished", score, totalQuestions, maxCombo, isNewHighScore, answeredWords, scoreDiff: 0, ranking: null, showComboLost: false, showComboMilestone: null, showComebackEffect: false };
+      const correctCount = answeredWords.filter((w) => w.correct).length;
+      return { ...state, gameState: "finished", score, correctCount, totalQuestions, maxCombo, isNewHighScore, answeredWords, scoreDiff: 0, ranking: null, showComboLost: false, showComboMilestone: null, showComebackEffect: false };
+    }
     case "START_GAME":
       return {
         ...initialState,
@@ -259,8 +270,9 @@ function speedChallengeReducer(state: SpeedChallengeState, action: Action): Spee
     case "ANSWER": {
       const { correct, answeredWord, nextQuestion } = action.payload;
       const newCombo = correct ? state.combo + 1 : 0;
-      const scoreBonus = correct && newCombo >= COMBO_BONUS_THRESHOLD ? 1 : 0;
-      const newScore = correct ? state.score + 1 + scoreBonus : state.score;
+      const points = correct ? calcPointsForCombo(newCombo) : 0;
+      const newScore = state.score + points;
+      const newCorrectCount = correct ? state.correctCount + 1 : state.correctCount;
       const showComboLost = !correct && state.combo >= 2;
       const showComboMilestone = correct && newCombo > 0 && newCombo % 10 === 0 ? newCombo : null;
       const showComebackEffect = correct && state.timeLeft <= 5 && state.timeLeft > 0;
@@ -270,6 +282,7 @@ function speedChallengeReducer(state: SpeedChallengeState, action: Action): Spee
         answeredWords: [...state.answeredWords, answeredWord],
         combo: newCombo,
         score: newScore,
+        correctCount: newCorrectCount,
         maxCombo: Math.max(state.maxCombo, newCombo),
         question: nextQuestion,
         usedWordIds: new Set(state.usedWordIds).add(nextQuestion.word.id),
@@ -333,7 +346,7 @@ declare global {
 
 export default function SpeedChallengePage() {
   const [state, dispatch] = useReducer(speedChallengeReducer, initialState);
-  const { gameState, timeLeft, timeLimit, score, combo, maxCombo, question, usedWordIds, totalQuestions, highScore, isNewHighScore, showingAchievement, pendingAchievements, showPerfectScore, feedback, answeredWords, recognizedText, earnedXp, levelUp, scoreDiff, ranking, showComboLost, showComboMilestone, showComebackEffect } = state;
+  const { gameState, timeLeft, timeLimit, score, correctCount, combo, maxCombo, question, usedWordIds, totalQuestions, highScore, isNewHighScore, showingAchievement, pendingAchievements, showPerfectScore, feedback, answeredWords, recognizedText, earnedXp, levelUp, scoreDiff, ranking, showComboLost, showComboMilestone, showComebackEffect } = state;
   const [wordFilter, setWordFilter] = useState<"all" | "correct" | "incorrect">("all");
   const [revealedWords, setRevealedWords] = useState<Set<number>>(new Set());
   // TODO: public/audio/ に音声ファイルを配置したら true に戻す
@@ -583,7 +596,7 @@ export default function SpeedChallengePage() {
   }, [state]);
 
   const endGame = useCallback(async () => {
-    const { score, totalQuestions, answeredWords, maxCombo } = stateRef.current;
+    const { score, correctCount, totalQuestions, answeredWords, maxCombo } = stateRef.current;
     const incorrectWordIds = answeredWords.filter(w => !w.correct).map(w => w.id);
 
     // ハイスコア対象判定:
@@ -600,7 +613,7 @@ export default function SpeedChallengePage() {
     // 結果を保存（音声専用でない場合はハイスコアを更新しない）
     await unifiedStorage.addSpeedChallengeResult({
       score: score,
-      correctCount: score,
+      correctCount: correctCount,
       totalQuestions: totalQuestions,
       timeLimit: timeLimit,
       maxCombo: maxCombo, // コンボ数も保存（称号判定用）
@@ -628,9 +641,9 @@ export default function SpeedChallengePage() {
     });
 
     // 学習セッション記録 (XP, Level)
-    // スピードチャレンジのスコアを正解数としてXP計算に使用
+    // XP = 獲得ポイント数（score は 10 の倍数なので score/10 を correctCount として渡す）
     const prevUserData = await unifiedStorage.getUserData();
-    const newUserData = await unifiedStorage.recordStudySession(score, 0);
+    const newUserData = await unifiedStorage.recordStudySession(score / 10, 0);
     const earnedXp = newUserData.totalXp - prevUserData.totalXp;
     const levelUp = newUserData.level > prevUserData.level
       ? { from: prevUserData.level, to: newUserData.level }
@@ -647,7 +660,7 @@ export default function SpeedChallengePage() {
       .filter((a): a is Achievement => a !== undefined);
 
     // 全問正解の場合はパーフェクトスコアポップアップを表示
-    const isPerfectScore = score > 0 && score === totalQuestions;
+    const isPerfectScore = correctCount > 0 && correctCount === totalQuestions;
 
     dispatch({
       type: "END_GAME",
@@ -994,8 +1007,8 @@ export default function SpeedChallengePage() {
       let sfx: HTMLAudioElement | undefined;
       if (correct) {
         const newCombo = combo + 1;
-        // 5コンボごとのマイルストーンで特別な効果音
-        if (newCombo >= COMBO_BONUS_THRESHOLD && newCombo % COMBO_BONUS_THRESHOLD === 0) {
+        // コンボ2以上でコンボ効果音（ポイントが倍増するタイミング）
+        if (newCombo >= 2) {
           sfx = sfxRef.current.combo;
         } else {
           sfx = sfxRef.current.correct;
@@ -1275,8 +1288,8 @@ export default function SpeedChallengePage() {
   const handleShare = () => {
     if (!navigator.share) return;
 
-    const title = getSpeedChallengeTitle(score, maxCombo, totalQuestions);
-    const shareText = `「栗垣英単語」のスピードチャレンジで【${title.text}】の称号を獲得！ (スコア: ${score}, 最大コンボ: ${maxCombo}) #栗垣英単語`;
+    const title = getSpeedChallengeTitle(score, maxCombo, correctCount, totalQuestions);
+    const shareText = `「栗垣英単語」のスピードチャレンジで【${title.text}】の称号を獲得！ (スコア: ${score}pt, 最大コンボ: ${maxCombo}) #栗垣英単語`;
 
     navigator.share({
       title: 'スピードチャレンジ結果',
@@ -1382,7 +1395,7 @@ export default function SpeedChallengePage() {
                             {/* 称号表示 */}
                             <span className="text-[10px] text-slate-500 dark:text-slate-400">
                               {(() => {
-                                const title = getSpeedChallengeTitle(rank.score, rank.max_combo || 0, rank.total_questions || 0);
+                                const title = getSpeedChallengeTitle(rank.score, rank.max_combo || 0, 0, rank.total_questions || 0);
                                 return `${title.emoji} ${title.text}`;
                               })()}
                             </span>
@@ -2008,9 +2021,10 @@ export default function SpeedChallengePage() {
             {combo >= 2 && (
               <div className="text-center">
                 <span key={combo} className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-white text-xs font-bold ${
-                  combo >= COMBO_BONUS_THRESHOLD ? "bg-gradient-to-r from-orange-500 to-red-500 animate-bounce" : "bg-gradient-to-r from-blue-500 to-primary-500"
+                  combo >= 5 ? "bg-gradient-to-r from-orange-500 to-red-500 animate-bounce" : "bg-gradient-to-r from-blue-500 to-primary-500"
                 }`}>
-                  {combo >= COMBO_BONUS_THRESHOLD ? "🔥" : "⚡"} {combo}連続正解！
+                  {combo >= 5 ? "🔥" : "⚡"} {combo}連続正解！
+                  <span className="opacity-80">×{Math.min(Math.pow(2, combo - 1), 16)}</span>
                 </span>
               </div>
             )}
@@ -2151,8 +2165,8 @@ export default function SpeedChallengePage() {
 
   // 結果画面
   if (gameState === "finished") {
-    const title = getSpeedChallengeTitle(score, maxCombo, totalQuestions);
-    const accuracy = totalQuestions > 0 ? Math.round((score / totalQuestions) * 100) : 0;
+    const title = getSpeedChallengeTitle(score, maxCombo, correctCount, totalQuestions);
+    const accuracy = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0;
     const filteredAnsweredWords = answeredWords.filter((word) => {
       if (wordFilter === "correct") return word.correct;
       if (wordFilter === "incorrect") return !word.correct;
@@ -2212,7 +2226,7 @@ export default function SpeedChallengePage() {
             <div className="grid grid-cols-2 gap-1.5 mb-2">
               <div className="bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-lg p-1.5">
                 <p className="text-[10px] text-slate-500 dark:text-slate-400">スコア</p>
-                <p className="text-2xl font-bold text-gradient">{score}</p>
+                <p className="text-2xl font-bold text-gradient">{score}<span className="text-sm font-normal ml-0.5">pt</span></p>
               </div>
               {ranking ? (
                 <div className="bg-gradient-to-r from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 rounded-lg p-1.5">
@@ -2248,8 +2262,8 @@ export default function SpeedChallengePage() {
 
             <div className="grid grid-cols-3 gap-1.5">
               <div className="bg-slate-50 dark:bg-slate-800/50 rounded-md p-1.5">
-                <p className="text-base font-bold text-slate-700 dark:text-slate-200">{totalQuestions}</p>
-                <p className="text-[9px] text-slate-400 dark:text-slate-500">回答数</p>
+                <p className="text-base font-bold text-slate-700 dark:text-slate-200">{correctCount}/{totalQuestions}</p>
+                <p className="text-[9px] text-slate-400 dark:text-slate-500">正解/回答</p>
               </div>
               <div className="bg-slate-50 dark:bg-slate-800/50 rounded-md p-1.5">
                 <p className="text-base font-bold text-slate-700 dark:text-slate-200">{accuracy}%</p>
