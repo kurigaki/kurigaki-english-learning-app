@@ -169,6 +169,24 @@ export default function HistoryPage() {
     return stats;
   }, [records]);
 
+  // 過去7日間の1日あたり正解数（SRS学習効果グラフ用）
+  const weeklyCorrectData = useMemo(() => {
+    const days: { label: string; correct: number; total: number }[] = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const dateStr = d.toDateString();
+      const dayRecords = records.filter((r) => new Date(r.studiedAt).toDateString() === dateStr);
+      const label = i === 0 ? "今日" : `${d.getMonth() + 1}/${d.getDate()}`;
+      days.push({
+        label,
+        correct: dayRecords.filter((r) => r.correct).length,
+        total: dayRecords.length,
+      });
+    }
+    return days;
+  }, [records]);
+
   // 最も苦手な問題タイプ（5回以上回答があるタイプの中で正答率が最低のもの）
   const weakestType = useMemo(() => {
     const candidates = (Object.entries(typeStats) as [string, { total: number; correct: number }][])
@@ -376,6 +394,42 @@ export default function HistoryPage() {
                   ))}
                 </div>
               </div>
+            </Card>
+
+            {/* Weekly Activity Graph */}
+            <Card>
+              <h2 className="text-base font-bold text-slate-700 dark:text-slate-200 mb-3 flex items-center gap-2">
+                <span className="emoji-icon">📅</span>
+                <span>過去7日間の学習活動</span>
+              </h2>
+              {records.length === 0 ? (
+                <p className="text-center text-sm text-slate-400 dark:text-slate-500 py-2">まだ学習記録がありません</p>
+              ) : (
+                <div className="flex items-end gap-1.5 h-24">
+                  {weeklyCorrectData.map((day, i) => {
+                    const maxCorrect = Math.max(...weeklyCorrectData.map((d) => d.correct), 1);
+                    const height = day.correct === 0 ? 4 : Math.max(8, Math.round((day.correct / maxCorrect) * 88));
+                    const isToday = i === 6;
+                    return (
+                      <div key={day.label} className="flex-1 flex flex-col items-center gap-1">
+                        {day.correct > 0 && (
+                          <span className="text-[9px] text-slate-500 dark:text-slate-400 leading-none">{day.correct}</span>
+                        )}
+                        <div
+                          className={`w-full rounded-t-sm transition-all duration-500 ${
+                            isToday ? "bg-primary-500" : day.correct > 0 ? "bg-primary-300 dark:bg-primary-700" : "bg-slate-100 dark:bg-slate-700"
+                          }`}
+                          style={{ height: `${height}px` }}
+                          title={`${day.label}: ${day.correct}問正解 / ${day.total}問`}
+                        />
+                        <span className={`text-[9px] leading-none ${isToday ? "font-bold text-primary-600 dark:text-primary-400" : "text-slate-400 dark:text-slate-500"}`}>
+                          {day.label}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </Card>
 
             {/* Type Stats */}
