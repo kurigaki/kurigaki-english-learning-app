@@ -9,8 +9,17 @@ const SPEED_RESULTS_KEY = "speed_challenge_results";
 const BOOKMARKS_KEY = "bookmarked_words";
 const SRS_PROGRESS_KEY = "srs_progress";
 const MANUAL_MASTERY_KEY = "manual_mastery";
+const DUNGEON_STATS_KEY = "dungeon_stats";
 const DEFAULT_USER_ID = "default";
 export type ManualMasteryLevel = "unlearned" | "weak" | "vague" | "almost" | "remembered";
+
+export type DungeonStats = {
+  attempts: number;     // 累計挑戦回数
+  kills: number;        // 累計撃破数
+  correct: number;      // 累計正解数
+  clears: number;       // 累計クリア回数（B5F踏破）
+  maxFloor: number;     // 到達最高フロア
+};
 
 export type WordStats = {
   wordId: number;
@@ -315,6 +324,7 @@ export const storage = {
     level?: number;
     speedScore?: number;
     isSpeedChallenge?: boolean;
+    dungeonStats?: DungeonStats;
   }): string[] => {
     const newlyUnlocked: string[] = [];
 
@@ -356,6 +366,26 @@ export const storage = {
             shouldUnlock = true;
           }
           break;
+        case "dungeon": {
+          const ds = context.dungeonStats;
+          if (!ds) break;
+          if (achievement.id === "dungeon_enter" && ds.attempts >= 1) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_floor3" && ds.maxFloor >= 3) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_first_clear" && ds.clears >= 1) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_kills_10" && ds.kills >= 10) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_kills_50" && ds.kills >= 50) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_correct_50" && ds.correct >= 50) {
+            shouldUnlock = true;
+          } else if (achievement.id === "dungeon_tenacious" && ds.attempts >= 3) {
+            shouldUnlock = true;
+          }
+          break;
+        }
       }
 
       if (shouldUnlock) {
@@ -544,6 +574,23 @@ export const storage = {
    * @param validWordIds 現在有効な単語 ID の配列
    * @returns 削除したエントリ数 { records, srsEntries }
    */
+  // ダンジョン統計管理
+  getDungeonStats: (): DungeonStats => {
+    if (typeof window === "undefined") return { attempts: 0, kills: 0, correct: 0, clears: 0, maxFloor: 0 };
+    try {
+      const data = localStorage.getItem(DUNGEON_STATS_KEY);
+      if (!data) return { attempts: 0, kills: 0, correct: 0, clears: 0, maxFloor: 0 };
+      return JSON.parse(data) as DungeonStats;
+    } catch {
+      return { attempts: 0, kills: 0, correct: 0, clears: 0, maxFloor: 0 };
+    }
+  },
+
+  saveDungeonStats: (stats: DungeonStats): void => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem(DUNGEON_STATS_KEY, JSON.stringify(stats));
+  },
+
   cleanupOrphanedData: (validWordIds: number[]): { records: number; srsEntries: number } => {
     if (typeof window === "undefined") return { records: 0, srsEntries: 0 };
     const validSet = new Set(validWordIds);

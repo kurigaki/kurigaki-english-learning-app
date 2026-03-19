@@ -16,6 +16,7 @@ const CATEGORY_LABELS: Record<Achievement["category"], string> = {
   mastery: "単語習得",
   level: "レベル",
   speed: "スピード",
+  dungeon: "ダンジョン",
 };
 
 export const AchievementList = ({

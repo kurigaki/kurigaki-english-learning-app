@@ -128,7 +128,7 @@ export type LearningRecord = {
 };
 
 // 実績カテゴリ
-export type AchievementCategory = "learning" | "combo" | "streak" | "mastery" | "level" | "speed";
+export type AchievementCategory = "learning" | "combo" | "streak" | "mastery" | "level" | "speed" | "dungeon";
 
 // 実績定義
 export type Achievement = {

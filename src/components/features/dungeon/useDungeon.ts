@@ -202,6 +202,17 @@ export function useDungeon(questions: DungeonQuestion[]) {
       // XP・ストリーク更新
       const updatedUser = storage.recordStudySession(g.correct);
 
+      // ダンジョン統計更新
+      const prevStats = storage.getDungeonStats();
+      const dungeonStats = {
+        attempts: prevStats.attempts + 1,
+        kills: prevStats.kills + g.kills,
+        correct: prevStats.correct + g.correct,
+        clears: prevStats.clears + (isCleared ? 1 : 0),
+        maxFloor: Math.max(prevStats.maxFloor, g.floor),
+      };
+      storage.saveDungeonStats(dungeonStats);
+
       // 実績チェック
       const totalRecords = storage.getRecords().length;
       const masteredWords = storage.getMasteredWordCount();
@@ -210,6 +221,7 @@ export function useDungeon(questions: DungeonQuestion[]) {
         streak: updatedUser.streak,
         masteredWords,
         level: updatedUser.level,
+        dungeonStats,
       });
 
       setUiState((prev) => ({
