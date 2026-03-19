@@ -316,6 +316,7 @@ src/
 │   ├── history/page.tsx          # 学習履歴（タブ: 概要/苦手単語/履歴）
 │   ├── achievements/page.tsx     # 実績一覧
 │   ├── review/page.tsx           # SRS・苦手単語復習（list フェーズで予習→クイズへ遷移）
+│   ├── dungeon/page.tsx          # WORD DUNGEON（ローグライク）- iframe で public/dungeon.html を表示
 │   └── updates/page.tsx          # お知らせ（アップデート情報一覧）
 ├── components/
 │   ├── ui/                       # 汎用UIコンポーネント
@@ -1287,6 +1288,60 @@ useEffect(() => {
   }
 }, [isAuthLoading, isAuthenticated, loadData]);
 ```
+
+---
+
+## WORD DUNGEON（ローグライク機能）
+
+### 概要
+
+「英語学習 × ローグライク」をコンセプトにした新モード。
+風来のシレンのように冒険に失敗すると所持アイテムをすべて失い、Lv1から再スタートする仕組みで繰り返し英語学習ができる。
+
+### 現在の状態（β版）
+
+- プロトタイプ: `public/dungeon.html`（スタンドアロン HTML/CSS/JS）
+- Next.js への統合: `src/app/dungeon/page.tsx`（iframe で `public/dungeon.html` を表示）
+- ナビゲーション: 「クイズ」と「単語帳」の間に「⚔️ ダンジョン」を追加済み
+
+### プロトタイプの主要機能（`public/dungeon.html`）
+
+| 機能 | 説明 |
+|------|------|
+| ダンジョン生成 | タイル（42×32）のランダムマップ（部屋＋廊下）、canvas描画 |
+| クイズ戦闘 | 敵に隣接して攻撃するとクイズパネルが出現（英語→日本語 4択） |
+| アイテム | 草/巻物/杖/食料/壷/特殊の6カテゴリ（シレン風） |
+| HP/EXP | レベルアップで最大HP+5・攻撃+1 |
+| 死亡 | 所持アイテム全ロスト・Lv1リスタート（間違えた単語を次回優先出題） |
+| BGM | Web Audio API によるピクセルサウンド |
+| 操作 | WASDまたは矢印キー、Zで攻撃、スマホはDパッド |
+
+### 段階的統合ロードマップ
+
+**Phase 1（現在）: iframe 埋め込み**
+- `public/dungeon.html` をそのまま iframe で表示
+- Next.js アプリへのエントリポイントを作成
+
+**Phase 2: 単語データ統合**
+- `QUESTIONS` 配列をアプリの `words.ts` に差し替え
+- `src/data/words.ts` から問題生成するスクリプトを追加
+- 単語帳・難易度でダンジョンをフィルタリングできるように
+
+**Phase 3: React コンポーネント化**
+- ゲームロジック（`dungeon-engine.ts`）を TypeScript に移植
+- Canvas描画を React コンポーネント（`DungeonCanvas.tsx`）に分離
+- ゲーム状態管理を React hooks（`useDungeon.ts`）に
+
+**Phase 4: アプリ連携**
+- ダンジョンの学習記録を `storage.ts` に保存（`addRecord`）
+- XP・実績・ストリークに連動
+- 間違えた単語を苦手単語リストに反映
+
+### 実装メモ
+
+- ゲームの単語データは現在 `public/dungeon.html` 内の `QUESTIONS` 配列に直接書き込まれている
+- Phase 2 で統合する際は `saveBookWordIds` 的な仕組みでダンジョン起動時に単語セットを渡す設計が良い
+- iframe 内の BGM は iframe をマウントするだけでは再生されない（ユーザー操作が必要）→ 現状の「START GAME」ボタンで問題なし
 
 ---
 
