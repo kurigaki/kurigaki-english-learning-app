@@ -58,11 +58,11 @@ export const QuizResult = ({
   handleAchievementClose,
 }: QuizResultProps) => {
   useEffect(() => {
-    if (typeof window === "undefined") return undefined;
+    if (typeof window === "undefined") return;
+    // 単語詳細から戻ってきた時にリザルトを復元できるようにフラグをセット。
+    // クリーンアップでは削除しない（単語詳細へ遷移してもフラグを保持するため）。
+    // フラグのクリアは新しいクイズ開始時（startNewSession / startRetrySessionWithWordIds）に行う。
     window.sessionStorage.setItem("quiz-show-result", "1");
-    return () => {
-      window.sessionStorage.removeItem("quiz-show-result");
-    };
   }, []);
   const totalQuestions = answeredWords.length || questions.length;
   const percentage = Math.round((score / totalQuestions) * 100);
