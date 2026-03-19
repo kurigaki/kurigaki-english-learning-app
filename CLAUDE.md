@@ -316,7 +316,7 @@ src/
 │   ├── history/page.tsx          # 学習履歴（タブ: 概要/苦手単語/履歴）
 │   ├── achievements/page.tsx     # 実績一覧
 │   ├── review/page.tsx           # SRS・苦手単語復習（list フェーズで予習→クイズへ遷移）
-│   ├── dungeon/page.tsx          # WORD DUNGEON（ローグライク）- iframe で public/dungeon.html を表示
+│   ├── dungeon/page.tsx          # WORD DUNGEON（ローグライク）- DungeonGame コンポーネントを表示
 │   └── updates/page.tsx          # お知らせ（アップデート情報一覧）
 ├── components/
 │   ├── ui/                       # 汎用UIコンポーネント
@@ -1298,11 +1298,28 @@ useEffect(() => {
 「英語学習 × ローグライク」をコンセプトにした新モード。
 風来のシレンのように冒険に失敗すると所持アイテムをすべて失い、Lv1から再スタートする仕組みで繰り返し英語学習ができる。
 
-### 現在の状態（β版）
+### 現在の状態（Phase 3 完了）
 
-- プロトタイプ: `public/dungeon.html`（スタンドアロン HTML/CSS/JS）
-- Next.js への統合: `src/app/dungeon/page.tsx`（iframe で `public/dungeon.html` を表示）
+- プロトタイプ: `public/dungeon.html`（参照用スタンドアロン HTML/CSS/JS、削除不要）
+- React 実装: `src/components/features/dungeon/DungeonGame.tsx`（iframe 廃止）
+- ゲームエンジン: `src/lib/dungeon/` 以下の TypeScript モジュール群
 - ナビゲーション: 「クイズ」と「単語帳」の間に「⚔️ ダンジョン」を追加済み
+
+### ファイル構成（Phase 3）
+
+```
+src/lib/dungeon/
+├── types.ts          - ゲーム全型定義（GameState, Enemy, DungeonQuestion 等）
+├── constants.ts      - ITEMS_DEF, ENEMIES_DEF, MW/MH/TILE 定数
+├── map.ts            - generateMap(), getItemPool()
+├── ai.ts             - 敵AI（BFS経路探索・徘徊・moveEnemies）
+├── audio.ts          - Web Audio API SFX / BGM（ダンジョン専用）
+└── renderer.ts       - Canvas描画（drawMap, scrollToPlayer）
+
+src/components/features/dungeon/
+├── useDungeon.ts     - メインゲームロジックフック（全アクション・アイテム効果）
+└── DungeonGame.tsx   - React コンポーネント（HUD/Quiz/Items/Death/Controls）
+```
 
 ### プロトタイプの主要機能（`public/dungeon.html`）
 
@@ -1327,10 +1344,11 @@ useEffect(() => {
 - `src/data/words.ts` から問題生成するスクリプトを追加
 - 単語帳・難易度でダンジョンをフィルタリングできるように
 
-**Phase 3: React コンポーネント化**
-- ゲームロジック（`dungeon-engine.ts`）を TypeScript に移植
-- Canvas描画を React コンポーネント（`DungeonCanvas.tsx`）に分離
-- ゲーム状態管理を React hooks（`useDungeon.ts`）に
+**Phase 3: React コンポーネント化 ✅ 完了**
+- ゲームロジックを `src/lib/dungeon/` TypeScript モジュール群に移植
+- Canvas描画を `renderer.ts` に分離
+- ゲーム状態管理を `useDungeon.ts` フックに移行
+- iframe 廃止、`DungeonGame.tsx` コンポーネントで直接レンダリング
 
 **Phase 4: アプリ連携**
 - ダンジョンの学習記録を `storage.ts` に保存（`addRecord`）
