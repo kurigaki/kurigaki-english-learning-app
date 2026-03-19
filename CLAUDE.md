@@ -916,11 +916,12 @@ type QuestionTypeRatios = {
 
 | キー | 動作 |
 |------|------|
-| `A` / `B` / `C` / `D` | 選択肢を選択（en-to-ja・ja-to-en・listening） |
+| `1` / `2` / `3` / `4` | 選択肢を選択（en-to-ja・ja-to-en・listening） |
 | `Enter` | 回答後に次の問題へ進む |
 
 - `e.repeat` チェックで長押しによる誤送信を防止
-- `dictation` タイプでは A〜D キーは無効（テキスト入力優先）
+- `dictation` タイプでは 1〜4 キーは無効（テキスト入力優先）
+- キーボードハンドラは `useQuiz.ts` で一元管理（`src/lib/hooks/useQuiz.ts`）
 
 ### 1セッションの問題数
 
