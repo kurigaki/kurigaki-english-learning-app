@@ -33,6 +33,20 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-20",
+    version: "1.45.0",
+    title: "学習分析・ダンジョン連携を強化",
+    content: [
+      "ナビゲーションがダンジョン中に隠れてしまう問題を修正しました",
+      "学習履歴の「問題タイプ別」に得意/普通/弱いバッジと苦手タイプのバナーを追加",
+      "学習履歴に「過去7日間の学習活動グラフ」を追加",
+      "実績画面にカテゴリタブを追加（ダンジョン実績の進捗バーを確認できます）",
+      "ダンジョンの結果画面に「過去の記録」（直近4件）を表示",
+      "単語詳細画面に「ダンジョンで鍛える」ボタンを追加",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-20",
     version: "1.44.0",
     title: "WORD DUNGEON の強化と改善",
     content: [
