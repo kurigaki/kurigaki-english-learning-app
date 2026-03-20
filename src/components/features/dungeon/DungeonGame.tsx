@@ -648,6 +648,9 @@ function DungeonControls({
     width: 32, height: 32, background: DC.bg3, border: `1px solid ${DC.border}`,
     display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13,
     cursor: "pointer", borderRadius: 3, color: DC.text2, userSelect: "none",
+    // 長押しによるコンテキストメニュー（コピー/選択）を防止
+    WebkitUserSelect: "none",
+    WebkitTouchCallout: "none",
   };
   const btnStyle: React.CSSProperties = {
     fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text2,
@@ -672,8 +675,9 @@ function DungeonControls({
   return (
     <div style={{
       background: DC.bg2, borderTop: `2px solid ${DC.border}`,
-      padding: "6px 12px", flexShrink: 0, display: "flex", gap: 18, justifyContent: "center", flexWrap: "wrap", alignItems: "center",
-    }}>
+      padding: "6px 12px", flexShrink: 0, display: "flex", gap: 32, justifyContent: "center", flexWrap: "wrap", alignItems: "center",
+      userSelect: "none", WebkitUserSelect: "none",
+    }} onContextMenu={(e) => e.preventDefault()}>
       {/* 十字キー */}
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
         <div style={{ display: "flex", gap: 2 }}>
@@ -1096,7 +1100,7 @@ function TitleScreen({
       background: "radial-gradient(ellipse at 50% 40%,#1a0f2e 0%,#09090f 65%)",
       gap: 10, padding: "16px 20px", overflowY: "auto",
     }}>
-      <div style={{ fontSize: 48, animation: "tfloat 3s ease-in-out infinite" }}>🗡️</div>
+      <div style={{ fontSize: 48, animation: "tfloat 3s ease-in-out infinite" }}>⚔️</div>
       <div style={{
         fontFamily: "'Press Start 2P', monospace",
         fontSize: "clamp(13px,3.5vw,22px)",
@@ -1338,7 +1342,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   } = useDungeon(questions, progressiveStages, dungeonMode);
 
   const [showMap, setShowMap] = useState(false);
-  const openMap = useCallback(() => setShowMap(true), []);
+  const toggleMap = useCallback(() => setShowMap(v => !v), []);
   const closeMap = useCallback(() => setShowMap(false), []);
 
   // sessionStorage からリザルト状態を復元 & localStorage セーブ確認
@@ -1674,7 +1678,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onWait={doWait}
         onItems={openItems}
         onStairs={goNextFloor}
-        onMap={openMap}
+        onMap={toggleMap}
         showStairs={uiState.onStairs}
       />
 
