@@ -355,4 +355,18 @@ body {
   @keyframes slide-out-right { to { transform: translateX(48px);  opacity: 0; } }
   .animate-slide-out-left  { animation: slide-out-left  0.18s ease-in forwards; }
   .animate-slide-out-right { animation: slide-out-right 0.18s ease-in forwards; }
+
+  /* ダンジョン：画面シェイク */
+  .dungeon-shake {
+    animation: dungeon-shake 0.38s ease-in-out;
+  }
+  @keyframes dungeon-shake {
+    0%, 100% { transform: translate(0, 0); }
+    15%  { transform: translate(-7px, 2px); }
+    30%  { transform: translate(7px, -3px); }
+    45%  { transform: translate(-5px, 3px); }
+    60%  { transform: translate(5px, -2px); }
+    75%  { transform: translate(-3px, 2px); }
+    90%  { transform: translate(3px, -1px); }
+  }
 }

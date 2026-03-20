@@ -11,6 +11,9 @@ import type {
   InventoryItem,
   Enemy,
   DungeonMode,
+  ScreenFlashKind,
+  ScreenEffect,
+  EventOverlay,
 } from "@/lib/dungeon/types";
 import { findPath } from "@/lib/dungeon/pathfinding";
 import type { StageDefinition } from "@/data/words/courses";
@@ -154,6 +157,22 @@ export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMo
 
 let _popId = 0;
 
+const TRAP_OVERLAYS: Record<string, EventOverlay> = {
+  damage: { kind: "trap", title: "⚡ ダメージトラップ！", body: "床に仕掛けられた罠を踏んだ！HPが減った。", color: "#e05252", icon: "⚡", autoClose: 1800 },
+  sleep:  { kind: "trap", title: "💤 眠りトラップ！", body: "罠にかかり、数ターン動けなくなった！敵に注意しよう。", color: "#7c6af7", icon: "💤", autoClose: 2500 },
+  warp:   { kind: "trap", title: "🌀 ワープトラップ！", body: "フロアのどこかへ飛ばされた！探索しなおそう。", color: "#9060c0", icon: "🌀", autoClose: 2200 },
+  hunger: { kind: "trap", title: "🍂 空腹トラップ！", body: "急激に空腹になった！早めに食料を食べよう。", color: "#f5a623", icon: "🍂", autoClose: 2000 },
+};
+
+const MONSTER_HOUSE_OVERLAY: EventOverlay = {
+  kind: "monster_house",
+  title: "👹 モンスターハウス！",
+  body: "大量の敵が眠っている部屋に入った！\n静かに通り抜けるか、アイテムで一掃しよう。",
+  color: "#e05252",
+  icon: "👹",
+  autoClose: 3000,
+};
+
 /** フロア番号（1-5）をステージインデックスに変換する（プログレッシブモード用） */
 function getStageForFloor(stages: StageDefinition[], floor: number): string {
   if (stages.length === 0) return "";
@@ -167,6 +186,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   const gameRef = useRef<GameState | null>(null);
   const [uiState, setUiState] = useState<UIState>(INITIAL_UI);
   const [dmgPops, setDmgPops] = useState<DmgPop[]>([]);
+  const [screenEffect, setScreenEffect] = useState<ScreenEffect>({ flash: null, shake: false, id: 0 });
+  const [eventOverlay, setEventOverlay] = useState<EventOverlay | null>(null);
+  const effectIdRef = useRef(0);
+  const seenMonsterHouseRef = useRef(false);
   const msgQueueRef = useRef<string[]>([]);
   const notifTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   // オートウォーク用
@@ -182,6 +205,21 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const vpW = wrap.clientWidth;
     const vpH = wrap.clientHeight;
     drawMap(canvas, g, vpW, vpH);
+  }, []);
+
+  const triggerScreenEffect = useCallback((flash: ScreenFlashKind | null, shake: boolean) => {
+    setScreenEffect({ flash, shake, id: ++effectIdRef.current });
+  }, []);
+
+  const showEventOverlay = useCallback((overlay: EventOverlay) => {
+    setEventOverlay(overlay);
+    if (overlay.autoClose) {
+      setTimeout(() => setEventOverlay(null), overlay.autoClose);
+    }
+  }, []);
+
+  const closeEventOverlay = useCallback(() => {
+    setEventOverlay(null);
   }, []);
 
   const updateUI = useCallback((g: GameState, extra: Partial<UIState> = {}) => {
@@ -270,10 +308,11 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
         g.p.atk++;
         sfxLevelUp();
+        triggerScreenEffect("levelup", false);
         showNotification(`✨ Lv${g.p.lv}アップ！ MaxHP+5 攻撃+1`);
       }
     },
-    [queueMsg, showNotification]
+    [queueMsg, showNotification, triggerScreenEffect]
   );
 
   const showDeath = useCallback(
@@ -355,9 +394,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       if (g.turn % 4 === 0 && g.p.hp < g.p.mhp) {
         g.p.hp = Math.min(g.p.hp + 1, g.p.mhp);
       }
-      // 空腹度減少: easy=2ターン毎に1、hard=毎ターン1
+      // 空腹度減少: easy=4ターン毎に1、hard=2ターン毎に1
       if (g.hunger > 0) {
-        const decayThisTurn = g.dungeonMode === "hard" ? true : (g.turn % 2 === 0);
+        const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 2 === 0) : (g.turn % 4 === 0);
         if (decayThisTurn) {
           g.hunger = Math.max(0, g.hunger - 1);
           if (g.hunger === 0) queueMsg("🍂 お腹が空いた！HPが減っていく…");
@@ -400,6 +439,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       for (const res of results) {
         if (res.enemyHit) {
           sfxRecv();
+          triggerScreenEffect("recv", true);
           addDmgPop(g.px, g.py, "recv", res.damage);
           queueMsg(`💥 ${res.enemy.name}から${res.damage}ダメージを受けた！（残HP:${g.p.hp}）`);
           if (res.killedPlayer) {
@@ -426,7 +466,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         });
       }
     },
-    [addDmgPop, flushMsg, queueMsg, redraw, showDeath, updateUI]
+    [addDmgPop, flushMsg, queueMsg, redraw, showDeath, triggerScreenEffect, updateUI]
   );
 
   const wakeEnemiesInRoom = useCallback((g: GameState, rx: number, ry: number) => {
@@ -463,39 +503,45 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         case "heal_grass": {
           const v = 15;
           g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
+          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxItem();
-          notify(`💚 HPが${v}回復！`);
+          notify(`💚 HPが${v}回復！満腹度+5`);
           return true;
         }
         case "big_heal": {
           g.p.hp = g.p.mhp;
+          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxItem();
-          notify("💚 HPが全回復！");
+          notify("💚 HPが全回復！満腹度+5");
           return true;
         }
         case "poison_grass": {
           g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
+          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxItem();
-          notify("✨ 毒が消えた！");
+          notify("✨ 毒が消えた！満腹度+5");
           return true;
         }
         case "power_grass": {
           g.p.atk += 2;
+          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxLevelUp();
-          notify(`⚔️ 攻撃力が${g.p.atk}になった！`);
+          notify(`⚔️ 攻撃力が${g.p.atk}になった！満腹度+5`);
           return true;
         }
         case "hp_grass": {
           g.p.mhp += 5;
           g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
+          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxLevelUp();
-          notify(`❤️ 最大HPが${g.p.mhp}になった！`);
+          notify(`❤️ 最大HPが${g.p.mhp}になった！満腹度+5`);
           return true;
         }
         case "swift_grass": {
           g.swiftTurns = (g.swiftTurns || 0) + 3;
+          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxItem();
-          notify("💨 素早くなった！（3ターン）");
+          notify("💨 素早くなった！（3ターン）満腹度+5");
           return true;
         }
         case "sleep_grass": {
@@ -507,8 +553,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               cnt++;
             }
           });
+          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxItem();
-          notify(cnt > 0 ? `💤 ${cnt}体の敵が眠った！` : "近くに敵がいない");
+          notify(cnt > 0 ? `💤 ${cnt}体の敵が眠った！満腹度+5` : "近くに敵がいない");
           redraw();
           return true;
         }
@@ -516,8 +563,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           g.enemies.forEach((e) => {
             e.confused = (e.confused || 0) + 4;
           });
+          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxItem();
-          notify("🌀 敵が混乱した！");
+          notify("🌀 敵が混乱した！満腹度+5");
           return true;
         }
         case "warp_grass": {
@@ -535,8 +583,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           if (g.map[ny][nx] !== 0) {
             g.px = nx;
             g.py = ny;
+            g.hunger = Math.min(g.maxHunger, g.hunger + 5);
             sfxStairs();
-            notify("✨ ワープした！");
+            notify("✨ ワープした！満腹度+5");
             redraw();
           }
           return true;
@@ -560,8 +609,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             }, 100);
           });
           g.enemies = g.enemies.filter((e) => e.hp > 0);
+          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxCrit();
-          notify(cnt > 0 ? `🔥 ${cnt}体に8ダメージ！` : "周囲に敵がいない");
+          notify(cnt > 0 ? `🔥 ${cnt}体に8ダメージ！満腹度+5` : "周囲に敵がいない");
           redraw();
           return true;
         }
@@ -805,6 +855,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     if (!g) return;
     g.onStairs = false;
     g.floor++;
+    seenMonsterHouseRef.current = false;
     if (g.floor > 5) {
       storage.clearDungeonGame();
       showDeath(g, true);
@@ -874,6 +925,18 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     [questions, progressiveStages]
   );
 
+  // ── セーブ（ターン毎オートセーブ） ──────────────────────────────
+  const saveGame = useCallback(() => {
+    const g = gameRef.current;
+    if (!g) return;
+    const save: DungeonSave = {
+      gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
+      questions,
+      savedAt: new Date().toISOString(),
+    };
+    storage.saveDungeonGame(save);
+  }, [questions]);
+
   const doTurn = useCallback(
     (dx: number, dy: number) => {
       const g = gameRef.current;
@@ -914,6 +977,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               g.p.hp = Math.max(1, g.p.hp - dmg);
               sfxRecv();
               addDmgPop(nx, ny, "recv", dmg);
+              triggerScreenEffect("trap_damage", true);
+              showEventOverlay(TRAP_OVERLAYS.damage);
               trapMsg = `⚡ ダメージトラップ！ ${dmg}ダメージを受けた！`;
               break;
             }
@@ -921,6 +986,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               const turns = 3 + Math.floor(Math.random() * 3);
               // blindTurns は「動けない」全般に共用（眠り罠・盲目の巻物どちらも同じ効果）
               g.blindTurns = (g.blindTurns || 0) + turns;
+              triggerScreenEffect("trap_sleep", false);
+              showEventOverlay(TRAP_OVERLAYS.sleep);
               trapMsg = `💤 眠りトラップ！ ${turns}ターン動けない！`;
               break;
             }
@@ -933,12 +1000,16 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
                 tries++;
               } while (tries < 200 && (g.map[wy][wx] === 0 || g.enemies.find((e) => e.x === wx && e.y === wy)));
               if (g.map[wy][wx] !== 0) { g.px = wx; g.py = wy; }
+              triggerScreenEffect("trap_warp", false);
+              showEventOverlay(TRAP_OVERLAYS.warp);
               trapMsg = "🌀 ワープトラップ！ 飛ばされた！";
               break;
             }
             case "hunger": {
               const loss = 20 + Math.floor(Math.random() * 20);
               g.hunger = Math.max(0, g.hunger - loss);
+              triggerScreenEffect("trap_hunger", false);
+              showEventOverlay(TRAP_OVERLAYS.hunger);
               trapMsg = `🍂 空腹トラップ！ 空腹度-${loss}！`;
               break;
             }
@@ -984,13 +1055,25 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // 部屋への侵入で起床
       wakeEnemiesInRoom(g, g.px, g.py);
 
+      // モンスターハウス入室時の初回警告
+      if (g.monsterHouseRoomIdx !== null && !seenMonsterHouseRef.current) {
+        const mhRoom = g.rooms[g.monsterHouseRoomIdx];
+        if (mhRoom && g.px >= mhRoom.x && g.px < mhRoom.x + mhRoom.w && g.py >= mhRoom.y && g.py < mhRoom.y + mhRoom.h) {
+          seenMonsterHouseRef.current = true;
+          showEventOverlay(MONSTER_HOUSE_OVERLAY);
+        }
+      }
+
       // 敵のターン
       runEnemyTurn(g);
 
       // ショッププロンプトを更新（runEnemyTurnのupdateUIより後に適用）
       setUiState((prev) => ({ ...prev, shopPrompt: newShopPrompt }));
+
+      // ターン終了後にオートセーブ（辞めた場所から再開できるよう）
+      saveGame();
     },
-    [addDmgPop, initiateAttack, queueMsg, runEnemyTurn, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
+    [addDmgPop, initiateAttack, queueMsg, runEnemyTurn, saveGame, showEventOverlay, triggerScreenEffect, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
   );
 
   const playerAttack = useCallback(() => {
@@ -1020,7 +1103,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     }
     queueMsg("足踏み中…");
     runEnemyTurn(g);
-  }, [goNextFloor, queueMsg, runEnemyTurn, uiState.quiz, uiState.quizAnswered]);
+    // ターン終了後にオートセーブ
+    saveGame();
+  }, [goNextFloor, queueMsg, runEnemyTurn, saveGame, uiState.quiz, uiState.quizAnswered]);
 
   const answerQuiz = useCallback(
     (chosen: string) => {
@@ -1055,8 +1140,6 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         if (correct) {
           g.correct++;
           g.missedWords = g.missedWords.filter((w) => w !== q.word);
-          // 正解で空腹度回復
-          g.hunger = Math.min(g.maxHunger, g.hunger + 3);
           sfxCorrect();
           const hitRate = g.sureHit ? 1 : 0.9;
           g.sureHit = false;
@@ -1071,12 +1154,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             e.hp = Math.max(0, e.hp - damage);
             if (crit) { sfxCrit(); } else { sfxHit(); }
             addDmgPop(e.x, e.y, crit ? "crit" : "hit", damage);
+            triggerScreenEffect("correct", false);
             queueMsg(`✅ 正解！ ${e.name}に${damage}ダメージ${crit ? " 会心！" : ""}`);
           } else {
             g.powerUp = false;
             miss = true;
             sfxMiss();
             addDmgPop(e.x, e.y, "miss", 0);
+            triggerScreenEffect("miss", false);
             queueMsg("✅ 正解！ しかしミスった…");
           }
         } else {
@@ -1095,12 +1180,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             e.hp = Math.max(0, e.hp - damage);
             sfxHit();
             addDmgPop(e.x, e.y, "hit", damage);
+            triggerScreenEffect("miss", false);
             queueMsg(`❌ 不正解（正解:${q.ans}） ${e.name}に${damage}dmg`);
           } else {
             g.powerUp = false;
             miss = true;
             sfxMiss();
             addDmgPop(e.x, e.y, "miss", 0);
+            triggerScreenEffect("miss", false);
             queueMsg(`❌ 不正解（正解:${q.ans}） ミス…`);
           }
         }
@@ -1114,11 +1201,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             onEnemyDied(g, e);
             setUiState((p) => ({ ...p, quiz: null, quizAnswered: false, quizResult: null }));
             runEnemyTurn(g);
+            saveGame();
           }, 500);
         } else {
           setTimeout(() => {
             setUiState((p) => ({ ...p, quiz: null, quizAnswered: false, quizResult: null }));
             runEnemyTurn(g);
+            saveGame();
           }, 750);
         }
 
@@ -1130,7 +1219,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         };
       });
     },
-    [addDmgPop, onEnemyDied, queueMsg, runEnemyTurn]
+    [addDmgPop, onEnemyDied, queueMsg, runEnemyTurn, saveGame, triggerScreenEffect]
   );
 
   const openItems = useCallback(() => {
@@ -1166,9 +1255,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
         closeItems();
         updateUI(g);
+        saveGame();
       }
     },
-    [applyItem, closeItems, goNextFloor, showNotification, updateUI]
+    [applyItem, closeItems, goNextFloor, saveGame, showNotification, updateUI]
   );
 
   const buyFromShop = useCallback(
@@ -1196,8 +1286,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       showNotification(`🏪 ${def?.name ?? shopPrompt.itemId}を購入！`);
       updateUI(g, { shopPrompt: null });
       redraw();
+      saveGame();
     },
-    [redraw, showNotification, updateUI]
+    [redraw, saveGame, showNotification, updateUI]
   );
 
   const skipShop = useCallback(() => {
@@ -1254,18 +1345,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     }
   }, [stopAutoWalk, scheduleWalkStep]);
 
-  // ── セーブ / ロード ──────────────────────────────────────────────
-  const saveGame = useCallback(() => {
-    const g = gameRef.current;
-    if (!g) return;
-    const save: DungeonSave = {
-      gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
-      questions,
-      savedAt: new Date().toISOString(),
-    };
-    storage.saveDungeonGame(save);
-  }, [questions]);
-
+  // ── ロード ──────────────────────────────────────────────────────
   const loadSave = useCallback((savedState: GameState) => {
     // Backward compatibility: fill in new fields if missing from old saves
     // Cast to partial to allow runtime saves missing these new fields
@@ -1369,6 +1449,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     wrapRef,
     uiState,
     dmgPops,
+    screenEffect,
+    eventOverlay,
+    closeEventOverlay,
     startGame,
     doTurn,
     playerAttack,

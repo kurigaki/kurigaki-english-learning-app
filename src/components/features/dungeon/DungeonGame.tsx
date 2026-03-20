@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback, useRef, useMemo } from "react";
 import Link from "next/link";
-import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState } from "@/lib/dungeon/types";
+import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, ScreenEffect, EventOverlay } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
 import type { DungeonMode } from "@/lib/dungeon/types";
@@ -788,6 +788,115 @@ function DmgPopLayer({
   );
 }
 
+// ─── Screen Flash Layer ────────────────────────────────────────────
+const FLASH_COLORS: Record<string, string> = {
+  recv:         "rgba(220,60,60,0.35)",
+  miss:         "rgba(245,200,66,0.32)",
+  correct:      "rgba(80,210,120,0.28)",
+  levelup:      "rgba(245,200,66,0.50)",
+  trap_damage:  "rgba(220,60,60,0.45)",
+  trap_sleep:   "rgba(120,100,240,0.38)",
+  trap_warp:    "rgba(140,90,200,0.38)",
+  trap_hunger:  "rgba(245,160,30,0.38)",
+};
+
+function ScreenFlashLayer({ effect }: { effect: ScreenEffect }) {
+  if (!effect.flash) return null;
+  const color = FLASH_COLORS[effect.flash] ?? "rgba(255,255,255,0.25)";
+  return (
+    <div
+      key={effect.id}
+      style={{
+        position: "absolute", inset: 0,
+        background: color,
+        pointerEvents: "none",
+        zIndex: 10,
+        animation: "dungeon-flash 0.42s ease-out forwards",
+      }}
+    >
+      <style>{`
+        @keyframes dungeon-flash {
+          0%   { opacity: 1; }
+          60%  { opacity: 0.6; }
+          100% { opacity: 0; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+// ─── Event Overlay Modal ───────────────────────────────────────────
+function EventOverlayModal({ overlay, onClose }: { overlay: EventOverlay; onClose: () => void }) {
+  return (
+    <div
+      style={{
+        position: "absolute", inset: 0,
+        display: "flex", alignItems: "center", justifyContent: "center",
+        background: "rgba(0,0,0,0.55)",
+        zIndex: 50,
+        animation: "dungeon-overlay-in 0.2s ease-out",
+      }}
+      onClick={onClose}
+    >
+      <div
+        style={{
+          background: DC.bg3,
+          border: `2px solid ${overlay.color}`,
+          borderRadius: 8,
+          padding: "16px 20px",
+          maxWidth: 280,
+          width: "85%",
+          textAlign: "center",
+          boxShadow: `0 0 24px ${overlay.color}55`,
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div style={{ fontSize: 32, marginBottom: 6 }}>{overlay.icon}</div>
+        <div style={{
+          fontFamily: "'Press Start 2P', monospace",
+          fontSize: 9,
+          color: overlay.color,
+          marginBottom: 10,
+          lineHeight: 1.6,
+        }}>
+          {overlay.title}
+        </div>
+        <div style={{
+          fontSize: 13,
+          color: DC.text,
+          lineHeight: 1.7,
+          whiteSpace: "pre-line",
+          fontFamily: "'DotGothic16', sans-serif",
+          marginBottom: 12,
+        }}>
+          {overlay.body}
+        </div>
+        <button
+          onClick={onClose}
+          style={{
+            fontFamily: "'Press Start 2P', monospace",
+            fontSize: 8,
+            color: DC.bg,
+            background: overlay.color,
+            border: "none",
+            padding: "7px 18px",
+            borderRadius: 4,
+            cursor: "pointer",
+          }}
+        >
+          OK
+        </button>
+      </div>
+      <style>{`
+        @keyframes dungeon-overlay-in {
+          from { opacity: 0; transform: scale(0.92); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+      `}</style>
+    </div>
+  );
+}
+
 // ─── Shop Prompt ───────────────────────────────────────────────────
 function DungeonShopPromptBanner({
   shopPrompt, gold, items, onBuy, onSkip,
@@ -1149,6 +1258,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     startGame, doTurn, playerAttack, doWait, answerQuiz,
     goNextFloor, useItem, openItems, closeItems, filterItems, retryGame,
     loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
+    screenEffect, eventOverlay, closeEventOverlay,
   } = useDungeon(questions, progressiveStages, dungeonMode);
 
   // sessionStorage からリザルト状態を復元 & localStorage セーブ確認
@@ -1278,12 +1388,16 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
 
       const k = ev.key;
 
-      // Quiz answers
+      // アイテム開閉（最優先：クイズ中でも使用可能）
+      if (k === "i" || k === "I") { ev.preventDefault(); openItems(); return; }
+
+      // Quiz answers（クイズ回答中は 1〜4 以外を遮断）
       if (uiState.quiz && !uiState.quizAnswered) {
         if (k === "1") { ev.preventDefault(); answerQuiz(uiState.quiz.choiceOrder[0]); return; }
         if (k === "2") { ev.preventDefault(); answerQuiz(uiState.quiz.choiceOrder[1]); return; }
         if (k === "3") { ev.preventDefault(); answerQuiz(uiState.quiz.choiceOrder[2]); return; }
         if (k === "4") { ev.preventDefault(); answerQuiz(uiState.quiz.choiceOrder[3]); return; }
+        return; // 1〜4 以外はクイズ中に無効
       }
 
       // Shop buy shortcut
@@ -1296,7 +1410,6 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       else if (k === "ArrowRight" || k === "d" || k === "D") { ev.preventDefault(); stopAutoWalk(); doTurn(1, 0); }
       else if (k === " " || k === "z" || k === "Z") { ev.preventDefault(); playerAttack(); }
       else if (k === "." || k === "x" || k === "X") { ev.preventDefault(); doWait(); }
-      else if (k === "i" || k === "I") { ev.preventDefault(); openItems(); }
       else if (k === ">" || k === "Enter") { ev.preventDefault(); if (uiState.onStairs) goNextFloor(); }
     };
 
@@ -1306,6 +1419,19 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     phase, uiState, answerQuiz, buyFromShop, closeItems, doTurn, doWait, goNextFloor,
     openItems, playerAttack, stopAutoWalk,
   ]);
+
+  // 画面シェイク
+  const prevEffectIdRef = useRef(0);
+  useEffect(() => {
+    if (screenEffect.id <= 0 || screenEffect.id === prevEffectIdRef.current) return;
+    prevEffectIdRef.current = screenEffect.id;
+    if (screenEffect.shake && wrapRef.current) {
+      const el = wrapRef.current;
+      el.classList.remove("dungeon-shake");
+      void el.offsetWidth; // force reflow to restart animation
+      el.classList.add("dungeon-shake");
+    }
+  }, [screenEffect, wrapRef]);
 
   // Canvas のタイル座標を計算するユーティリティ
   const getTileFromEvent = useCallback((clientX: number, clientY: number) => {
@@ -1389,6 +1515,10 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
           height={MH * TILE}
         />
         <DmgPopLayer pops={dmgPops} canvasRef={canvasRef} />
+        <ScreenFlashLayer effect={screenEffect} />
+        {eventOverlay && (
+          <EventOverlayModal overlay={eventOverlay} onClose={closeEventOverlay} />
+        )}
       </div>
 
       {/* Quiz panel */}
