@@ -1030,6 +1030,43 @@ startNewSession(settings, {
 
 ## ゲーミフィケーション機能
 
+### ミッションシステム（`src/data/missions.ts` / `src/lib/storage.ts`）
+
+期間ごとにリセットされるミッション目標をトラッキングする仕組み。
+
+**ミッション定義（`MISSIONS` 配列、`getMissionsByPeriod(period)` ヘルパー）**
+
+| 期間 | ミッションID | 内容 | 目標 |
+|------|-------------|------|------|
+| daily | daily_quiz_1 | クイズ1回プレイ | 1 |
+| daily | daily_speed_1 | スピードチャレンジ1回 | 1 |
+| daily | daily_dungeon_1 | ダンジョン1回 | 1 |
+| weekly | weekly_quiz_5 | クイズ5回プレイ | 5 |
+| weekly | weekly_quiz_10 | クイズ10回プレイ | 10 |
+| weekly | weekly_speed_3 | スピードチャレンジ3回 | 3 |
+| weekly | weekly_dungeon_3 | ダンジョン3回 | 3 |
+| monthly | monthly_quiz_30 | クイズ30回プレイ | 30 |
+| monthly | monthly_speed_10 | スピードチャレンジ10回 | 10 |
+| monthly | monthly_dungeon_10 | ダンジョン10回 | 10 |
+
+**進捗記録 `storage.recordModePlay(mode)`**
+- 引数: `"quiz"` / `"speed"` / `"dungeon"`
+- 呼び出し箇所: `useQuiz.ts`（クイズ終了時）、`speed-challenge/page.tsx`（セッション終了時）、`useDungeon.ts`（ダンジョン終了時）
+- 日次・週次・月次の3バケットに同時記録
+
+**PeriodProgress 型**
+```typescript
+type PeriodProgress = {
+  periodKey: string;      // リセット判定キー（日付/週開始日/月キー）
+  quizPlays: number;
+  speedPlays: number;
+  dungeonPlays: number;
+  completed: string[];    // 達成済みミッションID一覧
+};
+```
+
+**リセット方式**: `periodKey` が現在の期間と不一致 → 全フィールドを 0 にリセット（localStorageキー: `daily_mission_progress` / `weekly_mission_progress` / `monthly_mission_progress`）
+
 ### XP・レベルシステム
 
 - 通常クイズ: 正解 10 XP、コンボボーナス 5 XP（3連続以上）
