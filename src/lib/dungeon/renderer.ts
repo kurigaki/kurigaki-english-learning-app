@@ -2,7 +2,7 @@
 
 import type { GameState, Enemy } from "./types";
 import { W, R } from "./types";
-import { MW, MH, TILE } from "./constants";
+import { MW, MH, TILE, ITEMS_DEF } from "./constants";
 
 export { TILE, MW, MH };
 
@@ -89,39 +89,165 @@ function drawStairs(ctx: CanvasRenderingContext2D, tx: number, ty: number): void
 }
 
 // ── Items ─────────────────────────────────────────────────────────────────────
-function drawItemTile(ctx: CanvasRenderingContext2D, tx: number, ty: number): void {
-  const x = tx * TILE, y = ty * TILE;
-  const cx = x + TILE / 2, cy = y + TILE / 2;
-  ctx.fillStyle = "rgba(245,200,66,0.14)";
-  ctx.fillRect(x, y, TILE, TILE);
-  // ダイヤ形ジェム
-  ctx.fillStyle = "#d4a820";
+
+function drawGrassItem(ctx: CanvasRenderingContext2D, cx: number, y: number): void {
+  // 茎
+  fr(ctx, "#228844", cx - 1, y + 9, 2, 13);
+  // 葉1（左）
+  ctx.fillStyle = "#33aa55";
   ctx.beginPath();
-  ctx.moveTo(cx,      cy - 9);
-  ctx.lineTo(cx + 7,  cy - 2);
-  ctx.lineTo(cx + 7,  cy + 3);
-  ctx.lineTo(cx,      cy + 9);
-  ctx.lineTo(cx - 7,  cy + 3);
-  ctx.lineTo(cx - 7,  cy - 2);
-  ctx.closePath();
+  ctx.ellipse(cx - 5, y + 16, 6, 3, -0.6, 0, Math.PI * 2);
   ctx.fill();
-  ctx.fillStyle = "#f5c542";
+  // 葉2（右）
   ctx.beginPath();
-  ctx.moveTo(cx,      cy - 7);
-  ctx.lineTo(cx + 5,  cy - 1);
-  ctx.lineTo(cx + 5,  cy + 2);
-  ctx.lineTo(cx,      cy + 7);
-  ctx.lineTo(cx - 5,  cy + 2);
-  ctx.lineTo(cx - 5,  cy - 1);
+  ctx.ellipse(cx + 4, y + 12, 6, 3, 0.6, 0, Math.PI * 2);
+  ctx.fill();
+  // 葉ハイライト
+  ctx.fillStyle = "#55cc77";
+  ctx.beginPath();
+  ctx.ellipse(cx - 5, y + 15, 4, 2, -0.6, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.ellipse(cx + 4, y + 11, 4, 2, 0.6, 0, Math.PI * 2);
+  ctx.fill();
+  // 芽の先
+  fc(ctx, "#66dd88", cx, y + 9, 2.5);
+}
+
+function drawScrollItem(ctx: CanvasRenderingContext2D, cx: number, y: number): void {
+  // 羊皮紙（中央）
+  fr(ctx, "#e8d090", cx - 7, y + 12, 14, 8);
+  fr(ctx, "#f0dca0", cx - 6, y + 13, 12, 6);
+  // 上のロール
+  fr(ctx, "#b87820", cx - 8, y + 8, 16, 5);
+  fr(ctx, "#c89030", cx - 7, y + 9, 14, 3);
+  fr(ctx, "#d4a840", cx - 6, y + 9, 12, 2);
+  // 下のロール
+  fr(ctx, "#b87820", cx - 8, y + 19, 16, 5);
+  fr(ctx, "#c89030", cx - 7, y + 20, 14, 3);
+  fr(ctx, "#d4a840", cx - 6, y + 21, 12, 2);
+  // 文字ライン
+  fr(ctx, "#a08040", cx - 5, y + 14, 10, 1);
+  fr(ctx, "#a08040", cx - 5, y + 16, 8, 1);
+}
+
+function drawCaneItem(ctx: CanvasRenderingContext2D, cx: number, y: number): void {
+  // 杖の柄（木材）
+  fr(ctx, "#7a4a1a", cx - 1, y + 10, 3, 17);
+  fr(ctx, "#9a6a2a", cx, y + 11, 1, 15);
+  // 宝玉（先端）
+  fc(ctx, "#8822ee", cx, y + 9, 5.5);
+  fc(ctx, "#aa44ff", cx, y + 9, 4);
+  fc(ctx, "#cc88ff", cx - 1, y + 8, 2);
+  fc(ctx, "#ffffff", cx - 1, y + 7, 1);
+  // 輝きエフェクト
+  fr(ctx, "#cc88ff", cx - 7, y + 9, 3, 1);
+  fr(ctx, "#cc88ff", cx + 5, y + 9, 3, 1);
+  fr(ctx, "#cc88ff", cx, y + 3, 1, 3);
+  fr(ctx, "#cc88ff", cx - 1, y + 5, 1, 1);
+  fr(ctx, "#cc88ff", cx + 1, y + 5, 1, 1);
+}
+
+function drawFoodItem(ctx: CanvasRenderingContext2D, cx: number, y: number): void {
+  // おにぎり - 海苔（下部ラップ）
+  fr(ctx, "#1a2a12", cx - 7, y + 17, 14, 7);
+  // ご飯（三角）
+  ctx.fillStyle = "#f8f0e0";
+  ctx.beginPath();
+  ctx.moveTo(cx, y + 8);
+  ctx.lineTo(cx - 8, y + 22);
+  ctx.lineTo(cx + 8, y + 22);
   ctx.closePath();
   ctx.fill();
   // ハイライト
-  ctx.fillStyle = "#fff8b0";
+  ctx.fillStyle = "#ffffff";
   ctx.beginPath();
-  ctx.moveTo(cx, cy - 5); ctx.lineTo(cx + 3, cy - 1);
-  ctx.lineTo(cx, cy + 3); ctx.lineTo(cx - 3, cy - 1);
+  ctx.moveTo(cx, y + 9);
+  ctx.lineTo(cx - 4, y + 18);
+  ctx.lineTo(cx + 4, y + 18);
   ctx.closePath();
   ctx.fill();
+  // 海苔のハイライト
+  fr(ctx, "#2a3a22", cx - 6, y + 18, 12, 2);
+  // 点（塩）
+  fr(ctx, "#ddddcc", cx - 1, y + 13, 1, 1);
+}
+
+function drawJarItem(ctx: CanvasRenderingContext2D, cx: number, y: number): void {
+  // 壷本体
+  ctx.fillStyle = "#9a6840";
+  ctx.beginPath();
+  ctx.ellipse(cx, y + 20, 9, 8, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = "#b07c52";
+  ctx.beginPath();
+  ctx.ellipse(cx, y + 19, 8, 7, 0, 0, Math.PI * 2);
+  ctx.fill();
+  // 光沢
+  fc(ctx, "#c89060", cx - 3, y + 15, 3.5);
+  fc(ctx, "#d8a880", cx - 3, y + 14, 1.5);
+  // 蓋
+  fr(ctx, "#7a5030", cx - 7, y + 11, 14, 3);
+  fr(ctx, "#9a7050", cx - 6, y + 10, 12, 2);
+  fr(ctx, "#b08060", cx - 4, y + 9, 8, 2);
+  // 口の縁
+  fr(ctx, "#7a5030", cx - 3, y + 8, 6, 2);
+}
+
+function drawSpecialItem(ctx: CanvasRenderingContext2D, cx: number, y: number): void {
+  // 星形（特殊アイテム）
+  const cy = y + TILE / 2;
+  const outerR = 9, innerR = 4;
+  ctx.fillStyle = "#f5c530";
+  ctx.beginPath();
+  for (let i = 0; i < 10; i++) {
+    const angle = (i * Math.PI) / 5 - Math.PI / 2;
+    const r = i % 2 === 0 ? outerR : innerR;
+    const px2 = cx + r * Math.cos(angle);
+    const py2 = cy + r * Math.sin(angle);
+    if (i === 0) ctx.moveTo(px2, py2);
+    else ctx.lineTo(px2, py2);
+  }
+  ctx.closePath();
+  ctx.fill();
+  // ハイライト
+  ctx.fillStyle = "#fff0a0";
+  ctx.beginPath();
+  for (let i = 0; i < 10; i++) {
+    const angle = (i * Math.PI) / 5 - Math.PI / 2;
+    const r = i % 2 === 0 ? outerR - 2 : innerR - 1;
+    const px2 = cx + r * Math.cos(angle);
+    const py2 = cy - 1 + r * Math.sin(angle);
+    if (i === 0) ctx.moveTo(px2, py2);
+    else ctx.lineTo(px2, py2);
+  }
+  ctx.closePath();
+  ctx.fill();
+}
+
+function drawItemTile(ctx: CanvasRenderingContext2D, tx: number, ty: number, cat?: string): void {
+  const x = tx * TILE, y = ty * TILE;
+  const cx = x + TILE / 2;
+  // カテゴリ別の背景色
+  const bgColors: Record<string, string> = {
+    grass:  "rgba(50,160,80,0.15)",
+    scroll: "rgba(200,160,60,0.15)",
+    cane:   "rgba(150,60,220,0.15)",
+    food:   "rgba(220,160,80,0.15)",
+    jar:    "rgba(140,90,50,0.15)",
+    special:"rgba(245,200,66,0.18)",
+  };
+  ctx.fillStyle = bgColors[cat ?? "special"] ?? bgColors.special;
+  ctx.fillRect(x, y, TILE, TILE);
+
+  switch (cat) {
+    case "grass":   drawGrassItem(ctx, cx, y);   break;
+    case "scroll":  drawScrollItem(ctx, cx, y);  break;
+    case "cane":    drawCaneItem(ctx, cx, y);     break;
+    case "food":    drawFoodItem(ctx, cx, y);     break;
+    case "jar":     drawJarItem(ctx, cx, y);      break;
+    default:        drawSpecialItem(ctx, cx, y);  break;
+  }
 }
 
 function drawShopItemTile(ctx: CanvasRenderingContext2D, tx: number, ty: number): void {
@@ -208,76 +334,95 @@ function drawPlayer(ctx: CanvasRenderingContext2D, tx: number, ty: number): void
 }
 
 // ── Enemies ───────────────────────────────────────────────────────────────────
-function drawMaml(ctx: CanvasRenderingContext2D, x: number, y: number): void {
+function drawGremlin(ctx: CanvasRenderingContext2D, x: number, y: number): void {
   const cx = x + TILE / 2;
-  // 耳
-  fc(ctx, "#e8b898", cx - 6, y + 9, 4);
-  fc(ctx, "#e8b898", cx + 6, y + 9, 4);
-  fc(ctx, "#f8c8b0", cx - 6, y + 9, 2);
-  fc(ctx, "#f8c8b0", cx + 6, y + 9, 2);
-  // 体
-  ctx.fillStyle = "#c8a060";
+  // 体（丸っこい緑灰色）
+  ctx.fillStyle = "#5a8840";
   ctx.beginPath();
-  ctx.ellipse(cx, y + 20, 9, 8, 0, 0, Math.PI * 2);
+  ctx.ellipse(cx, y + 21, 8, 8, 0, 0, Math.PI * 2);
   ctx.fill();
   // 頭
-  fc(ctx, "#c8a060", cx, y + 13, 7);
-  fc(ctx, "#d8b878", cx, y + 12, 4); // ハイライト
-  // 目
-  fc(ctx, "#ee2222", cx - 3, y + 12, 1.8);
-  fc(ctx, "#ee2222", cx + 3, y + 12, 1.8);
-  fc(ctx, "#ff8888", cx - 3, y + 12, 0.7);
-  fc(ctx, "#ff8888", cx + 3, y + 12, 0.7);
-  // 鼻
-  fc(ctx, "#dd8888", cx, y + 14, 1.5);
-  // ヒゲ
-  ctx.strokeStyle = "#a07840";
-  ctx.lineWidth = 0.8;
-  for (const [sx, angle] of [[-1, -0.15], [-1, 0.15], [1, -0.15], [1, 0.15]] as [number, number][]) {
-    ctx.beginPath();
-    ctx.moveTo(cx + sx, y + 14);
-    ctx.lineTo(cx + sx * 8, y + 14 + angle * 10);
-    ctx.stroke();
-  }
-  // 尻尾
-  ctx.strokeStyle = "#a07840";
-  ctx.lineWidth = 1.5;
+  fc(ctx, "#6a9850", cx, y + 14, 8);
+  fc(ctx, "#7aaa60", cx, y + 13, 5);
+  // コウモリ耳（とがった耳）
+  ctx.fillStyle = "#4a7830";
   ctx.beginPath();
-  ctx.moveTo(cx + 8, y + 23);
-  ctx.quadraticCurveTo(cx + 14, y + 26, cx + 11, y + 28);
-  ctx.stroke();
+  ctx.moveTo(cx - 6, y + 10); ctx.lineTo(cx - 13, y + 2); ctx.lineTo(cx - 2, y + 8);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.moveTo(cx + 6, y + 10); ctx.lineTo(cx + 13, y + 2); ctx.lineTo(cx + 2, y + 8);
+  ctx.fill();
+  // 耳の内側
+  ctx.fillStyle = "#8acc60";
+  ctx.beginPath();
+  ctx.moveTo(cx - 6, y + 10); ctx.lineTo(cx - 11, y + 4); ctx.lineTo(cx - 3, y + 8);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.moveTo(cx + 6, y + 10); ctx.lineTo(cx + 11, y + 4); ctx.lineTo(cx + 3, y + 8);
+  ctx.fill();
+  // 目（黄色く光る）
+  fc(ctx, "#ffcc00", cx - 3, y + 14, 2.5);
+  fc(ctx, "#ffcc00", cx + 3, y + 14, 2.5);
+  fc(ctx, "#ff8800", cx - 3, y + 14, 1.2);
+  fc(ctx, "#ff8800", cx + 3, y + 14, 1.2);
+  fc(ctx, "#ffffff", cx - 3.5, y + 13, 0.8);
+  fc(ctx, "#ffffff", cx + 2.5, y + 13, 0.8);
+  // 口（鋭い歯）
+  fr(ctx, "#2a4a1a", cx - 4, y + 17, 8, 2);
+  fr(ctx, "#ffffff", cx - 3, y + 18, 2, 2);
+  fr(ctx, "#ffffff", cx + 1, y + 18, 2, 2);
+  // 腕
+  fr(ctx, "#5a8840", cx - 12, y + 19, 5, 5);
+  fr(ctx, "#5a8840", cx + 8, y + 19, 5, 5);
+  // 爪
+  fr(ctx, "#3a5820", cx - 12, y + 23, 2, 2);
+  fr(ctx, "#3a5820", cx + 11, y + 23, 2, 2);
 }
 
 function drawSlime(ctx: CanvasRenderingContext2D, x: number, y: number): void {
-  const cx = x + TILE / 2, cy = y + TILE / 2;
+  // ドラクエ風スライム：丸いドーム＋先端のツノ
+  const cx = x + TILE / 2;
+  const bodyY = y + 20; // 体の中心Y
   // 影
-  ctx.fillStyle = "rgba(0,80,0,0.25)";
+  ctx.fillStyle = "rgba(0,60,140,0.22)";
   ctx.beginPath();
-  ctx.ellipse(cx, y + 27, 9, 2.5, 0, 0, Math.PI * 2);
+  ctx.ellipse(cx, y + 28, 9, 2.5, 0, 0, Math.PI * 2);
   ctx.fill();
-  // ボディ（しずく形）
-  ctx.fillStyle = "#1e9938";
+  // ボディ（ドーム形）
+  ctx.fillStyle = "#2266cc";
   ctx.beginPath();
-  ctx.arc(cx, cy + 2, 10, 0, Math.PI);
-  ctx.quadraticCurveTo(cx + 9, cy - 8, cx + 4, cy - 12);
-  ctx.quadraticCurveTo(cx, cy - 15, cx - 4, cy - 12);
-  ctx.quadraticCurveTo(cx - 9, cy - 8, cx, cy + 2);
+  ctx.arc(cx, bodyY, 11, 0, Math.PI);
   ctx.fill();
-  // 光沢
-  ctx.fillStyle = "#33bb55";
   ctx.beginPath();
-  ctx.arc(cx, cy + 2, 8, 0, Math.PI);
-  ctx.quadraticCurveTo(cx + 7, cy - 6, cx + 3, cy - 10);
-  ctx.quadraticCurveTo(cx, cy - 12, cx - 3, cy - 10);
-  ctx.quadraticCurveTo(cx - 7, cy - 6, cx, cy + 2);
+  ctx.arc(cx, bodyY, 11, Math.PI, Math.PI * 2);
   ctx.fill();
-  fc(ctx, "#55dd77", cx - 3, cy - 6, 4);
-  fc(ctx, "#99ffbb", cx - 4, cy - 8, 2);
-  // 目
-  fc(ctx, "#0a1a0a", cx - 3, cy - 2, 2.5);
-  fc(ctx, "#0a1a0a", cx + 3, cy - 2, 2.5);
-  fc(ctx, "#ffffff", cx - 2, cy - 3, 1);
-  fc(ctx, "#ffffff", cx + 4, cy - 3, 1);
+  // 先端ツノ（波形）
+  ctx.fillStyle = "#2266cc";
+  ctx.beginPath();
+  ctx.moveTo(cx - 5, bodyY - 9);
+  ctx.quadraticCurveTo(cx - 3, bodyY - 16, cx, bodyY - 18);
+  ctx.quadraticCurveTo(cx + 3, bodyY - 16, cx + 5, bodyY - 9);
+  ctx.fill();
+  // 光沢（上部ハイライト）
+  ctx.fillStyle = "#4488ee";
+  ctx.beginPath();
+  ctx.arc(cx, bodyY - 1, 8, Math.PI, Math.PI * 2);
+  ctx.fill();
+  fc(ctx, "#6699ff", cx - 3, bodyY - 6, 5);
+  fc(ctx, "#88bbff", cx - 4, bodyY - 9, 3);
+  fc(ctx, "#bbddff", cx - 5, bodyY - 11, 1.5);
+  // 大きな可愛い目
+  fc(ctx, "#0a0a22", cx - 4, bodyY - 1, 3.5);
+  fc(ctx, "#0a0a22", cx + 4, bodyY - 1, 3.5);
+  // 目の白ハイライト
+  fc(ctx, "#ffffff", cx - 5, bodyY - 2.5, 1.2);
+  fc(ctx, "#ffffff", cx + 3, bodyY - 2.5, 1.2);
+  // スマイル
+  ctx.strokeStyle = "#1144aa";
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.arc(cx, bodyY + 5, 4, Math.PI * 0.15, Math.PI * 0.85);
+  ctx.stroke();
 }
 
 function drawBat(ctx: CanvasRenderingContext2D, x: number, y: number): void {
@@ -475,7 +620,7 @@ function drawEnemySprite(
 ): void {
   const x = tx * TILE, y = ty * TILE;
   switch (enemy.name) {
-    case "マムル":     drawMaml(ctx, x, y);     break;
+    case "グレムリン": drawGremlin(ctx, x, y);  break;
     case "スライム":   drawSlime(ctx, x, y);    break;
     case "コウモリ":   drawBat(ctx, x, y);      break;
     case "スケルトン": drawSkeleton(ctx, x, y); break;
@@ -540,9 +685,10 @@ export function drawMap(
     ctx.fillRect(mhr.x * TILE, mhr.y * TILE, mhr.w * TILE, mhr.h * TILE);
   }
 
-  // アイテム
+  // アイテム（カテゴリ別描画）
   for (const it of g.itemTiles) {
-    drawItemTile(ctx, it.x, it.y);
+    const cat = ITEMS_DEF.find((d) => d.id === it.id)?.cat;
+    drawItemTile(ctx, it.x, it.y, cat);
   }
 
   // ショップアイテム

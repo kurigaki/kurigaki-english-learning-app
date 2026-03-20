@@ -231,6 +231,7 @@ export function moveEnemies(
 
     if (e.alert) {
       // ■ 認識中：プレイヤーへ直進追跡
+      // 隣接していれば攻撃（移動せず攻撃のみ）
       if (adj(e.x, e.y, px, py)) {
         const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
         g.p.hp = Math.max(0, g.p.hp - dmg);
@@ -242,6 +243,7 @@ export function moveEnemies(
         });
         continue;
       }
+      // 隣接していなければ移動のみ（攻撃しない）
       const dx = px - e.x;
       const dy = py - e.y;
       const moves: [number, number][] = [];
@@ -249,31 +251,17 @@ export function moveEnemies(
       if (dy !== 0) moves.push([0, Math.sign(dy)]);
       if (Math.random() < 0.5) moves.reverse();
       if (dx !== 0 && dy !== 0) moves.push([Math.sign(dx), Math.sign(dy)]);
-      let attacked = false;
       for (const [ddx, ddy] of moves) {
         const nx = e.x + ddx;
         const ny = e.y + ddy;
         if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
         if (g.map[ny][nx] === W) continue;
         if (g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny)) continue;
-        if (nx === px && ny === py) {
-          const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
-          g.p.hp = Math.max(0, g.p.hp - dmg);
-          results.push({
-            enemyHit: true,
-            damage: dmg,
-            killedPlayer: g.p.hp <= 0,
-            enemy: e,
-          });
-          attacked = true;
-          break;
-        }
+        // プレイヤーのタイルには移動不可（攻撃は隣接チェック時のみ）
+        if (nx === px && ny === py) continue;
         e.x = nx;
         e.y = ny;
         break;
-      }
-      if (!attacked) {
-        // moved, no attack
       }
     } else {
       // ■ 非認識中：廊下出口を目指して徘徊

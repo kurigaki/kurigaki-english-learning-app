@@ -312,7 +312,7 @@ export const EASY_TRAP_TYPES: TrapType[] = ["damage", "sleep"];
 export const HARD_TRAP_TYPES: TrapType[] = ["damage", "sleep", "warp", "hunger"];
 
 export const ENEMIES_DEF: EnemyDef[] = [
-  { name: "マムル", icon: "🐭", mhp: 4, atk: 1, exp: 4, floor: 1, sleepChance: 0.5 },
+  { name: "グレムリン", icon: "👾", mhp: 4, atk: 1, exp: 4, floor: 1, sleepChance: 0.5 },
   { name: "スライム", icon: "🟢", mhp: 6, atk: 2, exp: 6, floor: 1, sleepChance: 0.4 },
   { name: "コウモリ", icon: "🦇", mhp: 5, atk: 2, exp: 6, floor: 1, sleepChance: 0.2 },
   { name: "スケルトン", icon: "💀", mhp: 10, atk: 3, exp: 12, floor: 2, sleepChance: 0.3 },

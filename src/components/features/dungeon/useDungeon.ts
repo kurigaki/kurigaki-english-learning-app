@@ -1365,7 +1365,15 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       canvas.style.width = MW * TILE + "px";
       canvas.style.height = MH * TILE + "px";
     }
-    updateUI(migrated, { msg: `セーブデータを読み込んだ！（B${migrated.floor}F）` });
+    updateUI(migrated, {
+      msg: `セーブデータを読み込んだ！（B${migrated.floor}F）`,
+      death: null,
+      quiz: null,
+      quizAnswered: false,
+      quizResult: null,
+      showItems: false,
+      shopPrompt: null,
+    });
     setTimeout(() => {
       redraw();
       startBGM();
@@ -1377,7 +1385,17 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const g = initGameState([], dungeonMode);
     gameRef.current = g;
     generateMap(g);
-    updateUI(g, { msg: "ダンジョンに入った！" });
+    // 前ゲームの death/quiz/showItems 等を確実にリセット（タイトルへ戻って再開始する場合に残留する）
+    updateUI(g, {
+      msg: "ダンジョンに入った！",
+      death: null,
+      quiz: null,
+      quizAnswered: false,
+      quizResult: null,
+      showItems: false,
+      shopPrompt: null,
+      notification: "",
+    });
     // canvas サイズ設定
     const canvas = canvasRef.current;
     if (canvas) {
