@@ -193,6 +193,16 @@ export function moveEnemies(
 
   for (const e of g.enemies) {
     if (e.sleeping) continue;
+    // 鈍足: 1ターンおきに行動
+    if ((e.slowTurns ?? 0) > 0) {
+      if (e.slowSkip) {
+        e.slowSkip = false;
+        if (e.slowTurns! > 0) e.slowTurns!--;
+        continue;
+      } else {
+        e.slowSkip = true;
+      }
+    }
     // 起床したターンは行動しない
     if (e.justWoke) {
       e.justWoke = false;
@@ -203,21 +213,22 @@ export function moveEnemies(
       e.sealed--;
       continue;
     }
-    // 混乱：ランダム方向に動く
+    // 混乱：ランダム方向に動く。プレイヤーの方向なら攻撃する
     if (e.confused > 0) {
       e.confused--;
       const dirs: [number, number][] = [[1, 0], [-1, 0], [0, 1], [0, -1]];
       const [ddx, ddy] = dirs[Math.floor(Math.random() * 4)];
       const nx = e.x + ddx;
       const ny = e.y + ddy;
-      if (
-        nx >= 0 &&
-        nx < MW &&
-        ny >= 0 &&
-        ny < MH &&
+      if (nx === px && ny === py) {
+        // 偶然プレイヤー方向に向かって攻撃
+        const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
+        g.p.hp = Math.max(0, g.p.hp - dmg);
+        results.push({ enemyHit: true, damage: dmg, killedPlayer: g.p.hp <= 0, enemy: e });
+      } else if (
+        nx >= 0 && nx < MW && ny >= 0 && ny < MH &&
         g.map[ny][nx] !== W &&
-        !g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny) &&
-        !(nx === px && ny === py)
+        !g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny)
       ) {
         e.x = nx;
         e.y = ny;
@@ -271,6 +282,19 @@ export function moveEnemies(
     } else {
       // ■ 非認識中：廊下出口を目指して徘徊
       wanderMove(g, e);
+    }
+  }
+
+  // 倍速敵: 2回目の行動（攻撃のみ、移動はしない）
+  for (const e of g.enemies) {
+    if ((e.swiftTurns ?? 0) <= 0) continue;
+    e.swiftTurns!--;
+    if (e.sleeping || (e.sealed > 0) || (e.confused > 0)) continue;
+    if (!e.alert) continue;
+    if (adj(e.x, e.y, px, py)) {
+      const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
+      g.p.hp = Math.max(0, g.p.hp - dmg);
+      results.push({ enemyHit: true, damage: dmg, killedPlayer: g.p.hp <= 0, enemy: e });
     }
   }
 

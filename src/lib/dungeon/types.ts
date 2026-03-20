@@ -48,6 +48,9 @@ export type Enemy = {
   lastDy: number | undefined;
   stuckCount: number;
   justWoke?: boolean; // 起床したターンは行動しない
+  slowTurns?: number;   // 鈍足残りターン
+  swiftTurns?: number;  // 倍速残りターン
+  slowSkip?: boolean;   // 鈍足スキップフラグ
 };
 
 export type ItemDef = {
@@ -67,6 +70,7 @@ export type InventoryItem = {
   cat: string;
   desc: string;
   count: number;
+  contents?: InventoryItem[]; // 壷の中身（jar_storeのみ使用）
 };
 
 export type ItemTile = { x: number; y: number; id: string };
@@ -117,6 +121,10 @@ export type GameState = {
   shopItems: ShopItem[];
   dungeonMode: DungeonMode;
   monsterHouseRoomIdx: number | null;
+  playerDir: { dx: number; dy: number }; // 最後の移動方向（投げる用）
+  playerSleepTurns: number;    // プレイヤー眠り残りターン
+  playerConfusedTurns: number; // プレイヤー混乱残りターン
+  playerSlowTurns: number;     // プレイヤー鈍足残りターン
 };
 
 export type DungeonQuestion = { wordId: number; word: string; ans: string; ch: string[]; stage?: string };
