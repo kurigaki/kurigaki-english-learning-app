@@ -8,6 +8,7 @@ import Image from "next/image";
 import { words, Word } from "@/data/words/compat";
 import Confetti from "react-confetti";
 import { unifiedStorage } from "@/lib/unified-storage";
+import { storage } from "@/lib/storage";
 import { Card, Button, SpeakButton } from "@/components/ui";
 import { Question, QuestionType, Achievement } from "@/types";
 import { getSupabaseClient } from "@/lib/supabase/client";
@@ -649,6 +650,9 @@ export default function SpeedChallengePage() {
       isNewHighScore: newHighScore, // isNewHighScoreはここで計算した最新の値を使う
       answeredWords: answeredWords,
     });
+
+    // ミッション進捗記録
+    storage.recordModePlay("speed");
 
     // 学習セッション記録 (XP, Level)
     // XP = 獲得ポイント数（score は 10 の倍数なので score/10 を correctCount として渡す）
@@ -1886,15 +1890,15 @@ export default function SpeedChallengePage() {
           <div className="space-y-1.5 text-left mb-4">
             <div className="flex items-center gap-1.5">
               <span className="text-lg emoji-icon">1️⃣</span>
-              <p className="text-slate-600 dark:text-slate-300 text-xs">正解するとスコア+1</p>
+              <p className="text-slate-600 dark:text-slate-300 text-xs">コンボが続くほどスコア倍増！最大+160pt</p>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="text-lg emoji-icon">2️⃣</span>
-              <p className="text-slate-600 dark:text-slate-300 text-xs">5連続正解でボーナス+1</p>
+              <p className="text-slate-600 dark:text-slate-300 text-xs">不正解は-10ptでコンボリセット</p>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="text-lg emoji-icon">3️⃣</span>
-              <p className="text-slate-600 dark:text-slate-300 text-xs">不正解でもどんどん次へ！</p>
+              <p className="text-slate-600 dark:text-slate-300 text-xs">制限時間内に高スコアを目指せ！</p>
             </div>
           </div>
 
