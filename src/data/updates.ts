@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-20",
+    version: "1.57.0",
+    title: "ダンジョン：ピクセルアートグラフィックに刷新",
+    content: [
+      "キャラクター・敵・マップ・アイテムをCanvas描画のピクセルアートスプライトに刷新",
+      "プレイヤーは魔法使い（帽子・ローブ・杖）、敵は種類ごとに個性的なデザイン",
+      "壁はレンガ模様、床は石畳、廊下は暗い通路として視覚的に区別",
+      "階段・宝石アイテム・金貨（ショップ）・罠なども専用グラフィックで表示",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-20",
     version: "1.56.0",
     title: "ダンジョン：バグ修正とクイズ戦闘システムの改善",
     content: [
