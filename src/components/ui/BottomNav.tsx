@@ -14,6 +14,9 @@ const navItems = [
 export const BottomNav = () => {
   const pathname = usePathname();
 
+  // ダンジョンページではBottomNavを非表示（誤タップ防止・レイアウト確保）
+  if (pathname === "/dungeon") return null;
+
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     // クイズ（/word-list 完全一致）または詳細クイズ設定（/quiz/配下）
