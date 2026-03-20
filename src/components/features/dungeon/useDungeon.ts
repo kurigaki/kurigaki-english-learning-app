@@ -52,7 +52,9 @@ export type UIState = {
   exp: number;
   enext: number;
   floor: number;
+  turn: number;
   msg: string;
+  msgLog: string[];
   onStairs: boolean;
   quiz: QuizState | null;
   quizAnswered: boolean;
@@ -72,7 +74,9 @@ const INITIAL_UI: UIState = {
   exp: 0,
   enext: 30,
   floor: 1,
+  turn: 0,
   msg: "ダンジョンに入った！",
+  msgLog: [],
   onStairs: false,
   quiz: null,
   quizAnswered: false,
@@ -149,24 +153,33 @@ export function useDungeon(questions: DungeonQuestion[]) {
   }, []);
 
   const updateUI = useCallback((g: GameState, extra: Partial<UIState> = {}) => {
-    setUiState((prev) => ({
-      ...prev,
-      hp: g.p.hp,
-      mhp: g.p.mhp,
-      lv: g.p.lv,
-      exp: g.p.exp,
-      enext: g.p.enext,
-      floor: g.floor,
-      onStairs: g.onStairs,
-      items: [...g.items],
-      caneCharges: {
-        cane_blow: g.cane_blow_charges,
-        cane_sleep: g.cane_sleep_charges,
-        cane_seal: g.cane_seal_charges,
-        cane_warp: g.cane_warp_charges,
-      },
-      ...extra,
-    }));
+    setUiState((prev) => {
+      const newMsg = extra.msg ?? prev.msg;
+      const msgLog = extra.msg && extra.msg !== prev.msg
+        ? [extra.msg, ...prev.msgLog].slice(0, 3)
+        : prev.msgLog;
+      return {
+        ...prev,
+        hp: g.p.hp,
+        mhp: g.p.mhp,
+        lv: g.p.lv,
+        exp: g.p.exp,
+        enext: g.p.enext,
+        floor: g.floor,
+        turn: g.turn,
+        onStairs: g.onStairs,
+        items: [...g.items],
+        caneCharges: {
+          cane_blow: g.cane_blow_charges,
+          cane_sleep: g.cane_sleep_charges,
+          cane_seal: g.cane_seal_charges,
+          cane_warp: g.cane_warp_charges,
+        },
+        ...extra,
+        msg: newMsg,
+        msgLog,
+      };
+    });
   }, []);
 
   const showNotification = useCallback((msg: string) => {
@@ -186,7 +199,11 @@ export function useDungeon(questions: DungeonQuestion[]) {
     if (q.length > 0) {
       const last = q[q.length - 1];
       msgQueueRef.current = [];
-      setUiState((prev) => ({ ...prev, msg: last }));
+      setUiState((prev) => ({
+        ...prev,
+        msg: last,
+        msgLog: [last, ...prev.msgLog].slice(0, 3),
+      }));
     }
   }, []);
 
@@ -303,7 +320,7 @@ export function useDungeon(questions: DungeonQuestion[]) {
       // 足速ターンカウントダウン
       if (g.swiftTurns > 0) {
         g.swiftTurns--;
-        if (g.swiftTurns === 0) setUiState((prev) => ({ ...prev, msg: "💨 素早さが戻った" }));
+        if (g.swiftTurns === 0) setUiState((prev) => ({ ...prev, msg: "💨 素早さが戻った", msgLog: ["💨 素早さが戻った", ...prev.msgLog].slice(0, 3) }));
         updateUI(g);
         redraw();
         flushMsg();
@@ -312,7 +329,7 @@ export function useDungeon(questions: DungeonQuestion[]) {
       // 盲目カウントダウン
       if (g.blindTurns > 0) {
         g.blindTurns--;
-        if (g.blindTurns === 0) setUiState((prev) => ({ ...prev, msg: "👁️ 視界が戻った" }));
+        if (g.blindTurns === 0) setUiState((prev) => ({ ...prev, msg: "👁️ 視界が戻った", msgLog: ["👁️ 視界が戻った", ...prev.msgLog].slice(0, 3) }));
         updateUI(g);
         redraw();
         flushMsg();
@@ -344,7 +361,8 @@ export function useDungeon(questions: DungeonQuestion[]) {
       if (near) {
         setUiState((prev) => {
           if (prev.msg === "足踏み中…" || prev.msg === "") {
-            return { ...prev, msg: `⚠ ${near.name}が隣にいる！ [Z]で攻撃` };
+            const m = `⚠ ${near.name}が隣にいる！ [Z]で攻撃`;
+            return { ...prev, msg: m, msgLog: [m, ...prev.msgLog].slice(0, 3) };
           }
           return prev;
         });
@@ -835,7 +853,7 @@ export function useDungeon(questions: DungeonQuestion[]) {
     if (uiState.quiz && !uiState.quizAnswered) return;
     const e = adjEnemy(g);
     if (!e) {
-      setUiState((prev) => ({ ...prev, msg: "隣に敵がいない" }));
+      setUiState((prev) => ({ ...prev, msg: "隣に敵がいない", msgLog: ["隣に敵がいない", ...prev.msgLog].slice(0, 3) }));
       return;
     }
     if (e.sleeping) {
