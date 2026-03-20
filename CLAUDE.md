@@ -1368,11 +1368,17 @@ src/components/features/dungeon/
 **Phase 6: フォグオブウォー・全体マップ ✅ 完了**
 - `explored: boolean[][]` を GameState に追加。未探索タイルは暗闇描画
 - 部屋入室時: 部屋全体 + 壁ボーダー(±1) + 廊下入口を一括開示（`revealAround` 部屋分岐）
-- 廊下移動時: 1タイル半径（Chebyshev距離1 = 3×3）を開示
+- 廊下: 常に全表示（`isExp` チェック不要。廊下タイルは常に `drawCorridor` を呼ぶ）
 - 壁タイルは未探索でも輪郭が薄く見える（`#0e0c18` + エッジハイライト）
+- 未探索の部屋は暗いブラウン（`#1e1810`）で部屋の範囲が視認できる（旧: `#07061a` ほぼ黒）
 - M キー / 🗺地図ボタンで全体マップオーバーレイ（`drawFullMap` / MINI_TILE=7px）
-- 全体マップ: 探索済/未探索で色分け、自分(黄)・敵(赤)・アイテム(黄)・ショップ(緑)・階段(青)
+- 全体マップ: 探索済みのみ表示。廊下は常に表示。未探索タイルは完全に黒（`#05040e`）
+- 全体マップのマーカー: 自分(黄)・敵(赤)・アイテム(黄)・ショップ(緑)・階段(青)
 - 旧セーブ後方互換: `explored` なし → 全 true でマイグレーション
+- M キーは開閉トグル。地図が開いているとき M/Escape で確実に閉じる（`showMap` を deps に追加）
+- ダンジョンページは `position: fixed` でヘッダー下〜画面下端を占有し、ボトムナビを覆う（誤タップ防止）
+- タイトル画面は `position: absolute` に変更（ヘッダーとの重なり解消）
+- コントローラー: 十字キー中央の待機ボタン削除、D-pad とアクションボタンの間隔を `gap:18px` に拡大
 
 ### セーブ仕様
 
@@ -1450,8 +1456,9 @@ const baseDamage = Math.max(1, Math.round(g.p.atk * (0.8 + Math.random() * 0.4))
 - 罠配置: アイテムと同タイルに重ならない・部屋入口（廊下隣接タイル）には配置しない（`isRoomEntrance()` で判定）
 - 罠発動: 踏んだ時に80%の確率で発動（20%で回避）。罠は踏んでも消えず、再踏みも80%判定
 - `justWoke`: 眠りから覚めたターンは行動しない（`Enemy.justWoke?: boolean`。起床時に `true` → `moveEnemies` 先頭で `false` にリセットしてスキップ）
-- フォグオブウォー: `explored[y][x]` が `false` のタイルは暗闇描画。`revealAround()` が部屋/廊下を判定して開示範囲を決定。全体マップは `drawFullMap()` (MINI_TILE=7px)、`DungeonMapOverlay` コンポーネントで表示。M キーでトグル
+- フォグオブウォー: `explored[y][x]` が `false` の部屋タイルは暗いブラウン描画。廊下は常に全表示。`revealAround()` が部屋入室時に部屋全体を開示。全体マップは `drawFullMap()` (MINI_TILE=7px)、`DungeonMapOverlay` コンポーネントで表示。M キー / Escape でトグル
 - 旧セーブの `explored` フィールドなし: `loadSave` で `explored ?? Array.from(...)` により全 true にフォールバック（旧プレイヤーがいきなり真っ暗になるのを防ぐ）
+- ダンジョンページ (`dungeon/page.tsx`): `position: fixed, top: var(--header-height), bottom: 0` でボトムナビを覆う。ゲーム中の誤タップ防止と全画面ゲーム体験を両立
 
 ---
 
