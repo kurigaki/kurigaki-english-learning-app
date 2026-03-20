@@ -22,11 +22,11 @@ vi.mock("next/link", () => ({
 import { usePathname } from "next/navigation";
 
 describe("BottomNav", () => {
-  it("renders 4 navigation items", () => {
+  it("renders 5 navigation items", () => {
     render(<BottomNav />);
     const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
     const links = nav.querySelectorAll("a");
-    expect(links).toHaveLength(4);
+    expect(links).toHaveLength(5);
   });
 
   it("renders correct labels", () => {
@@ -35,6 +35,7 @@ describe("BottomNav", () => {
     expect(screen.getByText("クイズ")).toBeInTheDocument();
     expect(screen.getByText("単語帳")).toBeInTheDocument();
     expect(screen.getByText("履歴")).toBeInTheDocument();
+    expect(screen.getByText("ダンジョン")).toBeInTheDocument();
   });
 
   it("renders correct hrefs", () => {
@@ -42,7 +43,7 @@ describe("BottomNav", () => {
     const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
     const links = nav.querySelectorAll("a");
     const hrefs = Array.from(links).map((link) => link.getAttribute("href"));
-    expect(hrefs).toEqual(["/", "/word-list", "/word-list/all", "/history"]);
+    expect(hrefs).toEqual(["/", "/word-list", "/word-list/all", "/history", "/dungeon"]);
   });
 
   it("marks home as active when pathname is /", () => {

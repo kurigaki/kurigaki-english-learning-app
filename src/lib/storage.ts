@@ -11,6 +11,7 @@ const SRS_PROGRESS_KEY = "srs_progress";
 const MANUAL_MASTERY_KEY = "manual_mastery";
 const DUNGEON_STATS_KEY = "dungeon_stats";
 const DUNGEON_LOG_KEY = "dungeon_run_log";
+const DUNGEON_SAVE_KEY = "dungeon_save";
 const DUNGEON_LOG_MAX = 10; // 保持する最大件数
 const DEFAULT_USER_ID = "default";
 export type ManualMasteryLevel = "unlearned" | "weak" | "vague" | "almost" | "remembered";
@@ -622,6 +623,30 @@ export const storage = {
     const newEntry: DungeonRunLog = { ...entry, playedAt: new Date().toISOString() };
     const updated = [newEntry, ...log].slice(0, DUNGEON_LOG_MAX);
     localStorage.setItem(DUNGEON_LOG_KEY, JSON.stringify(updated));
+  },
+
+  // ダンジョンセーブデータ管理
+  saveDungeonGame: (data: unknown): void => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem(DUNGEON_SAVE_KEY, JSON.stringify(data));
+  },
+
+  getDungeonGame: (): unknown => {
+    if (typeof window === "undefined") return null;
+    try {
+      const d = localStorage.getItem(DUNGEON_SAVE_KEY);
+      return d ? JSON.parse(d) : null;
+    } catch { return null; }
+  },
+
+  clearDungeonGame: (): void => {
+    if (typeof window === "undefined") return;
+    localStorage.removeItem(DUNGEON_SAVE_KEY);
+  },
+
+  hasDungeonGame: (): boolean => {
+    if (typeof window === "undefined") return false;
+    return localStorage.getItem(DUNGEON_SAVE_KEY) !== null;
   },
 
   cleanupOrphanedData: (validWordIds: number[]): { records: number; srsEntries: number } => {

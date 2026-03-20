@@ -8,6 +8,7 @@ const navItems = [
   { href: "/word-list", label: "クイズ", icon: "📝" },
   { href: "/word-list/all", label: "単語帳", icon: "📖" },
   { href: "/history", label: "履歴", icon: "📊" },
+  { href: "/dungeon", label: "ダンジョン", icon: "⚔️" },
 ];
 
 export const BottomNav = () => {
@@ -32,7 +33,7 @@ export const BottomNav = () => {
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       aria-label="メインナビゲーション"
     >
-      <div className="flex items-center justify-around h-14">
+      <div className="flex items-center justify-around h-14 text-[10px]">
         {navItems.map((item) => {
           const active = isActive(item.href);
           return (
@@ -44,8 +45,8 @@ export const BottomNav = () => {
               }`}
               {...(active ? { "aria-current": "page" as const } : {})}
             >
-              <span className="text-xl emoji-icon leading-none">{item.icon}</span>
-              <span className={`text-[10px] mt-0.5 ${active ? "font-bold" : "font-medium"}`}>
+              <span className="text-lg emoji-icon leading-none">{item.icon}</span>
+              <span className={`text-[9px] mt-0.5 ${active ? "font-bold" : "font-medium"}`}>
                 {item.label}
               </span>
             </Link>
