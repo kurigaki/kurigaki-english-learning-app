@@ -1365,6 +1365,15 @@ src/components/features/dungeon/
 - ショップ: 1フロアに1箇所・部屋中央に3×3グリッド配置（5×5以上の部屋を優先選択）
 - 中断セーブ: ターン毎オートセーブで「辞めた場所から再開」を実現
 
+**Phase 6: フォグオブウォー・全体マップ ✅ 完了**
+- `explored: boolean[][]` を GameState に追加。未探索タイルは暗闇描画
+- 部屋入室時: 部屋全体 + 壁ボーダー(±1) + 廊下入口を一括開示（`revealAround` 部屋分岐）
+- 廊下移動時: 1タイル半径（Chebyshev距離1 = 3×3）を開示
+- 壁タイルは未探索でも輪郭が薄く見える（`#0e0c18` + エッジハイライト）
+- M キー / 🗺地図ボタンで全体マップオーバーレイ（`drawFullMap` / MINI_TILE=7px）
+- 全体マップ: 探索済/未探索で色分け、自分(黄)・敵(赤)・アイテム(黄)・ショップ(緑)・階段(青)
+- 旧セーブ後方互換: `explored` なし → 全 true でマイグレーション
+
 ### セーブ仕様
 
 **中断セーブ方式**（風来のシレン準拠）:
@@ -1441,6 +1450,8 @@ const baseDamage = Math.max(1, Math.round(g.p.atk * (0.8 + Math.random() * 0.4))
 - 罠配置: アイテムと同タイルに重ならない・部屋入口（廊下隣接タイル）には配置しない（`isRoomEntrance()` で判定）
 - 罠発動: 踏んだ時に80%の確率で発動（20%で回避）。罠は踏んでも消えず、再踏みも80%判定
 - `justWoke`: 眠りから覚めたターンは行動しない（`Enemy.justWoke?: boolean`。起床時に `true` → `moveEnemies` 先頭で `false` にリセットしてスキップ）
+- フォグオブウォー: `explored[y][x]` が `false` のタイルは暗闇描画。`revealAround()` が部屋/廊下を判定して開示範囲を決定。全体マップは `drawFullMap()` (MINI_TILE=7px)、`DungeonMapOverlay` コンポーネントで表示。M キーでトグル
+- 旧セーブの `explored` フィールドなし: `loadSave` で `explored ?? Array.from(...)` により全 true にフォールバック（旧プレイヤーがいきなり真っ暗になるのを防ぐ）
 
 ---
 
