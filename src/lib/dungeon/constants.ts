@@ -1,4 +1,4 @@
-import type { ItemDef, EnemyDef } from "./types";
+import type { ItemDef, EnemyDef, TrapType } from "./types";
 
 export const MW = 42;
 export const MH = 32;
@@ -269,6 +269,47 @@ export const ITEMS_DEF: ItemDef[] = [
     rarity: 1,
   },
 ];
+
+export const DUNGEON_MODE_KEY = "dungeon_mode_pref";
+
+// Shop prices for items
+export const SHOP_PRICES: Record<string, number> = {
+  heal_grass: 10,
+  big_heal: 40,
+  poison_grass: 15,
+  power_grass: 50,
+  hp_grass: 60,
+  swift_grass: 20,
+  sleep_grass: 20,
+  confuse_grass: 15,
+  warp_grass: 15,
+  fire_grass: 25,
+  scroll_hp: 20,
+  scroll_power: 20,
+  scroll_attack: 30,
+  scroll_sleep: 35,
+  scroll_escape: 50,
+  rice: 25,
+  rice_big: 60,
+  herb: 15,
+  jar_store: 20,
+  jar_exp: 70,
+  escape_wing: 60,
+  lucky_gold: 80,
+};
+
+// Trap icon display
+export const TRAP_ICONS: Record<TrapType, string> = {
+  damage: "⚡",
+  sleep: "💤",
+  warp: "🌀",
+  hunger: "🍂",
+};
+
+// Easy mode trap pool (milder effects)
+export const EASY_TRAP_TYPES: TrapType[] = ["damage", "sleep"];
+// Hard mode trap pool (all types)
+export const HARD_TRAP_TYPES: TrapType[] = ["damage", "sleep", "warp", "hunger"];
 
 export const ENEMIES_DEF: EnemyDef[] = [
   { name: "マムル", icon: "🐭", mhp: 4, atk: 1, exp: 4, floor: 1, sleepChance: 0.5 },

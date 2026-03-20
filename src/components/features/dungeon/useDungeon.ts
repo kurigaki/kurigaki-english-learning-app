@@ -10,6 +10,7 @@ import type {
   DmgPop,
   InventoryItem,
   Enemy,
+  DungeonMode,
 } from "@/lib/dungeon/types";
 import { findPath } from "@/lib/dungeon/pathfinding";
 import type { StageDefinition } from "@/data/words/courses";
@@ -46,6 +47,13 @@ import { ITEMS_DEF, ENEMIES_DEF, MW, MH } from "@/lib/dungeon/constants";
 import { speakWord } from "@/lib/audio";
 import { storage } from "@/lib/storage";
 
+export type ShopPrompt = {
+  itemId: string;
+  price: number;
+  x: number;
+  y: number;
+};
+
 export type UIState = {
   hp: number;
   mhp: number;
@@ -66,6 +74,11 @@ export type UIState = {
   notification: string;
   items: InventoryItem[];
   caneCharges: CaneCharges;
+  // New mechanics
+  hunger: number;
+  maxHunger: number;
+  gold: number;
+  shopPrompt: ShopPrompt | null;
 };
 
 const INITIAL_UI: UIState = {
@@ -88,9 +101,13 @@ const INITIAL_UI: UIState = {
   notification: "",
   items: [],
   caneCharges: { cane_blow: 3, cane_sleep: 4, cane_seal: 4, cane_warp: 2 },
+  hunger: 100,
+  maxHunger: 100,
+  gold: 0,
+  shopPrompt: null,
 };
 
-export function initGameState(missedWords: string[] = []): GameState {
+export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMode = "easy"): GameState {
   const healGrass = ITEMS_DEF.find((d) => d.id === "heal_grass")!;
   const scrollPower = ITEMS_DEF.find((d) => d.id === "scroll_power")!;
   const rice = ITEMS_DEF.find((d) => d.id === "rice")!;
@@ -125,6 +142,13 @@ export function initGameState(missedWords: string[] = []): GameState {
     cane_seal_charges: 4,
     cane_warp_charges: 2,
     answeredQuestions: [],
+    hunger: 100,
+    maxHunger: 100,
+    gold: 0,
+    traps: [],
+    shopItems: [],
+    dungeonMode,
+    monsterHouseRoomIdx: null,
   };
 }
 
@@ -137,7 +161,7 @@ function getStageForFloor(stages: StageDefinition[], floor: number): string {
   return stages[idx].stage;
 }
 
-export function useDungeon(questions: DungeonQuestion[], progressiveStages?: StageDefinition[]) {
+export function useDungeon(questions: DungeonQuestion[], progressiveStages?: StageDefinition[], dungeonMode: DungeonMode = "easy") {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
   const gameRef = useRef<GameState | null>(null);
@@ -183,6 +207,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           cane_seal: g.cane_seal_charges,
           cane_warp: g.cane_warp_charges,
         },
+        hunger: g.hunger,
+        maxHunger: g.maxHunger,
+        gold: g.gold,
         ...extra,
         msg: newMsg,
         msgLog,
@@ -231,7 +258,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       g.kills++;
       g.p.exp += e.exp;
       g.enemies = g.enemies.filter((en) => en.id !== e.id);
-      queueMsg(`⚔️ ${e.name}を倒した！ EXP+${e.exp}`);
+      // Gold drop
+      const goldDrop = 2 + Math.floor(Math.random() * 7); // 2-8 gold
+      g.gold += goldDrop;
+      queueMsg(`⚔️ ${e.name}を倒した！ EXP+${e.exp} 💰+${goldDrop}G`);
       if (g.p.exp >= g.p.enext) {
         g.p.lv++;
         g.p.exp -= g.p.enext;
@@ -324,6 +354,26 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // HP自然回復（4ターン毎）
       if (g.turn % 4 === 0 && g.p.hp < g.p.mhp) {
         g.p.hp = Math.min(g.p.hp + 1, g.p.mhp);
+      }
+      // 空腹度減少: easy=2ターン毎に1、hard=毎ターン1
+      if (g.hunger > 0) {
+        const decayThisTurn = g.dungeonMode === "hard" ? true : (g.turn % 2 === 0);
+        if (decayThisTurn) {
+          g.hunger = Math.max(0, g.hunger - 1);
+          if (g.hunger === 0) queueMsg("🍂 お腹が空いた！HPが減っていく…");
+          else if (g.hunger === 20) queueMsg("🍂 お腹が空いてきた…食料を食べよう！");
+        }
+      } else {
+        // 空腹時はHPが減る（0になると死亡）
+        g.p.hp = Math.max(0, g.p.hp - 2);
+        if (g.p.hp <= 0) {
+          updateUI(g);
+          flushMsg();
+          storage.clearDungeonGame();
+          setTimeout(() => showDeath(g, false), 300);
+          return;
+        }
+        queueMsg("💀 飢えでHPが限界に！");
       }
       // 足速ターンカウントダウン
       if (g.swiftTurns > 0) {
@@ -681,29 +731,33 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
         case "rice": {
           g.p.hp = g.p.mhp;
+          g.hunger = g.maxHunger;
           sfxItem();
-          notify("🍙 HP全回復！");
+          notify("🍙 HP全回復！空腹も満たされた！");
           return true;
         }
         case "rice_big": {
           g.p.mhp += 3;
           g.p.hp = g.p.mhp;
+          g.hunger = g.maxHunger;
           sfxLevelUp();
-          notify("🍱 HP全回復＆最大HP+3！");
+          notify("🍱 HP全回復＆最大HP+3！空腹も満たされた！");
           return true;
         }
         case "herb": {
           const v = 12;
           g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
+          g.hunger = Math.min(g.maxHunger, g.hunger + 20);
           sfxItem();
-          notify(`💚 HPが${v}回復！`);
+          notify(`💚 HPが${v}回復！空腹度+20`);
           return true;
         }
         case "jar_store": {
           const v = 18;
           g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
+          g.hunger = Math.min(g.maxHunger, g.hunger + 30);
           sfxItem();
-          notify(`🫙 壷から${v}HP回復！`);
+          notify(`🫙 壷から${v}HP回復！空腹度+30`);
           return true;
         }
         case "jar_exp": {
@@ -847,8 +901,55 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       g.py = ny;
       g.onStairs = !!(g.stairsPos && nx === g.stairsPos.x && ny === g.stairsPos.y);
 
+      // 罠チェック
+      let trapMsg: string | null = null;
+      if (g.traps) {
+        const trapIdx = g.traps.findIndex((t) => t.x === nx && t.y === ny);
+        if (trapIdx >= 0) {
+          const trap = g.traps[trapIdx];
+          trap.visible = true;
+          switch (trap.type) {
+            case "damage": {
+              const dmg = g.dungeonMode === "hard" ? 6 + Math.floor(Math.random() * 5) : 3 + Math.floor(Math.random() * 4);
+              g.p.hp = Math.max(1, g.p.hp - dmg);
+              sfxRecv();
+              addDmgPop(nx, ny, "recv", dmg);
+              trapMsg = `⚡ ダメージトラップ！ ${dmg}ダメージを受けた！`;
+              break;
+            }
+            case "sleep": {
+              const turns = 3 + Math.floor(Math.random() * 3);
+              // blindTurns は「動けない」全般に共用（眠り罠・盲目の巻物どちらも同じ効果）
+              g.blindTurns = (g.blindTurns || 0) + turns;
+              trapMsg = `💤 眠りトラップ！ ${turns}ターン動けない！`;
+              break;
+            }
+            case "warp": {
+              let tries = 0;
+              let wx = nx; let wy = ny;
+              do {
+                wx = 1 + Math.floor(Math.random() * (MW - 2));
+                wy = 1 + Math.floor(Math.random() * (MH - 2));
+                tries++;
+              } while (tries < 200 && (g.map[wy][wx] === 0 || g.enemies.find((e) => e.x === wx && e.y === wy)));
+              if (g.map[wy][wx] !== 0) { g.px = wx; g.py = wy; }
+              trapMsg = "🌀 ワープトラップ！ 飛ばされた！";
+              break;
+            }
+            case "hunger": {
+              const loss = 20 + Math.floor(Math.random() * 20);
+              g.hunger = Math.max(0, g.hunger - loss);
+              trapMsg = `🍂 空腹トラップ！ 空腹度-${loss}！`;
+              break;
+            }
+          }
+          g.traps.splice(trapIdx, 1);
+          if (trapMsg) queueMsg(trapMsg);
+        }
+      }
+
       // アイテム取得
-      const iIdx = g.itemTiles.findIndex((i) => i.x === nx && i.y === ny);
+      const iIdx = g.itemTiles.findIndex((i) => i.x === g.px && i.y === g.py);
       if (iIdx >= 0) {
         const it = g.itemTiles.splice(iIdx, 1)[0];
         const def = ITEMS_DEF.find((d) => d.id === it.id);
@@ -869,11 +970,25 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
       }
 
+      // ショップタイルチェック
+      let newShopPrompt: ShopPrompt | null = null;
+      if (g.shopItems) {
+        const shop = g.shopItems.find((s) => s.x === g.px && s.y === g.py);
+        if (shop) {
+          const def = ITEMS_DEF.find((d) => d.id === shop.itemId);
+          newShopPrompt = { itemId: shop.itemId, price: shop.price, x: shop.x, y: shop.y };
+          queueMsg(`🏪 ${def?.icon}${def?.name} ${shop.price}G で売っている`);
+        }
+      }
+
       // 部屋への侵入で起床
-      wakeEnemiesInRoom(g, nx, ny);
+      wakeEnemiesInRoom(g, g.px, g.py);
 
       // 敵のターン
       runEnemyTurn(g);
+
+      // ショッププロンプトを更新（runEnemyTurnのupdateUIより後に適用）
+      setUiState((prev) => ({ ...prev, shopPrompt: newShopPrompt }));
     },
     [addDmgPop, initiateAttack, queueMsg, runEnemyTurn, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
   );
@@ -940,6 +1055,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         if (correct) {
           g.correct++;
           g.missedWords = g.missedWords.filter((w) => w !== q.word);
+          // 正解で空腹度回復
+          g.hunger = Math.min(g.maxHunger, g.hunger + 3);
           sfxCorrect();
           const hitRate = g.sureHit ? 1 : 0.9;
           g.sureHit = false;
@@ -1054,6 +1171,39 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     [applyItem, closeItems, goNextFloor, showNotification, updateUI]
   );
 
+  const buyFromShop = useCallback(
+    (shopPrompt: ShopPrompt) => {
+      const g = gameRef.current;
+      if (!g) return;
+      if (g.gold < shopPrompt.price) {
+        showNotification("💰 お金が足りない！");
+        return;
+      }
+      const shopIdx = g.shopItems?.findIndex((s) => s.x === shopPrompt.x && s.y === shopPrompt.y) ?? -1;
+      if (shopIdx < 0) {
+        setUiState((prev) => ({ ...prev, shopPrompt: null }));
+        return;
+      }
+      g.gold -= shopPrompt.price;
+      g.shopItems.splice(shopIdx, 1);
+      const def = ITEMS_DEF.find((d) => d.id === shopPrompt.itemId);
+      if (def) {
+        const ex = g.items.find((i) => i.id === shopPrompt.itemId);
+        if (ex) ex.count++;
+        else g.items.push({ id: def.id, name: def.name, icon: def.icon, cat: def.cat, desc: def.desc, count: 1 });
+      }
+      sfxItem();
+      showNotification(`🏪 ${def?.name ?? shopPrompt.itemId}を購入！`);
+      updateUI(g, { shopPrompt: null });
+      redraw();
+    },
+    [redraw, showNotification, updateUI]
+  );
+
+  const skipShop = useCallback(() => {
+    setUiState((prev) => ({ ...prev, shopPrompt: null }));
+  }, []);
+
   // ── オートウォーク ──────────────────────────────────────────────
   const stopAutoWalk = useCallback(() => {
     if (autoWalkTimerRef.current) {
@@ -1117,7 +1267,20 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   }, [questions]);
 
   const loadSave = useCallback((savedState: GameState) => {
-    gameRef.current = savedState;
+    // Backward compatibility: fill in new fields if missing from old saves
+    // Cast to partial to allow runtime saves missing these new fields
+    const raw = savedState as Partial<GameState> & Omit<GameState, "hunger" | "maxHunger" | "gold" | "traps" | "shopItems" | "dungeonMode" | "monsterHouseRoomIdx">;
+    const migrated: GameState = {
+      ...savedState,
+      hunger: raw.hunger ?? 100,
+      maxHunger: raw.maxHunger ?? 100,
+      gold: raw.gold ?? 0,
+      traps: raw.traps ?? [],
+      shopItems: raw.shopItems ?? [],
+      dungeonMode: raw.dungeonMode ?? "easy",
+      monsterHouseRoomIdx: raw.monsterHouseRoomIdx ?? null,
+    };
+    gameRef.current = migrated;
     const canvas = canvasRef.current;
     if (canvas) {
       canvas.width = MW * TILE;
@@ -1125,7 +1288,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       canvas.style.width = MW * TILE + "px";
       canvas.style.height = MH * TILE + "px";
     }
-    updateUI(savedState, { msg: `セーブデータを読み込んだ！（B${savedState.floor}F）` });
+    updateUI(migrated, { msg: `セーブデータを読み込んだ！（B${migrated.floor}F）` });
     setTimeout(() => {
       redraw();
       startBGM();
@@ -1134,7 +1297,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
 
   const startGame = useCallback(() => {
     storage.clearDungeonGame();
-    const g = initGameState();
+    const g = initGameState([], dungeonMode);
     gameRef.current = g;
     generateMap(g);
     updateUI(g, { msg: "ダンジョンに入った！" });
@@ -1157,13 +1320,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       redraw();
       startBGM();
     }, 50);
-  }, [questions, redraw, updateUI]);
+  }, [dungeonMode, questions, redraw, updateUI]);
 
   const retryGame = useCallback(() => {
     storage.clearDungeonGame();
     stopAutoWalk();
     const prevMissed = gameRef.current?.missedWords ?? [];
-    const g = initGameState(prevMissed);
+    const g = initGameState(prevMissed, dungeonMode);
     gameRef.current = g;
     generateMap(g);
     updateUI(g, {
@@ -1177,7 +1340,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       redraw();
       startBGM();
     }, 50);
-  }, [redraw, stopAutoWalk, updateUI]);
+  }, [dungeonMode, redraw, stopAutoWalk, updateUI]);
 
   // doTurn が再生成されるたびに最新参照を更新（オートウォークで常に最新版を呼ぶため）
   useEffect(() => {
@@ -1221,5 +1384,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     loadSave,
     stopAutoWalk,
     handleCanvasTap,
+    buyFromShop,
+    skipShop,
   };
 }
