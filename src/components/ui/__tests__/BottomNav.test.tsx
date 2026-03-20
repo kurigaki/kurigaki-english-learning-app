@@ -43,7 +43,7 @@ describe("BottomNav", () => {
     const nav = screen.getByRole("navigation", { name: "メインナビゲーション" });
     const links = nav.querySelectorAll("a");
     const hrefs = Array.from(links).map((link) => link.getAttribute("href"));
-    expect(hrefs).toEqual(["/", "/word-list", "/word-list/all", "/history", "/dungeon"]);
+    expect(hrefs).toEqual(["/", "/word-list", "/dungeon", "/word-list/all", "/history"]);
   });
 
   it("marks home as active when pathname is /", () => {
