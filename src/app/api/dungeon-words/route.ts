@@ -7,6 +7,7 @@ type DungeonQuestion = {
   word: string;
   ans: string;
   ch: string[];
+  stage?: string;
 };
 
 function shuffleArray<T>(arr: T[]): T[] {
@@ -40,7 +41,10 @@ export async function GET(request: NextRequest) {
     const ans = w.meaning;
     const distractors = shuffleArray(allMeanings.filter((m) => m !== ans)).slice(0, 3);
     const ch = shuffleArray([ans, ...distractors]);
-    return { wordId: w.id, word: w.word, ans, ch };
+    // stage は progressive モード（コース全体選択）でフロア別フィルタに使用
+    const q: DungeonQuestion = { wordId: w.id, word: w.word, ans, ch };
+    if (course && !stage && "stage" in w && w.stage) q.stage = String(w.stage);
+    return q;
   });
 
   return NextResponse.json(questions);

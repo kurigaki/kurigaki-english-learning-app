@@ -12,6 +12,7 @@ import type {
   Enemy,
 } from "@/lib/dungeon/types";
 import { findPath } from "@/lib/dungeon/pathfinding";
+import type { StageDefinition } from "@/data/words/courses";
 
 export type DungeonSave = {
   gameState: GameState;
@@ -129,7 +130,14 @@ export function initGameState(missedWords: string[] = []): GameState {
 
 let _popId = 0;
 
-export function useDungeon(questions: DungeonQuestion[]) {
+/** フロア番号（1-5）をステージインデックスに変換する（プログレッシブモード用） */
+function getStageForFloor(stages: StageDefinition[], floor: number): string {
+  if (stages.length === 0) return "";
+  const idx = Math.min(Math.floor((floor - 1) * stages.length / 5), stages.length - 1);
+  return stages[idx].stage;
+}
+
+export function useDungeon(questions: DungeonQuestion[], progressiveStages?: StageDefinition[]) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
   const gameRef = useRef<GameState | null>(null);
@@ -750,7 +758,20 @@ export function useDungeon(questions: DungeonQuestion[]) {
     }
     sfxStairs();
     generateMap(g);
+
+    // プログレッシブモード: フロア移動時にステージ変化を通知
+    let stageNotice = "";
+    if (progressiveStages && progressiveStages.length > 0) {
+      const prevStage = getStageForFloor(progressiveStages, g.floor - 1);
+      const nextStage = getStageForFloor(progressiveStages, g.floor);
+      if (nextStage !== prevStage) {
+        const stageDef = progressiveStages.find((s) => s.stage === nextStage);
+        if (stageDef) stageNotice = `⚠ ここから「${stageDef.displayName}」の問題が出現！`;
+      }
+    }
+
     updateUI(g, { quiz: null, quizAnswered: false, quizResult: null, msg: `✨ B${g.floor}Fへ降りた！` });
+    if (stageNotice) showNotification(stageNotice);
     redraw();
     // フロア移動後に自動セーブ（次回「続きから」で再開できる）
     setTimeout(() => {
@@ -761,15 +782,25 @@ export function useDungeon(questions: DungeonQuestion[]) {
       };
       storage.saveDungeonGame(save);
     }, 100);
-  }, [questions, redraw, showDeath, updateUI]);
+  }, [questions, progressiveStages, redraw, showDeath, showNotification, updateUI]);
 
   const initiateAttack = useCallback(
     (g: GameState, e: Enemy) => {
+      // プログレッシブモード: 現在フロアに対応するステージの問題のみ出題
+      const floorStage = progressiveStages && progressiveStages.length > 0
+        ? getStageForFloor(progressiveStages, g.floor)
+        : null;
+      const basePool = floorStage
+        ? questions.filter((q) => q.stage === floorStage)
+        : [...questions];
+      // フィルタ後の pool が空なら全体にフォールバック
+      const effectivePool = basePool.length > 0 ? basePool : [...questions];
+
       // 問題選択（ミス単語を優先）
-      let pool = [...questions];
+      let pool = [...effectivePool];
       if (g.missedWords.length > 0 && Math.random() < 0.6) {
         const mw = g.missedWords[Math.floor(Math.random() * g.missedWords.length)];
-        const f = questions.find((q) => q.word === mw);
+        const f = effectivePool.find((q) => q.word === mw);
         if (f) pool = [f, ...pool.filter((q) => q.word !== mw)];
       }
       const q = pool[Math.floor(Math.random() * pool.length)];
@@ -786,7 +817,7 @@ export function useDungeon(questions: DungeonQuestion[]) {
       // 単語を自動読み上げ
       speakWord(q.word);
     },
-    [questions]
+    [questions, progressiveStages]
   );
 
   const doTurn = useCallback(
