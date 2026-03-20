@@ -1811,7 +1811,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       {/* Message bar */}
       {(() => {
         const lowHp = uiState.hp <= uiState.mhp * 0.3;
-        const pastMsgs = uiState.msgLog.slice(1, 3);
+        const pastMsgs = uiState.msgLog.slice(1, 5);
         return (
           <div style={{
             background: lowHp ? "#1a0a0a" : DC.bg2,
