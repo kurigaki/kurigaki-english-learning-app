@@ -1263,11 +1263,11 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           item.count--;
         }
         closeItems();
-        updateUI(g);
+        runEnemyTurn(g); // アイテム使用も1ターン消費（敵が行動）
         saveGame();
       }
     },
-    [applyItem, closeItems, goNextFloor, saveGame, showNotification, updateUI]
+    [applyItem, closeItems, goNextFloor, runEnemyTurn, saveGame, showNotification]
   );
 
   const buyFromShop = useCallback(

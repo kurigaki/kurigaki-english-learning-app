@@ -824,8 +824,8 @@ export function drawFullMap(canvas: HTMLCanvasElement, g: GameState): void {
         // 部屋の床: 探索済みのみ表示
         color = explored ? "#28244a" : "#05040e";
       } else {
-        // 廊下: 常に表示（ゲーム画面と同様）
-        color = "#1e1c3c";
+        // 廊下: 探索済みのみ表示（ゲーム画面は常に表示だが、全体マップは通過済みのみ）
+        color = explored ? "#1e1c3c" : "#05040e";
       }
       ctx.fillStyle = color;
       ctx.fillRect(x, y, MINI_TILE, MINI_TILE);
