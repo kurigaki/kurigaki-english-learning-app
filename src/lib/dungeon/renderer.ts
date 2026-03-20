@@ -298,7 +298,7 @@ function drawTrapTile(ctx: CanvasRenderingContext2D, tx: number, ty: number, typ
 }
 
 // ── Player ────────────────────────────────────────────────────────────────────
-function drawPlayer(ctx: CanvasRenderingContext2D, tx: number, ty: number): void {
+function drawPlayer(ctx: CanvasRenderingContext2D, tx: number, ty: number, dir: { dx: number; dy: number } = { dx: 0, dy: 1 }): void {
   const x = tx * TILE, y = ty * TILE;
   const cx = x + TILE / 2;
 
@@ -306,41 +306,152 @@ function drawPlayer(ctx: CanvasRenderingContext2D, tx: number, ty: number): void
   ctx.fillStyle = "rgba(120,100,255,0.18)";
   ctx.fillRect(x, y, TILE, TILE);
 
-  // スタッフ（体の後ろ）
-  fr(ctx, "#6644aa", x + 22, y + 7, 2, 21);
-  fc(ctx, "#aa55ee", x + 23, y + 6, 3);
-  fc(ctx, "#ddaaff", x + 23, y + 6, 1.5);
+  const facing = (dir.dy === -1) ? "up" : (dir.dx === 1) ? "right" : (dir.dx === -1) ? "left" : "down";
 
-  // 帽子
-  ctx.fillStyle = "#231577";
-  ctx.beginPath();
-  ctx.moveTo(cx, y + 1);
-  ctx.lineTo(cx - 5, y + 9);
-  ctx.lineTo(cx + 5, y + 9);
-  ctx.closePath();
-  ctx.fill();
-  fr(ctx, "#2e1e99", cx - 7, y + 8, 14, 3); // つば
-  fr(ctx, "#3828aa", cx - 6, y + 8, 12, 2); // つばハイライト
+  if (facing === "up") {
+    // 上向き（後ろ姿）
+    // スタッフ（右側に立てる）
+    fr(ctx, "#6644aa", x + 22, y + 7, 2, 21);
+    fc(ctx, "#aa55ee", x + 23, y + 6, 3);
+    fc(ctx, "#ddaaff", x + 23, y + 6, 1.5);
 
-  // 顔
-  fc(ctx, "#f5c898", cx, y + 16, 5);
-  fc(ctx, "#f8d8b0", cx, y + 15, 3); // 顔ハイライト
-  // 目
-  fr(ctx, "#2a1a10", cx - 3, y + 15, 2, 2);
-  fr(ctx, "#2a1a10", cx + 1, y + 15, 2, 2);
-  fr(ctx, "#ffffff", cx - 3, y + 15, 1, 1);
-  fr(ctx, "#ffffff", cx + 1, y + 15, 1, 1);
+    // 帽子（後ろ向き：先端が少し太め）
+    ctx.fillStyle = "#231577";
+    ctx.beginPath();
+    ctx.moveTo(cx - 1, y + 1);
+    ctx.lineTo(cx + 1, y + 1);
+    ctx.lineTo(cx + 6, y + 9);
+    ctx.lineTo(cx - 6, y + 9);
+    ctx.closePath();
+    ctx.fill();
+    fr(ctx, "#2e1e99", cx - 7, y + 8, 14, 3); // つば（後ろ）
+    fr(ctx, "#3828aa", cx - 6, y + 8, 12, 2);
 
-  // ローブ
-  ctx.fillStyle = "#3d2db8";
-  ctx.beginPath();
-  ctx.moveTo(cx - 7, y + 20);
-  ctx.lineTo(cx + 7, y + 20);
-  ctx.lineTo(cx + 9, y + 29);
-  ctx.lineTo(cx - 9, y + 29);
-  ctx.closePath();
-  ctx.fill();
-  fr(ctx, "#4e3ecc", cx - 4, y + 20, 4, 9); // ローブハイライト
+    // 頭の後ろ（顔なし）
+    fc(ctx, "#c8a070", cx, y + 16, 5);
+
+    // ローブ（後ろ姿）
+    ctx.fillStyle = "#3d2db8";
+    ctx.beginPath();
+    ctx.moveTo(cx - 7, y + 20);
+    ctx.lineTo(cx + 7, y + 20);
+    ctx.lineTo(cx + 9, y + 29);
+    ctx.lineTo(cx - 9, y + 29);
+    ctx.closePath();
+    ctx.fill();
+    fr(ctx, "#2d1e9a", cx, y + 20, 4, 9); // ローブ中央線（後ろ姿らしく）
+  } else if (facing === "right") {
+    // 右向き（横顔）
+    // スタッフ（後ろ＝左側）
+    fr(ctx, "#6644aa", x + 6, y + 7, 2, 21);
+    fc(ctx, "#aa55ee", x + 7, y + 6, 3);
+    fc(ctx, "#ddaaff", x + 7, y + 6, 1.5);
+
+    // 帽子（横から見た三角形、先端右上）
+    ctx.fillStyle = "#231577";
+    ctx.beginPath();
+    ctx.moveTo(cx + 3, y + 1);
+    ctx.lineTo(cx - 5, y + 9);
+    ctx.lineTo(cx + 7, y + 9);
+    ctx.closePath();
+    ctx.fill();
+    fr(ctx, "#2e1e99", cx - 5, y + 8, 14, 3);
+    fr(ctx, "#3828aa", cx - 4, y + 8, 12, 2);
+
+    // 顔（右向き横顔：右寄り）
+    fc(ctx, "#f5c898", cx + 1, y + 16, 5);
+    fc(ctx, "#f8d8b0", cx + 1, y + 15, 3);
+    // 目（右側のみ）
+    fr(ctx, "#2a1a10", cx + 2, y + 15, 2, 2);
+    fr(ctx, "#ffffff", cx + 2, y + 15, 1, 1);
+    // 鼻のドット
+    fr(ctx, "#c89060", cx + 5, y + 17, 1, 1);
+
+    // ローブ（縦長・右向き）
+    ctx.fillStyle = "#3d2db8";
+    ctx.beginPath();
+    ctx.moveTo(cx - 4, y + 20);
+    ctx.lineTo(cx + 6, y + 20);
+    ctx.lineTo(cx + 7, y + 29);
+    ctx.lineTo(cx - 5, y + 29);
+    ctx.closePath();
+    ctx.fill();
+    fr(ctx, "#4e3ecc", cx - 2, y + 20, 3, 9);
+  } else if (facing === "left") {
+    // 左向き（右向きの鏡像）
+    // スタッフ（後ろ＝右側）
+    fr(ctx, "#6644aa", x + 22, y + 7, 2, 21);
+    fc(ctx, "#aa55ee", x + 23, y + 6, 3);
+    fc(ctx, "#ddaaff", x + 23, y + 6, 1.5);
+
+    // 帽子（左向き三角形）
+    ctx.fillStyle = "#231577";
+    ctx.beginPath();
+    ctx.moveTo(cx - 3, y + 1);
+    ctx.lineTo(cx - 7, y + 9);
+    ctx.lineTo(cx + 5, y + 9);
+    ctx.closePath();
+    ctx.fill();
+    fr(ctx, "#2e1e99", cx - 9, y + 8, 14, 3);
+    fr(ctx, "#3828aa", cx - 8, y + 8, 12, 2);
+
+    // 顔（左向き横顔：左寄り）
+    fc(ctx, "#f5c898", cx - 1, y + 16, 5);
+    fc(ctx, "#f8d8b0", cx - 1, y + 15, 3);
+    // 目（左側のみ）
+    fr(ctx, "#2a1a10", cx - 4, y + 15, 2, 2);
+    fr(ctx, "#ffffff", cx - 4, y + 15, 1, 1);
+    // 鼻のドット
+    fr(ctx, "#c89060", cx - 6, y + 17, 1, 1);
+
+    // ローブ（左向き）
+    ctx.fillStyle = "#3d2db8";
+    ctx.beginPath();
+    ctx.moveTo(cx - 6, y + 20);
+    ctx.lineTo(cx + 4, y + 20);
+    ctx.lineTo(cx + 5, y + 29);
+    ctx.lineTo(cx - 7, y + 29);
+    ctx.closePath();
+    ctx.fill();
+    fr(ctx, "#4e3ecc", cx - 1, y + 20, 3, 9);
+  } else {
+    // 下向き（正面）- デフォルト
+    // スタッフ（体の後ろ）
+    fr(ctx, "#6644aa", x + 22, y + 7, 2, 21);
+    fc(ctx, "#aa55ee", x + 23, y + 6, 3);
+    fc(ctx, "#ddaaff", x + 23, y + 6, 1.5);
+
+    // 帽子
+    ctx.fillStyle = "#231577";
+    ctx.beginPath();
+    ctx.moveTo(cx, y + 1);
+    ctx.lineTo(cx - 5, y + 9);
+    ctx.lineTo(cx + 5, y + 9);
+    ctx.closePath();
+    ctx.fill();
+    fr(ctx, "#2e1e99", cx - 7, y + 8, 14, 3); // つば
+    fr(ctx, "#3828aa", cx - 6, y + 8, 12, 2); // つばハイライト
+
+    // 顔
+    fc(ctx, "#f5c898", cx, y + 16, 5);
+    fc(ctx, "#f8d8b0", cx, y + 15, 3); // 顔ハイライト
+    // 目
+    fr(ctx, "#2a1a10", cx - 3, y + 15, 2, 2);
+    fr(ctx, "#2a1a10", cx + 1, y + 15, 2, 2);
+    fr(ctx, "#ffffff", cx - 3, y + 15, 1, 1);
+    fr(ctx, "#ffffff", cx + 1, y + 15, 1, 1);
+
+    // ローブ
+    ctx.fillStyle = "#3d2db8";
+    ctx.beginPath();
+    ctx.moveTo(cx - 7, y + 20);
+    ctx.lineTo(cx + 7, y + 20);
+    ctx.lineTo(cx + 9, y + 29);
+    ctx.lineTo(cx - 9, y + 29);
+    ctx.closePath();
+    ctx.fill();
+    fr(ctx, "#4e3ecc", cx - 4, y + 20, 4, 9); // ローブハイライト
+  }
 }
 
 // ── Enemies ───────────────────────────────────────────────────────────────────
@@ -783,7 +894,7 @@ export function drawMap(
   }
 
   // プレイヤー（常に表示）
-  drawPlayer(ctx, g.px, g.py);
+  drawPlayer(ctx, g.px, g.py, g.playerDir ?? { dx: 0, dy: 1 });
 
   scrollToPlayer(canvas, g, vpW, vpH);
 }

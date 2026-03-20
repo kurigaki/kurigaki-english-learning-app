@@ -574,13 +574,11 @@ function DungeonItemOverlay({
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); onThrow(item.id); }}
-                      disabled={item.cat === "cane"}
                       style={{
                         fontFamily: "'Press Start 2P', monospace", fontSize: 7,
-                        color: item.cat === "cane" ? DC.text3 : DC.accent2,
-                        background: DC.bg3, border: `1px solid ${item.cat === "cane" ? DC.border : DC.accent2}`,
-                        padding: "4px 7px", cursor: item.cat === "cane" ? "default" : "pointer", borderRadius: 3,
-                        opacity: item.cat === "cane" ? 0.4 : 1,
+                        color: DC.accent2,
+                        background: DC.bg3, border: `1px solid ${DC.accent2}`,
+                        padding: "4px 7px", cursor: "pointer", borderRadius: 3,
                       }}
                     >
                       投げる
@@ -778,7 +776,7 @@ function DungeonDeathScreen({
 }
 
 function DungeonControls({
-  onDpad, onAttack, onWait, onItems, onStairs, onMap, showStairs,
+  onDpad, onAttack, onWait, onItems, onStairs, onMap, showStairs, onChangeFacing,
 }: {
   onDpad: (dx: number, dy: number) => void;
   onAttack: () => void;
@@ -787,7 +785,10 @@ function DungeonControls({
   onStairs: () => void;
   onMap: () => void;
   showStairs: boolean;
+  onChangeFacing: (dx: number, dy: number) => void;
 }) {
+  const [turnModeActive, setTurnModeActive] = useState(false);
+
   const dpStyle: React.CSSProperties = {
     width: 32, height: 32, background: DC.bg3, border: `1px solid ${DC.border}`,
     display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13,
@@ -805,38 +806,65 @@ function DungeonControls({
 
   // タッチ後に生成される click を抑制するためにタイムスタンプで判定
   const lastTouchTimeRef = useRef(0);
-  const handleTouch = (dx: number, dy: number) => (e: React.TouchEvent) => {
+  const handleDpadPointerDown = (dx: number, dy: number) => (e: React.PointerEvent) => {
     e.preventDefault();
     lastTouchTimeRef.current = Date.now();
-    onDpad(dx, dy);
+    if (turnModeActive) {
+      onChangeFacing(dx, dy);
+      setTurnModeActive(false);
+    } else {
+      onDpad(dx, dy);
+    }
   };
   const handleClick = (dx: number, dy: number) => () => {
     // タッチから 500ms 以内の click は無視（ダブル発火防止）
     if (Date.now() - lastTouchTimeRef.current < 500) return;
-    onDpad(dx, dy);
+    if (turnModeActive) {
+      onChangeFacing(dx, dy);
+      setTurnModeActive(false);
+    } else {
+      onDpad(dx, dy);
+    }
   };
 
   return (
     <div style={{
       background: DC.bg2, borderTop: `2px solid ${DC.border}`,
-      padding: "6px 12px", flexShrink: 0, display: "flex", gap: 32, justifyContent: "center", flexWrap: "wrap", alignItems: "center",
+      padding: "6px 12px", flexShrink: 0, display: "flex", gap: 18, justifyContent: "center", flexWrap: "wrap", alignItems: "center",
       userSelect: "none", WebkitUserSelect: "none",
     }} onContextMenu={(e) => e.preventDefault()}>
       {/* 十字キー */}
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+        {/* 向きボタン */}
+        <div style={{ display: "flex", justifyContent: "flex-end", width: "100%", marginBottom: 2 }}>
+          <button
+            style={{
+              fontSize: 18,
+              background: turnModeActive ? "#f59e0b" : "#334",
+              color: turnModeActive ? "#000" : "#aaa",
+              border: "none",
+              borderRadius: 6,
+              padding: "4px 8px",
+              cursor: "pointer",
+              fontFamily: "monospace",
+              lineHeight: 1,
+            }}
+            onPointerDown={(e) => { e.preventDefault(); setTurnModeActive((v) => !v); }}
+          >↻</button>
+        </div>
         <div style={{ display: "flex", gap: 2 }}>
           <div style={{ width: 32, height: 32 }} />
-          <div style={dpStyle} onTouchStart={handleTouch(0, -1)} onClick={handleClick(0, -1)}>▲</div>
+          <div style={dpStyle} onPointerDown={handleDpadPointerDown(0, -1)} onClick={handleClick(0, -1)}>▲</div>
           <div style={{ width: 32, height: 32 }} />
         </div>
         <div style={{ display: "flex", gap: 2 }}>
-          <div style={dpStyle} onTouchStart={handleTouch(-1, 0)} onClick={handleClick(-1, 0)}>◀</div>
+          <div style={dpStyle} onPointerDown={handleDpadPointerDown(-1, 0)} onClick={handleClick(-1, 0)}>◀</div>
           <div style={{ width: 32, height: 32 }} />
-          <div style={dpStyle} onTouchStart={handleTouch(1, 0)} onClick={handleClick(1, 0)}>▶</div>
+          <div style={dpStyle} onPointerDown={handleDpadPointerDown(1, 0)} onClick={handleClick(1, 0)}>▶</div>
         </div>
         <div style={{ display: "flex", gap: 2 }}>
           <div style={{ width: 32, height: 32 }} />
-          <div style={dpStyle} onTouchStart={handleTouch(0, 1)} onClick={handleClick(0, 1)}>▼</div>
+          <div style={dpStyle} onPointerDown={handleDpadPointerDown(0, 1)} onClick={handleClick(0, 1)}>▼</div>
           <div style={{ width: 32, height: 32 }} />
         </div>
       </div>
@@ -1485,6 +1513,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     retryGame,
     loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
     screenEffect, eventOverlay, closeEventOverlay,
+    changeFacing,
   } = useDungeon(questions, progressiveStages, dungeonMode);
 
   const [showMap, setShowMap] = useState(false);
@@ -1641,6 +1670,14 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       // Shop buy shortcut
       if ((k === "b" || k === "B") && uiState.shopPrompt) { ev.preventDefault(); buyFromShop(uiState.shopPrompt); return; }
 
+      // Shift+方向キーで向き変更（ターン消費なし）
+      if (ev.shiftKey) {
+        if (k === "ArrowUp" || k === "w" || k === "W") { ev.preventDefault(); changeFacing(0, -1); return; }
+        if (k === "ArrowDown" || k === "s" || k === "S") { ev.preventDefault(); changeFacing(0, 1); return; }
+        if (k === "ArrowLeft" || k === "a" || k === "A") { ev.preventDefault(); changeFacing(-1, 0); return; }
+        if (k === "ArrowRight" || k === "d" || k === "D") { ev.preventDefault(); changeFacing(1, 0); return; }
+      }
+
       // Movement（手動操作はオートウォークを停止）
       if (k === "ArrowUp" || k === "w" || k === "W") { ev.preventDefault(); stopAutoWalk(); doTurn(0, -1); }
       else if (k === "ArrowDown" || k === "s" || k === "S") { ev.preventDefault(); stopAutoWalk(); doTurn(0, 1); }
@@ -1655,7 +1692,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [
-    phase, uiState, showMap, answerQuiz, buyFromShop, closeItems, doTurn, doWait, goNextFloor,
+    phase, uiState, showMap, answerQuiz, buyFromShop, changeFacing, closeItems, doTurn, doWait, goNextFloor,
     openItems, playerAttack, stopAutoWalk, setShowMap,
   ]);
 
@@ -1826,6 +1863,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onStairs={goNextFloor}
         onMap={toggleMap}
         showStairs={uiState.onStairs}
+        onChangeFacing={changeFacing}
       />
 
       {/* Notification */}
