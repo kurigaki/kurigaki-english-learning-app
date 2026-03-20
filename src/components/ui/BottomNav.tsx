@@ -33,7 +33,7 @@ export const BottomNav = () => {
       style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
       aria-label="メインナビゲーション"
     >
-      <div className="flex items-center justify-around h-14 text-[10px]">
+      <div className="flex items-center justify-around h-14">
         {navItems.map((item) => {
           const active = isActive(item.href);
           return (
