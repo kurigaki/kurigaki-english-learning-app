@@ -11,6 +11,20 @@ import type {
   InventoryItem,
   Enemy,
 } from "@/lib/dungeon/types";
+import { findPath } from "@/lib/dungeon/pathfinding";
+
+export type DungeonSave = {
+  gameState: GameState;
+  questions: DungeonQuestion[];
+  savedAt: string;
+};
+
+export type CaneCharges = {
+  cane_blow: number;
+  cane_sleep: number;
+  cane_seal: number;
+  cane_warp: number;
+};
 import { generateMap } from "@/lib/dungeon/map";
 import { adjEnemy, moveEnemies, adj } from "@/lib/dungeon/ai";
 import { drawMap, TILE } from "@/lib/dungeon/renderer";
@@ -48,6 +62,7 @@ export type UIState = {
   death: DeathState | null;
   notification: string;
   items: InventoryItem[];
+  caneCharges: CaneCharges;
 };
 
 const INITIAL_UI: UIState = {
@@ -67,6 +82,7 @@ const INITIAL_UI: UIState = {
   death: null,
   notification: "",
   items: [],
+  caneCharges: { cane_blow: 3, cane_sleep: 4, cane_seal: 4, cane_warp: 2 },
 };
 
 export function initGameState(missedWords: string[] = []): GameState {
@@ -117,6 +133,10 @@ export function useDungeon(questions: DungeonQuestion[]) {
   const [dmgPops, setDmgPops] = useState<DmgPop[]>([]);
   const msgQueueRef = useRef<string[]>([]);
   const notifTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // オートウォーク用
+  const autoWalkPathRef = useRef<{ x: number; y: number }[]>([]);
+  const autoWalkTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const doTurnLatestRef = useRef<(dx: number, dy: number) => void>(() => {});
 
   const redraw = useCallback(() => {
     const g = gameRef.current;
@@ -139,6 +159,12 @@ export function useDungeon(questions: DungeonQuestion[]) {
       floor: g.floor,
       onStairs: g.onStairs,
       items: [...g.items],
+      caneCharges: {
+        cane_blow: g.cane_blow_charges,
+        cane_sleep: g.cane_sleep_charges,
+        cane_seal: g.cane_seal_charges,
+        cane_warp: g.cane_warp_charges,
+      },
       ...extra,
     }));
   }, []);
@@ -304,7 +330,8 @@ export function useDungeon(questions: DungeonQuestion[]) {
           if (res.killedPlayer) {
             updateUI(g);
             flushMsg();
-            setTimeout(() => showDeath(g, false), 300);
+            storage.clearDungeonGame();
+          setTimeout(() => showDeath(g, false), 300);
             return;
           }
         }
@@ -699,6 +726,7 @@ export function useDungeon(questions: DungeonQuestion[]) {
     g.onStairs = false;
     g.floor++;
     if (g.floor > 5) {
+      storage.clearDungeonGame();
       showDeath(g, true);
       return;
     }
@@ -706,7 +734,16 @@ export function useDungeon(questions: DungeonQuestion[]) {
     generateMap(g);
     updateUI(g, { quiz: null, quizAnswered: false, quizResult: null, msg: `✨ B${g.floor}Fへ降りた！` });
     redraw();
-  }, [redraw, showDeath, updateUI]);
+    // フロア移動後に自動セーブ（次回「続きから」で再開できる）
+    setTimeout(() => {
+      const save: DungeonSave = {
+        gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
+        questions,
+        savedAt: new Date().toISOString(),
+      };
+      storage.saveDungeonGame(save);
+    }, 100);
+  }, [questions, redraw, showDeath, updateUI]);
 
   const initiateAttack = useCallback(
     (g: GameState, e: Enemy) => {
@@ -968,7 +1005,86 @@ export function useDungeon(questions: DungeonQuestion[]) {
     [applyItem, closeItems, goNextFloor, showNotification, updateUI]
   );
 
+  // ── オートウォーク ──────────────────────────────────────────────
+  const stopAutoWalk = useCallback(() => {
+    if (autoWalkTimerRef.current) {
+      clearTimeout(autoWalkTimerRef.current);
+      autoWalkTimerRef.current = null;
+    }
+    autoWalkPathRef.current = [];
+  }, []);
+
+  const scheduleWalkStep = useCallback(() => {
+    const step = () => {
+      const g = gameRef.current;
+      const path = autoWalkPathRef.current;
+      if (!g || path.length === 0) { autoWalkPathRef.current = []; return; }
+      // 隣に敵がいたら停止
+      if (adjEnemy(g)) { autoWalkPathRef.current = []; return; }
+      const next = path[0];
+      // 通路が壁になっていたら停止（再生成などで変化した場合）
+      if (!next || g.map[next.y]?.[next.x] === 0) { autoWalkPathRef.current = []; return; }
+      autoWalkPathRef.current = path.slice(1);
+      doTurnLatestRef.current(next.x - g.px, next.y - g.py);
+      if (autoWalkPathRef.current.length > 0) {
+        autoWalkTimerRef.current = setTimeout(step, 160);
+      }
+    };
+    if (autoWalkTimerRef.current) clearTimeout(autoWalkTimerRef.current);
+    autoWalkTimerRef.current = setTimeout(step, 160);
+  }, []);
+
+  const handleCanvasTap = useCallback((tileX: number, tileY: number) => {
+    const g = gameRef.current;
+    if (!g) return;
+    stopAutoWalk();
+    // アイテム画面・死亡・クイズ中は無視（doTurn 側でも quiz guard あり）
+    const dx = tileX - g.px;
+    const dy = tileY - g.py;
+    if (dx === 0 && dy === 0) return;
+    // 隣接タイル（マンハッタン距離 1）
+    if (Math.abs(dx) + Math.abs(dy) === 1) {
+      doTurnLatestRef.current(dx, dy);
+      return;
+    }
+    // 非隣接：A* でパスを探して自動歩行
+    const path = findPath(g.map, { x: g.px, y: g.py }, { x: tileX, y: tileY }, g.enemies);
+    if (path.length > 0) {
+      autoWalkPathRef.current = path;
+      scheduleWalkStep();
+    }
+  }, [stopAutoWalk, scheduleWalkStep]);
+
+  // ── セーブ / ロード ──────────────────────────────────────────────
+  const saveGame = useCallback(() => {
+    const g = gameRef.current;
+    if (!g) return;
+    const save: DungeonSave = {
+      gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
+      questions,
+      savedAt: new Date().toISOString(),
+    };
+    storage.saveDungeonGame(save);
+  }, [questions]);
+
+  const loadSave = useCallback((savedState: GameState) => {
+    gameRef.current = savedState;
+    const canvas = canvasRef.current;
+    if (canvas) {
+      canvas.width = MW * TILE;
+      canvas.height = MH * TILE;
+      canvas.style.width = MW * TILE + "px";
+      canvas.style.height = MH * TILE + "px";
+    }
+    updateUI(savedState, { msg: `セーブデータを読み込んだ！（B${savedState.floor}F）` });
+    setTimeout(() => {
+      redraw();
+      startBGM();
+    }, 50);
+  }, [redraw, updateUI]);
+
   const startGame = useCallback(() => {
+    storage.clearDungeonGame();
     const g = initGameState();
     gameRef.current = g;
     generateMap(g);
@@ -988,6 +1104,8 @@ export function useDungeon(questions: DungeonQuestion[]) {
   }, [redraw, updateUI]);
 
   const retryGame = useCallback(() => {
+    storage.clearDungeonGame();
+    stopAutoWalk();
     const prevMissed = gameRef.current?.missedWords ?? [];
     const g = initGameState(prevMissed);
     gameRef.current = g;
@@ -1003,14 +1121,20 @@ export function useDungeon(questions: DungeonQuestion[]) {
       redraw();
       startBGM();
     }, 50);
-  }, [redraw, updateUI]);
+  }, [redraw, stopAutoWalk, updateUI]);
 
-  // アンマウント時にBGMを停止
+  // doTurn が再生成されるたびに最新参照を更新（オートウォークで常に最新版を呼ぶため）
+  useEffect(() => {
+    doTurnLatestRef.current = doTurn;
+  }, [doTurn]);
+
+  // アンマウント時にBGM停止・オートウォーク停止
   useEffect(() => {
     return () => {
       stopBGM();
+      stopAutoWalk();
     };
-  }, []);
+  }, [stopAutoWalk]);
 
   // resize
   useEffect(() => {
@@ -1037,5 +1161,9 @@ export function useDungeon(questions: DungeonQuestion[]) {
     closeItems,
     filterItems,
     retryGame,
+    saveGame,
+    loadSave,
+    stopAutoWalk,
+    handleCanvasTap,
   };
 }
