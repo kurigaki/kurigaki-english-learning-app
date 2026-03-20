@@ -8,19 +8,19 @@ export const ITEMS_DEF: ItemDef[] = [
   // ── 草（即時） ──
   {
     id: "heal_grass",
-    name: "回復草",
+    name: "薬草",
     icon: "🌿",
     cat: "grass",
     desc: "HPを15回復する",
-    rarity: 3,
+    rarity: 1,
   },
   {
     id: "big_heal",
-    name: "薬草",
+    name: "特薬草",
     icon: "🌱",
     cat: "grass",
     desc: "HPを最大まで全回復",
-    rarity: 1,
+    rarity: 3,
   },
   {
     id: "poison_grass",
@@ -35,23 +35,23 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "力の草",
     icon: "🌾",
     cat: "grass",
-    desc: "攻撃力を永続+2",
-    rarity: 1,
+    desc: "攻撃力を永続+1",
+    rarity: 3,
   },
   {
     id: "hp_grass",
     name: "命の草",
     icon: "🌺",
     cat: "grass",
-    desc: "最大HPを永続+5",
-    rarity: 1,
+    desc: "最大HPを永続+3",
+    rarity: 2,
   },
   {
     id: "swift_grass",
-    name: "足速の草",
+    name: "倍速の草",
     icon: "🍀",
     cat: "grass",
-    desc: "次の3ターン、行動後に敵ターンをスキップ",
+    desc: "倍速状態になる",
     rarity: 1,
   },
   {
@@ -59,7 +59,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "眠り草",
     icon: "🌙",
     cat: "grass",
-    desc: "隣接する全敵を眠らせる",
+    desc: "飲むと数ターン眠ってしまう",
     rarity: 2,
   },
   {
@@ -67,7 +67,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "混乱草",
     icon: "🌀",
     cat: "grass",
-    desc: "このフロアの敵全員を混乱させる（数ターン暴走）",
+    desc: "飲むと数ターン混乱してしまう",
     rarity: 1,
   },
   {
@@ -83,19 +83,11 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "火炎草",
     icon: "🔥",
     cat: "grass",
-    desc: "周囲の全敵に8ダメージ",
+    desc: "飲むと正面に15ダメージ",
     rarity: 2,
   },
 
   // ── 巻物 ──
-  {
-    id: "scroll_identify",
-    name: "識別の巻物",
-    icon: "📖",
-    cat: "scroll",
-    desc: "このフロアの全アイテムの種類を識別（効果なし・フレーバー）",
-    rarity: 3,
-  },
   {
     id: "scroll_hp",
     name: "回復の巻物",
@@ -118,7 +110,7 @@ export const ITEMS_DEF: ItemDef[] = [
     icon: "📜",
     cat: "scroll",
     desc: "次の攻撃ダメージ×2（会心効果）",
-    rarity: 2,
+    rarity: 3,
   },
   {
     id: "scroll_sleep",
@@ -133,7 +125,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "脱出の巻物",
     icon: "📜",
     cat: "scroll",
-    desc: "このフロアから脱出する",
+    desc: "ダンジョンから脱出する",
     rarity: 1,
   },
   {
@@ -141,7 +133,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "魔物部屋の巻物",
     icon: "📜",
     cat: "scroll",
-    desc: "周囲に敵が3体現れる（経験値稼ぎに）",
+    desc: "周囲に敵が3体現れる",
     rarity: 2,
   },
   {
@@ -149,15 +141,15 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "地図の巻物",
     icon: "📜",
     cat: "scroll",
-    desc: "フロア内の全アイテム・階段の位置が分かる（フレーバー）",
+    desc: "フロア内の全アイテム・階段の位置が分かる",
     rarity: 2,
   },
   {
-    id: "scroll_blind",
+    id: "scroll_confuse",
     name: "盲目の巻物",
     icon: "📜",
     cat: "scroll",
-    desc: "【呪い】数ターン操作できなくなる（読まないのが吉）",
+    desc: "フロア全敵を数ターン混乱させる",
     rarity: 2,
   },
 
@@ -167,7 +159,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "吹き飛ばしの杖",
     icon: "🪄",
     cat: "cane",
-    desc: "正面の敵を遠くへ吹き飛ばす",
+    desc: "正面の敵を10マス吹き飛ばす。5ダメージを与える。",
     charges: 3,
     rarity: 2,
   },
@@ -199,30 +191,31 @@ export const ITEMS_DEF: ItemDef[] = [
     rarity: 1,
   },
 
+  {
+    id: "slow_grass",
+    name: "鈍足草",
+    icon: "🐢",
+    cat: "grass",
+    desc: "飲むと5ターン鈍足になる。投げると敵が5ターン鈍足になる",
+    rarity: 2,
+  },
+
   // ── 食料 ──
   {
     id: "rice",
     name: "おにぎり",
     icon: "🍙",
     cat: "food",
-    desc: "HP全回復",
-    rarity: 3,
+    desc: "満腹度を50回復",
+    rarity: 1,
   },
   {
     id: "rice_big",
     name: "大きいおにぎり",
     icon: "🍱",
     cat: "food",
-    desc: "HP全回復＋最大HP+3",
+    desc: "満腹度を100回復",
     rarity: 1,
-  },
-  {
-    id: "herb",
-    name: "薬草",
-    icon: "🌿",
-    cat: "grass",
-    desc: "HPを12回復。腐ってる場合ダメージ（フレーバー）",
-    rarity: 3,
   },
 
   // ── 壷 ──
@@ -231,35 +224,11 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "保存の壷",
     icon: "🫙",
     cat: "jar",
-    desc: "HPを18回復（壷の中の回復薬を飲む）",
-    rarity: 2,
-  },
-  {
-    id: "jar_exp",
-    name: "経験の壷",
-    icon: "🏺",
-    cat: "jar",
-    desc: "EXPを次のレベルアップまで一気に補充",
-    rarity: 1,
-  },
-  {
-    id: "jar_curse",
-    name: "呪いの壷",
-    icon: "🪬",
-    cat: "jar",
-    desc: "【呪い】HPが半分になる（開けない方が吉）",
+    desc: "壺の中にアイテムを保存できる",
     rarity: 2,
   },
 
   // ── 特殊 ──
-  {
-    id: "escape_wing",
-    name: "脱出の翼",
-    icon: "🪶",
-    cat: "special",
-    desc: "このフロアから脱出する",
-    rarity: 1,
-  },
   {
     id: "lucky_gold",
     name: "幸運のコイン",
@@ -291,10 +260,8 @@ export const SHOP_PRICES: Record<string, number> = {
   scroll_escape: 50,
   rice: 25,
   rice_big: 60,
-  herb: 15,
   jar_store: 20,
-  jar_exp: 70,
-  escape_wing: 60,
+  slow_grass: 20,
   lucky_gold: 80,
 };
 
