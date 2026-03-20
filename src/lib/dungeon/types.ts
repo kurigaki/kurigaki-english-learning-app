@@ -51,6 +51,8 @@ export type Enemy = {
   slowTurns?: number;   // 鈍足残りターン
   swiftTurns?: number;  // 倍速残りターン
   slowSkip?: boolean;   // 鈍足スキップフラグ
+  slowed?: boolean;    // 永続鈍足（風来のシレン準拠）
+  justSlowed?: boolean; // 鈍足付与ターンは行動しない
 };
 
 export type ItemDef = {
