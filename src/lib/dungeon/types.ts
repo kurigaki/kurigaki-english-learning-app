@@ -164,3 +164,30 @@ export type SfxName =
   | "levelup"
   | "stairs"
   | "item";
+
+export type ScreenFlashKind =
+  | "recv"
+  | "miss"
+  | "correct"
+  | "levelup"
+  | "trap_damage"
+  | "trap_sleep"
+  | "trap_warp"
+  | "trap_hunger";
+
+export type ScreenEffect = {
+  flash: ScreenFlashKind | null;
+  shake: boolean;
+  id: number;
+};
+
+export type EventOverlayKind = "trap" | "monster_house";
+
+export type EventOverlay = {
+  kind: EventOverlayKind;
+  title: string;
+  body: string;
+  color: string;
+  icon: string;
+  autoClose?: number;
+};
