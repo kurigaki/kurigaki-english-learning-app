@@ -763,7 +763,7 @@ function TitleScreen({
   const [course, setCourse] = useState("");
   const [weakOnly, setWeakOnly] = useState(false);
   const [loading, setLoading] = useState(false);
-  const weakWordCount = storage.getWeakWords()?.length ?? 0;
+  const weakWordCount = storage.getWeakWords().length;
 
   const handleStart = async () => {
     setLoading(true);
@@ -1071,25 +1071,27 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     };
   }, [canvasRef]);
 
-  // マウスクリック → タップ移動
+  // マウスクリック → タップ移動（クイズ中は無視）
   const handleCanvasClick = useCallback(
     (ev: React.MouseEvent<HTMLCanvasElement>) => {
+      if (uiState.quiz && !uiState.quizAnswered) return;
       const tile = getTileFromEvent(ev.clientX, ev.clientY);
       if (tile) handleCanvasTap(tile.x, tile.y);
     },
-    [getTileFromEvent, handleCanvasTap]
+    [getTileFromEvent, handleCanvasTap, uiState.quiz, uiState.quizAnswered]
   );
 
-  // タッチタップ → タップ移動（スマホ用）
+  // タッチタップ → タップ移動（スマホ用・クイズ中は無視）
   const handleCanvasTouchEnd = useCallback(
     (ev: React.TouchEvent<HTMLCanvasElement>) => {
       ev.preventDefault();
+      if (uiState.quiz && !uiState.quizAnswered) return;
       const touch = ev.changedTouches[0];
       if (!touch) return;
       const tile = getTileFromEvent(touch.clientX, touch.clientY);
       if (tile) handleCanvasTap(tile.x, tile.y);
     },
-    [getTileFromEvent, handleCanvasTap]
+    [getTileFromEvent, handleCanvasTap, uiState.quiz, uiState.quizAnswered]
   );
 
   if (phase === "title") {
