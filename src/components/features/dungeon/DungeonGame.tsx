@@ -7,6 +7,8 @@ import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges } from "./useDungeon";
 import { storage, type DungeonRunLog } from "@/lib/storage";
 import { SpeakButton } from "@/components/ui";
+import { COURSE_DEFINITIONS } from "@/data/words/courses";
+import type { Course } from "@/data/words/types";
 
 const DUNGEON_DEATH_KEY = "dungeon-death-state";
 
@@ -29,21 +31,45 @@ const DC = {
   text3: "#606080",
 };
 
-const COURSE_OPTIONS = [
-  { value: "", label: "全コース（ランダム）" },
-  { value: "junior", label: "中学英語" },
-  { value: "senior", label: "高校英語" },
-  { value: "toeic", label: "TOEIC" },
-  { value: "eiken", label: "英検" },
-  { value: "conversation", label: "会話" },
+// コースグループの表示順（全コースは末尾）
+const DUNGEON_COURSE_ORDER: (Course | "")[] = [
+  "junior", "senior", "eiken", "toeic", "conversation", "",
 ];
+const DUNGEON_COURSE_LABELS: Record<Course | "", string> = {
+  junior: "中学英語",
+  senior: "高校英語",
+  eiken: "英検",
+  toeic: "TOEIC",
+  conversation: "英会話",
+  "": "全コース",
+  general: "一般英語",
+  business: "ビジネス英語",
+};
+
+const DUNGEON_COURSE_PREF_KEY = "dungeon_course_pref";
+type CoursePref = { course: Course | ""; stage: string };
+
+function loadCoursePref(): CoursePref {
+  const DEFAULT: CoursePref = { course: "junior", stage: "" };
+  if (typeof window === "undefined") return DEFAULT;
+  try {
+    const raw = localStorage.getItem(DUNGEON_COURSE_PREF_KEY);
+    if (!raw) return DEFAULT;
+    return JSON.parse(raw) as CoursePref;
+  } catch { return DEFAULT; }
+}
+
+function saveCoursePref(pref: CoursePref) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(DUNGEON_COURSE_PREF_KEY, JSON.stringify(pref));
+}
 
 // ─── Sub-components ────────────────────────────────────────────────
 
 function DungeonHUD({
-  floor, hp, mhp, lv, exp, enext,
+  floor, hp, mhp, lv, exp, enext, turn,
 }: {
-  floor: number; hp: number; mhp: number; lv: number; exp: number; enext: number;
+  floor: number; hp: number; mhp: number; lv: number; exp: number; enext: number; turn: number;
 }) {
   const hpPct = Math.max(0, (hp / mhp) * 100);
   const expPct = (exp / enext) * 100;
@@ -59,8 +85,13 @@ function DungeonHUD({
       flexShrink: 0,
       gap: 8,
     }}>
-      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.gold, whiteSpace: "nowrap" }}>
-        B{floor}F
+      <div style={{ display: "flex", flexDirection: "column", gap: 1, flexShrink: 0 }}>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.gold, whiteSpace: "nowrap" }}>
+          B{floor}F
+        </div>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: DC.text3, whiteSpace: "nowrap" }}>
+          T{turn}
+        </div>
       </div>
       <div style={{ display: "flex", gap: 8, flex: 1, justifyContent: "flex-end" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 1, minWidth: 68 }}>
@@ -98,21 +129,7 @@ function DungeonQuizPanel({
   const KEYS = ["１", "２", "３", "４"];
 
   if (!quiz) {
-    return (
-      <div style={{
-        background: DC.bg2,
-        borderTop: `2px solid ${DC.border2}`,
-        height: 32,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 6,
-        flexShrink: 0,
-      }}>
-        <span style={{ fontSize: 11, color: DC.text2 }}>敵に隣接してZ/Spaceで攻撃</span>
-        <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text3 }}>1/2/3/4で回答</span>
-      </div>
-    );
+    return null;
   }
 
   const e = quiz.enemy;
@@ -153,7 +170,7 @@ function DungeonQuizPanel({
         </div>
 
         {/* Word */}
-        <div style={{ fontSize: 20, color: DC.gold, fontWeight: 700, textAlign: "center", fontFamily: "'DotGothic16', sans-serif", padding: "2px 0" }}>
+        <div style={{ fontSize: 26, color: DC.gold, fontWeight: 700, textAlign: "center", fontFamily: "'DotGothic16', sans-serif", padding: "2px 0", letterSpacing: 1 }}>
           {q.word}
         </div>
 
@@ -758,29 +775,46 @@ function DmgPopLayer({
 function TitleScreen({
   onStart, onContinue, hasSave,
 }: {
-  onStart: (course: string, weakOnly: boolean) => void;
+  onStart: (course: Course | "", stage: string, weakOnly: boolean) => void;
   onContinue: () => void;
   hasSave: boolean;
 }) {
-  const [course, setCourse] = useState("");
+  const pref = useMemo(() => loadCoursePref(), []);
+  const [selectedCourse, setSelectedCourse] = useState<Course | "">(pref.course);
+  const [selectedStage, setSelectedStage] = useState<string>(pref.stage);
   const [weakOnly, setWeakOnly] = useState(false);
   const [loading, setLoading] = useState(false);
   const weakWordCount = storage.getWeakWords().length;
 
+  const courseStages = selectedCourse && selectedCourse in COURSE_DEFINITIONS
+    ? COURSE_DEFINITIONS[selectedCourse as Course].stages
+    : [];
+
+  const handleSelectCourse = (c: Course | "") => {
+    setSelectedCourse(c);
+    setSelectedStage(""); // コース変更時はステージをリセット
+  };
+
   const handleStart = async () => {
+    if (!weakOnly) saveCoursePref({ course: selectedCourse, stage: selectedStage });
     setLoading(true);
-    await onStart(course, weakOnly);
+    await onStart(selectedCourse, selectedStage, weakOnly);
     setLoading(false);
   };
+
+  // 選択中コース・ステージのラベル
+  const courseLabel = DUNGEON_COURSE_LABELS[selectedCourse] ?? "全コース";
+  const stageLabel = courseStages.find((s) => s.stage === selectedStage)?.displayName ?? `${courseLabel} 全体`;
+  const selectionLabel = weakOnly ? "苦手単語モード" : (courseStages.length > 0 ? `${courseLabel} / ${stageLabel}` : courseLabel);
 
   return (
     <div style={{
       position: "fixed", inset: 0, display: "flex", flexDirection: "column",
       alignItems: "center", justifyContent: "center",
       background: "radial-gradient(ellipse at 50% 40%,#1a0f2e 0%,#09090f 65%)",
-      zIndex: 100, gap: 10, padding: 20,
+      zIndex: 100, gap: 10, padding: "16px 20px", overflowY: "auto",
     }}>
-      <div style={{ fontSize: 56, animation: "tfloat 3s ease-in-out infinite" }}>🗡️</div>
+      <div style={{ fontSize: 48, animation: "tfloat 3s ease-in-out infinite" }}>🗡️</div>
       <div style={{
         fontFamily: "'Press Start 2P', monospace",
         fontSize: "clamp(13px,3.5vw,22px)",
@@ -801,30 +835,82 @@ function TitleScreen({
         〜英語で戦うローグライク〜
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 5, width: "100%", maxWidth: 260 }}>
-        <label style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text2 }}>コース選択</label>
-        <select
-          value={course}
-          onChange={(e) => setCourse(e.target.value)}
-          disabled={weakOnly}
-          style={{
-            fontFamily: "'DotGothic16', sans-serif", fontSize: 13, color: weakOnly ? DC.text3 : DC.text,
-            background: DC.bg3, border: `1px solid ${DC.border2}`, borderRadius: 4,
-            padding: "6px 10px", width: "100%", cursor: weakOnly ? "default" : "pointer",
-            appearance: "none",
-          }}
-        >
-          {COURSE_OPTIONS.map((o) => (
-            <option key={o.value} value={o.value}>{o.label}</option>
-          ))}
-        </select>
+      {/* ── コース選択 ── */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 8, width: "100%", maxWidth: 340 }}>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text2, textAlign: "center" }}>
+          コース選択
+        </div>
+
+        {/* グループ選択ボタン */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 5, justifyContent: "center" }}>
+          {DUNGEON_COURSE_ORDER.map((c) => {
+            const active = selectedCourse === c && !weakOnly;
+            return (
+              <button
+                key={c}
+                onClick={() => { setWeakOnly(false); handleSelectCourse(c); }}
+                style={{
+                  fontFamily: "'DotGothic16', sans-serif", fontSize: 13,
+                  color: active ? "#09090f" : DC.text2,
+                  background: active ? DC.gold : DC.bg3,
+                  border: `1px solid ${active ? DC.gold : DC.border2}`,
+                  borderRadius: 4, padding: "6px 10px", cursor: "pointer",
+                  transition: "all 0.15s",
+                }}
+              >
+                {DUNGEON_COURSE_LABELS[c]}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* ステージ選択（コース選択時のみ表示） */}
+        {courseStages.length > 0 && !weakOnly && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 4, justifyContent: "center" }}>
+            {/* 全体オプション */}
+            <button
+              onClick={() => setSelectedStage("")}
+              style={{
+                fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
+                color: selectedStage === "" ? "#09090f" : DC.text3,
+                background: selectedStage === "" ? DC.accent : DC.bg4,
+                border: `1px solid ${selectedStage === "" ? DC.accent : DC.border}`,
+                borderRadius: 3, padding: "4px 8px", cursor: "pointer",
+                transition: "all 0.15s",
+              }}
+            >
+              {courseLabel} 全体
+            </button>
+            {courseStages.map((s) => {
+              const active = selectedStage === s.stage;
+              return (
+                <button
+                  key={s.stage}
+                  onClick={() => setSelectedStage(s.stage)}
+                  style={{
+                    fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
+                    color: active ? "#09090f" : DC.text3,
+                    background: active ? DC.accent : DC.bg4,
+                    border: `1px solid ${active ? DC.accent : DC.border}`,
+                    borderRadius: 3, padding: "4px 8px", cursor: "pointer",
+                    transition: "all 0.15s",
+                  }}
+                >
+                  {s.displayName}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        {/* 苦手単語モード */}
         <label style={{
           display: "flex", alignItems: "center", gap: 6, cursor: "pointer",
           color: weakOnly ? DC.accent2 : DC.text2,
-          fontSize: 12, fontFamily: "'DotGothic16', sans-serif",
+          fontSize: 13, fontFamily: "'DotGothic16', sans-serif",
           background: weakOnly ? "#f5a62318" : "transparent",
           border: `1px solid ${weakOnly ? DC.accent2 : DC.border}`,
-          borderRadius: 4, padding: "5px 10px", width: "100%",
+          borderRadius: 4, padding: "7px 10px",
         }}>
           <input
             type="checkbox"
@@ -840,8 +926,17 @@ function TitleScreen({
             }
           </span>
         </label>
+
+        {/* 選択状態サマリ */}
+        <div style={{
+          fontFamily: "'DotGothic16', sans-serif", fontSize: 12, color: DC.text3,
+          textAlign: "center", padding: "3px 0",
+        }}>
+          ▸ {selectionLabel}
+        </div>
       </div>
 
+      {/* ── ボタン群 ── */}
       {hasSave && (
         <button
           onClick={onContinue}
@@ -853,7 +948,7 @@ function TitleScreen({
             border: `2px solid ${DC.accent}`,
             padding: "12px 24px",
             cursor: "pointer",
-            marginTop: 6,
+            marginTop: 2,
             clipPath: "polygon(4px 0%,calc(100% - 4px) 0%,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0% calc(100% - 4px),0% 4px)",
           }}
         >
@@ -871,7 +966,7 @@ function TitleScreen({
           border: "none",
           padding: "14px 28px",
           cursor: loading ? "default" : "pointer",
-          marginTop: hasSave ? 4 : 6,
+          marginTop: hasSave ? 4 : 2,
           opacity: loading ? 0.7 : 1,
           clipPath: "polygon(4px 0%,calc(100% - 4px) 0%,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0% calc(100% - 4px),0% 4px)",
         }}
@@ -883,6 +978,7 @@ function TitleScreen({
         <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.text2 }}>読み込み中…</div>
       )}
 
+      {/* 操作説明（タイトル画面のみ） */}
       <div style={{
         fontSize: 11, color: DC.text2, textAlign: "center", lineHeight: 2.1,
         background: DC.bg3, border: `1px solid ${DC.border}`, padding: "12px 18px", borderRadius: 4, width: "100%", maxWidth: 360,
@@ -954,7 +1050,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     startedRef.current = false;
   }, [stopAutoWalk]);
 
-  const handleStart = useCallback(async (course: string, weakOnly: boolean) => {
+  const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean) => {
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
     let url = "/api/dungeon-words";
     if (weakOnly) {
@@ -964,6 +1060,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       }
     } else if (course) {
       url += "?course=" + encodeURIComponent(course);
+      if (stage) url += "&stage=" + encodeURIComponent(stage);
     }
     let qs: DungeonQuestion[] = [];
     try {
@@ -1003,7 +1100,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   useEffect(() => {
     if (!initialWordId || autoStartedRef.current) return;
     autoStartedRef.current = true;
-    handleStart("", false);
+    handleStart("", "", false);
   }, [initialWordId, handleStart]);
 
   // Start game once questions are set and phase is "game"
@@ -1121,6 +1218,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         lv={uiState.lv}
         exp={uiState.exp}
         enext={uiState.enext}
+        turn={uiState.turn}
       />
 
       {/* Map */}
@@ -1148,14 +1246,39 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       />
 
       {/* Message bar */}
-      <div style={{
-        background: DC.bg2, borderTop: `1px solid ${DC.border}`,
-        padding: "3px 10px", flexShrink: 0, minHeight: 22,
-      }}>
-        <div style={{ fontSize: 11, color: DC.text2, textAlign: "center" }}>
-          {uiState.msg}
-        </div>
-      </div>
+      {(() => {
+        const lowHp = uiState.hp <= uiState.mhp * 0.3;
+        const pastMsgs = uiState.msgLog.slice(1, 3);
+        return (
+          <div style={{
+            background: lowHp ? "#1a0a0a" : DC.bg2,
+            borderTop: `1px solid ${lowHp ? DC.hp : DC.border}`,
+            padding: "7px 12px",
+            flexShrink: 0,
+            minHeight: 52,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: 2,
+            transition: "background 0.5s, border-color 0.5s",
+          }}>
+            {pastMsgs.reverse().map((m, i) => (
+              <div key={i} style={{ fontSize: 10, color: DC.text3, fontFamily: "'DotGothic16', sans-serif", lineHeight: 1.4 }}>
+                {m}
+              </div>
+            ))}
+            <div style={{
+              fontSize: 14,
+              color: lowHp ? DC.hp : DC.text,
+              fontFamily: "'DotGothic16', sans-serif",
+              lineHeight: 1.4,
+              fontWeight: lowHp ? 700 : 400,
+            }}>
+              {uiState.msg}
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Controls */}
       <DungeonControls
@@ -1173,7 +1296,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
           position: "fixed", top: 52, left: "50%", transform: "translateX(-50%)",
           background: DC.bg3, border: `1px solid ${DC.accent}`, borderRadius: 4,
           padding: "7px 16px", fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.accent,
-          zIndex: 300, whiteSpace: "nowrap",
+          zIndex: 300, maxWidth: "90vw", textAlign: "center", wordBreak: "break-word",
         }}>
           {uiState.notification}
         </div>
