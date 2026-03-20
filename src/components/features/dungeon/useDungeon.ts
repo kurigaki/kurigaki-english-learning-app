@@ -509,6 +509,22 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     ): boolean => {
       const { notify, goNextFloor } = callbacks;
 
+      // playerDir方向の直線上の最初の敵を返す（杖・火炎草用）
+      const lineEnemy = (): Enemy | null => {
+        const { dx: ld, dy: ly2 } = g.playerDir ?? { dx: 0, dy: 1 };
+        const ldx = (ld === 0 && ly2 === 0) ? 0 : ld;
+        const ldy = (ld === 0 && ly2 === 0) ? 1 : ly2;
+        let lx = g.px + ldx;
+        let ly = g.py + ldy;
+        while (lx >= 0 && lx < MW && ly >= 0 && ly < MH && g.map[ly][lx] !== 0) {
+          const le = g.enemies.find((e) => e.x === lx && e.y === ly);
+          if (le) return le;
+          lx += ldx;
+          ly += ldy;
+        }
+        return null;
+      };
+
       switch (itemId) {
         case "heal_grass": {
           const v = 15;
@@ -588,22 +604,33 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "fire_grass": {
-          const fe = adjEnemy(g);
-          if (!fe) {
-            sfxItem();
-            notify("🔥 正面に敵がいない");
-            return true;
+          const { dx: fgDx, dy: fgDy } = g.playerDir ?? { dx: 0, dy: 1 };
+          const fdx = (fgDx === 0 && fgDy === 0) ? 0 : fgDx;
+          const fdy = (fgDx === 0 && fgDy === 0) ? 1 : fgDy;
+          let fx = g.px + fdx;
+          let fy = g.py + fdy;
+          let hitEnemy2: Enemy | null = null;
+          while (fx >= 0 && fx < MW && fy >= 0 && fy < MH && g.map[fy][fx] !== 0) {
+            const fe2 = g.enemies.find((e) => e.x === fx && e.y === fy);
+            if (fe2) { hitEnemy2 = fe2; break; }
+            fx += fdx;
+            fy += fdy;
           }
           const fdmg = 15;
-          fe.hp = Math.max(0, fe.hp - fdmg);
-          addDmgPop(fe.x, fe.y, "hit", fdmg);
-          sfxCrit();
-          notify(`🔥 ${fe.name}に${fdmg}ダメージ！`);
-          if (fe.hp <= 0) {
-            setTimeout(() => { onEnemyDied(g, fe); updateUI(g); redraw(); }, 100);
-            g.enemies = g.enemies.filter((en) => en.id !== fe.id);
+          if (hitEnemy2) {
+            hitEnemy2.hp = Math.max(0, hitEnemy2.hp - fdmg);
+            addDmgPop(hitEnemy2.x, hitEnemy2.y, "hit", fdmg);
+            sfxCrit();
+            notify(`🔥 ${hitEnemy2.name}に${fdmg}ダメージ！`);
+            if (hitEnemy2.hp <= 0) {
+              setTimeout(() => { onEnemyDied(g, hitEnemy2!); updateUI(g); redraw(); }, 100);
+              g.enemies = g.enemies.filter((en) => en.id !== hitEnemy2!.id);
+            }
+            redraw();
+          } else {
+            sfxItem();
+            notify("🔥 火炎が空を切った");
           }
-          redraw();
           return true;
         }
         case "scroll_hp": {
@@ -693,22 +720,29 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
         case "cane_blow": {
           if (g.cane_blow_charges <= 0) { notify("💨 杖の魔力が尽きた"); return false; }
-          const e = adjEnemy(g);
-          if (!e) { notify("🪄 正面に敵がいない"); return false; }
-          let tx = e.x;
-          let ty = e.y;
-          const dx = e.x - g.px;
-          const dy = e.y - g.py;
+          const e = lineEnemy();
+          g.cane_blow_charges--;
+          if (!e) {
+            sfxItem();
+            notify(`💨 魔力が虚空に消えた（残${g.cane_blow_charges}回）`);
+            return true;
+          }
+          let blowTx = e.x;
+          let blowTy = e.y;
+          const blowDx = e.x - g.px;
+          const blowDy = e.y - g.py;
+          // 正規化（斜めはないが念のため）
+          const blowDxN = blowDx === 0 ? 0 : blowDx / Math.abs(blowDx);
+          const blowDyN = blowDy === 0 ? 0 : blowDy / Math.abs(blowDy);
           for (let i = 0; i < 4; i++) {
-            const nx = tx + dx;
-            const ny = ty + dy;
+            const nx = blowTx + blowDxN;
+            const ny = blowTy + blowDyN;
             if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) break;
             if (!g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny)) {
-              tx = nx; ty = ny;
+              blowTx = nx; blowTy = ny;
             } else break;
           }
-          e.x = tx; e.y = ty;
-          g.cane_blow_charges--;
+          e.x = blowTx; e.y = blowTy;
           sfxCrit();
           notify(`💨 ${e.name}を吹き飛ばした！（残${g.cane_blow_charges}回）`);
           redraw();
@@ -716,10 +750,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
         case "cane_sleep": {
           if (g.cane_sleep_charges <= 0) { notify("😴 杖の魔力が尽きた"); return false; }
-          const e = adjEnemy(g);
-          if (!e) { notify("🪄 正面に敵がいない"); return false; }
-          e.sleeping = true; e.alert = false;
+          const e = lineEnemy();
           g.cane_sleep_charges--;
+          if (!e) {
+            sfxItem();
+            notify(`💤 魔力が虚空に消えた（残${g.cane_sleep_charges}回）`);
+            return true;
+          }
+          e.sleeping = true; e.alert = false;
           sfxItem();
           notify(`💤 ${e.name}が眠った！（残${g.cane_sleep_charges}回）`);
           redraw();
@@ -727,21 +765,29 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
         case "cane_seal": {
           if (g.cane_seal_charges <= 0) { notify("🔒 杖の魔力が尽きた"); return false; }
-          const e = adjEnemy(g);
-          if (!e) { notify("🪄 正面に敵がいない"); return false; }
+          const e = lineEnemy();
+          g.cane_seal_charges--;
+          if (!e) {
+            sfxItem();
+            notify(`🔒 魔力が虚空に消えた（残${g.cane_seal_charges}回）`);
+            return true;
+          }
           e.sealed = (e.sealed || 0) + 5;
           e.alert = false;
-          g.cane_seal_charges--;
           sfxItem();
           notify(`🔒 ${e.name}を封印した！（残${g.cane_seal_charges}回）`);
           return true;
         }
         case "cane_warp": {
           if (g.cane_warp_charges <= 0) { notify("🌀 杖の魔力が尽きた"); return false; }
-          const e = adjEnemy(g);
-          if (!e) { notify("🪄 正面に敵がいない"); return false; }
-          g.enemies = g.enemies.filter((en) => en.id !== e.id);
+          const e = lineEnemy();
           g.cane_warp_charges--;
+          if (!e) {
+            sfxItem();
+            notify(`🌀 魔力が虚空に消えた（残${g.cane_warp_charges}回）`);
+            return true;
+          }
+          g.enemies = g.enemies.filter((en) => en.id !== e.id);
           sfxStairs();
           notify(`🌀 ${e.name}がワープした！（残${g.cane_warp_charges}回）`);
           redraw();
@@ -1323,8 +1369,60 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               }
           }
         } else {
+          // 敵がいない → 床に落とす
+          g.itemTiles.push({ x: landX, y: landY, id: itemId });
           sfxItem();
-          showNotification(`${item.icon} 外れた`);
+          showNotification(`${item.icon} 床に落ちた`);
+        }
+      } else if (item.cat === "cane") {
+        // 杖を投げる
+        if (hitEnemy && Math.random() < 0.7) {
+          // 70%の確率で効果発動（チャージ消費なし）
+          switch (itemId) {
+            case "cane_blow": {
+              let blowTx = hitEnemy.x;
+              let blowTy = hitEnemy.y;
+              const blowDxN = hitEnemy.x === g.px ? 0 : (hitEnemy.x - g.px) / Math.abs(hitEnemy.x - g.px);
+              const blowDyN = hitEnemy.y === g.py ? 0 : (hitEnemy.y - g.py) / Math.abs(hitEnemy.y - g.py);
+              for (let i = 0; i < 4; i++) {
+                const nx = blowTx + blowDxN;
+                const ny = blowTy + blowDyN;
+                if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) break;
+                if (!g.enemies.find((o) => o.id !== hitEnemy!.id && o.x === nx && o.y === ny)) {
+                  blowTx = nx; blowTy = ny;
+                } else break;
+              }
+              hitEnemy.x = blowTx; hitEnemy.y = blowTy;
+              sfxCrit();
+              showNotification(`💨 ${hitEnemy.name}を吹き飛ばした！`);
+              break;
+            }
+            case "cane_sleep":
+              hitEnemy.sleeping = true;
+              hitEnemy.alert = false;
+              showNotification(`💤 ${hitEnemy.name}が眠った！`);
+              break;
+            case "cane_seal":
+              hitEnemy.sealed = (hitEnemy.sealed || 0) + 5;
+              hitEnemy.alert = false;
+              showNotification(`🔒 ${hitEnemy.name}を封印した！`);
+              break;
+            case "cane_warp":
+              g.enemies = g.enemies.filter((en) => en.id !== hitEnemy!.id);
+              showNotification(`🌀 ${hitEnemy.name}がワープした！`);
+              break;
+            default:
+              g.itemTiles.push({ x: landX, y: landY, id: itemId });
+              showNotification(`${item.icon} 床に落ちた`);
+          }
+        } else {
+          // 外れて床に落ちる
+          g.itemTiles.push({ x: landX, y: landY, id: itemId });
+          if (hitEnemy) {
+            showNotification(`${item.icon} 外れて床に落ちた`);
+          } else {
+            showNotification(`${item.icon} 床に落ちた`);
+          }
         }
       } else if (item.cat === "jar") {
         // 壷は割れる
@@ -1357,7 +1455,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           showNotification("🫙 中身が散らばった！");
         }
       } else {
-        // 草・壷以外：3ダメージ
+        // 草・壷・杖以外（食料・巻物・特殊）
         if (hitEnemy) {
           const dmg = 3;
           hitEnemy.hp = Math.max(0, hitEnemy.hp - dmg);
@@ -1369,7 +1467,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             g.enemies = g.enemies.filter((e) => e.id !== hitEnemy!.id);
           }
         } else {
-          showNotification(`${item.icon} 外れた`);
+          // 敵がいない → 床に落とす
+          g.itemTiles.push({ x: landX, y: landY, id: itemId });
+          showNotification(`${item.icon} 床に落ちた`);
         }
       }
 
@@ -1463,6 +1563,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   const skipShop = useCallback(() => {
     setUiState((prev) => ({ ...prev, shopPrompt: null }));
   }, []);
+
+  const changeFacing = useCallback((dx: number, dy: number) => {
+    const g = gameRef.current;
+    if (!g) return;
+    g.playerDir = { dx, dy };
+    redraw();
+    saveGame();
+  }, [redraw, saveGame]);
 
   // ── オートウォーク ──────────────────────────────────────────────
   const stopAutoWalk = useCallback(() => {
@@ -1670,5 +1778,6 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     buyFromShop,
     skipShop,
     openJarId: uiState.openJarId,
+    changeFacing,
   };
 }
