@@ -2,6 +2,15 @@ import type { GameState, TileType, TrapType } from "./types";
 import { W, R, C } from "./types";
 import { MW, MH, ITEMS_DEF, ENEMIES_DEF, EASY_TRAP_TYPES, HARD_TRAP_TYPES, SHOP_PRICES } from "./constants";
 
+/** 部屋タイルのうち廊下に隣接しているタイル（部屋の入口）かどうかを判定 */
+function isRoomEntrance(m: TileType[][], x: number, y: number): boolean {
+  for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+    const nx = x + dx; const ny = y + dy;
+    if (nx >= 0 && nx < MW && ny >= 0 && ny < MH && m[ny][nx] === C) return true;
+  }
+  return false;
+}
+
 let _trapId = 0;
 
 export function generateMap(g: GameState): void {
@@ -115,22 +124,28 @@ export function generateMap(g: GameState): void {
     }
   }
 
-  // Traps
+  // アイテムの重複チェック用セット
+  const itemPositions = new Set(g.itemTiles.map((it) => `${it.x},${it.y}`));
+
+  // Traps（アイテムと重ならない・部屋入口を避ける）
   g.traps = [];
   const trapPool: TrapType[] = g.dungeonMode === "hard" ? HARD_TRAP_TYPES : EASY_TRAP_TYPES;
   const trapCount = g.dungeonMode === "hard"
     ? 3 + Math.floor(Math.random() * 4) // 3-6 traps in hard
     : 1 + Math.floor(Math.random() * 2); // 1-2 traps in easy
-  for (let t = 0; t < trapCount * 5 && g.traps.length < trapCount; t++) {
+  for (let t = 0; t < trapCount * 10 && g.traps.length < trapCount; t++) {
     const ri = 1 + Math.floor(Math.random() * (rooms.length - 1));
     const r = rooms[ri];
     const tx = r.x + 1 + Math.floor(Math.random() * (r.w - 2));
     const ty = r.y + 1 + Math.floor(Math.random() * (r.h - 2));
-    if (
-      tx === g.px && ty === g.py) continue;
+    if (tx === g.px && ty === g.py) continue;
     if (g.stairsPos && tx === g.stairsPos.x && ty === g.stairsPos.y) continue;
     if (g.enemies.find((e) => e.x === tx && e.y === ty)) continue;
     if (g.traps.find((tr) => tr.x === tx && tr.y === ty)) continue;
+    // アイテムと重ならない
+    if (itemPositions.has(`${tx},${ty}`)) continue;
+    // 部屋入口（廊下隣接タイル）には罠を置かない
+    if (isRoomEntrance(m, tx, ty)) continue;
     const type = trapPool[Math.floor(Math.random() * trapPool.length)];
     g.traps.push({ id: ++_trapId, x: tx, y: ty, type, visible: false });
   }
@@ -175,7 +190,7 @@ export function generateMap(g: GameState): void {
     }
   }
 
-  // Shop — 1フロアに1箇所、9アイテム固定配置
+  // Shop — 1フロアに1箇所、3×3グリッド配置
   // (将来: 店主キャラ配置・泥棒システム対応のため shopRoomIdx を明示)
   g.shopItems = [];
   if (g.floor >= 2 && rooms.length >= 3) {
@@ -185,10 +200,13 @@ export function generateMap(g: GameState): void {
       if (i !== excludedRoomIdx) candidateIdxs.push(i);
     }
     if (candidateIdxs.length > 0) {
-      const shopRoomIdx = candidateIdxs[Math.floor(Math.random() * candidateIdxs.length)];
+      // 3×3グリッドが収まる5×5以上の部屋を優先
+      const largeRoomIdxs = candidateIdxs.filter((i) => rooms[i].w >= 5 && rooms[i].h >= 5);
+      const shopRoomIdx = largeRoomIdxs.length > 0
+        ? largeRoomIdxs[Math.floor(Math.random() * largeRoomIdxs.length)]
+        : candidateIdxs[Math.floor(Math.random() * candidateIdxs.length)];
       const shopRoom = rooms[shopRoomIdx];
       const shopPool = Object.keys(SHOP_PRICES);
-      const SHOP_ITEM_COUNT = 9;
       // ショップ部屋の敵・アイテム・罠を除去してスペースを確保
       g.enemies = g.enemies.filter(
         (e) => !(e.x >= shopRoom.x && e.x < shopRoom.x + shopRoom.w && e.y >= shopRoom.y && e.y < shopRoom.y + shopRoom.h)
@@ -199,21 +217,20 @@ export function generateMap(g: GameState): void {
       g.traps = g.traps.filter(
         (tr) => !(tr.x >= shopRoom.x && tr.x < shopRoom.x + shopRoom.w && tr.y >= shopRoom.y && tr.y < shopRoom.y + shopRoom.h)
       );
-      // 部屋内の全タイルをリストアップして均等配置
-      const shopTiles: { x: number; y: number }[] = [];
-      for (let sy2 = shopRoom.y + 1; sy2 < shopRoom.y + shopRoom.h - 1; sy2++) {
-        for (let sx2 = shopRoom.x + 1; sx2 < shopRoom.x + shopRoom.w - 1; sx2++) {
-          shopTiles.push({ x: sx2, y: sy2 });
-        }
-      }
-      // シャッフルして先頭から最大 SHOP_ITEM_COUNT 個配置
-      for (let i = shopTiles.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shopTiles[i], shopTiles[j]] = [shopTiles[j], shopTiles[i]];
-      }
-      const itemsToPlace = Math.min(SHOP_ITEM_COUNT, shopTiles.length);
-      for (let k = 0; k < itemsToPlace; k++) {
-        const { x: sx, y: sy } = shopTiles[k];
+      // 3×3グリッドを部屋中央に配置（内部タイルに収まる位置のみ使用）
+      const centerX = shopRoom.x + Math.floor(shopRoom.w / 2);
+      const centerY = shopRoom.y + Math.floor(shopRoom.h / 2);
+      const gridOffsets: [number, number][] = [
+        [-1, -1], [0, -1], [1, -1],
+        [-1,  0], [0,  0], [1,  0],
+        [-1,  1], [0,  1], [1,  1],
+      ];
+      for (const [dx, dy] of gridOffsets) {
+        const sx = centerX + dx;
+        const sy = centerY + dy;
+        // 内部タイル（壁の1マス内側）のみ配置
+        if (sx <= shopRoom.x || sx >= shopRoom.x + shopRoom.w - 1) continue;
+        if (sy <= shopRoom.y || sy >= shopRoom.y + shopRoom.h - 1) continue;
         const itemId = shopPool[Math.floor(Math.random() * shopPool.length)];
         g.shopItems.push({ x: sx, y: sy, itemId, price: SHOP_PRICES[itemId] });
       }

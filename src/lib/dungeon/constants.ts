@@ -220,7 +220,7 @@ export const ITEMS_DEF: ItemDef[] = [
     id: "herb",
     name: "薬草",
     icon: "🫚",
-    cat: "food",
+    cat: "grass",
     desc: "HPを12回復。腐ってる場合ダメージ（フレーバー）",
     rarity: 3,
   },

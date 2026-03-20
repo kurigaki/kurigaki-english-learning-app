@@ -481,6 +481,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           if (playerInRoom) {
             e.sleeping = false;
             e.alert = true;
+            e.justWoke = true; // 起床ターンは行動しない
             addDmgPop(e.x, e.y, "wake", 0);
           }
         }
@@ -953,6 +954,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         if (eAt.sleeping) {
           eAt.sleeping = false;
           eAt.alert = true;
+          eAt.justWoke = true; // 起床ターンは行動しない
           addDmgPop(eAt.x, eAt.y, "wake", 0);
         }
         initiateAttack(g, eAt);
@@ -964,58 +966,62 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       g.py = ny;
       g.onStairs = !!(g.stairsPos && nx === g.stairsPos.x && ny === g.stairsPos.y);
 
-      // 罠チェック
-      let trapMsg: string | null = null;
+      // 罠チェック（踏んでも80%の確率でかかる・罠は消えない）
       if (g.traps) {
-        const trapIdx = g.traps.findIndex((t) => t.x === nx && t.y === ny);
-        if (trapIdx >= 0) {
-          const trap = g.traps[trapIdx];
+        const trap = g.traps.find((t) => t.x === nx && t.y === ny);
+        if (trap) {
           trap.visible = true;
-          switch (trap.type) {
-            case "damage": {
-              const dmg = g.dungeonMode === "hard" ? 6 + Math.floor(Math.random() * 5) : 3 + Math.floor(Math.random() * 4);
-              g.p.hp = Math.max(1, g.p.hp - dmg);
-              sfxRecv();
-              addDmgPop(nx, ny, "recv", dmg);
-              triggerScreenEffect("trap_damage", true);
-              showEventOverlay(TRAP_OVERLAYS.damage);
-              trapMsg = `⚡ ダメージトラップ！ ${dmg}ダメージを受けた！`;
-              break;
+          if (Math.random() < 0.80) {
+            // 罠発動
+            let trapMsg: string | null = null;
+            switch (trap.type) {
+              case "damage": {
+                const dmg = g.dungeonMode === "hard" ? 6 + Math.floor(Math.random() * 5) : 3 + Math.floor(Math.random() * 4);
+                g.p.hp = Math.max(1, g.p.hp - dmg);
+                sfxRecv();
+                addDmgPop(nx, ny, "recv", dmg);
+                triggerScreenEffect("trap_damage", true);
+                showEventOverlay(TRAP_OVERLAYS.damage);
+                trapMsg = `⚡ ダメージトラップ！ ${dmg}ダメージを受けた！`;
+                break;
+              }
+              case "sleep": {
+                const turns = 3 + Math.floor(Math.random() * 3);
+                // blindTurns は「動けない」全般に共用（眠り罠・盲目の巻物どちらも同じ効果）
+                g.blindTurns = (g.blindTurns || 0) + turns;
+                triggerScreenEffect("trap_sleep", false);
+                showEventOverlay(TRAP_OVERLAYS.sleep);
+                trapMsg = `💤 眠りトラップ！ ${turns}ターン動けない！`;
+                break;
+              }
+              case "warp": {
+                let tries = 0;
+                let wx = nx; let wy = ny;
+                do {
+                  wx = 1 + Math.floor(Math.random() * (MW - 2));
+                  wy = 1 + Math.floor(Math.random() * (MH - 2));
+                  tries++;
+                } while (tries < 200 && (g.map[wy][wx] === 0 || g.enemies.find((e) => e.x === wx && e.y === wy)));
+                if (g.map[wy][wx] !== 0) { g.px = wx; g.py = wy; }
+                triggerScreenEffect("trap_warp", false);
+                showEventOverlay(TRAP_OVERLAYS.warp);
+                trapMsg = "🌀 ワープトラップ！ 飛ばされた！";
+                break;
+              }
+              case "hunger": {
+                const loss = 20 + Math.floor(Math.random() * 20);
+                g.hunger = Math.max(0, g.hunger - loss);
+                triggerScreenEffect("trap_hunger", false);
+                showEventOverlay(TRAP_OVERLAYS.hunger);
+                trapMsg = `🍂 空腹トラップ！ 空腹度-${loss}！`;
+                break;
+              }
             }
-            case "sleep": {
-              const turns = 3 + Math.floor(Math.random() * 3);
-              // blindTurns は「動けない」全般に共用（眠り罠・盲目の巻物どちらも同じ効果）
-              g.blindTurns = (g.blindTurns || 0) + turns;
-              triggerScreenEffect("trap_sleep", false);
-              showEventOverlay(TRAP_OVERLAYS.sleep);
-              trapMsg = `💤 眠りトラップ！ ${turns}ターン動けない！`;
-              break;
-            }
-            case "warp": {
-              let tries = 0;
-              let wx = nx; let wy = ny;
-              do {
-                wx = 1 + Math.floor(Math.random() * (MW - 2));
-                wy = 1 + Math.floor(Math.random() * (MH - 2));
-                tries++;
-              } while (tries < 200 && (g.map[wy][wx] === 0 || g.enemies.find((e) => e.x === wx && e.y === wy)));
-              if (g.map[wy][wx] !== 0) { g.px = wx; g.py = wy; }
-              triggerScreenEffect("trap_warp", false);
-              showEventOverlay(TRAP_OVERLAYS.warp);
-              trapMsg = "🌀 ワープトラップ！ 飛ばされた！";
-              break;
-            }
-            case "hunger": {
-              const loss = 20 + Math.floor(Math.random() * 20);
-              g.hunger = Math.max(0, g.hunger - loss);
-              triggerScreenEffect("trap_hunger", false);
-              showEventOverlay(TRAP_OVERLAYS.hunger);
-              trapMsg = `🍂 空腹トラップ！ 空腹度-${loss}！`;
-              break;
-            }
+            if (trapMsg) queueMsg(trapMsg);
+          } else {
+            // 回避（20%）
+            queueMsg("🦶 罠を回避した！");
           }
-          g.traps.splice(trapIdx, 1);
-          if (trapMsg) queueMsg(trapMsg);
         }
       }
 
@@ -1088,6 +1094,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     if (e.sleeping) {
       e.sleeping = false;
       e.alert = true;
+      e.justWoke = true; // 起床ターンは行動しない
       addDmgPop(e.x, e.y, "wake", 0);
     }
     initiateAttack(g, e);
