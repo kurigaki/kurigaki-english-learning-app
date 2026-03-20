@@ -31,7 +31,7 @@ export type CaneCharges = {
   cane_warp: number;
 };
 import { generateMap, revealAround } from "@/lib/dungeon/map";
-import { adjEnemy, moveEnemies, adj, sameRoom } from "@/lib/dungeon/ai";
+import { adjEnemy, adjEnemyInDir, moveEnemies, adj, sameRoom } from "@/lib/dungeon/ai";
 import { drawMap, TILE } from "@/lib/dungeon/renderer";
 import {
   sfxHit,
@@ -233,7 +233,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     setUiState((prev) => {
       const newMsg = extra.msg ?? prev.msg;
       const msgLog = extra.msg && extra.msg !== prev.msg
-        ? [extra.msg, ...prev.msgLog].slice(0, 3)
+        ? [extra.msg, ...prev.msgLog].slice(0, 8)
         : prev.msgLog;
       return {
         ...prev,
@@ -276,15 +276,16 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
 
   const flushMsg = useCallback(() => {
     const q = msgQueueRef.current;
-    if (q.length > 0) {
-      const last = q[q.length - 1];
-      msgQueueRef.current = [];
-      setUiState((prev) => ({
-        ...prev,
-        msg: last,
-        msgLog: [last, ...prev.msgLog].slice(0, 3),
-      }));
-    }
+    if (q.length === 0) return "";
+    const msgs = [...q];
+    msgQueueRef.current = [];
+    const last = msgs[msgs.length - 1];
+    setUiState((prev) => ({
+      ...prev,
+      msg: last,
+      msgLog: [...msgs.slice().reverse(), ...prev.msgLog].slice(0, 8),
+    }));
+    return last;
   }, []);
 
   const addDmgPop = useCallback(
@@ -1092,9 +1093,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const g = gameRef.current;
     if (!g) return;
     if (uiState.quiz && !uiState.quizAnswered) return;
-    const e = adjEnemy(g);
+    // 向いている方向の敵を対象にする
+    const e = adjEnemyInDir(g);
     if (!e) {
-      setUiState((prev) => ({ ...prev, msg: "隣に敵がいない", msgLog: ["隣に敵がいない", ...prev.msgLog].slice(0, 3) }));
+      // 向きを変えて攻撃するよう案内
+      const anyAdj = adjEnemy(g);
+      const msg = anyAdj ? `⚔️ ${anyAdj.name}は別の方向にいる！向きを変えて攻撃` : "隣に敵がいない";
+      setUiState((prev) => ({ ...prev, msg, msgLog: [msg, ...prev.msgLog].slice(0, 6) }));
       return;
     }
     if (e.sleeping) {
@@ -1328,9 +1333,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               showNotification(`💨 ${hitEnemy.name}が倍速になった！`);
               break;
             case "slow_grass":
-              hitEnemy.slowTurns = (hitEnemy.slowTurns ?? 0) + 5;
+              hitEnemy.slowed = true;
+              hitEnemy.justSlowed = true;
               hitEnemy.slowSkip = false;
-              showNotification(`🐢 ${hitEnemy.name}が鈍足になった！`);
+              showNotification(`🐢 ${hitEnemy.name}が永続鈍足になった！`);
               break;
             case "sleep_grass":
               hitEnemy.sleeping = true;

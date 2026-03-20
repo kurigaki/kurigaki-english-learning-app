@@ -193,11 +193,26 @@ export function moveEnemies(
 
   for (const e of g.enemies) {
     if (e.sleeping) continue;
-    // 鈍足: 1ターンおきに行動
-    if ((e.slowTurns ?? 0) > 0) {
+    // justSlowed: 鈍足付与ターンは行動しない
+    if (e.justSlowed) {
+      e.justSlowed = false;
+      continue;
+    }
+    // 永続鈍足（slowed）: 1ターンおきに行動
+    if (e.slowed) {
       if (e.slowSkip) {
         e.slowSkip = false;
-        if (e.slowTurns! > 0) e.slowTurns!--;
+        continue;
+      } else {
+        e.slowSkip = true;
+        // 以降に通常行動へ
+      }
+    }
+    // 後方互換: 従来の slowTurns（一時的な鈍足）
+    if (!e.slowed && (e.slowTurns ?? 0) > 0) {
+      if (e.slowSkip) {
+        e.slowSkip = false;
+        if ((e.slowTurns ?? 0) > 0) e.slowTurns!--;
         continue;
       } else {
         e.slowSkip = true;
@@ -283,6 +298,12 @@ export function moveEnemies(
       // ■ 非認識中：廊下出口を目指して徘徊
       wanderMove(g, e);
     }
+
+    // プレイヤーが視野外になったらアラートをリセット
+    // （同じ部屋でも隣接でもない → 追跡をやめる）
+    if (e.alert && !sameRoom(g.rooms, e.x, e.y, px, py) && !adj(e.x, e.y, px, py)) {
+      e.alert = false;
+    }
   }
 
   // 倍速敵: 2回目の行動（攻撃のみ、移動はしない）
@@ -296,6 +317,10 @@ export function moveEnemies(
       g.p.hp = Math.max(0, g.p.hp - dmg);
       results.push({ enemyHit: true, damage: dmg, killedPlayer: g.p.hp <= 0, enemy: e });
     }
+    // 追加行動後も視野外ならアラートをリセット
+    if (e.alert && !sameRoom(g.rooms, e.x, e.y, px, py) && !adj(e.x, e.y, px, py)) {
+      e.alert = false;
+    }
   }
 
   return results;
@@ -303,4 +328,10 @@ export function moveEnemies(
 
 export function adjEnemy(g: GameState): Enemy | undefined {
   return g.enemies.find((e) => adj(e.x, e.y, g.px, g.py) && !e.sleeping);
+}
+
+// プレイヤーの向きの先にいる敵を返す（方向攻撃用）
+export function adjEnemyInDir(g: GameState): Enemy | undefined {
+  const { dx, dy } = g.playerDir ?? { dx: 0, dy: 1 };
+  return g.enemies.find((e) => e.x === g.px + dx && e.y === g.py + dy && !e.sleeping);
 }
