@@ -1417,6 +1417,18 @@ src/components/features/dungeon/
 - タイトル画面は `position: absolute` に変更（ヘッダーとの重なり解消）
 - コントローラー: 十字キー中央の待機ボタン削除、D-pad とアクションボタンの間隔を `gap:18px` に拡大
 
+**Phase 7: アイテム拡張・投げる・壷インベントリ ✅ 完了**
+- 草アイテムを飲むと自分に効果、投げると前方直線の最初の敵に当たって効果（草以外は3ダメージ）
+- 壷はアイテムを最大3個収納可能。壷を投げると中身が散らばり床に落ちる
+- プレイヤーステータス追加: `playerSleepTurns`（眠り）/ `playerConfusedTurns`（混乱）/ `playerSlowTurns`（鈍足）
+- 敵ステータス追加: `slowTurns` / `swiftTurns`（鈍足・倍速）/ `slowSkip`（鈍足の偶数ターンスキップ用）
+- 倍速: プレイヤーが2回行動してから敵のターン。敵に投げると敵が倍速（2回攻撃）
+- 鈍足: プレイヤー行動後に敵が2回行動。敵に投げると敵が鈍足（2ターンに1回しか行動しない）
+- フロア効果アイテム（scroll_sleep / scroll_confuse）: 同室の敵を対象。廊下では隣接敵のみ
+- アイテム使用もターン消費（`useItem` が `runEnemyTurn` を呼ぶ）
+- 投げる機能: アイテムオーバーレイに「投げる」ボタン追加、プレイヤーの向きに直線投射
+- 壷UIオーバーレイ: 壷を選択すると `DungeonJarOverlay` が開き中身の出し入れが可能
+
 ### セーブ仕様
 
 **中断セーブ方式**（風来のシレン準拠）:
@@ -1481,6 +1493,9 @@ const baseDamage = Math.max(1, Math.round(g.p.atk * (0.8 + Math.random() * 0.4))
   - 敵が移動して隣接 → そのターンは攻撃しない（次ターンに攻撃）
 - **移動先にプレイヤーがいる場合は移動不可**: `continue` でその方向をスキップ（斜め移動で着地→攻撃のバグを防ぐ）
 - 非アラート中は部屋の廊下入口を BFS で目指して徘徊
+- **鈍足（slowTurns）**: `slowSkip` フラグで偶数ターンの行動をスキップ。2ターンに1回しか動かない
+- **倍速（swiftTurns）**: メインループ終了後に追加ループで再行動（攻撃のみ）
+- **混乱（confusedTurns）**: ランダム方向に移動。移動先がプレイヤーと一致した場合は攻撃する
 
 ### 実装メモ
 
@@ -1496,6 +1511,11 @@ const baseDamage = Math.max(1, Math.round(g.p.atk * (0.8 + Math.random() * 0.4))
 - フォグオブウォー: `explored[y][x]` が `false` の部屋タイルは暗いブラウン描画。廊下は常に全表示。`revealAround()` が部屋入室時に部屋全体を開示。全体マップは `drawFullMap()` (MINI_TILE=7px)、`DungeonMapOverlay` コンポーネントで表示。M キー / Escape でトグル
 - 旧セーブの `explored` フィールドなし: `loadSave` で `explored ?? Array.from(...)` により全 true にフォールバック（旧プレイヤーがいきなり真っ暗になるのを防ぐ）
 - ダンジョンページ (`dungeon/page.tsx`): `position: fixed, top: var(--header-height), bottom: 0` でボトムナビを覆う。ゲーム中の誤タップ防止と全画面ゲーム体験を両立
+- `BottomNav.tsx`: `/dungeon` パスでは `return null`（完全非表示）でレイアウト競合を回避
+- 投げるロジック: プレイヤーの `playerDir` を向きとして直線移動。最初の壁または敵で停止
+- 壷インベントリ: `InventoryItem.contents?: InventoryItem[]`。`putInJar` / `takeFromJar` / `closeJar` で操作
+- `doTurn` 冒頭: `playerSleepTurns > 0` なら移動スキップ → `runEnemyTurn` → return。`playerConfusedTurns > 0` なら `mvDx/mvDy` をランダム方向に上書き
+- `doTurn` 末尾: `playerSlowTurns > 0` なら `runEnemyTurn` を追加で1回呼ぶ（敵2回行動）
 
 ---
 
