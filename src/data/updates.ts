@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-20",
+    version: "1.55.0",
+    title: "ダンジョン：中断セーブを「辞めた場所から再開」に変更",
+    content: [
+      "セーブタイミングを変更：フロア移動時のみ → 毎ターン終了後（移動・待機・クイズ回答・アイテム使用・購入）に自動セーブ",
+      "「続きから」を選ぶと辞めた瞬間の状態からそのまま再開できるように",
+      "死亡を利用した「有利なやり直し」が不可能になり、緊張感のある探索を実現",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-20",
     version: "1.54.0",
     title: "ダンジョンのバランス調整とバグ修正",
     content: [

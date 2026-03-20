@@ -1357,10 +1357,51 @@ src/components/features/dungeon/
 - `storage.checkAndUnlockAchievements()` で実績を自動解除
 - 間違えた単語は苦手単語リストに自動反映（`addRecord` + 正答率計算経由）
 
+**Phase 5: ローグライク演出・バランス ✅ 完了**
+- アニメーション: 画面フラッシュ（命中/ミス/ダメージ/レベルアップ/罠種別カラー）+ 画面シェイク
+- イベントオーバーレイ: 罠・モンスターハウス初入時にポップアップで効果を説明
+- バランス: 満腹度減少ペース緩和、草アイテムで満腹度+5回復、正解時回復廃止
+- モンスターハウス: 内部に報酬アイテム3〜5個配置
+- ショップ: 1フロアに1箇所・9アイテム固定配置（不思議のダンジョン風）
+- 中断セーブ: ターン毎オートセーブで「辞めた場所から再開」を実現
+
+### セーブ仕様
+
+**中断セーブ方式**（風来のシレン準拠）:
+- **セーブタイミング**: 毎ターン終了後（移動・待機・クイズ回答・アイテム使用・ショップ購入）に自動セーブ
+- **再開**: 「続きから」で辞めた瞬間の状態からそのまま再開
+- **リセット不可**: セーブは1枠のみ。死亡時はセーブデータ削除 → 死亡を利用したやり直し不可
+- **セーブAPI**: `storage.saveDungeonGame(save)` / `storage.loadDungeonGame()` / `storage.clearDungeonGame()`
+- **ストレージキー**: `dungeon_save`（localStorage）
+
+```typescript
+// DungeonSave の構造
+type DungeonSave = {
+  gameState: GameState;
+  questions: DungeonQuestion[];
+  savedAt: string; // ISO文字列
+};
+```
+
+### ローグライク演出（useDungeon.ts）
+
+| 演出 | トリガー | 実装 |
+|------|---------|------|
+| 赤フラッシュ | 敵からダメージ | `triggerScreenEffect("recv", true)` |
+| 緑フラッシュ | 正解 + 命中 | `triggerScreenEffect("correct", false)` |
+| 黄フラッシュ | ミス | `triggerScreenEffect("miss", false)` |
+| 金フラッシュ | レベルアップ | `triggerScreenEffect("levelup", false)` |
+| 罠カラー | 罠踏み（種別ごと） | `triggerScreenEffect("trap_damage" ｜ "trap_sleep" ｜ "trap_warp" ｜ "trap_hunger", shake)` |
+| 画面シェイク | 重いダメージ | `shake: true` を渡す（wrapRef に CSS アニメーション）|
+| トラップ説明 | 罠踏み時 | `showEventOverlay(TRAP_OVERLAYS.XXX)` |
+| モンスターハウス警告 | 初入時のみ | `showEventOverlay(MONSTER_HOUSE_OVERLAY)` |
+
 ### 実装メモ
 
-- ゲームの単語データは現在 `public/dungeon.html` 内の `QUESTIONS` 配列に直接書き込まれている
-- Phase 2 で統合する際は `saveBookWordIds` 的な仕組みでダンジョン起動時に単語セットを渡す設計が良い
+- 単語データは `useDungeon` の `questions` prop（ダンジョン起動時に単語帳から生成）
+- シェイクは `wrapRef`（キャンバスの親要素）に適用。`canvas.style.transform` を使う `scrollToPlayer` と競合しないよう分離
+- `screenEffect` / `eventOverlay` は `UIState` とは別 `useState` で管理（`setUiState` コールバック内から別セッター呼び出し可能にするため）
+- `seenMonsterHouseRef`: フロア毎の初回モンスターハウス入室フラグ（`goNextFloor` でリセット）
 - iframe 内の BGM は iframe をマウントするだけでは再生されない（ユーザー操作が必要）→ 現状の「START GAME」ボタンで問題なし
 
 ---
