@@ -1098,9 +1098,9 @@ function TitleScreen({
       position: "absolute", inset: 0, display: "flex", flexDirection: "column",
       alignItems: "center", justifyContent: "center",
       background: "radial-gradient(ellipse at 50% 40%,#1a0f2e 0%,#09090f 65%)",
-      gap: 10, padding: "16px 20px", overflowY: "auto",
+      gap: 6, padding: "8px 16px", overflowY: "auto",
     }}>
-      <div style={{ fontSize: 48, animation: "tfloat 3s ease-in-out infinite" }}>⚔️</div>
+      <div style={{ fontSize: 36, animation: "tfloat 3s ease-in-out infinite" }}>⚔️</div>
       <div style={{
         fontFamily: "'Press Start 2P', monospace",
         fontSize: "clamp(13px,3.5vw,22px)",
@@ -1122,7 +1122,7 @@ function TitleScreen({
       </div>
 
       {/* ── コース選択 ── */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 8, width: "100%", maxWidth: 340 }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: 6, width: "100%", maxWidth: 340 }}>
         <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text2, textAlign: "center" }}>
           コース選択
         </div>
@@ -1302,8 +1302,8 @@ function TitleScreen({
 
       {/* 操作説明（タイトル画面のみ） */}
       <div style={{
-        fontSize: 11, color: DC.text2, textAlign: "center", lineHeight: 2.1,
-        background: DC.bg3, border: `1px solid ${DC.border}`, padding: "12px 18px", borderRadius: 4, width: "100%", maxWidth: 360,
+        fontSize: 10, color: DC.text2, textAlign: "center", lineHeight: 1.8,
+        background: DC.bg3, border: `1px solid ${DC.border}`, padding: "8px 14px", borderRadius: 4, width: "100%", maxWidth: 360,
       }}>
         <b style={{ color: DC.text }}>移動:</b> 矢印/WASD &nbsp;|&nbsp; <b style={{ color: DC.text }}>攻撃:</b> Z/Space<br />
         <b style={{ color: DC.text }}>足踏み:</b> X/. &nbsp;|&nbsp; <b style={{ color: DC.text }}>道具:</b> I<br />
