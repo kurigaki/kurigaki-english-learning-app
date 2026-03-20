@@ -101,11 +101,11 @@ export function generateMap(g: GameState): void {
     }
   }
 
-  // items
+  // items（出現率: 通常部屋は75%、アイテム不足を防ぐ）
   g.itemTiles = [];
   const pool = getItemPool(g.floor);
   for (let ri = 1; ri < rooms.length - 1; ri++) {
-    if (Math.random() < 0.6) {
+    if (Math.random() < 0.75) {
       const r = rooms[ri];
       const ix = r.x + 1 + Math.floor(Math.random() * (r.w - 2));
       const iy = r.y + 1 + Math.floor(Math.random() * (r.h - 2));
@@ -135,7 +135,8 @@ export function generateMap(g: GameState): void {
     g.traps.push({ id: ++_trapId, x: tx, y: ty, type, visible: false });
   }
 
-  // Monster house (hard mode only, one room packed with enemies) — generated first to exclude from shop
+  // Monster house (hard mode only, one room packed with enemies + items as reward)
+  // — generated first to exclude from shop
   g.monsterHouseRoomIdx = null;
   if (g.dungeonMode === "hard" && rooms.length >= 4) {
     const mhRoomIdx = 1 + Math.floor(Math.random() * (rooms.length - 2));
@@ -160,11 +161,24 @@ export function generateMap(g: GameState): void {
         wanderTarget: null, lastDx: undefined, lastDy: undefined, stuckCount: 0,
       });
     }
+    // モンスターハウスの報酬: アイテムを3〜5個配置（挑む動機）
+    const mhItemPool = getItemPool(g.floor);
+    const mhItemCount = 3 + Math.floor(Math.random() * 3); // 3-5 items
+    for (let att = 0; att < mhItemCount * 10 && g.itemTiles.filter(
+      (it) => it.x >= mhRoom.x && it.x < mhRoom.x + mhRoom.w && it.y >= mhRoom.y && it.y < mhRoom.y + mhRoom.h
+    ).length < mhItemCount; att++) {
+      const ix = mhRoom.x + 1 + Math.floor(Math.random() * (mhRoom.w - 2));
+      const iy = mhRoom.y + 1 + Math.floor(Math.random() * (mhRoom.h - 2));
+      if (g.enemies.find((e) => e.x === ix && e.y === iy)) continue;
+      if (g.itemTiles.find((it) => it.x === ix && it.y === iy)) continue;
+      g.itemTiles.push({ x: ix, y: iy, id: mhItemPool[Math.floor(Math.random() * mhItemPool.length)] });
+    }
   }
 
-  // Shop (floor 2+ only, random room, not first/last, not the monster house room)
+  // Shop — 1フロアに1箇所、9アイテム固定配置
+  // (将来: 店主キャラ配置・泥棒システム対応のため shopRoomIdx を明示)
   g.shopItems = [];
-  if (g.floor >= 2 && rooms.length >= 4 && Math.random() < 0.7) {
+  if (g.floor >= 2 && rooms.length >= 3) {
     const excludedRoomIdx = g.monsterHouseRoomIdx ?? -1;
     const candidateIdxs: number[] = [];
     for (let i = 1; i < rooms.length - 1; i++) {
@@ -174,18 +188,34 @@ export function generateMap(g: GameState): void {
       const shopRoomIdx = candidateIdxs[Math.floor(Math.random() * candidateIdxs.length)];
       const shopRoom = rooms[shopRoomIdx];
       const shopPool = Object.keys(SHOP_PRICES);
-      const shopItemCount = 2 + Math.floor(Math.random() * 2); // 2-3 shop items
-      let placed = 0;
-      for (let att = 0; att < 30 && placed < shopItemCount; att++) {
-        const sx = shopRoom.x + 1 + Math.floor(Math.random() * (shopRoom.w - 2));
-        const sy = shopRoom.y + 1 + Math.floor(Math.random() * (shopRoom.h - 2));
-        if (g.enemies.find((e) => e.x === sx && e.y === sy)) continue;
-        if (g.itemTiles.find((i) => i.x === sx && i.y === sy)) continue;
-        if (g.traps.find((tr) => tr.x === sx && tr.y === sy)) continue;
-        if (g.shopItems.find((s) => s.x === sx && s.y === sy)) continue;
+      const SHOP_ITEM_COUNT = 9;
+      // ショップ部屋の敵・アイテム・罠を除去してスペースを確保
+      g.enemies = g.enemies.filter(
+        (e) => !(e.x >= shopRoom.x && e.x < shopRoom.x + shopRoom.w && e.y >= shopRoom.y && e.y < shopRoom.y + shopRoom.h)
+      );
+      g.itemTiles = g.itemTiles.filter(
+        (it) => !(it.x >= shopRoom.x && it.x < shopRoom.x + shopRoom.w && it.y >= shopRoom.y && it.y < shopRoom.y + shopRoom.h)
+      );
+      g.traps = g.traps.filter(
+        (tr) => !(tr.x >= shopRoom.x && tr.x < shopRoom.x + shopRoom.w && tr.y >= shopRoom.y && tr.y < shopRoom.y + shopRoom.h)
+      );
+      // 部屋内の全タイルをリストアップして均等配置
+      const shopTiles: { x: number; y: number }[] = [];
+      for (let sy2 = shopRoom.y + 1; sy2 < shopRoom.y + shopRoom.h - 1; sy2++) {
+        for (let sx2 = shopRoom.x + 1; sx2 < shopRoom.x + shopRoom.w - 1; sx2++) {
+          shopTiles.push({ x: sx2, y: sy2 });
+        }
+      }
+      // シャッフルして先頭から最大 SHOP_ITEM_COUNT 個配置
+      for (let i = shopTiles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shopTiles[i], shopTiles[j]] = [shopTiles[j], shopTiles[i]];
+      }
+      const itemsToPlace = Math.min(SHOP_ITEM_COUNT, shopTiles.length);
+      for (let k = 0; k < itemsToPlace; k++) {
+        const { x: sx, y: sy } = shopTiles[k];
         const itemId = shopPool[Math.floor(Math.random() * shopPool.length)];
         g.shopItems.push({ x: sx, y: sy, itemId, price: SHOP_PRICES[itemId] });
-        placed++;
       }
     }
   }
