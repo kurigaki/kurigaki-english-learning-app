@@ -2,7 +2,7 @@
 
 import type { GameState } from "./types";
 import { W, R } from "./types";
-import { MW, MH, TILE } from "./constants";
+import { MW, MH, TILE, TRAP_ICONS } from "./constants";
 
 export { TILE, MW, MH };
 
@@ -86,11 +86,38 @@ export function drawMap(canvas: HTMLCanvasElement, g: GameState, vpW: number, vp
     drawEmoji(ctx, "🔽", x, y, TILE - 6);
   }
 
+  // monster house room highlight
+  if (g.monsterHouseRoomIdx != null && g.rooms[g.monsterHouseRoomIdx]) {
+    const mhr = g.rooms[g.monsterHouseRoomIdx];
+    ctx.fillStyle = "rgba(224,82,82,0.06)";
+    ctx.fillRect(mhr.x * TILE, mhr.y * TILE, mhr.w * TILE, mhr.h * TILE);
+  }
+
   // items
   for (const it of g.itemTiles) {
     ctx.fillStyle = "rgba(245,200,66,0.08)";
     ctx.fillRect(it.x * TILE, it.y * TILE, TILE, TILE);
     drawEmoji(ctx, "✨", it.x, it.y, TILE - 8);
+  }
+
+  // shop items
+  if (g.shopItems) {
+    for (const s of g.shopItems) {
+      ctx.fillStyle = "rgba(82,200,150,0.12)";
+      ctx.fillRect(s.x * TILE, s.y * TILE, TILE, TILE);
+      drawEmoji(ctx, "🏪", s.x, s.y, TILE - 8);
+    }
+  }
+
+  // traps (only visible ones shown)
+  if (g.traps) {
+    for (const tr of g.traps) {
+      if (tr.visible) {
+        ctx.fillStyle = "rgba(180,60,60,0.10)";
+        ctx.fillRect(tr.x * TILE, tr.y * TILE, TILE, TILE);
+        drawEmoji(ctx, TRAP_ICONS[tr.type] || "⚠️", tr.x, tr.y, TILE - 10);
+      }
+    }
   }
 
   // enemies

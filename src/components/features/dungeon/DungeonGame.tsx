@@ -4,7 +4,9 @@ import React, { useEffect, useState, useCallback, useRef, useMemo } from "react"
 import Link from "next/link";
 import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
-import { useDungeon, type DungeonSave, type CaneCharges } from "./useDungeon";
+import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
+import type { DungeonMode } from "@/lib/dungeon/types";
+import { DUNGEON_MODE_KEY } from "@/lib/dungeon/constants";
 import { storage, type DungeonRunLog } from "@/lib/storage";
 import { SpeakButton } from "@/components/ui";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
@@ -67,12 +69,15 @@ function saveCoursePref(pref: CoursePref) {
 // ─── Sub-components ────────────────────────────────────────────────
 
 function DungeonHUD({
-  floor, hp, mhp, lv, exp, enext, turn,
+  floor, hp, mhp, lv, exp, enext, turn, hunger, maxHunger, gold,
 }: {
   floor: number; hp: number; mhp: number; lv: number; exp: number; enext: number; turn: number;
+  hunger: number; maxHunger: number; gold: number;
 }) {
   const hpPct = Math.max(0, (hp / mhp) * 100);
   const expPct = (exp / enext) * 100;
+  const hungerPct = Math.max(0, (hunger / maxHunger) * 100);
+  const hungerColor = hunger === 0 ? "#e05252" : hunger <= 20 ? "#f5a623" : "#52d47a";
 
   return (
     <div style={{
@@ -92,9 +97,12 @@ function DungeonHUD({
         <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: DC.text3, whiteSpace: "nowrap" }}>
           T{turn}
         </div>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.gold, whiteSpace: "nowrap" }}>
+          💰{gold}G
+        </div>
       </div>
-      <div style={{ display: "flex", gap: 8, flex: 1, justifyContent: "flex-end" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 1, minWidth: 68 }}>
+      <div style={{ display: "flex", gap: 6, flex: 1, justifyContent: "flex-end" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 1, minWidth: 60 }}>
           <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: DC.text2 }}>HP</div>
           <div style={{ height: 6, background: "#ffffff10", borderRadius: 1, overflow: "hidden" }}>
             <div style={{ height: "100%", width: `${hpPct}%`, background: "linear-gradient(90deg,#a02020,#e05252)", borderRadius: 1, transition: "width .3s" }} />
@@ -103,13 +111,22 @@ function DungeonHUD({
             {hp}/{mhp}
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 1, minWidth: 68 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 1, minWidth: 60 }}>
           <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: DC.text2 }}>LV/EXP</div>
           <div style={{ height: 6, background: "#ffffff10", borderRadius: 1, overflow: "hidden" }}>
             <div style={{ height: "100%", width: `${expPct}%`, background: "linear-gradient(90deg,#2060a0,#52a8e0)", borderRadius: 1, transition: "width .3s" }} />
           </div>
           <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: DC.text, textAlign: "right" }}>
             Lv{lv}
+          </div>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 1, minWidth: 60 }}>
+          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: DC.text2 }}>満腹度</div>
+          <div style={{ height: 6, background: "#ffffff10", borderRadius: 1, overflow: "hidden" }}>
+            <div style={{ height: "100%", width: `${hungerPct}%`, background: `linear-gradient(90deg,${hungerColor}90,${hungerColor})`, borderRadius: 1, transition: "width .3s" }} />
+          </div>
+          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: hunger <= 20 ? hungerColor : DC.text, textAlign: "right" }}>
+            {hunger}/{maxHunger}
           </div>
         </div>
       </div>
@@ -771,11 +788,82 @@ function DmgPopLayer({
   );
 }
 
+// ─── Shop Prompt ───────────────────────────────────────────────────
+function DungeonShopPromptBanner({
+  shopPrompt, gold, items, onBuy, onSkip,
+}: {
+  shopPrompt: ShopPrompt;
+  gold: number;
+  items: import("@/lib/dungeon/types").InventoryItem[];
+  onBuy: (prompt: ShopPrompt) => void;
+  onSkip: () => void;
+}) {
+  const def = ITEMS_DEF.find((d) => d.id === shopPrompt.itemId);
+  const canAfford = gold >= shopPrompt.price;
+  const alreadyHave = items.find((i) => i.id === shopPrompt.itemId);
+  return (
+    <div style={{
+      background: DC.bg3, border: `2px solid #52d47a60`,
+      padding: "8px 12px", flexShrink: 0,
+      display: "flex", alignItems: "center", gap: 10,
+    }}>
+      <div style={{ fontSize: 22 }}>{def?.icon ?? "📦"}</div>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: "#52d47a" }}>
+          🏪 ショップ
+        </div>
+        <div style={{ fontSize: 12, color: DC.text, marginTop: 2 }}>
+          {def?.name ?? shopPrompt.itemId}
+          {alreadyHave && <span style={{ color: DC.text3, marginLeft: 4 }}>（所持中）</span>}
+        </div>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: canAfford ? DC.gold : DC.hp, marginTop: 2 }}>
+          {shopPrompt.price}G &nbsp;<span style={{ color: DC.text3, fontSize: 7 }}>所持:{gold}G</span>
+        </div>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <button
+          onClick={() => onBuy(shopPrompt)}
+          disabled={!canAfford}
+          style={{
+            fontFamily: "'Press Start 2P', monospace", fontSize: 8,
+            color: canAfford ? "#09090f" : DC.text3,
+            background: canAfford ? DC.gold : DC.bg4,
+            border: "none", padding: "5px 10px", cursor: canAfford ? "pointer" : "default",
+            borderRadius: 3,
+          }}
+        >
+          購入[B]
+        </button>
+        <button
+          onClick={onSkip}
+          style={{
+            fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2,
+            background: DC.bg4, border: `1px solid ${DC.border}`,
+            padding: "5px 10px", cursor: "pointer", borderRadius: 3,
+          }}
+        >
+          スキップ
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function loadDungeonMode(): DungeonMode {
+  if (typeof window === "undefined") return "easy";
+  return (localStorage.getItem(DUNGEON_MODE_KEY) as DungeonMode | null) ?? "easy";
+}
+
+function saveDungeonMode(mode: DungeonMode) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(DUNGEON_MODE_KEY, mode);
+}
+
 // ─── Title screen ──────────────────────────────────────────────────
 function TitleScreen({
   onStart, onContinue, hasSave,
 }: {
-  onStart: (course: Course | "", stage: string, weakOnly: boolean) => void;
+  onStart: (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode) => void;
   onContinue: () => void;
   hasSave: boolean;
 }) {
@@ -783,6 +871,7 @@ function TitleScreen({
   const [selectedCourse, setSelectedCourse] = useState<Course | "">(pref.course);
   const [selectedStage, setSelectedStage] = useState<string>(pref.stage);
   const [weakOnly, setWeakOnly] = useState(false);
+  const [dungeonMode, setDungeonMode] = useState<DungeonMode>(() => loadDungeonMode());
   const [loading, setLoading] = useState(false);
   const weakWordCount = storage.getWeakWords().length;
 
@@ -797,8 +886,9 @@ function TitleScreen({
 
   const handleStart = async () => {
     if (!weakOnly) saveCoursePref({ course: selectedCourse, stage: selectedStage });
+    saveDungeonMode(dungeonMode);
     setLoading(true);
-    await onStart(selectedCourse, selectedStage, weakOnly);
+    await onStart(selectedCourse, selectedStage, weakOnly, dungeonMode);
     setLoading(false);
   };
 
@@ -935,6 +1025,40 @@ function TitleScreen({
           </span>
         </label>
 
+        {/* 難易度モード選択 */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text2, textAlign: "center" }}>
+            難易度
+          </div>
+          <div style={{ display: "flex", gap: 5 }}>
+            {(["easy", "hard"] as DungeonMode[]).map((m) => {
+              const active = dungeonMode === m;
+              const label = m === "easy" ? "🌱 英語学習メイン" : "⚔️ ローグライクを楽しむ";
+              return (
+                <button
+                  key={m}
+                  onClick={() => setDungeonMode(m)}
+                  style={{
+                    flex: 1, fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
+                    color: active ? "#09090f" : DC.text2,
+                    background: active ? (m === "easy" ? DC.green : DC.hp) : DC.bg3,
+                    border: `1px solid ${active ? (m === "easy" ? DC.green : DC.hp) : DC.border2}`,
+                    borderRadius: 4, padding: "7px 6px", cursor: "pointer",
+                    transition: "all 0.15s", lineHeight: 1.4, textAlign: "center",
+                  }}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+          <div style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 10, color: DC.text3, textAlign: "center", lineHeight: 1.5 }}>
+            {dungeonMode === "easy"
+              ? "空腹度の減りが緩やか・罠が少ない・モンスターハウスなし"
+              : "空腹度の減りが速い・罠が多い・モンスターハウスあり"}
+          </div>
+        </div>
+
         {/* 選択状態サマリ */}
         <div style={{
           fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
@@ -1013,6 +1137,9 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const [phase, setPhase] = useState<"title" | "game">("title");
   const [questions, setQuestions] = useState<DungeonQuestion[]>([]);
   const [progressiveStages, setProgressiveStages] = useState<import("@/data/words/courses").StageDefinition[] | undefined>(undefined);
+  const [dungeonMode, setDungeonMode] = useState<DungeonMode>(() =>
+    typeof window !== "undefined" ? (localStorage.getItem(DUNGEON_MODE_KEY) as DungeonMode | null) ?? "easy" : "easy"
+  );
   const [restoredDeath, setRestoredDeath] = useState<DeathState | null>(null);
   const pendingSaveRef = useRef<GameState | null>(null);
   const [hasSave, setHasSave] = useState(false);
@@ -1021,8 +1148,8 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     canvasRef, wrapRef, uiState, dmgPops,
     startGame, doTurn, playerAttack, doWait, answerQuiz,
     goNextFloor, useItem, openItems, closeItems, filterItems, retryGame,
-    loadSave, stopAutoWalk, handleCanvasTap,
-  } = useDungeon(questions, progressiveStages);
+    loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
+  } = useDungeon(questions, progressiveStages, dungeonMode);
 
   // sessionStorage からリザルト状態を復元 & localStorage セーブ確認
   useEffect(() => {
@@ -1060,7 +1187,8 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     startedRef.current = false;
   }, [stopAutoWalk]);
 
-  const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean) => {
+  const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode = "easy") => {
+    setDungeonMode(mode);
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
 
     // プログレッシブモード: コース全体選択（stage=""）かつステージが存在する場合
@@ -1158,6 +1286,9 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         if (k === "4") { ev.preventDefault(); answerQuiz(uiState.quiz.choiceOrder[3]); return; }
       }
 
+      // Shop buy shortcut
+      if ((k === "b" || k === "B") && uiState.shopPrompt) { ev.preventDefault(); buyFromShop(uiState.shopPrompt); return; }
+
       // Movement（手動操作はオートウォークを停止）
       if (k === "ArrowUp" || k === "w" || k === "W") { ev.preventDefault(); stopAutoWalk(); doTurn(0, -1); }
       else if (k === "ArrowDown" || k === "s" || k === "S") { ev.preventDefault(); stopAutoWalk(); doTurn(0, 1); }
@@ -1172,7 +1303,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [
-    phase, uiState, answerQuiz, closeItems, doTurn, doWait, goNextFloor,
+    phase, uiState, answerQuiz, buyFromShop, closeItems, doTurn, doWait, goNextFloor,
     openItems, playerAttack, stopAutoWalk,
   ]);
 
@@ -1215,7 +1346,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   if (phase === "title") {
     return (
       <div style={{ width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}>
-        <TitleScreen onStart={handleStart} onContinue={handleContinue} hasSave={hasSave} />
+        <TitleScreen onStart={handleStart as (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode) => void} onContinue={handleContinue} hasSave={hasSave} />
       </div>
     );
   }
@@ -1239,6 +1370,9 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         exp={uiState.exp}
         enext={uiState.enext}
         turn={uiState.turn}
+        hunger={uiState.hunger}
+        maxHunger={uiState.maxHunger}
+        gold={uiState.gold}
       />
 
       {/* Map */}
@@ -1299,6 +1433,17 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
           </div>
         );
       })()}
+
+      {/* Shop prompt */}
+      {uiState.shopPrompt && (
+        <DungeonShopPromptBanner
+          shopPrompt={uiState.shopPrompt}
+          gold={uiState.gold}
+          items={uiState.items}
+          onBuy={buyFromShop}
+          onSkip={skipShop}
+        />
+      )}
 
       {/* Controls */}
       <DungeonControls
