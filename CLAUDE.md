@@ -1439,6 +1439,16 @@ src/components/features/dungeon/
 - 投げ外れ全般: 草・杖・巻物・食料・特殊アイテムが外れると `g.itemTiles` に追加（床に落下・拾い直し可）
 - `lineEnemy()` は `applyItem` callback 内部に定義したローカルヘルパー
 
+**Phase 9: 方向攻撃・敵AI改善・通知ログ改善 ✅ 完了**
+- `adjEnemyInDir(g)`: `playerDir` 方向の1マス先にいる敵のみ返す（`ai.ts` に追加）
+- `playerAttack`: `adjEnemy` → `adjEnemyInDir` に変更。向きと異なる方向に敵がいる場合は「向きを変えて攻撃」案内
+- 鈍足の永続化: `Enemy.slowed?: boolean`（永続）+ `Enemy.justSlowed?: boolean`（付与ターンスキップ）
+  - `throwItem` で `slow_grass` 投擲時 → `slowed=true, justSlowed=true`
+  - `moveEnemies` で `justSlowed → slowed(1ターンおき) → slowTurns(後方互換)` の順で処理
+- 視野外アラートリセット: `moveEnemies` ループ末尾で `!sameRoom && !adj` → `e.alert=false`（swift追加行動後も適用）
+- `flushMsg` 改善: 全キューメッセージを `msgLog` に追加（逆順で先頭へ、上限8件）→ 同ターンの複数メッセージが全て残る
+- `msgLog` 表示件数: 3 → 4 件（`DungeonGame.tsx`）
+
 ### セーブ仕様
 
 **中断セーブ方式**（風来のシレン準拠）:
