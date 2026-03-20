@@ -1300,6 +1300,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode = "easy") => {
     setDungeonMode(mode);
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
+    setRestoredDeath(null);
 
     // プログレッシブモード: コース全体選択（stage=""）かつステージが存在する場合
     const courseDef = course && course in COURSE_DEFINITIONS
@@ -1350,6 +1351,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     if (!raw) return;
     pendingSaveRef.current = raw.gameState;
     setQuestions(raw.questions);
+    setRestoredDeath(null);
     setPhase("game");
   }, []);
 

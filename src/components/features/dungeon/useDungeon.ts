@@ -1137,27 +1137,29 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         // 回答履歴を記録
         g.answeredQuestions.push({ question: q, correct });
 
+        // ── ダメージ計算（正解/不正解で共通のベース値を先に確定） ──────────
+        // 正解ダメージ: ATK × rand(0.8〜1.2)
+        const baseDamage = Math.max(1, Math.round(g.p.atk * (0.8 + Math.random() * 0.4)));
+        // 会心・必中は正解/不正解に関わらず特例扱い（ここで消費）
+        crit = g.powerUp;
+        g.powerUp = false;
+        const sureHit = g.sureHit;
+        g.sureHit = false;
+
         if (correct) {
           g.correct++;
           g.missedWords = g.missedWords.filter((w) => w !== q.word);
           sfxCorrect();
-          const hitRate = g.sureHit ? 1 : 0.9;
-          g.sureHit = false;
-          const hit = Math.random() < hitRate;
+          // 命中率: 通常90%、必中の巻物なら100%
+          const hit = Math.random() < (sureHit ? 1 : 0.9);
           if (hit) {
-            damage = g.p.atk + Math.floor(Math.random() * 3);
-            crit = g.powerUp;
-            if (crit) {
-              damage *= 2;
-              g.powerUp = false;
-            }
+            damage = crit ? baseDamage * 2 : baseDamage;
             e.hp = Math.max(0, e.hp - damage);
             if (crit) { sfxCrit(); } else { sfxHit(); }
             addDmgPop(e.x, e.y, crit ? "crit" : "hit", damage);
             triggerScreenEffect("correct", false);
             queueMsg(`✅ 正解！ ${e.name}に${damage}ダメージ${crit ? " 会心！" : ""}`);
           } else {
-            g.powerUp = false;
             miss = true;
             sfxMiss();
             addDmgPop(e.x, e.y, "miss", 0);
@@ -1168,22 +1170,17 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           g.wrong++;
           if (!g.missedWords.includes(q.word)) g.missedWords.push(q.word);
           sfxWrong();
-          const hitRate = g.sureHit ? 0.55 : 0.4;
-          g.sureHit = false;
-          const hit = Math.random() < hitRate;
+          // 命中率: 正解の半分（45%）、必中の巻物は不正解でも100%
+          // ダメージ: 正解ダメージの半分（会心は不正解でも正解ダメージ×2の特例）
+          const hit = Math.random() < (sureHit ? 1 : 0.45);
           if (hit) {
-            damage = 1 + Math.floor(Math.random() * 2);
-            if (g.powerUp) {
-              damage = Math.ceil(damage * 1.5);
-              g.powerUp = false;
-            }
+            damage = crit ? baseDamage * 2 : Math.max(1, Math.floor(baseDamage / 2));
             e.hp = Math.max(0, e.hp - damage);
-            sfxHit();
-            addDmgPop(e.x, e.y, "hit", damage);
+            if (crit) { sfxCrit(); } else { sfxHit(); }
+            addDmgPop(e.x, e.y, crit ? "crit" : "hit", damage);
             triggerScreenEffect("miss", false);
-            queueMsg(`❌ 不正解（正解:${q.ans}） ${e.name}に${damage}dmg`);
+            queueMsg(`❌ 不正解（正解:${q.ans}） ${e.name}に${damage}dmg${crit ? " 会心！" : ""}`);
           } else {
-            g.powerUp = false;
             miss = true;
             sfxMiss();
             addDmgPop(e.x, e.y, "miss", 0);

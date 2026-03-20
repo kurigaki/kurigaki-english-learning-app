@@ -221,9 +221,11 @@ export function moveEnemies(
     }
 
     // アラート判定：同じ部屋 or 隣接でプレイヤーを認識
+    // このターンに初めて認識した場合は行動しない（移動＋攻撃の2ターン行動を防ぐ）
     if (!e.alert) {
       if (sameRoom(g.rooms, e.x, e.y, px, py) || adj(e.x, e.y, px, py)) {
         e.alert = true;
+        continue;
       }
     }
 
