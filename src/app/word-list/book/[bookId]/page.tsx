@@ -790,7 +790,7 @@ export default function BookDetailPage() {
               className="flex items-center justify-center gap-2 flex-1 py-3 bg-orange-500 text-white font-bold rounded-2xl hover:bg-orange-600 transition-colors text-sm shadow-sm"
             >
               <span className="emoji-icon">⚡</span>
-              タイムアタック
+              スピードチャレンジ
             </button>
           </div>
         </div>
