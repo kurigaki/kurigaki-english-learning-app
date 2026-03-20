@@ -149,28 +149,38 @@ function drawCaneItem(ctx: CanvasRenderingContext2D, cx: number, y: number): voi
 }
 
 function drawFoodItem(ctx: CanvasRenderingContext2D, cx: number, y: number): void {
-  // おにぎり - 海苔（下部ラップ）
-  fr(ctx, "#1a2a12", cx - 7, y + 17, 14, 7);
-  // ご飯（三角）
-  ctx.fillStyle = "#f8f0e0";
+  // ── おにぎり ──
+  // ご飯（大きな三角形・クリーム白）
+  ctx.fillStyle = "#f0ece0";
   ctx.beginPath();
-  ctx.moveTo(cx, y + 8);
-  ctx.lineTo(cx - 8, y + 22);
-  ctx.lineTo(cx + 8, y + 22);
+  ctx.moveTo(cx, y + 2);           // 頂点
+  ctx.lineTo(cx - 11, y + 27);    // 左下
+  ctx.lineTo(cx + 11, y + 27);    // 右下
   ctx.closePath();
   ctx.fill();
-  // ハイライト
+  // 海苔（台形・下部1/3を覆う濃い緑/黒）
+  // 三角形の y+18 での幅 = 11 * (18-2)/(27-2) = 11 * 0.64 ≈ 7
+  ctx.fillStyle = "#1c2e12";
+  ctx.beginPath();
+  ctx.moveTo(cx - 7, y + 18);     // 左上
+  ctx.lineTo(cx + 7, y + 18);     // 右上
+  ctx.lineTo(cx + 11, y + 27);    // 右下
+  ctx.lineTo(cx - 11, y + 27);    // 左下
+  ctx.closePath();
+  ctx.fill();
+  // 海苔の明暗テクスチャ（横ライン2本）
+  fr(ctx, "#2a4018", cx - 6, y + 20, 12, 1);
+  fr(ctx, "#2a4018", cx - 8, y + 23, 16, 1);
+  // ご飯のハイライト（頂点付近の光沢）
   ctx.fillStyle = "#ffffff";
   ctx.beginPath();
-  ctx.moveTo(cx, y + 9);
-  ctx.lineTo(cx - 4, y + 18);
-  ctx.lineTo(cx + 4, y + 18);
+  ctx.moveTo(cx, y + 4);
+  ctx.lineTo(cx - 4, y + 14);
+  ctx.lineTo(cx + 4, y + 14);
   ctx.closePath();
   ctx.fill();
-  // 海苔のハイライト
-  fr(ctx, "#2a3a22", cx - 6, y + 18, 12, 2);
-  // 点（塩）
-  fr(ctx, "#ddddcc", cx - 1, y + 13, 1, 1);
+  // 塩の点
+  fr(ctx, "#e0dcd0", cx - 1, y + 10, 2, 2);
 }
 
 function drawJarItem(ctx: CanvasRenderingContext2D, cx: number, y: number): void {

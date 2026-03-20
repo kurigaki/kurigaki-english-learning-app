@@ -47,6 +47,7 @@ export type Enemy = {
   lastDx: number | undefined;
   lastDy: number | undefined;
   stuckCount: number;
+  justWoke?: boolean; // 起床したターンは行動しない
 };
 
 export type ItemDef = {

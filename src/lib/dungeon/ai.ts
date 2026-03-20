@@ -193,6 +193,11 @@ export function moveEnemies(
 
   for (const e of g.enemies) {
     if (e.sleeping) continue;
+    // 起床したターンは行動しない
+    if (e.justWoke) {
+      e.justWoke = false;
+      continue;
+    }
     // 封印カウントダウン
     if (e.sealed > 0) {
       e.sealed--;
