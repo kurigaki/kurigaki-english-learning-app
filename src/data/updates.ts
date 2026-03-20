@@ -33,6 +33,19 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-20",
+    version: "1.51.0",
+    title: "ダンジョン「全体」モードで段階的難易度を実装",
+    content: [
+      "コース全体（例：TOEIC 全体）を選ぶと、フロアが深くなるにつれ難しい単語が出現",
+      "TOEIC: B1F→500点, B2F→600点, B3F→700点, B4F→800点, B5F→900点",
+      "中学英語: B1-2F→中1, B3-4F→中2, B5F→中3 のように段階的に変化",
+      "ステージ変化のタイミングで「ここから〇〇の問題が出現！」と通知",
+      "ステージボタンの「全体」を右端に移動（各ステージと区別しやすく）",
+    ],
+    category: "feature",
+  },
+  {
+    date: "2026-03-20",
     version: "1.50.0",
     title: "ダンジョンのコース選択強化・UI大幅改善",
     content: [

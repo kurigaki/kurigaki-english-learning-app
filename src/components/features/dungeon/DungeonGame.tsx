@@ -804,8 +804,15 @@ function TitleScreen({
 
   // 選択中コース・ステージのラベル
   const courseLabel = DUNGEON_COURSE_LABELS[selectedCourse] ?? "全コース";
-  const stageLabel = courseStages.find((s) => s.stage === selectedStage)?.displayName ?? `${courseLabel} 全体`;
-  const selectionLabel = weakOnly ? "苦手単語モード" : (courseStages.length > 0 ? `${courseLabel} / ${stageLabel}` : courseLabel);
+  const stageLabel = courseStages.find((s) => s.stage === selectedStage)?.displayName ?? null;
+  const isProgressive = courseStages.length > 0 && selectedStage === "" && !weakOnly;
+  const selectionLabel = weakOnly
+    ? "苦手単語モード"
+    : courseStages.length > 0
+      ? stageLabel
+        ? `${courseLabel} / ${stageLabel}`
+        : `${courseLabel} 全体（フロアが深くなるほど難しい単語が出現）`
+      : courseLabel;
 
   return (
     <div style={{
@@ -867,20 +874,7 @@ function TitleScreen({
         {/* ステージ選択（コース選択時のみ表示） */}
         {courseStages.length > 0 && !weakOnly && (
           <div style={{ display: "flex", flexWrap: "wrap", gap: 4, justifyContent: "center" }}>
-            {/* 全体オプション */}
-            <button
-              onClick={() => setSelectedStage("")}
-              style={{
-                fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
-                color: selectedStage === "" ? "#09090f" : DC.text3,
-                background: selectedStage === "" ? DC.accent : DC.bg4,
-                border: `1px solid ${selectedStage === "" ? DC.accent : DC.border}`,
-                borderRadius: 3, padding: "4px 8px", cursor: "pointer",
-                transition: "all 0.15s",
-              }}
-            >
-              {courseLabel} 全体
-            </button>
+            {/* 各ステージボタン（先に表示） */}
             {courseStages.map((s) => {
               const active = selectedStage === s.stage;
               return (
@@ -900,6 +894,20 @@ function TitleScreen({
                 </button>
               );
             })}
+            {/* 全体オプション（右端） */}
+            <button
+              onClick={() => setSelectedStage("")}
+              style={{
+                fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
+                color: selectedStage === "" ? "#09090f" : DC.text3,
+                background: selectedStage === "" ? DC.accent : DC.bg4,
+                border: `1px solid ${selectedStage === "" ? DC.accent : DC.border}`,
+                borderRadius: 3, padding: "4px 8px", cursor: "pointer",
+                transition: "all 0.15s",
+              }}
+            >
+              全体
+            </button>
           </div>
         )}
 
@@ -929,8 +937,9 @@ function TitleScreen({
 
         {/* 選択状態サマリ */}
         <div style={{
-          fontFamily: "'DotGothic16', sans-serif", fontSize: 12, color: DC.text3,
-          textAlign: "center", padding: "3px 0",
+          fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
+          color: isProgressive ? DC.accent2 : DC.text3,
+          textAlign: "center", padding: "3px 4px", lineHeight: 1.5,
         }}>
           ▸ {selectionLabel}
         </div>
@@ -1003,6 +1012,7 @@ function TitleScreen({
 export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) {
   const [phase, setPhase] = useState<"title" | "game">("title");
   const [questions, setQuestions] = useState<DungeonQuestion[]>([]);
+  const [progressiveStages, setProgressiveStages] = useState<import("@/data/words/courses").StageDefinition[] | undefined>(undefined);
   const [restoredDeath, setRestoredDeath] = useState<DeathState | null>(null);
   const pendingSaveRef = useRef<GameState | null>(null);
   const [hasSave, setHasSave] = useState(false);
@@ -1012,7 +1022,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     startGame, doTurn, playerAttack, doWait, answerQuiz,
     goNextFloor, useItem, openItems, closeItems, filterItems, retryGame,
     loadSave, stopAutoWalk, handleCanvasTap,
-  } = useDungeon(questions);
+  } = useDungeon(questions, progressiveStages);
 
   // sessionStorage からリザルト状態を復元 & localStorage セーブ確認
   useEffect(() => {
@@ -1052,6 +1062,14 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
 
   const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean) => {
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
+
+    // プログレッシブモード: コース全体選択（stage=""）かつステージが存在する場合
+    const courseDef = course && course in COURSE_DEFINITIONS
+      ? COURSE_DEFINITIONS[course as Course]
+      : null;
+    const isProgMode = !weakOnly && !!course && !stage && (courseDef?.stages.length ?? 0) > 0;
+    setProgressiveStages(isProgMode ? courseDef!.stages : undefined);
+
     let url = "/api/dungeon-words";
     if (weakOnly) {
       const weakIds = storage.getWeakWords();
@@ -1061,6 +1079,8 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     } else if (course) {
       url += "?course=" + encodeURIComponent(course);
       if (stage) url += "&stage=" + encodeURIComponent(stage);
+      // プログレッシブモードはステージなしで全単語をロード（limit を大きめに）
+      if (isProgMode) url += "&limit=300";
     }
     let qs: DungeonQuestion[] = [];
     try {
