@@ -925,6 +925,18 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     [questions, progressiveStages]
   );
 
+  // ── セーブ（ターン毎オートセーブ） ──────────────────────────────
+  const saveGame = useCallback(() => {
+    const g = gameRef.current;
+    if (!g) return;
+    const save: DungeonSave = {
+      gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
+      questions,
+      savedAt: new Date().toISOString(),
+    };
+    storage.saveDungeonGame(save);
+  }, [questions]);
+
   const doTurn = useCallback(
     (dx: number, dy: number) => {
       const g = gameRef.current;
@@ -1057,8 +1069,11 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
 
       // ショッププロンプトを更新（runEnemyTurnのupdateUIより後に適用）
       setUiState((prev) => ({ ...prev, shopPrompt: newShopPrompt }));
+
+      // ターン終了後にオートセーブ（辞めた場所から再開できるよう）
+      saveGame();
     },
-    [addDmgPop, initiateAttack, queueMsg, runEnemyTurn, showEventOverlay, triggerScreenEffect, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
+    [addDmgPop, initiateAttack, queueMsg, runEnemyTurn, saveGame, showEventOverlay, triggerScreenEffect, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
   );
 
   const playerAttack = useCallback(() => {
@@ -1088,7 +1103,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     }
     queueMsg("足踏み中…");
     runEnemyTurn(g);
-  }, [goNextFloor, queueMsg, runEnemyTurn, uiState.quiz, uiState.quizAnswered]);
+    // ターン終了後にオートセーブ
+    saveGame();
+  }, [goNextFloor, queueMsg, runEnemyTurn, saveGame, uiState.quiz, uiState.quizAnswered]);
 
   const answerQuiz = useCallback(
     (chosen: string) => {
@@ -1184,11 +1201,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             onEnemyDied(g, e);
             setUiState((p) => ({ ...p, quiz: null, quizAnswered: false, quizResult: null }));
             runEnemyTurn(g);
+            saveGame();
           }, 500);
         } else {
           setTimeout(() => {
             setUiState((p) => ({ ...p, quiz: null, quizAnswered: false, quizResult: null }));
             runEnemyTurn(g);
+            saveGame();
           }, 750);
         }
 
@@ -1200,7 +1219,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         };
       });
     },
-    [addDmgPop, onEnemyDied, queueMsg, runEnemyTurn, triggerScreenEffect]
+    [addDmgPop, onEnemyDied, queueMsg, runEnemyTurn, saveGame, triggerScreenEffect]
   );
 
   const openItems = useCallback(() => {
@@ -1236,9 +1255,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
         closeItems();
         updateUI(g);
+        saveGame();
       }
     },
-    [applyItem, closeItems, goNextFloor, showNotification, updateUI]
+    [applyItem, closeItems, goNextFloor, saveGame, showNotification, updateUI]
   );
 
   const buyFromShop = useCallback(
@@ -1266,8 +1286,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       showNotification(`🏪 ${def?.name ?? shopPrompt.itemId}を購入！`);
       updateUI(g, { shopPrompt: null });
       redraw();
+      saveGame();
     },
-    [redraw, showNotification, updateUI]
+    [redraw, saveGame, showNotification, updateUI]
   );
 
   const skipShop = useCallback(() => {
@@ -1324,18 +1345,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     }
   }, [stopAutoWalk, scheduleWalkStep]);
 
-  // ── セーブ / ロード ──────────────────────────────────────────────
-  const saveGame = useCallback(() => {
-    const g = gameRef.current;
-    if (!g) return;
-    const save: DungeonSave = {
-      gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
-      questions,
-      savedAt: new Date().toISOString(),
-    };
-    storage.saveDungeonGame(save);
-  }, [questions]);
-
+  // ── ロード ──────────────────────────────────────────────────────
   const loadSave = useCallback((savedState: GameState) => {
     // Backward compatibility: fill in new fields if missing from old saves
     // Cast to partial to allow runtime saves missing these new fields
