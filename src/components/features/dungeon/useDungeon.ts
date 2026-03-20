@@ -342,6 +342,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         bestCorrect: Math.max(prevStats.bestCorrect, g.correct),
       };
       storage.saveDungeonStats(dungeonStats);
+      // ミッション進捗記録（ダンジョン1プレイ終了）
+      storage.recordModePlay("dungeon");
 
       // ラン履歴を記録
       storage.addDungeonRunLog({

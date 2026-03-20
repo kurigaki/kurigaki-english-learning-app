@@ -5,6 +5,7 @@ import { unifiedStorage } from "@/lib/unified-storage";
 import { Question, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
 import type { ManualMasteryLevel, WordStats } from "@/lib/storage";
+import { storage } from "@/lib/storage";
 import {
   saveQuizResultState,
   getQuizResultState,
@@ -161,6 +162,8 @@ export const useQuiz = () => {
         const previousUserData = await unifiedStorage.getUserData();
         const previousLevel = previousUserData.level;
         const previousStreak = previousUserData.streak;
+        // ミッション進捗記録
+        storage.recordModePlay("quiz");
         const updatedUserData = await unifiedStorage.recordStudySession(score, maxCombo);
         const dailyProgress = unifiedStorage.getDailyProgress(updatedUserData);
 
