@@ -3,6 +3,18 @@ export const R = 1 as const;
 export const C = 2 as const;
 export type TileType = 0 | 1 | 2;
 
+export type DungeonMode = "easy" | "hard";
+
+export type TrapType = "damage" | "sleep" | "warp" | "hunger";
+
+export type Trap = {
+  id: number;
+  x: number;
+  y: number;
+  type: TrapType;
+  visible: boolean;
+};
+
 export type Room = { x: number; y: number; w: number; h: number };
 
 export type EnemyDef = {
@@ -58,6 +70,8 @@ export type InventoryItem = {
 
 export type ItemTile = { x: number; y: number; id: string };
 
+export type ShopItem = { x: number; y: number; itemId: string; price: number };
+
 export type PlayerState = {
   hp: number;
   mhp: number;
@@ -93,6 +107,14 @@ export type GameState = {
   cane_sleep_charges: number;
   cane_seal_charges: number;
   cane_warp_charges: number;
+  // New roguelike mechanics
+  hunger: number;
+  maxHunger: number;
+  gold: number;
+  traps: Trap[];
+  shopItems: ShopItem[];
+  dungeonMode: DungeonMode;
+  monsterHouseRoomIdx: number | null;
 };
 
 export type DungeonQuestion = { wordId: number; word: string; ans: string; ch: string[]; stage?: string };
