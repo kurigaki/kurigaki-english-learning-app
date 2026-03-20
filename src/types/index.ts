@@ -150,6 +150,28 @@ export type UnlockedAchievement = {
 // 記憶度レベル
 export type MasteryLevel = "new" | "learning" | "familiar" | "mastered";
 
+// ── ミッション（日/週/月リセット型実績） ──────────────────────────────────
+export type MissionProgressKey = "quizPlays" | "speedPlays" | "dungeonPlays";
+
+export type Mission = {
+  id: string;
+  period: "daily" | "weekly" | "monthly";
+  name: string;
+  description: string;
+  icon: string;
+  target: number;
+  progressKey: MissionProgressKey;
+};
+
+/** 日/週/月ごとのプレイ回数と達成済みミッションID */
+export type PeriodProgress = {
+  periodKey: string; // 日: "YYYY-MM-DD"、週: "YYYY-MM-DD"(月曜日)、月: "YYYY-MM"
+  quizPlays: number;
+  speedPlays: number;
+  dungeonPlays: number;
+  completed: string[]; // 達成済みミッションID
+};
+
 // フラッシュカード表示用の単語データ
 export type FlashcardWord = {
   id: number;

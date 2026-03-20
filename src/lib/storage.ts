@@ -1,4 +1,5 @@
-import { LearningRecord, QuestionType, UnlockedAchievement, SpeedChallengeResult } from "@/types";
+import { LearningRecord, QuestionType, UnlockedAchievement, SpeedChallengeResult, PeriodProgress } from "@/types";
+import { MISSIONS } from "@/data/missions";
 import { ACHIEVEMENTS, getAchievementById } from "@/data/achievements";
 import { type SrsProgress, isDueForReview } from "./srs";
 
@@ -13,6 +14,9 @@ const DUNGEON_STATS_KEY = "dungeon_stats";
 const DUNGEON_LOG_KEY = "dungeon_run_log";
 const DUNGEON_SAVE_KEY = "dungeon_save";
 const DUNGEON_LOG_MAX = 10; // 保持する最大件数
+const DAILY_PROGRESS_KEY = "daily_progress";
+const WEEKLY_PROGRESS_KEY = "weekly_progress";
+const MONTHLY_PROGRESS_KEY = "monthly_progress";
 const DEFAULT_USER_ID = "default";
 export type ManualMasteryLevel = "unlearned" | "weak" | "vague" | "almost" | "remembered";
 
@@ -647,6 +651,83 @@ export const storage = {
   hasDungeonGame: (): boolean => {
     if (typeof window === "undefined") return false;
     return localStorage.getItem(DUNGEON_SAVE_KEY) !== null;
+  },
+
+  // ── ミッション進捗（日/週/月リセット）──────────────────────────────────────
+
+  /** ローカル日付文字列 "YYYY-MM-DD" */
+  _localDate: (): string => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  },
+
+  /** 今週月曜日の "YYYY-MM-DD" */
+  _weekStart: (): string => {
+    const d = new Date();
+    const day = d.getDay(); // 0=日 1=月 ... 6=土
+    const daysToMonday = day === 0 ? 6 : day - 1;
+    const mon = new Date(d.getTime() - daysToMonday * 86400000);
+    return `${mon.getFullYear()}-${String(mon.getMonth() + 1).padStart(2, "0")}-${String(mon.getDate()).padStart(2, "0")}`;
+  },
+
+  /** 今月の "YYYY-MM" */
+  _monthKey: (): string => {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+  },
+
+  _getOrInitProgress: (key: string, periodKey: string): PeriodProgress => {
+    try {
+      const raw = localStorage.getItem(key);
+      if (raw) {
+        const data = JSON.parse(raw) as PeriodProgress;
+        if (data.periodKey === periodKey) return data;
+      }
+    } catch { /* ignore */ }
+    return { periodKey, quizPlays: 0, speedPlays: 0, dungeonPlays: 0, completed: [] };
+  },
+
+  getDailyMissionProgress: (): PeriodProgress => {
+    if (typeof window === "undefined") return { periodKey: "", quizPlays: 0, speedPlays: 0, dungeonPlays: 0, completed: [] };
+    return storage._getOrInitProgress(DAILY_PROGRESS_KEY, storage._localDate());
+  },
+
+  getWeeklyMissionProgress: (): PeriodProgress => {
+    if (typeof window === "undefined") return { periodKey: "", quizPlays: 0, speedPlays: 0, dungeonPlays: 0, completed: [] };
+    return storage._getOrInitProgress(WEEKLY_PROGRESS_KEY, storage._weekStart());
+  },
+
+  getMonthlyMissionProgress: (): PeriodProgress => {
+    if (typeof window === "undefined") return { periodKey: "", quizPlays: 0, speedPlays: 0, dungeonPlays: 0, completed: [] };
+    return storage._getOrInitProgress(MONTHLY_PROGRESS_KEY, storage._monthKey());
+  },
+
+  /**
+   * モードプレイを記録する。日/週/月すべての進捗に加算し、
+   * 達成したミッションを `completed` に追加する。
+   */
+  recordModePlay: (mode: "quiz" | "speed" | "dungeon"): void => {
+    if (typeof window === "undefined") return;
+    const pk = mode === "quiz" ? "quizPlays" : mode === "speed" ? "speedPlays" : "dungeonPlays";
+
+    const update = (
+      key: string,
+      periodKey: string,
+      period: "daily" | "weekly" | "monthly",
+    ): void => {
+      const prog = storage._getOrInitProgress(key, periodKey);
+      prog[pk]++;
+      for (const m of MISSIONS.filter((ms) => ms.period === period && ms.progressKey === pk)) {
+        if (!prog.completed.includes(m.id) && prog[pk] >= m.target) {
+          prog.completed.push(m.id);
+        }
+      }
+      localStorage.setItem(key, JSON.stringify(prog));
+    };
+
+    update(DAILY_PROGRESS_KEY, storage._localDate(), "daily");
+    update(WEEKLY_PROGRESS_KEY, storage._weekStart(), "weekly");
+    update(MONTHLY_PROGRESS_KEY, storage._monthKey(), "monthly");
   },
 
   cleanupOrphanedData: (validWordIds: number[]): { records: number; srsEntries: number } => {
