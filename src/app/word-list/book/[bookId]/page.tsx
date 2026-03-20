@@ -773,24 +773,24 @@ export default function BookDetailPage() {
           <div className="max-w-4xl mx-auto flex gap-2">
             <button
               onClick={handleStartFlashcard}
-              className="flex items-center justify-center gap-2 flex-1 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold rounded-2xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm"
+              className="flex items-center justify-center gap-1.5 flex-1 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold rounded-2xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-xs whitespace-nowrap"
             >
               <span className="emoji-icon">🃏</span>
-              フラッシュカード
+              カード
             </button>
             <button
               onClick={handleStartQuiz}
-              className="flex items-center justify-center gap-2 flex-1 py-3 bg-primary-500 text-white font-bold rounded-2xl hover:bg-primary-600 transition-colors text-sm shadow-sm"
+              className="flex items-center justify-center gap-1.5 flex-1 py-3 bg-primary-500 text-white font-bold rounded-2xl hover:bg-primary-600 transition-colors text-xs whitespace-nowrap shadow-sm"
             >
               <span className="emoji-icon">📝</span>
               クイズ
             </button>
             <button
               onClick={handleStartTimeAttack}
-              className="flex items-center justify-center gap-2 flex-1 py-3 bg-orange-500 text-white font-bold rounded-2xl hover:bg-orange-600 transition-colors text-sm shadow-sm"
+              className="flex items-center justify-center gap-1.5 flex-1 py-3 bg-orange-500 text-white font-bold rounded-2xl hover:bg-orange-600 transition-colors text-xs whitespace-nowrap shadow-sm"
             >
               <span className="emoji-icon">⚡</span>
-              スピードチャレンジ
+              スピード
             </button>
           </div>
         </div>
