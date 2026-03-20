@@ -1396,12 +1396,41 @@ type DungeonSave = {
 | トラップ説明 | 罠踏み時 | `showEventOverlay(TRAP_OVERLAYS.XXX)` |
 | モンスターハウス警告 | 初入時のみ | `showEventOverlay(MONSTER_HOUSE_OVERLAY)` |
 
+### クイズ戦闘ダメージ仕様（`useDungeon.ts` > `answerQuiz`）
+
+設計思想: 「知らない単語でもクリアできる・知らない単語にチャレンジしてほしい」
+
+**ベースダメージ（正解/不正解共通で先に計算）**
+```typescript
+const baseDamage = Math.max(1, Math.round(g.p.atk * (0.8 + Math.random() * 0.4)));
+```
+
+| 状況 | 命中率 | ダメージ |
+|------|--------|---------|
+| 正解 | 90% | `baseDamage` |
+| 正解 + 必中の巻物 | 100% | `baseDamage` |
+| 不正解 | 45%（正解の半分） | `baseDamage ÷ 2`（最低1） |
+| 不正解 + 必中の巻物 | **100%**（必中なので不正解でも必ず当たる） | `baseDamage ÷ 2` |
+| 会心（パワーアップ中）| 正解/不正解どちらも変わらず | **`baseDamage × 2`**（防御貫通の特例） |
+
+**ポイント**
+- `crit`（会心）と `sureHit`（必中）はどちらも `if (correct)` の分岐の前に消費する
+- 不正解でも必中・会心が効く（アイテムの価値を落とさない）
+- `g.powerUp` / `g.sureHit` は両フラグとも回答時に必ずリセット
+
+### 敵AI仕様（`ai.ts` > `moveEnemies`）
+
+- **初認識ターンは行動しない**: `alert=false → true` に変わったターンは `continue` でスキップ（プレイヤーが隣接移動した瞬間に即攻撃されるバグを防ぐ）
+- アラート中に隣接していれば攻撃、離れていれば追跡移動
+- 非アラート中は部屋の廊下入口を BFS で目指して徘徊
+
 ### 実装メモ
 
 - 単語データは `useDungeon` の `questions` prop（ダンジョン起動時に単語帳から生成）
 - シェイクは `wrapRef`（キャンバスの親要素）に適用。`canvas.style.transform` を使う `scrollToPlayer` と競合しないよう分離
 - `screenEffect` / `eventOverlay` は `UIState` とは別 `useState` で管理（`setUiState` コールバック内から別セッター呼び出し可能にするため）
 - `seenMonsterHouseRef`: フロア毎の初回モンスターハウス入室フラグ（`goNextFloor` でリセット）
+- リザルト復元: `restoredDeath` state は `handleStart` / `handleContinue` 両方で必ず `null` にリセットする（しないと「新しく始める」後に前のリザルトが表示されるバグが発生）
 - iframe 内の BGM は iframe をマウントするだけでは再生されない（ユーザー操作が必要）→ 現状の「START GAME」ボタンで問題なし
 
 ---
