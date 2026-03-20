@@ -673,52 +673,84 @@ export function drawMap(
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  const exp = g.explored;
+  // explored がない（旧セーブ互換）場合は全開示
+  const isExp = (tx: number, ty: number): boolean =>
+    !exp || !exp[ty] || exp[ty][tx] === true;
+
   // マップタイル
   for (let ty = 0; ty < MH; ty++) {
     for (let tx = 0; tx < MW; tx++) {
       const t = g.map[ty][tx];
-      if (t === W) drawWall(ctx, tx, ty);
-      else if (t === R) drawFloor(ctx, tx, ty);
-      else drawCorridor(ctx, tx, ty);
+      if (t === W) {
+        if (isExp(tx, ty)) {
+          drawWall(ctx, tx, ty);
+        } else {
+          // 未探索の壁: 輪郭だけ暗く表示（部屋の形が分かる）
+          fr(ctx, "#0e0c18", tx * TILE, ty * TILE, TILE, TILE);
+          fr(ctx, "#1a1838", tx * TILE, ty * TILE, TILE, 1);
+          fr(ctx, "#1a1838", tx * TILE, ty * TILE, 1, TILE);
+        }
+      } else if (t === R) {
+        if (isExp(tx, ty)) {
+          drawFloor(ctx, tx, ty);
+        } else {
+          // 未探索の床: ほぼ真っ暗
+          fr(ctx, "#07061a", tx * TILE, ty * TILE, TILE, TILE);
+        }
+      } else {
+        if (isExp(tx, ty)) {
+          drawCorridor(ctx, tx, ty);
+        } else {
+          // 未探索の廊下: ほぼ真っ暗
+          fr(ctx, "#07061a", tx * TILE, ty * TILE, TILE, TILE);
+        }
+      }
     }
   }
 
-  // 階段
-  if (g.stairsPos) {
+  // 階段（探索済みのみ）
+  if (g.stairsPos && isExp(g.stairsPos.x, g.stairsPos.y)) {
     drawStairs(ctx, g.stairsPos.x, g.stairsPos.y);
   }
 
-  // モンスターハウスの部屋ハイライト
+  // モンスターハウスの部屋ハイライト（探索済みのみ）
   if (g.monsterHouseRoomIdx != null && g.rooms[g.monsterHouseRoomIdx]) {
     const mhr = g.rooms[g.monsterHouseRoomIdx];
-    ctx.fillStyle = "rgba(224,82,82,0.06)";
-    ctx.fillRect(mhr.x * TILE, mhr.y * TILE, mhr.w * TILE, mhr.h * TILE);
-  }
-
-  // アイテム（カテゴリ別描画）
-  for (const it of g.itemTiles) {
-    const cat = ITEMS_DEF.find((d) => d.id === it.id)?.cat;
-    drawItemTile(ctx, it.x, it.y, cat);
-  }
-
-  // ショップアイテム
-  if (g.shopItems) {
-    for (const s of g.shopItems) {
-      drawShopItemTile(ctx, s.x, s.y);
+    if (isExp(mhr.x, mhr.y)) {
+      ctx.fillStyle = "rgba(224,82,82,0.06)";
+      ctx.fillRect(mhr.x * TILE, mhr.y * TILE, mhr.w * TILE, mhr.h * TILE);
     }
   }
 
-  // 罠（踏んで可視化されたもの）
+  // アイテム（探索済みのみ）
+  for (const it of g.itemTiles) {
+    if (isExp(it.x, it.y)) {
+      const cat = ITEMS_DEF.find((d) => d.id === it.id)?.cat;
+      drawItemTile(ctx, it.x, it.y, cat);
+    }
+  }
+
+  // ショップアイテム（探索済みのみ）
+  if (g.shopItems) {
+    for (const s of g.shopItems) {
+      if (isExp(s.x, s.y)) drawShopItemTile(ctx, s.x, s.y);
+    }
+  }
+
+  // 罠（探索済みかつ可視のみ）
   if (g.traps) {
     for (const tr of g.traps) {
-      if (tr.visible) {
+      if (tr.visible && isExp(tr.x, tr.y)) {
         drawTrapTile(ctx, tr.x, tr.y, tr.type);
       }
     }
   }
 
-  // 敵
+  // 敵（探索済みのみ）
   for (const e of g.enemies) {
+    if (!isExp(e.x, e.y)) continue;
+
     // アラート状態の背景
     if (e.alert && !e.sleeping) {
       ctx.fillStyle = "rgba(224,82,82,0.10)";
@@ -752,10 +784,106 @@ export function drawMap(
     );
   }
 
-  // プレイヤー
+  // プレイヤー（常に表示）
   drawPlayer(ctx, g.px, g.py);
 
   scrollToPlayer(canvas, g, vpW, vpH);
+}
+
+// ── 全体マップ（オーバービュー）描画 ─────────────────────────────────────────
+const MINI_TILE = 7; // ミニマップ1タイルのピクセル数
+
+export const FULL_MAP_W = MW * MINI_TILE;
+export const FULL_MAP_H = MH * MINI_TILE;
+
+export function drawFullMap(canvas: HTMLCanvasElement, g: GameState): void {
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  const exp = g.explored;
+  const isExp = (tx: number, ty: number): boolean =>
+    !exp || !exp[ty] || exp[ty][tx] === true;
+
+  // 背景
+  ctx.fillStyle = "#05040e";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // タイル
+  for (let ty = 0; ty < MH; ty++) {
+    for (let tx = 0; tx < MW; tx++) {
+      const t = g.map[ty][tx];
+      const x = tx * MINI_TILE;
+      const y = ty * MINI_TILE;
+      const explored = isExp(tx, ty);
+
+      let color: string;
+      if (t === W) {
+        color = explored ? "#302858" : "#131228";
+      } else if (t === R) {
+        color = explored ? "#28244a" : "#07061a";
+      } else {
+        color = explored ? "#1e1c3c" : "#07061a";
+      }
+      ctx.fillStyle = color;
+      ctx.fillRect(x, y, MINI_TILE, MINI_TILE);
+    }
+  }
+
+  // 階段（探索済みのみ）
+  if (g.stairsPos && isExp(g.stairsPos.x, g.stairsPos.y)) {
+    ctx.fillStyle = "#4488cc";
+    ctx.fillRect(
+      g.stairsPos.x * MINI_TILE + 1,
+      g.stairsPos.y * MINI_TILE + 1,
+      MINI_TILE - 2,
+      MINI_TILE - 2,
+    );
+  }
+
+  // アイテム（探索済みのみ・黄色ドット）
+  ctx.fillStyle = "#f5c842";
+  for (const it of g.itemTiles) {
+    if (isExp(it.x, it.y)) {
+      ctx.beginPath();
+      ctx.arc(it.x * MINI_TILE + MINI_TILE / 2, it.y * MINI_TILE + MINI_TILE / 2, 2, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // ショップアイテム（探索済みのみ・緑ドット）
+  ctx.fillStyle = "#52d47a";
+  for (const s of g.shopItems ?? []) {
+    if (isExp(s.x, s.y)) {
+      ctx.beginPath();
+      ctx.arc(s.x * MINI_TILE + MINI_TILE / 2, s.y * MINI_TILE + MINI_TILE / 2, 2, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // 敵（探索済みのみ・赤ドット）
+  ctx.fillStyle = "#e05252";
+  for (const e of g.enemies) {
+    if (isExp(e.x, e.y)) {
+      ctx.beginPath();
+      ctx.arc(e.x * MINI_TILE + MINI_TILE / 2, e.y * MINI_TILE + MINI_TILE / 2, 2, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  // プレイヤー（常に表示・明るい黄色）
+  const plx = g.px * MINI_TILE + MINI_TILE / 2;
+  const ply = g.py * MINI_TILE + MINI_TILE / 2;
+  ctx.fillStyle = "#f5c842";
+  ctx.beginPath();
+  ctx.arc(plx, ply, 3, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.strokeStyle = "rgba(245,200,66,0.55)";
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.arc(plx, ply, 5, 0, Math.PI * 2);
+  ctx.stroke();
 }
 
 export function getCanvasScrollOffset(

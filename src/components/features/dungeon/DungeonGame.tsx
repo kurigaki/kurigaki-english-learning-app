@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, ScreenEffect, EventOverlay } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
+import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
 import { DUNGEON_MODE_KEY } from "@/lib/dungeon/constants";
 import { storage, type DungeonRunLog } from "@/lib/storage";
@@ -633,13 +634,14 @@ function DungeonDeathScreen({
 }
 
 function DungeonControls({
-  onDpad, onAttack, onWait, onItems, onStairs, showStairs,
+  onDpad, onAttack, onWait, onItems, onStairs, onMap, showStairs,
 }: {
   onDpad: (dx: number, dy: number) => void;
   onAttack: () => void;
   onWait: () => void;
   onItems: () => void;
   onStairs: () => void;
+  onMap: () => void;
   showStairs: boolean;
 }) {
   const dpStyle: React.CSSProperties = {
@@ -701,6 +703,11 @@ function DungeonControls({
         <button style={btnStyle} onClick={onWait}>
           <span style={{ fontSize: 15 }}>⏸</span>待機[X]
         </button>
+        <button style={btnStyle} onClick={onMap}>
+          <span style={{ fontSize: 15 }}>🗺</span>地図[M]
+        </button>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
         {showStairs && (
           <button style={{ ...btnStyle, borderColor: DC.accent2, color: DC.accent2 }} onClick={onStairs}>
             <span style={{ fontSize: 15 }}>🔽</span>降りる[Enter]
@@ -893,6 +900,73 @@ function EventOverlayModal({ overlay, onClose }: { overlay: EventOverlay; onClos
           to   { opacity: 1; transform: scale(1); }
         }
       `}</style>
+    </div>
+  );
+}
+
+// ─── Full Map Overlay ──────────────────────────────────────────────
+function DungeonMapOverlay({
+  gameState, onClose,
+}: {
+  gameState: GameState | null;
+  onClose: () => void;
+}) {
+  const mapCanvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    if (!gameState || !mapCanvasRef.current) return;
+    drawFullMap(mapCanvasRef.current, gameState);
+  }, [gameState]);
+
+  return (
+    <div
+      style={{
+        position: "absolute", inset: 0,
+        background: "rgba(0,0,0,0.82)",
+        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+        zIndex: 200,
+        animation: "dungeon-overlay-in 0.15s ease-out",
+      }}
+      onClick={onClose}
+    >
+      <div
+        style={{
+          background: DC.bg2,
+          border: `2px solid ${DC.border2}`,
+          borderRadius: 6,
+          padding: 10,
+          display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.gold }}>
+          🗺 ダンジョンマップ
+        </div>
+        <canvas
+          ref={mapCanvasRef}
+          width={FULL_MAP_W}
+          height={FULL_MAP_H}
+          style={{ display: "block", imageRendering: "pixelated", maxWidth: "90vw", maxHeight: "60vh", objectFit: "contain" }}
+        />
+        {/* 凡例 */}
+        <div style={{ display: "flex", gap: 12, fontSize: 10, color: DC.text2 }}>
+          <span><span style={{ color: DC.gold }}>●</span> 自分</span>
+          <span><span style={{ color: "#e05252" }}>●</span> 敵</span>
+          <span><span style={{ color: DC.gold, opacity: 0.7 }}>●</span> アイテム</span>
+          <span><span style={{ color: "#52d47a" }}>●</span> ショップ</span>
+          <span><span style={{ color: "#4488cc" }}>■</span> 階段</span>
+        </div>
+        <button
+          onClick={onClose}
+          style={{
+            fontFamily: "'Press Start 2P', monospace", fontSize: 8,
+            color: DC.bg, background: DC.text2, border: "none",
+            padding: "6px 18px", borderRadius: 3, cursor: "pointer",
+          }}
+        >
+          閉じる [M]
+        </button>
+      </div>
     </div>
   );
 }
@@ -1254,12 +1328,16 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const [hasSave, setHasSave] = useState(false);
 
   const {
-    canvasRef, wrapRef, uiState, dmgPops,
+    canvasRef, wrapRef, gameStateRef, uiState, dmgPops,
     startGame, doTurn, playerAttack, doWait, answerQuiz,
     goNextFloor, useItem, openItems, closeItems, filterItems, retryGame,
     loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
     screenEffect, eventOverlay, closeEventOverlay,
   } = useDungeon(questions, progressiveStages, dungeonMode);
+
+  const [showMap, setShowMap] = useState(false);
+  const openMap = useCallback(() => setShowMap(true), []);
+  const closeMap = useCallback(() => setShowMap(false), []);
 
   // sessionStorage からリザルト状態を復元 & localStorage セーブ確認
   useEffect(() => {
@@ -1413,6 +1491,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       else if (k === " " || k === "z" || k === "Z") { ev.preventDefault(); playerAttack(); }
       else if (k === "." || k === "x" || k === "X") { ev.preventDefault(); doWait(); }
       else if (k === ">" || k === "Enter") { ev.preventDefault(); if (uiState.onStairs) goNextFloor(); }
+      else if (k === "m" || k === "M") { ev.preventDefault(); setShowMap((v) => !v); }
     };
 
     document.addEventListener("keydown", handleKeyDown);
@@ -1521,6 +1600,9 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         {eventOverlay && (
           <EventOverlayModal overlay={eventOverlay} onClose={closeEventOverlay} />
         )}
+        {showMap && (
+          <DungeonMapOverlay gameState={gameStateRef.current} onClose={closeMap} />
+        )}
       </div>
 
       {/* Quiz panel */}
@@ -1584,6 +1666,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onWait={doWait}
         onItems={openItems}
         onStairs={goNextFloor}
+        onMap={openMap}
         showStairs={uiState.onStairs}
       />
 

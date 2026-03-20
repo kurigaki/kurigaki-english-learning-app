@@ -87,6 +87,7 @@ export type GameState = {
   p: PlayerState;
   items: InventoryItem[];
   map: TileType[][];
+  explored: boolean[][]; // 探索済みタイル（fog of war）
   rooms: Room[];
   px: number;
   py: number;

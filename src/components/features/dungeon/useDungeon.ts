@@ -30,7 +30,7 @@ export type CaneCharges = {
   cane_seal: number;
   cane_warp: number;
 };
-import { generateMap } from "@/lib/dungeon/map";
+import { generateMap, revealAround } from "@/lib/dungeon/map";
 import { adjEnemy, moveEnemies, adj } from "@/lib/dungeon/ai";
 import { drawMap, TILE } from "@/lib/dungeon/renderer";
 import {
@@ -124,6 +124,7 @@ export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMo
       { id: rice.id, name: rice.name, icon: rice.icon, cat: rice.cat, desc: rice.desc, count: 1 },
     ],
     map: [],
+    explored: [],
     rooms: [],
     px: 2,
     py: 2,
@@ -864,6 +865,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     }
     sfxStairs();
     generateMap(g);
+    revealAround(g, g.px, g.py); // 新フロアの開始位置を開く
 
     // プログレッシブモード: フロア移動時にステージ変化を通知
     let stageNotice = "";
@@ -964,6 +966,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // 移動
       g.px = nx;
       g.py = ny;
+      revealAround(g, nx, ny); // 移動先の視野を開く
       g.onStairs = !!(g.stairsPos && nx === g.stairsPos.x && ny === g.stairsPos.y);
 
       // 罠チェック（踏んでも80%の確率でかかる・罠は消えない）
@@ -1353,7 +1356,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   const loadSave = useCallback((savedState: GameState) => {
     // Backward compatibility: fill in new fields if missing from old saves
     // Cast to partial to allow runtime saves missing these new fields
-    const raw = savedState as Partial<GameState> & Omit<GameState, "hunger" | "maxHunger" | "gold" | "traps" | "shopItems" | "dungeonMode" | "monsterHouseRoomIdx">;
+    const raw = savedState as Partial<GameState> & Omit<GameState, "hunger" | "maxHunger" | "gold" | "traps" | "shopItems" | "dungeonMode" | "monsterHouseRoomIdx" | "explored">;
     const migrated: GameState = {
       ...savedState,
       hunger: raw.hunger ?? 100,
@@ -1363,6 +1366,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       shopItems: raw.shopItems ?? [],
       dungeonMode: raw.dungeonMode ?? "easy",
       monsterHouseRoomIdx: raw.monsterHouseRoomIdx ?? null,
+      // 旧セーブには explored がないため全開示でマイグレーション
+      explored: raw.explored ?? Array.from({ length: MH }, () => new Array(MW).fill(true)),
     };
     gameRef.current = migrated;
     const canvas = canvasRef.current;
@@ -1392,6 +1397,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const g = initGameState([], dungeonMode);
     gameRef.current = g;
     generateMap(g);
+    revealAround(g, g.px, g.py); // 開始位置の視野を開く
     // 前ゲームの death/quiz/showItems 等を確実にリセット（タイトルへ戻って再開始する場合に残留する）
     updateUI(g, {
       msg: "ダンジョンに入った！",
@@ -1431,6 +1437,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const g = initGameState(prevMissed, dungeonMode);
     gameRef.current = g;
     generateMap(g);
+    revealAround(g, g.px, g.py);
     updateUI(g, {
       death: null,
       quiz: null,
@@ -1469,6 +1476,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   return {
     canvasRef,
     wrapRef,
+    gameStateRef: gameRef, // マップオーバーレイ等で GameState を参照するために公開
     uiState,
     dmgPops,
     screenEffect,

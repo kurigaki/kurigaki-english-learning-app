@@ -2,6 +2,45 @@ import type { GameState, TileType, TrapType } from "./types";
 import { W, R, C } from "./types";
 import { MW, MH, ITEMS_DEF, ENEMIES_DEF, EASY_TRAP_TYPES, HARD_TRAP_TYPES, SHOP_PRICES } from "./constants";
 
+/** explored 配列を全 false で初期化 */
+export function initExplored(g: GameState): void {
+  g.explored = Array.from({ length: MH }, () => new Array(MW).fill(false));
+}
+
+/**
+ * プレイヤー位置を起点に視野を開く
+ * - 部屋内: 部屋全体＋壁ボーダー＋隣接廊下1マスを開示
+ * - 廊下 : 1タイル半径（8近傍）を開示
+ */
+export function revealAround(g: GameState, px: number, py: number): void {
+  if (!g.explored) return;
+  const mark = (x: number, y: number) => {
+    if (x >= 0 && x < MW && y >= 0 && y < MH) g.explored[y][x] = true;
+  };
+
+  const tile = g.map[py][px];
+  if (tile === R) {
+    // 部屋タイル: 部屋全体＋壁ボーダー（廊下入口も含む）を開示
+    const room = g.rooms.find(
+      (r) => px >= r.x && px < r.x + r.w && py >= r.y && py < r.y + r.h
+    );
+    if (room) {
+      for (let ry = room.y - 1; ry <= room.y + room.h; ry++) {
+        for (let rx = room.x - 1; rx <= room.x + room.w; rx++) {
+          mark(rx, ry);
+        }
+      }
+    }
+  } else {
+    // 廊下（または不明）: 1マス半径を開示
+    for (let dy = -1; dy <= 1; dy++) {
+      for (let dx = -1; dx <= 1; dx++) {
+        mark(px + dx, py + dy);
+      }
+    }
+  }
+}
+
 /** 部屋タイルのうち廊下に隣接しているタイル（部屋の入口）かどうかを判定 */
 function isRoomEntrance(m: TileType[][], x: number, y: number): boolean {
   for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
@@ -20,6 +59,7 @@ export function generateMap(g: GameState): void {
   }
   g.map = m;
   g.rooms = [];
+  initExplored(g);
 
   // generate rooms
   const rooms: { x: number; y: number; w: number; h: number }[] = [];
