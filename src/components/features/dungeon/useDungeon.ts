@@ -1097,11 +1097,18 @@ export function useDungeon(questions: DungeonQuestion[]) {
       canvas.style.width = MW * TILE + "px";
       canvas.style.height = MH * TILE + "px";
     }
+    // ゲーム開始直後にセーブ（「続きから」を有効にするため）
     setTimeout(() => {
+      const save: DungeonSave = {
+        gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
+        questions,
+        savedAt: new Date().toISOString(),
+      };
+      storage.saveDungeonGame(save);
       redraw();
       startBGM();
     }, 50);
-  }, [redraw, updateUI]);
+  }, [questions, redraw, updateUI]);
 
   const retryGame = useCallback(() => {
     storage.clearDungeonGame();

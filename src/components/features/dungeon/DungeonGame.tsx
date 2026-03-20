@@ -322,7 +322,7 @@ function DungeonItemOverlay({
   return (
     <div style={{
       position: "fixed", inset: 0, background: "#09090fee",
-      display: "flex", flexDirection: "column", padding: 14, overflowY: "auto", zIndex: 50,
+      display: "flex", flexDirection: "column", padding: 14, overflowY: "auto", zIndex: 400,
     }}>
       {/* ヘッダー行: タイトル + 常時表示の閉じるボタン */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4, flexShrink: 0 }}>
@@ -370,7 +370,9 @@ function DungeonItemOverlay({
             const def = ITEMS_DEF.find((d) => d.id === item.id);
             const catLabel = catLabels[item.cat] || "";
             const isSelected = idx === selectedIndex;
-            const isDepleted = item.count <= 0; // 杖で charges 切れ
+            const isDepleted = item.cat === "cane"
+              ? (caneCharges[item.id as keyof CaneCharges] ?? 0) <= 0
+              : item.count <= 0;
             return (
               <div
                 key={item.id}
@@ -1061,13 +1063,12 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const getTileFromEvent = useCallback((clientX: number, clientY: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return null;
+    // getBoundingClientRect() は CSS transform を含む画面上の座標を返す
+    // transform parsing は不要（二重計算になりタイル座標がずれるバグの原因）
     const rect = canvas.getBoundingClientRect();
-    const m = canvas.style.transform.match(/translate\(([^,]+)px,([^)]+)px\)/);
-    const tx = m ? parseFloat(m[1]) : 0;
-    const ty = m ? parseFloat(m[2]) : 0;
     return {
-      x: Math.floor((clientX - rect.left - tx) / TILE),
-      y: Math.floor((clientY - rect.top - ty) / TILE),
+      x: Math.floor((clientX - rect.left) / TILE),
+      y: Math.floor((clientY - rect.top) / TILE),
     };
   }, [canvasRef]);
 
