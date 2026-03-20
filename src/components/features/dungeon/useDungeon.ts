@@ -31,7 +31,7 @@ export type CaneCharges = {
   cane_warp: number;
 };
 import { generateMap, revealAround } from "@/lib/dungeon/map";
-import { adjEnemy, moveEnemies, adj } from "@/lib/dungeon/ai";
+import { adjEnemy, moveEnemies, adj, sameRoom } from "@/lib/dungeon/ai";
 import { drawMap, TILE } from "@/lib/dungeon/renderer";
 import {
   sfxHit,
@@ -82,6 +82,7 @@ export type UIState = {
   maxHunger: number;
   gold: number;
   shopPrompt: ShopPrompt | null;
+  openJarId: string | null;
 };
 
 const INITIAL_UI: UIState = {
@@ -108,6 +109,7 @@ const INITIAL_UI: UIState = {
   maxHunger: 100,
   gold: 0,
   shopPrompt: null,
+  openJarId: null,
 };
 
 export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMode = "easy"): GameState {
@@ -153,6 +155,10 @@ export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMo
     shopItems: [],
     dungeonMode,
     monsterHouseRoomIdx: null,
+    playerDir: { dx: 0, dy: 0 },
+    playerSleepTurns: 0,
+    playerConfusedTurns: 0,
+    playerSlowTurns: 0,
   };
 }
 
@@ -507,69 +513,57 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         case "heal_grass": {
           const v = 15;
           g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
-          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxItem();
-          notify(`💚 HPが${v}回復！満腹度+5`);
+          notify(`💚 HPが${v}回復！`);
           return true;
         }
         case "big_heal": {
           g.p.hp = g.p.mhp;
-          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxItem();
-          notify("💚 HPが全回復！満腹度+5");
+          notify("💚 HPが全回復！");
           return true;
         }
         case "poison_grass": {
           g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
-          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
           sfxItem();
-          notify("✨ 毒が消えた！満腹度+5");
+          notify("✨ 毒が消えた！HP+5");
           return true;
         }
         case "power_grass": {
-          g.p.atk += 2;
-          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
+          g.p.atk += 1;
           sfxLevelUp();
-          notify(`⚔️ 攻撃力が${g.p.atk}になった！満腹度+5`);
+          notify(`⚔️ 攻撃力が${g.p.atk}になった！`);
           return true;
         }
         case "hp_grass": {
-          g.p.mhp += 5;
-          g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
-          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
+          g.p.mhp += 3;
+          g.p.hp = Math.min(g.p.hp + 3, g.p.mhp);
           sfxLevelUp();
-          notify(`❤️ 最大HPが${g.p.mhp}になった！満腹度+5`);
+          notify(`❤️ 最大HPが${g.p.mhp}になった！`);
           return true;
         }
         case "swift_grass": {
-          g.swiftTurns = (g.swiftTurns || 0) + 3;
-          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
+          g.swiftTurns = (g.swiftTurns || 0) + 5;
           sfxItem();
-          notify("💨 素早くなった！（3ターン）満腹度+5");
+          notify("💨 倍速になった！（5ターン）");
+          return true;
+        }
+        case "slow_grass": {
+          g.playerSlowTurns = (g.playerSlowTurns || 0) + 5;
+          sfxWrong();
+          notify("🐢 鈍足になった！敵が2回行動する（5ターン）");
           return true;
         }
         case "sleep_grass": {
-          let cnt = 0;
-          g.enemies.forEach((e) => {
-            if (adj(e.x, e.y, g.px, g.py) && !e.sleeping) {
-              e.sleeping = true;
-              e.alert = false;
-              cnt++;
-            }
-          });
-          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
-          sfxItem();
-          notify(cnt > 0 ? `💤 ${cnt}体の敵が眠った！満腹度+5` : "近くに敵がいない");
-          redraw();
+          g.playerSleepTurns = (g.playerSleepTurns || 0) + 3;
+          sfxWrong();
+          notify("💤 眠ってしまった！3ターン動けない！");
           return true;
         }
         case "confuse_grass": {
-          g.enemies.forEach((e) => {
-            e.confused = (e.confused || 0) + 4;
-          });
-          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
-          sfxItem();
-          notify("🌀 敵が混乱した！満腹度+5");
+          g.playerConfusedTurns = (g.playerConfusedTurns || 0) + 4;
+          sfxWrong();
+          notify("🌀 混乱した！4ターン方向が乱れる！");
           return true;
         }
         case "warp_grass": {
@@ -587,41 +581,29 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           if (g.map[ny][nx] !== 0) {
             g.px = nx;
             g.py = ny;
-            g.hunger = Math.min(g.maxHunger, g.hunger + 5);
             sfxStairs();
-            notify("✨ ワープした！満腹度+5");
+            notify("✨ ワープした！");
             redraw();
           }
           return true;
         }
         case "fire_grass": {
-          let cnt = 0;
-          const dead: Enemy[] = [];
-          g.enemies.forEach((e) => {
-            if (Math.abs(e.x - g.px) <= 2 && Math.abs(e.y - g.py) <= 2) {
-              e.hp = Math.max(0, e.hp - 8);
-              cnt++;
-              addDmgPop(e.x, e.y, "hit", 8);
-              if (e.hp <= 0) dead.push(e);
-            }
-          });
-          dead.forEach((e) => {
-            setTimeout(() => {
-              onEnemyDied(g, e);
-              updateUI(g);
-              redraw();
-            }, 100);
-          });
-          g.enemies = g.enemies.filter((e) => e.hp > 0);
-          g.hunger = Math.min(g.maxHunger, g.hunger + 5);
+          const fe = adjEnemy(g);
+          if (!fe) {
+            sfxItem();
+            notify("🔥 正面に敵がいない");
+            return true;
+          }
+          const fdmg = 15;
+          fe.hp = Math.max(0, fe.hp - fdmg);
+          addDmgPop(fe.x, fe.y, "hit", fdmg);
           sfxCrit();
-          notify(cnt > 0 ? `🔥 ${cnt}体に8ダメージ！満腹度+5` : "周囲に敵がいない");
+          notify(`🔥 ${fe.name}に${fdmg}ダメージ！`);
+          if (fe.hp <= 0) {
+            setTimeout(() => { onEnemyDied(g, fe); updateUI(g); redraw(); }, 100);
+            g.enemies = g.enemies.filter((en) => en.id !== fe.id);
+          }
           redraw();
-          return true;
-        }
-        case "scroll_identify": {
-          sfxItem();
-          notify("🔍 アイテムの正体が分かった！（フレーバー）");
           return true;
         }
         case "scroll_hp": {
@@ -640,16 +622,18 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         case "scroll_attack": {
           g.powerUp = true;
           sfxItem();
-          notify("💪 次の攻撃が強化！");
+          notify("💪 次の攻撃が強化！（ダメージ×2）");
           return true;
         }
         case "scroll_sleep": {
-          g.enemies.forEach((e) => {
-            e.sleeping = true;
-            e.alert = false;
-          });
+          // 部屋なら同部屋の敵、廊下なら隣接敵
+          const isInRoom = g.map[g.py][g.px] === 1;
+          const targets = isInRoom
+            ? g.enemies.filter((e) => sameRoom(g.rooms, e.x, e.y, g.px, g.py))
+            : g.enemies.filter((e) => adj(e.x, e.y, g.px, g.py));
+          targets.forEach((e) => { e.sleeping = true; e.alert = false; });
           sfxItem();
-          notify("💤 全ての敵が眠った！");
+          notify(targets.length > 0 ? `💤 ${targets.length}体の敵が眠った！` : "近くに敵がいない");
           redraw();
           return true;
         }
@@ -690,26 +674,27 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "scroll_map": {
+          // アイテム・階段の位置を探索済みにする
+          if (g.stairsPos) g.explored[g.stairsPos.y][g.stairsPos.x] = true;
+          g.itemTiles.forEach((it) => { g.explored[it.y][it.x] = true; });
           sfxItem();
-          notify("🗺️ フロアの地形が頭に浮かんだ！");
+          notify("🗺️ フロアのアイテムと階段が分かった！");
           return true;
         }
-        case "scroll_blind": {
-          g.blindTurns = (g.blindTurns || 0) + 4;
-          sfxWrong();
-          notify("💀 呪われた！数ターン動けない！");
+        case "scroll_confuse": {
+          const isInRoom2 = g.map[g.py][g.px] === 1;
+          const targets2 = isInRoom2
+            ? g.enemies.filter((e) => sameRoom(g.rooms, e.x, e.y, g.px, g.py))
+            : g.enemies.filter((e) => adj(e.x, e.y, g.px, g.py));
+          targets2.forEach((e) => { e.confused = (e.confused || 0) + 4; });
+          sfxItem();
+          notify(targets2.length > 0 ? `🌀 ${targets2.length}体の敵が混乱した！` : "近くに敵がいない");
           return true;
         }
         case "cane_blow": {
-          if (g.cane_blow_charges <= 0) {
-            notify("💨 杖の魔力が尽きた");
-            return false;
-          }
+          if (g.cane_blow_charges <= 0) { notify("💨 杖の魔力が尽きた"); return false; }
           const e = adjEnemy(g);
-          if (!e) {
-            notify("🪄 正面に敵がいない");
-            return false;
-          }
+          if (!e) { notify("🪄 正面に敵がいない"); return false; }
           let tx = e.x;
           let ty = e.y;
           const dx = e.x - g.px;
@@ -719,12 +704,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             const ny = ty + dy;
             if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) break;
             if (!g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny)) {
-              tx = nx;
-              ty = ny;
+              tx = nx; ty = ny;
             } else break;
           }
-          e.x = tx;
-          e.y = ty;
+          e.x = tx; e.y = ty;
           g.cane_blow_charges--;
           sfxCrit();
           notify(`💨 ${e.name}を吹き飛ばした！（残${g.cane_blow_charges}回）`);
@@ -732,17 +715,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "cane_sleep": {
-          if (g.cane_sleep_charges <= 0) {
-            notify("😴 杖の魔力が尽きた");
-            return false;
-          }
+          if (g.cane_sleep_charges <= 0) { notify("😴 杖の魔力が尽きた"); return false; }
           const e = adjEnemy(g);
-          if (!e) {
-            notify("🪄 正面に敵がいない");
-            return false;
-          }
-          e.sleeping = true;
-          e.alert = false;
+          if (!e) { notify("🪄 正面に敵がいない"); return false; }
+          e.sleeping = true; e.alert = false;
           g.cane_sleep_charges--;
           sfxItem();
           notify(`💤 ${e.name}が眠った！（残${g.cane_sleep_charges}回）`);
@@ -750,15 +726,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "cane_seal": {
-          if (g.cane_seal_charges <= 0) {
-            notify("🔒 杖の魔力が尽きた");
-            return false;
-          }
+          if (g.cane_seal_charges <= 0) { notify("🔒 杖の魔力が尽きた"); return false; }
           const e = adjEnemy(g);
-          if (!e) {
-            notify("🪄 正面に敵がいない");
-            return false;
-          }
+          if (!e) { notify("🪄 正面に敵がいない"); return false; }
           e.sealed = (e.sealed || 0) + 5;
           e.alert = false;
           g.cane_seal_charges--;
@@ -767,15 +737,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "cane_warp": {
-          if (g.cane_warp_charges <= 0) {
-            notify("🌀 杖の魔力が尽きた");
-            return false;
-          }
+          if (g.cane_warp_charges <= 0) { notify("🌀 杖の魔力が尽きた"); return false; }
           const e = adjEnemy(g);
-          if (!e) {
-            notify("🪄 正面に敵がいない");
-            return false;
-          }
+          if (!e) { notify("🪄 正面に敵がいない"); return false; }
           g.enemies = g.enemies.filter((en) => en.id !== e.id);
           g.cane_warp_charges--;
           sfxStairs();
@@ -798,47 +762,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           notify("🍱 HP全回復＆最大HP+3！空腹も満たされた！");
           return true;
         }
-        case "herb": {
-          const v = 12;
-          g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
-          g.hunger = Math.min(g.maxHunger, g.hunger + 20);
-          sfxItem();
-          notify(`💚 HPが${v}回復！空腹度+20`);
-          return true;
-        }
         case "jar_store": {
-          const v = 18;
-          g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
-          g.hunger = Math.min(g.maxHunger, g.hunger + 30);
-          sfxItem();
-          notify(`🫙 壷から${v}HP回復！空腹度+30`);
-          return true;
-        }
-        case "jar_exp": {
-          g.p.exp = g.p.enext;
-          if (g.p.exp >= g.p.enext) {
-            g.p.lv++;
-            g.p.exp -= g.p.enext;
-            g.p.enext = Math.floor(g.p.enext * 1.5);
-            g.p.mhp += 5;
-            g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
-            sfxLevelUp();
-            notify(`🏺 経験値補充！ Lv${g.p.lv}にアップ！`);
-          } else {
-            sfxItem();
-            notify("🏺 経験値を補充した！");
-          }
-          return true;
-        }
-        case "jar_curse": {
-          g.p.hp = Math.max(1, Math.floor(g.p.hp / 2));
-          sfxWrong();
-          notify("💀 呪いの壷！HPが半分に…");
-          return true;
-        }
-        case "escape_wing": {
-          goNextFloor();
-          return true;
+          // 壷を開くUIへ（ターン消費しない）
+          setUiState((prev) => ({ ...prev, openJarId: itemId }));
+          return false;
         }
         case "lucky_gold": {
           g.sureHit = true;
@@ -851,7 +778,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return false;
       }
     },
-    [addDmgPop, onEnemyDied, redraw, updateUI]
+    [addDmgPop, onEnemyDied, redraw, setUiState, updateUI]
   );
 
   const goNextFloor = useCallback(() => {
@@ -949,8 +876,30 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // quiz active guard
       if (uiState.quiz && !uiState.quizAnswered) return;
 
-      const nx = g.px + dx;
-      const ny = g.py + dy;
+      // 眠り状態チェック（プレイヤーが眠り草で眠った場合）
+      if (g.playerSleepTurns > 0) {
+        g.playerSleepTurns--;
+        queueMsg("💤 眠っている…");
+        runEnemyTurn(g);
+        saveGame();
+        return;
+      }
+      // 移動方向を記録（投げる機能用）
+      if (dx !== 0 || dy !== 0) {
+        g.playerDir = { dx, dy };
+      }
+
+      // 混乱状態チェック（ランダム方向に移動）
+      let mvDx = dx;
+      let mvDy = dy;
+      if (g.playerConfusedTurns > 0) {
+        g.playerConfusedTurns--;
+        const confDirs: [number, number][] = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+        [mvDx, mvDy] = confDirs[Math.floor(Math.random() * 4)];
+        queueMsg("🌀 混乱して変な方向に！");
+      }
+      const nx = g.px + mvDx;
+      const ny = g.py + mvDy;
       if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) return;
 
       const eAt = g.enemies.find((e) => e.x === nx && e.y === ny);
@@ -1077,6 +1026,12 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
 
       // 敵のターン
       runEnemyTurn(g);
+
+      // 鈍足: 追加で敵ターンを1回実行
+      if (g.playerSlowTurns > 0) {
+        g.playerSlowTurns--;
+        runEnemyTurn(g);
+      }
 
       // ショッププロンプトを更新（runEnemyTurnのupdateUIより後に適用）
       setUiState((prev) => ({ ...prev, shopPrompt: newShopPrompt }));
@@ -1270,6 +1225,211 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     [applyItem, closeItems, goNextFloor, runEnemyTurn, saveGame, showNotification]
   );
 
+  // アイテムを投げる（草は敵に効果、壷は割れる、その他は3ダメージ）
+  const throwItem = useCallback(
+    (itemId: string) => {
+      const g = gameRef.current;
+      if (!g) return;
+      const item = g.items.find((i) => i.id === itemId);
+      if (!item || item.count <= 0) return;
+
+      const dir = g.playerDir;
+      if (!dir || (dir.dx === 0 && dir.dy === 0)) {
+        showNotification("🎯 まず移動して向きを決めよう");
+        return;
+      }
+
+      // 投擲軌道計算：直線上の最初の敵にヒット
+      let tx = g.px + dir.dx;
+      let ty = g.py + dir.dy;
+      let hitEnemy: Enemy | null = null;
+      while (tx >= 0 && tx < MW && ty >= 0 && ty < MH && g.map[ty][tx] !== 0) {
+        const e = g.enemies.find((e) => e.x === tx && e.y === ty);
+        if (e) { hitEnemy = e; break; }
+        tx += dir.dx;
+        ty += dir.dy;
+      }
+      // 最後の有効タイル（壁の直前）
+      const landX = tx - dir.dx;
+      const landY = ty - dir.dy;
+
+      item.count--;
+      closeItems();
+
+      if (item.cat === "grass") {
+        if (hitEnemy) {
+          // 草を投げると当たった敵に効果
+          switch (itemId) {
+            case "heal_grass":
+              hitEnemy.hp = Math.min(hitEnemy.hp + 15, hitEnemy.mhp);
+              showNotification(`💚 ${hitEnemy.name}のHPが15回復した`);
+              break;
+            case "big_heal":
+              hitEnemy.hp = hitEnemy.mhp;
+              showNotification(`💚 ${hitEnemy.name}のHPが全回復した`);
+              break;
+            case "power_grass":
+              hitEnemy.atk += 1;
+              showNotification(`⚔️ ${hitEnemy.name}の攻撃力が上がった！`);
+              break;
+            case "hp_grass":
+              hitEnemy.mhp += 3;
+              hitEnemy.hp = Math.min(hitEnemy.hp + 3, hitEnemy.mhp);
+              showNotification(`❤️ ${hitEnemy.name}の最大HPが上がった！`);
+              break;
+            case "swift_grass":
+              hitEnemy.swiftTurns = (hitEnemy.swiftTurns ?? 0) + 3;
+              showNotification(`💨 ${hitEnemy.name}が倍速になった！`);
+              break;
+            case "slow_grass":
+              hitEnemy.slowTurns = (hitEnemy.slowTurns ?? 0) + 5;
+              hitEnemy.slowSkip = false;
+              showNotification(`🐢 ${hitEnemy.name}が鈍足になった！`);
+              break;
+            case "sleep_grass":
+              hitEnemy.sleeping = true;
+              hitEnemy.alert = false;
+              showNotification(`💤 ${hitEnemy.name}が眠った！`);
+              break;
+            case "confuse_grass":
+              hitEnemy.confused = (hitEnemy.confused || 0) + 4;
+              showNotification(`🌀 ${hitEnemy.name}が混乱した！`);
+              break;
+            case "warp_grass": {
+              g.enemies = g.enemies.filter((e) => e.id !== hitEnemy!.id);
+              showNotification(`✨ ${hitEnemy.name}がワープした！`);
+              break;
+            }
+            case "fire_grass": {
+              const fdmg = 20;
+              hitEnemy.hp = Math.max(0, hitEnemy.hp - fdmg);
+              addDmgPop(hitEnemy.x, hitEnemy.y, "hit", fdmg);
+              sfxCrit();
+              showNotification(`🔥 ${hitEnemy.name}に${fdmg}ダメージ！`);
+              if (hitEnemy.hp <= 0) {
+                onEnemyDied(g, hitEnemy);
+                g.enemies = g.enemies.filter((e) => e.id !== hitEnemy!.id);
+              }
+              break;
+            }
+            default:
+              // その他の草：3ダメージ
+              hitEnemy.hp = Math.max(0, hitEnemy.hp - 3);
+              addDmgPop(hitEnemy.x, hitEnemy.y, "hit", 3);
+              showNotification(`${item.icon} ${hitEnemy.name}に3ダメージ！`);
+              if (hitEnemy.hp <= 0) {
+                onEnemyDied(g, hitEnemy);
+                g.enemies = g.enemies.filter((e) => e.id !== hitEnemy!.id);
+              }
+          }
+        } else {
+          sfxItem();
+          showNotification(`${item.icon} 外れた`);
+        }
+      } else if (item.cat === "jar") {
+        // 壷は割れる
+        sfxCrit();
+        if (hitEnemy) {
+          const dmg = 3;
+          hitEnemy.hp = Math.max(0, hitEnemy.hp - dmg);
+          addDmgPop(hitEnemy.x, hitEnemy.y, "hit", dmg);
+          showNotification(`🫙 壷が割れて${hitEnemy.name}に${dmg}ダメージ！`);
+          if (hitEnemy.hp <= 0) {
+            onEnemyDied(g, hitEnemy);
+            g.enemies = g.enemies.filter((e) => e.id !== hitEnemy!.id);
+          }
+        } else {
+          showNotification("🫙 壷が割れた！");
+        }
+        // 中身を着地点付近に散乱
+        if (item.contents && item.contents.length > 0) {
+          const offsets: [number, number][] = [[0,0],[1,0],[-1,0],[0,1],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1]];
+          for (const c of item.contents) {
+            for (const [ox, oy] of offsets) {
+              const cx = landX + ox;
+              const cy = landY + oy;
+              if (cx >= 0 && cx < MW && cy >= 0 && cy < MH && g.map[cy][cx] !== 0 && !g.itemTiles.find((it) => it.x === cx && it.y === cy)) {
+                g.itemTiles.push({ x: cx, y: cy, id: c.id });
+                break;
+              }
+            }
+          }
+          showNotification("🫙 中身が散らばった！");
+        }
+      } else {
+        // 草・壷以外：3ダメージ
+        if (hitEnemy) {
+          const dmg = 3;
+          hitEnemy.hp = Math.max(0, hitEnemy.hp - dmg);
+          addDmgPop(hitEnemy.x, hitEnemy.y, "hit", dmg);
+          sfxHit();
+          showNotification(`${item.icon} ${hitEnemy.name}に${dmg}ダメージ！`);
+          if (hitEnemy.hp <= 0) {
+            onEnemyDied(g, hitEnemy);
+            g.enemies = g.enemies.filter((e) => e.id !== hitEnemy!.id);
+          }
+        } else {
+          showNotification(`${item.icon} 外れた`);
+        }
+      }
+
+      updateUI(g);
+      redraw();
+      runEnemyTurn(g);
+      saveGame();
+    },
+    [addDmgPop, closeItems, onEnemyDied, redraw, runEnemyTurn, saveGame, showNotification, updateUI]
+  );
+
+  const closeJar = useCallback(() => {
+    setUiState((prev) => ({ ...prev, openJarId: null }));
+  }, []);
+
+  const putInJar = useCallback((jarItemId: string, targetItemId: string) => {
+    const g = gameRef.current;
+    if (!g) return;
+    const jar = g.items.find((i) => i.id === jarItemId);
+    const target = g.items.find((i) => i.id === targetItemId);
+    if (!jar || !target || target.count <= 0) return;
+    const contents = jar.contents ?? [];
+    if (contents.length >= 3) {
+      showNotification("🫙 壷がいっぱい（最大3個）");
+      return;
+    }
+    const existing = contents.find((c) => c.id === targetItemId);
+    if (existing) {
+      existing.count++;
+    } else {
+      contents.push({ ...target, count: 1 });
+    }
+    jar.contents = contents;
+    target.count--;
+    if (target.count <= 0) {
+      g.items = g.items.filter((i) => i.id !== targetItemId);
+    }
+    updateUI(g);
+    showNotification(`${target.icon} ${target.name}を壷に入れた`);
+  }, [showNotification, updateUI]);
+
+  const takeFromJar = useCallback((jarItemId: string, contentItemId: string) => {
+    const g = gameRef.current;
+    if (!g) return;
+    const jar = g.items.find((i) => i.id === jarItemId);
+    if (!jar || !jar.contents) return;
+    const content = jar.contents.find((c) => c.id === contentItemId);
+    if (!content || content.count <= 0) return;
+    const existing = g.items.find((i) => i.id === contentItemId);
+    if (existing) {
+      existing.count++;
+    } else {
+      g.items.push({ ...content, count: 1, contents: undefined });
+    }
+    content.count--;
+    jar.contents = jar.contents.filter((c) => c.count > 0);
+    updateUI(g);
+    showNotification(`${content.icon} ${content.name}を取り出した`);
+  }, [showNotification, updateUI]);
+
   const buyFromShop = useCallback(
     (shopPrompt: ShopPrompt) => {
       const g = gameRef.current;
@@ -1370,6 +1530,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       monsterHouseRoomIdx: raw.monsterHouseRoomIdx ?? null,
       // 旧セーブには explored がないため全開示でマイグレーション
       explored: raw.explored ?? Array.from({ length: MH }, () => new Array(MW).fill(true)),
+      playerDir: (raw as Partial<GameState>).playerDir ?? { dx: 0, dy: 0 },
+      playerSleepTurns: (raw as Partial<GameState>).playerSleepTurns ?? 0,
+      playerConfusedTurns: (raw as Partial<GameState>).playerConfusedTurns ?? 0,
+      playerSlowTurns: (raw as Partial<GameState>).playerSlowTurns ?? 0,
     };
     gameRef.current = migrated;
     const canvas = canvasRef.current;
@@ -1491,9 +1655,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     answerQuiz,
     goNextFloor,
     useItem,
+    throwItem,
     openItems,
     closeItems,
     filterItems,
+    closeJar,
+    putInJar,
+    takeFromJar,
     retryGame,
     saveGame,
     loadSave,
@@ -1501,5 +1669,6 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     handleCanvasTap,
     buyFromShop,
     skipShop,
+    openJarId: uiState.openJarId,
   };
 }

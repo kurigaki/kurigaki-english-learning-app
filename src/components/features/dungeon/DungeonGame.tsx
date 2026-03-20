@@ -279,14 +279,126 @@ const ITEM_TABS = [
   { cat: "special", label: "✨特殊" },
 ];
 
+function DungeonJarOverlay({
+  jarItem, allItems, onPutIn, onTakeOut, onClose,
+}: {
+  jarItem: InventoryItem;
+  allItems: InventoryItem[];
+  onPutIn: (jarId: string, itemId: string) => void;
+  onTakeOut: (jarId: string, contentId: string) => void;
+  onClose: () => void;
+}) {
+  const contents = jarItem.contents ?? [];
+  const canPutIn = contents.length < 3;
+  const puttable = allItems.filter((i) => i.id !== jarItem.id && i.count > 0 && i.cat !== "jar");
+
+  return (
+    <div style={{
+      position: "fixed", inset: 0, background: "#09090fee",
+      display: "flex", flexDirection: "column", padding: 14, overflowY: "auto", zIndex: 450,
+    }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 11, color: DC.gold }}>
+          🫙 保存の壷 ({contents.length}/3)
+        </div>
+        <button onClick={onClose} style={{
+          fontFamily: "'Press Start 2P', monospace", fontSize: 11, color: DC.text2,
+          background: DC.bg4, border: `1px solid ${DC.border2}`,
+          width: 32, height: 32, cursor: "pointer", borderRadius: 4,
+          display: "flex", alignItems: "center", justifyContent: "center",
+        }}>✕</button>
+      </div>
+
+      {/* 中身リスト */}
+      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2, marginBottom: 8 }}>
+        ── 中身 ──
+      </div>
+      {contents.length === 0 ? (
+        <div style={{ color: DC.text3, fontSize: 13, textAlign: "center", padding: 10 }}>空っぽ</div>
+      ) : (
+        <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 12 }}>
+          {contents.map((c) => (
+            <div key={c.id} style={{
+              background: DC.bg3, border: `1px solid ${DC.border2}`, borderRadius: 5,
+              padding: "8px 10px", display: "flex", alignItems: "center", gap: 8,
+            }}>
+              <span style={{ fontSize: 20 }}>{c.icon}</span>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.gold }}>{c.name}</div>
+                <div style={{ fontSize: 11, color: DC.text2 }}>{c.desc}</div>
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.accent }}>×{c.count}</span>
+                <button
+                  onClick={() => onTakeOut(jarItem.id, c.id)}
+                  style={{
+                    fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text,
+                    background: DC.bg4, border: `1px solid ${DC.accent}`,
+                    padding: "4px 8px", cursor: "pointer", borderRadius: 3,
+                  }}
+                >取り出す</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* 入れる */}
+      {canPutIn && (
+        <>
+          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2, marginBottom: 8 }}>
+            ── 入れる ──
+          </div>
+          {puttable.length === 0 ? (
+            <div style={{ color: DC.text3, fontSize: 13, textAlign: "center", padding: 10 }}>入れられるアイテムなし</div>
+          ) : (
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              {puttable.map((item) => (
+                <div key={item.id} style={{
+                  background: DC.bg3, border: `1px solid ${DC.border}`, borderRadius: 5,
+                  padding: "8px 10px", display: "flex", alignItems: "center", gap: 8,
+                }}>
+                  <span style={{ fontSize: 20 }}>{item.icon}</span>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text }}>{item.name}</div>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                    <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.accent }}>×{item.count}</span>
+                    <button
+                      onClick={() => onPutIn(jarItem.id, item.id)}
+                      style={{
+                        fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: "#09090f",
+                        background: DC.accent, border: "none",
+                        padding: "4px 8px", cursor: "pointer", borderRadius: 3,
+                      }}
+                    >入れる</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
+      )}
+
+      <button onClick={onClose} style={{
+        fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.text2,
+        background: DC.bg3, border: `1px solid ${DC.border2}`,
+        padding: "9px 18px", cursor: "pointer", borderRadius: 4, alignSelf: "center", marginTop: 16,
+      }}>✕ 閉じる</button>
+    </div>
+  );
+}
+
 function DungeonItemOverlay({
-  items, itemFilter, onFilter, onUse, onClose, caneCharges,
+  items, itemFilter, onFilter, onUse, onClose, onThrow, onOpenJar, caneCharges,
 }: {
   items: InventoryItem[];
   itemFilter: string;
   onFilter: (cat: string) => void;
   onUse: (id: string) => void;
   onClose: () => void;
+  onThrow: (id: string) => void;
+  onOpenJar: (id: string) => void;
   caneCharges: CaneCharges;
 }) {
   const tabs = ITEM_TABS;
@@ -411,7 +523,7 @@ function DungeonItemOverlay({
             return (
               <div
                 key={item.id}
-                onClick={() => { setSelectedIndex(idx); onUse(item.id); }}
+                onClick={() => setSelectedIndex(idx)}
                 onMouseEnter={() => setSelectedIndex(idx)}
                 style={{
                   background: isSelected ? DC.bg4 : DC.bg3,
@@ -436,13 +548,45 @@ function DungeonItemOverlay({
                   </div>
                   <div style={{ fontSize: 12, color: DC.text2 }}>{def?.desc || item.desc}</div>
                 </div>
-                {item.cat === "cane" ? (
-                  <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: isDepleted ? DC.hp : DC.mp }}>
-                    残{caneCharges[item.id as keyof CaneCharges] ?? 0}回
+                {/* 右側: カウント + アクションボタン */}
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 4, flexShrink: 0 }}>
+                  {item.cat === "cane" ? (
+                    <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: isDepleted ? DC.hp : DC.mp }}>
+                      残{caneCharges[item.id as keyof CaneCharges] ?? 0}回
+                    </div>
+                  ) : item.cat === "jar" ? (
+                    <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.text2 }}>
+                      中{(item.contents ?? []).length}/3
+                    </div>
+                  ) : (
+                    <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: DC.accent }}>×{item.count}</div>
+                  )}
+                  <div style={{ display: "flex", gap: 3 }}>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); if (item.cat === "jar") { onOpenJar(item.id); } else { onUse(item.id); } }}
+                      style={{
+                        fontFamily: "'Press Start 2P', monospace", fontSize: 7,
+                        color: DC.text, background: DC.bg4, border: `1px solid ${DC.accent}`,
+                        padding: "4px 7px", cursor: "pointer", borderRadius: 3,
+                      }}
+                    >
+                      使う
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onThrow(item.id); }}
+                      disabled={item.cat === "cane"}
+                      style={{
+                        fontFamily: "'Press Start 2P', monospace", fontSize: 7,
+                        color: item.cat === "cane" ? DC.text3 : DC.accent2,
+                        background: DC.bg3, border: `1px solid ${item.cat === "cane" ? DC.border : DC.accent2}`,
+                        padding: "4px 7px", cursor: item.cat === "cane" ? "default" : "pointer", borderRadius: 3,
+                        opacity: item.cat === "cane" ? 0.4 : 1,
+                      }}
+                    >
+                      投げる
+                    </button>
                   </div>
-                ) : (
-                  <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: DC.accent }}>×{item.count}</div>
-                )}
+                </div>
               </div>
             );
           })
@@ -1336,7 +1480,9 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const {
     canvasRef, wrapRef, gameStateRef, uiState, dmgPops,
     startGame, doTurn, playerAttack, doWait, answerQuiz,
-    goNextFloor, useItem, openItems, closeItems, filterItems, retryGame,
+    goNextFloor, useItem, throwItem, openItems, closeItems, filterItems,
+    closeJar, putInJar, takeFromJar, openJarId,
+    retryGame,
     loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
     screenEffect, eventOverlay, closeEventOverlay,
   } = useDungeon(questions, progressiveStages, dungeonMode);
@@ -1702,9 +1848,25 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
           onFilter={filterItems}
           onUse={useItem}
           onClose={closeItems}
+          onThrow={throwItem}
+          onOpenJar={useItem}
           caneCharges={uiState.caneCharges}
         />
       )}
+
+      {/* Jar overlay */}
+      {openJarId && (() => {
+        const jarItem = uiState.items.find((i) => i.id === openJarId);
+        return jarItem ? (
+          <DungeonJarOverlay
+            jarItem={jarItem}
+            allItems={uiState.items}
+            onPutIn={putInJar}
+            onTakeOut={takeFromJar}
+            onClose={closeJar}
+          />
+        ) : null;
+      })()}
 
       {/* Death screen */}
       {(uiState.death ?? restoredDeath) && (
