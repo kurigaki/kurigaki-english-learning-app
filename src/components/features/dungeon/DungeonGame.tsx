@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState, useCallback, useRef, useMemo } from "react";
 import Link from "next/link";
-import type { DungeonQuestion, DmgPop, InventoryItem, DeathState } from "@/lib/dungeon/types";
+import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
-import { useDungeon } from "./useDungeon";
+import { useDungeon, type DungeonSave, type CaneCharges } from "./useDungeon";
 import { storage, type DungeonRunLog } from "@/lib/storage";
 import { SpeakButton } from "@/components/ui";
 
@@ -245,13 +245,14 @@ const ITEM_TABS = [
 ];
 
 function DungeonItemOverlay({
-  items, itemFilter, onFilter, onUse, onClose,
+  items, itemFilter, onFilter, onUse, onClose, caneCharges,
 }: {
   items: InventoryItem[];
   itemFilter: string;
   onFilter: (cat: string) => void;
   onUse: (id: string) => void;
   onClose: () => void;
+  caneCharges: CaneCharges;
 }) {
   const tabs = ITEM_TABS;
 
@@ -323,10 +324,25 @@ function DungeonItemOverlay({
       position: "fixed", inset: 0, background: "#09090fee",
       display: "flex", flexDirection: "column", padding: 14, overflowY: "auto", zIndex: 50,
     }}>
-      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 11, color: DC.gold, marginBottom: 4, textAlign: "center" }}>
-        🎒 道具袋
+      {/* ヘッダー行: タイトル + 常時表示の閉じるボタン */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 4, flexShrink: 0 }}>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 11, color: DC.gold }}>
+          🎒 道具袋
+        </div>
+        <button
+          onClick={onClose}
+          style={{
+            fontFamily: "'Press Start 2P', monospace", fontSize: 11, color: DC.text2,
+            background: DC.bg4, border: `1px solid ${DC.border2}`,
+            width: 32, height: 32, cursor: "pointer", borderRadius: 4,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            flexShrink: 0,
+          }}
+        >
+          ✕
+        </button>
       </div>
-      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text3, textAlign: "center", marginBottom: 8 }}>
+      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text3, textAlign: "center", marginBottom: 8, flexShrink: 0 }}>
         ▲▼ / W・S で選択　Enter / Z で使用　1〜7 でタブ
       </div>
       <div style={{ display: "flex", gap: 4, flexWrap: "wrap", marginBottom: 10 }}>
@@ -383,7 +399,11 @@ function DungeonItemOverlay({
                   </div>
                   <div style={{ fontSize: 12, color: DC.text2 }}>{def?.desc || item.desc}</div>
                 </div>
-                {item.cat !== "cane" && (
+                {item.cat === "cane" ? (
+                  <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: isDepleted ? DC.hp : DC.mp }}>
+                    残{caneCharges[item.id as keyof CaneCharges] ?? 0}回
+                  </div>
+                ) : (
                   <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: DC.accent }}>×{item.count}</div>
                 )}
               </div>
@@ -598,8 +618,16 @@ function DungeonControls({
     display: "flex", flexDirection: "column", alignItems: "center", gap: 2,
   };
 
+  // タッチ後に生成される click を抑制するためにタイムスタンプで判定
+  const lastTouchTimeRef = useRef(0);
   const handleTouch = (dx: number, dy: number) => (e: React.TouchEvent) => {
     e.preventDefault();
+    lastTouchTimeRef.current = Date.now();
+    onDpad(dx, dy);
+  };
+  const handleClick = (dx: number, dy: number) => () => {
+    // タッチから 500ms 以内の click は無視（ダブル発火防止）
+    if (Date.now() - lastTouchTimeRef.current < 500) return;
     onDpad(dx, dy);
   };
 
@@ -611,17 +639,17 @@ function DungeonControls({
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
         <div style={{ display: "flex", gap: 2 }}>
           <div style={{ width: 32, height: 32 }} />
-          <div style={dpStyle} onTouchStart={handleTouch(0, -1)} onClick={() => onDpad(0, -1)}>▲</div>
+          <div style={dpStyle} onTouchStart={handleTouch(0, -1)} onClick={handleClick(0, -1)}>▲</div>
           <div style={{ width: 32, height: 32 }} />
         </div>
         <div style={{ display: "flex", gap: 2 }}>
-          <div style={dpStyle} onTouchStart={handleTouch(-1, 0)} onClick={() => onDpad(-1, 0)}>◀</div>
-          <div style={dpStyle} onTouchStart={handleTouch(0, 0)} onClick={() => onDpad(0, 0)}>·</div>
-          <div style={dpStyle} onTouchStart={handleTouch(1, 0)} onClick={() => onDpad(1, 0)}>▶</div>
+          <div style={dpStyle} onTouchStart={handleTouch(-1, 0)} onClick={handleClick(-1, 0)}>◀</div>
+          <div style={dpStyle} onTouchStart={handleTouch(0, 0)} onClick={handleClick(0, 0)}>·</div>
+          <div style={dpStyle} onTouchStart={handleTouch(1, 0)} onClick={handleClick(1, 0)}>▶</div>
         </div>
         <div style={{ display: "flex", gap: 2 }}>
           <div style={{ width: 32, height: 32 }} />
-          <div style={dpStyle} onTouchStart={handleTouch(0, 1)} onClick={() => onDpad(0, 1)}>▼</div>
+          <div style={dpStyle} onTouchStart={handleTouch(0, 1)} onClick={handleClick(0, 1)}>▼</div>
           <div style={{ width: 32, height: 32 }} />
         </div>
       </div>
@@ -726,14 +754,16 @@ function DmgPopLayer({
 
 // ─── Title screen ──────────────────────────────────────────────────
 function TitleScreen({
-  onStart,
+  onStart, onContinue, hasSave,
 }: {
   onStart: (course: string, weakOnly: boolean) => void;
+  onContinue: () => void;
+  hasSave: boolean;
 }) {
   const [course, setCourse] = useState("");
   const [weakOnly, setWeakOnly] = useState(false);
   const [loading, setLoading] = useState(false);
-  const weakWordCount = storage.getWeakWords()?.length ?? 0;
+  const weakWordCount = storage.getWeakWords().length;
 
   const handleStart = async () => {
     setLoading(true);
@@ -810,6 +840,24 @@ function TitleScreen({
         </label>
       </div>
 
+      {hasSave && (
+        <button
+          onClick={onContinue}
+          style={{
+            fontFamily: "'Press Start 2P', monospace",
+            fontSize: "clamp(9px,2.5vw,12px)",
+            color: DC.text,
+            background: DC.bg4,
+            border: `2px solid ${DC.accent}`,
+            padding: "12px 24px",
+            cursor: "pointer",
+            marginTop: 6,
+            clipPath: "polygon(4px 0%,calc(100% - 4px) 0%,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0% calc(100% - 4px),0% 4px)",
+          }}
+        >
+          ▶ 続きから
+        </button>
+      )}
       <button
         onClick={handleStart}
         disabled={loading}
@@ -821,12 +869,12 @@ function TitleScreen({
           border: "none",
           padding: "14px 28px",
           cursor: loading ? "default" : "pointer",
-          marginTop: 6,
+          marginTop: hasSave ? 4 : 6,
           opacity: loading ? 0.7 : 1,
           clipPath: "polygon(4px 0%,calc(100% - 4px) 0%,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0% calc(100% - 4px),0% 4px)",
         }}
       >
-        ▶ START
+        ▶ {hasSave ? "新しくはじめる" : "START"}
       </button>
 
       {loading && (
@@ -858,14 +906,17 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const [phase, setPhase] = useState<"title" | "game">("title");
   const [questions, setQuestions] = useState<DungeonQuestion[]>([]);
   const [restoredDeath, setRestoredDeath] = useState<DeathState | null>(null);
+  const pendingSaveRef = useRef<GameState | null>(null);
+  const [hasSave, setHasSave] = useState(false);
 
   const {
     canvasRef, wrapRef, uiState, dmgPops,
     startGame, doTurn, playerAttack, doWait, answerQuiz,
     goNextFloor, useItem, openItems, closeItems, filterItems, retryGame,
+    loadSave, stopAutoWalk, handleCanvasTap,
   } = useDungeon(questions);
 
-  // sessionStorage からリザルト状態を復元
+  // sessionStorage からリザルト状態を復元 & localStorage セーブ確認
   useEffect(() => {
     const saved = sessionStorage.getItem(DUNGEON_DEATH_KEY);
     if (saved) {
@@ -877,6 +928,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         sessionStorage.removeItem(DUNGEON_DEATH_KEY);
       }
     }
+    setHasSave(storage.hasDungeonGame());
   }, []);
 
   // Load Google Fonts
@@ -893,10 +945,12 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
 
   const handleBackToTitle = useCallback(() => {
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
+    stopAutoWalk();
     setRestoredDeath(null);
     setPhase("title");
+    setHasSave(storage.hasDungeonGame());
     startedRef.current = false;
-  }, []);
+  }, [stopAutoWalk]);
 
   const handleStart = useCallback(async (course: string, weakOnly: boolean) => {
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
@@ -934,6 +988,14 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     setPhase("game");
   }, []);
 
+  const handleContinue = useCallback(() => {
+    const raw = storage.getDungeonGame() as DungeonSave | null;
+    if (!raw) return;
+    pendingSaveRef.current = raw.gameState;
+    setQuestions(raw.questions);
+    setPhase("game");
+  }, []);
+
   // initialWordId が指定された場合、タイトルをスキップして自動起動
   const autoStartedRef = useRef(false);
   useEffect(() => {
@@ -947,9 +1009,14 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   useEffect(() => {
     if (phase === "game" && questions.length > 0 && !startedRef.current) {
       startedRef.current = true;
-      startGame();
+      if (pendingSaveRef.current) {
+        loadSave(pendingSaveRef.current);
+        pendingSaveRef.current = null;
+      } else {
+        startGame();
+      }
     }
-  }, [phase, questions, startGame]);
+  }, [phase, questions, startGame, loadSave]);
 
   // Keyboard handler
   useEffect(() => {
@@ -972,11 +1039,11 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         if (k === "4") { ev.preventDefault(); answerQuiz(uiState.quiz.choiceOrder[3]); return; }
       }
 
-      // Movement
-      if (k === "ArrowUp" || k === "w" || k === "W") { ev.preventDefault(); doTurn(0, -1); }
-      else if (k === "ArrowDown" || k === "s" || k === "S") { ev.preventDefault(); doTurn(0, 1); }
-      else if (k === "ArrowLeft" || k === "a" || k === "A") { ev.preventDefault(); doTurn(-1, 0); }
-      else if (k === "ArrowRight" || k === "d" || k === "D") { ev.preventDefault(); doTurn(1, 0); }
+      // Movement（手動操作はオートウォークを停止）
+      if (k === "ArrowUp" || k === "w" || k === "W") { ev.preventDefault(); stopAutoWalk(); doTurn(0, -1); }
+      else if (k === "ArrowDown" || k === "s" || k === "S") { ev.preventDefault(); stopAutoWalk(); doTurn(0, 1); }
+      else if (k === "ArrowLeft" || k === "a" || k === "A") { ev.preventDefault(); stopAutoWalk(); doTurn(-1, 0); }
+      else if (k === "ArrowRight" || k === "d" || k === "D") { ev.preventDefault(); stopAutoWalk(); doTurn(1, 0); }
       else if (k === " " || k === "z" || k === "Z") { ev.preventDefault(); playerAttack(); }
       else if (k === "." || k === "x" || k === "X") { ev.preventDefault(); doWait(); }
       else if (k === "i" || k === "I") { ev.preventDefault(); openItems(); }
@@ -987,56 +1054,50 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [
     phase, uiState, answerQuiz, closeItems, doTurn, doWait, goNextFloor,
-    openItems, playerAttack,
+    openItems, playerAttack, stopAutoWalk,
   ]);
 
-  // Map click handler
+  // Canvas のタイル座標を計算するユーティリティ
+  const getTileFromEvent = useCallback((clientX: number, clientY: number) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return null;
+    const rect = canvas.getBoundingClientRect();
+    const m = canvas.style.transform.match(/translate\(([^,]+)px,([^)]+)px\)/);
+    const tx = m ? parseFloat(m[1]) : 0;
+    const ty = m ? parseFloat(m[2]) : 0;
+    return {
+      x: Math.floor((clientX - rect.left - tx) / TILE),
+      y: Math.floor((clientY - rect.top - ty) / TILE),
+    };
+  }, [canvasRef]);
+
+  // マウスクリック → タップ移動（クイズ中は無視）
   const handleCanvasClick = useCallback(
     (ev: React.MouseEvent<HTMLCanvasElement>) => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const rect = canvas.getBoundingClientRect();
-      const m = canvas.style.transform.match(/translate\(([^,]+)px,([^)]+)px\)/);
-      const tx = m ? parseFloat(m[1]) : 0;
-      const ty = m ? parseFloat(m[2]) : 0;
-      const cx = Math.floor((ev.clientX - rect.left - tx) / TILE);
-      const cy = Math.floor((ev.clientY - rect.top - ty) / TILE);
-      // We need the game state to compute dx/dy - use the event coordinates to call doTurn
-      // Since we can't directly access gameRef here, we dispatch via doTurn relative to player
-      // We need to pass the target tile through. Workaround: use a custom event or expose gameRef.
-      // For simplicity, trigger doTurn with relative coords if adjacent
-      const canvas2 = canvasRef.current;
-      if (canvas2) {
-        // The canvas has access to the player position via the rendered image
-        // We cannot easily get px/py here without accessing gameRef
-        // We'll use data attributes set on the canvas
-        const pxAttr = canvas2.dataset.px;
-        const pyAttr = canvas2.dataset.py;
-        if (pxAttr !== undefined && pyAttr !== undefined) {
-          const px = parseInt(pxAttr);
-          const py = parseInt(pyAttr);
-          const dx = cx - px;
-          const dy = cy - py;
-          if (Math.abs(dx) + Math.abs(dy) === 1) doTurn(dx, dy);
-        }
-      }
+      if (uiState.quiz && !uiState.quizAnswered) return;
+      const tile = getTileFromEvent(ev.clientX, ev.clientY);
+      if (tile) handleCanvasTap(tile.x, tile.y);
     },
-    [canvasRef, doTurn]
+    [getTileFromEvent, handleCanvasTap, uiState.quiz, uiState.quizAnswered]
   );
 
-  // Update canvas data attributes with player position
-  useEffect(() => {
-    // We track this via uiState indirectly - but we need px/py
-    // This is updated from gameRef inside useDungeon via redraw
-    // For click handling, we'll set data attrs after each redraw
-    // Actually the best approach: expose px/py via uiState
-    // For now we'll use a simpler approach: set data-px/data-py during redraw
-  }, [uiState]);
+  // タッチタップ → タップ移動（スマホ用・クイズ中は無視）
+  const handleCanvasTouchEnd = useCallback(
+    (ev: React.TouchEvent<HTMLCanvasElement>) => {
+      ev.preventDefault();
+      if (uiState.quiz && !uiState.quizAnswered) return;
+      const touch = ev.changedTouches[0];
+      if (!touch) return;
+      const tile = getTileFromEvent(touch.clientX, touch.clientY);
+      if (tile) handleCanvasTap(tile.x, tile.y);
+    },
+    [getTileFromEvent, handleCanvasTap, uiState.quiz, uiState.quizAnswered]
+  );
 
   if (phase === "title") {
     return (
       <div style={{ width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}>
-        <TitleScreen onStart={handleStart} />
+        <TitleScreen onStart={handleStart} onContinue={handleContinue} hasSave={hasSave} />
       </div>
     );
   }
@@ -1069,7 +1130,8 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         <canvas
           ref={canvasRef}
           onClick={handleCanvasClick}
-          style={{ position: "absolute", top: 0, left: 0, imageRendering: "pixelated", cursor: "pointer" }}
+          onTouchEnd={handleCanvasTouchEnd}
+          style={{ position: "absolute", top: 0, left: 0, imageRendering: "pixelated", cursor: "pointer", touchAction: "none" }}
           width={MW * TILE}
           height={MH * TILE}
         />
@@ -1096,7 +1158,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
 
       {/* Controls */}
       <DungeonControls
-        onDpad={(dx, dy) => dx === 0 && dy === 0 ? doWait() : doTurn(dx, dy)}
+        onDpad={(dx, dy) => { stopAutoWalk(); if (dx === 0 && dy === 0) { doWait(); } else { doTurn(dx, dy); } }}
         onAttack={playerAttack}
         onWait={doWait}
         onItems={openItems}
@@ -1124,6 +1186,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
           onFilter={filterItems}
           onUse={useItem}
           onClose={closeItems}
+          caneCharges={uiState.caneCharges}
         />
       )}
 
