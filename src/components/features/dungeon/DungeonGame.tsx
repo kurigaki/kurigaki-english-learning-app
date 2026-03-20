@@ -672,8 +672,9 @@ function DungeonControls({
   return (
     <div style={{
       background: DC.bg2, borderTop: `2px solid ${DC.border}`,
-      padding: "5px 8px", flexShrink: 0, display: "flex", gap: 5, justifyContent: "center", flexWrap: "wrap", alignItems: "center",
+      padding: "6px 12px", flexShrink: 0, display: "flex", gap: 18, justifyContent: "center", flexWrap: "wrap", alignItems: "center",
     }}>
+      {/* 十字キー */}
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
         <div style={{ display: "flex", gap: 2 }}>
           <div style={{ width: 32, height: 32 }} />
@@ -682,7 +683,7 @@ function DungeonControls({
         </div>
         <div style={{ display: "flex", gap: 2 }}>
           <div style={dpStyle} onTouchStart={handleTouch(-1, 0)} onClick={handleClick(-1, 0)}>◀</div>
-          <div style={dpStyle} onTouchStart={handleTouch(0, 0)} onClick={handleClick(0, 0)}>·</div>
+          <div style={{ width: 32, height: 32 }} />
           <div style={dpStyle} onTouchStart={handleTouch(1, 0)} onClick={handleClick(1, 0)}>▶</div>
         </div>
         <div style={{ display: "flex", gap: 2 }}>
@@ -691,6 +692,7 @@ function DungeonControls({
           <div style={{ width: 32, height: 32 }} />
         </div>
       </div>
+      {/* アクションボタン */}
       <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
         <button style={{ ...btnStyle, borderColor: DC.accent2, color: DC.accent2 }} onClick={onAttack}>
           <span style={{ fontSize: 15 }}>⚔️</span>攻撃[Z]
@@ -1089,10 +1091,10 @@ function TitleScreen({
 
   return (
     <div style={{
-      position: "fixed", inset: 0, display: "flex", flexDirection: "column",
+      position: "absolute", inset: 0, display: "flex", flexDirection: "column",
       alignItems: "center", justifyContent: "center",
       background: "radial-gradient(ellipse at 50% 40%,#1a0f2e 0%,#09090f 65%)",
-      zIndex: 100, gap: 10, padding: "16px 20px", overflowY: "auto",
+      gap: 10, padding: "16px 20px", overflowY: "auto",
     }}>
       <div style={{ fontSize: 48, animation: "tfloat 3s ease-in-out infinite" }}>🗡️</div>
       <div style={{
@@ -1460,13 +1462,19 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     if (phase !== "game") return;
 
     const handleKeyDown = (ev: KeyboardEvent) => {
+      const k = ev.key;
+
+      // 地図が開いているとき: M/Escape で閉じ、他キーはブロック
+      if (showMap) {
+        if (k === "m" || k === "M" || k === "Escape") { ev.preventDefault(); setShowMap(false); }
+        return;
+      }
+
       if (uiState.showItems) {
-        if (["i", "I", "Escape"].includes(ev.key)) closeItems();
+        if (["i", "I", "Escape"].includes(k)) closeItems();
         return;
       }
       if (uiState.death) return;
-
-      const k = ev.key;
 
       // アイテム開閉（最優先：クイズ中でも使用可能）
       if (k === "i" || k === "I") { ev.preventDefault(); openItems(); return; }
@@ -1491,14 +1499,14 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       else if (k === " " || k === "z" || k === "Z") { ev.preventDefault(); playerAttack(); }
       else if (k === "." || k === "x" || k === "X") { ev.preventDefault(); doWait(); }
       else if (k === ">" || k === "Enter") { ev.preventDefault(); if (uiState.onStairs) goNextFloor(); }
-      else if (k === "m" || k === "M") { ev.preventDefault(); setShowMap((v) => !v); }
+      else if (k === "m" || k === "M") { ev.preventDefault(); setShowMap(true); }
     };
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [
-    phase, uiState, answerQuiz, buyFromShop, closeItems, doTurn, doWait, goNextFloor,
-    openItems, playerAttack, stopAutoWalk,
+    phase, uiState, showMap, answerQuiz, buyFromShop, closeItems, doTurn, doWait, goNextFloor,
+    openItems, playerAttack, stopAutoWalk, setShowMap,
   ]);
 
   // 画面シェイク
@@ -1552,7 +1560,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
 
   if (phase === "title") {
     return (
-      <div style={{ width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}>
+      <div style={{ position: "relative", width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}>
         <TitleScreen onStart={handleStart as (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode) => void} onContinue={handleContinue} hasSave={hasSave} />
       </div>
     );

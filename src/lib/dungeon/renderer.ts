@@ -695,16 +695,14 @@ export function drawMap(
         if (isExp(tx, ty)) {
           drawFloor(ctx, tx, ty);
         } else {
-          // 未探索の床: ほぼ真っ暗
-          fr(ctx, "#07061a", tx * TILE, ty * TILE, TILE, TILE);
+          // 未探索の床: 暗い茶色（真っ暗でなく、部屋の範囲が分かる）
+          fr(ctx, "#1e1810", tx * TILE, ty * TILE, TILE, TILE);
+          fr(ctx, "#2a2218", tx * TILE, ty * TILE, TILE, 1);
+          fr(ctx, "#2a2218", tx * TILE, ty * TILE, 1, TILE);
         }
       } else {
-        if (isExp(tx, ty)) {
-          drawCorridor(ctx, tx, ty);
-        } else {
-          // 未探索の廊下: ほぼ真っ暗
-          fr(ctx, "#07061a", tx * TILE, ty * TILE, TILE, TILE);
-        }
+        // 廊下: 常に全表示（explored に関わらず）
+        drawCorridor(ctx, tx, ty);
       }
     }
   }
@@ -820,11 +818,14 @@ export function drawFullMap(canvas: HTMLCanvasElement, g: GameState): void {
 
       let color: string;
       if (t === W) {
-        color = explored ? "#302858" : "#131228";
+        // 壁: 探索済みのみ表示（未探索は完全に非表示）
+        color = explored ? "#302858" : "#05040e";
       } else if (t === R) {
-        color = explored ? "#28244a" : "#07061a";
+        // 部屋の床: 探索済みのみ表示
+        color = explored ? "#28244a" : "#05040e";
       } else {
-        color = explored ? "#1e1c3c" : "#07061a";
+        // 廊下: 常に表示（ゲーム画面と同様）
+        color = "#1e1c3c";
       }
       ctx.fillStyle = color;
       ctx.fillRect(x, y, MINI_TILE, MINI_TILE);
