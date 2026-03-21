@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.67.0",
+    title: "ダンジョン：BGM/SFX音量調整・クレジットページ追加",
+    content: [
+      "ダンジョンのBGM・効果音の音量をスライダーで個別に調整できるようになった（設定は保存される）",
+      "BGMのデフォルト音量を15%に設定。英語の聞き取りを最優先にした音量バランスに",
+      "HUDの🔊ボタン、またはタイトル画面の「音量設定」ボタンから調整可能",
+      "クレジットページを追加（メニュー → クレジット）。使用BGM・フォントの著作権情報を掲載",
+    ],
+    category: "feature",
+  },
+  {
+    date: "2026-03-21",
     version: "1.66.0",
     title: "ダンジョン：BGM MP3対応・カスタムループ実装",
     content: [
