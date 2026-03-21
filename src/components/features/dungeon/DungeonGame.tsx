@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, ScreenEffect, EventOverlay } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
-import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio } from "@/lib/dungeon/audio";
+import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, initDungeonAudio } from "@/lib/dungeon/audio";
 import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL } from "@/lib/audio";
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
@@ -1550,7 +1550,7 @@ function TitleScreen({
       {/* ── ボタン群 ── */}
       {hasSave && (
         <button
-          onClick={onContinue}
+          onClick={() => { unlockAudio(); onContinue(); }}
           style={{
             fontFamily: "'Press Start 2P', monospace",
             fontSize: "clamp(9px,2.5vw,12px)",
@@ -1567,7 +1567,7 @@ function TitleScreen({
         </button>
       )}
       <button
-        onClick={handleStart}
+        onClick={() => { unlockAudio(); handleStart(); }}
         disabled={loading}
         style={{
           fontFamily: "'Press Start 2P', monospace",
@@ -1654,6 +1654,11 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const toggleVolume = useCallback(() => setShowVolume(v => !v), []);
   const closeVolume = useCallback(() => setShowVolume(false), []);
 
+  // ページ表示時点から音声ファイルのフェッチを開始（STARTを押す前から準備）
+  useEffect(() => {
+    initDungeonAudio();
+  }, []);
+
   // sessionStorage からリザルト状態を復元 & localStorage セーブ確認
   useEffect(() => {
     const saved = sessionStorage.getItem(DUNGEON_DEATH_KEY);
@@ -1698,11 +1703,6 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   }, [stopAutoWalk]);
 
   const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode = "easy") => {
-    // ★ await より前（ユーザージェスチャーの同期コールスタック内）で呼ぶ必須
-    // await fetch() を挟むと mobile Safari/Chrome はジェスチャーコンテキストを失い
-    // AudioContext の生成・resume() がブロックされる
-    unlockAudio();
-
     setDungeonMode(mode);
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
     setRestoredDeath(null);
@@ -1754,7 +1754,6 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const handleContinue = useCallback(() => {
     const raw = storage.getDungeonGame() as DungeonSave | null;
     if (!raw) return;
-    unlockAudio(); // スマホ対応: ユーザージェスチャー内でAudioContextを解放
     pendingSaveRef.current = raw.gameState;
     setQuestions(raw.questions);
     setRestoredDeath(null);
