@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.74.0",
+    title: "ダンジョン：スマホ音声修正（Safari/Chrome 両対応）",
+    content: [
+      "スマホのSafari・Chromeで音声（BGM・効果音）が流れないバグを根本修正",
+      "原因：async 関数の中から AudioContext を解除していたため、Safari がユーザー操作と認識せず再生をブロックしていた",
+      "START/続きからボタンの onClick で直接・同期的に AudioContext を解除する方式に変更",
+      "ダンジョンページを開いた時点から音声ファイルのダウンロードを開始するよう改善",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.73.0",
     title: "ダンジョン：スマホでBGM・効果音が全く流れないバグを修正",
     content: [
