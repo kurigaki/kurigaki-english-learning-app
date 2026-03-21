@@ -43,7 +43,7 @@ const AUDIO_BASE = "/audio/dungeon/";
 
 // ── 音量設定 ─────────────────────────────────────────────────────────────────
 
-export const BGM_DEFAULT_VOL = 0.25; // オシレーター BGM は音が小さいため少し大きめに
+export const BGM_DEFAULT_VOL = 0.10;
 export const SFX_DEFAULT_VOL = 0.4;
 
 const AUDIO_VOL_KEY = "dungeon_audio_vol";

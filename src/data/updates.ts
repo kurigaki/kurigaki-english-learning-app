@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-22",
+    version: "1.84.0",
+    title: "ダンジョン：BGM常時再生・デフォルト音量調整",
+    content: [
+      "【修正】直接URL入力・ページリロード時もタイトルBGMが流れるようになった（最初のタッチで開始）",
+      "【修正】ゲームオーバー後にタイトルに戻った際もタイトルBGMが再開するようになった",
+      "【改善】BGMのデフォルト音量を25%から10%に変更",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-22",
     version: "1.83.0",
     title: "ダンジョン：遷移で即BGM・bgm.mp3修正・効果音iOS対応",
     content: [
