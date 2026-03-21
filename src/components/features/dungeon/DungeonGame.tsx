@@ -1666,6 +1666,12 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     // タイトル BGM を自動開始する。iOS は遷移から数秒以内の play() を許可する。
     unlockAudio();
     startTitleBGM();
+    // 直接URLアクセス・ページリロード時フォールバック:
+    // user activation なしでは play() が失敗する場合があるため、
+    // 最初のポインターイベントで再試行する
+    const startOnFirst = () => { unlockAudio(); startTitleBGM(); };
+    document.addEventListener("pointerdown", startOnFirst, { once: true });
+    return () => { document.removeEventListener("pointerdown", startOnFirst); };
   }, []);
 
   // sessionStorage からリザルト状態を復元 & localStorage セーブ確認
@@ -1710,6 +1716,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     setPhase("title");
     setHasSave(storage.hasDungeonGame());
     startedRef.current = false;
+    startTitleBGM();
   }, [stopAutoWalk]);
 
   const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode = "easy") => {
