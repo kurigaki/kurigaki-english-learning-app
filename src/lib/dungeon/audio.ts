@@ -30,6 +30,59 @@ const BGM_LOOP_END   = 3 * 60 + 36.888; // ループ終点（秒）= 216.888
 
 const AUDIO_BASE = "/audio/dungeon/";
 
+// ── 音量設定 ─────────────────────────────────────────────────────────────────
+
+// デフォルト音量（0〜1）
+// BGM は英語音声の邪魔にならない程度に控えめ
+const BGM_DEFAULT_VOL = 0.15;
+const SFX_DEFAULT_VOL = 0.4;
+
+// Web Audio BGM のマスターゲインスケール（vol=1.0 時のゲイン）
+const WEB_AUDIO_BGM_MAX_GAIN = 0.53;
+
+const AUDIO_VOL_KEY = "dungeon_audio_vol";
+
+let _bgmVol = BGM_DEFAULT_VOL;
+let _sfxVol = SFX_DEFAULT_VOL;
+
+function _loadVolumes(): void {
+  try {
+    const raw = localStorage.getItem(AUDIO_VOL_KEY);
+    if (!raw) return;
+    const v = JSON.parse(raw) as { bgm?: number; sfx?: number };
+    if (typeof v.bgm === "number") _bgmVol = Math.max(0, Math.min(1, v.bgm));
+    if (typeof v.sfx === "number") _sfxVol = Math.max(0, Math.min(1, v.sfx));
+  } catch { /* ignore */ }
+}
+
+function _saveVolumes(): void {
+  try {
+    localStorage.setItem(AUDIO_VOL_KEY, JSON.stringify({ bgm: _bgmVol, sfx: _sfxVol }));
+  } catch { /* ignore */ }
+}
+
+export function getBgmVolume(): number { return _bgmVol; }
+export function getSfxVolume(): number { return _sfxVol; }
+
+export function setBgmVolume(vol: number): void {
+  _bgmVol = Math.max(0, Math.min(1, vol));
+  // ライブ反映
+  if (bgmEl) bgmEl.volume = _bgmVol;
+  if (_bgmGain) {
+    const ac = getACtx();
+    if (ac) {
+      const target = _bgmVol > 0 ? _bgmVol * WEB_AUDIO_BGM_MAX_GAIN : 0.001;
+      _bgmGain.gain.setValueAtTime(target, ac.currentTime);
+    }
+  }
+  _saveVolumes();
+}
+
+export function setSfxVolume(vol: number): void {
+  _sfxVol = Math.max(0, Math.min(1, vol));
+  _saveVolumes();
+}
+
 // SFX キー一覧
 const SFX_KEYS = [
   "sfx_hit",
@@ -91,7 +144,9 @@ export function playTone(
     osc.frequency.setValueAtTime(freq, t);
     if (freqEnd !== null)
       osc.frequency.exponentialRampToValueAtTime(freqEnd, t + dur * 0.9);
-    gain.gain.setValueAtTime(vol, t);
+    // SFX 音量を適用
+    const scaledVol = vol * _sfxVol;
+    gain.gain.setValueAtTime(scaledVol, t);
     gain.gain.exponentialRampToValueAtTime(0.001, t + dur);
     osc.start(t);
     osc.stop(t + dur + 0.01);
@@ -129,6 +184,9 @@ export function initDungeonAudio(): void {
   if (typeof window === "undefined" || _initialized) return;
   _initialized = true;
 
+  // localStorage から音量を復元
+  _loadVolumes();
+
   // SFX をプリロード
   for (const key of SFX_KEYS) {
     const el = new Audio(`${AUDIO_BASE}${key}.mp3`);
@@ -143,7 +201,7 @@ export function initDungeonAudio(): void {
 
   // BGM をプリロード
   const bgm = new Audio(`${AUDIO_BASE}bgm.mp3`);
-  bgm.volume = 0.5;
+  bgm.volume = _bgmVol;
   bgm.preload = "auto";
 
   // カスタムループ（timeupdate でループポイントを制御）
@@ -189,7 +247,7 @@ function playSfx(key: SfxKey, fallback: () => void): void {
   const el = sfxReady.get(key);
   if (el) {
     const clone = el.cloneNode() as HTMLAudioElement;
-    clone.volume = el.volume;
+    clone.volume = _sfxVol;
     clone.play().catch(() => fallback());
   } else {
     fallback();
@@ -308,7 +366,7 @@ function _startWebAudioBGM(): void {
     }
 
     _bgmGain = ac.createGain();
-    _bgmGain.gain.setValueAtTime(0.08, ac.currentTime);
+    _bgmGain.gain.setValueAtTime(_bgmVol * WEB_AUDIO_BGM_MAX_GAIN, ac.currentTime);
     _bgmGain.connect(ac.destination);
 
     const bassNotes = [
