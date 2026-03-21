@@ -44,13 +44,13 @@ export default function CreditsPage() {
                 <div className="flex gap-2">
                   <dt className="text-slate-500 dark:text-slate-400 shrink-0 w-16">曲名</dt>
                   <dd className="text-slate-800 dark:text-slate-200">
-                    Dungeon Drizzle
+                    カナリアスキップ
                   </dd>
                 </div>
                 <div className="flex gap-2">
                   <dt className="text-slate-500 dark:text-slate-400 shrink-0 w-16">作曲者</dt>
                   <dd className="text-slate-800 dark:text-slate-200">
-                    Senses Circuit
+                    まんぼう二等兵
                   </dd>
                 </div>
                 <div className="flex gap-2">

@@ -22,7 +22,9 @@
 //     sfx_item.mp3      - アイテム取得・使用
 //
 // 【BGMループポイント設定】
-// 音源のループ始点・終点（秒）を変更する場合は下記の定数を編集してください。
+// AudioBufferSourceNode の loopStart / loopEnd に設定する秒数です。
+// Web Audio API はサンプル単位で正確にループするため MP3 のズレが発生しません。
+// 曲の尺に合わせて下記を編集してください。
 const BGM_LOOP_START = 14.222;        // ループ始点（秒）
 const BGM_LOOP_END   = 3 * 60 + 36.888; // ループ終点（秒）= 216.888
 //
@@ -37,7 +39,7 @@ const AUDIO_BASE = "/audio/dungeon/";
 const BGM_DEFAULT_VOL = 0.15;
 const SFX_DEFAULT_VOL = 0.4;
 
-// Web Audio BGM のマスターゲインスケール（vol=1.0 時のゲイン）
+// Web Audio フォールバック BGM のマスターゲインスケール（vol=1.0 時のゲイン）
 const WEB_AUDIO_BGM_MAX_GAIN = 0.53;
 
 const AUDIO_VOL_KEY = "dungeon_audio_vol";
@@ -66,8 +68,12 @@ export function getSfxVolume(): number { return _sfxVol; }
 
 export function setBgmVolume(vol: number): void {
   _bgmVol = Math.max(0, Math.min(1, vol));
-  // ライブ反映
-  if (bgmEl) bgmEl.volume = _bgmVol;
+  // ライブ反映: AudioBuffer BGM
+  if (_bgmBufferGain) {
+    const ac = getACtx();
+    if (ac) _bgmBufferGain.gain.setValueAtTime(_bgmVol, ac.currentTime);
+  }
+  // ライブ反映: Web Audio フォールバック BGM
   if (_bgmGain) {
     const ac = getACtx();
     if (ac) {
@@ -100,15 +106,9 @@ type SfxKey = (typeof SFX_KEYS)[number];
 // ロード済みの SFX 要素
 const sfxReady = new Map<SfxKey, HTMLAudioElement>();
 
-// BGM 状態
-let bgmEl: HTMLAudioElement | null = null;
-let bgmFileReady = false;  // canplaythrough 済み
-let bgmShouldPlay = false; // startBGM() が呼ばれた後 true になる
-
-// ── Web Audio API（フォールバック） ──────────────────────────────────────────
+// ── Web Audio API ─────────────────────────────────────────────────────────────
 
 let _actx: AudioContext | null = null;
-let _bgmGain: GainNode | null = null;
 
 function getACtx(): AudioContext | null {
   if (typeof window === "undefined") return null;
@@ -123,6 +123,153 @@ function getACtx(): AudioContext | null {
   if (_actx.state === "suspended") _actx.resume();
   return _actx;
 }
+
+// ── BGM（AudioBuffer 方式: サンプル単位の正確なループ） ────────────────────
+
+let _bgmBuffer: AudioBuffer | null = null;       // デコード済みの PCM データ
+let _bgmSource: AudioBufferSourceNode | null = null; // 再生中のソース
+let _bgmBufferGain: GainNode | null = null;      // 音量制御ノード
+let _bgmShouldPlay = false;                      // startBGM() が呼ばれた後 true
+
+// MP3 を fetch → decodeAudioData でロード（非同期・initDungeonAudio から呼ぶ）
+async function _loadBgmBuffer(): Promise<void> {
+  try {
+    const res = await fetch(`${AUDIO_BASE}bgm.mp3`);
+    if (!res.ok) return; // ファイルなし → Web Audio フォールバックのまま
+    const arrayBuf = await res.arrayBuffer();
+    const ac = getACtx();
+    if (!ac) return;
+    _bgmBuffer = await ac.decodeAudioData(arrayBuf);
+    // ロード完了時点で startBGM() が呼ばれていたら即再生
+    if (_bgmShouldPlay) {
+      _stopWebAudioBGM(); // フォールバックを停止
+      _playBgmBuffer();
+    }
+  } catch {
+    // ファイルなし・デコードエラー → フォールバックのまま
+  }
+}
+
+function _playBgmBuffer(): void {
+  const ac = getACtx();
+  if (!ac || !_bgmBuffer) return;
+
+  // ゲインノードを一度だけ生成（音量制御用）
+  if (!_bgmBufferGain) {
+    _bgmBufferGain = ac.createGain();
+    _bgmBufferGain.gain.setValueAtTime(_bgmVol, ac.currentTime);
+    _bgmBufferGain.connect(ac.destination);
+  } else {
+    _bgmBufferGain.gain.setValueAtTime(_bgmVol, ac.currentTime);
+  }
+
+  // 前のソースがあれば停止
+  if (_bgmSource) {
+    try { _bgmSource.stop(); } catch { /* ignore */ }
+    _bgmSource = null;
+  }
+
+  const src = ac.createBufferSource();
+  src.buffer = _bgmBuffer;
+  src.loop = true;
+  src.loopStart = BGM_LOOP_START;
+  src.loopEnd = BGM_LOOP_END;
+  src.connect(_bgmBufferGain);
+  src.start(0);
+  _bgmSource = src;
+}
+
+function _stopBgmBuffer(): void {
+  if (_bgmSource) {
+    try { _bgmSource.stop(); } catch { /* ignore */ }
+    _bgmSource = null;
+  }
+  // ゲインノードはキープ（setBgmVolume で再利用するため）
+}
+
+// ── Web Audio BGM（フォールバック: ピクセルサウンド） ────────────────────────
+
+let _bgmGain: GainNode | null = null;
+
+function _stopWebAudioBGM(): void {
+  try {
+    if (_bgmGain) {
+      const ac = getACtx();
+      if (ac) {
+        _bgmGain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.3);
+      }
+      setTimeout(() => { _bgmGain = null; }, 400);
+    }
+  } catch { /* ignore */ }
+}
+
+function _startWebAudioBGM(): void {
+  try {
+    const ac = getACtx();
+    if (!ac) return;
+    if (_bgmGain) {
+      _bgmGain.gain.setValueAtTime(0.001, ac.currentTime);
+      _bgmGain = null;
+    }
+
+    _bgmGain = ac.createGain();
+    _bgmGain.gain.setValueAtTime(_bgmVol * WEB_AUDIO_BGM_MAX_GAIN, ac.currentTime);
+    _bgmGain.connect(ac.destination);
+
+    const bassNotes = [
+      110, 110, 98, 110, 110, 98, 110, 123, 98, 110, 98, 87, 98, 110, 123, 110,
+    ];
+    const melNotes = [
+      220, 262, 220, 196, 220, 262, 294, 220, 196, 220, 196, 175, 196, 220, 247, 220,
+    ];
+    const beatLen = 0.22;
+    const loopLen = bassNotes.length * beatLen;
+    const localGain = _bgmGain;
+
+    const scheduleLoop = (startTime: number) => {
+      if (!localGain) return;
+      const currentAc = getACtx();
+      if (!currentAc) return;
+      bassNotes.forEach((f, i) => {
+        const t = startTime + i * beatLen;
+        const osc = currentAc.createOscillator();
+        const g = currentAc.createGain();
+        osc.connect(g); g.connect(localGain);
+        osc.type = "square";
+        osc.frequency.setValueAtTime(f, t);
+        g.gain.setValueAtTime(0.6, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + beatLen * 0.7);
+        osc.start(t); osc.stop(t + beatLen * 0.8);
+      });
+      melNotes.forEach((f, i) => {
+        const t = startTime + i * beatLen + beatLen * 0.5;
+        const osc = currentAc.createOscillator();
+        const g = currentAc.createGain();
+        osc.connect(g); g.connect(localGain);
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(f, t);
+        g.gain.setValueAtTime(0.4, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + beatLen * 0.6);
+        osc.start(t); osc.stop(t + beatLen * 0.7);
+      });
+    };
+
+    let nextLoopTime = ac.currentTime;
+    const tick = () => {
+      if (!_bgmGain || _bgmGain !== localGain) return;
+      const currentAc2 = getACtx();
+      if (!currentAc2) return;
+      while (nextLoopTime < currentAc2.currentTime + 2.0) {
+        scheduleLoop(nextLoopTime);
+        nextLoopTime += loopLen;
+      }
+      setTimeout(tick, 500);
+    };
+    tick();
+  } catch { /* ignore */ }
+}
+
+// ── SFX Web Audio フォールバック ─────────────────────────────────────────────
 
 export function playTone(
   freq: number,
@@ -144,36 +291,12 @@ export function playTone(
     osc.frequency.setValueAtTime(freq, t);
     if (freqEnd !== null)
       osc.frequency.exponentialRampToValueAtTime(freqEnd, t + dur * 0.9);
-    // SFX 音量を適用
     const scaledVol = vol * _sfxVol;
     gain.gain.setValueAtTime(scaledVol, t);
     gain.gain.exponentialRampToValueAtTime(0.001, t + dur);
     osc.start(t);
     osc.stop(t + dur + 0.01);
-  } catch {
-    // ignore
-  }
-}
-
-// ── Web Audio BGM の停止ヘルパー ──────────────────────────────────────────────
-
-function _stopWebAudioBGM(): void {
-  try {
-    if (_bgmGain) {
-      const ac = getACtx();
-      if (ac) {
-        _bgmGain.gain.exponentialRampToValueAtTime(
-          0.001,
-          ac.currentTime + 0.3
-        );
-      }
-      setTimeout(() => {
-        _bgmGain = null;
-      }, 400);
-    }
-  } catch {
-    // ignore
-  }
+  } catch { /* ignore */ }
 }
 
 // ── MP3 プリロード ────────────────────────────────────────────────────────────
@@ -187,58 +310,16 @@ export function initDungeonAudio(): void {
   // localStorage から音量を復元
   _loadVolumes();
 
-  // SFX をプリロード
+  // SFX を HTMLAudioElement でプリロード
   for (const key of SFX_KEYS) {
     const el = new Audio(`${AUDIO_BASE}${key}.mp3`);
     el.preload = "auto";
-    el.addEventListener(
-      "canplaythrough",
-      () => { sfxReady.set(key, el); },
-      { once: true }
-    );
+    el.addEventListener("canplaythrough", () => { sfxReady.set(key, el); }, { once: true });
     el.load();
   }
 
-  // BGM をプリロード
-  const bgm = new Audio(`${AUDIO_BASE}bgm.mp3`);
-  bgm.volume = _bgmVol;
-  bgm.preload = "auto";
-
-  // カスタムループ（timeupdate でループポイントを制御）
-  bgm.addEventListener("timeupdate", () => {
-    if (bgm.currentTime >= BGM_LOOP_END) {
-      bgm.currentTime = BGM_LOOP_START;
-    }
-  });
-
-  bgm.addEventListener(
-    "canplaythrough",
-    () => {
-      bgmFileReady = true;
-      bgmEl = bgm;
-      // startBGM() がすでに呼ばれていたら Web Audio から MP3 に切り替える
-      if (bgmShouldPlay) {
-        _stopWebAudioBGM();
-        bgm.currentTime = 0;
-        bgm.play().catch(() => {
-          // 自動再生ポリシーでブロックされた場合は何もしない（ユーザー操作後に再試行）
-        });
-      }
-    },
-    { once: true }
-  );
-
-  bgm.addEventListener(
-    "error",
-    () => {
-      // ファイルが存在しない → Web Audio フォールバックのまま
-      bgmEl = null;
-    },
-    { once: true }
-  );
-
-  bgm.load();
-  bgmEl = bgm; // ロード中は保持しておく（error 時に null へ上書き）
+  // BGM を Web Audio API でロード（サンプル単位の正確なループのため）
+  _loadBgmBuffer();
 }
 
 // ── SFX 再生ヘルパー ──────────────────────────────────────────────────────────
@@ -322,111 +403,24 @@ export function sfxItem(): void {
   });
 }
 
-// ── BGM ───────────────────────────────────────────────────────────────────────
+// ── BGM 公開 API ──────────────────────────────────────────────────────────────
 
 export function startBGM(): void {
-  bgmShouldPlay = true;
+  _bgmShouldPlay = true;
 
-  if (bgmFileReady && bgmEl) {
-    // MP3 ロード済み → すぐに再生
-    bgmEl.currentTime = 0;
-    bgmEl.play().catch(() => {
-      // 自動再生ポリシーでブロック → Web Audio にフォールバック
-      _startWebAudioBGM();
-    });
+  if (_bgmBuffer) {
+    // AudioBuffer ロード済み → すぐに再生
+    _stopWebAudioBGM();
+    _playBgmBuffer();
   } else {
-    // MP3 未ロード or ファイルなし → Web Audio を開始
-    // MP3 のロードが完了したら canplaythrough リスナーが自動で切り替える
+    // まだロード中 → Web Audio フォールバックを暫定再生
+    // _loadBgmBuffer() が完了したら自動で切り替わる
     _startWebAudioBGM();
   }
 }
 
 export function stopBGM(): void {
-  bgmShouldPlay = false;
-
-  // MP3 BGM を停止
-  if (bgmEl && !bgmEl.paused) {
-    bgmEl.pause();
-    bgmEl.currentTime = 0;
-  }
-
-  // Web Audio BGM を停止
+  _bgmShouldPlay = false;
+  _stopBgmBuffer();
   _stopWebAudioBGM();
-}
-
-// ── Web Audio BGM（フォールバック） ───────────────────────────────────────────
-
-function _startWebAudioBGM(): void {
-  try {
-    const ac = getACtx();
-    if (!ac) return;
-    if (_bgmGain) {
-      _bgmGain.gain.setValueAtTime(0.001, ac.currentTime);
-      _bgmGain = null;
-    }
-
-    _bgmGain = ac.createGain();
-    _bgmGain.gain.setValueAtTime(_bgmVol * WEB_AUDIO_BGM_MAX_GAIN, ac.currentTime);
-    _bgmGain.connect(ac.destination);
-
-    const bassNotes = [
-      110, 110, 98, 110, 110, 98, 110, 123, 98, 110, 98, 87, 98, 110, 123,
-      110,
-    ];
-    const melNotes = [
-      220, 262, 220, 196, 220, 262, 294, 220, 196, 220, 196, 175, 196, 220,
-      247, 220,
-    ];
-    const beatLen = 0.22;
-    const loopLen = bassNotes.length * beatLen;
-
-    const localGain = _bgmGain;
-
-    const scheduleLoop = (startTime: number) => {
-      if (!localGain) return;
-      const currentAc = getACtx();
-      if (!currentAc) return;
-      bassNotes.forEach((f, i) => {
-        const t = startTime + i * beatLen;
-        const osc = currentAc.createOscillator();
-        const g = currentAc.createGain();
-        osc.connect(g);
-        g.connect(localGain);
-        osc.type = "square";
-        osc.frequency.setValueAtTime(f, t);
-        g.gain.setValueAtTime(0.6, t);
-        g.gain.exponentialRampToValueAtTime(0.001, t + beatLen * 0.7);
-        osc.start(t);
-        osc.stop(t + beatLen * 0.8);
-      });
-      melNotes.forEach((f, i) => {
-        const t = startTime + i * beatLen + beatLen * 0.5;
-        const osc = currentAc.createOscillator();
-        const g = currentAc.createGain();
-        osc.connect(g);
-        g.connect(localGain);
-        osc.type = "triangle";
-        osc.frequency.setValueAtTime(f, t);
-        g.gain.setValueAtTime(0.4, t);
-        g.gain.exponentialRampToValueAtTime(0.001, t + beatLen * 0.6);
-        osc.start(t);
-        osc.stop(t + beatLen * 0.7);
-      });
-    };
-
-    let nextLoopTime = ac.currentTime;
-    const tick = () => {
-      if (!_bgmGain || _bgmGain !== localGain) return;
-      const currentAc2 = getACtx();
-      if (!currentAc2) return;
-      while (nextLoopTime < currentAc2.currentTime + 2.0) {
-        scheduleLoop(nextLoopTime);
-        nextLoopTime += loopLen;
-      }
-      setTimeout(tick, 500);
-    };
-    tick();
-  } catch {
-    // ignore
-  }
 }
