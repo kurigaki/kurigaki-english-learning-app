@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, ScreenEffect, EventOverlay } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
+import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume } from "@/lib/dungeon/audio";
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
 import { DUNGEON_MODE_KEY } from "@/lib/dungeon/constants";
@@ -69,11 +70,86 @@ function saveCoursePref(pref: CoursePref) {
 
 // ─── Sub-components ────────────────────────────────────────────────
 
+// ── 音量パネル ──────────────────────────────────────────────────────
+function DungeonVolumePanel({ onClose }: { onClose: () => void }) {
+  const [bgmVol, setBgmVolState] = React.useState(() => getBgmVolume());
+  const [sfxVol, setSfxVolState] = React.useState(() => getSfxVolume());
+
+  const handleBgm = (v: number) => {
+    setBgmVolState(v);
+    setBgmVolume(v);
+  };
+  const handleSfx = (v: number) => {
+    setSfxVolState(v);
+    setSfxVolume(v);
+  };
+
+  return (
+    <div style={{
+      position: "fixed", inset: 0, zIndex: 500,
+      background: "rgba(0,0,0,0.7)",
+      display: "flex", alignItems: "center", justifyContent: "center",
+    }} onClick={onClose}>
+      <div style={{
+        background: DC.bg2, border: `2px solid ${DC.border2}`, borderRadius: 6,
+        padding: "20px 24px", width: 280, display: "flex", flexDirection: "column", gap: 16,
+      }} onClick={(e) => e.stopPropagation()}>
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: DC.gold, textAlign: "center" }}>
+          🔊 音量設定
+        </div>
+
+        {/* BGM */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 13, color: DC.text2 }}>BGM</span>
+            <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text }}>{Math.round(bgmVol * 100)}%</span>
+          </div>
+          <input
+            type="range" min={0} max={1} step={0.01}
+            value={bgmVol}
+            onChange={(e) => handleBgm(Number(e.target.value))}
+            style={{ width: "100%", accentColor: DC.accent }}
+          />
+        </div>
+
+        {/* SFX */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 13, color: DC.text2 }}>効果音</span>
+            <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text }}>{Math.round(sfxVol * 100)}%</span>
+          </div>
+          <input
+            type="range" min={0} max={1} step={0.01}
+            value={sfxVol}
+            onChange={(e) => handleSfx(Number(e.target.value))}
+            style={{ width: "100%", accentColor: DC.accent }}
+          />
+        </div>
+
+        <div style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 10, color: DC.text3, textAlign: "center", lineHeight: 1.6 }}>
+          英語の聞き取りを優先するため<br />BGMは控えめに設定されています
+        </div>
+
+        <button
+          onClick={onClose}
+          style={{
+            fontFamily: "'Press Start 2P', monospace", fontSize: 9,
+            color: DC.text, background: DC.bg4, border: `1px solid ${DC.border2}`,
+            borderRadius: 4, padding: "8px 16px", cursor: "pointer",
+          }}
+        >
+          閉じる
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function DungeonHUD({
-  floor, hp, mhp, lv, exp, enext, turn, hunger, maxHunger, gold,
+  floor, hp, mhp, lv, exp, enext, turn, hunger, maxHunger, gold, onVolumeClick,
 }: {
   floor: number; hp: number; mhp: number; lv: number; exp: number; enext: number; turn: number;
-  hunger: number; maxHunger: number; gold: number;
+  hunger: number; maxHunger: number; gold: number; onVolumeClick: () => void;
 }) {
   const hpPct = Math.max(0, (hp / mhp) * 100);
   const expPct = (exp / enext) * 100;
@@ -131,6 +207,18 @@ function DungeonHUD({
           </div>
         </div>
       </div>
+      {/* 音量ボタン */}
+      <button
+        onClick={onVolumeClick}
+        title="音量設定"
+        style={{
+          background: "none", border: "none", cursor: "pointer",
+          fontSize: 16, padding: "2px 4px", flexShrink: 0,
+          opacity: 0.7, lineHeight: 1,
+        }}
+      >
+        🔊
+      </button>
     </div>
   );
 }
@@ -1234,6 +1322,7 @@ function TitleScreen({
   const [weakOnly, setWeakOnly] = useState(false);
   const [dungeonMode, setDungeonMode] = useState<DungeonMode>(() => loadDungeonMode());
   const [loading, setLoading] = useState(false);
+  const [showVolume, setShowVolume] = useState(false);
   const weakWordCount = storage.getWeakWords().length;
 
   const courseStages = selectedCourse && selectedCourse in COURSE_DEFINITIONS
@@ -1472,6 +1561,19 @@ function TitleScreen({
         <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.text2 }}>読み込み中…</div>
       )}
 
+      {/* 音量ボタン */}
+      <button
+        onClick={() => setShowVolume(true)}
+        style={{
+          fontFamily: "'DotGothic16', sans-serif", fontSize: 13,
+          color: DC.text2, background: DC.bg3, border: `1px solid ${DC.border}`,
+          borderRadius: 4, padding: "7px 14px", cursor: "pointer",
+        }}
+      >
+        🔊 音量設定
+      </button>
+      {showVolume && <DungeonVolumePanel onClose={() => setShowVolume(false)} />}
+
       {/* 操作説明（タイトル画面のみ） */}
       <div style={{
         fontSize: 10, color: DC.text2, textAlign: "center", lineHeight: 1.8,
@@ -1519,6 +1621,10 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const [showMap, setShowMap] = useState(false);
   const toggleMap = useCallback(() => setShowMap(v => !v), []);
   const closeMap = useCallback(() => setShowMap(false), []);
+
+  const [showVolume, setShowVolume] = useState(false);
+  const toggleVolume = useCallback(() => setShowVolume(v => !v), []);
+  const closeVolume = useCallback(() => setShowVolume(false), []);
 
   // sessionStorage からリザルト状態を復元 & localStorage セーブ確認
   useEffect(() => {
@@ -1775,6 +1881,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         hunger={uiState.hunger}
         maxHunger={uiState.maxHunger}
         gold={uiState.gold}
+        onVolumeClick={toggleVolume}
       />
 
       {/* Map */}
@@ -1799,6 +1906,9 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
           <DungeonMapOverlay gameState={gameStateRef.current} onClose={closeMap} />
         )}
       </div>
+
+      {/* Volume panel */}
+      {showVolume && <DungeonVolumePanel onClose={closeVolume} />}
 
       {/* Quiz panel */}
       <DungeonQuizPanel
