@@ -1698,6 +1698,11 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   }, [stopAutoWalk]);
 
   const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode = "easy") => {
+    // ★ await より前（ユーザージェスチャーの同期コールスタック内）で呼ぶ必須
+    // await fetch() を挟むと mobile Safari/Chrome はジェスチャーコンテキストを失い
+    // AudioContext の生成・resume() がブロックされる
+    unlockAudio();
+
     setDungeonMode(mode);
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
     setRestoredDeath(null);
@@ -1742,7 +1747,6 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         { wordId: 0, word: "danger", ans: "危険", ch: ["安全", "危険", "平和", "喜び"] },
       ];
     }
-    unlockAudio(); // スマホ対応: ユーザージェスチャー内でAudioContextを解放
     setQuestions(qs);
     setPhase("game");
   }, []);
