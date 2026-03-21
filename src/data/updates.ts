@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.69.0",
+    title: "ダンジョン：英語音声音量調整・攻撃改善・SFX細分化",
+    content: [
+      "英語音声（読み上げ）の音量を音量設定パネルで調整できるようになった。設定はアプリ全体に反映される",
+      "メニューの「テーマ」と「クイズ設定」の順番を変更（テーマが上に）",
+      "攻撃時、向いていない方向に敵がいる場合は自動でその方向を向いてからクイズを開始するように改善",
+      "効果音をより細かく使い分け：アイテム取得・使用・杖・ワープをそれぞれ別のSFXで再生",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-21",
     version: "1.68.0",
     title: "ダンジョン：BGMループのMP3ズレを修正",
     content: [
