@@ -31,14 +31,18 @@
 const BGM_LOOP_START = 14.222;        // ループ始点（秒）
 const BGM_LOOP_END   = 3 * 60 + 36.888; // ループ終点（秒）= 216.888
 //
+// 【設計方針】
+// - AudioContext はユーザージェスチャー内の unlockAudio() でのみ生成（TTS干渉防止）
+// - initDungeonAudio() は MP3 を ArrayBuffer としてフェッチするだけ（AudioContext不要）
+// - unlockAudio() でフェッチ済みデータをデコード。未フェッチ分はフェッチ完了後に逐次デコード
+// - BGM: src.start(0) は suspended でも呼べる（resume時に自動再生）
+// - SFX: AudioBuffer + 順番再生キュー。context が running でない間はキューで待機
 // ─────────────────────────────────────────────────────────────────────────────
 
 const AUDIO_BASE = "/audio/dungeon/";
 
 // ── 音量設定 ─────────────────────────────────────────────────────────────────
 
-// デフォルト音量（0〜1）
-// BGM は英語音声の邪魔にならない程度に控えめ
 export const BGM_DEFAULT_VOL = 0.10;
 export const SFX_DEFAULT_VOL = 0.4;
 
@@ -69,8 +73,7 @@ export function getSfxVolume(): number { return _sfxVol; }
 export function setBgmVolume(vol: number): void {
   _bgmVol = Math.max(0, Math.min(1, vol));
   if (_bgmBufferGain) {
-    const ac = getACtx();
-    if (ac) _bgmBufferGain.gain.setValueAtTime(_bgmVol, ac.currentTime);
+    if (_actx) _bgmBufferGain.gain.setValueAtTime(_bgmVol, _actx.currentTime);
   }
   _saveVolumes();
 }
@@ -98,78 +101,60 @@ const SFX_KEYS = [
 ] as const;
 type SfxKey = (typeof SFX_KEYS)[number];
 
-// ── Web Audio API ─────────────────────────────────────────────────────────────
+// ── AudioContext（ユーザージェスチャー内でのみ生成） ──────────────────────────
 
+// _actx は unlockAudio() が呼ばれるまで null のまま
 let _actx: AudioContext | null = null;
 
-function getACtx(): AudioContext | null {
-  if (typeof window === "undefined") return null;
-  if (!_actx) {
-    const AC =
-      window.AudioContext ||
-      (window as unknown as { webkitAudioContext: typeof AudioContext })
-        .webkitAudioContext;
-    if (!AC) return null;
-    _actx = new AC();
-  }
-  if (_actx.state === "suspended") _actx.resume().catch(() => {});
-  return _actx;
-}
+// ── BGM ───────────────────────────────────────────────────────────────────────
 
-// ── BGM（AudioBuffer 方式: サンプル単位の正確なループ） ────────────────────
-
+// フェーズ1: 生データ（fetchのみ、AudioContext不要）
+let _bgmRaw: ArrayBuffer | null = null;
+// フェーズ2: デコード済みバッファ
 let _bgmBuffer: AudioBuffer | null = null;
 let _bgmSource: AudioBufferSourceNode | null = null;
 let _bgmBufferGain: GainNode | null = null;
 let _bgmShouldPlay = false;
 
-async function _loadBgmBuffer(): Promise<void> {
+async function _fetchBgm(): Promise<void> {
   try {
     const res = await fetch(`${AUDIO_BASE}bgm.mp3`);
     if (!res.ok) return;
-    const arrayBuf = await res.arrayBuffer();
-    const ac = getACtx();
-    if (!ac) return;
-    _bgmBuffer = await ac.decodeAudioData(arrayBuf);
-    if (_bgmShouldPlay) {
-      _playBgmBuffer();
-    }
+    _bgmRaw = await res.arrayBuffer();
+    // AudioContext が既に解放済みならデコードを試みる
+    if (_actx) await _decodeBgm();
+  } catch { /* ignore */ }
+}
+
+async function _decodeBgm(): Promise<void> {
+  if (_bgmBuffer || !_bgmRaw || !_actx) return;
+  try {
+    _bgmBuffer = await _actx.decodeAudioData(_bgmRaw.slice(0));
+    if (_bgmShouldPlay) _playBgmBuffer();
   } catch { /* ignore */ }
 }
 
 function _playBgmBuffer(): void {
-  const ac = getACtx();
-  if (!ac || !_bgmBuffer) return;
-
-  // スマホ等でAudioContextがsuspendedのとき、runningになったら再度呼ぶ
-  if (ac.state !== "running") {
-    const onStateChange = () => {
-      if (ac.state === "running") {
-        ac.removeEventListener("statechange", onStateChange);
-        _playBgmBuffer();
-      }
-    };
-    ac.addEventListener("statechange", onStateChange);
-    return;
-  }
+  if (!_actx || !_bgmBuffer) return;
 
   if (!_bgmBufferGain) {
-    _bgmBufferGain = ac.createGain();
-    _bgmBufferGain.connect(ac.destination);
+    _bgmBufferGain = _actx.createGain();
+    _bgmBufferGain.connect(_actx.destination);
   }
-  _bgmBufferGain.gain.setValueAtTime(_bgmVol, ac.currentTime);
+  _bgmBufferGain.gain.setValueAtTime(_bgmVol, _actx.currentTime);
 
   if (_bgmSource) {
     try { _bgmSource.stop(); } catch { /* ignore */ }
     _bgmSource = null;
   }
 
-  const src = ac.createBufferSource();
+  const src = _actx.createBufferSource();
   src.buffer = _bgmBuffer;
   src.loop = true;
   src.loopStart = BGM_LOOP_START;
   src.loopEnd = BGM_LOOP_END;
   src.connect(_bgmBufferGain);
+  // suspended でも start(0) を呼ぶ: resume() 後に自動再生される（モバイル対応）
   src.start(0);
   _bgmSource = src;
 }
@@ -183,16 +168,18 @@ function _stopBgmBuffer(): void {
 
 // ── SFX（Web Audio API: ピーク正規化 + 順番再生キュー） ──────────────────────
 
-// フェーズ1: 生データをフェッチ（AudioContext不要）
+// フェーズ1: 生データ
 const _sfxRaw = new Map<SfxKey, ArrayBuffer>();
-// フェーズ2: デコード済み・正規化済みバッファ（AudioContext必要）
+// フェーズ2: デコード済み・正規化済み
 const _sfxBuf = new Map<SfxKey, AudioBuffer>();
 
 // 順番再生キュー
 const _sfxQueue: SfxKey[] = [];
 let _sfxActive = false;
+// キューが blocked 中か（context が suspended のとき statechange 待ち）
+let _sfxWaiting = false;
 
-// ピーク正規化（in-place: Float32Arrayへの書き込みでバッファを直接変更）
+// ピーク正規化（in-place）
 function _normalizePeak(buffer: AudioBuffer): AudioBuffer {
   let peak = 0;
   for (let ch = 0; ch < buffer.numberOfChannels; ch++) {
@@ -202,7 +189,6 @@ function _normalizePeak(buffer: AudioBuffer): AudioBuffer {
       if (abs > peak) peak = abs;
     }
   }
-  // ピークが0.98未満の場合のみスケール（クリップ防止のため0.98を上限に）
   if (peak > 0 && peak < 0.98) {
     const scale = 0.98 / peak;
     for (let ch = 0; ch < buffer.numberOfChannels; ch++) {
@@ -215,48 +201,72 @@ function _normalizePeak(buffer: AudioBuffer): AudioBuffer {
   return buffer;
 }
 
-// 全SFXをデコード・正規化（AudioContext解放後に呼ぶ）
-async function _decodeSfxAll(): Promise<void> {
-  const ac = getACtx();
-  if (!ac) return;
-  for (const key of SFX_KEYS) {
-    if (_sfxBuf.has(key)) continue;
-    const raw = _sfxRaw.get(key);
-    if (!raw) continue;
-    try {
-      // slice(0) でコピーを渡す（decodeAudioData が ArrayBuffer を detach するブラウザ対策）
-      const buf = await ac.decodeAudioData(raw.slice(0));
+// SFX 1件をフェッチ→デコード（AudioContext 有無に対応）
+async function _loadAndDecodeSfx(key: SfxKey): Promise<void> {
+  try {
+    const res = await fetch(`${AUDIO_BASE}${key}.mp3`);
+    if (!res.ok) return;
+    const raw = await res.arrayBuffer();
+    if (_actx) {
+      // AudioContext 解放済み: 即デコード
+      const buf = await _actx.decodeAudioData(raw);
       _sfxBuf.set(key, _normalizePeak(buf));
-    } catch { /* ignore */ }
-  }
+    } else {
+      // AudioContext 未解放: 生データを保存しておき、unlockAudio() でデコード
+      _sfxRaw.set(key, raw);
+    }
+  } catch { /* ignore */ }
 }
 
-// キューを順番に消化する（onended コールバックチェーン）
+// unlockAudio() 後: フェッチ済みの生データをまとめてデコード
+async function _decodePendingSfx(): Promise<void> {
+  if (!_actx) return;
+  await Promise.all(
+    SFX_KEYS.filter((k) => !_sfxBuf.has(k) && _sfxRaw.has(k)).map(async (key) => {
+      const raw = _sfxRaw.get(key)!;
+      try {
+        const buf = await _actx!.decodeAudioData(raw.slice(0));
+        _sfxBuf.set(key, _normalizePeak(buf));
+      } catch { /* ignore */ }
+    })
+  );
+}
+
+// キューを順番に消化する
 function _drainSfxQueue(): void {
   if (_sfxQueue.length === 0) {
     _sfxActive = false;
+    _sfxWaiting = false;
     return;
   }
-  const ac = getACtx();
-  if (!ac || ac.state !== "running") {
-    // AudioContextがrunningでない場合はスキップして次へ
-    _sfxQueue.shift();
-    _drainSfxQueue();
+  if (!_actx || _actx.state !== "running") {
+    // suspended: statechange で再トリガー（キューは捨てない）
+    if (!_sfxWaiting && _actx) {
+      _sfxWaiting = true;
+      const onState = () => {
+        if (_actx!.state === "running") {
+          _actx!.removeEventListener("statechange", onState);
+          _sfxWaiting = false;
+          _drainSfxQueue();
+        }
+      };
+      _actx.addEventListener("statechange", onState);
+    }
     return;
   }
   const key = _sfxQueue.shift()!;
   const buf = _sfxBuf.get(key);
   if (!buf) {
-    // バッファ未デコード: スキップして次へ
+    // 未デコード: スキップして次へ（フェッチが遅かった場合）
     _drainSfxQueue();
     return;
   }
-  const src = ac.createBufferSource();
+  const src = _actx.createBufferSource();
   src.buffer = buf;
-  const gain = ac.createGain();
-  gain.gain.setValueAtTime(_sfxVol, ac.currentTime);
+  const gain = _actx.createGain();
+  gain.gain.setValueAtTime(_sfxVol, _actx.currentTime);
   src.connect(gain);
-  gain.connect(ac.destination);
+  gain.connect(_actx.destination);
   src.onended = () => _drainSfxQueue();
   src.start(0);
 }
@@ -279,20 +289,13 @@ export function initDungeonAudio(): void {
 
   _loadVolumes();
 
-  // SFX: 生データをフェッチしてキャッシュ（デコードはAudioContext解放後）
-  for (const key of SFX_KEYS) {
-    fetch(`${AUDIO_BASE}${key}.mp3`)
-      .then((res) => {
-        if (res.ok) return res.arrayBuffer();
-        return null;
-      })
-      .then((buf) => {
-        if (buf) _sfxRaw.set(key, buf);
-      })
-      .catch(() => { /* ignore */ });
-  }
+  // BGM フェッチ（AudioContext不要、デコードはunlockAudio後）
+  _fetchBgm();
 
-  _loadBgmBuffer();
+  // SFX フェッチ + 可能なら即デコード（AudioContext 解放済みなら _loadAndDecodeSfx 内でデコード）
+  for (const key of SFX_KEYS) {
+    _loadAndDecodeSfx(key);
+  }
 }
 
 // ── 効果音 API ────────────────────────────────────────────────────────────────
@@ -312,12 +315,24 @@ export function sfxCane(): void     { playSfx("sfx_cane"); }
 
 // ── BGM 公開 API ──────────────────────────────────────────────────────────────
 
-// ユーザーインタラクション時に AudioContext を解放する（スマホ対応）
+// ユーザーインタラクション時に AudioContext を生成・解放する（スマホ対応）
 // startBGM() より先にボタンクリックハンドラで呼ぶこと
 export function unlockAudio(): void {
-  getACtx();
-  // AudioContext解放後にSFXをデコード・正規化（非同期）
-  _decodeSfxAll().catch(() => {});
+  if (typeof window === "undefined") return;
+  if (!_actx) {
+    const AC =
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext })
+        .webkitAudioContext;
+    if (!AC) return;
+    _actx = new AC();
+  }
+  if (_actx.state === "suspended") {
+    _actx.resume().catch(() => {});
+  }
+  // フェッチ済みの SFX 生データをデコード、BGM もデコード
+  _decodePendingSfx().catch(() => {});
+  _decodeBgm().catch(() => {});
 }
 
 export function startBGM(): void {
@@ -325,7 +340,7 @@ export function startBGM(): void {
   if (_bgmBuffer) {
     _playBgmBuffer();
   }
-  // ロード中の場合は _loadBgmBuffer() 完了時に自動再生される
+  // バッファ未準備の場合: _decodeBgm() または _fetchBgm() 完了後に自動再生
 }
 
 export function stopBGM(): void {
