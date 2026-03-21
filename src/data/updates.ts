@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.66.0",
+    title: "ダンジョン：BGM MP3対応・カスタムループ実装",
+    content: [
+      "public/audio/dungeon/bgm.mp3 を配置するとダンジョンBGMとして再生されるように",
+      "ファイルがない場合はWeb Audio APIによるピクセルサウンドに自動フォールバック",
+      "MP3のロード完了タイミングに関係なく確実にMP3が再生される非同期処理を修正",
+      "ループ始点・終点を秒単位で設定可能（audio.ts の BGM_LOOP_START / BGM_LOOP_END 定数）",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-21",
     version: "1.65.0",
     title: "ダンジョン：方向攻撃・敵AI改善・ログ表示改善",
     content: [
