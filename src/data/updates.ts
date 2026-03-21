@@ -33,6 +33,19 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.76.0",
+    title: "ダンジョン：スマホ音声を根本修正（オシレーター方式に変更）",
+    content: [
+      "iOS Safari・Chrome でBGM・効果音が鳴らない問題を根本から修正",
+      "原因：MP3ファイルの読み込み・デコードが非同期処理のため、iOS がユーザー操作による音声と認識せずブロックしていた",
+      "修正1：STARTボタン押下時にオシレーター（合成音）を同期的に再生し、iOSの音声ロックを確実に解除するよう変更",
+      "修正2：効果音にオシレーターフォールバックを追加。MP3デコードが失敗しても合成音で代替再生されるため、効果音が必ず鳴るようになった",
+      "スタンドアロン版（dungeon.html）と同じ方式を採用",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.75.0",
     title: "ダンジョン：スマホ音声修正（iOS Safari/Chrome 根本対応）",
     content: [
