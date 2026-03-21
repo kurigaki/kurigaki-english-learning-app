@@ -67,6 +67,9 @@ function _saveVolumes(): void {
   } catch { /* ignore */ }
 }
 
+// モジュールロード時に音量を読み込む（initDungeonAudio より前に BottomNav から呼ばれる場合に対応）
+if (typeof window !== "undefined") { _loadVolumes(); }
+
 export function getBgmVolume(): number { return _bgmVol; }
 export function getSfxVolume(): number { return _sfxVol; }
 
@@ -141,7 +144,12 @@ async function _decodeBgm(): Promise<void> {
   if (_bgmBuffer || !_bgmRaw || !_actx) return;
   try {
     _bgmBuffer = await _decodeAudioData(_actx, _bgmRaw.slice(0));
-    if (_bgmShouldPlay) void _playBgmBuffer();
+    if (_bgmShouldPlay) {
+      // HTMLAudioElement が再生中なら止めてから AudioBuffer に切り替える
+      // （切り替えないと同じ曲が2ストリーム流れてズレが生じる）
+      if (_gameBgmEl) _gameBgmEl.pause();
+      void _playBgmBuffer();
+    }
   } catch { /* ignore */ }
 }
 
@@ -279,6 +287,7 @@ function _scheduleOscBgmLoop(startTime: number): void {
   });
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- HTMLAudioElement方式移行後は未使用だが、フォールバック用に保持
 function _startOscBGM(): void {
   if (!_actx || _oscBgmGain) return; // 既に起動中ならスキップ
   try {
@@ -579,19 +588,21 @@ export function unlockAudio(): void {
 export function startBGM(): void {
   _bgmShouldPlay = true;
   stopTitleBGM();
-  // HTMLAudioElement で直接 bgm.mp3 を再生（iOS Safari/Chrome 対応）
-  const el = _getOrCreateGameBgm();
-  el.volume = _bgmVol;
-  el.play().catch(() => {});
-  // Web Audio API が利用可能なら AudioBuffer 再生を試みる（デスクトップ向け高品質ループ）
+  // 既存のストリームを全て止めてから再生（二重起動防止）
+  _stopBgmBuffer();
+  _stopOscBGM();
+  if (_gameBgmEl) _gameBgmEl.pause();
+  // AudioBuffer が準備済みなら高品質ループ再生（Web Audio API）
   if (_bgmBuffer) {
-    el.pause();
     void _playBgmBuffer();
     return;
   }
-  if (_actx) {
-    _startOscBGM();
-  }
+  // HTMLAudioElement で再生（iOS 対応・AudioBuffer 未準備時のプライマリ方式）
+  // ※ オシレーターは使用しない（HTMLAudioElement と同時再生するとズレが生じるため）
+  const el = _getOrCreateGameBgm();
+  el.volume = _bgmVol;
+  el.currentTime = 0;
+  el.play().catch(() => {});
 }
 
 export function stopBGM(): void {
