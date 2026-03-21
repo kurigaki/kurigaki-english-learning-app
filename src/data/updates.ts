@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.73.0",
+    title: "ダンジョン：スマホでBGM・効果音が全く流れないバグを修正",
+    content: [
+      "Chrome・Safari を問わずスマホでBGMと効果音が一切再生されなかったバグを修正",
+      "原因：START ボタン押下後に非同期通信（fetch）を挟んでから AudioContext を作成していたため、モバイルブラウザがユーザー操作と認識せず音声再生をブロックしていた",
+      "ユーザー操作と同じ同期処理内で AudioContext を生成するよう修正",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.72.0",
     title: "ダンジョン：スマホ音声修正・効果音の二重再生防止・テンポ改善",
     content: [
