@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.81.0",
+    title: "ダンジョン：ナビゲーションクリックでBGM開始・離脱で停止",
+    content: [
+      "ボトムナビの「ダンジョン」をタップした瞬間にタイトルBGMが開始（iOS対応：ユーザー操作内でaudio.play()を呼ぶことでSafari/Chromeでも動作）",
+      "他ページへのナビゲーションや画面遷移でダンジョンBGMを自動停止",
+      "タイトル画面にBGMクレジットを追加：\"Promotion Legend\" by GT-K (DOVA-SYNDROME)",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-21",
     version: "1.80.0",
     title: "ダンジョン：HTMLAudioElement方式にBGMを刷新（iOS完全対応）",
     content: [

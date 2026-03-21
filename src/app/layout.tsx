@@ -4,6 +4,7 @@ import { Header, BottomNav } from "@/components/ui";
 import { AuthProvider } from "@/lib/auth-context";
 import { AuthGuard } from "@/components/AuthGuard";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { PageBGMManager } from "@/components/PageBGMManager";
 
 export const metadata: Metadata = {
   title: "English Learning App",
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className="overflow-x-hidden">
         <ThemeProvider>
           <AuthProvider>
+            <PageBGMManager />
             <Header />
             <main className="relative">
               <AuthGuard>{children}</AuthGuard>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { startTitleBGM, stopAllDungeonBGM } from "@/lib/dungeon/audio";
 
 const navItems = [
   { href: "/", label: "ホーム", icon: "🏠" },
@@ -30,6 +31,16 @@ export const BottomNav = () => {
     return pathname === href || pathname.startsWith(href + "/");
   };
 
+  const handleNavClick = (href: string) => {
+    if (href === "/dungeon") {
+      // ダンジョンへ遷移: タイトルBGMをユーザージェスチャー内で開始（iOS対応）
+      startTitleBGM();
+    } else {
+      // 他ページへ遷移: ダンジョンBGMを停止
+      stopAllDungeonBGM();
+    }
+  };
+
   return (
     <nav
       className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 dark:bg-slate-900/95 dark:border-slate-700"
@@ -43,6 +54,7 @@ export const BottomNav = () => {
             <Link
               key={item.href}
               href={item.href}
+              onClick={() => handleNavClick(item.href)}
               className={`flex flex-col items-center justify-center flex-1 h-full transition-colors ${
                 active ? "text-primary-600 dark:text-primary-400" : "text-slate-400 dark:text-slate-500"
               }`}
