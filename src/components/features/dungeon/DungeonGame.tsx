@@ -1615,6 +1615,11 @@ function TitleScreen({
         💤 寝ている敵は部屋に入ると起きる
       </div>
 
+      {/* BGMクレジット */}
+      <div style={{ fontSize: 9, color: DC.text2, textAlign: "center", opacity: 0.7 }}>
+        BGM: &quot;Promotion Legend&quot; by GT-K (DOVA-SYNDROME)
+      </div>
+
       <style>{`
         @keyframes tfloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
         @keyframes tglow { 0%,100%{text-shadow:0 0 20px #f5c84260} 50%{text-shadow:0 0 30px #f5c842aa} }
@@ -1898,7 +1903,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       // （ボタン以外の場所をタップしても音声が起動する）
       <div
         style={{ position: "relative", width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}
-        onClick={() => { unlockAudio(); startTitleBGM(); }}
+        onClick={() => { unlockAudio(); startTitleBGM(); /* BottomNav未使用時のフォールバック */ }}
       >
         <TitleScreen onStart={handleStart as (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode) => void} onContinue={handleContinue} hasSave={hasSave} />
       </div>

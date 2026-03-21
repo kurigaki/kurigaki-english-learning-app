@@ -226,6 +226,8 @@ export function startTitleBGM(): void {
   // ゲーム BGM が再生中 or ゲーム開始済みの場合は起動しない
   if (_bgmShouldPlay) return;
   if (_gameBgmEl && !_gameBgmEl.paused) return;
+  // 既にタイトル BGM が再生中なら何もしない
+  if (_titleBgmEl && !_titleBgmEl.paused) return;
   const el = _getOrCreateTitleBgm();
   el.volume = _bgmVol;
   el.play().catch(() => {});
@@ -597,4 +599,10 @@ export function stopBGM(): void {
   if (_gameBgmEl) _gameBgmEl.pause();
   _stopBgmBuffer();
   _stopOscBGM();
+}
+
+/** タイトルBGM・ゲームBGMをまとめて停止（ページ離脱時など） */
+export function stopAllDungeonBGM(): void {
+  stopTitleBGM();
+  stopBGM();
 }
