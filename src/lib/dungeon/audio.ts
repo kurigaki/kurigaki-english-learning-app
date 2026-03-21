@@ -21,6 +21,11 @@
 //     sfx_stairs.mp3    - 階段・ワープ
 //     sfx_item.mp3      - アイテム取得・使用
 //
+// 【BGMループポイント設定】
+// 音源のループ始点・終点（秒）を変更する場合は下記の定数を編集してください。
+const BGM_LOOP_START = 14.222;        // ループ始点（秒）
+const BGM_LOOP_END   = 3 * 60 + 36.888; // ループ終点（秒）= 216.888
+//
 // ─────────────────────────────────────────────────────────────────────────────
 
 const AUDIO_BASE = "/audio/dungeon/";
@@ -39,12 +44,13 @@ const SFX_KEYS = [
 ] as const;
 type SfxKey = (typeof SFX_KEYS)[number];
 
-// ロード済みの SFX 要素（ロード失敗の場合はエントリなし）
+// ロード済みの SFX 要素
 const sfxReady = new Map<SfxKey, HTMLAudioElement>();
 
-// BGM 用 HTMLAudioElement（ロード失敗なら null）
+// BGM 状態
 let bgmEl: HTMLAudioElement | null = null;
-let bgmFileReady = false;
+let bgmFileReady = false;  // canplaythrough 済み
+let bgmShouldPlay = false; // startBGM() が呼ばれた後 true になる
 
 // ── Web Audio API（フォールバック） ──────────────────────────────────────────
 
@@ -94,6 +100,27 @@ export function playTone(
   }
 }
 
+// ── Web Audio BGM の停止ヘルパー ──────────────────────────────────────────────
+
+function _stopWebAudioBGM(): void {
+  try {
+    if (_bgmGain) {
+      const ac = getACtx();
+      if (ac) {
+        _bgmGain.gain.exponentialRampToValueAtTime(
+          0.001,
+          ac.currentTime + 0.3
+        );
+      }
+      setTimeout(() => {
+        _bgmGain = null;
+      }, 400);
+    }
+  } catch {
+    // ignore
+  }
+}
+
 // ── MP3 プリロード ────────────────────────────────────────────────────────────
 
 let _initialized = false;
@@ -108,30 +135,52 @@ export function initDungeonAudio(): void {
     el.preload = "auto";
     el.addEventListener(
       "canplaythrough",
-      () => {
-        sfxReady.set(key, el);
-      },
+      () => { sfxReady.set(key, el); },
       { once: true }
     );
-    // error は無視（ファイルがなければ Web Audio にフォールバック）
     el.load();
   }
 
   // BGM をプリロード
   const bgm = new Audio(`${AUDIO_BASE}bgm.mp3`);
-  bgm.loop = true;
   bgm.volume = 0.5;
   bgm.preload = "auto";
+
+  // カスタムループ（timeupdate でループポイントを制御）
+  bgm.addEventListener("timeupdate", () => {
+    if (bgm.currentTime >= BGM_LOOP_END) {
+      bgm.currentTime = BGM_LOOP_START;
+    }
+  });
+
   bgm.addEventListener(
     "canplaythrough",
     () => {
       bgmFileReady = true;
       bgmEl = bgm;
+      // startBGM() がすでに呼ばれていたら Web Audio から MP3 に切り替える
+      if (bgmShouldPlay) {
+        _stopWebAudioBGM();
+        bgm.currentTime = 0;
+        bgm.play().catch(() => {
+          // 自動再生ポリシーでブロックされた場合は何もしない（ユーザー操作後に再試行）
+        });
+      }
     },
     { once: true }
   );
+
+  bgm.addEventListener(
+    "error",
+    () => {
+      // ファイルが存在しない → Web Audio フォールバックのまま
+      bgmEl = null;
+    },
+    { once: true }
+  );
+
   bgm.load();
-  bgmEl = bgm; // canplaythrough を待たずに保持（start 時に判定）
+  bgmEl = bgm; // ロード中は保持しておく（error 時に null へ上書き）
 }
 
 // ── SFX 再生ヘルパー ──────────────────────────────────────────────────────────
@@ -139,7 +188,6 @@ export function initDungeonAudio(): void {
 function playSfx(key: SfxKey, fallback: () => void): void {
   const el = sfxReady.get(key);
   if (el) {
-    // 重複再生のためクローン
     const clone = el.cloneNode() as HTMLAudioElement;
     clone.volume = el.volume;
     clone.play().catch(() => fallback());
@@ -219,22 +267,25 @@ export function sfxItem(): void {
 // ── BGM ───────────────────────────────────────────────────────────────────────
 
 export function startBGM(): void {
-  // MP3 ファイルが使える場合
+  bgmShouldPlay = true;
+
   if (bgmFileReady && bgmEl) {
+    // MP3 ロード済み → すぐに再生
     bgmEl.currentTime = 0;
     bgmEl.play().catch(() => {
-      // 自動再生ブロック等 → フォールバック
+      // 自動再生ポリシーでブロック → Web Audio にフォールバック
       _startWebAudioBGM();
     });
-    return;
+  } else {
+    // MP3 未ロード or ファイルなし → Web Audio を開始
+    // MP3 のロードが完了したら canplaythrough リスナーが自動で切り替える
+    _startWebAudioBGM();
   }
-
-  // bgmEl が存在するが canplaythrough 未発火（まだロード中）の場合も
-  // Web Audio にフォールバック（ロード完了後は次回 startBGM から MP3 が使われる）
-  _startWebAudioBGM();
 }
 
 export function stopBGM(): void {
+  bgmShouldPlay = false;
+
   // MP3 BGM を停止
   if (bgmEl && !bgmEl.paused) {
     bgmEl.pause();
@@ -242,22 +293,7 @@ export function stopBGM(): void {
   }
 
   // Web Audio BGM を停止
-  try {
-    if (_bgmGain) {
-      const ac = getACtx();
-      if (ac) {
-        _bgmGain.gain.exponentialRampToValueAtTime(
-          0.001,
-          ac.currentTime + 0.3
-        );
-      }
-      setTimeout(() => {
-        _bgmGain = null;
-      }, 400);
-    }
-  } catch {
-    // ignore
-  }
+  _stopWebAudioBGM();
 }
 
 // ── Web Audio BGM（フォールバック） ───────────────────────────────────────────
