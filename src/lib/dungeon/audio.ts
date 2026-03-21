@@ -248,6 +248,84 @@ async function _decodePendingSfx(): Promise<void> {
 // SFX 間の最大待機時間（ms）: この時間を超えたら音が終わる前に次へ進む
 const MAX_GAP_MS = 350;
 
+// ── オシレーター SFX（MP3 デコード失敗時のフォールバック） ──────────────────
+// HTML プロトタイプ (public/dungeon.html) と同じ方式。
+// ファイルのデコード不要なので iOS Safari でも確実に鳴る。
+
+function _playOscTone(
+  freq: number, dur: number, vol: number,
+  type: OscillatorType = "square",
+  freqEnd?: number, delay = 0
+): void {
+  if (!_actx) return;
+  try {
+    const osc = _actx.createOscillator();
+    const gain = _actx.createGain();
+    osc.connect(gain);
+    gain.connect(_actx.destination);
+    osc.type = type;
+    const t = _actx.currentTime + delay;
+    osc.frequency.setValueAtTime(freq, t);
+    if (freqEnd !== undefined) osc.frequency.exponentialRampToValueAtTime(freqEnd, t + dur * 0.9);
+    gain.gain.setValueAtTime(vol * _sfxVol, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + dur);
+    osc.start(t);
+    osc.stop(t + dur + 0.01);
+  } catch { /* ignore */ }
+}
+
+function _playOscSfxByKey(key: SfxKey): void {
+  switch (key) {
+    case "sfx_hit":
+      _playOscTone(180, 0.04, 0.3, "square", 80);
+      _playOscTone(260, 0.06, 0.2, "square", 120, 0.02);
+      break;
+    case "sfx_crit":
+      _playOscTone(320, 0.04, 0.35, "square", 160);
+      _playOscTone(480, 0.08, 0.25, "square", 200, 0.03);
+      _playOscTone(240, 0.1, 0.2, "sawtooth", 120, 0.06);
+      break;
+    case "sfx_miss":
+      _playOscTone(120, 0.08, 0.15, "sine", 90);
+      break;
+    case "sfx_recv":
+      _playOscTone(90, 0.05, 0.4, "sawtooth", 60);
+      _playOscTone(70, 0.12, 0.25, "square", 50, 0.04);
+      break;
+    case "sfx_correct":
+      _playOscTone(523, 0.07, 0.2, "sine");
+      _playOscTone(659, 0.07, 0.2, "sine", undefined, 0.08);
+      _playOscTone(784, 0.1, 0.2, "sine", undefined, 0.16);
+      break;
+    case "sfx_wrong":
+      _playOscTone(220, 0.05, 0.2, "sawtooth", 180);
+      _playOscTone(160, 0.12, 0.2, "sawtooth", 120, 0.06);
+      break;
+    case "sfx_levelup":
+      [523, 659, 784, 1047].forEach((f, i) => _playOscTone(f, 0.1, 0.18, "sine", undefined, i * 0.09));
+      break;
+    case "sfx_stairs":
+      [440, 370, 310, 260].forEach((f, i) => _playOscTone(f, 0.07, 0.18, "sine", undefined, i * 0.07));
+      break;
+    case "sfx_warp":
+      _playOscTone(300, 0.15, 0.25, "sine", 600);
+      _playOscTone(600, 0.1, 0.15, "sine", 300, 0.1);
+      break;
+    case "sfx_item_get":
+      _playOscTone(660, 0.06, 0.18, "sine");
+      _playOscTone(880, 0.08, 0.16, "sine", undefined, 0.07);
+      break;
+    case "sfx_item_use":
+      _playOscTone(440, 0.08, 0.15, "sine");
+      _playOscTone(523, 0.06, 0.15, "sine", undefined, 0.06);
+      break;
+    case "sfx_cane":
+      _playOscTone(200, 0.05, 0.2, "sawtooth", 400);
+      _playOscTone(350, 0.1, 0.15, "sawtooth", 150, 0.04);
+      break;
+  }
+}
+
 // キューを順番に消化する
 function _drainSfxQueue(): void {
   if (_sfxQueue.length === 0) {
@@ -271,8 +349,9 @@ function _drainSfxQueue(): void {
   const key = _sfxQueue.shift()!;
   const buf = _sfxBuf.get(key);
   if (!buf) {
-    // 未デコード: スキップして次へ（フェッチが遅かった場合）
-    _drainSfxQueue();
+    // MP3 未デコード: オシレーターでフォールバック再生（iOS でも確実に鳴る）
+    _playOscSfxByKey(key);
+    setTimeout(() => _drainSfxQueue(), MAX_GAP_MS);
     return;
   }
   const src = _actx.createBufferSource();
@@ -349,19 +428,21 @@ export function unlockAudio(): void {
     if (!AC) return;
     _actx = new AC();
   }
-  // iOS Safari 対策: resume() を await した後にサイレントバッファを再生する
-  // resume() だけでは AudioContext が本当にアンロックされない場合があるため、
-  // 実際にオーディオ出力を行う操作（1サンプルの無音再生）が必要
-  _actx.resume().then(() => {
-    if (!_actx) return;
-    try {
-      const silentBuf = _actx.createBuffer(1, 1, 22050);
-      const silentSrc = _actx.createBufferSource();
-      silentSrc.buffer = silentBuf;
-      silentSrc.connect(_actx.destination);
-      silentSrc.start(0);
-    } catch { /* ignore */ }
-  }).catch(() => {});
+  // iOS Safari 対策: ユーザージェスチャーのコールスタック内（同期）でオシレーターを鳴らす
+  // resume().then() の中での再生は microtask になりジェスチャー判定から外れる場合がある。
+  // オシレーターは MP3 のようなファイルデコードが不要なため、suspended 状態でも
+  // start() 後に resume() が解決すれば確実に再生される（HTML プロトタイプと同じ方式）。
+  try {
+    const osc = _actx.createOscillator();
+    const gain = _actx.createGain();
+    gain.gain.setValueAtTime(0.001, _actx.currentTime); // ほぼ無音
+    osc.connect(gain);
+    gain.connect(_actx.destination);
+    osc.start(_actx.currentTime);
+    osc.stop(_actx.currentTime + 0.01); // 10ms で停止
+  } catch { /* ignore */ }
+  // resume() で suspended 状態を解除（オシレーターは resume 後に自動再生される）
+  _actx.resume().catch(() => {});
   // フェッチ済みの SFX 生データをデコード、BGM もデコード
   _decodePendingSfx().catch(() => {});
   _decodeBgm().catch(() => {});
