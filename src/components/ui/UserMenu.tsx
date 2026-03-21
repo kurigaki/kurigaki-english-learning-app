@@ -257,6 +257,17 @@ export const UserMenu = () => {
             </>
           )}
 
+          {/* テーマ切り替え */}
+          <div className="px-4 py-2.5 border-b border-slate-100 dark:border-slate-700">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
+                <span className="emoji-icon">🎨</span>
+                テーマ
+              </span>
+              <ThemeSwitcher />
+            </div>
+          </div>
+
           {/* クイズ設定 */}
           <nav className="py-1 border-b border-slate-100 dark:border-slate-700">
             <Link
@@ -271,17 +282,6 @@ export const UserMenu = () => {
               クイズ設定
             </Link>
           </nav>
-
-          {/* テーマ切り替え */}
-          <div className="px-4 py-2.5 border-b border-slate-100 dark:border-slate-700">
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-slate-600 dark:text-slate-300 flex items-center gap-1.5">
-                <span className="emoji-icon">🎨</span>
-                テーマ
-              </span>
-              <ThemeSwitcher />
-            </div>
-          </div>
 
           {/* お知らせ・クレジット */}
           <nav className="py-1">
