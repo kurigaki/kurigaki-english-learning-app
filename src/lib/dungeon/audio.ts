@@ -39,8 +39,8 @@ const AUDIO_BASE = "/audio/dungeon/";
 
 // デフォルト音量（0〜1）
 // BGM は英語音声の邪魔にならない程度に控えめ
-const BGM_DEFAULT_VOL = 0.08;
-const SFX_DEFAULT_VOL = 0.4;
+export const BGM_DEFAULT_VOL = 0.10;
+export const SFX_DEFAULT_VOL = 0.4;
 
 const AUDIO_VOL_KEY = "dungeon_audio_vol";
 
@@ -218,6 +218,12 @@ export function sfxItemUse(): void  { playSfx("sfx_item_use"); }
 export function sfxCane(): void     { playSfx("sfx_cane"); }
 
 // ── BGM 公開 API ──────────────────────────────────────────────────────────────
+
+// ユーザーインタラクション時に AudioContext を解放する（スマホ対応）
+// startBGM() より先にボタンクリックハンドラで呼ぶこと
+export function unlockAudio(): void {
+  getACtx();
+}
 
 export function startBGM(): void {
   _bgmShouldPlay = true;
