@@ -33,6 +33,19 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.71.0",
+    title: "ダンジョン：音声品質・BGMスマホ対応・バグ修正",
+    content: [
+      "効果音をWeb Audio API化し、MP3ファイルごとの音量差をピーク正規化で統一",
+      "効果音の順番再生を実装。正解音→攻撃音、不正解音→被ダメージ音のように順番に再生される",
+      "敵複数から攻撃を受けた場合の被ダメージ音も順番に再生",
+      "スマホでBGMが効果音と同タイミングでしか流れないバグを修正。ゲーム開始時から正しく再生される",
+      "ゲームオーバー後「続きから」で再開できてしまうバグを修正（根本原因：death後にsaveGameが実行されていた）",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.70.0",
     title: "ダンジョン：バグ修正・音量リセット・AI改善",
     content: [
