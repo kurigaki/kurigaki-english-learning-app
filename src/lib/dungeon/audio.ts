@@ -98,9 +98,6 @@ const SFX_KEYS = [
 ] as const;
 type SfxKey = (typeof SFX_KEYS)[number];
 
-// ロード済みの SFX 要素
-const sfxReady = new Map<SfxKey, HTMLAudioElement>();
-
 // ── Web Audio API ─────────────────────────────────────────────────────────────
 
 let _actx: AudioContext | null = null;
@@ -115,7 +112,7 @@ function getACtx(): AudioContext | null {
     if (!AC) return null;
     _actx = new AC();
   }
-  if (_actx.state === "suspended") _actx.resume();
+  if (_actx.state === "suspended") _actx.resume().catch(() => {});
   return _actx;
 }
 
@@ -143,6 +140,18 @@ async function _loadBgmBuffer(): Promise<void> {
 function _playBgmBuffer(): void {
   const ac = getACtx();
   if (!ac || !_bgmBuffer) return;
+
+  // スマホ等でAudioContextがsuspendedのとき、runningになったら再度呼ぶ
+  if (ac.state !== "running") {
+    const onStateChange = () => {
+      if (ac.state === "running") {
+        ac.removeEventListener("statechange", onStateChange);
+        _playBgmBuffer();
+      }
+    };
+    ac.addEventListener("statechange", onStateChange);
+    return;
+  }
 
   if (!_bgmBufferGain) {
     _bgmBufferGain = ac.createGain();
@@ -172,6 +181,94 @@ function _stopBgmBuffer(): void {
   }
 }
 
+// ── SFX（Web Audio API: ピーク正規化 + 順番再生キュー） ──────────────────────
+
+// フェーズ1: 生データをフェッチ（AudioContext不要）
+const _sfxRaw = new Map<SfxKey, ArrayBuffer>();
+// フェーズ2: デコード済み・正規化済みバッファ（AudioContext必要）
+const _sfxBuf = new Map<SfxKey, AudioBuffer>();
+
+// 順番再生キュー
+const _sfxQueue: SfxKey[] = [];
+let _sfxActive = false;
+
+// ピーク正規化（in-place: Float32Arrayへの書き込みでバッファを直接変更）
+function _normalizePeak(buffer: AudioBuffer): AudioBuffer {
+  let peak = 0;
+  for (let ch = 0; ch < buffer.numberOfChannels; ch++) {
+    const data = buffer.getChannelData(ch);
+    for (let i = 0; i < data.length; i++) {
+      const abs = Math.abs(data[i]);
+      if (abs > peak) peak = abs;
+    }
+  }
+  // ピークが0.98未満の場合のみスケール（クリップ防止のため0.98を上限に）
+  if (peak > 0 && peak < 0.98) {
+    const scale = 0.98 / peak;
+    for (let ch = 0; ch < buffer.numberOfChannels; ch++) {
+      const data = buffer.getChannelData(ch);
+      for (let i = 0; i < data.length; i++) {
+        data[i] *= scale;
+      }
+    }
+  }
+  return buffer;
+}
+
+// 全SFXをデコード・正規化（AudioContext解放後に呼ぶ）
+async function _decodeSfxAll(): Promise<void> {
+  const ac = getACtx();
+  if (!ac) return;
+  for (const key of SFX_KEYS) {
+    if (_sfxBuf.has(key)) continue;
+    const raw = _sfxRaw.get(key);
+    if (!raw) continue;
+    try {
+      // slice(0) でコピーを渡す（decodeAudioData が ArrayBuffer を detach するブラウザ対策）
+      const buf = await ac.decodeAudioData(raw.slice(0));
+      _sfxBuf.set(key, _normalizePeak(buf));
+    } catch { /* ignore */ }
+  }
+}
+
+// キューを順番に消化する（onended コールバックチェーン）
+function _drainSfxQueue(): void {
+  if (_sfxQueue.length === 0) {
+    _sfxActive = false;
+    return;
+  }
+  const ac = getACtx();
+  if (!ac || ac.state !== "running") {
+    // AudioContextがrunningでない場合はスキップして次へ
+    _sfxQueue.shift();
+    _drainSfxQueue();
+    return;
+  }
+  const key = _sfxQueue.shift()!;
+  const buf = _sfxBuf.get(key);
+  if (!buf) {
+    // バッファ未デコード: スキップして次へ
+    _drainSfxQueue();
+    return;
+  }
+  const src = ac.createBufferSource();
+  src.buffer = buf;
+  const gain = ac.createGain();
+  gain.gain.setValueAtTime(_sfxVol, ac.currentTime);
+  src.connect(gain);
+  gain.connect(ac.destination);
+  src.onended = () => _drainSfxQueue();
+  src.start(0);
+}
+
+function playSfx(key: SfxKey): void {
+  _sfxQueue.push(key);
+  if (!_sfxActive) {
+    _sfxActive = true;
+    _drainSfxQueue();
+  }
+}
+
 // ── MP3 プリロード ────────────────────────────────────────────────────────────
 
 let _initialized = false;
@@ -182,24 +279,20 @@ export function initDungeonAudio(): void {
 
   _loadVolumes();
 
+  // SFX: 生データをフェッチしてキャッシュ（デコードはAudioContext解放後）
   for (const key of SFX_KEYS) {
-    const el = new Audio(`${AUDIO_BASE}${key}.mp3`);
-    el.preload = "auto";
-    el.addEventListener("canplaythrough", () => { sfxReady.set(key, el); }, { once: true });
-    el.load();
+    fetch(`${AUDIO_BASE}${key}.mp3`)
+      .then((res) => {
+        if (res.ok) return res.arrayBuffer();
+        return null;
+      })
+      .then((buf) => {
+        if (buf) _sfxRaw.set(key, buf);
+      })
+      .catch(() => { /* ignore */ });
   }
 
   _loadBgmBuffer();
-}
-
-// ── SFX 再生ヘルパー（MP3のみ・フォールバックなし） ────────────────────────
-
-function playSfx(key: SfxKey): void {
-  const el = sfxReady.get(key);
-  if (!el) return;
-  const clone = el.cloneNode() as HTMLAudioElement;
-  clone.volume = _sfxVol;
-  clone.play().catch(() => { /* ignore */ });
 }
 
 // ── 効果音 API ────────────────────────────────────────────────────────────────
@@ -223,6 +316,8 @@ export function sfxCane(): void     { playSfx("sfx_cane"); }
 // startBGM() より先にボタンクリックハンドラで呼ぶこと
 export function unlockAudio(): void {
   getACtx();
+  // AudioContext解放後にSFXをデコード・正規化（非同期）
+  _decodeSfxAll().catch(() => {});
 }
 
 export function startBGM(): void {

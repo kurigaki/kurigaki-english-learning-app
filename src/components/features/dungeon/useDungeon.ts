@@ -911,7 +911,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   // ── セーブ（ターン毎オートセーブ） ──────────────────────────────
   const saveGame = useCallback(() => {
     const g = gameRef.current;
-    if (!g) return;
+    // プレイヤーが死亡している場合はセーブしない（clearDungeonGame後に上書きされるのを防ぐ）
+    if (!g || g.p.hp <= 0) return;
     const save: DungeonSave = {
       gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
       questions,
