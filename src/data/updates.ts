@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.68.0",
+    title: "ダンジョン：BGMループのMP3ズレを修正",
+    content: [
+      "BGMの再生方式をWeb Audio API（AudioBufferSourceNode）に変更。ループ折り返しがサンプル単位で正確になった",
+      "MP3エンコーダーによる先頭無音フレームの影響を受けなくなり、ループポイントのズレが解消",
+      "クレジットページのBGM情報を正しい情報に更新（カナリアスキップ / まんぼう二等兵）",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.67.0",
     title: "ダンジョン：BGM/SFX音量調整・クレジットページ追加",
     content: [
