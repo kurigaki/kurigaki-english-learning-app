@@ -33,6 +33,19 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.75.0",
+    title: "ダンジョン：スマホ音声修正（iOS Safari/Chrome 根本対応）",
+    content: [
+      "スマホ（iOS Safari・Chrome）でBGM・効果音が流れないバグをさらに根本修正",
+      "原因1：decodeAudioData の Promise API が iOS Safari 旧版で失敗しエラーが無視されていた → callback API ラッパーに統一",
+      "原因2：BGM 再生前に AudioContext の resume() 完了を待たず start() を呼んでいた → await resume() してから start() するよう修正",
+      "原因3：resume() を呼ぶだけでは iOS が AudioContext を本当にアンロックしない → 無音バッファを実際に再生してアンロックを確実化",
+      "原因4：効果音キューの suspended 解除が statechange イベント依存（iOS で発火しないことがある）→ Promise ベースに変更",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.74.0",
     title: "ダンジョン：スマホ音声修正（Safari/Chrome 両対応）",
     content: [
