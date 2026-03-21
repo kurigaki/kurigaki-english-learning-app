@@ -106,6 +106,14 @@ type SfxKey = (typeof SFX_KEYS)[number];
 // _actx は unlockAudio() が呼ばれるまで null のまま
 let _actx: AudioContext | null = null;
 
+// iOS Safari 互換: callback ベースの decodeAudioData ラッパー
+// Promise API は iOS Safari 旧版で失敗することがあるため callback API を使用
+function _decodeAudioData(ctx: AudioContext, buffer: ArrayBuffer): Promise<AudioBuffer> {
+  return new Promise((resolve, reject) => {
+    ctx.decodeAudioData(buffer, resolve, reject);
+  });
+}
+
 // ── BGM ───────────────────────────────────────────────────────────────────────
 
 // フェーズ1: 生データ（fetchのみ、AudioContext不要）
@@ -129,12 +137,12 @@ async function _fetchBgm(): Promise<void> {
 async function _decodeBgm(): Promise<void> {
   if (_bgmBuffer || !_bgmRaw || !_actx) return;
   try {
-    _bgmBuffer = await _actx.decodeAudioData(_bgmRaw.slice(0));
-    if (_bgmShouldPlay) _playBgmBuffer();
+    _bgmBuffer = await _decodeAudioData(_actx, _bgmRaw.slice(0));
+    if (_bgmShouldPlay) void _playBgmBuffer();
   } catch { /* ignore */ }
 }
 
-function _playBgmBuffer(): void {
+async function _playBgmBuffer(): Promise<void> {
   if (!_actx || !_bgmBuffer) return;
 
   if (!_bgmBufferGain) {
@@ -148,16 +156,18 @@ function _playBgmBuffer(): void {
     _bgmSource = null;
   }
 
+  // iOS Safari 対策: resume() を await してから src.start(0) を呼ぶ
+  // await せずに start() すると suspended 状態のまま再生されないことがある
+  if (_actx.state !== "running") {
+    try { await _actx.resume(); } catch { /* ignore */ }
+  }
+
   const src = _actx.createBufferSource();
   src.buffer = _bgmBuffer;
   src.loop = true;
   src.loopStart = BGM_LOOP_START;
   src.loopEnd = BGM_LOOP_END;
   src.connect(_bgmBufferGain);
-  // suspended でも start(0) を呼ぶ。resume() も呼んでモバイルで確実に再生
-  if (_actx.state === "suspended") {
-    _actx.resume().catch(() => {});
-  }
   src.start(0);
   _bgmSource = src;
 }
@@ -179,7 +189,7 @@ const _sfxBuf = new Map<SfxKey, AudioBuffer>();
 // 順番再生キュー
 const _sfxQueue: SfxKey[] = [];
 let _sfxActive = false;
-// キューが blocked 中か（context が suspended のとき statechange 待ち）
+// キューが blocked 中か（context が suspended のとき resume() 待ち）
 let _sfxWaiting = false;
 
 // ピーク正規化（in-place）
@@ -211,8 +221,8 @@ async function _loadAndDecodeSfx(key: SfxKey): Promise<void> {
     if (!res.ok) return;
     const raw = await res.arrayBuffer();
     if (_actx) {
-      // AudioContext 解放済み: 即デコード
-      const buf = await _actx.decodeAudioData(raw);
+      // AudioContext 解放済み: 即デコード（callback API で iOS 互換性確保）
+      const buf = await _decodeAudioData(_actx, raw.slice(0));
       _sfxBuf.set(key, _normalizePeak(buf));
     } else {
       // AudioContext 未解放: 生データを保存しておき、unlockAudio() でデコード
@@ -228,7 +238,7 @@ async function _decodePendingSfx(): Promise<void> {
     SFX_KEYS.filter((k) => !_sfxBuf.has(k) && _sfxRaw.has(k)).map(async (key) => {
       const raw = _sfxRaw.get(key)!;
       try {
-        const buf = await _actx!.decodeAudioData(raw.slice(0));
+        const buf = await _decodeAudioData(_actx!, raw.slice(0));
         _sfxBuf.set(key, _normalizePeak(buf));
       } catch { /* ignore */ }
     })
@@ -246,18 +256,15 @@ function _drainSfxQueue(): void {
     return;
   }
   if (!_actx || _actx.state !== "running") {
-    // suspended: resume() を呼んで statechange を待つ
+    // suspended: resume() を Promise ベースで待つ（statechange は iOS で発火しないことがある）
     if (!_sfxWaiting && _actx) {
       _sfxWaiting = true;
-      _actx.resume().catch(() => {});
-      const onState = () => {
-        if (_actx!.state === "running") {
-          _actx!.removeEventListener("statechange", onState);
-          _sfxWaiting = false;
-          _drainSfxQueue();
-        }
-      };
-      _actx.addEventListener("statechange", onState);
+      _actx.resume().then(() => {
+        _sfxWaiting = false;
+        _drainSfxQueue();
+      }).catch(() => {
+        _sfxWaiting = false;
+      });
     }
     return;
   }
@@ -342,9 +349,19 @@ export function unlockAudio(): void {
     if (!AC) return;
     _actx = new AC();
   }
-  if (_actx.state === "suspended") {
-    _actx.resume().catch(() => {});
-  }
+  // iOS Safari 対策: resume() を await した後にサイレントバッファを再生する
+  // resume() だけでは AudioContext が本当にアンロックされない場合があるため、
+  // 実際にオーディオ出力を行う操作（1サンプルの無音再生）が必要
+  _actx.resume().then(() => {
+    if (!_actx) return;
+    try {
+      const silentBuf = _actx.createBuffer(1, 1, 22050);
+      const silentSrc = _actx.createBufferSource();
+      silentSrc.buffer = silentBuf;
+      silentSrc.connect(_actx.destination);
+      silentSrc.start(0);
+    } catch { /* ignore */ }
+  }).catch(() => {});
   // フェッチ済みの SFX 生データをデコード、BGM もデコード
   _decodePendingSfx().catch(() => {});
   _decodeBgm().catch(() => {});
@@ -353,7 +370,7 @@ export function unlockAudio(): void {
 export function startBGM(): void {
   _bgmShouldPlay = true;
   if (_bgmBuffer) {
-    _playBgmBuffer();
+    void _playBgmBuffer();
   }
   // バッファ未準備の場合: _decodeBgm() または _fetchBgm() 完了後に自動再生
 }
