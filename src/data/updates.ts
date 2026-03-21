@@ -33,6 +33,19 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.80.0",
+    title: "ダンジョン：HTMLAudioElement方式にBGMを刷新（iOS完全対応）",
+    content: [
+      "BGM再生方式をWeb Audio APIからHTMLAudioElementに変更（iOS Safari・Chromeで動作しない問題の根本対策）",
+      "タイトル画面用BGM（bgm_title.mp3）を追加サポート：タイトル画面をタップするとタイトルBGMが流れ、ゲーム開始時に自動で切り替わる",
+      "ゲームBGM（bgm.mp3）はHTMLAudioElementで再生し、カスタムループ点（14.2秒→3分36秒）を維持",
+      "Web Audio APIが利用可能な環境ではAudioBufferを使った高品質再生も引き続き試みる",
+      "タイトルへ戻る際にBGMを停止するよう修正",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.79.0",
     title: "ダンジョン：タイトル画面BGM追加・音声診断改善",
     content: [
