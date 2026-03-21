@@ -10,6 +10,28 @@ export function getRoom(rooms: Room[], x: number, y: number): Room | undefined {
   return rooms.find((r) => x >= r.x && x < r.x + r.w && y >= r.y && y < r.y + r.h);
 }
 
+// プレイヤーが廊下入口にいる（部屋に隣接する廊下タイル）かつ敵がその部屋にいるか判定
+// 「フロアから1歩出た廊下」では同部屋にいるのと同様に認識する
+function isPlayerAtCorridorEntranceOfEnemyRoom(
+  g: GameState,
+  px: number, py: number,
+  ex: number, ey: number,
+): boolean {
+  if (g.map[py][px] !== C) return false;            // プレイヤーが廊下タイルにいる
+  const eRoom = getRoom(g.rooms, ex, ey);
+  if (!eRoom) return false;                          // 敵が部屋にいる
+  // プレイヤーの4近傍に敵の部屋タイルがあれば「廊下入口」
+  for (const [dx, dy] of [[1,0],[-1,0],[0,1],[0,-1]] as [number,number][]) {
+    const nx = px + dx; const ny = py + dy;
+    if (nx >= 0 && nx < MW && ny >= 0 && ny < MH &&
+        nx >= eRoom.x && nx < eRoom.x + eRoom.w &&
+        ny >= eRoom.y && ny < eRoom.y + eRoom.h) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export function sameRoom(rooms: Room[], ax: number, ay: number, bx: number, by: number): boolean {
   const ra = getRoom(rooms, ax, ay);
   if (!ra) return false;
@@ -251,10 +273,11 @@ export function moveEnemies(
       continue;
     }
 
-    // アラート判定：同じ部屋 or 隣接でプレイヤーを認識
+    // アラート判定：同じ部屋 or 隣接 or 廊下入口でプレイヤーを認識
     // このターンに初めて認識した場合は行動しない（移動＋攻撃の2ターン行動を防ぐ）
     if (!e.alert) {
-      if (sameRoom(g.rooms, e.x, e.y, px, py) || adj(e.x, e.y, px, py)) {
+      if (sameRoom(g.rooms, e.x, e.y, px, py) || adj(e.x, e.y, px, py) ||
+          isPlayerAtCorridorEntranceOfEnemyRoom(g, px, py, e.x, e.y)) {
         e.alert = true;
         continue;
       }
@@ -300,8 +323,11 @@ export function moveEnemies(
     }
 
     // プレイヤーが視野外になったらアラートをリセット
-    // （同じ部屋でも隣接でもない → 追跡をやめる）
-    if (e.alert && !sameRoom(g.rooms, e.x, e.y, px, py) && !adj(e.x, e.y, px, py)) {
+    // 同じ部屋・隣接・廊下入口のいずれでもない → 追跡をやめる
+    if (e.alert &&
+        !sameRoom(g.rooms, e.x, e.y, px, py) &&
+        !adj(e.x, e.y, px, py) &&
+        !isPlayerAtCorridorEntranceOfEnemyRoom(g, px, py, e.x, e.y)) {
       e.alert = false;
     }
   }
@@ -318,7 +344,10 @@ export function moveEnemies(
       results.push({ enemyHit: true, damage: dmg, killedPlayer: g.p.hp <= 0, enemy: e });
     }
     // 追加行動後も視野外ならアラートをリセット
-    if (e.alert && !sameRoom(g.rooms, e.x, e.y, px, py) && !adj(e.x, e.y, px, py)) {
+    if (e.alert &&
+        !sameRoom(g.rooms, e.x, e.y, px, py) &&
+        !adj(e.x, e.y, px, py) &&
+        !isPlayerAtCorridorEntranceOfEnemyRoom(g, px, py, e.x, e.y)) {
       e.alert = false;
     }
   }
