@@ -1156,107 +1156,113 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       const g = gameRef.current;
       if (!g) return;
 
+      // React 18 Strict Mode では setUiState コールバックが2回呼ばれる。
+      // SFX・setTimeout・ゲーム状態変更などの副作用が2重実行されないよう
+      // このフラグで1回目のみ実行するよう制御する。
+      let sideEffectsDone = false;
+      let capturedResult: QuizResult | null = null;
+      let capturedEnemy: Enemy | null = null;
+
       setUiState((prev) => {
         if (prev.quizAnswered || !prev.quiz) return prev;
 
         const q = prev.quiz.question;
         const e = prev.quiz.enemy;
-        const correct = chosen === q.ans;
 
-        let damage = 0;
-        let miss = false;
-        let crit = false;
+        if (!sideEffectsDone) {
+          sideEffectsDone = true;
 
-        // アプリの学習記録に保存（wordId=0 はフォールバック単語なのでスキップ）
-        if (q.wordId !== 0) {
-          storage.addRecord({
-            wordId: q.wordId,
-            word: q.word,
-            meaning: q.ans,
-            questionType: "en-to-ja",
-            correct,
-          });
-        }
+          const correct = chosen === q.ans;
+          let damage = 0;
+          let miss = false;
 
-        // 回答履歴を記録
-        g.answeredQuestions.push({ question: q, correct });
-
-        // ── ダメージ計算（正解/不正解で共通のベース値を先に確定） ──────────
-        // 正解ダメージ: ATK × rand(0.8〜1.2)
-        const baseDamage = Math.max(1, Math.round(g.p.atk * (0.8 + Math.random() * 0.4)));
-        // 会心・必中は正解/不正解に関わらず特例扱い（ここで消費）
-        crit = g.powerUp;
-        g.powerUp = false;
-        const sureHit = g.sureHit;
-        g.sureHit = false;
-
-        if (correct) {
-          g.correct++;
-          g.missedWords = g.missedWords.filter((w) => w !== q.word);
-          sfxCorrect();
-          // 命中率: 通常90%、必中の巻物なら100%
-          const hit = Math.random() < (sureHit ? 1 : 0.9);
-          if (hit) {
-            damage = crit ? baseDamage * 2 : baseDamage;
-            e.hp = Math.max(0, e.hp - damage);
-            if (crit) { sfxCrit(); } else { sfxHit(); }
-            addDmgPop(e.x, e.y, crit ? "crit" : "hit", damage);
-            triggerScreenEffect("correct", false);
-            queueMsg(`✅ 正解！ ${e.name}に${damage}ダメージ${crit ? " 会心！" : ""}`);
-          } else {
-            miss = true;
-            sfxMiss();
-            addDmgPop(e.x, e.y, "miss", 0);
-            triggerScreenEffect("miss", false);
-            queueMsg("✅ 正解！ しかしミスった…");
+          // アプリの学習記録に保存（wordId=0 はフォールバック単語なのでスキップ）
+          if (q.wordId !== 0) {
+            storage.addRecord({
+              wordId: q.wordId,
+              word: q.word,
+              meaning: q.ans,
+              questionType: "en-to-ja",
+              correct,
+            });
           }
-        } else {
-          g.wrong++;
-          if (!g.missedWords.includes(q.word)) g.missedWords.push(q.word);
-          sfxWrong();
-          // 命中率: 正解の半分（45%）、必中の巻物は不正解でも100%
-          // ダメージ: 正解ダメージの半分（会心は不正解でも正解ダメージ×2の特例）
-          const hit = Math.random() < (sureHit ? 1 : 0.45);
-          if (hit) {
-            damage = crit ? baseDamage * 2 : Math.max(1, Math.floor(baseDamage / 2));
-            e.hp = Math.max(0, e.hp - damage);
-            if (crit) { sfxCrit(); } else { sfxHit(); }
-            addDmgPop(e.x, e.y, crit ? "crit" : "hit", damage);
-            triggerScreenEffect("miss", false);
-            queueMsg(`❌ 不正解（正解:${q.ans}） ${e.name}に${damage}dmg${crit ? " 会心！" : ""}`);
+
+          // 回答履歴を記録
+          g.answeredQuestions.push({ question: q, correct });
+
+          // ── ダメージ計算（正解/不正解で共通のベース値を先に確定） ──────────
+          const baseDamage = Math.max(1, Math.round(g.p.atk * (0.8 + Math.random() * 0.4)));
+          const crit = g.powerUp;
+          g.powerUp = false;
+          const sureHit = g.sureHit;
+          g.sureHit = false;
+
+          if (correct) {
+            g.correct++;
+            g.missedWords = g.missedWords.filter((w) => w !== q.word);
+            sfxCorrect();
+            const hit = Math.random() < (sureHit ? 1 : 0.9);
+            if (hit) {
+              damage = crit ? baseDamage * 2 : baseDamage;
+              e.hp = Math.max(0, e.hp - damage);
+              if (crit) { sfxCrit(); } else { sfxHit(); }
+              addDmgPop(e.x, e.y, crit ? "crit" : "hit", damage);
+              triggerScreenEffect("correct", false);
+              queueMsg(`✅ 正解！ ${e.name}に${damage}ダメージ${crit ? " 会心！" : ""}`);
+            } else {
+              miss = true;
+              sfxMiss();
+              addDmgPop(e.x, e.y, "miss", 0);
+              triggerScreenEffect("miss", false);
+              queueMsg("✅ 正解！ しかしミスった…");
+            }
           } else {
-            miss = true;
-            sfxMiss();
-            addDmgPop(e.x, e.y, "miss", 0);
-            triggerScreenEffect("miss", false);
-            queueMsg(`❌ 不正解（正解:${q.ans}） ミス…`);
+            g.wrong++;
+            if (!g.missedWords.includes(q.word)) g.missedWords.push(q.word);
+            sfxWrong();
+            const hit = Math.random() < (sureHit ? 1 : 0.45);
+            if (hit) {
+              damage = crit ? baseDamage * 2 : Math.max(1, Math.floor(baseDamage / 2));
+              e.hp = Math.max(0, e.hp - damage);
+              if (crit) { sfxCrit(); } else { sfxHit(); }
+              addDmgPop(e.x, e.y, crit ? "crit" : "hit", damage);
+              triggerScreenEffect("miss", false);
+              queueMsg(`❌ 不正解（正解:${q.ans}） ${e.name}に${damage}dmg${crit ? " 会心！" : ""}`);
+            } else {
+              miss = true;
+              sfxMiss();
+              addDmgPop(e.x, e.y, "miss", 0);
+              triggerScreenEffect("miss", false);
+              queueMsg(`❌ 不正解（正解:${q.ans}） ミス…`);
+            }
+          }
+
+          capturedResult = { correct, damage, miss, crit };
+          capturedEnemy = { ...e };
+
+          if (e.hp <= 0) {
+            setTimeout(() => {
+              onEnemyDied(g, e);
+              setUiState((p) => ({ ...p, quiz: null, quizAnswered: false, quizResult: null }));
+              runEnemyTurn(g);
+              saveGame();
+            }, 500);
+          } else {
+            setTimeout(() => {
+              setUiState((p) => ({ ...p, quiz: null, quizAnswered: false, quizResult: null }));
+              runEnemyTurn(g);
+              saveGame();
+            }, 750);
           }
         }
 
-        // Update enemy hp in quiz state
-        const updatedEnemy = { ...e };
-        const result: QuizResult = { correct, damage, miss, crit };
-
-        if (e.hp <= 0) {
-          setTimeout(() => {
-            onEnemyDied(g, e);
-            setUiState((p) => ({ ...p, quiz: null, quizAnswered: false, quizResult: null }));
-            runEnemyTurn(g);
-            saveGame();
-          }, 500);
-        } else {
-          setTimeout(() => {
-            setUiState((p) => ({ ...p, quiz: null, quizAnswered: false, quizResult: null }));
-            runEnemyTurn(g);
-            saveGame();
-          }, 750);
-        }
+        if (!capturedResult || !capturedEnemy) return prev;
 
         return {
           ...prev,
           quizAnswered: true,
-          quizResult: result,
-          quiz: { ...prev.quiz, enemy: updatedEnemy },
+          quizResult: capturedResult,
+          quiz: { ...prev.quiz, enemy: capturedEnemy },
         };
       });
     },
