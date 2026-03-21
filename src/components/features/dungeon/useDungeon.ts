@@ -42,7 +42,10 @@ import {
   sfxWrong,
   sfxLevelUp,
   sfxStairs,
-  sfxItem,
+  sfxWarp,
+  sfxItemGet,
+  sfxItemUse,
+  sfxCane,
   startBGM,
   stopBGM,
   initDungeonAudio,
@@ -531,19 +534,19 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         case "heal_grass": {
           const v = 15;
           g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
-          sfxItem();
+          sfxItemUse();
           notify(`💚 HPが${v}回復！`);
           return true;
         }
         case "big_heal": {
           g.p.hp = g.p.mhp;
-          sfxItem();
+          sfxItemUse();
           notify("💚 HPが全回復！");
           return true;
         }
         case "poison_grass": {
           g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
-          sfxItem();
+          sfxItemUse();
           notify("✨ 毒が消えた！HP+5");
           return true;
         }
@@ -562,7 +565,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
         case "swift_grass": {
           g.swiftTurns = (g.swiftTurns || 0) + 5;
-          sfxItem();
+          sfxItemUse();
           notify("💨 倍速になった！（5ターン）");
           return true;
         }
@@ -599,7 +602,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           if (g.map[ny][nx] !== 0) {
             g.px = nx;
             g.py = ny;
-            sfxStairs();
+            sfxWarp();
             notify("✨ ワープした！");
             redraw();
           }
@@ -630,7 +633,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             }
             redraw();
           } else {
-            sfxItem();
+            sfxItemUse();
             notify("🔥 火炎が空を切った");
           }
           return true;
@@ -638,19 +641,19 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         case "scroll_hp": {
           const v = 20;
           g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
-          sfxItem();
+          sfxItemUse();
           notify(`💚 HPが${v}回復！`);
           return true;
         }
         case "scroll_power": {
           g.sureHit = true;
-          sfxItem();
+          sfxItemUse();
           notify("🎯 次の攻撃が必中！");
           return true;
         }
         case "scroll_attack": {
           g.powerUp = true;
-          sfxItem();
+          sfxItemUse();
           notify("💪 次の攻撃が強化！（ダメージ×2）");
           return true;
         }
@@ -661,7 +664,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             ? g.enemies.filter((e) => sameRoom(g.rooms, e.x, e.y, g.px, g.py))
             : g.enemies.filter((e) => adj(e.x, e.y, g.px, g.py));
           targets.forEach((e) => { e.sleeping = true; e.alert = false; });
-          sfxItem();
+          sfxItemUse();
           notify(targets.length > 0 ? `💤 ${targets.length}体の敵が眠った！` : "近くに敵がいない");
           redraw();
           return true;
@@ -706,7 +709,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           // アイテム・階段の位置を探索済みにする
           if (g.stairsPos) g.explored[g.stairsPos.y][g.stairsPos.x] = true;
           g.itemTiles.forEach((it) => { g.explored[it.y][it.x] = true; });
-          sfxItem();
+          sfxItemUse();
           notify("🗺️ フロアのアイテムと階段が分かった！");
           return true;
         }
@@ -716,7 +719,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             ? g.enemies.filter((e) => sameRoom(g.rooms, e.x, e.y, g.px, g.py))
             : g.enemies.filter((e) => adj(e.x, e.y, g.px, g.py));
           targets2.forEach((e) => { e.confused = (e.confused || 0) + 4; });
-          sfxItem();
+          sfxItemUse();
           notify(targets2.length > 0 ? `🌀 ${targets2.length}体の敵が混乱した！` : "近くに敵がいない");
           return true;
         }
@@ -725,7 +728,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           const e = lineEnemy();
           g.cane_blow_charges--;
           if (!e) {
-            sfxItem();
+            sfxCane();
             notify(`💨 魔力が虚空に消えた（残${g.cane_blow_charges}回）`);
             return true;
           }
@@ -755,12 +758,12 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           const e = lineEnemy();
           g.cane_sleep_charges--;
           if (!e) {
-            sfxItem();
+            sfxCane();
             notify(`💤 魔力が虚空に消えた（残${g.cane_sleep_charges}回）`);
             return true;
           }
           e.sleeping = true; e.alert = false;
-          sfxItem();
+          sfxCane();
           notify(`💤 ${e.name}が眠った！（残${g.cane_sleep_charges}回）`);
           redraw();
           return true;
@@ -770,13 +773,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           const e = lineEnemy();
           g.cane_seal_charges--;
           if (!e) {
-            sfxItem();
+            sfxCane();
             notify(`🔒 魔力が虚空に消えた（残${g.cane_seal_charges}回）`);
             return true;
           }
           e.sealed = (e.sealed || 0) + 5;
           e.alert = false;
-          sfxItem();
+          sfxCane();
           notify(`🔒 ${e.name}を封印した！（残${g.cane_seal_charges}回）`);
           return true;
         }
@@ -785,12 +788,12 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           const e = lineEnemy();
           g.cane_warp_charges--;
           if (!e) {
-            sfxItem();
+            sfxCane();
             notify(`🌀 魔力が虚空に消えた（残${g.cane_warp_charges}回）`);
             return true;
           }
           g.enemies = g.enemies.filter((en) => en.id !== e.id);
-          sfxStairs();
+          sfxWarp();
           notify(`🌀 ${e.name}がワープした！（残${g.cane_warp_charges}回）`);
           redraw();
           return true;
@@ -798,7 +801,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         case "rice": {
           g.p.hp = g.p.mhp;
           g.hunger = g.maxHunger;
-          sfxItem();
+          sfxItemUse();
           notify("🍙 HP全回復！空腹も満たされた！");
           return true;
         }
@@ -1044,7 +1047,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               cat: def.cat,
               count: 1,
             });
-          sfxItem();
+          sfxItemGet();
           queueMsg(`${def.icon}${def.name}を拾った！`);
         }
       }
@@ -1095,13 +1098,20 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     if (!g) return;
     if (uiState.quiz && !uiState.quizAnswered) return;
     // 向いている方向の敵を対象にする
-    const e = adjEnemyInDir(g);
+    let e = adjEnemyInDir(g);
     if (!e) {
-      // 向きを変えて攻撃するよう案内
+      // 隣接している敵がいれば自動でその方向を向く
       const anyAdj = adjEnemy(g);
-      const msg = anyAdj ? `⚔️ ${anyAdj.name}は別の方向にいる！向きを変えて攻撃` : "隣に敵がいない";
-      setUiState((prev) => ({ ...prev, msg, msgLog: [msg, ...prev.msgLog].slice(0, 6) }));
-      return;
+      if (!anyAdj) {
+        const msg = "隣に敵がいない";
+        setUiState((prev) => ({ ...prev, msg, msgLog: [msg, ...prev.msgLog].slice(0, 6) }));
+        return;
+      }
+      // 自動方向転換
+      const dx = Math.sign(anyAdj.x - g.px);
+      const dy = Math.sign(anyAdj.y - g.py);
+      g.playerDir = { dx, dy };
+      e = anyAdj;
     }
     if (e.sleeping) {
       e.sleeping = false;
@@ -1378,7 +1388,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         } else {
           // 敵がいない → 床に落とす
           g.itemTiles.push({ x: landX, y: landY, id: itemId });
-          sfxItem();
+          sfxItemUse();
           showNotification(`${item.icon} 床に落ちた`);
         }
       } else if (item.cat === "cane") {
@@ -1558,7 +1568,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         if (ex) ex.count++;
         else g.items.push({ id: def.id, name: def.name, icon: def.icon, cat: def.cat, desc: def.desc, count: 1 });
       }
-      sfxItem();
+      sfxItemGet();
       showNotification(`🏪 ${def?.name ?? shopPrompt.itemId}を購入！`);
       updateUI(g, { shopPrompt: null });
       redraw();

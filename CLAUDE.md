@@ -506,6 +506,10 @@ waitForVoices(timeout?: number): Promise<SpeechSynthesisVoice[]>
 
 // 音声初期化を確認
 ensureVoicesLoaded(): Promise<boolean>
+
+// 英語音声の音量取得・設定（0〜1、localStorage に永続化）
+getVoiceVolume(): number
+setVoiceVolume(vol: number): void
 ```
 
 ### UK/US発音切り替え
@@ -1351,7 +1355,7 @@ src/lib/dungeon/
 ├── constants.ts      - ITEMS_DEF, ENEMIES_DEF, MW/MH/TILE 定数
 ├── map.ts            - generateMap(), getItemPool()
 ├── ai.ts             - 敵AI（BFS経路探索・徘徊・moveEnemies）
-├── audio.ts          - Web Audio API SFX / BGM（ダンジョン専用）
+├── audio.ts          - Web Audio API BGM + HTMLAudioElement SFX（ダンジョン専用）
 └── renderer.ts       - Canvas描画（drawMap, scrollToPlayer）
 
 src/components/features/dungeon/
@@ -1368,7 +1372,7 @@ src/components/features/dungeon/
 | アイテム | 草/巻物/杖/食料/壷/特殊の6カテゴリ（シレン風） |
 | HP/EXP | レベルアップで最大HP+5・攻撃+1 |
 | 死亡 | 所持アイテム全ロスト・Lv1リスタート（間違えた単語を次回優先出題） |
-| BGM | Web Audio API によるピクセルサウンド |
+| BGM | MP3ファイル（`public/audio/dungeon/bgm.mp3`）をWeb Audio APIで再生、サンプル単位でループ |
 | 操作 | WASDまたは矢印キー、Zで攻撃、スマホはDパッド |
 
 ### 段階的統合ロードマップ
@@ -1519,6 +1523,11 @@ const baseDamage = Math.max(1, Math.round(g.p.atk * (0.8 + Math.random() * 0.4))
 
 ### 実装メモ
 
+- **ダンジョン音声ファイル**: `public/audio/dungeon/` に配置。BGM: `bgm.mp3`。SFX: `sfx_hit.mp3` / `sfx_crit.mp3` / `sfx_miss.mp3` / `sfx_recv.mp3` / `sfx_correct.mp3` / `sfx_wrong.mp3` / `sfx_levelup.mp3` / `sfx_stairs.mp3` / `sfx_warp.mp3` / `sfx_item_get.mp3` / `sfx_item_use.mp3` / `sfx_cane.mp3`（ファイルがない場合は無音）
+- **BGMループ**: `AudioBufferSourceNode.loopStart` / `loopEnd` でサンプル単位の正確なループ。ループ点は `audio.ts` の `BGM_LOOP_START` / `BGM_LOOP_END` で設定
+- **音量設定**: BGM/SFX は `dungeon_audio_vol`（localStorage）、英語音声 TTS は `voice_volume`（localStorage）に永続化。ダンジョンの音量パネル（🔊ボタン）で3つのスライダーを統合管理
+- **SFX使い分け**: アイテム拾得/ショップ購入 → `sfxItemGet`、草/巻物/食料の使用 → `sfxItemUse`、杖を振る → `sfxCane`、ワープ系（warp_grass/cane_warp）→ `sfxWarp`
+- **攻撃の自動方向転換**: `playerAttack` で向いている方向に敵がいない場合、隣接敵がいれば自動的にその方向を向いてからクイズを開始する
 - 単語データは `useDungeon` の `questions` prop（ダンジョン起動時に単語帳から生成）
 - シェイクは `wrapRef`（キャンバスの親要素）に適用。`canvas.style.transform` を使う `scrollToPlayer` と競合しないよう分離
 - `screenEffect` / `eventOverlay` は `UIState` とは別 `useState` で管理（`setUiState` コールバック内から別セッター呼び出し可能にするため）
