@@ -43,7 +43,7 @@ const AUDIO_BASE = "/audio/dungeon/";
 
 // ── 音量設定 ─────────────────────────────────────────────────────────────────
 
-export const BGM_DEFAULT_VOL = 0.08; // オシレーター BGM に合わせた初期値
+export const BGM_DEFAULT_VOL = 0.25; // オシレーター BGM は音が小さいため少し大きめに
 export const SFX_DEFAULT_VOL = 0.4;
 
 const AUDIO_VOL_KEY = "dungeon_audio_vol";
@@ -225,14 +225,17 @@ function _startOscBGM(): void {
   if (!_actx || _oscBgmGain) return; // 既に起動中ならスキップ
   try {
     _oscBgmGain = _actx.createGain();
-    _oscBgmGain.gain.setValueAtTime(_bgmVol, _actx.currentTime);
+    // suspended 状態の AudioContext では currentTime が 0 または NaN になることがある
+    const ct = (_actx.currentTime > 0 && isFinite(_actx.currentTime)) ? _actx.currentTime : 0;
+    _oscBgmGain.gain.setValueAtTime(_bgmVol, ct);
     _oscBgmGain.connect(_actx.destination);
 
-    _oscBgmNextTime = _actx.currentTime;
+    _oscBgmNextTime = ct;
 
     const tick = () => {
       if (!_oscBgmGain || !_actx) return;
-      while (_oscBgmNextTime < _actx.currentTime + 2.0) {
+      const now = (_actx.currentTime > 0 && isFinite(_actx.currentTime)) ? _actx.currentTime : 0;
+      while (_oscBgmNextTime < now + 2.0) {
         _scheduleOscBgmLoop(_oscBgmNextTime);
         _oscBgmNextTime += _OSC_BGM_LOOP;
       }

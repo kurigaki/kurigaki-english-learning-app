@@ -1893,7 +1893,12 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
 
   if (phase === "title") {
     return (
-      <div style={{ position: "relative", width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}>
+      // タイトル画面全体のタップで AudioContext をアンロック + BGM 開始
+      // （ボタン以外の場所をタップしても音声が起動する）
+      <div
+        style={{ position: "relative", width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}
+        onClick={() => { unlockAudio(); startBGM(); }}
+      >
         <TitleScreen onStart={handleStart as (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode) => void} onContinue={handleContinue} hasSave={hasSave} />
       </div>
     );
