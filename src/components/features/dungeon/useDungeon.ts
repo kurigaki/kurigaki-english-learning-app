@@ -31,7 +31,7 @@ export type CaneCharges = {
   cane_warp: number;
 };
 import { generateMap, revealAround } from "@/lib/dungeon/map";
-import { adjEnemy, adjEnemyInDir, moveEnemies, adj, sameRoom } from "@/lib/dungeon/ai";
+import { adjEnemy, moveEnemies, adj, sameRoom } from "@/lib/dungeon/ai";
 import { drawMap, TILE } from "@/lib/dungeon/renderer";
 import {
   sfxHit,
@@ -1097,22 +1097,36 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const g = gameRef.current;
     if (!g) return;
     if (uiState.quiz && !uiState.quizAnswered) return;
-    // 向いている方向の敵を対象にする
-    let e = adjEnemyInDir(g);
+
+    // まず向いている方向の敵を探す（眠っている敵も含む）
+    const { dx: pd, dy: pdy } = g.playerDir ?? { dx: 0, dy: 0 };
+    let e: Enemy | undefined =
+      (pd !== 0 || pdy !== 0)
+        ? g.enemies.find((en) => en.x === g.px + pd && en.y === g.py + pdy)
+        : undefined;
+
     if (!e) {
-      // 隣接している敵がいれば自動でその方向を向く
-      const anyAdj = adjEnemy(g);
-      if (!anyAdj) {
+      // 8方向を優先順位（4方向 > 斜め）で探して自動方向転換
+      const DIRS: { dx: number; dy: number }[] = [
+        { dx: 1, dy: 0 }, { dx: -1, dy: 0 }, { dx: 0, dy: 1 }, { dx: 0, dy: -1 },
+        { dx: 1, dy: 1 }, { dx: 1, dy: -1 }, { dx: -1, dy: 1 }, { dx: -1, dy: -1 },
+      ];
+      let found: { e: Enemy; dx: number; dy: number } | undefined;
+      for (const d of DIRS) {
+        const en = g.enemies.find((en) => en.x === g.px + d.dx && en.y === g.py + d.dy);
+        if (en) { found = { e: en, dx: d.dx, dy: d.dy }; break; }
+      }
+      if (!found) {
         const msg = "隣に敵がいない";
         setUiState((prev) => ({ ...prev, msg, msgLog: [msg, ...prev.msgLog].slice(0, 6) }));
         return;
       }
-      // 自動方向転換
-      const dx = Math.sign(anyAdj.x - g.px);
-      const dy = Math.sign(anyAdj.y - g.py);
-      g.playerDir = { dx, dy };
-      e = anyAdj;
+      // 自動方向転換してキャンバスを再描画
+      g.playerDir = { dx: found.dx, dy: found.dy };
+      redraw();
+      e = found.e;
     }
+
     if (e.sleeping) {
       e.sleeping = false;
       e.alert = true;
@@ -1120,7 +1134,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       addDmgPop(e.x, e.y, "wake", 0);
     }
     initiateAttack(g, e);
-  }, [addDmgPop, initiateAttack, uiState.quiz, uiState.quizAnswered]);
+  }, [addDmgPop, initiateAttack, redraw, uiState.quiz, uiState.quizAnswered]);
 
   const doWait = useCallback(() => {
     const g = gameRef.current;

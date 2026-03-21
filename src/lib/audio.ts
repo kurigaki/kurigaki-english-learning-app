@@ -5,7 +5,8 @@ import type { PronunciationVariant } from "@/types";
 // ── 英語音声 音量設定 ─────────────────────────────────────────────────────────
 
 const VOICE_VOLUME_KEY = "voice_volume";
-let _voiceVol = 1.0;
+export const VOICE_DEFAULT_VOL = 0.8;
+let _voiceVol = VOICE_DEFAULT_VOL;
 
 function _loadVoiceVolume(): void {
   try {
