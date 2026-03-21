@@ -43,7 +43,7 @@ const AUDIO_BASE = "/audio/dungeon/";
 
 // ── 音量設定 ─────────────────────────────────────────────────────────────────
 
-export const BGM_DEFAULT_VOL = 0.10;
+export const BGM_DEFAULT_VOL = 0.08; // オシレーター BGM に合わせた初期値
 export const SFX_DEFAULT_VOL = 0.4;
 
 const AUDIO_VOL_KEY = "dungeon_audio_vol";
@@ -72,8 +72,9 @@ export function getSfxVolume(): number { return _sfxVol; }
 
 export function setBgmVolume(vol: number): void {
   _bgmVol = Math.max(0, Math.min(1, vol));
-  if (_bgmBufferGain) {
-    if (_actx) _bgmBufferGain.gain.setValueAtTime(_bgmVol, _actx.currentTime);
+  if (_actx) {
+    if (_bgmBufferGain) _bgmBufferGain.gain.setValueAtTime(_bgmVol, _actx.currentTime);
+    if (_oscBgmGain) _oscBgmGain.gain.setValueAtTime(_bgmVol, _actx.currentTime);
   }
   _saveVolumes();
 }
@@ -145,6 +146,9 @@ async function _decodeBgm(): Promise<void> {
 async function _playBgmBuffer(): Promise<void> {
   if (!_actx || !_bgmBuffer) return;
 
+  // オシレーター BGM が動いていれば先に止める
+  _stopOscBGM();
+
   if (!_bgmBufferGain) {
     _bgmBufferGain = _actx.createGain();
     _bgmBufferGain.connect(_actx.destination);
@@ -157,7 +161,6 @@ async function _playBgmBuffer(): Promise<void> {
   }
 
   // iOS Safari 対策: resume() を await してから src.start(0) を呼ぶ
-  // await せずに start() すると suspended 状態のまま再生されないことがある
   if (_actx.state !== "running") {
     try { await _actx.resume(); } catch { /* ignore */ }
   }
@@ -177,6 +180,81 @@ function _stopBgmBuffer(): void {
     try { _bgmSource.stop(); } catch { /* ignore */ }
     _bgmSource = null;
   }
+}
+
+// ── オシレーター BGM（MP3 BGM のフォールバック） ────────────────────────────
+// HTML プロトタイプ (public/dungeon.html) と同じ音楽データ・ロジックを使用。
+// MP3 ファイルのデコード不要なため iOS Safari/Chrome でも確実に鳴る。
+
+let _oscBgmGain: GainNode | null = null;
+let _oscBgmTickId: ReturnType<typeof setTimeout> | null = null;
+let _oscBgmNextTime = 0;
+
+const _OSC_BGM_BASS  = [110,110,98,110, 110,98,110,123, 98,110,98,87, 98,110,123,110];
+const _OSC_BGM_MEL   = [220,262,220,196, 220,262,294,220, 196,220,196,175, 196,220,247,220];
+const _OSC_BGM_BEAT  = 0.22; // 1音の長さ（秒）
+const _OSC_BGM_LOOP  = _OSC_BGM_BASS.length * _OSC_BGM_BEAT;
+
+function _scheduleOscBgmLoop(startTime: number): void {
+  if (!_actx || !_oscBgmGain) return;
+  _OSC_BGM_BASS.forEach((f, i) => {
+    if (!_actx || !_oscBgmGain) return;
+    const t = startTime + i * _OSC_BGM_BEAT;
+    const osc = _actx.createOscillator();
+    const g = _actx.createGain();
+    osc.connect(g); g.connect(_oscBgmGain);
+    osc.type = "square"; osc.frequency.setValueAtTime(f, t);
+    g.gain.setValueAtTime(0.6, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + _OSC_BGM_BEAT * 0.7);
+    osc.start(t); osc.stop(t + _OSC_BGM_BEAT * 0.8);
+  });
+  _OSC_BGM_MEL.forEach((f, i) => {
+    if (!_actx || !_oscBgmGain) return;
+    const t = startTime + i * _OSC_BGM_BEAT + _OSC_BGM_BEAT * 0.5;
+    const osc = _actx.createOscillator();
+    const g = _actx.createGain();
+    osc.connect(g); g.connect(_oscBgmGain);
+    osc.type = "triangle"; osc.frequency.setValueAtTime(f, t);
+    g.gain.setValueAtTime(0.4, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + _OSC_BGM_BEAT * 0.6);
+    osc.start(t); osc.stop(t + _OSC_BGM_BEAT * 0.7);
+  });
+}
+
+function _startOscBGM(): void {
+  if (!_actx || _oscBgmGain) return; // 既に起動中ならスキップ
+  try {
+    _oscBgmGain = _actx.createGain();
+    _oscBgmGain.gain.setValueAtTime(_bgmVol, _actx.currentTime);
+    _oscBgmGain.connect(_actx.destination);
+
+    _oscBgmNextTime = _actx.currentTime;
+
+    const tick = () => {
+      if (!_oscBgmGain || !_actx) return;
+      while (_oscBgmNextTime < _actx.currentTime + 2.0) {
+        _scheduleOscBgmLoop(_oscBgmNextTime);
+        _oscBgmNextTime += _OSC_BGM_LOOP;
+      }
+      _oscBgmTickId = setTimeout(tick, 500);
+    };
+    tick();
+  } catch { /* ignore */ }
+}
+
+function _stopOscBGM(): void {
+  if (_oscBgmTickId !== null) {
+    clearTimeout(_oscBgmTickId);
+    _oscBgmTickId = null;
+  }
+  if (_oscBgmGain && _actx) {
+    try {
+      _oscBgmGain.gain.exponentialRampToValueAtTime(0.001, _actx.currentTime + 0.3);
+      const g = _oscBgmGain;
+      setTimeout(() => { try { g.disconnect(); } catch { /* ignore */ } }, 400);
+    } catch { /* ignore */ }
+  }
+  _oscBgmGain = null;
 }
 
 // ── SFX（Web Audio API: ピーク正規化 + 順番再生キュー） ──────────────────────
@@ -428,20 +506,18 @@ export function unlockAudio(): void {
     if (!AC) return;
     _actx = new AC();
   }
-  // iOS Safari 対策: ユーザージェスチャーのコールスタック内（同期）でオシレーターを鳴らす
-  // resume().then() の中での再生は microtask になりジェスチャー判定から外れる場合がある。
-  // オシレーターは MP3 のようなファイルデコードが不要なため、suspended 状態でも
-  // start() 後に resume() が解決すれば確実に再生される（HTML プロトタイプと同じ方式）。
+  // iOS unlock: 1サンプルの完全無音バッファをユーザージェスチャー内で同期再生。
+  // oscillator を使うと iOS Safari が「音声あり」と判定してタブを自動消音するが、
+  // ゼロデータのバッファは真の無音なのでタブ消音を引き起こさない。
+  // resume().then() 内で再生すると microtask になりジェスチャー判定から外れるため
+  // resume() の前に同期で start(0) を呼ぶ。
   try {
-    const osc = _actx.createOscillator();
-    const gain = _actx.createGain();
-    gain.gain.setValueAtTime(0.001, _actx.currentTime); // ほぼ無音
-    osc.connect(gain);
-    gain.connect(_actx.destination);
-    osc.start(_actx.currentTime);
-    osc.stop(_actx.currentTime + 0.01); // 10ms で停止
+    const silentBuf = _actx.createBuffer(1, 1, _actx.sampleRate);
+    const silentSrc = _actx.createBufferSource();
+    silentSrc.buffer = silentBuf;
+    silentSrc.connect(_actx.destination);
+    silentSrc.start(0);
   } catch { /* ignore */ }
-  // resume() で suspended 状態を解除（オシレーターは resume 後に自動再生される）
   _actx.resume().catch(() => {});
   // フェッチ済みの SFX 生データをデコード、BGM もデコード
   _decodePendingSfx().catch(() => {});
@@ -452,11 +528,26 @@ export function startBGM(): void {
   _bgmShouldPlay = true;
   if (_bgmBuffer) {
     void _playBgmBuffer();
+    return;
   }
-  // バッファ未準備の場合: _decodeBgm() または _fetchBgm() 完了後に自動再生
+  // MP3 バッファ未準備: オシレーター BGM で即時再生開始（iOS でのフォールバック）。
+  // MP3 デコードが後で完了した場合は _decodeBgm() → _playBgmBuffer() が
+  // オシレーター BGM を停止してから MP3 BGM に切り替える。
+  if (!_actx) return;
+  if (_actx.state === "running") {
+    _startOscBGM();
+  } else {
+    // unlockAudio() 直後で resume がまだ完了していない場合
+    _actx.resume().then(() => {
+      if (!_bgmShouldPlay) return;
+      if (_bgmBuffer) void _playBgmBuffer();
+      else _startOscBGM();
+    }).catch(() => {});
+  }
 }
 
 export function stopBGM(): void {
   _bgmShouldPlay = false;
   _stopBgmBuffer();
+  _stopOscBGM();
 }
