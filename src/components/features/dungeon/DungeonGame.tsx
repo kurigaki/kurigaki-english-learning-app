@@ -1662,6 +1662,10 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   // ページ表示時点から音声ファイルのフェッチを開始（STARTを押す前から準備）
   useEffect(() => {
     initDungeonAudio();
+    // SPA 遷移直後（BottomNav クリックの user activation が継承された状態）で
+    // タイトル BGM を自動開始する。iOS は遷移から数秒以内の play() を許可する。
+    unlockAudio();
+    startTitleBGM();
   }, []);
 
   // sessionStorage からリザルト状態を復元 & localStorage セーブ確認

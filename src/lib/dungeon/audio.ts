@@ -144,9 +144,9 @@ async function _decodeBgm(): Promise<void> {
   if (_bgmBuffer || !_bgmRaw || !_actx) return;
   try {
     _bgmBuffer = await _decodeAudioData(_actx, _bgmRaw.slice(0));
-    if (_bgmShouldPlay) {
-      // HTMLAudioElement が再生中なら止めてから AudioBuffer に切り替える
-      // （切り替えないと同じ曲が2ストリーム流れてズレが生じる）
+    // AudioContext が実際に running の場合のみ AudioBuffer に切り替える。
+    // suspended のまま pause() すると HTMLAudioElement の再生も止まって無音になる。
+    if (_bgmShouldPlay && _actx.state === "running") {
       if (_gameBgmEl) _gameBgmEl.pause();
       void _playBgmBuffer();
     }
@@ -520,12 +520,41 @@ function _drainSfxQueue(): void {
   src.start(0);
 }
 
-function playSfx(key: SfxKey): void {
-  _sfxQueue.push(key);
-  if (!_sfxActive) {
-    _sfxActive = true;
-    _drainSfxQueue();
+// ── HTMLAudioElement SFX（AudioContext suspended 時のフォールバック） ───────────
+// iOS で AudioContext が動かない場合、ユーザージェスチャーのコールスタック内で
+// HTMLAudioElement.play() を呼ぶことで SFX を再生できる。
+
+const _sfxEls = new Map<SfxKey, HTMLAudioElement>();
+
+function _getOrCreateSfxEl(key: SfxKey): HTMLAudioElement {
+  let el = _sfxEls.get(key);
+  if (!el) {
+    el = new Audio(`${AUDIO_BASE}${key}.mp3`);
+    _sfxEls.set(key, el);
   }
+  return el;
+}
+
+function _playSfxHtml(key: SfxKey): void {
+  const el = _getOrCreateSfxEl(key);
+  el.volume = _sfxVol;
+  el.currentTime = 0;
+  el.play().catch(() => {});
+}
+
+function playSfx(key: SfxKey): void {
+  // AudioContext が running なら Web Audio API で高品質再生（キュー管理付き）
+  if (_actx && _actx.state === "running") {
+    _sfxQueue.push(key);
+    if (!_sfxActive) {
+      _sfxActive = true;
+      _drainSfxQueue();
+    }
+    return;
+  }
+  // AudioContext が未準備 / suspended（iOS など）: HTMLAudioElement で直接再生
+  // ダンジョンの操作はすべてユーザージェスチャー起点なので iOS 制限に引っかからない
+  _playSfxHtml(key);
 }
 
 // ── MP3 プリロード ────────────────────────────────────────────────────────────
@@ -592,13 +621,12 @@ export function startBGM(): void {
   _stopBgmBuffer();
   _stopOscBGM();
   if (_gameBgmEl) _gameBgmEl.pause();
-  // AudioBuffer が準備済みなら高品質ループ再生（Web Audio API）
-  if (_bgmBuffer) {
+  // AudioBuffer + running AudioContext → 高品質ループ（PC / Web Audio API 対応環境）
+  if (_bgmBuffer && _actx && _actx.state === "running") {
     void _playBgmBuffer();
     return;
   }
-  // HTMLAudioElement で再生（iOS 対応・AudioBuffer 未準備時のプライマリ方式）
-  // ※ オシレーターは使用しない（HTMLAudioElement と同時再生するとズレが生じるため）
+  // HTMLAudioElement で再生（iOS 対応・AudioContext が suspended / 非対応の場合）
   const el = _getOrCreateGameBgm();
   el.volume = _bgmVol;
   el.currentTime = 0;

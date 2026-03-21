@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-22",
+    version: "1.83.0",
+    title: "ダンジョン：遷移で即BGM・bgm.mp3修正・効果音iOS対応",
+    content: [
+      "【改善】/dungeonに遷移した直後にタイトルBGMが自動開始（ボタンを押さなくてよくなった）",
+      "【修正】bgm.mp3（ゲームBGM）がiOSで流れないバグを修正：AudioContextがsuspendedのままHTMLAudioElementを止めていた",
+      "【修正】効果音がiOSで流れないバグを修正：WebAudio APIが動かない環境ではHTMLAudioElementで直接再生するよう変更",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-22",
     version: "1.82.0",
     title: "ダンジョン：BGM二重再生バグ修正・ナビゲーション時の音声起動改善",
     content: [
