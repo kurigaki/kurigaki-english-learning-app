@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, ScreenEffect, EventOverlay } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
-import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, startBGM, initDungeonAudio } from "@/lib/dungeon/audio";
+import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, startBGM, stopBGM, startTitleBGM, initDungeonAudio } from "@/lib/dungeon/audio";
 import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL } from "@/lib/audio";
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
@@ -1696,6 +1696,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const handleBackToTitle = useCallback(() => {
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
     stopAutoWalk();
+    stopBGM();
     setRestoredDeath(null);
     setPhase("title");
     setHasSave(storage.hasDungeonGame());
@@ -1897,7 +1898,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       // （ボタン以外の場所をタップしても音声が起動する）
       <div
         style={{ position: "relative", width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}
-        onClick={() => { unlockAudio(); startBGM(); }}
+        onClick={() => { unlockAudio(); startTitleBGM(); }}
       >
         <TitleScreen onStart={handleStart as (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode) => void} onContinue={handleContinue} hasSave={hasSave} />
       </div>

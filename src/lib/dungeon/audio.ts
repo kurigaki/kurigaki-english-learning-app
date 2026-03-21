@@ -72,6 +72,8 @@ export function getSfxVolume(): number { return _sfxVol; }
 
 export function setBgmVolume(vol: number): void {
   _bgmVol = Math.max(0, Math.min(1, vol));
+  if (_gameBgmEl) _gameBgmEl.volume = _bgmVol;
+  if (_titleBgmEl) _titleBgmEl.volume = _bgmVol;
   if (_actx) {
     if (_bgmBufferGain) _bgmBufferGain.gain.setValueAtTime(_bgmVol, _actx.currentTime);
     if (_oscBgmGain) _oscBgmGain.gain.setValueAtTime(_bgmVol, _actx.currentTime);
@@ -179,6 +181,60 @@ function _stopBgmBuffer(): void {
   if (_bgmSource) {
     try { _bgmSource.stop(); } catch { /* ignore */ }
     _bgmSource = null;
+  }
+}
+
+// ── HTMLAudioElement BGM ──────────────────────────────────────────────────────
+// iOS では Web Audio API の AudioContext が resume() しても再生されないことがある。
+// HTMLAudioElement は audio.play() をジェスチャー内で呼ぶだけで動作するため
+// iOS 互換性が高い。BGM の primary 再生方式として使用する。
+
+let _titleBgmEl: HTMLAudioElement | null = null;
+let _gameBgmEl: HTMLAudioElement | null = null;
+
+function _getOrCreateTitleBgm(): HTMLAudioElement {
+  if (!_titleBgmEl) {
+    _titleBgmEl = new Audio(`${AUDIO_BASE}bgm_title.mp3`);
+    _titleBgmEl.loop = true;
+  }
+  return _titleBgmEl;
+}
+
+function _getOrCreateGameBgm(): HTMLAudioElement {
+  if (!_gameBgmEl) {
+    _gameBgmEl = new Audio(`${AUDIO_BASE}bgm.mp3`);
+    _gameBgmEl.loop = false;
+    // Web Audio API の BGM_LOOP_START/END に相当するカスタムループを再現
+    _gameBgmEl.addEventListener("timeupdate", () => {
+      if (_gameBgmEl && _gameBgmEl.currentTime >= BGM_LOOP_END) {
+        _gameBgmEl.currentTime = BGM_LOOP_START;
+      }
+    });
+    _gameBgmEl.addEventListener("ended", () => {
+      if (_bgmShouldPlay && _gameBgmEl) {
+        _gameBgmEl.currentTime = BGM_LOOP_START;
+        _gameBgmEl.play().catch(() => {});
+      }
+    });
+  }
+  return _gameBgmEl;
+}
+
+// タイトル BGM を開始（ジェスチャー内で呼ぶこと）
+export function startTitleBGM(): void {
+  if (typeof window === "undefined") return;
+  // ゲーム BGM が再生中 or ゲーム開始済みの場合は起動しない
+  if (_bgmShouldPlay) return;
+  if (_gameBgmEl && !_gameBgmEl.paused) return;
+  const el = _getOrCreateTitleBgm();
+  el.volume = _bgmVol;
+  el.play().catch(() => {});
+}
+
+export function stopTitleBGM(): void {
+  if (_titleBgmEl && !_titleBgmEl.paused) {
+    _titleBgmEl.pause();
+    _titleBgmEl.currentTime = 0;
   }
 }
 
@@ -520,20 +576,25 @@ export function unlockAudio(): void {
 
 export function startBGM(): void {
   _bgmShouldPlay = true;
+  stopTitleBGM();
+  // HTMLAudioElement で直接 bgm.mp3 を再生（iOS Safari/Chrome 対応）
+  const el = _getOrCreateGameBgm();
+  el.volume = _bgmVol;
+  el.play().catch(() => {});
+  // Web Audio API が利用可能なら AudioBuffer 再生を試みる（デスクトップ向け高品質ループ）
   if (_bgmBuffer) {
+    el.pause();
     void _playBgmBuffer();
     return;
   }
-  if (!_actx) return;
-  // MP3 バッファ未準備: オシレーター BGM を即時開始。
-  // AudioContext が suspended 状態でも oscillator は start() 可能。
-  // unlockAudio() で呼んだ resume() が解決した瞬間から自動再生される。
-  // → unlockAudio() と同じクリックハンドラから呼ぶことで確実にジェスチャー内で開始。
-  _startOscBGM();
+  if (_actx) {
+    _startOscBGM();
+  }
 }
 
 export function stopBGM(): void {
   _bgmShouldPlay = false;
+  if (_gameBgmEl) _gameBgmEl.pause();
   _stopBgmBuffer();
   _stopOscBGM();
 }
