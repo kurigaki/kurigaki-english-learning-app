@@ -6,6 +6,7 @@ import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, Scr
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
 import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume } from "@/lib/dungeon/audio";
+import { getVoiceVolume, setVoiceVolume } from "@/lib/audio";
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
 import { DUNGEON_MODE_KEY } from "@/lib/dungeon/constants";
@@ -74,6 +75,7 @@ function saveCoursePref(pref: CoursePref) {
 function DungeonVolumePanel({ onClose }: { onClose: () => void }) {
   const [bgmVol, setBgmVolState] = React.useState(() => getBgmVolume());
   const [sfxVol, setSfxVolState] = React.useState(() => getSfxVolume());
+  const [voiceVol, setVoiceVolState] = React.useState(() => getVoiceVolume());
 
   const handleBgm = (v: number) => {
     setBgmVolState(v);
@@ -82,6 +84,10 @@ function DungeonVolumePanel({ onClose }: { onClose: () => void }) {
   const handleSfx = (v: number) => {
     setSfxVolState(v);
     setSfxVolume(v);
+  };
+  const handleVoice = (v: number) => {
+    setVoiceVolState(v);
+    setVoiceVolume(v);
   };
 
   return (
@@ -122,6 +128,20 @@ function DungeonVolumePanel({ onClose }: { onClose: () => void }) {
             type="range" min={0} max={1} step={0.01}
             value={sfxVol}
             onChange={(e) => handleSfx(Number(e.target.value))}
+            style={{ width: "100%", accentColor: DC.accent }}
+          />
+        </div>
+
+        {/* 英語音声 */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <span style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 13, color: DC.text2 }}>英語音声</span>
+            <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text }}>{Math.round(voiceVol * 100)}%</span>
+          </div>
+          <input
+            type="range" min={0} max={1} step={0.01}
+            value={voiceVol}
+            onChange={(e) => handleVoice(Number(e.target.value))}
             style={{ width: "100%", accentColor: DC.accent }}
           />
         </div>
