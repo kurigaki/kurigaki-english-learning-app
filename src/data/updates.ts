@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.79.0",
+    title: "ダンジョン：タイトル画面BGM追加・音声診断改善",
+    content: [
+      "タイトル画面のどこかをタップするだけでBGMが開始するよう変更（ボタン以外の場所をタップしても音声が起動）",
+      "BGMの初期音量を引き上げ（オシレーター方式は音が小さかったため）",
+      "AudioContext が suspended 状態のときの currentTime NaN バグを修正",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.78.0",
     title: "ダンジョン：スマホ音声タイミング修正（ジェスチャー内即時BGM開始）",
     content: [
