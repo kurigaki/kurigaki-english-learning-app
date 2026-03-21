@@ -506,18 +506,9 @@ export function unlockAudio(): void {
     if (!AC) return;
     _actx = new AC();
   }
-  // iOS unlock: 1サンプルの完全無音バッファをユーザージェスチャー内で同期再生。
-  // oscillator を使うと iOS Safari が「音声あり」と判定してタブを自動消音するが、
-  // ゼロデータのバッファは真の無音なのでタブ消音を引き起こさない。
-  // resume().then() 内で再生すると microtask になりジェスチャー判定から外れるため
-  // resume() の前に同期で start(0) を呼ぶ。
-  try {
-    const silentBuf = _actx.createBuffer(1, 1, _actx.sampleRate);
-    const silentSrc = _actx.createBufferSource();
-    silentSrc.buffer = silentBuf;
-    silentSrc.connect(_actx.destination);
-    silentSrc.start(0);
-  } catch { /* ignore */ }
+  // iOS: ユーザージェスチャーのコールスタック内で resume() を呼ぶ。
+  // startBGM() も同じハンドラから直接呼ぶことで、suspended 状態での
+  // oscillator start() → resume() 解決後に即再生、という流れが成立する。
   _actx.resume().catch(() => {});
   // フェッチ済みの SFX 生データをデコード、BGM もデコード
   _decodePendingSfx().catch(() => {});
@@ -530,20 +521,12 @@ export function startBGM(): void {
     void _playBgmBuffer();
     return;
   }
-  // MP3 バッファ未準備: オシレーター BGM で即時再生開始（iOS でのフォールバック）。
-  // MP3 デコードが後で完了した場合は _decodeBgm() → _playBgmBuffer() が
-  // オシレーター BGM を停止してから MP3 BGM に切り替える。
   if (!_actx) return;
-  if (_actx.state === "running") {
-    _startOscBGM();
-  } else {
-    // unlockAudio() 直後で resume がまだ完了していない場合
-    _actx.resume().then(() => {
-      if (!_bgmShouldPlay) return;
-      if (_bgmBuffer) void _playBgmBuffer();
-      else _startOscBGM();
-    }).catch(() => {});
-  }
+  // MP3 バッファ未準備: オシレーター BGM を即時開始。
+  // AudioContext が suspended 状態でも oscillator は start() 可能。
+  // unlockAudio() で呼んだ resume() が解決した瞬間から自動再生される。
+  // → unlockAudio() と同じクリックハンドラから呼ぶことで確実にジェスチャー内で開始。
+  _startOscBGM();
 }
 
 export function stopBGM(): void {

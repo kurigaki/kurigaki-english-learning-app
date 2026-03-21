@@ -5,7 +5,7 @@ import Link from "next/link";
 import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, ScreenEffect, EventOverlay } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
-import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, initDungeonAudio } from "@/lib/dungeon/audio";
+import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, startBGM, initDungeonAudio } from "@/lib/dungeon/audio";
 import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL } from "@/lib/audio";
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
@@ -1550,7 +1550,7 @@ function TitleScreen({
       {/* ── ボタン群 ── */}
       {hasSave && (
         <button
-          onClick={() => { unlockAudio(); onContinue(); }}
+          onClick={() => { unlockAudio(); startBGM(); onContinue(); }}
           style={{
             fontFamily: "'Press Start 2P', monospace",
             fontSize: "clamp(9px,2.5vw,12px)",
@@ -1567,7 +1567,7 @@ function TitleScreen({
         </button>
       )}
       <button
-        onClick={() => { unlockAudio(); handleStart(); }}
+        onClick={() => { unlockAudio(); startBGM(); handleStart(); }}
         disabled={loading}
         style={{
           fontFamily: "'Press Start 2P', monospace",
@@ -2061,6 +2061,8 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         <DungeonDeathScreen
           death={(uiState.death ?? restoredDeath)!}
           onRetry={() => {
+            unlockAudio();
+            startBGM();
             sessionStorage.removeItem(DUNGEON_DEATH_KEY);
             setRestoredDeath(null);
             startedRef.current = false;

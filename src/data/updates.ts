@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.78.0",
+    title: "ダンジョン：スマホ音声タイミング修正（ジェスチャー内即時BGM開始）",
+    content: [
+      "iOS Safari・Chrome でBGM・効果音が流れない問題を修正",
+      "原因：STARTボタン押下からBGM開始まで「fetchリクエスト→Reactレンダー→useEffect→setTimeout(50ms)」というチェーンがあり、ユーザー操作から数秒後にBGMが開始されていた。iOSはこれをオートプレイと判定してタブを消音する",
+      "修正：STARTボタン・続きから・再挑戦の各クリックハンドラでBGMを即時開始するよう変更。ユーザーの操作と同期してBGMが始まるためiOSが自動消音しない",
+      "【重要】すでに「このタブを消音」がONになっている場合は、Safariのタブを一度閉じて新しいタブで開き直してください",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.77.0",
     title: "ダンジョン：スマホ音声を完全修正（BGMオシレーター化・タブ消音バグ解消）",
     content: [
