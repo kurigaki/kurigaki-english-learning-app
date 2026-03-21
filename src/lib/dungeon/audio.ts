@@ -39,8 +39,6 @@ const AUDIO_BASE = "/audio/dungeon/";
 const BGM_DEFAULT_VOL = 0.15;
 const SFX_DEFAULT_VOL = 0.4;
 
-// Web Audio フォールバック BGM のマスターゲインスケール（vol=1.0 時のゲイン）
-const WEB_AUDIO_BGM_MAX_GAIN = 0.53;
 
 const AUDIO_VOL_KEY = "dungeon_audio_vol";
 
@@ -72,14 +70,6 @@ export function setBgmVolume(vol: number): void {
   if (_bgmBufferGain) {
     const ac = getACtx();
     if (ac) _bgmBufferGain.gain.setValueAtTime(_bgmVol, ac.currentTime);
-  }
-  // ライブ反映: Web Audio フォールバック BGM
-  if (_bgmGain) {
-    const ac = getACtx();
-    if (ac) {
-      const target = _bgmVol > 0 ? _bgmVol * WEB_AUDIO_BGM_MAX_GAIN : 0.001;
-      _bgmGain.gain.setValueAtTime(target, ac.currentTime);
-    }
   }
   _saveVolumes();
 }
@@ -142,7 +132,6 @@ async function _loadBgmBuffer(): Promise<void> {
     _bgmBuffer = await ac.decodeAudioData(arrayBuf);
     // ロード完了時点で startBGM() が呼ばれていたら即再生
     if (_bgmShouldPlay) {
-      _stopWebAudioBGM(); // フォールバックを停止
       _playBgmBuffer();
     }
   } catch {
@@ -187,90 +176,7 @@ function _stopBgmBuffer(): void {
   // ゲインノードはキープ（setBgmVolume で再利用するため）
 }
 
-// ── Web Audio BGM（フォールバック: ピクセルサウンド） ────────────────────────
-
-let _bgmGain: GainNode | null = null;
-
-function _stopWebAudioBGM(): void {
-  try {
-    if (_bgmGain) {
-      const ac = getACtx();
-      if (ac) {
-        // 即座に無音化（スケジュール済みの値をキャンセルして即 0 に）
-        _bgmGain.gain.cancelScheduledValues(ac.currentTime);
-        _bgmGain.gain.setValueAtTime(0.001, ac.currentTime);
-      }
-      // 参照を即 null にして tick() が新規ノートをスケジュールしないようにする
-      _bgmGain = null;
-    }
-  } catch { /* ignore */ }
-}
-
-function _startWebAudioBGM(): void {
-  try {
-    const ac = getACtx();
-    if (!ac) return;
-    if (_bgmGain) {
-      _bgmGain.gain.setValueAtTime(0.001, ac.currentTime);
-      _bgmGain = null;
-    }
-
-    _bgmGain = ac.createGain();
-    _bgmGain.gain.setValueAtTime(_bgmVol * WEB_AUDIO_BGM_MAX_GAIN, ac.currentTime);
-    _bgmGain.connect(ac.destination);
-
-    const bassNotes = [
-      110, 110, 98, 110, 110, 98, 110, 123, 98, 110, 98, 87, 98, 110, 123, 110,
-    ];
-    const melNotes = [
-      220, 262, 220, 196, 220, 262, 294, 220, 196, 220, 196, 175, 196, 220, 247, 220,
-    ];
-    const beatLen = 0.22;
-    const loopLen = bassNotes.length * beatLen;
-    const localGain = _bgmGain;
-
-    const scheduleLoop = (startTime: number) => {
-      if (!localGain) return;
-      const currentAc = getACtx();
-      if (!currentAc) return;
-      bassNotes.forEach((f, i) => {
-        const t = startTime + i * beatLen;
-        const osc = currentAc.createOscillator();
-        const g = currentAc.createGain();
-        osc.connect(g); g.connect(localGain);
-        osc.type = "square";
-        osc.frequency.setValueAtTime(f, t);
-        g.gain.setValueAtTime(0.6, t);
-        g.gain.exponentialRampToValueAtTime(0.001, t + beatLen * 0.7);
-        osc.start(t); osc.stop(t + beatLen * 0.8);
-      });
-      melNotes.forEach((f, i) => {
-        const t = startTime + i * beatLen + beatLen * 0.5;
-        const osc = currentAc.createOscillator();
-        const g = currentAc.createGain();
-        osc.connect(g); g.connect(localGain);
-        osc.type = "triangle";
-        osc.frequency.setValueAtTime(f, t);
-        g.gain.setValueAtTime(0.4, t);
-        g.gain.exponentialRampToValueAtTime(0.001, t + beatLen * 0.6);
-        osc.start(t); osc.stop(t + beatLen * 0.7);
-      });
-    };
-
-    let nextLoopTime = ac.currentTime;
-    const tick = () => {
-      if (!_bgmGain || _bgmGain !== localGain) return;
-      const currentAc2 = getACtx();
-      if (!currentAc2) return;
-      while (nextLoopTime < currentAc2.currentTime + 2.0) {
-        scheduleLoop(nextLoopTime);
-        nextLoopTime += loopLen;
-      }
-      setTimeout(tick, 500);
-    };
-    tick();
-  } catch { /* ignore */ }
-}
+// Web Audio BGM フォールバックは削除済み（bgm.mp3 を使用）
 
 // ── SFX Web Audio フォールバック ─────────────────────────────────────────────
 
@@ -413,17 +319,12 @@ export function startBGM(): void {
 
   if (_bgmBuffer) {
     // AudioBuffer ロード済み → すぐに再生
-    _stopWebAudioBGM();
     _playBgmBuffer();
-  } else {
-    // まだロード中 → Web Audio フォールバックを暫定再生
-    // _loadBgmBuffer() が完了したら自動で切り替わる
-    _startWebAudioBGM();
   }
+  // ロード中の場合は _loadBgmBuffer() 完了時に自動再生される
 }
 
 export function stopBGM(): void {
   _bgmShouldPlay = false;
   _stopBgmBuffer();
-  _stopWebAudioBGM();
 }
