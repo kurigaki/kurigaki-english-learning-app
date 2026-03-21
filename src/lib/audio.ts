@@ -2,6 +2,37 @@
 
 import type { PronunciationVariant } from "@/types";
 
+// ── 英語音声 音量設定 ─────────────────────────────────────────────────────────
+
+const VOICE_VOLUME_KEY = "voice_volume";
+let _voiceVol = 1.0;
+
+function _loadVoiceVolume(): void {
+  try {
+    if (typeof window === "undefined") return;
+    const raw = localStorage.getItem(VOICE_VOLUME_KEY);
+    if (raw !== null) {
+      const v = parseFloat(raw);
+      if (!isNaN(v)) _voiceVol = Math.max(0, Math.min(1, v));
+    }
+  } catch { /* ignore */ }
+}
+
+function _saveVoiceVolume(): void {
+  try {
+    localStorage.setItem(VOICE_VOLUME_KEY, String(_voiceVol));
+  } catch { /* ignore */ }
+}
+
+_loadVoiceVolume();
+
+export function getVoiceVolume(): number { return _voiceVol; }
+
+export function setVoiceVolume(vol: number): void {
+  _voiceVol = Math.max(0, Math.min(1, vol));
+  _saveVoiceVolume();
+}
+
 export type VoiceLanguage = "en-US" | "en-GB" | "ja-JP";
 
 // ブラウザがWeb Speech APIをサポートしているかチェック
@@ -72,7 +103,7 @@ export function speak(
   // オプション設定
   utterance.rate = options?.rate ?? 1;
   utterance.pitch = options?.pitch ?? 1;
-  utterance.volume = options?.volume ?? 1;
+  utterance.volume = options?.volume ?? _voiceVol;
 
   // 音声を設定（language が指定された場合はその言語の音声を優先探索）
   if (options?.voice) {
