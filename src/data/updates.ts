@@ -32,6 +32,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 // アップデート履歴（新しい順）
 export const APP_UPDATES: AppUpdate[] = [
   {
+    date: "2026-03-22",
+    version: "1.82.0",
+    title: "ダンジョン：BGM二重再生バグ修正・ナビゲーション時の音声起動改善",
+    content: [
+      "【修正】BGMが何本も重なって流れるバグを修正（HTMLAudioElement・AudioBuffer・オシレーターが同時起動していた）",
+      "startBGM時は既存ストリームを全て停止してから新規再生。AudioBuffer/HTMLAudioElement/オシレーターは排他使用に変更",
+      "AudioBufferへの切り替え時（非同期デコード完了後）にHTMLAudioElementを先に停止するよう修正",
+      "BottomNavのダンジョンリンクタップ時にunlockAudio()を呼ぶよう修正（iOS音声制限の解除）",
+    ],
+    category: "fix",
+  },
+  {
     date: "2026-03-21",
     version: "1.81.0",
     title: "ダンジョン：ナビゲーションクリックでBGM開始・離脱で停止",

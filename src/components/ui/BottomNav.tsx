@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { startTitleBGM, stopAllDungeonBGM } from "@/lib/dungeon/audio";
+import { unlockAudio, startTitleBGM, stopAllDungeonBGM } from "@/lib/dungeon/audio";
 
 const navItems = [
   { href: "/", label: "ホーム", icon: "🏠" },
@@ -33,7 +33,9 @@ export const BottomNav = () => {
 
   const handleNavClick = (href: string) => {
     if (href === "/dungeon") {
-      // ダンジョンへ遷移: タイトルBGMをユーザージェスチャー内で開始（iOS対応）
+      // ダンジョンへ遷移: AudioContext をアンロックしてタイトルBGMを開始
+      // unlockAudio() で AudioContext を作成し iOS のオーディオ制限を解除してから play()
+      unlockAudio();
       startTitleBGM();
     } else {
       // 他ページへ遷移: ダンジョンBGMを停止
