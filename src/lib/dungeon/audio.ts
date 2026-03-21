@@ -154,7 +154,10 @@ function _playBgmBuffer(): void {
   src.loopStart = BGM_LOOP_START;
   src.loopEnd = BGM_LOOP_END;
   src.connect(_bgmBufferGain);
-  // suspended でも start(0) を呼ぶ: resume() 後に自動再生される（モバイル対応）
+  // suspended でも start(0) を呼ぶ。resume() も呼んでモバイルで確実に再生
+  if (_actx.state === "suspended") {
+    _actx.resume().catch(() => {});
+  }
   src.start(0);
   _bgmSource = src;
 }
@@ -232,6 +235,9 @@ async function _decodePendingSfx(): Promise<void> {
   );
 }
 
+// SFX 間の最大待機時間（ms）: この時間を超えたら音が終わる前に次へ進む
+const MAX_GAP_MS = 350;
+
 // キューを順番に消化する
 function _drainSfxQueue(): void {
   if (_sfxQueue.length === 0) {
@@ -240,9 +246,10 @@ function _drainSfxQueue(): void {
     return;
   }
   if (!_actx || _actx.state !== "running") {
-    // suspended: statechange で再トリガー（キューは捨てない）
+    // suspended: resume() を呼んで statechange を待つ
     if (!_sfxWaiting && _actx) {
       _sfxWaiting = true;
+      _actx.resume().catch(() => {});
       const onState = () => {
         if (_actx!.state === "running") {
           _actx!.removeEventListener("statechange", onState);
@@ -267,7 +274,15 @@ function _drainSfxQueue(): void {
   gain.gain.setValueAtTime(_sfxVol, _actx.currentTime);
   src.connect(gain);
   gain.connect(_actx.destination);
-  src.onended = () => _drainSfxQueue();
+  // onended または MAX_GAP_MS のどちらか早い方で次の SFX へ進む
+  let advanced = false;
+  const advance = () => {
+    if (advanced) return;
+    advanced = true;
+    _drainSfxQueue();
+  };
+  src.onended = advance;
+  setTimeout(advance, MAX_GAP_MS);
   src.start(0);
 }
 
