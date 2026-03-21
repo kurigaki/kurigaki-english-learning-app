@@ -5,8 +5,8 @@ import Link from "next/link";
 import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, ScreenEffect, EventOverlay } from "@/lib/dungeon/types";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
-import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume } from "@/lib/dungeon/audio";
-import { getVoiceVolume, setVoiceVolume } from "@/lib/audio";
+import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio } from "@/lib/dungeon/audio";
+import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL } from "@/lib/audio";
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
 import { DUNGEON_MODE_KEY } from "@/lib/dungeon/constants";
@@ -77,17 +77,13 @@ function DungeonVolumePanel({ onClose }: { onClose: () => void }) {
   const [sfxVol, setSfxVolState] = React.useState(() => getSfxVolume());
   const [voiceVol, setVoiceVolState] = React.useState(() => getVoiceVolume());
 
-  const handleBgm = (v: number) => {
-    setBgmVolState(v);
-    setBgmVolume(v);
-  };
-  const handleSfx = (v: number) => {
-    setSfxVolState(v);
-    setSfxVolume(v);
-  };
-  const handleVoice = (v: number) => {
-    setVoiceVolState(v);
-    setVoiceVolume(v);
+  const handleBgm = (v: number) => { setBgmVolState(v); setBgmVolume(v); };
+  const handleSfx = (v: number) => { setSfxVolState(v); setSfxVolume(v); };
+  const handleVoice = (v: number) => { setVoiceVolState(v); setVoiceVolume(v); };
+  const handleReset = () => {
+    handleBgm(BGM_DEFAULT_VOL);
+    handleSfx(SFX_DEFAULT_VOL);
+    handleVoice(VOICE_DEFAULT_VOL);
   };
 
   return (
@@ -150,16 +146,28 @@ function DungeonVolumePanel({ onClose }: { onClose: () => void }) {
           英語の聞き取りを優先するため<br />BGMは控えめに設定されています
         </div>
 
-        <button
-          onClick={onClose}
-          style={{
-            fontFamily: "'Press Start 2P', monospace", fontSize: 9,
-            color: DC.text, background: DC.bg4, border: `1px solid ${DC.border2}`,
-            borderRadius: 4, padding: "8px 16px", cursor: "pointer",
-          }}
-        >
-          閉じる
-        </button>
+        <div style={{ display: "flex", gap: 8 }}>
+          <button
+            onClick={handleReset}
+            style={{
+              fontFamily: "'Press Start 2P', monospace", fontSize: 9,
+              color: DC.text3, background: DC.bg4, border: `1px solid ${DC.border2}`,
+              borderRadius: 4, padding: "8px 12px", cursor: "pointer", flex: 1,
+            }}
+          >
+            リセット
+          </button>
+          <button
+            onClick={onClose}
+            style={{
+              fontFamily: "'Press Start 2P', monospace", fontSize: 9,
+              color: DC.text, background: DC.accent, border: "none",
+              borderRadius: 4, padding: "8px 12px", cursor: "pointer", flex: 1,
+            }}
+          >
+            閉じる
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -1661,6 +1669,13 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     setHasSave(storage.hasDungeonGame());
   }, []);
 
+  // ゲームオーバー時に続きからボタンを非表示にする
+  useEffect(() => {
+    if (uiState.death) {
+      setHasSave(storage.hasDungeonGame());
+    }
+  }, [uiState.death]);
+
   // Load Google Fonts
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -1727,6 +1742,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         { wordId: 0, word: "danger", ans: "危険", ch: ["安全", "危険", "平和", "喜び"] },
       ];
     }
+    unlockAudio(); // スマホ対応: ユーザージェスチャー内でAudioContextを解放
     setQuestions(qs);
     setPhase("game");
   }, []);
@@ -1734,6 +1750,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const handleContinue = useCallback(() => {
     const raw = storage.getDungeonGame() as DungeonSave | null;
     if (!raw) return;
+    unlockAudio(); // スマホ対応: ユーザージェスチャー内でAudioContextを解放
     pendingSaveRef.current = raw.gameState;
     setQuestions(raw.questions);
     setRestoredDeath(null);
