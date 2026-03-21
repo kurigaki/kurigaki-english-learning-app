@@ -1,5 +1,53 @@
 "use client";
 
+// ─────────────────────────────────────────────────────────────────────────────
+// ダンジョン音声モジュール
+//
+// 【MP3ファイルの配置方法】
+// 以下のファイルを public/audio/dungeon/ に置くと自動で使用されます。
+// ファイルがない場合は Web Audio API によるピクセルサウンドにフォールバックします。
+//
+//   BGM:
+//     bgm.mp3           - ダンジョン探索BGM（ループ再生）
+//
+//   効果音:
+//     sfx_hit.mp3       - 通常攻撃ヒット
+//     sfx_crit.mp3      - 会心ヒット
+//     sfx_miss.mp3      - 攻撃ミス
+//     sfx_recv.mp3      - ダメージを受けた
+//     sfx_correct.mp3   - クイズ正解
+//     sfx_wrong.mp3     - クイズ不正解
+//     sfx_levelup.mp3   - レベルアップ
+//     sfx_stairs.mp3    - 階段・ワープ
+//     sfx_item.mp3      - アイテム取得・使用
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
+const AUDIO_BASE = "/audio/dungeon/";
+
+// SFX キー一覧
+const SFX_KEYS = [
+  "sfx_hit",
+  "sfx_crit",
+  "sfx_miss",
+  "sfx_recv",
+  "sfx_correct",
+  "sfx_wrong",
+  "sfx_levelup",
+  "sfx_stairs",
+  "sfx_item",
+] as const;
+type SfxKey = (typeof SFX_KEYS)[number];
+
+// ロード済みの SFX 要素（ロード失敗の場合はエントリなし）
+const sfxReady = new Map<SfxKey, HTMLAudioElement>();
+
+// BGM 用 HTMLAudioElement（ロード失敗なら null）
+let bgmEl: HTMLAudioElement | null = null;
+let bgmFileReady = false;
+
+// ── Web Audio API（フォールバック） ──────────────────────────────────────────
+
 let _actx: AudioContext | null = null;
 let _bgmGain: GainNode | null = null;
 
@@ -7,7 +55,9 @@ function getACtx(): AudioContext | null {
   if (typeof window === "undefined") return null;
   if (!_actx) {
     const AC =
-      window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      window.AudioContext ||
+      (window as unknown as { webkitAudioContext: typeof AudioContext })
+        .webkitAudioContext;
     if (!AC) return null;
     _actx = new AC();
   }
@@ -33,7 +83,8 @@ export function playTone(
     osc.type = type;
     const t = ac.currentTime + delay;
     osc.frequency.setValueAtTime(freq, t);
-    if (freqEnd !== null) osc.frequency.exponentialRampToValueAtTime(freqEnd, t + dur * 0.9);
+    if (freqEnd !== null)
+      osc.frequency.exponentialRampToValueAtTime(freqEnd, t + dur * 0.9);
     gain.gain.setValueAtTime(vol, t);
     gain.gain.exponentialRampToValueAtTime(0.001, t + dur);
     osc.start(t);
@@ -43,51 +94,175 @@ export function playTone(
   }
 }
 
+// ── MP3 プリロード ────────────────────────────────────────────────────────────
+
+let _initialized = false;
+
+export function initDungeonAudio(): void {
+  if (typeof window === "undefined" || _initialized) return;
+  _initialized = true;
+
+  // SFX をプリロード
+  for (const key of SFX_KEYS) {
+    const el = new Audio(`${AUDIO_BASE}${key}.mp3`);
+    el.preload = "auto";
+    el.addEventListener(
+      "canplaythrough",
+      () => {
+        sfxReady.set(key, el);
+      },
+      { once: true }
+    );
+    // error は無視（ファイルがなければ Web Audio にフォールバック）
+    el.load();
+  }
+
+  // BGM をプリロード
+  const bgm = new Audio(`${AUDIO_BASE}bgm.mp3`);
+  bgm.loop = true;
+  bgm.volume = 0.5;
+  bgm.preload = "auto";
+  bgm.addEventListener(
+    "canplaythrough",
+    () => {
+      bgmFileReady = true;
+      bgmEl = bgm;
+    },
+    { once: true }
+  );
+  bgm.load();
+  bgmEl = bgm; // canplaythrough を待たずに保持（start 時に判定）
+}
+
+// ── SFX 再生ヘルパー ──────────────────────────────────────────────────────────
+
+function playSfx(key: SfxKey, fallback: () => void): void {
+  const el = sfxReady.get(key);
+  if (el) {
+    // 重複再生のためクローン
+    const clone = el.cloneNode() as HTMLAudioElement;
+    clone.volume = el.volume;
+    clone.play().catch(() => fallback());
+  } else {
+    fallback();
+  }
+}
+
+// ── 効果音 API ────────────────────────────────────────────────────────────────
+
 export function sfxHit(): void {
-  playTone(180, 0.04, 0.3, "square", 80);
-  playTone(260, 0.06, 0.2, "square", 120, 0.02);
+  playSfx("sfx_hit", () => {
+    playTone(180, 0.04, 0.3, "square", 80);
+    playTone(260, 0.06, 0.2, "square", 120, 0.02);
+  });
 }
 
 export function sfxCrit(): void {
-  playTone(320, 0.04, 0.35, "square", 160);
-  playTone(480, 0.08, 0.25, "square", 200, 0.03);
-  playTone(240, 0.1, 0.2, "sawtooth", 120, 0.06);
+  playSfx("sfx_crit", () => {
+    playTone(320, 0.04, 0.35, "square", 160);
+    playTone(480, 0.08, 0.25, "square", 200, 0.03);
+    playTone(240, 0.1, 0.2, "sawtooth", 120, 0.06);
+  });
 }
 
 export function sfxMiss(): void {
-  playTone(120, 0.08, 0.15, "sine", 90);
+  playSfx("sfx_miss", () => {
+    playTone(120, 0.08, 0.15, "sine", 90);
+  });
 }
 
 export function sfxRecv(): void {
-  playTone(90, 0.05, 0.4, "sawtooth", 60);
-  playTone(70, 0.12, 0.25, "square", 50, 0.04);
+  playSfx("sfx_recv", () => {
+    playTone(90, 0.05, 0.4, "sawtooth", 60);
+    playTone(70, 0.12, 0.25, "square", 50, 0.04);
+  });
 }
 
 export function sfxCorrect(): void {
-  playTone(523, 0.07, 0.2, "sine");
-  playTone(659, 0.07, 0.2, "sine", null, 0.08);
-  playTone(784, 0.1, 0.2, "sine", null, 0.16);
+  playSfx("sfx_correct", () => {
+    playTone(523, 0.07, 0.2, "sine");
+    playTone(659, 0.07, 0.2, "sine", null, 0.08);
+    playTone(784, 0.1, 0.2, "sine", null, 0.16);
+  });
 }
 
 export function sfxWrong(): void {
-  playTone(220, 0.05, 0.2, "sawtooth", 180);
-  playTone(160, 0.12, 0.2, "sawtooth", 120, 0.06);
+  playSfx("sfx_wrong", () => {
+    playTone(220, 0.05, 0.2, "sawtooth", 180);
+    playTone(160, 0.12, 0.2, "sawtooth", 120, 0.06);
+  });
 }
 
 export function sfxLevelUp(): void {
-  [523, 659, 784, 1047].forEach((f, i) => playTone(f, 0.1, 0.18, "sine", null, i * 0.09));
+  playSfx("sfx_levelup", () => {
+    [523, 659, 784, 1047].forEach((f, i) =>
+      playTone(f, 0.1, 0.18, "sine", null, i * 0.09)
+    );
+  });
 }
 
 export function sfxStairs(): void {
-  [440, 370, 310, 260].forEach((f, i) => playTone(f, 0.07, 0.18, "sine", null, i * 0.07));
+  playSfx("sfx_stairs", () => {
+    [440, 370, 310, 260].forEach((f, i) =>
+      playTone(f, 0.07, 0.18, "sine", null, i * 0.07)
+    );
+  });
 }
 
 export function sfxItem(): void {
-  playTone(660, 0.06, 0.18, "sine");
-  playTone(880, 0.08, 0.16, "sine", null, 0.07);
+  playSfx("sfx_item", () => {
+    playTone(660, 0.06, 0.18, "sine");
+    playTone(880, 0.08, 0.16, "sine", null, 0.07);
+  });
 }
 
+// ── BGM ───────────────────────────────────────────────────────────────────────
+
 export function startBGM(): void {
+  // MP3 ファイルが使える場合
+  if (bgmFileReady && bgmEl) {
+    bgmEl.currentTime = 0;
+    bgmEl.play().catch(() => {
+      // 自動再生ブロック等 → フォールバック
+      _startWebAudioBGM();
+    });
+    return;
+  }
+
+  // bgmEl が存在するが canplaythrough 未発火（まだロード中）の場合も
+  // Web Audio にフォールバック（ロード完了後は次回 startBGM から MP3 が使われる）
+  _startWebAudioBGM();
+}
+
+export function stopBGM(): void {
+  // MP3 BGM を停止
+  if (bgmEl && !bgmEl.paused) {
+    bgmEl.pause();
+    bgmEl.currentTime = 0;
+  }
+
+  // Web Audio BGM を停止
+  try {
+    if (_bgmGain) {
+      const ac = getACtx();
+      if (ac) {
+        _bgmGain.gain.exponentialRampToValueAtTime(
+          0.001,
+          ac.currentTime + 0.3
+        );
+      }
+      setTimeout(() => {
+        _bgmGain = null;
+      }, 400);
+    }
+  } catch {
+    // ignore
+  }
+}
+
+// ── Web Audio BGM（フォールバック） ───────────────────────────────────────────
+
+function _startWebAudioBGM(): void {
   try {
     const ac = getACtx();
     if (!ac) return;
@@ -100,8 +275,14 @@ export function startBGM(): void {
     _bgmGain.gain.setValueAtTime(0.08, ac.currentTime);
     _bgmGain.connect(ac.destination);
 
-    const bassNotes = [110, 110, 98, 110, 110, 98, 110, 123, 98, 110, 98, 87, 98, 110, 123, 110];
-    const melNotes = [220, 262, 220, 196, 220, 262, 294, 220, 196, 220, 196, 175, 196, 220, 247, 220];
+    const bassNotes = [
+      110, 110, 98, 110, 110, 98, 110, 123, 98, 110, 98, 87, 98, 110, 123,
+      110,
+    ];
+    const melNotes = [
+      220, 262, 220, 196, 220, 262, 294, 220, 196, 220, 196, 175, 196, 220,
+      247, 220,
+    ];
     const beatLen = 0.22;
     const loopLen = bassNotes.length * beatLen;
 
@@ -137,7 +318,7 @@ export function startBGM(): void {
         osc.start(t);
         osc.stop(t + beatLen * 0.7);
       });
-    }
+    };
 
     let nextLoopTime = ac.currentTime;
     const tick = () => {
@@ -149,24 +330,8 @@ export function startBGM(): void {
         nextLoopTime += loopLen;
       }
       setTimeout(tick, 500);
-    }
+    };
     tick();
-  } catch {
-    // ignore
-  }
-}
-
-export function stopBGM(): void {
-  try {
-    if (_bgmGain) {
-      const ac = getACtx();
-      if (ac) {
-        _bgmGain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.3);
-      }
-      setTimeout(() => {
-        _bgmGain = null;
-      }, 400);
-    }
   } catch {
     // ignore
   }

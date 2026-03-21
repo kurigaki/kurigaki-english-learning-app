@@ -45,6 +45,7 @@ import {
   sfxItem,
   startBGM,
   stopBGM,
+  initDungeonAudio,
 } from "@/lib/dungeon/audio";
 import { ITEMS_DEF, ENEMIES_DEF, MW, MH } from "@/lib/dungeon/constants";
 import { speakWord } from "@/lib/audio";
@@ -1630,6 +1631,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
 
   // ── ロード ──────────────────────────────────────────────────────
   const loadSave = useCallback((savedState: GameState) => {
+    initDungeonAudio(); // MP3ファイルをプリロード（初回のみ）
     // Backward compatibility: fill in new fields if missing from old saves
     // Cast to partial to allow runtime saves missing these new fields
     const raw = savedState as Partial<GameState> & Omit<GameState, "hunger" | "maxHunger" | "gold" | "traps" | "shopItems" | "dungeonMode" | "monsterHouseRoomIdx" | "explored">;
@@ -1673,6 +1675,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   }, [redraw, updateUI]);
 
   const startGame = useCallback(() => {
+    initDungeonAudio(); // MP3ファイルをプリロード（初回のみ）
     storage.clearDungeonGame();
     const g = initGameState([], dungeonMode);
     gameRef.current = g;
