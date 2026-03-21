@@ -196,9 +196,12 @@ function _stopWebAudioBGM(): void {
     if (_bgmGain) {
       const ac = getACtx();
       if (ac) {
-        _bgmGain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.3);
+        // 即座に無音化（スケジュール済みの値をキャンセルして即 0 に）
+        _bgmGain.gain.cancelScheduledValues(ac.currentTime);
+        _bgmGain.gain.setValueAtTime(0.001, ac.currentTime);
       }
-      setTimeout(() => { _bgmGain = null; }, 400);
+      // 参照を即 null にして tick() が新規ノートをスケジュールしないようにする
+      _bgmGain = null;
     }
   } catch { /* ignore */ }
 }
