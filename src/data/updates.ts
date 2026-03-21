@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-21",
+    version: "1.72.0",
+    title: "ダンジョン：スマホ音声修正・効果音の二重再生防止・テンポ改善",
+    content: [
+      "スマホChrome でBGM・効果音が全く流れないバグを修正（AudioContext が suspended のまま再生されていなかった問題）",
+      "PCでクイズ回答後に効果音が2回流れるバグを修正（React Strict Mode の二重呼び出し対策）",
+      "正解音と攻撃音の間隔を最大350msに短縮。サウンドのテンポが行動に追いつくよう改善",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-21",
     version: "1.71.0",
     title: "ダンジョン：音声品質・BGMスマホ対応・バグ修正",
     content: [
