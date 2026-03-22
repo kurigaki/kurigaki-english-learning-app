@@ -534,57 +534,66 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         case "heal_grass": {
           const v = 15;
           g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxItemUse();
-          notify(`💚 HPが${v}回復！`);
+          notify(`💚 HPが${v}回復！（満腹度+5）`);
           return true;
         }
         case "big_heal": {
           g.p.hp = g.p.mhp;
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxItemUse();
-          notify("💚 HPが全回復！");
+          notify("💚 HPが全回復！（満腹度+5）");
           return true;
         }
         case "poison_grass": {
           g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxItemUse();
-          notify("✨ 毒が消えた！HP+5");
+          notify("✨ HP+5！（満腹度+5）");
           return true;
         }
         case "power_grass": {
           g.p.atk += 1;
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxLevelUp();
-          notify(`⚔️ 攻撃力が${g.p.atk}になった！`);
+          notify(`⚔️ 攻撃力が${g.p.atk}になった！（満腹度+5）`);
           return true;
         }
         case "hp_grass": {
           g.p.mhp += 3;
           g.p.hp = Math.min(g.p.hp + 3, g.p.mhp);
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxLevelUp();
-          notify(`❤️ 最大HPが${g.p.mhp}になった！`);
+          notify(`❤️ 最大HPが${g.p.mhp}になった！（満腹度+5）`);
           return true;
         }
         case "swift_grass": {
           g.swiftTurns = (g.swiftTurns || 0) + 5;
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxItemUse();
-          notify("💨 倍速になった！（5ターン）");
+          notify("💨 倍速になった！（5ターン・満腹度+5）");
           return true;
         }
         case "slow_grass": {
           g.playerSlowTurns = (g.playerSlowTurns || 0) + 5;
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxWrong();
-          notify("🐢 鈍足になった！敵が2回行動する（5ターン）");
+          notify("🐢 鈍足になった！（5ターン・満腹度+5）");
           return true;
         }
         case "sleep_grass": {
           g.playerSleepTurns = (g.playerSleepTurns || 0) + 3;
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxWrong();
-          notify("💤 眠ってしまった！3ターン動けない！");
+          notify("💤 眠ってしまった！3ターン動けない（満腹度+5）");
           return true;
         }
         case "confuse_grass": {
           g.playerConfusedTurns = (g.playerConfusedTurns || 0) + 4;
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxWrong();
-          notify("🌀 混乱した！4ターン方向が乱れる！");
+          notify("🌀 混乱した！4ターン方向が乱れる（満腹度+5）");
           return true;
         }
         case "warp_grass": {
@@ -603,9 +612,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             g.px = nx;
             g.py = ny;
             sfxWarp();
-            notify("✨ ワープした！");
+            notify("✨ ワープした！（満腹度+5）");
             redraw();
           }
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           return true;
         }
         case "fire_grass": {
@@ -622,11 +632,12 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             fy += fdy;
           }
           const fdmg = 15;
+          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           if (hitEnemy2) {
             hitEnemy2.hp = Math.max(0, hitEnemy2.hp - fdmg);
             addDmgPop(hitEnemy2.x, hitEnemy2.y, "hit", fdmg);
             sfxCrit();
-            notify(`🔥 ${hitEnemy2.name}に${fdmg}ダメージ！`);
+            notify(`🔥 ${hitEnemy2.name}に${fdmg}ダメージ！（満腹度+5）`);
             if (hitEnemy2.hp <= 0) {
               setTimeout(() => { onEnemyDied(g, hitEnemy2!); updateUI(g); redraw(); }, 100);
               g.enemies = g.enemies.filter((en) => en.id !== hitEnemy2!.id);
@@ -634,7 +645,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             redraw();
           } else {
             sfxItemUse();
-            notify("🔥 火炎が空を切った");
+            notify("🔥 火炎が空を切った（満腹度+5）");
           }
           return true;
         }
@@ -748,8 +759,16 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             } else break;
           }
           e.x = blowTx; e.y = blowTy;
+          // 吹き飛ばし時に5ダメージ
+          const blowDmg = 5;
+          e.hp = Math.max(0, e.hp - blowDmg);
+          addDmgPop(blowTx, blowTy, "hit", blowDmg);
           sfxCrit();
-          notify(`💨 ${e.name}を吹き飛ばした！（残${g.cane_blow_charges}回）`);
+          if (e.hp <= 0) {
+            setTimeout(() => { onEnemyDied(g, e!); updateUI(g); redraw(); }, 100);
+            g.enemies = g.enemies.filter((en) => en.id !== e!.id);
+          }
+          notify(`💨 ${e.name}を吹き飛ばして${blowDmg}ダメージ！（残${g.cane_blow_charges}回）`);
           redraw();
           return true;
         }
@@ -799,18 +818,15 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "rice": {
-          g.p.hp = g.p.mhp;
-          g.hunger = g.maxHunger;
+          g.hunger = Math.min(g.hunger + 50, g.maxHunger);
           sfxItemUse();
-          notify("🍙 HP全回復！空腹も満たされた！");
+          notify("🍙 満腹度が50回復！");
           return true;
         }
         case "rice_big": {
-          g.p.mhp += 3;
-          g.p.hp = g.p.mhp;
-          g.hunger = g.maxHunger;
-          sfxLevelUp();
-          notify("🍱 HP全回復＆最大HP+3！空腹も満たされた！");
+          g.hunger = Math.min(g.hunger + 100, g.maxHunger);
+          sfxItemUse();
+          notify("🍱 満腹度が全回復！");
           return true;
         }
         case "jar_store": {

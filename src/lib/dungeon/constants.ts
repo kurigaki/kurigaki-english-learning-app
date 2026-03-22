@@ -11,7 +11,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "薬草",
     icon: "🌿",
     cat: "grass",
-    desc: "HPを15回復する",
+    desc: "HPを15回復する（満腹度+5）",
     rarity: 1,
   },
   {
@@ -19,7 +19,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "特薬草",
     icon: "🌱",
     cat: "grass",
-    desc: "HPを最大まで全回復",
+    desc: "HPを最大まで全回復（満腹度+5）",
     rarity: 3,
   },
   {
@@ -27,7 +27,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "毒消し草",
     icon: "🍃",
     cat: "grass",
-    desc: "毒状態を解除し、HPを5回復",
+    desc: "HPを5回復する（満腹度+5）",
     rarity: 2,
   },
   {
@@ -35,7 +35,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "力の草",
     icon: "🌾",
     cat: "grass",
-    desc: "攻撃力を永続+1",
+    desc: "攻撃力を永続+1（満腹度+5）",
     rarity: 3,
   },
   {
@@ -43,7 +43,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "命の草",
     icon: "🌺",
     cat: "grass",
-    desc: "最大HPを永続+3",
+    desc: "最大HPを永続+3（満腹度+5）",
     rarity: 2,
   },
   {
@@ -51,7 +51,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "倍速の草",
     icon: "🍀",
     cat: "grass",
-    desc: "倍速状態になる",
+    desc: "5ターン倍速になる（満腹度+5）",
     rarity: 1,
   },
   {
@@ -59,7 +59,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "眠り草",
     icon: "🌙",
     cat: "grass",
-    desc: "飲むと数ターン眠ってしまう",
+    desc: "飲むと3ターン眠ってしまう（満腹度+5）",
     rarity: 2,
   },
   {
@@ -67,7 +67,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "混乱草",
     icon: "🌀",
     cat: "grass",
-    desc: "飲むと数ターン混乱してしまう",
+    desc: "飲むと4ターン混乱してしまう（満腹度+5）",
     rarity: 1,
   },
   {
@@ -75,7 +75,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "ワープ草",
     icon: "🌸",
     cat: "grass",
-    desc: "フロア内のランダムな場所へ瞬間移動",
+    desc: "フロア内のランダムな場所へ瞬間移動（満腹度+5）",
     rarity: 2,
   },
   {
@@ -83,7 +83,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "火炎草",
     icon: "🔥",
     cat: "grass",
-    desc: "飲むと正面に15ダメージ",
+    desc: "飲むと正面に15ダメージ（満腹度+5）",
     rarity: 2,
   },
 
@@ -117,7 +117,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "睡眠の巻物",
     icon: "📜",
     cat: "scroll",
-    desc: "フロア全敵を数ターン眠らせる",
+    desc: "同室の敵を眠らせる（廊下では隣接のみ）",
     rarity: 1,
   },
   {
@@ -196,7 +196,7 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "鈍足草",
     icon: "🐢",
     cat: "grass",
-    desc: "飲むと5ターン鈍足になる。投げると敵が5ターン鈍足になる",
+    desc: "飲むと5ターン鈍足になる。投げると敵が5ターン鈍足（満腹度+5）",
     rarity: 2,
   },
 
