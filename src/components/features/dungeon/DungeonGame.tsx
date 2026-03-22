@@ -6,7 +6,7 @@ import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, Scr
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
 import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, startBGM, stopBGM, startTitleBGM, initDungeonAudio } from "@/lib/dungeon/audio";
-import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL, ensureVoicesLoaded } from "@/lib/audio";
+import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL, ensureVoicesLoaded, unlockSpeech } from "@/lib/audio";
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
 import { DUNGEON_MODE_KEY } from "@/lib/dungeon/constants";
@@ -1724,6 +1724,9 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   }, [stopAutoWalk]);
 
   const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode = "easy") => {
+    // iOS Web Speech API アンロック: click イベント内でアンロックしておくことで
+    // 以降の pointerdown 経由の speakWord 呼び出しも動作するようになる
+    unlockSpeech();
     setDungeonMode(mode);
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
     setRestoredDeath(null);
@@ -1773,6 +1776,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   }, []);
 
   const handleContinue = useCallback(() => {
+    unlockSpeech(); // iOS Web Speech API アンロック
     const raw = storage.getDungeonGame() as DungeonSave | null;
     if (!raw) return;
     pendingSaveRef.current = raw.gameState;
@@ -1927,7 +1931,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       // （ボタン以外の場所をタップしても音声が起動する）
       <div
         style={{ position: "relative", width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}
-        onClick={() => { unlockAudio(); startTitleBGM(); /* BottomNav未使用時のフォールバック */ }}
+        onClick={() => { unlockAudio(); startTitleBGM(); unlockSpeech(); /* BottomNav未使用時のフォールバック */ }}
       >
         <TitleScreen onStart={handleStart as (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode) => void} onContinue={handleContinue} hasSave={hasSave} />
       </div>

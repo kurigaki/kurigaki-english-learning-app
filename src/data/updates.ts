@@ -33,6 +33,17 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-22",
+    version: "1.86.0",
+    title: "ダンジョン：iOS英語音声の修正（START押下でアンロック）",
+    content: [
+      "【修正】iOS でD-pad移動で敵に接触した際に英語音声が流れないバグを修正",
+      "【原因】iOS は speechSynthesis.speak() を click イベント内で一度呼ぶまでブロックする仕様",
+      "【対応】START/CONTINUEボタン押下時（clickイベント）で無音 Utterance を再生してアンロック",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-22",
     version: "1.85.0",
     title: "ダンジョン：英語音声・攻撃方向・オーバーレイ改善",
     content: [
