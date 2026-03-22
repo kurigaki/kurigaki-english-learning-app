@@ -204,6 +204,7 @@ function _getOrCreateTitleBgm(): HTMLAudioElement {
   if (!_titleBgmEl) {
     _titleBgmEl = new Audio(`${AUDIO_BASE}bgm_title.mp3`);
     _titleBgmEl.loop = true;
+    _titleBgmEl.preload = "auto";
   }
   return _titleBgmEl;
 }
@@ -212,6 +213,7 @@ function _getOrCreateGameBgm(): HTMLAudioElement {
   if (!_gameBgmEl) {
     _gameBgmEl = new Audio(`${AUDIO_BASE}bgm.mp3`);
     _gameBgmEl.loop = false;
+    _gameBgmEl.preload = "auto";
     // Web Audio API の BGM_LOOP_START/END に相当するカスタムループを再現
     _gameBgmEl.addEventListener("timeupdate", () => {
       if (_gameBgmEl && _gameBgmEl.currentTime >= BGM_LOOP_END) {
@@ -530,6 +532,7 @@ function _getOrCreateSfxEl(key: SfxKey): HTMLAudioElement {
   let el = _sfxEls.get(key);
   if (!el) {
     el = new Audio(`${AUDIO_BASE}${key}.mp3`);
+    el.preload = "auto";
     _sfxEls.set(key, el);
   }
   return el;
@@ -569,6 +572,16 @@ export function initDungeonAudio(): void {
 
   // BGM フェッチ（AudioContext不要、デコードはunlockAudio後）
   _fetchBgm();
+
+  // HTMLAudioElement を事前作成して preload="auto" でブラウザにフェッチを開始させる
+  // ──初回アクセス時に play() を呼ぶ前にファイルがキャッシュされるようにする──
+  const titleEl = _getOrCreateTitleBgm();
+  titleEl.load();
+  const gameEl = _getOrCreateGameBgm();
+  gameEl.load();
+  for (const key of SFX_KEYS) {
+    _getOrCreateSfxEl(key).load();
+  }
 
   // SFX フェッチ + 可能なら即デコード（AudioContext 解放済みなら _loadAndDecodeSfx 内でデコード）
   for (const key of SFX_KEYS) {
