@@ -199,12 +199,27 @@ function _stopBgmBuffer(): void {
 
 let _titleBgmEl: HTMLAudioElement | null = null;
 let _gameBgmEl: HTMLAudioElement | null = null;
+// stopTitleBGM() / startBGM() による意図的な一時停止フラグ
+// AudioContext resume() による非意図的な中断と区別するために使用
+let _titleBgmIntentionalPause = false;
 
 function _getOrCreateTitleBgm(): HTMLAudioElement {
   if (!_titleBgmEl) {
     _titleBgmEl = new Audio(`${AUDIO_BASE}bgm_title.mp3`);
     _titleBgmEl.loop = true;
     _titleBgmEl.preload = "auto";
+    // iOS で AudioContext の resume() がタイトル BGM を中断した場合の自動回復
+    // unlockAudio() → _actx.resume() がAudioSessionを掌握してHTMLAudioElementを割り込み停止させる
+    // 意図しない pause イベントを検知して 300ms 後に再開を試みる
+    _titleBgmEl.addEventListener("pause", () => {
+      if (_titleBgmIntentionalPause || _bgmShouldPlay) return;
+      // ゲームBGM未開始 かつ 意図的停止でない場合は自動回復
+      setTimeout(() => {
+        if (_titleBgmEl && _titleBgmEl.paused && !_bgmShouldPlay && !_titleBgmIntentionalPause) {
+          _titleBgmEl.play().catch(() => {});
+        }
+      }, 300);
+    });
   }
   return _titleBgmEl;
 }
@@ -238,12 +253,14 @@ export function startTitleBGM(): void {
   if (_gameBgmEl && !_gameBgmEl.paused) return;
   // 既にタイトル BGM が再生中なら何もしない
   if (_titleBgmEl && !_titleBgmEl.paused) return;
+  _titleBgmIntentionalPause = false;
   const el = _getOrCreateTitleBgm();
   el.volume = _bgmVol;
   el.play().catch(() => {});
 }
 
 export function stopTitleBGM(): void {
+  _titleBgmIntentionalPause = true;
   if (_titleBgmEl && !_titleBgmEl.paused) {
     _titleBgmEl.pause();
     _titleBgmEl.currentTime = 0;
