@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import { storage } from "@/lib/storage";
+import { unlockAudio, startTitleBGM } from "@/lib/dungeon/audio";
 
 export const DungeonCard = () => {
   const stats = storage.getDungeonStats();
   const hasPlayed = stats.attempts > 0;
 
   return (
-    <Link href="/dungeon" className="block">
+    <Link href="/dungeon" className="block" onClick={() => { unlockAudio(); startTitleBGM(); }}>
       <div className="relative overflow-hidden rounded-2xl border-2 border-indigo-300 dark:border-indigo-700 bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 hover:from-indigo-800 hover:via-purple-800 hover:to-slate-800 transition-colors">
         <div className="flex items-center gap-3 p-3">
           <div className="w-11 h-11 bg-indigo-600/50 rounded-xl flex items-center justify-center flex-shrink-0">
