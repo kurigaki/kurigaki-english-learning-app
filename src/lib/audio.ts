@@ -196,6 +196,24 @@ export function stopSpeaking(): void {
   }
 }
 
+// iOS Web Speech API をユーザージェスチャー内でアンロック
+// iOS は speechSynthesis.speak() を click イベント内で一度呼ぶまで再生をブロックする。
+// 無音 Utterance を speak → cancel することでブロックを解除する（音は出ない）。
+// ダンジョン START/CONTINUE ボタンの onClick で呼ぶことで、
+// その後の pointerdown 経由の speakWord 呼び出しも動作するようになる。
+let _speechUnlocked = false;
+export function unlockSpeech(): void {
+  if (_speechUnlocked || !isSpeechSynthesisSupported()) return;
+  _speechUnlocked = true;
+  try {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(" ");
+    u.volume = 0;
+    u.rate = 10;
+    window.speechSynthesis.speak(u);
+  } catch { /* ignore */ }
+}
+
 // 読み上げ中かどうか
 export function isSpeaking(): boolean {
   if (!isSpeechSynthesisSupported()) return false;
