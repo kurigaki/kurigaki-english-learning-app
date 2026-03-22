@@ -962,6 +962,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           eAt.justWoke = true; // 起床ターンは行動しない
           addDmgPop(eAt.x, eAt.y, "wake", 0);
         }
+        redraw(); // 移動方向を即座にキャンバスに反映してからクイズを開始
         initiateAttack(g, eAt);
         return;
       }
@@ -1091,7 +1092,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // ターン終了後にオートセーブ（辞めた場所から再開できるよう）
       saveGame();
     },
-    [addDmgPop, initiateAttack, queueMsg, runEnemyTurn, saveGame, showEventOverlay, triggerScreenEffect, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
+    [addDmgPop, initiateAttack, queueMsg, redraw, runEnemyTurn, saveGame, showEventOverlay, triggerScreenEffect, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
   );
 
   const playerAttack = useCallback(() => {

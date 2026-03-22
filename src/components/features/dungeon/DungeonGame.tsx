@@ -6,7 +6,7 @@ import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, Scr
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
 import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, startBGM, stopBGM, startTitleBGM, initDungeonAudio } from "@/lib/dungeon/audio";
-import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL } from "@/lib/audio";
+import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL, ensureVoicesLoaded } from "@/lib/audio";
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
 import { DUNGEON_MODE_KEY } from "@/lib/dungeon/constants";
@@ -1671,6 +1671,10 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     // 最初のポインターイベントで再試行する
     const startOnFirst = () => { unlockAudio(); startTitleBGM(); };
     document.addEventListener("pointerdown", startOnFirst, { once: true });
+    // iOS 向け: Web Speech API の音声リストを事前ロード
+    // getVoices() は初回空配列を返し voiceschanged イベント後に利用可能になる
+    // 早期に呼ぶことでクイズ開始時に voice が確実に利用可能になる
+    void ensureVoicesLoaded();
     return () => { document.removeEventListener("pointerdown", startOnFirst); };
   }, []);
 
@@ -1812,6 +1816,12 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         return;
       }
 
+      // イベントオーバーレイ表示中: Enter/Escape/Space で閉じ、他キーはブロック
+      if (eventOverlay) {
+        if (k === "Enter" || k === "Escape" || k === " ") { ev.preventDefault(); closeEventOverlay(); }
+        return;
+      }
+
       if (uiState.showItems) {
         if (["i", "I", "Escape"].includes(k)) closeItems();
         return;
@@ -1855,7 +1865,8 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [
-    phase, uiState, showMap, answerQuiz, buyFromShop, changeFacing, closeItems, doTurn, doWait, goNextFloor,
+    phase, uiState, showMap, eventOverlay, closeEventOverlay,
+    answerQuiz, buyFromShop, changeFacing, closeItems, doTurn, doWait, goNextFloor,
     openItems, playerAttack, stopAutoWalk, setShowMap,
   ]);
 
@@ -1885,27 +1896,29 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     };
   }, [canvasRef]);
 
-  // マウスクリック → タップ移動（クイズ中は無視）
+  // マウスクリック → タップ移動（クイズ中・オーバーレイ中は無視）
   const handleCanvasClick = useCallback(
     (ev: React.MouseEvent<HTMLCanvasElement>) => {
+      if (eventOverlay) return;
       if (uiState.quiz && !uiState.quizAnswered) return;
       const tile = getTileFromEvent(ev.clientX, ev.clientY);
       if (tile) handleCanvasTap(tile.x, tile.y);
     },
-    [getTileFromEvent, handleCanvasTap, uiState.quiz, uiState.quizAnswered]
+    [eventOverlay, getTileFromEvent, handleCanvasTap, uiState.quiz, uiState.quizAnswered]
   );
 
-  // タッチタップ → タップ移動（スマホ用・クイズ中は無視）
+  // タッチタップ → タップ移動（スマホ用・クイズ中・オーバーレイ中は無視）
   const handleCanvasTouchEnd = useCallback(
     (ev: React.TouchEvent<HTMLCanvasElement>) => {
       ev.preventDefault();
+      if (eventOverlay) return;
       if (uiState.quiz && !uiState.quizAnswered) return;
       const touch = ev.changedTouches[0];
       if (!touch) return;
       const tile = getTileFromEvent(touch.clientX, touch.clientY);
       if (tile) handleCanvasTap(tile.x, tile.y);
     },
-    [getTileFromEvent, handleCanvasTap, uiState.quiz, uiState.quizAnswered]
+    [eventOverlay, getTileFromEvent, handleCanvasTap, uiState.quiz, uiState.quizAnswered]
   );
 
   if (phase === "title") {
@@ -2028,8 +2041,8 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
 
       {/* Controls */}
       <DungeonControls
-        onDpad={(dx, dy) => { stopAutoWalk(); if (dx === 0 && dy === 0) { doWait(); } else { doTurn(dx, dy); } }}
-        onAttack={playerAttack}
+        onDpad={(dx, dy) => { if (eventOverlay) { closeEventOverlay(); return; } stopAutoWalk(); if (dx === 0 && dy === 0) { doWait(); } else { doTurn(dx, dy); } }}
+        onAttack={() => { if (eventOverlay) { closeEventOverlay(); return; } playerAttack(); }}
         onWait={doWait}
         onItems={openItems}
         onStairs={goNextFloor}
