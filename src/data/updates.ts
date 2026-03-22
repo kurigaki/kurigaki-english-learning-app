@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-22",
+    version: "1.85.0",
+    title: "ダンジョン：英語音声・攻撃方向・オーバーレイ改善",
+    content: [
+      "【修正】iOS で英語音声が最初しばらく流れない問題を修正（起動時に音声リストを事前ロード）",
+      "【修正】移動して敵に隣接した時にプレイヤーの向きがクイズ前に正しく反映されるようになった",
+      "【修正】モンスターハウス・罠のウィンドウ表示中は移動・攻撃ができなくなった",
+      "【改善】ウィンドウをEnterキー・Space・タップで閉じられるようになった",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-22",
     version: "1.84.0",
     title: "ダンジョン：BGM常時再生・デフォルト音量調整",
     content: [
