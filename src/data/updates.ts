@@ -33,6 +33,16 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-22",
+    version: "1.87.0",
+    title: "ダンジョン：ホームの「WORD DUNGEON」からBGMが流れない問題を修正",
+    content: [
+      "【修正】ホーム画面の「WORD DUNGEON」カードをタップした際にタイトルBGMが流れなかったバグを修正",
+      "【原因】BottomNavのダンジョンリンクにはunlockAudio/startTitleBGM処理があったが、ホームのDungeonCardには未実装だった",
+    ],
+    category: "fix",
+  },
+  {
+    date: "2026-03-22",
     version: "1.86.0",
     title: "ダンジョン：iOS英語音声の修正（START押下でアンロック）",
     content: [
