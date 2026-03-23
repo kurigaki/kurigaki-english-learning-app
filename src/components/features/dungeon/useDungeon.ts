@@ -882,7 +882,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       }
     }
 
-    updateUI(g, { quiz: null, quizAnswered: false, quizResult: null, msg: `✨ B${g.floor}Fへ降りた！` });
+    updateUI(g, { quiz: null, quizAnswered: false, quizResult: null, footAction: null, msg: `✨ B${g.floor}Fへ降りた！` });
     if (stageNotice) showNotification(stageNotice);
     redraw();
     // フロア移動後に自動セーブ（次回「続きから」で再開できる）
@@ -1146,24 +1146,31 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
 
     // まず向いている方向の敵を探す（眠っている敵も含む）
     const { dx: pd, dy: pdy } = g.playerDir ?? { dx: 0, dy: 0 };
-    // 向いている方向がナナメかつ壁でブロックされているなら攻撃不可
-    if (diagBlocked(pd, pdy)) {
+    const isDiagDir = pd !== 0 && pdy !== 0;
+    // ナナメ移動OFF → 斜め方向の攻撃不可
+    if (!g.diagMove && isDiagDir) {
+      // 向きが斜めなので4方向の敵を探す（下の自動方向転換ロジックへ）
+    } else if (diagBlocked(pd, pdy)) {
+      // 向いている方向がナナメかつ壁でブロックされているなら攻撃不可
       const msg = "壁に遮られて攻撃できない";
       setUiState((prev) => ({ ...prev, msg, msgLog: [msg, ...prev.msgLog].slice(0, 6) }));
       return;
     }
     let e: Enemy | undefined =
-      (pd !== 0 || pdy !== 0)
+      (pd !== 0 || pdy !== 0) && !(isDiagDir && !g.diagMove)
         ? g.enemies.find((en) => en.x === g.px + pd && en.y === g.py + pdy)
         : undefined;
 
     if (!e) {
-      // 8方向を優先順位（4方向 > 斜め）で探して自動方向転換
-      // ナナメ方向はコーナーカット防止チェックを適用
-      const DIRS: { dx: number; dy: number }[] = [
-        { dx: 1, dy: 0 }, { dx: -1, dy: 0 }, { dx: 0, dy: 1 }, { dx: 0, dy: -1 },
-        { dx: 1, dy: 1 }, { dx: 1, dy: -1 }, { dx: -1, dy: 1 }, { dx: -1, dy: -1 },
-      ];
+      // diagMove に応じて探索方向を決定（OFF: 4方向のみ、ON: 8方向）
+      const DIRS: { dx: number; dy: number }[] = g.diagMove
+        ? [
+            { dx: 1, dy: 0 }, { dx: -1, dy: 0 }, { dx: 0, dy: 1 }, { dx: 0, dy: -1 },
+            { dx: 1, dy: 1 }, { dx: 1, dy: -1 }, { dx: -1, dy: 1 }, { dx: -1, dy: -1 },
+          ]
+        : [
+            { dx: 1, dy: 0 }, { dx: -1, dy: 0 }, { dx: 0, dy: 1 }, { dx: 0, dy: -1 },
+          ];
       let found: { e: Enemy; dx: number; dy: number } | undefined;
       for (const d of DIRS) {
         if (diagBlocked(d.dx, d.dy)) continue; // 壁でブロックされたナナメはスキップ

@@ -2293,7 +2293,13 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
             }}>
               <div style={{ color: DC.text, fontSize: 12 }}>ナナメ移動</div>
               <button
-                onClick={() => { const next = !diagMoveEnabled; setDiagMoveEnabled(next); saveDiagMove(next); }}
+                onClick={() => {
+                  const next = !diagMoveEnabled;
+                  setDiagMoveEnabled(next);
+                  saveDiagMove(next);
+                  // ゲームエンジン内のフラグも即座に更新（敵AIにも反映）
+                  if (gameStateRef.current) gameStateRef.current.diagMove = next;
+                }}
                 style={{
                   background: diagMoveEnabled ? DC.accent : DC.bg4,
                   color: diagMoveEnabled ? "#fff" : DC.text3,
