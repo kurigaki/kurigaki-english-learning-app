@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import type { WordExtension } from "@/types";
-import { wordExtensions } from "../word-extensions";
-import { words, type Word } from "../words";
+import { wordExtensions, getWordExtension } from "@/data/word-extensions";
+import { words, type Word, categoryLabels } from "@/data/words";
 
 describe("wordExtensions", () => {
   describe("マップ構造", () => {
@@ -97,5 +97,78 @@ describe("統一Word型のフィールド検証", () => {
       (w: Word) => w.difficulty < 1 || w.difficulty > 7
     );
     expect(invalid).toHaveLength(0);
+  });
+
+  it("全単語に exampleJa（例文の日本語訳）がある", () => {
+    const missing = words.filter((w: Word) => !w.exampleJa);
+    expect(
+      missing,
+      `exampleJa 未設定: ${missing.slice(0, 5).map((w) => `${w.id}:${w.word}`).join(", ")}${missing.length > 5 ? "..." : ""}`
+    ).toHaveLength(0);
+  });
+
+  it("全単語に example（英語例文）がある", () => {
+    const missing = words.filter((w: Word) => !w.example);
+    expect(missing).toHaveLength(0);
+  });
+
+  it("example と exampleJa に空文字列がない", () => {
+    const emptyExample = words.filter((w: Word) => w.example === "");
+    const emptyJa = words.filter((w: Word) => w.exampleJa === "");
+    expect(emptyExample, "空のexample").toHaveLength(0);
+    expect(emptyJa, "空のexampleJa").toHaveLength(0);
+  });
+
+  it("category が categoryLabels に定義されたカテゴリである", () => {
+    // categoryLabels は top-level import 済み
+    const validCategories = new Set(Object.keys(categoryLabels));
+    const invalid = words.filter((w: Word) => !validCategories.has(w.category));
+    expect(
+      invalid,
+      `不正なカテゴリ: ${invalid.slice(0, 5).map((w) => `${w.id}:${w.word}:${w.category}`).join(", ")}`
+    ).toHaveLength(0);
+  });
+});
+
+describe("自動補完エンジンの品質", () => {
+  it("getWordExtension が全単語で正常に動作する", () => {
+    // getWordExtension は top-level import 済み
+    const sampleWords = words.slice(0, 100);
+    for (const w of sampleWords) {
+      const ext = getWordExtension(w);
+      expect(ext, `id=${w.id} ${w.word}`).toBeDefined();
+      expect(ext.coreImage, `id=${w.id} coreImage`).toBeTruthy();
+      expect(ext.usage, `id=${w.id} usage`).toBeTruthy();
+    }
+  });
+
+  it("生成されたコアイメージに「するする」「なな」等の重複がない", () => {
+    // getWordExtension は top-level import 済み
+    const badPatterns = [/するする/, /なな[状態]/, /にに/];
+    const problems: string[] = [];
+    for (const w of words) {
+      const ext = getWordExtension(w);
+      if (!ext.coreImage) continue;
+      for (const pat of badPatterns) {
+        if (pat.test(ext.coreImage)) {
+          problems.push(`${w.id}:${w.word}: "${ext.coreImage.slice(0, 50)}"`);
+        }
+      }
+    }
+    expect(problems, problems.slice(0, 5).join("\n")).toHaveLength(0);
+  });
+
+  it("生成された英英定義に日本語が混入していない", () => {
+    // getWordExtension は top-level import 済み
+    const jaPattern = /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FFF]/;
+    const problems: string[] = [];
+    const sampleWords = words.filter((w: Word) => !wordExtensions.has(w.id)).slice(0, 200);
+    for (const w of sampleWords) {
+      const ext = getWordExtension(w);
+      if (ext.englishDefinition && jaPattern.test(ext.englishDefinition)) {
+        problems.push(`${w.id}:${w.word}: "${ext.englishDefinition}"`);
+      }
+    }
+    expect(problems, problems.slice(0, 5).join("\n")).toHaveLength(0);
   });
 });
