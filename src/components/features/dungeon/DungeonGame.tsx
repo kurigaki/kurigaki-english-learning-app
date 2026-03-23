@@ -3,13 +3,14 @@
 import React, { useEffect, useState, useCallback, useRef, useMemo } from "react";
 import Link from "next/link";
 import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, ScreenEffect, EventOverlay } from "@/lib/dungeon/types";
+import { loadKeyMap, saveKeyMap, KeyMap, KeyMapAction, ACTION_LABELS, DEFAULT_KEYMAP } from "@/lib/dungeon/keymap";
 import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
 import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, startBGM, stopBGM, startTitleBGM, initDungeonAudio } from "@/lib/dungeon/audio";
 import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL, ensureVoicesLoaded, unlockSpeech } from "@/lib/audio";
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
-import { DUNGEON_MODE_KEY } from "@/lib/dungeon/constants";
+import { DUNGEON_MODE_KEY, DUNGEON_DIAG_KEY } from "@/lib/dungeon/constants";
 import { storage, type DungeonRunLog } from "@/lib/storage";
 import { SpeakButton } from "@/components/ui";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
@@ -174,10 +175,10 @@ function DungeonVolumePanel({ onClose }: { onClose: () => void }) {
 }
 
 function DungeonHUD({
-  floor, hp, mhp, lv, exp, enext, turn, hunger, maxHunger, gold, onVolumeClick,
+  floor, hp, mhp, lv, exp, enext, turn, hunger, maxHunger, gold, onVolumeClick, onKeySettingsClick,
 }: {
   floor: number; hp: number; mhp: number; lv: number; exp: number; enext: number; turn: number;
-  hunger: number; maxHunger: number; gold: number; onVolumeClick: () => void;
+  hunger: number; maxHunger: number; gold: number; onVolumeClick: () => void; onKeySettingsClick: () => void;
 }) {
   const hpPct = Math.max(0, (hp / mhp) * 100);
   const expPct = (exp / enext) * 100;
@@ -246,6 +247,18 @@ function DungeonHUD({
         }}
       >
         🔊
+      </button>
+      {/* キー設定ボタン */}
+      <button
+        onClick={onKeySettingsClick}
+        title="キー設定"
+        style={{
+          background: "none", border: "none", cursor: "pointer",
+          fontSize: 16, padding: "2px 4px", flexShrink: 0,
+          opacity: 0.7, lineHeight: 1,
+        }}
+      >
+        ⌨️
       </button>
     </div>
   );
@@ -892,121 +905,149 @@ function DungeonDeathScreen({
 }
 
 function DungeonControls({
-  onDpad, onAttack, onWait, onItems, onStairs, onMap, showStairs, onChangeFacing,
+  onDpad, onAttack, onWait, onItems, onFootAction, onLookAround, onMenu, onShootArrow, onDash,
+  onChangeFacing, arrowCount, isDashMode, onToggleDashMode, diagMoveEnabled,
 }: {
   onDpad: (dx: number, dy: number) => void;
   onAttack: () => void;
   onWait: () => void;
   onItems: () => void;
-  onStairs: () => void;
-  onMap: () => void;
-  showStairs: boolean;
+  onFootAction: () => void;
+  onLookAround: () => void;
+  onMenu: () => void;
+  onShootArrow: () => void;
+  onDash: (dx: number, dy: number) => void;
   onChangeFacing: (dx: number, dy: number) => void;
+  arrowCount: number;
+  diagMoveEnabled: boolean;
+  isDashMode: boolean;
+  onToggleDashMode: () => void;
 }) {
-  const [turnModeActive, setTurnModeActive] = useState(false);
-
+  // 4方向（カーディナル）ボタン
   const dpStyle: React.CSSProperties = {
-    width: 32, height: 32, background: DC.bg3, border: `1px solid ${DC.border}`,
-    display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13,
-    cursor: "pointer", borderRadius: 3, color: DC.text2, userSelect: "none",
-    // 長押しによるコンテキストメニュー（コピー/選択）を防止
-    WebkitUserSelect: "none",
-    WebkitTouchCallout: "none",
+    width: 52, height: 52, background: "#1565c0", border: "2px solid #2196f3",
+    display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22,
+    cursor: "pointer", borderRadius: 8, color: "#bbdefb", userSelect: "none",
+    WebkitUserSelect: "none", WebkitTouchCallout: "none",
+    boxShadow: "0 3px 6px rgba(0,0,0,0.5)", touchAction: "none",
   };
-  const btnStyle: React.CSSProperties = {
-    fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.text2,
-    background: DC.bg3, border: `1px solid ${DC.border}`,
-    padding: "6px 9px", cursor: "pointer", borderRadius: 3,
-    display: "flex", flexDirection: "column", alignItems: "center", gap: 2,
+  const dpDiagStyle: React.CSSProperties = {
+    width: 52, height: 52, background: "#0d47a1", border: "2px solid #1565c0",
+    display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18,
+    cursor: "pointer", borderRadius: 8, color: "#90caf9", userSelect: "none",
+    WebkitUserSelect: "none", WebkitTouchCallout: "none",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.5)", touchAction: "none",
+  };
+  const dpCenterStyle: React.CSSProperties = {
+    width: 52, height: 52, background: "#0a0f1a", border: "2px solid #1a2240",
+    display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10,
+    cursor: "pointer", borderRadius: 8, color: "#445", userSelect: "none",
+    WebkitUserSelect: "none", WebkitTouchCallout: "none",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.3)", touchAction: "none",
+  };
+  const menuBtnStyle: React.CSSProperties = {
+    flex: 1, height: 36, background: "#4a7c1a", border: "2px solid #6abf2a",
+    display: "flex", alignItems: "center", justifyContent: "center",
+    fontSize: 11, fontWeight: "bold", color: "#e8f5e9",
+    cursor: "pointer", borderRadius: 6, userSelect: "none",
+    WebkitUserSelect: "none", touchAction: "none",
+    fontFamily: "'DotGothic16', sans-serif",
+  };
+  const sideBtnStyle: React.CSSProperties = {
+    width: 56, height: 52, background: "#1c1c2e", border: "2px solid #333355",
+    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
+    fontSize: 9, color: "#aaa", cursor: "pointer", borderRadius: 8, userSelect: "none",
+    WebkitUserSelect: "none", WebkitTouchCallout: "none",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.5)", touchAction: "none", gap: 2,
+    fontFamily: "'DotGothic16', sans-serif",
   };
 
-  // タッチ後に生成される click を抑制するためにタイムスタンプで判定
-  const lastTouchTimeRef = useRef(0);
+  // onPointerDown のみで操作（onClick は二重発火するため使わない）
   const handleDpadPointerDown = (dx: number, dy: number) => (e: React.PointerEvent) => {
     e.preventDefault();
-    lastTouchTimeRef.current = Date.now();
-    if (turnModeActive) {
-      onChangeFacing(dx, dy);
-      setTurnModeActive(false);
+    if (isDashMode) {
+      if (dx !== 0 || dy !== 0) {
+        onDash(dx, dy); // startDash + setDashMode(false) は onDash 内で処理
+      } else {
+        onToggleDashMode(); // 中央ボタンはダッシュモードキャンセル
+      }
     } else {
       onDpad(dx, dy);
     }
   };
-  const handleClick = (dx: number, dy: number) => () => {
-    // タッチから 500ms 以内の click は無視（ダブル発火防止）
-    if (Date.now() - lastTouchTimeRef.current < 500) return;
-    if (turnModeActive) {
-      onChangeFacing(dx, dy);
-      setTurnModeActive(false);
-    } else {
-      onDpad(dx, dy);
-    }
+
+  const dashBtnStyle: React.CSSProperties = {
+    ...sideBtnStyle,
+    background: isDashMode ? "#7c4b00" : "#1c1c2e",
+    border: `2px solid ${isDashMode ? "#f59e0b" : "#333355"}`,
+    color: isDashMode ? "#fcd34d" : "#aaa",
   };
 
   return (
     <div style={{
-      background: DC.bg2, borderTop: `2px solid ${DC.border}`,
-      padding: "6px 12px", flexShrink: 0, display: "flex", gap: 18, justifyContent: "center", flexWrap: "wrap", alignItems: "center",
+      background: "#0a0f1a", borderTop: "2px solid #1a2240",
+      padding: "6px 8px 8px", flexShrink: 0,
       userSelect: "none", WebkitUserSelect: "none",
     }} onContextMenu={(e) => e.preventDefault()}>
-      {/* 十字キー */}
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
-        {/* 向きボタン */}
-        <div style={{ display: "flex", justifyContent: "flex-end", width: "100%", marginBottom: 2 }}>
-          <button
-            style={{
-              fontSize: 18,
-              background: turnModeActive ? "#f59e0b" : "#334",
-              color: turnModeActive ? "#000" : "#aaa",
-              border: "none",
-              borderRadius: 6,
-              padding: "4px 8px",
-              cursor: "pointer",
-              fontFamily: "monospace",
-              lineHeight: 1,
-            }}
-            onPointerDown={(e) => { e.preventDefault(); setTurnModeActive((v) => !v); }}
-          >↻</button>
-        </div>
-        <div style={{ display: "flex", gap: 2 }}>
-          <div style={{ width: 32, height: 32 }} />
-          <div style={dpStyle} onPointerDown={handleDpadPointerDown(0, -1)} onClick={handleClick(0, -1)}>▲</div>
-          <div style={{ width: 32, height: 32 }} />
-        </div>
-        <div style={{ display: "flex", gap: 2 }}>
-          <div style={dpStyle} onPointerDown={handleDpadPointerDown(-1, 0)} onClick={handleClick(-1, 0)}>◀</div>
-          <div style={{ width: 32, height: 32 }} />
-          <div style={dpStyle} onPointerDown={handleDpadPointerDown(1, 0)} onClick={handleClick(1, 0)}>▶</div>
-        </div>
-        <div style={{ display: "flex", gap: 2 }}>
-          <div style={{ width: 32, height: 32 }} />
-          <div style={dpStyle} onPointerDown={handleDpadPointerDown(0, 1)} onClick={handleClick(0, 1)}>▼</div>
-          <div style={{ width: 32, height: 32 }} />
-        </div>
+      {/* トップメニューバー */}
+      <div style={{ display: "flex", gap: 4, marginBottom: 6 }}>
+        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onMenu(); }}>メニュー</div>
+        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onItems(); }}>持ち物</div>
+        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onFootAction(); }}>足元</div>
+        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onLookAround(); }}>見渡す</div>
       </div>
-      {/* アクションボタン */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-        <button style={{ ...btnStyle, borderColor: DC.accent2, color: DC.accent2 }} onClick={onAttack}>
-          <span style={{ fontSize: 15 }}>⚔️</span>攻撃[Z]
-        </button>
-        <button style={btnStyle} onClick={onItems}>
-          <span style={{ fontSize: 15 }}>🎒</span>道具[I]
-        </button>
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-        <button style={btnStyle} onClick={onWait}>
-          <span style={{ fontSize: 15 }}>⏸</span>待機[X]
-        </button>
-        <button style={btnStyle} onClick={onMap}>
-          <span style={{ fontSize: 15 }}>🗺</span>地図[M]
-        </button>
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
-        {showStairs && (
-          <button style={{ ...btnStyle, borderColor: DC.accent2, color: DC.accent2 }} onClick={onStairs}>
-            <span style={{ fontSize: 15 }}>🔽</span>降りる[Enter]
-          </button>
+      {/* メインコントロールエリア */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
+        {/* 左サイドボタン */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <div style={sideBtnStyle} onPointerDown={(e) => { e.preventDefault(); onWait(); }}>
+            <span style={{ fontSize: 16 }}>🦶</span>足踏み
+          </div>
+          <div style={dashBtnStyle} onPointerDown={(e) => { e.preventDefault(); onToggleDashMode(); }}>
+            <span style={{ fontSize: 14 }}>💨</span>ダッシュ<br />乗る
+          </div>
+        </div>
+        {/* 方向パッド */}
+        {diagMoveEnabled ? (
+          /* 8方向パッド (3×3) */
+          <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
+            <div style={{ display: "flex", gap: 3 }}>
+              <div style={dpDiagStyle} onPointerDown={handleDpadPointerDown(-1, -1)}>↖</div>
+              <div style={dpStyle}     onPointerDown={handleDpadPointerDown(0, -1)}>▲</div>
+              <div style={dpDiagStyle} onPointerDown={handleDpadPointerDown(1, -1)}>↗</div>
+            </div>
+            <div style={{ display: "flex", gap: 3 }}>
+              <div style={dpStyle}       onPointerDown={handleDpadPointerDown(-1, 0)}>◀</div>
+              <div style={dpCenterStyle} onPointerDown={handleDpadPointerDown(0, 0)}>●</div>
+              <div style={dpStyle}       onPointerDown={handleDpadPointerDown(1, 0)}>▶</div>
+            </div>
+            <div style={{ display: "flex", gap: 3 }}>
+              <div style={dpDiagStyle} onPointerDown={handleDpadPointerDown(-1, 1)}>↙</div>
+              <div style={dpStyle}     onPointerDown={handleDpadPointerDown(0, 1)}>▼</div>
+              <div style={dpDiagStyle} onPointerDown={handleDpadPointerDown(1, 1)}>↘</div>
+            </div>
+          </div>
+        ) : (
+          /* 4方向パッド (十字) */
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 3 }}>
+            <div style={dpStyle} onPointerDown={handleDpadPointerDown(0, -1)}>▲</div>
+            <div style={{ display: "flex", gap: 3 }}>
+              <div style={dpStyle} onPointerDown={handleDpadPointerDown(-1, 0)}>◀</div>
+              <div style={dpCenterStyle} onPointerDown={handleDpadPointerDown(0, 0)}>●</div>
+              <div style={dpStyle} onPointerDown={handleDpadPointerDown(1, 0)}>▶</div>
+            </div>
+            <div style={dpStyle} onPointerDown={handleDpadPointerDown(0, 1)}>▼</div>
+          </div>
         )}
+        {/* 右サイドボタン */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+          <div style={{ ...sideBtnStyle, color: "#f9a825", borderColor: "#666" }} onPointerDown={(e) => { e.preventDefault(); onAttack(); }}>
+            <span style={{ fontSize: 16 }}>⚔️</span>攻撃/話す
+          </div>
+          <div style={sideBtnStyle} onPointerDown={(e) => { e.preventDefault(); onShootArrow(); }}>
+            <span style={{ fontSize: 16 }}>🏹</span>弓矢<br />×{arrowCount}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -1336,11 +1377,28 @@ function saveDungeonMode(mode: DungeonMode) {
   localStorage.setItem(DUNGEON_MODE_KEY, mode);
 }
 
+function loadDiagMove(): boolean | null {
+  if (typeof window === "undefined") return null;
+  const v = localStorage.getItem(DUNGEON_DIAG_KEY);
+  if (v === null) return null; // ユーザー未設定
+  return v === "true";
+}
+
+function saveDiagMove(enabled: boolean) {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(DUNGEON_DIAG_KEY, String(enabled));
+}
+
+/** モードに応じたナナメ移動デフォルト値 */
+function diagDefault(mode: DungeonMode): boolean {
+  return mode === "hard";
+}
+
 // ─── Title screen ──────────────────────────────────────────────────
 function TitleScreen({
   onStart, onContinue, hasSave,
 }: {
-  onStart: (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode) => void;
+  onStart: (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode, diag: boolean) => void;
   onContinue: () => void;
   hasSave: boolean;
 }) {
@@ -1349,6 +1407,7 @@ function TitleScreen({
   const [selectedStage, setSelectedStage] = useState<string>(pref.stage);
   const [weakOnly, setWeakOnly] = useState(false);
   const [dungeonMode, setDungeonMode] = useState<DungeonMode>(() => loadDungeonMode());
+  const [diagMove, setDiagMove] = useState<boolean>(() => diagDefault(loadDungeonMode()));
   const [loading, setLoading] = useState(false);
   const [showVolume, setShowVolume] = useState(false);
   const weakWordCount = storage.getWeakWords().length;
@@ -1362,11 +1421,24 @@ function TitleScreen({
     setSelectedStage(""); // コース変更時はステージをリセット
   };
 
+  const handleModeChange = (m: DungeonMode) => {
+    setDungeonMode(m);
+    // モード切替時はナナメ移動をデフォルト値に設定
+    setDiagMove(diagDefault(m));
+  };
+
+  const handleDiagToggle = () => {
+    const next = !diagMove;
+    setDiagMove(next);
+    saveDiagMove(next); // 明示設定として保存
+  };
+
   const handleStart = async () => {
     if (!weakOnly) saveCoursePref({ course: selectedCourse, stage: selectedStage });
     saveDungeonMode(dungeonMode);
+    saveDiagMove(diagMove);
     setLoading(true);
-    await onStart(selectedCourse, selectedStage, weakOnly, dungeonMode);
+    await onStart(selectedCourse, selectedStage, weakOnly, dungeonMode, diagMove);
     setLoading(false);
   };
 
@@ -1515,7 +1587,7 @@ function TitleScreen({
               return (
                 <button
                   key={m}
-                  onClick={() => setDungeonMode(m)}
+                  onClick={() => handleModeChange(m)}
                   style={{
                     flex: 1, fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
                     color: active ? "#09090f" : DC.text2,
@@ -1535,6 +1607,20 @@ function TitleScreen({
               ? "空腹度の減りが緩やか・罠が少ない・モンスターハウスなし"
               : "空腹度の減りが速い・罠が多い・モンスターハウスあり"}
           </div>
+          {/* ナナメ移動トグル */}
+          <label style={{
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+            fontFamily: "'DotGothic16', sans-serif", fontSize: 11, color: DC.text2,
+            cursor: "pointer", marginTop: 4,
+          }}>
+            <input
+              type="checkbox"
+              checked={diagMove}
+              onChange={handleDiagToggle}
+              style={{ accentColor: DC.accent, width: 14, height: 14 }}
+            />
+            <span>ナナメ移動 {diagMove ? "ON" : "OFF"}</span>
+          </label>
         </div>
 
         {/* 選択状態サマリ */}
@@ -1607,10 +1693,11 @@ function TitleScreen({
         fontSize: 10, color: DC.text2, textAlign: "center", lineHeight: 1.8,
         background: DC.bg3, border: `1px solid ${DC.border}`, padding: "8px 14px", borderRadius: 4, width: "100%", maxWidth: 360,
       }}>
-        <b style={{ color: DC.text }}>移動:</b> 矢印/WASD &nbsp;|&nbsp; <b style={{ color: DC.text }}>攻撃:</b> Z/Space<br />
-        <b style={{ color: DC.text }}>足踏み:</b> X/. &nbsp;|&nbsp; <b style={{ color: DC.text }}>道具:</b> I<br />
-        <b style={{ color: DC.text }}>英語回答:</b> 1 / 2 / 3 / 4 キー<br />
-        <b style={{ color: DC.text }}>階段を降りる:</b> Enter / &gt;<br /><br />
+        <b style={{ color: DC.text }}>移動:</b> 矢印キー &nbsp;|&nbsp; <b style={{ color: DC.text }}>斜め:</b> Shift+矢印2個同時/テンキー<br />
+        <b style={{ color: DC.text }}>ダッシュ:</b> 矢印ダブルタップ &nbsp;|&nbsp; <b style={{ color: DC.text }}>攻撃:</b> Z/Space/Enter<br />
+        <b style={{ color: DC.text }}>待機:</b> X/. &nbsp;|&nbsp; <b style={{ color: DC.text }}>向き変更:</b> Option+矢印 / ナナメ: Shift+Option+矢印2個<br />
+        <b style={{ color: DC.text }}>道具:</b> I &nbsp;|&nbsp; <b style={{ color: DC.text }}>見渡す:</b> L &nbsp;|&nbsp; <b style={{ color: DC.text }}>マップ:</b> M<br />
+        <b style={{ color: DC.text }}>英語回答:</b> 1/2/3/4 &nbsp;|&nbsp; <b style={{ color: DC.text }}>階段:</b> &gt;<br /><br />
         戦闘中もターンは進む。敵に囲まれるな！<br />
         💤 寝ている敵は部屋に入ると起きる
       </div>
@@ -1636,6 +1723,9 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const [dungeonMode, setDungeonMode] = useState<DungeonMode>(() =>
     typeof window !== "undefined" ? (localStorage.getItem(DUNGEON_MODE_KEY) as DungeonMode | null) ?? "easy" : "easy"
   );
+  const [diagMoveEnabled, setDiagMoveEnabled] = useState<boolean>(() =>
+    diagDefault(typeof window !== "undefined" ? (localStorage.getItem(DUNGEON_MODE_KEY) as DungeonMode | null) ?? "easy" : "easy")
+  );
   const [restoredDeath, setRestoredDeath] = useState<DeathState | null>(null);
   const pendingSaveRef = useRef<GameState | null>(null);
   const [hasSave, setHasSave] = useState(false);
@@ -1649,15 +1739,38 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
     screenEffect, eventOverlay, closeEventOverlay,
     changeFacing,
-  } = useDungeon(questions, progressiveStages, dungeonMode);
+    pickUpFloorItem, throwFloorItem, useFloorItem, closeFootAction,
+    startDash, stopDash, lookAround, shootArrow, openFootAction,
+  } = useDungeon(questions, progressiveStages, dungeonMode, diagMoveEnabled);
 
   const [showMap, setShowMap] = useState(false);
   const toggleMap = useCallback(() => setShowMap(v => !v), []);
   const closeMap = useCallback(() => setShowMap(false), []);
+  const [dashMode, setDashMode] = useState(false);
+  const [lookAroundText, setLookAroundText] = useState<string | null>(null);
 
   const [showVolume, setShowVolume] = useState(false);
   const toggleVolume = useCallback(() => setShowVolume(v => !v), []);
   const closeVolume = useCallback(() => setShowVolume(false), []);
+
+  const [showKeySettings, setShowKeySettings] = useState(false);
+  const [keyMap, setKeyMap] = useState<KeyMap>(() => loadKeyMap());
+  const [recordingAction, setRecordingAction] = useState<KeyMapAction | null>(null);
+
+  useEffect(() => {
+    if (!recordingAction) return;
+    const handleRecord = (ev: KeyboardEvent) => {
+      ev.preventDefault();
+      if (ev.key === "Escape") { setRecordingAction(null); return; }
+      const key = ev.code.startsWith("Numpad") ? ev.code : ev.key;
+      const km = { ...keyMap, [recordingAction]: [key] };
+      setKeyMap(km);
+      saveKeyMap(km);
+      setRecordingAction(null);
+    };
+    window.addEventListener("keydown", handleRecord);
+    return () => window.removeEventListener("keydown", handleRecord);
+  }, [recordingAction, keyMap]);
 
   // ページ表示時点から音声ファイルのフェッチを開始（STARTを押す前から準備）
   useEffect(() => {
@@ -1723,11 +1836,13 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     startTitleBGM();
   }, [stopAutoWalk]);
 
-  const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode = "easy") => {
+  const handleStart = useCallback(async (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode = "easy", diag: boolean = false) => {
     // iOS Web Speech API アンロック: click イベント内でアンロックしておくことで
     // 以降の pointerdown 経由の speakWord 呼び出しも動作するようになる
     unlockSpeech();
     setDungeonMode(mode);
+    // タイトル画面から直接受け取ったナナメ移動設定を反映
+    setDiagMoveEnabled(diag);
     sessionStorage.removeItem(DUNGEON_DEATH_KEY);
     setRestoredDeath(null);
 
@@ -1807,6 +1922,11 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     }
   }, [phase, questions, startGame, loadSave]);
 
+  // 同時押し斜め移動用: 現在押下中の方向キーを記録
+  const heldDirKeysRef = useRef<Set<string>>(new Set());
+  // ダブルタップダッシュ検出用
+  const lastArrowKeyRef = useRef<{ key: string; time: number } | null>(null);
+
   // Keyboard handler
   useEffect(() => {
     if (phase !== "game") return;
@@ -1814,9 +1934,9 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     const handleKeyDown = (ev: KeyboardEvent) => {
       const k = ev.key;
 
-      // 地図が開いているとき: M/Escape で閉じ、他キーはブロック
+      // 地図が開いているとき: マップキーまたはEscape で閉じ、他キーはブロック
       if (showMap) {
-        if (k === "m" || k === "M" || k === "Escape") { ev.preventDefault(); setShowMap(false); }
+        if (keyMap.map.includes(k) || k === "Escape") { ev.preventDefault(); setShowMap(false); }
         return;
       }
 
@@ -1832,8 +1952,12 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       }
       if (uiState.death) return;
 
+      // keyMap ヘルパー
+      const km = keyMap;
+      const hasKey = (keys: string[]) => keys.includes(k);
+
       // アイテム開閉（最優先：クイズ中でも使用可能）
-      if (k === "i" || k === "I") { ev.preventDefault(); openItems(); return; }
+      if (hasKey(km.items)) { ev.preventDefault(); openItems(); return; }
 
       // Quiz answers（クイズ回答中は 1〜4 以外を遮断）
       if (uiState.quiz && !uiState.quizAnswered) {
@@ -1847,31 +1971,107 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       // Shop buy shortcut
       if ((k === "b" || k === "B") && uiState.shopPrompt) { ev.preventDefault(); buyFromShop(uiState.shopPrompt); return; }
 
-      // Shift+方向キーで向き変更（ターン消費なし）
-      if (ev.shiftKey) {
-        if (k === "ArrowUp" || k === "w" || k === "W") { ev.preventDefault(); changeFacing(0, -1); return; }
-        if (k === "ArrowDown" || k === "s" || k === "S") { ev.preventDefault(); changeFacing(0, 1); return; }
-        if (k === "ArrowLeft" || k === "a" || k === "A") { ev.preventDefault(); changeFacing(-1, 0); return; }
-        if (k === "ArrowRight" || k === "d" || k === "D") { ev.preventDefault(); changeFacing(1, 0); return; }
+      // 足元アクションダイアログ表示中
+      if (uiState.footAction) {
+        if (uiState.footAction.kind === "stairs") {
+          if (hasKey(km.attack) || k === "Escape") { ev.preventDefault(); k === "Escape" ? closeFootAction() : goNextFloor(); }
+        } else {
+          if (k === "g" || k === "G") { ev.preventDefault(); pickUpFloorItem(); }
+          if (k === "u" || k === "U") { ev.preventDefault(); useFloorItem(uiState.footAction.itemId); }
+          if (k === "t" || k === "T") { ev.preventDefault(); throwFloorItem(uiState.footAction.itemId); }
+          if (k === "Escape") { ev.preventDefault(); closeFootAction(); }
+        }
+        return;
       }
 
-      // Movement（手動操作はオートウォークを停止）
-      if (k === "ArrowUp" || k === "w" || k === "W") { ev.preventDefault(); stopAutoWalk(); doTurn(0, -1); }
-      else if (k === "ArrowDown" || k === "s" || k === "S") { ev.preventDefault(); stopAutoWalk(); doTurn(0, 1); }
-      else if (k === "ArrowLeft" || k === "a" || k === "A") { ev.preventDefault(); stopAutoWalk(); doTurn(-1, 0); }
-      else if (k === "ArrowRight" || k === "d" || k === "D") { ev.preventDefault(); stopAutoWalk(); doTurn(1, 0); }
-      else if (k === " " || k === "z" || k === "Z") { ev.preventDefault(); playerAttack(); }
-      else if (k === "." || k === "x" || k === "X") { ev.preventDefault(); doWait(); }
-      else if (k === ">" || k === "Enter") { ev.preventDefault(); if (uiState.onStairs) goNextFloor(); }
-      else if (k === "m" || k === "M") { ev.preventDefault(); setShowMap(true); }
+      // 矢印キー: 移動 / 向き変更
+      //   矢印キーのみ        → 4方向移動（ダブルタップでダッシュ）
+      //   Shift+矢印2キー同時  → 斜め移動
+      //   Option(Alt)+矢印     → 4方向向き変更（ターン消費なし）
+      //   Shift+Option+矢印2キー同時 → 斜め向き変更（ターン消費なし）
+      if (k === "ArrowUp" || k === "ArrowDown" || k === "ArrowLeft" || k === "ArrowRight") {
+        ev.preventDefault();
+        if (ev.shiftKey && diagMoveEnabled) {
+          // Shift(+Option)+矢印: 2キー同時押しで斜め（ナナメ移動ON時のみ）
+          heldDirKeysRef.current.add(k);
+          const held = heldDirKeysRef.current;
+          const dx = (held.has("ArrowRight") ? 1 : 0) - (held.has("ArrowLeft") ? 1 : 0);
+          const dy = (held.has("ArrowDown") ? 1 : 0) - (held.has("ArrowUp") ? 1 : 0);
+          if (dx !== 0 && dy !== 0) {
+            if (ev.altKey) {
+              // Shift+Option+矢印2キー → 斜め向き変更
+              changeFacing(dx, dy);
+            } else {
+              // Shift+矢印2キー → 斜め移動
+              stopDash(); stopAutoWalk(); doTurn(dx, dy);
+            }
+          }
+        } else if (ev.altKey) {
+          // Option+矢印: 4方向向き変更（ターン消費なし）
+          heldDirKeysRef.current.clear();
+          if (k === "ArrowUp")    changeFacing(0, -1);
+          if (k === "ArrowDown")  changeFacing(0, 1);
+          if (k === "ArrowLeft")  changeFacing(-1, 0);
+          if (k === "ArrowRight") changeFacing(1, 0);
+        } else {
+          // 通常矢印: 4方向移動（ダブルタップでダッシュ）
+          heldDirKeysRef.current.clear();
+          const dx2 = k === "ArrowRight" ? 1 : k === "ArrowLeft" ? -1 : 0;
+          const dy2 = k === "ArrowDown" ? 1 : k === "ArrowUp" ? -1 : 0;
+          const now = Date.now();
+          const last = lastArrowKeyRef.current;
+          if (last && last.key === k && now - last.time < 300) {
+            lastArrowKeyRef.current = null;
+            startDash(dx2, dy2);
+          } else {
+            lastArrowKeyRef.current = { key: k, time: now };
+            stopDash();
+            stopAutoWalk();
+            doTurn(dx2, dy2);
+          }
+        }
+        return;
+      }
+
+      // カスタムキーマップ: ナナメ移動（ナナメ移動ON時のみ）
+      if (diagMoveEnabled && hasKey(km.diagUL)) { ev.preventDefault(); stopDash(); stopAutoWalk(); doTurn(-1, -1); return; }
+      if (diagMoveEnabled && hasKey(km.diagUR)) { ev.preventDefault(); stopDash(); stopAutoWalk(); doTurn(1, -1); return; }
+      if (diagMoveEnabled && hasKey(km.diagDL)) { ev.preventDefault(); stopDash(); stopAutoWalk(); doTurn(-1, 1); return; }
+      if (diagMoveEnabled && hasKey(km.diagDR)) { ev.preventDefault(); stopDash(); stopAutoWalk(); doTurn(1, 1); return; }
+
+      // 攻撃
+      if (hasKey(km.attack)) { ev.preventDefault(); stopDash(); playerAttack(); return; }
+      // 待機
+      if (hasKey(km.wait)) { ev.preventDefault(); stopDash(); doWait(); return; }
+      // 階段
+      if (hasKey(km.stairs)) { ev.preventDefault(); if (uiState.onStairs) goNextFloor(); return; }
+      // マップ / 見渡す (M キー)
+      if (hasKey(km.map)) { ev.preventDefault(); setShowMap(true); return; }
+    };
+
+    const handleKeyUp = (ev: KeyboardEvent) => {
+      heldDirKeysRef.current.delete(ev.key);
+      if (ev.key === "Shift" || ev.key === "Alt") heldDirKeysRef.current.clear();
+    };
+
+    const handleBlur = () => {
+      heldDirKeysRef.current.clear();
     };
 
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener("keyup", handleKeyUp);
+    window.addEventListener("blur", handleBlur);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keyup", handleKeyUp);
+      window.removeEventListener("blur", handleBlur);
+    };
   }, [
     phase, uiState, showMap, eventOverlay, closeEventOverlay,
     answerQuiz, buyFromShop, changeFacing, closeItems, doTurn, doWait, goNextFloor,
     openItems, playerAttack, stopAutoWalk, setShowMap,
+    pickUpFloorItem, throwFloorItem, useFloorItem, closeFootAction,
+    startDash, stopDash, lookAround, setLookAroundText, keyMap, diagMoveEnabled,
   ]);
 
   // 画面シェイク
@@ -1933,7 +2133,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         style={{ position: "relative", width: "100%", height: "100%", background: DC.bg, color: DC.text, fontFamily: "'DotGothic16', sans-serif", overflow: "hidden" }}
         onClick={() => { unlockAudio(); startTitleBGM(); unlockSpeech(); /* BottomNav未使用時のフォールバック */ }}
       >
-        <TitleScreen onStart={handleStart as (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode) => void} onContinue={handleContinue} hasSave={hasSave} />
+        <TitleScreen onStart={handleStart as (course: Course | "", stage: string, weakOnly: boolean, mode: DungeonMode, diag: boolean) => void} onContinue={handleContinue} hasSave={hasSave} />
       </div>
     );
   }
@@ -1961,6 +2161,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         maxHunger={uiState.maxHunger}
         gold={uiState.gold}
         onVolumeClick={toggleVolume}
+        onKeySettingsClick={() => setShowKeySettings(true)}
       />
 
       {/* Map */}
@@ -1984,10 +2185,118 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         {showMap && (
           <DungeonMapOverlay gameState={gameStateRef.current} onClose={closeMap} />
         )}
+        {lookAroundText && (
+          <div style={{
+            position: "absolute", inset: 0, background: "rgba(0,0,0,0.6)",
+            display: "flex", alignItems: "flex-end", justifyContent: "center",
+            paddingBottom: 80, zIndex: 30,
+          }} onPointerDown={() => setLookAroundText(null)}>
+            <div style={{
+              background: DC.bg2, border: `1px solid ${DC.border2}`,
+              borderRadius: 8, padding: "14px 18px", maxWidth: 280, width: "90%",
+            }} onPointerDown={(e) => e.stopPropagation()}>
+              <div style={{ color: DC.gold, fontSize: 13, fontWeight: "bold", marginBottom: 8 }}>👁 見渡す</div>
+              <div style={{ color: DC.text, fontSize: 12, whiteSpace: "pre-line", lineHeight: 1.7 }}>{lookAroundText}</div>
+              <div style={{ textAlign: "right", marginTop: 10 }}>
+                <button onClick={() => setLookAroundText(null)} style={{ background: DC.bg4, color: DC.text2, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "4px 12px", fontSize: 11, cursor: "pointer" }}>閉じる</button>
+              </div>
+            </div>
+          </div>
+        )}
+        {uiState.footAction && (
+          <div style={{
+            position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)",
+            display: "flex", alignItems: "flex-end", justifyContent: "center",
+            paddingBottom: 80, zIndex: 30,
+          }}>
+            <div style={{
+              background: DC.bg2, border: `1px solid ${DC.border2}`,
+              borderRadius: 8, padding: "16px 20px", minWidth: 220, textAlign: "center",
+            }}>
+              {uiState.footAction.kind === "stairs" ? (
+                <>
+                  <div style={{ color: DC.gold, fontSize: 18, marginBottom: 8 }}>🪜 階段</div>
+                  <div style={{ color: DC.text2, fontSize: 12, marginBottom: 12 }}>次のフロアへ降りますか？</div>
+                  <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
+                    <button onClick={goNextFloor} style={{ background: DC.accent, color: "#fff", border: "none", borderRadius: 4, padding: "6px 16px", cursor: "pointer", fontSize: 13 }}>降りる [Enter]</button>
+                    <button onClick={closeFootAction} style={{ background: DC.bg4, color: DC.text, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "6px 16px", cursor: "pointer", fontSize: 13 }}>キャンセル [Esc]</button>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div style={{ color: DC.accent2, fontSize: 16, marginBottom: 4 }}>
+                    {uiState.footAction.itemIcon} {uiState.footAction.itemName}
+                  </div>
+                  <div style={{ color: DC.text2, fontSize: 11, marginBottom: 12 }}>{uiState.footAction.itemDesc}</div>
+                  <div style={{ display: "flex", gap: 6, justifyContent: "center", flexWrap: "wrap" }}>
+                    <button onClick={pickUpFloorItem} style={{ background: DC.green, color: "#000", border: "none", borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>拾う [G]</button>
+                    <button onClick={() => useFloorItem(uiState.footAction!.kind === "item" ? uiState.footAction!.itemId : "")} style={{ background: DC.accent, color: "#fff", border: "none", borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>{uiState.footAction.kind === "item" && uiState.footAction.itemId === "arrow" ? "打つ [U]" : "使う [U]"}</button>
+                    <button onClick={() => throwFloorItem(uiState.footAction!.kind === "item" ? uiState.footAction!.itemId : "")} style={{ background: DC.accent2, color: "#000", border: "none", borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>投げる [T]</button>
+                    <button onClick={closeFootAction} style={{ background: DC.bg4, color: DC.text, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>キャンセル [Esc]</button>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Volume panel */}
       {showVolume && <DungeonVolumePanel onClose={closeVolume} />}
+
+      {/* Key settings modal */}
+      {showKeySettings && (
+        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.7)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 100 }}>
+          <div style={{ background: DC.bg2, border: `1px solid ${DC.border2}`, borderRadius: 8, padding: 20, width: 340, maxHeight: "80vh", overflowY: "auto" }}>
+            <div style={{ color: DC.text, fontSize: 15, fontWeight: "bold", marginBottom: 12 }}>⌨️ キー設定</div>
+            {(Object.keys(ACTION_LABELS) as KeyMapAction[]).map((action) => (
+              <div key={action} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+                <div style={{ color: DC.text2, fontSize: 12 }}>{ACTION_LABELS[action]}</div>
+                <div style={{ display: "flex", gap: 4, alignItems: "center" }}>
+                  <div
+                    onClick={() => setRecordingAction(action)}
+                    style={{
+                      background: recordingAction === action ? DC.accent : DC.bg4,
+                      color: recordingAction === action ? "#fff" : DC.text,
+                      border: `1px solid ${recordingAction === action ? DC.accent : DC.border}`,
+                      borderRadius: 4, padding: "3px 8px", fontSize: 11, cursor: "pointer", minWidth: 80, textAlign: "center",
+                    }}
+                  >
+                    {recordingAction === action ? "押してください..." : (keyMap[action].join(" / ") || "なし")}
+                  </div>
+                  <button
+                    onClick={() => { const km = { ...keyMap, [action]: [] }; setKeyMap(km); saveKeyMap(km); }}
+                    style={{ background: "none", color: DC.text3, border: "none", cursor: "pointer", fontSize: 11 }}
+                  >✕</button>
+                </div>
+              </div>
+            ))}
+            {/* ナナメ移動トグル */}
+            <div style={{
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              marginTop: 12, padding: "8px 0", borderTop: `1px solid ${DC.border}`,
+            }}>
+              <div style={{ color: DC.text, fontSize: 12 }}>ナナメ移動</div>
+              <button
+                onClick={() => { const next = !diagMoveEnabled; setDiagMoveEnabled(next); saveDiagMove(next); }}
+                style={{
+                  background: diagMoveEnabled ? DC.accent : DC.bg4,
+                  color: diagMoveEnabled ? "#fff" : DC.text3,
+                  border: `1px solid ${diagMoveEnabled ? DC.accent : DC.border}`,
+                  borderRadius: 4, padding: "3px 12px", fontSize: 11, cursor: "pointer",
+                  minWidth: 50, textAlign: "center",
+                }}
+              >
+                {diagMoveEnabled ? "ON" : "OFF"}
+              </button>
+            </div>
+            <div style={{ display: "flex", gap: 8, marginTop: 12, justifyContent: "flex-end" }}>
+              <button onClick={() => { const km = { ...DEFAULT_KEYMAP }; setKeyMap(km); saveKeyMap(km); }} style={{ background: DC.bg4, color: DC.text2, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "4px 10px", fontSize: 11, cursor: "pointer" }}>リセット</button>
+              <button onClick={() => setShowKeySettings(false)} style={{ background: DC.accent, color: "#fff", border: "none", borderRadius: 4, padding: "4px 12px", fontSize: 11, cursor: "pointer" }}>閉じる</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Quiz panel */}
       <DungeonQuizPanel
@@ -2045,14 +2354,39 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
 
       {/* Controls */}
       <DungeonControls
-        onDpad={(dx, dy) => { if (eventOverlay) { closeEventOverlay(); return; } stopAutoWalk(); if (dx === 0 && dy === 0) { doWait(); } else { doTurn(dx, dy); } }}
-        onAttack={() => { if (eventOverlay) { closeEventOverlay(); return; } playerAttack(); }}
-        onWait={doWait}
-        onItems={openItems}
-        onStairs={goNextFloor}
-        onMap={toggleMap}
-        showStairs={uiState.onStairs}
+        onDpad={(dx, dy) => {
+          if (eventOverlay) { closeEventOverlay(); return; }
+          stopAutoWalk(); stopDash();
+          if (dx === 0 && dy === 0) { doWait(); } else { doTurn(dx, dy); }
+        }}
+        onAttack={() => { if (eventOverlay) { closeEventOverlay(); return; } stopDash(); playerAttack(); }}
+        onWait={() => { stopDash(); doWait(); }}
+        onItems={() => { stopDash(); openItems(); }}
+        onFootAction={() => { stopDash(); openFootAction(); }}
+        onLookAround={() => { stopDash(); setShowMap(true); }}
+        onMenu={() => { stopDash(); setShowKeySettings(true); }}
+        onShootArrow={() => { stopDash(); shootArrow(); }}
+        onDash={(dx, dy) => { startDash(dx, dy); setDashMode(false); }}
         onChangeFacing={changeFacing}
+        arrowCount={uiState.items.find((i) => i.id === "arrow")?.count ?? 0}
+        isDashMode={dashMode}
+        diagMoveEnabled={diagMoveEnabled}
+        onToggleDashMode={() => {
+          if (dashMode) {
+            stopDash();
+            setDashMode(false);
+          } else {
+            // ダッシュモードON: プレイヤーの向き方向が定まっていれば即ダッシュ開始
+            const g = gameStateRef.current;
+            const dir = g?.playerDir;
+            if (dir && (dir.dx !== 0 || dir.dy !== 0)) {
+              startDash(dir.dx, dir.dy);
+            } else {
+              // 向き未定: D-pad で方向を選ぶモードに切替
+              setDashMode(true);
+            }
+          }
+        }}
       />
 
       {/* Notification */}

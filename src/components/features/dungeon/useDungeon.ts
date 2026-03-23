@@ -14,6 +14,7 @@ import type {
   ScreenFlashKind,
   ScreenEffect,
   EventOverlay,
+  FootAction,
 } from "@/lib/dungeon/types";
 import { findPath } from "@/lib/dungeon/pathfinding";
 import type { StageDefinition } from "@/data/words/courses";
@@ -87,6 +88,7 @@ export type UIState = {
   gold: number;
   shopPrompt: ShopPrompt | null;
   openJarId: string | null;
+  footAction: FootAction | null;
 };
 
 const INITIAL_UI: UIState = {
@@ -114,9 +116,10 @@ const INITIAL_UI: UIState = {
   gold: 0,
   shopPrompt: null,
   openJarId: null,
+  footAction: null,
 };
 
-export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMode = "easy"): GameState {
+export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMode = "easy", diagMove: boolean = true): GameState {
   const healGrass = ITEMS_DEF.find((d) => d.id === "heal_grass")!;
   const scrollPower = ITEMS_DEF.find((d) => d.id === "scroll_power")!;
   const rice = ITEMS_DEF.find((d) => d.id === "rice")!;
@@ -163,6 +166,7 @@ export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMo
     playerSleepTurns: 0,
     playerConfusedTurns: 0,
     playerSlowTurns: 0,
+    diagMove,
   };
 }
 
@@ -191,7 +195,7 @@ function getStageForFloor(stages: StageDefinition[], floor: number): string {
   return stages[idx].stage;
 }
 
-export function useDungeon(questions: DungeonQuestion[], progressiveStages?: StageDefinition[], dungeonMode: DungeonMode = "easy") {
+export function useDungeon(questions: DungeonQuestion[], progressiveStages?: StageDefinition[], dungeonMode: DungeonMode = "easy", diagMove: boolean = true) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
   const gameRef = useRef<GameState | null>(null);
@@ -207,6 +211,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   const autoWalkPathRef = useRef<{ x: number; y: number }[]>([]);
   const autoWalkTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const doTurnLatestRef = useRef<(dx: number, dy: number) => void>(() => {});
+  const dashDirRef = useRef<{ dx: number; dy: number } | null>(null);
+  const dashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isDashingRef = useRef(false);
 
   const redraw = useCallback(() => {
     const g = gameRef.current;
@@ -611,6 +618,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           if (g.map[ny][nx] !== 0) {
             g.px = nx;
             g.py = ny;
+            revealAround(g, nx, ny);
             sfxWarp();
             notify("✨ ワープした！（満腹度+5）");
             redraw();
@@ -952,6 +960,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         saveGame();
         return;
       }
+      // ナナメ移動OFF時は斜め入力を無視
+      if (!g.diagMove && dx !== 0 && dy !== 0) return;
+
       // 移動方向を記録（投げる機能用）
       if (dx !== 0 || dy !== 0) {
         g.playerDir = { dx, dy };
@@ -962,13 +973,22 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       let mvDy = dy;
       if (g.playerConfusedTurns > 0) {
         g.playerConfusedTurns--;
-        const confDirs: [number, number][] = [[1, 0], [-1, 0], [0, 1], [0, -1]];
-        [mvDx, mvDy] = confDirs[Math.floor(Math.random() * 4)];
+        const confDirs: [number, number][] = g.diagMove
+          ? [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]]
+          : [[1, 0], [-1, 0], [0, 1], [0, -1]];
+        [mvDx, mvDy] = confDirs[Math.floor(Math.random() * confDirs.length)];
         queueMsg("🌀 混乱して変な方向に！");
       }
       const nx = g.px + mvDx;
       const ny = g.py + mvDy;
       if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) return;
+      // ナナメ移動のコーナーカット防止（風来のシレン準拠）
+      // 片方でも壁があればナナメに抜けられない
+      if (mvDx !== 0 && mvDy !== 0) {
+        const hBlocked = g.map[g.py][g.px + mvDx] === 0;
+        const vBlocked = g.map[g.py + mvDy][g.px] === 0;
+        if (hBlocked || vBlocked) return;
+      }
 
       const eAt = g.enemies.find((e) => e.x === nx && e.y === ny);
       if (eAt) {
@@ -1025,7 +1045,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
                   wy = 1 + Math.floor(Math.random() * (MH - 2));
                   tries++;
                 } while (tries < 200 && (g.map[wy][wx] === 0 || g.enemies.find((e) => e.x === wx && e.y === wy)));
-                if (g.map[wy][wx] !== 0) { g.px = wx; g.py = wy; }
+                if (g.map[wy][wx] !== 0) { g.px = wx; g.py = wy; revealAround(g, wx, wy); }
                 triggerScreenEffect("trap_warp", false);
                 showEventOverlay(TRAP_OVERLAYS.warp);
                 trapMsg = "🌀 ワープトラップ！ 飛ばされた！";
@@ -1048,26 +1068,26 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
       }
 
-      // アイテム取得
-      const iIdx = g.itemTiles.findIndex((i) => i.x === g.px && i.y === g.py);
-      if (iIdx >= 0) {
-        const it = g.itemTiles.splice(iIdx, 1)[0];
-        const def = ITEMS_DEF.find((d) => d.id === it.id);
-        if (def) {
-          const ex = g.items.find((i) => i.id === it.id);
-          if (ex) ex.count++;
-          else
-            g.items.push({
-              id: def.id,
-              name: def.name,
-              icon: def.icon,
-              desc: def.desc,
-              cat: def.cat,
-              count: 1,
-            });
-          sfxItemGet();
-          queueMsg(`${def.icon}${def.name}を拾った！`);
+      // アイテム自動取得（ダッシュ中は乗るだけで拾わない）
+      if (!isDashingRef.current) {
+        const iIdx = g.itemTiles.findIndex((i) => i.x === g.px && i.y === g.py);
+        if (iIdx >= 0) {
+          const it = g.itemTiles.splice(iIdx, 1)[0];
+          const def = ITEMS_DEF.find((d) => d.id === it.id);
+          if (def) {
+            const ex = g.items.find((i) => i.id === it.id);
+            if (ex) ex.count++;
+            else g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1 });
+            sfxItemGet();
+            queueMsg(`${def.icon}${def.name}を拾った！`);
+          }
         }
+      }
+
+      // 足元チェック（階段のみ確認ダイアログ）
+      let newFootAction: FootAction | null = null;
+      if (g.onStairs) {
+        newFootAction = { kind: "stairs" };
       }
 
       // ショップタイルチェック
@@ -1102,8 +1122,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         runEnemyTurn(g);
       }
 
-      // ショッププロンプトを更新（runEnemyTurnのupdateUIより後に適用）
-      setUiState((prev) => ({ ...prev, shopPrompt: newShopPrompt }));
+      // ショッププロンプト・足元アクションを更新（runEnemyTurnのupdateUIより後に適用）
+      setUiState((prev) => ({ ...prev, shopPrompt: newShopPrompt, footAction: newFootAction }));
 
       // ターン終了後にオートセーブ（辞めた場所から再開できるよう）
       saveGame();
@@ -1116,8 +1136,22 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     if (!g) return;
     if (uiState.quiz && !uiState.quizAnswered) return;
 
+    // コーナーカット判定ヘルパー（片方でも壁があれば斜め攻撃不可）
+    const diagBlocked = (dx: number, dy: number): boolean => {
+      if (Math.abs(dx) !== 1 || Math.abs(dy) !== 1) return false;
+      const hBlocked = g.map[g.py]?.[g.px + dx] === 0;
+      const vBlocked = g.map[g.py + dy]?.[g.px] === 0;
+      return hBlocked || vBlocked;
+    };
+
     // まず向いている方向の敵を探す（眠っている敵も含む）
     const { dx: pd, dy: pdy } = g.playerDir ?? { dx: 0, dy: 0 };
+    // 向いている方向がナナメかつ壁でブロックされているなら攻撃不可
+    if (diagBlocked(pd, pdy)) {
+      const msg = "壁に遮られて攻撃できない";
+      setUiState((prev) => ({ ...prev, msg, msgLog: [msg, ...prev.msgLog].slice(0, 6) }));
+      return;
+    }
     let e: Enemy | undefined =
       (pd !== 0 || pdy !== 0)
         ? g.enemies.find((en) => en.x === g.px + pd && en.y === g.py + pdy)
@@ -1125,12 +1159,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
 
     if (!e) {
       // 8方向を優先順位（4方向 > 斜め）で探して自動方向転換
+      // ナナメ方向はコーナーカット防止チェックを適用
       const DIRS: { dx: number; dy: number }[] = [
         { dx: 1, dy: 0 }, { dx: -1, dy: 0 }, { dx: 0, dy: 1 }, { dx: 0, dy: -1 },
         { dx: 1, dy: 1 }, { dx: 1, dy: -1 }, { dx: -1, dy: 1 }, { dx: -1, dy: -1 },
       ];
       let found: { e: Enemy; dx: number; dy: number } | undefined;
       for (const d of DIRS) {
+        if (diagBlocked(d.dx, d.dy)) continue; // 壁でブロックされたナナメはスキップ
         const en = g.enemies.find((en) => en.x === g.px + d.dx && en.y === g.py + d.dy);
         if (en) { found = { e: en, dx: d.dx, dy: d.dy }; break; }
       }
@@ -1158,15 +1194,11 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const g = gameRef.current;
     if (!g) return;
     if (uiState.quiz && !uiState.quizAnswered) return;
-    if (g.onStairs) {
-      goNextFloor();
-      return;
-    }
     queueMsg("足踏み中…");
     runEnemyTurn(g);
     // ターン終了後にオートセーブ
     saveGame();
-  }, [goNextFloor, queueMsg, runEnemyTurn, saveGame, uiState.quiz, uiState.quizAnswered]);
+  }, [queueMsg, runEnemyTurn, saveGame, uiState.quiz, uiState.quizAnswered]);
 
   const answerQuiz = useCallback(
     (chosen: string) => {
@@ -1426,7 +1458,6 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         } else {
           // 敵がいない → 床に落とす
           g.itemTiles.push({ x: landX, y: landY, id: itemId });
-          sfxItemUse();
           showNotification(`${item.icon} 床に落ちた`);
         }
       } else if (item.cat === "cane") {
@@ -1636,6 +1667,184 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     autoWalkPathRef.current = [];
   }, []);
 
+  const stopDash = useCallback(() => {
+    if (dashTimerRef.current) {
+      clearTimeout(dashTimerRef.current);
+      dashTimerRef.current = null;
+    }
+    dashDirRef.current = null;
+    isDashingRef.current = false;
+  }, []);
+
+  // ダッシュ停止判定（シレン準拠）※アイテムタイルは呼び出し元で別処理
+  function shouldDashStop(g: GameState, nx: number, ny: number, dx: number, dy: number): boolean {
+    const W = 0;
+    // 現在位置に隣接する覚醒敵がいる（目の前にいる敵を感知）
+    if (g.enemies.some((e) => !e.sleeping && adj(e.x, e.y, g.px, g.py))) return true;
+    // 行き先が階段
+    if (g.stairsPos && nx === g.stairsPos.x && ny === g.stairsPos.y) return true;
+    // 現在地が通路(C=2)で行き先が部屋(R=1): 部屋への侵入
+    if (g.map[g.py]?.[g.px] === 2 && g.map[ny]?.[nx] === 1) return true;
+    // 分岐判定: 行き先(nx,ny)から現在の移動方向以外に非壁タイルがあるか確認
+    const perp1 = [dy, -dx];  // perpendicular direction 1
+    const perp2 = [-dy, dx];  // perpendicular direction 2
+    const hasPerp1 = g.map[ny + perp1[1]]?.[nx + perp1[0]] !== W;
+    const hasPerp2 = g.map[ny + perp2[1]]?.[nx + perp2[0]] !== W;
+    const hasForward = g.map[ny + dy]?.[nx + dx] !== W;
+    // 通路の分岐: 横方向が開いていて前方も開いている → T字路または十字路
+    if ((hasPerp1 || hasPerp2) && hasForward) return true;
+    return false;
+  }
+
+  const startDash = useCallback((dx: number, dy: number) => {
+    const g = gameRef.current;
+    if (!g) return;
+    if (uiState.quiz && !uiState.quizAnswered) return;
+    stopDash();
+    stopAutoWalk();
+    dashDirRef.current = { dx, dy };
+    isDashingRef.current = true;
+
+    const step = () => {
+      const g2 = gameRef.current;
+      if (!g2 || !dashDirRef.current) { isDashingRef.current = false; return; }
+      const { dx: ddx, dy: ddy } = dashDirRef.current;
+      const nx = g2.px + ddx;
+      const ny = g2.py + ddy;
+      // 壁にぶつかったら停止（移動しない）
+      if (g2.map[ny]?.[nx] === 0) {
+        dashDirRef.current = null;
+        isDashingRef.current = false;
+        return;
+      }
+      // アイテムタイル: 乗って停止（isDashingRef=true のまま移動 → auto-pickup スキップ）
+      const isItemTile = g2.itemTiles.some((it) => it.x === nx && it.y === ny);
+      if (isItemTile) {
+        dashDirRef.current = null; // タイマーを止める
+        doTurnLatestRef.current(ddx, ddy); // 乗る（拾わない）
+        isDashingRef.current = false;
+        return;
+      }
+      // その他の停止条件
+      if (shouldDashStop(g2, nx, ny, ddx, ddy)) {
+        dashDirRef.current = null;
+        isDashingRef.current = false;
+        return;
+      }
+      doTurnLatestRef.current(ddx, ddy);
+      if (dashDirRef.current) {
+        dashTimerRef.current = setTimeout(step, 150);
+      } else {
+        isDashingRef.current = false;
+      }
+    };
+    // 最初の一歩は即実行
+    const nx0 = g.px + dx;
+    const ny0 = g.py + dy;
+    if (g.map[ny0]?.[nx0] !== 0) {
+      doTurnLatestRef.current(dx, dy);
+      if (dashDirRef.current) {
+        dashTimerRef.current = setTimeout(step, 150);
+      } else {
+        isDashingRef.current = false;
+      }
+    } else {
+      isDashingRef.current = false;
+    }
+  }, [stopDash, stopAutoWalk, uiState.quiz, uiState.quizAnswered]);
+
+  const lookAround = useCallback((): string => {
+    const g = gameRef.current;
+    if (!g) return "周囲に何もない";
+    const lines: string[] = [];
+    // 可視範囲内（探索済みタイル上）の敵
+    const visEnemies = g.enemies.filter((e) => g.explored[e.y]?.[e.x]);
+    if (visEnemies.length > 0) {
+      lines.push("👾 敵:");
+      visEnemies.forEach((e) => {
+        const dx = e.x - g.px;
+        const dy = e.y - g.py;
+        const dist = Math.max(Math.abs(dx), Math.abs(dy));
+        const dir = dx === 0 && dy < 0 ? "北" : dx === 0 && dy > 0 ? "南" : dx > 0 && dy === 0 ? "東" : dx < 0 && dy === 0 ? "西" :
+          dx > 0 && dy < 0 ? "北東" : dx < 0 && dy < 0 ? "北西" : dx > 0 && dy > 0 ? "南東" : "南西";
+        lines.push(`  ${e.icon}${e.name} (${dir}${dist}マス)`);
+      });
+    }
+    // 可視範囲内のアイテム
+    const visItems = g.itemTiles.filter((it) => g.explored[it.y]?.[it.x]);
+    if (visItems.length > 0) {
+      lines.push("🎒 アイテム:");
+      visItems.forEach((it) => {
+        const def = ITEMS_DEF.find((d) => d.id === it.id);
+        if (!def) return;
+        const dx = it.x - g.px;
+        const dy = it.y - g.py;
+        const dist = Math.max(Math.abs(dx), Math.abs(dy));
+        lines.push(`  ${def.icon}${def.name} (${dist}マス)`);
+      });
+    }
+    if (lines.length === 0) lines.push("周囲に敵もアイテムも見当たらない");
+    return lines.join("\n");
+  }, []);
+
+  const shootArrow = useCallback(() => {
+    const g = gameRef.current;
+    if (!g) return;
+    const arrowItem = g.items.find((i) => i.id === "arrow");
+    if (!arrowItem || arrowItem.count <= 0) {
+      showNotification("🏹 矢がない");
+      return;
+    }
+    const dir = g.playerDir;
+    if (!dir || (dir.dx === 0 && dir.dy === 0)) {
+      showNotification("🏹 まず向きを決めよう");
+      return;
+    }
+    let tx = g.px + dir.dx;
+    let ty = g.py + dir.dy;
+    let hitEnemy: Enemy | null = null;
+    while (tx >= 0 && tx < MW && ty >= 0 && ty < MH && g.map[ty][tx] !== 0) {
+      const e = g.enemies.find((e) => e.x === tx && e.y === ty);
+      if (e) { hitEnemy = e; break; }
+      tx += dir.dx;
+      ty += dir.dy;
+    }
+    arrowItem.count--;
+    if (hitEnemy) {
+      const dmg = 10;
+      hitEnemy.hp = Math.max(0, hitEnemy.hp - dmg);
+      addDmgPop(hitEnemy.x, hitEnemy.y, "hit", dmg);
+      sfxHit();
+      queueMsg(`🏹 矢が${hitEnemy.name}に命中！${dmg}ダメージ`);
+      if (hitEnemy.hp <= 0) {
+        onEnemyDied(g, hitEnemy);
+        g.enemies = g.enemies.filter((e) => e.id !== hitEnemy!.id);
+      }
+    } else {
+      queueMsg("🏹 矢が飛んでいった…");
+    }
+    runEnemyTurn(g);
+    saveGame();
+  }, [addDmgPop, onEnemyDied, queueMsg, runEnemyTurn, saveGame, showNotification]);
+
+  const openFootAction = useCallback(() => {
+    const g = gameRef.current;
+    if (!g) return;
+    if (g.onStairs) {
+      setUiState((prev) => ({ ...prev, footAction: { kind: "stairs" } }));
+      return;
+    }
+    const itemOnTile = g.itemTiles.find((i) => i.x === g.px && i.y === g.py);
+    if (itemOnTile) {
+      const def = ITEMS_DEF.find((d) => d.id === itemOnTile.id);
+      if (def) {
+        setUiState((prev) => ({ ...prev, footAction: { kind: "item", itemId: def.id, itemName: def.name, itemIcon: def.icon, itemDesc: def.desc } }));
+        return;
+      }
+    }
+    queueMsg("足元には何もない");
+  }, [queueMsg]);
+
   const scheduleWalkStep = useCallback(() => {
     const step = () => {
       const g = gameRef.current;
@@ -1698,6 +1907,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       playerSleepTurns: (raw as Partial<GameState>).playerSleepTurns ?? 0,
       playerConfusedTurns: (raw as Partial<GameState>).playerConfusedTurns ?? 0,
       playerSlowTurns: (raw as Partial<GameState>).playerSlowTurns ?? 0,
+      diagMove: (raw as Partial<GameState>).diagMove ?? diagMove,
     };
     gameRef.current = migrated;
     const canvas = canvasRef.current;
@@ -1725,7 +1935,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   const startGame = useCallback(() => {
     initDungeonAudio(); // MP3ファイルをプリロード（初回のみ）
     storage.clearDungeonGame();
-    const g = initGameState([], dungeonMode);
+    const g = initGameState([], dungeonMode, diagMove);
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py); // 開始位置の視野を開く
@@ -1759,13 +1969,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       redraw();
       startBGM();
     }, 50);
-  }, [dungeonMode, questions, redraw, updateUI]);
+  }, [diagMove, dungeonMode, questions, redraw, updateUI]);
 
   const retryGame = useCallback(() => {
     storage.clearDungeonGame();
     stopAutoWalk();
     const prevMissed = gameRef.current?.missedWords ?? [];
-    const g = initGameState(prevMissed, dungeonMode);
+    const g = initGameState(prevMissed, dungeonMode, diagMove);
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py);
@@ -1780,20 +1990,93 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       redraw();
       startBGM();
     }, 50);
-  }, [dungeonMode, redraw, stopAutoWalk, updateUI]);
+  }, [diagMove, dungeonMode, redraw, stopAutoWalk, updateUI]);
 
   // doTurn が再生成されるたびに最新参照を更新（オートウォークで常に最新版を呼ぶため）
   useEffect(() => {
     doTurnLatestRef.current = doTurn;
   }, [doTurn]);
 
-  // アンマウント時にBGM停止・オートウォーク停止
+  const pickUpFloorItem = useCallback(() => {
+    const g = gameRef.current;
+    if (!g) return;
+    const iIdx = g.itemTiles.findIndex((i) => i.x === g.px && i.y === g.py);
+    if (iIdx < 0) { setUiState((prev) => ({ ...prev, footAction: null })); return; }
+    const it = g.itemTiles.splice(iIdx, 1)[0];
+    const def = ITEMS_DEF.find((d) => d.id === it.id);
+    if (def) {
+      const ex = g.items.find((i) => i.id === it.id);
+      if (ex) ex.count++;
+      else g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1 });
+      sfxItemGet();
+      queueMsg(`${def.icon}${def.name}を拾った！`);
+    }
+    setUiState((prev) => ({ ...prev, footAction: null }));
+    runEnemyTurn(g);
+    saveGame();
+  }, [queueMsg, runEnemyTurn, saveGame]);
+
+  const throwFloorItem = useCallback((itemId: string) => {
+    const g = gameRef.current;
+    if (!g) return;
+    const iIdx = g.itemTiles.findIndex((i) => i.x === g.px && i.y === g.py && i.id === itemId);
+    if (iIdx < 0) { setUiState((prev) => ({ ...prev, footAction: null })); return; }
+    const it = g.itemTiles.splice(iIdx, 1)[0];
+    const def = ITEMS_DEF.find((d) => d.id === it.id);
+    if (def) {
+      const ex = g.items.find((i) => i.id === it.id);
+      if (ex) ex.count++;
+      else g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1 });
+    }
+    setUiState((prev) => ({ ...prev, footAction: null }));
+    throwItem(itemId);
+  }, [throwItem, saveGame]);
+
+  // 床アイテムをその場で使う（拾わずに使用 → 使用後は床から消える）
+  const useFloorItem = useCallback((itemId: string) => {
+    const g = gameRef.current;
+    if (!g) return;
+    const tileIdx = g.itemTiles.findIndex((i) => i.x === g.px && i.y === g.py && i.id === itemId);
+    if (tileIdx < 0) { setUiState((prev) => ({ ...prev, footAction: null })); return; }
+    const def = ITEMS_DEF.find((d) => d.id === itemId);
+    if (!def) return;
+
+    // 一時的にインベントリへ追加して applyItem を呼ぶ
+    const inv = g.items.find((i) => i.id === itemId);
+    if (inv) { inv.count++; } else { g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1 }); }
+
+    const used = applyItem(g, itemId, { notify: showNotification, goNextFloor });
+
+    if (used) {
+      // 床から削除し、インベントリのカウントを戻す（pick up せずに使ったのと同じ）
+      g.itemTiles.splice(tileIdx, 1);
+      const invItem = g.items.find((i) => i.id === itemId);
+      if (invItem && invItem.cat !== "cane") {
+        invItem.count--;
+        if (invItem.count <= 0) g.items = g.items.filter((i) => i.id !== itemId);
+      }
+      setUiState((prev) => ({ ...prev, footAction: null }));
+      runEnemyTurn(g);
+      saveGame();
+    } else {
+      // 使用失敗: 一時追加を取り消す
+      const invItem = g.items.find((i) => i.id === itemId);
+      if (invItem) { invItem.count--; if (invItem.count <= 0) g.items = g.items.filter((i) => i.id !== itemId); }
+    }
+  }, [applyItem, goNextFloor, runEnemyTurn, saveGame, showNotification]);
+
+  const closeFootAction = useCallback(() => {
+    setUiState((prev) => ({ ...prev, footAction: null }));
+  }, []);
+
+  // アンマウント時にBGM停止・オートウォーク停止・ダッシュ停止
   useEffect(() => {
     return () => {
       stopBGM();
       stopAutoWalk();
+      stopDash();
     };
-  }, [stopAutoWalk]);
+  }, [stopAutoWalk, stopDash]);
 
   // resize
   useEffect(() => {
@@ -1836,5 +2119,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     skipShop,
     openJarId: uiState.openJarId,
     changeFacing,
+    pickUpFloorItem,
+    throwFloorItem,
+    useFloorItem,
+    closeFootAction,
+    startDash,
+    stopDash,
+    lookAround,
+    shootArrow,
+    openFootAction,
   };
 }
