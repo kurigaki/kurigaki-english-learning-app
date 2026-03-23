@@ -127,6 +127,7 @@ export type GameState = {
   playerSleepTurns: number;    // プレイヤー眠り残りターン
   playerConfusedTurns: number; // プレイヤー混乱残りターン
   playerSlowTurns: number;     // プレイヤー鈍足残りターン
+  diagMove: boolean;           // ナナメ移動の有効/無効
 };
 
 export type DungeonQuestion = { wordId: number; word: string; ans: string; ch: string[]; stage?: string };
@@ -203,3 +204,7 @@ export type EventOverlay = {
   icon: string;
   autoClose?: number;
 };
+
+export type FootAction =
+  | { kind: "stairs" }
+  | { kind: "item"; itemId: string; itemName: string; itemIcon: string; itemDesc: string };
