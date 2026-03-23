@@ -54,17 +54,38 @@ function pickPrimaryMeaning(meaning: string): string {
   return primary || meaning.trim();
 }
 
+// 品詞別の接尾辞重複を防ぐヘルパー
+function verbForm(m: string): string {
+  // 「走る」「食べる」→ そのまま（既に動詞終止形）
+  // 「〜する」「〜を見る」→ そのまま
+  if (/[るすくぐむぬぶつう]$/.test(m)) return m;
+  // 「管理」「確認」→ 「管理する」
+  return `${m}する`;
+}
+
+function adjForm(m: string): string {
+  // 「幸せな」「大きい」→ そのまま
+  if (/[ないいしきくぐすずつづぬぶむるう]$/.test(m)) return m;
+  // 「幸せ」「重要」→ 「幸せな」
+  return `${m}な`;
+}
+
+function advForm(m: string): string {
+  if (/に$/.test(m)) return m;
+  return `${m}に`;
+}
+
 function buildCoreImage(word: ExtensionSourceWord): string {
   const m = pickPrimaryMeaning(word.meaning);
   switch (word.partOfSpeech) {
     case "noun":
       return `「${m}」という概念・対象をひとまとまりで捉えるのがコアイメージ。文脈によって具体物にも抽象概念にも広がる。`;
     case "verb":
-      return `「${m}する」という動き・変化を起こすのがコアイメージ。誰が何にどう作用するかを意識すると定着しやすい。`;
+      return `「${verbForm(m)}」という動き・変化を起こすのがコアイメージ。誰が何にどう作用するかを意識すると定着しやすい。`;
     case "adjective":
-      return `名詞の性質を「${m}な状態」として描写するのがコアイメージ。対象の特徴・評価を短く示せる。`;
+      return `「${adjForm(m)}状態」として名詞の性質を描写するのがコアイメージ。対象の特徴・評価を短く示せる。`;
     case "adverb":
-      return `動詞・形容詞・文全体にかかって「${m}に」という様子や程度を補うのがコアイメージ。`;
+      return `「${advForm(m)}」という様子や程度を補い、動詞・形容詞・文全体にかかるのがコアイメージ。`;
     default:
       return `文脈に応じて「${m}」の機能を担う語。定型表現の中で意味をまとめて覚えると使いやすい。`;
   }
@@ -76,11 +97,11 @@ function buildUsage(word: ExtensionSourceWord): string {
     case "noun":
       return `「a/the ${word.word}」「${word.word} + of ...」の形で使われることが多い。意味は「${m}」で、可算・不可算や前置詞との相性を例文で確認すると実用性が上がる。`;
     case "verb":
-      return `「${word.word} + 名詞」「${word.word} + to do / that ...」などで使う。意味「${m}する」が誰に何を及ぼすかを例文単位で覚えるのが効果的。`;
+      return `「${word.word} + 名詞」「${word.word} + to do / that ...」などで使う。意味「${verbForm(m)}」が誰に何を及ぼすかを例文単位で覚えるのが効果的。`;
     case "adjective":
-      return `「${word.word} + 名詞」「be動詞 + ${word.word}」で使う。意味「${m}な」を、対象や場面とセットで覚えると定着しやすい。`;
+      return `「${word.word} + 名詞」「be動詞 + ${word.word}」で使う。意味「${adjForm(m)}」を、対象や場面とセットで覚えると定着しやすい。`;
     case "adverb":
-      return `主に「動詞 + ${word.word}」「${word.word}, 文」の形で使う。意味「${m}に」がどの語を修飾するかを意識すると誤用を防げる。`;
+      return `主に「動詞 + ${word.word}」「${word.word}, 文」の形で使う。意味「${advForm(m)}」がどの語を修飾するかを意識すると誤用を防げる。`;
     default:
       return `会話・定型表現の中で使われることが多い語。意味「${m}」を単体ではなくフレーズごと覚えると運用しやすい。`;
   }
@@ -92,23 +113,23 @@ function buildSynonymDifference(word: ExtensionSourceWord): string {
 }
 
 function buildEnglishDefinition(word: ExtensionSourceWord): string {
-  const m = pickPrimaryMeaning(word.meaning);
+  // 英英定義には英単語のみ使用（日本語混入を防止）
   switch (word.partOfSpeech) {
     case "noun":
-      return `A noun used to refer to “${m}”, depending on context.`;
+      return `A thing, concept, or entity referred to as "${word.word}".`;
     case "verb":
-      return `A verb meaning “to ${m}” in context.`;
+      return `To perform the action expressed by "${word.word}".`;
     case "adjective":
-      return `An adjective used to describe something as “${m}”.`;
+      return `Describing a quality or state expressed by "${word.word}".`;
     case "adverb":
-      return `An adverb that modifies verbs/adjectives with the sense of “${m}”.`;
+      return `In a manner expressed by "${word.word}".`;
     default:
-      return `A word or expression used with the sense of “${m}”, depending on context.`;
+      return `A word or expression: "${word.word}".`;
   }
 }
 
 function buildEtymology(word: ExtensionSourceWord): string {
-  return `語源は辞書によって説明が異なるため、主要英英辞典（OED, Merriam-Webster, Collins など）で ${word.word} の語形成（接頭辞・接尾辞・語根）を照合して確認するのが確実。`;
+  return `${word.word} の詳しい語源は主要英英辞典（OED, Merriam-Webster 等）で確認できます。接頭辞・接尾辞・語根の分解を意識すると、類似語の意味推測にも役立ちます。`;
 }
 
 function buildGeneratedExtension(word: ExtensionSourceWord): WordExtension {
@@ -157,12 +178,12 @@ function buildGeneratedExamples(word: ExtensionSourceWord): NonNullable<WordExte
       ? [
           {
             en: `I try to ${word.word} every day.`,
-            ja: `私は毎日${m}ようにしています。`,
+            ja: `私は毎日${verbForm(m)}ようにしています。`,
             context: "学習",
           },
           {
             en: `She can ${word.word} this task well.`,
-            ja: `彼女はこの課題をうまく${m}ことができます。`,
+            ja: `彼女はこの課題をうまく${verbForm(m)}ことができます。`,
             context: "実践",
           },
         ]
@@ -170,12 +191,12 @@ function buildGeneratedExamples(word: ExtensionSourceWord): NonNullable<WordExte
         ? [
             {
               en: `The result was ${word.word}.`,
-              ja: `その結果は${m}状態でした。`,
+              ja: `その結果は${adjForm(m)}状態でした。`,
               context: "説明",
             },
             {
               en: `It seems ${word.word} to me.`,
-              ja: `私にはそれが${m}ように見えます。`,
+              ja: `私にはそれが${adjForm(m)}ように見えます。`,
               context: "判断",
             },
           ]
@@ -183,12 +204,12 @@ function buildGeneratedExamples(word: ExtensionSourceWord): NonNullable<WordExte
           ? [
               {
                 en: `He answered ${word.word} in class.`,
-                ja: `彼は授業で${m}答えました。`,
+                ja: `彼は授業で${advForm(m)}答えました。`,
                 context: "授業",
               },
               {
                 en: `We moved ${word.word} to finish on time.`,
-                ja: `私たちは時間内に終えるため${m}動きました。`,
+                ja: `私たちは時間内に終えるため${advForm(m)}動きました。`,
                 context: "行動",
               },
             ]
