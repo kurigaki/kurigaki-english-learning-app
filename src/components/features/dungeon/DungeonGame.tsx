@@ -906,7 +906,7 @@ function DungeonDeathScreen({
 
 function DungeonControls({
   onDpad, onAttack, onWait, onItems, onFootAction, onLookAround, onMenu, onShootArrow, onDash,
-  onChangeFacing, arrowCount, isDashMode, onToggleDashMode, diagMoveEnabled,
+  onChangeFacing, arrowCount, diagMoveEnabled,
 }: {
   onDpad: (dx: number, dy: number) => void;
   onAttack: () => void;
@@ -920,8 +920,6 @@ function DungeonControls({
   onChangeFacing: (dx: number, dy: number) => void;
   arrowCount: number;
   diagMoveEnabled: boolean;
-  isDashMode: boolean;
-  onToggleDashMode: () => void;
 }) {
   // 4方向（カーディナル）ボタン
   const dpStyle: React.CSSProperties = {
@@ -967,31 +965,27 @@ function DungeonControls({
     fontFamily: "'DotGothic16', sans-serif",
   };
 
+  // ダッシュモード・方向転換モードは DungeonControls 内部で完結管理
   const [turnMode, setTurnMode] = useState(false);
-  const turnModeRef = useRef(false);
-  const isDashModeRef = useRef(isDashMode);
-  turnModeRef.current = turnMode;
-  isDashModeRef.current = isDashMode;
+  const [dashMode, setDashMode] = useState(false);
 
   // onPointerDown のみで操作（onClick は二重発火するため使わない）
-  // useRef 経由でモード状態を参照し、クロージャの古い値を回避
   const handleDpadPointerDown = (dx: number, dy: number) => (e: React.PointerEvent) => {
     e.preventDefault();
     if (dx === 0 && dy === 0) {
-      // 中央ボタン: 方向転換モードのトグル（ダッシュモードはキャンセル）
-      if (isDashModeRef.current) { isDashModeRef.current = false; onToggleDashMode(); return; }
-      setTurnMode((v) => { turnModeRef.current = !v; return !v; });
+      // 中央ボタン: ダッシュモードならキャンセル、それ以外は方向転換トグル
+      if (dashMode) { setDashMode(false); return; }
+      setTurnMode((v) => !v);
       return;
     }
-    if (isDashModeRef.current) {
-      isDashModeRef.current = false; // ref を即座にリセット（次のタップで通常移動に戻る）
+    if (dashMode) {
+      setDashMode(false);
       onDash(dx, dy);
       return;
     }
-    if (turnModeRef.current) {
-      onChangeFacing(dx, dy);
+    if (turnMode) {
       setTurnMode(false);
-      turnModeRef.current = false;
+      onChangeFacing(dx, dy);
       return;
     }
     onDpad(dx, dy);
@@ -999,9 +993,9 @@ function DungeonControls({
 
   const dashBtnStyle: React.CSSProperties = {
     ...sideBtnStyle,
-    background: isDashMode ? "#7c4b00" : "#1c1c2e",
-    border: `2px solid ${isDashMode ? "#f59e0b" : "#333355"}`,
-    color: isDashMode ? "#fcd34d" : "#aaa",
+    background: dashMode ? "#7c4b00" : "#1c1c2e",
+    border: `2px solid ${dashMode ? "#f59e0b" : "#333355"}`,
+    color: dashMode ? "#fcd34d" : "#aaa",
   };
 
   return (
@@ -1026,9 +1020,8 @@ function DungeonControls({
           </div>
           <div style={dashBtnStyle} onPointerDown={(e) => {
             e.preventDefault();
-            const next = !isDashModeRef.current;
-            isDashModeRef.current = next; // ref を即座に同期
-            onToggleDashMode();
+            setDashMode((v) => !v);
+            setTurnMode(false);
           }}>
             <span style={{ fontSize: 14 }}>💨</span>ダッシュ<br />乗る
           </div>
@@ -1764,7 +1757,6 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
 
   const [showMap, setShowMap] = useState(false);
   const closeMap = useCallback(() => setShowMap(false), []);
-  const [dashMode, setDashMode] = useState(false);
   const [lookAroundText, setLookAroundText] = useState<string | null>(null);
 
   const [showVolume, setShowVolume] = useState(false);
@@ -2384,17 +2376,10 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onLookAround={() => { stopDash(); setShowMap(true); }}
         onMenu={() => { stopDash(); setShowKeySettings(true); }}
         onShootArrow={() => { stopDash(); shootArrow(); }}
-        onDash={(dx, dy) => { setDashMode(false); startDash(dx, dy); }}
+        onDash={(dx, dy) => { stopDash(); startDash(dx, dy); }}
         onChangeFacing={changeFacing}
         arrowCount={uiState.items.find((i) => i.id === "arrow")?.count ?? 0}
-        isDashMode={dashMode}
         diagMoveEnabled={diagMoveEnabled}
-        onToggleDashMode={() => {
-          if (dashMode) {
-            stopDash();
-          }
-          setDashMode((v) => !v);
-        }}
       />
 
       {/* Notification */}
