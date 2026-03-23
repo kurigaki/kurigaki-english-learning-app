@@ -921,6 +921,10 @@ function DungeonControls({
   arrowCount: number;
   diagMoveEnabled: boolean;
 }) {
+  // ダッシュモード・方向転換モードは DungeonControls 内部で完結管理
+  const [turnMode, setTurnMode] = useState(false);
+  const [dashMode, setDashMode] = useState(false);
+
   // 4方向（カーディナル）ボタン
   const dpStyle: React.CSSProperties = {
     width: 52, height: 52, background: "#1565c0", border: "2px solid #2196f3",
@@ -964,10 +968,6 @@ function DungeonControls({
     boxShadow: "0 2px 4px rgba(0,0,0,0.5)", touchAction: "none", gap: 2,
     fontFamily: "'DotGothic16', sans-serif",
   };
-
-  // ダッシュモード・方向転換モードは DungeonControls 内部で完結管理
-  const [turnMode, setTurnMode] = useState(false);
-  const [dashMode, setDashMode] = useState(false);
 
   // onPointerDown のみで操作（onClick は二重発火するため使わない）
   const handleDpadPointerDown = (dx: number, dy: number) => (e: React.PointerEvent) => {
