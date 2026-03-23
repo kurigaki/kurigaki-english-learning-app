@@ -155,7 +155,7 @@ export default function WordDetailPage() {
                     key={cat}
                     className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-full"
                   >
-                    {categoryLabels[cat]}
+                    {(categoryLabels as Record<string, string>)[cat] ?? cat}
                   </span>
                 ))}
                 <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
