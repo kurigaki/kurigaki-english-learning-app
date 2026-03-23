@@ -1930,7 +1930,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       redraw();
       startBGM();
     }, 50);
-  }, [redraw, updateUI]);
+  }, [diagMove, redraw, updateUI]);
 
   const startGame = useCallback(() => {
     initDungeonAudio(); // MP3ファイルをプリロード（初回のみ）
@@ -2030,10 +2030,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     }
     setUiState((prev) => ({ ...prev, footAction: null }));
     throwItem(itemId);
-  }, [throwItem, saveGame]);
+  }, [throwItem]);
 
   // 床アイテムをその場で使う（拾わずに使用 → 使用後は床から消える）
-  const useFloorItem = useCallback((itemId: string) => {
+  const applyFloorItem = useCallback((itemId: string) => {
     const g = gameRef.current;
     if (!g) return;
     const tileIdx = g.itemTiles.findIndex((i) => i.x === g.px && i.y === g.py && i.id === itemId);
@@ -2121,7 +2121,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     changeFacing,
     pickUpFloorItem,
     throwFloorItem,
-    useFloorItem,
+    applyFloorItem,
     closeFootAction,
     startDash,
     stopDash,
