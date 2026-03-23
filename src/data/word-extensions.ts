@@ -10,8 +10,9 @@ import type { WordExtension } from "@/types";
 import type { Word as BaseWord } from "./words/types";
 import { allWords } from "./words";
 import { exampleJaOverrides } from "./example-ja-overrides";
+import { motitownExtensions } from "./word-extensions-motitown";
 
-export const wordExtensions: Map<number, WordExtension> = new Map([
+const _handwrittenExtensions: [number, WordExtension][] = [
   // ── TOEIC 500 ──────────────────────────────────────────────────────────────
 
   // appointment (30001)
@@ -7559,7 +7560,12 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
   [10529, { coreImage: "注意・注目を向ける心の焦点がコアイメージ。", usage: "「pay attention to ...」が定型。", synonymDifference: "attention vs interest: attention は集中、interest は関心。", englishDefinition: "Notice or concentration on something.", etymology: "認知語彙の基礎語。" }],
   // audience (10530)
   [10530, { coreImage: "話や演技を聞く・見る観客集団がコアイメージ。", usage: "単数形で集合を表すことが多い。", synonymDifference: "audience vs crowd: audience は鑑賞目的の集団、crowd は群衆一般。", englishDefinition: "The people watching or listening to a performance.", etymology: "集合語彙の基礎語。" }],
+];
 
+// 手書き + モチタン取り込みを統合
+export const wordExtensions: Map<number, WordExtension> = new Map([
+  ..._handwrittenExtensions,
+  ...motitownExtensions,
 ]);
 
 type ExtensionSourceWord = Pick<
@@ -7678,6 +7684,7 @@ function buildGeneratedExtension(word: ExtensionSourceWord): WordExtension {
 
 function buildGeneratedExamples(word: ExtensionSourceWord): NonNullable<WordExtension["examples"]> {
   const examples: NonNullable<WordExtension["examples"]> = [];
+
   const seen = new Set<string>();
   const push = (en: string | undefined, ja: string | undefined, context: string) => {
     if (!en) return;
@@ -7874,7 +7881,8 @@ export function getWordExtension(word: ExtensionSourceWord): WordExtension {
         partOfSpeech: matched ? PART_OF_SPEECH_LABEL[matched.partOfSpeech] : "他",
         meaning: matched ? pickPrimaryMeaning(matched.meaning) : "関連語",
       };
-    }) ?? []);
+    }) ?? [
+]);
 
   const mergedRelatedEntries =
     manualRelatedEntries.length > 0 ? manualRelatedEntries : generatedRelatedEntries;

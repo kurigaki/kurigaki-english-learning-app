@@ -65,8 +65,9 @@
 4. 外部語彙取り込み（補完）
 - NGSL/NAWL の語彙を優先して取り込み、不足分は信頼可能な公開語彙リストで補完する
 - 本リポジトリでは、運用上の補完ソースとしてシステム辞書（`/usr/share/dict/words`）を利用可能とする
+- モチタン英語辞典（`https://motitown.com/vocabulary/`）: スクレイピングツール `scripts/motitown/` で取得。発音・コアイメージ・使い方・例文を含む
 
-4. 補助的な公開記事（一次情報を補完する用途）
+5. 補助的な公開記事（一次情報を補完する用途）
 - `https://english-club.jp/blog/juniorhigh-english-word/`
 - `https://allabout.co.jp/gm/gc/487726/`
 - `https://ei-raku.com/2017/11/exam-eiken-comparison/`
@@ -83,18 +84,20 @@
 
 ## Word Extension Data Policy
 
-### 手書きコンテンツの対象範囲（2026-03-01 現在）
+### 手書きコンテンツの対象範囲（2026-03-23 現在）
 - **TOEIC 500**（IDs: 30001–30180）: 全180語に手書きの詳細解説（コアイメージ・使い方・類義語との違い・英英定義・語源）
 - **TOEIC 600**（IDs: 30181–30450）: 全語に手書きの詳細解説
 - **Junior Stage 1**（IDs: 10001–10530）: 全語に手書きのコンパクト解説
+- **モチタン取り込み**（全コース約6,500語）: 発音・コアイメージ・使い方・反意語・例文1つをモチタン英語辞典から取り込み。`src/data/word-extensions-motitown.ts` に分離管理
 - それ以外のコース・ステージ: 自動生成（`buildGeneratedExtension()`）でフォールバック提供
 
 ### 拡張データの管理ルール
-- 手書きコンテンツは `src/data/word-extensions.ts` の `wordExtensions` Map に登録する
+- 手書きコンテンツは `src/data/word-extensions.ts` の `_handwrittenExtensions` 配列に登録する
+- モチタン取り込みデータは `src/data/word-extensions-motitown.ts` の `motitownExtensions` 配列に登録する
+- 両者は `word-extensions.ts` 内で統合され、`wordExtensions` Map としてエクスポートされる
 - `wordExtensions` に登録したIDは必ず対応する単語データファイル（`words/*.ts`）に存在すること
 - テンプレート生成コンテンツを `wordExtensions` に登録しない（フォールバックは `buildGeneratedExtension()` が自動提供）
-- `src/data/word-extensions/` ディレクトリは将来のコース別ファイル分割用に予約されている（現在は未使用）
-- 単語データから語を削除する場合は、`wordExtensions` の対応エントリも同時に削除する
+- 単語データから語を削除する場合は、`wordExtensions`（手書き）または `motitownExtensions`（取り込み）の対応エントリも同時に削除する
 
 ### フォールバック方針
 - 手書きエントリがない単語は、単語詳細画面で `getWordExtension()` が `buildGeneratedExtension()` を自動適用する
