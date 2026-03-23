@@ -957,8 +957,6 @@ function DungeonControls({
     fontFamily: "'DotGothic16', sans-serif",
   };
 
-  const [turnMode, setTurnMode] = useState(false);
-  const turnModeRef = useRef(false);
   const dpCenterStyle: React.CSSProperties = {
     width: 52, height: 52,
     background: turnMode ? "#1a3a1a" : "#0a0f1a",
@@ -971,9 +969,6 @@ function DungeonControls({
     WebkitUserSelect: "none", WebkitTouchCallout: "none",
     boxShadow: "0 2px 4px rgba(0,0,0,0.3)", touchAction: "none",
   };
-  const isDashModeRef = useRef(isDashMode);
-  turnModeRef.current = turnMode;
-  isDashModeRef.current = isDashMode;
 
   // onPointerDown のみで操作（onClick は二重発火するため使わない）
   const handleDpadPointerDown = (dx: number, dy: number) => (e: React.PointerEvent) => {
@@ -2294,7 +2289,13 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
             }}>
               <div style={{ color: DC.text, fontSize: 12 }}>ナナメ移動</div>
               <button
-                onClick={() => { const next = !diagMoveEnabled; setDiagMoveEnabled(next); saveDiagMove(next); }}
+                onClick={() => {
+                  const next = !diagMoveEnabled;
+                  setDiagMoveEnabled(next);
+                  saveDiagMove(next);
+                  // ゲームエンジン内のフラグも即座に更新（敵AIにも反映）
+                  if (gameStateRef.current) gameStateRef.current.diagMove = next;
+                }}
                 style={{
                   background: diagMoveEnabled ? DC.accent : DC.bg4,
                   color: diagMoveEnabled ? "#fff" : DC.text3,
