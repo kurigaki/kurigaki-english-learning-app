@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { categoryLabels, difficultyLabels } from "@/data/words/compat";
+import { categoryLabels, difficultyLabels } from "@/data/words";
 import { Card, Button } from "@/components/ui";
 import {
   WordHeader,
@@ -95,7 +95,6 @@ export default function WordDetailPage() {
 
   // 例文データを変換（例文がある場合）
   const examples =
-    word.examples ??
     wordExt?.examples ??
     (word.example
       ? [{
@@ -193,7 +192,7 @@ export default function WordDetailPage() {
             <WordHeader
               word={word.word}
               meaning={word.meaning}
-              pronunciation={word.pronunciation ?? wordExt?.pronunciation}
+              pronunciation={wordExt?.pronunciation}
               partOfSpeech={word.partOfSpeech}
             />
 
@@ -232,14 +231,14 @@ export default function WordDetailPage() {
             <WordPlaceholderSection
               title="コアイメージ"
               emoji="💡"
-              content={word.coreImage ?? wordExt?.coreImage}
+              content={wordExt?.coreImage}
               placeholder="この単語のコアイメージは今後追加予定です"
               currentWord={word.word}
             />
 
             {/* 関連語 */}
             <WordRelations
-              relatedWordEntries={word.relatedWordEntries ?? wordExt?.relatedWordEntries}
+              relatedWordEntries={wordExt?.relatedWordEntries}
               currentWord={word.word}
             />
 
@@ -247,23 +246,23 @@ export default function WordDetailPage() {
             <WordPlaceholderSection
               title="使い方"
               emoji="📝"
-              content={word.usage ?? wordExt?.usage}
+              content={wordExt?.usage}
               placeholder="この単語の使い方解説は今後追加予定です"
               currentWord={word.word}
             />
 
             {/* 類義語との違い（構造化データがあればリスト表示、なければプレーンテキスト） */}
-            {((word.synonymDifferenceEntries ?? wordExt?.synonymDifferenceEntries) &&
-              (word.synonymDifferenceEntries ?? wordExt?.synonymDifferenceEntries)!.length > 0) ? (
+            {(wordExt?.synonymDifferenceEntries &&
+              wordExt.synonymDifferenceEntries.length > 0) ? (
               <WordSynonymDiff
-                entries={(word.synonymDifferenceEntries ?? wordExt?.synonymDifferenceEntries)!}
+                entries={wordExt.synonymDifferenceEntries}
                 currentWord={word.word}
               />
             ) : (
               <WordPlaceholderSection
                 title="類義語との違い"
                 emoji="🔍"
-                content={word.synonymDifference ?? wordExt?.synonymDifference}
+                content={wordExt?.synonymDifference}
                 placeholder="類義語との使い分けは今後追加予定です"
                 currentWord={word.word}
               />
@@ -273,7 +272,7 @@ export default function WordDetailPage() {
             <WordPlaceholderSection
               title="英英定義"
               emoji="🇬🇧"
-              content={word.englishDefinition ?? wordExt?.englishDefinition}
+              content={wordExt?.englishDefinition}
               placeholder="英語による定義は今後追加予定です"
               currentWord={word.word}
             />
@@ -282,13 +281,13 @@ export default function WordDetailPage() {
             <WordPlaceholderSection
               title="語源"
               emoji="📜"
-              content={word.etymology ?? wordExt?.etymology}
+              content={wordExt?.etymology}
               placeholder="語源解説は今後追加予定です"
               currentWord={word.word}
             />
 
             {/* コラム */}
-            <WordColumn column={word.column ?? wordExt?.column} currentWord={word.word} />
+            <WordColumn column={wordExt?.column} currentWord={word.word} />
 
             {/* アクションボタン */}
             <div className="pt-6 space-y-3">

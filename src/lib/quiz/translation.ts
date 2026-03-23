@@ -1,4 +1,4 @@
-import { words } from "@/data/words/compat";
+import { words } from "@/data/words";
 
 // 例文の日本語訳と単語の意味を取得
 export type TranslationInfo = {
@@ -210,20 +210,11 @@ export function getTranslationInfo(wordId: number, exampleSentence?: string): Tr
 
   let sentenceJa: string | null = null;
 
-  // 1. examples[]から出題例文に対応する日本語訳を優先（ランダム選択された例文と訳を一致させる）
-  if (fullWordData.examples && fullWordData.examples.length > 0 && exampleSentence) {
-    const matchingExample = fullWordData.examples.find(
-      (ex) => ex.en.toLowerCase() === exampleSentence.toLowerCase()
-    );
-    if (matchingExample) {
-      sentenceJa = matchingExample.ja;
-    }
-  }
-  // 2. examples[]にマッチなし → exampleJa（word.example の訳）にフォールバック
+  // 1. exampleJa（word.example の訳）を優先
   if (!sentenceJa && fullWordData.exampleJa) {
     sentenceJa = fullWordData.exampleJa;
   }
-  // 3. それもなければ日本語のみの簡易ヒントを生成
+  // 2. それもなければ日本語のみの簡易ヒントを生成
   if (!sentenceJa && exampleSentence) {
     sentenceJa = toJapaneseHint(
       exampleSentence,

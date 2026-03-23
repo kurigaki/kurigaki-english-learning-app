@@ -7,7 +7,7 @@
  */
 
 import { shuffleArray, pickRandom } from "@/lib/shuffle";
-import type { Word } from "@/data/words/compat";
+import type { Word } from "@/data/words";
 
 /**
  * en-to-ja 問題の選択肢を生成する。

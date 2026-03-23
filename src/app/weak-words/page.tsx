@@ -10,7 +10,7 @@ import { unifiedStorage } from "@/lib/unified-storage";
 import { saveWeakWordSort, getAndClearWeakWordSort } from "@/lib/navigation-state";
 import { saveWordNavState } from "@/lib/word-nav-state";
 import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
-import { words, Word } from "@/data/words/compat";
+import { words, Word } from "@/data/words";
 import { isWeakWord } from "@/types";
 import { getDisplayedManualMastery, MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import { getAccuracyBadgeClass } from "@/lib/accuracy-style";

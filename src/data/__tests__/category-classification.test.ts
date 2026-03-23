@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { words, categoryLabels } from "@/data/words/compat";
+import { words, categoryLabels } from "@/data/words";
 
 const getCategories = (w: (typeof words)[number]) =>
   w.categories && w.categories.length > 0 ? w.categories : [w.category];
