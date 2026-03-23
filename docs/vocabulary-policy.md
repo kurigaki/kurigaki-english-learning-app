@@ -8,10 +8,10 @@
 - TOEIC学習者は `toeic` コースの目標スコア帯ステージを学習して必要語彙を段階的にカバーできる
 
 ## Primary Source
-- **モチタン英語辞典**（`https://motitown.com/vocabulary/`）が単語データの正（primary source）
-- モチタンのコース構成・ステージ分け・単語配置を基準とする
-- モチタンに含まれるフレーズ（句動詞・熟語・複合語）も、全コースで採用する
-- スクレイピングツール: `scripts/motitown/` で取得
+- 単語データはオリジナルで構築する（著作権リスクのある外部サービスからのスクレイピングは禁止）
+- 推奨ソース: WordNet（プリンストン大学, CC BY-SA）、NGSL、EVP（ケンブリッジ大学）等の商用利用可能な公開データ
+- コース構成・ステージ分け・単語配置は独自基準で設計する
+- フレーズ（句動詞・熟語・複合語）も独自に選定する
 
 ## Course Priority
 - コース間で語数を同数に揃えることは目標にしない
@@ -27,7 +27,7 @@
 - `junior` には中学課程で扱わない語彙（過度に専門的・稀少な語）を入れない
 
 ## Word Format Rules
-- フレーズ（句動詞・熟語・複合語）はモチタンに含まれていれば全コースで許可
+- フレーズ（句動詞・熟語・複合語）は学習上有用であれば全コースで許可
   - 例: "want to", "credit card", "hear from" 等
 - 禁止語（公序良俗・学習用途不適切語）は全コースで不採用にする
 
@@ -55,20 +55,16 @@
 ## Recommended Sources
 優先度の高い順に採用する。
 
-1. **モチタン英語辞典**（primary source）
-- `https://motitown.com/vocabulary/`
-- スクレイピングツール: `scripts/motitown/scrape.mjs` + `scripts/motitown/import.mjs`
-
-2. 公式・準公式
+1. 公式・準公式
 - 英検公式（級の目安・出題レベル）
 - `https://www.eiken.or.jp/eiken/exam/about/`
 - 学習指導要領準拠資料（中学・高校）
 
-3. 頻度ベース語彙
+2. 頻度ベース語彙
 - NGSL (New General Service List)
 - NAWL (New Academic Word List)
 
-4. 既存アプリ資産
+3. 既存アプリ資産
 - 既存 `src/data/words/*.js` の語彙を重複除去・ステージ再配分して拡張
 
 ## Operational Notes
@@ -86,20 +82,17 @@ src/data/
 │   ├── index.ts       ← 公開API（Map統合 + getWordExtension）
 │   ├── manual.ts      ← 手書き拡張（TOEIC 500/600, Junior Stage 1）
 │   └── generated.ts   ← 自動補完エンジン
-└── word-extensions-motitown.ts  ← モチタン取り込み拡張（~6,200語）
 ```
 
 ### 手書きコンテンツの対象範囲
 - **TOEIC 500**（IDs: 30001–30180）: 全180語に手書きの詳細解説
 - **TOEIC 600**（IDs: 30181–30450）: 全語に手書きの詳細解説
 - **Junior Stage 1**（IDs: 10001–10530）: 全語に手書きのコンパクト解説
-- **モチタン取り込み**（全コース約6,200語）: 発音・コアイメージ・使い方・反意語・例文
 - それ以外: 自動生成（`buildGeneratedExtension()`）でフォールバック提供
 
 ### 拡張データの管理ルール
 - 手書きコンテンツは `src/data/word-extensions/manual.ts` の `handwrittenExtensions` 配列に登録
-- モチタン取り込みは `src/data/word-extensions-motitown.ts` の `motitownExtensions` 配列に登録
-- 両者は `word-extensions/index.ts` で統合され `wordExtensions` Map としてエクスポート
+- `word-extensions/index.ts` で `wordExtensions` Map としてエクスポート
 - `wordExtensions` に登録したIDは必ず対応する単語データファイル（`words/*.js`）に存在すること
 - 単語データから語を削除する場合は、対応する拡張エントリも同時に削除する
 

@@ -154,7 +154,7 @@ GitHub操作は以下のツールを使用してください。
 - コンポーネントは `components/ui`（汎用）と `components/features`（機能別）に分離
 - 状態は最小限に保つ（必要以上にuseStateを増やさない）
 - 型定義は `src/types/index.ts` に集約
-- 単語データは `src/data/words/` にコース別で静的定義（モチタンが正）
+- 単語データは `src/data/words/` にコース別で静的定義
 
 ### 日付文字列のタイムゾーン
 
@@ -375,7 +375,6 @@ src/
 │   │   ├── index.ts              # Map統合 + getWordExtension()
 │   │   ├── manual.ts             # 手書き拡張（TOEIC/Junior等）
 │   │   └── generated.ts          # 自動補完エンジン
-│   ├── word-extensions-motitown.ts # モチタン取り込み拡張
 │   ├── achievements.ts           # 実績定義
 │   └── recommended-books.ts      # おすすめ単語帳定義
 └── types/

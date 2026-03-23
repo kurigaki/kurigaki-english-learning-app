@@ -1,12 +1,11 @@
 /**
  * 単語拡張データ — 統合エントリポイント
  *
- * 手書きデータ(manual.ts) + モチタン取り込み(word-extensions-motitown.ts) を
- * Map に統合し、自動補完エンジン(generated.ts) でフォールバックを提供する。
+ * 手書きデータ(manual.ts) を Map に統合し、
+ * 自動補完エンジン(generated.ts) でフォールバックを提供する。
  */
 import type { WordExtension } from "@/types";
 import { handwrittenExtensions } from "./manual";
-import { motitownExtensions } from "../word-extensions-motitown";
 import {
   buildGeneratedExtension,
   buildGeneratedExamples,
@@ -19,10 +18,8 @@ import {
   type ExtensionSourceWord,
 } from "./generated";
 
-// 手書き + モチタン取り込みを統合
 export const wordExtensions: Map<number, WordExtension> = new Map([
   ...handwrittenExtensions,
-  ...motitownExtensions,
 ]);
 
 /**
