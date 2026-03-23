@@ -968,23 +968,29 @@ function DungeonControls({
   };
 
   const [turnMode, setTurnMode] = useState(false);
+  const turnModeRef = useRef(false);
+  const isDashModeRef = useRef(isDashMode);
+  turnModeRef.current = turnMode;
+  isDashModeRef.current = isDashMode;
 
   // onPointerDown のみで操作（onClick は二重発火するため使わない）
+  // useRef 経由でモード状態を参照し、クロージャの古い値を回避
   const handleDpadPointerDown = (dx: number, dy: number) => (e: React.PointerEvent) => {
     e.preventDefault();
     if (dx === 0 && dy === 0) {
       // 中央ボタン: 方向転換モードのトグル（ダッシュモードはキャンセル）
-      if (isDashMode) { onToggleDashMode(); return; }
-      setTurnMode((v) => !v);
+      if (isDashModeRef.current) { onToggleDashMode(); return; }
+      setTurnMode((v) => { turnModeRef.current = !v; return !v; });
       return;
     }
-    if (isDashMode) {
+    if (isDashModeRef.current) {
       onDash(dx, dy);
       return;
     }
-    if (turnMode) {
+    if (turnModeRef.current) {
       onChangeFacing(dx, dy);
       setTurnMode(false);
+      turnModeRef.current = false;
       return;
     }
     onDpad(dx, dy);
@@ -2372,7 +2378,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onLookAround={() => { stopDash(); setShowMap(true); }}
         onMenu={() => { stopDash(); setShowKeySettings(true); }}
         onShootArrow={() => { stopDash(); shootArrow(); }}
-        onDash={(dx, dy) => { startDash(dx, dy); setDashMode(false); }}
+        onDash={(dx, dy) => { setDashMode(false); startDash(dx, dy); }}
         onChangeFacing={changeFacing}
         arrowCount={uiState.items.find((i) => i.id === "arrow")?.count ?? 0}
         isDashMode={dashMode}
