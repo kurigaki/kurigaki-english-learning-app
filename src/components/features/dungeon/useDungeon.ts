@@ -386,6 +386,17 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
 
       stopBGM();
 
+      // スコア計算 & 番付登録
+      const score = g.floor * 1000 + g.kills * 100 + g.correct * 50
+        + Math.max(0, 500 - g.turn) + (isCleared ? 5000 : 0);
+      const cause = isCleared ? "クリア" : "倒された";
+      const rank = storage.addDungeonRanking({
+        score, floor: g.floor, lv: g.p.lv, kills: g.kills,
+        correct: g.correct, wrong: g.wrong, turns: g.turn,
+        cleared: isCleared, cause, date: new Date().toISOString(),
+        mode: g.dungeonMode,
+      });
+
       setUiState((prev) => ({
         ...prev,
         quiz: null,
@@ -402,6 +413,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           isCleared,
           newRecords,
           answeredQuestions: g.answeredQuestions,
+          score,
+          rank,
         },
       }));
     },

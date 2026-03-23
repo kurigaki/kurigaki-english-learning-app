@@ -733,6 +733,36 @@ function DungeonItemOverlay({
   );
 }
 
+function DungeonRankingList({ currentScore }: { currentScore?: number }) {
+  const rankings = useMemo(() => storage.getDungeonRankings(), []);
+  if (rankings.length === 0) return <div style={{ color: DC.text3, textAlign: "center", padding: 10 }}>まだ記録がありません</div>;
+  return (
+    <div style={{ maxHeight: 300, overflowY: "auto", width: "100%", maxWidth: 340 }}>
+      {rankings.slice(0, 20).map((r, i) => {
+        const isCurrent = currentScore !== undefined && r.score === currentScore && i === rankings.findIndex((x) => x.score === currentScore);
+        return (
+          <div key={i} style={{
+            display: "flex", gap: 6, alignItems: "center", padding: "4px 8px",
+            fontSize: 11, borderBottom: `1px solid ${DC.border}`,
+            background: isCurrent ? "#f5c84215" : "transparent",
+            color: isCurrent ? DC.gold : DC.text2,
+          }}>
+            <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, minWidth: 24, color: i < 3 ? DC.gold : DC.text3 }}>
+              {i + 1}.
+            </span>
+            <span style={{ flex: 1, fontFamily: "'DotGothic16', sans-serif" }}>
+              {r.score.toLocaleString()}pt B{r.floor}F Lv{r.lv} {r.cleared ? "🏆" : "💀"}
+            </span>
+            <span style={{ fontSize: 9, color: DC.text3 }}>
+              {r.mode === "hard" ? "⚔️" : "🌱"} {r.date.slice(5, 10)}
+            </span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function DungeonDeathScreen({
   death, onRetry, onBackToTitle,
 }: {
@@ -741,6 +771,7 @@ function DungeonDeathScreen({
   onBackToTitle: () => void;
 }) {
   const isCleared = death.isCleared;
+  const [showRanking, setShowRanking] = useState(false);
   // 過去ログ（最新1件=今回の結果を除いた直近4件）
   const pastLogs = useMemo<DungeonRunLog[]>(() => storage.getDungeonRunLog().slice(1, 5), []);
 
@@ -766,6 +797,19 @@ function DungeonDeathScreen({
       <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2, flexShrink: 0 }}>
         {isCleared ? "全フロアを踏破した！" : "全ての持ち物を失い、Lv1に戻った"}
       </div>
+      {/* スコア & 番付 */}
+      {death.score !== undefined && (
+        <div style={{ textAlign: "center", flexShrink: 0 }}>
+          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: "clamp(14px,4vw,20px)", color: DC.gold }}>
+            {death.score.toLocaleString()} pts
+          </div>
+          {death.rank !== undefined && death.rank <= 50 && (
+            <div style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 14, color: death.rank <= 3 ? DC.gold : DC.accent, marginTop: 2 }}>
+              番付 第{death.rank}位{death.rank <= 3 ? " 🏅" : ""}
+            </div>
+          )}
+        </div>
+      )}
       {death.newRecords.length > 0 && (
         <div style={{
           background: "#f5c84220", border: `1px solid ${DC.gold}`,
@@ -899,7 +943,22 @@ function DungeonDeathScreen({
         >
           ↺ 再挑戦
         </button>
+        <button
+          onClick={() => setShowRanking((v) => !v)}
+          style={{
+            fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.accent,
+            background: DC.bg3, border: `1px solid ${DC.accent}`, padding: "12px 16px", cursor: "pointer",
+            clipPath: "polygon(4px 0%,calc(100% - 4px) 0%,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0% calc(100% - 4px),0% 4px)",
+          }}
+        >
+          📊 番付
+        </button>
       </div>
+      {showRanking && (
+        <div style={{ width: "100%", maxWidth: 340, flexShrink: 0, marginTop: 4 }}>
+          <DungeonRankingList currentScore={death.score} />
+        </div>
+      )}
     </div>
   );
 }
@@ -1427,6 +1486,7 @@ function TitleScreen({
   const [diagMove, setDiagMove] = useState<boolean>(() => diagDefault(loadDungeonMode()));
   const [loading, setLoading] = useState(false);
   const [showVolume, setShowVolume] = useState(false);
+  const [showRanking, setShowRanking] = useState(false);
   const weakWordCount = storage.getWeakWords().length;
 
   const courseStages = selectedCourse && selectedCourse in COURSE_DEFINITIONS
@@ -1703,7 +1763,26 @@ function TitleScreen({
       >
         🔊 音量設定
       </button>
+      <button
+        onClick={() => setShowRanking((v) => !v)}
+        style={{
+          fontFamily: "'DotGothic16', sans-serif", fontSize: 13,
+          color: DC.accent, background: DC.bg3, border: `1px solid ${DC.accent}`,
+          borderRadius: 4, padding: "7px 14px", cursor: "pointer",
+        }}
+      >
+        📊 番付を見る
+      </button>
       {showVolume && <DungeonVolumePanel onClose={() => setShowVolume(false)} />}
+      {showRanking && (
+        <div style={{ width: "100%", maxWidth: 360, background: DC.bg2, border: `1px solid ${DC.border2}`, borderRadius: 6, padding: 12 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+            <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.gold }}>📊 番付</div>
+            <button onClick={() => setShowRanking(false)} style={{ background: "none", border: "none", color: DC.text3, cursor: "pointer", fontSize: 14 }}>✕</button>
+          </div>
+          <DungeonRankingList />
+        </div>
+      )}
 
       {/* 操作説明（タイトル画面のみ） */}
       <div style={{
