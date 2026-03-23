@@ -8,7 +8,7 @@ export const ITEMS_DEF: ItemDef[] = [
   // ── 草（即時） ──
   {
     id: "heal_grass",
-    name: "薬草",
+    name: "ヒールハーブ",
     icon: "🌿",
     cat: "grass",
     desc: "HPを15回復する（満腹度+5）",
@@ -16,7 +16,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "big_heal",
-    name: "特薬草",
+    name: "メガハーブ",
     icon: "🌱",
     cat: "grass",
     desc: "HPを最大まで全回復（満腹度+5）",
@@ -24,7 +24,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "poison_grass",
-    name: "毒消し草",
+    name: "クリアハーブ",
     icon: "🍃",
     cat: "grass",
     desc: "HPを5回復する（満腹度+5）",
@@ -32,7 +32,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "power_grass",
-    name: "力の草",
+    name: "パワーハーブ",
     icon: "🌾",
     cat: "grass",
     desc: "攻撃力を永続+1（満腹度+5）",
@@ -40,7 +40,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "hp_grass",
-    name: "命の草",
+    name: "ライフハーブ",
     icon: "🌺",
     cat: "grass",
     desc: "最大HPを永続+3（満腹度+5）",
@@ -48,7 +48,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "swift_grass",
-    name: "倍速の草",
+    name: "ヘイストハーブ",
     icon: "🍀",
     cat: "grass",
     desc: "5ターン倍速になる（満腹度+5）",
@@ -56,7 +56,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "sleep_grass",
-    name: "眠り草",
+    name: "スリープハーブ",
     icon: "🌙",
     cat: "grass",
     desc: "飲むと3ターン眠ってしまう（満腹度+5）",
@@ -64,7 +64,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "confuse_grass",
-    name: "混乱草",
+    name: "コンフューズハーブ",
     icon: "🌀",
     cat: "grass",
     desc: "飲むと4ターン混乱してしまう（満腹度+5）",
@@ -72,7 +72,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "warp_grass",
-    name: "ワープ草",
+    name: "テレポハーブ",
     icon: "🌸",
     cat: "grass",
     desc: "フロア内のランダムな場所へ瞬間移動（満腹度+5）",
@@ -80,7 +80,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "fire_grass",
-    name: "火炎草",
+    name: "ファイアハーブ",
     icon: "🔥",
     cat: "grass",
     desc: "飲むと正面に15ダメージ（満腹度+5）",
@@ -90,7 +90,7 @@ export const ITEMS_DEF: ItemDef[] = [
   // ── 巻物 ──
   {
     id: "scroll_hp",
-    name: "回復の巻物",
+    name: "ヒールスクロール",
     icon: "📜",
     cat: "scroll",
     desc: "HPを20回復する",
@@ -98,7 +98,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "scroll_power",
-    name: "命中の巻物",
+    name: "ヒットスクロール",
     icon: "📜",
     cat: "scroll",
     desc: "次の攻撃を必中にする",
@@ -106,7 +106,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "scroll_attack",
-    name: "強化の巻物",
+    name: "パワースクロール",
     icon: "📜",
     cat: "scroll",
     desc: "次の攻撃ダメージ×2（会心効果）",
@@ -114,7 +114,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "scroll_sleep",
-    name: "睡眠の巻物",
+    name: "スリープスクロール",
     icon: "📜",
     cat: "scroll",
     desc: "同室の敵を眠らせる（廊下では隣接のみ）",
@@ -122,7 +122,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "scroll_escape",
-    name: "脱出の巻物",
+    name: "エスケープスクロール",
     icon: "📜",
     cat: "scroll",
     desc: "ダンジョンから脱出する",
@@ -130,7 +130,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "scroll_monster",
-    name: "魔物部屋の巻物",
+    name: "モンスタースクロール",
     icon: "📜",
     cat: "scroll",
     desc: "周囲に敵が3体現れる",
@@ -138,7 +138,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "scroll_map",
-    name: "地図の巻物",
+    name: "マップスクロール",
     icon: "📜",
     cat: "scroll",
     desc: "フロア内の全アイテム・階段の位置が分かる",
@@ -146,7 +146,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "scroll_confuse",
-    name: "盲目の巻物",
+    name: "コンフューズスクロール",
     icon: "📜",
     cat: "scroll",
     desc: "フロア全敵を数ターン混乱させる",
@@ -156,7 +156,7 @@ export const ITEMS_DEF: ItemDef[] = [
   // ── 杖 ──
   {
     id: "cane_blow",
-    name: "吹き飛ばしの杖",
+    name: "ノックバックロッド",
     icon: "🪄",
     cat: "cane",
     desc: "正面の敵を10マス吹き飛ばす。5ダメージを与える。",
@@ -165,7 +165,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "cane_sleep",
-    name: "睡眠の杖",
+    name: "スリープロッド",
     icon: "🪄",
     cat: "cane",
     desc: "正面の敵を眠らせる",
@@ -174,7 +174,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "cane_seal",
-    name: "封印の杖",
+    name: "シールロッド",
     icon: "🪄",
     cat: "cane",
     desc: "正面の敵を封印し、数ターン動けなくする",
@@ -183,7 +183,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "cane_warp",
-    name: "転びの杖",
+    name: "ワープロッド",
     icon: "🪄",
     cat: "cane",
     desc: "正面の敵を別フロアへワープさせる",
@@ -193,7 +193,7 @@ export const ITEMS_DEF: ItemDef[] = [
 
   {
     id: "slow_grass",
-    name: "鈍足草",
+    name: "スローハーブ",
     icon: "🐢",
     cat: "grass",
     desc: "飲むと5ターン鈍足になる。投げると敵が5ターン鈍足（満腹度+5）",
@@ -203,7 +203,7 @@ export const ITEMS_DEF: ItemDef[] = [
   // ── 食料 ──
   {
     id: "rice",
-    name: "おにぎり",
+    name: "ブレッド",
     icon: "🍙",
     cat: "food",
     desc: "満腹度を50回復",
@@ -211,7 +211,7 @@ export const ITEMS_DEF: ItemDef[] = [
   },
   {
     id: "rice_big",
-    name: "大きいおにぎり",
+    name: "ビッグブレッド",
     icon: "🍱",
     cat: "food",
     desc: "満腹度を100回復",
@@ -221,7 +221,7 @@ export const ITEMS_DEF: ItemDef[] = [
   // ── 壷 ──
   {
     id: "jar_store",
-    name: "保存の壷",
+    name: "ストレージポット",
     icon: "🫙",
     cat: "jar",
     desc: "壺の中にアイテムを保存できる",
@@ -289,6 +289,15 @@ export const TRAP_ICONS: Record<TrapType, string> = {
 export const EASY_TRAP_TYPES: TrapType[] = ["damage", "hunger"];
 // Hard mode trap pool (all types)
 export const HARD_TRAP_TYPES: TrapType[] = ["damage", "sleep", "warp", "hunger"];
+
+// ショップキーパー（超高ステータスで倒すのはほぼ不可能）
+export const SHOPKEEPER_DEF = {
+  name: "ショップキーパー",
+  icon: "🧔",
+  mhp: 200,
+  atk: 50,
+  exp: 0,      // 倒しても経験値なし
+} as const;
 
 export const ENEMIES_DEF: EnemyDef[] = [
   // B1F

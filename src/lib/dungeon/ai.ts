@@ -1,13 +1,13 @@
-import type { GameState, Room, Enemy } from "./types";
+import type { GameState, Room, Enemy, Shopkeeper } from "./types";
 import { W, C, R } from "./types";
-import { MW, MH } from "./constants";
+import { MW, MH, SHOPKEEPER_DEF } from "./constants";
 
 // 8方向隣接判定（ナナメ含む）: Chebyshev距離 = 1
 export function adj(ax: number, ay: number, bx: number, by: number): boolean {
   return Math.max(Math.abs(ax - bx), Math.abs(ay - by)) === 1;
 }
 
-// ナナメ移動のコーナーカット判定: 片方でも壁があれば不可（シレン準拠）
+// ナナメ移動のコーナーカット判定: 片方でも壁があれば不可
 function canMoveDiag(g: GameState, fx: number, fy: number, dx: number, dy: number): boolean {
   const hBlocked = g.map[fy][fx + dx] === W;
   const vBlocked = g.map[fy + dy][fx] === W;
@@ -353,7 +353,7 @@ export function moveEnemies(
       const dx = px - e.x;
       const dy = py - e.y;
       const moves: [number, number][] = [];
-      // ナナメ方向を最優先（シレン準拠、diagMove ON時のみ）
+      // ナナメ方向を最優先（diagMove ON時のみ）
       if (g.diagMove && dx !== 0 && dy !== 0) moves.push([Math.sign(dx), Math.sign(dy)]);
       // 4方向をランダム順で次の候補に
       const cardinals: [number, number][] = [];
@@ -428,4 +428,97 @@ export function adjEnemy(g: GameState): Enemy | undefined {
 export function adjEnemyInDir(g: GameState): Enemy | undefined {
   const { dx, dy } = g.playerDir ?? { dx: 0, dy: 1 };
   return g.enemies.find((e) => e.x === g.px + dx && e.y === g.py + dy && !e.sleeping);
+}
+
+// プレイヤーの向きの先に店主がいるか
+export function adjShopkeeperInDir(g: GameState): Shopkeeper | null {
+  if (!g.shopkeeper) return null;
+  const { dx, dy } = g.playerDir ?? { dx: 0, dy: 1 };
+  if (g.shopkeeper.x === g.px + dx && g.shopkeeper.y === g.py + dy) return g.shopkeeper;
+  return null;
+}
+
+// 店主が隣接しているか
+export function adjShopkeeper(g: GameState): Shopkeeper | null {
+  if (!g.shopkeeper) return null;
+  if (adj(g.shopkeeper.x, g.shopkeeper.y, g.px, g.py)) return g.shopkeeper;
+  return null;
+}
+
+export type ShopkeeperMoveResult = {
+  hit: boolean;
+  damage: number;
+  killedPlayer: boolean;
+};
+
+/**
+ * 店主AI — 毎ターン呼ばれる
+ * - 通常時: 定位置で待機（動かない）
+ * - 敵化時: プレイヤーをBFS追跡、隣接で攻撃（倍速: 1ターンに2回行動）
+ */
+export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
+  const sk = g.shopkeeper;
+  if (!sk || sk.hp <= 0) return [];
+  if (!sk.hostile) return []; // 温厚モード: 何もしない
+
+  const results: ShopkeeperMoveResult[] = [];
+  const px = g.px;
+  const py = g.py;
+
+  // 敵化店主: 倍速（2回行動）
+  for (let action = 0; action < 2; action++) {
+    if (sk.hp <= 0) break;
+
+    // 隣接していれば攻撃
+    if (adj(sk.x, sk.y, px, py)) {
+      const dmg = Math.max(1, sk.atk - 1 + Math.floor(Math.random() * 3));
+      g.p.hp = Math.max(0, g.p.hp - dmg);
+      results.push({ hit: true, damage: dmg, killedPlayer: g.p.hp <= 0 });
+      continue;
+    }
+
+    // BFS追跡（敵リストとの衝突を避ける）
+    const key = (x: number, y: number) => y * MW + x;
+    const visited = new Set<number>([key(sk.x, sk.y)]);
+    const DIRS: [number, number][] = [[0, -1], [0, 1], [-1, 0], [1, 0], [-1, -1], [1, -1], [-1, 1], [1, 1]];
+    const queue: [number, number, number, number][] = [];
+    for (const [dx, dy] of DIRS) {
+      const nx = sk.x + dx;
+      const ny = sk.y + dy;
+      if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
+      if (g.map[ny][nx] === W) continue;
+      if (g.enemies.find((o) => o.x === nx && o.y === ny)) continue;
+      if (nx === px && ny === py) continue; // プレイヤー位置には移動しない（攻撃は隣接判定で）
+      if (!visited.has(key(nx, ny))) {
+        visited.add(key(nx, ny));
+        queue.push([nx, ny, nx, ny]);
+      }
+    }
+    let head = 0;
+    let nextStep: [number, number] | null = null;
+    while (head < queue.length) {
+      const [cx, cy, fx, fy] = queue[head++];
+      if (cx === px && cy === py) { nextStep = [fx, fy]; break; }
+      for (const [dx, dy] of DIRS) {
+        const nx = cx + dx;
+        const ny = cy + dy;
+        if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
+        if (g.map[ny][nx] === W) continue;
+        if (!visited.has(key(nx, ny))) {
+          visited.add(key(nx, ny));
+          queue.push([nx, ny, fx, fy]);
+        }
+      }
+    }
+    if (nextStep) {
+      sk.x = nextStep[0];
+      sk.y = nextStep[1];
+      // 移動先でプレイヤー隣接なら即攻撃（2回目の行動で）
+      if (action === 0 && adj(sk.x, sk.y, px, py)) {
+        // 2回目のループで攻撃する
+      }
+    }
+  }
+
+  return results;
 }

@@ -51,7 +51,7 @@ export type Enemy = {
   slowTurns?: number;   // 鈍足残りターン
   swiftTurns?: number;  // 倍速残りターン
   slowSkip?: boolean;   // 鈍足スキップフラグ
-  slowed?: boolean;    // 永続鈍足（風来のシレン準拠）
+  slowed?: boolean;    // 永続鈍足
   justSlowed?: boolean; // 鈍足付与ターンは行動しない
 };
 
@@ -78,6 +78,17 @@ export type InventoryItem = {
 export type ItemTile = { x: number; y: number; id: string };
 
 export type ShopItem = { x: number; y: number; itemId: string; price: number };
+
+export type Shopkeeper = {
+  x: number;
+  y: number;
+  hp: number;
+  mhp: number;
+  atk: number;
+  hostile: boolean;       // 敵化フラグ（攻撃 or 泥棒で true）
+  homeX: number;          // 初期位置X（通常時の待機場所）
+  homeY: number;          // 初期位置Y
+};
 
 export type PlayerState = {
   hp: number;
@@ -121,6 +132,9 @@ export type GameState = {
   gold: number;
   traps: Trap[];
   shopItems: ShopItem[];
+  shopkeeper: Shopkeeper | null;
+  shopRoomIdx: number | null;
+  stolenItems: string[];    // 未払いで持ち出したアイテムID（泥棒判定用）
   dungeonMode: DungeonMode;
   monsterHouseRoomIdx: number | null;
   playerDir: { dx: number; dy: number }; // 最後の移動方向（投げる用）
@@ -210,7 +224,7 @@ export type ScreenEffect = {
   id: number;
 };
 
-export type EventOverlayKind = "trap" | "monster_house";
+export type EventOverlayKind = "trap" | "monster_house" | "shopkeeper_rage";
 
 export type EventOverlay = {
   kind: EventOverlayKind;

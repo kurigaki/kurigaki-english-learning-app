@@ -428,7 +428,7 @@ function DungeonJarOverlay({
     }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
         <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 11, color: DC.gold }}>
-          🫙 保存の壷 ({contents.length}/3)
+          🫙 ストレージポット ({contents.length}/3)
         </div>
         <button onClick={onClose} style={{
           fontFamily: "'Press Start 2P', monospace", fontSize: 11, color: DC.text2,
@@ -1681,8 +1681,8 @@ function TitleScreen({
           </div>
           <div style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 10, color: DC.text3, textAlign: "center", lineHeight: 1.5 }}>
             {dungeonMode === "easy"
-              ? "空腹度の減りが緩やか・罠が少ない・モンスターハウスなし"
-              : "空腹度の減りが速い・罠が多い・モンスターハウスあり"}
+              ? "空腹度の減りが緩やか・罠が少ない・エネミーラッシュなし"
+              : "空腹度の減りが速い・罠が多い・エネミーラッシュあり"}
           </div>
           {/* ナナメ移動トグル */}
           <label style={{
@@ -1832,7 +1832,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     goNextFloor, useItem, throwItem, openItems, closeItems, filterItems,
     closeJar, putInJar, takeFromJar, openJarId,
     retryGame,
-    loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
+    loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop, payShopkeeper,
     screenEffect, eventOverlay, closeEventOverlay,
     changeFacing,
     pickUpFloorItem, throwFloorItem, applyFloorItem, closeFootAction,

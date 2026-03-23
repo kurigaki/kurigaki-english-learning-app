@@ -32,7 +32,7 @@ export type CaneCharges = {
   cane_warp: number;
 };
 import { generateMap, revealAround } from "@/lib/dungeon/map";
-import { adjEnemy, moveEnemies, adj, sameRoom } from "@/lib/dungeon/ai";
+import { adjEnemy, adjShopkeeperInDir, moveEnemies, moveShopkeeper, adj, sameRoom, getRoom } from "@/lib/dungeon/ai";
 import { drawMap, TILE } from "@/lib/dungeon/renderer";
 import {
   sfxHit,
@@ -51,7 +51,7 @@ import {
   stopBGM,
   initDungeonAudio,
 } from "@/lib/dungeon/audio";
-import { ITEMS_DEF, ENEMIES_DEF, MW, MH } from "@/lib/dungeon/constants";
+import { ITEMS_DEF, ENEMIES_DEF, MW, MH, SHOPKEEPER_DEF, SHOP_PRICES } from "@/lib/dungeon/constants";
 import { speakWord } from "@/lib/audio";
 import { storage } from "@/lib/storage";
 
@@ -160,6 +160,9 @@ export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMo
     gold: 0,
     traps: [],
     shopItems: [],
+    shopkeeper: null,
+    shopRoomIdx: null,
+    stolenItems: [],
     dungeonMode,
     monsterHouseRoomIdx: null,
     playerDir: { dx: 0, dy: 0 },
@@ -181,7 +184,7 @@ const TRAP_OVERLAYS: Record<string, EventOverlay> = {
 
 const MONSTER_HOUSE_OVERLAY: EventOverlay = {
   kind: "monster_house",
-  title: "👹 モンスターハウス！",
+  title: "👹 エネミーラッシュ！",
   body: "大量の敵が眠っている部屋に入った！\n静かに通り抜けるか、アイテムで一掃しよう。",
   color: "#e05252",
   icon: "👹",
@@ -482,6 +485,27 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             storage.clearDungeonGame();
           setTimeout(() => showDeath(g, false), 300);
             return;
+          }
+        }
+      }
+
+      // 店主AIターン（敵化時のみ行動）
+      const skResults = moveShopkeeper(g);
+      if (skResults.length > 0) {
+        redraw();
+        for (const sr of skResults) {
+          if (sr.hit) {
+            sfxRecv();
+            triggerScreenEffect("recv", true);
+            addDmgPop(g.px, g.py, "recv", sr.damage);
+            queueMsg(`💥 ${SHOPKEEPER_DEF.name}から${sr.damage}ダメージを受けた！（残HP:${g.p.hp}）`);
+            if (sr.killedPlayer) {
+              updateUI(g);
+              flushMsg();
+              storage.clearDungeonGame();
+              setTimeout(() => showDeath(g, false), 300);
+              return;
+            }
           }
         }
       }
@@ -901,7 +925,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     // フロア移動後に自動セーブ（次回「続きから」で再開できる）
     setTimeout(() => {
       const save: DungeonSave = {
-        gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
+        gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms], shopkeeper: g.shopkeeper ? { ...g.shopkeeper } : null, stolenItems: [...(g.stolenItems ?? [])] },
         questions,
         savedAt: new Date().toISOString(),
       };
@@ -951,7 +975,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     // プレイヤーが死亡している場合はセーブしない（clearDungeonGame後に上書きされるのを防ぐ）
     if (!g || g.p.hp <= 0) return;
     const save: DungeonSave = {
-      gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
+      gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms], shopkeeper: g.shopkeeper ? { ...g.shopkeeper } : null, stolenItems: [...(g.stolenItems ?? [])] },
       questions,
       savedAt: new Date().toISOString(),
     };
@@ -995,12 +1019,25 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       const nx = g.px + mvDx;
       const ny = g.py + mvDy;
       if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) return;
-      // ナナメ移動のコーナーカット防止（風来のシレン準拠）
+      // ナナメ移動のコーナーカット防止
       // 片方でも壁があればナナメに抜けられない
       if (mvDx !== 0 && mvDy !== 0) {
         const hBlocked = g.map[g.py][g.px + mvDx] === 0;
         const vBlocked = g.map[g.py + mvDy][g.px] === 0;
         if (hBlocked || vBlocked) return;
+      }
+
+      // 店主に体当たり → 話しかける（会計）
+      if (g.shopkeeper && g.shopkeeper.hp > 0 && !g.shopkeeper.hostile &&
+          g.shopkeeper.x === nx && g.shopkeeper.y === ny) {
+        payShopkeeper();
+        return;
+      }
+      // 敵化店主にぶつかる → 攻撃
+      if (g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.hostile &&
+          g.shopkeeper.x === nx && g.shopkeeper.y === ny) {
+        attackShopkeeper(g);
+        return;
       }
 
       const eAt = g.enemies.find((e) => e.x === nx && e.y === ny);
@@ -1015,6 +1052,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         initiateAttack(g, eAt);
         return;
       }
+
+      // 移動前の位置を保存（泥棒判定用）
+      const prevPx = g.px;
+      const prevPy = g.py;
 
       // 移動
       g.px = nx;
@@ -1103,26 +1144,64 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         newFootAction = { kind: "stairs" };
       }
 
-      // ショップタイルチェック
+      // ショップタイルチェック: 踏んだら自動で拾い、未払いリストに追加
       let newShopPrompt: ShopPrompt | null = null;
-      if (g.shopItems) {
-        const shop = g.shopItems.find((s) => s.x === g.px && s.y === g.py);
-        if (shop) {
+      if (g.shopItems && g.shopkeeper && g.shopkeeper.hp > 0 && !g.shopkeeper.hostile) {
+        const shopIdx = g.shopItems.findIndex((s) => s.x === g.px && s.y === g.py);
+        if (shopIdx >= 0) {
+          const shop = g.shopItems[shopIdx];
           const def = ITEMS_DEF.find((d) => d.id === shop.itemId);
-          newShopPrompt = { itemId: shop.itemId, price: shop.price, x: shop.x, y: shop.y };
-          queueMsg(`🏪 ${def?.icon}${def?.name} ${shop.price}G で売っている`);
+          if (def) {
+            // アイテムを拾う
+            g.shopItems.splice(shopIdx, 1);
+            const ex = g.items.find((i) => i.id === shop.itemId);
+            if (ex) ex.count++;
+            else g.items.push({ id: def.id, name: def.name, icon: def.icon, cat: def.cat, desc: def.desc, count: 1 });
+            sfxItemGet();
+            // 未払いリストに追加
+            g.stolenItems.push(shop.itemId);
+            queueMsg(`🏪 ${def.icon}${def.name}を手に取った（${shop.price}G）— ショップキーパーに話して会計しよう`);
+          }
+        }
+      } else if (g.shopItems) {
+        // 店主がいない or 敵化済みの場合は従来通り（買い物プロンプト表示なし、無料で拾える）
+        const shopIdx = g.shopItems.findIndex((s) => s.x === g.px && s.y === g.py);
+        if (shopIdx >= 0) {
+          const shop = g.shopItems[shopIdx];
+          const def = ITEMS_DEF.find((d) => d.id === shop.itemId);
+          if (def) {
+            g.shopItems.splice(shopIdx, 1);
+            const ex = g.items.find((i) => i.id === shop.itemId);
+            if (ex) ex.count++;
+            else g.items.push({ id: def.id, name: def.name, icon: def.icon, cat: def.cat, desc: def.desc, count: 1 });
+            sfxItemGet();
+            queueMsg(`${def.icon}${def.name}を拾った！`);
+          }
         }
       }
 
       // 部屋への侵入で起床
       wakeEnemiesInRoom(g, g.px, g.py);
 
-      // モンスターハウス入室時の初回警告
+      // エネミーラッシュ入室時の初回警告
       if (g.monsterHouseRoomIdx !== null && !seenMonsterHouseRef.current) {
         const mhRoom = g.rooms[g.monsterHouseRoomIdx];
         if (mhRoom && g.px >= mhRoom.x && g.px < mhRoom.x + mhRoom.w && g.py >= mhRoom.y && g.py < mhRoom.y + mhRoom.h) {
           seenMonsterHouseRef.current = true;
           showEventOverlay(MONSTER_HOUSE_OVERLAY);
+        }
+      }
+
+      // 泥棒判定: ショップ部屋から未払いアイテムを持って出たら店主敵化
+      if (g.shopkeeper && !g.shopkeeper.hostile && g.shopkeeper.hp > 0 && g.shopRoomIdx !== null) {
+        const shopRoom = g.rooms[g.shopRoomIdx];
+        if (shopRoom) {
+          const playerInShop = g.px >= shopRoom.x && g.px < shopRoom.x + shopRoom.w &&
+                               g.py >= shopRoom.y && g.py < shopRoom.y + shopRoom.h;
+          // ショップ部屋から出た瞬間 & 未払いアイテムがある
+          if (!playerInShop && g.stolenItems.length > 0) {
+            makeShopkeeperHostile(g, "泥棒め！タダで持ってく気か！");
+          }
         }
       }
 
@@ -1141,8 +1220,48 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // ターン終了後にオートセーブ（辞めた場所から再開できるよう）
       saveGame();
     },
-    [addDmgPop, initiateAttack, queueMsg, redraw, runEnemyTurn, saveGame, showEventOverlay, triggerScreenEffect, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
+    [addDmgPop, attackShopkeeper, initiateAttack, makeShopkeeperHostile, payShopkeeper, queueMsg, redraw, runEnemyTurn, saveGame, showEventOverlay, triggerScreenEffect, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
   );
+
+  // 店主を敵化させる
+  const makeShopkeeperHostile = useCallback((g: GameState, reason: string) => {
+    if (!g.shopkeeper || g.shopkeeper.hostile) return;
+    g.shopkeeper.hostile = true;
+    queueMsg(`🧔💢 ${SHOPKEEPER_DEF.name}「${reason}」`);
+    showEventOverlay({
+      kind: "shopkeeper_rage",
+      title: "🧔💢 ショップキーパーが怒った！",
+      body: reason === "泥棒め！タダで持ってく気か！" ? "未払いの商品を持ってショップを出た！\nショップキーパーが追いかけてくる！" : "ショップキーパーを攻撃してしまった！\nショップキーパーが本気で怒っている！",
+      color: "#cc2222",
+      icon: "💢",
+      autoClose: 2500,
+    });
+    sfxRecv();
+    triggerScreenEffect("recv", true);
+  }, [queueMsg, showEventOverlay, triggerScreenEffect]);
+
+  // 店主に攻撃（クイズなし — 直接ダメージ）
+  const attackShopkeeper = useCallback((g: GameState) => {
+    const sk = g.shopkeeper;
+    if (!sk || sk.hp <= 0) return;
+    // 攻撃ダメージ計算（通常攻撃と同じ: atk ± 1）
+    const dmg = Math.max(1, g.p.atk - 1 + Math.floor(Math.random() * 3));
+    sk.hp = Math.max(0, sk.hp - dmg);
+    sfxHit();
+    addDmgPop(sk.x, sk.y, "hit", dmg);
+    queueMsg(`⚔️ ${SHOPKEEPER_DEF.name}に${dmg}ダメージ！（残HP:${sk.hp}）`);
+    // 店主敵化
+    if (!sk.hostile) {
+      makeShopkeeperHostile(g, "やりやがったな！覚悟しろ！");
+    }
+    if (sk.hp <= 0) {
+      queueMsg(`⚔️ ${SHOPKEEPER_DEF.name}を倒した！`);
+      // ショップキーパーを倒しても経験値は入らない
+    }
+    redraw();
+    runEnemyTurn(g);
+    saveGame();
+  }, [addDmgPop, makeShopkeeperHostile, queueMsg, redraw, runEnemyTurn, saveGame]);
 
   const playerAttack = useCallback(() => {
     const g = gameRef.current;
@@ -1169,6 +1288,15 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       setUiState((prev) => ({ ...prev, msg, msgLog: [msg, ...prev.msgLog].slice(0, 6) }));
       return;
     }
+    // 向いている方向に店主がいれば店主を攻撃
+    if ((pd !== 0 || pdy !== 0) && !(isDiagDir && !g.diagMove) && !diagBlocked(pd, pdy)) {
+      if (g.shopkeeper && g.shopkeeper.hp > 0 &&
+          g.shopkeeper.x === g.px + pd && g.shopkeeper.y === g.py + pdy) {
+        attackShopkeeper(g);
+        return;
+      }
+    }
+
     let e: Enemy | undefined =
       (pd !== 0 || pdy !== 0) && !(isDiagDir && !g.diagMove)
         ? g.enemies.find((en) => en.x === g.px + pd && en.y === g.py + pdy)
@@ -1191,6 +1319,17 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         if (en) { found = { e: en, dx: d.dx, dy: d.dy }; break; }
       }
       if (!found) {
+        // 店主への攻撃チェック
+        if (g.shopkeeper && g.shopkeeper.hp > 0) {
+          for (const d of DIRS) {
+            if (diagBlocked(d.dx, d.dy)) continue;
+            if (g.shopkeeper.x === g.px + d.dx && g.shopkeeper.y === g.py + d.dy) {
+              g.playerDir = { dx: d.dx, dy: d.dy };
+              attackShopkeeper(g);
+              return;
+            }
+          }
+        }
         const msg = "隣に敵がいない";
         setUiState((prev) => ({ ...prev, msg, msgLog: [msg, ...prev.msgLog].slice(0, 6) }));
         return;
@@ -1208,7 +1347,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       addDmgPop(e.x, e.y, "wake", 0);
     }
     initiateAttack(g, e);
-  }, [addDmgPop, initiateAttack, redraw, uiState.quiz, uiState.quizAnswered]);
+  }, [addDmgPop, attackShopkeeper, initiateAttack, redraw, uiState.quiz, uiState.quizAnswered]);
 
   const doWait = useCallback(() => {
     const g = gameRef.current;
@@ -1636,6 +1775,35 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     showNotification(`${content.icon} ${content.name}を取り出した`);
   }, [showNotification, updateUI]);
 
+  // 店主に話しかけて未払いアイテムの会計をする
+  const payShopkeeper = useCallback(() => {
+    const g = gameRef.current;
+    if (!g || !g.shopkeeper || g.shopkeeper.hostile || g.shopkeeper.hp <= 0) return;
+    if (g.stolenItems.length === 0) {
+      showNotification("🧔 ショップキーパー「いらっしゃい！商品を手に取ってみてくれ」");
+      return;
+    }
+    // 合計金額を計算
+    let total = 0;
+    for (const itemId of g.stolenItems) {
+      total += SHOP_PRICES[itemId] ?? 0;
+    }
+    if (g.gold < total) {
+      showNotification(`💰 お金が足りない！（合計${total}G / 所持${g.gold}G）`);
+      return;
+    }
+    g.gold -= total;
+    const count = g.stolenItems.length;
+    g.stolenItems = [];
+    sfxItemGet();
+    queueMsg(`🧔 ショップキーパー「${total}Gだな。毎度あり！」`);
+    showNotification(`🏪 ${count}個のアイテムを購入！（-${total}G）`);
+    updateUI(g);
+    redraw();
+    saveGame();
+  }, [queueMsg, redraw, saveGame, showNotification, updateUI]);
+
+  // 従来のbuyFromShop（互換性のため残す — shopPromptからの直接購入）
   const buyFromShop = useCallback(
     (shopPrompt: ShopPrompt) => {
       const g = gameRef.current;
@@ -1644,21 +1812,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         showNotification("💰 お金が足りない！");
         return;
       }
-      const shopIdx = g.shopItems?.findIndex((s) => s.x === shopPrompt.x && s.y === shopPrompt.y) ?? -1;
-      if (shopIdx < 0) {
-        setUiState((prev) => ({ ...prev, shopPrompt: null }));
-        return;
+      // stolenItemsから該当アイテムを除去（会計済みにする）
+      const idx = g.stolenItems.indexOf(shopPrompt.itemId);
+      if (idx >= 0) {
+        g.stolenItems.splice(idx, 1);
       }
       g.gold -= shopPrompt.price;
-      g.shopItems.splice(shopIdx, 1);
-      const def = ITEMS_DEF.find((d) => d.id === shopPrompt.itemId);
-      if (def) {
-        const ex = g.items.find((i) => i.id === shopPrompt.itemId);
-        if (ex) ex.count++;
-        else g.items.push({ id: def.id, name: def.name, icon: def.icon, cat: def.cat, desc: def.desc, count: 1 });
-      }
       sfxItemGet();
-      showNotification(`🏪 ${def?.name ?? shopPrompt.itemId}を購入！`);
+      showNotification(`🏪 ${shopPrompt.itemId}を購入！（-${shopPrompt.price}G）`);
       updateUI(g, { shopPrompt: null });
       redraw();
       saveGame();
@@ -1696,7 +1857,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     isDashingRef.current = false;
   }, []);
 
-  // ダッシュ停止判定（シレン準拠）※アイテムタイルは呼び出し元で別処理
+  // ダッシュ停止判定 ※アイテムタイルは呼び出し元で別処理
   function shouldDashStop(g: GameState, nx: number, ny: number, dx: number, dy: number): boolean {
     const W = 0;
     // 現在位置に隣接する覚醒敵がいる（目の前にいる敵を感知）
@@ -1919,6 +2080,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       gold: raw.gold ?? 0,
       traps: raw.traps ?? [],
       shopItems: raw.shopItems ?? [],
+      shopkeeper: (raw as Partial<GameState>).shopkeeper ?? null,
+      shopRoomIdx: (raw as Partial<GameState>).shopRoomIdx ?? null,
+      stolenItems: (raw as Partial<GameState>).stolenItems ?? [],
       dungeonMode: raw.dungeonMode ?? "easy",
       monsterHouseRoomIdx: raw.monsterHouseRoomIdx ?? null,
       // 旧セーブには explored がないため全開示でマイグレーション
@@ -1981,7 +2145,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     // ゲーム開始直後にセーブ（「続きから」を有効にするため）
     setTimeout(() => {
       const save: DungeonSave = {
-        gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms] },
+        gameState: { ...g, enemies: g.enemies.map((e) => ({ ...e })), items: g.items.map((i) => ({ ...i })), itemTiles: [...g.itemTiles], map: g.map.map((row) => [...row]), rooms: [...g.rooms], shopkeeper: g.shopkeeper ? { ...g.shopkeeper } : null, stolenItems: [...(g.stolenItems ?? [])] },
         questions,
         savedAt: new Date().toISOString(),
       };
@@ -2137,6 +2301,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     handleCanvasTap,
     buyFromShop,
     skipShop,
+    payShopkeeper,
     openJarId: uiState.openJarId,
     changeFacing,
     pickUpFloorItem,

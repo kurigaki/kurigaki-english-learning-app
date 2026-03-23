@@ -1,6 +1,6 @@
 import type { GameState, TileType, TrapType } from "./types";
 import { W, R, C } from "./types";
-import { MW, MH, ITEMS_DEF, ENEMIES_DEF, EASY_TRAP_TYPES, HARD_TRAP_TYPES, SHOP_PRICES } from "./constants";
+import { MW, MH, ITEMS_DEF, ENEMIES_DEF, EASY_TRAP_TYPES, HARD_TRAP_TYPES, SHOP_PRICES, SHOPKEEPER_DEF } from "./constants";
 
 /** explored 配列を全 false で初期化 */
 export function initExplored(g: GameState): void {
@@ -83,7 +83,7 @@ export function generateMap(g: GameState): void {
   }
   g.rooms = rooms;
 
-  // corridors — 1タイル幅、部屋の各辺に最大1接続（シレン準拠）
+  // corridors — 1タイル幅、部屋の各辺に最大1接続
   // 各部屋の辺ごとに使用済みフラグを管理: top/bottom/left/right
   const usedSides: Map<number, Set<string>> = new Map();
   for (let i = 0; i < rooms.length; i++) usedSides.set(i, new Set());
@@ -292,7 +292,7 @@ export function generateMap(g: GameState): void {
         wanderTarget: null, lastDx: undefined, lastDy: undefined, stuckCount: 0,
       });
     }
-    // モンスターハウスの報酬: アイテムを3〜5個配置（挑む動機）
+    // エネミーラッシュの報酬: アイテムを3〜5個配置（挑む動機）
     const mhItemPool = getItemPool(g.floor);
     const mhItemCount = 3 + Math.floor(Math.random() * 3); // 3-5 items
     for (let att = 0; att < mhItemCount * 10 && g.itemTiles.filter(
@@ -306,9 +306,11 @@ export function generateMap(g: GameState): void {
     }
   }
 
-  // Shop — 1フロアに1箇所、3×3グリッド配置
-  // (将来: 店主キャラ配置・泥棒システム対応のため shopRoomIdx を明示)
+  // Shop — 1フロアに1箇所、3×3グリッド配置 + 店主NPC配置
   g.shopItems = [];
+  g.shopkeeper = null;
+  g.shopRoomIdx = null;
+  g.stolenItems = [];
   if (g.floor >= 2 && rooms.length >= 3) {
     const excludedRoomIdx = g.monsterHouseRoomIdx ?? -1;
     const candidateIdxs: number[] = [];
@@ -350,6 +352,50 @@ export function generateMap(g: GameState): void {
         const itemId = shopPool[Math.floor(Math.random() * shopPool.length)];
         g.shopItems.push({ x: sx, y: sy, itemId, price: SHOP_PRICES[itemId] });
       }
+      // 店主NPC配置: ショップ部屋の入口付近（廊下に隣接する部屋タイル）に配置
+      g.shopRoomIdx = shopRoomIdx;
+      const shopR = rooms[shopRoomIdx];
+      let skX = shopR.x + 1;
+      let skY = shopR.y + 1;
+      // 部屋の廊下隣接タイル（入口）を探して店主を置く
+      outer:
+      for (let ry = shopR.y; ry < shopR.y + shopR.h; ry++) {
+        for (let rx = shopR.x; rx < shopR.x + shopR.w; rx++) {
+          if (m[ry][rx] !== R) continue;
+          for (const [ddx, ddy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+            const nx = rx + ddx;
+            const ny = ry + ddy;
+            if (nx >= 0 && nx < MW && ny >= 0 && ny < MH && m[ny][nx] === C) {
+              // 入口タイルの隣（部屋内側）に店主を置く
+              const insideX = rx - ddx;
+              const insideY = ry - ddy;
+              if (insideX > shopR.x && insideX < shopR.x + shopR.w - 1 &&
+                  insideY > shopR.y && insideY < shopR.y + shopR.h - 1 &&
+                  !g.shopItems.find((s) => s.x === insideX && s.y === insideY)) {
+                skX = insideX;
+                skY = insideY;
+                break outer;
+              }
+              // フォールバック: 入口タイル自体に配置
+              if (!g.shopItems.find((s) => s.x === rx && s.y === ry)) {
+                skX = rx;
+                skY = ry;
+                break outer;
+              }
+            }
+          }
+        }
+      }
+      g.shopkeeper = {
+        x: skX,
+        y: skY,
+        hp: SHOPKEEPER_DEF.mhp,
+        mhp: SHOPKEEPER_DEF.mhp,
+        atk: SHOPKEEPER_DEF.atk,
+        hostile: false,
+        homeX: skX,
+        homeY: skY,
+      };
     }
   }
 }

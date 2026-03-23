@@ -1,6 +1,6 @@
 "use client";
 
-import type { GameState, Enemy } from "./types";
+import type { GameState, Enemy, Shopkeeper } from "./types";
 import { W, R } from "./types";
 import { MW, MH, TILE, ITEMS_DEF } from "./constants";
 
@@ -149,7 +149,7 @@ function drawCaneItem(ctx: CanvasRenderingContext2D, cx: number, y: number): voi
 }
 
 function drawFoodItem(ctx: CanvasRenderingContext2D, cx: number, y: number): void {
-  // ── おにぎり ──
+  // ── 食料 ──
   // ご飯（大きな三角形・クリーム白）
   ctx.fillStyle = "#f0ece0";
   ctx.beginPath();
@@ -258,6 +258,53 @@ function drawItemTile(ctx: CanvasRenderingContext2D, tx: number, ty: number, cat
     case "jar":     drawJarItem(ctx, cx, y);      break;
     default:        drawSpecialItem(ctx, cx, y);  break;
   }
+}
+
+// ── Shopkeeper ───────────────────────────────────────────────────────────────
+function drawShopkeeper(ctx: CanvasRenderingContext2D, sk: Shopkeeper): void {
+  const x = sk.x * TILE, y = sk.y * TILE;
+  const cx = x + TILE / 2, cy = y + TILE / 2;
+
+  if (sk.hostile) {
+    // 敵化モード: 赤い怒りオーラ
+    ctx.fillStyle = "rgba(220,40,40,0.18)";
+    ctx.fillRect(x, y, TILE, TILE);
+  }
+
+  // 体（ローブ）
+  const robeColor = sk.hostile ? "#8b1a1a" : "#2e6b4f";
+  fr(ctx, robeColor, cx - 8, cy + 2, 16, 12);
+
+  // 頭
+  const skinColor = "#f0c890";
+  fc(ctx, skinColor, cx, cy - 4, 8);
+
+  // ひげ
+  ctx.fillStyle = "#a0a0a0";
+  ctx.beginPath();
+  ctx.moveTo(cx - 4, cy);
+  ctx.lineTo(cx, cy + 5);
+  ctx.lineTo(cx + 4, cy);
+  ctx.fill();
+
+  // 目
+  const eyeColor = sk.hostile ? "#ff2020" : "#222";
+  fr(ctx, eyeColor, cx - 4, cy - 6, 2, 2);
+  fr(ctx, eyeColor, cx + 2, cy - 6, 2, 2);
+
+  // 怒りマーク（敵化時）
+  if (sk.hostile) {
+    ctx.font = "bold 10px sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "#ff0000";
+    ctx.fillText("💢", x + TILE - 6, y + 6);
+  }
+
+  // HPバー
+  const hpRatio = sk.hp / sk.mhp;
+  fr(ctx, "#300000", x + 1, y + TILE - 5, TILE - 2, 4);
+  fr(ctx, hpRatio > 0.5 ? "#409030" : "#d04040", x + 1, y + TILE - 5, Math.floor((TILE - 2) * hpRatio), 4);
 }
 
 function drawShopItemTile(ctx: CanvasRenderingContext2D, tx: number, ty: number): void {
@@ -890,7 +937,7 @@ export function drawMap(
     drawStairs(ctx, g.stairsPos.x, g.stairsPos.y);
   }
 
-  // モンスターハウスの部屋ハイライト（探索済みのみ）
+  // エネミーラッシュの部屋ハイライト（探索済みのみ）
   if (g.monsterHouseRoomIdx != null && g.rooms[g.monsterHouseRoomIdx]) {
     const mhr = g.rooms[g.monsterHouseRoomIdx];
     if (isExp(mhr.x, mhr.y)) {
@@ -958,6 +1005,11 @@ export function drawMap(
       Math.floor((TILE - 2) * hpRatio),
       4,
     );
+  }
+
+  // 店主NPC（探索済みのみ）
+  if (g.shopkeeper && g.shopkeeper.hp > 0 && isExp(g.shopkeeper.x, g.shopkeeper.y)) {
+    drawShopkeeper(ctx, g.shopkeeper);
   }
 
   // プレイヤー（常に表示）
@@ -1039,6 +1091,14 @@ export function drawFullMap(canvas: HTMLCanvasElement, g: GameState): void {
       ctx.arc(s.x * MINI_TILE + MINI_TILE / 2, s.y * MINI_TILE + MINI_TILE / 2, 2, 0, Math.PI * 2);
       ctx.fill();
     }
+  }
+
+  // 店主NPC（探索済みのみ・紫ドット）
+  if (g.shopkeeper && g.shopkeeper.hp > 0 && isExp(g.shopkeeper.x, g.shopkeeper.y)) {
+    ctx.fillStyle = g.shopkeeper.hostile ? "#e05252" : "#a060d0";
+    ctx.beginPath();
+    ctx.arc(g.shopkeeper.x * MINI_TILE + MINI_TILE / 2, g.shopkeeper.y * MINI_TILE + MINI_TILE / 2, 3, 0, Math.PI * 2);
+    ctx.fill();
   }
 
   // 敵（探索済みのみ・赤ドット）
