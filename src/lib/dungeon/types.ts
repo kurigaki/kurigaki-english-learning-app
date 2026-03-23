@@ -157,6 +157,22 @@ export type DeathState = {
   isCleared: boolean;
   newRecords: string[];
   answeredQuestions: AnsweredQuestion[];
+  score?: number;
+  rank?: number;
+};
+
+export type DungeonRanking = {
+  score: number;
+  floor: number;
+  lv: number;
+  kills: number;
+  correct: number;
+  wrong: number;
+  turns: number;
+  cleared: boolean;
+  cause: string;
+  date: string;
+  mode: string;
 };
 
 export type DmgPop = {

@@ -653,6 +653,26 @@ export const storage = {
     return localStorage.getItem(DUNGEON_SAVE_KEY) !== null;
   },
 
+  // ── 番付（ランキング）──────────────────────────────────────────────────────
+  getDungeonRankings: (): import("@/lib/dungeon/types").DungeonRanking[] => {
+    if (typeof window === "undefined") return [];
+    try {
+      const d = localStorage.getItem("dungeon_rankings");
+      return d ? JSON.parse(d) : [];
+    } catch { return []; }
+  },
+
+  addDungeonRanking: (r: import("@/lib/dungeon/types").DungeonRanking): number => {
+    const rankings = storage.getDungeonRankings();
+    rankings.push(r);
+    rankings.sort((a, b) => b.score - a.score);
+    const trimmed = rankings.slice(0, 50);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("dungeon_rankings", JSON.stringify(trimmed));
+    }
+    return trimmed.findIndex((x) => x === r) + 1; // 1-based rank
+  },
+
   // ── ミッション進捗（日/週/月リセット）──────────────────────────────────────
 
   /** ローカル日付文字列 "YYYY-MM-DD" */
