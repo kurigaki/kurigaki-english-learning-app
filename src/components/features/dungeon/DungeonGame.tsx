@@ -957,6 +957,7 @@ function DungeonControls({
     fontFamily: "'DotGothic16', sans-serif",
   };
 
+  const turnModeRef = useRef(false);
   const dpCenterStyle: React.CSSProperties = {
     width: 52, height: 52,
     background: turnMode ? "#1a3a1a" : "#0a0f1a",
@@ -969,6 +970,9 @@ function DungeonControls({
     WebkitUserSelect: "none", WebkitTouchCallout: "none",
     boxShadow: "0 2px 4px rgba(0,0,0,0.3)", touchAction: "none",
   };
+  const isDashModeRef = useRef(dashMode);
+  turnModeRef.current = turnMode;
+  isDashModeRef.current = dashMode;
 
   // onPointerDown のみで操作（onClick は二重発火するため使わない）
   const handleDpadPointerDown = (dx: number, dy: number) => (e: React.PointerEvent) => {
