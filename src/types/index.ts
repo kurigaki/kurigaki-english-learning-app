@@ -57,46 +57,24 @@ export type SynonymDifferenceEntry = {
   description: string;
 };
 
-// 拡張単語データ
-export type WordExtended = {
-  pronunciation?: string | PronunciationData; // 発音記号（US/UK対応）
-  partOfSpeech?: PartOfSpeech; // 品詞
-  audioUrl?: string;           // 音声ファイルURL（将来対応用）
-  imageUrl?: string;           // イメージ画像URL
-  examples?: WordExample[];    // 複数の例文
-  synonyms?: string[];         // 類義語
-  antonyms?: string[];         // 対義語
-  column?: WordColumn;         // 学習コラム
-  coreImage?: string;          // コアイメージ説明
-  relatedWords?: string[];     // 関連語（後方互換）
-  relatedWordEntries?: RelatedWordEntry[]; // 品詞・意味付き関連語
-  usage?: string;              // 使い方説明
-  synonymDifference?: string;  // 類義語との違い（後方互換）
-  synonymDifferenceEntries?: SynonymDifferenceEntry[]; // 類義語の違い（構造化）
-  englishDefinition?: string;  // 英英定義
-  etymology?: string | string[]; // 語源（複数ある場合は配列）
-};
-
 /**
- * 単語拡張データ（word-extensions.ts のマップ値型）
- * WordExtended のうち、静的データとして管理するフィールドのみ抽出したもの。
+ * 単語拡張データ（word-extensions のマップ値型）
+ * 単語詳細画面で表示するコアイメージ・使い方・類義語比較等を管理する。
  */
-export type WordExtension = Pick<
-  WordExtended,
-  | "coreImage"
-  | "usage"
-  | "synonymDifference"
-  | "synonymDifferenceEntries"
-  | "englishDefinition"
-  | "etymology"
-  | "examples"
-  | "relatedWords"
-  | "relatedWordEntries"
-  | "synonyms"
-  | "antonyms"
-  | "column"
-> & {
-  pronunciation?: string | PronunciationData; // US/UK 発音対応
+export type WordExtension = {
+  pronunciation?: string | PronunciationData;
+  coreImage?: string;
+  usage?: string;
+  synonymDifference?: string;
+  synonymDifferenceEntries?: SynonymDifferenceEntry[];
+  englishDefinition?: string;
+  etymology?: string | string[];
+  examples?: WordExample[];
+  relatedWords?: string[];
+  relatedWordEntries?: RelatedWordEntry[];
+  synonyms?: string[];
+  antonyms?: string[];
+  column?: WordColumn;
 };
 
 // クイズの問題

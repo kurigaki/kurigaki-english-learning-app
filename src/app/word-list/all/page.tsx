@@ -27,8 +27,8 @@ type WordWithStats = {
   id: number;
   word: string;
   meaning: string;
-  category: Category;
-  categories?: Category[];
+  category: string;
+  categories?: string[];
   difficulty: number;
   mastery: MasteryLevel;
   accuracy: number | null;
