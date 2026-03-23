@@ -154,7 +154,7 @@ GitHub操作は以下のツールを使用してください。
 - コンポーネントは `components/ui`（汎用）と `components/features`（機能別）に分離
 - 状態は最小限に保つ（必要以上にuseStateを増やさない）
 - 型定義は `src/types/index.ts` に集約
-- 単語データは `src/data/words.ts` に静的定義
+- 単語データは `src/data/words/` にコース別で静的定義（モチタンが正）
 
 ### 日付文字列のタイムゾーン
 
@@ -364,7 +364,18 @@ src/
 │   ├── vocabulary-books.ts       # My単語帳・お気に入り・最近見た単語帳管理（localStorage）
 │   └── vocab-book-meta.ts        # bookId→表示名/emoji/gradient/quizHref を共通解決
 ├── data/                         # 静的データ
-│   ├── words.ts                  # 単語データベース
+│   ├── words/                    # 単語データ（コース別.jsファイル + 型定義）
+│   │   ├── types.ts              # 統一Word型
+│   │   ├── category.ts           # Category型・ラベル
+│   │   ├── difficulty.ts         # Difficulty型・ラベル
+│   │   ├── courses.ts            # コース定義マスタ
+│   │   ├── index.ts              # allWords統合 + 再エクスポート
+│   │   └── *.js                  # コース別データ（junior/senior/toeic/eiken/conversation）
+│   ├── word-extensions/          # 単語拡張データ（詳細画面専用）
+│   │   ├── index.ts              # Map統合 + getWordExtension()
+│   │   ├── manual.ts             # 手書き拡張（TOEIC/Junior等）
+│   │   └── generated.ts          # 自動補完エンジン
+│   ├── word-extensions-motitown.ts # モチタン取り込み拡張
 │   ├── achievements.ts           # 実績定義
 │   └── recommended-books.ts      # おすすめ単語帳定義
 └── types/
@@ -382,8 +393,8 @@ type QuestionType = "en-to-ja" | "ja-to-en" | "listening" | "dictation";
 // クイズモード
 type QuizMode = "normal" | "speed-challenge";
 
-// 品詞
-type PartOfSpeech = "noun" | "verb" | "adjective" | "adverb" | "preposition" | "conjunction";
+// 品詞（5種に簡素化）
+type PartOfSpeech = "noun" | "verb" | "adjective" | "adverb" | "other";
 
 // 発音データ（UK/US切り替え対応）
 type PronunciationData = {
@@ -391,30 +402,37 @@ type PronunciationData = {
   uk?: string;  // UK発音記号 (例: /ˈʃedjuːl/) - 差がある場合のみ
 };
 
-// 単語データ（拡張版）
-type WordExtended = {
+// 統一Word型（src/data/words/types.ts）
+type Word = {
   id: number;
   word: string;
   meaning: string;
-  example?: string;           // 例文（英語）
-  exampleJa?: string;         // 例文の日本語訳
+  partOfSpeech: PartOfSpeech;
+  course: Course;
+  stage: Stage;
+  example?: string;
+  exampleJa?: string;
+  difficulty: Difficulty;       // 1-7（course+stageから事前計算）
   category: string;
-  difficulty: number;
-  pronunciation?: string | PronunciationData; // UK/US発音切り替え対応
-  partOfSpeech?: PartOfSpeech;
-  examples?: WordExample[];   // 複数の例文（詳細形式）
-  synonyms?: string[];
-  antonyms?: string[];
-  column?: WordColumn;
-  // 将来追加予定
+  categories?: string[];
+  frequencyRank?: number;
+};
+
+// 単語拡張データ（src/types/index.ts — 単語詳細画面専用）
+type WordExtension = {
+  pronunciation?: string | PronunciationData;
   coreImage?: string;
   usage?: string;
   synonymDifference?: string;
+  synonymDifferenceEntries?: SynonymDifferenceEntry[];
   englishDefinition?: string;
-  etymology?: string;
+  etymology?: string | string[];
+  examples?: WordExample[];
   relatedWords?: string[];
-  imageUrl?: string;
-  audioUrl?: string;
+  relatedWordEntries?: RelatedWordEntry[];
+  synonyms?: string[];
+  antonyms?: string[];
+  column?: WordColumn;
 };
 
 // 学習記録
@@ -1590,6 +1608,8 @@ english-learning-app-reviewerサブエージェントを使用して、
 | コーディング規約 | `.claude/agents/best-practices.md` | コード規約 |
 | コードレビュー | `.claude/agents/reviewer.md` | レビュー基準（サブエージェント定義） |
 | Supabaseセットアップ | `supabase/README.md` | DB設定・マイグレーション手順 |
-| 単語データ | `src/data/words.ts` | 単語データベース |
+| 単語データ | `src/data/words/` | 単語データベース（コース別.js + 型定義） |
+| 単語拡張データ | `src/data/word-extensions/` | 詳細画面用拡張（手書き + 自動補完） |
+| 単語ポリシー | `docs/vocabulary-policy.md` | 単語データの品質ルール |
 | 実績データ | `src/data/achievements.ts` | 実績定義 |
 | 型定義 | `src/types/index.ts` | TypeScript型定義 |
