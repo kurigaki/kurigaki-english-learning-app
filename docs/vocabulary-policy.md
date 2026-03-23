@@ -7,6 +7,12 @@
 - 英検5級を目指す学習者は `eiken` コースの `stage: "5"` を中心に学習して合格語彙をカバーできる
 - TOEIC学習者は `toeic` コースの目標スコア帯ステージを学習して必要語彙を段階的にカバーできる
 
+## Primary Source
+- **モチタン英語辞典**（`https://motitown.com/vocabulary/`）が単語データの正（primary source）
+- モチタンのコース構成・ステージ分け・単語配置を基準とする
+- モチタンに含まれるフレーズ（句動詞・熟語・複合語）も、全コースで採用する
+- スクレイピングツール: `scripts/motitown/` で取得
+
 ## Course Priority
 - コース間で語数を同数に揃えることは目標にしない
 - 各コースは「そのコースの合格・到達目標」に必要な語彙カバレッジを最優先する
@@ -20,95 +26,88 @@
 - 信頼ソース由来でないテンプレート生成語は採用しない
 - `junior` には中学課程で扱わない語彙（過度に専門的・稀少な語）を入れない
 
+## Word Format Rules
+- フレーズ（句動詞・熟語・複合語）はモチタンに含まれていれば全コースで許可
+  - 例: "want to", "credit card", "hear from" 等
+- 禁止語（公序良俗・学習用途不適切語）は全コースで不採用にする
+
 ## Category Classification Policy
-- カテゴリは `src/data/words/compat.ts` で一元生成する
+- カテゴリは単語データファイル（`words/*.js`）に事前計算済みで格納
 - 1語に対して複数カテゴリを許可する（`categories`）
 - UI上の主カテゴリは `category`（先頭カテゴリ）を使用するが、検索・フィルタは `categories` 全体で判定する
-- 英語キーワード判定は「部分一致」ではなく「単語一致/フレーズ一致」を採用する
-  - 例: `app` は `app` にのみ一致させ、`apple` や `happy` への誤判定を禁止
-- コース基底カテゴリ（`toeic -> business` 等）は初期候補に使うが、語義に合わないカテゴリが優先されないように正規化ルールを適用する
-- 明確な誤分類は `src/data/category-overrides.ts` で上書きする
-- `category-overrides.ts` は推定カテゴリへの「追加」ではなく「最終カテゴリの上書き」として扱う
+- カテゴリラベルは `src/data/words/category.ts` の `categoryLabels` で管理
 
-## Course-Fit Filters (Rebuild Rules)
-- 非 `conversation` コースはフレーズ語を除外する（空白・ハイフン・スラッシュを含む `word` は不採用）
-- 禁止語（公序良俗・学習用途不適切語）は全コースで不採用にする
+## Difficulty Rules
+- 難易度（`difficulty`: 1-7）は `course` + `stage` から事前計算
+- 難易度マッピングは `src/data/words/difficulty.ts` の `DIFFICULTY_MAP` で管理
 - 難易度上限（`frequencyRank`）をコース別に適用する
   - `junior`: `<= 2`
   - `senior`: `<= 2`
   - `eiken`: `<= 3`
   - `toeic`: `<= 3`
-  - `conversation`: 会話表現重視のため上限は緩和（フレーズ許可）
+  - `conversation`: 会話表現重視のため上限は緩和
 - TOEIC高スコア帯の基礎語混入を禁止する
   - `toeic` の `stage: "700" | "800" | "900"` には、中学基礎の具体名詞（動物・食べ物・身体部位・季節など）を配置しない
   - `toeic` で中学基礎語を許可する場合は、ビジネス用途の語義（例: `schedule`, `purchase`）であることを確認する
 - 英検高級での低難度語混入を禁止する
   - `eiken` の `stage: "pre2" | "2" | "pre1" | "1"` には、英検5級〜4級相当の基礎語を原則配置しない
-  - 再配置が必要な語は `stage: "5" | "4" | "3"` へ降格して扱う
-- フィルタ適用後に語彙が減ったステージは、同一方針（公式/頻度リスト突合）で段階的に補充する
 
 ## Recommended Sources
 優先度の高い順に採用する。
 
-1. 公式・準公式
+1. **モチタン英語辞典**（primary source）
+- `https://motitown.com/vocabulary/`
+- スクレイピングツール: `scripts/motitown/scrape.mjs` + `scripts/motitown/import.mjs`
+
+2. 公式・準公式
 - 英検公式（級の目安・出題レベル）
 - `https://www.eiken.or.jp/eiken/exam/about/`
 - 学習指導要領準拠資料（中学・高校）
 
-2. 頻度ベース語彙
+3. 頻度ベース語彙
 - NGSL (New General Service List)
 - NAWL (New Academic Word List)
 
-3. 既存アプリ資産
-- 既存 `src/data/words/*.ts` の語彙を重複除去・ステージ再配分して拡張
-
-4. 外部語彙取り込み（補完）
-- NGSL/NAWL の語彙を優先して取り込み、不足分は信頼可能な公開語彙リストで補完する
-- 本リポジトリでは、運用上の補完ソースとしてシステム辞書（`/usr/share/dict/words`）を利用可能とする
-- モチタン英語辞典（`https://motitown.com/vocabulary/`）: スクレイピングツール `scripts/motitown/` で取得。発音・コアイメージ・使い方・例文を含む
-
-5. 補助的な公開記事（一次情報を補完する用途）
-- `https://english-club.jp/blog/juniorhigh-english-word/`
-- `https://allabout.co.jp/gm/gc/487726/`
-- `https://ei-raku.com/2017/11/exam-eiken-comparison/`
-- `https://www.rarejob.com/englishlab/column/20210926_02/`
-- `https://eigosapuri.jp/article/toeic-word-count/`
+4. 既存アプリ資産
+- 既存 `src/data/words/*.js` の語彙を重複除去・ステージ再配分して拡張
 
 ## Operational Notes
 - 語彙追加時は、同一コース重複チェックを先に実施する
 - `senior` 追加時は `junior` との重複をチェックし、重複語は除外する
 - 追加後にステージ別件数を確認し、偏りが大きい場合は段階的に補正する
 - 既存語の削除・差し替えを行う場合は、学習体験への影響を明記する
-- 外部取り込み時は、`NGSL/NAWL -> 補完ソース` の順で投入し、同一コース内重複ゼロを維持する
-- 大量取り込み時も「コース別の到達目標カバレッジ」を優先し、コース横並びの件数最適化は行わない
 
 ## Word Extension Data Policy
 
-### 手書きコンテンツの対象範囲（2026-03-23 現在）
-- **TOEIC 500**（IDs: 30001–30180）: 全180語に手書きの詳細解説（コアイメージ・使い方・類義語との違い・英英定義・語源）
+### データ構成（2026-03-24 現在）
+```
+src/data/
+├── word-extensions/
+│   ├── index.ts       ← 公開API（Map統合 + getWordExtension）
+│   ├── manual.ts      ← 手書き拡張（TOEIC 500/600, Junior Stage 1）
+│   └── generated.ts   ← 自動補完エンジン
+└── word-extensions-motitown.ts  ← モチタン取り込み拡張（~6,200語）
+```
+
+### 手書きコンテンツの対象範囲
+- **TOEIC 500**（IDs: 30001–30180）: 全180語に手書きの詳細解説
 - **TOEIC 600**（IDs: 30181–30450）: 全語に手書きの詳細解説
 - **Junior Stage 1**（IDs: 10001–10530）: 全語に手書きのコンパクト解説
-- **モチタン取り込み**（全コース約6,500語）: 発音・コアイメージ・使い方・反意語・例文1つをモチタン英語辞典から取り込み。`src/data/word-extensions-motitown.ts` に分離管理
-- それ以外のコース・ステージ: 自動生成（`buildGeneratedExtension()`）でフォールバック提供
+- **モチタン取り込み**（全コース約6,200語）: 発音・コアイメージ・使い方・反意語・例文
+- それ以外: 自動生成（`buildGeneratedExtension()`）でフォールバック提供
 
 ### 拡張データの管理ルール
-- 手書きコンテンツは `src/data/word-extensions.ts` の `_handwrittenExtensions` 配列に登録する
-- モチタン取り込みデータは `src/data/word-extensions-motitown.ts` の `motitownExtensions` 配列に登録する
-- 両者は `word-extensions.ts` 内で統合され、`wordExtensions` Map としてエクスポートされる
-- `wordExtensions` に登録したIDは必ず対応する単語データファイル（`words/*.ts`）に存在すること
-- テンプレート生成コンテンツを `wordExtensions` に登録しない（フォールバックは `buildGeneratedExtension()` が自動提供）
-- 単語データから語を削除する場合は、`wordExtensions`（手書き）または `motitownExtensions`（取り込み）の対応エントリも同時に削除する
+- 手書きコンテンツは `src/data/word-extensions/manual.ts` の `handwrittenExtensions` 配列に登録
+- モチタン取り込みは `src/data/word-extensions-motitown.ts` の `motitownExtensions` 配列に登録
+- 両者は `word-extensions/index.ts` で統合され `wordExtensions` Map としてエクスポート
+- `wordExtensions` に登録したIDは必ず対応する単語データファイル（`words/*.js`）に存在すること
+- 単語データから語を削除する場合は、対応する拡張エントリも同時に削除する
 
 ### フォールバック方針
-- 手書きエントリがない単語は、単語詳細画面で `getWordExtension()` が `buildGeneratedExtension()` を自動適用する
-- `compat.ts` の `words` 配列には手書きエントリのみ反映する（起動時コスト最適化）
-- 単語詳細ページ（`app/word/[id]/page.tsx`）で手書きデータ優先・生成データフォールバックの順で表示
+- 手書きエントリがない単語は `getWordExtension()` が `buildGeneratedExtension()` を自動適用
+- 単語詳細ページで手書きデータ優先・生成データフォールバックの順で表示
 
 ## Japanese Translation Policy
 - クイズの和訳ヒントは「英語を混在させない日本語文」で表示する
-- 例文和訳のデータ追加時は、以下の順で採用する
-1. 公式・準公式（英検公式情報、学習指導要領準拠）
-2. 頻度語彙リスト（NGSL/NAWL）に基づく既存語義
-3. 既存 `meaning` と例文構文ルールによる補完ヒント
+- 全単語に `exampleJa`（例文の日本語訳）が必須（充足率100%を維持）
 - 「未登録」表示は出さず、最低限の日本語ヒントを常に返す
-- 手動和訳データは `src/data/example-ja-overrides.ts` に集約してバッチ追加する
