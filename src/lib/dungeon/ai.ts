@@ -135,55 +135,85 @@ export function wanderMove(g: GameState, e: Enemy): void {
       const nx = e.x + e.lastDx;
       const ny = e.y + e.lastDy;
       const canGo =
-        nx >= 0 &&
-        nx < MW &&
-        ny >= 0 &&
-        ny < MH &&
+        nx >= 0 && nx < MW && ny >= 0 && ny < MH &&
         g.map[ny][nx] !== W &&
         !g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny);
+
       if (canGo) {
+        // 部屋に入ったらlastDxリセット（部屋ロジックに切り替え）
+        if (g.map[ny][nx] === R) {
+          e.lastDx = undefined;
+          e.lastDy = undefined;
+          e.wanderTarget = null;
+        }
         e.x = nx;
         e.y = ny;
         e.stuckCount = 0;
         return;
       }
-      // 進めない
-      e.stuckCount = (e.stuckCount || 0) + 1;
-      if (e.stuckCount >= 3) {
-        // Uターン
-        e.lastDx = -e.lastDx;
-        e.lastDy = -e.lastDy;
+
+      // 進めない → 分岐を探す
+      const dirs: [number, number][] = [[0, -1], [0, 1], [-1, 0], [1, 0]];
+      // 現在の方向と逆方向以外で進める方向を探す
+      const altDirs = dirs.filter(([dx, dy]) => {
+        if (dx === -e.lastDx! && dy === -e.lastDy!) return false; // Uターンは最終手段
+        const ax = e.x + dx, ay = e.y + dy;
+        return ax >= 0 && ax < MW && ay >= 0 && ay < MH &&
+          g.map[ay][ax] !== W && !g.enemies.find((o) => o.id !== e.id && o.x === ax && o.y === ay);
+      });
+      if (altDirs.length > 0) {
+        const [dx, dy] = altDirs[Math.floor(Math.random() * altDirs.length)];
+        e.lastDx = dx;
+        e.lastDy = dy;
+        e.x = e.x + dx;
+        e.y = e.y + dy;
         e.stuckCount = 0;
-        e.wanderTarget = null;
-        const ux = e.x + e.lastDx;
-        const uy = e.y + e.lastDy;
-        if (
-          ux >= 0 &&
-          ux < MW &&
-          uy >= 0 &&
-          uy < MH &&
-          g.map[uy][ux] !== W &&
-          !g.enemies.find((o) => o.id !== e.id && o.x === ux && o.y === uy)
-        ) {
-          e.x = ux;
-          e.y = uy;
-        }
+        return;
+      }
+      // 分岐もない → Uターン
+      e.lastDx = -e.lastDx;
+      e.lastDy = -e.lastDy;
+      e.stuckCount = 0;
+      e.wanderTarget = null;
+      const ux = e.x + e.lastDx;
+      const uy = e.y + e.lastDy;
+      if (ux >= 0 && ux < MW && uy >= 0 && uy < MH &&
+          g.map[uy][ux] !== W && !g.enemies.find((o) => o.id !== e.id && o.x === ux && o.y === uy)) {
+        e.x = ux;
+        e.y = uy;
       }
       return;
     }
     // lastDx がない → 下の部屋ロジックへ
   }
 
-  // ── 部屋内：廊下入口をBFSで目指す ──
+  // ── 部屋内：同じ部屋の廊下出口をBFSで目指す ──
   e.stuckCount = 0;
 
   if (!e.wanderTarget || (e.x === e.wanderTarget.x && e.y === e.wanderTarget.y)) {
-    const entrances = getAllCorridorEntrances(g);
-    if (entrances.length === 0) {
-      e.wanderTarget = null;
-      return;
+    // 現在の部屋の出口を探す（同じ部屋の廊下隣接タイルを優先）
+    const myRoom = getRoom(g.rooms, e.x, e.y);
+    let candidates: { x: number; y: number }[];
+    if (myRoom) {
+      // 部屋の廊下隣接タイル（出口）を取得
+      const exits: { x: number; y: number }[] = [];
+      for (let ry = myRoom.y; ry < myRoom.y + myRoom.h; ry++) {
+        for (let rx = myRoom.x; rx < myRoom.x + myRoom.w; rx++) {
+          if (g.map[ry][rx] !== R) continue;
+          for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+            if (rx + dx >= 0 && rx + dx < MW && ry + dy >= 0 && ry + dy < MH && g.map[ry + dy][rx + dx] === C) {
+              exits.push({ x: rx, y: ry });
+              break;
+            }
+          }
+        }
+      }
+      candidates = exits.filter((t) => !(t.x === e.x && t.y === e.y));
+    } else {
+      // 部屋にいない場合は全入口から選ぶ
+      const entrances = getAllCorridorEntrances(g);
+      candidates = entrances.filter((t) => !(t.x === e.x && t.y === e.y));
     }
-    const candidates = entrances.filter((t) => !(t.x === e.x && t.y === e.y));
     if (candidates.length === 0) {
       e.wanderTarget = null;
       return;

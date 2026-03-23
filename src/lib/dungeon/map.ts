@@ -83,20 +83,96 @@ export function generateMap(g: GameState): void {
   }
   g.rooms = rooms;
 
-  // corridors (L-shaped)
+  // corridors — 1タイル幅、部屋の各辺に最大1接続（シレン準拠）
+  // 各部屋の辺ごとに使用済みフラグを管理: top/bottom/left/right
+  const usedSides: Map<number, Set<string>> = new Map();
+  for (let i = 0; i < rooms.length; i++) usedSides.set(i, new Set());
+
+  /** 部屋の辺から廊下接続点を1つ選ぶ（辺の内側からランダムに1タイル） */
+  function pickExit(room: { x: number; y: number; w: number; h: number }, side: string): { x: number; y: number } {
+    switch (side) {
+      case "top":    return { x: room.x + 1 + Math.floor(Math.random() * (room.w - 2)), y: room.y - 1 };
+      case "bottom": return { x: room.x + 1 + Math.floor(Math.random() * (room.w - 2)), y: room.y + room.h };
+      case "left":   return { x: room.x - 1, y: room.y + 1 + Math.floor(Math.random() * (room.h - 2)) };
+      case "right":  return { x: room.x + room.w, y: room.y + 1 + Math.floor(Math.random() * (room.h - 2)) };
+      default:       return { x: room.x, y: room.y };
+    }
+  }
+
+  /** 2部屋間の最適な辺ペアを決定 */
+  function bestSides(ai: number, bi: number): { aSide: string; bSide: string } | null {
+    const a = rooms[ai], b = rooms[bi];
+    const aCx = a.x + a.w / 2, aCy = a.y + a.h / 2;
+    const bCx = b.x + b.w / 2, bCy = b.y + b.h / 2;
+    const dx = bCx - aCx, dy = bCy - aCy;
+    const usedA = usedSides.get(ai)!, usedB = usedSides.get(bi)!;
+
+    // 優先順: 主方向に合った辺ペア
+    const candidates: { aSide: string; bSide: string }[] = [];
+    if (Math.abs(dx) >= Math.abs(dy)) {
+      // 横方向優先
+      if (dx > 0) candidates.push({ aSide: "right", bSide: "left" });
+      else candidates.push({ aSide: "left", bSide: "right" });
+      if (dy > 0) candidates.push({ aSide: "bottom", bSide: "top" });
+      else if (dy < 0) candidates.push({ aSide: "top", bSide: "bottom" });
+    } else {
+      // 縦方向優先
+      if (dy > 0) candidates.push({ aSide: "bottom", bSide: "top" });
+      else candidates.push({ aSide: "top", bSide: "bottom" });
+      if (dx > 0) candidates.push({ aSide: "right", bSide: "left" });
+      else if (dx < 0) candidates.push({ aSide: "left", bSide: "right" });
+    }
+    for (const c of candidates) {
+      if (!usedA.has(c.aSide) && !usedB.has(c.bSide)) return c;
+    }
+    // フォールバック: 空いている辺を探す
+    const allSides = ["top", "bottom", "left", "right"];
+    for (const as2 of allSides) {
+      if (usedA.has(as2)) continue;
+      for (const bs2 of allSides) {
+        if (usedB.has(bs2)) continue;
+        return { aSide: as2, bSide: bs2 };
+      }
+    }
+    return null; // 4辺すべて使用済み
+  }
+
+  /** L字型廊下を掘る（1タイル幅） */
+  function digCorridor(fromX: number, fromY: number, toX: number, toY: number, horizontalFirst: boolean): void {
+    if (horizontalFirst) {
+      // 横 → 縦
+      const step = fromX <= toX ? 1 : -1;
+      for (let x = fromX; x !== toX + step; x += step) {
+        if (x >= 0 && x < MW && m[fromY][x] === W) m[fromY][x] = C;
+      }
+      const stepY = fromY <= toY ? 1 : -1;
+      for (let y = fromY; y !== toY + stepY; y += stepY) {
+        if (y >= 0 && y < MH && m[y][toX] === W) m[y][toX] = C;
+      }
+    } else {
+      // 縦 → 横
+      const stepY = fromY <= toY ? 1 : -1;
+      for (let y = fromY; y !== toY + stepY; y += stepY) {
+        if (y >= 0 && y < MH && m[y][fromX] === W) m[y][fromX] = C;
+      }
+      const step = fromX <= toX ? 1 : -1;
+      for (let x = fromX; x !== toX + step; x += step) {
+        if (x >= 0 && x < MW && m[toY][x] === W) m[toY][x] = C;
+      }
+    }
+  }
+
   for (let i = 1; i < rooms.length; i++) {
-    const a = rooms[i - 1];
-    const b = rooms[i];
-    const ax = a.x + Math.floor(a.w / 2);
-    const ay = a.y + Math.floor(a.h / 2);
-    const bx = b.x + Math.floor(b.w / 2);
-    const by = b.y + Math.floor(b.h / 2);
-    for (let x = Math.min(ax, bx); x <= Math.max(ax, bx); x++) {
-      if (m[ay][x] === W) m[ay][x] = C;
-    }
-    for (let y = Math.min(ay, by); y <= Math.max(ay, by); y++) {
-      if (m[y][bx] === W) m[y][bx] = C;
-    }
+    const sides = bestSides(i - 1, i);
+    if (!sides) continue; // 辺が全部埋まっている（稀）
+    const exitA = pickExit(rooms[i - 1], sides.aSide);
+    const exitB = pickExit(rooms[i], sides.bSide);
+    // 辺を使用済みに
+    usedSides.get(i - 1)!.add(sides.aSide);
+    usedSides.get(i)!.add(sides.bSide);
+    // 横優先か縦優先かはA側の辺で決定
+    const hFirst = sides.aSide === "left" || sides.aSide === "right";
+    digCorridor(exitA.x, exitA.y, exitB.x, exitB.y, hFirst);
   }
 
   // player start
