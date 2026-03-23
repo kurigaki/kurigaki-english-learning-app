@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Course, Stage } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
-import { words, categoryLabels, Category, getWordsByCourse } from "@/data/words/compat";
+import { words, categoryLabels, Category, getWordsByCourse } from "@/data/words";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
 import { Card, SpeakButton } from "@/components/ui";

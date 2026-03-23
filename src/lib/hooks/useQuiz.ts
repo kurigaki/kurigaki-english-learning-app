@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams } from "next/navigation";
-import { words, Word } from "@/data/words/compat";
+import { words, Word } from "@/data/words";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Question, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";

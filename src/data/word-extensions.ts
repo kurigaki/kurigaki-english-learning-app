@@ -9,7 +9,6 @@
 import type { WordExtension } from "@/types";
 import type { Word as BaseWord } from "./words/types";
 import { allWords } from "./words";
-import { exampleJaOverrides } from "./example-ja-overrides";
 import { motitownExtensions } from "./word-extensions-motitown";
 
 const _handwrittenExtensions: [number, WordExtension][] = [
@@ -7570,7 +7569,7 @@ export const wordExtensions: Map<number, WordExtension> = new Map([
 
 type ExtensionSourceWord = Pick<
   BaseWord,
-  "id" | "word" | "meaning" | "partOfSpeech" | "course" | "stage" | "example"
+  "id" | "word" | "meaning" | "partOfSpeech" | "course" | "stage" | "example" | "exampleJa"
 >;
 
 const ALL_SOURCE_WORDS: ExtensionSourceWord[] = allWords;
@@ -7703,13 +7702,13 @@ function buildGeneratedExamples(word: ExtensionSourceWord): NonNullable<WordExte
     if (examples.length >= 3) break;
     push(
       candidate.example,
-      exampleJaOverrides.get(candidate.id),
+      candidate.exampleJa,
       COURSE_CONTEXT_LABEL[candidate.course]
     );
   }
 
   if (examples.length < 3 && word.example) {
-    push(word.example, exampleJaOverrides.get(word.id), COURSE_CONTEXT_LABEL[word.course]);
+    push(word.example, word.exampleJa, COURSE_CONTEXT_LABEL[word.course]);
   }
 
   const m = pickPrimaryMeaning(word.meaning);

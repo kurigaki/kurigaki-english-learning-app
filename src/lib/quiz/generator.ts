@@ -1,4 +1,4 @@
-import { Word, getWordsByCourse } from "@/data/words/compat";
+import { Word, getWordsByCourse } from "@/data/words";
 import { Question, QuestionType, QuestionTypeRatios } from "@/types";
 import { shuffleArray, pickRandom } from "@/lib/shuffle";
 import { QuizSettings } from "./settings";
@@ -99,19 +99,9 @@ export function createFillBlankSentence(example: string, word: string): string {
 
 /**
  * リスニング/書き取り問題用の例文を選択する。
- * word.examples[] がある場合は穴あき可能なものをランダムに選択する。
- * なければ従来の word.example にフォールバック。
+ * word.example（単一例文）から穴あき可能なものを返す。
  */
 export function selectFillBlankExample(word: Word): { example: string; exampleJa: string | undefined } | null {
-  // examples[] がある場合は穴あき可能なものをランダムに選ぶ
-  if (word.examples && word.examples.length > 0) {
-    const validExamples = word.examples.filter((ex) => canCreateFillBlank(ex.en, word.word));
-    if (validExamples.length > 0) {
-      const selected = validExamples[Math.floor(Math.random() * validExamples.length)];
-      return { example: selected.en, exampleJa: selected.ja };
-    }
-  }
-  // フォールバック: 従来の単一例文
   if (word.example && canCreateFillBlank(word.example, word.word)) {
     return { example: word.example, exampleJa: word.exampleJa };
   }
@@ -154,7 +144,6 @@ export function parseDictationParts(example: string, word: string): DictationPar
 }
 
 export function generateQuestion(word: Word, allWords: Word[], ratios: QuestionTypeRatios): Question {
-  // examples[] を考慮した例文選択（hasExample の判定も改善）
   const selectedExample = selectFillBlankExample(word);
   const hasExample = selectedExample !== null;
   let type = selectQuestionTypeWithRatios(ratios, hasExample);
@@ -170,7 +159,6 @@ export function generateQuestion(word: Word, allWords: Word[], ratios: QuestionT
     id: word.id,
     word: word.word,
     meaning: word.meaning,
-    // examples[] があれば選択された例文を使用し、なければ従来の word.example にフォールバック
     example: selectedExample?.example ?? word.example,
     exampleJa: selectedExample?.exampleJa ?? word.exampleJa,
     category: word.category,
