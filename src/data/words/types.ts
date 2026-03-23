@@ -1,4 +1,3 @@
-import type { Category } from "./category";
 import type { Difficulty } from "./difficulty";
 
 // コース種別（7コース、将来拡張用に general/business 予約）
@@ -30,6 +29,8 @@ export type Stage =
 export type PartOfSpeech = "noun" | "verb" | "adjective" | "adverb" | "other";
 
 // 統一Word型
+// category/categories は string で定義（Category union の組み合わせ爆発を回避）
+// UI表示には categoryLabels を使用し、正しさはテストで保証する
 export type Word = {
   id: number;
   word: string;
@@ -40,8 +41,8 @@ export type Word = {
   example?: string;
   exampleJa?: string;
   difficulty: Difficulty;
-  category: Category;
-  categories?: Category[];
+  category: string;
+  categories?: string[];
   frequencyRank?: number;
   source?: string;
 };

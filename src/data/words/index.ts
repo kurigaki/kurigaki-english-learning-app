@@ -5,8 +5,7 @@ import { eikenWords as _eikenWords } from "./eiken";
 import { conversationWords as _conversationWords } from "./conversation";
 import { Word, Course, Stage } from "./types";
 
-// 型アサーション（データファイルは型注釈なしで定義、ここで型を付与）
-// categories フィールドの組み合わせ数が多いため、直接キャストすると TS2590 になる
+// 型アサーション（データファイルは大量エントリで型推論が TS2590 になるため）
 export const juniorWords = _juniorWords as unknown as Word[];
 export const seniorWords = _seniorWords as unknown as Word[];
 export const toeicWords = _toeicWords as unknown as Word[];

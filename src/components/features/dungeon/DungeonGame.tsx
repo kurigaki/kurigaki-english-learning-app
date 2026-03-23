@@ -938,18 +938,6 @@ function DungeonControls({
     WebkitUserSelect: "none", WebkitTouchCallout: "none",
     boxShadow: "0 2px 4px rgba(0,0,0,0.5)", touchAction: "none",
   };
-  const dpCenterStyle: React.CSSProperties = {
-    width: 52, height: 52,
-    background: turnMode ? "#1a3a1a" : "#0a0f1a",
-    border: `2px solid ${turnMode ? "#4caf50" : "#1a2240"}`,
-    display: "flex", alignItems: "center", justifyContent: "center",
-    fontSize: turnMode ? 18 : 10,
-    cursor: "pointer", borderRadius: 8,
-    color: turnMode ? "#4caf50" : "#445",
-    userSelect: "none",
-    WebkitUserSelect: "none", WebkitTouchCallout: "none",
-    boxShadow: "0 2px 4px rgba(0,0,0,0.3)", touchAction: "none",
-  };
   const menuBtnStyle: React.CSSProperties = {
     flex: 1, height: 36, background: "#4a7c1a", border: "2px solid #6abf2a",
     display: "flex", alignItems: "center", justifyContent: "center",
@@ -969,6 +957,18 @@ function DungeonControls({
 
   const [turnMode, setTurnMode] = useState(false);
   const turnModeRef = useRef(false);
+  const dpCenterStyle: React.CSSProperties = {
+    width: 52, height: 52,
+    background: turnMode ? "#1a3a1a" : "#0a0f1a",
+    border: `2px solid ${turnMode ? "#4caf50" : "#1a2240"}`,
+    display: "flex", alignItems: "center", justifyContent: "center",
+    fontSize: turnMode ? 18 : 10,
+    cursor: "pointer", borderRadius: 8,
+    color: turnMode ? "#4caf50" : "#445",
+    userSelect: "none",
+    WebkitUserSelect: "none", WebkitTouchCallout: "none",
+    boxShadow: "0 2px 4px rgba(0,0,0,0.3)", touchAction: "none",
+  };
   const isDashModeRef = useRef(isDashMode);
   turnModeRef.current = turnMode;
   isDashModeRef.current = isDashMode;
