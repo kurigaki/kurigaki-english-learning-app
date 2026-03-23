@@ -191,7 +191,7 @@ export function generateMap(g: GameState): void {
   let eid = 0;
   for (let ri = 1; ri < rooms.length; ri++) {
     const r = rooms[ri];
-    const cnt = 1 + Math.floor(Math.random() * 2);
+    const cnt = 1 + Math.floor(Math.random() * 2) + (g.floor >= 4 ? 1 : 0);
     for (let c = 0; c < cnt; c++) {
       let ex = 0;
       let ey = 0;
@@ -205,7 +205,7 @@ export function generateMap(g: GameState): void {
         (g.enemies.find((e) => e.x === ex && e.y === ey) ||
           (g.stairsPos && ex === g.stairsPos.x && ey === g.stairsPos.y))
       );
-      const pool = ENEMIES_DEF.filter((e) => e.floor <= Math.min(g.floor, 3));
+      const pool = ENEMIES_DEF.filter((e) => e.floor <= g.floor);
       const t = pool[Math.floor(Math.random() * pool.length)];
       const sleeping = Math.random() < t.sleepChance;
       g.enemies.push({

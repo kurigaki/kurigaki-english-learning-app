@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-24",
+    version: "1.91.1",
+    title: "ダンジョン：敵・罠のバランス調整",
+    content: [
+      "【追加】新敵5種追加（ゴースト・ウィザード・ミノタウロス・ドラゴン・リッチ）",
+      "【改善】B4F-B5Fに強力な敵が出現するようになりました",
+      "【改善】深層フロアでは敵の出現数が増加",
+      "【改善】英語学習メインモードのトラップをダメージと空腹のみに緩和",
+    ],
+    category: "improvement",
+  },
+  {
+    date: "2026-03-24",
     version: "1.90.0",
     title: "ダンジョン：廊下1列化・敵AI改善（シレン準拠）",
     content: [
