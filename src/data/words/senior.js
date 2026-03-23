@@ -1,4 +1,3 @@
-// @ts-nocheck — categories の組み合わせ数が多く TS2590 が発生するため
 
 
 // senior コース — ID範囲: 20000-29999

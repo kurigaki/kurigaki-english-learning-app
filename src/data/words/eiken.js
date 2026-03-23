@@ -1,4 +1,3 @@
-// @ts-nocheck — categories の組み合わせ数が多く TS2590 が発生するため
 
 
 // eiken コース — ID範囲: 40000-49999
