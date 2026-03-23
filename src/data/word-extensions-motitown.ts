@@ -2490,18 +2490,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // want to (11856)
-  [
-    11856,
-    {
-      pronunciation: { us: "[wɑnt-túː]" },
-      coreImage: "何かをしたいという気持ちや願望",
-      examples: [
-        { en: "She wants to study English.", ja: "彼女は英語を勉強したい。", context: "一般" },
-      ],
-    },
-  ],
-
   // ourselves (11857)
   [
     11857,
@@ -2537,18 +2525,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "the eleventh=11番目の",
       examples: [
         { en: "She was the eleventh guest to arrive.", ja: "彼女は到着した11番目の客だった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // every day (11860)
-  [
-    11860,
-    {
-      pronunciation: { us: "[évridèɪ]" },
-      coreImage: "一日一日が積み重なっていく連続した時間の流れ。",
-      examples: [
-        { en: "He goes to school every day.", ja: "彼は毎日学校に行く。", context: "一般" },
       ],
     },
   ],
@@ -4490,18 +4466,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // post office (11991)
-  [
-    11991,
-    {
-      pronunciation: { us: "[póust-ɔ́fis]" },
-      coreImage: "手紙や小包が集められ、仕分けされて宛先へ送られる公的な場所",
-      examples: [
-        { en: "I went to the post office to mail a letter.", ja: "手紙を出すために郵便局に行った。", context: "一般" },
-      ],
-    },
-  ],
-
   // across (11992)
   [
     11992,
@@ -5236,54 +5200,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // be going to (12042)
-  [
-    12042,
-    {
-      pronunciation: { us: "[biː]" },
-      coreImage: "今の準備や動きが続いて、近いうちにその結果が起こる方向へ進んでいる状態",
-      examples: [
-        { en: "They are going to play soccer after school.", ja: "彼らは放課後にサッカーをするつもりだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // how to (12043)
-  [
-    12043,
-    {
-      pronunciation: { us: "[háu-túː]" },
-      coreImage: "何かをするための手順や順番を示して、どう進めるかを表すイメージ",
-      examples: [
-        { en: "Do you know how to solve this problem?", ja: "この問題を解く方法を知っていますか。", context: "一般" },
-      ],
-    },
-  ],
-
-  // some of (12044)
-  [
-    12044,
-    {
-      pronunciation: { us: "[səm-əv]" },
-      coreImage: "まとまりの中で、全部ではなく一部だけを指す。",
-      examples: [
-        { en: "Some of the questions were difficult.", ja: "その問題のうちのいくつかは難しかったです。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in front of (12045)
-  [
-    12045,
-    {
-      pronunciation: { us: "[in-frʌ́nt-əv]" },
-      coreImage: "物や人の正面に位置する空間的な感覚で、人物の場合はその人の前にいる場面も含む。",
-      examples: [
-        { en: "There is a bench in front of the school.", ja: "学校の前にベンチがある。", context: "一般" },
-      ],
-    },
-  ],
-
   // slide (12046)
   [
     12046,
@@ -5297,46 +5213,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // for example (12047)
-  [
-    12047,
-    {
-      pronunciation: { us: "[fər-igzǽmpl]" },
-      coreImage: "多くの事柄の代表として一例を指し示すイメージ",
-      examples: [
-        { en: "For example, frogs eat insects.", ja: "例えば、カエルは昆虫を食べます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // begin to (12048)
-  [
-    12048,
-    {
-      pronunciation: { us: "[bigín-túː]" },
-      coreImage: "心や状況が変わりかけて、行為が見え始める出発点",
-      antonyms: ["end"],
-      relatedWordEntries: [
-        { word: "end", partOfSpeech: "動", meaning: "終わる", isAntonym: true },
-      ],
-      examples: [
-        { en: "She began to study English.", ja: "彼女は英語を勉強し始めた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // of course (12049)
-  [
-    12049,
-    {
-      pronunciation: { us: "[əv-kɔ́rs]" },
-      coreImage: "予想や期待とぴったり合い、自然にそうだと感じる状態",
-      examples: [
-        { en: "She is, of course, the fastest runner.", ja: "彼女はもちろん一番速い選手だ。", context: "一般" },
-      ],
-    },
-  ],
-
   // ton (12050)
   [
     12050,
@@ -5346,18 +5222,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "tons of=〜トンの / a ton=1トンの / two tons=2トンの",
       examples: [
         { en: "The truck carried ten tons of coal.", ja: "そのトラックは石炭を10トン運んだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // one of (12051)
-  [
-    12051,
-    {
-      pronunciation: { us: "[wʌ́n-əv]" },
-      coreImage: "集まりやグループの中から1つを選んで示すイメージ。",
-      examples: [
-        { en: "This is one of my favorite books.", ja: "これは私のお気に入りの本のうちの一つだ。", context: "一般" },
       ],
     },
   ],
@@ -5379,18 +5243,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // have to (12053)
-  [
-    12053,
-    {
-      pronunciation: { us: "[həv-túː]" },
-      coreImage: "外からの決まりや必要で道が決まり、そこを進むしかない状況",
-      examples: [
-        { en: "She has to wear a uniform.", ja: "彼女は制服を着なければならない。", context: "一般" },
-      ],
-    },
-  ],
-
   // gun (12054)
   [
     12054,
@@ -5400,18 +5252,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "shoot a gun=銃を撃つ / fire a gun=発砲する / carry a gun=銃を携帯する",
       examples: [
         { en: "This picture shows the parts of a gun.", ja: "この図は銃の部品を示している。", context: "一般" },
-      ],
-    },
-  ],
-
-  // come from (12055)
-  [
-    12055,
-    {
-      pronunciation: { us: "[kʌ́m-frəm]" },
-      coreImage: "その人や物の出身地や出身集団を表す",
-      examples: [
-        { en: "Ken comes from Japan.", ja: "ケンは日本の出身である。", context: "一般" },
       ],
     },
   ],
@@ -5493,30 +5333,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // because of (12061)
-  [
-    12061,
-    {
-      pronunciation: { us: "[bikɔ́z-əv]" },
-      coreImage: "ある出来事や状態が原因となって、その結果が生じる因果のつながり",
-      examples: [
-        { en: "We cancelled the picnic because of the rain.", ja: "雨が原因で、私たちはピクニックを中止した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // a few (12062)
-  [
-    12062,
-    {
-      pronunciation: { us: "[ə-fjúː]" },
-      coreImage: "数は少ないがゼロではなく、いくつか存在するという感覚",
-      examples: [
-        { en: "She gave me a few coins.", ja: "彼女は私にいくつかの硬貨をくれた。", context: "一般" },
-      ],
-    },
-  ],
-
   // chain (12063)
   [
     12063,
@@ -5526,22 +5342,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "chain reaction=連鎖反応 / chain store=チェーン店 / chain of events=一連の出来事 / in chains=鎖でつながれて",
       examples: [
         { en: "The chain broke.", ja: "鎖が切れた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // arrive at (12064)
-  [
-    12064,
-    {
-      pronunciation: { us: "[əráiv-ət]" },
-      coreImage: "目的地や駅など特定の場所に到着するというイメージ",
-      antonyms: ["leave"],
-      relatedWordEntries: [
-        { word: "leave", partOfSpeech: "動", meaning: "出発する", isAntonym: true },
-      ],
-      examples: [
-        { en: "She arrived at the station yesterday.", ja: "彼女は昨日駅に到着した。", context: "一般" },
       ],
     },
   ],
@@ -5559,34 +5359,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // more than (12066)
-  [
-    12066,
-    {
-      pronunciation: { us: "[mɔr-ðən]" },
-      coreImage: "天秤の片側が沈んで、どちらにたくさんあるかが見えるイメージ",
-      antonyms: ["less than"],
-      relatedWordEntries: [
-        { word: "less than", partOfSpeech: "前", meaning: "〜より少ない", isAntonym: true },
-      ],
-      examples: [
-        { en: "More than ten students passed the exam.", ja: "10人より多くの生徒がその試験に合格した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // come true (12067)
-  [
-    12067,
-    {
-      pronunciation: { us: "[kʌ́m-trúː]" },
-      coreImage: "心に描いた想像や願いが現実の出来事として姿を現す",
-      examples: [
-        { en: "My dream came true.", ja: "私の夢が実現した。", context: "一般" },
-      ],
-    },
-  ],
-
   // bar (12068)
   [
     12068,
@@ -5596,22 +5368,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "hang from bar=鉄棒にぶら下がる / climb onto bar=鉄棒に登る / pull up on bar=鉄棒で懸垂する / swing on bar=鉄棒で揺れる",
       examples: [
         { en: "The gymnast hung from the bar.", ja: "体操選手は棒にぶら下がった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // all over (12069)
-  [
-    12069,
-    {
-      pronunciation: { us: "[ɔl-óuvər]" },
-      coreImage: "広く行き渡ってどこにでもあるという感覚。文脈によっては『もう終わった』という意味を表す。",
-      antonyms: ["nowhere"],
-      relatedWordEntries: [
-        { word: "nowhere", partOfSpeech: "副", meaning: "どこにもない", isAntonym: true },
-      ],
-      examples: [
-        { en: "People live all over the world.", ja: "人々は世界のいたるところに住んでいる。", context: "一般" },
       ],
     },
   ],
@@ -5642,50 +5398,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // with a smile (12072)
-  [
-    12072,
-    {
-      pronunciation: { us: "[wíð-ə-smáil]" },
-      coreImage: "口角を上げた顔のまま、話したり動いたりする状態",
-      antonyms: ["angrily"],
-      relatedWordEntries: [
-        { word: "angrily", partOfSpeech: "副", meaning: "怒って", isAntonym: true },
-      ],
-      examples: [
-        { en: "He answered with a smile.", ja: "彼は微笑みながら答えた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at night (12073)
-  [
-    12073,
-    {
-      pronunciation: { us: "[ət-nait]" },
-      coreImage: "太陽が地平線の下にあり、空が暗く自然光が乏しい時間帯",
-      examples: [
-        { en: "I study at night.", ja: "私は夜に勉強する。", context: "一般" },
-      ],
-    },
-  ],
-
-  // go out (12074)
-  [
-    12074,
-    {
-      pronunciation: { us: "[góu-áut]" },
-      coreImage: "屋内から外へ移動して、外の空間に出る動き",
-      antonyms: ["stay"],
-      relatedWordEntries: [
-        { word: "stay", partOfSpeech: "動", meaning: "とどまる", isAntonym: true },
-      ],
-      examples: [
-        { en: "They went out last Saturday.", ja: "彼らは先週土曜日に外出した。", context: "一般" },
-      ],
-    },
-  ],
-
   // fool (12075)
   [
     12075,
@@ -5699,34 +5411,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Don't be a fool.", ja: "ばかになるな。", context: "一般" },
-      ],
-    },
-  ],
-
-  // hear of (12076)
-  [
-    12076,
-    {
-      pronunciation: { us: "[hir-əv]" },
-      coreImage: "話や情報が耳に入って、その存在や名前だけを知っている状態になる。",
-      examples: [
-        { en: "Have you heard of Mt. Fuji?", ja: "富士山のことを聞いたことがありますか。", context: "一般" },
-      ],
-    },
-  ],
-
-  // do well (12077)
-  [
-    12077,
-    {
-      pronunciation: { us: "[du-wél]" },
-      coreImage: "目標に合わせて行動し、ねらい通りの結果を出す",
-      antonyms: ["fail"],
-      relatedWordEntries: [
-        { word: "fail", partOfSpeech: "動", meaning: "失敗する", isAntonym: true },
-      ],
-      examples: [
-        { en: "I did well on the test.", ja: "テストではうまくやった。", context: "一般" },
       ],
     },
   ],
@@ -5800,18 +5484,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "I recognized him by his voice.", ja: "私は声で彼だとわかった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // hear from (12083)
-  [
-    12083,
-    {
-      pronunciation: { us: "[hir-frəm]" },
-      coreImage: "誰かから知らせや連絡を受け取り、それを知る場面",
-      examples: [
-        { en: "We haven't heard from our parents yet.", ja: "私たちはまだ両親から連絡がありません。", context: "一般" },
       ],
     },
   ],
@@ -5915,18 +5587,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "She finished second in the race.", ja: "彼女はレースで２番目になった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // high school (12091)
-  [
-    12091,
-    {
-      pronunciation: { us: "[hái-skúːl]" },
-      coreImage: "中学校のあとに通う、十代が学び将来の進路を準備する学校。",
-      examples: [
-        { en: "I go to high school.", ja: "私は高校に通っている。", context: "一般" },
       ],
     },
   ],
@@ -7756,18 +7416,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // carbon dioxide (12214)
-  [
-    12214,
-    {
-      pronunciation: { us: "[kɑ́rbən-daiɑ́ksàid]" },
-      coreImage: "空気の中にある無色のガスで、炭素原子と酸素原子が結合した分子。",
-      examples: [
-        { en: "Burning fuel produces carbon dioxide.", ja: "燃料を燃やすと二酸化炭素が発生する。", context: "一般" },
-      ],
-    },
-  ],
-
   // seventh (12215)
   [
     12215,
@@ -8459,18 +8107,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // decide to (12262)
-  [
-    12262,
-    {
-      pronunciation: { us: "[disáid-túː]" },
-      coreImage: "心の中のスイッチを入れて、行動を始める向きに切り替える",
-      examples: [
-        { en: "She decides to study harder for the exam.", ja: "彼女は試験のためにもっと勉強しようと決心する。", context: "一般" },
-      ],
-    },
-  ],
-
   // valley (12263)
   [
     12263,
@@ -8527,18 +8163,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "I like animation more than comics!", ja: "漫画よりアニメーションが好きなんだ！", context: "一般" },
-      ],
-    },
-  ],
-
-  // what to (12267)
-  [
-    12267,
-    {
-      pronunciation: { us: "[hwʌ́t-túː]" },
-      coreImage: "行動の対象を指し、どれを選べばよいかを問うイメージ",
-      examples: [
-        { en: "I didn't know what to do in that situation.", ja: "その状況で何をしたらよいか分からなかった。", context: "一般" },
       ],
     },
   ],
@@ -8715,38 +8339,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // go back (12280)
-  [
-    12280,
-    {
-      pronunciation: { us: "[góu-bǽk]" },
-      coreImage: "以前いた場所に戻ること",
-      antonyms: ["depart"],
-      relatedWordEntries: [
-        { word: "depart", partOfSpeech: "動", meaning: "出発する", isAntonym: true },
-      ],
-      examples: [
-        { en: "He went back to school yesterday.", ja: "彼は昨日学校に戻った。", context: "一般" },
-      ],
-    },
-  ],
-
-  // all right (12281)
-  [
-    12281,
-    {
-      pronunciation: { us: "[ɔl-ráit]" },
-      coreImage: "反対や不安がないことを示し、そのまま続けてよいと伝える表現",
-      antonyms: ["wrong"],
-      relatedWordEntries: [
-        { word: "wrong", partOfSpeech: "形", meaning: "間違っている", isAntonym: true },
-      ],
-      examples: [
-        { en: "Is it all right to open the window?", ja: "窓を開けてもいいですか？", context: "一般" },
-      ],
-    },
-  ],
-
   // loss (12282)
   [
     12282,
@@ -8807,22 +8399,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // be born (12286)
-  [
-    12286,
-    {
-      pronunciation: { us: "[bíː-bɔ́rn]" },
-      coreImage: "母や卵から出て新しい命として存在し始めること",
-      antonyms: ["die"],
-      relatedWordEntries: [
-        { word: "die", partOfSpeech: "動", meaning: "死ぬ", isAntonym: true },
-      ],
-      examples: [
-        { en: "He was born on July 3.", ja: "彼は7月3日に生まれた。", context: "一般" },
-      ],
-    },
-  ],
-
   // quick (12287)
   [
     12287,
@@ -8836,22 +8412,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "She made a quick decision.", ja: "彼女はすばやい決断を下した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // agree with (12288)
-  [
-    12288,
-    {
-      pronunciation: { us: "[əgríː-wíð]" },
-      coreImage: "ある人の見解に同じ立場を取り、意見に賛同すること",
-      antonyms: ["disagree"],
-      relatedWordEntries: [
-        { word: "disagree", partOfSpeech: "動", meaning: "賛成しない", isAntonym: true },
-      ],
-      examples: [
-        { en: "I agree with you.", ja: "私はあなたに賛成です。", context: "一般" },
       ],
     },
   ],
@@ -8981,22 +8541,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // go on (12298)
-  [
-    12298,
-    {
-      pronunciation: { us: "[gúːn]" },
-      coreImage: "始まった動作や状態が止まらずに次の段階へ進む。",
-      antonyms: ["stop"],
-      relatedWordEntries: [
-        { word: "stop", partOfSpeech: "動", meaning: "やめる", isAntonym: true },
-      ],
-      examples: [
-        { en: "The road goes on and on.", ja: "その道は長々と続く。", context: "一般" },
-      ],
-    },
-  ],
-
   // fifteenth (12299)
   [
     12299,
@@ -9023,42 +8567,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // have been to (12301)
-  [
-    12301,
-    {
-      pronunciation: { us: "[həv-bín-túː]" },
-      coreImage: "その訪問が自分の経験の一部になっている",
-      examples: [
-        { en: "I have been to Kyoto.", ja: "私は京都へ行ったことがある。", context: "一般" },
-      ],
-    },
-  ],
-
-  // instead of (12302)
-  [
-    12302,
-    {
-      pronunciation: { us: "[instéd-əv]" },
-      coreImage: "あるものをやめて、別のものをその場所や役割に入れるイメージ",
-      examples: [
-        { en: "He played games instead of studying.", ja: "彼は勉強する代わりにゲームをした。", context: "一般" },
-      ],
-    },
-  ],
-
-  // even if (12303)
-  [
-    12303,
-    {
-      pronunciation: { us: "[íːvn-íf]" },
-      coreImage: "起こるか分からない出来事を仮定しても結果は同じだと示す",
-      examples: [
-        { en: "Even if it snows, I will go to school.", ja: "たとえ雪が降っても、私は学校へ行きます。", context: "一般" },
-      ],
-    },
-  ],
-
   // gram (12304)
   [
     12304,
@@ -9068,22 +8576,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "grams of=〜グラムの / a gram of=1グラムの / one gram=1グラム",
       examples: [
         { en: "There are 1000 grams in a kilogram.", ja: "1キログラムは1000グラムです。", context: "一般" },
-      ],
-    },
-  ],
-
-  // stand up (12305)
-  [
-    12305,
-    {
-      pronunciation: { us: "[stǽnd-ʌ́p]" },
-      coreImage: "座ったり横になったりして低い状態から、足で体を支えて直立になる動き。",
-      antonyms: ["sit down"],
-      relatedWordEntries: [
-        { word: "sit down", partOfSpeech: "動", meaning: "座る", isAntonym: true },
-      ],
-      examples: [
-        { en: "He stood up when the teacher entered.", ja: "先生が入ってきたとき、彼は立ち上がった。", context: "一般" },
       ],
     },
   ],
@@ -9157,34 +8649,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // hear from (21648)
-  [
-    21648,
-    {
-      pronunciation: { us: "[hir-frəm]" },
-      coreImage: "遠くにいる人の声や知らせがこちらに届き、自分がそれを受け取る場面",
-      examples: [
-        { en: "We haven't heard from our parents yet.", ja: "私たちはまだ両親から連絡がありません。", context: "一般" },
-      ],
-    },
-  ],
-
-  // believe in (21649)
-  [
-    21649,
-    {
-      pronunciation: { us: "[bilíːv-in]" },
-      coreImage: "あるものの実在や効力を疑わず肯定する",
-      antonyms: ["doubt"],
-      relatedWordEntries: [
-        { word: "doubt", partOfSpeech: "動", meaning: "疑う", isAntonym: true },
-      ],
-      examples: [
-        { en: "Many people believe in ghosts.", ja: "多くの人が幽霊の存在を信じている。", context: "一般" },
-      ],
-    },
-  ],
-
   // through (21650)
   [
     21650,
@@ -9198,34 +8662,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // put away (21651)
-  [
-    21651,
-    {
-      pronunciation: { us: "[pút-əwéi]" },
-      coreImage: "手に取ったものを決まった場所に運んでそこにしまうイメージ。",
-      examples: [
-        { en: "Please put your books away.", ja: "本を片付けてください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // throw away (21652)
-  [
-    21652,
-    {
-      pronunciation: { us: "[θróu-əwéi]" },
-      coreImage: "必要なくなった物や考えを自分から離して、持たない状態にするイメージ。",
-      antonyms: ["keep"],
-      relatedWordEntries: [
-        { word: "keep", partOfSpeech: "動", meaning: "〜を保つ", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please throw away the old newspapers.", ja: "古い新聞を捨ててください。", context: "一般" },
-      ],
-    },
-  ],
-
   // mean (21653)
   [
     21653,
@@ -9235,18 +8671,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "mean that=…という意味である / mean well=善意がある / mean to do=〜するつもりだ",
       examples: [
         { en: "The red light means stop.", ja: "赤信号は停止を意味する。", context: "一般" },
-      ],
-    },
-  ],
-
-  // laugh at (21654)
-  [
-    21654,
-    {
-      pronunciation: { us: "[lǽf-ət]" },
-      coreImage: "特定の人や出来事を標的にして、笑いを向ける",
-      examples: [
-        { en: "They laughed at his idea.", ja: "彼らは彼の考えを笑った。", context: "一般" },
       ],
     },
   ],
@@ -9294,34 +8718,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // no longer (21658)
-  [
-    21658,
-    {
-      pronunciation: { us: "[nou]" },
-      coreImage: "前に続いていたことが、ある時点で終わって戻らなくなる状態",
-      antonyms: ["still"],
-      relatedWordEntries: [
-        { word: "still", partOfSpeech: "副", meaning: "まだ", isAntonym: true },
-      ],
-      examples: [
-        { en: "She is no longer my friend.", ja: "彼女はもう私の友人ではない。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at that time (21659)
-  [
-    21659,
-    {
-      pronunciation: { us: "[ət-ðǽt-táim]" },
-      coreImage: "話や出来事の中で示された、ある出来事が起きていたその時点を指す",
-      examples: [
-        { en: "At that time, she lived in Tokyo.", ja: "当時、彼女は東京に住んでいた。", context: "一般" },
-      ],
-    },
-  ],
-
   // introduce (21660)
   [
     21660,
@@ -9348,22 +8744,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // do well (21662)
-  [
-    21662,
-    {
-      pronunciation: { us: "[du-wél]" },
-      coreImage: "試験や学習の結果が良く出て、高得点や良い成績になること",
-      antonyms: ["fail"],
-      relatedWordEntries: [
-        { word: "fail", partOfSpeech: "動", meaning: "失敗する", isAntonym: true },
-      ],
-      examples: [
-        { en: "She did well in her exams.", ja: "彼女は試験でいい成績を取った。", context: "一般" },
-      ],
-    },
-  ],
-
   // until (21663)
   [
     21663,
@@ -9373,22 +8753,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "not until=～するまでは～ない / until now=現在まで / until recently=最近まで",
       examples: [
         { en: "I will study English until 7 pm.", ja: "夜7時まで英語を勉強します。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at last (21664)
-  [
-    21664,
-    {
-      pronunciation: { us: "[ət-læst]" },
-      coreImage: "長く待ったあとで、目的の時や結果にようやくたどり着く瞬間のイメージ。",
-      antonyms: ["initially"],
-      relatedWordEntries: [
-        { word: "initially", partOfSpeech: "副", meaning: "最初に", isAntonym: true },
-      ],
-      examples: [
-        { en: "She passed the exam at last.", ja: "彼女はとうとう試験に合格した。", context: "一般" },
       ],
     },
   ],
@@ -9461,22 +8825,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // at first (21669)
-  [
-    21669,
-    {
-      pronunciation: { us: "[ət-fə́ːrst]" },
-      coreImage: "話や出来事の時間で一番先の部分を示し、後の様子と分ける",
-      antonyms: ["finally"],
-      relatedWordEntries: [
-        { word: "finally", partOfSpeech: "副", meaning: "最終的に", isAntonym: true },
-      ],
-      examples: [
-        { en: "At first, I did not like carrots, but now I like them.", ja: "最初はニンジンが嫌いだったけれど、今は好きだ。", context: "一般" },
-      ],
-    },
-  ],
-
   // confident (21670)
   [
     21670,
@@ -9490,18 +8838,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "She is a confident student.", ja: "彼女は自信のある学生だ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // wait for (21671)
-  [
-    21671,
-    {
-      pronunciation: { us: "[wéit-fər]" },
-      coreImage: "目当ての人や物が現れるまで注意を向け続けて時間を過ごす",
-      examples: [
-        { en: "She waits for the bus every morning.", ja: "彼女は毎朝バスを待ちます。", context: "一般" },
       ],
     },
   ],
@@ -9596,18 +8932,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // because of (21678)
-  [
-    21678,
-    {
-      pronunciation: { us: "[bikɔ́z-əv]" },
-      coreImage: "ある出来事や状態が原因となって、その結果が生じる因果のつながり",
-      examples: [
-        { en: "The match was canceled because of heavy rain.", ja: "試合は大雨のために中止になった。", context: "一般" },
-      ],
-    },
-  ],
-
   // rarely (21679)
   [
     21679,
@@ -9642,18 +8966,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // one day (21681)
-  [
-    21681,
-    {
-      pronunciation: { us: "[wʌ́n-déi]" },
-      coreImage: "日付を特定せず、過去や未来の『ある時点』で起こる出来事を表す。",
-      examples: [
-        { en: "One day, she found a small cat.", ja: "ある日、彼女は小さな猫を見つけた。", context: "一般" },
-      ],
-    },
-  ],
-
   // temple (21682)
   [
     21682,
@@ -9684,22 +8996,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // not always (21684)
-  [
-    21684,
-    {
-      pronunciation: { us: "[nɑt-ɔ́lweiz]" },
-      coreImage: "ある条件では成り立つが、別の条件では成り立たないこと",
-      antonyms: ["always"],
-      relatedWordEntries: [
-        { word: "always", partOfSpeech: "副", meaning: "いつも", isAntonym: true },
-      ],
-      examples: [
-        { en: "He may not always perform well.", ja: "彼は必ずしも良いパフォーマンスを見せるとは限らない。", context: "一般" },
-      ],
-    },
-  ],
-
   // celebrate (21685)
   [
     21685,
@@ -9726,18 +9022,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "determine how=どのように〜かを決定する / determine what=何を〜かを決定する / determine who=誰が〜かを決定する / determine whether=〜かどうかを決定する",
       examples: [
         { en: "Students determine their preferred universities before applying.", ja: "学生は出願前に希望する大学を決める。", context: "一般" },
-      ],
-    },
-  ],
-
-  // after all (21687)
-  [
-    21687,
-    {
-      pronunciation: { us: "[ǽftər-ɔl]" },
-      coreImage: "出来事や議論を振り返って示す結論・判断で、文頭では理由提示（やはり）にも使われる",
-      examples: [
-        { en: "After all, I can do it.", ja: "結局、私にはできる。", context: "一般" },
       ],
     },
   ],
@@ -9811,22 +9095,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "estimate at=〜を〜と見積もる / estimate to be=〜であると推定する / estimate that=〜と推定する",
       examples: [
         { en: "The committee estimated the cost of the project at one million dollars.", ja: "委員会はそのプロジェクトの費用を100万ドルと見積もった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // by chance (21693)
-  [
-    21693,
-    {
-      pronunciation: { us: "[bái-tʃǽns]" },
-      coreImage: "計画や意図なしに、ばらばらのものごとが組み合わさって結果になるイメージ",
-      antonyms: ["on purpose"],
-      relatedWordEntries: [
-        { word: "on purpose", partOfSpeech: "副", meaning: "わざと", isAntonym: true },
-      ],
-      examples: [
-        { en: "He met her by chance at the station.", ja: "彼は駅で偶然に彼女に会った。", context: "一般" },
       ],
     },
   ],
@@ -9993,18 +9261,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // carry out (21704)
-  [
-    21704,
-    {
-      pronunciation: { us: "[kǽri-áut]" },
-      coreImage: "考えや命令を具体的な行動に移して最後までやり切る",
-      examples: [
-        { en: "Scientists carry out experiments to test the theory.", ja: "科学者たちは理論を検証するために実験を実行する。", context: "一般" },
-      ],
-    },
-  ],
-
   // borrow (21705)
   [
     21705,
@@ -10035,22 +9291,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The teacher gave several students extra help after class.", ja: "先生は授業後にいくつかの生徒に追加の指導をした。", context: "一般" },
-      ],
-    },
-  ],
-
-  // on purpose (21707)
-  [
-    21707,
-    {
-      pronunciation: { us: "[ɑn-pə́ːrpəs]" },
-      coreImage: "意図的に行うこと",
-      antonyms: ["accidentally"],
-      relatedWordEntries: [
-        { word: "accidentally", partOfSpeech: "副", meaning: "偶然に", isAntonym: true },
-      ],
-      examples: [
-        { en: "He broke the window on purpose.", ja: "彼は故意に窓を割った。", context: "一般" },
       ],
     },
   ],
@@ -10153,18 +9393,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The quality of education has improved recently.", ja: "教育の質は最近向上した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // for free (21714)
-  [
-    21714,
-    {
-      pronunciation: { us: "[fər-fríː]" },
-      coreImage: "料金や支払いの条件がなく、そのまま使ったり受け取ったりできる場面",
-      examples: [
-        { en: "I got it for free.", ja: "私はそれを無料で手に入れた。", context: "一般" },
       ],
     },
   ],
@@ -10835,18 +10063,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // all the way (21757)
-  [
-    21757,
-    {
-      pronunciation: { us: "[ɔl-ðə-wéi]" },
-      coreImage: "はじめからおわりまで休まず続く動きや状態を思い浮かべる像",
-      examples: [
-        { en: "I walked all the way home.", ja: "私は家までずっと歩いた。", context: "一般" },
-      ],
-    },
-  ],
-
   // remind (21758)
   [
     21758,
@@ -10886,22 +10102,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Make sure you have the correct answer before submitting your test.", ja: "テストを提出する前に正しい答えを確認してください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // show up (21761)
-  [
-    21761,
-    {
-      pronunciation: { us: "[ʃóu-ʌ́p]" },
-      coreImage: "人や物がその場所に到着して姿が見えるようになる",
-      antonyms: ["disappear"],
-      relatedWordEntries: [
-        { word: "disappear", partOfSpeech: "動", meaning: "消える", isAntonym: true },
-      ],
-      examples: [
-        { en: "She showed up on time.", ja: "彼女は時間通りに現れた。", context: "一般" },
       ],
     },
   ],
@@ -11718,18 +10918,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Many scientists argue that climate change is human-caused.", ja: "多くの科学者は気候変動が人間の活動によると主張している。", context: "一般" },
-      ],
-    },
-  ],
-
-  // each other (21814)
-  [
-    21814,
-    {
-      pronunciation: { us: "[íːtʃ-ʌ́ðər]" },
-      coreImage: "二人以上が互いに行為や感情を及ぼし合うこと",
-      examples: [
-        { en: "They help each other.", ja: "彼らはお互いに助け合います。", context: "一般" },
       ],
     },
   ],
@@ -13652,34 +12840,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // get along (21937)
-  [
-    21937,
-    {
-      pronunciation: { us: "[get-əlɔ́ŋ]" },
-      coreImage: "相手と関係を円滑に保ちながらやっていく",
-      examples: [
-        { en: "We need to get along with our classmates.", ja: "私たちはクラスメートと仲良くする必要がある。", context: "一般" },
-      ],
-    },
-  ],
-
-  // run away (21938)
-  [
-    21938,
-    {
-      pronunciation: { us: "[rʌ́n-əwéi]" },
-      coreImage: "危険や罰から逃れるために素早くその場を離れて他所へ行く動き。",
-      antonyms: ["stay"],
-      relatedWordEntries: [
-        { word: "stay", partOfSpeech: "動", meaning: "留まる", isAntonym: true },
-      ],
-      examples: [
-        { en: "She ran away from home.", ja: "彼女は家から逃げた。", context: "一般" },
-      ],
-    },
-  ],
-
   // attach (21939)
   [
     21939,
@@ -13714,18 +12874,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // in advance (21941)
-  [
-    21941,
-    {
-      pronunciation: { us: "[in-ədvǽns]" },
-      coreImage: "出来事の前に時間を取って行動や準備をしておく",
-      examples: [
-        { en: "Please notify us in advance if you cannot take the exam.", ja: "試験を受けられない場合は、あらかじめご連絡ください。", context: "一般" },
-      ],
-    },
-  ],
-
   // equipment (21942)
   [
     21942,
@@ -13735,22 +12883,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "piece of equipment=1つの備品 / laboratory equipment=実験室の設備 / medical equipment=医療機器 / sports equipment=スポーツ用具 / electrical equipment=電気機器",
       examples: [
         { en: "The equipment in the laboratory is expensive.", ja: "研究室の設備は高価だ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // stand out (21943)
-  [
-    21943,
-    {
-      pronunciation: { us: "[stǽnd-áut]" },
-      coreImage: "周囲より高く突き出して、すぐ目に入る",
-      antonyms: ["fade"],
-      relatedWordEntries: [
-        { word: "fade", partOfSpeech: "動", meaning: "目立たなくなる", isAntonym: true },
-      ],
-      examples: [
-        { en: "Her score stands out among the students.", ja: "彼女の点数は生徒の中でずば抜けている。", context: "一般" },
       ],
     },
   ],
@@ -13807,22 +12939,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "electronic device=電子機器 / mobile device=携帯端末 / portable device=携帯用の装置",
       examples: [
         { en: "Doctors use devices in hospitals.", ja: "医師は病院で装置を使います。", context: "一般" },
-      ],
-    },
-  ],
-
-  // first of all (21948)
-  [
-    21948,
-    {
-      pronunciation: { us: "[fə́ːrst-əv-ɔl]" },
-      coreImage: "順序の先頭に立ち、最初に扱う事柄を示す",
-      antonyms: ["lastly"],
-      relatedWordEntries: [
-        { word: "lastly", partOfSpeech: "副", meaning: "最後に", isAntonym: true },
-      ],
-      examples: [
-        { en: "First of all, we must check the brakes.", ja: "まず第一に、ブレーキを点検しなければならない。", context: "一般" },
       ],
     },
   ],
@@ -13891,22 +13007,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The company made a big profit.", ja: "会社は大きな利益を上げた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at most (21953)
-  [
-    21953,
-    {
-      pronunciation: { us: "[ət-móust]" },
-      coreImage: "可能な範囲の上限を決め、せいぜいそこまでと線を引く",
-      antonyms: ["at least"],
-      relatedWordEntries: [
-        { word: "at least", partOfSpeech: "副", meaning: "少なくとも", isAntonym: true },
-      ],
-      examples: [
-        { en: "There were at most three people in the room.", ja: "部屋にはせいぜい3人しかいませんでした。", context: "一般" },
       ],
     },
   ],
@@ -14215,18 +13315,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "There was evidence that he was the criminal.", ja: "彼が犯人であるという証拠があった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // according to (21974)
-  [
-    21974,
-    {
-      pronunciation: { us: "[əkɔ́rdiŋ-túː]" },
-      coreImage: "誰かや本の言葉を土台にして、情報の出どころを示す",
-      examples: [
-        { en: "According to the weather forecast, it will be sunny today.", ja: "天気予報によれば、今日は晴れるだろう。", context: "一般" },
       ],
     },
   ],
@@ -14816,18 +13904,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // at present (22012)
-  [
-    22012,
-    {
-      pronunciation: { us: "[ət-préznt]" },
-      coreImage: "過去と未来の間にある、今という時間の場所",
-      examples: [
-        { en: "At present, many students study English.", ja: "現在、多くの生徒が英語を学んでいます。", context: "一般" },
-      ],
-    },
-  ],
-
   // process (22013)
   [
     22013,
@@ -14944,18 +14020,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "candidate for admission=入学志願者",
       examples: [
         { en: "Only a few candidates passed the entrance exam.", ja: "ごく少数の受験者だけが入学試験に合格した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in fact (22021)
-  [
-    22021,
-    {
-      pronunciation: { us: "[in-fǽkt]" },
-      coreImage: "想像や説明よりも、実際に確かめられる事実を指し示す",
-      examples: [
-        { en: "He in fact passed the exam.", ja: "彼は実際に試験に合格した。", context: "一般" },
       ],
     },
   ],
@@ -15178,18 +14242,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // as a result (22036)
-  [
-    22036,
-    {
-      pronunciation: { us: "[əz-ə-rizʌ́lt]" },
-      coreImage: "一つの出来事が原因になって、次の出来事や状態が自然に起こる流れ",
-      examples: [
-        { en: "She missed the bus; as a result, she was late for school.", ja: "彼女はバスを逃した。結果として、彼女は学校に遅刻した。", context: "一般" },
-      ],
-    },
-  ],
-
   // precious (22037)
   [
     22037,
@@ -15203,18 +14255,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The necklace my grandma gave me is precious.", ja: "おばあちゃんがくれたネックレスは貴重なものだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // instead of (22038)
-  [
-    22038,
-    {
-      pronunciation: { us: "[instéd-əv]" },
-      coreImage: "あるものをやめて、別のものをその場所や役割に入れるイメージ",
-      examples: [
-        { en: "He played games instead of studying.", ja: "彼は勉強する代わりにゲームをした。", context: "一般" },
       ],
     },
   ],
@@ -15287,58 +14327,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // in addition (22043)
-  [
-    22043,
-    {
-      pronunciation: { us: "[in-ədíʃən]" },
-      coreImage: "集まりやリストに新しい要素を加えて数や内容を増やすイメージ",
-      examples: [
-        { en: "In addition, I reviewed my notes.", ja: "その上、ノートも見直した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // for example (22044)
-  [
-    22044,
-    {
-      pronunciation: { us: "[fər-igzǽmpl]" },
-      coreImage: "多くの事柄の代表として一例を指し示すイメージ",
-      examples: [
-        { en: "For example, frogs eat insects.", ja: "例えば、カエルは昆虫を食べます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // deal with (22045)
-  [
-    22045,
-    {
-      pronunciation: { us: "[díːl-wíð]" },
-      coreImage: "問題や仕事に手を伸ばしてつかみ、整理しながら処理するイメージ",
-      antonyms: ["ignore"],
-      relatedWordEntries: [
-        { word: "ignore", partOfSpeech: "動", meaning: "無視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "She dealt with difficult questions on the exam.", ja: "彼女は試験の難しい問題に対処した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // result in (22046)
-  [
-    22046,
-    {
-      pronunciation: { us: "[rizʌ́lt-in]" },
-      coreImage: "ある出来事や行動が原因になり、別の結果が出るというつながり",
-      examples: [
-        { en: "The heavy rain will result in flooding.", ja: "この大雨は洪水という結果になるだろう。", context: "一般" },
-      ],
-    },
-  ],
-
   // angle (22047)
   [
     22047,
@@ -15365,18 +14353,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Water is a substance that we need.", ja: "水は私たちに必要な物質だ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // due to (22049)
-  [
-    22049,
-    {
-      pronunciation: { us: "[dúː-túː]" },
-      coreImage: "出来事の理由を、手前にある出来事や状態に結びつけて示すイメージ",
-      examples: [
-        { en: "The flight was canceled due to bad weather.", ja: "その飛行機は悪天候のために欠航した。", context: "一般" },
       ],
     },
   ],
@@ -15616,18 +14592,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // cope with (22065)
-  [
-    22065,
-    {
-      pronunciation: { us: "[kóup-wíð]" },
-      coreImage: "困ったことや難しい問題に向き合い、やり方を考えて対応する",
-      examples: [
-        { en: "Many students can't cope with the pressure of university entrance exams.", ja: "多くの生徒は大学入試のプレッシャーに対処できない。", context: "一般" },
-      ],
-    },
-  ],
-
   // foundation (22066)
   [
     22066,
@@ -15637,34 +14601,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "the foundation of=〜の基礎 / lay the foundations=基礎を築く / the foundation for=〜の基礎",
       examples: [
         { en: "The foundation of this building is strong.", ja: "この建物の基礎は頑丈だ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in charge of (22067)
-  [
-    22067,
-    {
-      pronunciation: { us: "[in-ʃɑrʒéi-əv]" },
-      coreImage: "物事を預かって、進め方や決まりを手で握っているイメージ",
-      examples: [
-        { en: "I'm in charge of technical support.", ja: "私が技術サポートを担当している。", context: "一般" },
-      ],
-    },
-  ],
-
-  // well off (22068)
-  [
-    22068,
-    {
-      pronunciation: { us: "[wélɔ́f]" },
-      coreImage: "お金や資産が十分にあり、生活に必要なものや余裕が満たされている状態",
-      antonyms: ["poor"],
-      relatedWordEntries: [
-        { word: "poor", partOfSpeech: "形", meaning: "貧しい", isAntonym: true },
-      ],
-      examples: [
-        { en: "The Smith family is well off.", ja: "スミス一家は裕福だ。", context: "一般" },
       ],
     },
   ],
@@ -15733,46 +14669,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // end up (22073)
-  [
-    22073,
-    {
-      pronunciation: { us: "[énd-ʌ́p]" },
-      coreImage: "いろいろな出来事を経て、最後にある状態や場所になる",
-      examples: [
-        { en: "She ended up studying all night before the college entrance exam.", ja: "彼女は大学入試の前夜に結局徹夜で勉強した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // take over (22074)
-  [
-    22074,
-    {
-      pronunciation: { us: "[téik-óuvər]" },
-      coreImage: "別の人や組織から仕事や権限を受け取り、その役目を続けて行う動作",
-      examples: [
-        { en: "She took over the project last month.", ja: "彼女は先月そのプロジェクトを引き継いだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // take after (22075)
-  [
-    22075,
-    {
-      pronunciation: { us: "[téik-ǽftər]" },
-      coreImage: "親や先祖の顔つきや性格の特徴が子に現れ、外見や振る舞いが似るイメージ",
-      antonyms: ["differ"],
-      relatedWordEntries: [
-        { word: "differ", partOfSpeech: "動", meaning: "異なる", isAntonym: true },
-      ],
-      examples: [
-        { en: "She takes after her mother.", ja: "彼女は母親に似ている。", context: "一般" },
-      ],
-    },
-  ],
-
   // delete (22076)
   [
     22076,
@@ -15790,146 +14686,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // look into (22077)
-  [
-    22077,
-    {
-      pronunciation: { us: "[lúk-íntu]" },
-      coreImage: "細かく観察して手がかりや事実を明らかにする行為。",
-      examples: [
-        { en: "The police looked into the case.", ja: "警察はその事件を調べた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // come up with (22078)
-  [
-    22078,
-    {
-      pronunciation: { us: "[kʌ́m-ʌ́p-wíð]" },
-      coreImage: "頭の中で考えが浮かび、それを生み出すイメージ",
-      examples: [
-        { en: "I came up with a new idea.", ja: "私は新しいアイデアを思いついた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // leave out (22079)
-  [
-    22079,
-    {
-      pronunciation: { us: "[líːv-áut]" },
-      coreImage: "あるものを集めたまとまりから外して、含めないようにする",
-      antonyms: ["include"],
-      relatedWordEntries: [
-        { word: "include", partOfSpeech: "動", meaning: "含む", isAntonym: true },
-      ],
-      examples: [
-        { en: "The teacher left out difficult problems from the exam.", ja: "教師は試験から難しい問題を省いた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // keep up with (22080)
-  [
-    22080,
-    {
-      pronunciation: { us: "[kíːp-ʌ́p-wíð]" },
-      coreImage: "相手に並んで進み差が広がらない状態を保つことから、情報や世間の動向にも遅れない意味になる",
-      antonyms: ["fall behind"],
-      relatedWordEntries: [
-        { word: "fall behind", partOfSpeech: "動", meaning: "遅れを取る", isAntonym: true },
-      ],
-      examples: [
-        { en: "They kept up with the pace.", ja: "彼らはペースに遅れずに付いていった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // cut down on (22081)
-  [
-    22081,
-    {
-      pronunciation: { us: "[kʌ́t-dáun-ɑn]" },
-      coreImage: "回数や量の山から少しずつ切り取って、合計を少なくする",
-      antonyms: ["increase"],
-      relatedWordEntries: [
-        { word: "increase", partOfSpeech: "動", meaning: "〜を増やす", isAntonym: true },
-      ],
-      examples: [
-        { en: "You should cut down on social media while studying for the entrance exam.", ja: "入試勉強中はSNSの利用を減らすべきだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // up to (22082)
-  [
-    22082,
-    {
-      pronunciation: { us: "[ʌ́p-túː]" },
-      coreImage: "一定の上限があって、それを超えない範囲までを指すイメージ",
-      examples: [
-        { en: "He can stay here up to 10 PM.", ja: "彼はここに午後10時まで滞在できる。", context: "一般" },
-      ],
-    },
-  ],
-
-  // pass out (22083)
-  [
-    22083,
-    {
-      pronunciation: { us: "[pǽs-áut]" },
-      coreImage: "頭の中が急に暗くなって意識が途切れ、反応しなくなる状態",
-      antonyms: ["revive"],
-      relatedWordEntries: [
-        { word: "revive", partOfSpeech: "動", meaning: "意識を回復させる", isAntonym: true },
-      ],
-      examples: [
-        { en: "Several students passed out from exhaustion after the entrance exam.", ja: "入試後、疲労で数人の生徒が気絶した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // make sure (22084)
-  [
-    22084,
-    {
-      pronunciation: { us: "[méik-ʃúər]" },
-      coreImage: "確認や準備をして、そのことが確実に起こるようにする",
-      antonyms: ["overlook"],
-      relatedWordEntries: [
-        { word: "overlook", partOfSpeech: "動", meaning: "見落とす", isAntonym: true },
-      ],
-      examples: [
-        { en: "Make sure the door is locked.", ja: "ドアが施錠されているか確認しなさい。", context: "一般" },
-      ],
-    },
-  ],
-
-  // work out (22085)
-  [
-    22085,
-    {
-      pronunciation: { us: "[wə́ːrkàʊt]" },
-      coreImage: "情報や数を組み合わせて順を追い、計算や考えで正しい結果にたどり着く",
-      examples: [
-        { en: "I cannot work out this math problem.", ja: "私はこの数学の問題を解くことができない。", context: "一般" },
-      ],
-    },
-  ],
-
-  // on behalf of (22086)
-  [
-    22086,
-    {
-      pronunciation: { us: "[ɑn-bihǽf-əv]" },
-      coreImage: "ある人を代表して、その人の利益や意向を代わりに伝える",
-      examples: [
-        { en: "They spoke on behalf of their colleague.", ja: "彼らは同僚に代わって話しました。", context: "一般" },
-      ],
-    },
-  ],
-
   // furthermore (22087)
   [
     22087,
@@ -15942,18 +14698,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The study confirms the results and, furthermore, suggests new directions.", ja: "研究は結果を裏付け、さらに新たな方向性を示唆する。", context: "一般" },
-      ],
-    },
-  ],
-
-  // for instance (22088)
-  [
-    22088,
-    {
-      pronunciation: { us: "[fər-ínstəns]" },
-      coreImage: "広い話の中から、具体的な一つの例を指し示す。",
-      examples: [
-        { en: "Study skills, for instance, include time management.", ja: "例えば、学習スキルには時間管理が含まれます。", context: "一般" },
       ],
     },
   ],
@@ -16235,22 +14979,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // put off (22106)
-  [
-    22106,
-    {
-      pronunciation: { us: "[pút-ɔf]" },
-      coreImage: "始める時刻を現在より先にずらして、その行為の位置を時間軸の後ろに置くイメージ。",
-      antonyms: ["bring forward"],
-      relatedWordEntries: [
-        { word: "bring forward", partOfSpeech: "動", meaning: "〜を繰り上げる", isAntonym: true },
-      ],
-      examples: [
-        { en: "They put off the meeting until Friday.", ja: "彼らは会議を金曜日まで延期した。", context: "一般" },
-      ],
-    },
-  ],
-
   // plant (22107)
   [
     22107,
@@ -16525,18 +15253,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "They received aid from the government after the disaster.", ja: "彼らは災害後に政府から援助を受けた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // live on (22125)
-  [
-    22125,
-    {
-      pronunciation: { us: "[lív-ɑn]" },
-      coreImage: "年金・貯金・仕事などに頼って生活を維持する様子と、困難な状況でも生存を続ける様子のイメージ",
-      examples: [
-        { en: "She lives on her pension.", ja: "彼女は年金で暮らしを立てている。", context: "一般" },
       ],
     },
   ],
@@ -17394,22 +16110,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The medicine tasted very bitter.", ja: "薬の味はとても苦かった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at least (22180)
-  [
-    22180,
-    {
-      pronunciation: { us: "[ət-líːst]" },
-      coreImage: "必要な量や条件の下限を決め、そこから下は含めない範囲を指す",
-      antonyms: ["at most"],
-      relatedWordEntries: [
-        { word: "at most", partOfSpeech: "副", meaning: "多くとも", isAntonym: true },
-      ],
-      examples: [
-        { en: "You should spend at least three hours studying each day.", ja: "あなたは毎日少なくとも3時間勉強すべきだ。", context: "一般" },
       ],
     },
   ],
@@ -18315,22 +17015,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "What's your opinion?", ja: "あなたの意見は何ですか。", context: "一般" },
-      ],
-    },
-  ],
-
-  // stay up (22238)
-  [
-    22238,
-    {
-      pronunciation: { us: "[stéi-ʌ́p]" },
-      coreImage: "眠るのを先送りして起きている時間を長く保つ",
-      antonyms: ["sleep"],
-      relatedWordEntries: [
-        { word: "sleep", partOfSpeech: "動", meaning: "眠る", isAntonym: true },
-      ],
-      examples: [
-        { en: "She stays up to finish her homework.", ja: "彼女は宿題を終えるために寝ずに起きている。", context: "一般" },
       ],
     },
   ],
@@ -19933,18 +18617,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // come out (22341)
-  [
-    22341,
-    {
-      pronunciation: { us: "[kʌ́m-áut]" },
-      coreImage: "商品や情報が公の場に出て入手できるようになるイメージ。",
-      examples: [
-        { en: "The new mobile phone comes out next month.", ja: "新しい携帯電話が来月発売される。", context: "一般" },
-      ],
-    },
-  ],
-
   // species (22342)
   [
     22342,
@@ -20056,18 +18728,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // make up (22349)
-  [
-    22349,
-    {
-      pronunciation: { us: "[méik-ʌ́p]" },
-      coreImage: "部分が集まって全体を形づくるイメージと、足りないものを補う・説明をでっち上げる働きを合わせ持つイメージ。",
-      examples: [
-        { en: "Women make up nearly half of the choir.", ja: "女性は合唱隊のほぼ半分を占めています。", context: "一般" },
-      ],
-    },
-  ],
-
   // bend (22350)
   [
     22350,
@@ -20111,22 +18771,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "alternative to=～の代替案 / alternatives to=～の代替案",
       examples: [
         { en: "There are several alternatives to this method.", ja: "この方法にはいくつかの代替案がある。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in time (22353)
-  [
-    22353,
-    {
-      pronunciation: { us: "[in-táim]" },
-      coreImage: "約束や締切に届くために、ほんの少しの時間の余裕がある状態。",
-      antonyms: ["late"],
-      relatedWordEntries: [
-        { word: "late", partOfSpeech: "副", meaning: "遅れて", isAntonym: true },
-      ],
-      examples: [
-        { en: "Arriving in time, she entered the interview room.", ja: "間に合って到着した彼女は面接室に入った。", context: "一般" },
       ],
     },
   ],
@@ -21214,22 +19858,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // for sure (22425)
-  [
-    22425,
-    {
-      pronunciation: { us: "[fər-ʃúər]" },
-      coreImage: "疑いが消えて、事実としてはっきり示されること",
-      antonyms: ["uncertainly"],
-      relatedWordEntries: [
-        { word: "uncertainly", partOfSpeech: "副", meaning: "不確かに", isAntonym: true },
-      ],
-      examples: [
-        { en: "She will pass the exam for sure.", ja: "彼女は確かにその試験に合格する。", context: "一般" },
-      ],
-    },
-  ],
-
   // wipe (22426)
   [
     22426,
@@ -21290,30 +19918,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "take out insurance=保険に加入する / insurance policy=保険証券",
       examples: [
         { en: "I got insurance for my car.", ja: "車の保険に入った。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at a loss (22430)
-  [
-    22430,
-    {
-      pronunciation: { us: "[ət-ə-lɔs]" },
-      coreImage: "どうすればいいか分からず、言葉に詰まって次に何をするか決められない状態。",
-      examples: [
-        { en: "I was at a loss.", ja: "私は途方に暮れた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // as well (22431)
-  [
-    22431,
-    {
-      pronunciation: { us: "[əz-wél]" },
-      coreImage: "前に言ったことに、同じ扱いの追加が付く感じ",
-      examples: [
-        { en: "He plays the guitar and sings as well.", ja: "彼はギターを弾き、歌も歌う。", context: "一般" },
       ],
     },
   ],
@@ -21502,18 +20106,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "A mature response calmed everyone.", ja: "成熟した対応が皆を落ち着かせた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in turn (22444)
-  [
-    22444,
-    {
-      pronunciation: { us: "[in-tə́ːrn]" },
-      coreImage: "手から手へ物を渡すように、役目や動きが順に次へ移るイメージ",
-      examples: [
-        { en: "The students received their lunch in turn.", ja: "生徒たちは順番に昼食を受け取った。", context: "一般" },
       ],
     },
   ],
@@ -21859,18 +20451,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // in general (22466)
-  [
-    22466,
-    {
-      pronunciation: { us: "[in-dʒénərəl]" },
-      coreImage: "多くの個別の例をまとめて、全体としての普通の傾向や様子を示す",
-      examples: [
-        { en: "In general, people prefer tea.", ja: "一般に、人々は紅茶を好む。", context: "一般" },
-      ],
-    },
-  ],
-
   // outstanding (22467)
   [
     22467,
@@ -21905,18 +20485,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // thanks to (22469)
-  [
-    22469,
-    {
-      pronunciation: { us: "[θæŋks]" },
-      coreImage: "出来事や人を原因として示し、その原因が結果につながることを表す言葉",
-      examples: [
-        { en: "Thanks to my teacher, I passed the entrance exam.", ja: "先生のおかげで入学試験に合格しました。", context: "一般" },
-      ],
-    },
-  ],
-
   // numerous (22470)
   [
     22470,
@@ -21947,18 +20515,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Many people live in rural areas.", ja: "多くの人々が田舎の地域に住んでいる。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in short (22472)
-  [
-    22472,
-    {
-      pronunciation: { us: "[in-ʃɔrt]" },
-      coreImage: "たくさんの情報を短い言葉や一文にまとめて伝える。",
-      examples: [
-        { en: "In short, the problem has been resolved.", ja: "要約すると、その問題は解決した。", context: "一般" },
       ],
     },
   ],
@@ -22450,46 +21006,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // out of date (22505)
-  [
-    22505,
-    {
-      pronunciation: { us: "[áut-əv-déit]" },
-      coreImage: "昔のやり方や考え方が新しい基準や技術に合わず場に合わなくなる状態。",
-      antonyms: ["current"],
-      relatedWordEntries: [
-        { word: "current", partOfSpeech: "形", meaning: "最新の", isAntonym: true },
-      ],
-      examples: [
-        { en: "My out of date laptop needs replacing.", ja: "私の時代遅れのノートパソコンは交換が必要だ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // get rid of (22506)
-  [
-    22506,
-    {
-      pronunciation: { us: "[get-ríd-əv]" },
-      coreImage: "いらない物を手元や場所から遠ざけて、そこにない状態にするイメージ。",
-      examples: [
-        { en: "I need to get rid of the weeds in my garden.", ja: "庭の雑草を取り除く必要がある。", context: "一般" },
-      ],
-    },
-  ],
-
-  // do away with (22507)
-  [
-    22507,
-    {
-      pronunciation: { us: "[du-əwéi-wíð]" },
-      coreImage: "古い考えや仕組みを取り除いて、もう使わないようにするイメージ",
-      examples: [
-        { en: "The university decided to do away with its outdated entrance exam.", ja: "大学は時代遅れの入試を廃止することにした。", context: "一般" },
-      ],
-    },
-  ],
-
   // immediate (22508)
   [
     22508,
@@ -22554,18 +21070,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // come across (22512)
-  [
-    22512,
-    {
-      pronunciation: { us: "[kʌ́m-əkrɔ́s]" },
-      coreImage: "歩いたり探している最中ではなく偶然に人や物に出くわすことで、場合によっては『～という印象を与える』という用法もある",
-      examples: [
-        { en: "I came across an old friend on the train.", ja: "電車で昔の友達に偶然出会った。", context: "一般" },
-      ],
-    },
-  ],
-
   // excess (22513)
   [
     22513,
@@ -22579,50 +21083,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Costs were in excess of the estimate.", ja: "費用が見積りを超過していた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // under way (22514)
-  [
-    22514,
-    {
-      pronunciation: { us: "[ʌ́ndər-wéi]" },
-      coreImage: "物事が既に始まり、完了までの途中段階にある状態",
-      antonyms: ["finished"],
-      relatedWordEntries: [
-        { word: "finished", partOfSpeech: "形", meaning: "完了した", isAntonym: true },
-      ],
-      examples: [
-        { en: "Negotiations are under way.", ja: "交渉は進行中だ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in a row (22515)
-  [
-    22515,
-    {
-      pronunciation: { us: "[in-ə-róu]" },
-      coreImage: "時間的に次々と続くことを表す状態",
-      examples: [
-        { en: "She won three races in a row.", ja: "彼女はレースを3回続けて勝った。", context: "一般" },
-      ],
-    },
-  ],
-
-  // look over (22516)
-  [
-    22516,
-    {
-      pronunciation: { us: "[lúk-óuvər]" },
-      coreImage: "紙や画面の上を見渡して、細かいところは読まずに大まかな内容だけ把握する",
-      antonyms: ["ignore"],
-      relatedWordEntries: [
-        { word: "ignore", partOfSpeech: "動", meaning: "無視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "I'll quickly look over the instructions again.", ja: "もう一度説明書にざっと目を通すよ。", context: "一般" },
       ],
     },
   ],
@@ -22696,18 +21156,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // look up (22522)
-  [
-    22522,
-    {
-      pronunciation: { us: "[lúk-ʌ́p]" },
-      coreImage: "疑問を解くために外の情報源に視線や注意を向けて答えを探す動作",
-      examples: [
-        { en: "I looked up the word in the dictionary.", ja: "その言葉を辞書で調べた。", context: "一般" },
-      ],
-    },
-  ],
-
   // pupil (22523)
   [
     22523,
@@ -22755,18 +21203,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The ease of the exam surprised many candidates.", ja: "試験の容易さは多くの受験者を驚かせた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // and so on (22526)
-  [
-    22526,
-    {
-      pronunciation: { us: "[ən-sóu-ɑn]" },
-      coreImage: "いくつかの例を示して、それ以外の同じようなものも含めることを表す",
-      examples: [
-        { en: "She bought apples, oranges and so on.", ja: "彼女はリンゴやオレンジなどを買った。", context: "一般" },
       ],
     },
   ],
@@ -23368,22 +21804,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The mystery was solved by the detective.", ja: "その謎は探偵によって解かれた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in the past (22566)
-  [
-    22566,
-    {
-      pronunciation: { us: "[in-ðə-pǽst]" },
-      coreImage: "現在より前にある時間の「場所」で、すでに終わった出来事や状態を示す",
-      antonyms: ["now"],
-      relatedWordEntries: [
-        { word: "now", partOfSpeech: "副", meaning: "今は", isAntonym: true },
-      ],
-      examples: [
-        { en: "In the past, we used to play outside.", ja: "昔はよく外で遊んだものだ。", context: "一般" },
       ],
     },
   ],
@@ -23994,18 +22414,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The storm caused considerable damage to the town.", ja: "嵐は町にかなりの被害をもたらした。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in spite of (22606)
-  [
-    22606,
-    {
-      pronunciation: { us: "[in]" },
-      coreImage: "障害や理由があっても、行動や事実がそのまま続く",
-      examples: [
-        { en: "He studied hard in spite of his illness.", ja: "病気にもかかわらず、彼は懸命に勉強した。", context: "一般" },
       ],
     },
   ],
@@ -29103,22 +27511,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // heat wave (31299)
-  [
-    31299,
-    {
-      pronunciation: { us: "[hit-weiv]" },
-      coreImage: "長い期間、周囲よりずっと高い気温が続き、強い熱が広い地域に及ぶ現象",
-      antonyms: ["cold wave"],
-      relatedWordEntries: [
-        { word: "cold wave", partOfSpeech: "名", meaning: "寒波", isAntonym: true },
-      ],
-      examples: [
-        { en: "The heat wave hit our city.", ja: "熱波が私たちの街を襲った。", context: "一般" },
-      ],
-    },
-  ],
-
   // imagine (31300)
   [
     31300,
@@ -29239,18 +27631,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "It is a shame that the meeting was canceled.", ja: "会議が中止になったのは残念なことだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // head office (31308)
-  [
-    31308,
-    {
-      pronunciation: { us: "[héd-ɔ́fis]" },
-      coreImage: "会社全体をまとめ、方針や重要な決定が行われる中心の拠点。",
-      examples: [
-        { en: "The head office is located downtown.", ja: "本社はダウンタウンにある。", context: "一般" },
       ],
     },
   ],
@@ -29632,18 +28012,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // city hall (31334)
-  [
-    31334,
-    {
-      pronunciation: { us: "[síti-hɔl]" },
-      coreImage: "市の行政や窓口がまとまり、住民の手続きを受け付ける公共の建物",
-      examples: [
-        { en: "I did the paperwork at the city hall.", ja: "私は市役所で手続きをした。", context: "一般" },
-      ],
-    },
-  ],
-
   // editor (31335)
   [
     31335,
@@ -29836,22 +28204,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // surface mail (31347)
-  [
-    31347,
-    {
-      pronunciation: { us: "[sə́ːrfis-meil]" },
-      coreImage: "海路で手紙や荷物を送る郵便（船便）",
-      antonyms: ["air mail"],
-      relatedWordEntries: [
-        { word: "air mail", partOfSpeech: "名", meaning: "航空便", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please send this letter by surface mail.", ja: "この手紙を船便でお送りください。", context: "一般" },
-      ],
-    },
-  ],
-
   // brick (31348)
   [
     31348,
@@ -29899,18 +28251,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // wake-up (31351)
-  [
-    31351,
-    {
-      pronunciation: { us: "[weik]" },
-      coreImage: "名詞を修飾して人を起こす目的の性質を示す",
-      usage: "wake-up call=目覚まし用の電話 / wake-up service=目覚まし用のサービス / wake-up alarm=目覚まし用のアラーム",
-      examples: [
-        { en: "I asked the front desk for a wake-up call at 7.", ja: "私はフロントに7時の目覚まし用の電話を頼んだ。", context: "一般" },
-      ],
-    },
-  ],
 
   // recognize (31352)
   [
@@ -29998,18 +28338,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "attend a seminar=セミナーに参加する / hold a seminar=セミナーを開く",
       examples: [
         { en: "I attended a seminar last week.", ja: "先週、あるセミナーに参加した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // down payment (31358)
-  [
-    31358,
-    {
-      pronunciation: { us: "[dáun-péimənt]" },
-      coreImage: "購入や契約を成立させるために最初に払う代金",
-      examples: [
-        { en: "A large down payment is required to purchase a house.", ja: "住宅の購入には多額の頭金が必要だ。", context: "一般" },
       ],
     },
   ],
@@ -32057,18 +30385,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // time line (31490)
-  [
-    31490,
-    {
-      pronunciation: { us: "[táim-láin]" },
-      coreImage: "工程や作業を時系列で線上に並べ、開始から終了までの順序と期間を示す説明図",
-      examples: [
-        { en: "The manager reviewed the time line for the product launch.", ja: "マネージャーが製品発売の工程表を確認した。", context: "一般" },
-      ],
-    },
-  ],
-
   // challenge (31491)
   [
     31491,
@@ -33628,18 +31944,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // real estate (31590)
-  [
-    31590,
-    {
-      pronunciation: { us: "[ríːəl-istéit]" },
-      coreImage: "土地と建物という、移動できない財産のまとまり",
-      examples: [
-        { en: "She works in real estate sales.", ja: "彼女は不動産の営業に従事しています。", context: "一般" },
-      ],
-    },
-  ],
-
   // counselor (31591)
   [
     31591,
@@ -34752,22 +33056,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // cutting-edge (31663)
-  [
-    31663,
-    {
-      pronunciation: { us: "[kʌ́tiŋ]" },
-      coreImage: "刃先が一番前に立ち、他より先に進むものがそこにあるイメージ",
-      usage: "cutting-edge technology=最先端技術 / cutting-edge design=最先端のデザイン",
-      antonyms: ["backward"],
-      relatedWordEntries: [
-        { word: "backward", partOfSpeech: "形", meaning: "後進的な", isAntonym: true },
-      ],
-      examples: [
-        { en: "The company uses cutting-edge technology.", ja: "その会社は最先端の技術を使っている。", context: "一般" },
-      ],
-    },
-  ],
 
   // consumer (31664)
   [
@@ -36644,22 +34932,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // out of stock (31781)
-  [
-    31781,
-    {
-      pronunciation: { us: "[áut-əv-stɑk]" },
-      coreImage: "売り場や倉庫のストックが空になり、その商品を提供できない状態",
-      antonyms: ["in stock"],
-      relatedWordEntries: [
-        { word: "in stock", partOfSpeech: "形", meaning: "在庫がある", isAntonym: true },
-      ],
-      examples: [
-        { en: "That model is out of stock.", ja: "そのモデルは在庫がない。", context: "一般" },
-      ],
-    },
-  ],
-
   // provider (31782)
   [
     31782,
@@ -36763,22 +35035,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "directly affect=〜に直接影響を与える / greatly affect=大きく影響を与える / adversely affect=〜に悪影響を与える",
       examples: [
         { en: "The decision could affect many people.", ja: "その決定は多くの人々に影響を及ぼすかもしれない。", context: "一般" },
-      ],
-    },
-  ],
-
-  // break down (31789)
-  [
-    31789,
-    {
-      pronunciation: { us: "[bréɪkdàʊn]" },
-      coreImage: "部品や要素が分かれて全体の働きが止まる、あるいは要素ごとに分けて分析するイメージ",
-      antonyms: ["work"],
-      relatedWordEntries: [
-        { word: "work", partOfSpeech: "動", meaning: "作動する", isAntonym: true },
-      ],
-      examples: [
-        { en: "My car breaks down often.", ja: "私の車はよく故障します。", context: "一般" },
       ],
     },
   ],
@@ -37031,34 +35287,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // point out (31806)
-  [
-    31806,
-    {
-      pronunciation: { us: "[pɔint-áut]" },
-      coreImage: "言葉や仕草で特定の点や問題に注意を向け、はっきり示すこと",
-      examples: [
-        { en: "The teacher pointed out the mistakes in my test.", ja: "先生は私のテストの間違いを指摘した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // try on (31807)
-  [
-    31807,
-    {
-      pronunciation: { us: "[trái-ɑn]" },
-      coreImage: "服や靴などを実際に身につけて、サイズや見た目を確かめること",
-      antonyms: ["take off"],
-      relatedWordEntries: [
-        { word: "take off", partOfSpeech: "動", meaning: "脱ぐ", isAntonym: true },
-      ],
-      examples: [
-        { en: "Can I try on this suit?", ja: "このスーツを試着してもいいですか？", context: "一般" },
-      ],
-    },
-  ],
-
   // amuse (31808)
   [
     31808,
@@ -37144,18 +35372,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // check in (31813)
-  [
-    31813,
-    {
-      pronunciation: { us: "[tʃék-in]" },
-      coreImage: "到着を知らせて記録し、搭乗のための登録や手続きを済ませる行為を指す",
-      examples: [
-        { en: "She's checking in at the airline counter now.", ja: "彼女は今、航空会社のカウンターで搭乗手続きをしています。", context: "一般" },
-      ],
-    },
-  ],
-
   // crossing (31814)
   [
     31814,
@@ -37229,30 +35445,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The company entertained clients at a reception.", ja: "その会社はレセプションで取引先を接待した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // set up (31819)
-  [
-    31819,
-    {
-      pronunciation: { us: "[sét-ʌ́p]" },
-      coreImage: "人や物の位置と準備を整えて、活動を始めるための場を作ること",
-      examples: [
-        { en: "They set up a new company last year.", ja: "彼らは昨年新しい会社を設立した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // work on (31820)
-  [
-    31820,
-    {
-      pronunciation: { us: "[wərk-ɑn]" },
-      coreImage: "問題や計画に集中して変化や結果を目指して働きかける",
-      examples: [
-        { en: "Please work on the expense report by Friday.", ja: "金曜までに経費精算書に取り組んでください。", context: "一般" },
       ],
     },
   ],
@@ -37458,22 +35650,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // reply to (31834)
-  [
-    31834,
-    {
-      pronunciation: { us: "[riplái-túː]" },
-      coreImage: "相手の言葉や知らせに、自分の言葉でこたえを返す動き",
-      antonyms: ["disregard"],
-      relatedWordEntries: [
-        { word: "disregard", partOfSpeech: "動", meaning: "軽視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please reply to my email by Friday.", ja: "金曜日までに私のメールに返事をしてください。", context: "一般" },
-      ],
-    },
-  ],
-
   // steady (31835)
   [
     31835,
@@ -37572,22 +35748,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // bend over (31841)
-  [
-    31841,
-    {
-      pronunciation: { us: "[bend-óuvər]" },
-      coreImage: "上半身を腰から前に折り、体を低くする動作",
-      antonyms: ["stand up"],
-      relatedWordEntries: [
-        { word: "stand up", partOfSpeech: "動", meaning: "立ち上がる", isAntonym: true },
-      ],
-      examples: [
-        { en: "The worker bent over to inspect the machine.", ja: "作業員は機械を点検するためにかがんだ。", context: "一般" },
-      ],
-    },
-  ],
-
   // emergency (31842)
   [
     31842,
@@ -37627,18 +35787,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "get to the root of=問題の原因を突き止める / have its roots in=〜に由来する / the root of=〜の根本",
       examples: [
         { en: "The root of the tree is strong.", ja: "木の根は強い。", context: "一般" },
-      ],
-    },
-  ],
-
-  // turn in (31845)
-  [
-    31845,
-    {
-      pronunciation: { us: "[tə́ːrn-in]" },
-      coreImage: "自分の持ち物や答案を受け取り手に渡す、または指定の提出先へ送る行為",
-      examples: [
-        { en: "I have to turn in homework tomorrow.", ja: "明日、宿題を提出しなければいけない。", context: "一般" },
       ],
     },
   ],
@@ -37711,50 +35859,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // reach for (31850)
-  [
-    31850,
-    {
-      pronunciation: { us: "[riːtʃ-fər]" },
-      coreImage: "手を伸ばして届きそうなものを取ろうとする動作",
-      examples: [
-        { en: "I reached for the boxes on the shelf.", ja: "私は棚の上の箱を取ろうと手を伸ばした。", context: "一般" },
-      ],
-    },
-  ],
-
-  // wait on (31851)
-  [
-    31851,
-    {
-      pronunciation: { us: "[wéit-ɑn]" },
-      coreImage: "相手のそばにいて、欲しい物や助けをすぐ渡せるように待機している状態。",
-      antonyms: ["ignore"],
-      relatedWordEntries: [
-        { word: "ignore", partOfSpeech: "動", meaning: "無視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "The waiter waited on three tables at once.", ja: "ウエイターが同時に3つのテーブルに給仕した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // line up (31852)
-  [
-    31852,
-    {
-      pronunciation: { us: "[láin-ʌ́p]" },
-      coreImage: "人や物が一列に並び順序や配置がそろうイメージで、人や予定を整えて手配する意味も含む",
-      antonyms: ["disperse"],
-      relatedWordEntries: [
-        { word: "disperse", partOfSpeech: "動", meaning: "散らす", isAntonym: true },
-      ],
-      examples: [
-        { en: "Passengers, please line up at gate five.", ja: "5番ゲートでお並びください。", context: "一般" },
-      ],
-    },
-  ],
-
   // sticker (31853)
   [
     31853,
@@ -37781,18 +35885,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // call on (31855)
-  [
-    31855,
-    {
-      pronunciation: { us: "[kɔl-ɑn]" },
-      coreImage: "声をかけて相手の所に向かい、短時間会って用件を伝えたり頼んだりする動き",
-      examples: [
-        { en: "The sales team is calling on potential clients this week.", ja: "セールスチームは今週見込み客を訪問しています。", context: "一般" },
-      ],
-    },
-  ],
-
   // plain (31856)
   [
     31856,
@@ -37806,18 +35898,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "It is plain that she is bored.", ja: "彼女が退屈しているのは明らかだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // search for (31857)
-  [
-    31857,
-    {
-      pronunciation: { us: "[sərtʃ-fər]" },
-      coreImage: "情報や周囲から手がかりを集めて、まだ見つからないものを探り出す過程。",
-      examples: [
-        { en: "I searched for my keys.", ja: "私は鍵を探しました。", context: "一般" },
       ],
     },
   ],
@@ -37839,22 +35919,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // take off (31859)
-  [
-    31859,
-    {
-      pronunciation: { us: "[téik-ɔf]" },
-      coreImage: "地上から上へ移る動きのイメージで、比喩的に人気が急に高まる意味も含む",
-      antonyms: ["land"],
-      relatedWordEntries: [
-        { word: "land", partOfSpeech: "動", meaning: "着陸する", isAntonym: true },
-      ],
-      examples: [
-        { en: "The plane took off on time.", ja: "飛行機は定刻に離陸した。", context: "一般" },
-      ],
-    },
-  ],
-
   // crush (31860)
   [
     31860,
@@ -37868,22 +35932,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The machine crushes empty cans for recycling.", ja: "その機械は空き缶を押しつぶしてリサイクルする。", context: "一般" },
-      ],
-    },
-  ],
-
-  // reflect on (31861)
-  [
-    31861,
-    {
-      pronunciation: { us: "[riflékt-ɑn]" },
-      coreImage: "鏡で映すように過去や情報を振り返り、意味やつながりを探る",
-      antonyms: ["ignore"],
-      relatedWordEntries: [
-        { word: "ignore", partOfSpeech: "動", meaning: "無視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "She reflected on her performance after the presentation.", ja: "彼女は発表後に自分のパフォーマンスを熟考した。", context: "一般" },
       ],
     },
   ],
@@ -37935,22 +35983,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // go off (31865)
-  [
-    31865,
-    {
-      pronunciation: { us: "[góu-ɔf]" },
-      coreImage: "中から外へ抜け出すような動きで、人が去ることや音・出来事が起きることの共通感覚を表す。",
-      antonyms: ["stay"],
-      relatedWordEntries: [
-        { word: "stay", partOfSpeech: "動", meaning: "留まる", isAntonym: true },
-      ],
-      examples: [
-        { en: "She went off without saying goodbye.", ja: "彼女はさよならも言わずに去っていきました。", context: "一般" },
-      ],
-    },
-  ],
-
   // rough (31866)
   [
     31866,
@@ -37981,38 +36013,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "We sat in the shade during our lunch break.", ja: "私たちは昼休みの間、日陰に座った。", context: "一般" },
-      ],
-    },
-  ],
-
-  // turn on (31868)
-  [
-    31868,
-    {
-      pronunciation: { us: "[tə́ːrn-òn]" },
-      coreImage: "電源を入れて停止していた装置の内部の仕組みを作動させる",
-      antonyms: ["turn off"],
-      relatedWordEntries: [
-        { word: "turn off", partOfSpeech: "動", meaning: "〜を消す", isAntonym: true },
-      ],
-      examples: [
-        { en: "She turns on the light when she comes back to the room.", ja: "彼女は部屋に戻ると明かりをつけます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // appeal to (31869)
-  [
-    31869,
-    {
-      pronunciation: { us: "[əpíːl-túː]" },
-      coreImage: "相手の関心や好意を引き起こすはたらき",
-      antonyms: ["repel"],
-      relatedWordEntries: [
-        { word: "repel", partOfSpeech: "動", meaning: "〜を遠ざける", isAntonym: true },
-      ],
-      examples: [
-        { en: "The new product appeals to budget-conscious consumers.", ja: "新製品は価格に敏感な消費者に訴求する。", context: "一般" },
       ],
     },
   ],
@@ -38140,22 +36140,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The lemonade tastes sour.", ja: "レモネードはすっぱい味がする。", context: "一般" },
-      ],
-    },
-  ],
-
-  // succeed in (31878)
-  [
-    31878,
-    {
-      pronunciation: { us: "[səksíːd-in]" },
-      coreImage: "目標に向かって進み、最後にそれをつかむ",
-      antonyms: ["fail"],
-      relatedWordEntries: [
-        { word: "fail", partOfSpeech: "動", meaning: "失敗する", isAntonym: true },
-      ],
-      examples: [
-        { en: "He succeeded in solving the problem.", ja: "彼はその問題を解くことに成功した。", context: "一般" },
       ],
     },
   ],
@@ -38336,18 +36320,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // do away with (31891)
-  [
-    31891,
-    {
-      pronunciation: { us: "[du-əwéi-wíð]" },
-      coreImage: "古い考えや仕組みを取りのぞいて、もう使わないようにするイメージ",
-      examples: [
-        { en: "Many stores are doing away with plastic bags.", ja: "多くの店舗がレジ袋を廃止しています。", context: "一般" },
-      ],
-    },
-  ],
-
   // possibly (31892)
   [
     31892,
@@ -38365,30 +36337,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // tie-up (31893)
-  [
-    31893,
-    {
-      pronunciation: { us: "[tai]" },
-      coreImage: "別々の力や物をつなげて、一緒に動くようにする感覚",
-      usage: "tie-up between=〜間の提携 / tie-up with=〜との提携",
-      examples: [
-        { en: "The tie-up between two companies is beneficial.", ja: "2社の提携は有益だ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // amount to (31894)
-  [
-    31894,
-    {
-      pronunciation: { us: "[əmáunt-túː]" },
-      coreImage: "いくつかを足し合わせて合計の額や数になる",
-      examples: [
-        { en: "Total sales amount to $20,000 this month.", ja: "売上は今月合計で20,000ドルになる。", context: "一般" },
-      ],
-    },
-  ],
 
   // biological (31895)
   [
@@ -38612,22 +36560,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // calm down (31909)
-  [
-    31909,
-    {
-      pronunciation: { us: "[kɑm-dáun]" },
-      coreImage: "心や体のざわつきを静めて、落ち着いた状態にする",
-      antonyms: ["agitate"],
-      relatedWordEntries: [
-        { word: "agitate", partOfSpeech: "動", meaning: "〜を動揺させる", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please calm down the customer and explain the delay.", ja: "顧客を落ち着かせて、遅延について説明してください。", context: "一般" },
-      ],
-    },
-  ],
-
   // engagement (31910)
   [
     31910,
@@ -38641,18 +36573,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The manager's engagement with the project led to better results.", ja: "マネージャーのプロジェクトへの関与がより良い成果につながった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // occur to (31911)
-  [
-    31911,
-    {
-      pronunciation: { us: "[əkə́ːr-túː]" },
-      coreImage: "暗い部屋に灯りがつくように、ある考えが心にぱっと現れる。",
-      examples: [
-        { en: "It occurred to me.", ja: "それが私の心にふと浮かんだ。", context: "一般" },
       ],
     },
   ],
@@ -38725,18 +36645,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // lean against (31916)
-  [
-    31916,
-    {
-      pronunciation: { us: "[líːn-əgénst]" },
-      coreImage: "ある点を支えにして体や物の一部の重さを預け、斜めに傾ける",
-      examples: [
-        { en: "People lean against the fence during the parade.", ja: "人々はパレードの間、柵に寄りかかる。", context: "一般" },
-      ],
-    },
-  ],
-
   // proceed (31917)
   [
     31917,
@@ -38784,22 +36692,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // gaze at (31920)
-  [
-    31920,
-    {
-      pronunciation: { us: "[géiz-ət]" },
-      coreImage: "目を一点にとめて視線を保ち、対象に集中する状態",
-      antonyms: ["disregard"],
-      relatedWordEntries: [
-        { word: "disregard", partOfSpeech: "動", meaning: "無視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "The children gazed at the stars.", ja: "子供たちは星を見つめた。", context: "一般" },
-      ],
-    },
-  ],
-
   // mechanical (31921)
   [
     31921,
@@ -38813,22 +36705,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "His smile looked mechanical.", ja: "彼の笑顔は機械的だった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // refer to (31922)
-  [
-    31922,
-    {
-      pronunciation: { us: "[rifə́ːr-túː]" },
-      coreImage: "人や事柄に注意を向けて言及するか、情報を得るための資料や参照先を指し示す",
-      antonyms: ["ignore"],
-      relatedWordEntries: [
-        { word: "ignore", partOfSpeech: "動", meaning: "無視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please refer to the user manual for setup instructions.", ja: "セットアップ手順については、取扱説明書を参照してください。", context: "一般" },
       ],
     },
   ],
@@ -38889,22 +36765,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "outline the main points=主な点を概説する / outline a plan=計画の概略を述べる / outline a proposal=提案の概略を述べる",
       examples: [
         { en: "Please outline the concept behind the proposal.", ja: "提案の背景にあるコンセプトの概要を説明してください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // care for (31927)
-  [
-    31927,
-    {
-      pronunciation: { us: "[kέər-fər]" },
-      coreImage: "心が特定の相手や物に向き、心地よく思う感覚",
-      antonyms: ["dislike"],
-      relatedWordEntries: [
-        { word: "dislike", partOfSpeech: "動", meaning: "好まない", isAntonym: true },
-      ],
-      examples: [
-        { en: "He doesn't care for spicy food.", ja: "彼は辛い食べ物が好きではない。", context: "一般" },
       ],
     },
   ],
@@ -39020,22 +36880,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "There is a connecting train at Shin-Yokohama Station.", ja: "新横浜駅には乗り継ぎの列車があります。", context: "一般" },
-      ],
-    },
-  ],
-
-  // fill out (31935)
-  [
-    31935,
-    {
-      pronunciation: { us: "[fíl-áut]" },
-      coreImage: "フォームや書類の空白に当てはまる答えや情報を記入して埋める",
-      antonyms: ["omit"],
-      relatedWordEntries: [
-        { word: "omit", partOfSpeech: "動", meaning: "省略する", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please fill out the application form.", ja: "申請書に必要事項を記入してください。", context: "一般" },
       ],
     },
   ],
@@ -39373,18 +37217,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // eco-friendly (31957)
-  [
-    31957,
-    {
-      pronunciation: { us: "[íːkoufrɛ̀ndli]" },
-      coreImage: "自然に負担をかけず、資源や生き物の循環を守るあり方",
-      usage: "eco-friendly products=環境にやさしい製品 / eco-friendly materials=環境にやさしい素材 / eco-friendly practices=環境にやさしい取り組み",
-      examples: [
-        { en: "Many companies use eco-friendly packaging.", ja: "多くの企業は環境にやさしい包装を使用している。", context: "一般" },
-      ],
-    },
-  ],
 
   // metropolis (31958)
   [
@@ -40116,18 +37948,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // in-flight (32004)
-  [
-    32004,
-    {
-      pronunciation: { us: "[infláit]" },
-      coreImage: "飛行中の機内という、移動中で閉ざされた内部空間を示す。",
-      usage: "in-flight meal=機内食 / in-flight entertainment=機内エンターテインメント / in-flight service=機内サービス",
-      examples: [
-        { en: "We can use the in-flight internet service.", ja: "機内のインターネットサービスが利用できる。", context: "一般" },
-      ],
-    },
-  ],
 
   // question (32005)
   [
@@ -40296,18 +38116,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // back-order (32016)
-  [
-    32016,
-    {
-      pronunciation: { us: "[bækɔ́ːrdər]" },
-      coreImage: "店にない品を後で入荷してもらうために今注文し、後日受け取る行為を中心にしたイメージ",
-      usage: "back-order an item=商品を取り寄せ注文する / back-order the part=部品を取り寄せ注文する",
-      examples: [
-        { en: "The item was back-ordered last week.", ja: "その商品は先週取り寄せ注文されました。", context: "一般" },
-      ],
-    },
-  ],
 
   // tone (32017)
   [
@@ -41969,22 +39777,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // large-scale (32125)
-  [
-    32125,
-    {
-      pronunciation: { us: "[lɑːrdʒ]" },
-      coreImage: "範囲・影響・資源の面で広く大きな規模を持つことを表す",
-      usage: "large-scale project=大規模なプロジェクト / large-scale production=大規模な生産 / large-scale survey=大規模な調査",
-      antonyms: ["limited"],
-      relatedWordEntries: [
-        { word: "limited", partOfSpeech: "形", meaning: "限られた", isAntonym: true },
-      ],
-      examples: [
-        { en: "The large-scale event drew a crowd.", ja: "その大規模なイベントには多くの観客が集まった。", context: "一般" },
-      ],
-    },
-  ],
 
   // hospitalize (32126)
   [
@@ -42660,22 +40452,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // eye-catching (32168)
-  [
-    32168,
-    {
-      pronunciation: { us: "[ai]" },
-      coreImage: "目が自然にとまる鮮やかな色やはっきりした形のもの",
-      usage: "eye-catching advertisement=人目を引く広告 / eye-catching headline=人目を引く見出し",
-      antonyms: ["dull"],
-      relatedWordEntries: [
-        { word: "dull", partOfSpeech: "形", meaning: "地味な", isAntonym: true },
-      ],
-      examples: [
-        { en: "The company released an eye-catching advertisement.", ja: "その会社は人目を引く広告を出した。", context: "一般" },
-      ],
-    },
-  ],
 
   // plot (32169)
   [
@@ -42750,22 +40526,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // out-of-date (32174)
-  [
-    32174,
-    {
-      pronunciation: { us: "[aut]" },
-      coreImage: "時間の流れに取り残されて、今のやり方や考えと合わなくなる状態",
-      usage: "out-of-date software=時代遅れのソフトウェア / out-of-date version=時代遅れのバージョン / out-of-date system=時代遅れのシステム",
-      antonyms: ["up-to-date"],
-      relatedWordEntries: [
-        { word: "up-to-date", partOfSpeech: "形", meaning: "最新の", isAntonym: true },
-      ],
-      examples: [
-        { en: "The software is out-of-date and needs updating.", ja: "そのソフトウェアは時代遅れで、更新が必要です。", context: "一般" },
-      ],
-    },
-  ],
 
   // stable (32175)
   [
@@ -43580,18 +41340,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // after-sales (32225)
-  [
-    32225,
-    {
-      pronunciation: { us: "[ɑ́ːftər]" },
-      coreImage: "購入後に行う点検や修理、問い合わせ対応といったサービスのしくみ",
-      usage: "after-sales service=アフターサービス / after-sales support=アフターサービス",
-      examples: [
-        { en: "The company invested in after-sales support to improve customer satisfaction.", ja: "顧客満足度向上のために、同社は販売後のサポートに投資した。", context: "一般" },
-      ],
-    },
-  ],
 
   // inhabitant (32226)
   [
@@ -46133,22 +43881,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // custom-made (32386)
-  [
-    32386,
-    {
-      pronunciation: { us: "[kʌ́stəm]" },
-      coreImage: "個人の体や好みなどに合わせて、一つずつ作られる。",
-      usage: "custom-made product=オーダーメイドの製品",
-      antonyms: ["ready-made"],
-      relatedWordEntries: [
-        { word: "ready-made", partOfSpeech: "形", meaning: "既製の", isAntonym: true },
-      ],
-      examples: [
-        { en: "I want a custom-made dress.", ja: "オーダーメイドのドレスが欲しい。", context: "一般" },
-      ],
-    },
-  ],
 
   // extinguish (32387)
   [
@@ -46435,18 +44167,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Companies should be cautious when announcing quarterly results.", ja: "企業は四半期の決算発表を行う際、注意深い対応が求められます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // dress code (32405)
-  [
-    32405,
-    {
-      pronunciation: { us: "[drés-kóud]" },
-      coreImage: "場所や場面に合わせて着る服の種類や形を決める、守るべき決まり",
-      examples: [
-        { en: "Guests must follow the dress code for the event.", ja: "来場者はそのイベントの服装規定に従わなければならない。", context: "一般" },
       ],
     },
   ],
@@ -46785,22 +44505,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // admit doing (32428)
-  [
-    32428,
-    {
-      pronunciation: { us: "[ədmít]" },
-      coreImage: "自分がした行為や過去のことを言葉にして認め、事実として扱う",
-      antonyms: ["deny"],
-      relatedWordEntries: [
-        { word: "deny", partOfSpeech: "動", meaning: "～したことを否定する", isAntonym: true },
-      ],
-      examples: [
-        { en: "The manager admitted making a mistake.", ja: "そのマネージャーは間違いを犯したことを認めた。", context: "一般" },
-      ],
-    },
-  ],
-
   // temperament (32429)
   [
     32429,
@@ -46810,18 +44514,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "temperament suited to=〜に適した性格 / temperament for leadership=リーダーに向いた性格 / even temperament=落ち着いた性格",
       examples: [
         { en: "His temperament is well suited to leadership.", ja: "彼の性格はリーダーに向いている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // bother to do (32430)
-  [
-    32430,
-    {
-      pronunciation: { us: "[bɑ́ðər-túː-du]" },
-      coreImage: "普段しない余分な手間や動作をして、目的を達成する",
-      examples: [
-        { en: "She didn't bother to do it.", ja: "彼女はわざわざそれをしなかった。", context: "一般" },
       ],
     },
   ],
@@ -47048,22 +44740,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // refuse to do (32445)
-  [
-    32445,
-    {
-      pronunciation: { us: "[rifjúːz-túː-du]" },
-      coreImage: "頼まれたことに対して体や言葉で「しない」と示し、動作を行わない",
-      antonyms: ["accept"],
-      relatedWordEntries: [
-        { word: "accept", partOfSpeech: "動", meaning: "～することを受け入れる", isAntonym: true },
-      ],
-      examples: [
-        { en: "They refused to sign the contract.", ja: "彼らは契約に署名することを拒んだ。", context: "一般" },
-      ],
-    },
-  ],
-
   // absurd (32446)
   [
     32446,
@@ -47124,18 +44800,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Gossip undermined her confidence.", ja: "うわさが彼女の自信を損なった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // bear to do (32450)
-  [
-    32450,
-    {
-      pronunciation: { us: "[bέər-túː-du]" },
-      coreImage: "不快やつらさを内側で押さえ、行動を続ける心の働き",
-      examples: [
-        { en: "I can't bear to work with unreliable colleagues.", ja: "信用できない同僚と働くのを我慢できない。", context: "一般" },
       ],
     },
   ],
@@ -47243,18 +44907,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "intervene in=〜に介入する / intervene between=〜の間に介入する",
       examples: [
         { en: "HR will intervene if conflicts persist.", ja: "問題が続く場合、人事部が介入する。", context: "一般" },
-      ],
-    },
-  ],
-
-  // quit doing (32458)
-  [
-    32458,
-    {
-      pronunciation: { us: "[kwit]" },
-      coreImage: "続けている行動のスイッチを切って、その行為をやめる",
-      examples: [
-        { en: "We quit doing business with that supplier.", ja: "その仕入先と取引をすることをやめた。", context: "一般" },
       ],
     },
   ],
@@ -47379,18 +45031,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // serve to do (32467)
-  [
-    32467,
-    {
-      pronunciation: { us: "[sə́ːrv-túː-du]" },
-      coreImage: "あるものが別のことを可能にするために、手助けや条件を整える働き",
-      examples: [
-        { en: "The manual serves to assist new users.", ja: "マニュアルは新規ユーザーを支援するのに役立つ。", context: "一般" },
-      ],
-    },
-  ],
-
   // anchor (32468)
   [
     32468,
@@ -47421,18 +45061,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The company manifested its commitment to safety in a statement.", ja: "同社は声明で安全への取り組みを明らかにした。", context: "一般" },
-      ],
-    },
-  ],
-
-  // tend to do (32470)
-  [
-    32470,
-    {
-      pronunciation: { us: "[ténd-túː-du]" },
-      coreImage: "ある状況で特定の行動をしがちな性向がある",
-      examples: [
-        { en: "Companies tend to focus on short-term profits.", ja: "企業は短期的な利益に注力しがちである。", context: "一般" },
       ],
     },
   ],
@@ -47471,18 +45099,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // regret doing (32473)
-  [
-    32473,
-    {
-      pronunciation: { us: "[rigrɛ́t]" },
-      coreImage: "したことと今の望みが合わないと気づき、やり直せないと知る心の動き",
-      examples: [
-        { en: "She regrets telling him the truth.", ja: "彼女は彼に本当のことを伝えたことを後悔している。", context: "一般" },
-      ],
-    },
-  ],
-
   // skeptical (32474)
   [
     32474,
@@ -47496,18 +45112,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "He looked skeptical about her story.", ja: "彼は彼女の話に懐疑的な表情を浮かべた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // wish to do (32475)
-  [
-    32475,
-    {
-      pronunciation: { us: "[wíʃ-túː-du]" },
-      coreImage: "ある行動を望む内的な気持ちや意向",
-      examples: [
-        { en: "We wish to inform you of the changes.", ja: "変更点をお知らせしたいと思う。", context: "一般" },
       ],
     },
   ],
@@ -47636,18 +45240,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // regret to do (32484)
-  [
-    32484,
-    {
-      pronunciation: { us: "[rigrét-túː-du]" },
-      coreImage: "自分の残念な気持ちを抑えて、しかたなく知らせたり行動したりする場面",
-      examples: [
-        { en: "We regret to announce that the shipment will be delayed.", ja: "残念ながら出荷が遅れることをお知らせします。", context: "一般" },
-      ],
-    },
-  ],
-
   // brew (32485)
   [
     32485,
@@ -47704,34 +45296,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The manager's decision provoked strong criticism from staff.", ja: "その管理者の決定は従業員からの強い批判を引き起こした。", context: "一般" },
-      ],
-    },
-  ],
-
-  // strive to do (32489)
-  [
-    32489,
-    {
-      pronunciation: { us: "[stráiv-túː-du]" },
-      coreImage: "目標に向かって力を出し続け、到達しようとするイメージ",
-      examples: [
-        { en: "Students strive to do their best in class.", ja: "生徒たちは授業でベストを尽くそうと努力している。", context: "一般" },
-      ],
-    },
-  ],
-
-  // mind doing (32490)
-  [
-    32490,
-    {
-      pronunciation: { us: "[maind]" },
-      coreImage: "行動を始めようとする心に小さなブレーキがかかり、進むのをためらう感覚",
-      antonyms: ["enjoy"],
-      relatedWordEntries: [
-        { word: "enjoy", partOfSpeech: "動", meaning: "〜するのを楽しむ", isAntonym: true },
-      ],
-      examples: [
-        { en: "Do you mind doing overtime?", ja: "残業するのは嫌ですか？", context: "一般" },
       ],
     },
   ],
@@ -47949,22 +45513,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "give testimony=証言をする / testimony in court=法廷での証言 / testimony under oath=宣誓の下での証言",
       examples: [
         { en: "Her testimony in court helped solve the case.", ja: "彼女の法廷での証言が事件の解決に役立った。", context: "一般" },
-      ],
-    },
-  ],
-
-  // choose to do (32504)
-  [
-    32504,
-    {
-      pronunciation: { us: "[tʃuz-túː-du]" },
-      coreImage: "複数の選択肢から実行する行動を自分で選ぶイメージ",
-      antonyms: ["refuse"],
-      relatedWordEntries: [
-        { word: "refuse", partOfSpeech: "動", meaning: "拒否する", isAntonym: true },
-      ],
-      examples: [
-        { en: "They chose to do extra work.", ja: "彼らは追加の仕事をすることを選択した。", context: "一般" },
       ],
     },
   ],
@@ -48358,34 +45906,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // recall doing (32530)
-  [
-    32530,
-    {
-      pronunciation: { us: "[rikɔ́ːl]" },
-      coreImage: "記憶の奥から昔の自分の動きを呼び戻して目の前に思い浮かべるイメージ",
-      antonyms: ["forget"],
-      relatedWordEntries: [
-        { word: "forget", partOfSpeech: "動", meaning: "忘れる", isAntonym: true },
-      ],
-      examples: [
-        { en: "He recalled sending the invoice last month.", ja: "彼は先月、請求書を送ったことを思い出した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // mean to do (32531)
-  [
-    32531,
-    {
-      pronunciation: { us: "[míːn-túː-du]" },
-      coreImage: "これからすることを考え、実行しようと決めている状態",
-      examples: [
-        { en: "I didn't mean to do that.", ja: "そんなことをするつもりはなかった。", context: "一般" },
-      ],
-    },
-  ],
-
   // odds (32532)
   [
     32532,
@@ -48492,18 +46012,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "apply fertilizer=肥料をまく / chemical fertilizer=化学肥料 / fertilizer production=肥料生産",
       examples: [
         { en: "Farmers apply fertilizer to their fields.", ja: "農家は畑に肥料を施す。", context: "一般" },
-      ],
-    },
-  ],
-
-  // pledge to do (32539)
-  [
-    32539,
-    {
-      pronunciation: { us: "[plédʒ-túː-du]" },
-      coreImage: "これから何かをすることを人や自分に向けて言葉で固く誓う心の動き",
-      examples: [
-        { en: "The company pledged to donate funds.", ja: "その会社は資金を寄付することを誓った。", context: "一般" },
       ],
     },
   ],
@@ -48811,18 +46319,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // claim to do (32559)
-  [
-    32559,
-    {
-      pronunciation: { us: "[kleim-túː-du]" },
-      coreImage: "自分がある行為をする、またはするつもりだと主張することを示す。",
-      examples: [
-        { en: "The company claims to have the best customer service.", ja: "その会社は最高の顧客サービスを提供していると主張している。", context: "一般" },
-      ],
-    },
-  ],
-
   // detach (32560)
   [
     32560,
@@ -48870,18 +46366,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "I live in the suburbs.", ja: "私は郊外に住んでいる。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be open to (32563)
-  [
-    32563,
-    {
-      pronunciation: { us: "[bíː-óupən-túː]" },
-      coreImage: "外の扉や門が開いていて、だれでも中に入れる状態",
-      examples: [
-        { en: "The manager is open to new ideas.", ja: "その部長は新しいアイデアを受け入れる用意がある。", context: "一般" },
       ],
     },
   ],
@@ -48950,22 +46434,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // be worthy of (32568)
-  [
-    32568,
-    {
-      pronunciation: { us: "[bíː-wə́ːrði-əv]" },
-      coreImage: "ある行為や評価を受けるに値する状態である",
-      antonyms: ["unworthy"],
-      relatedWordEntries: [
-        { word: "unworthy", partOfSpeech: "形", meaning: "ふさわしくない", isAntonym: true },
-      ],
-      examples: [
-        { en: "His hard work was worthy of praise.", ja: "彼の努力は称賛にふさわしい。", context: "一般" },
-      ],
-    },
-  ],
-
   // deceit (32569)
   [
     32569,
@@ -48979,18 +46447,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The company's deceit in its financial report was uncovered, and shareholders sued the company.", ja: "会社の財務報告における欺瞞が明らかになり、株主は会社を訴えた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // hand truck (32570)
-  [
-    32570,
-    {
-      pronunciation: { us: "[hǽnd-trʌ́k]" },
-      coreImage: "L字型の板に載せた荷を支え、後ろの車輪で移動させる運搬具",
-      examples: [
-        { en: "I borrowed a hand truck.", ja: "私は台車を借りた。", context: "一般" },
       ],
     },
   ],
@@ -49021,22 +46477,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "She wore a triumphant smile after closing the deal.", ja: "取引をまとめた後、彼女は得意げな笑みを浮かべた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be native to (32573)
-  [
-    32573,
-    {
-      pronunciation: { us: "[bíː-néitiv-túː]" },
-      coreImage: "人や動植物が最初からその土地に由来し、その場所で生まれ育った状態",
-      antonyms: ["foreign"],
-      relatedWordEntries: [
-        { word: "foreign", partOfSpeech: "形", meaning: "外国の", isAntonym: true },
-      ],
-      examples: [
-        { en: "The kangaroo is native to Australia.", ja: "カンガルーはオーストラリア原産である。", context: "一般" },
       ],
     },
   ],
@@ -49135,18 +46575,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The manager exercised restraint in his response.", ja: "マネージャーは対応において自制心を示した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be keen to (32580)
-  [
-    32580,
-    {
-      pronunciation: { us: "[bíː-kíːn-túː]" },
-      coreImage: "ある行動をしたいという気持ちが強く、進んでその行動をしようとする心の向き",
-      examples: [
-        { en: "He is keen to improve his English.", ja: "彼は英語を上達させることに熱心だ。", context: "一般" },
       ],
     },
   ],
@@ -49322,18 +46750,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // cover letter (32592)
-  [
-    32592,
-    {
-      pronunciation: { us: "[kʌ́vər-létər]" },
-      coreImage: "履歴書と一緒に送る、自分の紹介と応募理由を短くまとめた手紙",
-      examples: [
-        { en: "My cover letter explains why I want the job.", ja: "カバーレターに志望動機が書かれている。", context: "一般" },
-      ],
-    },
-  ],
-
   // evoke (32593)
   [
     32593,
@@ -49441,18 +46857,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The sales team's superb presentation won the client over.", ja: "営業チームの見事なプレゼンテーションが顧客を引きつけた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be based in (32600)
-  [
-    32600,
-    {
-      pronunciation: { us: "[bíː-beɪst-in]" },
-      coreImage: "組織や仕事の中心が特定の場所にあり、そこを起点にして動く",
-      examples: [
-        { en: "The company is based in Tokyo.", ja: "その会社は東京に本拠を置いている。", context: "一般" },
       ],
     },
   ],
@@ -49606,18 +47010,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // be sited in (32610)
-  [
-    32610,
-    {
-      pronunciation: { us: "[biː]" },
-      coreImage: "場所や区域という枠の中で、そのものの位置がはっきり決まっている状態",
-      examples: [
-        { en: "The new branch is sited in the financial district.", ja: "その新支店は金融街に位置している。", context: "一般" },
-      ],
-    },
-  ],
-
   // clerical (32611)
   [
     32611,
@@ -49682,18 +47074,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // be stuck in (32615)
-  [
-    32615,
-    {
-      pronunciation: { us: "[bíː-stʌ́k-in]" },
-      coreImage: "中にはまりこんで外に出られず移動や進行が止まっている様子",
-      examples: [
-        { en: "She is stuck in a meeting.", ja: "彼女は会議で立ち往生している。", context: "一般" },
-      ],
-    },
-  ],
-
   // foreman (32616)
   [
     32616,
@@ -49720,18 +47100,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "She thrust the files into his hands.", ja: "彼女はファイルを彼の手に突き出した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be short of (32618)
-  [
-    32618,
-    {
-      pronunciation: { us: "[bíː-ʃɔrt-əv]" },
-      coreImage: "手元にある量が必要な量に届かず、足りない状態",
-      examples: [
-        { en: "I am short of money.", ja: "僕はお金が不足している。", context: "一般" },
       ],
     },
   ],
@@ -50402,18 +47770,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // fine-tune (32661)
-  [
-    32661,
-    {
-      pronunciation: { us: "[fain]" },
-      coreImage: "細かな部分を少し調整して全体の働きを目標の状態に近づける",
-      usage: "fine-tune the schedule=スケジュールを微調整する / fine-tune the process=プロセスを微調整する / fine-tune the system=システムを微調整する",
-      examples: [
-        { en: "We need to fine-tune the schedule before the product launch.", ja: "製品の発売前にスケジュールを微調整する必要がある。", context: "一般" },
-      ],
-    },
-  ],
 
   // legroom (32662)
   [
@@ -51227,18 +48583,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // follow-up (32714)
-  [
-    32714,
-    {
-      pronunciation: { us: "[fɑ́louʌ̀p]" },
-      coreImage: "先に起きたことに続いて行われ、つながりを保ちながら進む次の動きや処置",
-      usage: "follow-up meeting=フォローアップ会議 / follow-up survey=フォローアップ調査 / follow-up email=フォローアップメール / follow-up call=フォローアップの電話 / follow-up appointment=フォローアップの面談",
-      examples: [
-        { en: "The follow-up meeting will be held.", ja: "フォローアップの会議が開催される。", context: "一般" },
-      ],
-    },
-  ],
 
   // procure (32715)
   [
@@ -51411,22 +48755,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // hands-on (32726)
-  [
-    32726,
-    {
-      pronunciation: { us: "[hændz-ɔn]" },
-      coreImage: "手を使って自分で作業に加わり、手先で確かめながら進めるイメージ。",
-      usage: "hands-on experience=実践的な経験 / hands-on training=実践的な研修 / hands-on approach=実践的なアプローチ / hands-on learning=実践的な学習 / hands-on practice=実践的な練習",
-      antonyms: ["hands-off"],
-      relatedWordEntries: [
-        { word: "hands-off", partOfSpeech: "形", meaning: "非介入的な", isAntonym: true },
-      ],
-      examples: [
-        { en: "Our hands-on training improved employees' skills.", ja: "当社の実践的な研修は従業員のスキルを向上させた。", context: "一般" },
-      ],
-    },
-  ],
 
   // kerosene (32727)
   [
@@ -52701,30 +50029,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // get nowhere (32808)
-  [
-    32808,
-    {
-      pronunciation: { us: "[get-nóuhwὲər]" },
-      coreImage: "同じ場所をぐるぐる回って前に進めない感覚。",
-      examples: [
-        { en: "Despite months of work, the project got nowhere.", ja: "数か月の作業にもかかわらず、そのプロジェクトは進展しなかった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // make it (32809)
-  [
-    32809,
-    {
-      pronunciation: { us: "[méik-ít]" },
-      coreImage: "時間や場所に間に合って到着すること、または物事をうまく成し遂げること",
-      examples: [
-        { en: "She made it to the meeting on time.", ja: "彼女は会議に間に合って到着しました。", context: "一般" },
-      ],
-    },
-  ],
-
   // meager (32810)
   [
     32810,
@@ -52802,18 +50106,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The palace was full of grandeur.", ja: "宮殿は壮麗さに満ちていた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // take effect (32815)
-  [
-    32815,
-    {
-      pronunciation: { us: "[téik-ifékt]" },
-      coreImage: "決めたことがスイッチを入れたように実際に動き始め、効果を出し始める",
-      examples: [
-        { en: "The new policy will take effect next month.", ja: "その新方針は来月から有効になります。", context: "一般" },
       ],
     },
   ],
@@ -54789,22 +52081,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // present-day (41361)
-  [
-    41361,
-    {
-      pronunciation: { us: "[prɛ́zənt]" },
-      coreImage: "いま実際にある状態や様子",
-      usage: "present-day society=現代の社会 / present-day life=現代の生活 / present-day education=現代の教育",
-      antonyms: ["former"],
-      relatedWordEntries: [
-        { word: "former", partOfSpeech: "形", meaning: "以前の", isAntonym: true },
-      ],
-      examples: [
-        { en: "In present-day society, smartphones are common.", ja: "現代の社会ではスマートフォンが一般的だ。", context: "一般" },
-      ],
-    },
-  ],
 
   // volcanic (41362)
   [
@@ -59691,18 +56967,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // trade-off (41671)
-  [
-    41671,
-    {
-      pronunciation: { us: "[treid]" },
-      coreImage: "限られた資源で一方を増やすともう一方が減る、バランスを決める状況",
-      usage: "trade-off between=〜と〜の間のトレードオフ",
-      examples: [
-        { en: "There is often a trade-off between speed and accuracy.", ja: "速度と正確さの間にはしばしばトレードオフがある。", context: "一般" },
-      ],
-    },
-  ],
 
   // chisel (41672)
   [
@@ -61138,18 +58402,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // credit card (41766)
-  [
-    41766,
-    {
-      pronunciation: { us: "[krédit-kɑ́rd]" },
-      coreImage: "買いものの代金をあとで払う約束で、会社がいったん立て替えてくれる小さなプラスチックのカード",
-      examples: [
-        { en: "Can I pay by credit card?", ja: "クレジットカードで支払えますか？", context: "一般" },
-      ],
-    },
-  ],
-
   // opponent (41767)
   [
     41767,
@@ -61227,18 +58479,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // real-estate (41772)
-  [
-    41772,
-    {
-      pronunciation: { us: "[ríːəl]" },
-      coreImage: "土地と建物を含む、動かせない財産",
-      usage: "real-estate market=不動産市場 / real-estate agent=不動産仲介業者 / buy real-estate=不動産を購入する",
-      examples: [
-        { en: "Many people invest in real-estate.", ja: "多くの人が不動産に投資しています。", context: "一般" },
-      ],
-    },
-  ],
 
   // locally (41773)
   [
@@ -62292,22 +59532,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // high-quality (41842)
-  [
-    41842,
-    {
-      pronunciation: { us: "[hai]" },
-      coreImage: "性能や仕上がりが高い水準にあり、優れた品質を示す。",
-      usage: "high-quality products=高品質の製品 / high-quality service=高品質のサービス / high-quality education=高品質の教育",
-      antonyms: ["low-quality"],
-      relatedWordEntries: [
-        { word: "low-quality", partOfSpeech: "形", meaning: "低品質の", isAntonym: true },
-      ],
-      examples: [
-        { en: "This is a high-quality diamond.", ja: "これは高品質のダイヤモンドです。", context: "一般" },
-      ],
-    },
-  ],
 
   // dawn (41843)
   [
@@ -64393,22 +61617,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // best-selling (41975)
-  [
-    41975,
-    {
-      pronunciation: { us: "[bɛstsɛ́liŋ]" },
-      coreImage: "広い地域で頻繁に売れて、多くの店や人の手に渡る本や商品",
-      usage: "best-selling novel=ベストセラーの小説 / best-selling book=ベストセラーの本 / best-selling author=ベストセラー作家",
-      antonyms: ["unpopular"],
-      relatedWordEntries: [
-        { word: "unpopular", partOfSpeech: "形", meaning: "不人気の", isAntonym: true },
-      ],
-      examples: [
-        { en: "She bought a best-selling novel.", ja: "彼女はベストセラーの小説を買った。", context: "一般" },
-      ],
-    },
-  ],
 
   // hardship (41976)
   [
@@ -65463,18 +62671,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "get a license=免許を取得する / driver's license=運転免許証",
       examples: [
         { en: "You need a license to drive a car.", ja: "車を運転するには免許証が必要だ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // New Zealand (42045)
-  [
-    42045,
-    {
-      pronunciation: { us: "[njuː]" },
-      coreImage: "二つの主要な島から成る島国で、先住民マオリの文化と自然の印象が結びつくイメージ",
-      examples: [
-        { en: "I want to visit New Zealand.", ja: "ニュージーランドに行きたい。", context: "一般" },
       ],
     },
   ],
@@ -67115,18 +64311,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // city hall (42154)
-  [
-    42154,
-    {
-      pronunciation: { us: "[síti-hɔl]" },
-      coreImage: "市の行政や窓口がまとまり、住民の手続きを受け付ける公共の建物",
-      examples: [
-        { en: "I did the paperwork at the city hall.", ja: "私は市役所で手続きをした。", context: "一般" },
-      ],
-    },
-  ],
-
   // else (42155)
   [
     42155,
@@ -67162,18 +64346,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "train platform=ホーム / cloud platform=クラウドプラットフォーム / software platform=ソフトウェアプラットフォーム / oil platform=海上油田の掘削施設",
       examples: [
         { en: "The company released a new platform for developers.", ja: "その会社は開発者向けの新しいプラットフォームを公開した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // table tennis (42158)
-  [
-    42158,
-    {
-      pronunciation: { us: "[téibl-ténəs]" },
-      coreImage: "台の上でネットをはさんで、小さなボールをラケットで打ち合う球技。",
-      examples: [
-        { en: "Do you want to play table tennis with me?", ja: "私と一緒に卓球をしませんか？", context: "一般" },
       ],
     },
   ],
@@ -68044,18 +65216,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "on the horizon=地平線上に / broaden one's horizons=視野を広げる",
       examples: [
         { en: "A ship appeared on the horizon.", ja: "船が地平線に現れた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // pen pal (42217)
-  [
-    42217,
-    {
-      pronunciation: { us: "[pén-pǽl]" },
-      coreImage: "手紙やメッセージで互いにやり取りする、遠くにいる相手",
-      examples: [
-        { en: "She is my pen pal.", ja: "彼女は私のペンパルです。", context: "一般" },
       ],
     },
   ],
@@ -70074,18 +67234,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // video game (42356)
-  [
-    42356,
-    {
-      pronunciation: { us: "[vídiòu-géim]" },
-      coreImage: "画面の出来事に自分の操作で影響を与え、展開していく遊び。",
-      examples: [
-        { en: "I love playing video games at home.", ja: "家でテレビゲームをするのが大好きなんだ。", context: "一般" },
-      ],
-    },
-  ],
-
   // move (42357)
   [
     42357,
@@ -71721,46 +68869,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // pop music (42466)
-  [
-    42466,
-    {
-      pronunciation: { us: "[pɔp]" },
-      coreImage: "親しみやすい短い旋律と繰り返しのサビを持ち、多くの人に向けて作られる大衆音楽。",
-      examples: [
-        { en: "Pop music is popular among teenagers.", ja: "ポップスはティーンエイジャーに人気がある。", context: "一般" },
-      ],
-    },
-  ],
-
-  // ice skating (42467)
-  [
-    42467,
-    {
-      pronunciation: { us: "[áis-skéitiŋ]" },
-      coreImage: "氷の上でスケート靴の刃を使い、滑りながら体を支えて進む",
-      examples: [
-        { en: "I enjoy ice skating in winter.", ja: "私は冬にアイススケートを楽しみます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be good at (42468)
-  [
-    42468,
-    {
-      pronunciation: { us: "[bíː-gúd-ət]" },
-      coreImage: "何かをするときに失敗が少なく、安定して成果を出せる状態",
-      antonyms: ["be bad at"],
-      relatedWordEntries: [
-        { word: "be bad at", partOfSpeech: "熟", meaning: "～が不得意だ", isAntonym: true },
-      ],
-      examples: [
-        { en: "He is good at painting.", ja: "彼は絵を描くのが得意だ。", context: "一般" },
-      ],
-    },
-  ],
-
   // than (42469)
   [
     42469,
@@ -71825,22 +68933,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "Merry Christmas!=メリークリスマス！ / Christmas Eve=クリスマスイブ / Christmas tree=クリスマスツリー / Christmas present=クリスマスプレゼント / Christmas decorations=クリスマスデコレーション",
       examples: [
         { en: "I love Christmas and Santa Claus!", ja: "クリスマスとサンタさんが大好き！", context: "一般" },
-      ],
-    },
-  ],
-
-  // speak to (42474)
-  [
-    42474,
-    {
-      pronunciation: { us: "[spik-túː]" },
-      coreImage: "相手に向かって声や言葉を出し、直接伝える行為。",
-      antonyms: ["ignore"],
-      relatedWordEntries: [
-        { word: "ignore", partOfSpeech: "動", meaning: "無視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please speak to the teacher politely.", ja: "先生に丁寧に話しかけてください。", context: "一般" },
       ],
     },
   ],
@@ -72518,18 +69610,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // want to do (42518)
-  [
-    42518,
-    {
-      pronunciation: { us: "[wɑnt-túː-du]" },
-      coreImage: "行為を想像して、実際に行おうという意欲が湧く状態",
-      examples: [
-        { en: "I want to do my homework.", ja: "私は宿題をしたい。", context: "一般" },
-      ],
-    },
-  ],
-
   // gold (42519)
   [
     42519,
@@ -72616,18 +69696,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // look for (42525)
-  [
-    42525,
-    {
-      pronunciation: { us: "[lúk-fər]" },
-      coreImage: "視線や注意を向けて手がかりを集め、目的にたどり着くイメージ",
-      examples: [
-        { en: "She is looking for books.", ja: "彼女は本を探している。", context: "一般" },
-      ],
-    },
-  ],
-
   // slowly (42526)
   [
     42526,
@@ -72641,34 +69709,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Please speak slowly.", ja: "ゆっくりと話してください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // a member of (42527)
-  [
-    42527,
-    {
-      pronunciation: { us: "[ə-mémbər-əv]" },
-      coreImage: "組織や仲間の一員として所属している人を表すこと",
-      examples: [
-        { en: "She is a member of our club.", ja: "彼女は私たちのクラブの一員です。", context: "一般" },
-      ],
-    },
-  ],
-
-  // on vacation (42528)
-  [
-    42528,
-    {
-      pronunciation: { us: "[ɑn-veikéiʃən]" },
-      coreImage: "仕事や学校の義務から離れて、一定期間自由に過ごす状態",
-      antonyms: ["at work"],
-      relatedWordEntries: [
-        { word: "at work", partOfSpeech: "熟", meaning: "仕事中", isAntonym: true },
-      ],
-      examples: [
-        { en: "I am on vacation.", ja: "私は休暇中です。", context: "一般" },
       ],
     },
   ],
@@ -72716,38 +69756,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // talk to (42532)
-  [
-    42532,
-    {
-      pronunciation: { us: "[tɔk-túː]" },
-      coreImage: "相手に向かって声をかけ、言葉を伝える行為",
-      antonyms: ["ignore"],
-      relatedWordEntries: [
-        { word: "ignore", partOfSpeech: "動", meaning: "無視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "She talked to the teacher after class.", ja: "彼女は授業の後、先生に話した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be careful (42533)
-  [
-    42533,
-    {
-      pronunciation: { us: "[bíː-kέərfl]" },
-      coreImage: "注意というブレーキで自分の動きを抑えて危険を避ける",
-      antonyms: ["be careless"],
-      relatedWordEntries: [
-        { word: "be careless", partOfSpeech: "動", meaning: "不注意だ", isAntonym: true },
-      ],
-      examples: [
-        { en: "Be careful when handling knives.", ja: "ナイフを扱うときは気を付ける。", context: "一般" },
-      ],
-    },
-  ],
-
   // excited (42534)
   [
     42534,
@@ -72761,370 +69769,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "The fans were excited about the new album.", ja: "ファンは新しいアルバムに興奮した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // go around (42535)
-  [
-    42535,
-    {
-      pronunciation: { us: "[góu-əráund]" },
-      coreImage: "噂や話が人々の間で広がる様子、または人数分が行き渡って足りる状態を表す。",
-      examples: [
-        { en: "Rumors are going around about the new teacher.", ja: "新しい先生についての噂が広まっている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // one of (42536)
-  [
-    42536,
-    {
-      pronunciation: { us: "[wʌ́n-əv]" },
-      coreImage: "集まりやグループの中から1つを選んで示すイメージ。",
-      examples: [
-        { en: "This book is one of my favorites.", ja: "この本は私のお気に入りの一つだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // want to be (42537)
-  [
-    42537,
-    {
-      pronunciation: { us: "[wɑnt-túː-bíː]" },
-      coreImage: "今より別の状態を思い浮かべ、そうなりたいと心が向く",
-      examples: [
-        { en: "I want to be a police officer.", ja: "私は警察官になりたいと思う。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be late for (42538)
-  [
-    42538,
-    {
-      pronunciation: { us: "[bíː-léit-fər]" },
-      coreImage: "約束や出発の時刻に間に合わず、始まった後で到着する状態。",
-      examples: [
-        { en: "She was late for the meeting.", ja: "彼女は会議に遅れた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // for free (42539)
-  [
-    42539,
-    {
-      pronunciation: { us: "[fər-fríː]" },
-      coreImage: "料金や支払いの条件がなく、そのまま使ったり受け取ったりできる場面",
-      examples: [
-        { en: "I got it for free.", ja: "それを無料で手に入れた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // go back to (42540)
-  [
-    42540,
-    {
-      pronunciation: { us: "[góu-bǽk-túː]" },
-      coreImage: "今いる位置や状態から、以前いた場所・状態・話題の位置へ再び向かうこと",
-      examples: [
-        { en: "I go back to school after lunch.", ja: "昼食の後に学校に戻る。", context: "一般" },
-      ],
-    },
-  ],
-
-  // hear about (42541)
-  [
-    42541,
-    {
-      pronunciation: { us: "[hir-əbáut]" },
-      coreImage: "他人の言葉や音を通して、特定の話題の存在や事情を知る",
-      examples: [
-        { en: "I heard about her yesterday.", ja: "昨日彼女のことについて聞きました。", context: "一般" },
-      ],
-    },
-  ],
-
-  // worry about (42542)
-  [
-    42542,
-    {
-      pronunciation: { us: "[wə́ri-əbáut]" },
-      coreImage: "ある事柄に心が向き、その結果や問題を繰り返し考えて落ち着かない状態",
-      examples: [
-        { en: "Don't worry about the test tomorrow.", ja: "明日のテストのことは心配しなくていい。", context: "一般" },
-      ],
-    },
-  ],
-
-  // arrive in (42543)
-  [
-    42543,
-    {
-      pronunciation: { us: "[əráiv-in]" },
-      coreImage: "目的の場所の境目を越えて、その場所の中に入るイメージ",
-      examples: [
-        { en: "I will arrive in Tokyo tomorrow.", ja: "私は明日東京に着きます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // forget to (42544)
-  [
-    42544,
-    {
-      pronunciation: { us: "[fərgét-túː]" },
-      coreImage: "やるつもりのことが頭から消えて、行動につながる合図が出ない",
-      antonyms: ["remember"],
-      relatedWordEntries: [
-        { word: "remember", partOfSpeech: "動", meaning: "〜するのを覚えている", isAntonym: true },
-      ],
-      examples: [
-        { en: "She forgot to call her mother.", ja: "彼女は母に電話するのを忘れた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // have a seat (42545)
-  [
-    42545,
-    {
-      pronunciation: { us: "[həv-ə-síːt]" },
-      coreImage: "相手に座るよう促す、席に座ってくださいと招く動作や表現",
-      antonyms: ["stand up"],
-      relatedWordEntries: [
-        { word: "stand up", partOfSpeech: "熟", meaning: "立ち上がる", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please have a seat.", ja: "おかけください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // most of (42546)
-  [
-    42546,
-    {
-      pronunciation: { us: "[móust-əv]" },
-      coreImage: "全体の多くの部分が対象になり、少数だけが外れる状態。",
-      examples: [
-        { en: "Most of the students passed the exam.", ja: "生徒のほとんどがその試験に合格した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // on sale (42547)
-  [
-    42547,
-    {
-      pronunciation: { us: "[ɑn-séil]" },
-      coreImage: "商品が割引された価格で提供されている状態。",
-      examples: [
-        { en: "Are these shoes on sale?", ja: "これらの靴は特売中ですか？", context: "一般" },
-      ],
-    },
-  ],
-
-  // be ready for (42548)
-  [
-    42548,
-    {
-      pronunciation: { us: "[bíː-rédi-fər]" },
-      coreImage: "必要な物や準備を整えて、行動を始められる状態",
-      antonyms: ["unprepared"],
-      relatedWordEntries: [
-        { word: "unprepared", partOfSpeech: "形", meaning: "準備ができていない", isAntonym: true },
-      ],
-      examples: [
-        { en: "She is ready for the test.", ja: "彼女はテストの準備ができている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // get to (42549)
-  [
-    42549,
-    {
-      pronunciation: { us: "[get-túː]" },
-      coreImage: "人や物が場所に到達するイメージと、行為の機会が生まれるイメージの二つを持つ",
-      antonyms: ["depart"],
-      relatedWordEntries: [
-        { word: "depart", partOfSpeech: "動", meaning: "出発する", isAntonym: true },
-      ],
-      examples: [
-        { en: "I need to get to school by 9.", ja: "9時までに学校に着かないといけない。", context: "一般" },
-      ],
-    },
-  ],
-
-  // how long (42550)
-  [
-    42550,
-    {
-      pronunciation: { us: "[háu-lɑ́ːŋ]" },
-      coreImage: "物の物理的な長さと、出来事や状態の続く時間のどれくらいかをはかるイメージ",
-      examples: [
-        { en: "How long will the meeting last?", ja: "会議はどれくらいの時間続きますか？", context: "一般" },
-      ],
-    },
-  ],
-
-  // look around (42551)
-  [
-    42551,
-    {
-      pronunciation: { us: "[lúk-əráund]" },
-      coreImage: "目を動かして周りの様子をざっと見てつかむ動き",
-      examples: [
-        { en: "She looked around for her keys.", ja: "彼女は鍵を探してあたりを見回した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // call back (42552)
-  [
-    42552,
-    {
-      pronunciation: { us: "[kɔl-bǽk]" },
-      coreImage: "着信や伝言を見て、あとで自分の方から電話で連絡を取る一連の動き",
-      examples: [
-        { en: "Can you call back after the meeting?", ja: "会議の後にかけ直してもらえますか？", context: "一般" },
-      ],
-    },
-  ],
-
-  // take care of (42553)
-  [
-    42553,
-    {
-      pronunciation: { us: "[téik-kέər-əv]" },
-      coreImage: "ある対象の世話や責任を引き受け、継続して注意と行動を向ける",
-      antonyms: ["neglect"],
-      relatedWordEntries: [
-        { word: "neglect", partOfSpeech: "動", meaning: "怠る", isAntonym: true },
-      ],
-      examples: [
-        { en: "She takes care of her younger brother.", ja: "彼女は弟の世話をしている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // go back (42554)
-  [
-    42554,
-    {
-      pronunciation: { us: "[góu-bǽk]" },
-      coreImage: "離れた場所や以前の状態にもう一度戻ること",
-      antonyms: ["stay"],
-      relatedWordEntries: [
-        { word: "stay", partOfSpeech: "動", meaning: "とどまる", isAntonym: true },
-      ],
-      examples: [
-        { en: "I go back to the office after lunch.", ja: "私は昼食後に職場に戻る。", context: "一般" },
-      ],
-    },
-  ],
-
-  // kind of (42555)
-  [
-    42555,
-    {
-      pronunciation: { us: "[káind-əv]" },
-      coreImage: "似た性質のものをまとめて、一つの種類やグループとしてとらえる感覚。",
-      examples: [
-        { en: "What kind of music do you like?", ja: "どの種類の音楽が好きですか？", context: "一般" },
-      ],
-    },
-  ],
-
-  // lots of (42556)
-  [
-    42556,
-    {
-      pronunciation: { us: "[lɔts]" },
-      coreImage: "多くの対象が存在し、数量や量が大きいことを伝える単純なイメージ",
-      examples: [
-        { en: "There are lots of books on the shelf.", ja: "本棚にはたくさんの本が並んでいる。", context: "一般" },
-      ],
-    },
-  ],
-
-  // talk with (42557)
-  [
-    42557,
-    {
-      pronunciation: { us: "[tɔk-wíð]" },
-      coreImage: "言葉を互いに出し合って相手と考えや情報をやり取りする動き",
-      examples: [
-        { en: "She talks with him every day.", ja: "彼女は毎日彼と話します。", context: "一般" },
-      ],
-    },
-  ],
-
-  // arrive at (42558)
-  [
-    42558,
-    {
-      pronunciation: { us: "[əráiv-ət]" },
-      coreImage: "到達するという共通のイメージで、物理的な地点と比喩的な結論の両方に使われる。",
-      examples: [
-        { en: "She arrives at work at nine.", ja: "彼女は9時に職場に着きます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // after work (42559)
-  [
-    42559,
-    {
-      pronunciation: { us: "[ǽftər-wərk]" },
-      coreImage: "仕事の役割を終え、私生活や休憩に切り替わる瞬間",
-      examples: [
-        { en: "I'll go home after work.", ja: "仕事のあとで家に帰る。", context: "一般" },
-      ],
-    },
-  ],
-
-  // have a sale (42560)
-  [
-    42560,
-    {
-      pronunciation: { us: "[həv-ə-séil]" },
-      coreImage: "店が特別な期間を決めて商品価格を一斉に下げる",
-      examples: [
-        { en: "We are having a sale today.", ja: "今日はセールを行っています。", context: "一般" },
-      ],
-    },
-  ],
-
-  // look like (42561)
-  [
-    42561,
-    {
-      pronunciation: { us: "[lúk-láik]" },
-      coreImage: "あるものの外見や形が別のものと似ていると見える",
-      antonyms: ["differ"],
-      relatedWordEntries: [
-        { word: "differ", partOfSpeech: "動", meaning: "異なる", isAntonym: true },
-      ],
-      examples: [
-        { en: "She looks like her mother.", ja: "彼女は母親に似ている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // ride on (42562)
-  [
-    42562,
-    {
-      pronunciation: { us: "[ráid-ɑn]" },
-      coreImage: "他の物の上に触れて支えられ移動することを表し、比喩的に何かに依存する状態も示す",
-      examples: [
-        { en: "Children ride on the bus every morning.", ja: "子どもたちは毎朝バスに乗る。", context: "一般" },
       ],
     },
   ],
@@ -73146,402 +69790,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // ask for (42564)
-  [
-    42564,
-    {
-      pronunciation: { us: "[ǽsk-fər]" },
-      coreImage: "ほしいものや助けを相手に伝えて、出してもらうように頼む行為",
-      examples: [
-        { en: "She asked for help from her teacher.", ja: "彼女は先生に助けを頼んだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // have no idea (42565)
-  [
-    42565,
-    {
-      pronunciation: { us: "[həv-nóu-aidíːə]" },
-      coreImage: "頭の中にそのことの手がかりや知識が全くない状態",
-      examples: [
-        { en: "I have no idea what to do.", ja: "どうすればいいのか全くわからない。", context: "一般" },
-      ],
-    },
-  ],
-
-  // last week (42566)
-  [
-    42566,
-    {
-      pronunciation: { us: "[læst-wíːk]" },
-      coreImage: "現在の週の直前に位置し、すでに終わった連続した7日間。",
-      antonyms: ["next week"],
-      relatedWordEntries: [
-        { word: "next week", partOfSpeech: "副", meaning: "来週", isAntonym: true },
-      ],
-      examples: [
-        { en: "I went hiking last week.", ja: "先週、私はハイキングに行きました。", context: "一般" },
-      ],
-    },
-  ],
-
-  // stop doing (42567)
-  [
-    42567,
-    {
-      pronunciation: { us: "[stɔp]" },
-      coreImage: "動きの流れを止めて、その行動をそこで終わらせる。",
-      antonyms: ["start"],
-      relatedWordEntries: [
-        { word: "start", partOfSpeech: "動", meaning: "始める", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please stop doing that right now.", ja: "今すぐそれをすることをやめてください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // all day (42568)
-  [
-    42568,
-    {
-      pronunciation: { us: "[ɔl-déi]" },
-      coreImage: "朝から夜までその日の時間全体に及ぶ行為や状態が続いているというイメージ",
-      examples: [
-        { en: "The store is open all day.", ja: "その店は一日中営業している。", context: "一般" },
-      ],
-    },
-  ],
-
-  // get back to (42569)
-  [
-    42569,
-    {
-      pronunciation: { us: "[get-bǽk-túː]" },
-      coreImage: "離れていた場所・話題・仕事などに再び戻って接すること",
-      examples: [
-        { en: "I'll get back to you as soon as I know.", ja: "分かり次第、あなたに連絡します。", context: "一般" },
-      ],
-    },
-  ],
-
-  // hear from (42570)
-  [
-    42570,
-    {
-      pronunciation: { us: "[hir-frəm]" },
-      coreImage: "誰かから連絡や知らせが届き、それを自分が受け取る場面",
-      examples: [
-        { en: "She hasn't heard from her friend for weeks.", ja: "彼女は何週間も友達から便りがない。", context: "一般" },
-      ],
-    },
-  ],
-
-  // need to (42571)
-  [
-    42571,
-    {
-      pronunciation: { us: "[níːd-túː]" },
-      coreImage: "状況や条件に応じて行動が求められる、行う必要性を伝える表現",
-      examples: [
-        { en: "You need to study for exams.", ja: "試験のために勉強をする必要がある。", context: "一般" },
-      ],
-    },
-  ],
-
-  // wait for (42572)
-  [
-    42572,
-    {
-      pronunciation: { us: "[wéit-fər]" },
-      coreImage: "目当ての人や物が現れるまでじっと待っている状態",
-      examples: [
-        { en: "She waits for the bus every morning.", ja: "彼女は毎朝バスを待ちます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be going to (42573)
-  [
-    42573,
-    {
-      pronunciation: { us: "[biː]" },
-      coreImage: "今の準備や動きが続いて、近いうちにその結果が起こる方向へ進んでいる状態",
-      examples: [
-        { en: "They are going to play soccer after school.", ja: "彼らは放課後にサッカーをするつもりだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // get back (42574)
-  [
-    42574,
-    {
-      pronunciation: { us: "[get-bǽk]" },
-      coreImage: "元の場所や状態へ戻る動きと、何かを取り戻す・折り返し連絡する向きのイメージ",
-      examples: [
-        { en: "When will you get back?", ja: "いつ戻ってきますか？", context: "一般" },
-      ],
-    },
-  ],
-
-  // move to (42575)
-  [
-    42575,
-    {
-      pronunciation: { us: "[múːv-túː]" },
-      coreImage: "生活の拠点を別の場所へ移すこと",
-      antonyms: ["stay"],
-      relatedWordEntries: [
-        { word: "stay", partOfSpeech: "動", meaning: "とどまる", isAntonym: true },
-      ],
-      examples: [
-        { en: "I am moving to a new house.", ja: "新しい家に引っ越します。", context: "一般" },
-      ],
-    },
-  ],
-
-  // stay in (42576)
-  [
-    42576,
-    {
-      pronunciation: { us: "[stéi-in]" },
-      coreImage: "建物や部屋にとどまりそこで夜を過ごす、または外出せず家にいる",
-      examples: [
-        { en: "I'm staying in a hotel.", ja: "私はホテルに泊まっています。", context: "一般" },
-      ],
-    },
-  ],
-
-  // walk to (42577)
-  [
-    42577,
-    {
-      pronunciation: { us: "[wɔk-túː]" },
-      coreImage: "一歩一歩進んで距離を詰め、目的の地点にたどり着く行為",
-      examples: [
-        { en: "The children walk to school every day.", ja: "子供たちは毎日学校まで歩いて行く。", context: "一般" },
-      ],
-    },
-  ],
-
-  // finish doing (42578)
-  [
-    42578,
-    {
-      pronunciation: { us: "[fíniʃ]" },
-      coreImage: "始めた動作を最後までやり通して、それ以上その動作が残らない状態",
-      antonyms: ["start"],
-      relatedWordEntries: [
-        { word: "start", partOfSpeech: "動", meaning: "始める", isAntonym: true },
-      ],
-      examples: [
-        { en: "He finished doing his homework.", ja: "彼は宿題をし終えた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // each other (42579)
-  [
-    42579,
-    {
-      pronunciation: { us: "[íːtʃ-ʌ́ðər]" },
-      coreImage: "人や物など二者以上が互いに働きかけ合う",
-      examples: [
-        { en: "They help each other.", ja: "彼らはお互いに助け合います。", context: "一般" },
-      ],
-    },
-  ],
-
-  // give up (42580)
-  [
-    42580,
-    {
-      pronunciation: { us: "[gív-ʌ́p]" },
-      coreImage: "努力や期待を手放し、それ以上追わない状態にする",
-      antonyms: ["continue"],
-      relatedWordEntries: [
-        { word: "continue", partOfSpeech: "動", meaning: "続ける", isAntonym: true },
-      ],
-      examples: [
-        { en: "Don't give up.", ja: "あきらめないで。", context: "一般" },
-      ],
-    },
-  ],
-
-  // on foot (42581)
-  [
-    42581,
-    {
-      pronunciation: { us: "[ɑn-fút]" },
-      coreImage: "乗り物を使わず自分の足だけで距離を移動する",
-      examples: [
-        { en: "I went to the park on foot.", ja: "私は歩いて公園に行った。", context: "一般" },
-      ],
-    },
-  ],
-
-  // talk about (42582)
-  [
-    42582,
-    {
-      pronunciation: { us: "[tɔk-əbáut]" },
-      coreImage: "ある話題に注意を向けて、その内容を言葉で伝える行為。",
-      examples: [
-        { en: "Let's talk about the future.", ja: "将来について話しましょう。", context: "一般" },
-      ],
-    },
-  ],
-
-  // turn off (42583)
-  [
-    42583,
-    {
-      pronunciation: { us: "[tə́ːrn-ɔf]" },
-      coreImage: "スイッチやつまみを回す・押すなどの動作で電気や音などの流れを止めるイメージ",
-      antonyms: ["turn on"],
-      relatedWordEntries: [
-        { word: "turn on", partOfSpeech: "動", meaning: "～のスイッチを入れる", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please turn off the lights when you leave.", ja: "出るときは明かりを消してください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // go out (42584)
-  [
-    42584,
-    {
-      pronunciation: { us: "[góu-áut]" },
-      coreImage: "屋内から外へ移動して、外の空間に出る動き",
-      antonyms: ["stay"],
-      relatedWordEntries: [
-        { word: "stay", partOfSpeech: "動", meaning: "留まる", isAntonym: true },
-      ],
-      examples: [
-        { en: "My daughter went out for a walk after school.", ja: "私の娘は放課後、散歩のために外出しました。", context: "一般" },
-      ],
-    },
-  ],
-
-  // hurry up (42585)
-  [
-    42585,
-    {
-      pronunciation: { us: "[hə́ːri-ʌ́p]" },
-      coreImage: "時間がなくて動作や歩みを速め、遅れを取り戻そうとする行動",
-      antonyms: ["dally"],
-      relatedWordEntries: [
-        { word: "dally", partOfSpeech: "動", meaning: "ぐずぐずする", isAntonym: true },
-      ],
-      examples: [
-        { en: "We're running late, so hurry up.", ja: "遅れそうだから、急いでください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // think of (42586)
-  [
-    42586,
-    {
-      pronunciation: { us: "[θíŋk-əv]" },
-      coreImage: "心の中である対象を短く思い浮かべ、そのことについて考えたり思い出したりする",
-      antonyms: ["forget"],
-      relatedWordEntries: [
-        { word: "forget", partOfSpeech: "動", meaning: "忘れる", isAntonym: true },
-      ],
-      examples: [
-        { en: "When I think of summer, I smile.", ja: "夏のことを考えると、私は笑顔になる。", context: "一般" },
-      ],
-    },
-  ],
-
-  // in front of (42587)
-  [
-    42587,
-    {
-      pronunciation: { us: "[in-frʌ́nt-əv]" },
-      coreImage: "ものや人の正面より前に位置することを示し、場所としての前と人前での状態の両方を含むイメージ。",
-      examples: [
-        { en: "There is a bench in front of the school.", ja: "学校の前にベンチがある。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at once (42588)
-  [
-    42588,
-    {
-      pronunciation: { us: "[ət-wʌ́ns]" },
-      coreImage: "行動がためらわず即座に起こること、または複数の出来事が同時に起こること",
-      antonyms: ["later"],
-      relatedWordEntries: [
-        { word: "later", partOfSpeech: "副", meaning: "後で", isAntonym: true },
-      ],
-      examples: [
-        { en: "You must leave at once.", ja: "あなたはすぐに出発しなければなりません。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at work (42589)
-  [
-    42589,
-    {
-      pronunciation: { us: "[ət-wərk]" },
-      coreImage: "仕事をするための時間や場所にいて、仕事に関わる作業を行っている状態。",
-      antonyms: ["off work"],
-      relatedWordEntries: [
-        { word: "off work", partOfSpeech: "副", meaning: "仕事を休んでいる", isAntonym: true },
-      ],
-      examples: [
-        { en: "She's at work today.", ja: "彼女は今日は職場で働いている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // write back (42590)
-  [
-    42590,
-    {
-      pronunciation: { us: "[rait-bǽk]" },
-      coreImage: "相手からの連絡にこたえて、再び文章を書いて返す動きや場面。",
-      examples: [
-        { en: "I haven't written back to her yet.", ja: "私はまだ彼女に返事を書いていません。", context: "一般" },
-      ],
-    },
-  ],
-
-  // start doing (42591)
-  [
-    42591,
-    {
-      pronunciation: { us: "[stɑːrt]" },
-      coreImage: "何もしていない状態から、行動や作業が動き出す瞬間",
-      antonyms: ["stop"],
-      relatedWordEntries: [
-        { word: "stop", partOfSpeech: "動", meaning: "やめる", isAntonym: true },
-      ],
-      examples: [
-        { en: "He started doing his homework.", ja: "彼は宿題をし始めた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // want to (42592)
-  [
-    42592,
-    {
-      pronunciation: { us: "[wɑnt-túː]" },
-      coreImage: "何かをしたいと感じ、その行動を実際に始めたくなる心の状態",
-      examples: [
-        { en: "She wants to study English.", ja: "彼女は英語を勉強したい。", context: "一般" },
-      ],
-    },
-  ],
-
   // anyone (42593)
   [
     42593,
@@ -73555,526 +69803,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Is there anyone in this room?", ja: "この部屋には誰かいますか？", context: "一般" },
-      ],
-    },
-  ],
-
-  // get home (42594)
-  [
-    42594,
-    {
-      pronunciation: { us: "[get-hóum]" },
-      coreImage: "外出先から自分の住む場所へ移動して到着する",
-      examples: [
-        { en: "I get home at six o'clock.", ja: "私は6時に帰宅する。", context: "一般" },
-      ],
-    },
-  ],
-
-  // play catch (42595)
-  [
-    42595,
-    {
-      pronunciation: { us: "[pléi-kætʃ]" },
-      coreImage: "相手にボールを投げ、相手が受けて投げ返す往復の動き",
-      examples: [
-        { en: "At the park, the father and his son were playing catch.", ja: "父と息子は公園でキャッチボールをしていた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // write to (42596)
-  [
-    42596,
-    {
-      pronunciation: { us: "[rait-túː]" },
-      coreImage: "誰かに向けてペンやキーボードで言葉を残し、相手が受け取ることを意図する",
-      examples: [
-        { en: "She writes to her parents every week.", ja: "彼女は毎週両親に手紙を書いている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // stay up late (42597)
-  [
-    42597,
-    {
-      pronunciation: { us: "[stéi-ʌ́p-léit]" },
-      coreImage: "眠気をこらえて夜の時間に活動を続けること",
-      examples: [
-        { en: "I stay up late to finish my homework.", ja: "宿題を終わらせるために夜更かしする。", context: "一般" },
-      ],
-    },
-  ],
-
-  // a kind of (42598)
-  [
-    42598,
-    {
-      pronunciation: { us: "[ə-káind-əv]" },
-      coreImage: "大きなグループの中で、共通の特徴を持つ一つの種類",
-      examples: [
-        { en: "A cherry is a kind of fruit.", ja: "さくらんぼは果物の一種である。", context: "一般" },
-      ],
-    },
-  ],
-
-  // get off (42599)
-  [
-    42599,
-    {
-      pronunciation: { us: "[get-ɔf]" },
-      coreImage: "上に乗っている状態から離れて、下の面や場所に降りる",
-      antonyms: ["board"],
-      relatedWordEntries: [
-        { word: "board", partOfSpeech: "動", meaning: "乗る", isAntonym: true },
-      ],
-      examples: [
-        { en: "They got off the bus.", ja: "彼らはバスから降りた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // next to (42600)
-  [
-    42600,
-    {
-      pronunciation: { us: "[nékst-túː]" },
-      coreImage: "接しているか小さなすき間をはさんで、左右や前後で隣り合っているイメージ。",
-      examples: [
-        { en: "The school is next to the station.", ja: "学校は駅の隣にあります。", context: "一般" },
-      ],
-    },
-  ],
-
-  // try to (42601)
-  [
-    42601,
-    {
-      pronunciation: { us: "[trái-túː]" },
-      coreImage: "ある行動を実際に行おうとして努力し、行動に移すこと",
-      examples: [
-        { en: "I tried to call her yesterday, but she was out.", ja: "私は昨日彼女に電話をかけようとしたが、彼女は外出していた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // years old (42602)
-  [
-    42602,
-    {
-      pronunciation: { us: "[jirz]" },
-      coreImage: "生まれてから経った年の数を使って、その人の年齢を表す。",
-      examples: [
-        { en: "This child is ten years old.", ja: "この子は10歳です。", context: "一般" },
-      ],
-    },
-  ],
-
-  // as well as (42603)
-  [
-    42603,
-    {
-      pronunciation: { us: "[əz-wél-əz]" },
-      coreImage: "既存の要素にさらに別の要素が並ぶイメージ",
-      examples: [
-        { en: "She invited her friends as well as her parents.", ja: "彼女は友人に加えて両親も招待した。", context: "一般" },
-      ],
-    },
-  ],
-
-  // believe in (42604)
-  [
-    42604,
-    {
-      pronunciation: { us: "[bilíːv-in]" },
-      coreImage: "あるものの実在や効力を疑わず肯定する",
-      antonyms: ["doubt"],
-      relatedWordEntries: [
-        { word: "doubt", partOfSpeech: "動", meaning: "疑う", isAntonym: true },
-      ],
-      examples: [
-        { en: "Many people believe in ghosts.", ja: "多くの人が幽霊の存在を信じている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // for example (42605)
-  [
-    42605,
-    {
-      pronunciation: { us: "[fər-igzǽmpl]" },
-      coreImage: "多くの事柄の代表として一例を指し示すイメージ",
-      examples: [
-        { en: "For example, frogs eat insects.", ja: "例えば、カエルは昆虫を食べます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // put on (42606)
-  [
-    42606,
-    {
-      pronunciation: { us: "[pút-ɑn]" },
-      coreImage: "ものを体に付けて、見た目や体の一部として扱える状態にする。",
-      antonyms: ["take off"],
-      relatedWordEntries: [
-        { word: "take off", partOfSpeech: "動", meaning: "脱ぐ", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please put on your coat.", ja: "コートを身に着けてください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at first (42607)
-  [
-    42607,
-    {
-      pronunciation: { us: "[ət-fə́ːrst]" },
-      coreImage: "話や出来事の時間で一番先の部分を示し、後の様子と分ける",
-      antonyms: ["finally"],
-      relatedWordEntries: [
-        { word: "finally", partOfSpeech: "副", meaning: "最終的に", isAntonym: true },
-      ],
-      examples: [
-        { en: "At first, I did not like carrots, but now I like them.", ja: "最初はニンジンが嫌いだったけれど、今は好きだ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // slow down (42608)
-  [
-    42608,
-    {
-      pronunciation: { us: "[slóu-dáun]" },
-      coreImage: "動いているものの速さがだんだん小さくなる様子",
-      antonyms: ["accelerate"],
-      relatedWordEntries: [
-        { word: "accelerate", partOfSpeech: "動", meaning: "加速する", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please slow down.", ja: "速度を落としてください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // catch a cold (42609)
-  [
-    42609,
-    {
-      pronunciation: { us: "[kætʃ-ə-kould]" },
-      coreImage: "外から小さな病気のもとを受け取り、体が一時的に調子を崩す状態。",
-      examples: [
-        { en: "People often catch a cold in winter.", ja: "冬になるとよく風邪を引く。", context: "一般" },
-      ],
-    },
-  ],
-
-  // one day (42610)
-  [
-    42610,
-    {
-      pronunciation: { us: "[wʌ́n-déi]" },
-      coreImage: "具体的な日付を示さずに、何かが起こる一日というまとまりを伝える。",
-      examples: [
-        { en: "One day, she found a small cat.", ja: "ある日、彼女は小さな猫を見つけた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // feel better (42611)
-  [
-    42611,
-    {
-      pronunciation: { us: "[fíːl-bétər]" },
-      coreImage: "不快やつらさが和らぎ、心や体が楽になる状態",
-      examples: [
-        { en: "I felt better after taking medicine.", ja: "薬を飲んだら気分がよくなりました。", context: "一般" },
-      ],
-    },
-  ],
-
-  // out of (42612)
-  [
-    42612,
-    {
-      pronunciation: { us: "[áut-əv]" },
-      coreImage: "中から外へ出る動きと、内側にない・欠けている状態、さらに割合・母集団からの選出を示す感覚の三つをまとめたもの",
-      antonyms: ["into"],
-      relatedWordEntries: [
-        { word: "into", partOfSpeech: "前", meaning: "〜の中へ", isAntonym: true },
-      ],
-      examples: [
-        { en: "They went out of the house.", ja: "彼らは家の外へ出て行った。", context: "一般" },
-      ],
-    },
-  ],
-
-  // stay home (42613)
-  [
-    42613,
-    {
-      pronunciation: { us: "[stéi-hóum]" },
-      coreImage: "外に出ないで家の中で過ごすこと",
-      antonyms: ["leave"],
-      relatedWordEntries: [
-        { word: "leave", partOfSpeech: "動", meaning: "出る", isAntonym: true },
-      ],
-      examples: [
-        { en: "The doctor told me to stay home.", ja: "医師に家にいるように言われました。", context: "一般" },
-      ],
-    },
-  ],
-
-  // enjoy doing (42614)
-  [
-    42614,
-    {
-      pronunciation: { us: "[indʒɔ́i]" },
-      coreImage: "何かをしているときに心が明るくなり、その行為を続けたくなる状態",
-      antonyms: ["hate"],
-      relatedWordEntries: [
-        { word: "hate", partOfSpeech: "動", meaning: "〜するのを嫌う", isAntonym: true },
-      ],
-      examples: [
-        { en: "She enjoys playing the piano.", ja: "彼女はピアノを弾くのを楽しんでいます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be able to (42615)
-  [
-    42615,
-    {
-      pronunciation: { us: "[bíː-éibl-túː]" },
-      coreImage: "力や条件がそろって、ある行動を実行できる状態。",
-      antonyms: ["cannot"],
-      relatedWordEntries: [
-        { word: "cannot", partOfSpeech: "助動", meaning: "〜できない", isAntonym: true },
-      ],
-      examples: [
-        { en: "He will be able to come.", ja: "彼は来ることができるでしょう。", context: "一般" },
-      ],
-    },
-  ],
-
-  // run away (42616)
-  [
-    42616,
-    {
-      pronunciation: { us: "[rʌ́n-əwéi]" },
-      coreImage: "危険・責任・困難から逃れるためにその場を離れて移動すること。",
-      antonyms: ["stay"],
-      relatedWordEntries: [
-        { word: "stay", partOfSpeech: "動", meaning: "留まる", isAntonym: true },
-      ],
-      examples: [
-        { en: "She ran away from home.", ja: "彼女は家から逃げた。", context: "一般" },
-      ],
-    },
-  ],
-
-  // wake up (42617)
-  [
-    42617,
-    {
-      pronunciation: { us: "[wéik-ʌ́p]" },
-      coreImage: "休んでいた体や頭の働きがまた動き出す",
-      antonyms: ["sleep"],
-      relatedWordEntries: [
-        { word: "sleep", partOfSpeech: "動", meaning: "眠る", isAntonym: true },
-      ],
-      examples: [
-        { en: "I wake up at seven every morning.", ja: "毎朝7時に目が覚める。", context: "一般" },
-      ],
-    },
-  ],
-
-  // ask for help (42618)
-  [
-    42618,
-    {
-      pronunciation: { us: "[ǽsk-fər-hélp]" },
-      coreImage: "自分でできないことを相手に伝えて手を貸してもらう行為",
-      examples: [
-        { en: "If you don't understand your homework, ask for help from your teacher.", ja: "宿題がわからないときは、先生に助けを求めましょう。", context: "一般" },
-      ],
-    },
-  ],
-
-  // far away (42619)
-  [
-    42619,
-    {
-      pronunciation: { us: "[fɑ́ːrəwèɪ]" },
-      coreImage: "自分や基準点から人や場所がかなり離れていること",
-      antonyms: ["nearby"],
-      relatedWordEntries: [
-        { word: "nearby", partOfSpeech: "副", meaning: "近くに", isAntonym: true },
-      ],
-      examples: [
-        { en: "He lives far away.", ja: "彼は遠くに住んでいます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // have a fever (42620)
-  [
-    42620,
-    {
-      pronunciation: { us: "[həv-ə-fíːvər]" },
-      coreImage: "体の中がふだんより熱くなっている。",
-      examples: [
-        { en: "I have a fever, so I will rest today.", ja: "私は熱があるので今日は休みます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // leave for (42621)
-  [
-    42621,
-    {
-      pronunciation: { us: "[líːv-fər]" },
-      coreImage: "ある地点を背にして、目的の場所へ向かって進み始めること",
-      examples: [
-        { en: "They leave for school at eight.", ja: "彼らは8時に学校に向けて出発します。", context: "一般" },
-      ],
-    },
-  ],
-
-  // take a trip (42622)
-  [
-    42622,
-    {
-      pronunciation: { us: "[téik-ə-trip]" },
-      coreImage: "日常を一時中断して、別の土地で過ごすために移動すること",
-      examples: [
-        { en: "We're taking a trip next month.", ja: "私たちは来月旅行をする予定です。", context: "一般" },
-      ],
-    },
-  ],
-
-  // at noon (42623)
-  [
-    42623,
-    {
-      pronunciation: { us: "[ət-núːn]" },
-      coreImage: "太陽がほぼ真上にあり、昼のちょうど中間に当たる時刻。",
-      examples: [
-        { en: "The store opens at noon.", ja: "店は正午に開店します。", context: "一般" },
-      ],
-    },
-  ],
-
-  // because of (42624)
-  [
-    42624,
-    {
-      pronunciation: { us: "[bikɔ́z-əv]" },
-      coreImage: "ある出来事や状態が原因となって、その結果が生じる因果のつながり",
-      examples: [
-        { en: "I couldn't go out because of the rain.", ja: "雨のために外に出られなかった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // have a test (42625)
-  [
-    42625,
-    {
-      pronunciation: { us: "[həv-ə-test]" },
-      coreImage: "決められた時間と場所で問題に答え、知識やできることをはかる行為",
-      examples: [
-        { en: "I have a test tomorrow.", ja: "私は明日テストを受ける。", context: "一般" },
-      ],
-    },
-  ],
-
-  // say hello to (42626)
-  [
-    42626,
-    {
-      pronunciation: { us: "[sei-helóu-túː]" },
-      coreImage: "相手に向かって短いあいさつの言葉を声に出して伝える行為",
-      examples: [
-        { en: "Please say hello to your teacher for me.", ja: "私の代わりに先生に挨拶してください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // take a walk (42627)
-  [
-    42627,
-    {
-      pronunciation: { us: "[téik-ə-wɔk]" },
-      coreImage: "遠出ではなく、気分転換や運動のために短く歩くこと",
-      examples: [
-        { en: "We take a walk in the park every day.", ja: "私たちは毎日公園を散歩します。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be full of (42628)
-  [
-    42628,
-    {
-      pronunciation: { us: "[bíː-fúl-əv]" },
-      coreImage: "容器や場所の内部が隙間なく物や液体で埋まっている状態",
-      antonyms: ["be empty"],
-      relatedWordEntries: [
-        { word: "be empty", partOfSpeech: "熟", meaning: "〜が空である", isAntonym: true },
-      ],
-      examples: [
-        { en: "The room was full of laughter.", ja: "その部屋は笑いでいっぱいだった。", context: "一般" },
-      ],
-    },
-  ],
-
-  // be ready to (42629)
-  [
-    42629,
-    {
-      pronunciation: { us: "[bíː-rédi-túː]" },
-      coreImage: "体や心が整い、行動をすぐ始められる状態",
-      examples: [
-        { en: "She is ready to start the game.", ja: "彼女は試合を始める準備ができている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // stay with (42630)
-  [
-    42630,
-    {
-      pronunciation: { us: "[stéi-wíð]" },
-      coreImage: "誰かのそばにとどまり、その家に泊まったり心に残ったりすること",
-      examples: [
-        { en: "I am staying with my friend.", ja: "私は友人のところに泊まっています。", context: "一般" },
-      ],
-    },
-  ],
-
-  // have to (42631)
-  [
-    42631,
-    {
-      pronunciation: { us: "[həv-túː]" },
-      coreImage: "外からの決まりや必要で道が決まり、そこを進むしかない状況",
-      examples: [
-        { en: "I have to study tonight.", ja: "今夜、勉強しなければならない。", context: "一般" },
-      ],
-    },
-  ],
-
-  // work for (42632)
-  [
-    42632,
-    {
-      pronunciation: { us: "[wərk-fər]" },
-      coreImage: "ある会社や人のために働くこと、または目的のために努力すること",
-      examples: [
-        { en: "She works for a software company.", ja: "彼女はソフトウェア会社で働いている。", context: "一般" },
       ],
     },
   ],
@@ -74157,18 +69885,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "play baseball=野球をする / baseball club=野球部 / baseball game=野球の試合",
       examples: [
         { en: "I play baseball every weekend.", ja: "毎週末、野球をしている。", context: "一般" },
-      ],
-    },
-  ],
-
-  // comic book (42639)
-  [
-    42639,
-    {
-      pronunciation: { us: "[kɑ́mik-búk]" },
-      coreImage: "絵を四角いコマに分けて順に並べ、話や動きを伝える紙の本",
-      examples: [
-        { en: "I love reading comic books.", ja: "漫画本を読むのが大好きなんだ。", context: "一般" },
       ],
     },
   ],
@@ -74994,18 +70710,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // ice cream (42697)
-  [
-    42697,
-    {
-      pronunciation: { us: "[ais]" },
-      coreImage: "冷凍しても柔らかく、すくって食べることを前提に作られた冷たい乳製品のデザート",
-      examples: [
-        { en: "I love eating ice cream in summer.", ja: "私は夏にアイスクリームを食べるのが大好きだ。", context: "一般" },
-      ],
-    },
-  ],
-
   // TV (42698)
   [
     42698,
@@ -75264,18 +70968,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "go to the gym=体育館に行く / at the gym=体育館で / in the gym=体育館で",
       examples: [
         { en: "There is a basketball court in the gym.", ja: "体育館の中にはバスケットコートがある。", context: "一般" },
-      ],
-    },
-  ],
-
-  // music room (42717)
-  [
-    42717,
-    {
-      pronunciation: { us: "[mjúːzik-rúːm]" },
-      coreImage: "楽器や楽譜が置かれ、音を出して練習や演奏ができるように作られた部屋",
-      examples: [
-        { en: "The music room is always lively.", ja: "音楽室はいつも活気に満ちている。", context: "一般" },
       ],
     },
   ],
@@ -75798,18 +71490,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       usage: "have curry=カレーを食べる / eat curry=カレーを食べる / order curry=カレーを注文する",
       examples: [
         { en: "Would you like some curry?", ja: "カレーはいかがですか。", context: "一般" },
-      ],
-    },
-  ],
-
-  // high school (42757)
-  [
-    42757,
-    {
-      pronunciation: { us: "[hái-skúːl]" },
-      coreImage: "中学校のあとに通う、十代が学び将来の進路を準備する学校。",
-      examples: [
-        { en: "We go to high school.", ja: "私たちは高校に通っている。", context: "一般" },
       ],
     },
   ],
@@ -76684,18 +72364,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // living room (42821)
-  [
-    42821,
-    {
-      pronunciation: { us: "[líviŋ-rúːm]" },
-      coreImage: "家族が集まり座って話したり休んだりする、家の共用の部屋。",
-      examples: [
-        { en: "We watched TV in the living room.", ja: "私たちは居間でテレビを見た。", context: "一般" },
-      ],
-    },
-  ],
-
   // story (42822)
   [
     42822,
@@ -77414,30 +73082,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "I bought a new phone.", ja: "新しい携帯電話を買ったよ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // post office (42872)
-  [
-    42872,
-    {
-      pronunciation: { us: "[póust-ɔ́fis]" },
-      coreImage: "手紙や荷物を受け付けて仕分けし、配達へ回す場所",
-      examples: [
-        { en: "I went to the post office to send a package.", ja: "私は荷物を送るために郵便局に行った。", context: "一般" },
-      ],
-    },
-  ],
-
-  // cell phone (42873)
-  [
-    42873,
-    {
-      pronunciation: { us: "[sél-fóun]" },
-      coreImage: "小さな個人用端末で、電波を使って電話やメッセージを送受信する機器。",
-      examples: [
-        { en: "There are many different kinds of cell phones.", ja: "いろいろな種類の携帯電話がある。", context: "一般" },
       ],
     },
   ],
@@ -79630,78 +75274,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // time for (43030)
-  [
-    43030,
-    {
-      pronunciation: { us: "[táim-fər]" },
-      coreImage: "何かをするのにちょうど良い時刻や、行為に当てる時間を表す",
-      examples: [
-        { en: "It's time for dinner.", ja: "夕食の時間だ。", context: "一般" },
-      ],
-    },
-  ],
-
-  // come in (43031)
-  [
-    43031,
-    {
-      pronunciation: { us: "[kʌ́m-in]" },
-      coreImage: "扉や門などの境を通り抜けて外から内へ入っていく動き",
-      antonyms: ["leave"],
-      relatedWordEntries: [
-        { word: "leave", partOfSpeech: "動", meaning: "出る", isAntonym: true },
-      ],
-      examples: [
-        { en: "Please come in.", ja: "どうぞ入ってください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // go home (43032)
-  [
-    43032,
-    {
-      pronunciation: { us: "[góu-hóum]" },
-      coreImage: "自分の生活や居場所がある建物や部屋へ向かって進む行為",
-      antonyms: ["stay"],
-      relatedWordEntries: [
-        { word: "stay", partOfSpeech: "動", meaning: "とどまる", isAntonym: true },
-      ],
-      examples: [
-        { en: "Let's go home now.", ja: "さあ家に帰ろう。", context: "一般" },
-      ],
-    },
-  ],
-
-  // listen to (43033)
-  [
-    43033,
-    {
-      pronunciation: { us: "[lísn-túː]" },
-      coreImage: "意識的に耳を傾けて音や話を受け取る行為",
-      antonyms: ["ignore"],
-      relatedWordEntries: [
-        { word: "ignore", partOfSpeech: "動", meaning: "無視する", isAntonym: true },
-      ],
-      examples: [
-        { en: "I listen to the radio every morning.", ja: "毎朝ラジオを聴く。", context: "一般" },
-      ],
-    },
-  ],
-
-  // a little (43034)
-  [
-    43034,
-    {
-      pronunciation: { us: "[ə-lítl]" },
-      coreImage: "全体に比べてほんの少しだけある量や程度",
-      examples: [
-        { en: "He is a little tired.", ja: "彼は少し疲れています。", context: "一般" },
-      ],
-    },
-  ],
-
   // my (43035)
   [
     43035,
@@ -79800,18 +75372,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "She put on a warm coat.", ja: "彼女は暖かいコートを着た。", context: "一般" },
-      ],
-    },
-  ],
-
-  // a lot of (43041)
-  [
-    43041,
-    {
-      pronunciation: { us: "[ə-lɑ́t-əv]" },
-      coreImage: "数量や量が十分にあることを示し、可算・不可算を問わず多さを表すイメージ",
-      examples: [
-        { en: "There are a lot of books on the shelf.", ja: "本棚にはたくさんの本がある。", context: "一般" },
       ],
     },
   ],
@@ -79978,34 +75538,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // come back (43052)
-  [
-    43052,
-    {
-      pronunciation: { us: "[kʌ́m-bǽk]" },
-      coreImage: "離れた場所から元の場所へ再び向かい、最初の出発点に戻る移動のイメージ。",
-      antonyms: ["leave"],
-      relatedWordEntries: [
-        { word: "leave", partOfSpeech: "動", meaning: "去る", isAntonym: true },
-      ],
-      examples: [
-        { en: "He came back yesterday.", ja: "彼は昨日戻ってきました。", context: "一般" },
-      ],
-    },
-  ],
-
-  // next week (43053)
-  [
-    43053,
-    {
-      pronunciation: { us: "[nékst-wíːk]" },
-      coreImage: "今の週が終わったあとに始まる、連続した1週間の期間。",
-      examples: [
-        { en: "I have a meeting next week.", ja: "来週、会議があります。", context: "一般" },
-      ],
-    },
-  ],
-
   // yes (43054)
   [
     43054,
@@ -80019,30 +75551,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Yes, I can.", ja: "はい、できます。", context: "一般" },
-      ],
-    },
-  ],
-
-  // go doing (43055)
-  [
-    43055,
-    {
-      pronunciation: { us: "[gou]" },
-      coreImage: "今いる場所から離れて、何かをするためにその場所や場面へ向かう動き",
-      examples: [
-        { en: "Let's go swimming.", ja: "泳ぎに行きましょう。", context: "一般" },
-      ],
-    },
-  ],
-
-  // on weekend (43056)
-  [
-    43056,
-    {
-      pronunciation: { us: "[ɑn-wíːkènd]" },
-      coreImage: "週の終わりに位置する、土日を中心とした一続きの時間帯",
-      examples: [
-        { en: "I usually relax on weekends.", ja: "私はふだん週末にくつろぎます。", context: "一般" },
       ],
     },
   ],
@@ -83983,22 +79491,6 @@ export const motitownExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // man-made (43309)
-  [
-    43309,
-    {
-      pronunciation: { us: "[mænméid]" },
-      coreImage: "人の設計や加工によってできた物や構造で、自然発生しないもの",
-      usage: "man-made materials=人工的な材料",
-      antonyms: ["natural"],
-      relatedWordEntries: [
-        { word: "natural", partOfSpeech: "形", meaning: "自然の", isAntonym: true },
-      ],
-      examples: [
-        { en: "Most plastics are man-made materials.", ja: "ほとんどのプラスチックは人工的な素材です。", context: "一般" },
-      ],
-    },
-  ],
 
   // scatter (43310)
   [
@@ -90866,22 +86358,6 @@ export const motitownExtensions: [number, WordExtension][] = [
       ],
       examples: [
         { en: "Please handle the fragile items gently.", ja: "壊れやすいものは優しく扱ってください。", context: "一般" },
-      ],
-    },
-  ],
-
-  // brand new (43758)
-  [
-    43758,
-    {
-      pronunciation: { us: "[brænd]" },
-      coreImage: "製造や販売直後で、傷や汚れがなくまだ誰にも使われていないもの",
-      antonyms: ["old"],
-      relatedWordEntries: [
-        { word: "old", partOfSpeech: "形", meaning: "古い", isAntonym: true },
-      ],
-      examples: [
-        { en: "This laptop is brand new.", ja: "このパソコンは真新しい。", context: "一般" },
       ],
     },
   ],
