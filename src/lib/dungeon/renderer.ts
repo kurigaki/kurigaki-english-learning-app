@@ -306,9 +306,76 @@ function drawPlayer(ctx: CanvasRenderingContext2D, tx: number, ty: number, dir: 
   ctx.fillStyle = "rgba(120,100,255,0.18)";
   ctx.fillRect(x, y, TILE, TILE);
 
-  const facing = (dir.dy === -1) ? "up" : (dir.dx === 1) ? "right" : (dir.dx === -1) ? "left" : "down";
+  const { dx: ddx, dy: ddy } = dir;
+  type Facing = "up" | "down" | "left" | "right" | "diagUL" | "diagUR" | "diagDL" | "diagDR";
+  const facing: Facing =
+    (ddx === -1 && ddy === -1) ? "diagUL" :
+    (ddx ===  1 && ddy === -1) ? "diagUR" :
+    (ddx === -1 && ddy ===  1) ? "diagDL" :
+    (ddx ===  1 && ddy ===  1) ? "diagDR" :
+    (ddy === -1) ? "up" : (ddx === 1) ? "right" : (ddx === -1) ? "left" : "down";
 
-  if (facing === "up") {
+  if (facing === "diagUR") {
+    // 右上向き（後ろ右3/4）— 頭・体を大きく右に寄せ、後ろ姿を強調
+    fr(ctx, "#6644aa", x + 2, y + 8, 2, 20); fc(ctx, "#aa55ee", x + 3, y + 7, 3); fc(ctx, "#ddaaff", x + 3, y + 7, 1.5);
+    ctx.fillStyle = "#231577";
+    ctx.beginPath();
+    ctx.moveTo(cx + 6, y + 0); ctx.lineTo(cx - 2, y + 9); ctx.lineTo(cx + 11, y + 9); ctx.closePath(); ctx.fill();
+    fr(ctx, "#2e1e99", cx - 3, y + 8, 15, 3); fr(ctx, "#3828aa", cx - 2, y + 8, 13, 2);
+    fc(ctx, "#c8a070", cx + 4, y + 16, 5); fc(ctx, "#d4aa80", cx + 4, y + 15, 3);
+    // 耳（右寄りで後ろ姿らしさを出す）
+    fr(ctx, "#c8a070", cx + 8, y + 15, 2, 2);
+    ctx.fillStyle = "#3d2db8";
+    ctx.beginPath();
+    ctx.moveTo(cx - 3, y + 20); ctx.lineTo(cx + 10, y + 20); ctx.lineTo(cx + 12, y + 29); ctx.lineTo(cx - 5, y + 29); ctx.closePath(); ctx.fill();
+    fr(ctx, "#2d1e9a", cx + 2, y + 20, 4, 9);
+  } else if (facing === "diagUL") {
+    // 左上向き（後ろ左3/4）— diagUR の左右反転
+    fr(ctx, "#6644aa", x + 24, y + 8, 2, 20); fc(ctx, "#aa55ee", x + 25, y + 7, 3); fc(ctx, "#ddaaff", x + 25, y + 7, 1.5);
+    ctx.fillStyle = "#231577";
+    ctx.beginPath();
+    ctx.moveTo(cx - 6, y + 0); ctx.lineTo(cx - 11, y + 9); ctx.lineTo(cx + 2, y + 9); ctx.closePath(); ctx.fill();
+    fr(ctx, "#2e1e99", cx - 12, y + 8, 15, 3); fr(ctx, "#3828aa", cx - 11, y + 8, 13, 2);
+    fc(ctx, "#c8a070", cx - 4, y + 16, 5); fc(ctx, "#d4aa80", cx - 4, y + 15, 3);
+    // 耳（左寄り）
+    fr(ctx, "#c8a070", cx - 10, y + 15, 2, 2);
+    ctx.fillStyle = "#3d2db8";
+    ctx.beginPath();
+    ctx.moveTo(cx - 10, y + 20); ctx.lineTo(cx + 3, y + 20); ctx.lineTo(cx + 5, y + 29); ctx.lineTo(cx - 12, y + 29); ctx.closePath(); ctx.fill();
+    fr(ctx, "#2d1e9a", cx - 6, y + 20, 4, 9);
+  } else if (facing === "diagDR") {
+    // 右下向き（前右3/4）— right寄りの正面、目1つ（横顔に近い3/4ビュー）
+    fr(ctx, "#6644aa", x + 2, y + 8, 2, 20); fc(ctx, "#aa55ee", x + 3, y + 7, 3); fc(ctx, "#ddaaff", x + 3, y + 7, 1.5);
+    ctx.fillStyle = "#231577";
+    ctx.beginPath();
+    ctx.moveTo(cx + 4, y + 1); ctx.lineTo(cx - 3, y + 9); ctx.lineTo(cx + 10, y + 9); ctx.closePath(); ctx.fill();
+    fr(ctx, "#2e1e99", cx - 4, y + 8, 15, 3); fr(ctx, "#3828aa", cx - 3, y + 8, 13, 2);
+    fc(ctx, "#f5c898", cx + 3, y + 16, 5); fc(ctx, "#f8d8b0", cx + 3, y + 15, 3);
+    // 目1つ（右寄り・3/4ビュー）
+    fr(ctx, "#2a1a10", cx + 3, y + 15, 2, 2); fr(ctx, "#ffffff", cx + 3, y + 15, 1, 1);
+    // 鼻のドット
+    fr(ctx, "#c89060", cx + 7, y + 17, 1, 1);
+    ctx.fillStyle = "#3d2db8";
+    ctx.beginPath();
+    ctx.moveTo(cx - 3, y + 20); ctx.lineTo(cx + 10, y + 20); ctx.lineTo(cx + 12, y + 29); ctx.lineTo(cx - 5, y + 29); ctx.closePath(); ctx.fill();
+    fr(ctx, "#4e3ecc", cx, y + 20, 4, 9);
+  } else if (facing === "diagDL") {
+    // 左下向き（前左3/4）— diagDR の左右反転
+    fr(ctx, "#6644aa", x + 24, y + 8, 2, 20); fc(ctx, "#aa55ee", x + 25, y + 7, 3); fc(ctx, "#ddaaff", x + 25, y + 7, 1.5);
+    ctx.fillStyle = "#231577";
+    ctx.beginPath();
+    ctx.moveTo(cx - 4, y + 1); ctx.lineTo(cx - 10, y + 9); ctx.lineTo(cx + 3, y + 9); ctx.closePath(); ctx.fill();
+    fr(ctx, "#2e1e99", cx - 11, y + 8, 15, 3); fr(ctx, "#3828aa", cx - 10, y + 8, 13, 2);
+    fc(ctx, "#f5c898", cx - 3, y + 16, 5); fc(ctx, "#f8d8b0", cx - 3, y + 15, 3);
+    // 目1つ（左寄り・3/4ビュー）
+    fr(ctx, "#2a1a10", cx - 5, y + 15, 2, 2); fr(ctx, "#ffffff", cx - 5, y + 15, 1, 1);
+    // 鼻のドット
+    fr(ctx, "#c89060", cx - 8, y + 17, 1, 1);
+    ctx.fillStyle = "#3d2db8";
+    ctx.beginPath();
+    ctx.moveTo(cx - 10, y + 20); ctx.lineTo(cx + 3, y + 20); ctx.lineTo(cx + 5, y + 29); ctx.lineTo(cx - 12, y + 29); ctx.closePath(); ctx.fill();
+    fr(ctx, "#4e3ecc", cx - 4, y + 20, 4, 9);
+  } else if (facing === "up") {
     // 上向き（後ろ姿）
     // スタッフ（右側に立てる）
     fr(ctx, "#6644aa", x + 22, y + 7, 2, 21);

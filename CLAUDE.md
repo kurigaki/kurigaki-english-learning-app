@@ -1373,7 +1373,7 @@ src/components/features/dungeon/
 | HP/EXP | レベルアップで最大HP+5・攻撃+1 |
 | 死亡 | 所持アイテム全ロスト・Lv1リスタート（間違えた単語を次回優先出題） |
 | BGM | MP3ファイル（`public/audio/dungeon/bgm.mp3`）をWeb Audio APIで再生、サンプル単位でループ |
-| 操作 | WASDまたは矢印キー、Zで攻撃、スマホはDパッド |
+| 操作 | 矢印キー（Shift+矢印2個でナナメ）、Z/Space/Enterで攻撃、スマホは8方向/4方向D-pad |
 
 ### 段階的統合ロードマップ
 
@@ -1452,6 +1452,18 @@ src/components/features/dungeon/
 - 視野外アラートリセット: `moveEnemies` ループ末尾で `!sameRoom && !adj` → `e.alert=false`（swift追加行動後も適用）
 - `flushMsg` 改善: 全キューメッセージを `msgLog` に追加（逆順で先頭へ、上限8件）→ 同ターンの複数メッセージが全て残る
 - `msgLog` 表示件数: 3 → 4 件（`DungeonGame.tsx`）
+
+**Phase 10: ナナメ移動設定・コントローラー刷新・足元アクション ✅ 完了**
+- ナナメ移動ON/OFF設定: `GameState.diagMove` で管理。`dungeon_diag_move`（localStorage）に永続化
+- モード別デフォルト: 🌱英語学習メイン → OFF、⚔️ローグライクを楽しむ → ON
+- タイトル画面にチェックボックス追加、ゲーム内設定（メニュー）からも切替可能
+- ナナメ移動OFF時: プレイヤー・敵AI・BFS経路探索すべて4方向に制限。斜め攻撃も不可
+- コントローラー刷新: 8方向D-pad（ナナメON時）/ 4方向十字パッド（OFF時）に自動切替
+- キーマップ: `src/lib/dungeon/keymap.ts` でカスタマイズ可能（斜め4方向・攻撃・待機・向き変更等）
+- ダッシュ: ボタン押下でプレイヤーの向き方向に即ダッシュ開始（向き未定時のみモード切替）
+- 足元アクション: 足元ボタン→アイテム拾う/使う/投げる選択。矢は「打つ」表示
+- 向き変更: Option+矢印で4方向、Shift+Option+矢印2個で斜め向き変更（ターン消費なし）
+- プレイヤー8方向アイコン: `renderer.ts` の `drawPlayer` で斜め4方向のピクセルアートを実装
 
 ### セーブ仕様
 

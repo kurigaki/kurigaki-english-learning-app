@@ -2,8 +2,16 @@ import type { GameState, Room, Enemy } from "./types";
 import { W, C, R } from "./types";
 import { MW, MH } from "./constants";
 
+// 8方向隣接判定（ナナメ含む）: Chebyshev距離 = 1
 export function adj(ax: number, ay: number, bx: number, by: number): boolean {
-  return Math.abs(ax - bx) + Math.abs(ay - by) === 1;
+  return Math.max(Math.abs(ax - bx), Math.abs(ay - by)) === 1;
+}
+
+// ナナメ移動のコーナーカット判定: 片方でも壁があれば不可（シレン準拠）
+function canMoveDiag(g: GameState, fx: number, fy: number, dx: number, dy: number): boolean {
+  const hBlocked = g.map[fy][fx + dx] === W;
+  const vBlocked = g.map[fy + dy][fx] === W;
+  return !(hBlocked || vBlocked);
 }
 
 export function getRoom(rooms: Room[], x: number, y: number): Room | undefined {
@@ -82,17 +90,17 @@ export function bfsStep(
   const key = (x: number, y: number) => y * MW + x;
   const visited = new Set<number>([key(sx, sy)]);
   // queue: [x, y, firstStepX, firstStepY]
+  // diagMove に応じて4方向 or 8方向で経路探索
+  const DIRS8: [number, number][] = g.diagMove
+    ? [[0, -1], [0, 1], [-1, 0], [1, 0], [-1, -1], [1, -1], [-1, 1], [1, 1]]
+    : [[0, -1], [0, 1], [-1, 0], [1, 0]];
   const queue: [number, number, number, number][] = [];
-  for (const [dx, dy] of [
-    [0, -1],
-    [0, 1],
-    [-1, 0],
-    [1, 0],
-  ]) {
+  for (const [dx, dy] of DIRS8) {
     const nx = sx + dx;
     const ny = sy + dy;
     if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
     if (g.map[ny][nx] === W) continue;
+    if (dx !== 0 && dy !== 0 && !canMoveDiag(g, sx, sy, dx, dy)) continue;
     if (g.enemies.find((o) => o.id !== skipId && o.x === nx && o.y === ny)) continue;
     if (!visited.has(key(nx, ny))) {
       visited.add(key(nx, ny));
@@ -103,16 +111,12 @@ export function bfsStep(
   while (head < queue.length) {
     const [cx, cy, fx, fy] = queue[head++];
     if (cx === gx && cy === gy) return [fx, fy];
-    for (const [dx, dy] of [
-      [0, -1],
-      [0, 1],
-      [-1, 0],
-      [1, 0],
-    ]) {
+    for (const [dx, dy] of DIRS8) {
       const nx = cx + dx;
       const ny = cy + dy;
       if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
       if (g.map[ny][nx] === W) continue;
+      if (dx !== 0 && dy !== 0 && !canMoveDiag(g, cx, cy, dx, dy)) continue;
       if (!visited.has(key(nx, ny))) {
         visited.add(key(nx, ny));
         queue.push([nx, ny, fx, fy]);
@@ -287,29 +291,53 @@ export function moveEnemies(
       // ■ 認識中：プレイヤーへ直進追跡
       // 隣接していれば攻撃（移動せず攻撃のみ）
       if (adj(e.x, e.y, px, py)) {
-        const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
-        g.p.hp = Math.max(0, g.p.hp - dmg);
-        results.push({
-          enemyHit: true,
-          damage: dmg,
-          killedPlayer: g.p.hp <= 0,
-          enemy: e,
-        });
-        continue;
+        const ddx = px - e.x;
+        const ddy = py - e.y;
+        const isDiag = ddx !== 0 && ddy !== 0;
+        // ナナメ攻撃: diagMove OFF → 斜め位置からは攻撃せず移動へ
+        // ナナメ攻撃: コーナーカット防止（壁があれば攻撃不可）
+        let canAttack = true;
+        if (isDiag) {
+          if (!g.diagMove) {
+            canAttack = false;
+          } else {
+            const hBlocked = g.map[e.y][e.x + ddx] === W;
+            const vBlocked = g.map[e.y + ddy][e.x] === W;
+            if (hBlocked || vBlocked) canAttack = false;
+          }
+        }
+        if (canAttack) {
+          const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
+          g.p.hp = Math.max(0, g.p.hp - dmg);
+          results.push({
+            enemyHit: true,
+            damage: dmg,
+            killedPlayer: g.p.hp <= 0,
+            enemy: e,
+          });
+          continue;
+        }
+        // canAttack=false: 下の移動ロジックへ落ちる
       }
       // 隣接していなければ移動のみ（攻撃しない）
       const dx = px - e.x;
       const dy = py - e.y;
       const moves: [number, number][] = [];
-      if (dx !== 0) moves.push([Math.sign(dx), 0]);
-      if (dy !== 0) moves.push([0, Math.sign(dy)]);
-      if (Math.random() < 0.5) moves.reverse();
-      if (dx !== 0 && dy !== 0) moves.push([Math.sign(dx), Math.sign(dy)]);
+      // ナナメ方向を最優先（シレン準拠、diagMove ON時のみ）
+      if (g.diagMove && dx !== 0 && dy !== 0) moves.push([Math.sign(dx), Math.sign(dy)]);
+      // 4方向をランダム順で次の候補に
+      const cardinals: [number, number][] = [];
+      if (dx !== 0) cardinals.push([Math.sign(dx), 0]);
+      if (dy !== 0) cardinals.push([0, Math.sign(dy)]);
+      if (Math.random() < 0.5) cardinals.reverse();
+      moves.push(...cardinals);
       for (const [ddx, ddy] of moves) {
         const nx = e.x + ddx;
         const ny = e.y + ddy;
         if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
         if (g.map[ny][nx] === W) continue;
+        // ナナメ移動のコーナーチェック
+        if (ddx !== 0 && ddy !== 0 && !canMoveDiag(g, e.x, e.y, ddx, ddy)) continue;
         if (g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny)) continue;
         // プレイヤーのタイルには移動不可（攻撃は隣接チェック時のみ）
         if (nx === px && ny === py) continue;
@@ -339,9 +367,16 @@ export function moveEnemies(
     if (e.sleeping || (e.sealed > 0) || (e.confused > 0)) continue;
     if (!e.alert) continue;
     if (adj(e.x, e.y, px, py)) {
-      const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
-      g.p.hp = Math.max(0, g.p.hp - dmg);
-      results.push({ enemyHit: true, damage: dmg, killedPlayer: g.p.hp <= 0, enemy: e });
+      const ddx2 = px - e.x;
+      const ddy2 = py - e.y;
+      const isDiag2 = ddx2 !== 0 && ddy2 !== 0;
+      // diagMove OFF → 斜め攻撃不可、コーナーカットも不可
+      const blocked2 = isDiag2 && (!g.diagMove || g.map[e.y][e.x + ddx2] === W || g.map[e.y + ddy2][e.x] === W);
+      if (!blocked2) {
+        const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
+        g.p.hp = Math.max(0, g.p.hp - dmg);
+        results.push({ enemyHit: true, damage: dmg, killedPlayer: g.p.hp <= 0, enemy: e });
+      }
     }
     // 追加行動後も視野外ならアラートをリセット
     if (e.alert &&
