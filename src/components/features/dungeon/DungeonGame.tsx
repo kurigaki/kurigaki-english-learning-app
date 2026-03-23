@@ -906,7 +906,7 @@ function DungeonDeathScreen({
 
 function DungeonControls({
   onDpad, onAttack, onWait, onItems, onFootAction, onLookAround, onMenu, onShootArrow, onDash,
-  onChangeFacing, arrowCount, isDashMode, onToggleDashMode, diagMoveEnabled,
+  arrowCount, isDashMode, onToggleDashMode, diagMoveEnabled,
 }: {
   onDpad: (dx: number, dy: number) => void;
   onAttack: () => void;
@@ -917,7 +917,6 @@ function DungeonControls({
   onMenu: () => void;
   onShootArrow: () => void;
   onDash: (dx: number, dy: number) => void;
-  onChangeFacing: (dx: number, dy: number) => void;
   arrowCount: number;
   diagMoveEnabled: boolean;
   isDashMode: boolean;
@@ -1377,13 +1376,6 @@ function saveDungeonMode(mode: DungeonMode) {
   localStorage.setItem(DUNGEON_MODE_KEY, mode);
 }
 
-function loadDiagMove(): boolean | null {
-  if (typeof window === "undefined") return null;
-  const v = localStorage.getItem(DUNGEON_DIAG_KEY);
-  if (v === null) return null; // ユーザー未設定
-  return v === "true";
-}
-
 function saveDiagMove(enabled: boolean) {
   if (typeof window === "undefined") return;
   localStorage.setItem(DUNGEON_DIAG_KEY, String(enabled));
@@ -1739,12 +1731,11 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
     screenEffect, eventOverlay, closeEventOverlay,
     changeFacing,
-    pickUpFloorItem, throwFloorItem, useFloorItem, closeFootAction,
+    pickUpFloorItem, throwFloorItem, applyFloorItem, closeFootAction,
     startDash, stopDash, lookAround, shootArrow, openFootAction,
   } = useDungeon(questions, progressiveStages, dungeonMode, diagMoveEnabled);
 
   const [showMap, setShowMap] = useState(false);
-  const toggleMap = useCallback(() => setShowMap(v => !v), []);
   const closeMap = useCallback(() => setShowMap(false), []);
   const [dashMode, setDashMode] = useState(false);
   const [lookAroundText, setLookAroundText] = useState<string | null>(null);
@@ -1974,10 +1965,10 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       // 足元アクションダイアログ表示中
       if (uiState.footAction) {
         if (uiState.footAction.kind === "stairs") {
-          if (hasKey(km.attack) || k === "Escape") { ev.preventDefault(); k === "Escape" ? closeFootAction() : goNextFloor(); }
+          if (hasKey(km.attack) || k === "Escape") { ev.preventDefault(); if (k === "Escape") { closeFootAction(); } else { goNextFloor(); } }
         } else {
           if (k === "g" || k === "G") { ev.preventDefault(); pickUpFloorItem(); }
-          if (k === "u" || k === "U") { ev.preventDefault(); useFloorItem(uiState.footAction.itemId); }
+          if (k === "u" || k === "U") { ev.preventDefault(); applyFloorItem(uiState.footAction.itemId); }
           if (k === "t" || k === "T") { ev.preventDefault(); throwFloorItem(uiState.footAction.itemId); }
           if (k === "Escape") { ev.preventDefault(); closeFootAction(); }
         }
@@ -2070,7 +2061,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     phase, uiState, showMap, eventOverlay, closeEventOverlay,
     answerQuiz, buyFromShop, changeFacing, closeItems, doTurn, doWait, goNextFloor,
     openItems, playerAttack, stopAutoWalk, setShowMap,
-    pickUpFloorItem, throwFloorItem, useFloorItem, closeFootAction,
+    pickUpFloorItem, throwFloorItem, applyFloorItem, closeFootAction,
     startDash, stopDash, lookAround, setLookAroundText, keyMap, diagMoveEnabled,
   ]);
 
@@ -2230,7 +2221,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
                   <div style={{ color: DC.text2, fontSize: 11, marginBottom: 12 }}>{uiState.footAction.itemDesc}</div>
                   <div style={{ display: "flex", gap: 6, justifyContent: "center", flexWrap: "wrap" }}>
                     <button onClick={pickUpFloorItem} style={{ background: DC.green, color: "#000", border: "none", borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>拾う [G]</button>
-                    <button onClick={() => useFloorItem(uiState.footAction!.kind === "item" ? uiState.footAction!.itemId : "")} style={{ background: DC.accent, color: "#fff", border: "none", borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>{uiState.footAction.kind === "item" && uiState.footAction.itemId === "arrow" ? "打つ [U]" : "使う [U]"}</button>
+                    <button onClick={() => applyFloorItem(uiState.footAction!.kind === "item" ? uiState.footAction!.itemId : "")} style={{ background: DC.accent, color: "#fff", border: "none", borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>{uiState.footAction.kind === "item" && uiState.footAction.itemId === "arrow" ? "打つ [U]" : "使う [U]"}</button>
                     <button onClick={() => throwFloorItem(uiState.footAction!.kind === "item" ? uiState.footAction!.itemId : "")} style={{ background: DC.accent2, color: "#000", border: "none", borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>投げる [T]</button>
                     <button onClick={closeFootAction} style={{ background: DC.bg4, color: DC.text, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>キャンセル [Esc]</button>
                   </div>
@@ -2367,7 +2358,6 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onMenu={() => { stopDash(); setShowKeySettings(true); }}
         onShootArrow={() => { stopDash(); shootArrow(); }}
         onDash={(dx, dy) => { startDash(dx, dy); setDashMode(false); }}
-        onChangeFacing={changeFacing}
         arrowCount={uiState.items.find((i) => i.id === "arrow")?.count ?? 0}
         isDashMode={dashMode}
         diagMoveEnabled={diagMoveEnabled}
