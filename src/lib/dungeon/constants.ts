@@ -237,9 +237,21 @@ export const ITEMS_DEF: ItemDef[] = [
     desc: "次の攻撃を必中＋会心にする",
     rarity: 1,
   },
+
+  // ── 弓矢 ──
+  {
+    id: "arrow",
+    name: "矢",
+    icon: "🏹",
+    cat: "special" as const,
+    desc: "弓で矢を放つ。直線上の最初の敵に10ダメージ。",
+    rarity: 2,
+    charges: 10,
+  },
 ];
 
 export const DUNGEON_MODE_KEY = "dungeon_mode_pref";
+export const DUNGEON_DIAG_KEY = "dungeon_diag_move";
 
 // Shop prices for items
 export const SHOP_PRICES: Record<string, number> = {
