@@ -906,7 +906,7 @@ function DungeonDeathScreen({
 
 function DungeonControls({
   onDpad, onAttack, onWait, onItems, onFootAction, onLookAround, onMenu, onShootArrow, onDash,
-  arrowCount, isDashMode, onToggleDashMode, diagMoveEnabled,
+  onChangeFacing, arrowCount, isDashMode, onToggleDashMode, diagMoveEnabled,
 }: {
   onDpad: (dx: number, dy: number) => void;
   onAttack: () => void;
@@ -917,6 +917,7 @@ function DungeonControls({
   onMenu: () => void;
   onShootArrow: () => void;
   onDash: (dx: number, dy: number) => void;
+  onChangeFacing: (dx: number, dy: number) => void;
   arrowCount: number;
   diagMoveEnabled: boolean;
   isDashMode: boolean;
@@ -938,9 +939,14 @@ function DungeonControls({
     boxShadow: "0 2px 4px rgba(0,0,0,0.5)", touchAction: "none",
   };
   const dpCenterStyle: React.CSSProperties = {
-    width: 52, height: 52, background: "#0a0f1a", border: "2px solid #1a2240",
-    display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10,
-    cursor: "pointer", borderRadius: 8, color: "#445", userSelect: "none",
+    width: 52, height: 52,
+    background: turnMode ? "#1a3a1a" : "#0a0f1a",
+    border: `2px solid ${turnMode ? "#4caf50" : "#1a2240"}`,
+    display: "flex", alignItems: "center", justifyContent: "center",
+    fontSize: turnMode ? 18 : 10,
+    cursor: "pointer", borderRadius: 8,
+    color: turnMode ? "#4caf50" : "#445",
+    userSelect: "none",
     WebkitUserSelect: "none", WebkitTouchCallout: "none",
     boxShadow: "0 2px 4px rgba(0,0,0,0.3)", touchAction: "none",
   };
@@ -961,18 +967,27 @@ function DungeonControls({
     fontFamily: "'DotGothic16', sans-serif",
   };
 
+  const [turnMode, setTurnMode] = useState(false);
+
   // onPointerDown のみで操作（onClick は二重発火するため使わない）
   const handleDpadPointerDown = (dx: number, dy: number) => (e: React.PointerEvent) => {
     e.preventDefault();
-    if (isDashMode) {
-      if (dx !== 0 || dy !== 0) {
-        onDash(dx, dy); // startDash + setDashMode(false) は onDash 内で処理
-      } else {
-        onToggleDashMode(); // 中央ボタンはダッシュモードキャンセル
-      }
-    } else {
-      onDpad(dx, dy);
+    if (dx === 0 && dy === 0) {
+      // 中央ボタン: 方向転換モードのトグル（ダッシュモードはキャンセル）
+      if (isDashMode) { onToggleDashMode(); return; }
+      setTurnMode((v) => !v);
+      return;
     }
+    if (isDashMode) {
+      onDash(dx, dy);
+      return;
+    }
+    if (turnMode) {
+      onChangeFacing(dx, dy);
+      setTurnMode(false);
+      return;
+    }
+    onDpad(dx, dy);
   };
 
   const dashBtnStyle: React.CSSProperties = {
@@ -1017,7 +1032,7 @@ function DungeonControls({
             </div>
             <div style={{ display: "flex", gap: 3 }}>
               <div style={dpStyle}       onPointerDown={handleDpadPointerDown(-1, 0)}>◀</div>
-              <div style={dpCenterStyle} onPointerDown={handleDpadPointerDown(0, 0)}>●</div>
+              <div style={dpCenterStyle} onPointerDown={handleDpadPointerDown(0, 0)}>{turnMode ? "↻" : "●"}</div>
               <div style={dpStyle}       onPointerDown={handleDpadPointerDown(1, 0)}>▶</div>
             </div>
             <div style={{ display: "flex", gap: 3 }}>
@@ -1032,7 +1047,7 @@ function DungeonControls({
             <div style={dpStyle} onPointerDown={handleDpadPointerDown(0, -1)}>▲</div>
             <div style={{ display: "flex", gap: 3 }}>
               <div style={dpStyle} onPointerDown={handleDpadPointerDown(-1, 0)}>◀</div>
-              <div style={dpCenterStyle} onPointerDown={handleDpadPointerDown(0, 0)}>●</div>
+              <div style={dpCenterStyle} onPointerDown={handleDpadPointerDown(0, 0)}>{turnMode ? "↻" : "●"}</div>
               <div style={dpStyle} onPointerDown={handleDpadPointerDown(1, 0)}>▶</div>
             </div>
             <div style={dpStyle} onPointerDown={handleDpadPointerDown(0, 1)}>▼</div>
@@ -2358,24 +2373,15 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onMenu={() => { stopDash(); setShowKeySettings(true); }}
         onShootArrow={() => { stopDash(); shootArrow(); }}
         onDash={(dx, dy) => { startDash(dx, dy); setDashMode(false); }}
+        onChangeFacing={changeFacing}
         arrowCount={uiState.items.find((i) => i.id === "arrow")?.count ?? 0}
         isDashMode={dashMode}
         diagMoveEnabled={diagMoveEnabled}
         onToggleDashMode={() => {
           if (dashMode) {
             stopDash();
-            setDashMode(false);
-          } else {
-            // ダッシュモードON: プレイヤーの向き方向が定まっていれば即ダッシュ開始
-            const g = gameStateRef.current;
-            const dir = g?.playerDir;
-            if (dir && (dir.dx !== 0 || dir.dy !== 0)) {
-              startDash(dir.dx, dir.dy);
-            } else {
-              // 向き未定: D-pad で方向を選ぶモードに切替
-              setDashMode(true);
-            }
           }
+          setDashMode((v) => !v);
         }}
       />
 
