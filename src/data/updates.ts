@@ -33,6 +33,18 @@ export const UPDATE_CATEGORY_CONFIG: Record<
 export const APP_UPDATES: AppUpdate[] = [
   {
     date: "2026-03-24",
+    version: "1.92.0",
+    title: "ダンジョン：番付（ランキング）・スコア制度を追加",
+    content: [
+      "【新機能】冒険終了時にスコアが計算されます（フロア×1000 + 撃破×100 + 正解×50 + クリアボーナス5000）",
+      "【新機能】番付に最大50件のランキングが記録されます",
+      "【新機能】死亡/クリア画面にスコアと番付順位を表示",
+      "【新機能】タイトル画面から「番付を見る」で過去の記録を閲覧可能",
+    ],
+    category: "feature",
+  },
+  {
+    date: "2026-03-24",
     version: "1.91.1",
     title: "ダンジョン：敵・罠のバランス調整",
     content: [
