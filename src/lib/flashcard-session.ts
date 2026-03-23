@@ -5,7 +5,7 @@
 
 import type { MasteryLevel, WordListSortOption } from "@/types";
 import type { Course, Stage } from "@/data/words/types";
-import type { Category } from "@/data/words/compat";
+import type { Category } from "@/data/words";
 import type { ManualMasteryLevel } from "@/lib/storage";
 import { SESSION_EXPIRY_MS } from "@/lib/navigation-state";
 

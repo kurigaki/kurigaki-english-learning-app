@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card } from "@/components/ui";
 import { DailyWordItem } from "./DailyWordItem";
-import type { Word } from "@/data/words/compat";
+import type { Word } from "@/data/words";
 import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 
 const INITIAL_SHOW_COUNT = 3;

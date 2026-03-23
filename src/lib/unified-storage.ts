@@ -18,7 +18,7 @@ import type {
   SpeedChallengeResult,
 } from "@/types";
 import { ACHIEVEMENTS } from "@/data/achievements";
-import { words } from "@/data/words/compat";
+import { words } from "@/data/words";
 import type { SrsProgress } from "./srs";
 
 // === 粒度別ハイスコア（timeLimit / mode / difficulty の組み合わせ）===

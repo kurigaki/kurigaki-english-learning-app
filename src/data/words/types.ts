@@ -1,3 +1,6 @@
+import type { Category } from "./category";
+import type { Difficulty } from "./difficulty";
+
 // コース種別（7コース、将来拡張用に general/business 予約）
 export type Course =
   | "junior"
@@ -26,7 +29,7 @@ export type Stage =
 // 品詞（5種に簡素化）
 export type PartOfSpeech = "noun" | "verb" | "adjective" | "adverb" | "other";
 
-// 単語データ
+// 統一Word型
 export type Word = {
   id: number;
   word: string;
@@ -35,6 +38,10 @@ export type Word = {
   course: Course;
   stage: Stage;
   example?: string;
-  source?: string;
+  exampleJa?: string;
+  difficulty: Difficulty;
+  category: Category;
+  categories?: Category[];
   frequencyRank?: number;
+  source?: string;
 };

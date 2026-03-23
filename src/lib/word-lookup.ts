@@ -1,4 +1,4 @@
-import { words } from "@/data/words/compat";
+import { words } from "@/data/words";
 
 /**
  * 単語(小文字)→IDのルックアップMap

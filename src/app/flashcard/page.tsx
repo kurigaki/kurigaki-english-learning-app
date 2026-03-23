@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
-import { words as allWordList } from "@/data/words/compat";
+import { words as allWordList } from "@/data/words";
 import {
   getFlashcardSession,
   saveQuickFlashcardSession,

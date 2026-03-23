@@ -1,4 +1,4 @@
-import { words, Word } from "@/data/words/compat";
+import { words, Word } from "@/data/words";
 import { Question, QuestionType } from "@/types";
 import { shuffleArray, pickRandom } from "@/lib/shuffle";
 
