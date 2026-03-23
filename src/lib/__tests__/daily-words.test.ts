@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { pickDailyWords } from "../daily-words";
-import type { Word } from "@/data/words/compat";
+import type { Word } from "@/data/words";
 
 // テスト用単語データ（10語）
 const makeWord = (id: number): Word =>

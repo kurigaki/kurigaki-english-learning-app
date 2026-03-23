@@ -1,6 +1,6 @@
 import Link from "next/link";
-import type { Word } from "@/data/words/compat";
-import { categoryLabels } from "@/data/words/compat";
+import type { Word } from "@/data/words";
+import { categoryLabels } from "@/data/words";
 import type { Course } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { Card, Button } from "@/components/ui";

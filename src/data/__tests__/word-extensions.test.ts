@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import type { WordExtension } from "@/types";
 import { wordExtensions } from "../word-extensions";
-import { words } from "../words/compat";
+import { words, type Word } from "../words";
 
 describe("wordExtensions", () => {
   describe("マップ構造", () => {
@@ -69,43 +69,33 @@ describe("wordExtensions", () => {
     });
   });
 
-  describe("compat words との結合", () => {
-    it("拡張データが登録された単語のフィールドが words 配列に反映されている", () => {
-      const appointment = words.find((w) => w.id === 30001);
-      expect(appointment).toBeDefined();
-      expect(appointment?.coreImage).toBeTruthy();
-      expect(appointment?.usage).toBeTruthy();
-      expect(appointment?.synonymDifference).toBeTruthy();
-      expect(appointment?.englishDefinition).toBeTruthy();
-      expect(appointment?.etymology).toBeTruthy();
-    });
-
-    it("拡張データが存在しない単語のフィールドは undefined になる", () => {
-      // bakery (10531) は手書き拡張データなし（Junior Stage 2 バッチは削除済み）
-      const bakery = words.find((w) => w.id === 10531);
-      expect(bakery).toBeDefined();
-      expect(bakery?.coreImage).toBeUndefined();
-      expect(bakery?.usage).toBeUndefined();
-      expect(bakery?.synonymDifference).toBeUndefined();
-      expect(bakery?.englishDefinition).toBeUndefined();
-      expect(bakery?.etymology).toBeUndefined();
-    });
-
-    it("複数の拡張データ単語がすべて正しくマージされている", () => {
-      const extendedIds = Array.from(wordExtensions.keys());
-      extendedIds.forEach((id) => {
-        const word = words.find((w) => w.id === id);
-        expect(word, `id=${id} の単語が words に存在する`).toBeDefined();
-        // 拡張データの少なくとも1フィールドが反映されている
-        const ext = wordExtensions.get(id)!;
-        if (ext.coreImage) expect(word?.coreImage).toBe(ext.coreImage);
-        if (ext.usage) expect(word?.usage).toBe(ext.usage);
-        if (ext.synonymDifference)
-          expect(word?.synonymDifference).toBe(ext.synonymDifference);
-        if (ext.englishDefinition)
-          expect(word?.englishDefinition).toBe(ext.englishDefinition);
-        if (ext.etymology) expect(word?.etymology).toBe(ext.etymology);
+  describe("拡張データのIDが words に存在する", () => {
+    it("全拡張データのIDに対応する単語が存在する", () => {
+      const wordIds = new Set(words.map((w: Word) => w.id));
+      const orphanIds: number[] = [];
+      wordExtensions.forEach((_ext, id) => {
+        if (!wordIds.has(id)) orphanIds.push(id);
       });
+      expect(orphanIds, `orphan IDs: ${orphanIds.join(", ")}`).toHaveLength(0);
     });
+  });
+});
+
+describe("統一Word型のフィールド検証", () => {
+  it("全単語に difficulty フィールドがある", () => {
+    const missing = words.filter((w: Word) => w.difficulty === undefined);
+    expect(missing).toHaveLength(0);
+  });
+
+  it("全単語に category フィールドがある", () => {
+    const missing = words.filter((w: Word) => !w.category);
+    expect(missing).toHaveLength(0);
+  });
+
+  it("difficulty は 1-7 の範囲内", () => {
+    const invalid = words.filter(
+      (w: Word) => w.difficulty < 1 || w.difficulty > 7
+    );
+    expect(invalid).toHaveLength(0);
   });
 });

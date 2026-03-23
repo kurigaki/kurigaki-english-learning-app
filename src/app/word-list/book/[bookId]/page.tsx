@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { words as allWordList } from "@/data/words/compat";
+import { words as allWordList } from "@/data/words";
 import { getWordsByCourse } from "@/data/words/index";
 import { RECOMMENDED_BOOKS } from "@/data/recommended-books";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";

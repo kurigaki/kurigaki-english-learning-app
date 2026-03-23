@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
-import { words } from "@/data/words/compat";
+import { words } from "@/data/words";
 import { allWords } from "@/data/words";
 import { getWordExtension } from "@/data/word-extensions";
 import { unifiedStorage } from "@/lib/unified-storage";

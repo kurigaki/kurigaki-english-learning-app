@@ -6,7 +6,7 @@ import {
   getReviewSession,
   clearReviewSession,
 } from "../review-quiz";
-import type { Word } from "@/data/words/compat";
+import type { Word } from "@/data/words";
 
 const toLocalDateStr = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;

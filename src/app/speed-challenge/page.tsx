@@ -5,7 +5,7 @@ import { useAuth } from "@/lib/auth-context";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { words, Word } from "@/data/words/compat";
+import { words, Word } from "@/data/words";
 import Confetti from "react-confetti";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { storage } from "@/lib/storage";

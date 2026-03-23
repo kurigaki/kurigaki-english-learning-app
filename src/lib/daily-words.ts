@@ -5,7 +5,7 @@
  * 再現性を持って選択する。
  */
 
-import type { Word } from "@/data/words/compat";
+import type { Word } from "@/data/words";
 
 /**
  * 日付文字列 "YYYY-MM-DD" を整数シードに変換する。
