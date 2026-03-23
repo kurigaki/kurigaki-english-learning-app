@@ -979,11 +979,12 @@ function DungeonControls({
     e.preventDefault();
     if (dx === 0 && dy === 0) {
       // 中央ボタン: 方向転換モードのトグル（ダッシュモードはキャンセル）
-      if (isDashModeRef.current) { onToggleDashMode(); return; }
+      if (isDashModeRef.current) { isDashModeRef.current = false; onToggleDashMode(); return; }
       setTurnMode((v) => { turnModeRef.current = !v; return !v; });
       return;
     }
     if (isDashModeRef.current) {
+      isDashModeRef.current = false; // ref を即座にリセット（次のタップで通常移動に戻る）
       onDash(dx, dy);
       return;
     }
@@ -1023,7 +1024,12 @@ function DungeonControls({
           <div style={sideBtnStyle} onPointerDown={(e) => { e.preventDefault(); onWait(); }}>
             <span style={{ fontSize: 16 }}>🦶</span>足踏み
           </div>
-          <div style={dashBtnStyle} onPointerDown={(e) => { e.preventDefault(); onToggleDashMode(); }}>
+          <div style={dashBtnStyle} onPointerDown={(e) => {
+            e.preventDefault();
+            const next = !isDashModeRef.current;
+            isDashModeRef.current = next; // ref を即座に同期
+            onToggleDashMode();
+          }}>
             <span style={{ fontSize: 14 }}>💨</span>ダッシュ<br />乗る
           </div>
         </div>
