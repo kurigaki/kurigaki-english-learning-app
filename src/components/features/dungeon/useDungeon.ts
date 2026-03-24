@@ -458,9 +458,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       if (g.turn % 4 === 0 && g.p.hp < g.p.mhp) {
         g.p.hp = Math.min(g.p.hp + 1, g.p.mhp);
       }
-      // スタミナ減少: easy=4ターン毎に1、hard=2ターン毎に1
+      // スタミナ減少: easy=6ターン毎に1、hard=3ターン毎に1
       if (g.hunger > 0) {
-        const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 2 === 0) : (g.turn % 4 === 0);
+        const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 3 === 0) : (g.turn % 6 === 0);
         if (decayThisTurn) {
           g.hunger = Math.max(0, g.hunger - 1);
           if (g.hunger === 0) queueMsg("🍂 お腹が空いた！HPが減っていく…");
@@ -581,9 +581,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       callbacks: {
         notify: (msg: string) => void;
         goNextFloor: () => void;
+        escapeDungeon: () => void;
       }
     ): boolean => {
-      const { notify, goNextFloor } = callbacks;
+      const { notify, escapeDungeon } = callbacks;
 
       // playerDir方向の直線上の最初の敵を返す（杖・火炎草用）
       const lineEnemy = (): Enemy | null => {
@@ -753,7 +754,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "scroll_escape": {
-          goNextFloor();
+          notify("📜 エスケープスペルを読んだ！アイテムとゴールドを持ってダンジョンから脱出！");
+          escapeDungeon();
           return true;
         }
         case "scroll_monster": {
@@ -960,6 +962,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     }, 100);
   }, [questions, progressiveStages, redraw, showDeath, showNotification, updateUI]);
 
+  /** 脱出の巻物: アイテム・ゴールドを持ったままダンジョンから帰還（クリア扱い） */
+  const escapeDungeon = useCallback(() => {
+    const g = gameRef.current;
+    if (!g) return;
+    storage.clearDungeonGame();
+    showDeath(g, true);
+  }, [showDeath]);
+
   const initiateAttack = useCallback(
     (g: GameState, e: Enemy) => {
       // プログレッシブモード: 現在フロアに対応するステージの問題のみ出題
@@ -1129,7 +1139,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
                 break;
               }
               case "hunger": {
-                const loss = 20 + Math.floor(Math.random() * 20);
+                const loss = 10 + Math.floor(Math.random() * 10);
                 g.hunger = Math.max(0, g.hunger - loss);
                 triggerScreenEffect("trap_hunger", false);
                 showEventOverlay(TRAP_OVERLAYS.hunger);
@@ -1152,9 +1162,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           const it = g.itemTiles.splice(iIdx, 1)[0];
           const def = ITEMS_DEF.find((d) => d.id === it.id);
           if (def) {
-            const ex = g.items.find((i) => i.id === it.id);
-            if (ex) ex.count++;
-            else g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1 });
+            // 壺の中身を復元（足元に置いた壺を拾い直した場合）
+            if (it.contents && it.contents.length > 0) {
+              g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1, contents: it.contents });
+            } else {
+              const ex = g.items.find((i) => i.id === it.id);
+              if (ex) ex.count++;
+              else g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1 });
+            }
             sfxItemGet();
             queueMsg(`${def.icon}${def.name}を拾った！`);
           }
@@ -1571,6 +1586,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       const used = applyItem(g, itemId, {
         notify: showNotification,
         goNextFloor,
+        escapeDungeon,
       });
 
       if (used) {
@@ -1583,7 +1599,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         saveGame();
       }
     },
-    [applyItem, closeItems, goNextFloor, runEnemyTurn, saveGame, showNotification]
+    [applyItem, closeItems, escapeDungeon, goNextFloor, runEnemyTurn, saveGame, showNotification]
   );
 
   // アイテムを投げる（草は敵に効果、壷は割れる、その他は3ダメージ）
@@ -2039,6 +2055,54 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     return lines.join("\n");
   }, []);
 
+  // ── 足元に置く ──────────────────────────────────────────────────────
+  const placeItem = useCallback((itemId: string) => {
+    const g = gameRef.current;
+    if (!g) return;
+    const item = g.items.find((i) => i.id === itemId);
+    if (!item || (item.count <= 0 && item.cat !== "cane")) return;
+    const def = ITEMS_DEF.find((d) => d.id === itemId);
+    if (!def) return;
+
+    // インベントリから除去
+    if (item.cat === "cane") {
+      // 杖は丸ごと除去（charges 情報は失われる）
+      g.items = g.items.filter((i) => i.id !== itemId);
+    } else {
+      item.count--;
+      if (item.count <= 0) g.items = g.items.filter((i) => i.id !== itemId);
+    }
+
+    // ショップ内で未払いアイテムを置く → 商品棚に返却
+    let returned = false;
+    if (g.shopRoomIdx !== null && g.shopkeeper && !g.shopkeeper.hostile && g.shopkeeper.hp > 0) {
+      const shopRoom = g.rooms[g.shopRoomIdx];
+      const inShop = g.px >= shopRoom.x && g.px < shopRoom.x + shopRoom.w &&
+                     g.py >= shopRoom.y && g.py < shopRoom.y + shopRoom.h;
+      const stolenIdx = g.stolenItems.indexOf(itemId);
+      if (inShop && stolenIdx >= 0) {
+        g.stolenItems.splice(stolenIdx, 1);
+        g.shopItems.push({ x: g.px, y: g.py, itemId, price: SHOP_PRICES[itemId] ?? 0 });
+        queueMsg(`🏪 ${def.icon}${def.name}を商品棚に戻した`);
+        returned = true;
+      }
+    }
+
+    if (!returned) {
+      // 通常の床置き（壺は中身ごと保存）
+      const tile: { x: number; y: number; id: string; contents?: typeof item.contents } = { x: g.px, y: g.py, id: itemId };
+      if (item.cat === "jar" && item.contents && item.contents.length > 0) {
+        tile.contents = [...item.contents];
+      }
+      g.itemTiles.push(tile);
+      queueMsg(`${def.icon}${def.name}を足元に置いた`);
+    }
+
+    closeItems();
+    runEnemyTurn(g);
+    saveGame();
+  }, [closeItems, queueMsg, runEnemyTurn, saveGame]);
+
   const shootArrow = useCallback(() => {
     const g = gameRef.current;
     if (!g) return;
@@ -2230,17 +2294,23 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     initDungeonAudio(); // MP3ファイルをプリロード（初回のみ）
     storage.clearDungeonGame();
     const g = initGameState([], dungeonMode, diagMove);
-    // 倉庫からアイテム・ゴールドを持ち込み
-    const warehouseItems = storage.getWarehouse();
-    for (const wi of warehouseItems) {
-      const existing = g.items.find((i) => i.id === wi.id);
-      if (existing) existing.count += wi.count;
-      else g.items.push({ ...wi });
+    // 倉庫から持ち込み設定に基づいてアイテム・ゴールドを持ち込み
+    {
+      const wh = storage.getWarehouse();
+      const cs = storage.getCarrySettings();
+      const gb = storage.getGoldBank();
+      const cg = Math.min(cs.goldAmount, gb);
+      for (const wi of wh) {
+        if (cs.selectedItems.includes(wi.id)) {
+          const ex = g.items.find((i) => i.id === wi.id);
+          if (ex) ex.count += wi.count;
+          else g.items.push({ ...wi });
+        }
+      }
+      g.gold += cg;
+      storage.saveWarehouse(wh.filter((wi) => !cs.selectedItems.includes(wi.id)));
+      storage.saveGoldBank(gb - cg);
     }
-    g.gold += storage.getGoldBank();
-    // 倉庫を空にする（持ち込み済み）
-    storage.saveWarehouse([]);
-    storage.saveGoldBank(0);
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py); // 開始位置の視野を開く
@@ -2281,16 +2351,23 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     stopAutoWalk();
     const prevMissed = gameRef.current?.missedWords ?? [];
     const g = initGameState(prevMissed, dungeonMode, diagMove);
-    // 倉庫からアイテム・ゴールドを持ち込み
-    const warehouseItems = storage.getWarehouse();
-    for (const wi of warehouseItems) {
-      const existing = g.items.find((i) => i.id === wi.id);
-      if (existing) existing.count += wi.count;
-      else g.items.push({ ...wi });
+    // 倉庫から持ち込み設定に基づいてアイテム・ゴールドを持ち込み
+    {
+      const wh = storage.getWarehouse();
+      const cs = storage.getCarrySettings();
+      const gb = storage.getGoldBank();
+      const cg = Math.min(cs.goldAmount, gb);
+      for (const wi of wh) {
+        if (cs.selectedItems.includes(wi.id)) {
+          const ex = g.items.find((i) => i.id === wi.id);
+          if (ex) ex.count += wi.count;
+          else g.items.push({ ...wi });
+        }
+      }
+      g.gold += cg;
+      storage.saveWarehouse(wh.filter((wi) => !cs.selectedItems.includes(wi.id)));
+      storage.saveGoldBank(gb - cg);
     }
-    g.gold += storage.getGoldBank();
-    storage.saveWarehouse([]);
-    storage.saveGoldBank(0);
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py);
@@ -2332,9 +2409,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const it = g.itemTiles.splice(iIdx, 1)[0];
     const def = ITEMS_DEF.find((d) => d.id === it.id);
     if (def) {
-      const ex = g.items.find((i) => i.id === it.id);
-      if (ex) ex.count++;
-      else g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1 });
+      if (it.contents && it.contents.length > 0) {
+        g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1, contents: it.contents });
+      } else {
+        const ex = g.items.find((i) => i.id === it.id);
+        if (ex) ex.count++;
+        else g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1 });
+      }
       sfxItemGet();
       queueMsg(`${def.icon}${def.name}を拾った！`);
     }
@@ -2395,7 +2476,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const inv = g.items.find((i) => i.id === itemId);
     if (inv) { inv.count++; } else { g.items.push({ id: def.id, name: def.name, icon: def.icon, desc: def.desc, cat: def.cat, count: 1 }); }
 
-    const used = applyItem(g, itemId, { notify: showNotification, goNextFloor });
+    const used = applyItem(g, itemId, { notify: showNotification, goNextFloor, escapeDungeon });
 
     if (used) {
       // 床から削除し、インベントリのカウントを戻す（pick up せずに使ったのと同じ）
@@ -2413,7 +2494,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       const invItem = g.items.find((i) => i.id === itemId);
       if (invItem) { invItem.count--; if (invItem.count <= 0) g.items = g.items.filter((i) => i.id !== itemId); }
     }
-  }, [applyItem, goNextFloor, runEnemyTurn, saveGame, showNotification]);
+  }, [applyItem, escapeDungeon, goNextFloor, runEnemyTurn, saveGame, showNotification]);
 
   const closeFootAction = useCallback(() => {
     setUiState((prev) => ({ ...prev, footAction: null }));
@@ -2474,6 +2555,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     throwFloorItem,
     applyFloorItem,
     closeFootAction,
+    placeItem,
     startDash,
     stopDash,
     lookAround,

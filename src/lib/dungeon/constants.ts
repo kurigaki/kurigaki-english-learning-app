@@ -117,7 +117,7 @@ export const ITEMS_DEF: ItemDef[] = [
     id: "scroll_escape",
     name: "エスケープスペル", nameEn: "Escape Spell",
     icon: "📜", cat: "scroll",
-    desc: "ダンジョンから脱出する", descEn: "Escape the dungeon",
+    desc: "アイテムとゴールドを持ってダンジョンから脱出する", descEn: "Escape the dungeon with your items and gold",
     rarity: 1,
   },
   {
@@ -178,14 +178,14 @@ export const ITEMS_DEF: ItemDef[] = [
     name: "ブレッド", nameEn: "Bread",
     icon: "🍙", cat: "food",
     desc: "スタミナを50回復", descEn: "Restore 50 Stamina",
-    rarity: 1,
+    rarity: 3,
   },
   {
     id: "rice_big",
     name: "ビッグブレッド", nameEn: "Big Bread",
     icon: "🍱", cat: "food",
     desc: "スタミナを100回復", descEn: "Restore 100 Stamina",
-    rarity: 1,
+    rarity: 2,
   },
 
   // ── ポット (Pot) ──

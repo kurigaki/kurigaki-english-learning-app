@@ -520,7 +520,7 @@ function DungeonJarOverlay({
 }
 
 function DungeonItemOverlay({
-  items, itemFilter, onFilter, onUse, onClose, onThrow, onOpenJar, caneCharges,
+  items, itemFilter, onFilter, onUse, onClose, onThrow, onPlace, onOpenJar, caneCharges,
 }: {
   items: InventoryItem[];
   itemFilter: string;
@@ -528,6 +528,7 @@ function DungeonItemOverlay({
   onUse: (id: string) => void;
   onClose: () => void;
   onThrow: (id: string) => void;
+  onPlace: (id: string) => void;
   onOpenJar: (id: string) => void;
   caneCharges: CaneCharges;
 }) {
@@ -712,6 +713,17 @@ function DungeonItemOverlay({
                       }}
                     >
                       投げる
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onPlace(item.id); }}
+                      style={{
+                        fontFamily: "'Press Start 2P', monospace", fontSize: 7,
+                        color: DC.green,
+                        background: DC.bg3, border: `1px solid ${DC.green}`,
+                        padding: "4px 7px", cursor: "pointer", borderRadius: 3,
+                      }}
+                    >
+                      置く
                     </button>
                   </div>
                 </div>
@@ -1970,7 +1982,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const {
     canvasRef, wrapRef, gameStateRef, uiState, dmgPops,
     startGame, doTurn, playerAttack, doWait, answerQuiz,
-    goNextFloor, useItem, throwItem, openItems, closeItems, filterItems,
+    goNextFloor, useItem, throwItem, placeItem, openItems, closeItems, filterItems,
     closeJar, putInJar, takeFromJar, openJarId,
     retryGame,
     loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
@@ -2646,6 +2658,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
           onUse={useItem}
           onClose={closeItems}
           onThrow={throwItem}
+          onPlace={placeItem}
           onOpenJar={useItem}
           caneCharges={uiState.caneCharges}
         />

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { storage } from "@/lib/storage";
 import { ITEMS_DEF } from "@/lib/dungeon/constants";
 import { getDungeonLang, itemName, itemDesc, type DungeonLang } from "@/lib/dungeon/i18n";
@@ -19,12 +19,46 @@ export default function WarehousePage() {
   const [gold, setGold] = useState(0);
   const [lang, setLang] = useState<DungeonLang>("ja");
   const [selectedItem, setSelectedItem] = useState<InventoryItem | null>(null);
+  // 持ち込み設定
+  const [carryItems, setCarryItems] = useState<Set<string>>(new Set());
+  const [carryGold, setCarryGold] = useState(0);
 
   useEffect(() => {
-    setItems(storage.getWarehouse());
-    setGold(storage.getGoldBank());
+    const wh = storage.getWarehouse();
+    const gb = storage.getGoldBank();
+    setItems(wh);
+    setGold(gb);
     setLang(getDungeonLang());
+    // 保存済み設定を復元
+    const cs = storage.getCarrySettings();
+    setCarryItems(new Set(cs.selectedItems));
+    setCarryGold(Math.min(cs.goldAmount, gb));
   }, []);
+
+  // 設定をlocalStorageに保存
+  const saveSettings = useCallback(() => {
+    storage.saveCarrySettings({
+      selectedItems: Array.from(carryItems),
+      goldAmount: carryGold,
+    });
+  }, [carryItems, carryGold]);
+
+  // 設定変更時に自動保存
+  useEffect(() => {
+    saveSettings();
+  }, [saveSettings]);
+
+  const toggleCarryItem = (id: string) => {
+    setCarryItems((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const selectAll = () => setCarryItems(new Set(items.map((i) => i.id)));
+  const selectNone = () => setCarryItems(new Set());
 
   const totalItems = items.reduce((sum, i) => sum + i.count, 0);
 
@@ -52,26 +86,65 @@ export default function WarehousePage() {
           <div style={{ width: 50 }} />
         </div>
 
-        {/* Gold */}
+        {/* Gold + 持ち込みゴールド設定 */}
         <div style={{
           background: DC.bg3, border: `1px solid ${DC.border}`,
           borderRadius: 8, padding: "12px 16px", marginBottom: 16,
-          display: "flex", justifyContent: "space-between", alignItems: "center",
         }}>
-          <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: DC.text2 }}>
-            GOLD
-          </span>
-          <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 16, color: DC.gold }}>
-            💰 {gold.toLocaleString()}G
-          </span>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+            <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: DC.text2 }}>
+              GOLD
+            </span>
+            <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 16, color: DC.gold }}>
+              💰 {gold.toLocaleString()}G
+            </span>
+          </div>
+          {gold > 0 && (
+            <div>
+              <div style={{ fontSize: 10, color: DC.text2, marginBottom: 4 }}>
+                {lang === "en" ? "Carry-in gold:" : "持ち込みゴールド:"}
+                <span style={{ color: DC.gold, marginLeft: 6 }}>{carryGold.toLocaleString()}G</span>
+              </div>
+              <input
+                type="range" min={0} max={gold} step={Math.max(1, Math.floor(gold / 100))}
+                value={carryGold}
+                onChange={(e) => setCarryGold(Number(e.target.value))}
+                style={{ width: "100%", accentColor: DC.gold }}
+              />
+              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 8, color: DC.text3, fontFamily: "'Press Start 2P', monospace" }}>
+                <span>0G</span>
+                <span>{gold.toLocaleString()}G</span>
+              </div>
+            </div>
+          )}
         </div>
 
-        {/* Item count */}
-        <div style={{
-          fontFamily: "'Press Start 2P', monospace", fontSize: 9,
-          color: DC.text3, marginBottom: 8,
-        }}>
-          ITEMS: {totalItems}
+        {/* Item count + 一括選択 */}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+          <div style={{
+            fontFamily: "'Press Start 2P', monospace", fontSize: 9,
+            color: DC.text3,
+          }}>
+            ITEMS: {totalItems}
+          </div>
+          {items.length > 0 && (
+            <div style={{ display: "flex", gap: 4 }}>
+              <button onClick={selectAll} style={{
+                fontFamily: "'Press Start 2P', monospace", fontSize: 7,
+                color: DC.green, background: DC.bg3, border: `1px solid ${DC.green}`,
+                padding: "3px 6px", cursor: "pointer", borderRadius: 3,
+              }}>
+                {lang === "en" ? "ALL" : "全選択"}
+              </button>
+              <button onClick={selectNone} style={{
+                fontFamily: "'Press Start 2P', monospace", fontSize: 7,
+                color: DC.text3, background: DC.bg3, border: `1px solid ${DC.border}`,
+                padding: "3px 6px", cursor: "pointer", borderRadius: 3,
+              }}>
+                {lang === "en" ? "NONE" : "全解除"}
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Items Grid */}
@@ -87,7 +160,7 @@ export default function WarehousePage() {
             <div style={{ color: DC.text3, fontSize: 10, marginTop: 4 }}>
               {lang === "en"
                 ? "Clear a dungeon or use Escape Spell to store items"
-                : "ダンジョンクリアか脱出スペルでアイテムを持ち帰ろう"}
+                : "ダンジョンクリアかエスケープスペルでアイテムを持ち帰ろう"}
             </div>
           </div>
         ) : (
@@ -99,18 +172,27 @@ export default function WarehousePage() {
               const def = ITEMS_DEF.find((d) => d.id === item.id);
               const displayName = def ? itemName(def, lang) : item.name;
               const isSelected = selectedItem?.id === item.id;
+              const isCarry = carryItems.has(item.id);
               return (
                 <button
                   key={item.id}
                   onClick={() => setSelectedItem(isSelected ? null : item)}
                   style={{
-                    background: isSelected ? DC.bg4 : DC.bg3,
-                    border: `1px solid ${isSelected ? DC.accent : DC.border}`,
+                    background: isCarry ? DC.bg4 : DC.bg3,
+                    border: `1px solid ${isCarry ? DC.green : isSelected ? DC.accent : DC.border}`,
                     borderRadius: 6, padding: "8px 6px",
                     cursor: "pointer", textAlign: "center",
                     transition: "border-color 0.15s",
+                    position: "relative",
                   }}
                 >
+                  {isCarry && (
+                    <div style={{
+                      position: "absolute", top: 2, right: 4,
+                      fontFamily: "'Press Start 2P', monospace", fontSize: 7,
+                      color: DC.green,
+                    }}>✓</div>
+                  )}
                   <div style={{ fontSize: 20 }}>{item.icon}</div>
                   <div style={{ fontSize: 9, color: DC.text, marginTop: 2, lineHeight: 1.2 }}>
                     {displayName}
@@ -127,9 +209,10 @@ export default function WarehousePage() {
           </div>
         )}
 
-        {/* Item Detail */}
+        {/* Item Detail + 持ち込みトグル */}
         {selectedItem && (() => {
           const def = ITEMS_DEF.find((d) => d.id === selectedItem.id);
+          const isCarry = carryItems.has(selectedItem.id);
           return (
             <div style={{
               background: DC.bg4, border: `1px solid ${DC.accent}40`,
@@ -137,7 +220,7 @@ export default function WarehousePage() {
             }}>
               <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
                 <span style={{ fontSize: 24 }}>{selectedItem.icon}</span>
-                <div>
+                <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 13, fontWeight: "bold" }}>
                     {def ? itemName(def, lang) : selectedItem.name}
                   </div>
@@ -148,6 +231,20 @@ export default function WarehousePage() {
                     x{selectedItem.count} | {selectedItem.cat}
                   </div>
                 </div>
+                <button
+                  onClick={(e) => { e.stopPropagation(); toggleCarryItem(selectedItem.id); }}
+                  style={{
+                    fontFamily: "'Press Start 2P', monospace", fontSize: 8,
+                    color: isCarry ? "#000" : DC.green,
+                    background: isCarry ? DC.green : DC.bg3,
+                    border: `1px solid ${DC.green}`,
+                    padding: "5px 10px", cursor: "pointer", borderRadius: 4,
+                  }}
+                >
+                  {isCarry
+                    ? (lang === "en" ? "CARRY ✓" : "持込 ✓")
+                    : (lang === "en" ? "CARRY" : "持込")}
+                </button>
               </div>
               <div style={{ fontSize: 11, color: DC.text2, lineHeight: 1.5 }}>
                 {def ? itemDesc(def, lang) : selectedItem.desc}
@@ -155,6 +252,23 @@ export default function WarehousePage() {
             </div>
           );
         })()}
+
+        {/* 持ち込みサマリー */}
+        {(carryItems.size > 0 || carryGold > 0) && (
+          <div style={{
+            marginTop: 12, padding: "10px 12px",
+            background: DC.bg2, border: `1px solid ${DC.green}40`,
+            borderRadius: 6, fontSize: 10, color: DC.green, lineHeight: 1.6,
+          }}>
+            <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, marginBottom: 4 }}>
+              {lang === "en" ? "CARRY-IN SUMMARY" : "持ち込み設定"}
+            </div>
+            {carryGold > 0 && <div>💰 {carryGold.toLocaleString()}G</div>}
+            {items.filter((i) => carryItems.has(i.id)).map((i) => (
+              <div key={i.id}>{i.icon} {i.name} x{i.count}</div>
+            ))}
+          </div>
+        )}
 
         {/* Info */}
         <div style={{
@@ -166,15 +280,17 @@ export default function WarehousePage() {
             <>
               <div>• Items and gold are stored when you clear a dungeon</div>
               <div>• Use Escape Spell to bring items back safely</div>
-              <div>• Stored items are automatically brought into your next adventure</div>
-              <div>• If you die, all items and gold are lost</div>
+              <div>• Select items and gold to carry into your next adventure</div>
+              <div>• Items left in warehouse are safe even if you die</div>
+              <div>• If you die, all carried items and gold are lost</div>
             </>
           ) : (
             <>
               <div>• ダンジョンクリア時にアイテムとゴールドが保存されます</div>
               <div>• エスケープスペルで安全にアイテムを持ち帰れます</div>
-              <div>• 保存したアイテムは次の冒険に自動で持ち込まれます</div>
-              <div>• 倒れた場合、アイテムとゴールドは全て失われます</div>
+              <div>• 持ち込むアイテムとゴールドを選んで冒険に出発できます</div>
+              <div>• 倉庫に残したアイテムは倒れても安全です</div>
+              <div>• 持ち込んだアイテムは倒れると全て失われます</div>
             </>
           )}
         </div>

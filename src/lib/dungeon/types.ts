@@ -77,7 +77,7 @@ export type InventoryItem = {
   contents?: InventoryItem[]; // 壷の中身（jar_storeのみ使用）
 };
 
-export type ItemTile = { x: number; y: number; id: string };
+export type ItemTile = { x: number; y: number; id: string; contents?: InventoryItem[] };
 
 export type ShopItem = { x: number; y: number; itemId: string; price: number };
 

@@ -720,6 +720,20 @@ export const storage = {
     localStorage.setItem("dungeon_gold_bank", String(clamped));
   },
 
+  // ── 倉庫持ち込み設定 ─────────────────────────────────────────────────
+  getCarrySettings: (): { selectedItems: string[]; goldAmount: number } => {
+    if (typeof window === "undefined") return { selectedItems: [], goldAmount: 0 };
+    try {
+      const raw = localStorage.getItem("dungeon_carry_settings");
+      if (!raw) return { selectedItems: [], goldAmount: 0 };
+      return JSON.parse(raw);
+    } catch { return { selectedItems: [], goldAmount: 0 }; }
+  },
+  saveCarrySettings: (settings: { selectedItems: string[]; goldAmount: number }): void => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("dungeon_carry_settings", JSON.stringify(settings));
+  },
+
   // ── ミッション進捗（日/週/月リセット）──────────────────────────────────────
 
   /** ローカル日付文字列 "YYYY-MM-DD" */
