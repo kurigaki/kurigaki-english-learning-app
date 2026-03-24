@@ -264,9 +264,10 @@ export const SHOPKEEPER_DEF = {
 } as const;
 
 // 泥棒時に出現するガーディアン（高ステータス・脱出チャレンジ用）
+// B細胞調整: ATKを下げて「即死級→逃走困難」に。逃げる余地を残す設計
 export const GUARDIAN_DEFS: EnemyDef[] = [
-  { name: "ガーディアン", icon: "🛡️", mhp: 60, atk: 20, exp: 0, floor: 99, sleepChance: 0 },
-  { name: "センチネル", icon: "⚔️", mhp: 80, atk: 25, exp: 0, floor: 99, sleepChance: 0 },
+  { name: "ガーディアン", icon: "🛡️", mhp: 70, atk: 15, exp: 0, floor: 99, sleepChance: 0 },
+  { name: "センチネル", icon: "⚔️", mhp: 90, atk: 18, exp: 0, floor: 99, sleepChance: 0 },
 ];
 
 export const ENEMIES_DEF: EnemyDef[] = [

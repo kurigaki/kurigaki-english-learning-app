@@ -663,6 +663,10 @@ export const storage = {
   },
 
   addDungeonRanking: (r: import("@/lib/dungeon/types").DungeonRanking): number => {
+    // バリデーション: スコア・フロアの範囲チェック
+    if (typeof r.score !== "number" || r.score < 0 || r.score > 999999) return -1;
+    if (typeof r.floor !== "number" || r.floor < 1 || r.floor > 99) return -1;
+    if (typeof r.lv !== "number" || r.lv < 1 || r.lv > 99) return -1;
     const rankings = storage.getDungeonRankings();
     rankings.push(r);
     rankings.sort((a, b) => b.score - a.score);
@@ -678,25 +682,42 @@ export const storage = {
     if (typeof window === "undefined") return [];
     try {
       const d = localStorage.getItem("dungeon_warehouse");
-      return d ? JSON.parse(d) : [];
+      if (!d) return [];
+      const raw = JSON.parse(d);
+      if (!Array.isArray(raw)) return [];
+      // バリデーション: 各アイテムのcount上限・ID長チェック
+      return raw.filter((item: unknown) => {
+        if (!item || typeof item !== "object") return false;
+        const it = item as Record<string, unknown>;
+        if (typeof it.id !== "string" || it.id.length === 0 || it.id.length > 50) return false;
+        if (typeof it.count !== "number" || it.count < 1 || it.count > 99) return false;
+        return true;
+      }).map((it: Record<string, unknown>) => ({
+        ...it,
+        count: Math.min(99, Math.max(1, it.count as number)),
+      })) as import("@/lib/dungeon/types").InventoryItem[];
     } catch { return []; }
   },
 
   saveWarehouse: (items: import("@/lib/dungeon/types").InventoryItem[]): void => {
     if (typeof window === "undefined") return;
-    localStorage.setItem("dungeon_warehouse", JSON.stringify(items));
+    // 保存時もcount上限を適用
+    const sanitized = items.map((i) => ({ ...i, count: Math.min(99, Math.max(0, i.count)) })).filter((i) => i.count > 0);
+    localStorage.setItem("dungeon_warehouse", JSON.stringify(sanitized));
   },
 
   getGoldBank: (): number => {
     if (typeof window === "undefined") return 0;
     try {
-      return parseInt(localStorage.getItem("dungeon_gold_bank") ?? "0", 10) || 0;
+      const raw = parseInt(localStorage.getItem("dungeon_gold_bank") ?? "0", 10) || 0;
+      return Math.max(0, Math.min(999999, raw));
     } catch { return 0; }
   },
 
   saveGoldBank: (gold: number): void => {
     if (typeof window === "undefined") return;
-    localStorage.setItem("dungeon_gold_bank", String(gold));
+    const clamped = Math.max(0, Math.min(999999, Math.floor(gold)));
+    localStorage.setItem("dungeon_gold_bank", String(clamped));
   },
 
   // ── ミッション進捗（日/週/月リセット）──────────────────────────────────────

@@ -324,8 +324,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       g.kills++;
       g.p.exp += e.exp;
       g.enemies = g.enemies.filter((en) => en.id !== e.id);
-      // Gold drop
-      const goldDrop = 2 + Math.floor(Math.random() * 7); // 2-8 gold
+      // Gold drop（フロアが深いほど増加）
+      const goldBase = 3 + g.floor * 2;
+      const goldDrop = goldBase + Math.floor(Math.random() * (goldBase + 1));
       g.gold += goldDrop;
       queueMsg(`⚔️ ${e.name}を倒した！ EXP+${e.exp} 💰+${goldDrop}G`);
       if (g.p.exp >= g.p.enext) {
@@ -2171,6 +2172,24 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       playerSlowTurns: (raw as Partial<GameState>).playerSlowTurns ?? 0,
       diagMove: (raw as Partial<GameState>).diagMove ?? diagMove,
     };
+    // セーブデータのバリデーション（改ざん・破損検出）
+    const p = migrated.p;
+    if (!p || typeof p.hp !== "number" || typeof p.mhp !== "number" ||
+        p.hp < 0 || p.hp > p.mhp + 50 || p.mhp < 1 || p.mhp > 999 ||
+        typeof p.lv !== "number" || p.lv < 1 || p.lv > 99 ||
+        typeof p.atk !== "number" || p.atk < 0 || p.atk > 999 ||
+        typeof migrated.floor !== "number" || migrated.floor < 1 || migrated.floor > 99 ||
+        typeof migrated.gold !== "number" || migrated.gold < 0 || migrated.gold > 999999 ||
+        !Array.isArray(migrated.map) || !Array.isArray(migrated.enemies)) {
+      console.warn("[Dungeon] セーブデータが不正です。クリアします。");
+      storage.clearDungeonGame();
+      return;
+    }
+    // 数値をクランプ（微小な不整合の自動修正）
+    migrated.p.hp = Math.min(migrated.p.hp, migrated.p.mhp);
+    migrated.gold = Math.max(0, Math.min(999999, migrated.gold));
+    migrated.hunger = Math.max(0, Math.min(migrated.maxHunger, migrated.hunger));
+
     gameRef.current = migrated;
     const canvas = canvasRef.current;
     if (canvas) {
