@@ -11,6 +11,7 @@ import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL, ensureVoicesLoaded, 
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
 import { DUNGEON_MODE_KEY, DUNGEON_DIAG_KEY } from "@/lib/dungeon/constants";
+import { getDungeonLang, setDungeonLang, t, type DungeonLang } from "@/lib/dungeon/i18n";
 import { storage, type DungeonRunLog } from "@/lib/storage";
 import { SpeakButton } from "@/components/ui";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
@@ -227,7 +228,7 @@ function DungeonHUD({
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 1, minWidth: 60 }}>
-          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: DC.text2 }}>満腹度</div>
+          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: DC.text2 }}>スタミナ</div>
           <div style={{ height: 6, background: "#ffffff10", borderRadius: 1, overflow: "hidden" }}>
             <div style={{ height: "100%", width: `${hungerPct}%`, background: `linear-gradient(90deg,${hungerColor}90,${hungerColor})`, borderRadius: 1, transition: "width .3s" }} />
           </div>
@@ -1484,6 +1485,7 @@ function TitleScreen({
   const [weakOnly, setWeakOnly] = useState(false);
   const [dungeonMode, setDungeonMode] = useState<DungeonMode>(() => loadDungeonMode());
   const [diagMove, setDiagMove] = useState<boolean>(() => diagDefault(loadDungeonMode()));
+  const [lang, setLang] = useState<DungeonLang>(() => getDungeonLang());
   const [loading, setLoading] = useState(false);
   const [showVolume, setShowVolume] = useState(false);
   const [showRanking, setShowRanking] = useState(false);
@@ -1681,8 +1683,8 @@ function TitleScreen({
           </div>
           <div style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 10, color: DC.text3, textAlign: "center", lineHeight: 1.5 }}>
             {dungeonMode === "easy"
-              ? "空腹度の減りが緩やか・罠が少ない・エネミーラッシュなし"
-              : "空腹度の減りが速い・罠が多い・エネミーラッシュあり"}
+              ? "スタミナの減りが緩やか・罠が少ない・エネミーラッシュなし"
+              : "スタミナの減りが速い・罠が多い・エネミーラッシュあり"}
           </div>
           {/* ナナメ移動トグル */}
           <label style={{
@@ -1697,6 +1699,25 @@ function TitleScreen({
               style={{ accentColor: DC.accent, width: 14, height: 14 }}
             />
             <span>ナナメ移動 {diagMove ? "ON" : "OFF"}</span>
+          </label>
+          {/* 言語トグル */}
+          <label style={{
+            display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
+            fontFamily: "'DotGothic16', sans-serif", fontSize: 11, color: DC.text2,
+            cursor: "pointer", marginTop: 2,
+          }}>
+            <span>言語 / Language:</span>
+            <button
+              onClick={() => { const next: DungeonLang = lang === "ja" ? "en" : "ja"; setLang(next); setDungeonLang(next); }}
+              style={{
+                fontFamily: "'Press Start 2P', monospace", fontSize: 9,
+                background: DC.bg4, color: DC.accent,
+                border: `1px solid ${DC.accent}`, borderRadius: 4,
+                padding: "2px 8px", cursor: "pointer",
+              }}
+            >
+              {lang === "ja" ? "日本語" : "English"}
+            </button>
           </label>
         </div>
 
@@ -1832,7 +1853,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     goNextFloor, useItem, throwItem, openItems, closeItems, filterItems,
     closeJar, putInJar, takeFromJar, openJarId,
     retryGame,
-    loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop, payShopkeeper,
+    loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
     screenEffect, eventOverlay, closeEventOverlay,
     changeFacing,
     pickUpFloorItem, throwFloorItem, applyFloorItem, closeFootAction,

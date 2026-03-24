@@ -1,6 +1,6 @@
 import type { GameState, Room, Enemy, Shopkeeper } from "./types";
 import { W, C, R } from "./types";
-import { MW, MH, SHOPKEEPER_DEF } from "./constants";
+import { MW, MH } from "./constants";
 
 // 8方向隣接判定（ナナメ含む）: Chebyshev距離 = 1
 export function adj(ax: number, ay: number, bx: number, by: number): boolean {

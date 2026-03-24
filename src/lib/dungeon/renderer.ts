@@ -848,6 +848,50 @@ function drawDevil(ctx: CanvasRenderingContext2D, x: number, y: number): void {
   ctx.fill();
 }
 
+// ── Guardian（泥棒時出現の強敵）──────────────────────────────────────────
+function drawGuardian(ctx: CanvasRenderingContext2D, x: number, y: number, elite: boolean): void {
+  const cx = x + TILE / 2, cy = y + TILE / 2;
+  // 体（重装鎧）
+  const armorColor = elite ? "#4a2a7a" : "#2a4a7a";
+  fr(ctx, armorColor, cx - 9, cy - 2, 18, 16);
+  // 肩パッド
+  fr(ctx, elite ? "#6a3aaa" : "#3a6aaa", cx - 12, cy - 2, 6, 6);
+  fr(ctx, elite ? "#6a3aaa" : "#3a6aaa", cx + 6, cy - 2, 6, 6);
+  // 頭（ヘルメット）
+  fc(ctx, elite ? "#5a2a9a" : "#2a5a9a", cx, cy - 6, 8);
+  // バイザー（目の部分）
+  fr(ctx, "#111", cx - 5, cy - 8, 10, 3);
+  // 目（赤く光る）
+  fr(ctx, "#ff3030", cx - 4, cy - 8, 3, 2);
+  fr(ctx, "#ff3030", cx + 1, cy - 8, 3, 2);
+  // 盾（ガーディアン）or 剣（センチネル）
+  if (elite) {
+    // 大剣
+    ctx.fillStyle = "#c0c0c0";
+    ctx.beginPath();
+    ctx.moveTo(cx + 10, cy - 10);
+    ctx.lineTo(cx + 12, cy + 6);
+    ctx.lineTo(cx + 8, cy + 6);
+    ctx.closePath();
+    ctx.fill();
+    // 柄
+    fr(ctx, "#8a6a30", cx + 8, cy + 6, 4, 4);
+  } else {
+    // 盾
+    ctx.fillStyle = "#c0c0c0";
+    ctx.beginPath();
+    ctx.moveTo(cx - 12, cy - 4);
+    ctx.lineTo(cx - 6, cy - 4);
+    ctx.lineTo(cx - 6, cy + 8);
+    ctx.lineTo(cx - 9, cy + 10);
+    ctx.lineTo(cx - 12, cy + 8);
+    ctx.closePath();
+    ctx.fill();
+    // 盾の紋章
+    fr(ctx, armorColor, cx - 11, cy, 4, 4);
+  }
+}
+
 function drawEnemySprite(
   ctx: CanvasRenderingContext2D,
   enemy: Enemy,
@@ -862,6 +906,8 @@ function drawEnemySprite(
     case "オーク":     drawOrc(ctx, x, y);      break;
     case "ゴーレム":   drawGolem(ctx, x, y);    break;
     case "デビル":     drawDevil(ctx, x, y);    break;
+    case "ガーディアン": drawGuardian(ctx, x, y, false); break;
+    case "センチネル":   drawGuardian(ctx, x, y, true);  break;
     default:
       // 未知の敵：色付き円 + 頭文字
       fc(ctx, "#cc6633", x + TILE / 2, y + TILE / 2, 10);

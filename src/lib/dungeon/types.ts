@@ -58,9 +58,11 @@ export type Enemy = {
 export type ItemDef = {
   id: string;
   name: string;
+  nameEn: string;
   icon: string;
   cat: "grass" | "scroll" | "cane" | "food" | "jar" | "special";
   desc: string;
+  descEn: string;
   rarity: number;
   charges?: number;
 };
@@ -135,6 +137,7 @@ export type GameState = {
   shopkeeper: Shopkeeper | null;
   shopRoomIdx: number | null;
   stolenItems: string[];    // 未払いで持ち出したアイテムID（泥棒判定用）
+  theftTriggered: boolean;  // 泥棒イベント発動済みフラグ（ガーディアン出現済み）
   dungeonMode: DungeonMode;
   monsterHouseRoomIdx: number | null;
   playerDir: { dx: number; dy: number }; // 最後の移動方向（投げる用）

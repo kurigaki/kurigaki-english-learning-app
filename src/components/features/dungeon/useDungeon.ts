@@ -32,7 +32,7 @@ export type CaneCharges = {
   cane_warp: number;
 };
 import { generateMap, revealAround } from "@/lib/dungeon/map";
-import { adjEnemy, adjShopkeeperInDir, moveEnemies, moveShopkeeper, adj, sameRoom, getRoom } from "@/lib/dungeon/ai";
+import { adjEnemy, moveEnemies, moveShopkeeper, adj, sameRoom, getAllCorridorEntrances } from "@/lib/dungeon/ai";
 import { drawMap, TILE } from "@/lib/dungeon/renderer";
 import {
   sfxHit,
@@ -51,7 +51,7 @@ import {
   stopBGM,
   initDungeonAudio,
 } from "@/lib/dungeon/audio";
-import { ITEMS_DEF, ENEMIES_DEF, MW, MH, SHOPKEEPER_DEF, SHOP_PRICES } from "@/lib/dungeon/constants";
+import { ITEMS_DEF, ENEMIES_DEF, MW, MH, SHOPKEEPER_DEF, SHOP_PRICES, GUARDIAN_DEFS } from "@/lib/dungeon/constants";
 import { speakWord } from "@/lib/audio";
 import { storage } from "@/lib/storage";
 
@@ -163,6 +163,7 @@ export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMo
     shopkeeper: null,
     shopRoomIdx: null,
     stolenItems: [],
+    theftTriggered: false,
     dungeonMode,
     monsterHouseRoomIdx: null,
     playerDir: { dx: 0, dy: 0 },
@@ -214,6 +215,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   const autoWalkPathRef = useRef<{ x: number; y: number }[]>([]);
   const autoWalkTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const doTurnLatestRef = useRef<(dx: number, dy: number) => void>(() => {});
+  const payShopkeeperRef = useRef<() => void>(() => {});
+  const attackShopkeeperRef = useRef<(g: GameState) => void>(() => {});
+  const makeShopkeeperHostileRef = useRef<(g: GameState, reason: string) => void>(() => {});
   const dashDirRef = useRef<{ dx: number; dy: number } | null>(null);
   const dashTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isDashingRef = useRef(false);
@@ -431,7 +435,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       if (g.turn % 4 === 0 && g.p.hp < g.p.mhp) {
         g.p.hp = Math.min(g.p.hp + 1, g.p.mhp);
       }
-      // 空腹度減少: easy=4ターン毎に1、hard=2ターン毎に1
+      // スタミナ減少: easy=4ターン毎に1、hard=2ターン毎に1
       if (g.hunger > 0) {
         const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 2 === 0) : (g.turn % 4 === 0);
         if (decayThisTurn) {
@@ -580,28 +584,28 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxItemUse();
-          notify(`💚 HPが${v}回復！（満腹度+5）`);
+          notify(`💚 HPが${v}回復！（スタミナ+5）`);
           return true;
         }
         case "big_heal": {
           g.p.hp = g.p.mhp;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxItemUse();
-          notify("💚 HPが全回復！（満腹度+5）");
+          notify("💚 HPが全回復！（スタミナ+5）");
           return true;
         }
         case "poison_grass": {
           g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxItemUse();
-          notify("✨ HP+5！（満腹度+5）");
+          notify("✨ HP+5！（スタミナ+5）");
           return true;
         }
         case "power_grass": {
           g.p.atk += 1;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxLevelUp();
-          notify(`⚔️ 攻撃力が${g.p.atk}になった！（満腹度+5）`);
+          notify(`⚔️ 攻撃力が${g.p.atk}になった！（スタミナ+5）`);
           return true;
         }
         case "hp_grass": {
@@ -609,35 +613,35 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           g.p.hp = Math.min(g.p.hp + 3, g.p.mhp);
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxLevelUp();
-          notify(`❤️ 最大HPが${g.p.mhp}になった！（満腹度+5）`);
+          notify(`❤️ 最大HPが${g.p.mhp}になった！（スタミナ+5）`);
           return true;
         }
         case "swift_grass": {
           g.swiftTurns = (g.swiftTurns || 0) + 5;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxItemUse();
-          notify("💨 倍速になった！（5ターン・満腹度+5）");
+          notify("💨 倍速になった！（5ターン・スタミナ+5）");
           return true;
         }
         case "slow_grass": {
           g.playerSlowTurns = (g.playerSlowTurns || 0) + 5;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxWrong();
-          notify("🐢 鈍足になった！（5ターン・満腹度+5）");
+          notify("🐢 鈍足になった！（5ターン・スタミナ+5）");
           return true;
         }
         case "sleep_grass": {
           g.playerSleepTurns = (g.playerSleepTurns || 0) + 3;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxWrong();
-          notify("💤 眠ってしまった！3ターン動けない（満腹度+5）");
+          notify("💤 眠ってしまった！3ターン動けない（スタミナ+5）");
           return true;
         }
         case "confuse_grass": {
           g.playerConfusedTurns = (g.playerConfusedTurns || 0) + 4;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxWrong();
-          notify("🌀 混乱した！4ターン方向が乱れる（満腹度+5）");
+          notify("🌀 混乱した！4ターン方向が乱れる（スタミナ+5）");
           return true;
         }
         case "warp_grass": {
@@ -657,7 +661,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             g.py = ny;
             revealAround(g, nx, ny);
             sfxWarp();
-            notify("✨ ワープした！（満腹度+5）");
+            notify("✨ ワープした！（スタミナ+5）");
             redraw();
           }
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
@@ -682,7 +686,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             hitEnemy2.hp = Math.max(0, hitEnemy2.hp - fdmg);
             addDmgPop(hitEnemy2.x, hitEnemy2.y, "hit", fdmg);
             sfxCrit();
-            notify(`🔥 ${hitEnemy2.name}に${fdmg}ダメージ！（満腹度+5）`);
+            notify(`🔥 ${hitEnemy2.name}に${fdmg}ダメージ！（スタミナ+5）`);
             if (hitEnemy2.hp <= 0) {
               setTimeout(() => { onEnemyDied(g, hitEnemy2!); updateUI(g); redraw(); }, 100);
               g.enemies = g.enemies.filter((en) => en.id !== hitEnemy2!.id);
@@ -690,7 +694,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             redraw();
           } else {
             sfxItemUse();
-            notify("🔥 火炎が空を切った（満腹度+5）");
+            notify("🔥 火炎が空を切った（スタミナ+5）");
           }
           return true;
         }
@@ -865,13 +869,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         case "rice": {
           g.hunger = Math.min(g.hunger + 50, g.maxHunger);
           sfxItemUse();
-          notify("🍙 満腹度が50回復！");
+          notify("🍙 スタミナが50回復！");
           return true;
         }
         case "rice_big": {
           g.hunger = Math.min(g.hunger + 100, g.maxHunger);
           sfxItemUse();
-          notify("🍱 満腹度が全回復！");
+          notify("🍱 スタミナが全回復！");
           return true;
         }
         case "jar_store": {
@@ -1030,13 +1034,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // 店主に体当たり → 話しかける（会計）
       if (g.shopkeeper && g.shopkeeper.hp > 0 && !g.shopkeeper.hostile &&
           g.shopkeeper.x === nx && g.shopkeeper.y === ny) {
-        payShopkeeper();
+        payShopkeeperRef.current();
         return;
       }
       // 敵化店主にぶつかる → 攻撃
       if (g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.hostile &&
           g.shopkeeper.x === nx && g.shopkeeper.y === ny) {
-        attackShopkeeper(g);
+        attackShopkeeperRef.current(g);
         return;
       }
 
@@ -1052,10 +1056,6 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         initiateAttack(g, eAt);
         return;
       }
-
-      // 移動前の位置を保存（泥棒判定用）
-      const prevPx = g.px;
-      const prevPy = g.py;
 
       // 移動
       g.px = nx;
@@ -1110,7 +1110,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
                 g.hunger = Math.max(0, g.hunger - loss);
                 triggerScreenEffect("trap_hunger", false);
                 showEventOverlay(TRAP_OVERLAYS.hunger);
-                trapMsg = `🍂 空腹トラップ！ 空腹度-${loss}！`;
+                trapMsg = `🍂 空腹トラップ！ スタミナ-${loss}！`;
                 break;
               }
             }
@@ -1145,7 +1145,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       }
 
       // ショップタイルチェック: 踏んだら自動で拾い、未払いリストに追加
-      let newShopPrompt: ShopPrompt | null = null;
+      const newShopPrompt: ShopPrompt | null = null;
       if (g.shopItems && g.shopkeeper && g.shopkeeper.hp > 0 && !g.shopkeeper.hostile) {
         const shopIdx = g.shopItems.findIndex((s) => s.x === g.px && s.y === g.py);
         if (shopIdx >= 0) {
@@ -1200,7 +1200,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
                                g.py >= shopRoom.y && g.py < shopRoom.y + shopRoom.h;
           // ショップ部屋から出た瞬間 & 未払いアイテムがある
           if (!playerInShop && g.stolenItems.length > 0) {
-            makeShopkeeperHostile(g, "泥棒め！タダで持ってく気か！");
+            makeShopkeeperHostileRef.current(g, "泥棒め！タダで持ってく気か！");
           }
         }
       }
@@ -1220,25 +1220,77 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // ターン終了後にオートセーブ（辞めた場所から再開できるよう）
       saveGame();
     },
-    [addDmgPop, attackShopkeeper, initiateAttack, makeShopkeeperHostile, payShopkeeper, queueMsg, redraw, runEnemyTurn, saveGame, showEventOverlay, triggerScreenEffect, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
+    [addDmgPop, initiateAttack, queueMsg, redraw, runEnemyTurn, saveGame, showEventOverlay, triggerScreenEffect, uiState.quiz, uiState.quizAnswered, wakeEnemiesInRoom]
   );
 
-  // 店主を敵化させる
+  // 店主を敵化させる + 泥棒時はガーディアン出現
   const makeShopkeeperHostile = useCallback((g: GameState, reason: string) => {
     if (!g.shopkeeper || g.shopkeeper.hostile) return;
     g.shopkeeper.hostile = true;
+
+    const isTheft = reason === "泥棒め！タダで持ってく気か！";
     queueMsg(`🧔💢 ${SHOPKEEPER_DEF.name}「${reason}」`);
-    showEventOverlay({
-      kind: "shopkeeper_rage",
-      title: "🧔💢 ショップキーパーが怒った！",
-      body: reason === "泥棒め！タダで持ってく気か！" ? "未払いの商品を持ってショップを出た！\nショップキーパーが追いかけてくる！" : "ショップキーパーを攻撃してしまった！\nショップキーパーが本気で怒っている！",
-      color: "#cc2222",
-      icon: "💢",
-      autoClose: 2500,
-    });
+
+    // 泥棒時: ガーディアンを廊下入口に配置
+    if (isTheft && !g.theftTriggered) {
+      g.theftTriggered = true;
+      const entrances = getAllCorridorEntrances(g);
+      // プレイヤーから遠い入口を優先（逃げ道を塞ぐように配置）
+      const sorted = entrances
+        .filter((e) => !(e.x === g.px && e.y === g.py))
+        .filter((e) => !g.enemies.find((en) => en.x === e.x && en.y === e.y))
+        .sort((a, b) => {
+          const da = Math.abs(a.x - g.px) + Math.abs(a.y - g.py);
+          const db = Math.abs(b.x - g.px) + Math.abs(b.y - g.py);
+          return db - da; // 遠い順
+        });
+      // 3〜4体のガーディアンを配置
+      const guardianCount = 3 + (g.floor >= 4 ? 1 : 0);
+      let eid = g.enemies.reduce((max, e) => Math.max(max, e.id), 0) + 1;
+      let spawned = 0;
+      for (const pos of sorted) {
+        if (spawned >= guardianCount) break;
+        const tmpl = GUARDIAN_DEFS[spawned % GUARDIAN_DEFS.length];
+        g.enemies.push({
+          ...tmpl,
+          hp: tmpl.mhp,
+          x: pos.x,
+          y: pos.y,
+          id: eid++,
+          alert: true, // 最初から追跡モード
+          sleeping: false,
+          confused: 0,
+          sealed: 0,
+          wanderTarget: null,
+          lastDx: undefined,
+          lastDy: undefined,
+          stuckCount: 0,
+        });
+        spawned++;
+      }
+      queueMsg(`🛡️ ガーディアンが${spawned}体出現した！階段まで逃げろ！`);
+      showEventOverlay({
+        kind: "shopkeeper_rage",
+        title: "🚨 泥棒警報！",
+        body: `未払いの商品を持って逃走した！\nガーディアン${spawned}体が出現！\nアイテムを駆使して階段まで脱出せよ！`,
+        color: "#cc2222",
+        icon: "🚨",
+        autoClose: 3000,
+      });
+    } else {
+      showEventOverlay({
+        kind: "shopkeeper_rage",
+        title: "🧔💢 ショップキーパーが怒った！",
+        body: "ショップキーパーを攻撃してしまった！\nショップキーパーが本気で怒っている！",
+        color: "#cc2222",
+        icon: "💢",
+        autoClose: 2500,
+      });
+    }
     sfxRecv();
     triggerScreenEffect("recv", true);
-  }, [queueMsg, showEventOverlay, triggerScreenEffect]);
+    redraw();
+  }, [queueMsg, redraw, showEventOverlay, triggerScreenEffect]);
 
   // 店主に攻撃（クイズなし — 直接ダメージ）
   const attackShopkeeper = useCallback((g: GameState) => {
@@ -2083,6 +2135,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       shopkeeper: (raw as Partial<GameState>).shopkeeper ?? null,
       shopRoomIdx: (raw as Partial<GameState>).shopRoomIdx ?? null,
       stolenItems: (raw as Partial<GameState>).stolenItems ?? [],
+      theftTriggered: (raw as Partial<GameState>).theftTriggered ?? false,
       dungeonMode: raw.dungeonMode ?? "easy",
       monsterHouseRoomIdx: raw.monsterHouseRoomIdx ?? null,
       // 旧セーブには explored がないため全開示でマイグレーション
@@ -2180,6 +2233,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   useEffect(() => {
     doTurnLatestRef.current = doTurn;
   }, [doTurn]);
+
+  // 店主関連のref更新
+  useEffect(() => {
+    payShopkeeperRef.current = payShopkeeper;
+    attackShopkeeperRef.current = attackShopkeeper;
+    makeShopkeeperHostileRef.current = makeShopkeeperHostile;
+  }, [payShopkeeper, attackShopkeeper, makeShopkeeperHostile]);
 
   const pickUpFloorItem = useCallback(() => {
     const g = gameRef.current;

@@ -311,6 +311,7 @@ export function generateMap(g: GameState): void {
   g.shopkeeper = null;
   g.shopRoomIdx = null;
   g.stolenItems = [];
+  g.theftTriggered = false;
   if (g.floor >= 2 && rooms.length >= 3) {
     const excludedRoomIdx = g.monsterHouseRoomIdx ?? -1;
     const candidateIdxs: number[] = [];
