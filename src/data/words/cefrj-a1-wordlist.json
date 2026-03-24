@@ -1,0 +1,5822 @@
+[
+  {
+    "headword": "'m",
+    "pos": "be-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "'re",
+    "pos": "be-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "'s",
+    "pos": "be-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "a",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "a.m./A.M./am/AM",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "about",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "about",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "above",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "above",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "action",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "activity",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "actor",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "add",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "address",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "afraid",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "after",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "afternoon",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "again",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "age",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ago",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "agree",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "airplane/aeroplane",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "airport",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "album",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "all",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "all",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "all right",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "all right",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "almost",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "alone",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "along",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "already",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "also",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "always",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "am",
+    "pos": "be-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "an",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "and",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "angry",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "animal",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "another",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "answer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "answer",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "any",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "any",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "anybody",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "anyone",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "anything",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "apple",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "April",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "apron",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "are",
+    "pos": "be-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "arm",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "around",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "arrive",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "art",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "article",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "as",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ask",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "at",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "August",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "aunt",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "autumn",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "awake",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "away",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "baby",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "back",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "back",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bad",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bag",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ball",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "banana",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "band",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bank",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bar",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "baseball",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "basketball",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bat",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bath",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bathroom",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "be",
+    "pos": "be-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "beach",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bean",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bear",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "beautiful",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "because",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "become",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bed",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bedroom",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bee",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "beef",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "before",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "before",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "begin",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "behind",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "behind",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "believe",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bell",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "below",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "below",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "beside",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "best",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "best",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "better",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "between",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bicycle",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "big",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bike",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bird",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "birth",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "birthday",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "biscuit",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "black",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "black",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "blank",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "block",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "blow",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "blue",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "blue",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "board",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "boat",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "body",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bone",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "book",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bookstore",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "boring",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "borrow",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "both",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "both",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "both",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bottle",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bottom",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bowl",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "box",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "boy",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "boyfriend",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "brain",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bread",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "break",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "breakfast",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "breathe",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bridge",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bright",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bring",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "broken",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "brother",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "brown",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "brush",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "brush",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bucket",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "build",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "building",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "burger",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bus",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "business",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "busy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "but",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "butter",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "butterfly",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "button",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "buy",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "by",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "bye",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cafe/café",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cake",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "call",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "camera",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "camp",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "can",
+    "pos": "modal auxiliary",
+    "cefr": "A1"
+  },
+  {
+    "headword": "candy",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cap",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "car",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "card",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "care",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "careful",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "carefully",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "carry",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cartoon",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "case",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cat",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "catch",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "catch",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "CD",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "CD player",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "celebrate",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "celebration",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "chair",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "change",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "change",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "character",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "check",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cheese",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "chicken",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "child",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "chocolate",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "choose",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "church",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cinema",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "circle",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "city",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "class",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "classmate",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "classroom",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "clean",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "clean",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "clever",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "climb",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "clock",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "close",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "close",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "closed",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cloth",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "clothes",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cloud",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cloudy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "club",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "coach",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "coat",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "code",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "coffee",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "coke",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cold",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cold",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "collect",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "collection",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "college",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "color/colour",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "color/colour",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "come",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "computer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "concert",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "contest",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "conversation",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cook",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cook",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cookie",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cool",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cop",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "copy",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "corn",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "corner",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "correct",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "couch",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "could",
+    "pos": "modal auxiliary",
+    "cefr": "A1"
+  },
+  {
+    "headword": "course",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cousin",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cover",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cow",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cream",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "credit card",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cry",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "culture",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cup",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cut",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "cute",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dad",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "daddy",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dance",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dance",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dancing",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dark",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "date",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "daughter",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "day",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dear",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "December",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "delicious",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "describe",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "design",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "desk",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dictionary",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "did",
+    "pos": "do-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "difference",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "different",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "difficult",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dig",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dining room",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dinner",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dirty",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "discuss",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dish",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "do",
+    "pos": "do-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "doctor/Dr./Dr",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "does",
+    "pos": "do-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dog",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "doing",
+    "pos": "do-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "doll",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dollar",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "door",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "down",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "drama",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "draw",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dream",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dress",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "drink",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "drink",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "drive",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "driver",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "drop",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "drum",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "dry",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "due",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "DVD",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "each",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "each",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "each other",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ear",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "early",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "easy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "eat",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "egg",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "eight",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "eighteen",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "eighty",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "either",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "elementary",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "eleven",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "else",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "email/e-mail/E-mail",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "end",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "engineer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "enjoy",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "evening",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "event",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "every",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "everybody",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "everyday",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "everyone",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "everything",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "everywhere",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "example",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "excellent",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "excited",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "exciting",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "excuse",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "exercise",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "expensive",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "eye",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "face",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "factory",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fair",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fairy",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "false",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "family",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "famous",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fan",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "farm",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "farmer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fast",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fast",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fat",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "father",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "favorite/favourite",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "favorite/favourite",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "February",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "feed",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "feel",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "feeling",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "festival",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fever",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "field",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fifteen",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fifty",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fight",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "file",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fill",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "find",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fine",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "finish",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "finish",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fire",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "first",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "first",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fish",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fishing",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "five",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "flag",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "flat",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "floor",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "flower",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fly",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fly",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "focus",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "foggy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "following",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "food",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "football",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "for",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "foreign",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "foreigner",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "forget",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "form",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "forty",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "four",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fourteen",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "free",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Friday",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "friend",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "frog",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "from",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "front",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fruit",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "full",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fun",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "fun",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "funny",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "future",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "game",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "garbage",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "garden",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "get",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ghost",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "gift",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "girl",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "girlfriend",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "give",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "glad",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "glass",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "glasses",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "go",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "goal",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "gold",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "good",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "good afternoon",
+    "pos": "interjection",
+    "cefr": "A1"
+  },
+  {
+    "headword": "good morning",
+    "pos": "interjection",
+    "cefr": "A1"
+  },
+  {
+    "headword": "good night",
+    "pos": "interjection",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grade",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grammar",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grandfather",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grandma",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grandmother",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grandpa",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grandparent",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grape",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grass",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "gray/grey",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "gray/grey",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "great",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "green",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "greet",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ground",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "group",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "grow",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "guess",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "guest",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "guitar",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "guy",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "habit",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "had",
+    "pos": "have-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hair",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "haircut",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "half",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hall",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hamburger",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hand",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "handsome",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "happen",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "happy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hard",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hard",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "has",
+    "pos": "have-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hat",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "have",
+    "pos": "have-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "have to",
+    "pos": "modal auxiliary",
+    "cefr": "A1"
+  },
+  {
+    "headword": "he",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "head",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "headache",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "health",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "healthy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hear",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "heart",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "heavy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hello",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "help",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "her",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "her",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "here",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hers",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hi",
+    "pos": "interjection",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hide",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "high",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hill",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "him",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "his",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "his",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "history",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hobby",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hold",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hole",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "holiday",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "home",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hometown",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "homework",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hope",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "horse",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hospital",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hot",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hotel",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hour",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "house",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "how",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hungry",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hurry",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "hurt",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "husband",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "I",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ice",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ice cream",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "idea",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ideal",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "if",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "imagine",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "important",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "in",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "information",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "inside",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "interested",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "interesting",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Internet/internet",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "interview",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "interviewer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "into",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "introduce",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "is",
+    "pos": "be-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "island",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "it",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "item",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "its",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "its",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "jacket",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "January",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "jeans",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "jet",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "jewelry/jewellery",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "job",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "join",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "judge",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "juice",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "July",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "jump",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "June",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "just",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "keep",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "key",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "key",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "kick",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "kick",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "kid",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "kill",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "kind",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "king",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "kiss",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "kitchen",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "kite",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "knee",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "knife",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "know",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lady",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "language",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "large",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "last name",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "late",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "late",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "later",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "laugh",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lazy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "leader",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "leaf",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "learn",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "leave",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "left",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "leg",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lesson",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "let",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "letter",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "library",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "life",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "light",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "light",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "like",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "like",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lily",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "line",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lion",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "list",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "listen",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "little",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "little",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "live",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "living",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "living room",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lonely",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "long",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "look",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "look",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lot",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lot",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "love",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "love",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lovely",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "luck",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lucky",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "lunch",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "machine",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "magazine",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mail",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "make",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "man",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "many",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "many",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "map",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "March",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "match",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "math/maths",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "matter",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "may",
+    "pos": "modal auxiliary",
+    "cefr": "A1"
+  },
+  {
+    "headword": "May",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "maybe",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "me",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "meal",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mean",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "meat",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "medicine",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "meet",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "meeting",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "memory",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "merry",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "message",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "middle",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "milk",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mind",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mine",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "minute",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Miss",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "miss",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mobile",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mobile phone",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mom",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "moment",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mommy/mommie",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Monday",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "money",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "monkey",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "month",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "moon",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "more",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "more",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "morning",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "most",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mother",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mountain",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mouse",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mouth",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "move",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "movie",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Mr./Mr",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Mrs./Mrs",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "much",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "much",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "much",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "mum",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "music",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "musician",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "must",
+    "pos": "modal auxiliary",
+    "cefr": "A1"
+  },
+  {
+    "headword": "my",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "name",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "nationality",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "near",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "neck",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "need",
+    "pos": "modal auxiliary",
+    "cefr": "A1"
+  },
+  {
+    "headword": "neighbor/neighbour",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "never",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "new",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "news",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "newspaper",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "nice",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "night",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "nine",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "nineteen",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ninety",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "no",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "no",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "noise",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "nose",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "not",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "note",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "note",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "notebook",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "nothing",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "November",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "now",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "number",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "nurse",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "o'clock",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "October",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "of",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "off",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "office",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "officer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "often",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "OK/okay",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "OK/okay",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "old",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Olympics",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "on",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "once",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "one",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "one",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "only",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "only",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "open",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "open",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "opera",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "or",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "orange",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "orange",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "order",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "other",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "our",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ours",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "out",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "outside",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "over",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "own",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "owner",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "p.m./P.M./pm/PM",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "page",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "paint",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "paint",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "painting",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pair",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "palace",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pants",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "paper",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "paragraph",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pardon",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "parent",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "park",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "partner",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "party",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "past",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "past",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pay",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pay",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "peace",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pen",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pencil",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "people",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "period",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "person",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "personal",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pet",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "phone",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "phone",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "photo",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "piano",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pick",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "picnic",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "picture",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "piece",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pig",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pink",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pizza",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "place",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "plan",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "plane",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "play",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "play",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "player",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "please",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pleasure",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pocket",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "poem",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "point",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pollution",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pool",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "poor",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pop",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "post",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "poster",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "potato",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "practice",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "practice/practise",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pray",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "present",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "pretty",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "price",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "prince",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "princess",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "problem",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "program/programme",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "purple",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "push",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "put",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "quarter",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "question",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "quickly",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "quiet",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rabbit",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "radio",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rain",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rain",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rainy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rat",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "read",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "reader",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "reading",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ready",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "real",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "real",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "really",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "reason",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "red",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "remember",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "repeat",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "reporter",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "restaurant",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "result",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "review",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ribbon",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rice",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rich",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ride",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ride",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "right",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "right",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ring",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "river",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "role",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "room",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rose",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "row",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rude",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "rule",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ruler",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "run",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "run",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sad",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sailor",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "salad",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sale",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "same",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "same",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "same",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sandwich",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Saturday",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "save",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "saw",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "say",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "school",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "science",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "scientist",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sea",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "seat",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "second",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "section",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "see",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "self",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sell",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sentence",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "September",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "set",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "seven",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "seventeen",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "seventy",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "shake",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "share",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "she",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sheep",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "shelf",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ship",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "shirt",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "shoe",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "shop",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "shopping",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "short",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "short",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "should",
+    "pos": "modal auxiliary",
+    "cefr": "A1"
+  },
+  {
+    "headword": "shoulder",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "show",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "shower",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "shy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sick",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "side",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sight",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sign",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sing",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "singer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sir",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sister",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sit",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "site",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "six",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sixteen",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sixty",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "size",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "skill",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "skirt",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sky",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sleep",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "slow",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "small",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "smart",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "smell",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "smile",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "smith",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "smoke",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "smoking",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "snake",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "snow",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "snowy",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "so",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "soccer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "social",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sofa",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "solve",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "some",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "some",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "someone",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "something",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "son",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "song",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "soon",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sorry",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "soup",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "speak",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "special",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "speech",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "spell",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "spend",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sport",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "spot",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "spring",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "spy",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "stage",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "stand",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "star",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "start",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "start",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "station",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "stay",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "step",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "still",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "stone",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "stop",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "stop",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "store",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "story",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "straight",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "strange",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "street",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "strict",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "strong",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "student",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "study",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "subject",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "subway",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "successful",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sugar",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "suggestion",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sum",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "summer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sun",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Sunday",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sunny",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sunshine",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "super",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "supermarket",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sure",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "surf",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "surprise",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "survey",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "sweet",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "swim",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "swim",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "swimming",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "swimming pool",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "T-shirt/tee-shirt",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "table",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "take",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "talk",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tall",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "taxi",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tea",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "teach",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "teacher",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "team",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "technology",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "telephone",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "television",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tell",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "temple",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ten",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tennis",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "terrible",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "test",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "than",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "than",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "thank",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "thanks",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "that",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "that",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "that",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "the",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "theater/theatre",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "their",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "them",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "then",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "there",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "these",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "these",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "they",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "thick",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "thin",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "thing",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "think",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "thirteen",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "thirty",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "this",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "this",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "those",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "those",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "three",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "through",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "throw",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Thursday",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ticket",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tiger",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tight",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "time",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tired",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "to",
+    "pos": "infinitive-to",
+    "cefr": "A1"
+  },
+  {
+    "headword": "to",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "today",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "today",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "together",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "toilet",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tomato",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tomorrow",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tomorrow",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tonight",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "too",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tool",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tooth",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "top",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "topic",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "touch",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "towel",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tower",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "town",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "toy",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "train",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "travel",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tree",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "trip",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "trousers",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "truck",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "true",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "try",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "tube",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Tuesday",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "turkey",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "turn",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "turn",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "TV",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "twelve",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "twenty",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "two",
+    "pos": "number",
+    "cefr": "A1"
+  },
+  {
+    "headword": "type",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "ugly",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "umbrella",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "uncle",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "under",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "underline",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "until",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "up",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "us",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "use",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "usually",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "vacation",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "vase",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "vegetable",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "very",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "video",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "visit",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "visit",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "volleyball",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "vote",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wait",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "waiter",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "waitress",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wake",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "walk",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "walk",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wall",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "want",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "war",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "warm",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "was",
+    "pos": "be-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wash",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wash",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "watch",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "watch",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "water",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "way",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "we",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wear",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "weather",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "Wednesday",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "week",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "weekend",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "welcome",
+    "pos": "interjection",
+    "cefr": "A1"
+  },
+  {
+    "headword": "welcome",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "well",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "well",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "were",
+    "pos": "be-verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "what",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "what",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wheel",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "when",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "when",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "where",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "where",
+    "pos": "conjunction",
+    "cefr": "A1"
+  },
+  {
+    "headword": "which",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "which",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "white",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "white",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "who",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "whose",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "whose",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "why",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wife",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "will",
+    "pos": "modal auxiliary",
+    "cefr": "A1"
+  },
+  {
+    "headword": "win",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wind",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "window",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "winter",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wish",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "with",
+    "pos": "preposition",
+    "cefr": "A1"
+  },
+  {
+    "headword": "woman",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wonderful",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "word",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "work",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "work",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "worker",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "world",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "worry",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "would",
+    "pos": "modal auxiliary",
+    "cefr": "A1"
+  },
+  {
+    "headword": "write",
+    "pos": "verb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "writer",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "wrong",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "yard",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "year",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "yellow",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "yellow",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "yes",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "yesterday",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "yet",
+    "pos": "adverb",
+    "cefr": "A1"
+  },
+  {
+    "headword": "yogurt/yoghurt",
+    "pos": "noun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "you",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "young",
+    "pos": "adjective",
+    "cefr": "A1"
+  },
+  {
+    "headword": "your",
+    "pos": "determiner",
+    "cefr": "A1"
+  },
+  {
+    "headword": "yours",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "yourself",
+    "pos": "pronoun",
+    "cefr": "A1"
+  },
+  {
+    "headword": "zoo",
+    "pos": "noun",
+    "cefr": "A1"
+  }
+]

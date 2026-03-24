@@ -140,12 +140,17 @@
 {
   id: number,            // ユニークID（コース別ID範囲）
   word: string,          // 英単語（小文字統一。フレーズも可）
-  meaning: string,       // 日本語の意味（自作。簡潔に）
+  meaning: string,       // 日本語の意味（自作。簡潔に10文字以内が理想）
   partOfSpeech: string,  // 品詞: "noun" | "verb" | "adjective" | "adverb" | "other"
   course: string,        // コース名
   stage: string,         // ステージ
-  example: string,       // 例文（自作。品質基準に従う）
-  exampleJa: string,     // 例文和訳（自作。自然な日本語）
+  example: string,       // メイン例文（自作。クイズ出題時のデフォルト）
+  exampleJa: string,     // メイン例文の和訳（自作。自然な日本語）
+  examples: [            // 例文3件（必須。クイズ・ダンジョンでランダム出題に使用）
+    { en: string, ja: string, context: string },  // 例文1（= example/exampleJaと同じ）
+    { en: string, ja: string, context: string },  // 例文2（異なる場面）
+    { en: string, ja: string, context: string },  // 例文3（異なる場面）
+  ],
   difficulty: number,    // 難易度 1-7（course + stage から自動計算）
   category: string,      // 主カテゴリ（categories[0]と一致）
   categories: string[],  // 複数カテゴリ（必須。最低1つ）
@@ -153,6 +158,17 @@
   source: string,        // データ出典（"CEFR-J" / "NGSL" / "TSL" / "original" 等）
 }
 ```
+
+### 4.2 例文3件のランダム出題仕様
+
+各単語に**3件の例文**を用意し、クイズ・ダンジョンのクイズ戦闘で**ランダムに1件を選んで出題**する。
+
+- `example` / `exampleJa`: メイン例文（1件目）。リスニング・ディクテーション等で使用
+- `examples[]`: 3件の例文配列。`examples[0]` はメイン例文と同一
+- クイズ出題時: `examples` からランダムに1件を選択して出題する
+- 同じ単語でも出題ごとに異なる例文が表示されるため、学習の単調化を防ぐ
+- 各例文は**異なる使用場面（context）**で作成し、単語の多面的な理解を促す
+- `context` の値: "学校" / "家庭" / "会話" / "買い物" / "旅行" / "スポーツ" 等
 
 ### 4.2 ID範囲
 
@@ -164,12 +180,12 @@
 | eiken | 40000-49999 |
 | conversation | 70000-79999 |
 
-### 4.3 充足率の目標
+### 4.4 充足率の目標
 
 | フィールド | 目標 |
 |-----------|------|
-| example | **100%**（未設定は不許可） |
-| exampleJa | **100%**（未設定は不許可） |
+| example / exampleJa | **100%**（未設定は不許可） |
+| examples[]（3件） | **100%**（全単語に3件必須） |
 | categories[] | **100%**（最低1カテゴリ必須） |
 | frequencyRank | **100%** |
 | source | **100%**（データ出自の透明性担保） |
