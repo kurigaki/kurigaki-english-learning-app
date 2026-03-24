@@ -484,30 +484,48 @@ export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
   const px = g.px;
   const py = g.py;
 
-  // 敵化店主: 倍速（2回行動）、移動2回後は攻撃しない
-  let moveCount = 0;
+  // diagMove に応じた方向セット（通常敵と同じルール）
+  const DIRS: [number, number][] = g.diagMove
+    ? [[0, -1], [0, 1], [-1, 0], [1, 0], [-1, -1], [1, -1], [-1, 1], [1, 1]]
+    : [[0, -1], [0, 1], [-1, 0], [1, 0]];
+
+  // 隣接判定（diagMove OFF 時はナナメ隣接を無視）
+  const isAdj = (ax: number, ay: number, bx: number, by: number): boolean => {
+    const ddx = Math.abs(ax - bx);
+    const ddy = Math.abs(ay - by);
+    if (ddx > 1 || ddy > 1) return false;
+    if (ddx === 0 && ddy === 0) return false;
+    if (!g.diagMove && ddx !== 0 && ddy !== 0) return false; // ナナメ隣接は不可
+    // ナナメ時はコーナーカットチェック
+    if (ddx !== 0 && ddy !== 0) {
+      if (g.map[ay][ax + (bx - ax)] === W || g.map[ay + (by - ay)][ax] === W) return false;
+    }
+    return true;
+  };
+
+  // 敵化店主: 倍速（2回行動）。各アクションは「移動」か「攻撃」のどちらか1つ
   for (let action = 0; action < 2; action++) {
     if (sk.hp <= 0) break;
 
-    // 隣接していれば攻撃（移動で2アクション使い切ったら攻撃不可）
-    if (adj(sk.x, sk.y, px, py)) {
-      if (moveCount >= 2) break;
+    // 隣接していれば攻撃（1アクション消費）
+    if (isAdj(sk.x, sk.y, px, py)) {
       const dmg = Math.max(1, sk.atk - 1 + Math.floor(Math.random() * 3));
       g.p.hp = Math.max(0, g.p.hp - dmg);
       results.push({ hit: true, damage: dmg, killedPlayer: g.p.hp <= 0 });
-      continue;
+      continue; // このアクションは攻撃で消費 → 次のアクションへ
     }
 
-    // BFS追跡（敵リストとの衝突を避ける）
+    // 隣接していなければ移動（1アクション消費）
     const key = (x: number, y: number) => y * MW + x;
     const visited = new Set<number>([key(sk.x, sk.y)]);
-    const DIRS: [number, number][] = [[0, -1], [0, 1], [-1, 0], [1, 0], [-1, -1], [1, -1], [-1, 1], [1, 1]];
     const queue: [number, number, number, number][] = [];
     for (const [dx, dy] of DIRS) {
       const nx = sk.x + dx;
       const ny = sk.y + dy;
       if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
       if (g.map[ny][nx] === W) continue;
+      // ナナメ移動時のコーナーカット防止
+      if (dx !== 0 && dy !== 0 && !canMoveDiag(g, sk.x, sk.y, dx, dy)) continue;
       if (g.enemies.find((o) => o.x === nx && o.y === ny)) continue;
       if (nx === px && ny === py) continue;
       if (!visited.has(key(nx, ny))) {
@@ -525,6 +543,7 @@ export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
         const ny = cy + dy;
         if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
         if (g.map[ny][nx] === W) continue;
+        if (dx !== 0 && dy !== 0 && !canMoveDiag(g, cx, cy, dx, dy)) continue;
         if (!visited.has(key(nx, ny))) {
           visited.add(key(nx, ny));
           queue.push([nx, ny, fx, fy]);
@@ -534,8 +553,8 @@ export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
     if (nextStep) {
       sk.x = nextStep[0];
       sk.y = nextStep[1];
-      moveCount++;
     }
+    // 移動後は攻撃しない（次のアクションで攻撃判定される）
   }
 
   return results;

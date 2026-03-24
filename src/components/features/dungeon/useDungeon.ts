@@ -1373,11 +1373,15 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       setUiState((prev) => ({ ...prev, msg, msgLog: [msg, ...prev.msgLog].slice(0, 6) }));
       return;
     }
-    // 向いている方向に店主がいれば店主を攻撃
+    // 向いている方向に店主がいれば: 非敵化→会計、敵化→攻撃
     if ((pd !== 0 || pdy !== 0) && !(isDiagDir && !g.diagMove) && !diagBlocked(pd, pdy)) {
       if (g.shopkeeper && g.shopkeeper.hp > 0 &&
           g.shopkeeper.x === g.px + pd && g.shopkeeper.y === g.py + pdy) {
-        attackShopkeeper(g);
+        if (!g.shopkeeper.hostile) {
+          payShopkeeperRef.current();
+        } else {
+          attackShopkeeper(g);
+        }
         return;
       }
     }
@@ -1404,13 +1408,17 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         if (en) { found = { e: en, dx: d.dx, dy: d.dy }; break; }
       }
       if (!found) {
-        // 店主への攻撃チェック
+        // 店主チェック: 非敵化→会計、敵化→攻撃
         if (g.shopkeeper && g.shopkeeper.hp > 0) {
           for (const d of DIRS) {
             if (diagBlocked(d.dx, d.dy)) continue;
             if (g.shopkeeper.x === g.px + d.dx && g.shopkeeper.y === g.py + d.dy) {
               g.playerDir = { dx: d.dx, dy: d.dy };
-              attackShopkeeper(g);
+              if (!g.shopkeeper.hostile) {
+                payShopkeeperRef.current();
+              } else {
+                attackShopkeeper(g);
+              }
               return;
             }
           }
@@ -1616,11 +1624,17 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         return;
       }
 
-      // 投擲軌道計算：直線上の最初の敵にヒット
+      // 投擲軌道計算：直線上の最初の敵 or 店主にヒット
       let tx = g.px + dir.dx;
       let ty = g.py + dir.dy;
       let hitEnemy: Enemy | null = null;
+      let hitShopkeeper = false;
       while (tx >= 0 && tx < MW && ty >= 0 && ty < MH && g.map[ty][tx] !== 0) {
+        // 店主衝突チェック
+        if (g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.x === tx && g.shopkeeper.y === ty) {
+          hitShopkeeper = true;
+          break;
+        }
         const e = g.enemies.find((e) => e.x === tx && e.y === ty);
         if (e) { hitEnemy = e; break; }
         tx += dir.dx;
@@ -1629,6 +1643,25 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // 最後の有効タイル（壁の直前）
       const landX = tx - dir.dx;
       const landY = ty - dir.dy;
+
+      // 店主に当たった場合: ダメージ + 敵化
+      if (hitShopkeeper && g.shopkeeper) {
+        item.count--;
+        closeItems();
+        const dmg = 3;
+        g.shopkeeper.hp = Math.max(0, g.shopkeeper.hp - dmg);
+        addDmgPop(g.shopkeeper.x, g.shopkeeper.y, "hit", dmg);
+        queueMsg(`⚔️ ${SHOPKEEPER_DEF.name}にアイテムが当たった！（${dmg}ダメージ）`);
+        if (!g.shopkeeper.hostile) {
+          makeShopkeeperHostileRef.current(g, "何を投げてやがる！覚悟しろ！");
+        }
+        if (g.shopkeeper.hp <= 0) {
+          queueMsg(`⚔️ ${SHOPKEEPER_DEF.name}を倒した！`);
+        }
+        runEnemyTurn(g);
+        saveGame();
+        return;
+      }
 
       item.count--;
       closeItems();
@@ -1809,7 +1842,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       runEnemyTurn(g);
       saveGame();
     },
-    [addDmgPop, closeItems, onEnemyDied, redraw, runEnemyTurn, saveGame, showNotification, updateUI]
+    [addDmgPop, closeItems, onEnemyDied, queueMsg, redraw, runEnemyTurn, saveGame, showNotification, updateUI]
   );
 
   const closeJar = useCallback(() => {

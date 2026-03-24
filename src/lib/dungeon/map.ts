@@ -123,6 +123,19 @@ function digCorridorBFS(
         if (nearRoom) continue;
         // 部屋の角を回避
         if (cornerSet.has(nk)) continue;
+        // 2×2歩行可能ブロック防止（廊下の並行を防ぐ。交差はOK）
+        let creates2x2 = false;
+        for (const [by, bx] of [[-1, -1], [-1, 0], [0, -1], [0, 0]] as [number, number][]) {
+          let walkable = 0;
+          for (const [oy, ox] of [[0, 0], [0, 1], [1, 0], [1, 1]] as [number, number][]) {
+            const tx = nx + bx + ox, ty = ny + by + oy;
+            if (tx < 0 || tx >= MW || ty < 0 || ty >= MH) { walkable = -4; break; }
+            if (tx === nx && ty === ny) { walkable++; continue; } // 配置予定タイル
+            if (m[ty][tx] !== W) walkable++; // R or C
+          }
+          if (walkable >= 4) { creates2x2 = true; break; }
+        }
+        if (creates2x2) continue;
       }
 
       parent.set(nk, key(cx, cy));
