@@ -28,6 +28,13 @@ export type Stage =
 // 品詞（5種に簡素化）
 export type PartOfSpeech = "noun" | "verb" | "adjective" | "adverb" | "other";
 
+// 単語の例文（3件ランダム出題用）
+export type WordExampleEntry = {
+  en: string;
+  ja: string;
+  context: string;
+};
+
 // 統一Word型
 // category/categories は string で定義（Category union の組み合わせ爆発を回避）
 // UI表示には categoryLabels を使用し、正しさはテストで保証する
@@ -40,6 +47,7 @@ export type Word = {
   stage: Stage;
   example?: string;
   exampleJa?: string;
+  examples?: WordExampleEntry[]; // 例文3件（クイズ・ダンジョンでランダム出題）
   difficulty: Difficulty;
   category: string;
   categories?: string[];
