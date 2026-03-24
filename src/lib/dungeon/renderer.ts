@@ -615,7 +615,7 @@ function drawGremlin(ctx: CanvasRenderingContext2D, x: number, y: number): void 
 }
 
 function drawSlime(ctx: CanvasRenderingContext2D, x: number, y: number): void {
-  // ドラクエ風スライム：丸いドーム＋先端のツノ
+  // スライム：丸いドーム＋先端のツノ
   const cx = x + TILE / 2;
   const bodyY = y + 20; // 体の中心Y
   // 影
