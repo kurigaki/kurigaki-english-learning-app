@@ -50,74 +50,87 @@ function isRoomEntrance(m: TileType[][], x: number, y: number): boolean {
   return false;
 }
 
-/** BFS: 全部屋が連結しているか確認 */
-function isAllRoomsConnected(m: TileType[][], rooms: { x: number; y: number; w: number; h: number }[]): boolean {
-  if (rooms.length === 0) return true;
-  const s = rooms[0];
-  const sx = s.x + Math.floor(s.w / 2);
-  const sy = s.y + Math.floor(s.h / 2);
-  const visited = new Set<number>([sy * MW + sx]);
-  const queue: [number, number][] = [[sx, sy]];
-  while (queue.length > 0) {
-    const [cx, cy] = queue.shift()!;
+/**
+ * BFS廊下掘り: 部屋に隣接しない・部屋の角を避ける1幅経路を探す
+ * 失敗時は false を返す（L字フォールバック用）
+ */
+function digCorridorBFS(
+  m: TileType[][],
+  fromX: number, fromY: number,
+  toX: number, toY: number,
+  rooms: { x: number; y: number; w: number; h: number }[]
+): boolean {
+  const key = (x: number, y: number) => y * MW + x;
+  const endKey = key(toX, toY);
+
+  // Start/End 付近は制約を免除（部屋に隣接していてOK）
+  const exempt = new Set<number>();
+  exempt.add(key(fromX, fromY));
+  exempt.add(endKey);
+  for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+    let nx: number, ny: number;
+    nx = fromX + dx; ny = fromY + dy;
+    if (nx >= 0 && nx < MW && ny >= 0 && ny < MH) exempt.add(key(nx, ny));
+    nx = toX + dx; ny = toY + dy;
+    if (nx >= 0 && nx < MW && ny >= 0 && ny < MH) exempt.add(key(nx, ny));
+  }
+
+  // 部屋の角タイル（頂点の外側4隅）を保護
+  const cornerSet = new Set<number>();
+  for (const room of rooms) {
+    for (const [cx, cy] of [
+      [room.x - 1, room.y - 1], [room.x + room.w, room.y - 1],
+      [room.x - 1, room.y + room.h], [room.x + room.w, room.y + room.h],
+    ] as [number, number][]) {
+      if (cx >= 0 && cx < MW && cy >= 0 && cy < MH) cornerSet.add(key(cx, cy));
+    }
+  }
+
+  const parent = new Map<number, number>();
+  parent.set(key(fromX, fromY), -1);
+  const queue: [number, number][] = [[fromX, fromY]];
+  let head = 0;
+
+  while (head < queue.length) {
+    const [cx, cy] = queue[head++];
+    if (cx === toX && cy === toY) {
+      // パス発見 → 掘る
+      let k: number | undefined = endKey;
+      while (k !== undefined && k !== -1) {
+        const px = k % MW, py = Math.floor(k / MW);
+        if (m[py][px] === W) m[py][px] = C;
+        k = parent.get(k);
+      }
+      return true;
+    }
     for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
       const nx = cx + dx, ny = cy + dy;
       if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
-      if (m[ny][nx] === W) continue;
-      const k = ny * MW + nx;
-      if (visited.has(k)) continue;
-      visited.add(k);
+      const nk = key(nx, ny);
+      if (parent.has(nk)) continue;
+      if (m[ny][nx] !== W) continue; // 壁のみ通過
+
+      if (!exempt.has(nk)) {
+        // 部屋に隣接するタイルを回避
+        let nearRoom = false;
+        for (const [ddx, ddy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+          const ax = nx + ddx, ay = ny + ddy;
+          if (ax >= 0 && ax < MW && ay >= 0 && ay < MH && m[ay][ax] === R) {
+            nearRoom = true;
+            break;
+          }
+        }
+        if (nearRoom) continue;
+        // 部屋の角を回避
+        if (cornerSet.has(nk)) continue;
+      }
+
+      parent.set(nk, key(cx, cy));
       queue.push([nx, ny]);
     }
   }
-  for (const room of rooms) {
-    const rx = room.x + Math.floor(room.w / 2);
-    const ry = room.y + Math.floor(room.h / 2);
-    if (!visited.has(ry * MW + rx)) return false;
-  }
-  return true;
-}
 
-/** 後処理: 2幅の廊下を1幅に縮小 & 部屋入口を1マス幅に制限 */
-function narrowCorridors(m: TileType[][], rooms: { x: number; y: number; w: number; h: number }[]): void {
-  // Pass 1: 2×2 の C ブロックを解消（連結性を維持）
-  let changed = true;
-  while (changed) {
-    changed = false;
-    for (let y = 0; y < MH - 1; y++) {
-      for (let x = 0; x < MW - 1; x++) {
-        if (m[y][x] !== C || m[y][x + 1] !== C || m[y + 1][x] !== C || m[y + 1][x + 1] !== C) continue;
-        for (const [cy, cx] of [[y + 1, x + 1], [y + 1, x], [y, x + 1], [y, x]] as [number, number][]) {
-          m[cy][cx] = W;
-          if (isAllRoomsConnected(m, rooms)) { changed = true; break; }
-          m[cy][cx] = C;
-        }
-      }
-    }
-  }
-
-  // Pass 2: 部屋の各辺に隣接する C タイルが2つ以上あれば1つに絞る
-  for (const room of rooms) {
-    const sides: { x: number; y: number }[][] = [
-      Array.from({ length: room.w }, (_, i) => ({ x: room.x + i, y: room.y - 1 })),
-      Array.from({ length: room.w }, (_, i) => ({ x: room.x + i, y: room.y + room.h })),
-      Array.from({ length: room.h }, (_, i) => ({ x: room.x - 1, y: room.y + i })),
-      Array.from({ length: room.h }, (_, i) => ({ x: room.x + room.w, y: room.y + i })),
-    ];
-    for (const side of sides) {
-      const cTiles = side.filter(({ x, y }) =>
-        x >= 0 && x < MW && y >= 0 && y < MH && m[y][x] === C
-      );
-      if (cTiles.length <= 1) continue;
-      const keepIdx = Math.floor(cTiles.length / 2);
-      for (let i = 0; i < cTiles.length; i++) {
-        if (i === keepIdx) continue;
-        const { x, y } = cTiles[i];
-        m[y][x] = W;
-        if (!isAllRoomsConnected(m, rooms)) m[y][x] = C;
-      }
-    }
-  }
+  return false; // 経路なし
 }
 
 let _trapId = 0;
@@ -271,13 +284,13 @@ export function generateMap(g: GameState): void {
     // 辺を使用済みに
     usedSides.get(fromIdx)!.add(sides.aSide);
     usedSides.get(toIdx)!.add(sides.bSide);
-    // 横優先か縦優先かはA側の辺で決定
-    const hFirst = sides.aSide === "left" || sides.aSide === "right";
-    digCorridor(exitA.x, exitA.y, exitB.x, exitB.y, hFirst);
+    // BFS廊下を試行（部屋隣接・角を自動回避、1幅保証）
+    // 失敗時はL字フォールバック
+    if (!digCorridorBFS(m, exitA.x, exitA.y, exitB.x, exitB.y, rooms)) {
+      const hFirst = sides.aSide === "left" || sides.aSide === "right";
+      digCorridor(exitA.x, exitA.y, exitB.x, exitB.y, hFirst);
+    }
   }
-
-  // 後処理: 廊下を1列化 & 入口を1マス幅に制限
-  narrowCorridors(m, rooms);
 
   // player start
   g.px = rooms[0].x + 1;

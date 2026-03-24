@@ -1859,10 +1859,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       total += SHOP_PRICES[itemId] ?? 0;
     }
     if (g.gold < total) {
-      // 金不足で店主が出口封鎖中 → 泥棒扱いにして脱出を許可
-      makeShopkeeperHostileRef.current(g, `${total}Gが必要だ！金がないなら…泥棒め！`);
-      redraw();
-      saveGame();
+      // 金不足 → メッセージのみ（敵化しない。足元に置いて返却可能）
+      showNotification(`🧔 ショップキーパー「お金が足りないよ！（合計${total}G / 所持${g.gold}G）」`);
       return;
     }
     g.gold -= total;
