@@ -407,13 +407,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
         storage.saveWarehouse(prevWarehouse);
         storage.saveGoldBank(storage.getGoldBank() + g.gold);
-      } else {
-        // 死亡: ゴールドの半分を倉庫に保存（アイテムは失う）
+      } else if (g.dungeonMode === "easy") {
+        // 死亡（easyモード）: ゴールドの半分のみ保存（アイテムは全て失う）
         const savedGold = Math.floor(g.gold / 2);
         if (savedGold > 0) {
           storage.saveGoldBank(storage.getGoldBank() + savedGold);
         }
       }
+      // 死亡（hardモード）: アイテムもゴールドも全て失う（保存なし）
 
       // スコア計算 & 番付登録
       const score = g.floor * 1000 + g.kills * 100 + g.correct * 50
@@ -1858,7 +1859,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       total += SHOP_PRICES[itemId] ?? 0;
     }
     if (g.gold < total) {
-      showNotification(`💰 お金が足りない！（合計${total}G / 所持${g.gold}G）`);
+      // 金不足で店主が出口封鎖中 → 泥棒扱いにして脱出を許可
+      makeShopkeeperHostileRef.current(g, `${total}Gが必要だ！金がないなら…泥棒め！`);
+      redraw();
+      saveGame();
       return;
     }
     g.gold -= total;

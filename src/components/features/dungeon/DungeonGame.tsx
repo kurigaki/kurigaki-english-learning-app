@@ -806,7 +806,7 @@ function DungeonDeathScreen({
           </div>
           {death.rank !== undefined && death.rank <= 50 && (
             <div style={{ fontFamily: "'DotGothic16', sans-serif", fontSize: 14, color: death.rank <= 3 ? DC.gold : DC.accent, marginTop: 2 }}>
-              番付 第{death.rank}位{death.rank <= 3 ? " 🏅" : ""}
+              Record #{death.rank}{death.rank <= 3 ? " 🏅" : ""}
             </div>
           )}
         </div>
@@ -970,28 +970,60 @@ function DungeonDeathScreen({
 function WarehouseSaveNotice({ isCleared }: { isCleared: boolean }) {
   const gold = storage.getGoldBank();
   const items = storage.getWarehouse();
-  if (gold === 0 && items.length === 0) return null;
+  if (isCleared) {
+    // クリア時: 全保存の通知
+    if (gold === 0 && items.length === 0) return null;
+    return (
+      <div style={{
+        marginTop: 6, padding: "6px 12px",
+        background: "rgba(82,210,160,0.12)",
+        border: "1px solid #52d4a040",
+        borderRadius: 6, maxWidth: 320, width: "100%",
+        fontSize: 10, color: DC.text2,
+        fontFamily: "'DotGothic16', sans-serif",
+      }}>
+        <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.gold }}>
+          📦 WAREHOUSE
+        </span>
+        <span style={{ marginLeft: 8 }}>全アイテム&ゴールド保存！</span>
+        {gold > 0 && <span style={{ color: DC.gold, marginLeft: 6 }}>💰{gold}G</span>}
+        {items.length > 0 && (
+          <span style={{ marginLeft: 6 }}>{items.map((it) => it.icon).join("")}</span>
+        )}
+      </div>
+    );
+  }
+  // 死亡時
+  if (gold > 0) {
+    // easyモードでゴールド半分保存された場合
+    return (
+      <div style={{
+        marginTop: 6, padding: "6px 12px",
+        background: "rgba(200,180,60,0.12)",
+        border: "1px solid #c8b43c40",
+        borderRadius: 6, maxWidth: 320, width: "100%",
+        fontSize: 10, color: DC.text2,
+        fontFamily: "'DotGothic16', sans-serif",
+      }}>
+        <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.gold }}>
+          📦 WAREHOUSE
+        </span>
+        <span style={{ marginLeft: 8 }}>ゴールドの半分を保存（easyモード）</span>
+        <span style={{ color: DC.gold, marginLeft: 6 }}>💰{gold}G</span>
+      </div>
+    );
+  }
+  // hardモード死亡: 何も保存されない
   return (
     <div style={{
       marginTop: 6, padding: "6px 12px",
-      background: isCleared ? "rgba(82,210,160,0.12)" : "rgba(200,180,60,0.12)",
-      border: `1px solid ${isCleared ? "#52d4a040" : "#c8b43c40"}`,
+      background: "rgba(224,82,82,0.08)",
+      border: "1px solid #e0525220",
       borderRadius: 6, maxWidth: 320, width: "100%",
-      fontSize: 10, color: DC.text2,
+      fontSize: 10, color: DC.text3,
       fontFamily: "'DotGothic16', sans-serif",
     }}>
-      <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.gold }}>
-        📦 WAREHOUSE
-      </span>
-      <span style={{ marginLeft: 8 }}>
-        {isCleared ? "全アイテム保存！" : "ゴールドの半分を保存"}
-      </span>
-      {gold > 0 && <span style={{ color: DC.gold, marginLeft: 6 }}>💰{gold}G</span>}
-      {items.length > 0 && (
-        <span style={{ marginLeft: 6 }}>
-          {items.map((it) => it.icon).join("")}
-        </span>
-      )}
+      <span>全てのアイテムとゴールドを失った…</span>
     </div>
   );
 }

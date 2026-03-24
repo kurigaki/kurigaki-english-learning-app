@@ -653,7 +653,7 @@ export const storage = {
     return localStorage.getItem(DUNGEON_SAVE_KEY) !== null;
   },
 
-  // ── 番付（ランキング）──────────────────────────────────────────────────────
+  // ── Records（ランキング）─────────────────────────────────────────────────
   getDungeonRankings: (): import("@/lib/dungeon/types").DungeonRanking[] => {
     if (typeof window === "undefined") return [];
     try {
