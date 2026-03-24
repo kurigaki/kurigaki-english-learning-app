@@ -11,7 +11,7 @@ import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL, ensureVoicesLoaded, 
 import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
 import { DUNGEON_MODE_KEY, DUNGEON_DIAG_KEY } from "@/lib/dungeon/constants";
-import { getDungeonLang, setDungeonLang, t, type DungeonLang } from "@/lib/dungeon/i18n";
+import { getDungeonLang, setDungeonLang, type DungeonLang } from "@/lib/dungeon/i18n";
 import { storage, type DungeonRunLog } from "@/lib/storage";
 import { SpeakButton } from "@/components/ui";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
@@ -955,10 +955,42 @@ function DungeonDeathScreen({
           📊 番付
         </button>
       </div>
+      {/* 倉庫保存通知 */}
+      <WarehouseSaveNotice isCleared={death.isCleared} />
+
       {showRanking && (
         <div style={{ width: "100%", maxWidth: 340, flexShrink: 0, marginTop: 4 }}>
           <DungeonRankingList currentScore={death.score} />
         </div>
+      )}
+    </div>
+  );
+}
+
+function WarehouseSaveNotice({ isCleared }: { isCleared: boolean }) {
+  const gold = storage.getGoldBank();
+  const items = storage.getWarehouse();
+  if (gold === 0 && items.length === 0) return null;
+  return (
+    <div style={{
+      marginTop: 6, padding: "6px 12px",
+      background: isCleared ? "rgba(82,210,160,0.12)" : "rgba(200,180,60,0.12)",
+      border: `1px solid ${isCleared ? "#52d4a040" : "#c8b43c40"}`,
+      borderRadius: 6, maxWidth: 320, width: "100%",
+      fontSize: 10, color: DC.text2,
+      fontFamily: "'DotGothic16', sans-serif",
+    }}>
+      <span style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.gold }}>
+        📦 WAREHOUSE
+      </span>
+      <span style={{ marginLeft: 8 }}>
+        {isCleared ? "全アイテム保存！" : "ゴールドの半分を保存"}
+      </span>
+      {gold > 0 && <span style={{ color: DC.gold, marginLeft: 6 }}>💰{gold}G</span>}
+      {items.length > 0 && (
+        <span style={{ marginLeft: 6 }}>
+          {items.map((it) => it.icon).join("")}
+        </span>
       )}
     </div>
   );
@@ -1472,6 +1504,41 @@ function diagDefault(mode: DungeonMode): boolean {
 }
 
 // ─── Title screen ──────────────────────────────────────────────────
+// ── 倉庫情報（タイトル画面に表示） ──────────────────────────────────────
+function WarehouseInfo() {
+  const items = storage.getWarehouse();
+  const gold = storage.getGoldBank();
+  if (items.length === 0 && gold === 0) return null;
+  return (
+    <div style={{
+      marginTop: 8, padding: "8px 14px",
+      background: DC.bg3, border: `1px solid ${DC.accent}40`,
+      borderRadius: 6, maxWidth: 260,
+      fontSize: 10, color: DC.text2,
+      fontFamily: "'DotGothic16', sans-serif",
+    }}>
+      <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.gold, marginBottom: 4 }}>
+        📦 WAREHOUSE
+      </div>
+      {gold > 0 && (
+        <div style={{ color: DC.gold }}>💰 {gold}G</div>
+      )}
+      {items.length > 0 && (
+        <div style={{ marginTop: 2, display: "flex", flexWrap: "wrap", gap: 2 }}>
+          {items.map((it) => (
+            <span key={it.id} title={`${it.name} x${it.count}`}>
+              {it.icon}{it.count > 1 ? `x${it.count}` : ""}
+            </span>
+          ))}
+        </div>
+      )}
+      <div style={{ fontSize: 8, color: DC.text3, marginTop: 4 }}>
+        ↑ 次の冒険に持ち込まれます
+      </div>
+    </div>
+  );
+}
+
 function TitleScreen({
   onStart, onContinue, hasSave,
 }: {
@@ -1772,6 +1839,9 @@ function TitleScreen({
       {loading && (
         <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.text2 }}>読み込み中…</div>
       )}
+
+      {/* 倉庫情報 */}
+      <WarehouseInfo />
 
       {/* 音量ボタン */}
       <button

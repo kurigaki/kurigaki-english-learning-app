@@ -673,6 +673,32 @@ export const storage = {
     return trimmed.findIndex((x) => x === r) + 1; // 1-based rank
   },
 
+  // ── 倉庫（アイテム持ち込み・持ち帰り）──────────────────────────────────────
+  getWarehouse: (): import("@/lib/dungeon/types").InventoryItem[] => {
+    if (typeof window === "undefined") return [];
+    try {
+      const d = localStorage.getItem("dungeon_warehouse");
+      return d ? JSON.parse(d) : [];
+    } catch { return []; }
+  },
+
+  saveWarehouse: (items: import("@/lib/dungeon/types").InventoryItem[]): void => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("dungeon_warehouse", JSON.stringify(items));
+  },
+
+  getGoldBank: (): number => {
+    if (typeof window === "undefined") return 0;
+    try {
+      return parseInt(localStorage.getItem("dungeon_gold_bank") ?? "0", 10) || 0;
+    } catch { return 0; }
+  },
+
+  saveGoldBank: (gold: number): void => {
+    if (typeof window === "undefined") return;
+    localStorage.setItem("dungeon_gold_bank", String(gold));
+  },
+
   // ── ミッション進捗（日/週/月リセット）──────────────────────────────────────
 
   /** ローカル日付文字列 "YYYY-MM-DD" */

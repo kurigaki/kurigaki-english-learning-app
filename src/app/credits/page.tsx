@@ -77,16 +77,18 @@ export default function CreditsPage() {
           </div>
         </section>
 
-        {/* SFX（プレースホルダー） */}
+        {/* SFX */}
         <section className="mb-8">
           <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
             <span className="emoji-icon">🔊</span>
             <span>効果音（SE）</span>
           </h2>
           <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-5">
+            <p className="text-sm text-slate-600 dark:text-slate-300 mb-2">
+              ダンジョン効果音は Web Audio API によるオリジナル生成音と、MP3ファイルの二重構成です。
+            </p>
             <p className="text-sm text-slate-500 dark:text-slate-400">
-              現在のダンジョン効果音は Web Audio API によるオリジナル生成音です。<br />
-              MP3 ファイルを配置した場合はここにクレジットを追加予定です。
+              MP3ファイルが利用できない環境ではオシレーター合成音にフォールバックします。
             </p>
           </div>
         </section>

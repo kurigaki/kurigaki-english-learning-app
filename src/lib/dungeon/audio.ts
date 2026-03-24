@@ -104,6 +104,8 @@ const SFX_KEYS = [
   "sfx_item_get",
   "sfx_item_use",
   "sfx_cane",
+  "sfx_theft_alarm",
+  "sfx_shop_buy",
 ] as const;
 type SfxKey = (typeof SFX_KEYS)[number];
 
@@ -490,6 +492,18 @@ function _playOscSfxByKey(key: SfxKey): void {
       _playOscTone(200, 0.05, 0.2, "sawtooth", 400);
       _playOscTone(350, 0.1, 0.15, "sawtooth", 150, 0.04);
       break;
+    case "sfx_theft_alarm":
+      // 警報音: 高い2音の交互繰り返し
+      [0, 0.15, 0.3, 0.45].forEach((d, i) =>
+        _playOscTone(i % 2 === 0 ? 880 : 660, 0.1, 0.25, "square", undefined, d)
+      );
+      break;
+    case "sfx_shop_buy":
+      // レジ音: 明るいチャリン
+      _playOscTone(1200, 0.04, 0.12, "sine");
+      _playOscTone(1600, 0.05, 0.10, "sine", undefined, 0.05);
+      _playOscTone(2000, 0.03, 0.08, "sine", undefined, 0.10);
+      break;
   }
 }
 
@@ -620,6 +634,8 @@ export function sfxWarp(): void     { playSfx("sfx_warp"); }
 export function sfxItemGet(): void  { playSfx("sfx_item_get"); }
 export function sfxItemUse(): void  { playSfx("sfx_item_use"); }
 export function sfxCane(): void     { playSfx("sfx_cane"); }
+export function sfxTheftAlarm(): void { playSfx("sfx_theft_alarm"); }
+export function sfxShopBuy(): void  { playSfx("sfx_shop_buy"); }
 
 // ── BGM 公開 API ──────────────────────────────────────────────────────────────
 

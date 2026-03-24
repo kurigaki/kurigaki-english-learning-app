@@ -47,6 +47,8 @@ import {
   sfxItemGet,
   sfxItemUse,
   sfxCane,
+  sfxTheftAlarm,
+  sfxShopBuy,
   startBGM,
   stopBGM,
   initDungeonAudio,
@@ -392,6 +394,25 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       });
 
       stopBGM();
+
+      // 倉庫にアイテム・ゴールドを保存
+      if (isCleared) {
+        // クリア: 全アイテムとゴールドを倉庫に保存
+        const prevWarehouse = storage.getWarehouse();
+        for (const item of g.items) {
+          const existing = prevWarehouse.find((w) => w.id === item.id);
+          if (existing) existing.count += item.count;
+          else prevWarehouse.push({ ...item });
+        }
+        storage.saveWarehouse(prevWarehouse);
+        storage.saveGoldBank(storage.getGoldBank() + g.gold);
+      } else {
+        // 死亡: ゴールドの半分を倉庫に保存（アイテムは失う）
+        const savedGold = Math.floor(g.gold / 2);
+        if (savedGold > 0) {
+          storage.saveGoldBank(storage.getGoldBank() + savedGold);
+        }
+      }
 
       // スコア計算 & 番付登録
       const score = g.floor * 1000 + g.kills * 100 + g.correct * 50
@@ -1287,7 +1308,11 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         autoClose: 2500,
       });
     }
-    sfxRecv();
+    if (isTheft) {
+      sfxTheftAlarm();
+    } else {
+      sfxRecv();
+    }
     triggerScreenEffect("recv", true);
     redraw();
   }, [queueMsg, redraw, showEventOverlay, triggerScreenEffect]);
@@ -1847,7 +1872,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     g.gold -= total;
     const count = g.stolenItems.length;
     g.stolenItems = [];
-    sfxItemGet();
+    sfxShopBuy();
     queueMsg(`🧔 ショップキーパー「${total}Gだな。毎度あり！」`);
     showNotification(`🏪 ${count}個のアイテムを購入！（-${total}G）`);
     updateUI(g);
@@ -2173,6 +2198,17 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     initDungeonAudio(); // MP3ファイルをプリロード（初回のみ）
     storage.clearDungeonGame();
     const g = initGameState([], dungeonMode, diagMove);
+    // 倉庫からアイテム・ゴールドを持ち込み
+    const warehouseItems = storage.getWarehouse();
+    for (const wi of warehouseItems) {
+      const existing = g.items.find((i) => i.id === wi.id);
+      if (existing) existing.count += wi.count;
+      else g.items.push({ ...wi });
+    }
+    g.gold += storage.getGoldBank();
+    // 倉庫を空にする（持ち込み済み）
+    storage.saveWarehouse([]);
+    storage.saveGoldBank(0);
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py); // 開始位置の視野を開く
@@ -2213,6 +2249,16 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     stopAutoWalk();
     const prevMissed = gameRef.current?.missedWords ?? [];
     const g = initGameState(prevMissed, dungeonMode, diagMove);
+    // 倉庫からアイテム・ゴールドを持ち込み
+    const warehouseItems = storage.getWarehouse();
+    for (const wi of warehouseItems) {
+      const existing = g.items.find((i) => i.id === wi.id);
+      if (existing) existing.count += wi.count;
+      else g.items.push({ ...wi });
+    }
+    g.gold += storage.getGoldBank();
+    storage.saveWarehouse([]);
+    storage.saveGoldBank(0);
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py);
