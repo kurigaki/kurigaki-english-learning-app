@@ -90,6 +90,8 @@ export type Shopkeeper = {
   hostile: boolean;       // 敵化フラグ（攻撃 or 泥棒で true）
   homeX: number;          // 初期位置X（通常時の待機場所）
   homeY: number;          // 初期位置Y
+  entranceX: number;      // 廊下入口の部屋側タイルX（泥棒時に塞ぐ位置）
+  entranceY: number;      // 廊下入口の部屋側タイルY
 };
 
 export type PlayerState = {
@@ -240,4 +242,5 @@ export type EventOverlay = {
 
 export type FootAction =
   | { kind: "stairs" }
-  | { kind: "item"; itemId: string; itemName: string; itemIcon: string; itemDesc: string };
+  | { kind: "item"; itemId: string; itemName: string; itemIcon: string; itemDesc: string }
+  | { kind: "shopItem"; itemId: string; itemName: string; itemIcon: string; itemDesc: string; price: number };

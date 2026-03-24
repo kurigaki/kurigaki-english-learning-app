@@ -50,6 +50,76 @@ function isRoomEntrance(m: TileType[][], x: number, y: number): boolean {
   return false;
 }
 
+/** BFS: 全部屋が連結しているか確認 */
+function isAllRoomsConnected(m: TileType[][], rooms: { x: number; y: number; w: number; h: number }[]): boolean {
+  if (rooms.length === 0) return true;
+  const s = rooms[0];
+  const sx = s.x + Math.floor(s.w / 2);
+  const sy = s.y + Math.floor(s.h / 2);
+  const visited = new Set<number>([sy * MW + sx]);
+  const queue: [number, number][] = [[sx, sy]];
+  while (queue.length > 0) {
+    const [cx, cy] = queue.shift()!;
+    for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+      const nx = cx + dx, ny = cy + dy;
+      if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
+      if (m[ny][nx] === W) continue;
+      const k = ny * MW + nx;
+      if (visited.has(k)) continue;
+      visited.add(k);
+      queue.push([nx, ny]);
+    }
+  }
+  for (const room of rooms) {
+    const rx = room.x + Math.floor(room.w / 2);
+    const ry = room.y + Math.floor(room.h / 2);
+    if (!visited.has(ry * MW + rx)) return false;
+  }
+  return true;
+}
+
+/** 後処理: 2幅の廊下を1幅に縮小 & 部屋入口を1マス幅に制限 */
+function narrowCorridors(m: TileType[][], rooms: { x: number; y: number; w: number; h: number }[]): void {
+  // Pass 1: 2×2 の C ブロックを解消（連結性を維持）
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (let y = 0; y < MH - 1; y++) {
+      for (let x = 0; x < MW - 1; x++) {
+        if (m[y][x] !== C || m[y][x + 1] !== C || m[y + 1][x] !== C || m[y + 1][x + 1] !== C) continue;
+        for (const [cy, cx] of [[y + 1, x + 1], [y + 1, x], [y, x + 1], [y, x]] as [number, number][]) {
+          m[cy][cx] = W;
+          if (isAllRoomsConnected(m, rooms)) { changed = true; break; }
+          m[cy][cx] = C;
+        }
+      }
+    }
+  }
+
+  // Pass 2: 部屋の各辺に隣接する C タイルが2つ以上あれば1つに絞る
+  for (const room of rooms) {
+    const sides: { x: number; y: number }[][] = [
+      Array.from({ length: room.w }, (_, i) => ({ x: room.x + i, y: room.y - 1 })),
+      Array.from({ length: room.w }, (_, i) => ({ x: room.x + i, y: room.y + room.h })),
+      Array.from({ length: room.h }, (_, i) => ({ x: room.x - 1, y: room.y + i })),
+      Array.from({ length: room.h }, (_, i) => ({ x: room.x + room.w, y: room.y + i })),
+    ];
+    for (const side of sides) {
+      const cTiles = side.filter(({ x, y }) =>
+        x >= 0 && x < MW && y >= 0 && y < MH && m[y][x] === C
+      );
+      if (cTiles.length <= 1) continue;
+      const keepIdx = Math.floor(cTiles.length / 2);
+      for (let i = 0; i < cTiles.length; i++) {
+        if (i === keepIdx) continue;
+        const { x, y } = cTiles[i];
+        m[y][x] = W;
+        if (!isAllRoomsConnected(m, rooms)) m[y][x] = C;
+      }
+    }
+  }
+}
+
 let _trapId = 0;
 
 export function generateMap(g: GameState): void {
@@ -82,6 +152,26 @@ export function generateMap(g: GameState): void {
     }
   }
   g.rooms = rooms;
+
+  // ── ショップ部屋・モンスターハウスの早期選択（廊下ルーティングに必要） ──
+  let monsterHouseRoomIdx: number | null = null;
+  if (g.dungeonMode === "hard" && rooms.length >= 4) {
+    monsterHouseRoomIdx = 1 + Math.floor(Math.random() * (rooms.length - 2));
+  }
+
+  let shopRoomIdx: number | null = null;
+  if (g.floor >= 2 && rooms.length >= 3) {
+    const shopCandidates: number[] = [];
+    for (let i = 1; i < rooms.length - 1; i++) {
+      if (i !== monsterHouseRoomIdx) shopCandidates.push(i);
+    }
+    if (shopCandidates.length > 0) {
+      const largeCandidates = shopCandidates.filter((i) => rooms[i].w >= 5 && rooms[i].h >= 5);
+      shopRoomIdx = largeCandidates.length > 0
+        ? largeCandidates[Math.floor(Math.random() * largeCandidates.length)]
+        : shopCandidates[Math.floor(Math.random() * shopCandidates.length)];
+    }
+  }
 
   // corridors — 1タイル幅、部屋の各辺に最大1接続
   // 各部屋の辺ごとに使用済みフラグを管理: top/bottom/left/right
@@ -163,17 +253,31 @@ export function generateMap(g: GameState): void {
   }
 
   for (let i = 1; i < rooms.length; i++) {
-    const sides = bestSides(i - 1, i);
+    let fromIdx = i - 1;
+    const toIdx = i;
+
+    // ショップ部屋は1出口のみ: ショップからの接続はバイパスに変更
+    // rooms[shop-1] → rooms[shop] は通常通り、rooms[shop] → rooms[shop+1] を
+    // rooms[shop-1] → rooms[shop+1] に置き換える
+    if (shopRoomIdx !== null && fromIdx === shopRoomIdx) {
+      fromIdx = shopRoomIdx - 1;
+      if (fromIdx < 0) continue;
+    }
+
+    const sides = bestSides(fromIdx, toIdx);
     if (!sides) continue; // 辺が全部埋まっている（稀）
-    const exitA = pickExit(rooms[i - 1], sides.aSide);
-    const exitB = pickExit(rooms[i], sides.bSide);
+    const exitA = pickExit(rooms[fromIdx], sides.aSide);
+    const exitB = pickExit(rooms[toIdx], sides.bSide);
     // 辺を使用済みに
-    usedSides.get(i - 1)!.add(sides.aSide);
-    usedSides.get(i)!.add(sides.bSide);
+    usedSides.get(fromIdx)!.add(sides.aSide);
+    usedSides.get(toIdx)!.add(sides.bSide);
     // 横優先か縦優先かはA側の辺で決定
     const hFirst = sides.aSide === "left" || sides.aSide === "right";
     digCorridor(exitA.x, exitA.y, exitB.x, exitB.y, hFirst);
   }
+
+  // 後処理: 廊下を1列化 & 入口を1マス幅に制限
+  narrowCorridors(m, rooms);
 
   // player start
   g.px = rooms[0].x + 1;
@@ -267,12 +371,9 @@ export function generateMap(g: GameState): void {
   }
 
   // Monster house (hard mode only, one room packed with enemies + items as reward)
-  // — generated first to exclude from shop
-  g.monsterHouseRoomIdx = null;
-  if (g.dungeonMode === "hard" && rooms.length >= 4) {
-    const mhRoomIdx = 1 + Math.floor(Math.random() * (rooms.length - 2));
-    g.monsterHouseRoomIdx = mhRoomIdx;
-    const mhRoom = rooms[mhRoomIdx];
+  g.monsterHouseRoomIdx = monsterHouseRoomIdx;
+  if (monsterHouseRoomIdx !== null) {
+    const mhRoom = rooms[monsterHouseRoomIdx];
     const mhCount = 5 + Math.floor(Math.random() * 4); // 5-8 enemies
     const alreadyInRoom = g.enemies.filter(
       (e) => e.x >= mhRoom.x && e.x < mhRoom.x + mhRoom.w && e.y >= mhRoom.y && e.y < mhRoom.y + mhRoom.h
@@ -307,97 +408,104 @@ export function generateMap(g: GameState): void {
   }
 
   // Shop — 1フロアに1箇所、3×3グリッド配置 + 店主NPC配置
+  // ショップ部屋は廊下接続が1本のみ（店主が出口を塞げるように）
   g.shopItems = [];
   g.shopkeeper = null;
   g.shopRoomIdx = null;
   g.stolenItems = [];
   g.theftTriggered = false;
-  if (g.floor >= 2 && rooms.length >= 3) {
-    const excludedRoomIdx = g.monsterHouseRoomIdx ?? -1;
-    const candidateIdxs: number[] = [];
-    for (let i = 1; i < rooms.length - 1; i++) {
-      if (i !== excludedRoomIdx) candidateIdxs.push(i);
+  if (shopRoomIdx !== null) {
+    const shopRoom = rooms[shopRoomIdx];
+    const shopPool = Object.keys(SHOP_PRICES);
+    // ショップ部屋の敵・アイテム・罠を除去してスペースを確保
+    g.enemies = g.enemies.filter(
+      (e) => !(e.x >= shopRoom.x && e.x < shopRoom.x + shopRoom.w && e.y >= shopRoom.y && e.y < shopRoom.y + shopRoom.h)
+    );
+    g.itemTiles = g.itemTiles.filter(
+      (it) => !(it.x >= shopRoom.x && it.x < shopRoom.x + shopRoom.w && it.y >= shopRoom.y && it.y < shopRoom.y + shopRoom.h)
+    );
+    g.traps = g.traps.filter(
+      (tr) => !(tr.x >= shopRoom.x && tr.x < shopRoom.x + shopRoom.w && tr.y >= shopRoom.y && tr.y < shopRoom.y + shopRoom.h)
+    );
+    // 3×3グリッドを部屋中央に配置（内部タイルに収まる位置のみ使用）
+    const centerX = shopRoom.x + Math.floor(shopRoom.w / 2);
+    const centerY = shopRoom.y + Math.floor(shopRoom.h / 2);
+    const gridOffsets: [number, number][] = [
+      [-1, -1], [0, -1], [1, -1],
+      [-1,  0], [0,  0], [1,  0],
+      [-1,  1], [0,  1], [1,  1],
+    ];
+    for (const [dx, dy] of gridOffsets) {
+      const sx = centerX + dx;
+      const sy = centerY + dy;
+      if (sx <= shopRoom.x || sx >= shopRoom.x + shopRoom.w - 1) continue;
+      if (sy <= shopRoom.y || sy >= shopRoom.y + shopRoom.h - 1) continue;
+      const itemId = shopPool[Math.floor(Math.random() * shopPool.length)];
+      g.shopItems.push({ x: sx, y: sy, itemId, price: SHOP_PRICES[itemId] });
     }
-    if (candidateIdxs.length > 0) {
-      // 3×3グリッドが収まる5×5以上の部屋を優先
-      const largeRoomIdxs = candidateIdxs.filter((i) => rooms[i].w >= 5 && rooms[i].h >= 5);
-      const shopRoomIdx = largeRoomIdxs.length > 0
-        ? largeRoomIdxs[Math.floor(Math.random() * largeRoomIdxs.length)]
-        : candidateIdxs[Math.floor(Math.random() * candidateIdxs.length)];
-      const shopRoom = rooms[shopRoomIdx];
-      const shopPool = Object.keys(SHOP_PRICES);
-      // ショップ部屋の敵・アイテム・罠を除去してスペースを確保
-      g.enemies = g.enemies.filter(
-        (e) => !(e.x >= shopRoom.x && e.x < shopRoom.x + shopRoom.w && e.y >= shopRoom.y && e.y < shopRoom.y + shopRoom.h)
-      );
-      g.itemTiles = g.itemTiles.filter(
-        (it) => !(it.x >= shopRoom.x && it.x < shopRoom.x + shopRoom.w && it.y >= shopRoom.y && it.y < shopRoom.y + shopRoom.h)
-      );
-      g.traps = g.traps.filter(
-        (tr) => !(tr.x >= shopRoom.x && tr.x < shopRoom.x + shopRoom.w && tr.y >= shopRoom.y && tr.y < shopRoom.y + shopRoom.h)
-      );
-      // 3×3グリッドを部屋中央に配置（内部タイルに収まる位置のみ使用）
-      const centerX = shopRoom.x + Math.floor(shopRoom.w / 2);
-      const centerY = shopRoom.y + Math.floor(shopRoom.h / 2);
-      const gridOffsets: [number, number][] = [
-        [-1, -1], [0, -1], [1, -1],
-        [-1,  0], [0,  0], [1,  0],
-        [-1,  1], [0,  1], [1,  1],
-      ];
-      for (const [dx, dy] of gridOffsets) {
-        const sx = centerX + dx;
-        const sy = centerY + dy;
-        // 内部タイル（壁の1マス内側）のみ配置
-        if (sx <= shopRoom.x || sx >= shopRoom.x + shopRoom.w - 1) continue;
-        if (sy <= shopRoom.y || sy >= shopRoom.y + shopRoom.h - 1) continue;
-        const itemId = shopPool[Math.floor(Math.random() * shopPool.length)];
-        g.shopItems.push({ x: sx, y: sy, itemId, price: SHOP_PRICES[itemId] });
-      }
-      // 店主NPC配置: ショップ部屋の入口付近（廊下に隣接する部屋タイル）に配置
-      g.shopRoomIdx = shopRoomIdx;
-      const shopR = rooms[shopRoomIdx];
-      let skX = shopR.x + 1;
-      let skY = shopR.y + 1;
-      // 部屋の廊下隣接タイル（入口）を探して店主を置く
-      outer:
-      for (let ry = shopR.y; ry < shopR.y + shopR.h; ry++) {
-        for (let rx = shopR.x; rx < shopR.x + shopR.w; rx++) {
-          if (m[ry][rx] !== R) continue;
-          for (const [ddx, ddy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
-            const nx = rx + ddx;
-            const ny = ry + ddy;
-            if (nx >= 0 && nx < MW && ny >= 0 && ny < MH && m[ny][nx] === C) {
-              // 入口タイルの隣（部屋内側）に店主を置く
-              const insideX = rx - ddx;
-              const insideY = ry - ddy;
-              if (insideX > shopR.x && insideX < shopR.x + shopR.w - 1 &&
-                  insideY > shopR.y && insideY < shopR.y + shopR.h - 1 &&
-                  !g.shopItems.find((s) => s.x === insideX && s.y === insideY)) {
-                skX = insideX;
-                skY = insideY;
-                break outer;
-              }
-              // フォールバック: 入口タイル自体に配置
-              if (!g.shopItems.find((s) => s.x === rx && s.y === ry)) {
-                skX = rx;
-                skY = ry;
-                break outer;
-              }
-            }
+    // 入口位置を特定（部屋のRタイルでCに隣接しているもの）
+    g.shopRoomIdx = shopRoomIdx;
+    let entranceX = shopRoom.x + 1;
+    let entranceY = shopRoom.y + 1;
+    let corridorDx = 0;
+    let corridorDy = -1;
+    findEntrance:
+    for (let ry = shopRoom.y; ry < shopRoom.y + shopRoom.h; ry++) {
+      for (let rx = shopRoom.x; rx < shopRoom.x + shopRoom.w; rx++) {
+        if (m[ry][rx] !== R) continue;
+        for (const [ddx, ddy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+          const nx = rx + ddx, ny = ry + ddy;
+          if (nx >= 0 && nx < MW && ny >= 0 && ny < MH && m[ny][nx] === C) {
+            entranceX = rx;
+            entranceY = ry;
+            corridorDx = ddx;
+            corridorDy = ddy;
+            break findEntrance;
           }
         }
       }
-      g.shopkeeper = {
-        x: skX,
-        y: skY,
-        hp: SHOPKEEPER_DEF.mhp,
-        mhp: SHOPKEEPER_DEF.mhp,
-        atk: SHOPKEEPER_DEF.atk,
-        hostile: false,
-        homeX: skX,
-        homeY: skY,
-      };
     }
+    // 店主配置: 入口の1歩横（入口を塞がない位置）
+    let skX = entranceX;
+    let skY = entranceY;
+    // 廊下方向と垂直な方向に1歩ずらす
+    const perpDirs: [number, number][] = corridorDx !== 0
+      ? [[0, -1], [0, 1]]
+      : [[-1, 0], [1, 0]];
+    for (const [pdx, pdy] of perpDirs) {
+      const nx = entranceX + pdx;
+      const ny = entranceY + pdy;
+      if (nx > shopRoom.x && nx < shopRoom.x + shopRoom.w - 1 &&
+          ny > shopRoom.y && ny < shopRoom.y + shopRoom.h - 1 &&
+          !g.shopItems.find((s) => s.x === nx && s.y === ny)) {
+        skX = nx;
+        skY = ny;
+        break;
+      }
+    }
+    // フォールバック: 入口から部屋内側に1歩
+    if (skX === entranceX && skY === entranceY) {
+      const insideX = entranceX - corridorDx;
+      const insideY = entranceY - corridorDy;
+      if (insideX > shopRoom.x && insideX < shopRoom.x + shopRoom.w - 1 &&
+          insideY > shopRoom.y && insideY < shopRoom.y + shopRoom.h - 1 &&
+          !g.shopItems.find((s) => s.x === insideX && s.y === insideY)) {
+        skX = insideX;
+        skY = insideY;
+      }
+    }
+    g.shopkeeper = {
+      x: skX,
+      y: skY,
+      hp: SHOPKEEPER_DEF.mhp,
+      mhp: SHOPKEEPER_DEF.mhp,
+      atk: SHOPKEEPER_DEF.atk,
+      hostile: false,
+      homeX: skX,
+      homeY: skY,
+      entranceX,
+      entranceY,
+    };
   }
 }
 

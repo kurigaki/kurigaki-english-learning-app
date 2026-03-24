@@ -453,24 +453,45 @@ export type ShopkeeperMoveResult = {
 
 /**
  * 店主AI — 毎ターン呼ばれる
- * - 通常時: 定位置で待機（動かない）
+ * - 通常時（未払いなし）: 定位置で待機（動かない）
+ * - 通常時（未払いあり）: 廊下入口に移動して出口を塞ぐ
  * - 敵化時: プレイヤーをBFS追跡、隣接で攻撃（倍速: 1ターンに2回行動）
+ *   ※ 移動を2回した後は攻撃しない（移動1+攻撃1はOK）
  */
 export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
   const sk = g.shopkeeper;
   if (!sk || sk.hp <= 0) return [];
-  if (!sk.hostile) return []; // 温厚モード: 何もしない
+
+  // 非敵化時: 未払いアイテムがあれば出口を塞ぐ位置に移動
+  if (!sk.hostile) {
+    if (g.stolenItems.length > 0) {
+      // 出口封鎖: 入口タイルに移動
+      if (sk.x !== sk.entranceX || sk.y !== sk.entranceY) {
+        // 入口にプレイヤーがいなければ移動
+        if (!(g.px === sk.entranceX && g.py === sk.entranceY)) {
+          const step = bfsStep(g, sk.x, sk.y, sk.entranceX, sk.entranceY, -1);
+          if (step) {
+            sk.x = step[0];
+            sk.y = step[1];
+          }
+        }
+      }
+    }
+    return []; // 非敵化時は攻撃しない
+  }
 
   const results: ShopkeeperMoveResult[] = [];
   const px = g.px;
   const py = g.py;
 
-  // 敵化店主: 倍速（2回行動）
+  // 敵化店主: 倍速（2回行動）、移動2回後は攻撃しない
+  let moveCount = 0;
   for (let action = 0; action < 2; action++) {
     if (sk.hp <= 0) break;
 
-    // 隣接していれば攻撃
+    // 隣接していれば攻撃（移動で2アクション使い切ったら攻撃不可）
     if (adj(sk.x, sk.y, px, py)) {
+      if (moveCount >= 2) break;
       const dmg = Math.max(1, sk.atk - 1 + Math.floor(Math.random() * 3));
       g.p.hp = Math.max(0, g.p.hp - dmg);
       results.push({ hit: true, damage: dmg, killedPlayer: g.p.hp <= 0 });
@@ -488,7 +509,7 @@ export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
       if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
       if (g.map[ny][nx] === W) continue;
       if (g.enemies.find((o) => o.x === nx && o.y === ny)) continue;
-      if (nx === px && ny === py) continue; // プレイヤー位置には移動しない（攻撃は隣接判定で）
+      if (nx === px && ny === py) continue;
       if (!visited.has(key(nx, ny))) {
         visited.add(key(nx, ny));
         queue.push([nx, ny, nx, ny]);
@@ -513,10 +534,7 @@ export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
     if (nextStep) {
       sk.x = nextStep[0];
       sk.y = nextStep[1];
-      // 移動先でプレイヤー隣接なら即攻撃（2回目の行動で）
-      if (action === 0 && adj(sk.x, sk.y, px, py)) {
-        // 2回目のループで攻撃する
-      }
+      moveCount++;
     }
   }
 

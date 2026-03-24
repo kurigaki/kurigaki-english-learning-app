@@ -1166,27 +1166,18 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         newFootAction = { kind: "stairs" };
       }
 
-      // ショップタイルチェック: 踏んだら自動で拾い、未払いリストに追加
-      const newShopPrompt: ShopPrompt | null = null;
+      // ショップタイルチェック: 足元メッセージのみ（自動拾いしない）
+      // 店主がいない or 敵化済みの場合は従来通り自動拾い（無料）
       if (g.shopItems && g.shopkeeper && g.shopkeeper.hp > 0 && !g.shopkeeper.hostile) {
         const shopIdx = g.shopItems.findIndex((s) => s.x === g.px && s.y === g.py);
         if (shopIdx >= 0) {
           const shop = g.shopItems[shopIdx];
           const def = ITEMS_DEF.find((d) => d.id === shop.itemId);
           if (def) {
-            // アイテムを拾う
-            g.shopItems.splice(shopIdx, 1);
-            const ex = g.items.find((i) => i.id === shop.itemId);
-            if (ex) ex.count++;
-            else g.items.push({ id: def.id, name: def.name, icon: def.icon, cat: def.cat, desc: def.desc, count: 1 });
-            sfxItemGet();
-            // 未払いリストに追加
-            g.stolenItems.push(shop.itemId);
-            queueMsg(`🏪 ${def.icon}${def.name}を手に取った（${shop.price}G）— ショップキーパーに話して会計しよう`);
+            queueMsg(`🏪 足元に${def.icon}${def.name}（${shop.price}G）— 足元ボタンで拾う`);
           }
         }
       } else if (g.shopItems) {
-        // 店主がいない or 敵化済みの場合は従来通り（買い物プロンプト表示なし、無料で拾える）
         const shopIdx = g.shopItems.findIndex((s) => s.x === g.px && s.y === g.py);
         if (shopIdx >= 0) {
           const shop = g.shopItems[shopIdx];
@@ -1236,8 +1227,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         runEnemyTurn(g);
       }
 
-      // ショッププロンプト・足元アクションを更新（runEnemyTurnのupdateUIより後に適用）
-      setUiState((prev) => ({ ...prev, shopPrompt: newShopPrompt, footAction: newFootAction }));
+      // 足元アクションを更新（runEnemyTurnのupdateUIより後に適用）
+      setUiState((prev) => ({ ...prev, shopPrompt: null, footAction: newFootAction }));
 
       // ターン終了後にオートセーブ（辞めた場所から再開できるよう）
       saveGame();
@@ -2093,12 +2084,27 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       setUiState((prev) => ({ ...prev, footAction: { kind: "stairs" } }));
       return;
     }
+    // 通常アイテム
     const itemOnTile = g.itemTiles.find((i) => i.x === g.px && i.y === g.py);
     if (itemOnTile) {
       const def = ITEMS_DEF.find((d) => d.id === itemOnTile.id);
       if (def) {
         setUiState((prev) => ({ ...prev, footAction: { kind: "item", itemId: def.id, itemName: def.name, itemIcon: def.icon, itemDesc: def.desc } }));
         return;
+      }
+    }
+    // ショップアイテム（店主が生存・非敵化時のみ足元メニュー表示）
+    if (g.shopItems && g.shopkeeper && g.shopkeeper.hp > 0 && !g.shopkeeper.hostile) {
+      const shopItem = g.shopItems.find((s) => s.x === g.px && s.y === g.py);
+      if (shopItem) {
+        const def = ITEMS_DEF.find((d) => d.id === shopItem.itemId);
+        if (def) {
+          setUiState((prev) => ({
+            ...prev,
+            footAction: { kind: "shopItem", itemId: def.id, itemName: def.name, itemIcon: def.icon, itemDesc: def.desc, price: shopItem.price },
+          }));
+          return;
+        }
       }
     }
     queueMsg("足元には何もない");
@@ -2158,7 +2164,12 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       gold: raw.gold ?? 0,
       traps: raw.traps ?? [],
       shopItems: raw.shopItems ?? [],
-      shopkeeper: (raw as Partial<GameState>).shopkeeper ?? null,
+      shopkeeper: (() => {
+        const sk = (raw as Partial<GameState>).shopkeeper;
+        if (!sk) return null;
+        // 旧セーブ互換: entranceX/Y がない場合は homeX/Y で代用
+        return { ...sk, entranceX: sk.entranceX ?? sk.homeX, entranceY: sk.entranceY ?? sk.homeY };
+      })(),
       shopRoomIdx: (raw as Partial<GameState>).shopRoomIdx ?? null,
       stolenItems: (raw as Partial<GameState>).stolenItems ?? [],
       theftTriggered: (raw as Partial<GameState>).theftTriggered ?? false,
@@ -2309,6 +2320,11 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   const pickUpFloorItem = useCallback(() => {
     const g = gameRef.current;
     if (!g) return;
+    // ショップアイテムの場合は専用ハンドラへ
+    if (uiState.footAction?.kind === "shopItem") {
+      pickUpShopItemRef.current();
+      return;
+    }
     const iIdx = g.itemTiles.findIndex((i) => i.x === g.px && i.y === g.py);
     if (iIdx < 0) { setUiState((prev) => ({ ...prev, footAction: null })); return; }
     const it = g.itemTiles.splice(iIdx, 1)[0];
@@ -2323,7 +2339,30 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     setUiState((prev) => ({ ...prev, footAction: null }));
     runEnemyTurn(g);
     saveGame();
+  }, [queueMsg, runEnemyTurn, saveGame, uiState.footAction]);
+
+  // ショップアイテムを明示的に拾う（足元ボタン経由）
+  const pickUpShopItemRef = useRef<() => void>(() => {});
+  const pickUpShopItem = useCallback(() => {
+    const g = gameRef.current;
+    if (!g || !g.shopItems) return;
+    const shopIdx = g.shopItems.findIndex((s) => s.x === g.px && s.y === g.py);
+    if (shopIdx < 0) { setUiState((prev) => ({ ...prev, footAction: null })); return; }
+    const shop = g.shopItems.splice(shopIdx, 1)[0];
+    const def = ITEMS_DEF.find((d) => d.id === shop.itemId);
+    if (def) {
+      const ex = g.items.find((i) => i.id === shop.itemId);
+      if (ex) ex.count++;
+      else g.items.push({ id: def.id, name: def.name, icon: def.icon, cat: def.cat, desc: def.desc, count: 1 });
+      sfxItemGet();
+      g.stolenItems.push(shop.itemId);
+      queueMsg(`🏪 ${def.icon}${def.name}を手に取った（${shop.price}G）— ショップキーパーに話して会計しよう`);
+    }
+    setUiState((prev) => ({ ...prev, footAction: null }));
+    runEnemyTurn(g);
+    saveGame();
   }, [queueMsg, runEnemyTurn, saveGame]);
+  useEffect(() => { pickUpShopItemRef.current = pickUpShopItem; }, [pickUpShopItem]);
 
   const throwFloorItem = useCallback((itemId: string) => {
     const g = gameRef.current;

@@ -798,7 +798,7 @@ function DungeonDeathScreen({
       <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.text2, flexShrink: 0 }}>
         {isCleared ? "全フロアを踏破した！" : "全ての持ち物を失い、Lv1に戻った"}
       </div>
-      {/* スコア & 番付 */}
+      {/* スコア & Records */}
       {death.score !== undefined && (
         <div style={{ textAlign: "center", flexShrink: 0 }}>
           <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: "clamp(14px,4vw,20px)", color: DC.gold }}>
@@ -952,7 +952,7 @@ function DungeonDeathScreen({
             clipPath: "polygon(4px 0%,calc(100% - 4px) 0%,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0% calc(100% - 4px),0% 4px)",
           }}
         >
-          📊 番付
+          📊 Records
         </button>
       </div>
       {/* 倉庫保存通知 */}
@@ -1843,6 +1843,24 @@ function TitleScreen({
       {/* 倉庫情報 */}
       <WarehouseInfo />
 
+      {/* 倉庫・記録ページリンク */}
+      <div style={{ display: "flex", gap: 6, marginTop: 6 }}>
+        <Link href="/dungeon/warehouse" style={{
+          fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
+          color: DC.gold, background: DC.bg3, border: `1px solid ${DC.gold}40`,
+          borderRadius: 4, padding: "7px 14px", textDecoration: "none",
+        }}>
+          📦 倉庫
+        </Link>
+        <Link href="/dungeon/records" style={{
+          fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
+          color: DC.accent, background: DC.bg3, border: `1px solid ${DC.accent}40`,
+          borderRadius: 4, padding: "7px 14px", textDecoration: "none",
+        }}>
+          📊 Records
+        </Link>
+      </div>
+
       {/* 音量ボタン */}
       <button
         onClick={() => setShowVolume(true)}
@@ -1862,13 +1880,13 @@ function TitleScreen({
           borderRadius: 4, padding: "7px 14px", cursor: "pointer",
         }}
       >
-        📊 番付を見る
+        📊 Records
       </button>
       {showVolume && <DungeonVolumePanel onClose={() => setShowVolume(false)} />}
       {showRanking && (
         <div style={{ width: "100%", maxWidth: 360, background: DC.bg2, border: `1px solid ${DC.border2}`, borderRadius: 6, padding: 12 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-            <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.gold }}>📊 番付</div>
+            <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.gold }}>📊 Records</div>
             <button onClick={() => setShowRanking(false)} style={{ background: "none", border: "none", color: DC.text3, cursor: "pointer", fontSize: 14 }}>✕</button>
           </div>
           <DungeonRankingList />
@@ -2405,6 +2423,18 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
                   <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
                     <button onClick={goNextFloor} style={{ background: DC.accent, color: "#fff", border: "none", borderRadius: 4, padding: "6px 16px", cursor: "pointer", fontSize: 13 }}>降りる [Enter]</button>
                     <button onClick={closeFootAction} style={{ background: DC.bg4, color: DC.text, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "6px 16px", cursor: "pointer", fontSize: 13 }}>キャンセル [Esc]</button>
+                  </div>
+                </>
+              ) : uiState.footAction.kind === "shopItem" ? (
+                <>
+                  <div style={{ color: DC.green, fontSize: 16, marginBottom: 4 }}>
+                    🏪 {uiState.footAction.itemIcon} {uiState.footAction.itemName}
+                  </div>
+                  <div style={{ color: DC.gold, fontSize: 12, marginBottom: 4 }}>{uiState.footAction.price}G</div>
+                  <div style={{ color: DC.text2, fontSize: 11, marginBottom: 12 }}>{uiState.footAction.itemDesc}</div>
+                  <div style={{ display: "flex", gap: 6, justifyContent: "center", flexWrap: "wrap" }}>
+                    <button onClick={pickUpFloorItem} style={{ background: DC.green, color: "#000", border: "none", borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>手に取る [G]</button>
+                    <button onClick={closeFootAction} style={{ background: DC.bg4, color: DC.text, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "6px 12px", cursor: "pointer", fontSize: 12 }}>キャンセル [Esc]</button>
                   </div>
                 </>
               ) : (
