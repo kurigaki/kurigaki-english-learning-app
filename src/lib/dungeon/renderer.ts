@@ -1037,12 +1037,22 @@ export function drawMap(
 
     drawEnemySprite(ctx, e, e.x, e.y);
 
-    // 睡眠中のZZZ
+    // 状態異常アイコン表示
+    ctx.font = "bold 9px sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
     if (e.sleeping) {
-      ctx.font = "bold 9px sans-serif";
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
       ctx.fillText("💤", e.x * TILE + TILE - 9, e.y * TILE + 7);
+    } else if (e.confused > 0) {
+      ctx.fillStyle = "rgba(200,150,50,0.15)";
+      ctx.fillRect(e.x * TILE, e.y * TILE, TILE, TILE);
+      ctx.fillText("😵", e.x * TILE + TILE - 9, e.y * TILE + 7);
+    } else if (e.sealed > 0) {
+      ctx.fillStyle = "rgba(100,100,150,0.15)";
+      ctx.fillRect(e.x * TILE, e.y * TILE, TILE, TILE);
+      ctx.fillText("🔒", e.x * TILE + TILE - 9, e.y * TILE + 7);
+    } else if (e.slowed || (e.slowTurns ?? 0) > 0) {
+      ctx.fillText("🐌", e.x * TILE + TILE - 9, e.y * TILE + 7);
     }
 
     // HPバー

@@ -32,9 +32,9 @@ export function revealAround(g: GameState, px: number, py: number): void {
       }
     }
   } else {
-    // 廊下（または不明）: 1マス半径を開示
-    for (let dy = -1; dy <= 1; dy++) {
-      for (let dx = -1; dx <= 1; dx++) {
+    // 廊下（または不明）: 3マス半径を開示（敵が事前に見える）
+    for (let dy = -3; dy <= 3; dy++) {
+      for (let dx = -3; dx <= 3; dx++) {
         mark(px + dx, py + dy);
       }
     }

@@ -227,9 +227,11 @@ function DungeonHUD({
             Lv{lv}
           </div>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 1, minWidth: 60 }}>
-          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: DC.text2 }}>スタミナ</div>
-          <div style={{ height: 6, background: "#ffffff10", borderRadius: 1, overflow: "hidden" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 1, minWidth: 60, animation: hunger === 0 ? "blink 0.5s infinite" : undefined }}>
+          <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: hunger === 0 ? "#e05252" : DC.text2 }}>
+            {hunger === 0 ? "⚠️危険!" : "スタミナ"}
+          </div>
+          <div style={{ height: 6, background: hunger === 0 ? "#e0525240" : "#ffffff10", borderRadius: 1, overflow: "hidden" }}>
             <div style={{ height: "100%", width: `${hungerPct}%`, background: `linear-gradient(90deg,${hungerColor}90,${hungerColor})`, borderRadius: 1, transition: "width .3s" }} />
           </div>
           <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 6, color: hunger <= 20 ? hungerColor : DC.text, textAlign: "right" }}>
@@ -1158,10 +1160,10 @@ function DungeonControls({
         <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onFootAction(); }}>足元</div>
         <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onLookAround(); }}>見渡す</div>
       </div>
-      {/* メインコントロールエリア */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 6 }}>
-        {/* 左サイドボタン */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+      {/* メインコントロールエリア — 左右に十分なスペースを確保 */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 0, width: "100%", maxWidth: 380 }}>
+        {/* 左端: 足踏み・ダッシュ（誤タップ防止のため十字キーから離す） */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 6, minWidth: 56 }}>
           <div style={sideBtnStyle} onPointerDown={(e) => { e.preventDefault(); onWait(); }}>
             <span style={{ fontSize: 16 }}>🦶</span>足踏み
           </div>
@@ -1205,8 +1207,8 @@ function DungeonControls({
             <div style={dpStyle} onPointerDown={handleDpadPointerDown(0, 1)}>▼</div>
           </div>
         )}
-        {/* 右サイドボタン */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        {/* 右端: 攻撃・弓矢（誤タップ防止のため十字キーから離す） */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 6, minWidth: 56 }}>
           <div style={{ ...sideBtnStyle, color: "#f9a825", borderColor: "#666" }} onPointerDown={(e) => { e.preventDefault(); onAttack(); }}>
             <span style={{ fontSize: 16 }}>⚔️</span>攻撃/話す
           </div>

@@ -469,8 +469,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           else if (g.hunger === 20) queueMsg("🍂 お腹が空いてきた…食料を食べよう！");
         }
       } else {
-        // 空腹時はHPが減る（0になると死亡）
+        // 空腹時はHPが減る（0になると死亡）+ 画面を赤くフラッシュ
         g.p.hp = Math.max(0, g.p.hp - 2);
+        triggerScreenEffect("recv", false); // 毎ターン赤フラッシュで危険を通知
         if (g.p.hp <= 0) {
           updateUI(g);
           flushMsg();
@@ -2208,6 +2209,11 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const g = gameRef.current;
     if (!g) return;
     if (uiState.quiz && !uiState.quizAnswered) return;
+    // スタミナ0ではダッシュ不可
+    if (g.hunger <= 0) {
+      queueMsg("🍂 お腹が空いてダッシュできない！");
+      return;
+    }
     stopDash();
     stopAutoWalk();
     dashDirRef.current = { dx, dy };
@@ -2259,7 +2265,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     } else {
       isDashingRef.current = false;
     }
-  }, [stopDash, stopAutoWalk, uiState.quiz, uiState.quizAnswered]);
+  }, [queueMsg, stopDash, stopAutoWalk, uiState.quiz, uiState.quizAnswered]);
 
   const lookAround = useCallback((): string => {
     const g = gameRef.current;
