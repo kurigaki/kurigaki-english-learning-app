@@ -1667,7 +1667,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               for (let t = 0; t < 100; t++) {
                 const wx = 1 + Math.floor(Math.random() * (MW - 2));
                 const wy = 1 + Math.floor(Math.random() * (MH - 2));
-                if (g.map[wy][wx] !== W && !(wx === g.px && wy === g.py) &&
+                if (g.map[wy][wx] !== 0 && !(wx === g.px && wy === g.py) &&
                     !g.enemies.find((e2) => e2.x === wx && e2.y === wy)) {
                   sk.x = wx; sk.y = wy; break;
                 }
@@ -1696,7 +1696,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               let bx = sk.x, by = sk.y;
               for (let i = 0; i < 4; i++) {
                 const nx = bx + bd, ny = by + bdy;
-                if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === W) break;
+                if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) break;
                 if (g.enemies.find((e2) => e2.x === nx && e2.y === ny)) break;
                 if (nx === g.px && ny === g.py) break;
                 bx = nx; by = ny;
@@ -1709,7 +1709,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               for (let t = 0; t < 100; t++) {
                 const wx = 1 + Math.floor(Math.random() * (MW - 2));
                 const wy = 1 + Math.floor(Math.random() * (MH - 2));
-                if (g.map[wy][wx] !== W && !(wx === g.px && wy === g.py) &&
+                if (g.map[wy][wx] !== 0 && !(wx === g.px && wy === g.py) &&
                     !g.enemies.find((e2) => e2.x === wx && e2.y === wy)) {
                   sk.x = wx; sk.y = wy; break;
                 }

@@ -69,15 +69,21 @@ describe("Map Generation", () => {
   });
 
   it("generates shop with shopkeeper on floor >= 2", () => {
-    const g = createTestGameState({ floor: 3 });
-    generateMap(g);
-    // ショップは部屋数3以上かつfloor >= 2で生成
-    if (g.rooms.length >= 3) {
-      expect(g.shopkeeper).not.toBeNull();
-      expect(g.shopkeeper!.hp).toBe(SHOPKEEPER_DEF.mhp);
-      expect(g.shopkeeper!.hostile).toBe(false);
-      expect(g.shopRoomIdx).not.toBeNull();
+    // テンプレートベース生成: ショップは行き止まり部屋(5×5以上)がある場合のみ
+    // 複数回生成して少なくとも1回はショップが出ることを確認
+    let shopFound = false;
+    for (let attempt = 0; attempt < 20; attempt++) {
+      const g = createTestGameState({ floor: 3 });
+      generateMap(g);
+      if (g.shopkeeper) {
+        expect(g.shopkeeper.hp).toBe(SHOPKEEPER_DEF.mhp);
+        expect(g.shopkeeper.hostile).toBe(false);
+        expect(g.shopRoomIdx).not.toBeNull();
+        shopFound = true;
+        break;
+      }
     }
+    expect(shopFound).toBe(true);
   });
 
   it("does not generate shop on floor 1", () => {
