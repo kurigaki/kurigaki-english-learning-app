@@ -588,7 +588,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     ): boolean => {
       const { notify, escapeDungeon } = callbacks;
 
-      // playerDir方向の直線上の最初の敵を返す（杖・火炎草用）
+      // playerDir方向の直線上の最初の敵 or 店主を返す（杖・火炎草用）
       const lineEnemy = (): Enemy | null => {
         const { dx: ld, dy: ly2 } = g.playerDir ?? { dx: 0, dy: 1 };
         const ldx = (ld === 0 && ly2 === 0) ? 0 : ld;
@@ -596,12 +596,31 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         let lx = g.px + ldx;
         let ly = g.py + ldy;
         while (lx >= 0 && lx < MW && ly >= 0 && ly < MH && g.map[ly][lx] !== 0) {
+          // 店主も射線上のターゲットとして検出
+          if (g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.x === lx && g.shopkeeper.y === ly) return null; // 店主は lineShopkeeper で処理
           const le = g.enemies.find((e) => e.x === lx && e.y === ly);
           if (le) return le;
           lx += ldx;
           ly += ldy;
         }
         return null;
+      };
+
+      // playerDir方向の直線上に店主がいるか
+      const lineShopkeeper = (): boolean => {
+        if (!g.shopkeeper || g.shopkeeper.hp <= 0) return false;
+        const { dx: ld, dy: ly2 } = g.playerDir ?? { dx: 0, dy: 1 };
+        const ldx = (ld === 0 && ly2 === 0) ? 0 : ld;
+        const ldy = (ld === 0 && ly2 === 0) ? 1 : ly2;
+        let lx = g.px + ldx;
+        let ly = g.py + ldy;
+        while (lx >= 0 && lx < MW && ly >= 0 && ly < MH && g.map[ly][lx] !== 0) {
+          if (g.shopkeeper.x === lx && g.shopkeeper.y === ly) return true;
+          if (g.enemies.find((e) => e.x === lx && e.y === ly)) return false; // 敵が先にいる
+          lx += ldx;
+          ly += ldy;
+        }
+        return false;
       };
 
       switch (itemId) {
@@ -814,6 +833,27 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           if (g.cane_blow_charges <= 0) { notify("💨 杖の魔力が尽きた"); return false; }
           const e = lineEnemy();
           g.cane_blow_charges--;
+          // 店主に当たった場合
+          if (!e && lineShopkeeper() && g.shopkeeper) {
+            const sk = g.shopkeeper;
+            const { dx: bd, dy: bdy } = g.playerDir ?? { dx: 0, dy: 1 };
+            let bx = sk.x, by = sk.y;
+            for (let i = 0; i < 4; i++) {
+              const nx2 = bx + bd, ny2 = by + bdy;
+              if (nx2 < 0 || nx2 >= MW || ny2 < 0 || ny2 >= MH || g.map[ny2][nx2] === 0) break;
+              if (g.enemies.find((e2) => e2.x === nx2 && e2.y === ny2)) break;
+              if (nx2 === g.px && ny2 === g.py) break;
+              bx = nx2; by = ny2;
+            }
+            sk.x = bx; sk.y = by;
+            sk.hp = Math.max(0, sk.hp - 5);
+            addDmgPop(bx, by, "hit", 5);
+            sfxCrit();
+            if (!sk.hostile) makeShopkeeperHostileRef.current(g, "何をする！覚悟しろ！");
+            notify(`💨 ${SHOPKEEPER_DEF.name}を吹き飛ばした！（残${g.cane_blow_charges}回）`);
+            redraw();
+            return true;
+          }
           if (!e) {
             sfxCane();
             notify(`💨 魔力が虚空に消えた（残${g.cane_blow_charges}回）`);
@@ -852,6 +892,15 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           if (g.cane_sleep_charges <= 0) { notify("😴 杖の魔力が尽きた"); return false; }
           const e = lineEnemy();
           g.cane_sleep_charges--;
+          // 店主に当たった場合
+          if (!e && lineShopkeeper() && g.shopkeeper) {
+            g.shopkeeper.sleepTurns = (g.shopkeeper.sleepTurns ?? 0) + 5;
+            sfxCane();
+            if (!g.shopkeeper.hostile) makeShopkeeperHostileRef.current(g, "何をする！覚悟しろ！");
+            notify(`💤 ${SHOPKEEPER_DEF.name}が眠った！（残${g.cane_sleep_charges}回）`);
+            redraw();
+            return true;
+          }
           if (!e) {
             sfxCane();
             notify(`💤 魔力が虚空に消えた（残${g.cane_sleep_charges}回）`);
@@ -867,6 +916,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           if (g.cane_seal_charges <= 0) { notify("🔒 杖の魔力が尽きた"); return false; }
           const e = lineEnemy();
           g.cane_seal_charges--;
+          // 店主に当たった場合 → 眠りとして扱う
+          if (!e && lineShopkeeper() && g.shopkeeper) {
+            g.shopkeeper.sleepTurns = (g.shopkeeper.sleepTurns ?? 0) + 5;
+            sfxCane();
+            if (!g.shopkeeper.hostile) makeShopkeeperHostileRef.current(g, "何をする！覚悟しろ！");
+            notify(`🔒 ${SHOPKEEPER_DEF.name}を封印した！（残${g.cane_seal_charges}回）`);
+            return true;
+          }
           if (!e) {
             sfxCane();
             notify(`🔒 魔力が虚空に消えた（残${g.cane_seal_charges}回）`);
@@ -882,6 +939,22 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           if (g.cane_warp_charges <= 0) { notify("🌀 杖の魔力が尽きた"); return false; }
           const e = lineEnemy();
           g.cane_warp_charges--;
+          // 店主に当たった場合
+          if (!e && lineShopkeeper() && g.shopkeeper) {
+            for (let t = 0; t < 100; t++) {
+              const wx = 1 + Math.floor(Math.random() * (MW - 2));
+              const wy = 1 + Math.floor(Math.random() * (MH - 2));
+              if (g.map[wy][wx] !== 0 && !(wx === g.px && wy === g.py) &&
+                  !g.enemies.find((e2) => e2.x === wx && e2.y === wy)) {
+                g.shopkeeper.x = wx; g.shopkeeper.y = wy; break;
+              }
+            }
+            sfxWarp();
+            if (!g.shopkeeper.hostile) makeShopkeeperHostileRef.current(g, "何をする！覚悟しろ！");
+            notify(`🌀 ${SHOPKEEPER_DEF.name}がワープした！（残${g.cane_warp_charges}回）`);
+            redraw();
+            return true;
+          }
           if (!e) {
             sfxCane();
             notify(`🌀 魔力が虚空に消えた（残${g.cane_warp_charges}回）`);
@@ -1706,7 +1779,12 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               break;
             }
             case "sleep_grass":
-              skMsg = `💤 ${SHOPKEEPER_DEF.name}に眠り草が当たった！`;
+              sk.sleepTurns = (sk.sleepTurns ?? 0) + 5;
+              skMsg = `💤 ${SHOPKEEPER_DEF.name}は眠ってしまった！`;
+              break;
+            case "confuse_grass":
+              sk.confusedTurns = (sk.confusedTurns ?? 0) + 8;
+              skMsg = `😵 ${SHOPKEEPER_DEF.name}は混乱した！`;
               break;
             case "slow_grass":
               skMsg = `🐌 ${SHOPKEEPER_DEF.name}に鈍足草が当たった！`;
@@ -2085,8 +2163,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     if (!g) return;
     g.playerDir = { dx, dy };
     redraw();
-    saveGame();
-  }, [redraw, saveGame]);
+    // 方向転換はターン消費しない → saveGameもrunEnemyTurnも呼ばない
+  }, [redraw]);
 
   // ── オートウォーク ──────────────────────────────────────────────
   const stopAutoWalk = useCallback(() => {

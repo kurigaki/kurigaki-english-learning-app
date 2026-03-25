@@ -92,6 +92,8 @@ export type Shopkeeper = {
   homeY: number;          // 初期位置Y
   entranceX: number;      // 廊下入口の部屋側タイルX（泥棒時に塞ぐ位置）
   entranceY: number;      // 廊下入口の部屋側タイルY
+  sleepTurns?: number;    // 眠り残りターン
+  confusedTurns?: number; // 混乱残りターン
 };
 
 export type PlayerState = {

@@ -899,13 +899,18 @@ function drawEnemySprite(
 ): void {
   const x = tx * TILE, y = ty * TILE;
   switch (enemy.name) {
-    case "グレムリン": drawGremlin(ctx, x, y);  break;
-    case "スライム":   drawSlime(ctx, x, y);    break;
-    case "コウモリ":   drawBat(ctx, x, y);      break;
-    case "スケルトン": drawSkeleton(ctx, x, y); break;
-    case "オーク":     drawOrc(ctx, x, y);      break;
-    case "ゴーレム":   drawGolem(ctx, x, y);    break;
-    case "デビル":     drawDevil(ctx, x, y);    break;
+    case "Gremlin":  case "グレムリン": drawGremlin(ctx, x, y);  break;
+    case "Slime":    case "スライム":   drawSlime(ctx, x, y);    break;
+    case "Bat":      case "コウモリ":   drawBat(ctx, x, y);      break;
+    case "Skeleton": case "スケルトン": drawSkeleton(ctx, x, y); break;
+    case "Orc":      case "オーク":     drawOrc(ctx, x, y);      break;
+    case "Ghost":    case "ゴースト":   drawGremlin(ctx, x, y);  break; // ゴースト（グレムリンベース）
+    case "Golem":    case "ゴーレム":   drawGolem(ctx, x, y);    break;
+    case "Wizard":   case "ウィザード": drawSkeleton(ctx, x, y); break; // ウィザード（スケルトンベース）
+    case "Devil":    case "デビル":     drawDevil(ctx, x, y);    break;
+    case "Minotaur": case "ミノタウロス": drawOrc(ctx, x, y);    break; // ミノタウロス（オークベース）
+    case "Dragon":   case "ドラゴン":   drawGolem(ctx, x, y);    break; // ドラゴン（ゴーレムベース）
+    case "Lich":     case "リッチ":     drawDevil(ctx, x, y);    break; // リッチ（デビルベース）
     case "ガーディアン": drawGuardian(ctx, x, y, false); break;
     case "センチネル":   drawGuardian(ctx, x, y, true);  break;
     default:

@@ -500,6 +500,25 @@ export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
   const sk = g.shopkeeper;
   if (!sk || sk.hp <= 0) return [];
 
+  // 状態異常チェック: 眠り中は行動しない
+  if ((sk.sleepTurns ?? 0) > 0) {
+    sk.sleepTurns!--;
+    return [];
+  }
+  // 混乱中はランダム移動（攻撃しない）
+  if ((sk.confusedTurns ?? 0) > 0) {
+    sk.confusedTurns!--;
+    const dirs: [number, number][] = [[0, -1], [0, 1], [-1, 0], [1, 0]];
+    const [dx, dy] = dirs[Math.floor(Math.random() * 4)];
+    const nx = sk.x + dx, ny = sk.y + dy;
+    if (nx >= 0 && nx < MW && ny >= 0 && ny < MH && g.map[ny][nx] !== W &&
+        !g.enemies.find((o) => o.x === nx && o.y === ny) &&
+        !(nx === g.px && ny === g.py)) {
+      sk.x = nx; sk.y = ny;
+    }
+    return [];
+  }
+
   // 非敵化時
   if (!sk.hostile) {
     if (g.stolenItems.length > 0) {
