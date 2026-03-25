@@ -1646,18 +1646,95 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       const landX = tx - dir.dx;
       const landY = ty - dir.dy;
 
-      // 店主に当たった場合: ダメージ + 敵化
+      // 店主に当たった場合: 各種効果を適用 + 敵化
       if (hitShopkeeper && g.shopkeeper) {
         item.count--;
         closeItems();
-        const dmg = 3;
-        g.shopkeeper.hp = Math.max(0, g.shopkeeper.hp - dmg);
-        addDmgPop(g.shopkeeper.x, g.shopkeeper.y, "hit", dmg);
-        queueMsg(`⚔️ ${SHOPKEEPER_DEF.name}にアイテムが当たった！（${dmg}ダメージ）`);
-        if (!g.shopkeeper.hostile) {
+        const sk = g.shopkeeper;
+        let skMsg = "";
+        // 草・杖の効果を適用
+        if (item.cat === "grass") {
+          switch (itemId) {
+            case "fire_grass": {
+              const dmg = 20;
+              sk.hp = Math.max(0, sk.hp - dmg);
+              addDmgPop(sk.x, sk.y, "crit", dmg);
+              skMsg = `🔥 ${SHOPKEEPER_DEF.name}に20ダメージ！`;
+              break;
+            }
+            case "warp_grass": {
+              // ランダムワープ
+              for (let t = 0; t < 100; t++) {
+                const wx = 1 + Math.floor(Math.random() * (MW - 2));
+                const wy = 1 + Math.floor(Math.random() * (MH - 2));
+                if (g.map[wy][wx] !== W && !(wx === g.px && wy === g.py) &&
+                    !g.enemies.find((e2) => e2.x === wx && e2.y === wy)) {
+                  sk.x = wx; sk.y = wy; break;
+                }
+              }
+              skMsg = `🌀 ${SHOPKEEPER_DEF.name}はどこかへ飛ばされた！`;
+              break;
+            }
+            case "sleep_grass":
+              skMsg = `💤 ${SHOPKEEPER_DEF.name}に眠り草が当たった！`;
+              break;
+            case "slow_grass":
+              skMsg = `🐌 ${SHOPKEEPER_DEF.name}に鈍足草が当たった！`;
+              break;
+            default: {
+              const dmg = 3;
+              sk.hp = Math.max(0, sk.hp - dmg);
+              addDmgPop(sk.x, sk.y, "hit", dmg);
+              skMsg = `⚔️ ${SHOPKEEPER_DEF.name}にアイテムが当たった！（${dmg}ダメージ）`;
+            }
+          }
+        } else if (item.cat === "cane") {
+          switch (itemId) {
+            case "cane_blow": {
+              // 吹き飛ばし（プレイヤーの向き方向に4マス）
+              const { dx: bd, dy: bdy } = g.playerDir ?? { dx: 0, dy: 1 };
+              let bx = sk.x, by = sk.y;
+              for (let i = 0; i < 4; i++) {
+                const nx = bx + bd, ny = by + bdy;
+                if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === W) break;
+                if (g.enemies.find((e2) => e2.x === nx && e2.y === ny)) break;
+                if (nx === g.px && ny === g.py) break;
+                bx = nx; by = ny;
+              }
+              sk.x = bx; sk.y = by;
+              skMsg = `💨 ${SHOPKEEPER_DEF.name}を吹き飛ばした！`;
+              break;
+            }
+            case "cane_warp": {
+              for (let t = 0; t < 100; t++) {
+                const wx = 1 + Math.floor(Math.random() * (MW - 2));
+                const wy = 1 + Math.floor(Math.random() * (MH - 2));
+                if (g.map[wy][wx] !== W && !(wx === g.px && wy === g.py) &&
+                    !g.enemies.find((e2) => e2.x === wx && e2.y === wy)) {
+                  sk.x = wx; sk.y = wy; break;
+                }
+              }
+              skMsg = `🌀 ${SHOPKEEPER_DEF.name}はどこかへ飛ばされた！`;
+              break;
+            }
+            default: {
+              const dmg = 3;
+              sk.hp = Math.max(0, sk.hp - dmg);
+              addDmgPop(sk.x, sk.y, "hit", dmg);
+              skMsg = `⚔️ ${SHOPKEEPER_DEF.name}に杖が当たった！（${dmg}ダメージ）`;
+            }
+          }
+        } else {
+          const dmg = 3;
+          sk.hp = Math.max(0, sk.hp - dmg);
+          addDmgPop(sk.x, sk.y, "hit", dmg);
+          skMsg = `⚔️ ${SHOPKEEPER_DEF.name}にアイテムが当たった！（${dmg}ダメージ）`;
+        }
+        queueMsg(skMsg);
+        if (!sk.hostile) {
           makeShopkeeperHostileRef.current(g, "何を投げてやがる！覚悟しろ！");
         }
-        if (g.shopkeeper.hp <= 0) {
+        if (sk.hp <= 0) {
           queueMsg(`⚔️ ${SHOPKEEPER_DEF.name}を倒した！`);
         }
         runEnemyTurn(g);

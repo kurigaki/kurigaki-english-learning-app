@@ -187,15 +187,13 @@ export function wanderMove(g: GameState, e: Enemy): void {
     // lastDx がない → 下の部屋ロジックへ
   }
 
-  // ── 部屋内：同じ部屋の廊下出口をBFSで目指す ──
+  // ── 部屋内：最も近い廊下出口をBFSで目指す ──
   e.stuckCount = 0;
 
   if (!e.wanderTarget || (e.x === e.wanderTarget.x && e.y === e.wanderTarget.y)) {
-    // 現在の部屋の出口を探す（同じ部屋の廊下隣接タイルを優先）
     const myRoom = getRoom(g.rooms, e.x, e.y);
     let candidates: { x: number; y: number }[];
     if (myRoom) {
-      // 部屋の廊下隣接タイル（出口）を取得
       const exits: { x: number; y: number }[] = [];
       for (let ry = myRoom.y; ry < myRoom.y + myRoom.h; ry++) {
         for (let rx = myRoom.x; rx < myRoom.x + myRoom.w; rx++) {
@@ -210,26 +208,50 @@ export function wanderMove(g: GameState, e: Enemy): void {
       }
       candidates = exits.filter((t) => !(t.x === e.x && t.y === e.y));
     } else {
-      // 部屋にいない場合は全入口から選ぶ
       const entrances = getAllCorridorEntrances(g);
       candidates = entrances.filter((t) => !(t.x === e.x && t.y === e.y));
     }
     if (candidates.length === 0) {
       e.wanderTarget = null;
-      return;
+    } else {
+      // 最も近い出口を選択（無駄な動きを防止）
+      candidates.sort((a, b) => {
+        const da = Math.abs(a.x - e.x) + Math.abs(a.y - e.y);
+        const db = Math.abs(b.x - e.x) + Math.abs(b.y - e.y);
+        return da - db;
+      });
+      e.wanderTarget = candidates[0];
     }
-    e.wanderTarget = candidates[Math.floor(Math.random() * candidates.length)];
   }
 
-  const step = bfsStep(g, e.x, e.y, e.wanderTarget.x, e.wanderTarget.y, e.id);
-  if (step) {
-    const [nx, ny] = step;
-    e.lastDx = nx - e.x;
-    e.lastDy = ny - e.y;
-    e.x = nx;
-    e.y = ny;
-  } else {
+  if (e.wanderTarget) {
+    const step = bfsStep(g, e.x, e.y, e.wanderTarget.x, e.wanderTarget.y, e.id);
+    if (step) {
+      const [nx, ny] = step;
+      e.lastDx = nx - e.x;
+      e.lastDy = ny - e.y;
+      e.x = nx;
+      e.y = ny;
+      return;
+    }
     e.wanderTarget = null;
+  }
+
+  // フォールバック: BFS失敗時はランダムに移動（停止しない）
+  const dirs: [number, number][] = [[0, -1], [0, 1], [-1, 0], [1, 0]];
+  const shuffled = dirs.sort(() => Math.random() - 0.5);
+  for (const [dx, dy] of shuffled) {
+    const nx = e.x + dx, ny = e.y + dy;
+    if (nx >= 0 && nx < MW && ny >= 0 && ny < MH &&
+        g.map[ny][nx] !== W &&
+        !g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny) &&
+        !(nx === g.px && ny === g.py)) {
+      e.x = nx;
+      e.y = ny;
+      e.lastDx = dx;
+      e.lastDy = dy;
+      return;
+    }
   }
 }
 
@@ -507,16 +529,18 @@ export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
     return true;
   };
 
-  // 敵化店主: 倍速（2回行動）。各アクションは「移動」か「攻撃」のどちらか1つ
+  // 敵化店主: 倍速（2回行動）。移動した後は攻撃不可（移動+移動 or 攻撃+攻撃）
+  let moved = false;
   for (let action = 0; action < 2; action++) {
     if (sk.hp <= 0) break;
 
-    // 隣接していれば攻撃（1アクション消費）
+    // 隣接していれば攻撃（ただし移動済みなら攻撃不可→ターン終了）
     if (isAdj(sk.x, sk.y, px, py)) {
+      if (moved) break; // 移動後は攻撃しない
       const dmg = Math.max(1, sk.atk - 1 + Math.floor(Math.random() * 3));
       g.p.hp = Math.max(0, g.p.hp - dmg);
       results.push({ hit: true, damage: dmg, killedPlayer: g.p.hp <= 0 });
-      continue; // このアクションは攻撃で消費 → 次のアクションへ
+      continue;
     }
 
     // 隣接していなければ移動（1アクション消費）
@@ -557,8 +581,8 @@ export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
     if (nextStep) {
       sk.x = nextStep[0];
       sk.y = nextStep[1];
+      moved = true;
     }
-    // 移動後は攻撃しない（次のアクションで攻撃判定される）
   }
 
   return results;
