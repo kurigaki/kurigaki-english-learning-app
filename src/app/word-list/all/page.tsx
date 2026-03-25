@@ -120,6 +120,8 @@ export default function WordListPage() {
   const [myBooks, setMyBooks] = useState<MyVocabBook[]>([]);
   const [bookmarkDialog, setBookmarkDialog] = useState<{ wordId: number; wordText: string } | null>(null);
   const [isMounted, setIsMounted] = useState(false);
+  // 仮想スクロール: 表示件数制限（メモリ/DOM溢れ防止）
+  const [displayLimit, setDisplayLimit] = useState(100);
   // スクロール位置の保存・復元用
   const listScrollRef = useRef<HTMLDivElement>(null);
   const pendingScrollTopRef = useRef<number | null>(null);
@@ -350,6 +352,9 @@ export default function WordListPage() {
 
     return filtered;
   }, [baseFilteredWords, selectedAccuracy, selectedMemory, sortOption, matchesAccuracyFilter, getDisplayedManualMastery]);
+
+  // フィルタ変更時に表示件数をリセット
+  useEffect(() => { setDisplayLimit(100); }, [baseFilteredWords, selectedAccuracy, selectedMemory, sortOption]);
 
   // wordId → filteredWords 内インデックスの逆引き Map（フラッシュカード開始位置に使用）
   const wordIndexMap = useMemo(
@@ -713,7 +718,14 @@ export default function WordListPage() {
         {/* 中央スクロール: Word List */}
         {isMounted && (
           <div ref={listScrollRef} className="flex-1 overflow-y-auto min-h-0 space-y-4">
-            {Object.entries(groupedWords).map(([category, categoryWords]) => (
+            {(() => {
+              // 表示件数制限: 全グループを通じてdisplayLimit件まで表示
+              let remaining = displayLimit;
+              return Object.entries(groupedWords).map(([category, categoryWords]) => {
+                if (remaining <= 0) return null;
+                const visibleWords = categoryWords.slice(0, remaining);
+                remaining -= visibleWords.length;
+                return (
               <div key={category}>
                 {selectedCategory === "all" && selectedCourse === null && (
                   <h2 className="text-sm font-bold text-slate-500 dark:text-slate-400 mb-3 flex items-center gap-2">
@@ -722,7 +734,7 @@ export default function WordListPage() {
                   </h2>
                 )}
                 <Card className="divide-y divide-slate-100 dark:divide-slate-700">
-                  {categoryWords.map((word) => (
+                  {visibleWords.map((word) => (
                     <div
                       id={`word-item-${word.id}`}
                       key={word.id}
@@ -855,7 +867,21 @@ export default function WordListPage() {
                   ))}
                 </Card>
               </div>
-            ))}
+                );
+              });
+            })()}
+
+            {/* もっと表示ボタン */}
+            {filteredWords.length > displayLimit && (
+              <div className="flex justify-center py-4">
+                <button
+                  onClick={() => setDisplayLimit((prev) => prev + 100)}
+                  className="px-6 py-3 bg-primary-500 hover:bg-primary-600 text-white text-sm font-medium rounded-lg transition-colors"
+                >
+                  もっと表示（残り{filteredWords.length - displayLimit}語）
+                </button>
+              </div>
+            )}
 
             {filteredWords.length === 0 && (
               <Card className="text-center py-8">
