@@ -176,10 +176,10 @@ function DungeonVolumePanel({ onClose }: { onClose: () => void }) {
 }
 
 function DungeonHUD({
-  floor, hp, mhp, lv, exp, enext, turn, hunger, maxHunger, gold, onVolumeClick, onKeySettingsClick,
+  floor, hp, mhp, lv, exp, enext, turn, hunger, maxHunger, gold, statusIcons, onVolumeClick, onKeySettingsClick,
 }: {
   floor: number; hp: number; mhp: number; lv: number; exp: number; enext: number; turn: number;
-  hunger: number; maxHunger: number; gold: number; onVolumeClick: () => void; onKeySettingsClick: () => void;
+  hunger: number; maxHunger: number; gold: number; statusIcons: string; onVolumeClick: () => void; onKeySettingsClick: () => void;
 }) {
   const hpPct = Math.max(0, (hp / mhp) * 100);
   const expPct = (exp / enext) * 100;
@@ -239,6 +239,12 @@ function DungeonHUD({
           </div>
         </div>
       </div>
+      {/* プレイヤー状態異常アイコン */}
+      {statusIcons && (
+        <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, flexShrink: 0, letterSpacing: 2 }}>
+          {statusIcons}
+        </div>
+      )}
       {/* 音量ボタン */}
       <button
         onClick={onVolumeClick}
@@ -1895,8 +1901,8 @@ function TitleScreen({
       {/* 倉庫情報 */}
       <WarehouseInfo />
 
-      {/* 倉庫・記録ページリンク */}
-      <div style={{ display: "flex", gap: 6, marginTop: 6 }}>
+      {/* 倉庫・記録・あそびかたリンク */}
+      <div style={{ display: "flex", gap: 6, marginTop: 6, flexWrap: "wrap", justifyContent: "center" }}>
         <Link href="/dungeon/warehouse" style={{
           fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
           color: DC.gold, background: DC.bg3, border: `1px solid ${DC.gold}40`,
@@ -1910,6 +1916,13 @@ function TitleScreen({
           borderRadius: 4, padding: "7px 14px", textDecoration: "none",
         }}>
           📊 Records
+        </Link>
+        <Link href="/dungeon/guide" style={{
+          fontFamily: "'DotGothic16', sans-serif", fontSize: 12,
+          color: DC.green, background: DC.bg3, border: `1px solid ${DC.green}40`,
+          borderRadius: 4, padding: "7px 14px", textDecoration: "none",
+        }}>
+          📖 あそびかた
         </Link>
       </div>
 
@@ -2416,6 +2429,19 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         hunger={uiState.hunger}
         maxHunger={uiState.maxHunger}
         gold={uiState.gold}
+        statusIcons={(() => {
+          const g = gameStateRef.current;
+          if (!g) return "";
+          const icons: string[] = [];
+          if (g.powerUp) icons.push("💪");
+          if (g.sureHit) icons.push("🎯");
+          if (g.swiftTurns > 0) icons.push("⚡");
+          if (g.playerSleepTurns > 0) icons.push("💤");
+          if (g.playerConfusedTurns > 0) icons.push("😵");
+          if (g.playerSlowTurns > 0) icons.push("🐌");
+          if (g.blindTurns > 0) icons.push("🌑");
+          return icons.join("");
+        })()}
         onVolumeClick={toggleVolume}
         onKeySettingsClick={() => setShowKeySettings(true)}
       />

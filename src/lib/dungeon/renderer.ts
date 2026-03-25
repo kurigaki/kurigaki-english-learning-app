@@ -1053,6 +1053,10 @@ export function drawMap(
       ctx.fillText("🔒", e.x * TILE + TILE - 9, e.y * TILE + 7);
     } else if (e.slowed || (e.slowTurns ?? 0) > 0) {
       ctx.fillText("🐌", e.x * TILE + TILE - 9, e.y * TILE + 7);
+    } else if ((e.swiftTurns ?? 0) > 0) {
+      ctx.fillStyle = "rgba(255,200,50,0.12)";
+      ctx.fillRect(e.x * TILE, e.y * TILE, TILE, TILE);
+      ctx.fillText("⚡", e.x * TILE + TILE - 9, e.y * TILE + 7);
     }
 
     // HPバー
