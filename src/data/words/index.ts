@@ -2,6 +2,7 @@ import { juniorWords as _juniorWords } from "./junior";
 import { seniorWords as _seniorWords } from "./senior";
 import { toeicWords as _toeicWords } from "./toeic";
 import { eikenWords as _eikenWords } from "./eiken";
+import { eiken1Practical as _eiken1Practical } from "./eiken-1-practical";
 import { conversationWords as _conversationWords } from "./conversation";
 import { Word, Course, Stage } from "./types";
 
@@ -10,6 +11,7 @@ export const juniorWords = _juniorWords as unknown as Word[];
 export const seniorWords = _seniorWords as unknown as Word[];
 export const toeicWords = _toeicWords as unknown as Word[];
 export const eikenWords = _eikenWords as unknown as Word[];
+export const eiken1Practical = _eiken1Practical as unknown as Word[];
 export const conversationWords = _conversationWords as unknown as Word[];
 
 // 全コースの単語を統合
@@ -18,6 +20,7 @@ export const allWords: Word[] = [
   ...seniorWords,
   ...toeicWords,
   ...eikenWords,
+  ...eiken1Practical,
   ...conversationWords,
 ];
 
