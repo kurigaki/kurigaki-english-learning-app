@@ -1,0 +1,448 @@
+// 英検準1級 単語 Round 10（40語）
+// ID: 48509〜48548
+// difficulty: 6, frequencyRank: 4, source: "original", course: "eiken", stage: "pre1"
+// 品質基準: meaning 10文字以内, examples 3件, 例文 5〜12語, "I"始まり15%以下
+// テーマ: 論説文・エッセイで頻出する動詞
+
+export const eikenPre1R10 = [
+  {
+    id: 48509, word: "adhere", meaning: "遵守する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "All employees must adhere to the safety guidelines.", exampleJa: "全従業員は安全指針を遵守しなければならない。",
+    examples: [
+      { en: "All employees must adhere to the safety guidelines.", ja: "全従業員は安全指針を遵守しなければならない。", context: "労働" },
+      { en: "The school strictly adheres to its admission policy.", ja: "その学校は入学方針を厳格に遵守している。", context: "教育" },
+      { en: "Nations should adhere to the terms of the treaty.", ja: "各国は条約の条件を遵守すべきである。", context: "国際" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48510, word: "aggravate", meaning: "悪化させる", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The drought aggravated the food shortage in the region.", exampleJa: "干ばつはその地域の食糧不足を悪化させた。",
+    examples: [
+      { en: "The drought aggravated the food shortage in the region.", ja: "干ばつはその地域の食糧不足を悪化させた。", context: "環境" },
+      { en: "Stress can aggravate existing health conditions significantly.", ja: "ストレスは既存の健康状態を著しく悪化させうる。", context: "医療" },
+      { en: "His rude comments only aggravated the tense situation.", ja: "彼の無礼な発言は緊迫した状況を悪化させただけだった。", context: "社会" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48511, word: "amend", meaning: "修正する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The committee voted to amend the proposed legislation.", exampleJa: "委員会は提案された法案の修正を議決した。",
+    examples: [
+      { en: "The committee voted to amend the proposed legislation.", ja: "委員会は提案された法案の修正を議決した。", context: "政治" },
+      { en: "The constitution was amended to protect individual rights.", ja: "憲法は個人の権利を守るために修正された。", context: "法律" },
+      { en: "She amended her report based on the feedback.", ja: "彼女はフィードバックに基づき報告書を修正した。", context: "ビジネス" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic","society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48512, word: "annihilate", meaning: "壊滅させる", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The army annihilated the enemy forces in one battle.", exampleJa: "軍は一度の戦闘で敵軍を壊滅させた。",
+    examples: [
+      { en: "The army annihilated the enemy forces in one battle.", ja: "軍は一度の戦闘で敵軍を壊滅させた。", context: "軍事" },
+      { en: "The wildfire annihilated thousands of acres of forest.", ja: "山火事は数千エーカーの森林を壊滅させた。", context: "災害" },
+      { en: "Nuclear weapons could annihilate entire civilizations at once.", ja: "核兵器は文明全体を一度に壊滅させうる。", context: "国際" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48513, word: "authorize", meaning: "認可する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The board authorized the construction of a new facility.", exampleJa: "取締役会は新施設の建設を認可した。",
+    examples: [
+      { en: "The board authorized the construction of a new facility.", ja: "取締役会は新施設の建設を認可した。", context: "ビジネス" },
+      { en: "Only the director can authorize access to classified data.", ja: "機密データへのアクセスを認可できるのは所長のみだ。", context: "セキュリティ" },
+      { en: "The government authorized emergency relief spending last week.", ja: "政府は先週緊急救援費の支出を認可した。", context: "政治" },
+    ],
+    difficulty: 6, category: "business", categories: ["business"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48514, word: "boycott", meaning: "不買運動する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Citizens boycotted the company over environmental concerns.", exampleJa: "市民は環境問題を理由にその企業を不買運動した。",
+    examples: [
+      { en: "Citizens boycotted the company over environmental concerns.", ja: "市民は環境問題を理由にその企業を不買運動した。", context: "社会" },
+      { en: "Several nations boycotted the international sporting event.", ja: "数か国がその国際スポーツ大会をボイコットした。", context: "国際" },
+      { en: "Consumers boycotted products made with child labor.", ja: "消費者は児童労働で作られた製品を不買運動した。", context: "人権" },
+    ],
+    difficulty: 6, category: "society", categories: ["society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48515, word: "categorize", meaning: "分類する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Scientists categorize species based on shared characteristics.", exampleJa: "科学者は共通の特徴に基づき種を分類する。",
+    examples: [
+      { en: "Scientists categorize species based on shared characteristics.", ja: "科学者は共通の特徴に基づき種を分類する。", context: "科学" },
+      { en: "The library categorizes books by genre and author.", ja: "図書館は本をジャンルと著者で分類する。", context: "教育" },
+      { en: "Researchers categorized the data into three distinct groups.", ja: "研究者はデータを3つの異なるグループに分類した。", context: "研究" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48516, word: "commend", meaning: "称賛する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The mayor commended the firefighters for their bravery.", exampleJa: "市長は消防士たちの勇敢さを称賛した。",
+    examples: [
+      { en: "The mayor commended the firefighters for their bravery.", ja: "市長は消防士たちの勇敢さを称賛した。", context: "社会" },
+      { en: "The teacher commended the student's exceptional performance.", ja: "教師はその生徒の優れた成績を称賛した。", context: "教育" },
+      { en: "Critics commended the film for its original storytelling.", ja: "批評家はその映画の独創的な語りを称賛した。", context: "メディア" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48517, word: "confiscate", meaning: "没収する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Customs officers confiscated the prohibited goods at the border.", exampleJa: "税関職員は国境で禁止物品を没収した。",
+    examples: [
+      { en: "Customs officers confiscated the prohibited goods at the border.", ja: "税関職員は国境で禁止物品を没収した。", context: "法律" },
+      { en: "The teacher confiscated phones during the examination period.", ja: "教師は試験期間中に携帯電話を没収した。", context: "教育" },
+      { en: "Police confiscated illegal weapons found in the warehouse.", ja: "警察は倉庫で発見された違法な武器を没収した。", context: "犯罪" },
+    ],
+    difficulty: 6, category: "society", categories: ["society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48518, word: "conserve", meaning: "保全する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "We must conserve natural resources for future generations.", exampleJa: "将来の世代のために天然資源を保全しなければならない。",
+    examples: [
+      { en: "We must conserve natural resources for future generations.", ja: "将来の世代のために天然資源を保全しなければならない。", context: "環境" },
+      { en: "The park was established to conserve endangered wildlife.", ja: "その公園は絶滅危惧種を保全するために設立された。", context: "自然" },
+      { en: "Homeowners can conserve energy by improving insulation quality.", ja: "住宅所有者は断熱性を改善して省エネできる。", context: "生活" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic","society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48519, word: "converge", meaning: "集まる", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Thousands of protesters converged on the central square.", exampleJa: "数千人の抗議者が中央広場に集まった。",
+    examples: [
+      { en: "Thousands of protesters converged on the central square.", ja: "数千人の抗議者が中央広場に集まった。", context: "社会" },
+      { en: "Several rivers converge at this point near the valley.", ja: "複数の川がこの渓谷付近の地点で合流する。", context: "地理" },
+      { en: "Different fields of study often converge in modern research.", ja: "異なる学問分野は現代の研究でしばしば交差する。", context: "学術" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48520, word: "culminate", meaning: "最高潮に達する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The negotiations culminated in a historic peace agreement.", exampleJa: "交渉は歴史的な和平合意で最高潮に達した。",
+    examples: [
+      { en: "The negotiations culminated in a historic peace agreement.", ja: "交渉は歴史的な和平合意で最高潮に達した。", context: "国際" },
+      { en: "Years of research culminated in a groundbreaking discovery.", ja: "数年の研究が画期的な発見で最高潮に達した。", context: "科学" },
+      { en: "The festival culminated with a spectacular fireworks display.", ja: "祭りは壮大な花火で最高潮に達した。", context: "文化" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48521, word: "defer", meaning: "延期する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The committee deferred the decision until next month.", exampleJa: "委員会は決定を来月まで延期した。",
+    examples: [
+      { en: "The committee deferred the decision until next month.", ja: "委員会は決定を来月まで延期した。", context: "ビジネス" },
+      { en: "Students may defer their enrollment for one academic year.", ja: "学生は入学を1学年分延期できる。", context: "教育" },
+      { en: "The court deferred sentencing pending further investigation.", ja: "裁判所はさらなる調査を待って判決を延期した。", context: "法律" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48522, word: "denounce", meaning: "非難する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "World leaders denounced the act of aggression publicly.", exampleJa: "世界の指導者たちはその侵略行為を公に非難した。",
+    examples: [
+      { en: "World leaders denounced the act of aggression publicly.", ja: "世界の指導者たちはその侵略行為を公に非難した。", context: "国際" },
+      { en: "The organization denounced corruption within the government.", ja: "その団体は政府内の汚職を非難した。", context: "政治" },
+      { en: "Activists denounced the policy as discriminatory and unfair.", ja: "活動家たちはその政策を差別的で不公平だと非難した。", context: "人権" },
+    ],
+    difficulty: 6, category: "society", categories: ["society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48523, word: "deplete", meaning: "枯渇させる", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Overfishing has depleted marine populations around the world.", exampleJa: "乱獲は世界中の海洋生物の個体数を枯渇させた。",
+    examples: [
+      { en: "Overfishing has depleted marine populations around the world.", ja: "乱獲は世界中の海洋生物の個体数を枯渇させた。", context: "環境" },
+      { en: "The long war depleted the nation's financial reserves.", ja: "長い戦争がその国の財政備蓄を枯渇させた。", context: "経済" },
+      { en: "Excessive farming depletes nutrients from the soil rapidly.", ja: "過度な農業は土壌の栄養素を急速に枯渇させる。", context: "農業" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic","society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48524, word: "deteriorate", meaning: "悪化する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The patient's condition deteriorated rapidly after the surgery.", exampleJa: "患者の状態は手術後急速に悪化した。",
+    examples: [
+      { en: "The patient's condition deteriorated rapidly after the surgery.", ja: "患者の状態は手術後急速に悪化した。", context: "医療" },
+      { en: "Relations between the two countries deteriorated over trade disputes.", ja: "両国の関係は貿易紛争をめぐり悪化した。", context: "国際" },
+      { en: "Old buildings deteriorate without regular maintenance and care.", ja: "古い建物は定期的な維持管理なしに劣化する。", context: "建築" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48525, word: "devise", meaning: "考案する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Engineers devised a solution to reduce carbon emissions.", exampleJa: "技術者たちは炭素排出量を削減する方法を考案した。",
+    examples: [
+      { en: "Engineers devised a solution to reduce carbon emissions.", ja: "技術者たちは炭素排出量を削減する方法を考案した。", context: "環境" },
+      { en: "The team devised a strategy for entering new markets.", ja: "チームは新市場参入の戦略を考案した。", context: "ビジネス" },
+      { en: "Researchers devised an experiment to test the hypothesis.", ja: "研究者たちは仮説を検証する実験を考案した。", context: "科学" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48526, word: "discard", meaning: "捨てる", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The factory discards waste materials in a responsible manner.", exampleJa: "工場は廃棄物を責任ある方法で処分する。",
+    examples: [
+      { en: "The factory discards waste materials in a responsible manner.", ja: "工場は廃棄物を責任ある方法で処分する。", context: "環境" },
+      { en: "Researchers discarded data that did not meet quality standards.", ja: "研究者は品質基準を満たさないデータを破棄した。", context: "研究" },
+      { en: "She discarded the old documents after scanning them digitally.", ja: "彼女は古い書類をデジタル化した後廃棄した。", context: "ビジネス" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48527, word: "dismantle", meaning: "解体する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Workers dismantled the old bridge over the weekend.", exampleJa: "作業員たちは週末に古い橋を解体した。",
+    examples: [
+      { en: "Workers dismantled the old bridge over the weekend.", ja: "作業員たちは週末に古い橋を解体した。", context: "建設" },
+      { en: "The government dismantled the outdated regulatory framework.", ja: "政府は時代遅れの規制の枠組みを解体した。", context: "政治" },
+      { en: "Activists campaigned to dismantle systemic barriers to equality.", ja: "活動家は平等への制度的障壁の解体を訴えた。", context: "社会" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic","society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48528, word: "draft", meaning: "起草する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The lawyer drafted a contract for both parties.", exampleJa: "弁護士は両者のために契約書を起草した。",
+    examples: [
+      { en: "The lawyer drafted a contract for both parties.", ja: "弁護士は両者のために契約書を起草した。", context: "法律" },
+      { en: "Committee members drafted new guidelines for data privacy.", ja: "委員会メンバーはデータプライバシーの新指針を起草した。", context: "政策" },
+      { en: "She drafted a proposal and submitted it to management.", ja: "彼女は提案書を起草し経営陣に提出した。", context: "ビジネス" },
+    ],
+    difficulty: 6, category: "business", categories: ["business"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48529, word: "dwell", meaning: "住む", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Ancient tribes dwelt in caves along the riverbank.", exampleJa: "古代の部族は川岸の洞窟に住んでいた。",
+    examples: [
+      { en: "Ancient tribes dwelt in caves along the riverbank.", ja: "古代の部族は川岸の洞窟に住んでいた。", context: "歴史" },
+      { en: "The essay dwells on the effects of urbanization.", ja: "そのエッセイは都市化の影響について詳しく論じている。", context: "学術" },
+      { en: "Try not to dwell on past mistakes too long.", ja: "過去の失敗にあまり長くこだわらないようにしなさい。", context: "日常" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48530, word: "elevate", meaning: "高める", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The promotion elevated her status within the organization.", exampleJa: "昇進は組織内での彼女の地位を高めた。",
+    examples: [
+      { en: "The promotion elevated her status within the organization.", ja: "昇進は組織内での彼女の地位を高めた。", context: "ビジネス" },
+      { en: "Regular exercise can elevate your mood and energy levels.", ja: "定期的な運動は気分とエネルギーを高めることができる。", context: "健康" },
+      { en: "The discovery elevated the researcher to international fame.", ja: "その発見は研究者を国際的な名声に高めた。", context: "科学" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48531, word: "emit", meaning: "排出する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Factories emit large amounts of carbon dioxide every year.", exampleJa: "工場は毎年大量の二酸化炭素を排出する。",
+    examples: [
+      { en: "Factories emit large amounts of carbon dioxide every year.", ja: "工場は毎年大量の二酸化炭素を排出する。", context: "環境" },
+      { en: "The device emits a high-pitched sound when activated.", ja: "その装置は作動すると高い音を発する。", context: "技術" },
+      { en: "Volcanoes emit ash and gases during major eruptions.", ja: "火山は大規模噴火時に灰とガスを放出する。", context: "自然" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic","society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48532, word: "empower", meaning: "権限を与える", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Education empowers individuals to make informed decisions.", exampleJa: "教育は個人に情報に基づく決断をする力を与える。",
+    examples: [
+      { en: "Education empowers individuals to make informed decisions.", ja: "教育は個人に情報に基づく決断をする力を与える。", context: "教育" },
+      { en: "The new law empowers citizens to challenge unfair practices.", ja: "新法は市民に不公正な慣行に異議を唱える権限を与える。", context: "法律" },
+      { en: "Technology empowers small businesses to compete with larger firms.", ja: "技術は中小企業が大企業と競争する力を与える。", context: "ビジネス" },
+    ],
+    difficulty: 6, category: "society", categories: ["society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48533, word: "enlighten", meaning: "啓発する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The documentary enlightened viewers about climate change risks.", exampleJa: "そのドキュメンタリーは気候変動のリスクについて視聴者を啓発した。",
+    examples: [
+      { en: "The documentary enlightened viewers about climate change risks.", ja: "そのドキュメンタリーは気候変動のリスクについて視聴者を啓発した。", context: "メディア" },
+      { en: "The lecture enlightened students on ancient Greek philosophy.", ja: "その講義は古代ギリシャ哲学について学生を啓発した。", context: "教育" },
+      { en: "Travel can enlighten people by exposing them to diversity.", ja: "旅行は多様性に触れさせることで人々を啓発できる。", context: "文化" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48534, word: "extinguish", meaning: "消す", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Firefighters extinguished the blaze within three hours.", exampleJa: "消防士たちは3時間以内に火を消した。",
+    examples: [
+      { en: "Firefighters extinguished the blaze within three hours.", ja: "消防士たちは3時間以内に火を消した。", context: "災害" },
+      { en: "The new policy could extinguish hopes for economic reform.", ja: "新政策は経済改革への希望を消しかねない。", context: "政治" },
+      { en: "Heavy rain helped extinguish the forest fire naturally.", ja: "大雨が自然に山火事を消すのに役立った。", context: "自然" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48535, word: "fulfil", meaning: "果たす", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The company fulfilled its promise to reduce emissions.", exampleJa: "その企業は排出量削減の約束を果たした。",
+    examples: [
+      { en: "The company fulfilled its promise to reduce emissions.", ja: "その企業は排出量削減の約束を果たした。", context: "環境" },
+      { en: "She fulfilled all the requirements for the scholarship.", ja: "彼女は奨学金の全要件を満たした。", context: "教育" },
+      { en: "Volunteers fulfilled a vital role during the disaster relief.", ja: "ボランティアは災害救援で重要な役割を果たした。", context: "支援" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48536, word: "harass", meaning: "嫌がらせする", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The new policy strictly prohibits harassing coworkers.", exampleJa: "新方針は同僚への嫌がらせを厳しく禁止している。",
+    examples: [
+      { en: "The new policy strictly prohibits harassing coworkers.", ja: "新方針は同僚への嫌がらせを厳しく禁止している。", context: "労働" },
+      { en: "Victims of online harassment often suffer in silence.", ja: "ネットでの嫌がらせの被害者はしばしば黙って苦しむ。", context: "社会" },
+      { en: "Laws protect employees from being harassed at work.", ja: "法律は従業員を職場での嫌がらせから保護する。", context: "法律" },
+    ],
+    difficulty: 6, category: "society", categories: ["society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48537, word: "incite", meaning: "扇動する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The speech was accused of inciting violence among supporters.", exampleJa: "その演説は支持者の間で暴力を扇動したと非難された。",
+    examples: [
+      { en: "The speech was accused of inciting violence among supporters.", ja: "その演説は支持者の間で暴力を扇動したと非難された。", context: "政治" },
+      { en: "Social media can incite public outrage very quickly.", ja: "ソーシャルメディアは非常に素早く世論の怒りを扇動できる。", context: "メディア" },
+      { en: "The article incited a heated debate among scholars.", ja: "その記事は学者の間で激しい議論を引き起こした。", context: "学術" },
+    ],
+    difficulty: 6, category: "society", categories: ["society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48538, word: "inflict", meaning: "与える", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The hurricane inflicted severe damage on coastal communities.", exampleJa: "ハリケーンは沿岸地域に深刻な被害を与えた。",
+    examples: [
+      { en: "The hurricane inflicted severe damage on coastal communities.", ja: "ハリケーンは沿岸地域に深刻な被害を与えた。", context: "災害" },
+      { en: "War inflicts lasting trauma on both soldiers and civilians.", ja: "戦争は兵士と市民の両方に永続的なトラウマを与える。", context: "軍事" },
+      { en: "Strict penalties were inflicted on those who violated regulations.", ja: "規則を違反した者には厳しい罰則が科された。", context: "法律" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48539, word: "innovate", meaning: "革新する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Companies must innovate constantly to stay competitive today.", exampleJa: "企業は今日競争力を維持するために絶えず革新しなければならない。",
+    examples: [
+      { en: "Companies must innovate constantly to stay competitive today.", ja: "企業は今日競争力を維持するために絶えず革新しなければならない。", context: "ビジネス" },
+      { en: "The startup innovated by using artificial intelligence creatively.", ja: "そのスタートアップはAIを創造的に活用して革新した。", context: "技術" },
+      { en: "Schools need to innovate their teaching methods regularly.", ja: "学校は定期的に教育方法を革新する必要がある。", context: "教育" },
+    ],
+    difficulty: 6, category: "business", categories: ["business"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48540, word: "intervene", meaning: "介入する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The government intervened to stabilize the falling currency.", exampleJa: "政府は下落する通貨を安定させるために介入した。",
+    examples: [
+      { en: "The government intervened to stabilize the falling currency.", ja: "政府は下落する通貨を安定させるために介入した。", context: "経済" },
+      { en: "A bystander intervened to stop the argument from escalating.", ja: "傍観者が口論のエスカレートを止めるために介入した。", context: "日常" },
+      { en: "International organizations intervened during the humanitarian crisis.", ja: "国際機関が人道的危機の際に介入した。", context: "国際" },
+    ],
+    difficulty: 6, category: "society", categories: ["society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48541, word: "intimidate", meaning: "威嚇する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The defendant attempted to intimidate witnesses before the trial.", exampleJa: "被告は裁判前に証人を威嚇しようとした。",
+    examples: [
+      { en: "The defendant attempted to intimidate witnesses before the trial.", ja: "被告は裁判前に証人を威嚇しようとした。", context: "法律" },
+      { en: "Large corporations sometimes intimidate smaller competitors unfairly.", ja: "大企業は時に小さな競合他社を不当に威嚇する。", context: "ビジネス" },
+      { en: "Students should not feel intimidated by difficult subjects.", ja: "学生は難しい科目に威圧されるべきではない。", context: "教育" },
+    ],
+    difficulty: 6, category: "society", categories: ["society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48542, word: "isolate", meaning: "孤立させる", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "Scientists isolated the virus causing the mysterious disease.", exampleJa: "科学者はその謎の病気を引き起こすウイルスを分離した。",
+    examples: [
+      { en: "Scientists isolated the virus causing the mysterious disease.", ja: "科学者はその謎の病気を引き起こすウイルスを分離した。", context: "医療" },
+      { en: "The island's geography isolated its inhabitants for centuries.", ja: "島の地形は何世紀にもわたり住民を孤立させた。", context: "地理" },
+      { en: "Economic sanctions effectively isolated the country from trade.", ja: "経済制裁はその国を貿易から効果的に孤立させた。", context: "国際" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48543, word: "nominate", meaning: "推薦する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The board nominated her as the new chairperson.", exampleJa: "取締役会は彼女を新しい議長に推薦した。",
+    examples: [
+      { en: "The board nominated her as the new chairperson.", ja: "取締役会は彼女を新しい議長に推薦した。", context: "ビジネス" },
+      { en: "The film was nominated for several international awards.", ja: "その映画はいくつかの国際的な賞に推薦された。", context: "メディア" },
+      { en: "Members nominated candidates for the upcoming annual election.", ja: "会員は次の年次選挙の候補者を推薦した。", context: "政治" },
+    ],
+    difficulty: 6, category: "business", categories: ["business"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48544, word: "notify", meaning: "通知する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The hospital notified families about the schedule change.", exampleJa: "病院はスケジュール変更について家族に通知した。",
+    examples: [
+      { en: "The hospital notified families about the schedule change.", ja: "病院はスケジュール変更について家族に通知した。", context: "医療" },
+      { en: "Authorities notified residents of the approaching severe storm.", ja: "当局は接近する激しい嵐について住民に通知した。", context: "防災" },
+      { en: "The airline notified passengers that the flight was delayed.", ja: "航空会社は乗客にフライトの遅延を通知した。", context: "旅行" },
+    ],
+    difficulty: 6, category: "business", categories: ["business"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48545, word: "optimize", meaning: "最適化する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The engineer optimized the system for faster processing.", exampleJa: "技術者はより高速な処理のためにシステムを最適化した。",
+    examples: [
+      { en: "The engineer optimized the system for faster processing.", ja: "技術者はより高速な処理のためにシステムを最適化した。", context: "技術" },
+      { en: "Farmers optimized crop yields through advanced irrigation methods.", ja: "農家は先進的な灌漑方法で作物の収穫量を最適化した。", context: "農業" },
+      { en: "The website was optimized to improve the user experience.", ja: "そのウェブサイトはユーザー体験向上のために最適化された。", context: "IT" },
+    ],
+    difficulty: 6, category: "business", categories: ["business","academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48546, word: "pledge", meaning: "誓約する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The president pledged to reduce poverty within five years.", exampleJa: "大統領は5年以内に貧困を減らすことを誓約した。",
+    examples: [
+      { en: "The president pledged to reduce poverty within five years.", ja: "大統領は5年以内に貧困を減らすことを誓約した。", context: "政治" },
+      { en: "Donors pledged millions of dollars for disaster recovery.", ja: "寄付者は災害復旧に数百万ドルを誓約した。", context: "支援" },
+      { en: "The company pledged full transparency in its operations.", ja: "その企業は事業の完全な透明性を誓約した。", context: "ビジネス" },
+    ],
+    difficulty: 6, category: "society", categories: ["society"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48547, word: "unleash", meaning: "解き放つ", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The storm unleashed powerful winds across the entire coast.", exampleJa: "嵐は海岸全域に強力な風を解き放った。",
+    examples: [
+      { en: "The storm unleashed powerful winds across the entire coast.", ja: "嵐は海岸全域に強力な風を解き放った。", context: "自然" },
+      { en: "The policy unleashed a wave of public protests nationwide.", ja: "その政策は全国的な抗議の波を引き起こした。", context: "政治" },
+      { en: "New technology can unleash creativity in unexpected ways.", ja: "新技術は予想外の方法で創造性を解き放てる。", context: "技術" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+  {
+    id: 48548, word: "utilize", meaning: "活用する", partOfSpeech: "verb",
+    course: "eiken", stage: "pre1",
+    example: "The team utilized advanced software to analyze the data.", exampleJa: "チームはデータ分析に先進的なソフトウェアを活用した。",
+    examples: [
+      { en: "The team utilized advanced software to analyze the data.", ja: "チームはデータ分析に先進的なソフトウェアを活用した。", context: "技術" },
+      { en: "Hospitals utilize telemedicine to reach patients in remote areas.", ja: "病院は遠隔地の患者に届くために遠隔医療を活用する。", context: "医療" },
+      { en: "Schools should utilize digital tools to enhance student learning.", ja: "学校は生徒の学習を高めるためにデジタルツールを活用すべきだ。", context: "教育" },
+    ],
+    difficulty: 6, category: "academic", categories: ["academic"], frequencyRank: 4, source: "original",
+  },
+];
