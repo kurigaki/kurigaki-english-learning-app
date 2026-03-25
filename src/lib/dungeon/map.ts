@@ -54,6 +54,13 @@ function isRoomEntrance(m: TileType[][], x: number, y: number): boolean {
  * BFS廊下掘り: 部屋に隣接しない・部屋の角を避ける1幅経路を探す
  * 失敗時は false を返す（L字フォールバック用）
  */
+/**
+ * BFS廊下掘り（段階的フォールバックで接続保証）
+ * Level 0: 全制約（部屋隣接回避・角回避・2×2防止）
+ * Level 1: 2×2防止を緩和
+ * Level 2: 角回避も緩和（部屋隣接回避のみ）
+ * Level 3: 制約なし（最低限の接続保証）
+ */
 function digCorridorBFS(
   m: TileType[][],
   fromX: number, fromY: number,
@@ -63,7 +70,7 @@ function digCorridorBFS(
   const key = (x: number, y: number) => y * MW + x;
   const endKey = key(toX, toY);
 
-  // Start/End 付近は制約を免除（部屋に隣接していてOK）
+  // Start/End 付近は制約を免除
   const exempt = new Set<number>();
   exempt.add(key(fromX, fromY));
   exempt.add(endKey);
@@ -75,7 +82,6 @@ function digCorridorBFS(
     if (nx >= 0 && nx < MW && ny >= 0 && ny < MH) exempt.add(key(nx, ny));
   }
 
-  // 部屋の角タイル（頂点の外側4隅）を保護
   const cornerSet = new Set<number>();
   for (const room of rooms) {
     for (const [cx, cy] of [
@@ -86,64 +92,71 @@ function digCorridorBFS(
     }
   }
 
-  const parent = new Map<number, number>();
-  parent.set(key(fromX, fromY), -1);
-  const queue: [number, number][] = [[fromX, fromY]];
-  let head = 0;
+  // 段階的にフォールバック（level 0=厳しい → level 3=制約なし）
+  for (let level = 0; level <= 3; level++) {
+    const parent = new Map<number, number>();
+    parent.set(key(fromX, fromY), -1);
+    const queue: [number, number][] = [[fromX, fromY]];
+    let head = 0;
 
-  while (head < queue.length) {
-    const [cx, cy] = queue[head++];
-    if (cx === toX && cy === toY) {
-      // パス発見 → 掘る
-      let k: number | undefined = endKey;
-      while (k !== undefined && k !== -1) {
-        const px = k % MW, py = Math.floor(k / MW);
-        if (m[py][px] === W) m[py][px] = C;
-        k = parent.get(k);
+    while (head < queue.length) {
+      const [cx, cy] = queue[head++];
+      if (cx === toX && cy === toY) {
+        // パス発見 → 掘る
+        let k: number | undefined = endKey;
+        while (k !== undefined && k !== -1) {
+          const px = k % MW, py = Math.floor(k / MW);
+          if (m[py][px] === W) m[py][px] = C;
+          k = parent.get(k);
+        }
+        return true;
       }
-      return true;
-    }
-    for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
-      const nx = cx + dx, ny = cy + dy;
-      if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
-      const nk = key(nx, ny);
-      if (parent.has(nk)) continue;
-      if (m[ny][nx] !== W) continue; // 壁のみ通過
+      for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+        const nx = cx + dx, ny = cy + dy;
+        if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
+        const nk = key(nx, ny);
+        if (parent.has(nk)) continue;
+        if (m[ny][nx] !== W) continue;
 
-      if (!exempt.has(nk)) {
-        // 部屋に隣接するタイルを回避
-        let nearRoom = false;
-        for (const [ddx, ddy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
-          const ax = nx + ddx, ay = ny + ddy;
-          if (ax >= 0 && ax < MW && ay >= 0 && ay < MH && m[ay][ax] === R) {
-            nearRoom = true;
-            break;
+        if (!exempt.has(nk)) {
+          // Level 0-2: 部屋隣接回避
+          if (level <= 2) {
+            let nearRoom = false;
+            for (const [ddx, ddy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+              const ax = nx + ddx, ay = ny + ddy;
+              if (ax >= 0 && ax < MW && ay >= 0 && ay < MH && m[ay][ax] === R) {
+                nearRoom = true;
+                break;
+              }
+            }
+            if (nearRoom) continue;
+          }
+          // Level 0-1: 角回避
+          if (level <= 1 && cornerSet.has(nk)) continue;
+          // Level 0: 2×2ブロック防止
+          if (level === 0) {
+            let creates2x2 = false;
+            for (const [by, bx] of [[-1, -1], [-1, 0], [0, -1], [0, 0]] as [number, number][]) {
+              let walkable = 0;
+              for (const [oy, ox] of [[0, 0], [0, 1], [1, 0], [1, 1]] as [number, number][]) {
+                const tx = nx + bx + ox, ty = ny + by + oy;
+                if (tx < 0 || tx >= MW || ty < 0 || ty >= MH) { walkable = -4; break; }
+                if (tx === nx && ty === ny) { walkable++; continue; }
+                if (m[ty][tx] !== W) walkable++;
+              }
+              if (walkable >= 4) { creates2x2 = true; break; }
+            }
+            if (creates2x2) continue;
           }
         }
-        if (nearRoom) continue;
-        // 部屋の角を回避
-        if (cornerSet.has(nk)) continue;
-        // 2×2歩行可能ブロック防止（廊下の並行を防ぐ。交差はOK）
-        let creates2x2 = false;
-        for (const [by, bx] of [[-1, -1], [-1, 0], [0, -1], [0, 0]] as [number, number][]) {
-          let walkable = 0;
-          for (const [oy, ox] of [[0, 0], [0, 1], [1, 0], [1, 1]] as [number, number][]) {
-            const tx = nx + bx + ox, ty = ny + by + oy;
-            if (tx < 0 || tx >= MW || ty < 0 || ty >= MH) { walkable = -4; break; }
-            if (tx === nx && ty === ny) { walkable++; continue; } // 配置予定タイル
-            if (m[ty][tx] !== W) walkable++; // R or C
-          }
-          if (walkable >= 4) { creates2x2 = true; break; }
-        }
-        if (creates2x2) continue;
-      }
 
-      parent.set(nk, key(cx, cy));
-      queue.push([nx, ny]);
+        parent.set(nk, key(cx, cy));
+        queue.push([nx, ny]);
+      }
     }
   }
 
-  return false; // 経路なし
+  return false;
 }
 
 let _trapId = 0;
