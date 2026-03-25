@@ -243,7 +243,7 @@ export function generateMap(g: GameState): void {
   let eid = 0;
   for (let ri = 1; ri < rooms.length; ri++) {
     const r = rooms[ri];
-    const cnt = 1 + Math.floor(Math.random() * 2) + (g.floor >= 4 ? 1 : 0);
+    const cnt = 2 + Math.floor(Math.random() * 2) + (g.floor >= 3 ? 1 : 0);
     for (let c = 0; c < cnt; c++) {
       let ex = 0;
       let ey = 0;

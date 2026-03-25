@@ -460,9 +460,9 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       if (g.turn % 4 === 0 && g.p.hp < g.p.mhp) {
         g.p.hp = Math.min(g.p.hp + 1, g.p.mhp);
       }
-      // スタミナ減少: easy=6ターン毎に1、hard=3ターン毎に1
+      // スタミナ減少: easy=10ターン毎に1、hard=5ターン毎に1
       if (g.hunger > 0) {
-        const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 3 === 0) : (g.turn % 6 === 0);
+        const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 5 === 0) : (g.turn % 10 === 0);
         if (decayThisTurn) {
           g.hunger = Math.max(0, g.hunger - 1);
           if (g.hunger === 0) queueMsg("🍂 お腹が空いた！HPが減っていく…");
@@ -1243,6 +1243,36 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       if (g.playerSlowTurns > 0) {
         g.playerSlowTurns--;
         runEnemyTurn(g);
+      }
+
+      // 敵の自然湧き: 30ターンごとにプレイヤーから離れた部屋で敵が1体湧く
+      if (g.turn > 0 && g.turn % 30 === 0) {
+        const playerRoom = g.rooms.find((r) =>
+          g.px >= r.x && g.px < r.x + r.w && g.py >= r.y && g.py < r.y + r.h
+        );
+        const spawnRooms = g.rooms.filter((r) => r !== playerRoom);
+        if (spawnRooms.length > 0) {
+          const sr = spawnRooms[Math.floor(Math.random() * spawnRooms.length)];
+          const pool = ENEMIES_DEF.filter((e) => e.floor <= g.floor);
+          if (pool.length > 0) {
+            const tmpl = pool[Math.floor(Math.random() * pool.length)];
+            for (let att = 0; att < 20; att++) {
+              const sx = sr.x + 1 + Math.floor(Math.random() * Math.max(1, sr.w - 2));
+              const sy = sr.y + 1 + Math.floor(Math.random() * Math.max(1, sr.h - 2));
+              if (!g.enemies.find((e2) => e2.x === sx && e2.y === sy) &&
+                  !(sx === g.px && sy === g.py) &&
+                  !(g.stairsPos && sx === g.stairsPos.x && sy === g.stairsPos.y)) {
+                g.enemies.push({
+                  ...tmpl, hp: tmpl.mhp, x: sx, y: sy,
+                  id: g.enemies.length > 0 ? Math.max(...g.enemies.map((e2) => e2.id)) + 1 : 0,
+                  alert: false, sleeping: false, confused: 0, sealed: 0,
+                  wanderTarget: null, lastDx: undefined, lastDy: undefined, stuckCount: 0,
+                });
+                break;
+              }
+            }
+          }
+        }
       }
 
       // 足元アクションを更新（runEnemyTurnのupdateUIより後に適用）

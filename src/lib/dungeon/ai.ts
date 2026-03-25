@@ -187,8 +187,25 @@ export function wanderMove(g: GameState, e: Enemy): void {
     // lastDx がない → 下の部屋ロジックへ
   }
 
-  // ── 部屋内：最も近い廊下出口をBFSで目指す ──
+  // ── 部屋内：廊下出口を目指し、到着したら廊下に出る ──
   e.stuckCount = 0;
+
+  // 出口タイル（Rで隣がC）にいる場合 → 廊下に出る
+  if (curTile === R) {
+    for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+      const cx = e.x + dx, cy = e.y + dy;
+      if (cx >= 0 && cx < MW && cy >= 0 && cy < MH && g.map[cy][cx] === C &&
+          !g.enemies.find((o) => o.id !== e.id && o.x === cx && o.y === cy) &&
+          !(cx === g.px && cy === g.py)) {
+        e.lastDx = dx;
+        e.lastDy = dy;
+        e.x = cx;
+        e.y = cy;
+        e.wanderTarget = null;
+        return;
+      }
+    }
+  }
 
   if (!e.wanderTarget || (e.x === e.wanderTarget.x && e.y === e.wanderTarget.y)) {
     const myRoom = getRoom(g.rooms, e.x, e.y);
@@ -214,7 +231,6 @@ export function wanderMove(g: GameState, e: Enemy): void {
     if (candidates.length === 0) {
       e.wanderTarget = null;
     } else {
-      // 最も近い出口を選択（無駄な動きを防止）
       candidates.sort((a, b) => {
         const da = Math.abs(a.x - e.x) + Math.abs(a.y - e.y);
         const db = Math.abs(b.x - e.x) + Math.abs(b.y - e.y);

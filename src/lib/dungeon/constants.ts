@@ -271,21 +271,21 @@ export const GUARDIAN_DEFS: EnemyDef[] = [
 ];
 
 export const ENEMIES_DEF: EnemyDef[] = [
-  // B1F
-  { name: "グレムリン", icon: "👾", mhp: 4, atk: 1, exp: 4, floor: 1, sleepChance: 0.5 },
-  { name: "スライム", icon: "🟢", mhp: 6, atk: 2, exp: 6, floor: 1, sleepChance: 0.4 },
-  { name: "コウモリ", icon: "🦇", mhp: 5, atk: 2, exp: 6, floor: 1, sleepChance: 0.2 },
+  // B1F — 弱い敵（初心者向け）
+  { name: "Gremlin", icon: "👾", mhp: 5, atk: 2, exp: 5, floor: 1, sleepChance: 0.5 },
+  { name: "Slime", icon: "🫧", mhp: 7, atk: 2, exp: 6, floor: 1, sleepChance: 0.4 },
+  { name: "Bat", icon: "🦇", mhp: 6, atk: 3, exp: 7, floor: 1, sleepChance: 0.2 },
   // B2F
-  { name: "スケルトン", icon: "💀", mhp: 10, atk: 3, exp: 12, floor: 2, sleepChance: 0.3 },
-  { name: "オーク", icon: "👹", mhp: 14, atk: 4, exp: 16, floor: 2, sleepChance: 0.2 },
-  { name: "ゴースト", icon: "👻", mhp: 8, atk: 3, exp: 10, floor: 2, sleepChance: 0.3 },
+  { name: "Skeleton", icon: "💀", mhp: 12, atk: 4, exp: 14, floor: 2, sleepChance: 0.3 },
+  { name: "Orc", icon: "👹", mhp: 16, atk: 5, exp: 18, floor: 2, sleepChance: 0.2 },
+  { name: "Ghost", icon: "👻", mhp: 10, atk: 4, exp: 12, floor: 2, sleepChance: 0.3 },
   // B3F
-  { name: "ゴーレム", icon: "🗿", mhp: 20, atk: 6, exp: 26, floor: 3, sleepChance: 0.1 },
-  { name: "ウィザード", icon: "🧙", mhp: 12, atk: 5, exp: 20, floor: 3, sleepChance: 0.2 },
+  { name: "Golem", icon: "🗿", mhp: 22, atk: 7, exp: 28, floor: 3, sleepChance: 0.1 },
+  { name: "Wizard", icon: "🧙", mhp: 14, atk: 6, exp: 22, floor: 3, sleepChance: 0.2 },
   // B4F
-  { name: "デビル", icon: "😈", mhp: 18, atk: 7, exp: 30, floor: 4, sleepChance: 0.1 },
-  { name: "ミノタウロス", icon: "🐂", mhp: 25, atk: 8, exp: 36, floor: 4, sleepChance: 0.1 },
+  { name: "Devil", icon: "😈", mhp: 20, atk: 8, exp: 32, floor: 4, sleepChance: 0.1 },
+  { name: "Minotaur", icon: "🐂", mhp: 28, atk: 9, exp: 38, floor: 4, sleepChance: 0.1 },
   // B5F
-  { name: "ドラゴン", icon: "🐉", mhp: 30, atk: 10, exp: 50, floor: 5, sleepChance: 0.05 },
-  { name: "リッチ", icon: "☠️", mhp: 22, atk: 9, exp: 44, floor: 5, sleepChance: 0.1 },
+  { name: "Dragon", icon: "🐉", mhp: 35, atk: 11, exp: 55, floor: 5, sleepChance: 0.05 },
+  { name: "Lich", icon: "☠️", mhp: 25, atk: 10, exp: 48, floor: 5, sleepChance: 0.1 },
 ];
