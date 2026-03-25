@@ -1,0 +1,718 @@
+// 英検1級 人物描写・状況描写の高度な形容詞（64語）
+// ID: 48653〜48716
+// difficulty: 7, frequencyRank: 5, source: "original", course: "eiken", stage: "1"
+// 品質基準: meaning 10文字以内, examples 3件, 例文 5〜12語, "I"始まり15%以下
+
+export const eiken1R11 = [
+  // ===== 態度・姿勢グループ =====
+  {
+    id: 48653, word: "adamant", meaning: "断固とした", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The mayor was adamant about enforcing the new policy.", exampleJa: "市長は新政策の施行に断固としていた。",
+    examples: [
+      { en: "The mayor was adamant about enforcing the new policy.", ja: "市長は新政策の施行に断固としていた。", context: "政治" },
+      { en: "She remained adamant despite mounting public criticism.", ja: "彼女は高まる世論の批判にもかかわらず断固としていた。", context: "社会" },
+      { en: "The union leader was adamant in his demands.", ja: "組合のリーダーは要求において断固としていた。", context: "労働" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48654, word: "assertive", meaning: "自己主張の強い", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Her assertive leadership transformed the struggling company.", exampleJa: "彼女の自己主張の強いリーダーシップが苦境の会社を変えた。",
+    examples: [
+      { en: "Her assertive leadership transformed the struggling company.", ja: "彼女の自己主張の強いリーダーシップが苦境の会社を変えた。", context: "ビジネス" },
+      { en: "The diplomat adopted a more assertive negotiating stance.", ja: "その外交官はより積極的な交渉姿勢をとった。", context: "外交" },
+      { en: "Being assertive does not mean being aggressive.", ja: "自己主張が強いことは攻撃的であることを意味しない。", context: "心理" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48655, word: "audacious", meaning: "大胆な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The audacious rescue mission saved all the hostages.", exampleJa: "その大胆な救出作戦は人質全員を救った。",
+    examples: [
+      { en: "The audacious rescue mission saved all the hostages.", ja: "その大胆な救出作戦は人質全員を救った。", context: "軍事" },
+      { en: "His audacious business plan attracted major investors.", ja: "彼の大胆な事業計画は大口投資家を引きつけた。", context: "ビジネス" },
+      { en: "The artist made an audacious departure from tradition.", ja: "その芸術家は伝統からの大胆な脱却を試みた。", context: "芸術" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48656, word: "defiant", meaning: "反抗的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The defiant protesters refused to leave the square.", exampleJa: "反抗的な抗議者たちは広場を離れることを拒否した。",
+    examples: [
+      { en: "The defiant protesters refused to leave the square.", ja: "反抗的な抗議者たちは広場を離れることを拒否した。", context: "社会" },
+      { en: "She gave a defiant response to the allegations.", ja: "彼女は疑惑に対して反抗的な返答をした。", context: "法律" },
+      { en: "The nation took a defiant stance against sanctions.", ja: "その国は制裁に対して反抗的な姿勢をとった。", context: "国際" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48657, word: "obstinate", meaning: "頑固な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The obstinate negotiator blocked every proposed compromise.", exampleJa: "頑固な交渉者はあらゆる妥協案を阻止した。",
+    examples: [
+      { en: "The obstinate negotiator blocked every proposed compromise.", ja: "頑固な交渉者はあらゆる妥協案を阻止した。", context: "外交" },
+      { en: "His obstinate refusal delayed the project significantly.", ja: "彼の頑固な拒否がプロジェクトを大幅に遅らせた。", context: "ビジネス" },
+      { en: "The obstinate child refused to eat any vegetables.", ja: "頑固な子供は野菜を一切食べることを拒んだ。", context: "日常" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48658, word: "relentless", meaning: "容赦ない", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The journalist pursued the corruption story with relentless determination.", exampleJa: "記者は容赦ない決意で汚職事件を追った。",
+    examples: [
+      { en: "The journalist pursued the corruption story with relentless determination.", ja: "記者は容赦ない決意で汚職事件を追った。", context: "メディア" },
+      { en: "Relentless flooding devastated the coastal communities.", ja: "容赦ない洪水が沿岸地域を壊滅させた。", context: "災害" },
+      { en: "The company faced relentless competition from global rivals.", ja: "その会社は世界的なライバルからの容赦ない競争に直面した。", context: "ビジネス" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48659, word: "dogmatic", meaning: "独断的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "His dogmatic approach alienated many of his colleagues.", exampleJa: "彼の独断的なアプローチは多くの同僚を遠ざけた。",
+    examples: [
+      { en: "His dogmatic approach alienated many of his colleagues.", ja: "彼の独断的なアプローチは多くの同僚を遠ざけた。", context: "職場" },
+      { en: "The professor was criticized for his dogmatic teaching style.", ja: "その教授は独断的な教授法で批判された。", context: "教育" },
+      { en: "Dogmatic policies often fail to adapt to change.", ja: "独断的な政策はしばしば変化に適応できない。", context: "政治" },
+    ],
+    difficulty: 7, category: "academic", categories: ["academic"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48660, word: "complacent", meaning: "自己満足の", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The complacent management ignored signs of declining sales.", exampleJa: "自己満足の経営陣は売上低下の兆候を無視した。",
+    examples: [
+      { en: "The complacent management ignored signs of declining sales.", ja: "自己満足の経営陣は売上低下の兆候を無視した。", context: "ビジネス" },
+      { en: "Citizens grew complacent after years of economic stability.", ja: "国民は長年の経済安定の後、自己満足に陥った。", context: "経済" },
+      { en: "We cannot afford to be complacent about cybersecurity.", ja: "サイバーセキュリティに関して自己満足であってはならない。", context: "技術" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  // ===== 性格・気質グループ =====
+  {
+    id: 48661, word: "affable", meaning: "愛想のよい", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The affable host made every guest feel welcome.", exampleJa: "愛想のよいホストは全てのゲストを歓迎した。",
+    examples: [
+      { en: "The affable host made every guest feel welcome.", ja: "愛想のよいホストは全てのゲストを歓迎した。", context: "社交" },
+      { en: "Her affable manner won the trust of voters.", ja: "彼女の愛想のよい態度が有権者の信頼を勝ち取った。", context: "政治" },
+      { en: "The affable professor was popular among all students.", ja: "その愛想のよい教授は全ての学生に人気だった。", context: "教育" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48662, word: "amiable", meaning: "友好的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The amiable diplomat eased tensions between the two nations.", exampleJa: "友好的な外交官が両国間の緊張を緩和した。",
+    examples: [
+      { en: "The amiable diplomat eased tensions between the two nations.", ja: "友好的な外交官が両国間の緊張を緩和した。", context: "外交" },
+      { en: "Despite the setback, she maintained an amiable attitude.", ja: "挫折にもかかわらず、彼女は友好的な態度を保った。", context: "職場" },
+      { en: "His amiable personality made him a natural leader.", ja: "彼の友好的な性格が天性のリーダーにした。", context: "社会" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48663, word: "gregarious", meaning: "社交的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The gregarious politician thrived at public gatherings.", exampleJa: "社交的な政治家は公の集まりで活躍した。",
+    examples: [
+      { en: "The gregarious politician thrived at public gatherings.", ja: "社交的な政治家は公の集まりで活躍した。", context: "政治" },
+      { en: "Gregarious people tend to build large professional networks.", ja: "社交的な人は大きな仕事のネットワークを築く傾向がある。", context: "ビジネス" },
+      { en: "Her gregarious nature made networking events enjoyable.", ja: "彼女の社交的な性格が交流イベントを楽しくした。", context: "社交" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48664, word: "charismatic", meaning: "魅力的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The charismatic leader inspired millions with his speeches.", exampleJa: "魅力的なリーダーは演説で何百万人を鼓舞した。",
+    examples: [
+      { en: "The charismatic leader inspired millions with his speeches.", ja: "魅力的なリーダーは演説で何百万人を鼓舞した。", context: "政治" },
+      { en: "Her charismatic presence dominated the conference stage.", ja: "彼女の魅力的な存在感が会議の壇上を支配した。", context: "ビジネス" },
+      { en: "Charismatic teachers can transform reluctant learners.", ja: "魅力的な教師は消極的な学習者を変えることができる。", context: "教育" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48665, word: "eccentric", meaning: "風変わりな", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The eccentric billionaire funded unusual scientific research.", exampleJa: "風変わりな億万長者が珍しい科学研究に資金を提供した。",
+    examples: [
+      { en: "The eccentric billionaire funded unusual scientific research.", ja: "風変わりな億万長者が珍しい科学研究に資金を提供した。", context: "科学" },
+      { en: "Her eccentric fashion choices attracted media attention.", ja: "彼女の風変わりなファッションの選択がメディアの注目を集めた。", context: "メディア" },
+      { en: "The eccentric inventor held over two hundred patents.", ja: "風変わりな発明家は200以上の特許を保有していた。", context: "技術" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48666, word: "flamboyant", meaning: "派手な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The flamboyant designer unveiled a stunning new collection.", exampleJa: "派手なデザイナーが素晴らしい新コレクションを発表した。",
+    examples: [
+      { en: "The flamboyant designer unveiled a stunning new collection.", ja: "派手なデザイナーが素晴らしい新コレクションを発表した。", context: "芸術" },
+      { en: "His flamboyant personality made him a television star.", ja: "彼の派手な性格がテレビスターにした。", context: "メディア" },
+      { en: "The festival featured flamboyant costumes and lively music.", ja: "その祭りでは派手な衣装と活気のある音楽が特徴だった。", context: "文化" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48667, word: "whimsical", meaning: "気まぐれな", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The whimsical artist created playful sculptures from scrap.", exampleJa: "気まぐれな芸術家が廃材から遊び心のある彫刻を作った。",
+    examples: [
+      { en: "The whimsical artist created playful sculptures from scrap.", ja: "気まぐれな芸術家が廃材から遊び心のある彫刻を作った。", context: "芸術" },
+      { en: "Her whimsical decisions often surprised her business partners.", ja: "彼女の気まぐれな決断はしばしばビジネスパートナーを驚かせた。", context: "ビジネス" },
+      { en: "The garden had a whimsical charm with winding paths.", ja: "その庭は曲がりくねった小道で気まぐれな魅力があった。", context: "日常" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48668, word: "capricious", meaning: "移り気な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The capricious weather disrupted the outdoor festival plans.", exampleJa: "移り気な天候が屋外フェスティバルの計画を狂わせた。",
+    examples: [
+      { en: "The capricious weather disrupted the outdoor festival plans.", ja: "移り気な天候が屋外フェスティバルの計画を狂わせた。", context: "天候" },
+      { en: "Capricious policy changes confused both investors and citizens.", ja: "移り気な政策変更が投資家と市民の双方を困惑させた。", context: "政治" },
+      { en: "The capricious dictator frequently replaced his advisors.", ja: "移り気な独裁者は頻繁に顧問を交代させた。", context: "政治" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48669, word: "fickle", meaning: "変わりやすい", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Fickle consumer trends challenge even established brands.", exampleJa: "変わりやすい消費者の動向は大手ブランドにも試練を与える。",
+    examples: [
+      { en: "Fickle consumer trends challenge even established brands.", ja: "変わりやすい消費者の動向は大手ブランドにも試練を与える。", context: "ビジネス" },
+      { en: "The fickle stock market rattled nervous investors.", ja: "変わりやすい株式市場が神経質な投資家を動揺させた。", context: "金融" },
+      { en: "Public opinion on the issue proved remarkably fickle.", ja: "この問題に関する世論は著しく変わりやすいことが判明した。", context: "社会" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48670, word: "volatile", meaning: "不安定な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The volatile political situation deterred foreign investment.", exampleJa: "不安定な政治情勢が外国からの投資を阻んだ。",
+    examples: [
+      { en: "The volatile political situation deterred foreign investment.", ja: "不安定な政治情勢が外国からの投資を阻んだ。", context: "経済" },
+      { en: "Oil prices remained highly volatile throughout the quarter.", ja: "石油価格は四半期を通じて非常に不安定だった。", context: "金融" },
+      { en: "The volatile leader was known for unpredictable outbursts.", ja: "不安定なリーダーは予測不能な爆発で知られていた。", context: "政治" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48671, word: "impetuous", meaning: "衝動的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "His impetuous decision led to a costly legal battle.", exampleJa: "彼の衝動的な決断が費用のかかる法的争いを招いた。",
+    examples: [
+      { en: "His impetuous decision led to a costly legal battle.", ja: "彼の衝動的な決断が費用のかかる法的争いを招いた。", context: "法律" },
+      { en: "The impetuous general launched an attack without authorization.", ja: "衝動的な将軍は許可なく攻撃を開始した。", context: "軍事" },
+      { en: "Her impetuous nature sometimes undermined her careful planning.", ja: "彼女の衝動的な性格が時に慎重な計画を台無しにした。", context: "職場" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48672, word: "reckless", meaning: "無謀な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Reckless spending brought the corporation to the brink.", exampleJa: "無謀な支出が企業を瀬戸際に追い込んだ。",
+    examples: [
+      { en: "Reckless spending brought the corporation to the brink.", ja: "無謀な支出が企業を瀬戸際に追い込んだ。", context: "ビジネス" },
+      { en: "The reckless driver caused a major highway accident.", ja: "無謀な運転者が高速道路で大事故を引き起こした。", context: "社会" },
+      { en: "Critics called the military strategy dangerously reckless.", ja: "批評家たちはその軍事戦略を危険なほど無謀と呼んだ。", context: "軍事" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  // ===== 感情・心理グループ =====
+  {
+    id: 48673, word: "ambivalent", meaning: "相反する", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Voters remained ambivalent about the proposed tax reform.", exampleJa: "有権者は提案された税制改革について相反する気持ちだった。",
+    examples: [
+      { en: "Voters remained ambivalent about the proposed tax reform.", ja: "有権者は提案された税制改革について相反する気持ちだった。", context: "政治" },
+      { en: "The public felt ambivalent toward the new technology.", ja: "大衆は新技術に対して相反する感情を持った。", context: "技術" },
+      { en: "She was ambivalent about accepting the overseas position.", ja: "彼女は海外のポジションを受けることに迷っていた。", context: "キャリア" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48674, word: "apathetic", meaning: "無関心な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Apathetic citizens failed to vote in the crucial election.", exampleJa: "無関心な市民は重要な選挙で投票しなかった。",
+    examples: [
+      { en: "Apathetic citizens failed to vote in the crucial election.", ja: "無関心な市民は重要な選挙で投票しなかった。", context: "政治" },
+      { en: "The apathetic response to the crisis alarmed authorities.", ja: "危機への無関心な反応が当局を驚かせた。", context: "社会" },
+      { en: "Young people were surprisingly apathetic about climate change.", ja: "若者は気候変動に対して驚くほど無関心だった。", context: "環境" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48675, word: "indignant", meaning: "憤慨した", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The indignant workers demanded an immediate public apology.", exampleJa: "憤慨した労働者たちは即座の公式謝罪を要求した。",
+    examples: [
+      { en: "The indignant workers demanded an immediate public apology.", ja: "憤慨した労働者たちは即座の公式謝罪を要求した。", context: "労働" },
+      { en: "Parents were indignant over the school funding cuts.", ja: "親たちは学校の資金削減に憤慨した。", context: "教育" },
+      { en: "An indignant crowd gathered outside the parliament building.", ja: "憤慨した群衆が議会議事堂の外に集まった。", context: "政治" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48676, word: "fervent", meaning: "熱烈な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The senator made a fervent appeal for diplomatic peace.", exampleJa: "上院議員は外交的平和への熱烈な訴えを行った。",
+    examples: [
+      { en: "The senator made a fervent appeal for diplomatic peace.", ja: "上院議員は外交的平和への熱烈な訴えを行った。", context: "政治" },
+      { en: "Fervent supporters rallied outside the convention center.", ja: "熱烈な支持者がコンベンションセンターの外に集まった。", context: "社会" },
+      { en: "She expressed a fervent hope for social justice.", ja: "彼女は社会正義への熱烈な希望を表明した。", context: "社会" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48677, word: "zealous", meaning: "熱心な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The zealous prosecutor pursued the case for five years.", exampleJa: "熱心な検察官は5年間にわたりその事件を追及した。",
+    examples: [
+      { en: "The zealous prosecutor pursued the case for five years.", ja: "熱心な検察官は5年間にわたりその事件を追及した。", context: "法律" },
+      { en: "Zealous environmentalists blocked the construction site entrance.", ja: "熱心な環境活動家が建設現場の入口を封鎖した。", context: "環境" },
+      { en: "His zealous dedication to research earned him recognition.", ja: "彼の研究への熱心な献身が評価を得た。", context: "学術" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48678, word: "exuberant", meaning: "活力に満ちた", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The exuberant crowd celebrated the historic election victory.", exampleJa: "活力に満ちた群衆が歴史的な選挙の勝利を祝った。",
+    examples: [
+      { en: "The exuberant crowd celebrated the historic election victory.", ja: "活力に満ちた群衆が歴史的な選挙の勝利を祝った。", context: "政治" },
+      { en: "Her exuberant energy transformed the dull office atmosphere.", ja: "彼女の活力に満ちたエネルギーが退屈なオフィスの雰囲気を変えた。", context: "職場" },
+      { en: "The festival had an exuberant, carnival-like atmosphere.", ja: "そのフェスティバルはカーニバルのような活気に満ちていた。", context: "文化" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48679, word: "lethargic", meaning: "無気力な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The lethargic economy showed no signs of recovery.", exampleJa: "無気力な経済は回復の兆しを見せなかった。",
+    examples: [
+      { en: "The lethargic economy showed no signs of recovery.", ja: "無気力な経済は回復の兆しを見せなかった。", context: "経済" },
+      { en: "Heat waves left the entire population feeling lethargic.", ja: "熱波は全住民を無気力な気分にさせた。", context: "環境" },
+      { en: "The team appeared lethargic after months of overwork.", ja: "チームは数ヶ月の過労の後、無気力に見えた。", context: "職場" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48680, word: "nonchalant", meaning: "無頓着な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The CEO gave a nonchalant response to the scandal.", exampleJa: "CEOはスキャンダルに対して無頓着な返答をした。",
+    examples: [
+      { en: "The CEO gave a nonchalant response to the scandal.", ja: "CEOはスキャンダルに対して無頓着な返答をした。", context: "ビジネス" },
+      { en: "His nonchalant attitude toward safety raised serious concerns.", ja: "安全に対する彼の無頓着な態度が深刻な懸念を生んだ。", context: "社会" },
+      { en: "She appeared nonchalant despite the mounting pressure.", ja: "高まるプレッシャーにもかかわらず彼女は無頓着に見えた。", context: "職場" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  // ===== 道徳・倫理グループ =====
+  {
+    id: 48681, word: "altruistic", meaning: "利他的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Her altruistic work improved the lives of thousands.", exampleJa: "彼女の利他的な活動は何千人もの生活を改善した。",
+    examples: [
+      { en: "Her altruistic work improved the lives of thousands.", ja: "彼女の利他的な活動は何千人もの生活を改善した。", context: "社会" },
+      { en: "The altruistic billionaire donated half his fortune.", ja: "利他的な億万長者は財産の半分を寄付した。", context: "慈善" },
+      { en: "Altruistic behavior can be observed across many species.", ja: "利他的な行動は多くの種にわたって観察される。", context: "科学" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48682, word: "philanthropic", meaning: "慈善的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The philanthropic foundation built schools in rural areas.", exampleJa: "慈善的な財団が地方に学校を建設した。",
+    examples: [
+      { en: "The philanthropic foundation built schools in rural areas.", ja: "慈善的な財団が地方に学校を建設した。", context: "教育" },
+      { en: "His philanthropic efforts focused on clean water access.", ja: "彼の慈善活動はきれいな水へのアクセスに焦点を当てた。", context: "社会" },
+      { en: "The company launched a major philanthropic initiative globally.", ja: "その会社は世界的に大規模な慈善活動を開始した。", context: "ビジネス" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48683, word: "magnanimous", meaning: "寛大な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The magnanimous leader pardoned his political opponents.", exampleJa: "寛大なリーダーは政敵を赦免した。",
+    examples: [
+      { en: "The magnanimous leader pardoned his political opponents.", ja: "寛大なリーダーは政敵を赦免した。", context: "政治" },
+      { en: "Her magnanimous gesture surprised even her harshest critics.", ja: "彼女の寛大な行為は最も厳しい批評家さえ驚かせた。", context: "社会" },
+      { en: "A magnanimous approach to negotiation builds lasting trust.", ja: "寛大な交渉のアプローチは持続的な信頼を築く。", context: "外交" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48684, word: "empathetic", meaning: "共感力のある", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "An empathetic manager can reduce workplace stress significantly.", exampleJa: "共感力のある管理者は職場のストレスを大幅に減らせる。",
+    examples: [
+      { en: "An empathetic manager can reduce workplace stress significantly.", ja: "共感力のある管理者は職場のストレスを大幅に減らせる。", context: "ビジネス" },
+      { en: "The empathetic doctor listened carefully to every patient.", ja: "共感力のある医師は全ての患者の話を注意深く聞いた。", context: "医療" },
+      { en: "Empathetic leadership fosters loyalty and higher productivity.", ja: "共感力のあるリーダーシップは忠誠心と高い生産性を育む。", context: "経営" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48685, word: "candid", meaning: "率直な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The minister gave a candid assessment of the crisis.", exampleJa: "大臣は危機について率直な評価を述べた。",
+    examples: [
+      { en: "The minister gave a candid assessment of the crisis.", ja: "大臣は危機について率直な評価を述べた。", context: "政治" },
+      { en: "Her candid interview revealed the challenges she faced.", ja: "彼女の率直なインタビューが直面した課題を明らかにした。", context: "メディア" },
+      { en: "Candid feedback from customers improved the product quality.", ja: "顧客からの率直なフィードバックが製品品質を改善した。", context: "ビジネス" },
+    ],
+    difficulty: 7, category: "communication", categories: ["communication"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48686, word: "concise", meaning: "簡潔な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The report provided a concise summary of key findings.", exampleJa: "その報告書は主要な発見の簡潔な要約を提供した。",
+    examples: [
+      { en: "The report provided a concise summary of key findings.", ja: "その報告書は主要な発見の簡潔な要約を提供した。", context: "学術" },
+      { en: "Effective communication requires clear and concise language.", ja: "効果的なコミュニケーションには明確で簡潔な言葉が必要だ。", context: "ビジネス" },
+      { en: "The lawyer drafted a concise legal brief.", ja: "弁護士は簡潔な法律文書を作成した。", context: "法律" },
+    ],
+    difficulty: 7, category: "academic", categories: ["academic"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48687, word: "prudent", meaning: "慎重な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "A prudent investor diversifies across multiple asset classes.", exampleJa: "慎重な投資家は複数の資産クラスに分散する。",
+    examples: [
+      { en: "A prudent investor diversifies across multiple asset classes.", ja: "慎重な投資家は複数の資産クラスに分散する。", context: "金融" },
+      { en: "The government adopted a prudent fiscal policy.", ja: "政府は慎重な財政政策を採用した。", context: "経済" },
+      { en: "Prudent risk management prevented a catastrophic failure.", ja: "慎重なリスク管理が壊滅的な失敗を防いだ。", context: "ビジネス" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48688, word: "circumspect", meaning: "用心深い", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The circumspect diplomat avoided making any rash statements.", exampleJa: "用心深い外交官は軽率な発言をすることを避けた。",
+    examples: [
+      { en: "The circumspect diplomat avoided making any rash statements.", ja: "用心深い外交官は軽率な発言をすることを避けた。", context: "外交" },
+      { en: "Circumspect planning saved the project from potential disaster.", ja: "用心深い計画がプロジェクトを潜在的な災害から救った。", context: "ビジネス" },
+      { en: "She was circumspect about revealing confidential information.", ja: "彼女は機密情報の開示について用心深かった。", context: "法律" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48689, word: "discreet", meaning: "思慮深い", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The discreet advisor handled sensitive matters with care.", exampleJa: "思慮深い顧問は機密事項を慎重に扱った。",
+    examples: [
+      { en: "The discreet advisor handled sensitive matters with care.", ja: "思慮深い顧問は機密事項を慎重に扱った。", context: "ビジネス" },
+      { en: "A discreet approach was essential during the investigation.", ja: "調査中は思慮深いアプローチが不可欠だった。", context: "法律" },
+      { en: "She made discreet inquiries about the merger plans.", ja: "彼女は合併計画について思慮深い問い合わせを行った。", context: "金融" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48690, word: "industrious", meaning: "勤勉な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The industrious researcher published over fifty peer-reviewed papers.", exampleJa: "勤勉な研究者は50本以上の査読付き論文を発表した。",
+    examples: [
+      { en: "The industrious researcher published over fifty peer-reviewed papers.", ja: "勤勉な研究者は50本以上の査読付き論文を発表した。", context: "学術" },
+      { en: "Industrious farmers cultivated the arid land successfully.", ja: "勤勉な農民たちは乾燥した土地をうまく耕した。", context: "農業" },
+      { en: "The industrious team completed the project ahead of schedule.", ja: "勤勉なチームは予定より早くプロジェクトを完了した。", context: "ビジネス" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  // ===== 否定的性質グループ =====
+  {
+    id: 48691, word: "callous", meaning: "冷淡な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The callous policy ignored the plight of refugees.", exampleJa: "冷淡な政策は難民の窮状を無視した。",
+    examples: [
+      { en: "The callous policy ignored the plight of refugees.", ja: "冷淡な政策は難民の窮状を無視した。", context: "政治" },
+      { en: "His callous remarks about poverty drew widespread criticism.", ja: "貧困についての彼の冷淡な発言が広範な批判を浴びた。", context: "社会" },
+      { en: "The corporation showed a callous disregard for safety.", ja: "その企業は安全に対する冷淡な無視を示した。", context: "ビジネス" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48692, word: "belligerent", meaning: "好戦的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The belligerent nation threatened its neighboring countries repeatedly.", exampleJa: "好戦的な国は繰り返し近隣国を脅かした。",
+    examples: [
+      { en: "The belligerent nation threatened its neighboring countries repeatedly.", ja: "好戦的な国は繰り返し近隣国を脅かした。", context: "国際" },
+      { en: "His belligerent tone during negotiations alarmed the delegates.", ja: "交渉中の彼の好戦的な口調が代表者たちを驚かせた。", context: "外交" },
+      { en: "The belligerent crowd clashed with riot police downtown.", ja: "好戦的な群衆が繁華街で機動隊と衝突した。", context: "社会" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48693, word: "vindictive", meaning: "報復的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The vindictive former partner filed a retaliatory lawsuit.", exampleJa: "報復的な元パートナーが報復訴訟を起こした。",
+    examples: [
+      { en: "The vindictive former partner filed a retaliatory lawsuit.", ja: "報復的な元パートナーが報復訴訟を起こした。", context: "法律" },
+      { en: "Critics described the new sanctions as purely vindictive.", ja: "批評家たちは新たな制裁を純粋に報復的だと評した。", context: "国際" },
+      { en: "A vindictive leader often silences dissenting voices.", ja: "報復的なリーダーはしばしば反対意見を封じる。", context: "政治" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48694, word: "haughty", meaning: "傲慢な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The haughty executive dismissed the junior staff's suggestions.", exampleJa: "傲慢な幹部は若手社員の提案を退けた。",
+    examples: [
+      { en: "The haughty executive dismissed the junior staff's suggestions.", ja: "傲慢な幹部は若手社員の提案を退けた。", context: "ビジネス" },
+      { en: "Her haughty demeanor alienated potential allies in parliament.", ja: "彼女の傲慢な態度が議会で潜在的な味方を遠ざけた。", context: "政治" },
+      { en: "The haughty aristocrat looked down on common workers.", ja: "傲慢な貴族は一般労働者を見下した。", context: "社会" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48695, word: "egotistical", meaning: "自己中心的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The egotistical manager took credit for the team's work.", exampleJa: "自己中心的な管理者がチームの業績を自分の手柄にした。",
+    examples: [
+      { en: "The egotistical manager took credit for the team's work.", ja: "自己中心的な管理者がチームの業績を自分の手柄にした。", context: "職場" },
+      { en: "His egotistical behavior eroded trust among colleagues.", ja: "彼の自己中心的な行動が同僚間の信頼を損なった。", context: "ビジネス" },
+      { en: "Egotistical leaders rarely accept constructive criticism.", ja: "自己中心的なリーダーは建設的な批判をほとんど受け入れない。", context: "経営" },
+    ],
+    difficulty: 7, category: "emotion", categories: ["emotion"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48696, word: "condescending", meaning: "見下した", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "His condescending tone offended everyone at the meeting.", exampleJa: "彼の見下した口調が会議の全員を不快にした。",
+    examples: [
+      { en: "His condescending tone offended everyone at the meeting.", ja: "彼の見下した口調が会議の全員を不快にした。", context: "ビジネス" },
+      { en: "The review was criticized as condescending toward newcomers.", ja: "その批評は新人に対して見下していると批判された。", context: "メディア" },
+      { en: "Condescending remarks can damage workplace morale severely.", ja: "見下した発言は職場の士気をひどく損ないうる。", context: "職場" },
+    ],
+    difficulty: 7, category: "communication", categories: ["communication"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48697, word: "pretentious", meaning: "気取った", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The pretentious speech failed to resonate with voters.", exampleJa: "気取ったスピーチは有権者に響かなかった。",
+    examples: [
+      { en: "The pretentious speech failed to resonate with voters.", ja: "気取ったスピーチは有権者に響かなかった。", context: "政治" },
+      { en: "Critics called the exhibit pretentious and self-indulgent.", ja: "批評家たちはその展示を気取っていて自己満足だと評した。", context: "芸術" },
+      { en: "The pretentious restaurant charged absurd prices for mediocre food.", ja: "気取ったレストランは平凡な料理に法外な値段をつけた。", context: "日常" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48698, word: "ostentatious", meaning: "見せびらかしの", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The ostentatious display of wealth drew public resentment.", exampleJa: "見せびらかしの富の展示が世間の反感を招いた。",
+    examples: [
+      { en: "The ostentatious display of wealth drew public resentment.", ja: "見せびらかしの富の展示が世間の反感を招いた。", context: "社会" },
+      { en: "Her ostentatious lifestyle contrasted sharply with the poverty around.", ja: "彼女の見せびらかしの生活は周囲の貧困と鋭く対照的だった。", context: "社会" },
+      { en: "The building's ostentatious design polarized local residents.", ja: "その建物の見せびらかしの設計が地元住民の意見を二分した。", context: "建築" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48699, word: "deceitful", meaning: "欺瞞に満ちた", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The deceitful advertisement misled thousands of consumers.", exampleJa: "欺瞞に満ちた広告が何千人もの消費者を誤解させた。",
+    examples: [
+      { en: "The deceitful advertisement misled thousands of consumers.", ja: "欺瞞に満ちた広告が何千人もの消費者を誤解させた。", context: "ビジネス" },
+      { en: "Deceitful accounting practices led to the company's collapse.", ja: "欺瞞に満ちた会計慣行が会社の崩壊を招いた。", context: "金融" },
+      { en: "The politician's deceitful promises eroded public trust.", ja: "政治家の欺瞞に満ちた約束が国民の信頼を侵食した。", context: "政治" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48700, word: "insidious", meaning: "陰険な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The insidious effects of corruption spread through institutions.", exampleJa: "腐敗の陰険な影響が組織全体に広がった。",
+    examples: [
+      { en: "The insidious effects of corruption spread through institutions.", ja: "腐敗の陰険な影響が組織全体に広がった。", context: "政治" },
+      { en: "Misinformation poses an insidious threat to democratic societies.", ja: "誤情報は民主主義社会に対する陰険な脅威をもたらす。", context: "メディア" },
+      { en: "The disease progressed in an insidious, almost invisible manner.", ja: "その病気は陰険な、ほとんど目に見えない形で進行した。", context: "医療" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48701, word: "coercive", meaning: "強制的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The regime relied on coercive tactics to silence dissent.", exampleJa: "その政権は反対意見を封じるため強制的な手段に頼った。",
+    examples: [
+      { en: "The regime relied on coercive tactics to silence dissent.", ja: "その政権は反対意見を封じるため強制的な手段に頼った。", context: "政治" },
+      { en: "Coercive labor practices were exposed by the investigation.", ja: "強制的な労働慣行が調査によって暴かれた。", context: "労働" },
+      { en: "The law bans coercive methods during police interrogations.", ja: "その法律は警察の取り調べ中の強制的な手法を禁止する。", context: "法律" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48702, word: "clandestine", meaning: "秘密の", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The clandestine operation was conducted under complete secrecy.", exampleJa: "その秘密の作戦は完全な機密のもとで実行された。",
+    examples: [
+      { en: "The clandestine operation was conducted under complete secrecy.", ja: "その秘密の作戦は完全な機密のもとで実行された。", context: "軍事" },
+      { en: "Clandestine meetings between the spies took place at midnight.", ja: "スパイ間の秘密の会合が真夜中に行われた。", context: "政治" },
+      { en: "The journalist uncovered a clandestine weapons deal.", ja: "そのジャーナリストが秘密の武器取引を暴いた。", context: "メディア" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48703, word: "unscrupulous", meaning: "不誠実な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Unscrupulous landlords exploited vulnerable tenants for profit.", exampleJa: "不誠実な家主が脆弱な入居者を利益のために搾取した。",
+    examples: [
+      { en: "Unscrupulous landlords exploited vulnerable tenants for profit.", ja: "不誠実な家主が脆弱な入居者を利益のために搾取した。", context: "社会" },
+      { en: "The unscrupulous trader manipulated stock prices illegally.", ja: "不誠実なトレーダーが株価を違法に操作した。", context: "金融" },
+      { en: "Regulations aim to prevent unscrupulous business practices.", ja: "規制は不誠実な商慣行を防ぐことを目的としている。", context: "法律" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48704, word: "incorrigible", meaning: "矯正不能な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The incorrigible offender was sentenced to life in prison.", exampleJa: "矯正不能な犯罪者は終身刑を宣告された。",
+    examples: [
+      { en: "The incorrigible offender was sentenced to life in prison.", ja: "矯正不能な犯罪者は終身刑を宣告された。", context: "法律" },
+      { en: "Her incorrigible optimism persisted despite repeated setbacks.", ja: "彼女の矯正不能な楽観主義は度重なる挫折にもかかわらず続いた。", context: "心理" },
+      { en: "The teacher struggled with the incorrigible student's behavior.", ja: "教師は矯正不能な生徒の行動に苦労した。", context: "教育" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48705, word: "delinquent", meaning: "非行の", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The program aims to rehabilitate delinquent youths effectively.", exampleJa: "そのプログラムは非行少年を効果的に更生させることを目指す。",
+    examples: [
+      { en: "The program aims to rehabilitate delinquent youths effectively.", ja: "そのプログラムは非行少年を効果的に更生させることを目指す。", context: "社会" },
+      { en: "Delinquent behavior often stems from unstable home environments.", ja: "非行行動はしばしば不安定な家庭環境から生じる。", context: "心理" },
+      { en: "The bank pursued legal action against delinquent borrowers.", ja: "銀行は滞納した借り手に対して法的措置を取った。", context: "金融" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  // ===== 知性・判断グループ =====
+  {
+    id: 48706, word: "perceptive", meaning: "洞察力のある", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The perceptive analyst predicted the market downturn accurately.", exampleJa: "洞察力のあるアナリストが市場の低迷を正確に予測した。",
+    examples: [
+      { en: "The perceptive analyst predicted the market downturn accurately.", ja: "洞察力のあるアナリストが市場の低迷を正確に予測した。", context: "金融" },
+      { en: "Her perceptive observations shaped the research direction.", ja: "彼女の洞察力のある観察が研究の方向性を形作った。", context: "学術" },
+      { en: "A perceptive leader reads subtle shifts in public opinion.", ja: "洞察力のあるリーダーは世論の微妙な変化を読み取る。", context: "政治" },
+    ],
+    difficulty: 7, category: "academic", categories: ["academic"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48707, word: "lucid", meaning: "明晰な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The professor delivered a lucid explanation of quantum theory.", exampleJa: "教授は量子論の明晰な説明を行った。",
+    examples: [
+      { en: "The professor delivered a lucid explanation of quantum theory.", ja: "教授は量子論の明晰な説明を行った。", context: "学術" },
+      { en: "Despite her illness, she remained remarkably lucid.", ja: "病気にもかかわらず、彼女は驚くほど明晰だった。", context: "医療" },
+      { en: "His lucid writing style appealed to a broad audience.", ja: "彼の明晰な文体が幅広い読者に支持された。", context: "メディア" },
+    ],
+    difficulty: 7, category: "academic", categories: ["academic"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48708, word: "inquisitive", meaning: "探究心の強い", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The inquisitive journalist uncovered a massive fraud scheme.", exampleJa: "探究心の強いジャーナリストが大規模な詐欺を暴いた。",
+    examples: [
+      { en: "The inquisitive journalist uncovered a massive fraud scheme.", ja: "探究心の強いジャーナリストが大規模な詐欺を暴いた。", context: "メディア" },
+      { en: "An inquisitive mind is essential for scientific breakthroughs.", ja: "探究心の強い精神は科学的突破に不可欠だ。", context: "科学" },
+      { en: "The inquisitive student challenged every assumption in class.", ja: "探究心の強い学生は授業で全ての前提に疑問を呈した。", context: "教育" },
+    ],
+    difficulty: 7, category: "academic", categories: ["academic"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48709, word: "idealistic", meaning: "理想主義的な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The idealistic proposal lacked practical implementation details.", exampleJa: "理想主義的な提案には実際の実施詳細が欠けていた。",
+    examples: [
+      { en: "The idealistic proposal lacked practical implementation details.", ja: "理想主義的な提案には実際の実施詳細が欠けていた。", context: "政治" },
+      { en: "Idealistic young activists pushed for sweeping social reform.", ja: "理想主義的な若い活動家が大幅な社会改革を推し進めた。", context: "社会" },
+      { en: "Her idealistic vision for education inspired many teachers.", ja: "彼女の理想主義的な教育のビジョンが多くの教師を鼓舞した。", context: "教育" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48710, word: "gullible", meaning: "騙されやすい", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Gullible investors lost fortunes in the elaborate scam.", exampleJa: "騙されやすい投資家が巧妙な詐欺で大金を失った。",
+    examples: [
+      { en: "Gullible investors lost fortunes in the elaborate scam.", ja: "騙されやすい投資家が巧妙な詐欺で大金を失った。", context: "金融" },
+      { en: "Scammers deliberately target gullible elderly individuals online.", ja: "詐欺師はオンラインで騙されやすい高齢者を意図的に狙う。", context: "技術" },
+      { en: "The gullible public believed the fabricated news reports.", ja: "騙されやすい大衆は捏造されたニュース報道を信じた。", context: "メディア" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48711, word: "docile", meaning: "従順な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The docile workforce accepted the wage cuts without protest.", exampleJa: "従順な労働者は抗議なしに賃金削減を受け入れた。",
+    examples: [
+      { en: "The docile workforce accepted the wage cuts without protest.", ja: "従順な労働者は抗議なしに賃金削減を受け入れた。", context: "労働" },
+      { en: "Authoritarian regimes prefer a docile and compliant citizenry.", ja: "権威主義体制は従順で従う市民を好む。", context: "政治" },
+      { en: "The once docile animal became aggressive when provoked.", ja: "かつて従順だった動物は挑発されると攻撃的になった。", context: "科学" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  // ===== 状況・雰囲気グループ =====
+  {
+    id: 48712, word: "desolate", meaning: "荒涼とした", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The desolate landscape stretched for miles without vegetation.", exampleJa: "荒涼とした景色が植物のないまま何マイルも広がっていた。",
+    examples: [
+      { en: "The desolate landscape stretched for miles without vegetation.", ja: "荒涼とした景色が植物のないまま何マイルも広がっていた。", context: "自然" },
+      { en: "War left the once thriving city utterly desolate.", ja: "戦争はかつて繁栄した都市を完全に荒涼とさせた。", context: "国際" },
+      { en: "The desolate factory stood as a symbol of decline.", ja: "荒涼とした工場は衰退の象徴として立っていた。", context: "経済" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48713, word: "ominous", meaning: "不吉な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The ominous economic data foreshadowed a severe recession.", exampleJa: "不吉な経済データが深刻な景気後退を予感させた。",
+    examples: [
+      { en: "The ominous economic data foreshadowed a severe recession.", ja: "不吉な経済データが深刻な景気後退を予感させた。", context: "経済" },
+      { en: "An ominous silence fell over the packed courtroom.", ja: "不吉な沈黙が満員の法廷に降りた。", context: "法律" },
+      { en: "The ominous clouds signaled an approaching tropical storm.", ja: "不吉な雲が熱帯暴風雨の接近を告げた。", context: "天候" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48714, word: "mundane", meaning: "平凡な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Automation now handles many mundane administrative tasks efficiently.", exampleJa: "自動化が多くの平凡な事務作業を効率的に処理している。",
+    examples: [
+      { en: "Automation now handles many mundane administrative tasks efficiently.", ja: "自動化が多くの平凡な事務作業を効率的に処理している。", context: "技術" },
+      { en: "The artist found beauty in the most mundane objects.", ja: "その芸術家は最も平凡な物の中に美を見出した。", context: "芸術" },
+      { en: "Mundane daily routines can mask underlying mental health issues.", ja: "平凡な日常のルーティンが根底にある心の問題を隠しうる。", context: "医療" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48715, word: "futile", meaning: "無駄な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "Diplomatic efforts proved futile as tensions continued to escalate.", exampleJa: "緊張が高まり続ける中、外交努力は無駄だと判明した。",
+    examples: [
+      { en: "Diplomatic efforts proved futile as tensions continued to escalate.", ja: "緊張が高まり続ける中、外交努力は無駄だと判明した。", context: "外交" },
+      { en: "The futile search for survivors was finally called off.", ja: "無駄な生存者の捜索がついに打ち切られた。", context: "災害" },
+      { en: "Resistance to the new regulations turned out to be futile.", ja: "新しい規制への抵抗は無駄であることが判明した。", context: "政治" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+  {
+    id: 48716, word: "intrepid", meaning: "勇敢な", partOfSpeech: "adjective",
+    course: "eiken", stage: "1",
+    example: "The intrepid explorer crossed the Antarctic continent alone.", exampleJa: "勇敢な探検家が一人で南極大陸を横断した。",
+    examples: [
+      { en: "The intrepid explorer crossed the Antarctic continent alone.", ja: "勇敢な探検家が一人で南極大陸を横断した。", context: "冒険" },
+      { en: "Intrepid journalists reported from the heart of conflict zones.", ja: "勇敢なジャーナリストが紛争地帯の中心から報道した。", context: "メディア" },
+      { en: "The intrepid rescue team saved dozens from the flood.", ja: "勇敢な救助チームが洪水から何十人もを救った。", context: "災害" },
+    ],
+    difficulty: 7, category: "society", categories: ["society"], frequencyRank: 5, source: "original",
+  },
+];
