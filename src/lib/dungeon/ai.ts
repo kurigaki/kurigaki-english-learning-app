@@ -462,22 +462,26 @@ export function moveShopkeeper(g: GameState): ShopkeeperMoveResult[] {
   const sk = g.shopkeeper;
   if (!sk || sk.hp <= 0) return [];
 
-  // 非敵化時: 未払いアイテムがあれば出口を塞ぐ位置に移動
+  // 非敵化時
   if (!sk.hostile) {
     if (g.stolenItems.length > 0) {
-      // 出口封鎖: 入口タイルに移動
+      // 未払いあり: 出口封鎖（入口タイルに移動）
       if (sk.x !== sk.entranceX || sk.y !== sk.entranceY) {
-        // 入口にプレイヤーがいなければ移動
         if (!(g.px === sk.entranceX && g.py === sk.entranceY)) {
           const step = bfsStep(g, sk.x, sk.y, sk.entranceX, sk.entranceY, -1);
-          if (step) {
-            sk.x = step[0];
-            sk.y = step[1];
-          }
+          if (step) { sk.x = step[0]; sk.y = step[1]; }
+        }
+      }
+    } else {
+      // 未払いなし: ホーム位置（出口の1歩横）に戻る
+      if (sk.x !== sk.homeX || sk.y !== sk.homeY) {
+        if (!(g.px === sk.homeX && g.py === sk.homeY)) {
+          const step = bfsStep(g, sk.x, sk.y, sk.homeX, sk.homeY, -1);
+          if (step) { sk.x = step[0]; sk.y = step[1]; }
         }
       }
     }
-    return []; // 非敵化時は攻撃しない
+    return [];
   }
 
   const results: ShopkeeperMoveResult[] = [];

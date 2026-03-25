@@ -4,7 +4,7 @@ import React, { useEffect, useState, useCallback, useRef, useMemo } from "react"
 import Link from "next/link";
 import type { DungeonQuestion, DmgPop, InventoryItem, DeathState, GameState, ScreenEffect, EventOverlay } from "@/lib/dungeon/types";
 import { loadKeyMap, saveKeyMap, KeyMap, KeyMapAction, ACTION_LABELS, DEFAULT_KEYMAP } from "@/lib/dungeon/keymap";
-import { ITEMS_DEF, TILE, MW, MH } from "@/lib/dungeon/constants";
+import { ITEMS_DEF, TILE, MW, MH, SHOP_PRICES } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
 import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, startBGM, stopBGM, startTitleBGM, initDungeonAudio } from "@/lib/dungeon/audio";
 import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL, ensureVoicesLoaded, unlockSpeech } from "@/lib/audio";
@@ -520,7 +520,7 @@ function DungeonJarOverlay({
 }
 
 function DungeonItemOverlay({
-  items, itemFilter, onFilter, onUse, onClose, onThrow, onPlace, onOpenJar, caneCharges,
+  items, itemFilter, onFilter, onUse, onClose, onThrow, onPlace, onOpenJar, caneCharges, stolenItems,
 }: {
   items: InventoryItem[];
   itemFilter: string;
@@ -531,6 +531,7 @@ function DungeonItemOverlay({
   onPlace: (id: string) => void;
   onOpenJar: (id: string) => void;
   caneCharges: CaneCharges;
+  stolenItems: string[];
 }) {
   const tabs = ITEM_TABS;
 
@@ -691,6 +692,11 @@ function DungeonItemOverlay({
                     </div>
                   ) : (
                     <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 10, color: DC.accent }}>×{item.count}</div>
+                  )}
+                  {stolenItems.includes(item.id) && (
+                    <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 7, color: DC.gold, background: `${DC.gold}20`, borderRadius: 2, padding: "1px 4px" }}>
+                      🏪 {SHOP_PRICES[item.id] ?? 0}G
+                    </div>
                   )}
                   <div style={{ display: "flex", gap: 3 }}>
                     <button
@@ -1986,6 +1992,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     closeJar, putInJar, takeFromJar, openJarId,
     retryGame,
     loadSave, stopAutoWalk, handleCanvasTap, buyFromShop, skipShop,
+    confirmPurchase, cancelPurchase,
     screenEffect, eventOverlay, closeEventOverlay,
     changeFacing,
     pickUpFloorItem, throwFloorItem, applyFloorItem, closeFootAction,
@@ -2500,6 +2507,25 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         )}
       </div>
 
+      {/* Shop purchase confirm dialog */}
+      {uiState.shopConfirm && (
+        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 90 }}>
+          <div style={{ background: DC.bg2, border: `1px solid ${DC.gold}`, borderRadius: 8, padding: 20, maxWidth: 300, textAlign: "center" }}>
+            <div style={{ color: DC.gold, fontSize: 16, marginBottom: 8 }}>🧔 ショップキーパー</div>
+            <div style={{ color: DC.text, fontSize: 13, marginBottom: 12 }}>
+              「{uiState.shopConfirm.count}個で{uiState.shopConfirm.total}Gだよ。買うかい？」
+            </div>
+            <div style={{ color: DC.text2, fontSize: 11, marginBottom: 16 }}>
+              所持金: {uiState.gold}G
+            </div>
+            <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
+              <button onClick={confirmPurchase} style={{ background: DC.green, color: "#000", border: "none", borderRadius: 4, padding: "8px 20px", cursor: "pointer", fontSize: 13, fontWeight: "bold" }}>買う</button>
+              <button onClick={cancelPurchase} style={{ background: DC.bg4, color: DC.text, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "8px 20px", cursor: "pointer", fontSize: 13 }}>やめる</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Volume panel */}
       {showVolume && <DungeonVolumePanel onClose={closeVolume} />}
 
@@ -2661,6 +2687,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
           onPlace={placeItem}
           onOpenJar={useItem}
           caneCharges={uiState.caneCharges}
+          stolenItems={gameStateRef.current?.stolenItems ?? []}
         />
       )}
 

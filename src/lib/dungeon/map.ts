@@ -253,31 +253,6 @@ export function generateMap(g: GameState): void {
     return null; // 4辺すべて使用済み
   }
 
-  /** L字型廊下を掘る（1タイル幅） */
-  function digCorridor(fromX: number, fromY: number, toX: number, toY: number, horizontalFirst: boolean): void {
-    if (horizontalFirst) {
-      // 横 → 縦
-      const step = fromX <= toX ? 1 : -1;
-      for (let x = fromX; x !== toX + step; x += step) {
-        if (x >= 0 && x < MW && m[fromY][x] === W) m[fromY][x] = C;
-      }
-      const stepY = fromY <= toY ? 1 : -1;
-      for (let y = fromY; y !== toY + stepY; y += stepY) {
-        if (y >= 0 && y < MH && m[y][toX] === W) m[y][toX] = C;
-      }
-    } else {
-      // 縦 → 横
-      const stepY = fromY <= toY ? 1 : -1;
-      for (let y = fromY; y !== toY + stepY; y += stepY) {
-        if (y >= 0 && y < MH && m[y][fromX] === W) m[y][fromX] = C;
-      }
-      const step = fromX <= toX ? 1 : -1;
-      for (let x = fromX; x !== toX + step; x += step) {
-        if (x >= 0 && x < MW && m[toY][x] === W) m[toY][x] = C;
-      }
-    }
-  }
-
   for (let i = 1; i < rooms.length; i++) {
     let fromIdx = i - 1;
     const toIdx = i;
@@ -297,11 +272,28 @@ export function generateMap(g: GameState): void {
     // 辺を使用済みに
     usedSides.get(fromIdx)!.add(sides.aSide);
     usedSides.get(toIdx)!.add(sides.bSide);
-    // BFS廊下を試行（部屋隣接・角を自動回避、1幅保証）
-    // 失敗時はL字フォールバック
-    if (!digCorridorBFS(m, exitA.x, exitA.y, exitB.x, exitB.y, rooms)) {
-      const hFirst = sides.aSide === "left" || sides.aSide === "right";
-      digCorridor(exitA.x, exitA.y, exitB.x, exitB.y, hFirst);
+    // BFS廊下を試行（部屋隣接・角を自動回避、1幅・2列防止保証）
+    // L字フォールバックは制約なしで問題を起こすため廃止
+    digCorridorBFS(m, exitA.x, exitA.y, exitB.x, exitB.y, rooms);
+  }
+
+  // 後処理: 1マス行き止まり廊下を除去
+  let cleaned = true;
+  while (cleaned) {
+    cleaned = false;
+    for (let y = 1; y < MH - 1; y++) {
+      for (let x = 1; x < MW - 1; x++) {
+        if (m[y][x] !== C) continue;
+        // 隣接する歩行可能タイル（C or R）を数える
+        let neighbors = 0;
+        for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+          if (m[y + dy][x + dx] !== W) neighbors++;
+        }
+        if (neighbors <= 1) {
+          m[y][x] = W; // 行き止まり除去
+          cleaned = true;
+        }
+      }
     }
   }
 

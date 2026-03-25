@@ -89,6 +89,7 @@ export type UIState = {
   maxHunger: number;
   gold: number;
   shopPrompt: ShopPrompt | null;
+  shopConfirm: { total: number; count: number } | null;
   openJarId: string | null;
   footAction: FootAction | null;
 };
@@ -117,6 +118,7 @@ const INITIAL_UI: UIState = {
   maxHunger: 100,
   gold: 0,
   shopPrompt: null,
+  shopConfirm: null,
   openJarId: null,
   footAction: null,
 };
@@ -1895,6 +1897,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   }, [showNotification, updateUI]);
 
   // 店主に話しかけて未払いアイテムの会計をする
+  // 購入確認ダイアログ表示
   const payShopkeeper = useCallback(() => {
     const g = gameRef.current;
     if (!g || !g.shopkeeper || g.shopkeeper.hostile || g.shopkeeper.hp <= 0) return;
@@ -1902,26 +1905,45 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       showNotification("🧔 ショップキーパー「いらっしゃい！商品を手に取ってみてくれ」");
       return;
     }
-    // 合計金額を計算
     let total = 0;
     for (const itemId of g.stolenItems) {
       total += SHOP_PRICES[itemId] ?? 0;
     }
     if (g.gold < total) {
-      // 金不足 → メッセージのみ（敵化しない。足元に置いて返却可能）
       showNotification(`🧔 ショップキーパー「お金が足りないよ！（合計${total}G / 所持${g.gold}G）」`);
       return;
     }
+    // 確認ダイアログを表示
+    setUiState((prev) => ({
+      ...prev,
+      shopConfirm: { total, count: g.stolenItems.length },
+    }));
+  }, [showNotification]);
+
+  // 購入確定
+  const confirmPurchase = useCallback(() => {
+    const g = gameRef.current;
+    if (!g) return;
+    let total = 0;
+    for (const itemId of g.stolenItems) {
+      total += SHOP_PRICES[itemId] ?? 0;
+    }
+    if (g.gold < total) return;
     g.gold -= total;
     const count = g.stolenItems.length;
     g.stolenItems = [];
     sfxShopBuy();
     queueMsg(`🧔 ショップキーパー「${total}Gだな。毎度あり！」`);
     showNotification(`🏪 ${count}個のアイテムを購入！（-${total}G）`);
+    setUiState((prev) => ({ ...prev, shopConfirm: null }));
     updateUI(g);
     redraw();
     saveGame();
   }, [queueMsg, redraw, saveGame, showNotification, updateUI]);
+
+  const cancelPurchase = useCallback(() => {
+    setUiState((prev) => ({ ...prev, shopConfirm: null }));
+  }, []);
 
   // 従来のbuyFromShop（互換性のため残す — shopPromptからの直接購入）
   const buyFromShop = useCallback(
@@ -2582,6 +2604,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     buyFromShop,
     skipShop,
     payShopkeeper,
+    confirmPurchase,
+    cancelPurchase,
     openJarId: uiState.openJarId,
     changeFacing,
     pickUpFloorItem,
