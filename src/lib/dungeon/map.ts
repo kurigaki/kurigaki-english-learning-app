@@ -54,111 +54,6 @@ function isRoomEntrance(m: TileType[][], x: number, y: number): boolean {
  * BFS廊下掘り: 部屋に隣接しない・部屋の角を避ける1幅経路を探す
  * 失敗時は false を返す（L字フォールバック用）
  */
-/**
- * BFS廊下掘り（段階的フォールバックで接続保証）
- * Level 0: 全制約（部屋隣接回避・角回避・2×2防止）
- * Level 1: 2×2防止を緩和
- * Level 2: 角回避も緩和（部屋隣接回避のみ）
- * Level 3: 制約なし（最低限の接続保証）
- */
-function digCorridorBFS(
-  m: TileType[][],
-  fromX: number, fromY: number,
-  toX: number, toY: number,
-  rooms: { x: number; y: number; w: number; h: number }[]
-): boolean {
-  const key = (x: number, y: number) => y * MW + x;
-  const endKey = key(toX, toY);
-
-  // Start/End 付近は制約を免除
-  const exempt = new Set<number>();
-  exempt.add(key(fromX, fromY));
-  exempt.add(endKey);
-  for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
-    let nx: number, ny: number;
-    nx = fromX + dx; ny = fromY + dy;
-    if (nx >= 0 && nx < MW && ny >= 0 && ny < MH) exempt.add(key(nx, ny));
-    nx = toX + dx; ny = toY + dy;
-    if (nx >= 0 && nx < MW && ny >= 0 && ny < MH) exempt.add(key(nx, ny));
-  }
-
-  const cornerSet = new Set<number>();
-  for (const room of rooms) {
-    for (const [cx, cy] of [
-      [room.x - 1, room.y - 1], [room.x + room.w, room.y - 1],
-      [room.x - 1, room.y + room.h], [room.x + room.w, room.y + room.h],
-    ] as [number, number][]) {
-      if (cx >= 0 && cx < MW && cy >= 0 && cy < MH) cornerSet.add(key(cx, cy));
-    }
-  }
-
-  // 段階的にフォールバック（level 0=厳しい → level 3=制約なし）
-  for (let level = 0; level <= 3; level++) {
-    const parent = new Map<number, number>();
-    parent.set(key(fromX, fromY), -1);
-    const queue: [number, number][] = [[fromX, fromY]];
-    let head = 0;
-
-    while (head < queue.length) {
-      const [cx, cy] = queue[head++];
-      if (cx === toX && cy === toY) {
-        // パス発見 → 掘る
-        let k: number | undefined = endKey;
-        while (k !== undefined && k !== -1) {
-          const px = k % MW, py = Math.floor(k / MW);
-          if (m[py][px] === W) m[py][px] = C;
-          k = parent.get(k);
-        }
-        return true;
-      }
-      for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
-        const nx = cx + dx, ny = cy + dy;
-        if (nx < 0 || nx >= MW || ny < 0 || ny >= MH) continue;
-        const nk = key(nx, ny);
-        if (parent.has(nk)) continue;
-        if (m[ny][nx] !== W) continue;
-
-        if (!exempt.has(nk)) {
-          // Level 0-2: 部屋隣接回避
-          if (level <= 2) {
-            let nearRoom = false;
-            for (const [ddx, ddy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
-              const ax = nx + ddx, ay = ny + ddy;
-              if (ax >= 0 && ax < MW && ay >= 0 && ay < MH && m[ay][ax] === R) {
-                nearRoom = true;
-                break;
-              }
-            }
-            if (nearRoom) continue;
-          }
-          // Level 0-1: 角回避
-          if (level <= 1 && cornerSet.has(nk)) continue;
-          // Level 0: 2×2ブロック防止
-          if (level === 0) {
-            let creates2x2 = false;
-            for (const [by, bx] of [[-1, -1], [-1, 0], [0, -1], [0, 0]] as [number, number][]) {
-              let walkable = 0;
-              for (const [oy, ox] of [[0, 0], [0, 1], [1, 0], [1, 1]] as [number, number][]) {
-                const tx = nx + bx + ox, ty = ny + by + oy;
-                if (tx < 0 || tx >= MW || ty < 0 || ty >= MH) { walkable = -4; break; }
-                if (tx === nx && ty === ny) { walkable++; continue; }
-                if (m[ty][tx] !== W) walkable++;
-              }
-              if (walkable >= 4) { creates2x2 = true; break; }
-            }
-            if (creates2x2) continue;
-          }
-        }
-
-        parent.set(nk, key(cx, cy));
-        queue.push([nx, ny]);
-      }
-    }
-  }
-
-  return false;
-}
-
 let _trapId = 0;
 
 export function generateMap(g: GameState): void {
@@ -170,124 +65,160 @@ export function generateMap(g: GameState): void {
   g.rooms = [];
   initExplored(g);
 
-  // generate rooms
+  // ── テンプレートベースの部屋配置 ──────────────────────────────────
+  // 3×3 グリッドに部屋を配置。隣接セル間をL字廊下で接続。
+  // 部屋がグリッドセル内に収まるため、廊下が他の部屋を通過しない。
+  const GRID_COLS = 3;
+  const GRID_ROWS = 3;
+  const CELL_W = Math.floor(MW / GRID_COLS); // 14
+  const CELL_H = Math.floor(MH / GRID_ROWS); // 10
+
+  // フロアテンプレート: 1=部屋あり, 0=なし（全パターン隣接接続で到達可能を保証）
+  const TEMPLATES: number[][][] = [
+    [[1,1,1],[1,1,1],[1,1,1]],  // Full 9
+    [[1,1,1],[1,0,1],[1,1,1]],  // Ring 8
+    [[1,0,1],[1,1,1],[1,0,1]],  // H-shape 7
+    [[1,1,1],[1,0,0],[1,1,1]],  // 7 variant
+    [[0,1,0],[1,1,1],[0,1,0]],  // Cross 5
+    [[1,1,0],[1,0,0],[1,1,1]],  // L-shape 6
+    [[1,0,1],[1,0,1],[1,1,1]],  // U-shape 7
+    [[1,1,1],[0,1,0],[0,1,0]],  // T-top 6
+    [[1,1,0],[0,1,0],[0,1,1]],  // Zigzag 5
+  ];
+
+  const template = TEMPLATES[Math.floor(Math.random() * TEMPLATES.length)];
   const rooms: { x: number; y: number; w: number; h: number }[] = [];
-  for (let attempt = 0; attempt < 300 && rooms.length < 9; attempt++) {
-    const rw = 4 + Math.floor(Math.random() * 6);
-    const rh = 3 + Math.floor(Math.random() * 4);
-    const rx = 1 + Math.floor(Math.random() * (MW - rw - 2));
-    const ry = 1 + Math.floor(Math.random() * (MH - rh - 2));
-    let ok = true;
-    for (const r of rooms) {
-      if (rx < r.x + r.w + 2 && rx + rw + 2 > r.x && ry < r.y + r.h + 2 && ry + rh + 2 > r.y) {
-        ok = false;
-        break;
-      }
-    }
-    if (ok) {
+  const gridRoomIdx: (number | null)[][] = Array.from({ length: GRID_ROWS }, () => new Array(GRID_COLS).fill(null));
+
+  for (let row = 0; row < GRID_ROWS; row++) {
+    for (let col = 0; col < GRID_COLS; col++) {
+      if (!template[row][col]) continue;
+      const cellX = col * CELL_W;
+      const cellY = row * CELL_H;
+      // 部屋サイズ: セル内にマージン2以上で収まるランダムサイズ
+      const maxRW = Math.min(CELL_W - 3, 9);
+      const maxRH = Math.min(CELL_H - 3, 6);
+      const rw = 4 + Math.floor(Math.random() * Math.max(1, maxRW - 3));
+      const rh = 3 + Math.floor(Math.random() * Math.max(1, maxRH - 2));
+      // セル内でランダム配置（マージン2確保）
+      const offX = 2 + Math.floor(Math.random() * Math.max(1, CELL_W - rw - 3));
+      const offY = 2 + Math.floor(Math.random() * Math.max(1, CELL_H - rh - 3));
+      const rx = Math.max(1, Math.min(MW - rw - 1, cellX + offX));
+      const ry = Math.max(1, Math.min(MH - rh - 1, cellY + offY));
       rooms.push({ x: rx, y: ry, w: rw, h: rh });
+      gridRoomIdx[row][col] = rooms.length - 1;
       for (let y = ry; y < ry + rh; y++)
         for (let x = rx; x < rx + rw; x++) m[y][x] = R;
     }
   }
   g.rooms = rooms;
 
-  // ── ショップ部屋・モンスターハウスの早期選択（廊下ルーティングに必要） ──
-  let monsterHouseRoomIdx: number | null = null;
-  if (g.dungeonMode === "hard" && rooms.length >= 4) {
-    monsterHouseRoomIdx = 1 + Math.floor(Math.random() * (rooms.length - 2));
-  }
-
-  let shopRoomIdx: number | null = null;
-  if (g.floor >= 2 && rooms.length >= 3) {
-    const shopCandidates: number[] = [];
-    for (let i = 1; i < rooms.length - 1; i++) {
-      if (i !== monsterHouseRoomIdx) shopCandidates.push(i);
+  // ── 隣接セル間をL字廊下で接続 ──────────────────────────────────
+  const carveH = (y: number, x1: number, x2: number) => {
+    const step = x1 <= x2 ? 1 : -1;
+    for (let x = x1; x !== x2 + step; x += step) {
+      if (x >= 0 && x < MW && m[y][x] === W) m[y][x] = C;
     }
-    if (shopCandidates.length > 0) {
-      const largeCandidates = shopCandidates.filter((i) => rooms[i].w >= 5 && rooms[i].h >= 5);
-      shopRoomIdx = largeCandidates.length > 0
-        ? largeCandidates[Math.floor(Math.random() * largeCandidates.length)]
-        : shopCandidates[Math.floor(Math.random() * shopCandidates.length)];
+  };
+  const carveV = (x: number, y1: number, y2: number) => {
+    const step = y1 <= y2 ? 1 : -1;
+    for (let y = y1; y !== y2 + step; y += step) {
+      if (y >= 0 && y < MH && m[y][x] === W) m[y][x] = C;
     }
-  }
+  };
 
-  // corridors — 1タイル幅、部屋の各辺に最大1接続
-  // 各部屋の辺ごとに使用済みフラグを管理: top/bottom/left/right
-  const usedSides: Map<number, Set<string>> = new Map();
-  for (let i = 0; i < rooms.length; i++) usedSides.set(i, new Set());
-
-  /** 部屋の辺から廊下接続点を1つ選ぶ（辺の内側からランダムに1タイル） */
+  /** 部屋の辺から廊下接続点を1つ選ぶ（角を避けて辺の内側） */
   function pickExit(room: { x: number; y: number; w: number; h: number }, side: string): { x: number; y: number } {
     switch (side) {
-      case "top":    return { x: room.x + 1 + Math.floor(Math.random() * (room.w - 2)), y: room.y - 1 };
-      case "bottom": return { x: room.x + 1 + Math.floor(Math.random() * (room.w - 2)), y: room.y + room.h };
-      case "left":   return { x: room.x - 1, y: room.y + 1 + Math.floor(Math.random() * (room.h - 2)) };
-      case "right":  return { x: room.x + room.w, y: room.y + 1 + Math.floor(Math.random() * (room.h - 2)) };
+      case "top":    return { x: room.x + 1 + Math.floor(Math.random() * Math.max(1, room.w - 2)), y: room.y - 1 };
+      case "bottom": return { x: room.x + 1 + Math.floor(Math.random() * Math.max(1, room.w - 2)), y: room.y + room.h };
+      case "left":   return { x: room.x - 1, y: room.y + 1 + Math.floor(Math.random() * Math.max(1, room.h - 2)) };
+      case "right":  return { x: room.x + room.w, y: room.y + 1 + Math.floor(Math.random() * Math.max(1, room.h - 2)) };
       default:       return { x: room.x, y: room.y };
     }
   }
 
-  /** 2部屋間の最適な辺ペアを決定 */
-  function bestSides(ai: number, bi: number): { aSide: string; bSide: string } | null {
-    const a = rooms[ai], b = rooms[bi];
-    const aCx = a.x + a.w / 2, aCy = a.y + a.h / 2;
-    const bCx = b.x + b.w / 2, bCy = b.y + b.h / 2;
-    const dx = bCx - aCx, dy = bCy - aCy;
-    const usedA = usedSides.get(ai)!, usedB = usedSides.get(bi)!;
-
-    // 優先順: 主方向に合った辺ペア
-    const candidates: { aSide: string; bSide: string }[] = [];
-    if (Math.abs(dx) >= Math.abs(dy)) {
-      // 横方向優先
-      if (dx > 0) candidates.push({ aSide: "right", bSide: "left" });
-      else candidates.push({ aSide: "left", bSide: "right" });
-      if (dy > 0) candidates.push({ aSide: "bottom", bSide: "top" });
-      else if (dy < 0) candidates.push({ aSide: "top", bSide: "bottom" });
-    } else {
-      // 縦方向優先
-      if (dy > 0) candidates.push({ aSide: "bottom", bSide: "top" });
-      else candidates.push({ aSide: "top", bSide: "bottom" });
-      if (dx > 0) candidates.push({ aSide: "right", bSide: "left" });
-      else if (dx < 0) candidates.push({ aSide: "left", bSide: "right" });
-    }
-    for (const c of candidates) {
-      if (!usedA.has(c.aSide) && !usedB.has(c.bSide)) return c;
-    }
-    // フォールバック: 空いている辺を探す
-    const allSides = ["top", "bottom", "left", "right"];
-    for (const as2 of allSides) {
-      if (usedA.has(as2)) continue;
-      for (const bs2 of allSides) {
-        if (usedB.has(bs2)) continue;
-        return { aSide: as2, bSide: bs2 };
+  const connected = new Set<string>();
+  for (let row = 0; row < GRID_ROWS; row++) {
+    for (let col = 0; col < GRID_COLS; col++) {
+      const ri = gridRoomIdx[row][col];
+      if (ri === null) continue;
+      // 右隣
+      if (col + 1 < GRID_COLS && gridRoomIdx[row][col + 1] !== null) {
+        const rj = gridRoomIdx[row][col + 1]!;
+        const ck = `${Math.min(ri, rj)}-${Math.max(ri, rj)}`;
+        if (!connected.has(ck)) {
+          connected.add(ck);
+          const eA = pickExit(rooms[ri], "right");
+          const eB = pickExit(rooms[rj], "left");
+          const midX = Math.floor((eA.x + eB.x) / 2);
+          carveH(eA.y, eA.x, midX);
+          carveV(midX, eA.y, eB.y);
+          carveH(eB.y, midX, eB.x);
+        }
+      }
+      // 下隣
+      if (row + 1 < GRID_ROWS && gridRoomIdx[row + 1][col] !== null) {
+        const rj = gridRoomIdx[row + 1][col]!;
+        const ck = `${Math.min(ri, rj)}-${Math.max(ri, rj)}`;
+        if (!connected.has(ck)) {
+          connected.add(ck);
+          const eA = pickExit(rooms[ri], "bottom");
+          const eB = pickExit(rooms[rj], "top");
+          const midY = Math.floor((eA.y + eB.y) / 2);
+          carveV(eA.x, eA.y, midY);
+          carveH(midY, eA.x, eB.x);
+          carveV(eB.x, midY, eB.y);
+        }
       }
     }
-    return null; // 4辺すべて使用済み
   }
 
-  for (let i = 1; i < rooms.length; i++) {
-    let fromIdx = i - 1;
-    const toIdx = i;
+  // ── ショップ部屋・モンスターハウス選択 ──
+  // ショップ: 隣接部屋が1つだけの部屋（行き止まり=出口1つ）を優先
+  let shopRoomIdx: number | null = null;
+  let monsterHouseRoomIdx: number | null = null;
 
-    // ショップ部屋は1出口のみ: ショップからの接続はバイパスに変更
-    // rooms[shop-1] → rooms[shop] は通常通り、rooms[shop] → rooms[shop+1] を
-    // rooms[shop-1] → rooms[shop+1] に置き換える
-    if (shopRoomIdx !== null && fromIdx === shopRoomIdx) {
-      fromIdx = shopRoomIdx - 1;
-      if (fromIdx < 0) continue;
+  if (g.dungeonMode === "hard" && rooms.length >= 4) {
+    const mhCandidates = rooms.map((_, i) => i).filter((i) => i !== 0 && i !== rooms.length - 1);
+    if (mhCandidates.length > 0) monsterHouseRoomIdx = mhCandidates[Math.floor(Math.random() * mhCandidates.length)];
+  }
+
+  if (g.floor >= 2 && rooms.length >= 3) {
+    // 隣接数を計算してショップ候補を選択
+    const adjCount = new Map<number, number>();
+    connected.forEach((ck) => {
+      const [a, b] = ck.split("-").map(Number);
+      adjCount.set(a, (adjCount.get(a) ?? 0) + 1);
+      adjCount.set(b, (adjCount.get(b) ?? 0) + 1);
+    });
+    const shopCandidates = rooms.map((_, i) => i)
+      .filter((i) => i !== 0 && i !== rooms.length - 1 && i !== monsterHouseRoomIdx)
+      .filter((i) => rooms[i].w >= 5 && rooms[i].h >= 5);
+    // 隣接数1（行き止まり）を優先、なければ隣接数2以上から選択
+    const leafShops = shopCandidates.filter((i) => (adjCount.get(i) ?? 0) === 1);
+    const candidates = leafShops.length > 0 ? leafShops : shopCandidates;
+    if (candidates.length > 0) {
+      shopRoomIdx = candidates[Math.floor(Math.random() * candidates.length)];
+      // ショップ部屋の接続を1本に制限
+      if ((adjCount.get(shopRoomIdx) ?? 0) > 1) {
+        // 余分な廊下の入口を封鎖
+        const shopRoom = rooms[shopRoomIdx];
+        let entranceCount = 0;
+        for (let ry = shopRoom.y; ry < shopRoom.y + shopRoom.h; ry++) {
+          for (let rx = shopRoom.x; rx < shopRoom.x + shopRoom.w; rx++) {
+            if (m[ry][rx] !== R) continue;
+            for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+              const nx = rx + dx, ny = ry + dy;
+              if (nx >= 0 && nx < MW && ny >= 0 && ny < MH && m[ny][nx] === C) {
+                entranceCount++;
+                if (entranceCount > 1) m[ny][nx] = W; // 2つ目以降を封鎖
+              }
+            }
+          }
+        }
+      }
     }
-
-    const sides = bestSides(fromIdx, toIdx);
-    if (!sides) continue; // 辺が全部埋まっている（稀）
-    const exitA = pickExit(rooms[fromIdx], sides.aSide);
-    const exitB = pickExit(rooms[toIdx], sides.bSide);
-    // 辺を使用済みに
-    usedSides.get(fromIdx)!.add(sides.aSide);
-    usedSides.get(toIdx)!.add(sides.bSide);
-    // BFS廊下を試行（部屋隣接・角を自動回避、1幅・2列防止保証）
-    // L字フォールバックは制約なしで問題を起こすため廃止
-    digCorridorBFS(m, exitA.x, exitA.y, exitB.x, exitB.y, rooms);
   }
 
   // 後処理: 1マス行き止まり廊下を除去
@@ -297,15 +228,11 @@ export function generateMap(g: GameState): void {
     for (let y = 1; y < MH - 1; y++) {
       for (let x = 1; x < MW - 1; x++) {
         if (m[y][x] !== C) continue;
-        // 隣接する歩行可能タイル（C or R）を数える
         let neighbors = 0;
         for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
           if (m[y + dy][x + dx] !== W) neighbors++;
         }
-        if (neighbors <= 1) {
-          m[y][x] = W; // 行き止まり除去
-          cleaned = true;
-        }
+        if (neighbors <= 1) { m[y][x] = W; cleaned = true; }
       }
     }
   }
