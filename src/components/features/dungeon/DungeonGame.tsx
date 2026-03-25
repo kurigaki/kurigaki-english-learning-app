@@ -1056,7 +1056,7 @@ function WarehouseSaveNotice({ isCleared }: { isCleared: boolean }) {
 
 function DungeonControls({
   onDpad, onAttack, onWait, onItems, onFootAction, onLookAround, onMenu, onShootArrow, onDash,
-  onChangeFacing, arrowCount, diagMoveEnabled,
+  onChangeFacing, arrowCount, diagMoveEnabled, lang,
 }: {
   onDpad: (dx: number, dy: number) => void;
   onAttack: () => void;
@@ -1070,6 +1070,7 @@ function DungeonControls({
   onChangeFacing: (dx: number, dy: number) => void;
   arrowCount: number;
   diagMoveEnabled: boolean;
+  lang: DungeonLang;
 }) {
   // ダッシュモード・方向転換モードは DungeonControls 内部で完結管理
   const [turnMode, setTurnMode] = useState(false);
@@ -1161,24 +1162,24 @@ function DungeonControls({
     }} onContextMenu={(e) => e.preventDefault()}>
       {/* トップメニューバー */}
       <div style={{ display: "flex", gap: 4, marginBottom: 6 }}>
-        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onMenu(); }}>メニュー</div>
-        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onItems(); }}>持ち物</div>
-        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onFootAction(); }}>足元</div>
-        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onLookAround(); }}>見渡す</div>
+        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onMenu(); }}>{lang === "en" ? "Menu" : "メニュー"}</div>
+        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onItems(); }}>{lang === "en" ? "Items" : "持ち物"}</div>
+        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onFootAction(); }}>{lang === "en" ? "Feet" : "足元"}</div>
+        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onLookAround(); }}>{lang === "en" ? "Look" : "見渡す"}</div>
       </div>
       {/* メインコントロールエリア — 左右に十分なスペースを確保 */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 0, width: "100%", maxWidth: 380 }}>
         {/* 左端: 足踏み・ダッシュ（誤タップ防止のため十字キーから離す） */}
         <div style={{ display: "flex", flexDirection: "column", gap: 6, minWidth: 56 }}>
           <div style={sideBtnStyle} onPointerDown={(e) => { e.preventDefault(); onWait(); }}>
-            <span style={{ fontSize: 16 }}>🦶</span>足踏み
+            <span style={{ fontSize: 16 }}>🦶</span>{lang === "en" ? "Wait" : "足踏み"}
           </div>
           <div style={dashBtnStyle} onPointerDown={(e) => {
             e.preventDefault();
             setDashMode((v) => !v);
             setTurnMode(false);
           }}>
-            <span style={{ fontSize: 14 }}>💨</span>ダッシュ<br />乗る
+            <span style={{ fontSize: 14 }}>💨</span>{lang === "en" ? "Dash" : "ダッシュ"}<br />{lang === "en" ? "Step" : "乗る"}
           </div>
         </div>
         {/* 方向パッド */}
@@ -1216,10 +1217,10 @@ function DungeonControls({
         {/* 右端: 攻撃・弓矢（誤タップ防止のため十字キーから離す） */}
         <div style={{ display: "flex", flexDirection: "column", gap: 6, minWidth: 56 }}>
           <div style={{ ...sideBtnStyle, color: "#f9a825", borderColor: "#666" }} onPointerDown={(e) => { e.preventDefault(); onAttack(); }}>
-            <span style={{ fontSize: 16 }}>⚔️</span>攻撃/話す
+            <span style={{ fontSize: 16 }}>⚔️</span>{lang === "en" ? "Atk/Talk" : "攻撃/話す"}
           </div>
           <div style={sideBtnStyle} onPointerDown={(e) => { e.preventDefault(); onShootArrow(); }}>
-            <span style={{ fontSize: 16 }}>🏹</span>弓矢<br />×{arrowCount}
+            <span style={{ fontSize: 16 }}>🏹</span>{lang === "en" ? "Arrow" : "弓矢"}<br />×{arrowCount}
           </div>
         </div>
       </div>
@@ -1415,10 +1416,11 @@ function EventOverlayModal({ overlay, onClose }: { overlay: EventOverlay; onClos
 
 // ─── Full Map Overlay ──────────────────────────────────────────────
 function DungeonMapOverlay({
-  gameState, onClose,
+  gameState, onClose, lang,
 }: {
   gameState: GameState | null;
   onClose: () => void;
+  lang: DungeonLang;
 }) {
   const mapCanvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -1449,7 +1451,7 @@ function DungeonMapOverlay({
         onClick={(e) => e.stopPropagation()}
       >
         <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 9, color: DC.gold }}>
-          🗺 ダンジョンマップ
+          🗺 {lang === "en" ? "Dungeon Map" : "ダンジョンマップ"}
         </div>
         <canvas
           ref={mapCanvasRef}
@@ -1459,11 +1461,11 @@ function DungeonMapOverlay({
         />
         {/* 凡例 */}
         <div style={{ display: "flex", gap: 12, fontSize: 10, color: DC.text2 }}>
-          <span><span style={{ color: DC.gold }}>●</span> 自分</span>
-          <span><span style={{ color: "#e05252" }}>●</span> 敵</span>
-          <span><span style={{ color: DC.gold, opacity: 0.7 }}>●</span> アイテム</span>
-          <span><span style={{ color: "#52d47a" }}>●</span> ショップ</span>
-          <span><span style={{ color: "#4488cc" }}>■</span> 階段</span>
+          <span><span style={{ color: DC.gold }}>●</span> {lang === "en" ? "You" : "自分"}</span>
+          <span><span style={{ color: "#e05252" }}>●</span> {lang === "en" ? "Enemy" : "敵"}</span>
+          <span><span style={{ color: DC.gold, opacity: 0.7 }}>●</span> {lang === "en" ? "Item" : "アイテム"}</span>
+          <span><span style={{ color: "#52d47a" }}>●</span> {lang === "en" ? "Shop" : "ショップ"}</span>
+          <span><span style={{ color: "#4488cc" }}>■</span> {lang === "en" ? "Stairs" : "階段"}</span>
         </div>
         <button
           onClick={onClose}
@@ -1473,7 +1475,7 @@ function DungeonMapOverlay({
             padding: "6px 18px", borderRadius: 3, cursor: "pointer",
           }}
         >
-          閉じる [M]
+          {lang === "en" ? "Close [M]" : "閉じる [M]"}
         </button>
       </div>
     </div>
@@ -1999,6 +2001,8 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
   const [restoredDeath, setRestoredDeath] = useState<DeathState | null>(null);
   const pendingSaveRef = useRef<GameState | null>(null);
   const [hasSave, setHasSave] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- タイトル画面で言語変更後にゲーム画面にも反映するため保持
+  const [lang, _setLang] = useState<DungeonLang>(() => getDungeonLang());
 
   const {
     canvasRef, wrapRef, gameStateRef, uiState, dmgPops,
@@ -2465,7 +2469,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
           <EventOverlayModal overlay={eventOverlay} onClose={closeEventOverlay} />
         )}
         {showMap && (
-          <DungeonMapOverlay gameState={gameStateRef.current} onClose={closeMap} />
+          <DungeonMapOverlay gameState={gameStateRef.current} onClose={closeMap} lang={lang} />
         )}
         {lookAroundText && (
           <div style={{
@@ -2539,16 +2543,18 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       {uiState.shopConfirm && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.6)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 90 }}>
           <div style={{ background: DC.bg2, border: `1px solid ${DC.gold}`, borderRadius: 8, padding: 20, maxWidth: 300, textAlign: "center" }}>
-            <div style={{ color: DC.gold, fontSize: 16, marginBottom: 8 }}>🧔 ショップキーパー</div>
+            <div style={{ color: DC.gold, fontSize: 16, marginBottom: 8 }}>🧔 {lang === "en" ? "Shopkeeper" : "ショップキーパー"}</div>
             <div style={{ color: DC.text, fontSize: 13, marginBottom: 12 }}>
-              「{uiState.shopConfirm.count}個で{uiState.shopConfirm.total}Gだよ。買うかい？」
+              {lang === "en"
+                ? `"That'll be ${uiState.shopConfirm.total}G for ${uiState.shopConfirm.count} item${uiState.shopConfirm.count > 1 ? "s" : ""}. Deal?"`
+                : `「${uiState.shopConfirm.count}個で${uiState.shopConfirm.total}Gだよ。買うかい？」`}
             </div>
             <div style={{ color: DC.text2, fontSize: 11, marginBottom: 16 }}>
-              所持金: {uiState.gold}G
+              {lang === "en" ? "Gold" : "所持金"}: {uiState.gold}G
             </div>
             <div style={{ display: "flex", gap: 8, justifyContent: "center" }}>
-              <button onClick={confirmPurchase} style={{ background: DC.green, color: "#000", border: "none", borderRadius: 4, padding: "8px 20px", cursor: "pointer", fontSize: 13, fontWeight: "bold" }}>買う</button>
-              <button onClick={cancelPurchase} style={{ background: DC.bg4, color: DC.text, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "8px 20px", cursor: "pointer", fontSize: 13 }}>やめる</button>
+              <button onClick={confirmPurchase} style={{ background: DC.green, color: "#000", border: "none", borderRadius: 4, padding: "8px 20px", cursor: "pointer", fontSize: 13, fontWeight: "bold" }}>{lang === "en" ? "Buy" : "買う"}</button>
+              <button onClick={cancelPurchase} style={{ background: DC.bg4, color: DC.text, border: `1px solid ${DC.border}`, borderRadius: 4, padding: "8px 20px", cursor: "pointer", fontSize: 13 }}>{lang === "en" ? "No thanks" : "やめる"}</button>
             </div>
           </div>
         </div>
@@ -2689,6 +2695,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onChangeFacing={changeFacing}
         arrowCount={uiState.items.find((i) => i.id === "arrow")?.count ?? 0}
         diagMoveEnabled={diagMoveEnabled}
+        lang={lang}
       />
 
       {/* Notification */}

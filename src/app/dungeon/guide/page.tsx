@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ITEMS_DEF, ENEMIES_DEF, SHOPKEEPER_DEF } from "@/lib/dungeon/constants";
+import { getDungeonLang, itemName as iName, itemDesc as iDesc, type DungeonLang } from "@/lib/dungeon/i18n";
 
 const DC = {
   bg: "#09090f", bg2: "#111118", bg3: "#181825", bg4: "#1f1f30",
@@ -14,6 +15,9 @@ type Tab = "guide" | "items" | "enemies";
 
 export default function GuidePage() {
   const [tab, setTab] = useState<Tab>("guide");
+  const [lang, setLang] = useState<DungeonLang>("ja");
+  useEffect(() => { setLang(getDungeonLang()); }, []);
+  const en = lang === "en";
 
   const tabStyle = (t: Tab) => ({
     fontFamily: "'Press Start 2P', monospace", fontSize: 9,
@@ -44,9 +48,9 @@ export default function GuidePage() {
 
         {/* Tabs */}
         <div style={{ display: "flex", gap: 2, marginBottom: 0 }}>
-          <div style={tabStyle("guide")} onClick={() => setTab("guide")}>あそびかた</div>
-          <div style={tabStyle("items")} onClick={() => setTab("items")}>アイテム図鑑</div>
-          <div style={tabStyle("enemies")} onClick={() => setTab("enemies")}>敵図鑑</div>
+          <div style={tabStyle("guide")} onClick={() => setTab("guide")}>{en ? "How to Play" : "あそびかた"}</div>
+          <div style={tabStyle("items")} onClick={() => setTab("items")}>{en ? "Items" : "アイテム図鑑"}</div>
+          <div style={tabStyle("enemies")} onClick={() => setTab("enemies")}>{en ? "Enemies" : "敵図鑑"}</div>
         </div>
 
         <div style={{
@@ -54,9 +58,9 @@ export default function GuidePage() {
           borderRadius: "0 0 8px 8px", padding: "16px 14px",
           fontSize: 13, lineHeight: 1.8, color: DC.text,
         }}>
-          {tab === "guide" && <GuideContent />}
-          {tab === "items" && <ItemsContent />}
-          {tab === "enemies" && <EnemiesContent />}
+          {tab === "guide" && <GuideContent lang={lang} />}
+          {tab === "items" && <ItemsContent lang={lang} />}
+          {tab === "enemies" && <EnemiesContent lang={lang} />}
         </div>
       </div>
     </div>
@@ -76,18 +80,28 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   );
 }
 
-function GuideContent() {
+function GuideContent({ lang }: { lang: DungeonLang }) {
+  const en = lang === "en";
   return (
     <>
-      <Section title="ゲームの目標">
-        <p>地下5階（B5F）の階段を降りればクリア！</p>
-        <p>敵に隣接して攻撃すると英語クイズが出題されます。正解すると高い命中率でダメージを与えられます。</p>
+      <Section title={en ? "Objective" : "ゲームの目標"}>
+        <p>{en ? "Reach the stairs on B5F to clear the dungeon!" : "地下5階（B5F）の階段を降りればクリア！"}</p>
+        <p>{en ? "Attack adjacent enemies to trigger an English quiz. Correct answers give higher accuracy!" : "敵に隣接して攻撃すると英語クイズが出題されます。正解すると高い命中率でダメージを与えられます。"}</p>
       </Section>
 
-      <Section title="基本操作">
+      <Section title={en ? "Controls" : "基本操作"}>
         <table style={{ width: "100%", fontSize: 12, borderCollapse: "collapse" }}>
           <tbody>
-            {[
+            {(en ? [
+              ["D-pad", "Move (4 or 8 directions)"],
+              ["Atk/Talk", "Attack adjacent enemy · Talk to Shopkeeper"],
+              ["Wait", "Wait 1 turn in place (recovers HP)"],
+              ["Dash", "Run in the direction you're facing"],
+              ["Arrow", "Ranged attack in a straight line"],
+              ["Feet", "Pick up items · Use stairs"],
+              ["Items", "Use, throw, or drop items"],
+              ["Look", "View the dungeon map"],
+            ] : [
               ["十字キー", "移動（4方向 or 8方向）"],
               ["攻撃/話す", "隣の敵に攻撃・店主と会話"],
               ["足踏み", "その場で1ターン待機（HP回復）"],
@@ -96,7 +110,7 @@ function GuideContent() {
               ["足元", "足元のアイテムを拾う・階段を降りる"],
               ["持ち物", "アイテムを使う・投げる・置く"],
               ["見渡す", "周囲の状況を確認"],
-            ].map(([key, desc]) => (
+            ]).map(([key, desc]) => (
               <tr key={key} style={{ borderBottom: `1px solid ${DC.border}` }}>
                 <td style={{ padding: "4px 6px", color: DC.gold, fontSize: 11, whiteSpace: "nowrap" }}>{key}</td>
                 <td style={{ padding: "4px 6px", color: DC.text2 }}>{desc}</td>
@@ -106,40 +120,78 @@ function GuideContent() {
         </table>
       </Section>
 
-      <Section title="アイテムの種類">
-        <p>🌿 <b>ワード（草）</b> — 飲むと自分に効果。投げると敵に効果。</p>
-        <p>📜 <b>スペル（巻物）</b> — 読むとフロア全体や周囲に効果。</p>
-        <p>🪶 <b>ボルト（杖）</b> — 振ると直線上の敵に効果。回数制限あり。</p>
-        <p>🍙 <b>フード（食料）</b> — 食べるとスタミナ回復。飢え死に注意！</p>
-        <p>🫙 <b>ポット（壷）</b> — アイテムを3つまで収納できる。</p>
-        <p>🏹 <b>アロー（矢）</b> — 遠くの敵に直線攻撃。</p>
+      <Section title={en ? "Item Types" : "アイテムの種類"}>
+        {en ? (<>
+          <p>🌿 <b>Word (Grass)</b> — Drink for self-effect. Throw at enemies for targeted effect.</p>
+          <p>📜 <b>Spell (Scroll)</b> — Read to affect the floor or nearby area.</p>
+          <p>🪶 <b>Bolt (Wand)</b> — Swing to hit enemies in a straight line. Limited charges.</p>
+          <p>🍙 <b>Food</b> — Eat to restore Stamina. Don&apos;t starve!</p>
+          <p>🫙 <b>Pot (Jar)</b> — Store up to 3 items inside.</p>
+          <p>🏹 <b>Arrow</b> — Ranged straight-line attack.</p>
+        </>) : (<>
+          <p>🌿 <b>ワード（草）</b> — 飲むと自分に効果。投げると敵に効果。</p>
+          <p>📜 <b>スペル（巻物）</b> — 読むとフロア全体や周囲に効果。</p>
+          <p>🪶 <b>ボルト（杖）</b> — 振ると直線上の敵に効果。回数制限あり。</p>
+          <p>🍙 <b>フード（食料）</b> — 食べるとスタミナ回復。飢え死に注意！</p>
+          <p>🫙 <b>ポット（壷）</b> — アイテムを3つまで収納できる。</p>
+          <p>🏹 <b>アロー（矢）</b> — 遠くの敵に直線攻撃。</p>
+        </>)}
       </Section>
 
-      <Section title="ショップ">
-        <p>B2F以降にショップが出現することがあります。</p>
-        <p>1. 足元ボタンでアイテムを手に取る</p>
-        <p>2. 店主に話しかけて購入（確認ダイアログあり）</p>
-        <p>3. 不要なら「置く」で商品を戻せる</p>
-        <p>💡 店主を杖や草で動かしてから逃げると泥棒できるが、ガーディアンが出現！</p>
+      <Section title={en ? "Shop" : "ショップ"}>
+        {en ? (<>
+          <p>Shops may appear from B2F onward.</p>
+          <p>1. Press Feet to pick up an item</p>
+          <p>2. Talk to the Shopkeeper to buy (confirmation dialog)</p>
+          <p>3. Drop unwanted items to return them to the shelf</p>
+          <p>💡 Move the Shopkeeper with wands or grass to steal — but Guardians will appear!</p>
+        </>) : (<>
+          <p>B2F以降にショップが出現することがあります。</p>
+          <p>1. 足元ボタンでアイテムを手に取る</p>
+          <p>2. 店主に話しかけて購入（確認ダイアログあり）</p>
+          <p>3. 不要なら「置く」で商品を戻せる</p>
+          <p>💡 店主を杖や草で動かしてから逃げると泥棒できるが、ガーディアンが出現！</p>
+        </>)}
       </Section>
 
-      <Section title="スタミナ（満腹度）">
-        <p>ターン経過でスタミナが減少します。</p>
-        <p>⚠️ スタミナが0になるとHP が減り続けます！</p>
-        <p>⚠️ スタミナ0ではダッシュできません。</p>
-        <p>🍙 フードやワード（草）を使ってスタミナを回復しましょう。</p>
+      <Section title={en ? "Stamina" : "スタミナ（満腹度）"}>
+        {en ? (<>
+          <p>Stamina decreases as turns pass.</p>
+          <p>⚠️ At 0 Stamina, your HP drains every turn!</p>
+          <p>⚠️ You cannot dash with 0 Stamina.</p>
+          <p>🍙 Use Food or Words (grass) to restore Stamina.</p>
+        </>) : (<>
+          <p>ターン経過でスタミナが減少します。</p>
+          <p>⚠️ スタミナが0になるとHP が減り続けます！</p>
+          <p>⚠️ スタミナ0ではダッシュできません。</p>
+          <p>🍙 フードやワード（草）を使ってスタミナを回復しましょう。</p>
+        </>)}
       </Section>
 
-      <Section title="倒れた場合">
-        <p>HPが0になると冒険失敗。アイテムとゴールドを全て失います。</p>
-        <p>📜 エスケープスペルを使えばアイテムとゴールドを持って帰還できます。</p>
-        <p>📦 倉庫に預けたアイテムは安全です。次の冒険に選んで持ち込めます。</p>
+      <Section title={en ? "When Defeated" : "倒れた場合"}>
+        {en ? (<>
+          <p>If your HP reaches 0, the adventure ends. All items and gold are lost.</p>
+          <p>📜 Use an Escape Spell to return safely with your items and gold.</p>
+          <p>📦 Items stored in the Warehouse are safe. Choose what to bring on your next run.</p>
+        </>) : (<>
+          <p>HPが0になると冒険失敗。アイテムとゴールドを全て失います。</p>
+          <p>📜 エスケープスペルを使えばアイテムとゴールドを持って帰還できます。</p>
+          <p>📦 倉庫に預けたアイテムは安全です。次の冒険に選んで持ち込めます。</p>
+        </>)}
       </Section>
 
-      <Section title="状態異常">
+      <Section title={en ? "Status Effects" : "状態異常"}>
         <table style={{ width: "100%", fontSize: 12, borderCollapse: "collapse" }}>
           <tbody>
-            {[
+            {(en ? [
+              ["💤 Sleep", "Cannot act for several turns"],
+              ["😵 Confused", "Moves in random directions"],
+              ["🔒 Sealed", "Cannot act for several turns"],
+              ["🐌 Slowed", "Can only act every other turn"],
+              ["⚡ Haste", "Acts twice per turn"],
+              ["💪 Power Up", "Next attack is a critical hit"],
+              ["🎯 Sure Hit", "Next attack never misses"],
+            ] : [
               ["💤 眠り", "数ターン行動不能"],
               ["😵 混乱", "ランダム方向に移動"],
               ["🔒 封印", "数ターン行動不能"],
@@ -147,7 +199,7 @@ function GuideContent() {
               ["⚡ 倍速", "1ターンに2回行動できる"],
               ["💪 パワーアップ", "次の攻撃が会心の一撃"],
               ["🎯 必中", "次の攻撃が必ず命中"],
-            ].map(([name, desc]) => (
+            ]).map(([name, desc]) => (
               <tr key={name} style={{ borderBottom: `1px solid ${DC.border}` }}>
                 <td style={{ padding: "4px 6px", color: DC.gold, whiteSpace: "nowrap" }}>{name}</td>
                 <td style={{ padding: "4px 6px", color: DC.text2 }}>{desc}</td>
@@ -160,8 +212,16 @@ function GuideContent() {
   );
 }
 
-function ItemsContent() {
-  const categories = [
+function ItemsContent({ lang }: { lang: DungeonLang }) {
+  const en = lang === "en";
+  const categories = en ? [
+    { id: "grass", label: "🌿 Word (Grass)" },
+    { id: "scroll", label: "📜 Spell (Scroll)" },
+    { id: "cane", label: "🪶 Bolt (Wand)" },
+    { id: "food", label: "🍙 Food" },
+    { id: "jar", label: "🫙 Pot (Jar)" },
+    { id: "special", label: "✨ Special" },
+  ] : [
     { id: "grass", label: "🌿 ワード（草）" },
     { id: "scroll", label: "📜 スペル（巻物）" },
     { id: "cane", label: "🪶 ボルト（杖）" },
@@ -184,9 +244,9 @@ function ItemsContent() {
               }}>
                 <span style={{ fontSize: 18, flexShrink: 0 }}>{item.icon}</span>
                 <div>
-                  <div style={{ fontSize: 12, fontWeight: "bold" }}>{item.name}</div>
-                  <div style={{ fontSize: 10, color: DC.text3 }}>{item.nameEn}</div>
-                  <div style={{ fontSize: 11, color: DC.text2, marginTop: 2 }}>{item.desc}</div>
+                  <div style={{ fontSize: 12, fontWeight: "bold" }}>{iName(item, lang)}</div>
+                  <div style={{ fontSize: 10, color: DC.text3 }}>{en ? item.name : item.nameEn}</div>
+                  <div style={{ fontSize: 11, color: DC.text2, marginTop: 2 }}>{iDesc(item, lang)}</div>
                 </div>
               </div>
             ))}
@@ -197,16 +257,17 @@ function ItemsContent() {
   );
 }
 
-function EnemiesContent() {
+function EnemiesContent({ lang }: { lang: DungeonLang }) {
+  const en = lang === "en";
   return (
     <>
-      <Section title="店主">
+      <Section title={en ? "Shopkeeper" : "店主"}>
         <div style={{ display: "flex", gap: 8, padding: "6px 0" }}>
           <span style={{ fontSize: 18 }}>🧔</span>
           <div>
             <div style={{ fontSize: 12, fontWeight: "bold" }}>{SHOPKEEPER_DEF.name}</div>
             <div style={{ fontSize: 11, color: DC.text2 }}>HP:{SHOPKEEPER_DEF.mhp} ATK:{SHOPKEEPER_DEF.atk}</div>
-            <div style={{ fontSize: 11, color: DC.text2 }}>ショップの番人。攻撃や泥棒をすると敵化（倍速）</div>
+            <div style={{ fontSize: 11, color: DC.text2 }}>{en ? "Shop guard. Attacks or theft make them hostile (double speed)" : "ショップの番人。攻撃や泥棒をすると敵化（倍速）"}</div>
           </div>
         </div>
       </Section>
@@ -214,7 +275,7 @@ function EnemiesContent() {
       {[1, 2, 3, 4, 5].map((floor) => {
         const enemies = ENEMIES_DEF.filter((e) => e.floor === floor);
         return (
-          <Section key={floor} title={`B${floor}F の敵`}>
+          <Section key={floor} title={en ? `B${floor}F Enemies` : `B${floor}F の敵`}>
             {enemies.map((e) => (
               <div key={e.name} style={{
                 display: "flex", gap: 8, alignItems: "flex-start",
