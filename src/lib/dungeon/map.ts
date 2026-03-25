@@ -74,19 +74,28 @@ export function generateMap(g: GameState): void {
   const CELL_H = Math.floor(MH / GRID_ROWS); // 10
 
   // フロアテンプレート: 1=部屋あり, 0=なし（全パターン隣接接続で到達可能を保証）
-  const TEMPLATES: number[][][] = [
-    [[1,1,1],[1,1,1],[1,1,1]],  // Full 9
-    [[1,1,1],[1,0,1],[1,1,1]],  // Ring 8
-    [[1,0,1],[1,1,1],[1,0,1]],  // H-shape 7
-    [[1,1,1],[1,0,0],[1,1,1]],  // 7 variant
-    [[0,1,0],[1,1,1],[0,1,0]],  // Cross 5
-    [[1,1,0],[1,0,0],[1,1,1]],  // L-shape 6
-    [[1,0,1],[1,0,1],[1,1,1]],  // U-shape 7
-    [[1,1,1],[0,1,0],[0,1,0]],  // T-top 6
-    [[1,1,0],[0,1,0],[0,1,1]],  // Zigzag 5
+  // minFloor: この階層以降で出現、easyOk: 初心者モードで出現可
+  const TEMPLATES: { grid: number[][]; minFloor: number; easyOk: boolean }[] = [
+    // 初心者向け（5-6部屋、シンプル構造）
+    { grid: [[0,1,0],[1,1,1],[0,1,0]], minFloor: 1, easyOk: true },   // Cross 5
+    { grid: [[1,1,0],[0,1,0],[0,1,1]], minFloor: 1, easyOk: true },   // Zigzag 5
+    { grid: [[1,1,0],[1,0,0],[1,1,1]], minFloor: 1, easyOk: true },   // L-shape 6
+    { grid: [[1,1,1],[0,1,0],[0,1,0]], minFloor: 1, easyOk: true },   // T-top 6
+    // 中級（7部屋）
+    { grid: [[1,0,1],[1,1,1],[1,0,1]], minFloor: 2, easyOk: true },   // H-shape 7
+    { grid: [[1,0,1],[1,0,1],[1,1,1]], minFloor: 2, easyOk: true },   // U-shape 7
+    { grid: [[1,1,1],[1,0,0],[1,1,1]], minFloor: 2, easyOk: true },   // 7 variant
+    // 上級（8-9部屋、難易度高）
+    { grid: [[1,1,1],[1,0,1],[1,1,1]], minFloor: 3, easyOk: false },  // Ring 8
+    { grid: [[1,1,1],[1,1,1],[1,1,1]], minFloor: 4, easyOk: false },  // Full 9
   ];
 
-  const template = TEMPLATES[Math.floor(Math.random() * TEMPLATES.length)];
+  // 階層・難易度に応じたテンプレートフィルタ
+  const available = TEMPLATES.filter((t) =>
+    g.floor >= t.minFloor && (g.dungeonMode !== "easy" || t.easyOk)
+  );
+  const chosen = available.length > 0 ? available : TEMPLATES.slice(0, 4); // フォールバック
+  const template = chosen[Math.floor(Math.random() * chosen.length)].grid;
   const rooms: { x: number; y: number; w: number; h: number }[] = [];
   const gridRoomIdx: (number | null)[][] = Array.from({ length: GRID_ROWS }, () => new Array(GRID_COLS).fill(null));
 
@@ -185,39 +194,20 @@ export function generateMap(g: GameState): void {
   }
 
   if (g.floor >= 2 && rooms.length >= 3) {
-    // 隣接数を計算してショップ候補を選択
+    // 隣接数を計算
     const adjCount = new Map<number, number>();
     connected.forEach((ck) => {
       const [a, b] = ck.split("-").map(Number);
       adjCount.set(a, (adjCount.get(a) ?? 0) + 1);
       adjCount.set(b, (adjCount.get(b) ?? 0) + 1);
     });
-    const shopCandidates = rooms.map((_, i) => i)
+    // ショップは行き止まり部屋（隣接数1）のみ選択（中継部屋の封鎖は詰みの原因）
+    const leafShops = rooms.map((_, i) => i)
       .filter((i) => i !== 0 && i !== rooms.length - 1 && i !== monsterHouseRoomIdx)
+      .filter((i) => (adjCount.get(i) ?? 0) === 1)
       .filter((i) => rooms[i].w >= 5 && rooms[i].h >= 5);
-    // 隣接数1（行き止まり）を優先、なければ隣接数2以上から選択
-    const leafShops = shopCandidates.filter((i) => (adjCount.get(i) ?? 0) === 1);
-    const candidates = leafShops.length > 0 ? leafShops : shopCandidates;
-    if (candidates.length > 0) {
-      shopRoomIdx = candidates[Math.floor(Math.random() * candidates.length)];
-      // ショップ部屋の接続を1本に制限
-      if ((adjCount.get(shopRoomIdx) ?? 0) > 1) {
-        // 余分な廊下の入口を封鎖
-        const shopRoom = rooms[shopRoomIdx];
-        let entranceCount = 0;
-        for (let ry = shopRoom.y; ry < shopRoom.y + shopRoom.h; ry++) {
-          for (let rx = shopRoom.x; rx < shopRoom.x + shopRoom.w; rx++) {
-            if (m[ry][rx] !== R) continue;
-            for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
-              const nx = rx + dx, ny = ry + dy;
-              if (nx >= 0 && nx < MW && ny >= 0 && ny < MH && m[ny][nx] === C) {
-                entranceCount++;
-                if (entranceCount > 1) m[ny][nx] = W; // 2つ目以降を封鎖
-              }
-            }
-          }
-        }
-      }
+    if (leafShops.length > 0) {
+      shopRoomIdx = leafShops[Math.floor(Math.random() * leafShops.length)];
     }
   }
 
