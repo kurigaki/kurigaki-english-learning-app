@@ -31,7 +31,7 @@ export type CaneCharges = {
   cane_seal: number;
   cane_warp: number;
 };
-import { generateMap, revealAround } from "@/lib/dungeon/map";
+import { generateMap, revealAround, revealAllCorridors } from "@/lib/dungeon/map";
 import { adjEnemy, moveEnemies, moveShopkeeper, adj, sameRoom, getAllCorridorEntrances } from "@/lib/dungeon/ai";
 import { drawMap, TILE } from "@/lib/dungeon/renderer";
 import {
@@ -456,9 +456,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
   const runEnemyTurn = useCallback(
     (g: GameState) => {
       g.turn++;
-      // HP自然回復（4ターン毎）
+      // HP自然回復（4ターン毎、レベル連動）
       if (g.turn % 4 === 0 && g.p.hp < g.p.mhp) {
-        g.p.hp = Math.min(g.p.hp + 1, g.p.mhp);
+        const healAmt = Math.max(1, Math.floor(g.p.lv / 2));
+        g.p.hp = Math.min(g.p.hp + healAmt, g.p.mhp);
       }
       // スタミナ減少: easy=10ターン毎に1、hard=5ターン毎に1
       if (g.hunger > 0) {
@@ -691,21 +692,36 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "warp_grass": {
-          let tries = 0;
-          let nx = 0;
-          let ny = 0;
-          do {
-            nx = 1 + Math.floor(Math.random() * (MW - 2));
-            ny = 1 + Math.floor(Math.random() * (MH - 2));
-            tries++;
-          } while (
-            tries < 200 &&
-            (g.map[ny][nx] === 0 || g.enemies.find((e) => e.x === nx && e.y === ny))
+          // 現在の部屋以外の部屋にワープ（廊下NG）
+          const curRoom = g.rooms.find((r) =>
+            g.px >= r.x && g.px < r.x + r.w && g.py >= r.y && g.py < r.y + r.h
           );
-          if (g.map[ny][nx] !== 0) {
-            g.px = nx;
-            g.py = ny;
-            revealAround(g, nx, ny);
+          const otherRooms = g.rooms.filter((r) => r !== curRoom);
+          let warped = false;
+          if (otherRooms.length > 0) {
+            for (let t = 0; t < 100; t++) {
+              const wr = otherRooms[Math.floor(Math.random() * otherRooms.length)];
+              const wx = wr.x + 1 + Math.floor(Math.random() * Math.max(1, wr.w - 2));
+              const wy = wr.y + 1 + Math.floor(Math.random() * Math.max(1, wr.h - 2));
+              if (!g.enemies.find((e) => e.x === wx && e.y === wy) &&
+                  !(g.shopkeeper && g.shopkeeper.x === wx && g.shopkeeper.y === wy)) {
+                g.px = wx; g.py = wy;
+                revealAround(g, wx, wy); // 着地した部屋を開示
+                // モンスターハウスなら起動
+                if (g.monsterHouseRoomIdx !== null && !seenMonsterHouseRef.current) {
+                  const mhRoom = g.rooms[g.monsterHouseRoomIdx];
+                  if (mhRoom && wx >= mhRoom.x && wx < mhRoom.x + mhRoom.w && wy >= mhRoom.y && wy < mhRoom.y + mhRoom.h) {
+                    seenMonsterHouseRef.current = true;
+                    showEventOverlay(MONSTER_HOUSE_OVERLAY);
+                    wakeEnemiesInRoom(g, wx, wy);
+                  }
+                }
+                warped = true;
+                break;
+              }
+            }
+          }
+          if (warped) {
             sfxWarp();
             notify("✨ ワープした！（スタミナ+5）");
             redraw();
@@ -995,7 +1011,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return false;
       }
     },
-    [addDmgPop, onEnemyDied, redraw, setUiState, updateUI]
+    [addDmgPop, onEnemyDied, redraw, setUiState, showEventOverlay, updateUI, wakeEnemiesInRoom]
   );
 
   const goNextFloor = useCallback(() => {
@@ -1012,6 +1028,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     sfxStairs();
     generateMap(g);
     revealAround(g, g.px, g.py); // 新フロアの開始位置を開く
+    revealAllCorridors(g); // 廊下を常時開示
 
     // プログレッシブモード: フロア移動時にステージ変化を通知
     let stageNotice = "";
@@ -1552,9 +1569,13 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     const g = gameRef.current;
     if (!g) return;
     if (uiState.quiz && !uiState.quizAnswered) return;
+    // 足踏み回復加速: 移動時の倍の速度でHP回復
+    if (g.p.hp < g.p.mhp) {
+      const healAmt = Math.max(1, Math.floor(g.p.lv / 2)) + 1;
+      g.p.hp = Math.min(g.p.hp + healAmt, g.p.mhp);
+    }
     queueMsg("足踏み中…");
     runEnemyTurn(g);
-    // ターン終了後にオートセーブ
     saveGame();
   }, [queueMsg, runEnemyTurn, saveGame, uiState.quiz, uiState.quizAnswered]);
 
@@ -2560,6 +2581,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py); // 開始位置の視野を開く
+    revealAllCorridors(g); // 廊下を常時開示
     // 前ゲームの death/quiz/showItems 等を確実にリセット（タイトルへ戻って再開始する場合に残留する）
     updateUI(g, {
       msg: "ダンジョンに入った！",
@@ -2617,6 +2639,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py);
+    revealAllCorridors(g);
     updateUI(g, {
       death: null,
       quiz: null,

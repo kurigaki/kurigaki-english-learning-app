@@ -137,7 +137,8 @@ export function wanderMove(g: GameState, e: Enemy): void {
       const canGo =
         nx >= 0 && nx < MW && ny >= 0 && ny < MH &&
         g.map[ny][nx] !== W &&
-        !g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny);
+        !g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny) &&
+        !(g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.x === nx && g.shopkeeper.y === ny);
 
       if (canGo) {
         // 部屋に入ったらlastDxリセット（部屋ロジックに切り替え）
@@ -346,12 +347,13 @@ export function moveEnemies(
     }
 
     // アラート判定：同じ部屋 or 隣接 or 廊下入口でプレイヤーを認識
-    // このターンに初めて認識した場合は行動しない（移動＋攻撃の2ターン行動を防ぐ）
+    // 初認識ターンでも隣接していれば攻撃を許可（プレイヤーが近づいた場合）
     if (!e.alert) {
       if (sameRoom(g.rooms, e.x, e.y, px, py) || adj(e.x, e.y, px, py) ||
           isPlayerAtCorridorEntranceOfEnemyRoom(g, px, py, e.x, e.y)) {
         e.alert = true;
-        continue;
+        // 隣接している場合は攻撃を許可（continueしない）
+        if (!adj(e.x, e.y, px, py)) continue;
       }
     }
 
@@ -409,6 +411,8 @@ export function moveEnemies(
         if (g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny)) continue;
         // プレイヤーのタイルには移動不可（攻撃は隣接チェック時のみ）
         if (nx === px && ny === py) continue;
+        // 店主のタイルにも移動不可（NPCとしてブロック）
+        if (g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.x === nx && g.shopkeeper.y === ny) continue;
         e.x = nx;
         e.y = ny;
         break;

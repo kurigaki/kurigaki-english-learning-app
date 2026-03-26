@@ -41,6 +41,25 @@ export function revealAround(g: GameState, px: number, py: number): void {
   }
 }
 
+/** 全廊下タイルと隣接する壁を常時開示（廊下は常に明るい） */
+export function revealAllCorridors(g: GameState): void {
+  if (!g.explored) return;
+  for (let y = 0; y < MH; y++) {
+    for (let x = 0; x < MW; x++) {
+      if (g.map[y][x] === C) {
+        g.explored[y][x] = true;
+        // 廊下の隣接壁も開示（廊下の輪郭が見えるように）
+        for (let dy = -1; dy <= 1; dy++) {
+          for (let dx = -1; dx <= 1; dx++) {
+            const nx = x + dx, ny = y + dy;
+            if (nx >= 0 && nx < MW && ny >= 0 && ny < MH) g.explored[ny][nx] = true;
+          }
+        }
+      }
+    }
+  }
+}
+
 /** 部屋タイルのうち廊下に隣接しているタイル（部屋の入口）かどうかを判定 */
 function isRoomEntrance(m: TileType[][], x: number, y: number): boolean {
   for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
@@ -189,7 +208,10 @@ export function generateMap(g: GameState): void {
   let monsterHouseRoomIdx: number | null = null;
 
   if (g.dungeonMode === "hard" && rooms.length >= 4) {
-    const mhCandidates = rooms.map((_, i) => i).filter((i) => i !== 0 && i !== rooms.length - 1);
+    // モンスターハウスは最低5×5以上の部屋（敵とアイテムが収まるように）
+    const mhCandidates = rooms.map((_, i) => i)
+      .filter((i) => i !== 0 && i !== rooms.length - 1)
+      .filter((i) => rooms[i].w >= 5 && rooms[i].h >= 5);
     if (mhCandidates.length > 0) monsterHouseRoomIdx = mhCandidates[Math.floor(Math.random() * mhCandidates.length)];
   }
 
@@ -413,18 +435,19 @@ export function generateMap(g: GameState): void {
         }
       }
     }
-    // 店主配置: 入口の1歩横（入口を塞がない位置）
+    // 店主配置: 入口の壁沿いに1歩ずらす（壁に接するタイルを優先）
     let skX = entranceX;
     let skY = entranceY;
-    // 廊下方向と垂直な方向に1歩ずらす
+    // 壁沿い方向（廊下方向と垂直）に1歩ずらす
     const perpDirs: [number, number][] = corridorDx !== 0
       ? [[0, -1], [0, 1]]
       : [[-1, 0], [1, 0]];
     for (const [pdx, pdy] of perpDirs) {
       const nx = entranceX + pdx;
       const ny = entranceY + pdy;
-      if (nx > shopRoom.x && nx < shopRoom.x + shopRoom.w - 1 &&
-          ny > shopRoom.y && ny < shopRoom.y + shopRoom.h - 1 &&
+      if (nx >= shopRoom.x && nx < shopRoom.x + shopRoom.w &&
+          ny >= shopRoom.y && ny < shopRoom.y + shopRoom.h &&
+          m[ny][nx] === R &&
           !g.shopItems.find((s) => s.x === nx && s.y === ny)) {
         skX = nx;
         skY = ny;

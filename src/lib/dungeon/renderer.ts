@@ -892,6 +892,128 @@ function drawGuardian(ctx: CanvasRenderingContext2D, x: number, y: number, elite
   }
 }
 
+// ── Ghost（半透明の幽霊）──────────────────────────────────────────
+function drawGhost(ctx: CanvasRenderingContext2D, x: number, y: number): void {
+  const cx = x + TILE / 2, cy = y + TILE / 2;
+  ctx.globalAlpha = 0.7;
+  // 体（半透明の白いドーム）
+  ctx.fillStyle = "#ccccff";
+  ctx.beginPath();
+  ctx.arc(cx, cy - 2, 10, Math.PI, 0);
+  ctx.lineTo(cx + 10, cy + 8);
+  // 裾のギザギザ
+  ctx.lineTo(cx + 6, cy + 4); ctx.lineTo(cx + 3, cy + 8);
+  ctx.lineTo(cx, cy + 4); ctx.lineTo(cx - 3, cy + 8);
+  ctx.lineTo(cx - 6, cy + 4); ctx.lineTo(cx - 10, cy + 8);
+  ctx.closePath(); ctx.fill();
+  // 目（暗い穴）
+  ctx.globalAlpha = 1;
+  fc(ctx, "#1a0a2a", cx - 4, cy - 4, 3);
+  fc(ctx, "#1a0a2a", cx + 4, cy - 4, 3);
+  fc(ctx, "#6666ff", cx - 4, cy - 4, 1.5);
+  fc(ctx, "#6666ff", cx + 4, cy - 4, 1.5);
+  // 口
+  ctx.fillStyle = "#2a1a3a";
+  ctx.beginPath(); ctx.arc(cx, cy + 1, 3, 0, Math.PI); ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+// ── Wizard（紫ローブの魔法使い）──────────────────────────────────────────
+function drawWizard(ctx: CanvasRenderingContext2D, x: number, y: number): void {
+  const cx = x + TILE / 2, cy = y + TILE / 2;
+  // ローブ
+  fr(ctx, "#4a2a6a", cx - 8, cy, 16, 14);
+  // 頭
+  fc(ctx, "#ddccbb", cx, cy - 2, 7);
+  // 帽子（三角）
+  ctx.fillStyle = "#3a1a5a";
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - 16);
+  ctx.lineTo(cx + 9, cy - 4);
+  ctx.lineTo(cx - 9, cy - 4);
+  ctx.closePath(); ctx.fill();
+  // 帽子のつば
+  fr(ctx, "#2a0a4a", cx - 10, cy - 5, 20, 3);
+  // 目（光る）
+  fc(ctx, "#ff44ff", cx - 3, cy - 3, 2);
+  fc(ctx, "#ff44ff", cx + 3, cy - 3, 2);
+  // 杖
+  fr(ctx, "#8a6a30", cx + 9, cy - 8, 2, 20);
+  fc(ctx, "#ff88ff", cx + 10, cy - 10, 3);
+}
+
+// ── Minotaur（茶色の牛頭人）──────────────────────────────────────────
+function drawMinotaur(ctx: CanvasRenderingContext2D, x: number, y: number): void {
+  const cx = x + TILE / 2, cy = y + TILE / 2;
+  // 体（大きい）
+  fr(ctx, "#6a3a1a", cx - 10, cy - 2, 20, 16);
+  // 頭
+  fc(ctx, "#8a5a2a", cx, cy - 5, 9);
+  // 角（左右）
+  ctx.fillStyle = "#ccbb99";
+  ctx.beginPath(); ctx.moveTo(cx - 8, cy - 8); ctx.lineTo(cx - 14, cy - 14); ctx.lineTo(cx - 5, cy - 10); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(cx + 8, cy - 8); ctx.lineTo(cx + 14, cy - 14); ctx.lineTo(cx + 5, cy - 10); ctx.closePath(); ctx.fill();
+  // 鼻輪
+  ctx.strokeStyle = "#ccaa66"; ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.arc(cx, cy, 3, 0.2, Math.PI - 0.2); ctx.stroke();
+  // 目（赤）
+  fc(ctx, "#ff2200", cx - 4, cy - 6, 2.5);
+  fc(ctx, "#ff2200", cx + 4, cy - 6, 2.5);
+  // 斧
+  fr(ctx, "#7a5a2a", cx - 14, cy - 6, 3, 18);
+  ctx.fillStyle = "#aaaaaa";
+  ctx.beginPath(); ctx.moveTo(cx - 16, cy - 6); ctx.lineTo(cx - 11, cy - 3); ctx.lineTo(cx - 11, cy - 9); ctx.closePath(); ctx.fill();
+}
+
+// ── Dragon（緑のドラゴン）──────────────────────────────────────────
+function drawDragon(ctx: CanvasRenderingContext2D, x: number, y: number): void {
+  const cx = x + TILE / 2, cy = y + TILE / 2;
+  // 翼
+  ctx.fillStyle = "#1a6a2a";
+  ctx.beginPath(); ctx.moveTo(cx - 6, cy - 4); ctx.lineTo(cx - 18, cy - 12); ctx.lineTo(cx - 14, cy + 2); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(cx + 6, cy - 4); ctx.lineTo(cx + 18, cy - 12); ctx.lineTo(cx + 14, cy + 2); ctx.closePath(); ctx.fill();
+  // 体
+  fc(ctx, "#2a8a3a", cx, cy + 2, 11);
+  // 頭
+  fc(ctx, "#3aaa4a", cx, cy - 6, 7);
+  // 角
+  ctx.fillStyle = "#ccbb66";
+  ctx.beginPath(); ctx.moveTo(cx - 4, cy - 10); ctx.lineTo(cx - 2, cy - 16); ctx.lineTo(cx, cy - 10); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.moveTo(cx + 4, cy - 10); ctx.lineTo(cx + 2, cy - 16); ctx.lineTo(cx, cy - 10); ctx.closePath(); ctx.fill();
+  // 目（金色）
+  fc(ctx, "#ffcc00", cx - 3, cy - 7, 2.5);
+  fc(ctx, "#ffcc00", cx + 3, cy - 7, 2.5);
+  fc(ctx, "#111", cx - 3, cy - 7, 1);
+  fc(ctx, "#111", cx + 3, cy - 7, 1);
+  // 口から炎
+  ctx.fillStyle = "#ff6600";
+  ctx.beginPath(); ctx.moveTo(cx - 2, cy - 2); ctx.lineTo(cx, cy + 6); ctx.lineTo(cx + 2, cy - 2); ctx.closePath(); ctx.fill();
+}
+
+// ── Lich（紫の死霊魔術師）──────────────────────────────────────────
+function drawLich(ctx: CanvasRenderingContext2D, x: number, y: number): void {
+  const cx = x + TILE / 2, cy = y + TILE / 2;
+  // ローブ（暗い紫）
+  fr(ctx, "#2a1a3a", cx - 9, cy, 18, 14);
+  // フード
+  ctx.fillStyle = "#1a0a2a";
+  ctx.beginPath();
+  ctx.arc(cx, cy - 3, 10, Math.PI + 0.3, -0.3);
+  ctx.lineTo(cx + 8, cy + 2); ctx.lineTo(cx - 8, cy + 2);
+  ctx.closePath(); ctx.fill();
+  // ドクロ顔
+  fc(ctx, "#bbbb99", cx, cy - 2, 6);
+  // 目（緑に光る）
+  fc(ctx, "#00ff66", cx - 3, cy - 4, 2.5);
+  fc(ctx, "#00ff66", cx + 3, cy - 4, 2.5);
+  // 歯
+  fr(ctx, "#bbbb99", cx - 3, cy + 1, 2, 2);
+  fr(ctx, "#bbbb99", cx + 1, cy + 1, 2, 2);
+  // 魔法のオーブ
+  fc(ctx, "#9900ff", cx, cy + 10, 4);
+  fc(ctx, "#cc66ff", cx, cy + 10, 2);
+}
+
 function drawEnemySprite(
   ctx: CanvasRenderingContext2D,
   enemy: Enemy,
@@ -904,13 +1026,13 @@ function drawEnemySprite(
     case "Bat":      case "コウモリ":   drawBat(ctx, x, y);      break;
     case "Skeleton": case "スケルトン": drawSkeleton(ctx, x, y); break;
     case "Orc":      case "オーク":     drawOrc(ctx, x, y);      break;
-    case "Ghost":    case "ゴースト":   drawGremlin(ctx, x, y);  break; // ゴースト（グレムリンベース）
-    case "Golem":    case "ゴーレム":   drawGolem(ctx, x, y);    break;
-    case "Wizard":   case "ウィザード": drawSkeleton(ctx, x, y); break; // ウィザード（スケルトンベース）
-    case "Devil":    case "デビル":     drawDevil(ctx, x, y);    break;
-    case "Minotaur": case "ミノタウロス": drawOrc(ctx, x, y);    break; // ミノタウロス（オークベース）
-    case "Dragon":   case "ドラゴン":   drawGolem(ctx, x, y);    break; // ドラゴン（ゴーレムベース）
-    case "Lich":     case "リッチ":     drawDevil(ctx, x, y);    break; // リッチ（デビルベース）
+    case "Ghost":    case "ゴースト":   drawGhost(ctx, x, y);     break;
+    case "Golem":    case "ゴーレム":   drawGolem(ctx, x, y);     break;
+    case "Wizard":   case "ウィザード": drawWizard(ctx, x, y);    break;
+    case "Devil":    case "デビル":     drawDevil(ctx, x, y);     break;
+    case "Minotaur": case "ミノタウロス": drawMinotaur(ctx, x, y); break;
+    case "Dragon":   case "ドラゴン":   drawDragon(ctx, x, y);    break;
+    case "Lich":     case "リッチ":     drawLich(ctx, x, y);      break;
     case "ガーディアン": drawGuardian(ctx, x, y, false); break;
     case "センチネル":   drawGuardian(ctx, x, y, true);  break;
     default:
