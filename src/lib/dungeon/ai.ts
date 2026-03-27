@@ -102,6 +102,8 @@ export function bfsStep(
     if (g.map[ny][nx] === W) continue;
     if (dx !== 0 && dy !== 0 && !canMoveDiag(g, sx, sy, dx, dy)) continue;
     if (g.enemies.find((o) => o.id !== skipId && o.x === nx && o.y === ny)) continue;
+    // 店主もNPCとしてブロック（敵のBFS経路探索で店主を迂回）
+    if (g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.x === nx && g.shopkeeper.y === ny) continue;
     if (!visited.has(key(nx, ny))) {
       visited.add(key(nx, ny));
       queue.push([nx, ny, nx, ny]);
@@ -262,7 +264,8 @@ export function wanderMove(g: GameState, e: Enemy): void {
     if (nx >= 0 && nx < MW && ny >= 0 && ny < MH &&
         g.map[ny][nx] !== W &&
         !g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny) &&
-        !(nx === g.px && ny === g.py)) {
+        !(nx === g.px && ny === g.py) &&
+        !(g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.x === nx && g.shopkeeper.y === ny)) {
       e.x = nx;
       e.y = ny;
       e.lastDx = dx;

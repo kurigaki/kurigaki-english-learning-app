@@ -41,23 +41,15 @@ export function revealAround(g: GameState, px: number, py: number): void {
   }
 }
 
-/** 全廊下タイルと隣接する壁を常時開示（廊下は常に明るい） */
-export function revealAllCorridors(g: GameState): void {
-  if (!g.explored) return;
-  for (let y = 0; y < MH; y++) {
-    for (let x = 0; x < MW; x++) {
-      if (g.map[y][x] === C) {
-        g.explored[y][x] = true;
-        // 廊下の隣接壁も開示（廊下の輪郭が見えるように）
-        for (let dy = -1; dy <= 1; dy++) {
-          for (let dx = -1; dx <= 1; dx++) {
-            const nx = x + dx, ny = y + dy;
-            if (nx >= 0 && nx < MW && ny >= 0 && ny < MH) g.explored[ny][nx] = true;
-          }
-        }
-      }
-    }
+/** 廊下タイルかどうか判定（画面描画で常時表示用） */
+export function isCorridorOrAdjacentWall(g: GameState, x: number, y: number): boolean {
+  if (g.map[y][x] === C) return true;
+  // 廊下に隣接する壁も表示（輪郭が見えるように）
+  for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+    const nx = x + dx, ny = y + dy;
+    if (nx >= 0 && nx < MW && ny >= 0 && ny < MH && g.map[ny][nx] === C) return true;
   }
+  return false;
 }
 
 /** 部屋タイルのうち廊下に隣接しているタイル（部屋の入口）かどうかを判定 */
@@ -332,8 +324,9 @@ export function generateMap(g: GameState): void {
     if (g.stairsPos && tx === g.stairsPos.x && ty === g.stairsPos.y) continue;
     if (g.enemies.find((e) => e.x === tx && e.y === ty)) continue;
     if (g.traps.find((tr) => tr.x === tx && tr.y === ty)) continue;
-    // アイテムと重ならない
+    // アイテムと重ならない（通常アイテム + ショップアイテム）
     if (itemPositions.has(`${tx},${ty}`)) continue;
+    if (g.shopItems.find((s) => s.x === tx && s.y === ty)) continue;
     // 部屋入口（廊下隣接タイル）には罠を置かない
     if (isRoomEntrance(m, tx, ty)) continue;
     const type = trapPool[Math.floor(Math.random() * trapPool.length)];

@@ -1,7 +1,7 @@
 "use client";
 
 import type { GameState, Enemy, Shopkeeper } from "./types";
-import { W, R } from "./types";
+import { W, R, C } from "./types";
 import { MW, MH, TILE, ITEMS_DEF } from "./constants";
 
 export { TILE, MW, MH };
@@ -1072,9 +1072,17 @@ export function drawMap(
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   const exp = g.explored;
-  // explored がない（旧セーブ互換）場合は全開示
-  const isExp = (tx: number, ty: number): boolean =>
-    !exp || !exp[ty] || exp[ty][tx] === true;
+  // explored がない（旧セーブ互換）場合は全開示。廊下と隣接壁は常に表示。
+  const isExp = (tx: number, ty: number): boolean => {
+    if (!exp || !exp[ty] || exp[ty][tx] === true) return true;
+    // 廊下タイルと廊下に隣接する壁は常に表示（地図には反映しない）
+    if (g.map[ty][tx] === C) return true;
+    for (const [ddx, ddy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
+      const nx2 = tx + ddx, ny2 = ty + ddy;
+      if (nx2 >= 0 && nx2 < MW && ny2 >= 0 && ny2 < MH && g.map[ny2][nx2] === C) return true;
+    }
+    return false;
+  };
 
   // マップタイル
   for (let ty = 0; ty < MH; ty++) {

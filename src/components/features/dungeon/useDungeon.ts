@@ -31,7 +31,7 @@ export type CaneCharges = {
   cane_seal: number;
   cane_warp: number;
 };
-import { generateMap, revealAround, revealAllCorridors } from "@/lib/dungeon/map";
+import { generateMap, revealAround } from "@/lib/dungeon/map";
 import { adjEnemy, moveEnemies, moveShopkeeper, adj, sameRoom, getAllCorridorEntrances } from "@/lib/dungeon/ai";
 import { drawMap, TILE } from "@/lib/dungeon/renderer";
 import {
@@ -1028,7 +1028,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     sfxStairs();
     generateMap(g);
     revealAround(g, g.px, g.py); // 新フロアの開始位置を開く
-    revealAllCorridors(g); // 廊下を常時開示
+    // 廊下はrenderer側で常時表示（exploredとは独立）
 
     // プログレッシブモード: フロア移動時にステージ変化を通知
     let stageNotice = "";
@@ -1210,8 +1210,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               }
               case "sleep": {
                 const turns = 3 + Math.floor(Math.random() * 3);
-                // blindTurns は「動けない」全般に共用（眠り罠・盲目の巻物どちらも同じ効果）
-                g.blindTurns = (g.blindTurns || 0) + turns;
+                g.playerSleepTurns = (g.playerSleepTurns || 0) + turns;
                 triggerScreenEffect("trap_sleep", false);
                 showEventOverlay(TRAP_OVERLAYS.sleep);
                 trapMsg = `💤 眠りトラップ！ ${turns}ターン動けない！`;
@@ -1341,7 +1340,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         const playerRoom = g.rooms.find((r) =>
           g.px >= r.x && g.px < r.x + r.w && g.py >= r.y && g.py < r.y + r.h
         );
-        const spawnRooms = g.rooms.filter((r) => r !== playerRoom);
+        const shopRoom = g.shopRoomIdx !== null ? g.rooms[g.shopRoomIdx] : null;
+        const spawnRooms = g.rooms.filter((r) => r !== playerRoom && r !== shopRoom);
         if (spawnRooms.length > 0) {
           const sr = spawnRooms[Math.floor(Math.random() * spawnRooms.length)];
           const pool = ENEMIES_DEF.filter((e) => e.floor <= g.floor);
@@ -2213,6 +2213,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     if (g.enemies.some((e) => !e.sleeping && adj(e.x, e.y, g.px, g.py))) return true;
     // 行き先が階段
     if (g.stairsPos && nx === g.stairsPos.x && ny === g.stairsPos.y) return true;
+    // 行き先に罠がある（手前で止まる）
+    if (g.traps.find((tr) => tr.x === nx && tr.y === ny && tr.visible)) return true;
     // 現在地が通路(C=2)で行き先が部屋(R=1): 部屋への侵入
     if (g.map[g.py]?.[g.px] === 2 && g.map[ny]?.[nx] === 1) return true;
     // 分岐判定: 行き先(nx,ny)から現在の移動方向以外に非壁タイルがあるか確認
@@ -2451,8 +2453,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       // 隣に敵がいたら停止
       if (adjEnemy(g)) { autoWalkPathRef.current = []; return; }
       const next = path[0];
-      // 通路が壁になっていたら停止（再生成などで変化した場合）
+      // 通路が壁になっていたら停止
       if (!next || g.map[next.y]?.[next.x] === 0) { autoWalkPathRef.current = []; return; }
+      // 罠がある場合は手前で停止
+      if (g.traps.find((tr) => tr.x === next.x && tr.y === next.y && tr.visible)) { autoWalkPathRef.current = []; return; }
       autoWalkPathRef.current = path.slice(1);
       doTurnLatestRef.current(next.x - g.px, next.y - g.py);
       if (autoWalkPathRef.current.length > 0) {
@@ -2581,7 +2585,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py); // 開始位置の視野を開く
-    revealAllCorridors(g); // 廊下を常時開示
+    // 廊下はrenderer側で常時表示（exploredとは独立）
     // 前ゲームの death/quiz/showItems 等を確実にリセット（タイトルへ戻って再開始する場合に残留する）
     updateUI(g, {
       msg: "ダンジョンに入った！",
@@ -2639,7 +2643,6 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     gameRef.current = g;
     generateMap(g);
     revealAround(g, g.px, g.py);
-    revealAllCorridors(g);
     updateUI(g, {
       death: null,
       quiz: null,

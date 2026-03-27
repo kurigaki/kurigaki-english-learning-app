@@ -2319,7 +2319,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
       // 階段
       if (hasKey(km.stairs)) { ev.preventDefault(); if (uiState.onStairs) goNextFloor(); return; }
       // マップ / 見渡す (M キー)
-      if (hasKey(km.map)) { ev.preventDefault(); setShowMap(true); return; }
+      if (hasKey(km.map)) { ev.preventDefault(); setShowMap((v) => !v); return; }
     };
 
     const handleKeyUp = (ev: KeyboardEvent) => {
@@ -2688,7 +2688,7 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onWait={() => { stopDash(); doWait(); }}
         onItems={() => { stopDash(); openItems(); }}
         onFootAction={() => { stopDash(); openFootAction(); }}
-        onLookAround={() => { stopDash(); setShowMap(true); }}
+        onLookAround={() => { stopDash(); setShowMap((v) => !v); }}
         onMenu={() => { stopDash(); setShowKeySettings(true); }}
         onShootArrow={() => { stopDash(); shootArrow(); }}
         onDash={(dx, dy) => { stopDash(); startDash(dx, dy); }}
