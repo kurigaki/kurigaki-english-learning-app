@@ -291,6 +291,14 @@ export function moveEnemies(
 
   for (const e of g.enemies) {
     if (e.sleeping) {
+      // プレイヤーが隣接したら確率で起きる（70%）
+      if (adj(e.x, e.y, px, py) && Math.random() < 0.7) {
+        e.sleeping = false;
+        e.sleepCounter = undefined;
+        e.alert = true;
+        e.justWoke = true;
+        continue;
+      }
       // 眠りカウントダウン（sleepCounterが設定されている場合）
       if (e.sleepCounter !== undefined && e.sleepCounter > 0) {
         e.sleepCounter--;

@@ -568,10 +568,15 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         if (ra) {
           const playerInRoom = rx >= ra.x && rx < ra.x + ra.w && ry >= ra.y && ry < ra.y + ra.h;
           if (playerInRoom) {
-            e.sleeping = false;
-            e.alert = true;
-            e.justWoke = true; // 起床ターンは行動しない
-            addDmgPop(e.x, e.y, "wake", 0);
+            // 確率で起きる（70%）。隣接している場合は100%起きる
+            const isAdj = Math.abs(e.x - rx) <= 1 && Math.abs(e.y - ry) <= 1;
+            if (isAdj || Math.random() < 0.7) {
+              e.sleeping = false;
+              e.sleepCounter = undefined;
+              e.alert = true;
+              e.justWoke = true;
+              addDmgPop(e.x, e.y, "wake", 0);
+            }
           }
         }
       }
@@ -664,7 +669,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "swift_grass": {
-          g.swiftTurns = (g.swiftTurns || 0) + 5;
+          g.swiftTurns = (g.swiftTurns || 0) + 10;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxItemUse();
           notify("💨 倍速になった！（5ターン・スタミナ+5）");
@@ -1158,6 +1163,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       if (dx !== 0 || dy !== 0) {
         g.playerDir = { dx, dy };
       }
+      const prevTile = g.map[g.py][g.px]; // 移動前のタイルを記録（部屋入室判定用）
 
       // 混乱状態チェック（ランダム方向に移動）
       let mvDx = dx;
@@ -1325,8 +1331,12 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         }
       }
 
-      // 部屋への侵入で起床
-      wakeEnemiesInRoom(g, g.px, g.py);
+      // 部屋への侵入で起床（部屋に入った瞬間のみ。部屋内移動中は起きない）
+      const curTile = g.map[g.py][g.px];
+      if (curTile === 1 && prevTile !== 1) {
+        // 廊下→部屋に入った瞬間
+        wakeEnemiesInRoom(g, g.px, g.py);
+      }
 
       // エネミーラッシュ入室時の初回警告
       if (g.monsterHouseRoomIdx !== null && !seenMonsterHouseRef.current) {
@@ -1380,7 +1390,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
                 g.enemies.push({
                   ...tmpl, hp: tmpl.mhp, x: sx, y: sy,
                   id: g.enemies.length > 0 ? Math.max(...g.enemies.map((e2) => e2.id)) + 1 : 0,
-                  alert: false, sleeping: false, confused: 0, sealed: 0,
+                  alert: false, sleeping: Math.random() < tmpl.sleepChance, confused: 0, sealed: 0,
                   wanderTarget: null, lastDx: undefined, lastDy: undefined, stuckCount: 0,
                 });
                 break;
@@ -1921,7 +1931,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               showNotification(`❤️ ${hitEnemy.name}の最大HPが上がった！`);
               break;
             case "swift_grass":
-              hitEnemy.swiftTurns = (hitEnemy.swiftTurns ?? 0) + 3;
+              hitEnemy.swiftTurns = 9999; // 永続倍速
               showNotification(`💨 ${hitEnemy.name}が倍速になった！`);
               break;
             case "slow_grass":
