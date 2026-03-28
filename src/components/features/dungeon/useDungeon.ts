@@ -463,7 +463,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       }
       // スタミナ減少: easy=10ターン毎に1、hard=5ターン毎に1
       if (g.hunger > 0) {
-        const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 3 === 0) : (g.turn % 5 === 0);
+        const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 5 === 0) : (g.turn % 10 === 0);
         if (decayThisTurn) {
           g.hunger = Math.max(0, g.hunger - 1);
           if (g.hunger === 0) queueMsg("🍂 お腹が空いた！HPが減っていく…");
@@ -646,13 +646,6 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           notify("💚 HPが全回復！（スタミナ+5）");
           return true;
         }
-        case "poison_grass": {
-          g.p.hp = Math.min(g.p.hp + 5, g.p.mhp);
-          g.hunger = Math.min(g.hunger + 5, g.maxHunger);
-          sfxItemUse();
-          notify("✨ HP+5！（スタミナ+5）");
-          return true;
-        }
         case "power_grass": {
           g.p.atk += 1;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
@@ -747,7 +740,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             fx += fdx;
             fy += fdy;
           }
-          const fdmg = 15;
+          const fdmg = 30;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           if (hitEnemy2) {
             hitEnemy2.hp = Math.max(0, hitEnemy2.hp - fdmg);
@@ -765,23 +758,33 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           }
           return true;
         }
-        case "scroll_hp": {
-          const v = 20;
-          g.p.hp = Math.min(g.p.hp + v, g.p.mhp);
-          sfxItemUse();
-          notify(`💚 HPが${v}回復！`);
-          return true;
-        }
-        case "scroll_power": {
-          g.sureHit = true;
-          sfxItemUse();
-          notify("🎯 次の攻撃が必中！");
-          return true;
-        }
-        case "scroll_attack": {
-          g.powerUp = true;
-          sfxItemUse();
-          notify("💪 次の攻撃が強化！（ダメージ×2）");
+        case "scroll_vacuum": {
+          // 同室の全敵に20ダメージ（廊下では隣接のみ）
+          const isInRoomV = g.map[g.py][g.px] === 1;
+          const vacTargets = isInRoomV
+            ? g.enemies.filter((e2) => sameRoom(g.rooms, e2.x, e2.y, g.px, g.py))
+            : g.enemies.filter((e2) => adj(e2.x, e2.y, g.px, g.py));
+          let vacKills = 0;
+          for (const vt of vacTargets) {
+            vt.hp = Math.max(0, vt.hp - 20);
+            addDmgPop(vt.x, vt.y, "crit", 20);
+            if (vt.hp <= 0) { onEnemyDied(g, vt); vacKills++; }
+          }
+          g.enemies = g.enemies.filter((e2) => e2.hp > 0);
+          // 店主にも効果
+          if (g.shopkeeper && g.shopkeeper.hp > 0) {
+            const skInRangeV = isInRoomV
+              ? sameRoom(g.rooms, g.shopkeeper.x, g.shopkeeper.y, g.px, g.py)
+              : adj(g.shopkeeper.x, g.shopkeeper.y, g.px, g.py);
+            if (skInRangeV) {
+              g.shopkeeper.hp = Math.max(0, g.shopkeeper.hp - 20);
+              addDmgPop(g.shopkeeper.x, g.shopkeeper.y, "crit", 20);
+              if (!g.shopkeeper.hostile) makeShopkeeperHostileRef.current(g, "何をする！覚悟しろ！");
+            }
+          }
+          sfxCrit();
+          notify(vacTargets.length > 0 ? `🌪️ ${vacTargets.length}体に20ダメージ！${vacKills > 0 ? ` ${vacKills}体倒した！` : ""}` : "近くに敵がいない");
+          redraw();
           return true;
         }
         case "scroll_sleep": {
@@ -813,44 +816,16 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           escapeDungeon();
           return true;
         }
-        case "scroll_monster": {
-          let spawned = 0;
-          for (let t2 = 0; t2 < 50 && spawned < 3; t2++) {
-            const sx = g.px - 3 + Math.floor(Math.random() * 7);
-            const sy = g.py - 3 + Math.floor(Math.random() * 7);
-            if (sx < 0 || sx >= MW || sy < 0 || sy >= MH || g.map[sy][sx] === 0) continue;
-            if (g.enemies.find((e) => e.x === sx && e.y === sy)) continue;
-            if (sx === g.px && sy === g.py) continue;
-            const pool = ENEMIES_DEF.filter((e) => e.floor <= Math.min(g.floor, 3));
-            const tmpl = pool[Math.floor(Math.random() * pool.length)];
-            g.enemies.push({
-              ...tmpl,
-              hp: tmpl.mhp,
-              x: sx,
-              y: sy,
-              id: Date.now() + spawned,
-              alert: true,
-              sleeping: false,
-              confused: 0,
-              sealed: 0,
-              wanderTarget: null,
-              lastDx: undefined,
-              lastDy: undefined,
-              stuckCount: 0,
-            });
-            spawned++;
-          }
-          sfxRecv();
-          notify(`👹 ${spawned}体の魔物が現れた！`);
-          redraw();
-          return true;
-        }
         case "scroll_map": {
-          // アイテム・階段の位置を探索済みにする
-          if (g.stairsPos) g.explored[g.stairsPos.y][g.stairsPos.x] = true;
-          g.itemTiles.forEach((it) => { g.explored[it.y][it.x] = true; });
+          // フロア全体を地図に表示（全タイルをexplored=trueに）
+          for (let my = 0; my < MH; my++) {
+            for (let mx = 0; mx < MW; mx++) {
+              g.explored[my][mx] = true;
+            }
+          }
           sfxItemUse();
-          notify("🗺️ フロアのアイテムと階段が分かった！");
+          notify("🗺️ フロアの全体が地図に表示された！");
+          redraw();
           return true;
         }
         case "scroll_confuse": {
@@ -1833,10 +1808,10 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         if (item.cat === "grass") {
           switch (itemId) {
             case "fire_grass": {
-              const dmg = 20;
+              const dmg = 30;
               sk.hp = Math.max(0, sk.hp - dmg);
               addDmgPop(sk.x, sk.y, "crit", dmg);
-              skMsg = `🔥 ${SHOPKEEPER_DEF.name}に20ダメージ！`;
+              skMsg = `🔥 ${SHOPKEEPER_DEF.name}に30ダメージ！`;
               break;
             }
             case "warp_grass": {
@@ -1973,7 +1948,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               break;
             }
             case "fire_grass": {
-              const fdmg = 20;
+              const fdmg = 30;
               hitEnemy.hp = Math.max(0, hitEnemy.hp - fdmg);
               addDmgPop(hitEnemy.x, hitEnemy.y, "hit", fdmg);
               sfxCrit();

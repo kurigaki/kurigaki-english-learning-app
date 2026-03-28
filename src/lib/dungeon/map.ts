@@ -92,13 +92,16 @@ export function generateMap(g: GameState): void {
     { grid: [[1,1,0],[0,1,0],[0,1,1]], minFloor: 1, easyOk: true },   // Zigzag 5
     { grid: [[1,1,0],[1,0,0],[1,1,1]], minFloor: 1, easyOk: true },   // L-shape 6
     { grid: [[1,1,1],[0,1,0],[0,1,0]], minFloor: 1, easyOk: true },   // T-top 6
-    // 中級（7部屋）
-    { grid: [[1,0,1],[1,1,1],[1,0,1]], minFloor: 2, easyOk: true },   // H-shape 7
-    { grid: [[1,0,1],[1,0,1],[1,1,1]], minFloor: 2, easyOk: true },   // U-shape 7
-    { grid: [[1,1,1],[1,0,0],[1,1,1]], minFloor: 2, easyOk: true },   // 7 variant
-    // 上級（8-9部屋、難易度高）
-    { grid: [[1,1,1],[1,0,1],[1,1,1]], minFloor: 3, easyOk: false },  // Ring 8
-    { grid: [[1,1,1],[1,1,1],[1,1,1]], minFloor: 4, easyOk: false },  // Full 9
+    // 中級（7部屋 + ループ構造）
+    { grid: [[1,0,1],[1,1,1],[1,0,1]], minFloor: 1, easyOk: true },   // H-shape 7
+    { grid: [[1,0,1],[1,0,1],[1,1,1]], minFloor: 1, easyOk: true },   // U-shape 7
+    { grid: [[1,1,1],[1,0,0],[1,1,1]], minFloor: 1, easyOk: true },   // 7 variant
+    // ループ構造（行き止まりなし = 逃げ回れる）
+    { grid: [[1,1,1],[1,0,1],[1,1,1]], minFloor: 1, easyOk: true },   // Ring 8（ループ）
+    { grid: [[1,1,1],[1,1,1],[1,1,1]], minFloor: 2, easyOk: true },   // Full 9
+    // 追加パターン
+    { grid: [[1,1,1],[1,0,1],[1,1,0]], minFloor: 1, easyOk: true },   // C-shape 7（ループ）
+    { grid: [[0,1,1],[1,1,0],[1,1,1]], minFloor: 1, easyOk: true },   // S-shape 7（ループ）
   ];
 
   // 階層・難易度に応じたテンプレートフィルタ

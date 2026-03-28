@@ -21,13 +21,6 @@ export const ITEMS_DEF: ItemDef[] = [
     rarity: 3,
   },
   {
-    id: "poison_grass",
-    name: "クリアワード", nameEn: "Clear Word",
-    icon: "🍃", cat: "grass",
-    desc: "HPを5回復する（スタミナ+5）", descEn: "Restore 5 HP (Stamina+5)",
-    rarity: 2,
-  },
-  {
     id: "power_grass",
     name: "パワーワード", nameEn: "Power Word",
     icon: "🌾", cat: "grass",
@@ -45,7 +38,7 @@ export const ITEMS_DEF: ItemDef[] = [
     id: "swift_grass",
     name: "ヘイストワード", nameEn: "Haste Word",
     icon: "🍀", cat: "grass",
-    desc: "5ターン倍速になる（スタミナ+5）", descEn: "Double speed for 5 turns (Stamina+5)",
+    desc: "10ターン倍速になる（スタミナ+5）", descEn: "Double speed for 10 turns (Stamina+5)",
     rarity: 1,
   },
   {
@@ -73,7 +66,7 @@ export const ITEMS_DEF: ItemDef[] = [
     id: "fire_grass",
     name: "ファイアワード", nameEn: "Fire Word",
     icon: "🔥", cat: "grass",
-    desc: "飲むと正面に15ダメージ（スタミナ+5）", descEn: "Deal 15 damage ahead (Stamina+5)",
+    desc: "飲むと正面に30ダメージ（スタミナ+5）", descEn: "Deal 30 damage ahead (Stamina+5)",
     rarity: 2,
   },
   {
@@ -86,25 +79,11 @@ export const ITEMS_DEF: ItemDef[] = [
 
   // ── スペル (Spell) — フロア全体効果 ──
   {
-    id: "scroll_hp",
-    name: "ヒールスペル", nameEn: "Heal Spell",
+    id: "scroll_vacuum",
+    name: "シンクウスペル", nameEn: "Vacuum Spell",
     icon: "📜", cat: "scroll",
-    desc: "HPを20回復する", descEn: "Restore 20 HP",
-    rarity: 3,
-  },
-  {
-    id: "scroll_power",
-    name: "ヒットスペル", nameEn: "Hit Spell",
-    icon: "📜", cat: "scroll",
-    desc: "次の攻撃を必中にする", descEn: "Next attack never misses",
-    rarity: 3,
-  },
-  {
-    id: "scroll_attack",
-    name: "パワースペル", nameEn: "Power Spell",
-    icon: "📜", cat: "scroll",
-    desc: "次の攻撃ダメージ×2（会心効果）", descEn: "Next attack deals x2 damage (critical)",
-    rarity: 3,
+    desc: "同室の全敵に20ダメージ（廊下では隣接のみ）", descEn: "Deal 20 damage to all enemies in room (corridor: adjacent only)",
+    rarity: 2,
   },
   {
     id: "scroll_sleep",
@@ -119,13 +98,6 @@ export const ITEMS_DEF: ItemDef[] = [
     icon: "📜", cat: "scroll",
     desc: "アイテムとゴールドを持ってダンジョンから脱出する", descEn: "Escape the dungeon with your items and gold",
     rarity: 1,
-  },
-  {
-    id: "scroll_monster",
-    name: "モンスタースペル", nameEn: "Monster Spell",
-    icon: "📜", cat: "scroll",
-    desc: "周囲に敵が3体現れる", descEn: "3 enemies appear nearby",
-    rarity: 2,
   },
   {
     id: "scroll_map",
@@ -229,8 +201,7 @@ export const SHOP_PRICES: Record<string, number> = {
   confuse_grass: 15,
   warp_grass: 15,
   fire_grass: 25,
-  scroll_hp: 20,
-  scroll_power: 20,
+  scroll_vacuum: 40,
   scroll_attack: 30,
   scroll_sleep: 35,
   scroll_escape: 50,
