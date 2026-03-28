@@ -48,6 +48,7 @@ export type Enemy = {
   lastDy: number | undefined;
   stuckCount: number;
   justWoke?: boolean; // 起床したターンは行動しない
+  sleepCounter?: number; // 眠り残りターン（0になると自動起床）
   slowTurns?: number;   // 鈍足残りターン
   swiftTurns?: number;  // 倍速残りターン
   slowSkip?: boolean;   // 鈍足スキップフラグ

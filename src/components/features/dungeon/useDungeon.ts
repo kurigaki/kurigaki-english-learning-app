@@ -463,7 +463,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       }
       // スタミナ減少: easy=10ターン毎に1、hard=5ターン毎に1
       if (g.hunger > 0) {
-        const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 5 === 0) : (g.turn % 10 === 0);
+        const decayThisTurn = g.dungeonMode === "hard" ? (g.turn % 3 === 0) : (g.turn % 5 === 0);
         if (decayThisTurn) {
           g.hunger = Math.max(0, g.hunger - 1);
           if (g.hunger === 0) queueMsg("🍂 お腹が空いた！HPが減っていく…");
@@ -678,14 +678,14 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           return true;
         }
         case "sleep_grass": {
-          g.playerSleepTurns = (g.playerSleepTurns || 0) + 3;
+          g.playerSleepTurns = (g.playerSleepTurns || 0) + 2;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxWrong();
           notify("💤 眠ってしまった！3ターン動けない（スタミナ+5）");
           return true;
         }
         case "confuse_grass": {
-          g.playerConfusedTurns = (g.playerConfusedTurns || 0) + 4;
+          g.playerConfusedTurns = (g.playerConfusedTurns || 0) + 5;
           g.hunger = Math.min(g.hunger + 5, g.maxHunger);
           sfxWrong();
           notify("🌀 混乱した！4ターン方向が乱れる（スタミナ+5）");
@@ -785,7 +785,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           const targets = isInRoom
             ? g.enemies.filter((e) => sameRoom(g.rooms, e.x, e.y, g.px, g.py))
             : g.enemies.filter((e) => adj(e.x, e.y, g.px, g.py));
-          targets.forEach((e) => { e.sleeping = true; e.alert = false; });
+          targets.forEach((e) => { e.sleeping = true; e.sleepCounter = 10; e.alert = false; });
           // 店主にも効果（同部屋 or 隣接）
           let skHit = false;
           if (g.shopkeeper && g.shopkeeper.hp > 0) {
@@ -853,7 +853,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           const targets2 = isInRoom2
             ? g.enemies.filter((e) => sameRoom(g.rooms, e.x, e.y, g.px, g.py))
             : g.enemies.filter((e) => adj(e.x, e.y, g.px, g.py));
-          targets2.forEach((e) => { e.confused = (e.confused || 0) + 4; });
+          targets2.forEach((e) => { e.confused = (e.confused || 0) + 10; });
           // 店主にも効果
           let skHit2 = false;
           if (g.shopkeeper && g.shopkeeper.hp > 0) {
@@ -947,7 +947,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             notify(`💤 魔力が虚空に消えた（残${g.cane_sleep_charges}回）`);
             return true;
           }
-          e.sleeping = true; e.alert = false;
+          e.sleeping = true; e.sleepCounter = 10; e.alert = false;
           sfxCane();
           notify(`💤 ${e.name}が眠った！（残${g.cane_sleep_charges}回）`);
           redraw();
@@ -1233,7 +1233,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
                 break;
               }
               case "sleep": {
-                const turns = 3 + Math.floor(Math.random() * 3);
+                const turns = 2 + Math.floor(Math.random() * 2); // 2-3ターン
                 g.playerSleepTurns = (g.playerSleepTurns || 0) + turns;
                 triggerScreenEffect("trap_sleep", false);
                 showEventOverlay(TRAP_OVERLAYS.sleep);
@@ -1931,12 +1931,12 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               showNotification(`🐢 ${hitEnemy.name}が永続鈍足になった！`);
               break;
             case "sleep_grass":
-              hitEnemy.sleeping = true;
+              hitEnemy.sleeping = true; hitEnemy.sleepCounter = 10;
               hitEnemy.alert = false;
               showNotification(`💤 ${hitEnemy.name}が眠った！`);
               break;
             case "confuse_grass":
-              hitEnemy.confused = (hitEnemy.confused || 0) + 4;
+              hitEnemy.confused = (hitEnemy.confused || 0) + 10;
               showNotification(`🌀 ${hitEnemy.name}が混乱した！`);
               break;
             case "warp_grass": {
@@ -1995,7 +1995,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               break;
             }
             case "cane_sleep":
-              hitEnemy.sleeping = true;
+              hitEnemy.sleeping = true; hitEnemy.sleepCounter = 10;
               hitEnemy.alert = false;
               showNotification(`💤 ${hitEnemy.name}が眠った！`);
               break;

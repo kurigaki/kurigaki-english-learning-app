@@ -290,7 +290,18 @@ export function moveEnemies(
   const results: EnemyMoveResult[] = [];
 
   for (const e of g.enemies) {
-    if (e.sleeping) continue;
+    if (e.sleeping) {
+      // 眠りカウントダウン（sleepCounterが設定されている場合）
+      if (e.sleepCounter !== undefined && e.sleepCounter > 0) {
+        e.sleepCounter--;
+        if (e.sleepCounter <= 0) {
+          e.sleeping = false;
+          e.sleepCounter = undefined;
+          e.justWoke = true;
+        }
+      }
+      continue;
+    }
     // justSlowed: 鈍足付与ターンは行動しない
     if (e.justSlowed) {
       e.justSlowed = false;
@@ -326,7 +337,7 @@ export function moveEnemies(
       e.sealed--;
       continue;
     }
-    // 混乱：ランダム方向に動く。プレイヤーの方向なら攻撃する
+    // 混乱：ランダム方向に動く。プレイヤーや他の敵に当たったら攻撃
     if (e.confused > 0) {
       e.confused--;
       const dirs: [number, number][] = [[1, 0], [-1, 0], [0, 1], [0, -1]];
@@ -334,17 +345,23 @@ export function moveEnemies(
       const nx = e.x + ddx;
       const ny = e.y + ddy;
       if (nx === px && ny === py) {
-        // 偶然プレイヤー方向に向かって攻撃
+        // プレイヤーを攻撃
         const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
         g.p.hp = Math.max(0, g.p.hp - dmg);
         results.push({ enemyHit: true, damage: dmg, killedPlayer: g.p.hp <= 0, enemy: e });
-      } else if (
-        nx >= 0 && nx < MW && ny >= 0 && ny < MH &&
-        g.map[ny][nx] !== W &&
-        !g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny)
-      ) {
-        e.x = nx;
-        e.y = ny;
+      } else if (nx >= 0 && nx < MW && ny >= 0 && ny < MH && g.map[ny][nx] !== W) {
+        // 他の敵がいたら同士討ち
+        const target = g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny);
+        if (target) {
+          const dmg = Math.max(1, e.atk - 1 + Math.floor(Math.random() * 3));
+          target.hp = Math.max(0, target.hp - dmg);
+          if (target.hp <= 0) {
+            g.enemies = g.enemies.filter((en) => en.id !== target.id);
+          }
+        } else if (!(g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.x === nx && g.shopkeeper.y === ny)) {
+          e.x = nx;
+          e.y = ny;
+        }
       }
       continue;
     }
