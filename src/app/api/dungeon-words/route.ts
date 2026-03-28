@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { allWords, getWordsByCourse } from "@/data/words";
 import type { Course, Stage } from "@/data/words/types";
 
+// APIキャッシュを無効化（毎回ランダムな問題を生成）
+export const dynamic = "force-dynamic";
+
 type DungeonQuestion = {
   wordId: number;
   word: string;

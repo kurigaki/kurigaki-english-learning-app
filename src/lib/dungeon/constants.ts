@@ -193,7 +193,6 @@ export const DUNGEON_DIAG_KEY = "dungeon_diag_move";
 export const SHOP_PRICES: Record<string, number> = {
   heal_grass: 10,
   big_heal: 40,
-  poison_grass: 15,
   power_grass: 50,
   hp_grass: 60,
   swift_grass: 20,
@@ -202,7 +201,6 @@ export const SHOP_PRICES: Record<string, number> = {
   warp_grass: 15,
   fire_grass: 25,
   scroll_vacuum: 40,
-  scroll_attack: 30,
   scroll_sleep: 35,
   scroll_escape: 50,
   rice: 25,

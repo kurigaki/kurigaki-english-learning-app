@@ -125,7 +125,7 @@ const INITIAL_UI: UIState = {
 
 export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMode = "easy", diagMove: boolean = true): GameState {
   const healGrass = ITEMS_DEF.find((d) => d.id === "heal_grass")!;
-  const scrollPower = ITEMS_DEF.find((d) => d.id === "scroll_power")!;
+  const scrollVacuum = ITEMS_DEF.find((d) => d.id === "scroll_vacuum")!;
   const rice = ITEMS_DEF.find((d) => d.id === "rice")!;
 
   return {
@@ -133,7 +133,7 @@ export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMo
     p: { hp: 25, mhp: 25, lv: 1, exp: 0, enext: 30, atk: 4 },
     items: [
       { id: healGrass.id, name: healGrass.name, icon: healGrass.icon, cat: healGrass.cat, desc: healGrass.desc, count: 2 },
-      { id: scrollPower.id, name: scrollPower.name, icon: scrollPower.icon, cat: scrollPower.cat, desc: scrollPower.desc, count: 1 },
+      { id: scrollVacuum.id, name: scrollVacuum.name, icon: scrollVacuum.icon, cat: scrollVacuum.cat, desc: scrollVacuum.desc, count: 1 },
       { id: rice.id, name: rice.name, icon: rice.icon, cat: rice.cat, desc: rice.desc, count: 1 },
     ],
     map: [],
