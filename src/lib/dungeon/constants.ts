@@ -158,11 +158,11 @@ export const ITEMS_DEF: ItemDef[] = [
     charges: 4, rarity: 2,
   },
   {
-    id: "cane_seal",
-    name: "シールボルト", nameEn: "Seal Bolt",
+    id: "cane_swap",
+    name: "スワップボルト", nameEn: "Swap Bolt",
     icon: "⚡", cat: "cane",
-    desc: "正面の敵を封印し、数ターン動けなくする", descEn: "Seal enemy ahead for several turns",
-    charges: 4, rarity: 1,
+    desc: "正面の敵と場所を入れ替える", descEn: "Swap positions with enemy ahead",
+    charges: 3, rarity: 2,
   },
   {
     id: "cane_warp",

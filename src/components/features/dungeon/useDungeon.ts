@@ -28,7 +28,7 @@ export type DungeonSave = {
 export type CaneCharges = {
   cane_blow: number;
   cane_sleep: number;
-  cane_seal: number;
+  cane_swap: number;
   cane_warp: number;
 };
 import { generateMap, revealAround } from "@/lib/dungeon/map";
@@ -113,7 +113,7 @@ const INITIAL_UI: UIState = {
   death: null,
   notification: "",
   items: [],
-  caneCharges: { cane_blow: 3, cane_sleep: 4, cane_seal: 4, cane_warp: 2 },
+  caneCharges: { cane_blow: 3, cane_sleep: 4, cane_swap: 4, cane_warp: 2 },
   hunger: 100,
   maxHunger: 100,
   gold: 0,
@@ -156,7 +156,7 @@ export function initGameState(missedWords: string[] = [], dungeonMode: DungeonMo
     blindTurns: 0,
     cane_blow_charges: 3,
     cane_sleep_charges: 4,
-    cane_seal_charges: 4,
+    cane_swap_charges: 4,
     cane_warp_charges: 2,
     answeredQuestions: [],
     hunger: 100,
@@ -271,7 +271,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
         caneCharges: {
           cane_blow: g.cane_blow_charges,
           cane_sleep: g.cane_sleep_charges,
-          cane_seal: g.cane_seal_charges,
+          cane_swap: g.cane_swap_charges,
           cane_warp: g.cane_warp_charges,
         },
         hunger: g.hunger,
@@ -884,7 +884,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             const sk = g.shopkeeper;
             const { dx: bd, dy: bdy } = g.playerDir ?? { dx: 0, dy: 1 };
             let bx = sk.x, by = sk.y;
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 10; i++) {
               const nx2 = bx + bd, ny2 = by + bdy;
               if (nx2 < 0 || nx2 >= MW || ny2 < 0 || ny2 >= MH || g.map[ny2][nx2] === 0) break;
               if (g.enemies.find((e2) => e2.x === nx2 && e2.y === ny2)) break;
@@ -909,19 +909,27 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           let blowTy = e.y;
           const blowDx = e.x - g.px;
           const blowDy = e.y - g.py;
-          // 正規化（斜めはないが念のため）
           const blowDxN = blowDx === 0 ? 0 : blowDx / Math.abs(blowDx);
           const blowDyN = blowDy === 0 ? 0 : blowDy / Math.abs(blowDy);
-          for (let i = 0; i < 4; i++) {
+          for (let i = 0; i < 10; i++) {
             const nx = blowTx + blowDxN;
             const ny = blowTy + blowDyN;
             if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) break;
-            if (!g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny)) {
-              blowTx = nx; blowTy = ny;
-            } else break;
+            const collisionEnemy = g.enemies.find((o) => o.id !== e.id && o.x === nx && o.y === ny);
+            if (collisionEnemy) {
+              // 衝突した敵にもダメージ
+              const colDmg = 5;
+              collisionEnemy.hp = Math.max(0, collisionEnemy.hp - colDmg);
+              addDmgPop(nx, ny, "hit", colDmg);
+              if (collisionEnemy.hp <= 0) {
+                onEnemyDied(g, collisionEnemy);
+                g.enemies = g.enemies.filter((en) => en.id !== collisionEnemy.id);
+              }
+              break;
+            }
+            blowTx = nx; blowTy = ny;
           }
           e.x = blowTx; e.y = blowTy;
-          // 吹き飛ばし時に5ダメージ
           const blowDmg = 5;
           e.hp = Math.max(0, e.hp - blowDmg);
           addDmgPop(blowTx, blowTy, "hit", blowDmg);
@@ -958,27 +966,37 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
           redraw();
           return true;
         }
-        case "cane_seal": {
-          if (g.cane_seal_charges <= 0) { notify("🔒 杖の魔力が尽きた"); return false; }
+        case "cane_swap": {
+          if (g.cane_swap_charges <= 0) { notify("🔄 杖の魔力が尽きた"); return false; }
           const e = lineEnemy();
-          g.cane_seal_charges--;
-          // 店主に当たった場合 → 眠りとして扱う
+          g.cane_swap_charges--;
+          // 店主と場所替え
           if (!e && lineShopkeeper() && g.shopkeeper) {
-            g.shopkeeper.sleepTurns = (g.shopkeeper.sleepTurns ?? 0) + 5;
-            sfxCane();
-            if (!g.shopkeeper.hostile) makeShopkeeperHostileRef.current(g, "何をする！覚悟しろ！");
-            notify(`🔒 ${SHOPKEEPER_DEF.name}を封印した！（残${g.cane_seal_charges}回）`);
+            const sk = g.shopkeeper;
+            const tmpX = g.px, tmpY = g.py;
+            g.px = sk.x; g.py = sk.y;
+            sk.x = tmpX; sk.y = tmpY;
+            sfxWarp();
+            revealAround(g, g.px, g.py);
+            if (!sk.hostile) makeShopkeeperHostileRef.current(g, "何をする！覚悟しろ！");
+            notify(`🔄 ${SHOPKEEPER_DEF.name}と場所を入れ替えた！（残${g.cane_swap_charges}回）`);
+            redraw();
             return true;
           }
           if (!e) {
             sfxCane();
-            notify(`🔒 魔力が虚空に消えた（残${g.cane_seal_charges}回）`);
+            notify(`🔄 魔力が虚空に消えた（残${g.cane_swap_charges}回）`);
             return true;
           }
-          e.sealed = (e.sealed || 0) + 5;
-          e.alert = false;
-          sfxCane();
-          notify(`🔒 ${e.name}を封印した！（残${g.cane_seal_charges}回）`);
+          // 敵と場所を入れ替え
+          const tmpX2 = g.px, tmpY2 = g.py;
+          g.px = e.x; g.py = e.y;
+          e.x = tmpX2; e.y = tmpY2;
+          e.alert = true; // 入れ替え後は敵がアラート状態に
+          sfxWarp();
+          revealAround(g, g.px, g.py);
+          notify(`🔄 ${e.name}と場所を入れ替えた！（残${g.cane_swap_charges}回）`);
+          redraw();
           return true;
         }
         case "cane_warp": {
@@ -1858,7 +1876,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               // 吹き飛ばし（プレイヤーの向き方向に4マス）
               const { dx: bd, dy: bdy } = g.playerDir ?? { dx: 0, dy: 1 };
               let bx = sk.x, by = sk.y;
-              for (let i = 0; i < 4; i++) {
+              for (let i = 0; i < 10; i++) {
                 const nx = bx + bd, ny = by + bdy;
                 if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) break;
                 if (g.enemies.find((e2) => e2.x === nx && e2.y === ny)) break;
@@ -1991,7 +2009,7 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               let blowTy = hitEnemy.y;
               const blowDxN = hitEnemy.x === g.px ? 0 : (hitEnemy.x - g.px) / Math.abs(hitEnemy.x - g.px);
               const blowDyN = hitEnemy.y === g.py ? 0 : (hitEnemy.y - g.py) / Math.abs(hitEnemy.y - g.py);
-              for (let i = 0; i < 4; i++) {
+              for (let i = 0; i < 10; i++) {
                 const nx = blowTx + blowDxN;
                 const ny = blowTy + blowDyN;
                 if (nx < 0 || nx >= MW || ny < 0 || ny >= MH || g.map[ny][nx] === 0) break;
@@ -2009,11 +2027,16 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
               hitEnemy.alert = false;
               showNotification(`💤 ${hitEnemy.name}が眠った！`);
               break;
-            case "cane_seal":
-              hitEnemy.sealed = (hitEnemy.sealed || 0) + 5;
-              hitEnemy.alert = false;
-              showNotification(`🔒 ${hitEnemy.name}を封印した！`);
+            case "cane_swap": {
+              // 投げた杖が当たった→場所替え
+              const swTmpX = g.px, swTmpY = g.py;
+              g.px = hitEnemy.x; g.py = hitEnemy.y;
+              hitEnemy.x = swTmpX; hitEnemy.y = swTmpY;
+              hitEnemy.alert = true;
+              revealAround(g, g.px, g.py);
+              showNotification(`🔄 ${hitEnemy.name}と場所を入れ替えた！`);
               break;
+            }
             case "cane_warp":
               g.enemies = g.enemies.filter((en) => en.id !== hitEnemy!.id);
               showNotification(`🌀 ${hitEnemy.name}がワープした！`);

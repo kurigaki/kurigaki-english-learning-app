@@ -21,7 +21,7 @@ function createTestGameState(overrides: Partial<GameState> = {}): GameState {
     answeredQuestions: [],
     powerUp: false, sureHit: false, onStairs: false,
     swiftTurns: 0, blindTurns: 0,
-    cane_blow_charges: 3, cane_sleep_charges: 4, cane_seal_charges: 4, cane_warp_charges: 2,
+    cane_blow_charges: 3, cane_sleep_charges: 4, cane_swap_charges: 4, cane_warp_charges: 2,
     hunger: 100, maxHunger: 100, gold: 0,
     traps: [], shopItems: [],
     shopkeeper: null, shopRoomIdx: null, stolenItems: [], theftTriggered: false,

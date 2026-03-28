@@ -131,7 +131,7 @@ export type GameState = {
   blindTurns: number;
   cane_blow_charges: number;
   cane_sleep_charges: number;
-  cane_seal_charges: number;
+  cane_swap_charges: number;
   cane_warp_charges: number;
   // New roguelike mechanics
   hunger: number;
