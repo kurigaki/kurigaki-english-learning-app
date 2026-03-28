@@ -8,7 +8,7 @@ import { ITEMS_DEF, TILE, MW, MH, SHOP_PRICES } from "@/lib/dungeon/constants";
 import { useDungeon, type DungeonSave, type CaneCharges, type ShopPrompt } from "./useDungeon";
 import { getBgmVolume, getSfxVolume, setBgmVolume, setSfxVolume, BGM_DEFAULT_VOL, SFX_DEFAULT_VOL, unlockAudio, startBGM, stopBGM, startTitleBGM, initDungeonAudio } from "@/lib/dungeon/audio";
 import { getVoiceVolume, setVoiceVolume, VOICE_DEFAULT_VOL, ensureVoicesLoaded, unlockSpeech } from "@/lib/audio";
-import { drawFullMap, FULL_MAP_W, FULL_MAP_H } from "@/lib/dungeon/renderer";
+import { drawFullMap, FULL_MAP_W, FULL_MAP_H, drawEnemySpriteForQuiz } from "@/lib/dungeon/renderer";
 import type { DungeonMode } from "@/lib/dungeon/types";
 import { DUNGEON_MODE_KEY, DUNGEON_DIAG_KEY } from "@/lib/dungeon/constants";
 import { getDungeonLang, setDungeonLang, type DungeonLang } from "@/lib/dungeon/i18n";
@@ -273,6 +273,19 @@ function DungeonHUD({
   );
 }
 
+function QuizEnemyIcon({ enemy }: { enemy: import("@/lib/dungeon/types").Enemy }) {
+  const ref = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    const cvs = ref.current;
+    if (!cvs) return;
+    const ctx = cvs.getContext("2d");
+    if (!ctx) return;
+    ctx.clearRect(0, 0, 32, 32);
+    drawEnemySpriteForQuiz(ctx, enemy, 0, 0);
+  }, [enemy]);
+  return <canvas ref={ref} width={32} height={32} style={{ width: 32, height: 32, imageRendering: "pixelated" }} />;
+}
+
 function DungeonQuizPanel({
   quiz, quizAnswered, quizResult,
   onAnswer,
@@ -307,7 +320,7 @@ function DungeonQuizPanel({
           display: "flex", alignItems: "center", gap: 8, padding: "5px 8px",
           background: DC.bg3, borderRadius: 4, border: `1px solid ${DC.border}`,
         }}>
-          <div style={{ fontSize: 22, lineHeight: 1 }}>{e.icon}</div>
+          <QuizEnemyIcon enemy={e} />
           <div style={{ flex: 1 }}>
             <div style={{ fontFamily: "'Press Start 2P', monospace", fontSize: 8, color: DC.accent2 }}>{e.name}</div>
             <div style={{ display: "flex", alignItems: "center", gap: 5, marginTop: 2 }}>

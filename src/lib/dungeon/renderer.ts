@@ -1046,6 +1046,11 @@ function drawEnemySprite(
   }
 }
 
+/** クイズ画面用: 敵のピクセルアートを描画（32x32 canvas） */
+export function drawEnemySpriteForQuiz(ctx: CanvasRenderingContext2D, enemy: Enemy, x: number, y: number): void {
+  drawEnemySprite(ctx, enemy, x, y);
+}
+
 // ── Main exports ──────────────────────────────────────────────────────────────
 export function scrollToPlayer(
   canvas: HTMLCanvasElement,

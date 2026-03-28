@@ -786,8 +786,20 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             ? g.enemies.filter((e) => sameRoom(g.rooms, e.x, e.y, g.px, g.py))
             : g.enemies.filter((e) => adj(e.x, e.y, g.px, g.py));
           targets.forEach((e) => { e.sleeping = true; e.alert = false; });
+          // 店主にも効果（同部屋 or 隣接）
+          let skHit = false;
+          if (g.shopkeeper && g.shopkeeper.hp > 0) {
+            const skInRange = isInRoom
+              ? sameRoom(g.rooms, g.shopkeeper.x, g.shopkeeper.y, g.px, g.py)
+              : adj(g.shopkeeper.x, g.shopkeeper.y, g.px, g.py);
+            if (skInRange) {
+              g.shopkeeper.sleepTurns = (g.shopkeeper.sleepTurns ?? 0) + 5;
+              skHit = true;
+            }
+          }
           sfxItemUse();
-          notify(targets.length > 0 ? `💤 ${targets.length}体の敵が眠った！` : "近くに敵がいない");
+          const sleepCount = targets.length + (skHit ? 1 : 0);
+          notify(sleepCount > 0 ? `💤 ${sleepCount}体が眠った！` : "近くに敵がいない");
           redraw();
           return true;
         }
@@ -842,8 +854,20 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
             ? g.enemies.filter((e) => sameRoom(g.rooms, e.x, e.y, g.px, g.py))
             : g.enemies.filter((e) => adj(e.x, e.y, g.px, g.py));
           targets2.forEach((e) => { e.confused = (e.confused || 0) + 4; });
+          // 店主にも効果
+          let skHit2 = false;
+          if (g.shopkeeper && g.shopkeeper.hp > 0) {
+            const skInRange2 = isInRoom2
+              ? sameRoom(g.rooms, g.shopkeeper.x, g.shopkeeper.y, g.px, g.py)
+              : adj(g.shopkeeper.x, g.shopkeeper.y, g.px, g.py);
+            if (skInRange2) {
+              g.shopkeeper.confusedTurns = (g.shopkeeper.confusedTurns ?? 0) + 8;
+              skHit2 = true;
+            }
+          }
           sfxItemUse();
-          notify(targets2.length > 0 ? `🌀 ${targets2.length}体の敵が混乱した！` : "近くに敵がいない");
+          const confCount = targets2.length + (skHit2 ? 1 : 0);
+          notify(confCount > 0 ? `🌀 ${confCount}体が混乱した！` : "近くに敵がいない");
           return true;
         }
         case "cane_blow": {
