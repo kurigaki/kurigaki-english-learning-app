@@ -1068,7 +1068,7 @@ function WarehouseSaveNotice({ isCleared }: { isCleared: boolean }) {
 }
 
 function DungeonControls({
-  onDpad, onAttack, onWait, onItems, onFootAction, onLookAround, onMenu, onShootArrow, onDash,
+  onDpad, onAttack, onWait, onItems, onFootAction, onLookAround, onShootArrow, onDash,
   onChangeFacing, arrowCount, diagMoveEnabled, lang,
 }: {
   onDpad: (dx: number, dy: number) => void;
@@ -1077,7 +1077,6 @@ function DungeonControls({
   onItems: () => void;
   onFootAction: () => void;
   onLookAround: () => void;
-  onMenu: () => void;
   onShootArrow: () => void;
   onDash: (dx: number, dy: number) => void;
   onChangeFacing: (dx: number, dy: number) => void;
@@ -1175,13 +1174,13 @@ function DungeonControls({
     }} onContextMenu={(e) => e.preventDefault()}>
       {/* トップメニューバー */}
       <div style={{ display: "flex", gap: 4, marginBottom: 6 }}>
-        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onMenu(); }}>{lang === "en" ? "Menu" : "メニュー"}</div>
+        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); window.open("/dungeon/guide", "_blank"); }}>{lang === "en" ? "Guide" : "遊び方"}</div>
         <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onItems(); }}>{lang === "en" ? "Items" : "持ち物"}</div>
         <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onFootAction(); }}>{lang === "en" ? "Feet" : "足元"}</div>
         <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onLookAround(); }}>{lang === "en" ? "Look" : "見渡す"}</div>
       </div>
-      {/* メインコントロールエリア — 左右に十分なスペースを確保 */}
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 0, width: "100%", maxWidth: 380 }}>
+      {/* メインコントロールエリア — 中央配置 */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 0, width: "100%", maxWidth: 380, margin: "0 auto" }}>
         {/* 左端: 足踏み・ダッシュ（誤タップ防止のため十字キーから離す） */}
         <div style={{ display: "flex", flexDirection: "column", gap: 6, minWidth: 56 }}>
           <div style={sideBtnStyle} onPointerDown={(e) => { e.preventDefault(); onWait(); }}>
@@ -2702,7 +2701,6 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
         onItems={() => { stopDash(); openItems(); }}
         onFootAction={() => { stopDash(); openFootAction(); }}
         onLookAround={() => { stopDash(); setShowMap((v) => !v); }}
-        onMenu={() => { stopDash(); setShowKeySettings(true); }}
         onShootArrow={() => { stopDash(); shootArrow(); }}
         onDash={(dx, dy) => { stopDash(); startDash(dx, dy); }}
         onChangeFacing={changeFacing}

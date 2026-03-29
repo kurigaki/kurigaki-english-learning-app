@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ITEMS_DEF, ENEMIES_DEF, SHOPKEEPER_DEF } from "@/lib/dungeon/constants";
 import { getDungeonLang, itemName as iName, itemDesc as iDesc, type DungeonLang } from "@/lib/dungeon/i18n";
+import { drawEnemySpriteForQuiz } from "@/lib/dungeon/renderer";
+import type { Enemy } from "@/lib/dungeon/types";
 
 const DC = {
   bg: "#09090f", bg2: "#111118", bg3: "#181825", bg4: "#1f1f30",
@@ -65,6 +67,20 @@ export default function GuidePage() {
       </div>
     </div>
   );
+}
+
+function EnemyPixelIcon({ name, icon }: { name: string; icon: string }) {
+  const ref = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    const cvs = ref.current;
+    if (!cvs) return;
+    const ctx = cvs.getContext("2d");
+    if (!ctx) return;
+    ctx.clearRect(0, 0, 32, 32);
+    const fakeEnemy = { name, icon, x: 0, y: 0, hp: 1, mhp: 1, atk: 1, exp: 0, floor: 1, sleepChance: 0, id: 0, alert: false, sleeping: false, confused: 0, sealed: 0, wanderTarget: null, lastDx: undefined, lastDy: undefined, stuckCount: 0 } as Enemy;
+    drawEnemySpriteForQuiz(ctx, fakeEnemy, 0, 0);
+  }, [name, icon]);
+  return <canvas ref={ref} width={32} height={32} style={{ width: 28, height: 28, imageRendering: "pixelated", flexShrink: 0 }} />;
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -278,10 +294,10 @@ function EnemiesContent({ lang }: { lang: DungeonLang }) {
           <Section key={floor} title={en ? `B${floor}F Enemies` : `B${floor}F の敵`}>
             {enemies.map((e) => (
               <div key={e.name} style={{
-                display: "flex", gap: 8, alignItems: "flex-start",
+                display: "flex", gap: 8, alignItems: "center",
                 padding: "6px 0", borderBottom: `1px solid ${DC.border}20`,
               }}>
-                <span style={{ fontSize: 18, flexShrink: 0 }}>{e.icon}</span>
+                <EnemyPixelIcon name={e.name} icon={e.icon} />
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 12, fontWeight: "bold" }}>{e.name}</div>
                   <div style={{ display: "flex", gap: 12, fontSize: 10, color: DC.text2, marginTop: 2 }}>
@@ -295,6 +311,33 @@ function EnemiesContent({ lang }: { lang: DungeonLang }) {
           </Section>
         );
       })}
+
+      <Section title={en ? "Theft Guardians" : "泥棒時の敵"}>
+        <div style={{
+          display: "flex", gap: 8, alignItems: "center",
+          padding: "6px 0", borderBottom: `1px solid ${DC.border}20`,
+        }}>
+          <EnemyPixelIcon name="ガーディアン" icon="🛡️" />
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 12, fontWeight: "bold" }}>{en ? "Guardian" : "ガーディアン"}</div>
+            <div style={{ fontSize: 10, color: DC.text2, marginTop: 2 }}>
+              {en ? "Appears when stealing. Blocks corridor entrances." : "泥棒時に廊下入口に出現。高ステータス。"}
+            </div>
+          </div>
+        </div>
+        <div style={{
+          display: "flex", gap: 8, alignItems: "center",
+          padding: "6px 0", borderBottom: `1px solid ${DC.border}20`,
+        }}>
+          <EnemyPixelIcon name="センチネル" icon="⚔️" />
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 12, fontWeight: "bold" }}>{en ? "Sentinel" : "センチネル"}</div>
+            <div style={{ fontSize: 10, color: DC.text2, marginTop: 2 }}>
+              {en ? "Elite guardian. Appears on deeper floors when stealing." : "上位ガーディアン。深い階層の泥棒時に出現。"}
+            </div>
+          </div>
+        </div>
+      </Section>
     </>
   );
 }
