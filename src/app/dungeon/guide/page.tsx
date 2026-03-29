@@ -320,8 +320,11 @@ function EnemiesContent({ lang }: { lang: DungeonLang }) {
           <EnemyPixelIcon name="ガーディアン" icon="🛡️" />
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 12, fontWeight: "bold" }}>{en ? "Guardian" : "ガーディアン"}</div>
-            <div style={{ fontSize: 10, color: DC.text2, marginTop: 2 }}>
-              {en ? "Appears when stealing. Blocks corridor entrances." : "泥棒時に廊下入口に出現。高ステータス。"}
+            <div style={{ display: "flex", gap: 12, fontSize: 10, color: DC.text2, marginTop: 2 }}>
+              <span>HP:70</span><span>ATK:15</span>
+            </div>
+            <div style={{ fontSize: 10, color: DC.text3, marginTop: 1 }}>
+              {en ? "Appears when stealing. Blocks corridor entrances." : "泥棒時に廊下入口に出現。逃げ道を塞ぐ。"}
             </div>
           </div>
         </div>
@@ -332,7 +335,10 @@ function EnemiesContent({ lang }: { lang: DungeonLang }) {
           <EnemyPixelIcon name="センチネル" icon="⚔️" />
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 12, fontWeight: "bold" }}>{en ? "Sentinel" : "センチネル"}</div>
-            <div style={{ fontSize: 10, color: DC.text2, marginTop: 2 }}>
+            <div style={{ display: "flex", gap: 12, fontSize: 10, color: DC.text2, marginTop: 2 }}>
+              <span>HP:90</span><span>ATK:18</span>
+            </div>
+            <div style={{ fontSize: 10, color: DC.text3, marginTop: 1 }}>
               {en ? "Elite guardian. Appears on deeper floors when stealing." : "上位ガーディアン。深い階層の泥棒時に出現。"}
             </div>
           </div>

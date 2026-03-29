@@ -1174,7 +1174,7 @@ function DungeonControls({
     }} onContextMenu={(e) => e.preventDefault()}>
       {/* トップメニューバー */}
       <div style={{ display: "flex", gap: 4, marginBottom: 6 }}>
-        <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); window.open("/dungeon/guide", "_blank"); }}>{lang === "en" ? "Guide" : "遊び方"}</div>
+        <a href="/dungeon/guide" target="_blank" rel="noopener noreferrer" style={{ ...menuBtnStyle, textDecoration: "none" }}>{lang === "en" ? "Guide" : "遊び方"}</a>
         <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onItems(); }}>{lang === "en" ? "Items" : "持ち物"}</div>
         <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onFootAction(); }}>{lang === "en" ? "Feet" : "足元"}</div>
         <div style={menuBtnStyle} onPointerDown={(e) => { e.preventDefault(); onLookAround(); }}>{lang === "en" ? "Look" : "見渡す"}</div>
