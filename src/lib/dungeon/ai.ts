@@ -194,12 +194,14 @@ export function wanderMove(g: GameState, e: Enemy): void {
   e.stuckCount = 0;
 
   // 出口タイル（Rで隣がC）にいる場合 → 廊下に出る
-  if (curTile === R) {
+  // ただしwanderTargetがない場合は部屋に入ったばかり→まず別の出口を目指す
+  if (curTile === R && e.wanderTarget) {
     for (const [dx, dy] of [[0, -1], [0, 1], [-1, 0], [1, 0]] as [number, number][]) {
       const cx = e.x + dx, cy = e.y + dy;
       if (cx >= 0 && cx < MW && cy >= 0 && cy < MH && g.map[cy][cx] === C &&
           !g.enemies.find((o) => o.id !== e.id && o.x === cx && o.y === cy) &&
-          !(cx === g.px && cy === g.py)) {
+          !(cx === g.px && cy === g.py) &&
+          !(g.shopkeeper && g.shopkeeper.hp > 0 && g.shopkeeper.x === cx && g.shopkeeper.y === cy)) {
         e.lastDx = dx;
         e.lastDy = dy;
         e.x = cx;
@@ -423,12 +425,23 @@ export function moveEnemies(
       const moves: [number, number][] = [];
       // ナナメ方向を最優先（diagMove ON時のみ）
       if (g.diagMove && dx !== 0 && dy !== 0) moves.push([Math.sign(dx), Math.sign(dy)]);
-      // 4方向をランダム順で次の候補に
+      // プレイヤー方向の4方向
       const cardinals: [number, number][] = [];
       if (dx !== 0) cardinals.push([Math.sign(dx), 0]);
       if (dy !== 0) cardinals.push([0, Math.sign(dy)]);
       if (Math.random() < 0.5) cardinals.reverse();
       moves.push(...cardinals);
+      // 回り込み: プレイヤー方向と垂直な方向も候補に追加（前が詰まった時用）
+      if (g.diagMove) {
+        if (dx !== 0) { moves.push([Math.sign(dx), 1]); moves.push([Math.sign(dx), -1]); }
+        if (dy !== 0) { moves.push([1, Math.sign(dy)]); moves.push([-1, Math.sign(dy)]); }
+      }
+      // 上下左右の残り方向（垂直方向への迂回）
+      const perpendiculars: [number, number][] = [];
+      if (dx !== 0 && dy === 0) { perpendiculars.push([0, 1]); perpendiculars.push([0, -1]); }
+      if (dy !== 0 && dx === 0) { perpendiculars.push([1, 0]); perpendiculars.push([-1, 0]); }
+      if (Math.random() < 0.5) perpendiculars.reverse();
+      moves.push(...perpendiculars);
       for (const [ddx, ddy] of moves) {
         const nx = e.x + ddx;
         const ny = e.y + ddy;

@@ -307,19 +307,24 @@ function drawShopkeeper(ctx: CanvasRenderingContext2D, sk: Shopkeeper): void {
   fr(ctx, hpRatio > 0.5 ? "#409030" : "#d04040", x + 1, y + TILE - 5, Math.floor((TILE - 2) * hpRatio), 4);
 }
 
-function drawShopItemTile(ctx: CanvasRenderingContext2D, tx: number, ty: number): void {
+function drawShopItemTile(ctx: CanvasRenderingContext2D, tx: number, ty: number, itemCat?: string): void {
   const x = tx * TILE, y = ty * TILE;
-  const cx = x + TILE / 2, cy = y + TILE / 2;
+  const cx = x + TILE / 2;
+  // ショップ背景（緑枠）
   ctx.fillStyle = "rgba(82,210,160,0.14)";
   ctx.fillRect(x, y, TILE, TILE);
-  fc(ctx, "#b89020", cx, cy, 9);
-  fc(ctx, "#f0c030", cx, cy, 7);
-  fc(ctx, "#f8d84a", cx, cy - 1, 5);
-  ctx.fillStyle = "#7a5a10";
-  ctx.font = "bold 9px monospace";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText("G", cx, cy + 1);
+  ctx.strokeStyle = "#52d47a40";
+  ctx.lineWidth = 1;
+  ctx.strokeRect(x + 1, y + 1, TILE - 2, TILE - 2);
+  // アイテムアイコン（カテゴリ別）
+  switch (itemCat) {
+    case "grass":   drawGrassItem(ctx, cx, y);   break;
+    case "scroll":  drawScrollItem(ctx, cx, y);  break;
+    case "cane":    drawCaneItem(ctx, cx, y);     break;
+    case "food":    drawFoodItem(ctx, cx, y);     break;
+    case "jar":     drawJarItem(ctx, cx, y);      break;
+    default:        drawSpecialItem(ctx, cx, y);  break;
+  }
 }
 
 // ── Traps ─────────────────────────────────────────────────────────────────────
@@ -1143,7 +1148,10 @@ export function drawMap(
   // ショップアイテム（探索済みのみ）
   if (g.shopItems) {
     for (const s of g.shopItems) {
-      if (isExp(s.x, s.y)) drawShopItemTile(ctx, s.x, s.y);
+      if (isExp(s.x, s.y)) {
+        const def = ITEMS_DEF.find((d) => d.id === s.itemId);
+        drawShopItemTile(ctx, s.x, s.y, def?.cat);
+      }
     }
   }
 
