@@ -219,12 +219,14 @@ export function generateMap(g: GameState): void {
       adjCount.set(b, (adjCount.get(b) ?? 0) + 1);
     });
     // ショップは行き止まり部屋（隣接数1）のみ選択（中継部屋の封鎖は詰みの原因）
-    const leafShops = rooms.map((_, i) => i)
+    // 行き止まり部屋（隣接数1）を優先、なければ隣接数2以上も候補
+    const shopBase = rooms.map((_, i) => i)
       .filter((i) => i !== 0 && i !== rooms.length - 1 && i !== monsterHouseRoomIdx)
-      .filter((i) => (adjCount.get(i) ?? 0) === 1)
       .filter((i) => rooms[i].w >= 5 && rooms[i].h >= 5);
-    if (leafShops.length > 0) {
-      shopRoomIdx = leafShops[Math.floor(Math.random() * leafShops.length)];
+    const leafShops = shopBase.filter((i) => (adjCount.get(i) ?? 0) === 1);
+    const candidates = leafShops.length > 0 ? leafShops : shopBase;
+    if (candidates.length > 0) {
+      shopRoomIdx = candidates[Math.floor(Math.random() * candidates.length)];
     }
   }
 

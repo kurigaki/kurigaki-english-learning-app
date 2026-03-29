@@ -721,15 +721,22 @@ export const storage = {
   },
 
   // ── 倉庫持ち込み設定 ─────────────────────────────────────────────────
-  getCarrySettings: (): { selectedItems: string[]; goldAmount: number } => {
-    if (typeof window === "undefined") return { selectedItems: [], goldAmount: 0 };
+  getCarrySettings: (): { selectedItems: Record<string, number>; goldAmount: number } => {
+    if (typeof window === "undefined") return { selectedItems: {}, goldAmount: 0 };
     try {
       const raw = localStorage.getItem("dungeon_carry_settings");
-      if (!raw) return { selectedItems: [], goldAmount: 0 };
-      return JSON.parse(raw);
-    } catch { return { selectedItems: [], goldAmount: 0 }; }
+      if (!raw) return { selectedItems: {}, goldAmount: 0 };
+      const parsed = JSON.parse(raw);
+      // 旧フォーマット（string[]）からの互換
+      if (Array.isArray(parsed.selectedItems)) {
+        const obj: Record<string, number> = {};
+        for (const id of parsed.selectedItems) obj[id] = 99;
+        return { selectedItems: obj, goldAmount: parsed.goldAmount ?? 0 };
+      }
+      return parsed;
+    } catch { return { selectedItems: {}, goldAmount: 0 }; }
   },
-  saveCarrySettings: (settings: { selectedItems: string[]; goldAmount: number }): void => {
+  saveCarrySettings: (settings: { selectedItems: Record<string, number>; goldAmount: number }): void => {
     if (typeof window === "undefined") return;
     localStorage.setItem("dungeon_carry_settings", JSON.stringify(settings));
   },

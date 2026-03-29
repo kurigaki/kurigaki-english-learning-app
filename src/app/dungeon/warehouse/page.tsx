@@ -19,8 +19,8 @@ export default function WarehousePage() {
   const [gold, setGold] = useState(0);
   const [lang, setLang] = useState<DungeonLang>("ja");
   const [selectedItem, setSelectedItem] = useState<InventoryItem | null>(null);
-  // 持ち込み設定
-  const [carryItems, setCarryItems] = useState<Set<string>>(new Set());
+  // 持ち込み設定（アイテムID → 個数）
+  const [carryItems, setCarryItems] = useState<Record<string, number>>({});
   const [carryGold, setCarryGold] = useState(0);
 
   useEffect(() => {
@@ -29,36 +29,44 @@ export default function WarehousePage() {
     setItems(wh);
     setGold(gb);
     setLang(getDungeonLang());
-    // 保存済み設定を復元
     const cs = storage.getCarrySettings();
-    setCarryItems(new Set(cs.selectedItems));
+    setCarryItems(cs.selectedItems);
     setCarryGold(Math.min(cs.goldAmount, gb));
   }, []);
 
-  // 設定をlocalStorageに保存
   const saveSettings = useCallback(() => {
     storage.saveCarrySettings({
-      selectedItems: Array.from(carryItems),
+      selectedItems: carryItems,
       goldAmount: carryGold,
     });
   }, [carryItems, carryGold]);
 
-  // 設定変更時に自動保存
-  useEffect(() => {
-    saveSettings();
-  }, [saveSettings]);
+  useEffect(() => { saveSettings(); }, [saveSettings]);
 
-  const toggleCarryItem = (id: string) => {
+  const toggleCarryItem = (id: string, maxCount: number) => {
     setCarryItems((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
+      const next = { ...prev };
+      if (next[id]) delete next[id];
+      else next[id] = maxCount;
       return next;
     });
   };
 
-  const selectAll = () => setCarryItems(new Set(items.map((i) => i.id)));
-  const selectNone = () => setCarryItems(new Set());
+  const setCarryCount = (id: string, count: number) => {
+    setCarryItems((prev) => {
+      const next = { ...prev };
+      if (count <= 0) delete next[id];
+      else next[id] = count;
+      return next;
+    });
+  };
+
+  const selectAll = () => {
+    const all: Record<string, number> = {};
+    items.forEach((i) => { all[i.id] = i.count; });
+    setCarryItems(all);
+  };
+  const selectNone = () => setCarryItems({});
 
   const totalItems = items.reduce((sum, i) => sum + i.count, 0);
 
@@ -106,7 +114,7 @@ export default function WarehousePage() {
                 <span style={{ color: DC.gold, marginLeft: 6 }}>{carryGold.toLocaleString()}G</span>
               </div>
               <input
-                type="range" min={0} max={gold} step={Math.max(1, Math.floor(gold / 100))}
+                type="range" min={0} max={gold} step={1}
                 value={carryGold}
                 onChange={(e) => setCarryGold(Number(e.target.value))}
                 style={{ width: "100%", accentColor: DC.gold }}
@@ -172,7 +180,7 @@ export default function WarehousePage() {
               const def = ITEMS_DEF.find((d) => d.id === item.id);
               const displayName = def ? itemName(def, lang) : item.name;
               const isSelected = selectedItem?.id === item.id;
-              const isCarry = carryItems.has(item.id);
+              const isCarry = !!carryItems[item.id];
               return (
                 <button
                   key={item.id}
@@ -212,7 +220,7 @@ export default function WarehousePage() {
         {/* Item Detail + 持ち込みトグル */}
         {selectedItem && (() => {
           const def = ITEMS_DEF.find((d) => d.id === selectedItem.id);
-          const isCarry = carryItems.has(selectedItem.id);
+          const isCarry = !!carryItems[selectedItem.id];
           return (
             <div style={{
               background: DC.bg4, border: `1px solid ${DC.accent}40`,
@@ -232,7 +240,7 @@ export default function WarehousePage() {
                   </div>
                 </div>
                 <button
-                  onClick={(e) => { e.stopPropagation(); toggleCarryItem(selectedItem.id); }}
+                  onClick={(e) => { e.stopPropagation(); toggleCarryItem(selectedItem.id, selectedItem.count); }}
                   style={{
                     fontFamily: "'Press Start 2P', monospace", fontSize: 8,
                     color: isCarry ? "#000" : DC.green,
@@ -249,12 +257,25 @@ export default function WarehousePage() {
               <div style={{ fontSize: 11, color: DC.text2, lineHeight: 1.5 }}>
                 {def ? itemDesc(def, lang) : selectedItem.desc}
               </div>
+              {isCarry && selectedItem.count > 1 && (
+                <div style={{ marginTop: 8 }}>
+                  <div style={{ fontSize: 10, color: DC.text3, marginBottom: 2 }}>
+                    {lang === "en" ? "Carry count:" : "持ち込み数:"} {carryItems[selectedItem.id] ?? 0}/{selectedItem.count}
+                  </div>
+                  <input
+                    type="range" min={1} max={selectedItem.count} step={1}
+                    value={carryItems[selectedItem.id] ?? selectedItem.count}
+                    onChange={(e2) => setCarryCount(selectedItem.id, Number(e2.target.value))}
+                    style={{ width: "100%", accentColor: DC.green }}
+                  />
+                </div>
+              )}
             </div>
           );
         })()}
 
         {/* 持ち込みサマリー */}
-        {(carryItems.size > 0 || carryGold > 0) && (
+        {(Object.keys(carryItems).length > 0 || carryGold > 0) && (
           <div style={{
             marginTop: 12, padding: "10px 12px",
             background: DC.bg2, border: `1px solid ${DC.green}40`,
@@ -264,8 +285,8 @@ export default function WarehousePage() {
               {lang === "en" ? "CARRY-IN SUMMARY" : "持ち込み設定"}
             </div>
             {carryGold > 0 && <div>💰 {carryGold.toLocaleString()}G</div>}
-            {items.filter((i) => carryItems.has(i.id)).map((i) => (
-              <div key={i.id}>{i.icon} {i.name} x{i.count}</div>
+            {items.filter((i) => !!carryItems[i.id]).map((i) => (
+              <div key={i.id}>{i.icon} {i.name} x{carryItems[i.id]}</div>
             ))}
           </div>
         )}

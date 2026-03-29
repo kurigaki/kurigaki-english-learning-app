@@ -377,20 +377,19 @@ export function moveEnemies(
     }
 
     // アラート判定：同じ部屋 or 隣接 or 廊下入口でプレイヤーを認識
-    // 初認識ターンでも隣接していれば攻撃を許可（プレイヤーが近づいた場合）
+    let justAlerted = false;
     if (!e.alert) {
       if (sameRoom(g.rooms, e.x, e.y, px, py) || adj(e.x, e.y, px, py) ||
           isPlayerAtCorridorEntranceOfEnemyRoom(g, px, py, e.x, e.y)) {
         e.alert = true;
-        // 隣接している場合は攻撃を許可（continueしない）
-        if (!adj(e.x, e.y, px, py)) continue;
+        justAlerted = true; // 初認識ターン: 移動はするが攻撃はしない
       }
     }
 
     if (e.alert) {
       // ■ 認識中：プレイヤーへ直進追跡
-      // 隣接していれば攻撃（移動せず攻撃のみ）
-      if (adj(e.x, e.y, px, py)) {
+      // 隣接していれば攻撃（初認識ターンは攻撃せず移動へ）
+      if (adj(e.x, e.y, px, py) && !justAlerted) {
         const ddx = px - e.x;
         const ddy = py - e.y;
         const isDiag = ddx !== 0 && ddy !== 0;

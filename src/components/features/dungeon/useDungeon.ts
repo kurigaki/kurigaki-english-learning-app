@@ -2597,28 +2597,32 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     initDungeonAudio(); // MP3ファイルをプリロード（初回のみ）
     storage.clearDungeonGame();
     const g = initGameState([], dungeonMode, diagMove);
-    // 倉庫から持ち込み設定に基づいてアイテム・ゴールドを持ち込み
+    // 倉庫から持ち込み設定に基づいてアイテム・ゴールドを持ち込み（個数指定対応）
     {
       const wh = storage.getWarehouse();
       const cs = storage.getCarrySettings();
       const gb = storage.getGoldBank();
       const cg = Math.min(cs.goldAmount, gb);
-      for (const wi of wh) {
-        if (cs.selectedItems.includes(wi.id)) {
-          const ex = g.items.find((i) => i.id === wi.id);
-          if (ex) ex.count += wi.count;
-          else g.items.push({ ...wi });
+      const remaining = [...wh];
+      for (let wi = 0; wi < remaining.length; wi++) {
+        const item = remaining[wi];
+        const carryCount = cs.selectedItems[item.id];
+        if (carryCount && carryCount > 0) {
+          const take = Math.min(carryCount, item.count);
+          const ex = g.items.find((i) => i.id === item.id);
+          if (ex) ex.count += take;
+          else g.items.push({ ...item, count: take });
+          item.count -= take;
         }
       }
       g.gold += cg;
-      storage.saveWarehouse(wh.filter((wi) => !cs.selectedItems.includes(wi.id)));
+      storage.saveWarehouse(remaining.filter((w) => w.count > 0));
       storage.saveGoldBank(gb - cg);
     }
     gameRef.current = g;
     generateMap(g);
-    revealAround(g, g.px, g.py); // 開始位置の視野を開く
-    // 廊下はrenderer側で常時表示（exploredとは独立）
-    // 前ゲームの death/quiz/showItems 等を確実にリセット（タイトルへ戻って再開始する場合に残留する）
+    revealAround(g, g.px, g.py);
+    // 前ゲームの death/quiz/showItems 等を確実にリセット
     updateUI(g, {
       msg: "ダンジョンに入った！",
       death: null,
@@ -2627,6 +2631,8 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
       quizResult: null,
       showItems: false,
       shopPrompt: null,
+      shopConfirm: null,
+      footAction: null,
       notification: "",
     });
     // canvas サイズ設定
@@ -2655,21 +2661,26 @@ export function useDungeon(questions: DungeonQuestion[], progressiveStages?: Sta
     stopAutoWalk();
     const prevMissed = gameRef.current?.missedWords ?? [];
     const g = initGameState(prevMissed, dungeonMode, diagMove);
-    // 倉庫から持ち込み設定に基づいてアイテム・ゴールドを持ち込み
+    // 倉庫から持ち込み設定に基づいてアイテム・ゴールドを持ち込み（個数指定対応）
     {
       const wh = storage.getWarehouse();
       const cs = storage.getCarrySettings();
       const gb = storage.getGoldBank();
       const cg = Math.min(cs.goldAmount, gb);
-      for (const wi of wh) {
-        if (cs.selectedItems.includes(wi.id)) {
-          const ex = g.items.find((i) => i.id === wi.id);
-          if (ex) ex.count += wi.count;
-          else g.items.push({ ...wi });
+      const remaining = [...wh];
+      for (let wi2 = 0; wi2 < remaining.length; wi2++) {
+        const item = remaining[wi2];
+        const carryCount = cs.selectedItems[item.id];
+        if (carryCount && carryCount > 0) {
+          const take = Math.min(carryCount, item.count);
+          const ex = g.items.find((i) => i.id === item.id);
+          if (ex) ex.count += take;
+          else g.items.push({ ...item, count: take });
+          item.count -= take;
         }
       }
       g.gold += cg;
-      storage.saveWarehouse(wh.filter((wi) => !cs.selectedItems.includes(wi.id)));
+      storage.saveWarehouse(remaining.filter((w) => w.count > 0));
       storage.saveGoldBank(gb - cg);
     }
     gameRef.current = g;
