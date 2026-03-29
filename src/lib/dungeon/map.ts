@@ -311,34 +311,8 @@ export function generateMap(g: GameState): void {
     }
   }
 
-  // アイテムの重複チェック用セット
-  const itemPositions = new Set(g.itemTiles.map((it) => `${it.x},${it.y}`));
-
-  // Traps（アイテムと重ならない・部屋入口を避ける）
-  g.traps = [];
-  const trapPool: TrapType[] = g.dungeonMode === "hard" ? HARD_TRAP_TYPES : EASY_TRAP_TYPES;
-  const trapCount = g.dungeonMode === "hard"
-    ? 3 + Math.floor(Math.random() * 4) // 3-6 traps in hard
-    : 1 + Math.floor(Math.random() * 2); // 1-2 traps in easy
-  for (let t = 0; t < trapCount * 10 && g.traps.length < trapCount; t++) {
-    const ri = 1 + Math.floor(Math.random() * (rooms.length - 1));
-    const r = rooms[ri];
-    const tx = r.x + 1 + Math.floor(Math.random() * (r.w - 2));
-    const ty = r.y + 1 + Math.floor(Math.random() * (r.h - 2));
-    if (tx === g.px && ty === g.py) continue;
-    if (g.stairsPos && tx === g.stairsPos.x && ty === g.stairsPos.y) continue;
-    if (g.enemies.find((e) => e.x === tx && e.y === ty)) continue;
-    if (g.traps.find((tr) => tr.x === tx && tr.y === ty)) continue;
-    // アイテムと重ならない（通常アイテム + ショップアイテム）
-    if (itemPositions.has(`${tx},${ty}`)) continue;
-    if (g.shopItems.find((s) => s.x === tx && s.y === ty)) continue;
-    // 部屋入口（廊下隣接タイル）には罠を置かない
-    if (isRoomEntrance(m, tx, ty)) continue;
-    const type = trapPool[Math.floor(Math.random() * trapPool.length)];
-    g.traps.push({ id: ++_trapId, x: tx, y: ty, type, visible: false });
-  }
-
   // Monster house (hard mode only, one room packed with enemies + items as reward)
+  // ※ アイテムの後、罠の前に配置（罠がモンスターハウスのアイテムと重ならないようにする）
   g.monsterHouseRoomIdx = monsterHouseRoomIdx;
   if (monsterHouseRoomIdx !== null) {
     const mhRoom = rooms[monsterHouseRoomIdx];
@@ -475,6 +449,36 @@ export function generateMap(g: GameState): void {
       entranceX,
       entranceY,
     };
+  }
+
+  // Traps（全アイテム配置後に生成 — アイテム・ショップ・敵・階段・入口と重ならない）
+  g.traps = [];
+  const trapPool: TrapType[] = g.dungeonMode === "hard" ? HARD_TRAP_TYPES : EASY_TRAP_TYPES;
+  const trapCount = g.dungeonMode === "hard"
+    ? 3 + Math.floor(Math.random() * 4)
+    : 1 + Math.floor(Math.random() * 2);
+  const allItemPos = new Set([
+    ...g.itemTiles.map((it) => `${it.x},${it.y}`),
+    ...g.shopItems.map((s) => `${s.x},${s.y}`),
+  ]);
+  for (let t = 0; t < trapCount * 10 && g.traps.length < trapCount; t++) {
+    const ri = 1 + Math.floor(Math.random() * (rooms.length - 1));
+    const r = rooms[ri];
+    const tx = r.x + 1 + Math.floor(Math.random() * Math.max(1, r.w - 2));
+    const ty = r.y + 1 + Math.floor(Math.random() * Math.max(1, r.h - 2));
+    if (tx === g.px && ty === g.py) continue;
+    if (g.stairsPos && tx === g.stairsPos.x && ty === g.stairsPos.y) continue;
+    if (g.enemies.find((e) => e.x === tx && e.y === ty)) continue;
+    if (g.traps.find((tr) => tr.x === tx && tr.y === ty)) continue;
+    if (allItemPos.has(`${tx},${ty}`)) continue;
+    if (isRoomEntrance(m, tx, ty)) continue;
+    // ショップ部屋には罠を置かない
+    if (shopRoomIdx !== null) {
+      const sr = rooms[shopRoomIdx];
+      if (tx >= sr.x && tx < sr.x + sr.w && ty >= sr.y && ty < sr.y + sr.h) continue;
+    }
+    const type = trapPool[Math.floor(Math.random() * trapPool.length)];
+    g.traps.push({ id: ++_trapId, x: tx, y: ty, type, visible: false });
   }
 }
 
