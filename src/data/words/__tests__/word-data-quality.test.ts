@@ -7,7 +7,7 @@
  * 担当: キラーT（テスト担当）
  */
 import { describe, it, expect } from "vitest";
-import { allWords, juniorWords, seniorWords, toeicWords, eikenWords, conversationWords } from "../index";
+import { juniorWords, seniorWords, toeicWords, eikenWords, conversationWords } from "../index";
 import type { Word } from "../types";
 
 // ═══════════════════════════════════════
@@ -15,13 +15,6 @@ import type { Word } from "../types";
 // ═══════════════════════════════════════
 
 const VALID_POS = ["noun", "verb", "adjective", "adverb", "other"] as const;
-
-const STAGE_DIFFICULTY_MAP: Record<string, number> = {
-  // eiken
-  "5": 1, "4": 2, "3": 3, "pre2": 4, "2": 5, "pre1": 6, "1": 7,
-  // toeic
-  "500": 3, "600": 4, "700": 5, "800": 6, "900": 7,
-};
 
 const VALID_STAGES: Record<string, string[]> = {
   eiken: ["5", "4", "3", "pre2", "2", "pre1", "1"],
@@ -147,7 +140,7 @@ describe("英検コース固有", () => {
         list.push(w.word);
         meaningMap.set(w.meaning, list);
       }
-      for (const [meaning, words] of meaningMap) {
+      for (const [meaning, words] of Array.from(meaningMap.entries())) {
         if (words.length >= 2) {
           collisions.push(`stage${stage} "${meaning}": ${words.join(", ")}`);
         }
