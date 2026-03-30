@@ -31,6 +31,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isSyncing, setIsSyncing] = useState(false);
   // タイムアウト復元モードかどうか（Supabaseが応答しないため、localStorageモードを維持）
   const [isTimeoutRecovery, setIsTimeoutRecovery] = useState(false);
@@ -73,13 +74,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
   // プロフィールを取得（直接REST API使用）
   const fetchProfile = useCallback(
     async (userId: string): Promise<Profile | null> => {
-      console.log("[Auth] fetchProfile開始（直接API）:", userId);
-
       const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
       const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
       if (!supabaseUrl || !supabaseKey) {
-        console.log("[Auth] fetchProfile: Supabase設定なし");
         return null;
       }
 
@@ -96,14 +94,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
       }
 
       if (!accessToken) {
-        console.log("[Auth] fetchProfile: アクセストークンなし");
         return null;
       }
 
       try {
         const url = `${supabaseUrl}/rest/v1/profiles?id=eq.${userId}`;
-        console.log("[Auth] fetchProfile: リクエスト送信");
-
         const response = await fetch(url, {
           method: "GET",
           headers: {
@@ -113,12 +108,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
           },
         });
 
-        console.log("[Auth] fetchProfile: レスポンス受信 status=", response.status);
-
         if (!response.ok) {
           if (response.status === 406) {
             // 406 = データなし（singleモードで0件）
-            console.log("[Auth] fetchProfile: プロフィールなし");
             return null;
           }
           console.error("[Auth] fetchProfile: エラー status=", response.status);
@@ -126,7 +118,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
         }
 
         const data = await response.json();
-        console.log("[Auth] fetchProfile完了:", data ? "データあり" : "データなし");
         return data as Profile | null;
       } catch (error) {
         console.error("[Auth] fetchProfile: 例外", error);
@@ -190,8 +181,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
     // localStorageから直接セッションを復元する試み
     const tryRecoverSessionFromStorage = (): { userId: string; email?: string } | null => {
       try {
-        console.log("[Auth] tryRecoverSessionFromStorage: localStorage検索開始, keys=" + localStorage.length);
-
         // Supabaseが使用する可能性のあるすべてのキーパターンを検索
         for (let i = 0; i < localStorage.length; i++) {
           const key = localStorage.key(i);
@@ -200,26 +189,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
           // Supabaseのauth tokenキーパターンをチェック
           // フォーマット: sb-<project-ref>-auth-token または english-app-auth
           if (key.includes("auth-token") || key === "english-app-auth") {
-            console.log("[Auth] tryRecoverSessionFromStorage: 認証キー発見:", key);
             const stored = localStorage.getItem(key);
-            if (!stored) {
-              console.log("[Auth] tryRecoverSessionFromStorage: キーの値が空");
-              continue;
-            }
+            if (!stored) continue;
 
             try {
               const parsed = JSON.parse(stored);
-              console.log("[Auth] tryRecoverSessionFromStorage: パース成功, hasUser=" + !!parsed?.user + ", userId=" + parsed?.user?.id);
               if (parsed?.user?.id) {
-                console.log("[Auth] localStorageから認証データ発見:", key);
                 return { userId: parsed.user.id, email: parsed.user.email };
               }
-            } catch (parseError) {
-              console.log("[Auth] tryRecoverSessionFromStorage: JSONパース失敗:", parseError);
+            } catch {
+              // JSONパース失敗 - 次のキーを試す
             }
           }
         }
-        console.log("[Auth] tryRecoverSessionFromStorage: 認証データが見つからず");
         return null;
       } catch (error) {
         console.error("[Auth] tryRecoverSessionFromStorage: エラー:", error);
@@ -229,12 +211,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
     // 現在のセッションを確認
     const initializeAuth = async () => {
-      console.log("[Auth] initializeAuth開始");
-
       // ステップ1: localStorageからセッション情報を確認（キャッシュとして保持）
       const cachedSession = tryRecoverSessionFromStorage();
       if (cachedSession) {
-        console.log("[Auth] localStorageからセッション発見:", cachedSession.userId);
         // キャッシュ情報を保持（onAuthStateChangeの結果を待つ）
         setCurrentUserId(cachedSession.userId);
         // 注意: setIsLoading(false)は呼び出さない - onAuthStateChangeで設定
@@ -243,13 +222,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       // ステップ2: Supabaseセッションを確認（タイムアウト付き）
       try {
-        console.log("[Auth] getSession開始");
         const { data: { session }, error } = await getSessionWithTimeout(1500);
 
         if (!isMounted) return;
 
         if (!error && session?.user) {
-          console.log("[Auth] Supabaseセッション確認成功:", session.user.id);
           // Supabaseモードで動作
           setIsTimeoutRecovery(false);
           setAuthTimedOut(false);
@@ -257,16 +234,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
           setUser(session.user);
           // 初期表示を優先し、プロフィール取得は非同期で反映
           setIsLoading(false);
-          console.log("[Auth] Supabaseセッション復元完了、isLoading=false");
+          console.info("[Auth] 認証初期化完了（Supabaseセッション復元）");
           void fetchProfile(session.user.id).then((userProfile) => {
             if (isMounted) setProfile(userProfile);
           });
         } else if (authCompletedByEvent) {
           // onAuthStateChangeで既に認証完了している
-          console.log("[Auth] onAuthStateChangeで既に認証完了、スキップ");
         } else if (cachedSession) {
           // SupabaseタイムアウトだがlocalStorageにセッションあり
-          console.log("[Auth] Supabaseタイムアウト、localStorageから復元");
           setIsTimeoutRecovery(true);
           setAuthTimedOut(true);
           setUser({
@@ -279,11 +254,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
           } as import("@supabase/supabase-js").User);
           if (isMounted) {
             setIsLoading(false);
-            console.log("[Auth] localStorageから復元完了、isLoading=false");
+            console.info("[Auth] 認証初期化完了（localStorageから復元）");
           }
         } else {
           // セッションなしの場合は待機せず未認証として即時表示
-          console.log("[Auth] getSessionでセッションなし、未認証として処理");
           setCurrentUserId(null);
           if (isMounted) {
             setIsLoading(false);
@@ -292,12 +266,9 @@ export function AuthProvider({ children }: AuthProviderProps) {
       } catch (error) {
         if (error instanceof Error && error.name === "AbortError") {
           console.warn("[Auth] セッション確認が中断されました。未認証として継続します。");
-        } else {
-          console.log("[Auth] セッション確認エラー");
         }
         // onAuthStateChangeで既に認証完了している場合はスキップ
         if (authCompletedByEvent) {
-          console.log("[Auth] onAuthStateChangeで既に認証完了、エラー処理スキップ");
           return;
         }
         // エラー時もlocalStorageから復元を試みる
@@ -326,12 +297,10 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log("[Auth] onAuthStateChange:", "event=" + event, "hasSession=" + !!session, "isMounted=" + isMounted);
       if (!isMounted) return;
 
       try {
         if (session?.user) {
-          console.log("[Auth] onAuthStateChange: セッション確認成功、Supabaseモードに設定");
           // onAuthStateChangeで認証完了したことをマーク
           authCompletedByEvent = true;
           // 正常なログイン/セッション取得時はタイムアウト復元モードを解除
@@ -380,12 +349,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
           // INITIAL_SESSIONでsession=nullの場合は、まだセッションが読み込まれていない可能性がある
           // SIGNED_OUTの場合のみユーザーをクリアする
           if (event === "SIGNED_OUT") {
-            console.log("[Auth] onAuthStateChange: SIGNED_OUT、ユーザーをクリア");
+            console.info("[Auth] ログアウト検知");
             setCurrentUserId(null);
             setUser(null);
             setProfile(null);
           } else {
-            console.log("[Auth] onAuthStateChange: " + event + "でセッションなし、getSessionの結果を待機");
             // INITIAL_SESSIONでsession=nullの場合は、initializeAuthのgetSession結果を待つ
           }
         }
@@ -574,15 +542,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
     updateProfile,
     refreshProfile,
   };
-
-  // デバッグ: コンテキスト値をログ（文字列化して確実に中身を表示）
-  console.log("[AuthContext] 提供値:",
-    "hasUser=" + !!user,
-    "userId=" + user?.id,
-    "isSyncing=" + isSyncing,
-    "isLoading=" + value.isLoading,
-    "isAuthenticated=" + value.isAuthenticated
-  );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

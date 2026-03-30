@@ -583,16 +583,6 @@ export const storage = {
     return all.filter(isDueForReview);
   },
 
-  /**
-   * 現在の単語リストに存在しない孤立データを削除する。
-   *
-   * 削除対象:
-   * - learning_records: validWordIds に含まれない wordId の学習記録
-   * - srs_progress:     validWordIds に含まれない wordId の SRS スケジュール
-   *
-   * @param validWordIds 現在有効な単語 ID の配列
-   * @returns 削除したエントリ数 { records, srsEntries }
-   */
   // ダンジョン統計管理
   getDungeonStats: (): DungeonStats => {
     const defaults: DungeonStats = { attempts: 0, kills: 0, correct: 0, clears: 0, maxFloor: 0, bestKills: 0, bestCorrect: 0 };
@@ -818,6 +808,16 @@ export const storage = {
     update(MONTHLY_PROGRESS_KEY, storage._monthKey(), "monthly");
   },
 
+  /**
+   * 現在の単語リストに存在しない孤立データを削除する。
+   *
+   * 削除対象:
+   * - learning_records: validWordIds に含まれない wordId の学習記録
+   * - srs_progress:     validWordIds に含まれない wordId の SRS スケジュール
+   *
+   * @param validWordIds 現在有効な単語 ID の配列
+   * @returns 削除したエントリ数 { records, srsEntries }
+   */
   cleanupOrphanedData: (validWordIds: number[]): { records: number; srsEntries: number } => {
     if (typeof window === "undefined") return { records: 0, srsEntries: 0 };
     const validSet = new Set(validWordIds);
