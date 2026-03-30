@@ -92,6 +92,84 @@ describe.each(courseDataSets)("$name コース", ({ words, course }) => {
     });
     expect(bad.map((w) => w.word)).toEqual([]);
   });
+
+  it("同一ステージ内でmeaning衝突がない", () => {
+    // 英検5/4/3級は衝突0を保証済み（英検固有テストで検証）
+    // 他コース・上位級は同義語が多いため、段階的に修正予定
+    // 現時点の既知の衝突数: eiken(pre2以上)=407, toeic=65, junior=10, senior=40, conversation=42
+    const KNOWN_COLLISION_LIMITS: Record<string, number> = {
+      eiken: 407, toeic: 65, junior: 10, senior: 40, conversation: 42,
+    };
+    const collisions: string[] = [];
+    const validStages = VALID_STAGES[course];
+    for (const stage of validStages) {
+      const stageWords = words.filter((w) => w.stage === stage);
+      const meaningMap = new Map<string, string[]>();
+      for (const w of stageWords) {
+        const list = meaningMap.get(w.meaning) || [];
+        list.push(w.word);
+        meaningMap.set(w.meaning, list);
+      }
+      for (const [meaning, ws] of Array.from(meaningMap.entries())) {
+        if (ws.length >= 2) {
+          collisions.push(`stage${stage} "${meaning}": ${ws.join(", ")}`);
+        }
+      }
+    }
+    const limit = KNOWN_COLLISION_LIMITS[course] ?? 0;
+    expect(collisions.length, `${collisions.length}件の衝突（上限${limit}件）`).toBeLessThanOrEqual(limit);
+  });
+
+  it("word が空文字でない", () => {
+    const bad = words.filter((w) => w.word.trim() === "");
+    expect(bad.map((w) => `id=${w.id}`)).toEqual([]);
+  });
+
+  it("meaning が空文字でない", () => {
+    const bad = words.filter((w) => w.meaning.trim() === "");
+    expect(bad.map((w) => `${w.word}(id=${w.id})`)).toEqual([]);
+  });
+
+  it("examples[*].en/ja/context が空文字でない", () => {
+    const bad: string[] = [];
+    for (const w of words) {
+      if (!w.examples) continue;
+      for (let i = 0; i < w.examples.length; i++) {
+        const ex = w.examples[i];
+        if (ex.en.trim() === "") bad.push(`${w.word} examples[${i}].en is empty`);
+        if (ex.ja.trim() === "") bad.push(`${w.word} examples[${i}].ja is empty`);
+        if (ex.context.trim() === "") bad.push(`${w.word} examples[${i}].context is empty`);
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it("example と exampleJa が空でない（存在する場合）", () => {
+    const bad: string[] = [];
+    for (const w of words) {
+      if (w.example !== undefined && w.example.trim() === "") {
+        bad.push(`${w.word} example is empty`);
+      }
+      if (w.exampleJa !== undefined && w.exampleJa.trim() === "") {
+        bad.push(`${w.word} exampleJa is empty`);
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it("examples[*].en の末尾が句点（./?/!）で終わる", () => {
+    const bad: string[] = [];
+    for (const w of words) {
+      if (!w.examples) continue;
+      for (let i = 0; i < w.examples.length; i++) {
+        const en = w.examples[i].en.trim();
+        if (en && !/[.?!]['"]?$/.test(en)) {
+          bad.push(`${w.word} examples[${i}].en="${en}"`);
+        }
+      }
+    }
+    expect(bad).toEqual([]);
+  });
 });
 
 // ═══════════════════════════════════════
@@ -195,5 +273,19 @@ describe("全コース統合", () => {
       const count = eikenWords.filter((w) => w.partOfSpeech === pos).length;
       expect(count, pos).toBeGreaterThanOrEqual(4);
     }
+  });
+
+  it("全コースで各品詞(noun/verb/adjective)に最低4語ある", () => {
+    const targetPos = ["noun", "verb", "adjective"] as const;
+    const bad: string[] = [];
+    for (const { name, words } of courseDataSets) {
+      for (const pos of targetPos) {
+        const count = words.filter((w) => w.partOfSpeech === pos).length;
+        if (count < 4) {
+          bad.push(`${name}: ${pos} = ${count}語（4語未満）`);
+        }
+      }
+    }
+    expect(bad).toEqual([]);
   });
 });
