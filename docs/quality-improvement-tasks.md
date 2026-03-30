@@ -54,8 +54,8 @@ Project Clean Vocabulary 完了後の次フェーズ施策。
 
 ## 優先度5: 頻出フレーズ追加 ✅ 完了
 - **担当**: 赤血球
-- **状態**: 完了（2026-03-29）
-- **成果**: 30件の英検頻出フレーズをeiken.jsに追加（stage 4: 8件、stage 3: 10件、stage pre2: 12件）
+- **状態**: 完了（2026-03-30）
+- **成果**: 179件の英検頻出フレーズをeiken.jsに追加（Stage 4: 約40件、Stage 3: 約49件、Stage pre2: 約35件、Stage 2: 15件 + 既存30件）
 - **概要**: 英検3級〜2級の慣用句・頻出フレーズを独立エントリとして追加
 - **候補例**: "look forward to", "be interested in", "take care of", "make a decision", "get along with"
 - **コロケーション情報**: WordExtensionに自然な組み合わせを追加
