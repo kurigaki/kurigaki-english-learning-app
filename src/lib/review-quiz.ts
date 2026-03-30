@@ -15,7 +15,7 @@ import type { Word } from "@/data/words";
  */
 export function generateReviewChoices(correctWord: Word, allWords: Word[]): string[] {
   const wrongWords = pickRandom(
-    allWords.filter((w) => w.id !== correctWord.id),
+    allWords.filter((w) => w.id !== correctWord.id && w.meaning !== correctWord.meaning),
     3
   );
   const choices = [correctWord.meaning, ...wrongWords.map((w) => w.meaning)];

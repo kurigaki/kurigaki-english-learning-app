@@ -86,7 +86,7 @@ function selectQuestionType(mode: SpeedChallengeMode): QuestionType {
 
 function generateChoicesForEnToJa(correctWord: Word, allWords: Word[]): string[] {
   const wrongWords = pickRandom(
-    allWords.filter((w) => w.id !== correctWord.id),
+    allWords.filter((w) => w.id !== correctWord.id && w.meaning !== correctWord.meaning),
     3
   );
   const choices = [correctWord.meaning, ...wrongWords.map((w) => w.meaning)];
@@ -95,7 +95,7 @@ function generateChoicesForEnToJa(correctWord: Word, allWords: Word[]): string[]
 
 function generateChoicesForJaToEn(correctWord: Word, allWords: Word[]): string[] {
   const wrongWords = pickRandom(
-    allWords.filter((w) => w.id !== correctWord.id),
+    allWords.filter((w) => w.id !== correctWord.id && w.meaning !== correctWord.meaning),
     3
   );
   const choices = [correctWord.word, ...wrongWords.map((w) => w.word)];

@@ -50,7 +50,7 @@ function selectQuestionTypeWithRatios(
 
 function generateChoicesForEnToJa(correctWord: Word, allWords: Word[]): string[] {
   const wrongWords = pickRandom(
-    allWords.filter((w) => w.id !== correctWord.id),
+    allWords.filter((w) => w.id !== correctWord.id && w.meaning !== correctWord.meaning),
     3
   );
 
@@ -60,7 +60,7 @@ function generateChoicesForEnToJa(correctWord: Word, allWords: Word[]): string[]
 
 function generateChoicesForJaToEn(correctWord: Word, allWords: Word[]): string[] {
   const wrongWords = pickRandom(
-    allWords.filter((w) => w.id !== correctWord.id),
+    allWords.filter((w) => w.id !== correctWord.id && w.meaning !== correctWord.meaning),
     3
   );
 
