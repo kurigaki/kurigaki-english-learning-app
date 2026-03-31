@@ -350,18 +350,6 @@ export const words: RawWord[] = [
     categories: ["communication", "science"],
   },
   {
-    id: 20134,
-    word: "interest",
-    meaning: "興味、利子",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The students showed great interest in science.", ja: "生徒たちは科学に大きな興味を示しました。", context: "学校" },
-      { en: "The bank charges three percent interest on loans.", ja: "その銀行は融資に3パーセントの利子を課します。", context: "金融" },
-      { en: "Her main interest outside work is gardening.", ja: "彼女の仕事以外の主な関心事はガーデニングです。", context: "趣味" },
-    ],
-    categories: ["school", "finance"],
-  },
-  {
     id: 20135,
     word: "interpretation",
     meaning: "解釈、通訳",
@@ -3878,18 +3866,6 @@ export const words: RawWord[] = [
     categories: ["daily", "travel"],
   },
   {
-    id: 20458,
-    word: "part",
-    meaning: "部分、役割",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Teamwork is an important part of every project.", ja: "チームワークはすべてのプロジェクトの重要な部分だ。", context: "ビジネス" },
-      { en: "She played the main part in the school play.", ja: "彼女は学校の劇で主役を演じた。", context: "学校" },
-      { en: "The northern part of the country gets heavy snow.", ja: "その国の北部は大雪が降る。", context: "地理" },
-    ],
-    categories: ["daily", "business"],
-  },
-  {
     id: 20459,
     word: "participant",
     meaning: "参加者",
@@ -4560,18 +4536,6 @@ export const words: RawWord[] = [
       { en: "The charity pleaded for donations after the disaster.", ja: "その慈善団体は災害後に寄付を懇願した。", context: "社会" },
     ],
     categories: ["communication", "daily"],
-  },
-  {
-    id: 20518,
-    word: "please",
-    meaning: "喜ばせる",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The chef works hard to please every customer.", ja: "そのシェフは全ての客を喜ばせるために一生懸命だ。", context: "外食" },
-      { en: "Nothing seems to please him no matter what we try.", ja: "何をしても彼を喜ばせることはできないようだ。", context: "日常" },
-      { en: "The new design was meant to please younger audiences.", ja: "新しいデザインは若い観客を喜ばせるためのものだった。", context: "ビジネス" },
-    ],
-    categories: ["emotion", "communication"],
   },
   {
     id: 20519,
@@ -8234,18 +8198,6 @@ export const words: RawWord[] = [
     categories: ["daily", "business"],
   },
   {
-    id: 20858,
-    word: "service",
-    meaning: "サービス",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The hotel is well known for its excellent service.", ja: "そのホテルは優れたサービスでよく知られている。", context: "旅行" },
-      { en: "Public bus service runs every fifteen minutes here.", ja: "公共バスサービスはここでは15分ごとに運行している。", context: "交通" },
-      { en: "The company provides repair service free of charge.", ja: "その会社は無料で修理サービスを提供している。", context: "ビジネス" },
-    ],
-    categories: ["daily", "business"],
-  },
-  {
     id: 20859,
     word: "session",
     meaning: "会期、授業",
@@ -8518,18 +8470,6 @@ export const words: RawWord[] = [
       { en: "The two concerts were held simultaneously in the city.", ja: "2つのコンサートがその市で同時に開催された。", context: "イベント" },
       { en: "She can handle three tasks simultaneously at work.", ja: "彼女は仕事で3つの業務を同時にこなせる。", context: "ビジネス" },
       { en: "The fireworks went off simultaneously across the bay.", ja: "花火が湾の向こうで同時に打ち上がった。", context: "祭り" },
-    ],
-    categories: ["communication", "daily"],
-  },
-  {
-    id: 20883,
-    word: "since",
-    meaning: "その後ずっと",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "He left the town and has lived abroad since.", ja: "彼はその町を離れ、その後ずっと海外に住んでいる。", context: "旅行" },
-      { en: "The shop closed in May and has been empty since.", ja: "その店は5月に閉まり、その後ずっと空だ。", context: "日常" },
-      { en: "They met at college and have been friends since.", ja: "彼らは大学で出会い、その後ずっと友人だ。", context: "人間関係" },
     ],
     categories: ["communication", "daily"],
   },

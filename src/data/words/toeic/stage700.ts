@@ -4586,18 +4586,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19497,
-    word: "employee",
-    meaning: "従業員",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The company has over five hundred employees.", ja: "その会社は500人以上の従業員がいる。", context: "仕事" },
-      { en: "New employees receive training for two weeks.", ja: "新入社員は2週間の研修を受ける。", context: "仕事" },
-      { en: "Employee satisfaction is important for productivity.", ja: "従業員の満足度は生産性にとって重要だ。", context: "仕事" },
-    ],
-    categories: ["business"],
-  },
-  {
     id: 19498,
     word: "employer",
     meaning: "雇用主",
@@ -4906,18 +4894,6 @@ export const words: RawWord[] = [
       { en: "The team worked hard to eliminate all errors.", ja: "チームはすべてのエラーを排除するため懸命に働いた。", context: "仕事" },
       { en: "Exercise helps eliminate stress from daily life.", ja: "運動は日常生活からストレスを排除するのに役立つ。", context: "健康" },
       { en: "The new rule will eliminate unfair practices.", ja: "新しい規則は不公正な慣行を排除するだろう。", context: "社会" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 19525,
-    word: "email",
-    meaning: "送信する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Please email the report to your manager today.", ja: "今日中にレポートを上司にメール送信してください。", context: "仕事" },
-      { en: "She emailed the invitation to all her friends.", ja: "彼女は招待状を友人全員にメールで送った。", context: "日常" },
-      { en: "The teacher emailed the homework instructions.", ja: "先生は宿題の指示をメールで送った。", context: "学校" },
     ],
     categories: ["communication"],
   },
