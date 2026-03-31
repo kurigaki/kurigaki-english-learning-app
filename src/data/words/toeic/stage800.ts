@@ -38,18 +38,6 @@ export const words: RawWord[] = [
     categories: ["communication", "description"],
   },
   {
-    id: 20104,
-    word: "innovative",
-    meaning: "革新的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The startup developed an innovative approach to recycling.", ja: "そのスタートアップはリサイクルへの革新的なアプローチを開発した。", context: "環境" },
-      { en: "Innovative technology is transforming the healthcare industry.", ja: "革新的な技術がヘルスケア産業を変えている。", context: "技術" },
-      { en: "The architect proposed an innovative design for the museum.", ja: "建築家は博物館の革新的なデザインを提案した。", context: "芸術" },
-    ],
-    categories: ["technology", "description"],
-  },
-  {
     id: 20105,
     word: "incur",
     meaning: "招く、被る",
@@ -194,18 +182,6 @@ export const words: RawWord[] = [
     categories: ["society", "business"],
   },
   {
-    id: 20120,
-    word: "initiative",
-    meaning: "主導",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She took the initiative to organize the charity event.", ja: "彼女はチャリティーイベントを主導して組織した。", context: "社会" },
-      { en: "The government launched a new environmental initiative.", ja: "政府は新しい環境イニシアチブを開始した。", context: "政治" },
-      { en: "Employees who show initiative are often promoted faster.", ja: "主体性を示す従業員はしばしばより早く昇進する。", context: "ビジネス" },
-    ],
-    categories: ["business", "society"],
-  },
-  {
     id: 20121,
     word: "innovation",
     meaning: "革新",
@@ -252,18 +228,6 @@ export const words: RawWord[] = [
       { en: "The restaurant was very good indeed for its price.", ja: "そのレストランは価格に対して確かにとても良かった。", context: "食事" },
     ],
     categories: ["communication"],
-  },
-  {
-    id: 20125,
-    word: "inspection",
-    meaning: "検査、点検",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The factory passed the safety inspection.", ja: "その工場は安全検査に合格しました。", context: "仕事" },
-      { en: "Regular inspection of the equipment is required.", ja: "設備の定期点検が必要です。", context: "ビジネス" },
-      { en: "The health inspection found no problems.", ja: "衛生検査では問題が見つかりませんでした。", context: "飲食" },
-    ],
-    categories: ["business", "daily"],
   },
   {
     id: 20126,
@@ -324,18 +288,6 @@ export const words: RawWord[] = [
       { en: "Dolphins are known for their high intelligence.", ja: "イルカは高い知能で知られています。", context: "自然" },
     ],
     categories: ["technology", "science"],
-  },
-  {
-    id: 20132,
-    word: "intention",
-    meaning: "意図",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "His intention was to help, not to interfere.", ja: "彼の意図は干渉ではなく助けることでした。", context: "人間関係" },
-      { en: "She had no intention of leaving the company.", ja: "彼女にはその会社を辞める意図はありませんでした。", context: "仕事" },
-      { en: "The government announced its intention to reform education.", ja: "政府は教育改革の意図を発表しました。", context: "政治" },
-    ],
-    categories: ["communication", "opinion"],
   },
   {
     id: 20133,
@@ -672,18 +624,6 @@ export const words: RawWord[] = [
       { en: "Parents instructed their children to be polite.", ja: "親は子供たちに礼儀正しくするよう指示しました。", context: "家庭" },
     ],
     categories: ["communication", "school"],
-  },
-  {
-    id: 20164,
-    word: "integrate",
-    meaning: "統合する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The school aims to integrate technology into learning.", ja: "その学校はテクノロジーを学習に統合することを目指しています。", context: "教育" },
-      { en: "The company plans to integrate both departments.", ja: "その会社は両部門を統合する計画です。", context: "ビジネス" },
-      { en: "New residents gradually integrated into the community.", ja: "新しい住民は徐々に地域社会に溶け込みました。", context: "社会" },
-    ],
-    categories: ["business", "school"],
   },
   {
     id: 20166,
@@ -1202,18 +1142,6 @@ export const words: RawWord[] = [
     categories: ["communication", "daily"],
   },
   {
-    id: 20215,
-    word: "legislation",
-    meaning: "法律、立法",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "New legislation will protect endangered species.", ja: "新しい法律が絶滅危惧種を保護します。", context: "環境" },
-      { en: "The government proposed legislation on healthcare.", ja: "政府は医療に関する法律を提案しました。", context: "政治" },
-      { en: "This legislation affects all small businesses.", ja: "この法律はすべての中小企業に影響します。", context: "ビジネス" },
-    ],
-    categories: ["daily", "business"],
-  },
-  {
     id: 20216,
     word: "liar",
     meaning: "うそつき",
@@ -1694,18 +1622,6 @@ export const words: RawWord[] = [
     categories: ["daily", "business"],
   },
   {
-    id: 20260,
-    word: "maximum",
-    meaning: "最大の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The maximum speed on this road is sixty.", ja: "この道路の最高速度は時速60キロだ。", context: "交通" },
-      { en: "We need maximum effort to finish on time.", ja: "時間内に終えるには最大の努力が必要だ。", context: "仕事" },
-      { en: "The hall has a maximum capacity of five hundred.", ja: "そのホールの最大収容人数は500人だ。", context: "施設" },
-    ],
-    categories: ["daily", "business"],
-  },
-  {
     id: 20261,
     word: "meaningful",
     meaning: "意味のある",
@@ -1886,18 +1802,6 @@ export const words: RawWord[] = [
     categories: ["business", "culture"],
   },
   {
-    id: 20277,
-    word: "margin",
-    meaning: "余白、利幅",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Write your notes in the margin of the page.", ja: "ページの余白にメモを書いてください。", context: "学校" },
-      { en: "The company operates on a thin profit margin.", ja: "その会社は薄い利益率で営業している。", context: "ビジネス" },
-      { en: "She won the election by a narrow margin.", ja: "彼女は僅差で選挙に勝った。", context: "政治" },
-    ],
-    categories: ["business", "school"],
-  },
-  {
     id: 20278,
     word: "marketing",
     meaning: "マーケティング",
@@ -2042,18 +1946,6 @@ export const words: RawWord[] = [
     categories: ["business", "school"],
   },
   {
-    id: 20291,
-    word: "merchandise",
-    meaning: "商品",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The store displays new merchandise every week.", ja: "その店は毎週新しい商品を陳列する。", context: "買い物" },
-      { en: "Damaged merchandise was returned to the supplier.", ja: "傷んだ商品は仕入先に返品された。", context: "ビジネス" },
-      { en: "Fans bought official team merchandise at the game.", ja: "ファンは試合で公式チームグッズを購入した。", context: "スポーツ" },
-    ],
-    categories: ["business", "shopping"],
-  },
-  {
     id: 20292,
     word: "merchant",
     meaning: "商人",
@@ -2160,18 +2052,6 @@ export const words: RawWord[] = [
       { en: "The museum displays old military uniforms.", ja: "その博物館は古い軍服を展示している。", context: "歴史" },
     ],
     categories: ["culture", "business"],
-  },
-  {
-    id: 20302,
-    word: "minimum",
-    meaning: "最小の、最低限の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The minimum age for this job is eighteen.", ja: "この仕事の最低年齢は18歳だ。", context: "仕事" },
-      { en: "We need a minimum of ten people to start.", ja: "始めるには最低10人が必要だ。", context: "イベント" },
-      { en: "The store sets a minimum purchase for delivery.", ja: "その店は配達に最低購入額を設定している。", context: "買い物" },
-    ],
-    categories: ["business", "daily"],
   },
   {
     id: 20303,
@@ -2954,18 +2834,6 @@ export const words: RawWord[] = [
     categories: ["communication", "daily"],
   },
   {
-    id: 20373,
-    word: "objective",
-    meaning: "客観的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "A judge must remain objective during a trial.", ja: "裁判官は裁判中に客観的でなければならない。", context: "法律" },
-      { en: "The report provides an objective analysis.", ja: "その報告書は客観的な分析を提供している。", context: "ビジネス" },
-      { en: "Scientists should take an objective approach.", ja: "科学者は客観的なアプローチを取るべきだ。", context: "科学" },
-    ],
-    categories: ["communication", "science"],
-  },
-  {
     id: 20374,
     word: "obvious",
     meaning: "明白な",
@@ -3170,18 +3038,6 @@ export const words: RawWord[] = [
     categories: ["communication", "business"],
   },
   {
-    id: 20392,
-    word: "obligation",
-    meaning: "義務、責務",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Paying taxes is a legal obligation for citizens.", ja: "納税は市民の法的義務である。", context: "社会" },
-      { en: "The company has an obligation to protect data.", ja: "その会社にはデータを保護する義務がある。", context: "ビジネス" },
-      { en: "Parents have an obligation to educate their children.", ja: "親には子供を教育する義務がある。", context: "家庭" },
-    ],
-    categories: ["culture", "business"],
-  },
-  {
     id: 20393,
     word: "obstacle",
     meaning: "障害、妨げ",
@@ -3192,18 +3048,6 @@ export const words: RawWord[] = [
       { en: "Language can be an obstacle when traveling abroad.", ja: "言葉は海外旅行の際に障害になりうる。", context: "旅行" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 20394,
-    word: "occupation",
-    meaning: "職業、占領",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Please write your occupation on the form.", ja: "用紙に職業を記入してください。", context: "手続き" },
-      { en: "Teaching is a highly respected occupation.", ja: "教職は非常に尊敬される職業だ。", context: "社会" },
-      { en: "The military occupation lasted for several years.", ja: "軍事占領は数年間続いた。", context: "歴史" },
-    ],
-    categories: ["business", "culture"],
   },
   {
     id: 20395,
@@ -3878,18 +3722,6 @@ export const words: RawWord[] = [
     categories: ["communication", "event"],
   },
   {
-    id: 20460,
-    word: "participation",
-    meaning: "参加",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Active participation in class improves your grades.", ja: "授業への積極的な参加は成績を向上させる。", context: "学校" },
-      { en: "Community participation is key to local development.", ja: "地域への参加は地元の発展の鍵だ。", context: "社会" },
-      { en: "The company encourages employee participation in events.", ja: "その会社はイベントへの社員参加を奨励している。", context: "ビジネス" },
-    ],
-    categories: ["communication", "school"],
-  },
-  {
     id: 20461,
     word: "participle",
     meaning: "分詞",
@@ -4320,18 +4152,6 @@ export const words: RawWord[] = [
       { en: "All personnel must attend the safety training session.", ja: "全職員が安全研修に出席しなければならない。", context: "仕事" },
     ],
     categories: ["business", "daily"],
-  },
-  {
-    id: 20498,
-    word: "perspective",
-    meaning: "視点、見方",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Traveling abroad gave her a new perspective on life.", ja: "海外旅行が彼女に人生への新しい視点を与えた。", context: "旅行" },
-      { en: "The article presents the issue from multiple perspectives.", ja: "その記事は問題を複数の視点から提示している。", context: "メディア" },
-      { en: "Try to see things from the customer's perspective.", ja: "顧客の視点から物事を見るようにしよう。", context: "ビジネス" },
-    ],
-    categories: ["communication", "culture"],
   },
   {
     id: 20499,
@@ -4898,18 +4718,6 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 20550,
-    word: "preliminary",
-    meaning: "予備の、準備段階の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The preliminary results of the study look very promising.", ja: "その研究の予備的な結果は非常に有望に見える。", context: "学術" },
-      { en: "A preliminary meeting was held before the main conference.", ja: "本会議の前に予備会議が開かれた。", context: "ビジネス" },
-      { en: "Athletes must pass preliminary rounds to reach the finals.", ja: "選手たちは決勝に進むために予選を通過しなければならない。", context: "スポーツ" },
-    ],
-    categories: ["business", "science"],
-  },
-  {
     id: 20551,
     word: "prestigious",
     meaning: "名声のある",
@@ -5076,18 +4884,6 @@ export const words: RawWord[] = [
       { en: "Selling handmade crafts can be quite profitable.", ja: "手作りの工芸品の販売はかなり利益が出る。", context: "趣味" },
     ],
     categories: ["business", "finance"],
-  },
-  {
-    id: 20566,
-    word: "prominent",
-    meaning: "著名な、目立つ",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "She became a prominent figure in modern art.", ja: "彼女は現代美術の著名な人物になった。", context: "芸術" },
-      { en: "The building has a prominent location downtown.", ja: "その建物は中心街の目立つ場所にある。", context: "都市" },
-      { en: "A prominent scientist gave a lecture at our school.", ja: "著名な科学者が私たちの学校で講演をした。", context: "学校" },
-    ],
-    categories: ["culture", "communication"],
   },
   {
     id: 20567,
@@ -5366,18 +5162,6 @@ export const words: RawWord[] = [
     categories: ["technology", "school"],
   },
   {
-    id: 20597,
-    word: "projection",
-    meaning: "予測、投影",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Sales projections for next year look very promising.", ja: "来年の売上予測はとても有望に見える。", context: "ビジネス" },
-      { en: "The map uses a special projection for accuracy.", ja: "その地図は精度のために特殊な投影法を使っている。", context: "地理" },
-      { en: "Population projections show growth in urban areas.", ja: "人口予測は都市部の成長を示している。", context: "社会" },
-    ],
-    categories: ["business", "science"],
-  },
-  {
     id: 20598,
     word: "prominence",
     meaning: "卓越、著名さ",
@@ -5508,18 +5292,6 @@ export const words: RawWord[] = [
       { en: "Tourists can explore the area by public transport.", ja: "観光客は公共交通機関でその地域を探索できる。", context: "旅行" },
     ],
     categories: ["daily", "travel"],
-  },
-  {
-    id: 20611,
-    word: "publication",
-    meaning: "出版、出版物",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The publication of her novel was a huge success.", ja: "彼女の小説の出版は大成功だった。", context: "文学" },
-      { en: "Scientific publications must go through peer review.", ja: "科学出版物は査読を経なければならない。", context: "学術" },
-      { en: "The magazine is a weekly publication on technology.", ja: "その雑誌は技術に関する週刊出版物だ。", context: "メディア" },
-    ],
-    categories: ["culture", "communication"],
   },
   {
     id: 20612,
@@ -5990,18 +5762,6 @@ export const words: RawWord[] = [
     categories: ["business", "daily"],
   },
   {
-    id: 20656,
-    word: "recession",
-    meaning: "景気後退、不況",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The country faced a severe recession last year.", ja: "その国は昨年深刻な景気後退に直面した。", context: "経済" },
-      { en: "Many businesses closed during the economic recession.", ja: "経済不況の間に多くの企業が閉鎖した。", context: "ビジネス" },
-      { en: "Recovery from the recession took several years.", ja: "不況からの回復には数年かかった。", context: "ニュース" },
-    ],
-    categories: ["business", "finance"],
-  },
-  {
     id: 20657,
     word: "recognition",
     meaning: "認識、承認",
@@ -6024,18 +5784,6 @@ export const words: RawWord[] = [
       { en: "The memoir is based on personal recollections.", ja: "その回顧録は個人的な回想に基づいている。", context: "文学" },
     ],
     categories: ["communication", "daily"],
-  },
-  {
-    id: 20659,
-    word: "recommendation",
-    meaning: "推薦、勧告",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The doctor gave a strong recommendation for rest.", ja: "医師は休息を強く勧告した。", context: "健康" },
-      { en: "A letter of recommendation helped her get the job.", ja: "推薦状が彼女の就職に役立った。", context: "仕事" },
-      { en: "Based on your recommendation, we tried the cafe.", ja: "あなたの薦めに基づいて、私たちはそのカフェを試した。", context: "日常" },
-    ],
-    categories: ["communication", "business"],
   },
   {
     id: 20660,
@@ -6218,18 +5966,6 @@ export const words: RawWord[] = [
     categories: ["emotion", "travel"],
   },
   {
-    id: 20677,
-    word: "relevant",
-    meaning: "関連のある",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Please include only relevant information in the report.", ja: "報告書には関連のある情報だけを含めてください。", context: "ビジネス" },
-      { en: "The lecture covered topics relevant to modern society.", ja: "その講義は現代社会に関連のあるトピックを扱った。", context: "学校" },
-      { en: "Past experience may not be relevant to this task.", ja: "過去の経験はこの仕事に関連がないかもしれない。", context: "仕事" },
-    ],
-    categories: ["communication", "business"],
-  },
-  {
     id: 20678,
     word: "reliable",
     meaning: "頼りになる",
@@ -6240,18 +5976,6 @@ export const words: RawWord[] = [
       { en: "The weather forecast was not reliable this week.", ja: "今週の天気予報は信頼できなかった。", context: "天気" },
     ],
     categories: ["communication", "daily"],
-  },
-  {
-    id: 20679,
-    word: "reluctant",
-    meaning: "気が進まない",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "He was reluctant to accept the new position.", ja: "彼は新しい役職を受け入れるのに気が進まなかった。", context: "仕事" },
-      { en: "The child was reluctant to go to the dentist.", ja: "その子は歯医者に行くのを嫌がった。", context: "日常" },
-      { en: "Many companies are reluctant to change old systems.", ja: "多くの企業は古いシステムを変えたがらない。", context: "ビジネス" },
-    ],
-    categories: ["emotion", "business"],
   },
   {
     id: 20680,
@@ -6528,18 +6252,6 @@ export const words: RawWord[] = [
       { en: "Early registration guarantees a discounted conference fee.", ja: "早期登録で割引された会議費が保証される。", context: "ビジネス" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 20708,
-    word: "regulation",
-    meaning: "規則、規制",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "New environmental regulations were introduced last month.", ja: "先月新しい環境規制が導入された。", context: "環境" },
-      { en: "The company follows strict safety regulations at work.", ja: "その会社は職場で厳しい安全規則に従っている。", context: "ビジネス" },
-      { en: "Traffic regulations differ from country to country.", ja: "交通規則は国によって異なる。", context: "交通" },
-    ],
-    categories: ["culture", "business"],
   },
   {
     id: 20709,
@@ -7022,18 +6734,6 @@ export const words: RawWord[] = [
     categories: ["communication", "science"],
   },
   {
-    id: 20753,
-    word: "resolution",
-    meaning: "決意、解決",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She made a resolution to exercise every morning.", ja: "彼女は毎朝運動する決意をした。", context: "健康" },
-      { en: "The conflict reached a peaceful resolution at last.", ja: "紛争はついに平和的な解決に至った。", context: "政治" },
-      { en: "New Year resolutions are hard to keep sometimes.", ja: "新年の決意は時に守るのが難しい。", context: "日常" },
-    ],
-    categories: ["communication", "daily"],
-  },
-  {
     id: 20754,
     word: "resort",
     meaning: "リゾート、手段",
@@ -7080,18 +6780,6 @@ export const words: RawWord[] = [
       { en: "Age restrictions apply to this movie screening.", ja: "この映画の上映には年齢制限が適用される。", context: "娯楽" },
     ],
     categories: ["daily", "communication"],
-  },
-  {
-    id: 20758,
-    word: "retail",
-    meaning: "小売り",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The retail industry has changed due to online shopping.", ja: "小売り業界はオンラインショッピングにより変化した。", context: "ビジネス" },
-      { en: "She started her career working in retail.", ja: "彼女は小売りで働くことからキャリアを始めた。", context: "仕事" },
-      { en: "Retail prices have gone up across the country.", ja: "小売り価格は全国的に上昇した。", context: "経済" },
-    ],
-    categories: ["business", "daily"],
   },
   {
     id: 20759,
@@ -7164,18 +6852,6 @@ export const words: RawWord[] = [
       { en: "That cooking class was a real revelation to me.", ja: "その料理教室は私にとって本当に目から鱗だった。", context: "日常" },
     ],
     categories: ["communication", "daily"],
-  },
-  {
-    id: 20766,
-    word: "revision",
-    meaning: "改訂",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The document is now in its third revision.", ja: "その文書は現在3回目の改訂版だ。", context: "ビジネス" },
-      { en: "Final revisions to the paper are due on Friday.", ja: "論文の最終改訂は金曜日が締め切りだ。", context: "学校" },
-      { en: "The law underwent a major revision last year.", ja: "その法律は昨年大幅な改訂を受けた。", context: "政治" },
-    ],
-    categories: ["communication", "school"],
   },
   {
     id: 20767,
@@ -7718,18 +7394,6 @@ export const words: RawWord[] = [
     categories: ["travel", "daily"],
   },
   {
-    id: 20816,
-    word: "scope",
-    meaning: "範囲",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The scope of the research covers three main areas.", ja: "その研究の範囲は3つの主要な分野をカバーする。", context: "学術" },
-      { en: "This problem is beyond the scope of our discussion.", ja: "この問題は私たちの議論の範囲を超えている。", context: "ビジネス" },
-      { en: "The project expanded in scope as new needs arose.", ja: "新しいニーズが生じるにつれプロジェクトの範囲が拡大した。", context: "仕事" },
-    ],
-    categories: ["communication", "science"],
-  },
-  {
     id: 20817,
     word: "scratch",
     meaning: "ひっかき傷",
@@ -7834,18 +7498,6 @@ export const words: RawWord[] = [
       { en: "The secretary arranged all the meetings for the week.", ja: "その秘書は週の全ての会議を手配した。", context: "ビジネス" },
       { en: "Please contact the school secretary for more details.", ja: "詳しくは学校の事務員に連絡してください。", context: "学校" },
       { en: "The secretary took notes during the board meeting.", ja: "秘書は取締役会の間メモを取った。", context: "仕事" },
-    ],
-    categories: ["business", "communication"],
-  },
-  {
-    id: 20826,
-    word: "sector",
-    meaning: "部門、分野",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The technology sector has grown rapidly in recent years.", ja: "技術部門は近年急速に成長した。", context: "経済" },
-      { en: "Many workers in the public sector received pay raises.", ja: "公共部門の多くの労働者が昇給を受けた。", context: "仕事" },
-      { en: "The health sector faces major challenges this decade.", ja: "保健分野は今後10年間で大きな課題に直面している。", context: "社会" },
     ],
     categories: ["business", "communication"],
   },
@@ -8162,18 +7814,6 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 20855,
-    word: "sequence",
-    meaning: "順序、連続",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Put the pictures in the correct sequence of events.", ja: "出来事の正しい順序に写真を並べなさい。", context: "学校" },
-      { en: "The dance involves a complicated sequence of steps.", ja: "そのダンスは複雑な一連のステップを含む。", context: "芸術" },
-      { en: "Scientists analyzed the gene sequence in the lab.", ja: "科学者たちは研究室で遺伝子配列を分析した。", context: "科学" },
-    ],
-    categories: ["communication", "science"],
-  },
-  {
     id: 20856,
     word: "series",
     meaning: "一連、シリーズ",
@@ -8196,18 +7836,6 @@ export const words: RawWord[] = [
       { en: "A secure server protects customer data from attacks.", ja: "安全なサーバーは顧客データを攻撃から守る。", context: "ビジネス" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 20859,
-    word: "session",
-    meaning: "会期、授業",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The training session lasted for about two hours.", ja: "トレーニングの授業は約2時間続いた。", context: "スポーツ" },
-      { en: "A special session of parliament was called this week.", ja: "今週、議会の特別会期が召集された。", context: "政治" },
-      { en: "The yoga session begins every morning at seven.", ja: "ヨガの授業は毎朝7時に始まる。", context: "健康" },
-    ],
-    categories: ["school", "business"],
   },
   {
     id: 20860,
@@ -8278,18 +7906,6 @@ export const words: RawWord[] = [
       { en: "The mall was full of shoppers during the holiday sale.", ja: "モールはホリデーセール中買い物客でいっぱいだった。", context: "買い物" },
       { en: "Online shoppers can compare prices very easily now.", ja: "オンラインの買い物客は今とても簡単に価格を比較できる。", context: "テクノロジー" },
       { en: "Early shoppers got the best deals at the market.", ja: "早く来た買い物客が市場で最高の取引を得た。", context: "日常" },
-    ],
-    categories: ["daily", "business"],
-  },
-  {
-    id: 20867,
-    word: "shortage",
-    meaning: "品不足",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The city is facing a serious shortage of clean water.", ja: "その市は深刻なきれいな水の不足に直面している。", context: "環境" },
-      { en: "A staff shortage forced the store to reduce hours.", ja: "人手不足のため店は営業時間を短縮せざるを得なかった。", context: "ビジネス" },
-      { en: "The food shortage affected thousands of families.", ja: "食料不足は何千もの家庭に影響を与えた。", context: "社会" },
     ],
     categories: ["daily", "business"],
   },
@@ -9758,18 +9374,6 @@ export const words: RawWord[] = [
     categories: ["school", "science"],
   },
   {
-    id: 20994,
-    word: "institution",
-    meaning: "機関、制度",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Universities are important educational institutions.", ja: "大学は重要な教育機関です。", context: "学校" },
-      { en: "The institution has served the community for decades.", ja: "その機関は何十年も地域に貢献してきました。", context: "社会" },
-      { en: "Marriage is a traditional institution in many cultures.", ja: "結婚は多くの文化における伝統的な制度です。", context: "文化" },
-    ],
-    categories: ["culture", "school"],
-  },
-  {
     id: 20995,
     word: "instructor",
     meaning: "指導者",
@@ -9984,18 +9588,6 @@ export const words: RawWord[] = [
       { en: "There was an intense debate in the parliament.", ja: "議会で激しい議論がありました。", context: "政治" },
     ],
     categories: ["emotion", "daily"],
-  },
-  {
-    id: 21013,
-    word: "intensive",
-    meaning: "集中的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The hospital has an intensive care unit on the third floor.", ja: "その病院には3階に集中治療室があります。", context: "医療" },
-      { en: "She took an intensive English course over the summer.", ja: "彼女は夏の間に集中英語コースを受講しました。", context: "学校" },
-      { en: "Intensive farming can harm the environment.", ja: "集約的な農業は環境を害する可能性があります。", context: "環境" },
-    ],
-    categories: ["school", "health"],
   },
   {
     id: 21014,
@@ -10418,18 +10010,6 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 21049,
-    word: "headquarters",
-    meaning: "本部",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The company's headquarters is located in Tokyo.", ja: "その会社の本部は東京にある。", context: "仕事" },
-      { en: "The police set up a temporary headquarters nearby.", ja: "警察は近くに臨時の本部を設置した。", context: "社会" },
-      { en: "She visited the headquarters for a job interview.", ja: "彼女は就職面接のために本部を訪れた。", context: "仕事" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 21050,
     word: "memorandum",
     meaning: "覚書",
@@ -10438,18 +10018,6 @@ export const words: RawWord[] = [
       { en: "The two firms exchanged a memorandum of understanding.", ja: "2社は覚書を交換した。", context: "ビジネス" },
       { en: "She drafted a memorandum for the board meeting.", ja: "彼女は取締役会のための覚書を作成した。", context: "ビジネス" },
       { en: "The memorandum outlined key terms of cooperation.", ja: "その覚書は協力の主要条件を概説した。", context: "ビジネス" },
-    ],
-    categories: ["academic"],
-  },
-  {
-    id: 21051,
-    word: "comply",
-    meaning: "準拠する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "All staff must comply with safety regulations.", ja: "全職員は安全規則に従わなければならない。", context: "ビジネス" },
-      { en: "The company complied with the court order.", ja: "その会社は裁判所の命令に従った。", context: "ビジネス" },
-      { en: "Residents were asked to comply with the rules.", ja: "住民は規則に従うよう求められた。", context: "日常" },
     ],
     categories: ["academic"],
   },
@@ -12840,18 +12408,6 @@ export const words: RawWord[] = [
       { en: "Abuse of power should never be tolerated.", ja: "権力の乱用は決して許されるべきではない。", context: "政治" },
     ],
     categories: ["daily", "communication"],
-  },
-  {
-    id: 95006,
-    word: "acquisition",
-    meaning: "取得",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Language acquisition begins at a very early age.", ja: "言語の習得はとても幼い時期に始まる。", context: "教育" },
-      { en: "The company announced the acquisition of a rival firm.", ja: "会社はライバル企業の買収を発表した。", context: "ビジネス" },
-      { en: "The museum celebrated its latest art acquisition.", ja: "博物館は最新の美術作品の取得を祝った。", context: "文化" },
-    ],
-    categories: ["business", "school"],
   },
   {
     id: 95007,

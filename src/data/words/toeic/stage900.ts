@@ -650,18 +650,6 @@ export const words: RawWord[] = [
     categories: ["business", "daily"],
   },
   {
-    id: 21298,
-    word: "supervisor",
-    meaning: "上司、監督者",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Her supervisor praised her excellent quarterly performance.", ja: "彼女の上司は四半期の優れた実績を称えた。", context: "ビジネス" },
-      { en: "The factory supervisor checks product quality every hour.", ja: "工場の監督者は毎時製品品質を確認する。", context: "製造" },
-      { en: "Employees should report safety issues to their supervisor.", ja: "従業員は安全上の問題を上司に報告すべきだ。", context: "仕事" },
-    ],
-    categories: ["business"],
-  },
-  {
     id: 21299,
     word: "supplier",
     meaning: "供給者、納入業者",
@@ -720,18 +708,6 @@ export const words: RawWord[] = [
       { en: "Strategic planning is essential for long-term success.", ja: "戦略的計画は長期的成功に不可欠だ。", context: "ビジネス" },
     ],
     categories: ["business"],
-  },
-  {
-    id: 21304,
-    word: "substantial",
-    meaning: "かなりの、実質的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The project requires a substantial amount of funding.", ja: "そのプロジェクトにはかなりの資金が必要だ。", context: "ビジネス" },
-      { en: "She made substantial progress in her piano practice.", ja: "彼女はピアノの練習でかなりの進歩を遂げた。", context: "趣味" },
-      { en: "The evidence was substantial enough to prove the case.", ja: "その証拠は事件を証明するのに十分だった。", context: "法律" },
-    ],
-    categories: ["business", "daily"],
   },
   {
     id: 21306,
@@ -1034,18 +1010,6 @@ export const words: RawWord[] = [
     categories: ["daily", "business"],
   },
   {
-    id: 21333,
-    word: "terminal",
-    meaning: "ターミナル、末期の",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "We arrived at the airport terminal early.", ja: "私たちは早めに空港ターミナルに到着した。", context: "旅行" },
-      { en: "The bus terminal is near the train station.", ja: "バスターミナルは駅の近くにある。", context: "交通" },
-      { en: "Passengers waited at the ferry terminal.", ja: "乗客はフェリーターミナルで待っていた。", context: "旅行" },
-    ],
-    categories: ["travel"],
-  },
-  {
     id: 21334,
     word: "testimony",
     meaning: "証言",
@@ -1248,18 +1212,6 @@ export const words: RawWord[] = [
       { en: "We live in an era of rapid technological change.", ja: "私たちは急速な技術変化の時代に生きている。", context: "社会" },
     ],
     categories: ["technology"],
-  },
-  {
-    id: 21353,
-    word: "temporary",
-    meaning: "一時的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The road closure is only temporary.", ja: "道路の閉鎖は一時的なものにすぎない。", context: "日常" },
-      { en: "She found a temporary job at the bookstore.", ja: "彼女は書店で一時的な仕事を見つけた。", context: "仕事" },
-      { en: "The pain is temporary and will pass soon.", ja: "痛みは一時的ですぐに治まる。", context: "健康" },
-    ],
-    categories: ["daily", "business"],
   },
   {
     id: 21354,
@@ -1488,18 +1440,6 @@ export const words: RawWord[] = [
       { en: "The transistor was invented in the late nineteen-forties.", ja: "トランジスタは1940年代後半に発明された。", context: "歴史" },
     ],
     categories: ["technology", "science"],
-  },
-  {
-    id: 21374,
-    word: "transition",
-    meaning: "移行",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The transition to renewable energy takes time.", ja: "再生可能エネルギーへの移行には時間がかかる。", context: "環境" },
-      { en: "The company managed a smooth leadership transition.", ja: "会社は円滑な指導者の交代を実現した。", context: "ビジネス" },
-      { en: "Adolescence is a difficult period of transition.", ja: "思春期は困難な移行期だ。", context: "教育" },
-    ],
-    categories: ["society", "business"],
   },
   {
     id: 21375,
@@ -1894,18 +1834,6 @@ export const words: RawWord[] = [
       { en: "The witness gave a truthful account of the event.", ja: "証人はその出来事の正直な説明をした。", context: "法律" },
       { en: "Children should learn to be truthful from childhood.", ja: "子どもたちは幼少期から正直であることを学ぶべきだ。", context: "教育" },
       { en: "A truthful leader earns the deep respect of others.", ja: "正直なリーダーは他者の深い尊敬を得る。", context: "社会" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 21413,
-    word: "ultimate",
-    meaning: "究極の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Winning the gold medal was her ultimate lifelong dream.", ja: "金メダルを獲得することが彼女の究極の夢だった。", context: "スポーツ" },
-      { en: "The ultimate goal of the project is world peace.", ja: "プロジェクトの究極の目標は世界平和だ。", context: "社会" },
-      { en: "This device offers the ultimate in comfort and style.", ja: "この機器は快適さとスタイルの究極を提供する。", context: "技術" },
     ],
     categories: ["communication"],
   },
@@ -3062,18 +2990,6 @@ export const words: RawWord[] = [
     categories: ["culture", "communication"],
   },
   {
-    id: 21517,
-    word: "petition",
-    meaning: "請願",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Thousands of residents signed the online petition.", ja: "何千もの住民がオンライン請願に署名した。", context: "政治" },
-      { en: "The petition demanded stricter pollution controls immediately.", ja: "その請願は直ちにより厳しい汚染規制を要求した。", context: "環境" },
-      { en: "Students submitted a petition to the principal.", ja: "生徒たちは校長に請願書を提出した。", context: "学校" },
-    ],
-    categories: ["communication", "culture"],
-  },
-  {
     id: 21518,
     word: "pioneer",
     meaning: "先駆者",
@@ -3192,18 +3108,6 @@ export const words: RawWord[] = [
       { en: "Gender quotas ensure equal representation in parliament.", ja: "ジェンダー割当は議会における平等な代表を保証する。", context: "政治" },
     ],
     categories: ["business", "finance"],
-  },
-  {
-    id: 21528,
-    word: "transaction",
-    meaning: "取引",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Online transactions require secure payment methods always.", ja: "オンライン取引には常に安全な支払い方法が必要だ。", context: "技術" },
-      { en: "The bank records every financial transaction automatically.", ja: "銀行はすべての金融取引を自動的に記録する。", context: "金融" },
-      { en: "Both parties must agree before completing the transaction.", ja: "取引を完了する前に双方が合意しなければならない。", context: "ビジネス" },
-    ],
-    categories: ["finance", "business"],
   },
   {
     id: 21529,
@@ -5438,18 +5342,6 @@ export const words: RawWord[] = [
     categories: ["academic", "technology"],
   },
   {
-    id: 21718,
-    word: "explicit",
-    meaning: "明示的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The contract contains explicit terms and conditions.", ja: "その契約には明確な条件が記載されている。", context: "ビジネス" },
-      { en: "The teacher gave explicit instructions for the task.", ja: "教師はその課題について明確な指示を出した。", context: "教育" },
-      { en: "Explicit consent is required before data collection.", ja: "データ収集の前に明示的な同意が必要だ。", context: "IT" },
-    ],
-    categories: ["academic", "business"],
-  },
-  {
     id: 21719,
     word: "feasible",
     meaning: "実行可能な",
@@ -5496,18 +5388,6 @@ export const words: RawWord[] = [
       { en: "The training session is obligatory for new staff.", ja: "その研修は新入社員にとって必須だ。", context: "ビジネス" },
     ],
     categories: ["academic", "business"],
-  },
-  {
-    id: 21723,
-    word: "prospective",
-    meaning: "見込みの",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Prospective buyers toured the property last week.", ja: "見込み客が先週その物件を見学した。", context: "ビジネス" },
-      { en: "The university holds events for prospective students.", ja: "大学は入学希望者向けのイベントを開催する。", context: "教育" },
-      { en: "Prospective employees must complete an online application.", ja: "応募予定者はオンラインで申請を完了する必要がある。", context: "ビジネス" },
-    ],
-    categories: ["business", "academic"],
   },
   {
     id: 21724,
@@ -6070,18 +5950,6 @@ export const words: RawWord[] = [
       { en: "The error was due to a simple oversight.", ja: "そのミスは単純な見落としが原因だった。", context: "ビジネス" },
       { en: "Regulatory oversight prevents financial misconduct.", ja: "規制の監視が金融不正を防いでいる。", context: "経済" },
       { en: "The oversight caused a delay in production.", ja: "その見落としが生産の遅延を引き起こした。", context: "製造" },
-    ],
-    categories: ["business"],
-  },
-  {
-    id: 21771,
-    word: "authorize",
-    meaning: "認可する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The board authorized the construction of a new facility.", ja: "取締役会は新施設の建設を認可した。", context: "ビジネス" },
-      { en: "Only the director can authorize access to classified data.", ja: "機密データへのアクセスを認可できるのは所長のみだ。", context: "セキュリティ" },
-      { en: "The government authorized emergency relief spending last week.", ja: "政府は先週緊急救援費の支出を認可した。", context: "政治" },
     ],
     categories: ["business"],
   },
@@ -6818,18 +6686,6 @@ export const words: RawWord[] = [
     categories: ["technology"],
   },
   {
-    id: 21834,
-    word: "methodology",
-    meaning: "方法論",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Her methodology enabled researchers to obtain reliable results.", ja: "彼女の方法論により研究者たちは信頼できる結果を得られました。", context: "研究" },
-      { en: "Had the methodology been flawed, the findings would collapse.", ja: "方法論に欠陥があったなら、その知見は崩壊していたでしょう。", context: "学術" },
-      { en: "The committee scrutinized every aspect of their methodology.", ja: "委員会は彼らの方法論のあらゆる側面を精査しました。", context: "審査" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 21835,
     word: "empirical",
     meaning: "経験的な",
@@ -6998,18 +6854,6 @@ export const words: RawWord[] = [
     categories: ["technology"],
   },
   {
-    id: 21849,
-    word: "variable",
-    meaning: "変数",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Controlling every variable in social experiments proves extremely difficult.", ja: "社会実験で全ての変数を制御することは極めて困難です。", context: "研究" },
-      { en: "The dependent variable responded predictably to environmental changes.", ja: "従属変数は環境の変化に対し予測通りに反応しました。", context: "科学" },
-      { en: "Had they isolated the variable earlier, results would differ.", ja: "変数をもっと早く分離していれば、結果は違っていたでしょう。", context: "学術" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 21850,
     word: "parameter",
     meaning: "媒介変数",
@@ -7020,18 +6864,6 @@ export const words: RawWord[] = [
       { en: "Altering one parameter inevitably affects the entire model.", ja: "一つの媒介変数を変えると必然的にモデル全体に影響します。", context: "研究" },
     ],
     categories: ["technology"],
-  },
-  {
-    id: 21851,
-    word: "framework",
-    meaning: "枠組み",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The regulatory framework shapes how corporations conduct business operations.", ja: "規制の枠組みが企業の事業運営方法を形作っています。", context: "ビジネス" },
-      { en: "Without a coherent framework, the research lacks direction.", ja: "一貫した枠組みがなければ、その研究は方向性を欠きます。", context: "学術" },
-      { en: "A new legal framework was established to protect consumers.", ja: "消費者を保護するための新しい法的枠組みが確立されました。", context: "法律" },
-    ],
-    categories: ["business", "technology"],
   },
   {
     id: 21852,
@@ -7466,18 +7298,6 @@ export const words: RawWord[] = [
     categories: ["finance"],
   },
   {
-    id: 21888,
-    word: "tariff",
-    meaning: "関税",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The government imposed a steep tariff on imported steel products.", ja: "政府は輸入鉄鋼製品に高い関税を課しました。", context: "経済" },
-      { en: "Retaliatory tariffs escalated the trade dispute between both countries.", ja: "報復関税が両国間の貿易紛争を激化させました。", context: "外交" },
-      { en: "Reducing tariffs would benefit consumers through lower retail prices.", ja: "関税を引き下げれば小売価格の低下を通じて消費者に恩恵をもたらすでしょう。", context: "経済" },
-    ],
-    categories: ["finance"],
-  },
-  {
     id: 21889,
     word: "subsidy",
     meaning: "補助金",
@@ -7486,18 +7306,6 @@ export const words: RawWord[] = [
       { en: "Agricultural subsidies have distorted global food markets for decades.", ja: "農業補助金は数十年にわたり世界の食料市場を歪めてきました。", context: "経済" },
       { en: "The subsidy program enabled small farmers to purchase modern equipment.", ja: "その補助金プログラムは小規模農家が近代的な設備を購入することを可能にしました。", context: "農業" },
       { en: "Critics argue that subsidies perpetuate inefficiency in declining industries.", ja: "批評家たちは補助金が衰退産業の非効率を永続させると主張しています。", context: "ビジネス" },
-    ],
-    categories: ["finance"],
-  },
-  {
-    id: 21890,
-    word: "commodity",
-    meaning: "商品",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Oil remains the most strategically significant commodity worldwide.", ja: "石油は世界で最も戦略的に重要な商品であり続けています。", context: "経済" },
-      { en: "Commodity prices fluctuate in response to supply and demand shifts.", ja: "商品価格は需要と供給の変動に応じて変動します。", context: "金融" },
-      { en: "Water is increasingly treated as a scarce tradable commodity.", ja: "水はますます希少な取引可能な商品として扱われています。", context: "環境" },
     ],
     categories: ["finance"],
   },
@@ -8004,18 +7812,6 @@ export const words: RawWord[] = [
       { en: "Rural areas lack adequate fiber optic infrastructure.", ja: "地方には十分な光ファイバー設備がない。", context: "社会" },
     ],
     categories: ["technology"],
-  },
-  {
-    id: 21934,
-    word: "liability",
-    meaning: "法的責任",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The company denied any liability for the accident.", ja: "会社はその事故に対する一切の法的責任を否定した。", context: "法律" },
-      { en: "Product liability lawsuits can cost millions in damages.", ja: "製造物責任訴訟は数百万の損害賠償につながりうる。", context: "ビジネス" },
-      { en: "Limited liability protects shareholders from personal losses.", ja: "有限責任は株主を個人的な損失から守る。", context: "金融" },
-    ],
-    categories: ["society", "law", "business"],
   },
   {
     id: 21935,
@@ -9710,18 +9506,6 @@ export const words: RawWord[] = [
     categories: ["school", "technology"],
   },
   {
-    id: 22077,
-    word: "ratio",
-    meaning: "比率",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The ratio of students to teachers is twenty to one.", ja: "生徒と教師の比率は20対1だ。", context: "教育" },
-      { en: "Financial analysts closely monitor the debt-to-equity ratio.", ja: "金融アナリストは負債資本比率を注意深く監視する。", context: "金融" },
-      { en: "The ratio of wins to losses improved this season.", ja: "今シーズンは勝敗の比率が改善した。", context: "スポーツ" },
-    ],
-    categories: ["school", "business"],
-  },
-  {
     id: 22078,
     word: "prioritize",
     meaning: "優先する",
@@ -9828,18 +9612,6 @@ export const words: RawWord[] = [
       { en: "Both parties agreed to terminate the agreement.", ja: "両者はその合意を終了することに同意した。", context: "法律" },
     ],
     categories: ["business"],
-  },
-  {
-    id: 22087,
-    word: "verify",
-    meaning: "検証する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The auditor verified the accuracy of the report.", ja: "監査人はその報告書の正確さを検証した。", context: "会計" },
-      { en: "Please verify your email address to continue.", ja: "続けるにはメールアドレスを確認してください。", context: "技術" },
-      { en: "Scientists verified the hypothesis through experiments.", ja: "科学者は実験を通じてその仮説を検証した。", context: "研究" },
-    ],
-    categories: ["business", "technology"],
   },
   {
     id: 22088,
@@ -10462,18 +10234,6 @@ export const words: RawWord[] = [
       { en: "Corporate philanthropy has expanded significantly in recent years.", ja: "企業の慈善活動は近年大幅に拡大している。", context: "ビジネス" },
       { en: "Her philanthropy funded hospitals across the developing world.", ja: "彼女の慈善活動が途上国の病院に資金を提供した。", context: "福祉" },
       { en: "Strategic philanthropy aligns charitable giving with business goals.", ja: "戦略的慈善活動は寄付と経営目標を一致させる。", context: "ビジネス" },
-    ],
-    categories: ["society", "business"],
-  },
-  {
-    id: 22140,
-    word: "transparency",
-    meaning: "透明性",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Greater transparency in government builds public trust.", ja: "政府のより大きな透明性が国民の信頼を築く。", context: "政治" },
-      { en: "Financial transparency is demanded by shareholders and regulators.", ja: "財務の透明性は株主と規制当局に求められている。", context: "金融" },
-      { en: "The organization improved transparency through open data initiatives.", ja: "その組織はオープンデータの取り組みで透明性を向上させた。", context: "行政" },
     ],
     categories: ["society", "business"],
   },
@@ -11242,18 +11002,6 @@ export const words: RawWord[] = [
       { en: "The underlying cause of the issue was identified.", ja: "問題の根本的な原因が特定されました。", context: "分析" },
       { en: "Underlying market trends support our forecast.", ja: "根本的な市場トレンドが予測を裏付けます。", context: "市場" },
       { en: "We must address the underlying structural problems.", ja: "根本的な構造問題に対処する必要があります。", context: "経営" },
-    ],
-    categories: ["business"],
-  },
-  {
-    id: 95043,
-    word: "voluntary",
-    meaning: "自発的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Participation in the survey is voluntary.", ja: "アンケートへの参加は自発的です。", context: "人事" },
-      { en: "The company offered voluntary early retirement.", ja: "会社が自発的な早期退職を提供しました。", context: "人事" },
-      { en: "Voluntary compliance is preferred over enforcement.", ja: "強制より自発的な遵守が好まれます。", context: "規制" },
     ],
     categories: ["business"],
   },
