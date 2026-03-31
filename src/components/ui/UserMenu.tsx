@@ -304,7 +304,7 @@ export const UserMenu = () => {
               クレジット
             </Link>
             <a
-              href="https://accurate-latency-744.notion.site/334beb8c682480a198a6f347354105c8?pvs=105"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdHn3o6IzTzrbIV4-tQ4gbdpp6nCOQfOQnpkXTa0tIZU_a3Pg/viewform"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
