@@ -6437,11 +6437,11 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // year (10022)
   [10022, { coreImage: "12か月の時間単位を示す名詞がコアイメージ。", usage: "「this year」「next year」で高頻度。", synonymDifference: "year vs month: year は月より長い単位。", englishDefinition: "A period of twelve months.", etymology: "時間表現の基本単位語。" }],
   // zoo (10023)
-  [10023, { coreImage: "動物を展示・保護する施設を指す名詞がコアイメージ。", usage: "「go to the zoo」が定型。", synonymDifference: "zoo vs aquarium: aquarium は水族館。", englishDefinition: "A place where animals are kept for people to see.", etymology: "初級学習で扱う施設語彙。" }],
+  [10023, { pronunciation: { us: "/dɔːɡ/", uk: "/dɒɡ/" }, coreImage: "動物を展示・保護する施設を指す名詞がコアイメージ。", usage: "「go to the zoo」が定型。", synonymDifference: "zoo vs aquarium: aquarium は水族館。", englishDefinition: "A place where animals are kept for people to see.", etymology: "初級学習で扱う施設語彙。" }],
   // morning (10024)
   [10024, { coreImage: "一日の始まりの時間帯を示す名詞がコアイメージ。", usage: "「in the morning」「Good morning」で頻出。", synonymDifference: "morning vs dawn: dawn は夜明けの瞬間寄り。", englishDefinition: "The early part of the day.", etymology: "時間帯語彙の基礎語。" }],
   // night (10025)
-  [10025, { coreImage: "日没後の暗い時間帯を示す名詞がコアイメージ。", usage: "「at night」「Good night」が定型。", synonymDifference: "night vs evening: evening は夜の早い時間帯。", englishDefinition: "The time when it is dark outside.", etymology: "時間帯語彙の基礎語。" }],
+  [10025, { pronunciation: { us: "/ˈwɔːtər/", uk: "/ˈwɔːtə/" }, coreImage: "日没後の暗い時間帯を示す名詞がコアイメージ。", usage: "「at night」「Good night」が定型。", synonymDifference: "night vs evening: evening は夜の早い時間帯。", englishDefinition: "The time when it is dark outside.", etymology: "時間帯語彙の基礎語。" }],
   // mother (10026)
   [10026, { coreImage: "母親という家族関係を示す名詞がコアイメージ。", usage: "「my mother」「her mother」で使う。", synonymDifference: "mother vs mom: mom はより口語的。", englishDefinition: "A female parent.", etymology: "家族語彙の基本語。" }],
   // father (10027)
@@ -6479,7 +6479,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // bear (10043)
   [10043, { coreImage: "大型の哺乳類クマを指す名詞がコアイメージ。", usage: "動物名としての bear（名詞）をまず習得。", synonymDifference: "bear vs polar bear: 後者は種名。", englishDefinition: "A large, heavy wild animal with thick fur.", etymology: "基本動物語彙。" }],
   // elephant (10044)
-  [10044, { coreImage: "長い鼻を持つ大型動物を指す名詞がコアイメージ。", usage: "「an elephant」など不定冠詞に注意。", synonymDifference: "elephant vs mammal: mammal は分類語、elephant は種名。", englishDefinition: "A very large animal with a trunk.", etymology: "初級で扱う代表動物名。" }],
+  [10044, { pronunciation: { us: "/hɑːt/", uk: "/hɒt/" }, coreImage: "長い鼻を持つ大型動物を指す名詞がコアイメージ。", usage: "「an elephant」など不定冠詞に注意。", synonymDifference: "elephant vs mammal: mammal は分類語、elephant は種名。", englishDefinition: "A very large animal with a trunk.", etymology: "初級で扱う代表動物名。" }],
   // lion (10045)
   [10045, { coreImage: "ライオンという大型の肉食獣を指す名詞がコアイメージ。", usage: "「a lion」「the lion」を文脈で使い分ける。", synonymDifference: "lion vs tiger: 種が異なる。", englishDefinition: "A large wild cat, often called the king of beasts.", etymology: "動物語彙の基礎語。" }],
   // tiger (10046)
@@ -6489,7 +6489,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // egg (10048)
   [10048, { coreImage: "殻に包まれた卵という具体物がコアイメージ。", usage: "可算名詞で「an egg」「eggs」。", synonymDifference: "egg vs omelet: egg は素材、omelet は料理。", englishDefinition: "An oval object laid by birds, often eaten as food.", etymology: "食語彙の基礎名詞。" }],
   // milk (10049)
-  [10049, { coreImage: "白い液体の飲料としての牛乳がコアイメージ。", usage: "通常不可算名詞で「some milk」。", synonymDifference: "milk vs dairy: dairy は乳製品全体。", englishDefinition: "A white liquid from animals, used as a drink.", etymology: "日常食語彙の基礎語。" }],
+  [10049, { pronunciation: { us: "/ˈɔːfən/", uk: "/ˈɒfən/" }, coreImage: "白い液体の飲料としての牛乳がコアイメージ。", usage: "通常不可算名詞で「some milk」。", synonymDifference: "milk vs dairy: dairy は乳製品全体。", englishDefinition: "A white liquid from animals, used as a drink.", etymology: "日常食語彙の基礎語。" }],
   // bread (10050)
   [10050, { coreImage: "小麦などで作る主食パンを指す名詞がコアイメージ。", usage: "不可算扱いが基本で「some bread」。", synonymDifference: "bread vs loaf: loaf はパン1斤の単位。", englishDefinition: "Food made from flour, water, and yeast, baked.", etymology: "基本食語彙の中心語。" }],
   // rice (10051)
@@ -6573,9 +6573,9 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // autumn (10090)
   [10090, { coreImage: "夏と冬の間の季節としての秋がコアイメージ。", usage: "米語では fall も同義で頻出。", synonymDifference: "autumn vs fall: 意味同じで地域・文体差。", englishDefinition: "The season between summer and winter.", etymology: "季節語彙の基礎語。" }],
   // winter (10091)
-  [10091, { coreImage: "寒い時期の季節としての冬がコアイメージ。", usage: "「in winter」「winter break」で使う。", synonymDifference: "winter vs cold weather: winter は季節、cold weather は天候状態。", englishDefinition: "The coldest season of the year.", etymology: "季節語彙の基礎語。" }],
+  [10091, { pronunciation: { us: "/klæs/", uk: "/klɑːs/" }, coreImage: "寒い時期の季節としての冬がコアイメージ。", usage: "「in winter」「winter break」で使う。", synonymDifference: "winter vs cold weather: winter は季節、cold weather は天候状態。", englishDefinition: "The coldest season of the year.", etymology: "季節語彙の基礎語。" }],
   // season (10092)
-  [10092, { coreImage: "一年を区切る季節区分の概念がコアイメージ。", usage: "four seasons で4季を表す。", synonymDifference: "season vs weather: season は時期区分、weather は日々の天候。", englishDefinition: "One of the four parts of the year.", etymology: "時間区分語彙の基礎語。" }],
+  [10092, { pronunciation: { us: "/klɑːk/", uk: "/klɒk/" }, coreImage: "一年を区切る季節区分の概念がコアイメージ。", usage: "four seasons で4季を表す。", synonymDifference: "season vs weather: season は時期区分、weather は日々の天候。", englishDefinition: "One of the four parts of the year.", etymology: "時間区分語彙の基礎語。" }],
   // garden (10093)
   [10093, { coreImage: "花や野菜を育てる庭空間がコアイメージ。", usage: "「in the garden」「garden flowers」で使う。", synonymDifference: "garden vs yard: yard は庭全般、garden は栽培要素が強い。", englishDefinition: "A piece of land where flowers or vegetables are grown.", etymology: "生活空間語彙の基礎語。" }],
   // lake (10094)
@@ -6617,7 +6617,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // chocolate (10112)
   [10112, { coreImage: "カカオ由来の甘い食品を指す名詞がコアイメージ。", usage: "不可算・可算の両用がある（some chocolate / a chocolate）。", synonymDifference: "chocolate vs candy: candy は甘い菓子全般。", englishDefinition: "A sweet food made from cacao.", etymology: "お菓子語彙の基礎語。" }],
   // cookie (10114)
-  [10114, { coreImage: "小型の焼き菓子クッキーを指す名詞がコアイメージ。", usage: "可算で「a cookie」「cookies」。", synonymDifference: "cookie vs biscuit: 地域差があり英米で語感が異なる。", englishDefinition: "A small sweet baked biscuit.", etymology: "食語彙の基礎語。" }],
+  [10114, { pronunciation: { us: "/dʒɑːb/", uk: "/dʒɒb/" }, coreImage: "小型の焼き菓子クッキーを指す名詞がコアイメージ。", usage: "可算で「a cookie」「cookies」。", synonymDifference: "cookie vs biscuit: 地域差があり英米で語感が異なる。", englishDefinition: "A small sweet baked biscuit.", etymology: "食語彙の基礎語。" }],
   // sandwich (10115)
   [10115, { coreImage: "パンで具をはさんだ料理がコアイメージ。", usage: "可算で「a sandwich」「sandwiches」。", synonymDifference: "sandwich vs burger: burger は挟む具が主にパティ。", englishDefinition: "Food made by putting filling between slices of bread.", etymology: "人名由来の料理名。" }],
   // pizza (10116)
@@ -6665,7 +6665,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // pencil (10137)
   [10137, { coreImage: "鉛筆芯で書く筆記具がコアイメージ。", usage: "可算で「a pencil」「colored pencils」。", synonymDifference: "pencil vs pen: pencil は消しやすく修正しやすい。", englishDefinition: "A writing tool with graphite inside.", etymology: "学用品語彙の基礎語。" }],
   // eraser (10138)
-  [10138, { coreImage: "鉛筆の筆跡を消す消しゴムがコアイメージ。", usage: "「an eraser」「rubber（英）」の地域差もある。", synonymDifference: "eraser vs correction pen: 前者は鉛筆、後者はインク修正向け。", englishDefinition: "An object used to remove pencil marks.", etymology: "erase + -er の語形成。" }],
+  [10138, { pronunciation: { us: "/fæst/", uk: "/fɑːst/" }, coreImage: "鉛筆の筆跡を消す消しゴムがコアイメージ。", usage: "「an eraser」「rubber（英）」の地域差もある。", synonymDifference: "eraser vs correction pen: 前者は鉛筆、後者はインク修正向け。", englishDefinition: "An object used to remove pencil marks.", etymology: "erase + -er の語形成。" }],
   // ruler (10139)
   [10139, { coreImage: "長さを測る・線を引く定規がコアイメージ。", usage: "可算で「a ruler」。", synonymDifference: "ruler vs scale: scale は目盛り概念全般にも使う。", englishDefinition: "A straight tool marked with units for measuring.", etymology: "学用品語彙の基礎語。" }],
   // desk (10140)
@@ -6837,7 +6837,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // towel (10223)
   [10223, { coreImage: "水分を拭き取るための布タオルがコアイメージ。", usage: "「bath towel」「paper towel」で使う。", synonymDifference: "towel vs tissue: towel は繰り返し使う布、tissue は薄紙。", englishDefinition: "A piece of cloth used for drying.", etymology: "生活語彙の基礎語。" }],
   // soap (10224)
-  [10224, { coreImage: "汚れを落とす石鹸を示す名詞がコアイメージ。", usage: "通常不可算で「some soap」。", synonymDifference: "soap vs shampoo: soap は洗浄剤一般、shampoo は髪用。", englishDefinition: "A substance used for washing.", etymology: "生活語彙の基礎語。" }],
+  [10224, { pronunciation: { us: "/ˈɔːfɪs/", uk: "/ˈɒfɪs/" }, coreImage: "汚れを落とす石鹸を示す名詞がコアイメージ。", usage: "通常不可算で「some soap」。", synonymDifference: "soap vs shampoo: soap は洗浄剤一般、shampoo は髪用。", englishDefinition: "A substance used for washing.", etymology: "生活語彙の基礎語。" }],
   // mirror (10225)
   [10225, { coreImage: "像を映す鏡面の道具がコアイメージ。", usage: "可算で「a mirror」「look in the mirror」。", synonymDifference: "mirror vs window: mirror は反射、window は透過。", englishDefinition: "A surface that reflects images.", etymology: "生活語彙の基礎語。" }],
   // present (10226)
@@ -7143,7 +7143,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // right (10376)
   [10376, { coreImage: "正しい、または右側を示す多義形容がコアイメージ。", usage: "文脈で正誤義か方向義かを判別。", synonymDifference: "right vs correct: correct は正確性に限定されやすい。", englishDefinition: "Correct; also on the right side.", etymology: "高頻度多義語。" }],
   // wrong (10377)
-  [10377, { coreImage: "正しくない誤り状態を示す形容がコアイメージ。", usage: "「You are wrong.」「wrong answer」で使う。", synonymDifference: "wrong vs mistaken: mistaken は人の思い違いに使うことが多い。", englishDefinition: "Not correct.", etymology: "正誤語彙の基礎語。" }],
+  [10377, { pronunciation: { us: "/bæθ/", uk: "/bɑːθ/" }, coreImage: "正しくない誤り状態を示す形容がコアイメージ。", usage: "「You are wrong.」「wrong answer」で使う。", synonymDifference: "wrong vs mistaken: mistaken は人の思い違いに使うことが多い。", englishDefinition: "Not correct.", etymology: "正誤語彙の基礎語。" }],
   // safe (10378)
   [10378, { coreImage: "危険が少なく安心できる状態がコアイメージ。", usage: "「safe place」「be safe」で使う。", synonymDifference: "safe vs secure: secure は防御面の強固さを強調。", englishDefinition: "Free from danger.", etymology: "安全語彙の基礎語。" }],
   // dangerous (10379)
@@ -7159,11 +7159,11 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // light (10385)
   [10385, { coreImage: "軽い、または明るいという多義状態がコアイメージ。", usage: "文脈で重量義か明暗義かを判別。", synonymDifference: "light vs bright: bright は明るさ強度、light は軽さ/明るさの広義。", englishDefinition: "Not heavy; also bright.", etymology: "多義形容詞の基礎語。" }],
   // rich (10386)
-  [10386, { coreImage: "お金や資源が豊かな状態がコアイメージ。", usage: "人・国・味（rich flavor）にも使える。", synonymDifference: "rich vs wealthy: wealthy の方が財産語感が明確なことが多い。", englishDefinition: "Having a lot of money or abundance.", etymology: "評価形容詞の基礎語。" }],
+  [10386, { pronunciation: { us: "/ˈbɑːtəl/", uk: "/ˈbɒtəl/" }, coreImage: "お金や資源が豊かな状態がコアイメージ。", usage: "人・国・味（rich flavor）にも使える。", synonymDifference: "rich vs wealthy: wealthy の方が財産語感が明確なことが多い。", englishDefinition: "Having a lot of money or abundance.", etymology: "評価形容詞の基礎語。" }],
   // poor (10387)
   [10387, { coreImage: "お金が少ない、または質が低い状態を示す語がコアイメージ。", usage: "経済状態と品質評価の両義がある。", synonymDifference: "poor vs bad: poor は不足感や低水準を示しやすい。", englishDefinition: "Having little money; also of low quality.", etymology: "評価形容詞の基礎多義語。" }],
   // wide (10388)
-  [10388, { coreImage: "横幅が広い状態を示す形容がコアイメージ。", usage: "「wide road」「open wide」で使う。", synonymDifference: "wide vs broad: broad も近いが語感差がある。", englishDefinition: "Having great width.", etymology: "空間形容詞の基礎語。" }],
+  [10388, { pronunciation: { us: "/æsk/", uk: "/ɑːsk/" }, coreImage: "横幅が広い状態を示す形容がコアイメージ。", usage: "「wide road」「open wide」で使う。", synonymDifference: "wide vs broad: broad も近いが語感差がある。", englishDefinition: "Having great width.", etymology: "空間形容詞の基礎語。" }],
   // narrow (10389)
   [10389, { coreImage: "幅が狭い状態を示す形容がコアイメージ。", usage: "「narrow street」「narrow gap」で使う。", synonymDifference: "narrow vs small: narrow は幅限定、小さいは全体サイズ。", englishDefinition: "Not wide.", etymology: "空間形容詞の基礎語。" }],
   // deep (10390)
@@ -7189,7 +7189,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // delicious (10400)
   [10400, { coreImage: "食べ物がとてもおいしいという高評価がコアイメージ。", usage: "「This is delicious.」が定型。", synonymDifference: "delicious vs tasty: delicious の方が賞賛度が高い。", englishDefinition: "Very pleasant to taste.", etymology: "味覚評価語彙の基礎語。" }],
   // fresh (10401)
-  [10401, { coreImage: "新鮮で古くない状態がコアイメージ。", usage: "食材・空気・情報などに使える。", synonymDifference: "fresh vs new: fresh は鮮度、new は新規性。", englishDefinition: "Recently made or picked; not old.", etymology: "状態形容詞の基礎語。" }],
+  [10401, { pronunciation: { us: "/dæns/", uk: "/dɑːns/" }, coreImage: "新鮮で古くない状態がコアイメージ。", usage: "食材・空気・情報などに使える。", synonymDifference: "fresh vs new: fresh は鮮度、new は新規性。", englishDefinition: "Recently made or picked; not old.", etymology: "状態形容詞の基礎語。" }],
   // full (10402)
   [10402, { coreImage: "中身がいっぱい、または満腹の状態がコアイメージ。", usage: "容器・時間・お腹など多義で使う。", synonymDifference: "full vs complete: full は充満、complete は完成。", englishDefinition: "Containing as much as possible; not hungry after eating.", etymology: "状態形容詞の基礎語。" }],
   // empty (10403)
@@ -7227,7 +7227,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // sometimes (10419)
   [10419, { coreImage: "時々起こる中程度頻度を示す副詞がコアイメージ。", usage: "習慣の例外や不定期行動に使う。", synonymDifference: "sometimes vs often: sometimes の方が頻度が低い。", englishDefinition: "At times; occasionally.", etymology: "頻度副詞の基礎語。" }],
   // never (10420)
-  [10420, { coreImage: "一度も起こらない0%頻度を示す副詞がコアイメージ。", usage: "否定語として文中の not と併用しない。", synonymDifference: "never vs not often: never は0回、not often は低頻度。", englishDefinition: "Not at any time.", etymology: "否定頻度副詞の基礎語。" }],
+  [10420, { pronunciation: { us: "/læf/", uk: "/lɑːf/" }, coreImage: "一度も起こらない0%頻度を示す副詞がコアイメージ。", usage: "否定語として文中の not と併用しない。", synonymDifference: "never vs not often: never は0回、not often は低頻度。", englishDefinition: "Not at any time.", etymology: "否定頻度副詞の基礎語。" }],
   // again (10421)
   [10421, { coreImage: "もう一度の反復を示す副詞がコアイメージ。", usage: "「try again」「see you again」で使う。", synonymDifference: "again vs once more: 意味は近く once more はやや丁寧。", englishDefinition: "One more time.", etymology: "反復副詞の基礎語。" }],
   // already (10422)
@@ -7247,7 +7247,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // inside (10429)
   [10429, { coreImage: "建物や領域の内側を示す副詞がコアイメージ。", usage: "副詞・前置詞・名詞で使える。", synonymDifference: "inside vs in: inside は内側位置をより明示。", englishDefinition: "On or to the inside.", etymology: "位置副詞の基礎語。" }],
   // here (10430)
-  [10430, { coreImage: "話し手の近くの場所を指す副詞がコアイメージ。", usage: "「come here」「here is ...」で高頻度。", synonymDifference: "here vs there: here は近い場所、there は離れた場所。", englishDefinition: "In or at this place.", etymology: "指示副詞の基礎語。" }],
+  [10430, { pronunciation: { us: "/pæs/", uk: "/pɑːs/" }, coreImage: "話し手の近くの場所を指す副詞がコアイメージ。", usage: "「come here」「here is ...」で高頻度。", synonymDifference: "here vs there: here は近い場所、there は離れた場所。", englishDefinition: "In or at this place.", etymology: "指示副詞の基礎語。" }],
   // there (10431)
   [10431, { coreImage: "話し手から離れた場所を指す副詞がコアイメージ。", usage: "「go there」「there is ...」で使う。", synonymDifference: "there vs here: there は遠い場所、here は近い場所。", englishDefinition: "In or at that place.", etymology: "指示副詞の基礎語。" }],
   // everywhere (10432)
@@ -7285,7 +7285,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // vacation (10448)
   [10448, { coreImage: "まとまった休暇期間を示す名詞がコアイメージ。", usage: "「summer vacation」で頻出。", synonymDifference: "vacation vs holiday: vacation は期間、holiday は日単位も含む。", englishDefinition: "A period of time spent away from work or school.", etymology: "時間語彙の基礎語。" }],
   // birthday (10449)
-  [10449, { coreImage: "生まれた日を祝う誕生日概念がコアイメージ。", usage: "「happy birthday」「birthday party」で使う。", synonymDifference: "birthday vs anniversary: anniversary は記念日一般。", englishDefinition: "The day each year on which someone was born.", etymology: "生活行事語彙の基礎語。" }],
+  [10449, { pronunciation: { us: "/stɑːp/", uk: "/stɒp/" }, coreImage: "生まれた日を祝う誕生日概念がコアイメージ。", usage: "「happy birthday」「birthday party」で使う。", synonymDifference: "birthday vs anniversary: anniversary は記念日一般。", englishDefinition: "The day each year on which someone was born.", etymology: "生活行事語彙の基礎語。" }],
   // weekend (10450)
   [10450, { coreImage: "週の終わりの休日期間を示す名詞がコアイメージ。", usage: "「on the weekend」「this weekend」で使う。", synonymDifference: "weekend vs weekday: weekend は週末、weekday は平日。", englishDefinition: "Saturday and Sunday.", etymology: "時間語彙の基礎語。" }],
   // trip (10451)
@@ -7329,7 +7329,7 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   // king (10470)
   [10470, { coreImage: "王国の男性君主を示す名詞がコアイメージ。", usage: "歴史・物語文脈で頻出。", synonymDifference: "king vs prince: king は君主、prince は王子。", englishDefinition: "A male ruler of a country.", etymology: "人物語彙の基礎語。" }],
   // queen (10471)
-  [10471, { coreImage: "女王という女性君主を示す名詞がコアイメージ。", usage: "king と対で覚える。", synonymDifference: "queen vs princess: queen は君主、princess は王女。", englishDefinition: "A female ruler of a country.", etymology: "人物語彙の基礎語。" }],
+  [10471, { pronunciation: { us: "/læst/", uk: "/lɑːst/" }, coreImage: "女王という女性君主を示す名詞がコアイメージ。", usage: "king と対で覚える。", synonymDifference: "queen vs princess: queen は君主、princess は王女。", englishDefinition: "A female ruler of a country.", etymology: "人物語彙の基礎語。" }],
   // princess (10472)
   [10472, { coreImage: "王女・お姫様を示す名詞がコアイメージ。", usage: "物語語彙として子ども向け文脈で高頻度。", synonymDifference: "princess vs queen: princess は王女、queen は女王。", englishDefinition: "A daughter of a king or queen.", etymology: "人物語彙の基礎語。" }],
   // hero (10473)
