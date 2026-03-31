@@ -914,18 +914,6 @@ export const words: RawWord[] = [
     categories: ["emotion", "communication"],
   },
   {
-    id: 21318,
-    word: "synonym",
-    meaning: "同義語",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Happy is a synonym for glad.", ja: "happyはgladの同義語だ。", context: "言語" },
-      { en: "Learning synonyms can improve your writing.", ja: "同義語を学ぶと文章力が向上する。", context: "学習" },
-      { en: "The dictionary lists many synonyms for each word.", ja: "その辞書は各単語の同義語を多数載せている。", context: "学習" },
-    ],
-    categories: ["school", "communication"],
-  },
-  {
     id: 21319,
     word: "tablet",
     meaning: "錠剤、端末",
@@ -2808,18 +2796,6 @@ export const words: RawWord[] = [
       { en: "Fog reduced the driver's vision on the highway.", ja: "霧が高速道路での運転者の視界を低下させた。", context: "交通" },
     ],
     categories: ["health", "business"],
-  },
-  {
-    id: 21476,
-    word: "vowel",
-    meaning: "母音",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "English has five main vowels in the alphabet.", ja: "英語のアルファベットには5つの主要な母音がある。", context: "言語" },
-      { en: "The pronunciation of vowels varies between languages.", ja: "母音の発音は言語によって異なる。", context: "教育" },
-      { en: "Students practiced pronouncing long and short vowels.", ja: "生徒たちは長母音と短母音の発音を練習した。", context: "学校" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 21477,

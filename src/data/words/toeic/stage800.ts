@@ -5990,18 +5990,6 @@ export const words: RawWord[] = [
     categories: ["business", "daily"],
   },
   {
-    id: 20600,
-    word: "pronoun",
-    meaning: "代名詞",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Students learned how to use pronouns in sentences.", ja: "生徒たちは文中での代名詞の使い方を学んだ。", context: "学校" },
-      { en: "A pronoun takes the place of a noun in grammar.", ja: "代名詞は文法で名詞の代わりを務める。", context: "文法" },
-      { en: "Using the wrong pronoun can cause confusion.", ja: "間違った代名詞を使うと混乱を招くことがある。", context: "学習" },
-    ],
-    categories: ["school", "communication"],
-  },
-  {
     id: 20601,
     word: "pronunciation",
     meaning: "発音",

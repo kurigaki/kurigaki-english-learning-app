@@ -12062,18 +12062,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 20091,
-    word: "fleet",
-    meaning: "艦隊",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The fleet sailed across the Atlantic Ocean.", ja: "艦隊は大西洋を横断して航行した。", context: "歴史" },
-      { en: "The company owns a fleet of delivery trucks.", ja: "その会社は配送トラックの車隊を所有している。", context: "仕事" },
-      { en: "A fleet of ships entered the harbor.", ja: "艦隊が港に入った。", context: "歴史" },
-    ],
-    categories: ["business"],
-  },
-  {
     id: 20092,
     word: "grievance",
     meaning: "苦情・不満",
