@@ -4,7 +4,7 @@ export const words: RawWord[] = [
   {
     id: 14151,
     word: "dna",
-    meaning: "DNA",
+    meaning: "遺伝子情報",
     partOfSpeech: "noun",
     examples: [
       { en: "Scientists studied the DNA of ancient animals.", ja: "科学者たちは古代動物のDNAを研究した。", context: "科学" },

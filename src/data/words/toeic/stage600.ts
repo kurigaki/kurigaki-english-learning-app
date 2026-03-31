@@ -1612,7 +1612,7 @@ export const words: RawWord[] = [
   {
     id: 18525,
     word: "cashpoint",
-    meaning: "ATM",
+    meaning: "現金引出機",
     partOfSpeech: "noun",
     examples: [
       { en: "There is a cashpoint near the station.", ja: "駅の近くにATMがある。", context: "地域" },
@@ -7468,7 +7468,7 @@ export const words: RawWord[] = [
   {
     id: 19013,
     word: "hiv",
-    meaning: "HIV",
+    meaning: "エイズウイルス",
     partOfSpeech: "noun",
     examples: [
       { en: "Scientists are working hard to find a cure for HIV.", ja: "科学者たちはHIVの治療法を見つけるために懸命に取り組んでいる。", context: "科学" },

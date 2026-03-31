@@ -6640,7 +6640,7 @@ export const words: RawWord[] = [
   {
     id: 26009,
     word: "dna",
-    meaning: "DNA",
+    meaning: "遺伝子情報",
     partOfSpeech: "noun",
     examples: [
       { en: "Scientists studied the DNA of ancient animals.", ja: "科学者たちは古代動物のDNAを研究した。", context: "科学" },
@@ -10576,7 +10576,7 @@ export const words: RawWord[] = [
   {
     id: 26337,
     word: "hiv",
-    meaning: "HIV",
+    meaning: "エイズウイルス",
     partOfSpeech: "noun",
     examples: [
       { en: "Scientists are working hard to find a cure for HIV.", ja: "科学者たちはHIVの治療法を見つけるために懸命に取り組んでいる。", context: "科学" },

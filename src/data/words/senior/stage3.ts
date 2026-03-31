@@ -1012,7 +1012,7 @@ export const words: RawWord[] = [
   {
     id: 15791,
     word: "hiv",
-    meaning: "HIV",
+    meaning: "エイズウイルス",
     partOfSpeech: "noun",
     examples: [
       { en: "Scientists are working hard to find a cure for HIV.", ja: "科学者たちはHIVの治療法を見つけるために懸命に取り組んでいる。", context: "科学" },

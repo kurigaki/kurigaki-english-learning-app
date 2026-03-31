@@ -3628,7 +3628,7 @@ export const words: RawWord[] = [
   {
     id: 24778,
     word: "DJ",
-    meaning: "DJ",
+    meaning: "選曲係",
     partOfSpeech: "noun",
     examples: [
       { en: "The DJ played popular songs at the party.", ja: "DJがパーティーで人気曲を流した。", context: "趣味" },
