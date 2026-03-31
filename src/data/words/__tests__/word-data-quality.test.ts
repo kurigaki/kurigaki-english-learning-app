@@ -8,7 +8,9 @@
  */
 import { describe, it, expect } from "vitest";
 import { juniorWords, seniorWords, toeicWords, eikenWords, conversationWords } from "../index";
-import type { Word } from "../types";
+import { enrichWords } from "../enrich";
+import { DIFFICULTY_MAP } from "../difficulty";
+import type { Word, RawWord } from "../types";
 
 // ═══════════════════════════════════════
 // Helper
@@ -146,13 +148,13 @@ describe.each(courseDataSets)("$name コース", ({ words, course }) => {
     expect(bad).toEqual([]);
   });
 
-  it("example と exampleJa が空でない（存在する場合）", () => {
+  it("example と exampleJa が空でない", () => {
     const bad: string[] = [];
     for (const w of words) {
-      if (w.example !== undefined && w.example.trim() === "") {
+      if (w.example.trim() === "") {
         bad.push(`${w.word} example is empty`);
       }
-      if (w.exampleJa !== undefined && w.exampleJa.trim() === "") {
+      if (w.exampleJa.trim() === "") {
         bad.push(`${w.word} exampleJa is empty`);
       }
     }
@@ -291,5 +293,54 @@ describe("全コース統合", () => {
       }
     }
     expect(bad).toEqual([]);
+  });
+});
+
+// ═══════════════════════════════════════
+// enrichWords ユニットテスト
+// ═══════════════════════════════════════
+
+describe("enrichWords", () => {
+  const sampleRaw: RawWord = {
+    id: 99999,
+    word: "test",
+    meaning: "テスト",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "This is a test.", ja: "これはテストです。", context: "学校" },
+      { en: "We passed the test.", ja: "テストに合格しました。", context: "学校" },
+      { en: "Take a test today.", ja: "今日テストを受けます。", context: "日常" },
+    ],
+    categories: ["school", "daily"],
+  };
+
+  it("course と stage を付与する", () => {
+    const [word] = enrichWords([sampleRaw], "junior", "1");
+    expect(word.course).toBe("junior");
+    expect(word.stage).toBe("1");
+  });
+
+  it("difficulty を DIFFICULTY_MAP から計算する", () => {
+    const [word] = enrichWords([sampleRaw], "junior", "1");
+    expect(word.difficulty).toBe(DIFFICULTY_MAP["junior:1"]);
+  });
+
+  it("example を examples[0].en から設定する", () => {
+    const [word] = enrichWords([sampleRaw], "junior", "1");
+    expect(word.example).toBe("This is a test.");
+  });
+
+  it("exampleJa を examples[0].ja から設定する", () => {
+    const [word] = enrichWords([sampleRaw], "junior", "1");
+    expect(word.exampleJa).toBe("これはテストです。");
+  });
+
+  it("category を categories[0] から設定する", () => {
+    const [word] = enrichWords([sampleRaw], "junior", "1");
+    expect(word.category).toBe("school");
+  });
+
+  it("未知の course:stage でエラーを投げる", () => {
+    expect(() => enrichWords([sampleRaw], "junior" as never, "999" as never)).toThrow();
   });
 });

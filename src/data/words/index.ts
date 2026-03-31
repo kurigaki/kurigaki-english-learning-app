@@ -1,19 +1,14 @@
-import { juniorWords as _juniorWords } from "./junior";
-import { seniorWords as _seniorWords } from "./senior";
-import { toeicWords as _toeicWords } from "./toeic";
-import { eikenWords as _eikenWords } from "./eiken";
-import { conversationWords as _conversationWords } from "./conversation";
-import { Word, Course, Stage } from "./types";
+import { juniorWords } from "./junior";
+import { seniorWords } from "./senior";
+import { toeicWords } from "./toeic";
+import { eikenWords } from "./eiken";
+import { conversationWords } from "./conversation";
+import type { Course, Stage } from "./types";
 
-// 型アサーション（データファイルは大量エントリで型推論が TS2590 になるため）
-export const juniorWords = _juniorWords as unknown as Word[];
-export const seniorWords = _seniorWords as unknown as Word[];
-export const toeicWords = _toeicWords as unknown as Word[];
-export const eikenWords = _eikenWords as unknown as Word[];
-export const conversationWords = _conversationWords as unknown as Word[];
+export { juniorWords, seniorWords, toeicWords, eikenWords, conversationWords };
 
 // 全コースの単語を統合
-export const allWords: Word[] = [
+export const allWords = [
   ...juniorWords,
   ...seniorWords,
   ...toeicWords,
@@ -21,13 +16,13 @@ export const allWords: Word[] = [
   ...conversationWords,
 ];
 
-// compat.ts が提供していた `words` エイリアス（後方互換）
+// 後方互換エイリアス
 export const words = allWords;
 
 // コース別フィルタ
-export function getWordsByCourse(course: Course, stage?: Stage): Word[] {
+export function getWordsByCourse(course: Course, stage?: Stage) {
   return allWords.filter(
-    (w) => w.course === course && (!stage || w.stage === stage)
+    (w) => w.course === course && (!stage || w.stage === stage),
   );
 }
 

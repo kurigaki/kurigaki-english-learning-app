@@ -35,7 +35,18 @@ export type WordExampleEntry = {
   context: string;
 };
 
-// 統一Word型
+// データファイルに格納する型（冗長フィールドを含まない最小形）
+// course/stage はファイルの場所から、difficulty は course:stage から導出される
+export type RawWord = {
+  id: number;
+  word: string;
+  meaning: string;
+  partOfSpeech: PartOfSpeech;
+  examples: [WordExampleEntry, WordExampleEntry, WordExampleEntry];
+  categories: [string, ...string[]]; // 1個以上必須、[0]が主カテゴリ
+};
+
+// ランタイム型（enrichWords で RawWord に course/stage/difficulty 等を付与した完全型）
 // category/categories は string で定義（Category union の組み合わせ爆発を回避）
 // UI表示には categoryLabels を使用し、正しさはテストで保証する
 export type Word = {
@@ -45,12 +56,10 @@ export type Word = {
   partOfSpeech: PartOfSpeech;
   course: Course;
   stage: Stage;
-  example?: string;
-  exampleJa?: string;
-  examples?: WordExampleEntry[]; // 例文3件（クイズ・ダンジョンでランダム出題）
+  example: string;      // examples[0].en
+  exampleJa: string;    // examples[0].ja
+  examples: [WordExampleEntry, WordExampleEntry, WordExampleEntry];
   difficulty: Difficulty;
-  category: string;
-  categories?: string[];
-  frequencyRank?: number;
-  source?: string;
+  category: string;     // categories[0]
+  categories: string[];
 };

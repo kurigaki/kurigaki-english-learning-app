@@ -91,34 +91,54 @@ Project Clean Vocabulary 完了後の次フェーズ施策。
 - **ランゲルハンス**: 「sourceフィールドが"generated"だが実態は英検転用。正確性の問題」
 - **ナイーブT**: 「中学既習語が高校に混ざっていたらアプリへの信頼が揺らぐ」
 
-## 優先度7: 句動詞partOfSpeech統一 🔲 未着手
+## 優先度7: 句動詞partOfSpeech統一 ✅ 完了
 - **担当**: QA
-- **状態**: 方針決定済み、未実施
-- **方針**: 句動詞（get up, look for, give up等）はverbに統一。前置詞句/助動詞フレーズはother維持
-- **影響**: 4級のother分類の句動詞をverbに変更する必要あり
+- **状態**: 完了（2026-03-31）
+- **成果**: 33語の句動詞をother→verbに変更（look for, get up, come back等）
+- **方針**: 純粋な句動詞はverb、熟語表現（take care of等）はother維持
 
-## 優先度8: 残り20語の詳細画面補足 🔲 未着手
+## 優先度8: 残り20語の詳細画面補足 ✅ 完了
 - **担当**: 開発
-- **状態**: 方針決定済み、未実施
-- **対象**: board, climb, fly, fold, manage, permit, refuse, replace, sketch, slide, dress, dust, garden, nurse, package, pair, pile, plot, plug, pump
-- **方針**: 片方の品詞がレアなためデータエントリは追加しない。word-extensions/generated.tsで補足表示
+- **状態**: 完了（2026-03-31）
+- **成果**: generated.tsのbuildUsage()に他品詞meaning自動追記機能を追加
+- **対象**: board, climb, fly等の片方品詞がレアな20語
+
+## 優先度9: ファイル構造リファクタリング ✅ 完了
+- **状態**: 完了（2026-03-31）
+- **成果**:
+  - JS→TS移行、ステージ別ファイル分割
+  - RawWord型で冗長フィールド除去、enrichWords()で自動導出
+  - example≠examples[0]不一致が型レベルで不可能に
+  - difficulty不整合が設計上発生しない構造に
+  - テスト79→85本に増加（enrichWordsユニットテスト追加）
 
 ---
 
-## 追加施策（優先度低・将来検討）
+## 将来タスク
 
-### 学習進捗の可視化改善（B細胞提案）
-- 「英検3級コースの○%完了」のプログレスバー
-- カテゴリ別の正答率表示
-- 各ステージクリア時のお祝い演出
+### Supabase移行（次フェーズ — 最優先）
+- **状態**: 全社員一致で推奨（品質会議#14）
+- **概要**: localStorage→Supabase移行。storage.ts廃止→unified-storage.ts一本化
+- **移行順**: 学習記録→ユーザーデータ→ブックマーク→ダンジョンセーブ→ミッション
+- **注意**: 未ログイン時のlocalStorageフォールバックは維持
+- **目的**: 端末間同期、学習データ分析基盤、データ保護
+- **議事録**: .company/secretary/notes/2026-03-31-supabase-migration.md
 
-### 音声の充実（血小板提案）
-- UK/US発音の両方を全単語に追加
-- 例文の読み上げ速度調整（初級者向けゆっくりオプション）
+### WordExtension Phase 2（Supabase後）
+- **概要**: 3級〜2級の頻出1,000語にコアイメージ・語源・使い方・類義語の違いを追加
+- **発音記号**: CMU Pronouncing Dictionaryベースの一括生成（現在27語のみ手書き）
+- **残り20語の補足**: Phase2と同時にgenerated.tsで対応
+- **効果**: 単語帳アプリとの決定的差別化。ユーザー定着に最も効果的
 
-### 英検pre1/1級の語数追加（マクロファージ提案）
-- 過去問分析に基づく厳選追加のみ許可
-- 重箱語の追加は禁止
+### 単語画像生成（Phase2後）
+- **概要**: Stable Diffusion（Replicate API）で全単語のイメージ画像を一括生成
+- **見積り**: 約$16-20
+- **前提**: 単語データ品質改善が完了してから（現在完了済み）
+
+### その他（優先度低）
+- ATM/DJ/DNA/HIVのクイズ出題方法検討
+- カテゴリ分布の偏り改善（daily 31%が突出）
+- TOEIC600のTSL完全移行（a-d語のさらなる精査）
 
 ---
 
