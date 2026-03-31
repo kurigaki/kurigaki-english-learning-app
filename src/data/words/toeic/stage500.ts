@@ -314,18 +314,6 @@ export const words: RawWord[] = [
     categories: ["daily", "travel"],
   },
   {
-    id: 18029,
-    word: "present",
-    meaning: "プレゼント",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She gives him a present.", ja: "彼女は彼にプレゼントをあげます。", context: "イベント" },
-      { en: "He opens the present with a smile.", ja: "彼は笑顔でプレゼントを開けます。", context: "誕生日" },
-      { en: "What present do you want?", ja: "どんなプレゼントがほしいですか？", context: "日常" },
-    ],
-    categories: ["daily", "communication"],
-  },
-  {
     id: 18030,
     word: "price",
     meaning: "値段",
@@ -336,18 +324,6 @@ export const words: RawWord[] = [
       { en: "She checks the price first.", ja: "彼女はまず値段を確認します。", context: "日常" },
     ],
     categories: ["shopping", "daily"],
-  },
-  {
-    id: 18031,
-    word: "question",
-    meaning: "質問",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Do you have any questions?", ja: "何か質問はありますか？", context: "授業" },
-      { en: "She asks a question to the teacher.", ja: "彼女は先生に質問をします。", context: "学校" },
-      { en: "That is a good question.", ja: "それはよい質問です。", context: "日常" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 18033,
@@ -698,18 +674,6 @@ export const words: RawWord[] = [
     categories: ["communication", "daily"],
   },
   {
-    id: 18063,
-    word: "share",
-    meaning: "分ける・共有する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She shares her lunch with friends.", ja: "彼女は友達とお弁当を分けます。", context: "学校" },
-      { en: "We share one room.", ja: "私たちは1つの部屋を共有しています。", context: "家庭" },
-      { en: "He shares his toys with his sister.", ja: "彼は妹とおもちゃを分け合います。", context: "日常" },
-    ],
-    categories: ["daily", "communication"],
-  },
-  {
     id: 18064,
     word: "show",
     meaning: "見せる",
@@ -852,18 +816,6 @@ export const words: RawWord[] = [
       { en: "They drive to the beach on Sunday.", ja: "彼らは日曜日に海へドライブします。", context: "旅行" },
     ],
     categories: ["daily", "travel"],
-  },
-  {
-    id: 18076,
-    word: "popular",
-    meaning: "人気のある",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "This song is very popular.", ja: "この歌はとても人気があります。", context: "趣味" },
-      { en: "He is popular at school.", ja: "彼は学校で人気者です。", context: "学校" },
-      { en: "Ramen is popular in Japan.", ja: "ラーメンは日本で人気があります。", context: "食事" },
-    ],
-    categories: ["daily", "communication"],
   },
   {
     id: 18077,
@@ -1046,18 +998,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 18092,
-    word: "explain",
-    meaning: "説明する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The teacher explained the grammar rule.", ja: "先生はその文法規則を説明した。", context: "学校" },
-      { en: "He explained why he was late.", ja: "彼はなぜ遅刻したか説明した。", context: "日常" },
-      { en: "Can you explain this word to me?", ja: "この単語を説明してくれますか？", context: "学校" },
-    ],
-    categories: ["communication", "school"],
-  },
-  {
     id: 18093,
     word: "fit",
     meaning: "合う",
@@ -1090,18 +1030,6 @@ export const words: RawWord[] = [
       { en: "What does this word mean?", ja: "この単語はどういう意味ですか？", context: "学校" },
       { en: "She didn't mean to hurt you.", ja: "彼女はあなたを傷つけるつもりはなかった。", context: "日常" },
       { en: "This sign means 'no parking' here.", ja: "この標識はここが駐車禁止だという意味だ。", context: "交通" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 18097,
-    word: "offer",
-    meaning: "申し出る",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "He offered to carry her bags.", ja: "彼は彼女の荷物を持つと申し出た。", context: "日常" },
-      { en: "She offered me a cup of tea.", ja: "彼女は私にお茶を出してくれた。", context: "家庭" },
-      { en: "They offered help after the earthquake.", ja: "彼らは地震の後に支援を申し出た。", context: "社会" },
     ],
     categories: ["communication"],
   },
@@ -1186,18 +1114,6 @@ export const words: RawWord[] = [
       { en: "That sounds like a great idea.", ja: "それは素晴らしい考えに聞こえる。", context: "日常" },
       { en: "Her voice sounded tired on the phone.", ja: "電話で彼女の声は疲れて聞こえた。", context: "日常" },
       { en: "The plan sounds easy but it isn't.", ja: "その計画は簡単そうに聞こえるが違う。", context: "仕事" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 18105,
-    word: "suggest",
-    meaning: "提案する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "He suggested going to the beach.", ja: "彼はビーチに行くことを提案した。", context: "レジャー" },
-      { en: "She suggested a new plan to the team.", ja: "彼女はチームに新しい計画を提案した。", context: "学校" },
-      { en: "They suggested eating out tonight.", ja: "彼らは今夜外食することを提案した。", context: "日常" },
     ],
     categories: ["communication"],
   },
@@ -1298,18 +1214,6 @@ export const words: RawWord[] = [
     categories: ["communication", "shopping"],
   },
   {
-    id: 18114,
-    word: "experience",
-    meaning: "経験する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She experienced a big earthquake last year.", ja: "彼女は昨年大きな地震を経験した。", context: "災害" },
-      { en: "He wants to experience life abroad.", ja: "彼は海外生活を経験したいと思っている。", context: "旅行" },
-      { en: "The students experienced farming for a day.", ja: "生徒たちは1日農業を体験した。", context: "学校" },
-    ],
-    categories: ["daily", "travel"],
-  },
-  {
     id: 18115,
     word: "express",
     meaning: "表現する",
@@ -1366,18 +1270,6 @@ export const words: RawWord[] = [
       { en: "Everyone respects the kind old teacher.", ja: "みんながその親切な年配の先生を尊敬している。", context: "学校" },
       { en: "She respects her parents very much.", ja: "彼女は両親をとても尊敬している。", context: "家庭" },
       { en: "We should respect different cultures.", ja: "私たちは異なる文化を尊重すべきだ。", context: "社会" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 18120,
-    word: "respond",
-    meaning: "返答する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She responded to the email quickly.", ja: "彼女はメールにすぐ返答した。", context: "仕事" },
-      { en: "He responded to the question correctly.", ja: "彼はその質問に正しく答えた。", context: "学校" },
-      { en: "The dog responded to its owner's voice.", ja: "犬は飼い主の声に反応した。", context: "日常" },
     ],
     categories: ["communication"],
   },
@@ -1596,18 +1488,6 @@ export const words: RawWord[] = [
       { en: "She prepared tea for the guests.", ja: "彼女は客のためにお茶を用意した。", context: "家庭" },
     ],
     categories: ["daily", "communication"],
-  },
-  {
-    id: 18141,
-    word: "guide",
-    meaning: "ガイド、案内人",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The guide showed us around the old castle.", ja: "ガイドが私たちに古い城を案内した。", context: "旅行" },
-      { en: "She bought a travel guide for Italy.", ja: "彼女はイタリアの旅行ガイドを買った。", context: "買い物" },
-      { en: "The guide spoke both English and Japanese.", ja: "ガイドは英語と日本語の両方を話した。", context: "旅行" },
-    ],
-    categories: ["travel", "communication"],
   },
   {
     id: 18142,
@@ -2054,18 +1934,6 @@ export const words: RawWord[] = [
     categories: ["travel"],
   },
   {
-    id: 18183,
-    word: "trade",
-    meaning: "貿易、取引",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Japan has trade with many countries.", ja: "日本は多くの国と貿易をしている。", context: "社会" },
-      { en: "The trade between the two cities is growing.", ja: "その2つの都市間の取引は拡大している。", context: "経済" },
-      { en: "He learned about trade in history class.", ja: "彼は歴史の授業で貿易について学んだ。", context: "学校" },
-    ],
-    categories: ["daily", "business"],
-  },
-  {
     id: 18184,
     word: "traffic",
     meaning: "交通、渋滞",
@@ -2244,18 +2112,6 @@ export const words: RawWord[] = [
       { en: "The local train stops at every station.", ja: "各駅停車はすべての駅に止まります。", context: "交通" },
     ],
     categories: ["daily", "travel"],
-  },
-  {
-    id: 18203,
-    word: "personal",
-    meaning: "個人的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "That is a very personal question.", ja: "それはとても個人的な質問です。", context: "会話" },
-      { en: "She keeps a personal diary every day.", ja: "彼女は毎日個人的な日記をつけています。", context: "日常" },
-      { en: "He brought his personal computer to class.", ja: "彼は自分のパソコンを授業に持ってきました。", context: "学校" },
-    ],
-    categories: ["daily", "communication"],
   },
   {
     id: 18204,
@@ -3266,18 +3122,6 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 18323,
-    word: "key",
-    meaning: "かぎ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Where is the key to this door?", ja: "このドアのかぎはどこですか？", context: "家庭" },
-      { en: "He always carries his key.", ja: "彼はいつもかぎを持ち歩きます。", context: "日常" },
-      { en: "She finds the key on the table.", ja: "彼女はテーブルの上でかぎを見つけます。", context: "生活" },
-    ],
-    categories: ["daily"],
-  },
-  {
     id: 18328,
     word: "light",
     meaning: "光・ライト",
@@ -3456,18 +3300,6 @@ export const words: RawWord[] = [
       { en: "Do you have any money with you?", ja: "お金を持っていますか？", context: "日常" },
     ],
     categories: ["daily"],
-  },
-  {
-    id: 18347,
-    word: "note",
-    meaning: "メモ・ノート",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She writes a note to her teacher.", ja: "彼女は先生にメモを書きます。", context: "学校" },
-      { en: "He reads the note on the desk.", ja: "彼は机の上のメモを読みます。", context: "オフィス" },
-      { en: "Please take notes in class.", ja: "授業中にメモを取ってください。", context: "授業" },
-    ],
-    categories: ["school", "daily"],
   },
   {
     id: 18348,
@@ -3710,18 +3542,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 18381,
-    word: "notice",
-    meaning: "気づく",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She noticed a strange sound outside.", ja: "彼女は外で奇妙な音に気づいた。", context: "家庭" },
-      { en: "He noticed that his wallet was missing.", ja: "彼は財布がなくなっていることに気づいた。", context: "日常" },
-      { en: "Did you notice the new poster?", ja: "新しいポスターに気づきましたか？", context: "学校" },
-    ],
-    categories: ["business"],
-  },
-  {
     id: 18382,
     word: "position",
     meaning: "位置、立場",
@@ -3730,18 +3550,6 @@ export const words: RawWord[] = [
       { en: "He changed his position on the team.", ja: "彼はチームでのポジションを変えました。", context: "スポーツ" },
       { en: "What position do you play in soccer?", ja: "サッカーではどのポジションですか？", context: "スポーツ" },
       { en: "She found the position of the city on the map.", ja: "彼女は地図でその市の位置を見つけました。", context: "学校" },
-    ],
-    categories: ["business"],
-  },
-  {
-    id: 18383,
-    word: "require",
-    meaning: "必要とする",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "This job requires a lot of patience.", ja: "この仕事は多くの忍耐を必要とする。", context: "仕事" },
-      { en: "The recipe requires three eggs.", ja: "そのレシピには卵が3つ必要だ。", context: "料理" },
-      { en: "All students are required to wear uniforms.", ja: "全ての生徒は制服を着ることが求められる。", context: "学校" },
     ],
     categories: ["business"],
   },

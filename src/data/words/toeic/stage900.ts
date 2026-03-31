@@ -14,18 +14,6 @@ export const words: RawWord[] = [
     categories: ["business", "daily"],
   },
   {
-    id: 21243,
-    word: "standard",
-    meaning: "標準の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The hotel offers a standard room with breakfast.", ja: "そのホテルは朝食付きのスタンダードルームを提供しています。", context: "旅行" },
-      { en: "All products must meet standard safety requirements.", ja: "すべての製品は標準的な安全基準を満たさなければなりません。", context: "ビジネス" },
-      { en: "What is considered standard practice varies by country.", ja: "標準的な慣行とみなされるものは国によって異なります。", context: "文化" },
-    ],
-    categories: ["business", "daily"],
-  },
-  {
     id: 21244,
     word: "standby",
     meaning: "待機の",
@@ -482,18 +470,6 @@ export const words: RawWord[] = [
     categories: ["daily", "business"],
   },
   {
-    id: 21282,
-    word: "submit",
-    meaning: "提出する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Please submit your report by next Friday.", ja: "来週金曜日までにレポートを提出してください。", context: "ビジネス" },
-      { en: "Students must submit their essays before the deadline.", ja: "学生は締め切り前にエッセイを提出しなければならない。", context: "学校" },
-      { en: "The team submitted a proposal for the new project.", ja: "チームは新プロジェクトの提案書を提出した。", context: "ビジネス" },
-    ],
-    categories: ["business", "school"],
-  },
-  {
     id: 21283,
     word: "subtract",
     meaning: "引く、減じる",
@@ -756,18 +732,6 @@ export const words: RawWord[] = [
       { en: "The evidence was substantial enough to prove the case.", ja: "その証拠は事件を証明するのに十分だった。", context: "法律" },
     ],
     categories: ["business", "daily"],
-  },
-  {
-    id: 21305,
-    word: "sufficient",
-    meaning: "十分な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "We have sufficient resources to complete the project.", ja: "プロジェクト完了に十分な資源がある。", context: "ビジネス" },
-      { en: "Make sure you get sufficient sleep before the exam.", ja: "試験前に十分な睡眠を取るようにしなさい。", context: "健康" },
-      { en: "The evidence was not sufficient to convict the suspect.", ja: "容疑者を有罪にするには証拠が不十分だった。", context: "法律" },
-    ],
-    categories: ["daily", "business"],
   },
   {
     id: 21306,
@@ -1070,18 +1034,6 @@ export const words: RawWord[] = [
     categories: ["daily", "business"],
   },
   {
-    id: 21332,
-    word: "term",
-    meaning: "用語、期間",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The term of the contract is three years.", ja: "契約の期間は三年だ。", context: "ビジネス" },
-      { en: "Can you explain this technical term?", ja: "この専門用語を説明してもらえますか？", context: "学習" },
-      { en: "The school term starts in April.", ja: "学期は四月に始まる。", context: "学校" },
-    ],
-    categories: ["business", "school"],
-  },
-  {
     id: 21333,
     word: "terminal",
     meaning: "ターミナル、末期の",
@@ -1116,18 +1068,6 @@ export const words: RawWord[] = [
       { en: "Train services were suspended due to the storm.", ja: "電車の運行は嵐のために停止された。", context: "交通" },
     ],
     categories: ["business", "school"],
-  },
-  {
-    id: 21336,
-    word: "sustain",
-    meaning: "維持する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The organization works to sustain local farms.", ja: "その団体は地元の農場を維持するために活動している。", context: "社会" },
-      { en: "She sustained a knee injury during the game.", ja: "彼女は試合中に膝を負傷した。", context: "スポーツ" },
-      { en: "We need to sustain economic growth long term.", ja: "長期的に経済成長を維持する必要がある。", context: "経済" },
-    ],
-    categories: ["business", "nature"],
   },
   {
     id: 21337,
@@ -1176,18 +1116,6 @@ export const words: RawWord[] = [
       { en: "Tap the screen to open the application.", ja: "画面をタップしてアプリを開いてください。", context: "技術" },
     ],
     categories: ["daily", "technology"],
-  },
-  {
-    id: 21341,
-    word: "tend",
-    meaning: "傾向がある",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Young people tend to use social media often.", ja: "若者はSNSを頻繁に使う傾向がある。", context: "社会" },
-      { en: "Prices tend to rise during the holiday season.", ja: "休暇シーズンには価格が上がる傾向がある。", context: "経済" },
-      { en: "She tends to worry about small things.", ja: "彼女は小さなことを心配しがちだ。", context: "性格" },
-    ],
-    categories: ["daily", "communication"],
   },
   {
     id: 21342,
@@ -1538,18 +1466,6 @@ export const words: RawWord[] = [
     categories: ["school", "business"],
   },
   {
-    id: 21371,
-    word: "transfer",
-    meaning: "移動",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The transfer of data was completed successfully.", ja: "データの移動は正常に完了した。", context: "技術" },
-      { en: "She requested a transfer to the Tokyo office.", ja: "彼女は東京のオフィスへの異動を申請した。", context: "ビジネス" },
-      { en: "The bank transfer will take two business days.", ja: "銀行振込は営業日2日かかる。", context: "金融" },
-    ],
-    categories: ["business"],
-  },
-  {
     id: 21372,
     word: "transformation",
     meaning: "変革",
@@ -1622,18 +1538,6 @@ export const words: RawWord[] = [
     categories: ["technology", "health"],
   },
   {
-    id: 21378,
-    word: "transport",
-    meaning: "輸送",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Public transport is efficient in major cities.", ja: "公共交通は大都市では効率的だ。", context: "交通" },
-      { en: "The transport of goods requires careful planning.", ja: "物品の輸送には慎重な計画が必要だ。", context: "ビジネス" },
-      { en: "Air transport has made travel much faster.", ja: "航空輸送は旅行をはるかに速くした。", context: "旅行" },
-    ],
-    categories: ["travel", "business"],
-  },
-  {
     id: 21379,
     word: "transportation",
     meaning: "交通手段",
@@ -1670,18 +1574,6 @@ export const words: RawWord[] = [
     categories: ["travel", "nature"],
   },
   {
-    id: 21382,
-    word: "thorough",
-    meaning: "徹底的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The inspector conducted a thorough examination today.", ja: "検査官は今日徹底的な調査を行った。", context: "ビジネス" },
-      { en: "A thorough understanding of the topic is needed.", ja: "そのトピックの徹底的な理解が必要だ。", context: "学術" },
-      { en: "She did a thorough cleanup of the house.", ja: "彼女は家の徹底的な掃除を行った。", context: "家庭" },
-    ],
-    categories: ["daily", "business"],
-  },
-  {
     id: 21383,
     word: "thoughtful",
     meaning: "気配りのある",
@@ -1704,18 +1596,6 @@ export const words: RawWord[] = [
       { en: "A timely warning helped people evacuate the area.", ja: "適時の警告が人々の避難を助けた。", context: "防災" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 21385,
-    word: "total",
-    meaning: "合計の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The total cost exceeded our initial budget estimate.", ja: "合計費用は当初の予算見積もりを超えた。", context: "ビジネス" },
-      { en: "The project was a total success for everyone.", ja: "プロジェクトは全員にとって完全な成功だった。", context: "ビジネス" },
-      { en: "The total number of participants reached two hundred.", ja: "参加者の合計は200人に達した。", context: "イベント" },
-    ],
-    categories: ["business"],
   },
   {
     id: 21386,
@@ -1848,18 +1728,6 @@ export const words: RawWord[] = [
       { en: "The mountain trek was challenging but truly rewarding.", ja: "山の長旅は大変だったが本当にやりがいがあった。", context: "スポーツ" },
     ],
     categories: ["travel", "sports"],
-  },
-  {
-    id: 21397,
-    word: "trend",
-    meaning: "動向",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The latest trend in fashion favors natural materials.", ja: "最新のファッションの傾向は天然素材を好む。", context: "文化" },
-      { en: "There is a growing trend toward remote working.", ja: "リモートワークへの傾向が高まっている。", context: "ビジネス" },
-      { en: "The downward trend in sales worried the manager.", ja: "売上の下降傾向がマネージャーを心配させた。", context: "ビジネス" },
-    ],
-    categories: ["society", "business"],
   },
   {
     id: 21398,
@@ -2026,18 +1894,6 @@ export const words: RawWord[] = [
       { en: "The witness gave a truthful account of the event.", ja: "証人はその出来事の正直な説明をした。", context: "法律" },
       { en: "Children should learn to be truthful from childhood.", ja: "子どもたちは幼少期から正直であることを学ぶべきだ。", context: "教育" },
       { en: "A truthful leader earns the deep respect of others.", ja: "正直なリーダーは他者の深い尊敬を得る。", context: "社会" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 21412,
-    word: "typical",
-    meaning: "典型的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "This is a typical example of modern Japanese architecture.", ja: "これは現代日本建築の典型的な例だ。", context: "文化" },
-      { en: "A typical workday starts at nine in the morning.", ja: "典型的な勤務日は朝9時に始まる。", context: "ビジネス" },
-      { en: "Rainy weather is typical for this season every year.", ja: "雨天はこの季節の典型的な天候だ。", context: "天気" },
     ],
     categories: ["communication"],
   },
@@ -2438,30 +2294,6 @@ export const words: RawWord[] = [
     categories: ["society", "business"],
   },
   {
-    id: 21446,
-    word: "update",
-    meaning: "更新",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The software update fixed several security issues quickly.", ja: "ソフトウェアの更新がいくつかのセキュリティ問題を迅速に修正した。", context: "技術" },
-      { en: "Can you give me an update on the project?", ja: "プロジェクトの最新情報を教えてもらえますか？", context: "ビジネス" },
-      { en: "The weather update warned of a severe storm approaching.", ja: "天気の最新情報が深刻な嵐の接近を警告した。", context: "天気" },
-    ],
-    categories: ["technology", "business"],
-  },
-  {
-    id: 21447,
-    word: "upgrade",
-    meaning: "改良",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The hotel offered a free room upgrade for guests.", ja: "ホテルは宿泊客に無料の部屋の改良を提供した。", context: "旅行" },
-      { en: "A system upgrade improved the overall network performance.", ja: "システムの改良がネットワーク全体の性能を向上させた。", context: "技術" },
-      { en: "The airline charged extra for a seat upgrade.", ja: "航空会社は座席の改良に追加料金を請求した。", context: "旅行" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 21448,
     word: "user",
     meaning: "利用者",
@@ -2810,18 +2642,6 @@ export const words: RawWord[] = [
     categories: ["travel", "history"],
   },
   {
-    id: 21478,
-    word: "wage",
-    meaning: "賃金",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Workers demanded higher wages and better working conditions.", ja: "労働者はより高い賃金とより良い労働条件を要求した。", context: "社会" },
-      { en: "The minimum wage was raised by the government.", ja: "最低賃金が政府によって引き上げられた。", context: "政治" },
-      { en: "Her weekly wage covers all the basic living expenses.", ja: "彼女の週給は基本的な生活費をすべてまかなう。", context: "経済" },
-    ],
-    categories: ["business", "society"],
-  },
-  {
     id: 21479,
     word: "walkabout",
     meaning: "散策",
@@ -2832,18 +2652,6 @@ export const words: RawWord[] = [
       { en: "A short walkabout revealed many beautiful hidden gardens.", ja: "短い散策で多くの美しい隠れた庭が見つかった。", context: "旅行" },
     ],
     categories: ["travel"],
-  },
-  {
-    id: 21480,
-    word: "warranty",
-    meaning: "保証書",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The laptop comes with a two-year manufacturer's warranty.", ja: "そのノートパソコンには2年間のメーカー保証が付いている。", context: "技術" },
-      { en: "Check if the warranty covers accidental damage too.", ja: "保証が偶発的な損傷もカバーするか確認してください。", context: "日常" },
-      { en: "The warranty expired just a week before the breakdown.", ja: "故障のちょうど1週間前に保証が切れていた。", context: "日常" },
-    ],
-    categories: ["business", "daily"],
   },
   {
     id: 21481,
@@ -3036,30 +2844,6 @@ export const words: RawWord[] = [
       { en: "The race car passed with a loud zoom.", ja: "レースカーが大きな音を立てて通過した。", context: "スポーツ" },
     ],
     categories: ["technology"],
-  },
-  {
-    id: 21497,
-    word: "withdraw",
-    meaning: "引き出す",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "He decided to withdraw money from his savings account.", ja: "彼は貯蓄口座からお金を引き出すことにした。", context: "金融" },
-      { en: "The troops were ordered to withdraw from the border.", ja: "部隊は国境から撤退するよう命令された。", context: "政治" },
-      { en: "She chose to withdraw her application for the position.", ja: "彼女はそのポジションへの応募を取り下げることにした。", context: "ビジネス" },
-    ],
-    categories: ["society", "finance"],
-  },
-  {
-    id: 21498,
-    word: "willing",
-    meaning: "進んでする",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "She is always willing to lend a helping hand.", ja: "彼女はいつも進んで手を貸してくれる。", context: "日常" },
-      { en: "The team was willing to work overtime this week.", ja: "チームは今週残業することをいとわなかった。", context: "ビジネス" },
-      { en: "Few people were willing to volunteer for the task.", ja: "そのタスクにボランティアを申し出る人はほとんどいなかった。", context: "社会" },
-    ],
-    categories: ["communication"],
   },
   {
     id: 21499,
@@ -3562,30 +3346,6 @@ export const words: RawWord[] = [
       { en: "The reporter uncovered corruption within the local government.", ja: "その記者は地方政府内の汚職を暴いた。", context: "政治" },
       { en: "Foreign reporters covered the conflict from the frontline.", ja: "外国人記者たちは前線から紛争を取材した。", context: "メディア" },
       { en: "Becoming a reporter requires strong communication skills.", ja: "記者になるには強いコミュニケーション能力が必要だ。", context: "キャリア" },
-    ],
-    categories: ["communication", "business"],
-  },
-  {
-    id: 21541,
-    word: "source",
-    meaning: "情報源",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Reliable sources are essential for accurate journalism.", ja: "信頼できる情報源は正確なジャーナリズムに不可欠だ。", context: "メディア" },
-      { en: "Always verify information from multiple independent sources.", ja: "常に複数の独立した情報源から情報を確認してください。", context: "学術" },
-      { en: "The journalist protected the identity of her source.", ja: "そのジャーナリストは情報源の身元を保護した。", context: "メディア" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 21542,
-    word: "survey",
-    meaning: "調査",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The survey revealed public attitudes toward climate change.", ja: "その調査は気候変動に対する一般の態度を明らかにした。", context: "環境" },
-      { en: "Researchers conducted a nationwide survey on education quality.", ja: "研究者たちは教育の質に関する全国調査を実施した。", context: "教育" },
-      { en: "Customer surveys help businesses improve their services.", ja: "顧客調査は企業がサービスを改善するのに役立つ。", context: "ビジネス" },
     ],
     categories: ["communication", "business"],
   },
@@ -5642,18 +5402,6 @@ export const words: RawWord[] = [
     categories: ["academic", "business"],
   },
   {
-    id: 21714,
-    word: "oversee",
-    meaning: "統括する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The director oversees all marketing activities.", ja: "その部長は全マーケティング活動を監督している。", context: "ビジネス" },
-      { en: "A committee was formed to oversee the project.", ja: "プロジェクトを監督するために委員会が設置された。", context: "行政" },
-      { en: "Parents oversee their children's online activity.", ja: "親は子供のオンライン活動を監視する。", context: "教育" },
-    ],
-    categories: ["business", "academic"],
-  },
-  {
     id: 21715,
     word: "pertain",
     meaning: "関連する",
@@ -6370,18 +6118,6 @@ export const words: RawWord[] = [
       { en: "The board nominated her as the new chairperson.", ja: "取締役会は彼女を新しい議長に推薦した。", context: "ビジネス" },
       { en: "The film was nominated for several international awards.", ja: "その映画はいくつかの国際的な賞に推薦された。", context: "メディア" },
       { en: "Members nominated candidates for the upcoming annual election.", ja: "会員は次の年次選挙の候補者を推薦した。", context: "政治" },
-    ],
-    categories: ["business"],
-  },
-  {
-    id: 21775,
-    word: "notify",
-    meaning: "通知する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The hospital notified families about the schedule change.", ja: "病院はスケジュール変更について家族に通知した。", context: "医療" },
-      { en: "Authorities notified residents of the approaching severe storm.", ja: "当局は接近する激しい嵐について住民に通知した。", context: "防災" },
-      { en: "The airline notified passengers that the flight was delayed.", ja: "航空会社は乗客にフライトの遅延を通知した。", context: "旅行" },
     ],
     categories: ["business"],
   },
