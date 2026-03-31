@@ -7850,18 +7850,6 @@ export const words: RawWord[] = [
     categories: ["technology"],
   },
   {
-    id: 21920,
-    word: "geological",
-    meaning: "地質学的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Geological surveys revealed vast mineral deposits beneath the region.", ja: "地質学的調査がその地域の地下に莫大な鉱床を明らかにしました。", context: "科学" },
-      { en: "The geological record spans billions of years of planetary history.", ja: "地質学的記録は数十億年にわたる惑星の歴史を網羅しています。", context: "学術" },
-      { en: "Understanding geological processes helps predict natural disaster patterns accurately.", ja: "地質学的プロセスの理解は自然災害のパターンを正確に予測するのに役立ちます。", context: "環境" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 21921,
     word: "seismic",
     meaning: "地震の",
@@ -9046,18 +9034,6 @@ export const words: RawWord[] = [
       { en: "Ancient sailors navigated by using celestial bodies.", ja: "古代の船乗りは天体を使って航行した。", context: "歴史" },
       { en: "The telescope revealed dozens of celestial objects.", ja: "望遠鏡は数十の天体を明らかにした。", context: "天文学" },
       { en: "Celestial events like eclipses fascinate many people.", ja: "日食のような天体現象は多くの人を魅了する。", context: "科学" },
-    ],
-    categories: ["technology", "nature"],
-  },
-  {
-    id: 22020,
-    word: "cosmic",
-    meaning: "宇宙の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Cosmic radiation poses risks to astronauts in space.", ja: "宇宙放射線は宇宙飛行士にリスクをもたらす。", context: "宇宙" },
-      { en: "The cosmic scale of the universe is hard to grasp.", ja: "宇宙の規模を理解するのは難しい。", context: "科学" },
-      { en: "Researchers detected cosmic dust from a distant galaxy.", ja: "研究者が遠方の銀河からの宇宙塵を検出した。", context: "天文学" },
     ],
     categories: ["technology", "nature"],
   },
