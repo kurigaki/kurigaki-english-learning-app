@@ -7,8 +7,8 @@ import type { WordExtension } from "@/types";
 export const handwrittenExtensions: [number, WordExtension][] = [
   // ── TOEIC 500 ──────────────────────────────────────────────────────────────
 
-  // appointment (18001)
-  [18001,
+  // appointment (24545)
+  [24545,
     {
       pronunciation: { us: "/əˈpɔɪntmənt/", uk: "/əˈpɔɪntmənt/" },
       coreImage:
@@ -60,8 +60,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
       ],
     },
   ],
-  // confirm (18002)
-  [18002,
+  // confirm (24709)
+  [24709,
     {
       pronunciation: { us: "/kənˈfɜːrm/", uk: "/kənˈfɜːm/" },
       coreImage:
@@ -114,8 +114,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
       ],
     },
   ],
-  // department (18003)
-  [18003,
+  // department (24737)
+  [24737,
     {
       pronunciation: { us: "/dɪˈpɑːrtmənt/", uk: "/dɪˈpɑːtmənt/" },
       coreImage:
@@ -165,8 +165,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
       ],
     },
   ],
-  // employee (18004)
-  [18004,
+  // employee (27582)
+  [27582,
     {
       pronunciation: { us: "/ɪmˈplɔɪiː/", uk: "/ɪmˈplɔɪiː/" },
       coreImage:
@@ -220,8 +220,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
       ],
     },
   ],
-  // invoice (18005)
-  [18005,
+  // invoice (33687)
+  [33687,
     {
       pronunciation: { us: "/ˈɪnvɔɪs/", uk: "/ˈɪnvɔɪs/" },
       coreImage:
@@ -327,8 +327,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
       ],
     },
   ],
-  // opportunity (18006)
-  [18006,
+  // opportunity (25118)
+  [25118,
     {
       pronunciation: { us: "/ˌɑːpərˈtuːnɪti/", uk: "/ˌɒpəˈtjuːnɪti/" },
       coreImage:
@@ -381,8 +381,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
       ],
     },
   ],
-  // purchase (18007)
-  [18007,
+  // purchase (28391)
+  [28391,
     {
       pronunciation: { us: "/ˈpɜːrtʃəs/", uk: "/ˈpɜːtʃəs/" },
       coreImage:
@@ -435,8 +435,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
       ],
     },
   ],
-  // reservation (18008)
-  [18008,
+  // reservation (29563)
+  [29563,
     {
       pronunciation: { us: "/ˌrezərˈveɪʃən/", uk: "/ˌrezəˈveɪʃən/" },
       coreImage:
@@ -488,8 +488,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
       ],
     },
   ],
-  // schedule (18009)
-  [18009,
+  // schedule (25283)
+  [25283,
     {
       pronunciation: { us: "/ˈskedʒuːl/", uk: "/ˈʃedjuːl/" },
       coreImage:
@@ -543,8 +543,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
       ],
     },
   ],
-  // apply (18010)
-  [18010,
+  // apply (24565)
+  [24565,
     {
       coreImage:
         "「ある目的のために自分を差し出す・当てはめる」のがコアイメージ。job apply なら自己を「差し出す」、rule を apply するなら規則を「当てはめる」。",
@@ -558,8 +558,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 applicare（くっつける）から。ad-（〜に）＋ plicare（折る・接触させる）。もともと「近づける・当てる」の意。",
     },
   ],
-  // attach (18011)
-  [18011,
+  // attach (24571)
+  [24571,
     {
       coreImage:
         "「あるものに別のものを固定・くっつける」のがコアイメージ。メールへのファイル添付も、書類をクリップ留めするのも、感情的なつながりも「attach」。",
@@ -573,8 +573,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 atachier（留める・拘束する）から。a-（〜に）＋ tachier（くぎで留める）。ゲルマン語の「杭・くぎ」に由来。",
     },
   ],
-  // avoid (18012)
-  [18012,
+  // avoid (24601)
+  [24601,
     {
       coreImage:
         "「不都合なものや状況から意図的に距離を置く、回避する」のがコアイメージ。物理的な回避も、状況・話題の回避も包む。",
@@ -588,8 +588,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 esvuidier（空にする・退く）から。ラテン語 ex-（外に）＋ viduare（空にする）が語源。",
     },
   ],
-  // budget (18013)
-  [18013,
+  // budget (24623)
+  [24623,
     {
       coreImage:
         "「特定の期間・目的のために割り当てられた金額の計画」がコアイメージ。お金の使い方を事前に計画した「財布の中身」。",
@@ -603,8 +603,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 bougette（小さな袋）の縮小形から。ラテン語 bulga（皮の袋）が語源。かつてイギリス大蔵大臣が予算書類を入れた「袋」から転じた。",
     },
   ],
-  // cancel (18014)
-  [18014,
+  // cancel (24639)
+  [24639,
     {
       coreImage:
         "「決まっていた予定・契約・注文を取り消す」のがコアイメージ。効力をなくして「無効にする」行為。",
@@ -618,8 +618,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 cancellare（格子状に引く・横線で消す）から。法律文書に×印を付けて「無効」にすることから。",
     },
   ],
-  // deliver (18015)
-  [18015,
+  // deliver (23787)
+  [23787,
     {
       coreImage:
         "「ある場所から別の場所へ物・サービス・情報を届ける」のがコアイメージ。物理的な配達だけでなく、プレゼンで「内容を伝える」意味でも使う。",
@@ -633,8 +633,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 deliberare（解放する・手放す）から。de-（完全に）＋ liberare（自由にする・liber と同語源）。「手から解放して渡す」のが原義。",
     },
   ],
-  // discount (18016)
-  [18016,
+  // discount (27236)
+  [27236,
     {
       coreImage:
         "「本来の価格から差し引かれた金額」がコアイメージ。値引きによってより安く購入できる状態。",
@@ -648,8 +648,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "中世ラテン語 discomputare（差し引いて計算する）から。dis-（分離）＋ computare（計算する・compute と同語源）。",
     },
   ],
-  // extend (18017)
-  [18017,
+  // extend (24877)
+  [24877,
     {
       coreImage:
         "「時間・空間・範囲を引き伸ばす・広げる」のがコアイメージ。期限の延長も、手を「伸ばす」のも、サービスを「拡張する」のも同じ語。",
@@ -663,8 +663,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 extendere（外に伸ばす）から。ex-（外に）＋ tendere（伸ばす・tension と同語源）。",
     },
   ],
-  // payment (18018)
-  [18018,
+  // payment (25148)
+  [25148,
     {
       coreImage:
         "「お金を相手に渡す行為・その金額」がコアイメージ。pay（払う）の名詞形で、支払いの動作・その支払われた金額の両方を指す。",
@@ -695,8 +695,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // application (18019)
-  [18019,
+  // application (24544)
+  [24544,
     {
       coreImage:
         "「特定の目的のために正式に申し込む行為・書類」がコアイメージ。就職・入学・許可証など、公式な手続きに使う。",
@@ -710,8 +710,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 applicatio（近づけること）から。apply（当てる・申し込む）＋ -tion（名詞化）。",
     },
   ],
-  // available (18020)
-  [18020,
+  // available (24592)
+  [24592,
     {
       coreImage:
         "「使える・利用できる・手に入る状態にある」がコアイメージ。物・人・時間・席など、アクセス可能な状態を表す。",
@@ -725,8 +725,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "中世ラテン語 availabilis から。avail（役立つ）＋ -able（可能の接尾辞）。",
     },
   ],
-  // benefit (18021)
-  [18021,
+  // benefit (24585)
+  [24585,
     {
       coreImage:
         "「良い影響・恩恵・利得」がコアイメージ。誰かや何かによってもたらされるプラスの効果や、職場での福利厚生など。",
@@ -756,8 +756,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 collega（共に選ばれた人）から。col-（共に）＋ legare（選ぶ・派遣する）。",
     },
   ],
-  // complain (18024)
-  [18024,
+  // complain (23783)
+  [23783,
     {
       coreImage:
         "「不満・不快な状況を言葉で表現する、苦情を言う」のがコアイメージ。改善を求めて不満を訴える行為。",
@@ -787,8 +787,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 constructio（積み上げること）から。con-（共に）＋ struere（積み重ねる・structure と同語源）。",
     },
   ],
-  // contact (18025)
-  [18025,
+  // contact (24691)
+  [24691,
     {
       coreImage:
         "「人と人、または物と物が触れる・つながる」のがコアイメージ。物理的な接触も、コミュニケーションの接続も「contact」。",
@@ -802,8 +802,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 contactus（触ること）から。con-（共に）＋ tangere（触れる・tangent と同語源）。",
     },
   ],
-  // contract (18026)
-  [18026,
+  // contract (27449)
+  [27449,
     {
       coreImage:
         "「二者以上が義務・権利を法的に取り決めた文書・合意」がコアイメージ。「contract = 縮める」という語源から、条件を絞り込んで合意した文書。",
@@ -818,8 +818,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // convenient (18027)
-  [18027,
+  // convenient (24704)
+  [24704,
     {
       coreImage:
         "「手間なく使いやすい・都合に合う」のがコアイメージ。場所・時間・方法など、使う人の状況にフィットした「楽さ」を表す。",
@@ -865,8 +865,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "19世紀の印刷業界で、印刷機の「印刷不可能なライン（dead line）」から。転じて「これ以上遅れると無効になるライン」。",
     },
   ],
-  // deposit (18030)
-  [18030,
+  // deposit (25747)
+  [25747,
     {
       coreImage:
         "「後で使うために、または担保として預けておく金や物」がコアイメージ。銀行預金・敷金・手付金などすべてを包む「預け置き」の概念。",
@@ -880,8 +880,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 depositum（預けられたもの）から。de-（下に）＋ ponere（置く）。",
     },
   ],
-  // display (18032)
-  [18032,
+  // display (27240)
+  [27240,
     {
       coreImage:
         "「人目に付くよう広げて見せる・表示する」のがコアイメージ。商品陳列・画面表示・感情の表現まで、「見える状態にする」行為すべて。",
@@ -927,8 +927,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 aestimare（価値を評価する・判断する）から。正確な測定ではなく「判断による評価」が原義。",
     },
   ],
-  // exchange (18033)
-  [18033,
+  // exchange (23799)
+  [23799,
     {
       coreImage:
         "「AをBに、BをAに互いに与え合う」のがコアイメージ。物・情報・通貨など、お互いに行き来する「交換」。",
@@ -942,8 +942,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 eschangier から。ex-（外に）＋ changer（変える）。",
     },
   ],
-  // expense (18034)
-  [18034,
+  // expense (24867)
+  [24867,
     {
       coreImage:
         "「何かを達成するために支払う費用・出費」がコアイメージ。特にビジネスで「経費」として申請できる支出に多用する。",
@@ -957,8 +957,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 expensa（支払われたもの）から。ex-（外に）＋ pendere（重さを量る・払う・spend と同語源）。",
     },
   ],
-  // facility (18035)
-  [18035,
+  // facility (24887)
+  [24887,
     {
       coreImage:
         "「特定の活動のために整備された設備・施設」がコアイメージ。スポーツ施設・医療施設・生産設備など、機能的に整えられた場所や機器。",
@@ -972,8 +972,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 facilitas（容易さ）から。facilis（しやすい）＋ -ity。「何かを容易にする場所・手段」というのが原義。",
     },
   ],
-  // forward (18036)
-  [18036,
+  // forward (24368)
+  [24368,
     {
       coreImage:
         "「前に・先に向かって進める、または転送する」のがコアイメージ。物理的な前進も、メールの転送も「前に送る」という共通概念。",
@@ -987,8 +987,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古英語 foreweard（前向きの）から。fore-（前）＋ -ward（方向）。",
     },
   ],
-  // guarantee (18037)
-  [18037,
+  // guarantee (27758)
+  [27758,
     {
       coreImage:
         "「責任を持って確実に実現することを約束する」のがコアイメージ。品質保証・結果保証など、約束の確実性を高める誓約。",
@@ -1017,8 +1017,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "軍事用語 quarter（宿営地）＋ head（主要な）。「指揮官の宿営地 → 本部」に転じた。",
     },
   ],
-  // hire (18039)
-  [18039,
+  // hire (23816)
+  [23816,
     {
       coreImage:
         "「報酬を払って人や物を使用する」のがコアイメージ。人を「雇う」場合も、車を「借りる（レンタル）」場合も hire。",
@@ -1064,8 +1064,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 inspectio（見ること）から。in-（中を）＋ specere（見る・spectacle と同語源）。",
     },
   ],
-  // install (18040)
-  [18040,
+  // install (18782)
+  [18782,
     {
       coreImage:
         "「使える状態になるよう、決められた場所にきちんと設置・導入する」のがコアイメージ。機器の設置もソフトのインストールも同じ語。",
@@ -1079,8 +1079,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 installare（場所に据える）から。in-（〜の中に）＋ stallum（場所・stall と同語源）。",
     },
   ],
-  // insurance (18041)
-  [18041,
+  // insurance (27894)
+  [27894,
     {
       coreImage:
         "「将来のリスク・損害に備えて保険料を払い、万一の時に補償を受ける仕組み」がコアイメージ。不確実性に対する「安全網」。",
@@ -1110,8 +1110,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "中世ラテン語 inventorium（発見したものの一覧）から。invenire（見つける・invent と同語源）＋ -ory（場所）。",
     },
   ],
-  // itinerary (18043)
-  [18043,
+  // itinerary (31634)
+  [31634,
     {
       coreImage:
         "「旅や出張の日程・経路・宿泊地などを細かく記した計画書」がコアイメージ。「どこで何をするか」が時系列にまとめられた旅程表。",
@@ -1125,8 +1125,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 itinerarium（旅の記録）から。iter（旅・道）＋ -arium（場所・記録）。",
     },
   ],
-  // luggage (18044)
-  [18044,
+  // luggage (27986)
+  [27986,
     {
       coreImage:
         "「旅行時に持ち運ぶスーツケース・バッグなどの荷物全体」がコアイメージ。不可算名詞で、個々のバッグではなく「荷物」という概念を表す。",
@@ -1140,8 +1140,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "lug（重いものを引きずる）＋ -age（集合名詞化）。重くて大変な「運ぶもの」のイメージ。",
     },
   ],
-  // maintain (18045)
-  [18045,
+  // maintain (25063)
+  [25063,
     {
       coreImage:
         "「あるレベルや状態を保ち続ける・持続させる」のがコアイメージ。機械の整備も、品質の維持も、自分の主張も「保ち続ける」点で共通。",
@@ -1171,8 +1171,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 manu factum（手で作られたもの）から。manu（手で）＋ facere（作る・fact と同語源）。現代は機械化されても同じ語を使う。",
     },
   ],
-  // merchandise (18046)
-  [18046,
+  // merchandise (28040)
+  [28040,
     {
       coreImage:
         "「売買の対象となる商品・品物の総称」がコアイメージ。小売店や卸売で取引される物品全般を指すやや格式ばった語。",
@@ -1186,8 +1186,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 marchandise（商品）から。marchand（商人）→ merchant と同語源。",
     },
   ],
-  // negotiate (18047)
-  [18047,
+  // negotiate (28120)
+  [28120,
     {
       coreImage:
         "「双方が満足できる合意に向けて、条件を話し合いながら調整する」のがコアイメージ。ビジネス・外交・日常まで幅広く使う。",
@@ -1202,8 +1202,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // notify (18048)
-  [18048,
+  // notify (26987)
+  [26987,
     {
       coreImage:
         "「公式に・正式に知らせる」のがコアイメージ。単なる会話ではなく、組織的・義務的に情報を伝達する行為。",
@@ -1217,8 +1217,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 notificare（知らせる）から。notus（知られた）＋ facere（する）。",
     },
   ],
-  // obtain (18049)
-  [18049,
+  // obtain (25121)
+  [25121,
     {
       coreImage:
         "「努力・手続きを経て何かを手に入れる」のがコアイメージ。単なる get より意図的・公式なニュアンスがある。",
@@ -1232,8 +1232,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 obtinere（保持する・達成する）から。ob-（に向かって）＋ tenere（保持する）。",
     },
   ],
-  // operate (18050)
-  [18050,
+  // operate (23825)
+  [23825,
     {
       coreImage:
         "「機械・システム・事業を動かして機能させる」のがコアイメージ。機器の操作も、会社の運営も、手術も「operate」。",
@@ -1247,8 +1247,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 operari（働く）から。opus（仕事・work）が語源。",
     },
   ],
-  // order (18052)
-  [18052,
+  // order (24493)
+  [24493,
     {
       coreImage:
         "「誰かに何かをするよう指示する・商品の購入を申し込む・物事を整然とした状態にする」という幅広いコアイメージ。",
@@ -1278,8 +1278,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 participare（共に持つ）から。pars（部分）＋ capere（取る）。「一部を取る＝関与する」のが原義。",
     },
   ],
-  // permit (18053)
-  [18053,
+  // permit (25150)
+  [25150,
     {
       coreImage:
         "「権限を持つ者が正式に許可を与える」のがコアイメージ。動詞と名詞の両方で使い、名詞では物理的な許可証も指す。",
@@ -1293,8 +1293,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 permittere（通過させる）から。per-（完全に）＋ mittere（送る・mission と同語源）。",
     },
   ],
-  // policy (18054)
-  [18054,
+  // policy (25162)
+  [25162,
     {
       coreImage:
         "「組織・政府が何かについて決めた公式な方針・ルール」がコアイメージ。判断の基準となる「枠組み」。",
@@ -1308,8 +1308,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ギリシャ語 politeia（市民のあり方）から。polis（都市・国家）→ police・politics と同語源。",
     },
   ],
-  // postpone (18055)
-  [18055,
+  // postpone (28306)
+  [28306,
     {
       coreImage:
         "「予定していたことを後の日時に先送りにする」のがコアイメージ。キャンセルではなく、「後回し」にすること。",
@@ -1323,8 +1323,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 postponere（後ろに置く）から。post-（後に）＋ ponere（置く）。",
     },
   ],
-  // procedure (18056)
-  [18056,
+  // procedure (26734)
+  [26734,
     {
       coreImage:
         "「目的を達成するために決められた手順・ステップ」のがコアイメージ。業務手順・医療手技・法的手続きなど、正式なやり方の流れ。",
@@ -1338,8 +1338,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 procedere（前に進む）から。pro-（前に）＋ cedere（行く・proceed と同語源）。",
     },
   ],
-  // profit (18057)
-  [18057,
+  // profit (25202)
+  [25202,
     {
       coreImage:
         "「収入からコストを差し引いた残り・利益」がコアイメージ。ビジネスが存続するための「黒字」の概念。",
@@ -1353,8 +1353,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 profectus（前進・進歩）から。pro-（前に）＋ facere（する）。「成果として得るもの」の意。",
     },
   ],
-  // promote (18058)
-  [18058,
+  // promote (25194)
+  [25194,
     {
       coreImage:
         "「上の位置に押し上げる・前に押し出す」のがコアイメージ。人を「昇進」させることも、商品を「宣伝」することも、目標を「促進」することも同じ語。",
@@ -1368,8 +1368,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 promovere（前に動かす）から。pro-（前に）＋ movere（動かす）。",
     },
   ],
-  // propose (18059)
-  [18059,
+  // propose (25195)
+  [25195,
     {
       coreImage:
         "「考えや計画を前に出して相手に検討を促す」のがコアイメージ。新しいアイデアを「提案する」、または結婚を「申し込む」行為。",
@@ -1383,8 +1383,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 proponere（前に置く）から。pro-（前に）＋ ponere（置く）。",
     },
   ],
-  // recommend (18062)
-  [18062,
+  // recommend (25226)
+  [25226,
     {
       coreImage:
         "「良いものとして他の人に信頼をもって伝える・勧める」のがコアイメージ。自分の経験・知識に基づいた肯定的な提案。",
@@ -1398,8 +1398,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 recommendare（再び委ねる）から。re-（再び）＋ commendare（委ねる・commend と同語源）。",
     },
   ],
-  // refund (18063)
-  [18063,
+  // refund (26796)
+  [26796,
     {
       coreImage:
         "「受け取ったお金を返す・払い戻す」のがコアイメージ。商品返品・サービス未提供・過払いなど、支払いを元に戻す行為。",
@@ -1413,8 +1413,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "re-（戻して）＋ fund（ラテン語 fundus = 底・基盤）。お金を「元の基盤に戻す」イメージ。",
     },
   ],
-  // register (18064)
-  [18064,
+  // register (25247)
+  [25247,
     {
       coreImage:
         "「公式なリスト・記録に名前や情報を登録する」のがコアイメージ。動詞「登録する」から名詞「レジ（金銭登録機）」まで幅広く使う。",
@@ -1428,8 +1428,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 regestum（記録されたもの）から。re-（戻して）＋ gerere（運ぶ・manage と関連）。",
     },
   ],
-  // regulation (18065)
-  [18065,
+  // regulation (28460)
+  [28460,
     {
       coreImage:
         "「政府・機関が設けた、守るべき公式のルール・法規制」がコアイメージ。個人ルールではなく、組織・社会全体を対象とした規制。",
@@ -1443,8 +1443,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 regulatio（規則による制御）から。regula（定規・規則・rule と同語源）。",
     },
   ],
-  // relocate (18066)
-  [18066,
+  // relocate (30675)
+  [30675,
     {
       coreImage:
         "「人や組織が別の場所に移る・移転させる」のがコアイメージ。会社の引越しも、従業員の転勤も「relocate」。",
@@ -1459,8 +1459,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // repair (18067)
-  [18067,
+  // repair (23842)
+  [23842,
     {
       coreImage:
         "「壊れたり不具合のある物を元の状態に戻す・修理する」のがコアイメージ。物理的な修繕も、関係の修復も「repair」。",
@@ -1474,8 +1474,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 reparare（再び準備する）から。re-（再び）＋ parare（準備する・prepare と同語源）。",
     },
   ],
-  // replace (18068)
-  [18068,
+  // replace (23844)
+  [23844,
     {
       coreImage:
         "「古い・壊れた・なくなったものの代わりに新しいものを置く」のがコアイメージ。「再配置する」から「後任になる」まで幅広く使う。",
@@ -1489,8 +1489,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "re-（再び）＋ place（場所に置く）。フランス語 replacer から。",
     },
   ],
-  // require (18069)
-  [18069,
+  // require (23845)
+  [23845,
     {
       coreImage:
         "「必要として求める・求められる」のがコアイメージ。任意ではなく「なくてはならない」という必要性の強さが特徴。",
@@ -1504,8 +1504,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 requirere（再び求める）から。re-（再び）＋ quaerere（求める・query と同語源）。",
     },
   ],
-  // resign (18071)
-  [18071,
+  // resign (25243)
+  [25243,
     {
       coreImage:
         "「自分の意志で職・役職を辞める」のがコアイメージ。解雇（fire）と違い、当人が自発的に「辞表を出す」行為。",
@@ -1519,8 +1519,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 resignare（印を消す・返還する）から。re-（戻して）＋ signare（印を付ける）。",
     },
   ],
-  // retail (18072)
-  [18072,
+  // retail (28506)
+  [28506,
     {
       coreImage:
         "「最終消費者に直接商品を販売する」のがコアイメージ。卸売（wholesale）の反対で、店頭・オンラインで個人に売ること。",
@@ -1534,8 +1534,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 retailler（小さく切る）から。re-（再び）＋ tailler（切る・tailor と同語源）。「大量の商品を切り分けて少量で売る」のが原義。",
     },
   ],
-  // revenue (18073)
-  [18073,
+  // revenue (28515)
+  [28515,
     {
       coreImage:
         "「事業活動から入ってくる総収入・売上高」のがコアイメージ。コストを差し引く前の「入ってきたお金の総額」。",
@@ -1549,8 +1549,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "フランス語 revenu（戻ってきたもの）から。ラテン語 revenire（戻ってくる）。「投資から戻ってくるお金」のイメージ。",
     },
   ],
-  // salary (18074)
-  [18074,
+  // salary (25279)
+  [25279,
     {
       coreImage:
         "「働いた対価として定期的（月ごと・年ごと）に受け取る固定報酬」がコアイメージ。時給（hourly wage）と違い、固定で支払われる。",
@@ -1564,8 +1564,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 salarium（塩代）から。古代ローマで兵士や官吏に「塩を買うための手当」を支給したことが語源。",
     },
   ],
-  // shipment (18076)
-  [18076,
+  // shipment (30190)
+  [30190,
     {
       coreImage:
         "「貨物・荷物を特定の場所に向けて輸送すること・その一括り」がコアイメージ。出荷の行為と、その出荷された荷物の両方を指す。",
@@ -1596,8 +1596,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 signatura（印を付けること）から。signum（印・sign）＋ -ature（行為・結果）。",
     },
   ],
-  // submit (18077)
-  [18077,
+  // submit (28706)
+  [28706,
     {
       coreImage:
         "「権限ある相手や締め切りに合わせて、書類・作品・データを提出する」のがコアイメージ。「下に送る」という語源通り、上位者への提出。",
@@ -1611,8 +1611,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 submittere（下に送る）から。sub-（下に）＋ mittere（送る）。",
     },
   ],
-  // subscribe (18078)
-  [18078,
+  // subscribe (27000)
+  [27000,
     {
       coreImage:
         "「継続的にサービス・情報を受け取るために定期的に支払い・登録をする」のがコアイメージ。一回限りではなく、継続的な関係。",
@@ -1626,8 +1626,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 subscribere（下に書く）から。sub-（下に）＋ scribere（書く）。契約書の下に署名する行為から。",
     },
   ],
-  // suggest (18079)
-  [18079,
+  // suggest (23755)
+  [23755,
     {
       coreImage:
         "「相手に軽く提示して考えてもらう」のがコアイメージ。propose より非公式で、相手に選択の余地を残した提案。",
@@ -1657,8 +1657,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 supplere（補充する）から。sub-（下から）＋ plere（満たす・full と同語源）。",
     },
   ],
-  // transfer (18080)
-  [18080,
+  // transfer (25334)
+  [25334,
     {
       coreImage:
         "「ある場所・人・状態から別の場所・人・状態へ移す・移る」のがコアイメージ。人の転勤、資金の振込、データの移動すべてが「transfer」。",
@@ -1672,8 +1672,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 transferre（向こうへ運ぶ）から。trans-（向こうへ）＋ ferre（運ぶ）。",
     },
   ],
-  // update (18081)
-  [18081,
+  // update (28914)
+  [28914,
     {
       coreImage:
         "「情報・状態・ソフトウェアを最新の状態にする」のがコアイメージ。古い情報を「今」に追いつかせる行為。",
@@ -1687,8 +1687,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "up-（上へ・最新に）＋ date（日付・時代）。「時代に追いつかせる」のが原義。",
     },
   ],
-  // vacancy (18082)
-  [18082,
+  // vacancy (28918)
+  [28918,
     {
       coreImage:
         "「空いている・埋まっていない状態」のがコアイメージ。ホテルの空室も、会社の欠員も「空き」という共通概念。",
@@ -1702,8 +1702,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 vacantia（空であること）から。vacare（空である・vacation と同語源）。",
     },
   ],
-  // warranty (18083)
-  [18083,
+  // warranty (28971)
+  [28971,
     {
       coreImage:
         "「製品の欠陥・故障が一定期間内に起きた場合の修理・交換を保証する」のがコアイメージ。製品に付属する「品質保証書」。",
@@ -1717,8 +1717,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古ノルマン語 warantie（保護・保証）から。warrant（保証・権限）と同語源。",
     },
   ],
-  // withdraw (18084)
-  [18084,
+  // withdraw (29010)
+  [29010,
     {
       coreImage:
         "「ある場所・状況から引っ張り戻す・引き出す」のがコアイメージ。ATMから現金を引き出すことも、軍が撤退することも「withdraw」。",
@@ -1749,8 +1749,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 accompagnier から。a-（〜に）＋ compagner（仲間と共に行く）＋ companion（仲間）と同語源。",
     },
   ],
-  // accurate (18085)
-  [18085,
+  // accurate (25493)
+  [25493,
     {
       coreImage:
         "「現実や事実と完全に一致している、誤りのない」のがコアイメージ。精度・正確性の高さを表す。",
@@ -1764,8 +1764,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 accuratus（注意深く行われた）から。ad-（〜に向かって）＋ curare（世話をする・care と関連）。",
     },
   ],
-  // additional (18086)
-  [18086,
+  // additional (24533)
+  [24533,
     {
       coreImage:
         "「すでにあるものの上にさらに加わる」のがコアイメージ。「おまけ・追加分」として存在するものを表す。",
@@ -1779,8 +1779,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "addition（追加）＋ -al（形容詞化）。addition はラテン語 addere（加える）から。",
     },
   ],
-  // adjust (18087)
-  [18087,
+  // adjust (24509)
+  [24509,
     {
       coreImage:
         "「目的に合うよう少し変えて合わせる・微調整する」のがコアイメージ。大きく変えるのではなく、ちょうどよくなるよう「合わせ込む」行為。",
@@ -1794,8 +1794,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "フランス語 ajuster（正確に合わせる）から。a-（〜に）＋ juste（正確な・just と同語源）。",
     },
   ],
-  // admission (18088)
-  [18088,
+  // admission (27066)
+  [27066,
     {
       coreImage:
         "「中に入ることを許される・認められる」のがコアイメージ。場所への入場も、学校・組織への入会も、事実を「認める」ことも同じ語。",
@@ -1809,8 +1809,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 admissio（受け入れること）から。ad-（〜へ）＋ mittere（送る・mission と同語源）。",
     },
   ],
-  // advance (18089)
-  [18089,
+  // advance (24513)
+  [24513,
     {
       coreImage:
         "「前に進む・前に進める・前払いする」のがコアイメージ。前向きの動き・進歩・前払いすべてに使える語。",
@@ -1824,8 +1824,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 abante（前方に）から。古フランス語 avancer を経て英語に。",
     },
   ],
-  // advertise (18090)
-  [18090,
+  // advertise (27057)
+  [27057,
     {
       coreImage:
         "「商品・サービス・求人などを広く知らせて関心を引く」のがコアイメージ。メディア・SNS・広告板などで「周知させる」行為。",
@@ -1839,8 +1839,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 advertere（向ける・注意を引く）から。ad-（〜に）＋ vertere（向ける）。",
     },
   ],
-  // afford (18091)
-  [18091,
+  // afford (24516)
+  [24516,
     {
       coreImage:
         "「余裕があるので〜できる・〜する余裕がある」のがコアイメージ。お金・時間・リスクのいずれにも使える「余裕・能力」の表現。",
@@ -1854,8 +1854,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古英語 geforðian（達成する・促進する）から。for-（前に）＋ þian（進む）。現代では「余裕がある」の意味に特化。",
     },
   ],
-  // agenda (18092)
-  [18092,
+  // agenda (25479)
+  [25479,
     {
       coreImage:
         "「会議・打ち合わせで扱う議題・進行予定のリスト」がコアイメージ。ラテン語「行われるべきこと」の複数形が語源。",
@@ -1869,8 +1869,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 agenda（行われるべきこと）の複数形。agere（行う・act と同語源）。",
     },
   ],
-  // alternative (18093)
-  [18093,
+  // alternative (27084)
+  [27084,
     {
       coreImage:
         "「代わりに選べる別の選択肢・手段」がコアイメージ。どちらかを選ぶ二択、または複数の代替案の中の一つ。",
@@ -1885,8 +1885,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // annual (18094)
-  [18094,
+  // annual (24556)
+  [24556,
     {
       coreImage:
         "「1年ごとに繰り返される・年に1回の」のがコアイメージ。定期的な年次サイクルを表す。",
@@ -1900,8 +1900,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 annualis（年ごとの）から。annus（年）が語源。",
     },
   ],
-  // apologize (18095)
-  [18095,
+  // apologize (23767)
+  [23767,
     {
       coreImage:
         "「自分のミスや失礼に対して、誠意を持って謝罪する」のがコアイメージ。単なる「ごめんなさい」より格式のある謝罪表現。",
@@ -1915,8 +1915,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ギリシャ語 apologeisthai（自己弁護する）から。apo-（離れて）＋ logos（言葉）。もともとは「弁明する」の意味で、謝罪の意味に変化した。",
     },
   ],
-  // appropriate (18097)
-  [18097,
+  // appropriate (24560)
+  [24560,
     {
       coreImage:
         "「その状況・目的・基準にちょうどふさわしい」のがコアイメージ。良い・悪いではなく「場に合っている」かどうかの評価。",
@@ -1930,8 +1930,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 appropriare（自分のものにする）から。ad-（〜に）＋ proprius（自分の・proper と同語源）。「その場に合ったもの」の意。",
     },
   ],
-  // approve (18098)
-  [18098,
+  // approve (24566)
+  [24566,
     {
       coreImage:
         "「権限を持つ者が、提案・計画・要求を正式に認める」のがコアイメージ。reject（却下）の反対。",
@@ -1945,8 +1945,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 approbare（良いと認める）から。ad-（〜に）＋ probare（試す・prove と同語源）。",
     },
   ],
-  // arrangement (18099)
-  [18099,
+  // arrangement (27096)
+  [27096,
     {
       coreImage:
         "「物事を整えて・手配して準備した状態・取り決め」がコアイメージ。旅行の手配・花の生け花・合意の取り決めすべてを包む。",
@@ -1960,8 +1960,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "arrange（整える・手配する）＋ -ment（名詞化）。古フランス語 arangier（列に並べる）から。",
     },
   ],
-  // assign (18100)
-  [18100,
+  // assign (25537)
+  [25537,
     {
       coreImage:
         "「特定の人や場所に役割・仕事・資源を割り当てる」のがコアイメージ。組織的に「これはあなたの担当」と決める行為。",
@@ -1975,8 +1975,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 assignare（印を付けて渡す）から。ad-（〜に）＋ signare（印を付ける・sign と同語源）。",
     },
   ],
-  // assist (18101)
-  [18101,
+  // assist (24569)
+  [24569,
     {
       coreImage:
         "「何かをしようとしている人の傍らで力を貸す・援助する」のがコアイメージ。主体はあくまで相手で、自分は「助っ人」として機能する。",
@@ -1990,8 +1990,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 assistere（傍らに立つ）から。ad-（傍らに）＋ sistere（立つ・stand と関連）。",
     },
   ],
-  // attend (18103)
-  [18103,
+  // attend (24572)
+  [24572,
     {
       coreImage:
         "「ある場所・イベントに実際に出向いて参加する」のがコアイメージ。単に「行く」のではなく、その場に存在して関与する。",
@@ -2006,8 +2006,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // award (18104)
-  [18104,
+  // award (25541)
+  [25541,
     {
       coreImage:
         "「優れた業績・貢献に対して正式に贈られる賞・賞金」がコアイメージ。動詞では「授与する・与える」の意味にもなる。",
@@ -2021,8 +2021,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古ノルマン語 awarder（注意深く見て決定する）から。a-（〜に）＋ warder（保護する・ward と同語源）。",
     },
   ],
-  // baggage (18105)
-  [18105,
+  // baggage (25545)
+  [25545,
     {
       coreImage:
         "「旅行時に携帯する荷物全体」がコアイメージ。主にアメリカ英語で使われ、スーツケース・バッグ類の総称。",
@@ -2036,8 +2036,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "フランス語 bagage（荷物の束）から。bague（束）に由来し、旅人が荷物をまとめた状態。",
     },
   ],
-  // balance (18106)
-  [18106,
+  // balance (24577)
+  [24577,
     {
       coreImage:
         "「両側が等しい状態・釣り合い」のがコアイメージ。銀行の「残高」も、天秤の「バランス」も、仕事と生活の「均衡」も同じ語。",
@@ -2051,8 +2051,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 bilanx（二皿の天秤）から。bi-（二つの）＋ lanx（皿）。",
     },
   ],
-  // ban (18107)
-  [18107,
+  // ban (24793)
+  [24793,
     {
       coreImage:
         "「権限のある者が特定の行為・物を正式に禁止する」のがコアイメージ。違反した場合は制裁・罰則がある公式禁止。",
@@ -2066,8 +2066,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古英語 bannan（公布する・呪う）から。「法令で公布して禁じる」というのが原義。",
     },
   ],
-  // banking (18108)
-  [18108,
+  // banking (25551)
+  [25551,
     {
       coreImage:
         "「銀行を通じたお金の保管・移動・貸し借りに関する活動・業界」がコアイメージ。",
@@ -2081,8 +2081,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "bank（銀行）＋ -ing（業務・活動）。bank はイタリア語 banca（両替商の台）から。",
     },
   ],
-  // beverage (18109)
-  [18109,
+  // beverage (31230)
+  [31230,
     {
       coreImage:
         "「水・アルコール・ジュースなど、飲むことができる液体全般」がコアイメージ。drink より格式ばったビジネス・食品業界用語。",
@@ -2096,8 +2096,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 bevrage（飲むこと）から。ラテン語 bibere（飲む）が語源。",
     },
   ],
-  // bill (18110)
-  [18110,
+  // bill (23888)
+  [23888,
     {
       coreImage:
         "「受け取ったサービスや商品の代金を請求する紙」がコアイメージ。レストランの「勘定」・公共料金の「請求書」・立法の「法案」まで含む。",
@@ -2111,8 +2111,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 bulla（印章・封印された文書）から。中世の公式文書→請求書に転じた。",
     },
   ],
-  // boarding (18111)
-  [18111,
+  // boarding (25391)
+  [25391,
     {
       coreImage:
         "「乗り物（飛行機・船・電車）に乗り込む行為・プロセス」がコアイメージ。",
@@ -2126,8 +2126,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "board（板・船板）＋ -ing。「船の板を渡って乗り込む」行為から転じた。",
     },
   ],
-  // branch (18112)
-  [18112,
+  // branch (24620)
+  [24620,
     {
       coreImage:
         "「本体から分岐した一部分」がコアイメージ。木の枝・銀行支店・学問の分野など「メインから派生したもの」すべてに使う。",
@@ -2141,8 +2141,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 branche（枝）から。ラテン語 branca（爪・手足）が語源。",
     },
   ],
-  // brief (18113)
-  [18113,
+  // brief (24607)
+  [24607,
     {
       coreImage:
         "「内容が凝縮されていて短い・簡潔な」のがコアイメージ。長さより情報の密度・的確さに注目する表現。",
@@ -2172,8 +2172,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "スペイン語 cargo（荷物）から。cargar（積む）＋ ラテン語 carrus（荷車）が語源。",
     },
   ],
-  // celebrate (18115)
-  [18115,
+  // celebrate (23780)
+  [23780,
     {
       coreImage:
         "「特別な出来事・達成・記念日を喜んで皆で祝う」のがコアイメージ。個人的な喜びより、共に「祝祭」を行う社交的な行為。",
@@ -2187,8 +2187,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 celebrare（多くの人と集う・賞賛する）から。celeber（多くの人が集まる場所）に由来。",
     },
   ],
-  // certificate (18116)
-  [18116,
+  // certificate (27375)
+  [27375,
     {
       coreImage:
         "「資格・事実・完了を公式に証明する文書」がコアイメージ。誰かが認めて正式に発行した「証明書」。",
@@ -2202,8 +2202,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 certificare（確かにする）から。certus（確かな・certain と同語源）＋ facere（する）。",
     },
   ],
-  // charge (18117)
-  [18117,
+  // charge (25661)
+  [25661,
     {
       coreImage:
         "「料金を請求する・任務を課す・充電する・突進する」という「力を込めて向かわせる」のがコアイメージ。",
@@ -2217,8 +2217,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 carrus（荷車）から。「荷を積む→負担を課す→料金を課す」に転じた。",
     },
   ],
-  // commute (18118)
-  [18118,
+  // commute (25928)
+  [25928,
     {
       coreImage:
         "「自宅と職場・学校の間を定期的に往復する」のがコアイメージ。日本語の「通勤」とほぼ同義。",
@@ -2232,8 +2232,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 commutare（完全に変える）から。通期定期券（commutation ticket）の略称として「定期的に往復する」の意味になった。",
     },
   ],
-  // compare (18119)
-  [18119,
+  // compare (23782)
+  [23782,
     {
       coreImage:
         "「2つ以上のものを並べてどう同じ・どう違うかを調べる」のがコアイメージ。差異・共通点を明確にするための分析行為。",
@@ -2247,8 +2247,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 comparare（同等に置く）から。com-（共に）＋ par（等しい・par と同語源）。",
     },
   ],
-  // competition (18120)
-  [18120,
+  // competition (24682)
+  [24682,
     {
       coreImage:
         "「限られたリソース・勝利・市場シェアを複数の相手と奪い合う状況」がコアイメージ。ビジネス競争も、スポーツ大会も同じ語。",
@@ -2262,8 +2262,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 competere（共に求める）から。com-（共に）＋ petere（求める）。",
     },
   ],
-  // concentrate (18121)
-  [18121,
+  // concentrate (24707)
+  [24707,
     {
       coreImage:
         "「一点に向けて意識・エネルギー・物質を集中させる」のがコアイメージ。注意を集中することも、物質を濃縮することも「concentrate」。",
@@ -2277,8 +2277,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 concentrare（中心に集める）から。con-（共に）＋ centrum（中心・center と同語源）。",
     },
   ],
-  // concern (18122)
-  [18122,
+  // concern (24684)
+  [24684,
     {
       coreImage:
         "「ある問題・出来事が自分に関係していて、気になる・心配する」のがコアイメージ。「関係する」と「心配する」は同じ語から。",
@@ -2292,8 +2292,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 concernere（ふるいにかけて混ぜる）から。con-（共に）＋ cernere（区別する）。「関わりを持つ」の意に転じた。",
     },
   ],
-  // conduct (18123)
-  [18123,
+  // conduct (25695)
+  [25695,
     {
       coreImage:
         "「一定のやり方・管理のもとに活動を進める・実施する」のがコアイメージ。組織的・計画的に「行う」行為。",
@@ -2308,8 +2308,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // connect (18125)
-  [18125,
+  // connect (23784)
+  [23784,
     {
       coreImage:
         "「分離していた2つ以上のものをつなぐ・接続する」のがコアイメージ。電子機器の接続から、人と人のネットワーキングまで幅広く使う。",
@@ -2323,8 +2323,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 connectere（ともに結ぶ）から。con-（共に）＋ nectere（結ぶ・nexus と同語源）。",
     },
   ],
-  // consequence (18126)
-  [18126,
+  // consequence (24688)
+  [24688,
     {
       coreImage:
         "「ある行為・出来事の後に続いて起きる結果・影響」がコアイメージ。特に否定的・重大な結果に使われることが多い。",
@@ -2338,8 +2338,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 consequi（後に続く）から。con-（共に）＋ sequi（続く・sequence と同語源）。",
     },
   ],
-  // consider (18127)
-  [18127,
+  // consider (23785)
+  [23785,
     {
       coreImage:
         "「決断する前に、様々な角度から注意深く思い巡らす」のがコアイメージ。即決ではなく、時間をかけて「検討する」行為。",
@@ -2353,8 +2353,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 considerare（星を観察する）から。con-（完全に）＋ sidus（星）。星を観察して吉凶を占うことから「注意深く調べる」の意に転じた。",
     },
   ],
-  // consume (18128)
-  [18128,
+  // consume (25709)
+  [25709,
     {
       coreImage:
         "「資源・エネルギー・時間などを使い切る・食べる」のがコアイメージ。何かを「消費することで減らしていく」行為。",
@@ -2384,8 +2384,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 contribuere（一緒に運ぶ）から。con-（共に）＋ tribuere（割り当てる・tribute と同語源）。",
     },
   ],
-  // cooperation (18129)
-  [18129,
+  // cooperation (27453)
+  [27453,
     {
       coreImage:
         "「複数の人・組織が共通の目的に向けて力を合わせて取り組む」のがコアイメージ。単純な「手伝い」ではなく「協働」の概念。",
@@ -2399,8 +2399,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 cooperari（共に働く）から。co-（共に）＋ operari（働く・operate と同語源）。",
     },
   ],
-  // coupon (18130)
-  [18130,
+  // coupon (18893)
+  [18893,
     {
       coreImage:
         "「提示することで割引・特典を受けられる券」がコアイメージ。購買を促進するために発行される。",
@@ -2414,8 +2414,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "フランス語 coupon（切り取り券）から。couper（切る）が語源。「切り取って使う券」が原義。",
     },
   ],
-  // current (18131)
-  [18131,
+  // current (24742)
+  [24742,
     {
       coreImage:
         "「今この瞬間に存在している・今に関連している」のがコアイメージ。名詞では「流れ（電流・海流）」の意味にもなる。",
@@ -2429,8 +2429,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 currens（流れている）から。currere（走る・run）の現在分詞。「今流れているもの」が転じて「現在の」に。",
     },
   ],
-  // delay (18132)
-  [18132,
+  // delay (25743)
+  [25743,
     {
       coreImage:
         "「予定より遅れる・遅らせる」のがコアイメージ。自然に遅れる場合も、意図的に延ばす場合も使える。",
@@ -2445,8 +2445,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // demand (18133)
-  [18133,
+  // demand (24735)
+  [24735,
     {
       coreImage:
         "「強く・はっきりと要求する」または「市場での商品への需要」がコアイメージ。強制的なニュアンスを持つ「強い要求」。",
@@ -2460,8 +2460,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 demandare（完全に委ねる）から。de-（完全に）＋ mandare（命じる・mandate と同語源）。",
     },
   ],
-  // demonstrate (18134)
-  [18134,
+  // demonstrate (27213)
+  [27213,
     {
       coreImage:
         "「見せることで証明する・実演して理解させる」のがコアイメージ。口頭説明ではなく、実際に示すことで確信させる行為。",
@@ -2491,8 +2491,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "depart（出発する）＋ -ure（名詞化）。depart はラテン語 dispartire（分離する）から。",
     },
   ],
-  // describe (18135)
-  [18135,
+  // describe (23691)
+  [23691,
     {
       coreImage:
         "「言葉で詳しく伝えて相手に理解させる」のがコアイメージ。特徴・状況・出来事を「言語化する」行為。",
@@ -2506,8 +2506,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 describere（書き写す）から。de-（完全に）＋ scribere（書く・script と同語源）。",
     },
   ],
-  // destination (18136)
-  [18136,
+  // destination (27226)
+  [27226,
     {
       coreImage:
         "「向かっている・向かう予定の最終的な目的地」がコアイメージ。旅行・配送・人生の目標すべての「終点」。",
@@ -2537,8 +2537,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 divisum（分けられたもの）から。deviser（計画する）と同語源。「計画して設計したもの」が原義。",
     },
   ],
-  // directory (18137)
-  [18137,
+  // directory (18686)
+  [18686,
     {
       coreImage:
         "「情報を整理して参照しやすくしたリスト・一覧」がコアイメージ。電話帳・社員名簿・コンピュータのフォルダすべてが「directory」。",
@@ -2552,8 +2552,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 directorium（案内・指示するもの）から。dirigere（導く・direct と同語源）。",
     },
   ],
-  // distribute (18138)
-  [18138,
+  // distribute (27224)
+  [27224,
     {
       coreImage:
         "「複数の場所・人に広く分けて配る」のがコアイメージ。1か所に集中させるのではなく、広く「配布・流通」させる行為。",
@@ -2567,8 +2567,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 distribuere（分けて割り当てる）から。dis-（分離）＋ tribuere（割り当てる・tribute と同語源）。",
     },
   ],
-  // domestic (18139)
-  [18139,
+  // domestic (27544)
+  [27544,
     {
       coreImage:
         "「国の内部・家庭の内部」に関することがコアイメージ。外国（international）や外部（外食など）の反対として使う。",
@@ -2582,8 +2582,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 domesticus（家の）から。domus（家・dome と同語源）。",
     },
   ],
-  // earn (18140)
-  [18140,
+  // earn (24827)
+  [24827,
     {
       coreImage:
         "「労働・努力・能力の対価として報酬を得る」のがコアイメージ。棚から牡丹餅ではなく、「正当に稼ぐ・手に入れる」行為。",
@@ -2598,8 +2598,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // effective (18141)
-  [18141,
+  // effective (24825)
+  [24825,
     {
       coreImage:
         "「意図した効果・成果をきちんと生み出している」のがコアイメージ。努力や行動が「機能している・成果が出ている」状態。",
@@ -2613,8 +2613,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 effectivus（実現する力のある）から。effect（結果・効果）＋ -ive（形容詞化）。",
     },
   ],
-  // efficient (18142)
-  [18142,
+  // efficient (24826)
+  [24826,
     {
       coreImage:
         "「無駄なリソースを使わずに目的を達成できる」のがコアイメージ。時間・コスト・エネルギーの「無駄のなさ」。",
@@ -2628,8 +2628,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 efficiens（実現させる）から。ex-（外に）＋ facere（する・factory と同語源）の現在分詞。",
     },
   ],
-  // encourage (18143)
-  [18143,
+  // encourage (23795)
+  [23795,
     {
       coreImage:
         "「勇気・自信を与えて、行動・挑戦を後押しする」のがコアイメージ。心理的な「心の支え」を提供する行為。",
@@ -2643,8 +2643,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "en-（中に）＋ courage（勇気）。「相手の中に勇気を注ぐ」のが原義。",
     },
   ],
-  // entire (18144)
-  [18144,
+  // entire (24834)
+  [24834,
     {
       coreImage:
         "「欠けた部分のない・完全な全体」がコアイメージ。「全員・全部・全期間」を強調する語。",
@@ -2658,8 +2658,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 integer（完全な・intact）から。in-（否定）＋ tangere（触れる）。「触れられていない・無傷の」が原義。",
     },
   ],
-  // entrance (18145)
-  [18145,
+  // entrance (23947)
+  [23947,
     {
       coreImage:
         "「中に入るための場所・入口」または「中に入る行為」がコアイメージ。",
@@ -2673,8 +2673,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "enter（入る）＋ -ance（名詞化）。ラテン語 intrare（中に入る）から。",
     },
   ],
-  // equipment (18146)
-  [18146,
+  // equipment (24840)
+  [24840,
     {
       coreImage:
         "「仕事・活動に必要な道具・機器一式」がコアイメージ。個々の道具ではなく「必要なものが揃った状態」を不可算名詞で表す。",
@@ -2688,8 +2688,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "equip（装備する）＋ -ment（名詞化）。古フランス語 equiper（船を装備する）から。",
     },
   ],
-  // essential (18147)
-  [18147,
+  // essential (24852)
+  [24852,
     {
       coreImage:
         "「それなしには存在・機能できない、絶対に必要な」のがコアイメージ。「あると良い」ではなく「なければならない」という強い必要性。",
@@ -2703,8 +2703,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 essentialis（本質の）から。esse（存在する・be と同語源）。「存在の核心」というのが原義。",
     },
   ],
-  // establish (18148)
-  [18148,
+  // establish (27640)
+  [27640,
     {
       coreImage:
         "「組織・制度・事実を公式にしっかりと作り上げる・確立する」のがコアイメージ。一時的ではなく、長続きする基盤を作る行為。",
@@ -2718,8 +2718,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 stabilire（固める）から。stabilis（安定した・stable と同語源）。「揺るがない基盤を作る」のが原義。",
     },
   ],
-  // exhibit (18149)
-  [18149,
+  // exhibit (26107)
+  [26107,
     {
       coreImage:
         "「人々が見られるよう公の場に展示・陳列する」のがコアイメージ。美術館の展示から、商品の展示会まで「公開して見せる」行為。",
@@ -2733,8 +2733,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 exhibere（外に保持する・提示する）から。ex-（外に）＋ habere（持つ・have と同語源）。",
     },
   ],
-  // expand (18150)
-  [18150,
+  // expand (24873)
+  [24873,
     {
       coreImage:
         "「大きさ・範囲・規模を広げて拡大する」のがコアイメージ。物理的な膨張も、ビジネスの拡大も、知識の広がりも「expand」。",
@@ -2749,8 +2749,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
     },
   ],
 
-  // expect (18151)
-  [18151,
+  // expect (24874)
+  [24874,
     {
       coreImage:
         "「起きるだろうと思って待つ・予期する」のがコアイメージ。hope（望む）と違い、事実として起こる可能性が高いと判断する「予測」。",
@@ -2779,8 +2779,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 expirare（息を吐き出す）から。ex-（外に）＋ spirare（息をする・spirit と同語源）。「息が尽きる」から「終わる」の意に。",
     },
   ],
-  // feature (18153)
-  [18153,
+  // feature (24891)
+  [24891,
     {
       coreImage:
         "「製品・人・場所の中で特に目立つ特徴・機能」がコアイメージ。全体ではなく「特に注目すべき要素」。",
@@ -2794,8 +2794,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 factura（作られたもの）から。facere（作る）が語源。「作り上げられた特徴」が原義。",
     },
   ],
-  // feedback (18154)
-  [18154,
+  // feedback (27667)
+  [27667,
     {
       coreImage:
         "「相手の行動・成果に対して、改善・強化のために返す情報・意見」がコアイメージ。評価というより「次に活かせる反応」。",
@@ -2809,8 +2809,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "feed（供給する）＋ back（返す）。電気工学の「フィードバック回路」から転じて「情報を返す」の意味に。",
     },
   ],
-  // frequent (18155)
-  [18155,
+  // frequent (24912)
+  [24912,
     {
       coreImage:
         "「短い間隔で何度も繰り返し起こる」のがコアイメージ。頻度の高さを表す形容詞。",
@@ -2824,8 +2824,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 frequens（込み合っている・繰り返される）から。farcire（詰め込む）と関連。",
     },
   ],
-  // furniture (18156)
-  [18156,
+  // furniture (23965)
+  [23965,
     {
       coreImage:
         "「部屋・オフィスで使う移動可能な大型の家具類の総称」がコアイメージ。不可算名詞で使う。",
@@ -2839,8 +2839,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "フランス語 fournir（供給する）から。「部屋に必要なものを供給する」のが原義。",
     },
   ],
-  // generous (18157)
-  [18157,
+  // generous (24920)
+  [24920,
     {
       coreImage:
         "「惜しまず気前よく与える・心が広い」のがコアイメージ。お金・時間・親切心などを豊かに提供する姿勢。",
@@ -2854,8 +2854,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 generosus（高貴な生まれの）から。genus（家系・生まれ・genus と同語源）。「高貴な生まれは気前がいい」から転じた。",
     },
   ],
-  // gradually (18158)
-  [18158,
+  // gradually (24370)
+  [24370,
     {
       coreImage:
         "「一気にではなく、少しずつ段階的に変化する」のがコアイメージ。急激ではなく、ゆっくりとした変化の速度を表す。",
@@ -2869,8 +2869,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "gradual（段階的な）＋ -ly（副詞化）。ラテン語 gradus（歩み・ステップ）が語源。",
     },
   ],
-  // handle (18159)
-  [18159,
+  // handle (24951)
+  [24951,
     {
       coreImage:
         "「手で扱う・責任を持って処理・管理する」のがコアイメージ。物を「手で操作する」ことから、問題・業務を「うまく対処する」まで幅広い。",
@@ -2884,8 +2884,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古英語 handlian（手で扱う）から。hand（手）が語源。「手で直接触れて扱う」のが原義。",
     },
   ],
-  // hesitate (18160)
-  [18160,
+  // hesitate (24950)
+  [24950,
     {
       coreImage:
         "「確信が持てず、行動・発言をためらう・ちゅうちょする」のがコアイメージ。決断できずに立ち止まる状態。",
@@ -2902,488 +2902,488 @@ export const handwrittenExtensions: [number, WordExtension][] = [
 
   // ── TOEIC 600 ───────────────────────────────────────────────────────────────
 
-  // comply (30181)
-  [30181, { coreImage: "「規則・要求・命令に従って行動する」のがコアイメージ。自発的というより、外部の基準に合わせる義務的な行為。", usage: "「comply with regulations（規制を遵守する）」「comply with a request（要求に応じる）」「non-compliance（違反・不遵守）」のように使う。", synonymDifference: "comply vs obey vs follow: comply は規則・要求に正式に応じる。obey は命令・権威に従う（obey orders）。follow は指示・手順を追う（follow instructions）。", englishDefinition: "To act in accordance with a rule, request, or command.", etymology: "ラテン語 complere（完全に満たす）から。com-（完全に）＋ plere（満たす）。" }],
-  // delegate (18161)
-  [18161, { coreImage: "「自分の権限・仕事を他の人に任せる」のがコアイメージ。名詞では「代表者・委任された人」。", usage: "「delegate tasks（タスクを委任する）」「delegate authority（権限を委譲する）」「conference delegate（会議の代表者）」のように使う。", synonymDifference: "delegate vs assign vs entrust: delegate は権限ごと任せる。assign は特定の業務を割り当てる。entrust はより信頼に基づいて「委ねる」。", englishDefinition: "To give someone authority to do something on your behalf; a representative.", etymology: "ラテン語 delegare（遣わす）から。de-（離れて）＋ legare（送る）。" }],
-  // headquarters (30184)
-  [30184, { coreImage: "「組織の中枢・指令所」がコアイメージ。常に複数形 headquarters（HQ）として使われる。", usage: "「global headquarters（グローバル本社）」「move headquarters（本社を移転する）」「HQ（本部の略称）」のように使う。", synonymDifference: "headquarters vs head office: headquarters は組織全体を統括する公式な本部（軍・大企業に多い）。head office はビジネス文脈での「本社」。", englishDefinition: "The main office or center of control of an organization.", etymology: "quarter（陣地・宿営地）＋ head（主要な）。軍の「指揮官本部」から転じた。" }],
-  // incentive (18163)
-  [18163, { coreImage: "「行動・努力を促すための報奨・動機付け」のがコアイメージ。「行動したくなるように外から与えるもの」。", usage: "「financial incentive（金銭的インセンティブ）」「sales incentive（販売奨励金）」「incentive program（インセンティブプログラム）」のように使う。", synonymDifference: "incentive vs reward vs bonus: incentive は行動を起こさせる事前の動機付け。reward は行動後に与える報酬。bonus は業績に応じた特別手当。", englishDefinition: "Something that encourages a person to do something; a financial reward.", etymology: "ラテン語 incentivum（刺激するもの）から。incinere（歌って奮起させる）が語源。" }],
-  // preliminary (18165)
-  [18165, { coreImage: "「本番・最終版の前に来る準備段階の」のがコアイメージ。最終的な結論を出す前の「暫定的な」ステップ。", usage: "「preliminary results（速報値）」「preliminary meeting（事前協議）」「preliminary investigation（予備調査）」のように使う。", synonymDifference: "preliminary vs provisional vs tentative: preliminary は本番前の準備的な段階。provisional は確定するまでの暫定的なもの（provisional budget）。tentative は確定していない・変更の可能性がある。", englishDefinition: "Done or happening before the main event as preparation.", etymology: "ラテン語 praeliminar（門の前）から。prae-（前に）＋ limen（敷居）。" }],
-  // promptly (18166)
-  [18166, { coreImage: "「遅れなく、すぐに・迅速に」のがコアイメージ。時間的な即応性を強調する副詞。", usage: "「respond promptly（迅速に対応する）」「arrive promptly at 9（9時きっかりに到着する）」「promptly addressed（速やかに対処された）」のように使う。", synonymDifference: "promptly vs quickly vs immediately: promptly は遅滞なく決まった時間に行う（professional nuance）。quickly は速さに焦点。immediately は「今すぐ・直ちに」という緊急性。", englishDefinition: "Quickly and without delay; at the correct time.", etymology: "prompt（即座の）＋ -ly。ラテン語 promptus（準備できた）から。" }],
-  // quarterly (18167)
-  [18167, { coreImage: "「3か月ごとの・四半期の」のがコアイメージ。1年を4等分した3か月ごとのサイクル。", usage: "「quarterly report（四半期報告書）」「quarterly earnings（四半期収益）」「on a quarterly basis（四半期ベースで）」のように使う。", synonymDifference: "quarterly vs annual vs monthly: quarterly は3か月ごと（Q1〜Q4）。annual は年1回。monthly は月1回。", englishDefinition: "Happening four times a year, once every three months.", etymology: "quarter（4分の1）＋ -ly（〜ごとの）。1年の4分の1＝3か月が quarter。" }],
-  // reimburse (18169)
-  [18169, { coreImage: "「誰かが立て替えた費用を後から返す・弁済する」のがコアイメージ。経費精算のビジネス場面で頻出。", usage: "「reimburse travel expenses（出張費を精算する）」「reimbursement form（経費精算書）」「reimburse employees（社員に立替費用を返す）」のように使う。", synonymDifference: "reimburse vs refund vs repay: reimburse は他者が立て替えた費用を返す（expense-focused）。refund は商品・サービスに対する払い戻し。repay はローン・借金を返済する。", englishDefinition: "To pay back money to someone who has spent it on your behalf.", etymology: "re-（再び）＋ im-（中に）＋ burse（財布）。「財布に戻し入れる」のが原義。" }],
-  // supervisor (30195)
-  [30195, { coreImage: "「部下の仕事を監督・指導する立場の人・上司」がコアイメージ。直属の上司を指すことが多い。", usage: "「report to a supervisor（上司に報告する）」「direct supervisor（直属の上司）」「supervisory role（監督職）」のように使う。", synonymDifference: "supervisor vs manager vs director: supervisor は現場レベルで直接監督する人。manager は部門・チームを管理する責任者。director は上位の役職・取締役クラス。", englishDefinition: "A person who watches over and directs the work of others.", etymology: "ラテン語 supervidere（上から見る）から。super-（上から）＋ videre（見る）。" }],
-  // tentative (30196)
-  [30196, { coreImage: "「まだ確定していない・変更の可能性がある仮の」のがコアイメージ。状況次第で変わる「仮決め」の状態。", usage: "「tentative schedule（仮スケジュール）」「tentative agreement（仮合意）」「tentative plan（暫定計画）」のように使う。", synonymDifference: "tentative vs provisional vs preliminary: tentative は確定していない・変更があり得る（subject to change）。provisional は公式に仮として設定された。preliminary は本番前の準備段階の。", englishDefinition: "Not definite or certain; done as a trial.", etymology: "ラテン語 tentativus（試みの）から。tentare（試みる）。" }],
-  // valid (30197)
-  [30197, { coreImage: "「法的・公式に認められていて使用・適用が可能な状態」のがコアイメージ。", usage: "「valid passport（有効なパスポート）」「valid until（〜まで有効）」「valid argument（正当な議論）」「validate（有効化する）」のように使う。", synonymDifference: "valid vs legitimate vs effective: valid は法的・公式に有効（valid ID）。legitimate は正当・合法的な。effective は機能して成果を出している。", englishDefinition: "Legally acceptable; based on good reasoning.", etymology: "ラテン語 validus（強い・健全な）から。valere（強い・value と同語源）。" }],
-  // adjacent (18172)
-  [18172, { coreImage: "「すぐ隣に位置している・隣接した」のがコアイメージ。物理的に近い・接している位置関係。", usage: "「adjacent to the station（駅に隣接した）」「adjacent room（隣の部屋）」「adjacent offices（隣接するオフィス）」のように使う。", synonymDifference: "adjacent vs nearby vs neighboring: adjacent は直接隣接している（touching or very close）。nearby は「近くの」（not necessarily touching）。neighboring は隣接する地域・国。", englishDefinition: "Very close or next to something.", etymology: "ラテン語 adjacere（近くに横たわる）から。ad-（〜に）＋ jacere（横たわる）。" }],
-  // affordable (18173)
-  [18173, { coreImage: "「一般の人が無理なく買える・費用対効果が高い」のがコアイメージ。", usage: "「affordable price（手頃な価格）」「affordable housing（手頃な住宅）」「affordable option（リーズナブルな選択肢）」のように使う。", synonymDifference: "affordable vs cheap vs reasonable: affordable は収入・予算の範囲内で無理なく買える（positive）。cheap は価格が安い・質が低いニュアンスを含む場合も。reasonable は妥当・納得できる価格。", englishDefinition: "Priced so that most people can afford to buy it.", etymology: "afford（余裕がある）＋ -able。" }],
-  // accomplish (18174)
-  [18174, { coreImage: "「努力の末に目標・課題を完全に達成し遂げる」のがコアイメージ。", usage: "「accomplish a goal（目標を達成する）」「accomplish a task（タスクを成し遂げる）」「sense of accomplishment（達成感）」のように使う。", synonymDifference: "accomplish vs achieve vs complete: accomplish は困難なことを成し遂げる。achieve は努力で目標を達成する（achieve success）。complete は全部終わらせる完了に焦点。", englishDefinition: "To succeed in doing or completing something.", etymology: "ラテン語 accomplere（完全に満たす）から。ad-（〜に）＋ complere（満たす）。" }],
-  // accumulate (18175)
-  [18175, { coreImage: "「少しずつ集まって積み重なる・蓄積する」のがコアイメージ。一度に大量にではなく、時間をかけて増えていく過程。", usage: "「accumulate wealth（富を蓄積する）」「accumulate points（ポイントをためる）」「accumulated data（蓄積されたデータ）」のように使う。", synonymDifference: "accumulate vs collect vs gather: accumulate は時間とともに徐々に増える（gradual buildup）。collect は意図的に集める。gather は一か所に集める。", englishDefinition: "To gradually collect or increase in amount over time.", etymology: "ラテン語 accumulare（山積みにする）から。ad-（〜に）＋ cumulare（積み重ねる）。" }],
-  // acknowledge (18176)
-  [18176, { coreImage: "「事実・受け取り・功績を正式に認める・承認の意を示す」のがコアイメージ。", usage: "「acknowledge receipt（受領を確認する）」「acknowledge a mistake（ミスを認める）」「acknowledge someone's contribution（貢献を認める）」のように使う。", synonymDifference: "acknowledge vs admit vs recognize: acknowledge は受け取り・事実・功績を公式に認める（neutral）。admit は不都合な事実を認める・白状する（negative nuance）。recognize は正式に認識・認定する。", englishDefinition: "To accept or admit the existence of something; to confirm receipt.", etymology: "ac-（〜に）＋ knowledge（知識）。「知っていることを認める」のが原義。" }],
-  // acquire (18177)
-  [18177, { coreImage: "「努力・交渉・購入を経て手に入れる・取得する」のがコアイメージ。ビジネスでは企業買収にも使う。", usage: "「acquire a company（企業を買収する）」「acquire skills（スキルを習得する）」「acquisition cost（取得コスト）」のように使う。", synonymDifference: "acquire vs obtain vs get: acquire はビジネス・法律的な取得に使われる格式ばった語（acquire assets）。obtain は努力・手続きを経て得る。get は日常的な「得る」。", englishDefinition: "To get something through effort or purchase; to buy a company.", etymology: "ラテン語 acquirere（追加して得る）から。ad-（〜に加えて）＋ quaerere（求める）。" }],
-  // adequate (18178)
-  [18178, { coreImage: "「必要な量・質に達している・十分な」のがコアイメージ。優れているわけではないが最低限の要件を満たしている。", usage: "「adequate resources（十分なリソース）」「adequate preparation（十分な準備）」「not adequate（不十分な）」のように使う。", synonymDifference: "adequate vs sufficient vs enough: adequate はぎりぎり十分・最低限OK（barely meets the standard）。sufficient は必要量を満たしている（neutral）。enough は口語的な「足りている」。", englishDefinition: "Enough in quantity or quality for a particular purpose.", etymology: "ラテン語 adaequatus（等しくする）から。ad-（〜に）＋ aequus（等しい）。" }],
-  // allocate (18179)
-  [18179, { coreImage: "「限られたリソース（予算・時間・人員など）を目的別に割り振る」のがコアイメージ。", usage: "「allocate budget（予算を配分する）」「allocate resources（リソースを割り当てる）」「resource allocation（資源配分）」のように使う。", synonymDifference: "allocate vs assign vs distribute: allocate はリソースを目的・部門に配分する（budgeting context）。assign は人に仕事・役割を与える。distribute は広く複数に分配する。", englishDefinition: "To set aside or give something for a specific purpose.", etymology: "ラテン語 allocare（場所を割り当てる）から。ad-（〜に）＋ locare（置く）。" }],
-  // amendment (18180)
-  [18180, { coreImage: "「法律・契約・文書を正式に修正・改正する行為またはその修正内容」がコアイメージ。", usage: "「contract amendment（契約変更）」「constitutional amendment（憲法改正）」「propose an amendment（修正案を提案する）」のように使う。", synonymDifference: "amendment vs revision vs modification: amendment は法律・契約の正式な改正（legal/official）。revision は全体的な見直し・改訂。modification は部分的な変更・調整。", englishDefinition: "A change or addition to a law, contract, or document.", etymology: "amend（修正する）＋ -ment。amend はラテン語 emendare（欠点を直す）から。" }],
-  // anticipate (18181)
-  [18181, { coreImage: "「起こりそうなことを前もって予測し、準備して待つ」のがコアイメージ。単なる予想ではなく、準備も含む能動的な予期。", usage: "「anticipate demand（需要を見込む）」「anticipate problems（問題を予測する）」「anticipate a result（結果を期待する）」のように使う。", synonymDifference: "anticipate vs expect vs predict: anticipate は前もって準備しながら待つ（proactive）。expect は根拠があって起こると思う（passive）。predict はデータ・論理で将来を予測する（scientific）。", englishDefinition: "To expect or prepare for something before it happens.", etymology: "ラテン語 anticipare（前もって取る）から。ante-（前に）＋ capere（取る）。" }],
-  // apprentice (18182)
-  [18182, { coreImage: "「職人・専門家のもとで技術を学ぶ見習い」のがコアイメージ。労働を提供しながら技術を習得するシステム。", usage: "「apprentice electrician（電気工見習い）」「start as an apprentice（見習いとして始める）」「apprenticeship program（見習い制度）」のように使う。", synonymDifference: "apprentice vs intern vs trainee: apprentice は特定の職人技術を習得する正式な見習い。intern は学生・新卒のインターンシップ。trainee は研修中の社員・学習者全般。", englishDefinition: "A person learning a skilled job by working with an expert.", etymology: "古フランス語 apprendre（学ぶ）から。ラテン語 apprehendere（つかんで学ぶ）が語源。" }],
-  // assess (18183)
-  [18183, { coreImage: "「状況・価値・リスクを体系的に評価・査定する」のがコアイメージ。基準に照らして判断する分析行為。", usage: "「assess risks（リスクを評価する）」「assess performance（業績を査定する）」「needs assessment（ニーズ評価）」「tax assessment（課税査定）」のように使う。", synonymDifference: "assess vs evaluate vs appraise: assess は税・リスク・必要性の公式な査定・評価（formal context）。evaluate は価値・有効性を判断する総合的な評価。appraise は資産・業績を金銭的に鑑定する。", englishDefinition: "To evaluate or estimate the value, quality, or importance of something.", etymology: "ラテン語 assidere（傍らに座って評価する）から。ad-（〜に）＋ sedere（座る）。" }],
+  // comply (29189)
+  [29189, { coreImage: "「規則・要求・命令に従って行動する」のがコアイメージ。自発的というより、外部の基準に合わせる義務的な行為。", usage: "「comply with regulations（規制を遵守する）」「comply with a request（要求に応じる）」「non-compliance（違反・不遵守）」のように使う。", synonymDifference: "comply vs obey vs follow: comply は規則・要求に正式に応じる。obey は命令・権威に従う（obey orders）。follow は指示・手順を追う（follow instructions）。", englishDefinition: "To act in accordance with a rule, request, or command.", etymology: "ラテン語 complere（完全に満たす）から。com-（完全に）＋ plere（満たす）。" }],
+  // delegate (29308)
+  [29308, { coreImage: "「自分の権限・仕事を他の人に任せる」のがコアイメージ。名詞では「代表者・委任された人」。", usage: "「delegate tasks（タスクを委任する）」「delegate authority（権限を委譲する）」「conference delegate（会議の代表者）」のように使う。", synonymDifference: "delegate vs assign vs entrust: delegate は権限ごと任せる。assign は特定の業務を割り当てる。entrust はより信頼に基づいて「委ねる」。", englishDefinition: "To give someone authority to do something on your behalf; a representative.", etymology: "ラテン語 delegare（遣わす）から。de-（離れて）＋ legare（送る）。" }],
+  // headquarters (27795)
+  [27795, { coreImage: "「組織の中枢・指令所」がコアイメージ。常に複数形 headquarters（HQ）として使われる。", usage: "「global headquarters（グローバル本社）」「move headquarters（本社を移転する）」「HQ（本部の略称）」のように使う。", synonymDifference: "headquarters vs head office: headquarters は組織全体を統括する公式な本部（軍・大企業に多い）。head office はビジネス文脈での「本社」。", englishDefinition: "The main office or center of control of an organization.", etymology: "quarter（陣地・宿営地）＋ head（主要な）。軍の「指揮官本部」から転じた。" }],
+  // incentive (29399)
+  [29399, { coreImage: "「行動・努力を促すための報奨・動機付け」のがコアイメージ。「行動したくなるように外から与えるもの」。", usage: "「financial incentive（金銭的インセンティブ）」「sales incentive（販売奨励金）」「incentive program（インセンティブプログラム）」のように使う。", synonymDifference: "incentive vs reward vs bonus: incentive は行動を起こさせる事前の動機付け。reward は行動後に与える報酬。bonus は業績に応じた特別手当。", englishDefinition: "Something that encourages a person to do something; a financial reward.", etymology: "ラテン語 incentivum（刺激するもの）から。incinere（歌って奮起させる）が語源。" }],
+  // preliminary (28335)
+  [28335, { coreImage: "「本番・最終版の前に来る準備段階の」のがコアイメージ。最終的な結論を出す前の「暫定的な」ステップ。", usage: "「preliminary results（速報値）」「preliminary meeting（事前協議）」「preliminary investigation（予備調査）」のように使う。", synonymDifference: "preliminary vs provisional vs tentative: preliminary は本番前の準備的な段階。provisional は確定するまでの暫定的なもの（provisional budget）。tentative は確定していない・変更の可能性がある。", englishDefinition: "Done or happening before the main event as preparation.", etymology: "ラテン語 praeliminar（門の前）から。prae-（前に）＋ limen（敷居）。" }],
+  // promptly (28358)
+  [28358, { coreImage: "「遅れなく、すぐに・迅速に」のがコアイメージ。時間的な即応性を強調する副詞。", usage: "「respond promptly（迅速に対応する）」「arrive promptly at 9（9時きっかりに到着する）」「promptly addressed（速やかに対処された）」のように使う。", synonymDifference: "promptly vs quickly vs immediately: promptly は遅滞なく決まった時間に行う（professional nuance）。quickly は速さに焦点。immediately は「今すぐ・直ちに」という緊急性。", englishDefinition: "Quickly and without delay; at the correct time.", etymology: "prompt（即座の）＋ -ly。ラテン語 promptus（準備できた）から。" }],
+  // quarterly (19829)
+  [19829, { coreImage: "「3か月ごとの・四半期の」のがコアイメージ。1年を4等分した3か月ごとのサイクル。", usage: "「quarterly report（四半期報告書）」「quarterly earnings（四半期収益）」「on a quarterly basis（四半期ベースで）」のように使う。", synonymDifference: "quarterly vs annual vs monthly: quarterly は3か月ごと（Q1〜Q4）。annual は年1回。monthly は月1回。", englishDefinition: "Happening four times a year, once every three months.", etymology: "quarter（4分の1）＋ -ly（〜ごとの）。1年の4分の1＝3か月が quarter。" }],
+  // reimburse (30672)
+  [30672, { coreImage: "「誰かが立て替えた費用を後から返す・弁済する」のがコアイメージ。経費精算のビジネス場面で頻出。", usage: "「reimburse travel expenses（出張費を精算する）」「reimbursement form（経費精算書）」「reimburse employees（社員に立替費用を返す）」のように使う。", synonymDifference: "reimburse vs refund vs repay: reimburse は他者が立て替えた費用を返す（expense-focused）。refund は商品・サービスに対する払い戻し。repay はローン・借金を返済する。", englishDefinition: "To pay back money to someone who has spent it on your behalf.", etymology: "re-（再び）＋ im-（中に）＋ burse（財布）。「財布に戻し入れる」のが原義。" }],
+  // supervisor (29756)
+  [29756, { coreImage: "「部下の仕事を監督・指導する立場の人・上司」がコアイメージ。直属の上司を指すことが多い。", usage: "「report to a supervisor（上司に報告する）」「direct supervisor（直属の上司）」「supervisory role（監督職）」のように使う。", synonymDifference: "supervisor vs manager vs director: supervisor は現場レベルで直接監督する人。manager は部門・チームを管理する責任者。director は上位の役職・取締役クラス。", englishDefinition: "A person who watches over and directs the work of others.", etymology: "ラテン語 supervidere（上から見る）から。super-（上から）＋ videre（見る）。" }],
+  // tentative (30523)
+  [30523, { coreImage: "「まだ確定していない・変更の可能性がある仮の」のがコアイメージ。状況次第で変わる「仮決め」の状態。", usage: "「tentative schedule（仮スケジュール）」「tentative agreement（仮合意）」「tentative plan（暫定計画）」のように使う。", synonymDifference: "tentative vs provisional vs preliminary: tentative は確定していない・変更があり得る（subject to change）。provisional は公式に仮として設定された。preliminary は本番前の準備段階の。", englishDefinition: "Not definite or certain; done as a trial.", etymology: "ラテン語 tentativus（試みの）から。tentare（試みる）。" }],
+  // valid (25352)
+  [25352, { coreImage: "「法的・公式に認められていて使用・適用が可能な状態」のがコアイメージ。", usage: "「valid passport（有効なパスポート）」「valid until（〜まで有効）」「valid argument（正当な議論）」「validate（有効化する）」のように使う。", synonymDifference: "valid vs legitimate vs effective: valid は法的・公式に有効（valid ID）。legitimate は正当・合法的な。effective は機能して成果を出している。", englishDefinition: "Legally acceptable; based on good reasoning.", etymology: "ラテン語 validus（強い・健全な）から。valere（強い・value と同語源）。" }],
+  // adjacent (30482)
+  [30482, { coreImage: "「すぐ隣に位置している・隣接した」のがコアイメージ。物理的に近い・接している位置関係。", usage: "「adjacent to the station（駅に隣接した）」「adjacent room（隣の部屋）」「adjacent offices（隣接するオフィス）」のように使う。", synonymDifference: "adjacent vs nearby vs neighboring: adjacent は直接隣接している（touching or very close）。nearby は「近くの」（not necessarily touching）。neighboring は隣接する地域・国。", englishDefinition: "Very close or next to something.", etymology: "ラテン語 adjacere（近くに横たわる）から。ad-（〜に）＋ jacere（横たわる）。" }],
+  // affordable (27266)
+  [27266, { coreImage: "「一般の人が無理なく買える・費用対効果が高い」のがコアイメージ。", usage: "「affordable price（手頃な価格）」「affordable housing（手頃な住宅）」「affordable option（リーズナブルな選択肢）」のように使う。", synonymDifference: "affordable vs cheap vs reasonable: affordable は収入・予算の範囲内で無理なく買える（positive）。cheap は価格が安い・質が低いニュアンスを含む場合も。reasonable は妥当・納得できる価格。", englishDefinition: "Priced so that most people can afford to buy it.", etymology: "afford（余裕がある）＋ -able。" }],
+  // accomplish (27055)
+  [27055, { coreImage: "「努力の末に目標・課題を完全に達成し遂げる」のがコアイメージ。", usage: "「accomplish a goal（目標を達成する）」「accomplish a task（タスクを成し遂げる）」「sense of accomplishment（達成感）」のように使う。", synonymDifference: "accomplish vs achieve vs complete: accomplish は困難なことを成し遂げる。achieve は努力で目標を達成する（achieve success）。complete は全部終わらせる完了に焦点。", englishDefinition: "To succeed in doing or completing something.", etymology: "ラテン語 accomplere（完全に満たす）から。ad-（〜に）＋ complere（満たす）。" }],
+  // accumulate (27283)
+  [27283, { coreImage: "「少しずつ集まって積み重なる・蓄積する」のがコアイメージ。一度に大量にではなく、時間をかけて増えていく過程。", usage: "「accumulate wealth（富を蓄積する）」「accumulate points（ポイントをためる）」「accumulated data（蓄積されたデータ）」のように使う。", synonymDifference: "accumulate vs collect vs gather: accumulate は時間とともに徐々に増える（gradual buildup）。collect は意図的に集める。gather は一か所に集める。", englishDefinition: "To gradually collect or increase in amount over time.", etymology: "ラテン語 accumulare（山積みにする）から。ad-（〜に）＋ cumulare（積み重ねる）。" }],
+  // acknowledge (27056)
+  [27056, { coreImage: "「事実・受け取り・功績を正式に認める・承認の意を示す」のがコアイメージ。", usage: "「acknowledge receipt（受領を確認する）」「acknowledge a mistake（ミスを認める）」「acknowledge someone's contribution（貢献を認める）」のように使う。", synonymDifference: "acknowledge vs admit vs recognize: acknowledge は受け取り・事実・功績を公式に認める（neutral）。admit は不都合な事実を認める・白状する（negative nuance）。recognize は正式に認識・認定する。", englishDefinition: "To accept or admit the existence of something; to confirm receipt.", etymology: "ac-（〜に）＋ knowledge（知識）。「知っていることを認める」のが原義。" }],
+  // acquire (25467)
+  [25467, { coreImage: "「努力・交渉・購入を経て手に入れる・取得する」のがコアイメージ。ビジネスでは企業買収にも使う。", usage: "「acquire a company（企業を買収する）」「acquire skills（スキルを習得する）」「acquisition cost（取得コスト）」のように使う。", synonymDifference: "acquire vs obtain vs get: acquire はビジネス・法律的な取得に使われる格式ばった語（acquire assets）。obtain は努力・手続きを経て得る。get は日常的な「得る」。", englishDefinition: "To get something through effort or purchase; to buy a company.", etymology: "ラテン語 acquirere（追加して得る）から。ad-（〜に加えて）＋ quaerere（求める）。" }],
+  // adequate (27262)
+  [27262, { coreImage: "「必要な量・質に達している・十分な」のがコアイメージ。優れているわけではないが最低限の要件を満たしている。", usage: "「adequate resources（十分なリソース）」「adequate preparation（十分な準備）」「not adequate（不十分な）」のように使う。", synonymDifference: "adequate vs sufficient vs enough: adequate はぎりぎり十分・最低限OK（barely meets the standard）。sufficient は必要量を満たしている（neutral）。enough は口語的な「足りている」。", englishDefinition: "Enough in quantity or quality for a particular purpose.", etymology: "ラテン語 adaequatus（等しくする）から。ad-（〜に）＋ aequus（等しい）。" }],
+  // allocate (31740)
+  [31740, { coreImage: "「限られたリソース（予算・時間・人員など）を目的別に割り振る」のがコアイメージ。", usage: "「allocate budget（予算を配分する）」「allocate resources（リソースを割り当てる）」「resource allocation（資源配分）」のように使う。", synonymDifference: "allocate vs assign vs distribute: allocate はリソースを目的・部門に配分する（budgeting context）。assign は人に仕事・役割を与える。distribute は広く複数に分配する。", englishDefinition: "To set aside or give something for a specific purpose.", etymology: "ラテン語 allocare（場所を割り当てる）から。ad-（〜に）＋ locare（置く）。" }],
+  // amendment (31827)
+  [31827, { coreImage: "「法律・契約・文書を正式に修正・改正する行為またはその修正内容」がコアイメージ。", usage: "「contract amendment（契約変更）」「constitutional amendment（憲法改正）」「propose an amendment（修正案を提案する）」のように使う。", synonymDifference: "amendment vs revision vs modification: amendment は法律・契約の正式な改正（legal/official）。revision は全体的な見直し・改訂。modification は部分的な変更・調整。", englishDefinition: "A change or addition to a law, contract, or document.", etymology: "amend（修正する）＋ -ment。amend はラテン語 emendare（欠点を直す）から。" }],
+  // anticipate (27285)
+  [27285, { coreImage: "「起こりそうなことを前もって予測し、準備して待つ」のがコアイメージ。単なる予想ではなく、準備も含む能動的な予期。", usage: "「anticipate demand（需要を見込む）」「anticipate problems（問題を予測する）」「anticipate a result（結果を期待する）」のように使う。", synonymDifference: "anticipate vs expect vs predict: anticipate は前もって準備しながら待つ（proactive）。expect は根拠があって起こると思う（passive）。predict はデータ・論理で将来を予測する（scientific）。", englishDefinition: "To expect or prepare for something before it happens.", etymology: "ラテン語 anticipare（前もって取る）から。ante-（前に）＋ capere（取る）。" }],
+  // apprentice (31131)
+  [31131, { coreImage: "「職人・専門家のもとで技術を学ぶ見習い」のがコアイメージ。労働を提供しながら技術を習得するシステム。", usage: "「apprentice electrician（電気工見習い）」「start as an apprentice（見習いとして始める）」「apprenticeship program（見習い制度）」のように使う。", synonymDifference: "apprentice vs intern vs trainee: apprentice は特定の職人技術を習得する正式な見習い。intern は学生・新卒のインターンシップ。trainee は研修中の社員・学習者全般。", englishDefinition: "A person learning a skilled job by working with an expert.", etymology: "古フランス語 apprendre（学ぶ）から。ラテン語 apprehendere（つかんで学ぶ）が語源。" }],
+  // assess (25836)
+  [25836, { coreImage: "「状況・価値・リスクを体系的に評価・査定する」のがコアイメージ。基準に照らして判断する分析行為。", usage: "「assess risks（リスクを評価する）」「assess performance（業績を査定する）」「needs assessment（ニーズ評価）」「tax assessment（課税査定）」のように使う。", synonymDifference: "assess vs evaluate vs appraise: assess は税・リスク・必要性の公式な査定・評価（formal context）。evaluate は価値・有効性を判断する総合的な評価。appraise は資産・業績を金銭的に鑑定する。", englishDefinition: "To evaluate or estimate the value, quality, or importance of something.", etymology: "ラテン語 assidere（傍らに座って評価する）から。ad-（〜に）＋ sedere（座る）。" }],
 
-  // asset (18184)
-  [18184, { coreImage: "「組織・個人が持つ価値ある資産・強み」のがコアイメージ。貸借対照表の「資産」から、人や能力の「強み・長所」まで。", usage: "「company assets（会社の資産）」「fixed assets（固定資産）」「current assets（流動資産）」「She is an asset to the team.（彼女はチームの強みだ）」のように使う。", synonymDifference: "asset vs resource vs strength: asset は金銭・物的・人的価値のある財産（assets on balance sheet）。resource は使用可能な資源・リソース（human resources）。strength は能力・性格の強み（personal strength）。", englishDefinition: "Something valuable that a person or organization owns; a useful quality.", etymology: "古フランス語 asez（十分な）から。ラテン語 ad satis（十分に）が語源。" }],
-  // authorize (18185)
-  [18185, { coreImage: "「権限を持つ者が公式に許可を与える・権限を付与する」のがコアイメージ。", usage: "「authorize a payment（支払いを承認する）」「authorize access（アクセスを許可する）」「authorized dealer（正規ディーラー）」のように使う。", synonymDifference: "authorize vs permit vs approve: authorize は特定の行動を行う公式な権限を与える。permit は許可を与える（allow to do）。approve は提案・申請を正式に認める。", englishDefinition: "To give official permission for something to happen.", etymology: "ラテン語 auctorizare（権威を与える）から。auctor（著者・創始者・authority と同語源）。" }],
-  // bilateral (18186)
-  [18186, { coreImage: "「二つの側・二国間に関わる」のがコアイメージ。一方的（unilateral）でも多国間（multilateral）でもなく「双方向」。", usage: "「bilateral agreement（二国間協定）」「bilateral trade（二国間貿易）」「bilateral talks（二国間会談）」のように使う。", synonymDifference: "bilateral vs unilateral vs multilateral: bilateral は二者間の。unilateral は一方的な（unilateral decision）。multilateral は多者間の（multilateral treaty）。", englishDefinition: "Involving two countries, groups, or people.", etymology: "bi-（二つの）＋ lateral（側・ラテン語 latus から）。" }],
-  // brochure (30214)
-  [30214, { coreImage: "「製品・サービス・イベントの情報を写真つきでまとめた小冊子・パンフレット」がコアイメージ。", usage: "「product brochure（製品パンフレット）」「travel brochure（旅行パンフレット）」「download a brochure（パンフレットをダウンロードする）」のように使う。", synonymDifference: "brochure vs pamphlet vs leaflet: brochure は複数ページでカラー印刷の格調ある小冊子（marketing material）。pamphlet はより簡素な小冊子（informational）。leaflet は1枚刷りのチラシ。", englishDefinition: "A small booklet containing information about a product, place, or service.", etymology: "フランス語 brochure（ホチキス留めしたもの）から。brocher（縫い合わせる）が語源。" }],
-  // capacity (30215)
-  [30215, { coreImage: "「収容・処理・生産できる最大量・能力」がコアイメージ。物理的な容量から、組織的・個人的な能力まで幅広く使う。", usage: "「full capacity（最大容量・フル稼働）」「production capacity（生産能力）」「seating capacity（収容人数）」「in my capacity as（〜の立場として）」のように使う。", synonymDifference: "capacity vs ability vs capability: capacity は最大限度・容量（how much it can hold/do）。ability は実際に持っている能力・技能（have the ability to）。capability は潜在的な能力（full capability）。", englishDefinition: "The maximum amount something can contain or produce; the ability to do something.", etymology: "ラテン語 capacitas（受け入れる力）から。capere（取る・contain と同語源）。" }],
-  // clause (30216)
-  [30216, { coreImage: "「契約書・法律文書の中の特定の条件・条項」がコアイメージ。文書全体ではなく「特定の一節」を指す。", usage: "「penalty clause（違約条項）」「escape clause（免責条項）」「clause in a contract（契約書の条項）」のように使う。", synonymDifference: "clause vs provision vs term: clause は契約・法律文書の特定の条文・条項。provision は条件・規定（legal provision）。term は契約条件・用語全般（terms and conditions）。", englishDefinition: "A specific section in a legal document or contract.", etymology: "ラテン語 clausa（締めくくり）から。claudere（閉じる・close と同語源）。" }],
-  // collaborate (18187)
-  [18187, { coreImage: "「共通の目的に向けて共同で作業する・コラボレーションする」のがコアイメージ。単純な協力より深い共同創造のニュアンス。", usage: "「collaborate with partners（パートナーと協働する）」「collaborate on a project（プロジェクトで共同作業する）」「collaboration tool（コラボレーションツール）」のように使う。", synonymDifference: "collaborate vs cooperate vs partner: collaborate は共同でより良いものを作り上げる創造的な協働。cooperate は共通の目的に向けて協力する（cooperative）。partner は正式なパートナーシップ関係を結ぶ。", englishDefinition: "To work together with someone to achieve something.", etymology: "ラテン語 collaborare（共に働く）から。com-（共に）＋ laborare（働く・labor と同語源）。" }],
-  // compensate (18188)
-  [18188, { coreImage: "「損害・損失・不足を金銭や別の手段で補う・補償する」のがコアイメージ。「バランスを取り戻す」行為。", usage: "「compensate for the loss（損失を補う）」「compensate employees fairly（社員に公正に報酬を支払う）」「compensation package（報酬パッケージ）」のように使う。", synonymDifference: "compensate vs reimburse vs pay: compensate は損害・不足を補う（broader scope）。reimburse は立替費用の返済（specific expense）。pay は労働の対価を支払う。", englishDefinition: "To give someone something in return for loss, injury, or work done.", etymology: "ラテン語 compensare（重さを量って釣り合わせる）から。com-（共に）＋ pensare（重さを量る・pension と同語源）。" }],
-  // comprehensive (18189)
-  [18189, { coreImage: "「何一つ抜けがない・すべてを網羅した」のがコアイメージ。部分的ではなく「全体を包含する」広さと深さ。", usage: "「comprehensive plan（包括的な計画）」「comprehensive report（総合的な報告書）」「comprehensive insurance（総合保険）」のように使う。", synonymDifference: "comprehensive vs complete vs thorough: comprehensive は範囲が広く全てを網羅している（wide coverage）。complete は全ての要素が揃っている（nothing missing）。thorough は細部まで念入りに行き届いた（detailed）。", englishDefinition: "Including all or nearly all aspects of something.", etymology: "ラテン語 comprehendere（すべてをつかむ）から。com-（完全に）＋ prehendere（つかむ）。" }],
-  // consecutive (18190)
-  [18190, { coreImage: "「途切れることなく連続して続く」のがコアイメージ。間に休みや中断がない「連続」。", usage: "「five consecutive days（5日連続）」「consecutive quarters（連続した四半期）」「consecutive wins（連勝）」のように使う。", synonymDifference: "consecutive vs successive vs continuous: consecutive は順番に切れ目なく続く（consecutive numbers: 1,2,3,4）。successive はある後に次が続く（successive governments）。continuous は常に途切れなく続いている（continuous operation）。", englishDefinition: "Following one after another without interruption.", etymology: "ラテン語 consecutivus（続く）から。con-（共に）＋ sequi（続く・sequence と同語源）。" }],
-  // consolidate (18191)
-  [18191, { coreImage: "「バラバラなものを一つにまとめる・基盤を強固にする」のがコアイメージ。合併・統合・強化すべてを包む語。", usage: "「consolidate offices（オフィスを統合する）」「consolidate debt（借金を一本化する）」「consolidate market position（市場地位を強固にする）」のように使う。", synonymDifference: "consolidate vs merge vs integrate: consolidate は散在するものを一つに集約し強固にする。merge は二つの組織・データを合体させる（merge companies）。integrate はシステム・文化などを一つに取り込む（integrate new hires）。", englishDefinition: "To combine things into a single more effective unit; to make something stronger.", etymology: "ラテン語 consolidare（固める）から。con-（完全に）＋ solidare（固める・solid と同語源）。" }],
-  // constraint (18192)
-  [18192, { coreImage: "「行動・選択肢を縛る制限・制約」のがコアイメージ。「これ以上はできない」という外部から課される限界。", usage: "「budget constraint（予算制約）」「time constraint（時間的制約）」「constraints on our options（選択肢への制約）」のように使う。", synonymDifference: "constraint vs restriction vs limitation: constraint は状況・構造的な制約（budget constraint）。restriction は意図的に課された制限・規制（travel restriction）。limitation は能力・量の限界（limitations of the system）。", englishDefinition: "A limitation that restricts what you can do.", etymology: "ラテン語 constringere（縛りつける）から。con-（完全に）＋ stringere（締め付ける・strict と同語源）。" }],
-  // consult (18193)
-  [18193, { coreImage: "「専門知識を持つ人に意見・助言を求める」のがコアイメージ。自分だけで判断せず「専門家に相談する」行為。", usage: "「consult a doctor（医師に相談する）」「consult a lawyer（弁護士に相談する）」「consulting firm（コンサルティング会社）」のように使う。", synonymDifference: "consult vs advise vs inquire: consult は専門家の意見を求める（client consults）。advise は専門家が意見を「与える」（advisor advises）。inquire は情報を得るために尋ねる（inquire about options）。", englishDefinition: "To seek advice or information from someone with expertise.", etymology: "ラテン語 consultare（熟慮する・意見を求める）から。consul（共に考える人）に由来。" }],
-  // correspondence (18194)
-  [18194, { coreImage: "「文書・メールによる正式なやり取り・通信」のがコアイメージ。「対応・一致」の意味もある。", usage: "「business correspondence（ビジネス通信文）」「correspondence with clients（顧客との書簡のやり取り）」「correspondence address（連絡先住所）」のように使う。", synonymDifference: "correspondence vs communication vs mail: correspondence は書面・メールによる正式な往復のやり取り（formal written exchange）。communication は会話・書面を含む全般的な情報伝達。mail は郵便・メール（the medium）。", englishDefinition: "Letters or emails exchanged between people; the relationship between two things that match.", etymology: "correspond（対応する・一致する）＋ -ence。ラテン語 correspondere（共に応じる）から。" }],
-  // credentials (18195)
-  [18195, { coreImage: "「その人が信頼・資格を持つことを証明するもの一式」がコアイメージ。学歴・資格・実績など「証明の束」。", usage: "「present credentials（資格証明を提示する）」「professional credentials（職業的資格）」「check credentials（資格を確認する）」のように使う。", synonymDifference: "credentials vs qualification vs certification: credentials はその人の信頼性・能力を示す一式（degrees, experience）。qualification は特定の仕事・活動の資格・要件（qualifications for the job）。certification は公式に認定された資格証（certificate）。", englishDefinition: "Documents or qualifications showing that someone is suitable for a job.", etymology: "ラテン語 credentialis（信頼に関する）から。credere（信じる・credit と同語源）。" }],
+  // asset (29970)
+  [29970, { coreImage: "「組織・個人が持つ価値ある資産・強み」のがコアイメージ。貸借対照表の「資産」から、人や能力の「強み・長所」まで。", usage: "「company assets（会社の資産）」「fixed assets（固定資産）」「current assets（流動資産）」「She is an asset to the team.（彼女はチームの強みだ）」のように使う。", synonymDifference: "asset vs resource vs strength: asset は金銭・物的・人的価値のある財産（assets on balance sheet）。resource は使用可能な資源・リソース（human resources）。strength は能力・性格の強み（personal strength）。", englishDefinition: "Something valuable that a person or organization owns; a useful quality.", etymology: "古フランス語 asez（十分な）から。ラテン語 ad satis（十分に）が語源。" }],
+  // authorize (26979)
+  [26979, { coreImage: "「権限を持つ者が公式に許可を与える・権限を付与する」のがコアイメージ。", usage: "「authorize a payment（支払いを承認する）」「authorize access（アクセスを許可する）」「authorized dealer（正規ディーラー）」のように使う。", synonymDifference: "authorize vs permit vs approve: authorize は特定の行動を行う公式な権限を与える。permit は許可を与える（allow to do）。approve は提案・申請を正式に認める。", englishDefinition: "To give official permission for something to happen.", etymology: "ラテン語 auctorizare（権威を与える）から。auctor（著者・創始者・authority と同語源）。" }],
+  // bilateral (31819)
+  [31819, { coreImage: "「二つの側・二国間に関わる」のがコアイメージ。一方的（unilateral）でも多国間（multilateral）でもなく「双方向」。", usage: "「bilateral agreement（二国間協定）」「bilateral trade（二国間貿易）」「bilateral talks（二国間会談）」のように使う。", synonymDifference: "bilateral vs unilateral vs multilateral: bilateral は二者間の。unilateral は一方的な（unilateral decision）。multilateral は多者間の（multilateral treaty）。", englishDefinition: "Involving two countries, groups, or people.", etymology: "bi-（二つの）＋ lateral（側・ラテン語 latus から）。" }],
+  // brochure (27360)
+  [27360, { coreImage: "「製品・サービス・イベントの情報を写真つきでまとめた小冊子・パンフレット」がコアイメージ。", usage: "「product brochure（製品パンフレット）」「travel brochure（旅行パンフレット）」「download a brochure（パンフレットをダウンロードする）」のように使う。", synonymDifference: "brochure vs pamphlet vs leaflet: brochure は複数ページでカラー印刷の格調ある小冊子（marketing material）。pamphlet はより簡素な小冊子（informational）。leaflet は1枚刷りのチラシ。", englishDefinition: "A small booklet containing information about a product, place, or service.", etymology: "フランス語 brochure（ホチキス留めしたもの）から。brocher（縫い合わせる）が語源。" }],
+  // capacity (27136)
+  [27136, { coreImage: "「収容・処理・生産できる最大量・能力」がコアイメージ。物理的な容量から、組織的・個人的な能力まで幅広く使う。", usage: "「full capacity（最大容量・フル稼働）」「production capacity（生産能力）」「seating capacity（収容人数）」「in my capacity as（〜の立場として）」のように使う。", synonymDifference: "capacity vs ability vs capability: capacity は最大限度・容量（how much it can hold/do）。ability は実際に持っている能力・技能（have the ability to）。capability は潜在的な能力（full capability）。", englishDefinition: "The maximum amount something can contain or produce; the ability to do something.", etymology: "ラテン語 capacitas（受け入れる力）から。capere（取る・contain と同語源）。" }],
+  // clause (25909)
+  [25909, { coreImage: "「契約書・法律文書の中の特定の条件・条項」がコアイメージ。文書全体ではなく「特定の一節」を指す。", usage: "「penalty clause（違約条項）」「escape clause（免責条項）」「clause in a contract（契約書の条項）」のように使う。", synonymDifference: "clause vs provision vs term: clause は契約・法律文書の特定の条文・条項。provision は条件・規定（legal provision）。term は契約条件・用語全般（terms and conditions）。", englishDefinition: "A specific section in a legal document or contract.", etymology: "ラテン語 clausa（締めくくり）から。claudere（閉じる・close と同語源）。" }],
+  // collaborate (31732)
+  [31732, { coreImage: "「共通の目的に向けて共同で作業する・コラボレーションする」のがコアイメージ。単純な協力より深い共同創造のニュアンス。", usage: "「collaborate with partners（パートナーと協働する）」「collaborate on a project（プロジェクトで共同作業する）」「collaboration tool（コラボレーションツール）」のように使う。", synonymDifference: "collaborate vs cooperate vs partner: collaborate は共同でより良いものを作り上げる創造的な協働。cooperate は共通の目的に向けて協力する（cooperative）。partner は正式なパートナーシップ関係を結ぶ。", englishDefinition: "To work together with someone to achieve something.", etymology: "ラテン語 collaborare（共に働く）から。com-（共に）＋ laborare（働く・labor と同語源）。" }],
+  // compensate (27437)
+  [27437, { coreImage: "「損害・損失・不足を金銭や別の手段で補う・補償する」のがコアイメージ。「バランスを取り戻す」行為。", usage: "「compensate for the loss（損失を補う）」「compensate employees fairly（社員に公正に報酬を支払う）」「compensation package（報酬パッケージ）」のように使う。", synonymDifference: "compensate vs reimburse vs pay: compensate は損害・不足を補う（broader scope）。reimburse は立替費用の返済（specific expense）。pay は労働の対価を支払う。", englishDefinition: "To give someone something in return for loss, injury, or work done.", etymology: "ラテン語 compensare（重さを量って釣り合わせる）から。com-（共に）＋ pensare（重さを量る・pension と同語源）。" }],
+  // comprehensive (29288)
+  [29288, { coreImage: "「何一つ抜けがない・すべてを網羅した」のがコアイメージ。部分的ではなく「全体を包含する」広さと深さ。", usage: "「comprehensive plan（包括的な計画）」「comprehensive report（総合的な報告書）」「comprehensive insurance（総合保険）」のように使う。", synonymDifference: "comprehensive vs complete vs thorough: comprehensive は範囲が広く全てを網羅している（wide coverage）。complete は全ての要素が揃っている（nothing missing）。thorough は細部まで念入りに行き届いた（detailed）。", englishDefinition: "Including all or nearly all aspects of something.", etymology: "ラテン語 comprehendere（すべてをつかむ）から。com-（完全に）＋ prehendere（つかむ）。" }],
+  // consecutive (30487)
+  [30487, { coreImage: "「途切れることなく連続して続く」のがコアイメージ。間に休みや中断がない「連続」。", usage: "「five consecutive days（5日連続）」「consecutive quarters（連続した四半期）」「consecutive wins（連勝）」のように使う。", synonymDifference: "consecutive vs successive vs continuous: consecutive は順番に切れ目なく続く（consecutive numbers: 1,2,3,4）。successive はある後に次が続く（successive governments）。continuous は常に途切れなく続いている（continuous operation）。", englishDefinition: "Following one after another without interruption.", etymology: "ラテン語 consecutivus（続く）から。con-（共に）＋ sequi（続く・sequence と同語源）。" }],
+  // consolidate (31729)
+  [31729, { coreImage: "「バラバラなものを一つにまとめる・基盤を強固にする」のがコアイメージ。合併・統合・強化すべてを包む語。", usage: "「consolidate offices（オフィスを統合する）」「consolidate debt（借金を一本化する）」「consolidate market position（市場地位を強固にする）」のように使う。", synonymDifference: "consolidate vs merge vs integrate: consolidate は散在するものを一つに集約し強固にする。merge は二つの組織・データを合体させる（merge companies）。integrate はシステム・文化などを一つに取り込む（integrate new hires）。", englishDefinition: "To combine things into a single more effective unit; to make something stronger.", etymology: "ラテン語 consolidare（固める）から。con-（完全に）＋ solidare（固める・solid と同語源）。" }],
+  // constraint (31699)
+  [31699, { coreImage: "「行動・選択肢を縛る制限・制約」のがコアイメージ。「これ以上はできない」という外部から課される限界。", usage: "「budget constraint（予算制約）」「time constraint（時間的制約）」「constraints on our options（選択肢への制約）」のように使う。", synonymDifference: "constraint vs restriction vs limitation: constraint は状況・構造的な制約（budget constraint）。restriction は意図的に課された制限・規制（travel restriction）。limitation は能力・量の限界（limitations of the system）。", englishDefinition: "A limitation that restricts what you can do.", etymology: "ラテン語 constringere（縛りつける）から。con-（完全に）＋ stringere（締め付ける・strict と同語源）。" }],
+  // consult (25972)
+  [25972, { coreImage: "「専門知識を持つ人に意見・助言を求める」のがコアイメージ。自分だけで判断せず「専門家に相談する」行為。", usage: "「consult a doctor（医師に相談する）」「consult a lawyer（弁護士に相談する）」「consulting firm（コンサルティング会社）」のように使う。", synonymDifference: "consult vs advise vs inquire: consult は専門家の意見を求める（client consults）。advise は専門家が意見を「与える」（advisor advises）。inquire は情報を得るために尋ねる（inquire about options）。", englishDefinition: "To seek advice or information from someone with expertise.", etymology: "ラテン語 consultare（熟慮する・意見を求める）から。consul（共に考える人）に由来。" }],
+  // correspondence (29296)
+  [29296, { coreImage: "「文書・メールによる正式なやり取り・通信」のがコアイメージ。「対応・一致」の意味もある。", usage: "「business correspondence（ビジネス通信文）」「correspondence with clients（顧客との書簡のやり取り）」「correspondence address（連絡先住所）」のように使う。", synonymDifference: "correspondence vs communication vs mail: correspondence は書面・メールによる正式な往復のやり取り（formal written exchange）。communication は会話・書面を含む全般的な情報伝達。mail は郵便・メール（the medium）。", englishDefinition: "Letters or emails exchanged between people; the relationship between two things that match.", etymology: "correspond（対応する・一致する）＋ -ence。ラテン語 correspondere（共に応じる）から。" }],
+  // credentials (31623)
+  [31623, { coreImage: "「その人が信頼・資格を持つことを証明するもの一式」がコアイメージ。学歴・資格・実績など「証明の束」。", usage: "「present credentials（資格証明を提示する）」「professional credentials（職業的資格）」「check credentials（資格を確認する）」のように使う。", synonymDifference: "credentials vs qualification vs certification: credentials はその人の信頼性・能力を示す一式（degrees, experience）。qualification は特定の仕事・活動の資格・要件（qualifications for the job）。certification は公式に認定された資格証（certificate）。", englishDefinition: "Documents or qualifications showing that someone is suitable for a job.", etymology: "ラテン語 credentialis（信頼に関する）から。credere（信じる・credit と同語源）。" }],
   // deduct (18196)
   [18196, { coreImage: "「合計から一定額を差し引く・控除する」のがコアイメージ。税金・費用などを「引いて」残りを出す計算行為。", usage: "「deduct tax（税金を差し引く）」「deduct expenses（経費を控除する）」「tax deduction（税額控除）」「deductible（控除できる・免責額）」のように使う。", synonymDifference: "deduct vs subtract vs withhold: deduct は税・費用などを正式に差し引く（tax/expense context）。subtract は数学的に引き算する（subtract numbers）。withhold は支払いを「差し控える・源泉徴収する」（withhold taxes）。", englishDefinition: "To take away an amount from a total.", etymology: "ラテン語 deducere（引き離す）から。de-（離れて）＋ ducere（引く・duct と同語源）。" }],
-  // deficit (18197)
-  [18197, { coreImage: "「必要量・期待量に対して不足している状態・赤字」のがコアイメージ。surplus（黒字・余剰）の反対。", usage: "「budget deficit（財政赤字）」「trade deficit（貿易赤字）」「run a deficit（赤字になる）」「deficit spending（赤字支出）」のように使う。", synonymDifference: "deficit vs shortage vs debt: deficit は支出が収入を上回る「赤字状態」（financial gap）。shortage は必要量に対する「不足・欠乏」（shortage of supplies）。debt は借りているお金・負債（national debt）。", englishDefinition: "The amount by which spending exceeds income; a shortage.", etymology: "ラテン語 deficit（欠けている・3人称単数）から。de-（離れて）＋ facere（する）。" }],
-  // deliberate (18198)
-  [18198, { coreImage: "「慎重に考えてから意図的に行う・よく考えた末の」のがコアイメージ。動詞では「熟慮する」意味になる。", usage: "「a deliberate choice（意図的な選択）」「deliberate action（計画的な行動）」「deliberate about（〜について熟慮する）」のように使う。", synonymDifference: "deliberate vs intentional vs purposeful: deliberate は事前に慎重に考えた末の行為（careful planning）。intentional は意図的・わざとの（intentional act）。purposeful は明確な目的を持った（purposeful effort）。", englishDefinition: "Done intentionally and carefully; to think carefully about something.", etymology: "ラテン語 deliberare（天秤にかけて考える）から。de-（完全に）＋ librare（天秤にかける・balance と関連）。" }],
-  // designate (18199)
-  [18199, { coreImage: "「特定の目的・役割のために指定する・任命する」のがコアイメージ。特別な目的のために「指名する・割り当てる」行為。", usage: "「designated area（指定エリア）」「designate a representative（代表を指名する）」「designated driver（指定ドライバー）」のように使う。", synonymDifference: "designate vs appoint vs assign: designate は特定目的・役割に指定する（designate a room for）。appoint はポジション・職務に公式に任命する（appoint a CEO）。assign は仕事・タスクを人に割り当てる（assign a task）。", englishDefinition: "To officially choose something or someone for a purpose.", etymology: "ラテン語 designare（印をつけて示す）から。de-（完全に）＋ signare（印をつける）。" }],
-  // diploma (18200)
-  [18200, { coreImage: "「学校・教育機関が発行する卒業・修了の公式証明書」がコアイメージ。", usage: "「high school diploma（高校卒業証書）」「receive a diploma（卒業証書を受け取る）」「diploma program（ディプロマプログラム）」のように使う。", synonymDifference: "diploma vs degree vs certificate: diploma は学校教育の修了証書（high school/vocational）。degree は大学が授与する学位（bachelor's degree）。certificate は特定スキル・研修の修了証（training certificate）。", englishDefinition: "An official document showing someone has successfully completed a course of study.", etymology: "ギリシャ語 diploma（二つ折りにされた書類）から。diploun（二重にする）に由来。" }],
-  // disclose (18201)
-  [18201, { coreImage: "「秘密にされていた情報を公式に開示する・明らかにする」のがコアイメージ。", usage: "「disclose financial information（財務情報を開示する）」「disclose a conflict of interest（利益相反を開示する）」「non-disclosure agreement（秘密保持契約）」のように使う。", synonymDifference: "disclose vs reveal vs expose: disclose は公式・義務的に情報を開示する（formal/legal）。reveal は驚きを持って「明らかにする」（dramatic reveal）。expose は隠されていた不都合な事実を「暴露する」（expose a scandal）。", englishDefinition: "To make previously secret information known.", etymology: "dis-（反対）＋ close（閉じる）。「閉じていたものを開く」のが原義。" }],
-  // disruption (18202)
-  [18202, { coreImage: "「通常の流れや秩序を壊す・中断させる大きな乱れ」がコアイメージ。デジタル革命のような「業界破壊」にも使う。", usage: "「service disruption（サービス障害）」「supply chain disruption（サプライチェーン混乱）」「disruptive technology（破壊的技術）」のように使う。", synonymDifference: "disruption vs interruption vs disturbance: disruption は大きく秩序・流れを壊す（major break）。interruption は一時的な中断（brief stop）。disturbance はより軽い「乱れ・迷惑」（noise disturbance）。", englishDefinition: "A major interruption to the normal activity or process.", etymology: "ラテン語 disruptio（引き裂くこと）から。dis-（分離）＋ rumpere（破る・rupture と同語源）。" }],
-  // dividend (18203)
-  [18203, { coreImage: "「会社の利益を株主に分配する配当金」がコアイメージ。努力に対する「利益の分け前」という広い意味も持つ。", usage: "「pay dividends（配当金を支払う）」「dividend yield（配当利回り）」「declare a dividend（配当を宣言する）」「pay dividends〈比喩〉（実を結ぶ・効果をあげる）」のように使う。", synonymDifference: "dividend vs interest vs profit: dividend は株主への利益配分（equity investors）。interest は債権者への利子（debt holders）。profit は収入からコストを引いた純利益（company perspective）。", englishDefinition: "A sum of money paid to shareholders from company profits.", etymology: "ラテン語 dividendum（分けられるもの）から。dividere（分ける）の動名詞。" }],
-  // duration (18204)
-  [18204, { coreImage: "「何かが続く時間の長さ・持続期間」がコアイメージ。開始から終了までの「時間の幅」。", usage: "「contract duration（契約期間）」「for the duration of（〜の期間中ずっと）」「call duration（通話時間）」「short duration（短期間）」のように使う。", synonymDifference: "duration vs period vs term: duration は持続する時間の長さに焦点（how long it lasts）。period は特定の時間的区切り（a period of time）。term は契約・学期などの正式な期間（contract term）。", englishDefinition: "The length of time that something lasts.", etymology: "ラテン語 duratio（持続すること）から。durare（続く・durable と同語源）。" }],
-  // eligible (18205)
-  [18205, { coreImage: "「特定の条件・基準を満たして対象になる・資格がある」のがコアイメージ。恩恵・参加・採用の「資格を満たしている」状態。", usage: "「eligible for a bonus（ボーナスの対象となる）」「eligible to vote（投票する資格がある）」「eligibility criteria（資格条件）」のように使う。", synonymDifference: "eligible vs qualified vs entitled: eligible は特定の条件を満たして対象になる（meet the criteria）。qualified は必要なスキル・資格を持っている（have the qualifications）。entitled は権利として受け取れる（legally entitled to benefits）。", englishDefinition: "Having the right qualifications or satisfying the conditions required.", etymology: "ラテン語 eligere（選ぶ・elect と同語源）＋ -ible（可能の接尾辞）。「選ばれる資格がある」のが原義。" }],
-  // endorse (18206)
-  [18206, { coreImage: "「公に支持・推薦する・裏書きする」のがコアイメージ。信頼性を担保して「お墨付きを与える」行為。", usage: "「endorse a candidate（候補者を支持する）」「celebrity endorsement（著名人の推薦）」「endorse a check（小切手を裏書きする）」のように使う。", synonymDifference: "endorse vs support vs approve: endorse は公式・公に支持を表明する（public declaration）。support は支持・援助する広い語。approve は提案・申請を正式に認める（authorize）。", englishDefinition: "To publicly support or recommend something; to sign the back of a check.", etymology: "ラテン語 indorsare（裏に書く）から。in-（上に）＋ dorsum（背中）。「小切手の裏に署名する」から「支持する」に転じた。" }],
-  // enterprise (18207)
-  [18207, { coreImage: "「リスクをとって新しいことに挑む事業・企業精神」のがコアイメージ。大胆な「進取の気性」を持つ事業体。", usage: "「small enterprise（中小企業）」「free enterprise（自由企業制度）」「enterprise software（企業向けソフトウェア）」「show enterprise（進取の精神を見せる）」のように使う。", synonymDifference: "enterprise vs company vs business: enterprise は事業・企業（特に大規模・意欲的な活動）を指す格調ある語。company は法的な「会社」（a limited company）。business は商業活動・事業全般（run a business）。", englishDefinition: "A business or company; willingness to undertake new projects.", etymology: "古フランス語 entreprendre（着手する）から。entre（間に）＋ prendre（取る・prize と同語源）。" }],
-  // evaluate (18208)
-  [18208, { coreImage: "「価値・有効性・成果を体系的に分析して判断する」のがコアイメージ。数値化・基準化して客観的に「評価する」行為。", usage: "「evaluate performance（パフォーマンスを評価する）」「evaluate options（選択肢を評価する）」「evaluation criteria（評価基準）」のように使う。", synonymDifference: "evaluate vs assess vs measure: evaluate は価値・有効性を総合的に判断する。assess は特定の基準に照らして査定する（tax assessment）。measure は数値で測定・計量する（measure results）。", englishDefinition: "To assess the value, quality, or importance of something.", etymology: "フランス語 évaluer から。e-（外に）＋ valuer（value＝価値を出す）。" }],
-  // exceed (18209)
-  [18209, { coreImage: "「基準・期待・限界を超える・上回る」のがコアイメージ。良い意味でも悪い意味でも「越境する」行為。", usage: "「exceed expectations（期待を超える）」「exceed the budget（予算を超過する）」「exceed the speed limit（制限速度を超える）」のように使う。", synonymDifference: "exceed vs surpass vs go beyond: exceed は設定された基準・限界を超える（exceed a limit）。surpass は他者・過去の記録を「上回る・超える」（surpass the competition）。go beyond は比喩的に「枠を越える」（go beyond expectations）。", englishDefinition: "To go beyond the limit or to be greater than something.", etymology: "ラテン語 excedere（外に行く）から。ex-（外に）＋ cedere（行く）。" }],
-  // expedition (18210)
-  [18210, { coreImage: "「特定の目的のために組まれた遠方への旅・探検隊」のがコアイメージ。また「迅速さ」の意味でも使われる。", usage: "「scientific expedition（科学探検）」「expedition team（探検隊）」「sales expedition（販売強化活動〈比喩〉）」「with expedition（迅速に）」のように使う。", synonymDifference: "expedition vs exploration vs journey: expedition は組織された目的のある遠征（formal, organized）。exploration はより広く「探索・調査」する行為（explore a new market）。journey は特定の目的地への「旅」（long journey）。", englishDefinition: "An organized journey for a specific purpose; speed in doing something.", etymology: "ラテン語 expedire（足を解放する・impediment の反対）から。「障害なく進む」→「遠征」の意に転じた。" }],
+  // deficit (25995)
+  [25995, { coreImage: "「必要量・期待量に対して不足している状態・赤字」のがコアイメージ。surplus（黒字・余剰）の反対。", usage: "「budget deficit（財政赤字）」「trade deficit（貿易赤字）」「run a deficit（赤字になる）」「deficit spending（赤字支出）」のように使う。", synonymDifference: "deficit vs shortage vs debt: deficit は支出が収入を上回る「赤字状態」（financial gap）。shortage は必要量に対する「不足・欠乏」（shortage of supplies）。debt は借りているお金・負債（national debt）。", englishDefinition: "The amount by which spending exceeds income; a shortage.", etymology: "ラテン語 deficit（欠けている・3人称単数）から。de-（離れて）＋ facere（する）。" }],
+  // deliberate (29301)
+  [29301, { coreImage: "「慎重に考えてから意図的に行う・よく考えた末の」のがコアイメージ。動詞では「熟慮する」意味になる。", usage: "「a deliberate choice（意図的な選択）」「deliberate action（計画的な行動）」「deliberate about（〜について熟慮する）」のように使う。", synonymDifference: "deliberate vs intentional vs purposeful: deliberate は事前に慎重に考えた末の行為（careful planning）。intentional は意図的・わざとの（intentional act）。purposeful は明確な目的を持った（purposeful effort）。", englishDefinition: "Done intentionally and carefully; to think carefully about something.", etymology: "ラテン語 deliberare（天秤にかけて考える）から。de-（完全に）＋ librare（天秤にかける・balance と関連）。" }],
+  // designate (29061)
+  [29061, { coreImage: "「特定の目的・役割のために指定する・任命する」のがコアイメージ。特別な目的のために「指名する・割り当てる」行為。", usage: "「designated area（指定エリア）」「designate a representative（代表を指名する）」「designated driver（指定ドライバー）」のように使う。", synonymDifference: "designate vs appoint vs assign: designate は特定目的・役割に指定する（designate a room for）。appoint はポジション・職務に公式に任命する（appoint a CEO）。assign は仕事・タスクを人に割り当てる（assign a task）。", englishDefinition: "To officially choose something or someone for a purpose.", etymology: "ラテン語 designare（印をつけて示す）から。de-（完全に）＋ signare（印をつける）。" }],
+  // diploma (26004)
+  [26004, { coreImage: "「学校・教育機関が発行する卒業・修了の公式証明書」がコアイメージ。", usage: "「high school diploma（高校卒業証書）」「receive a diploma（卒業証書を受け取る）」「diploma program（ディプロマプログラム）」のように使う。", synonymDifference: "diploma vs degree vs certificate: diploma は学校教育の修了証書（high school/vocational）。degree は大学が授与する学位（bachelor's degree）。certificate は特定スキル・研修の修了証（training certificate）。", englishDefinition: "An official document showing someone has successfully completed a course of study.", etymology: "ギリシャ語 diploma（二つ折りにされた書類）から。diploun（二重にする）に由来。" }],
+  // disclose (26970)
+  [26970, { coreImage: "「秘密にされていた情報を公式に開示する・明らかにする」のがコアイメージ。", usage: "「disclose financial information（財務情報を開示する）」「disclose a conflict of interest（利益相反を開示する）」「non-disclosure agreement（秘密保持契約）」のように使う。", synonymDifference: "disclose vs reveal vs expose: disclose は公式・義務的に情報を開示する（formal/legal）。reveal は驚きを持って「明らかにする」（dramatic reveal）。expose は隠されていた不都合な事実を「暴露する」（expose a scandal）。", englishDefinition: "To make previously secret information known.", etymology: "dis-（反対）＋ close（閉じる）。「閉じていたものを開く」のが原義。" }],
+  // disruption (32809)
+  [32809, { coreImage: "「通常の流れや秩序を壊す・中断させる大きな乱れ」がコアイメージ。デジタル革命のような「業界破壊」にも使う。", usage: "「service disruption（サービス障害）」「supply chain disruption（サプライチェーン混乱）」「disruptive technology（破壊的技術）」のように使う。", synonymDifference: "disruption vs interruption vs disturbance: disruption は大きく秩序・流れを壊す（major break）。interruption は一時的な中断（brief stop）。disturbance はより軽い「乱れ・迷惑」（noise disturbance）。", englishDefinition: "A major interruption to the normal activity or process.", etymology: "ラテン語 disruptio（引き裂くこと）から。dis-（分離）＋ rumpere（破る・rupture と同語源）。" }],
+  // dividend (31840)
+  [31840, { coreImage: "「会社の利益を株主に分配する配当金」がコアイメージ。努力に対する「利益の分け前」という広い意味も持つ。", usage: "「pay dividends（配当金を支払う）」「dividend yield（配当利回り）」「declare a dividend（配当を宣言する）」「pay dividends〈比喩〉（実を結ぶ・効果をあげる）」のように使う。", synonymDifference: "dividend vs interest vs profit: dividend は株主への利益配分（equity investors）。interest は債権者への利子（debt holders）。profit は収入からコストを引いた純利益（company perspective）。", englishDefinition: "A sum of money paid to shareholders from company profits.", etymology: "ラテン語 dividendum（分けられるもの）から。dividere（分ける）の動名詞。" }],
+  // duration (33519)
+  [33519, { coreImage: "「何かが続く時間の長さ・持続期間」がコアイメージ。開始から終了までの「時間の幅」。", usage: "「contract duration（契約期間）」「for the duration of（〜の期間中ずっと）」「call duration（通話時間）」「short duration（短期間）」のように使う。", synonymDifference: "duration vs period vs term: duration は持続する時間の長さに焦点（how long it lasts）。period は特定の時間的区切り（a period of time）。term は契約・学期などの正式な期間（contract term）。", englishDefinition: "The length of time that something lasts.", etymology: "ラテン語 duratio（持続すること）から。durare（続く・durable と同語源）。" }],
+  // eligible (27560)
+  [27560, { coreImage: "「特定の条件・基準を満たして対象になる・資格がある」のがコアイメージ。恩恵・参加・採用の「資格を満たしている」状態。", usage: "「eligible for a bonus（ボーナスの対象となる）」「eligible to vote（投票する資格がある）」「eligibility criteria（資格条件）」のように使う。", synonymDifference: "eligible vs qualified vs entitled: eligible は特定の条件を満たして対象になる（meet the criteria）。qualified は必要なスキル・資格を持っている（have the qualifications）。entitled は権利として受け取れる（legally entitled to benefits）。", englishDefinition: "Having the right qualifications or satisfying the conditions required.", etymology: "ラテン語 eligere（選ぶ・elect と同語源）＋ -ible（可能の接尾辞）。「選ばれる資格がある」のが原義。" }],
+  // endorse (26081)
+  [26081, { coreImage: "「公に支持・推薦する・裏書きする」のがコアイメージ。信頼性を担保して「お墨付きを与える」行為。", usage: "「endorse a candidate（候補者を支持する）」「celebrity endorsement（著名人の推薦）」「endorse a check（小切手を裏書きする）」のように使う。", synonymDifference: "endorse vs support vs approve: endorse は公式・公に支持を表明する（public declaration）。support は支持・援助する広い語。approve は提案・申請を正式に認める（authorize）。", englishDefinition: "To publicly support or recommend something; to sign the back of a check.", etymology: "ラテン語 indorsare（裏に書く）から。in-（上に）＋ dorsum（背中）。「小切手の裏に署名する」から「支持する」に転じた。" }],
+  // enterprise (27589)
+  [27589, { coreImage: "「リスクをとって新しいことに挑む事業・企業精神」のがコアイメージ。大胆な「進取の気性」を持つ事業体。", usage: "「small enterprise（中小企業）」「free enterprise（自由企業制度）」「enterprise software（企業向けソフトウェア）」「show enterprise（進取の精神を見せる）」のように使う。", synonymDifference: "enterprise vs company vs business: enterprise は事業・企業（特に大規模・意欲的な活動）を指す格調ある語。company は法的な「会社」（a limited company）。business は商業活動・事業全般（run a business）。", englishDefinition: "A business or company; willingness to undertake new projects.", etymology: "古フランス語 entreprendre（着手する）から。entre（間に）＋ prendre（取る・prize と同語源）。" }],
+  // evaluate (27642)
+  [27642, { coreImage: "「価値・有効性・成果を体系的に分析して判断する」のがコアイメージ。数値化・基準化して客観的に「評価する」行為。", usage: "「evaluate performance（パフォーマンスを評価する）」「evaluate options（選択肢を評価する）」「evaluation criteria（評価基準）」のように使う。", synonymDifference: "evaluate vs assess vs measure: evaluate は価値・有効性を総合的に判断する。assess は特定の基準に照らして査定する（tax assessment）。measure は数値で測定・計量する（measure results）。", englishDefinition: "To assess the value, quality, or importance of something.", etymology: "フランス語 évaluer から。e-（外に）＋ valuer（value＝価値を出す）。" }],
+  // exceed (26102)
+  [26102, { coreImage: "「基準・期待・限界を超える・上回る」のがコアイメージ。良い意味でも悪い意味でも「越境する」行為。", usage: "「exceed expectations（期待を超える）」「exceed the budget（予算を超過する）」「exceed the speed limit（制限速度を超える）」のように使う。", synonymDifference: "exceed vs surpass vs go beyond: exceed は設定された基準・限界を超える（exceed a limit）。surpass は他者・過去の記録を「上回る・超える」（surpass the competition）。go beyond は比喩的に「枠を越える」（go beyond expectations）。", englishDefinition: "To go beyond the limit or to be greater than something.", etymology: "ラテン語 excedere（外に行く）から。ex-（外に）＋ cedere（行く）。" }],
+  // expedition (27636)
+  [27636, { coreImage: "「特定の目的のために組まれた遠方への旅・探検隊」のがコアイメージ。また「迅速さ」の意味でも使われる。", usage: "「scientific expedition（科学探検）」「expedition team（探検隊）」「sales expedition（販売強化活動〈比喩〉）」「with expedition（迅速に）」のように使う。", synonymDifference: "expedition vs exploration vs journey: expedition は組織された目的のある遠征（formal, organized）。exploration はより広く「探索・調査」する行為（explore a new market）。journey は特定の目的地への「旅」（long journey）。", englishDefinition: "An organized journey for a specific purpose; speed in doing something.", etymology: "ラテン語 expedire（足を解放する・impediment の反対）から。「障害なく進む」→「遠征」の意に転じた。" }],
 
   // expertise (18211)
   [18211, { coreImage: "「特定の分野における深い専門知識・熟練した技術」がコアイメージ。長年の経験で磨かれた「プロの実力」。", usage: "「technical expertise（技術的専門知識）」「marketing expertise（マーケティングの専門知識）」「draw on expertise（専門知識を活かす）」のように使う。", synonymDifference: "expertise vs knowledge vs skill: expertise は深い専門性・熟練度（expert-level）。knowledge は習得した知識・情報。skill は実践的な「技能・技術」（technical skill）。", englishDefinition: "Expert knowledge or skill in a particular area.", etymology: "expert（専門家）＋ -ise（フランス語の名詞化）。フランス語 expertise から。" }],
-  // extension (18212)
-  [18212, { coreImage: "「時間・空間・機能を伸ばす・広げること」のがコアイメージ。電話の内線（extension）も、期限の延長も同じ語。", usage: "「deadline extension（締め切り延長）」「phone extension（電話内線番号）」「hair extension（ヘアエクステ）」「extension cord（延長コード）」のように使う。", synonymDifference: "extension vs expansion vs prolongation: extension は既存のものを伸ばす・追加する（extend a deadline）。expansion は規模・範囲を広げる（business expansion）。prolongation はより格式ばった「期間の延長」（prolongation of a contract）。", englishDefinition: "An addition to something that makes it longer; a telephone line on a shared system.", etymology: "ラテン語 extensio（伸ばすこと）から。ex-（外に）＋ tendere（伸ばす）。" }],
-  // fluctuate (18213)
-  [18213, { coreImage: "「上下・増減を繰り返しながら不安定に変動する」のがコアイメージ。波のように行き来する変動。", usage: "「prices fluctuate（価格が変動する）」「fluctuating demand（変動する需要）」「exchange rates fluctuate（為替レートが変動する）」のように使う。", synonymDifference: "fluctuate vs vary vs oscillate: fluctuate は予測しにくい不規則な上下変動（markets fluctuate）。vary は変化する・様々に異なる（prices vary by region）。oscillate はより規則的に「振動・往復する」（oscillate between two values）。", englishDefinition: "To change continually between high and low levels.", etymology: "ラテン語 fluctuare（波に揺れる）から。fluctus（波）が語源。" }],
-  // forecast (18214)
-  [18214, { coreImage: "「データ・トレンドを分析して将来の状況を予測する」のがコアイメージ。天気予報も売上予測も「forecast」。", usage: "「sales forecast（売上予測）」「weather forecast（天気予報）」「economic forecast（経済見通し）」「forecast growth（成長を予測する）」のように使う。", synonymDifference: "forecast vs predict vs estimate: forecast はデータに基づく将来の数値・状況の予測（professional/technical）。predict はより広く将来を「予言する・予測する」。estimate は不完全な情報からの概算。", englishDefinition: "A statement about what is likely to happen in the future.", etymology: "fore-（前もって）＋ cast（投げる・予測する）。「前もって投げかける」のが原義。" }],
-  // fulfillment (18215)
-  [18215, { coreImage: "「約束・注文・目標を完全に満たす・達成する行為・状態」のがコアイメージ。注文の発送処理（order fulfillment）にもよく使う。", usage: "「order fulfillment（注文処理・出荷）」「fulfillment center（フルフィルメントセンター）」「sense of fulfillment（充実感・達成感）」のように使う。", synonymDifference: "fulfillment vs completion vs satisfaction: fulfillment は約束・目標を完全に達成する（meeting obligations）。completion は仕事・プロジェクトを終わらせること。satisfaction は満足感・充足感（customer satisfaction）。", englishDefinition: "The act of fulfilling a promise or requirement; the feeling of satisfaction from doing something worthwhile.", etymology: "fulfill（満たす）＋ -ment（名詞化）。fulfill は古英語 fulfyllan（完全に満たす）から。" }],
-  // implement (18216)
-  [18216, { coreImage: "「計画・方針・システムを実際に動かして実施に移す」のがコアイメージ。計画段階から実行段階へのアクション。", usage: "「implement a strategy（戦略を実施する）」「implement changes（変更を実施する）」「implementation plan（実施計画）」のように使う。", synonymDifference: "implement vs execute vs carry out: implement は計画・システム・方針を正式に実施する（more formal）。execute はより速く・意志を持って実行する（execute a plan）。carry out は決定・任務を「遂行する」（carry out instructions）。", englishDefinition: "To put a plan or decision into effect.", etymology: "ラテン語 implementum（充填するもの）から。im-（中に）＋ plere（満たす）。「計画を現実で満たす」のが原義。" }],
-  // incur (18217)
-  [18217, { coreImage: "「費用・損失・罰則などを負うことになる・被る」のがコアイメージ。意図せず「かぶってしまう」ニュアンスが強い。", usage: "「incur costs（費用を負う）」「incur a penalty（罰則を受ける）」「incur debt（借金を背負う）」「without incurring charges（追加料金なしで）」のように使う。", synonymDifference: "incur vs suffer vs bear: incur は費用・負債・罰則を「招く・被る」（incur consequences）。suffer は苦しみ・損害を受ける（suffer a loss）。bear は重荷を「担う・耐える」（bear the cost）。", englishDefinition: "To experience something unpleasant, especially a cost or penalty, as a result of something you do.", etymology: "ラテン語 incurrere（〜の中に走り込む）から。in-（中に）＋ currere（走る）。" }],
-  // initiative (18218)
-  [18218, { coreImage: "「他者の指示を待たず、自ら最初の一歩を踏み出す力・構想」のがコアイメージ。「イニシアチブをとる」日本語でもおなじみ。", usage: "「take the initiative（主導権を取る）」「show initiative（積極性を示す）」「strategic initiative（戦略的取り組み）」「on one's own initiative（自分の判断で）」のように使う。", synonymDifference: "initiative vs leadership vs drive: initiative は自ら先に行動を起こす力・最初のアクション。leadership は人を引っ張る統率力。drive は前進する強い意志・やる気（inner drive）。", englishDefinition: "The ability to take action without being told; a new plan or action.", etymology: "ラテン語 initium（始まり）から。inire（中に入る）。「最初の行動を起こす人」が原義。" }],
-  // insight (18219)
-  [18219, { coreImage: "「表面の下にある本質・真実を見抜く深い理解・洞察」のがコアイメージ。「内側を見る」という語源通り、深い視点。", usage: "「gain insights（洞察を得る）」「valuable insight（貴重な見識）」「market insights（市場の洞察）」「provide insight into（〜についての洞察を提供する）」のように使う。", synonymDifference: "insight vs understanding vs knowledge: insight は表面の下にある深い本質への洞察（aha moment）。understanding は理解・把握（general understanding）。knowledge は習得された情報・知識（theoretical knowledge）。", englishDefinition: "A deep understanding of the true nature of something.", etymology: "in-（中を）＋ sight（見ること）。「内側を見る」のが原義。" }],
-  // interpersonal (18220)
-  [18220, { coreImage: "「人と人の間の関係・コミュニケーションに関する」のがコアイメージ。", usage: "「interpersonal skills（対人スキル）」「interpersonal relationship（対人関係）」「interpersonal communication（対人コミュニケーション）」のように使う。", synonymDifference: "interpersonal vs social vs personal: interpersonal は特定の「人と人の間」に焦点（interpersonal conflict）。social は社会的・集団的な（social skills）。personal は個人的・私的な（personal matter）。", englishDefinition: "Relating to relationships or communication between people.", etymology: "inter-（間に）＋ personal（個人の）。「人々の間の」のが原義。" }],
-  // keynote (18221)
-  [18221, { coreImage: "「会議・イベントのテーマ・方向性を定める最重要スピーチ・中心思想」のがコアイメージ。", usage: "「keynote speech（基調講演）」「keynote speaker（基調講演者）」「deliver the keynote（基調講演を行う）」のように使う。", synonymDifference: "keynote vs opening vs main: keynote は会議・イベントのテーマを示す最重要スピーチ（sets the tone）。opening は単に「開幕の」（opening remarks）。main はメインの・主要な（main speaker）。", englishDefinition: "The most important speech or theme of a conference or event.", etymology: "key（鍵）＋ note（音符）。音楽の「基本音」から転じて「根本的な主題」の意に。" }],
-  // lease (18222)
-  [18222, { coreImage: "「一定期間、代金を払って物・不動産を使用する契約・リース」のがコアイメージ。所有ではなく「使用権を借りる」こと。", usage: "「sign a lease（賃貸借契約を結ぶ）」「office lease（オフィスの賃貸借）」「lease a car（車をリースする）」「lease term（賃貸期間）」のように使う。", synonymDifference: "lease vs rent vs hire: lease は長期的な賃貸借契約（usually 1+ year）。rent は短期的・継続的な賃料支払い（rent an apartment monthly）。hire は人や機器を一時的に「雇う・借りる」（hire a van）。", englishDefinition: "A legal agreement to use property or equipment for a set period in exchange for payment.", etymology: "古フランス語 laisser（残す・置く）から。ラテン語 laxare（緩める）が語源。" }],
-  // legitimate (18223)
-  [18223, { coreImage: "「法律・規則・道理に基づいた正当・合法的な」のがコアイメージ。不正・不法の反対。", usage: "「legitimate business（正当なビジネス）」「legitimate concern（正当な懸念）」「legitimate claim（正当な主張）」「Is this legitimate?（これは合法ですか？）」のように使う。", synonymDifference: "legitimate vs legal vs valid: legitimate は法律・道理・慣例から正当と認められる（broader sense）。legal は法律に適合している（strictly law-based）。valid は公式に有効である（valid ID）。", englishDefinition: "Conforming to the law or rules; reasonable and justifiable.", etymology: "ラテン語 legitimus（法律に従った）から。lex（法律・legal と同語源）。" }],
-  // liability (18224)
-  [18224, { coreImage: "「負担・責任・負債を負っている状態」のがコアイメージ。asset（資産）の反対語として貸借対照表でも頻出。", usage: "「limited liability（有限責任）」「current liabilities（流動負債）」「product liability（製造物責任）」「be a liability（お荷物になる〈比喩〉）」のように使う。", synonymDifference: "liability vs debt vs obligation: liability は財務・法律的な責任・負債（broader legal term）。debt は借入金・借金（specific amount owed）。obligation は履行すべき義務・責任（moral/contractual obligation）。", englishDefinition: "A legal responsibility or financial debt; a disadvantage.", etymology: "liable（責任がある）＋ -ity（名詞化）。フランス語 liable（縛られた）から。" }],
-  // logistics (18225)
-  [18225, { coreImage: "「物・人・情報を必要な場所・時間に届けるための計画・管理システム」のがコアイメージ。サプライチェーン管理の核心。", usage: "「supply chain logistics（サプライチェーン物流）」「logistics company（物流会社）」「logistics management（ロジスティクス管理）」「handle the logistics（段取りをする）」のように使う。", synonymDifference: "logistics vs supply chain vs distribution: logistics は物の移動・保管・配送の実務的な管理。supply chain はサプライヤーから消費者までの全工程。distribution は商品を顧客に届ける流通プロセス。", englishDefinition: "The detailed organization of a complex operation; the management of goods and services.", etymology: "フランス語 logistique（兵站）から。ギリシャ語 logistikos（計算の・実用的な）が語源。" }],
-  // mandatory (18226)
-  [18226, { coreImage: "「法律・規則によって必ず行わなければならない義務的な」のがコアイメージ。optional（任意）の反対。", usage: "「mandatory training（必須研修）」「mandatory disclosure（義務的開示）」「mandatory attendance（参加必須）」「make something mandatory（義務化する）」のように使う。", synonymDifference: "mandatory vs compulsory vs required: mandatory は法律・規則による義務（non-compliance leads to penalty）。compulsory はより強制的・命令的（compulsory education）。required は条件・基準として「必要とされる」（required skills）。", englishDefinition: "Required by law or rules; obligatory.", etymology: "ラテン語 mandatum（命令）から。mandare（命じる・command と同語源）＋ -ory（形容詞化）。" }],
-  // merger (18227)
-  [18227, { coreImage: "「二つ以上の企業・組織が一つに合体する合併」のがコアイメージ。M&A（Mergers and Acquisitions）の M。", usage: "「company merger（会社合併）」「merger and acquisition（M&A）」「proposed merger（合併案）」「merger talks（合併交渉）」のように使う。", synonymDifference: "merger vs acquisition vs consolidation: merger は対等に近い合体（two become one）。acquisition は一方が他方を買収する（one buys the other）。consolidation は複数の組織を統合して一つにまとめる（broader term）。", englishDefinition: "The combining of two or more companies into one.", etymology: "ラテン語 mergere（沈める・混ぜ合わせる）から。emerge（浮かび上がる）の反対語と同語源。" }],
-  // milestone (18228)
-  [18228, { coreImage: "「プロジェクト・人生における重要な節目・画期的な出来事」のがコアイメージ。道標として「ここまで来た」を示す。", usage: "「project milestone（プロジェクトのマイルストーン）」「reach a milestone（節目を迎える）」「milestone event（節目のイベント）」のように使う。", synonymDifference: "milestone vs deadline vs goal: milestone はプロセスの重要な通過点（check-in point）。deadline は完了の期限（time limit）。goal は到達したい最終目標（end point）。", englishDefinition: "An important event or point in the development of something.", etymology: "mile（距離単位）＋ stone（石）。道路の「1マイルごとに置かれた距離標石」から転じた。" }],
-  // moderate (18229)
-  [18229, { coreImage: "「極端でなく中間・穏当な程度・量」のがコアイメージ。過度でも不足でもない「適度な・穏やかな」状態。", usage: "「moderate growth（穏やかな成長）」「at a moderate pace（適度なペースで）」「moderate temperature（穏やかな気温）」「moderate a discussion（議論を司会進行する）」のように使う。", synonymDifference: "moderate vs reasonable vs modest: moderate は程度・量が中間・適度な（not extreme）。reasonable は理性的・納得できる（reasonable price）。modest は謙虚な・控えめな（modest salary）。", englishDefinition: "Not extreme; of average amount or degree; to control a discussion.", etymology: "ラテン語 moderatus（程よく抑えられた）から。modus（度・measure と関連）。" }],
-  // mortgage (18230)
-  [18230, { coreImage: "「不動産を担保にしてお金を借りる・住宅ローン」のがコアイメージ。「死の誓い」という語源が示す通り、長期の重い契約。", usage: "「take out a mortgage（住宅ローンを組む）」「mortgage payment（住宅ローンの返済）」「mortgage rate（住宅ローン金利）」「pay off a mortgage（ローンを完済する）」のように使う。", synonymDifference: "mortgage vs loan vs lease: mortgage は不動産を担保にした長期ローン（property-secured）。loan は担保あり・なしの借入金全般。lease は物件の使用権を借りること（不動産は所有しない）。", englishDefinition: "A loan secured on a property, used to buy real estate.", etymology: "古フランス語 mort gage（死の誓い）から。mort（死）＋ gage（誓い）。「ローンが完済されるか借り手が死ぬまで続く」誓いから。" }],
+  // extension (24886)
+  [24886, { coreImage: "「時間・空間・機能を伸ばす・広げること」のがコアイメージ。電話の内線（extension）も、期限の延長も同じ語。", usage: "「deadline extension（締め切り延長）」「phone extension（電話内線番号）」「hair extension（ヘアエクステ）」「extension cord（延長コード）」のように使う。", synonymDifference: "extension vs expansion vs prolongation: extension は既存のものを伸ばす・追加する（extend a deadline）。expansion は規模・範囲を広げる（business expansion）。prolongation はより格式ばった「期間の延長」（prolongation of a contract）。", englishDefinition: "An addition to something that makes it longer; a telephone line on a shared system.", etymology: "ラテン語 extensio（伸ばすこと）から。ex-（外に）＋ tendere（伸ばす）。" }],
+  // fluctuate (26991)
+  [26991, { coreImage: "「上下・増減を繰り返しながら不安定に変動する」のがコアイメージ。波のように行き来する変動。", usage: "「prices fluctuate（価格が変動する）」「fluctuating demand（変動する需要）」「exchange rates fluctuate（為替レートが変動する）」のように使う。", synonymDifference: "fluctuate vs vary vs oscillate: fluctuate は予測しにくい不規則な上下変動（markets fluctuate）。vary は変化する・様々に異なる（prices vary by region）。oscillate はより規則的に「振動・往復する」（oscillate between two values）。", englishDefinition: "To change continually between high and low levels.", etymology: "ラテン語 fluctuare（波に揺れる）から。fluctus（波）が語源。" }],
+  // forecast (27688)
+  [27688, { coreImage: "「データ・トレンドを分析して将来の状況を予測する」のがコアイメージ。天気予報も売上予測も「forecast」。", usage: "「sales forecast（売上予測）」「weather forecast（天気予報）」「economic forecast（経済見通し）」「forecast growth（成長を予測する）」のように使う。", synonymDifference: "forecast vs predict vs estimate: forecast はデータに基づく将来の数値・状況の予測（professional/technical）。predict はより広く将来を「予言する・予測する」。estimate は不完全な情報からの概算。", englishDefinition: "A statement about what is likely to happen in the future.", etymology: "fore-（前もって）＋ cast（投げる・予測する）。「前もって投げかける」のが原義。" }],
+  // fulfillment (32818)
+  [32818, { coreImage: "「約束・注文・目標を完全に満たす・達成する行為・状態」のがコアイメージ。注文の発送処理（order fulfillment）にもよく使う。", usage: "「order fulfillment（注文処理・出荷）」「fulfillment center（フルフィルメントセンター）」「sense of fulfillment（充実感・達成感）」のように使う。", synonymDifference: "fulfillment vs completion vs satisfaction: fulfillment は約束・目標を完全に達成する（meeting obligations）。completion は仕事・プロジェクトを終わらせること。satisfaction は満足感・充足感（customer satisfaction）。", englishDefinition: "The act of fulfilling a promise or requirement; the feeling of satisfaction from doing something worthwhile.", etymology: "fulfill（満たす）＋ -ment（名詞化）。fulfill は古英語 fulfyllan（完全に満たす）から。" }],
+  // implement (29382)
+  [29382, { coreImage: "「計画・方針・システムを実際に動かして実施に移す」のがコアイメージ。計画段階から実行段階へのアクション。", usage: "「implement a strategy（戦略を実施する）」「implement changes（変更を実施する）」「implementation plan（実施計画）」のように使う。", synonymDifference: "implement vs execute vs carry out: implement は計画・システム・方針を正式に実施する（more formal）。execute はより速く・意志を持って実行する（execute a plan）。carry out は決定・任務を「遂行する」（carry out instructions）。", englishDefinition: "To put a plan or decision into effect.", etymology: "ラテン語 implementum（充填するもの）から。im-（中に）＋ plere（満たす）。「計画を現実で満たす」のが原義。" }],
+  // incur (26385)
+  [26385, { coreImage: "「費用・損失・罰則などを負うことになる・被る」のがコアイメージ。意図せず「かぶってしまう」ニュアンスが強い。", usage: "「incur costs（費用を負う）」「incur a penalty（罰則を受ける）」「incur debt（借金を背負う）」「without incurring charges（追加料金なしで）」のように使う。", synonymDifference: "incur vs suffer vs bear: incur は費用・負債・罰則を「招く・被る」（incur consequences）。suffer は苦しみ・損害を受ける（suffer a loss）。bear は重荷を「担う・耐える」（bear the cost）。", englishDefinition: "To experience something unpleasant, especially a cost or penalty, as a result of something you do.", etymology: "ラテン語 incurrere（〜の中に走り込む）から。in-（中に）＋ currere（走る）。" }],
+  // initiative (27879)
+  [27879, { coreImage: "「他者の指示を待たず、自ら最初の一歩を踏み出す力・構想」のがコアイメージ。「イニシアチブをとる」日本語でもおなじみ。", usage: "「take the initiative（主導権を取る）」「show initiative（積極性を示す）」「strategic initiative（戦略的取り組み）」「on one's own initiative（自分の判断で）」のように使う。", synonymDifference: "initiative vs leadership vs drive: initiative は自ら先に行動を起こす力・最初のアクション。leadership は人を引っ張る統率力。drive は前進する強い意志・やる気（inner drive）。", englishDefinition: "The ability to take action without being told; a new plan or action.", etymology: "ラテン語 initium（始まり）から。inire（中に入る）。「最初の行動を起こす人」が原義。" }],
+  // insight (27888)
+  [27888, { coreImage: "「表面の下にある本質・真実を見抜く深い理解・洞察」のがコアイメージ。「内側を見る」という語源通り、深い視点。", usage: "「gain insights（洞察を得る）」「valuable insight（貴重な見識）」「market insights（市場の洞察）」「provide insight into（〜についての洞察を提供する）」のように使う。", synonymDifference: "insight vs understanding vs knowledge: insight は表面の下にある深い本質への洞察（aha moment）。understanding は理解・把握（general understanding）。knowledge は習得された情報・知識（theoretical knowledge）。", englishDefinition: "A deep understanding of the true nature of something.", etymology: "in-（中を）＋ sight（見ること）。「内側を見る」のが原義。" }],
+  // interpersonal (29419)
+  [29419, { coreImage: "「人と人の間の関係・コミュニケーションに関する」のがコアイメージ。", usage: "「interpersonal skills（対人スキル）」「interpersonal relationship（対人関係）」「interpersonal communication（対人コミュニケーション）」のように使う。", synonymDifference: "interpersonal vs social vs personal: interpersonal は特定の「人と人の間」に焦点（interpersonal conflict）。social は社会的・集団的な（social skills）。personal は個人的・私的な（personal matter）。", englishDefinition: "Relating to relationships or communication between people.", etymology: "inter-（間に）＋ personal（個人の）。「人々の間の」のが原義。" }],
+  // keynote (19715)
+  [19715, { coreImage: "「会議・イベントのテーマ・方向性を定める最重要スピーチ・中心思想」のがコアイメージ。", usage: "「keynote speech（基調講演）」「keynote speaker（基調講演者）」「deliver the keynote（基調講演を行う）」のように使う。", synonymDifference: "keynote vs opening vs main: keynote は会議・イベントのテーマを示す最重要スピーチ（sets the tone）。opening は単に「開幕の」（opening remarks）。main はメインの・主要な（main speaker）。", englishDefinition: "The most important speech or theme of a conference or event.", etymology: "key（鍵）＋ note（音符）。音楽の「基本音」から転じて「根本的な主題」の意に。" }],
+  // lease (26450)
+  [26450, { coreImage: "「一定期間、代金を払って物・不動産を使用する契約・リース」のがコアイメージ。所有ではなく「使用権を借りる」こと。", usage: "「sign a lease（賃貸借契約を結ぶ）」「office lease（オフィスの賃貸借）」「lease a car（車をリースする）」「lease term（賃貸期間）」のように使う。", synonymDifference: "lease vs rent vs hire: lease は長期的な賃貸借契約（usually 1+ year）。rent は短期的・継続的な賃料支払い（rent an apartment monthly）。hire は人や機器を一時的に「雇う・借りる」（hire a van）。", englishDefinition: "A legal agreement to use property or equipment for a set period in exchange for payment.", etymology: "古フランス語 laisser（残す・置く）から。ラテン語 laxare（緩める）が語源。" }],
+  // legitimate (29435)
+  [29435, { coreImage: "「法律・規則・道理に基づいた正当・合法的な」のがコアイメージ。不正・不法の反対。", usage: "「legitimate business（正当なビジネス）」「legitimate concern（正当な懸念）」「legitimate claim（正当な主張）」「Is this legitimate?（これは合法ですか？）」のように使う。", synonymDifference: "legitimate vs legal vs valid: legitimate は法律・道理・慣例から正当と認められる（broader sense）。legal は法律に適合している（strictly law-based）。valid は公式に有効である（valid ID）。", englishDefinition: "Conforming to the law or rules; reasonable and justifiable.", etymology: "ラテン語 legitimus（法律に従った）から。lex（法律・legal と同語源）。" }],
+  // liability (31917)
+  [31917, { coreImage: "「負担・責任・負債を負っている状態」のがコアイメージ。asset（資産）の反対語として貸借対照表でも頻出。", usage: "「limited liability（有限責任）」「current liabilities（流動負債）」「product liability（製造物責任）」「be a liability（お荷物になる〈比喩〉）」のように使う。", synonymDifference: "liability vs debt vs obligation: liability は財務・法律的な責任・負債（broader legal term）。debt は借入金・借金（specific amount owed）。obligation は履行すべき義務・責任（moral/contractual obligation）。", englishDefinition: "A legal responsibility or financial debt; a disadvantage.", etymology: "liable（責任がある）＋ -ity（名詞化）。フランス語 liable（縛られた）から。" }],
+  // logistics (30186)
+  [30186, { coreImage: "「物・人・情報を必要な場所・時間に届けるための計画・管理システム」のがコアイメージ。サプライチェーン管理の核心。", usage: "「supply chain logistics（サプライチェーン物流）」「logistics company（物流会社）」「logistics management（ロジスティクス管理）」「handle the logistics（段取りをする）」のように使う。", synonymDifference: "logistics vs supply chain vs distribution: logistics は物の移動・保管・配送の実務的な管理。supply chain はサプライヤーから消費者までの全工程。distribution は商品を顧客に届ける流通プロセス。", englishDefinition: "The detailed organization of a complex operation; the management of goods and services.", etymology: "フランス語 logistique（兵站）から。ギリシャ語 logistikos（計算の・実用的な）が語源。" }],
+  // mandatory (30503)
+  [30503, { coreImage: "「法律・規則によって必ず行わなければならない義務的な」のがコアイメージ。optional（任意）の反対。", usage: "「mandatory training（必須研修）」「mandatory disclosure（義務的開示）」「mandatory attendance（参加必須）」「make something mandatory（義務化する）」のように使う。", synonymDifference: "mandatory vs compulsory vs required: mandatory は法律・規則による義務（non-compliance leads to penalty）。compulsory はより強制的・命令的（compulsory education）。required は条件・基準として「必要とされる」（required skills）。", englishDefinition: "Required by law or rules; obligatory.", etymology: "ラテン語 mandatum（命令）から。mandare（命じる・command と同語源）＋ -ory（形容詞化）。" }],
+  // merger (26521)
+  [26521, { coreImage: "「二つ以上の企業・組織が一つに合体する合併」のがコアイメージ。M&A（Mergers and Acquisitions）の M。", usage: "「company merger（会社合併）」「merger and acquisition（M&A）」「proposed merger（合併案）」「merger talks（合併交渉）」のように使う。", synonymDifference: "merger vs acquisition vs consolidation: merger は対等に近い合体（two become one）。acquisition は一方が他方を買収する（one buys the other）。consolidation は複数の組織を統合して一つにまとめる（broader term）。", englishDefinition: "The combining of two or more companies into one.", etymology: "ラテン語 mergere（沈める・混ぜ合わせる）から。emerge（浮かび上がる）の反対語と同語源。" }],
+  // milestone (31635)
+  [31635, { coreImage: "「プロジェクト・人生における重要な節目・画期的な出来事」のがコアイメージ。道標として「ここまで来た」を示す。", usage: "「project milestone（プロジェクトのマイルストーン）」「reach a milestone（節目を迎える）」「milestone event（節目のイベント）」のように使う。", synonymDifference: "milestone vs deadline vs goal: milestone はプロセスの重要な通過点（check-in point）。deadline は完了の期限（time limit）。goal は到達したい最終目標（end point）。", englishDefinition: "An important event or point in the development of something.", etymology: "mile（距離単位）＋ stone（石）。道路の「1マイルごとに置かれた距離標石」から転じた。" }],
+  // moderate (25074)
+  [25074, { coreImage: "「極端でなく中間・穏当な程度・量」のがコアイメージ。過度でも不足でもない「適度な・穏やかな」状態。", usage: "「moderate growth（穏やかな成長）」「at a moderate pace（適度なペースで）」「moderate temperature（穏やかな気温）」「moderate a discussion（議論を司会進行する）」のように使う。", synonymDifference: "moderate vs reasonable vs modest: moderate は程度・量が中間・適度な（not extreme）。reasonable は理性的・納得できる（reasonable price）。modest は謙虚な・控えめな（modest salary）。", englishDefinition: "Not extreme; of average amount or degree; to control a discussion.", etymology: "ラテン語 moderatus（程よく抑えられた）から。modus（度・measure と関連）。" }],
+  // mortgage (28070)
+  [28070, { coreImage: "「不動産を担保にしてお金を借りる・住宅ローン」のがコアイメージ。「死の誓い」という語源が示す通り、長期の重い契約。", usage: "「take out a mortgage（住宅ローンを組む）」「mortgage payment（住宅ローンの返済）」「mortgage rate（住宅ローン金利）」「pay off a mortgage（ローンを完済する）」のように使う。", synonymDifference: "mortgage vs loan vs lease: mortgage は不動産を担保にした長期ローン（property-secured）。loan は担保あり・なしの借入金全般。lease は物件の使用権を借りること（不動産は所有しない）。", englishDefinition: "A loan secured on a property, used to buy real estate.", etymology: "古フランス語 mort gage（死の誓い）から。mort（死）＋ gage（誓い）。「ローンが完済されるか借り手が死ぬまで続く」誓いから。" }],
 
-  // numerous (18231)
-  [18231, { coreImage: "「非常に多い・数多くの」のがコアイメージ。「数え切れないほど多い」という量の多さを強調する形容詞。", usage: "「numerous times（何度も）」「numerous complaints（多数の苦情）」「on numerous occasions（多くの機会に）」「numerous examples（多数の例）」のように使う。", synonymDifference: "numerous vs many vs multiple: numerous は「数え切れないほど多い」という強調表現（more formal）。many は日常的に使う「多い」。multiple は「複数の・多様な」（multiple options）。", englishDefinition: "Very many; existing in large numbers.", etymology: "ラテン語 numerosus（数が多い）から。numerus（数・number と同語源）＋ -ous。" }],
-  // obligation (18232)
-  [18232, { coreImage: "「道義的・法的に果たさなければならない義務・責任」のがコアイメージ。「縛られている」という感覚。", usage: "「fulfill an obligation（義務を果たす）」「contractual obligation（契約上の義務）」「feel an obligation to（〜する義務を感じる）」「under no obligation（義務はない）」のように使う。", synonymDifference: "obligation vs duty vs responsibility: obligation は外部から課せられた義務（contractual/legal）。duty は役割や立場から生じる義務（duty of care）。responsibility は自分が担うべき責任（責任感）。", englishDefinition: "Something you are required to do because of a law, rule, or promise.", etymology: "ラテン語 obligatio（縛ること）から。ob-（向かって）＋ ligare（縛る・ligate と同語源）。" }],
-  // ongoing (30263)
-  [30263, { coreImage: "「現在進行中で継続している」のがコアイメージ。「止まっていない・まだ続いている」状態。", usage: "「ongoing project（進行中のプロジェクト）」「ongoing investigation（継続中の調査）」「ongoing support（継続的なサポート）」「ongoing process（継続的なプロセス）」のように使う。", synonymDifference: "ongoing vs current vs continuous: ongoing は「今も進行中でまだ終わっていない」（unresolved/in progress）。current は「現在の時点での」（current situation）。continuous は「途切れなく続く」（continuous improvement）。", englishDefinition: "Continuing to exist or develop; currently in progress.", etymology: "on-（続いて）＋ going（進んでいる）。「前進し続けている」のが原義。" }],
-  // outstanding (30264)
-  [30264, { coreImage: "「群を抜いて優れている」と「まだ処理・支払いが完了していない」の二つのコアイメージ。「際立って飛び出している」という語源から。", usage: "「outstanding performance（素晴らしい業績）」「outstanding balance（未払い残高）」「outstanding invoice（未払い請求書）」「outstanding issue（未解決の課題）」のように使う。", synonymDifference: "outstanding vs excellent vs pending: outstanding は「群を抜いた優秀さ」または「未処理・未払い」。excellent は純粋に「優れた・素晴らしい」。pending は「保留中・処理待ち」（pending approval）。", englishDefinition: "Exceptionally good; not yet paid or resolved.", etymology: "out-（外に）＋ stand（立つ）。「目立って突き出ている」のが原義。" }],
-  // oversight (18233)
-  [18233, { coreImage: "「管理・監督する」という意味と「見落とす・不注意で見逃す」という二つのコアイメージ。「上から見る」という語源から両方の意味が生まれた。", usage: "「regulatory oversight（規制当局の監督）」「due to an oversight（見落としにより）」「oversight committee（監督委員会）」「lack of oversight（監督不足）」のように使う。", synonymDifference: "oversight vs supervision vs mistake: oversight は「監督」または「不注意による見落とし」。supervision は専ら「監督・管理」（supervision of staff）。mistake は意図的でないが広い誤り（I made a mistake）。", englishDefinition: "Supervision and management; a mistake caused by not noticing something.", etymology: "over-（上を）＋ sight（見ること）。「上から見渡す＝監督・見落とし」。" }],
-  // patron (18234)
-  [18234, { coreImage: "「お店・施設を定期的に利用する常連客」と「芸術家・組織を財政的に支援する後援者」のがコアイメージ。「保護者」という語源から。", usage: "「regular patrons（常連客）」「corporate patron（企業スポンサー）」「patron of the arts（芸術の後援者）」「patron saint（守護聖人）」のように使う。", synonymDifference: "patron vs customer vs sponsor: patron は贔屓にする常連客または支援者（loyalty/ongoing relationship）。customer は一般的な顧客（one-time OK）。sponsor は資金提供して宣伝効果を得るスポンサー（commercial）。", englishDefinition: "A regular customer of a store; a person who supports an artist or organization.", etymology: "ラテン語 patronus（保護者）から。pater（父）と同語源。「父のように守る者」が原義。" }],
-  // pedestrian (18235)
-  [18235, { coreImage: "「道路を歩いている人・歩行者」のがコアイメージ。車両に対する歩いている人。形容詞では「単調でつまらない」の意にも。", usage: "「pedestrian crossing（横断歩道）」「pedestrian zone（歩行者専用区域）」「yield to pedestrians（歩行者に道を譲る）」「pedestrian traffic（歩行者の往来）」のように使う。", synonymDifference: "pedestrian vs walker vs commuter: pedestrian は「徒歩で移動している人」（特に道路・交通文脈）。walker は「歩いている人」の一般的な表現（健康のために歩く人も含む）。commuter は「通勤・通学者」（交通手段問わず）。", englishDefinition: "A person walking along a road; ordinary and unimaginative (adjective).", etymology: "ラテン語 pedester（足による）から。pes（足・pedal と同語源）。" }],
-  // pharmaceutical (18236)
-  [18236, { coreImage: "「薬学・製薬に関する」のがコアイメージ。製薬業界（pharma industry）の形容詞形として頻出。", usage: "「pharmaceutical company（製薬会社）」「pharmaceutical industry（製薬業界）」「pharmaceutical products（医薬品）」「pharmaceutical research（薬学研究）」のように使う。", synonymDifference: "pharmaceutical vs medical vs medicinal: pharmaceutical は「製薬・薬学に関する」（industry/company focus）。medical は「医療全般に関する」（medical care/device）。medicinal は「薬効のある・薬として使われる」（medicinal herb）。", englishDefinition: "Relating to the production or sale of medicines.", etymology: "ギリシャ語 pharmakeutikos（薬剤師の）から。pharmakon（薬・毒）が語源。" }],
+  // numerous (25107)
+  [25107, { coreImage: "「非常に多い・数多くの」のがコアイメージ。「数え切れないほど多い」という量の多さを強調する形容詞。", usage: "「numerous times（何度も）」「numerous complaints（多数の苦情）」「on numerous occasions（多くの機会に）」「numerous examples（多数の例）」のように使う。", synonymDifference: "numerous vs many vs multiple: numerous は「数え切れないほど多い」という強調表現（more formal）。many は日常的に使う「多い」。multiple は「複数の・多様な」（multiple options）。", englishDefinition: "Very many; existing in large numbers.", etymology: "ラテン語 numerosus（数が多い）から。numerus（数・number と同語源）＋ -ous。" }],
+  // obligation (29486)
+  [29486, { coreImage: "「道義的・法的に果たさなければならない義務・責任」のがコアイメージ。「縛られている」という感覚。", usage: "「fulfill an obligation（義務を果たす）」「contractual obligation（契約上の義務）」「feel an obligation to（〜する義務を感じる）」「under no obligation（義務はない）」のように使う。", synonymDifference: "obligation vs duty vs responsibility: obligation は外部から課せられた義務（contractual/legal）。duty は役割や立場から生じる義務（duty of care）。responsibility は自分が担うべき責任（責任感）。", englishDefinition: "Something you are required to do because of a law, rule, or promise.", etymology: "ラテン語 obligatio（縛ること）から。ob-（向かって）＋ ligare（縛る・ligate と同語源）。" }],
+  // ongoing (19816)
+  [19816, { coreImage: "「現在進行中で継続している」のがコアイメージ。「止まっていない・まだ続いている」状態。", usage: "「ongoing project（進行中のプロジェクト）」「ongoing investigation（継続中の調査）」「ongoing support（継続的なサポート）」「ongoing process（継続的なプロセス）」のように使う。", synonymDifference: "ongoing vs current vs continuous: ongoing は「今も進行中でまだ終わっていない」（unresolved/in progress）。current は「現在の時点での」（current situation）。continuous は「途切れなく続く」（continuous improvement）。", englishDefinition: "Continuing to exist or develop; currently in progress.", etymology: "on-（続いて）＋ going（進んでいる）。「前進し続けている」のが原義。" }],
+  // outstanding (28179)
+  [28179, { coreImage: "「群を抜いて優れている」と「まだ処理・支払いが完了していない」の二つのコアイメージ。「際立って飛び出している」という語源から。", usage: "「outstanding performance（素晴らしい業績）」「outstanding balance（未払い残高）」「outstanding invoice（未払い請求書）」「outstanding issue（未解決の課題）」のように使う。", synonymDifference: "outstanding vs excellent vs pending: outstanding は「群を抜いた優秀さ」または「未処理・未払い」。excellent は純粋に「優れた・素晴らしい」。pending は「保留中・処理待ち」（pending approval）。", englishDefinition: "Exceptionally good; not yet paid or resolved.", etymology: "out-（外に）＋ stand（立つ）。「目立って突き出ている」のが原義。" }],
+  // oversight (30684)
+  [30684, { coreImage: "「管理・監督する」という意味と「見落とす・不注意で見逃す」という二つのコアイメージ。「上から見る」という語源から両方の意味が生まれた。", usage: "「regulatory oversight（規制当局の監督）」「due to an oversight（見落としにより）」「oversight committee（監督委員会）」「lack of oversight（監督不足）」のように使う。", synonymDifference: "oversight vs supervision vs mistake: oversight は「監督」または「不注意による見落とし」。supervision は専ら「監督・管理」（supervision of staff）。mistake は意図的でないが広い誤り（I made a mistake）。", englishDefinition: "Supervision and management; a mistake caused by not noticing something.", etymology: "over-（上を）＋ sight（見ること）。「上から見渡す＝監督・見落とし」。" }],
+  // patron (26648)
+  [26648, { coreImage: "「お店・施設を定期的に利用する常連客」と「芸術家・組織を財政的に支援する後援者」のがコアイメージ。「保護者」という語源から。", usage: "「regular patrons（常連客）」「corporate patron（企業スポンサー）」「patron of the arts（芸術の後援者）」「patron saint（守護聖人）」のように使う。", synonymDifference: "patron vs customer vs sponsor: patron は贔屓にする常連客または支援者（loyalty/ongoing relationship）。customer は一般的な顧客（one-time OK）。sponsor は資金提供して宣伝効果を得るスポンサー（commercial）。", englishDefinition: "A regular customer of a store; a person who supports an artist or organization.", etymology: "ラテン語 patronus（保護者）から。pater（父）と同語源。「父のように守る者」が原義。" }],
+  // pedestrian (28248)
+  [28248, { coreImage: "「道路を歩いている人・歩行者」のがコアイメージ。車両に対する歩いている人。形容詞では「単調でつまらない」の意にも。", usage: "「pedestrian crossing（横断歩道）」「pedestrian zone（歩行者専用区域）」「yield to pedestrians（歩行者に道を譲る）」「pedestrian traffic（歩行者の往来）」のように使う。", synonymDifference: "pedestrian vs walker vs commuter: pedestrian は「徒歩で移動している人」（特に道路・交通文脈）。walker は「歩いている人」の一般的な表現（健康のために歩く人も含む）。commuter は「通勤・通学者」（交通手段問わず）。", englishDefinition: "A person walking along a road; ordinary and unimaginative (adjective).", etymology: "ラテン語 pedester（足による）から。pes（足・pedal と同語源）。" }],
+  // pharmaceutical (31896)
+  [31896, { coreImage: "「薬学・製薬に関する」のがコアイメージ。製薬業界（pharma industry）の形容詞形として頻出。", usage: "「pharmaceutical company（製薬会社）」「pharmaceutical industry（製薬業界）」「pharmaceutical products（医薬品）」「pharmaceutical research（薬学研究）」のように使う。", synonymDifference: "pharmaceutical vs medical vs medicinal: pharmaceutical は「製薬・薬学に関する」（industry/company focus）。medical は「医療全般に関する」（medical care/device）。medicinal は「薬効のある・薬として使われる」（medicinal herb）。", englishDefinition: "Relating to the production or sale of medicines.", etymology: "ギリシャ語 pharmakeutikos（薬剤師の）から。pharmakon（薬・毒）が語源。" }],
   // premises (30269)
   [30269, { coreImage: "「建物を含む敷地・構内全体」のがコアイメージ。複数形で使うのが基本。「建物とその周辺」を一体として指す。", usage: "「on the premises（構内で）」「off the premises（敷地外で）」「business premises（事業所）」「no smoking on the premises（構内禁煙）」のように使う。", synonymDifference: "premises vs property vs facility: premises は「特定の用途に使われる建物と敷地」（法的・ビジネス文脈で頻出）。property は「所有地・資産」全般（real property）。facility は「設備・施設」（manufacturing facility）。", englishDefinition: "A building and the land around it, used for a particular purpose.", etymology: "ラテン語 praemissa（前もって述べたもの）から。法律文書で「前述の建物・土地」が premises に。" }],
-  // procurement (18237)
-  [18237, { coreImage: "「組織が必要な物品・サービスを外部から調達・購買するプロセス」のがコアイメージ。ビジネス・政府機関で頻出の専門用語。", usage: "「procurement department（購買部門）」「procurement process（調達プロセス）」「strategic procurement（戦略的調達）」「government procurement（政府調達）」のように使う。", synonymDifference: "procurement vs purchasing vs sourcing: procurement は調達の計画から支払いまでの全プロセス（broad term）。purchasing は実際に物を買う行為（narrower, transactional）。sourcing はサプライヤーを探す・選ぶ活動（finding suppliers）。", englishDefinition: "The process of obtaining goods or services for an organization.", etymology: "ラテン語 procurare（代理で手配する）から。pro-（代わりに）＋ curare（手配する・care と関連）。" }],
-  // proponent (30271)
-  [30271, { coreImage: "「ある意見・計画・考えを積極的に支持・提唱する人」のがコアイメージ。「前に出して提案する人」。", usage: "「proponent of change（変革の支持者）」「proponent of renewable energy（再生可能エネルギーの提唱者）」「leading proponent（主要な支持者）」のように使う。", synonymDifference: "proponent vs advocate vs supporter: proponent は「積極的に推進・提唱する人」（最も強い推進者）。advocate は「主義・立場を擁護・弁護する人」（legal/formal）。supporter は「支持する人」一般（broader, less active）。", englishDefinition: "A person who supports or promotes a theory, proposal, or action.", etymology: "ラテン語 proponere（前に置く）から。pro-（前に）＋ ponere（置く・position と同語源）。" }],
-  // prospective (30272)
-  [30272, { coreImage: "「将来そうなる見込みがある・候補の」のがコアイメージ。「前を見ている」という語源から「未来志向の」。", usage: "「prospective clients（見込み客）」「prospective employees（採用候補者）」「prospective buyer（購入見込み者）」「prospective market（将来の市場）」のように使う。", synonymDifference: "prospective vs potential vs future: prospective は「なりそうな見込みがある」（likely, expected）。potential は「可能性を持つ」（could become）。future は単に「将来の・未来の」（future plans）。", englishDefinition: "Expected or likely to be in the future; likely to become something.", etymology: "ラテン語 prospectus（前を見ること）から。pro-（前に）＋ specere（見る・inspect と同語源）。" }],
-  // provision (18238)
-  [18238, { coreImage: "「将来の必要のために事前に準備・供給する」のがコアイメージ。また「契約・法律の条項・規定」という意味でも頻出。", usage: "「make provision for（〜に備える）」「provision of services（サービスの提供）」「a provision in the contract（契約の条項）」「social provisions（社会保障）」のように使う。", synonymDifference: "provision vs supply vs clause: provision は「準備した供給」または「契約・法律の条項」（dual meaning）。supply は「物資・供給」（narrower, physical）。clause は専ら「条文・条項」（legal document）。", englishDefinition: "The act of supplying something; a condition or requirement in a law or agreement.", etymology: "ラテン語 provisio（前もって見ること・準備）から。pro-（前に）＋ videre（見る・vision と同語源）。" }],
-  // receptionist (18239)
-  [18239, { coreImage: "「ホテル・オフィス・医療機関などで来客・電話の最初の窓口になる受付係」のがコアイメージ。", usage: "「front desk receptionist（フロントデスク受付）」「hotel receptionist（ホテルの受付係）」「contact the receptionist（受付に問い合わせる）」のように使う。", synonymDifference: "receptionist vs secretary vs front desk clerk: receptionist は来客・電話応対が主業務（first point of contact）。secretary は上司のスケジュール管理や事務全般（administrative support）。front desk clerk は特にホテルのフロント係（hotel-specific）。", englishDefinition: "A person who works at the front desk of a business, welcoming visitors.", etymology: "reception（受け取り・応接）＋ -ist（人）。ラテン語 receptio（受け入れること）から。" }],
-  // retrieve (18240)
-  [18240, { coreImage: "「失われたもの・遠くにあるものを取り戻す・取り出す」のがコアイメージ。データ検索の文脈でも頻出。", usage: "「retrieve data（データを取得する）」「retrieve a file（ファイルを取り出す）」「retrieve information（情報を検索する）」「retrieve a message（メッセージを取り出す）」のように使う。", synonymDifference: "retrieve vs recover vs fetch: retrieve は「保管場所や記憶から取り出す」（storage/database context）。recover は「失ったものを回復する」（recover from data loss）。fetch は「行って持ってくる」（口語的・動物のフェッチも）。", englishDefinition: "To get something back, especially stored information.", etymology: "古フランス語 retrouver（再び見つける）から。re-（再び）＋ trouver（見つける）。" }],
-  // subsidiary (30276)
-  [30276, { coreImage: "「親会社に支配・所有される子会社」のがコアイメージ。「補助的な・従属的な」という形容詞としても使われる。", usage: "「wholly owned subsidiary（完全子会社）」「subsidiary company（子会社）」「foreign subsidiary（海外子会社）」「establish a subsidiary（子会社を設立する）」のように使う。", synonymDifference: "subsidiary vs affiliate vs branch: subsidiary は親会社が過半数の株式を持つ子会社（majority control）。affiliate は提携関係にある関連会社（minority stake or partnership）。branch は本社の一部門・支社（not a separate legal entity）。", englishDefinition: "A company controlled by a parent company; secondary or subordinate.", etymology: "ラテン語 subsidiarius（予備の・補助の）から。subsidium（予備軍・援助）＋ -ary（形容詞化）。" }],
-  // surplus (18241)
-  [18241, { coreImage: "「必要量・使用量を超えた余剰・超過分」のがコアイメージ。財政では「黒字」、対義語は deficit（赤字）。", usage: "「budget surplus（財政黒字）」「trade surplus（貿易黒字）」「surplus inventory（余剰在庫）」「surplus funds（余剰資金）」のように使う。", synonymDifference: "surplus vs excess vs profit: surplus は「需要・必要を超えた余り」（trade surplus/budget surplus）。excess は「許容量を超えた過剰」（excess baggage）。profit は「売上から費用を引いた利益」（net profit）。", englishDefinition: "An amount left over; more than what is needed.", etymology: "ラテン語 superplus（超過分）から。super-（超えて）＋ plus（より多く）。" }],
-  // transaction (18242)
-  [18242, { coreImage: "「金融・商業上の取引・やり取り」のがコアイメージ。ビジネス・IT両方で頻出の重要語。", usage: "「financial transaction（金融取引）」「complete a transaction（取引を完了する）」「transaction fee（取引手数料）」「record all transactions（全取引を記録する）」のように使う。", synonymDifference: "transaction vs deal vs trade: transaction は「個々の金融・商業上のやり取り」（formal/specific）。deal は「取引・合意」一般（business deal/informal）。trade は「継続的な商売・交易・業種」（trade relations）。", englishDefinition: "An instance of buying, selling, or exchanging something.", etymology: "ラテン語 transactio（完了した取引）から。trans-（超えて・通じて）＋ agere（動かす・act と同語源）。" }],
-  // vendor (30279)
-  [30279, { coreImage: "「商品・サービスを提供・販売する業者・ベンダー」のがコアイメージ。調達先・サプライヤーとしての業者。", usage: "「select a vendor（業者を選定する）」「vendor management（ベンダー管理）」「third-party vendor（第三者業者）」「preferred vendor（優先業者）」のように使う。", synonymDifference: "vendor vs supplier vs distributor: vendor は商品・サービスを直接販売する業者（B2B/B2C）。supplier はメーカー・生産者への原材料・部品供給者（supply chain上流）。distributor は製品を流通させる中間業者（wholesaler）。", englishDefinition: "A company or person that sells goods or services.", etymology: "ラテン語 vendere（売る）から。venum（売り物）＋ dare（与える）。" }],
-  // workforce (30280)
-  [30280, { coreImage: "「組織・産業・社会全体が持つ労働力・就労者の集団」のがコアイメージ。人的資源としての「働く人全員」。", usage: "「workforce development（人材育成）」「diverse workforce（多様な人材）」「skilled workforce（熟練した労働力）」「reduce the workforce（人員を削減する）」のように使う。", synonymDifference: "workforce vs staff vs employees: workforce は組織全体・産業全体の「労働力・就労者集団」（macro view）。staff は「スタッフ・職員」（internal, more personal）。employees は雇用契約がある「従業員」（legal/HR term）。", englishDefinition: "All the people who work for a company or in an industry.", etymology: "work（仕事）＋ force（力・勢力）。「労働する人たちの勢力・集団」から。" }],
-  // abrupt (30281)
-  [30281, { coreImage: "「突然で予告なく起きる」と「無愛想・ぶっきらぼう」の二つのコアイメージ。「折り取られた」という語源から「唐突さ」。", usage: "「abrupt change（急な変更）」「abrupt end（唐突な終わり）」「abrupt manner（ぶっきらぼうな態度）」「come to an abrupt halt（突然止まる）」のように使う。", synonymDifference: "abrupt vs sudden vs unexpected: abrupt は「前触れなく唐突・ぶっきらぼう」（stronger connotation of rudeness）。sudden は「急な・突然の」（sudden rain）。unexpected は「予期しない」（unexpected results）。", englishDefinition: "Sudden and unexpected; rude and unfriendly.", etymology: "ラテン語 abruptus（断ち切られた）から。ab-（離れて）＋ rumpere（破る・rupture と同語源）。" }],
-  // accommodate (18243)
-  [18243, { coreImage: "「スペース・条件・ニーズに合わせて受け入れる・収容する」のがコアイメージ。「合わせる」「対応する」という柔軟性が核心。", usage: "「accommodate guests（宿泊客を収容する）」「accommodate requests（要望に応じる）」「accommodate differences（違いに対応する）」「seating capacity to accommodate 100（100名収容可能）」のように使う。", synonymDifference: "accommodate vs adjust vs adapt: accommodate は「他者のニーズ・状況に合わせて対応する」（external focus）。adjust は「自分自身を調整する」（minor changes）。adapt は「新しい環境に適応する」（larger, longer-term change）。", englishDefinition: "To provide space for; to adapt to the needs of someone.", etymology: "ラテン語 accommodare（適合させる）から。ad-（向かって）＋ commodare（便宜を図る・commodity と関連）。" }],
-  // accrue (30283)
-  [30283, { coreImage: "「時間とともに少しずつ積み上がって生じる・蓄積する」のがコアイメージ。利息・費用・権益が自然に増えていく。", usage: "「interest accrues（利息が積み上がる）」「accrued expenses（未払費用）」「accrual basis（発生主義）」「benefits accrue to（〜に利益が生じる）」のように使う。", synonymDifference: "accrue vs accumulate vs build up: accrue は「時間経過で自然に生じる・発生する」（特に財務）。accumulate は「意図的に蓄積する・たまる」（accumulate wealth）。build up は「段階的に増える・増やす」（口語的）。", englishDefinition: "To increase gradually; to be added as a benefit or right over time.", etymology: "ラテン語 accrescere（成長する）から。ac-（向かって）＋ crescere（成長する・crescent と同語源）。" }],
-  // administer (30284)
-  [30284, { coreImage: "「組織・プログラム・薬などを管理・運営・投与する」のがコアイメージ。「世話をする」という語源から「管理・実施」に発展。", usage: "「administer a test（試験を実施する）」「administer medication（薬を投与する）」「administer the program（プログラムを運営する）」「administer an oath（宣誓させる）」のように使う。", synonymDifference: "administer vs manage vs govern: administer は「具体的な手続き・運営・投与を実施する」（hands-on execution）。manage は「マネジメント・管理全般」（broader）。govern は「国・組織を統治・支配する」（higher level）。", englishDefinition: "To manage or direct; to give or apply officially.", etymology: "ラテン語 administrare（仕える・支援する）から。ad-（向かって）＋ ministrare（仕える・minister と同語源）。" }],
-  // adverse (30285)
-  [30285, { coreImage: "「不利・有害・逆方向の」のがコアイメージ。期待・目標に反する悪い影響。adverse と averse（嫌いな）は混同しやすいので注意。", usage: "「adverse conditions（不利な状況）」「adverse effects（悪影響）」「adverse weather（悪天候）」「adverse reaction（副作用・有害反応）」のように使う。", synonymDifference: "adverse vs negative vs unfavorable: adverse は「有害・不利・危険な状況や影響」（stronger negative impact）。negative は「否定的・消極的」（broader term）。unfavorable は「好ましくない・不利な」（unfavorable review）。", englishDefinition: "Harmful or unfavorable; preventing progress.", etymology: "ラテン語 adversus（向かい合った）から。ad-（向かって）＋ vertere（回す・convert と同語源）。" }],
-  // aggregate (30286)
-  [30286, { coreImage: "「個々の要素を集めた合計・総体」のがコアイメージ。統計や財務で「集計された全体」を指す。", usage: "「aggregate data（集計データ）」「aggregate demand（総需要）」「in the aggregate（全体として）」「aggregate sales（総売上）」のように使う。", synonymDifference: "aggregate vs total vs sum: aggregate は「個々の構成要素を集めた全体」（macro/statistical view）。total は「足し算した合計額」（total cost）。sum は「数値の合計」（sum of all values）。", englishDefinition: "A total formed by combining several elements; collected together.", etymology: "ラテン語 aggregatus（群れにした）から。ag-（向かって）＋ gregare（群れにする・gregarious と同語源）。" }],
-  // ample (30288)
-  [30288, { coreImage: "「十分すぎるほど豊富にある」のがコアイメージ。「ちょうど十分」ではなく「余裕をもって十分」という量の豊かさ。", usage: "「ample time（十分な時間）」「ample space（十分なスペース）」「ample opportunity（十分な機会）」「ample evidence（十分な証拠）」のように使う。", synonymDifference: "ample vs sufficient vs enough: ample は「必要以上に豊富で余裕がある」（more than enough）。sufficient は「必要を満たす十分量」（just enough）。enough は日常語で「足りている」（enough food）。", englishDefinition: "More than enough; in large quantity or space.", etymology: "ラテン語 amplus（広い・大きい）から。「広々とした→豊富な」のイメージ。" }],
-  // anonymous (30289)
-  [30289, { coreImage: "「名前が明かされていない・匿名の」のがコアイメージ。「名前なし」という語源通り、身元不明・匿名の状態。", usage: "「anonymous survey（匿名アンケート）」「remain anonymous（匿名のままにする）」「anonymous donor（匿名の寄付者）」「anonymous tip（匿名の情報提供）」のように使う。", synonymDifference: "anonymous vs unknown vs confidential: anonymous は「意図的に名前を伏せた」（by choice）。unknown は「誰なのか分からない」（author unknown）。confidential は「秘密扱いで開示されていない」（confidential source）。", englishDefinition: "Not identified by name; having no known name.", etymology: "ギリシャ語 anonymos（名なし）から。an-（なし）＋ onyma（名前・synonym と同語源）。" }],
+  // procurement (32256)
+  [32256, { coreImage: "「組織が必要な物品・サービスを外部から調達・購買するプロセス」のがコアイメージ。ビジネス・政府機関で頻出の専門用語。", usage: "「procurement department（購買部門）」「procurement process（調達プロセス）」「strategic procurement（戦略的調達）」「government procurement（政府調達）」のように使う。", synonymDifference: "procurement vs purchasing vs sourcing: procurement は調達の計画から支払いまでの全プロセス（broad term）。purchasing は実際に物を買う行為（narrower, transactional）。sourcing はサプライヤーを探す・選ぶ活動（finding suppliers）。", englishDefinition: "The process of obtaining goods or services for an organization.", etymology: "ラテン語 procurare（代理で手配する）から。pro-（代わりに）＋ curare（手配する・care と関連）。" }],
+  // proponent (29538)
+  [29538, { coreImage: "「ある意見・計画・考えを積極的に支持・提唱する人」のがコアイメージ。「前に出して提案する人」。", usage: "「proponent of change（変革の支持者）」「proponent of renewable energy（再生可能エネルギーの提唱者）」「leading proponent（主要な支持者）」のように使う。", synonymDifference: "proponent vs advocate vs supporter: proponent は「積極的に推進・提唱する人」（最も強い推進者）。advocate は「主義・立場を擁護・弁護する人」（legal/formal）。supporter は「支持する人」一般（broader, less active）。", englishDefinition: "A person who supports or promotes a theory, proposal, or action.", etymology: "ラテン語 proponere（前に置く）から。pro-（前に）＋ ponere（置く・position と同語源）。" }],
+  // prospective (30512)
+  [30512, { coreImage: "「将来そうなる見込みがある・候補の」のがコアイメージ。「前を見ている」という語源から「未来志向の」。", usage: "「prospective clients（見込み客）」「prospective employees（採用候補者）」「prospective buyer（購入見込み者）」「prospective market（将来の市場）」のように使う。", synonymDifference: "prospective vs potential vs future: prospective は「なりそうな見込みがある」（likely, expected）。potential は「可能性を持つ」（could become）。future は単に「将来の・未来の」（future plans）。", englishDefinition: "Expected or likely to be in the future; likely to become something.", etymology: "ラテン語 prospectus（前を見ること）から。pro-（前に）＋ specere（見る・inspect と同語源）。" }],
+  // provision (28382)
+  [28382, { coreImage: "「将来の必要のために事前に準備・供給する」のがコアイメージ。また「契約・法律の条項・規定」という意味でも頻出。", usage: "「make provision for（〜に備える）」「provision of services（サービスの提供）」「a provision in the contract（契約の条項）」「social provisions（社会保障）」のように使う。", synonymDifference: "provision vs supply vs clause: provision は「準備した供給」または「契約・法律の条項」（dual meaning）。supply は「物資・供給」（narrower, physical）。clause は専ら「条文・条項」（legal document）。", englishDefinition: "The act of supplying something; a condition or requirement in a law or agreement.", etymology: "ラテン語 provisio（前もって見ること・準備）から。pro-（前に）＋ videre（見る・vision と同語源）。" }],
+  // receptionist (29550)
+  [29550, { coreImage: "「ホテル・オフィス・医療機関などで来客・電話の最初の窓口になる受付係」のがコアイメージ。", usage: "「front desk receptionist（フロントデスク受付）」「hotel receptionist（ホテルの受付係）」「contact the receptionist（受付に問い合わせる）」のように使う。", synonymDifference: "receptionist vs secretary vs front desk clerk: receptionist は来客・電話応対が主業務（first point of contact）。secretary は上司のスケジュール管理や事務全般（administrative support）。front desk clerk は特にホテルのフロント係（hotel-specific）。", englishDefinition: "A person who works at the front desk of a business, welcoming visitors.", etymology: "reception（受け取り・応接）＋ -ist（人）。ラテン語 receptio（受け入れること）から。" }],
+  // retrieve (28495)
+  [28495, { coreImage: "「失われたもの・遠くにあるものを取り戻す・取り出す」のがコアイメージ。データ検索の文脈でも頻出。", usage: "「retrieve data（データを取得する）」「retrieve a file（ファイルを取り出す）」「retrieve information（情報を検索する）」「retrieve a message（メッセージを取り出す）」のように使う。", synonymDifference: "retrieve vs recover vs fetch: retrieve は「保管場所や記憶から取り出す」（storage/database context）。recover は「失ったものを回復する」（recover from data loss）。fetch は「行って持ってくる」（口語的・動物のフェッチも）。", englishDefinition: "To get something back, especially stored information.", etymology: "古フランス語 retrouver（再び見つける）から。re-（再び）＋ trouver（見つける）。" }],
+  // subsidiary (31645)
+  [31645, { coreImage: "「親会社に支配・所有される子会社」のがコアイメージ。「補助的な・従属的な」という形容詞としても使われる。", usage: "「wholly owned subsidiary（完全子会社）」「subsidiary company（子会社）」「foreign subsidiary（海外子会社）」「establish a subsidiary（子会社を設立する）」のように使う。", synonymDifference: "subsidiary vs affiliate vs branch: subsidiary は親会社が過半数の株式を持つ子会社（majority control）。affiliate は提携関係にある関連会社（minority stake or partnership）。branch は本社の一部門・支社（not a separate legal entity）。", englishDefinition: "A company controlled by a parent company; secondary or subordinate.", etymology: "ラテン語 subsidiarius（予備の・補助の）から。subsidium（予備軍・援助）＋ -ary（形容詞化）。" }],
+  // surplus (31843)
+  [31843, { coreImage: "「必要量・使用量を超えた余剰・超過分」のがコアイメージ。財政では「黒字」、対義語は deficit（赤字）。", usage: "「budget surplus（財政黒字）」「trade surplus（貿易黒字）」「surplus inventory（余剰在庫）」「surplus funds（余剰資金）」のように使う。", synonymDifference: "surplus vs excess vs profit: surplus は「需要・必要を超えた余り」（trade surplus/budget surplus）。excess は「許容量を超えた過剰」（excess baggage）。profit は「売上から費用を引いた利益」（net profit）。", englishDefinition: "An amount left over; more than what is needed.", etymology: "ラテン語 superplus（超過分）から。super-（超えて）＋ plus（より多く）。" }],
+  // transaction (29974)
+  [29974, { coreImage: "「金融・商業上の取引・やり取り」のがコアイメージ。ビジネス・IT両方で頻出の重要語。", usage: "「financial transaction（金融取引）」「complete a transaction（取引を完了する）」「transaction fee（取引手数料）」「record all transactions（全取引を記録する）」のように使う。", synonymDifference: "transaction vs deal vs trade: transaction は「個々の金融・商業上のやり取り」（formal/specific）。deal は「取引・合意」一般（business deal/informal）。trade は「継続的な商売・交易・業種」（trade relations）。", englishDefinition: "An instance of buying, selling, or exchanging something.", etymology: "ラテン語 transactio（完了した取引）から。trans-（超えて・通じて）＋ agere（動かす・act と同語源）。" }],
+  // vendor (19775)
+  [19775, { coreImage: "「商品・サービスを提供・販売する業者・ベンダー」のがコアイメージ。調達先・サプライヤーとしての業者。", usage: "「select a vendor（業者を選定する）」「vendor management（ベンダー管理）」「third-party vendor（第三者業者）」「preferred vendor（優先業者）」のように使う。", synonymDifference: "vendor vs supplier vs distributor: vendor は商品・サービスを直接販売する業者（B2B/B2C）。supplier はメーカー・生産者への原材料・部品供給者（supply chain上流）。distributor は製品を流通させる中間業者（wholesaler）。", englishDefinition: "A company or person that sells goods or services.", etymology: "ラテン語 vendere（売る）から。venum（売り物）＋ dare（与える）。" }],
+  // workforce (18785)
+  [18785, { coreImage: "「組織・産業・社会全体が持つ労働力・就労者の集団」のがコアイメージ。人的資源としての「働く人全員」。", usage: "「workforce development（人材育成）」「diverse workforce（多様な人材）」「skilled workforce（熟練した労働力）」「reduce the workforce（人員を削減する）」のように使う。", synonymDifference: "workforce vs staff vs employees: workforce は組織全体・産業全体の「労働力・就労者集団」（macro view）。staff は「スタッフ・職員」（internal, more personal）。employees は雇用契約がある「従業員」（legal/HR term）。", englishDefinition: "All the people who work for a company or in an industry.", etymology: "work（仕事）＋ force（力・勢力）。「労働する人たちの勢力・集団」から。" }],
+  // abrupt (31609)
+  [31609, { coreImage: "「突然で予告なく起きる」と「無愛想・ぶっきらぼう」の二つのコアイメージ。「折り取られた」という語源から「唐突さ」。", usage: "「abrupt change（急な変更）」「abrupt end（唐突な終わり）」「abrupt manner（ぶっきらぼうな態度）」「come to an abrupt halt（突然止まる）」のように使う。", synonymDifference: "abrupt vs sudden vs unexpected: abrupt は「前触れなく唐突・ぶっきらぼう」（stronger connotation of rudeness）。sudden は「急な・突然の」（sudden rain）。unexpected は「予期しない」（unexpected results）。", englishDefinition: "Sudden and unexpected; rude and unfriendly.", etymology: "ラテン語 abruptus（断ち切られた）から。ab-（離れて）＋ rumpere（破る・rupture と同語源）。" }],
+  // accommodate (31784)
+  [31784, { coreImage: "「スペース・条件・ニーズに合わせて受け入れる・収容する」のがコアイメージ。「合わせる」「対応する」という柔軟性が核心。", usage: "「accommodate guests（宿泊客を収容する）」「accommodate requests（要望に応じる）」「accommodate differences（違いに対応する）」「seating capacity to accommodate 100（100名収容可能）」のように使う。", synonymDifference: "accommodate vs adjust vs adapt: accommodate は「他者のニーズ・状況に合わせて対応する」（external focus）。adjust は「自分自身を調整する」（minor changes）。adapt は「新しい環境に適応する」（larger, longer-term change）。", englishDefinition: "To provide space for; to adapt to the needs of someone.", etymology: "ラテン語 accommodare（適合させる）から。ad-（向かって）＋ commodare（便宜を図る・commodity と関連）。" }],
+  // accrue (34316)
+  [34316, { coreImage: "「時間とともに少しずつ積み上がって生じる・蓄積する」のがコアイメージ。利息・費用・権益が自然に増えていく。", usage: "「interest accrues（利息が積み上がる）」「accrued expenses（未払費用）」「accrual basis（発生主義）」「benefits accrue to（〜に利益が生じる）」のように使う。", synonymDifference: "accrue vs accumulate vs build up: accrue は「時間経過で自然に生じる・発生する」（特に財務）。accumulate は「意図的に蓄積する・たまる」（accumulate wealth）。build up は「段階的に増える・増やす」（口語的）。", englishDefinition: "To increase gradually; to be added as a benefit or right over time.", etymology: "ラテン語 accrescere（成長する）から。ac-（向かって）＋ crescere（成長する・crescent と同語源）。" }],
+  // administer (29054)
+  [29054, { coreImage: "「組織・プログラム・薬などを管理・運営・投与する」のがコアイメージ。「世話をする」という語源から「管理・実施」に発展。", usage: "「administer a test（試験を実施する）」「administer medication（薬を投与する）」「administer the program（プログラムを運営する）」「administer an oath（宣誓させる）」のように使う。", synonymDifference: "administer vs manage vs govern: administer は「具体的な手続き・運営・投与を実施する」（hands-on execution）。manage は「マネジメント・管理全般」（broader）。govern は「国・組織を統治・支配する」（higher level）。", englishDefinition: "To manage or direct; to give or apply officially.", etymology: "ラテン語 administrare（仕える・支援する）から。ad-（向かって）＋ ministrare（仕える・minister と同語源）。" }],
+  // adverse (25781)
+  [25781, { coreImage: "「不利・有害・逆方向の」のがコアイメージ。期待・目標に反する悪い影響。adverse と averse（嫌いな）は混同しやすいので注意。", usage: "「adverse conditions（不利な状況）」「adverse effects（悪影響）」「adverse weather（悪天候）」「adverse reaction（副作用・有害反応）」のように使う。", synonymDifference: "adverse vs negative vs unfavorable: adverse は「有害・不利・危険な状況や影響」（stronger negative impact）。negative は「否定的・消極的」（broader term）。unfavorable は「好ましくない・不利な」（unfavorable review）。", englishDefinition: "Harmful or unfavorable; preventing progress.", etymology: "ラテン語 adversus（向かい合った）から。ad-（向かって）＋ vertere（回す・convert と同語源）。" }],
+  // aggregate (30368)
+  [30368, { coreImage: "「個々の要素を集めた合計・総体」のがコアイメージ。統計や財務で「集計された全体」を指す。", usage: "「aggregate data（集計データ）」「aggregate demand（総需要）」「in the aggregate（全体として）」「aggregate sales（総売上）」のように使う。", synonymDifference: "aggregate vs total vs sum: aggregate は「個々の構成要素を集めた全体」（macro/statistical view）。total は「足し算した合計額」（total cost）。sum は「数値の合計」（sum of all values）。", englishDefinition: "A total formed by combining several elements; collected together.", etymology: "ラテン語 aggregatus（群れにした）から。ag-（向かって）＋ gregare（群れにする・gregarious と同語源）。" }],
+  // ample (25782)
+  [25782, { coreImage: "「十分すぎるほど豊富にある」のがコアイメージ。「ちょうど十分」ではなく「余裕をもって十分」という量の豊かさ。", usage: "「ample time（十分な時間）」「ample space（十分なスペース）」「ample opportunity（十分な機会）」「ample evidence（十分な証拠）」のように使う。", synonymDifference: "ample vs sufficient vs enough: ample は「必要以上に豊富で余裕がある」（more than enough）。sufficient は「必要を満たす十分量」（just enough）。enough は日常語で「足りている」（enough food）。", englishDefinition: "More than enough; in large quantity or space.", etymology: "ラテン語 amplus（広い・大きい）から。「広々とした→豊富な」のイメージ。" }],
+  // anonymous (27269)
+  [27269, { coreImage: "「名前が明かされていない・匿名の」のがコアイメージ。「名前なし」という語源通り、身元不明・匿名の状態。", usage: "「anonymous survey（匿名アンケート）」「remain anonymous（匿名のままにする）」「anonymous donor（匿名の寄付者）」「anonymous tip（匿名の情報提供）」のように使う。", synonymDifference: "anonymous vs unknown vs confidential: anonymous は「意図的に名前を伏せた」（by choice）。unknown は「誰なのか分からない」（author unknown）。confidential は「秘密扱いで開示されていない」（confidential source）。", englishDefinition: "Not identified by name; having no known name.", etymology: "ギリシャ語 anonymos（名なし）から。an-（なし）＋ onyma（名前・synonym と同語源）。" }],
   // appliance (18244)
   [18244, { coreImage: "「特定の目的のために使う電気機器・器具・装置」のがコアイメージ。家庭用電気機器（家電）が典型。", usage: "「kitchen appliances（キッチン家電）」「household appliances（家庭用電化製品）」「home appliance store（家電量販店）」「energy-efficient appliances（省エネ家電）」のように使う。", synonymDifference: "appliance vs device vs equipment: appliance は「家庭・業務用の電気器具」（refrigerator, washer）。device は「特定の目的のための小型機器」（smartphone, USB device）。equipment は「業務・活動に必要な機材・設備の総称」（sports equipment）。", englishDefinition: "A device or machine designed to perform a specific task, especially in the home.", etymology: "apply（適用する）＋ -ance（名詞化）。「目的に適用される道具」のが原義。" }],
 
-  // apprenticeship (18245)
-  [18245, { coreImage: "「職人・専門職の技術を師匠のもとで学ぶ見習い期間・制度」のがコアイメージ。実地訓練を通じて技術を習得する。", usage: "「complete an apprenticeship（見習いを修了する）」「apprenticeship program（実習プログラム）」「apprenticeship in carpentry（大工の見習い）」「paid apprenticeship（有給実習）」のように使う。", synonymDifference: "apprenticeship vs internship vs training: apprenticeship は「職人・専門職の技術を実地で学ぶ長期制度」（trade skill focused）。internship は「会社・組織での職業体験・インターンシップ」（white collar, shorter）。training は「スキル習得の訓練」全般（broader）。", englishDefinition: "A period of working under supervision to learn a trade or profession.", etymology: "apprentice（見習い）＋ -ship（状態・資格）。古フランス語 apprendre（学ぶ）から。" }],
-  // attribute (18246)
-  [18246, { coreImage: "「ある結果・性質の原因を〜のせいにする・〜に帰属させる」と「特性・属性」の二つのコアイメージ。", usage: "「attribute success to hard work（成功を努力のおかげとする）」「attributed to（〜に起因する）」「key attributes（主要な特性）」「personal attributes（個人の特性）」のように使う。", synonymDifference: "attribute vs credit vs assign: attribute は「原因・所有を〜に帰する」（neutral or evaluative）。credit は「功績を〜に帰する」（positive connotation）。assign は「役割・タスクを割り当てる」（deliberate action）。", englishDefinition: "To regard as caused by or belonging to; a characteristic or quality.", etymology: "ラテン語 attributum（割り当てられたもの）から。ad-（向かって）＋ tribuere（割り当てる・contribute と同語源）。" }],
-  // audit (18247)
-  [18247, { coreImage: "「財務・業務・コンプライアンスを公式に検査・監査する」のがコアイメージ。「聞く・調べる」という語源から。", usage: "「financial audit（財務監査）」「internal audit（内部監査）」「audit the accounts（会計を監査する）」「tax audit（税務調査）」のように使う。", synonymDifference: "audit vs inspection vs review: audit は「財務・コンプライアンスの公式な検査」（formal, systematic）。inspection は「物理的な現場確認・点検」（physical check）。review は「内容・品質を評価・検討する」（broader, less formal）。", englishDefinition: "An official examination of financial records or processes.", etymology: "ラテン語 audire（聞く）から。「会計報告を聞いて確認する」のが原義。" }],
+  // apprenticeship (33627)
+  [33627, { coreImage: "「職人・専門職の技術を師匠のもとで学ぶ見習い期間・制度」のがコアイメージ。実地訓練を通じて技術を習得する。", usage: "「complete an apprenticeship（見習いを修了する）」「apprenticeship program（実習プログラム）」「apprenticeship in carpentry（大工の見習い）」「paid apprenticeship（有給実習）」のように使う。", synonymDifference: "apprenticeship vs internship vs training: apprenticeship は「職人・専門職の技術を実地で学ぶ長期制度」（trade skill focused）。internship は「会社・組織での職業体験・インターンシップ」（white collar, shorter）。training は「スキル習得の訓練」全般（broader）。", englishDefinition: "A period of working under supervision to learn a trade or profession.", etymology: "apprentice（見習い）＋ -ship（状態・資格）。古フランス語 apprendre（学ぶ）から。" }],
+  // attribute (27321)
+  [27321, { coreImage: "「ある結果・性質の原因を〜のせいにする・〜に帰属させる」と「特性・属性」の二つのコアイメージ。", usage: "「attribute success to hard work（成功を努力のおかげとする）」「attributed to（〜に起因する）」「key attributes（主要な特性）」「personal attributes（個人の特性）」のように使う。", synonymDifference: "attribute vs credit vs assign: attribute は「原因・所有を〜に帰する」（neutral or evaluative）。credit は「功績を〜に帰する」（positive connotation）。assign は「役割・タスクを割り当てる」（deliberate action）。", englishDefinition: "To regard as caused by or belonging to; a characteristic or quality.", etymology: "ラテン語 attributum（割り当てられたもの）から。ad-（向かって）＋ tribuere（割り当てる・contribute と同語源）。" }],
+  // audit (25812)
+  [25812, { coreImage: "「財務・業務・コンプライアンスを公式に検査・監査する」のがコアイメージ。「聞く・調べる」という語源から。", usage: "「financial audit（財務監査）」「internal audit（内部監査）」「audit the accounts（会計を監査する）」「tax audit（税務調査）」のように使う。", synonymDifference: "audit vs inspection vs review: audit は「財務・コンプライアンスの公式な検査」（formal, systematic）。inspection は「物理的な現場確認・点検」（physical check）。review は「内容・品質を評価・検討する」（broader, less formal）。", englishDefinition: "An official examination of financial records or processes.", etymology: "ラテン語 audire（聞く）から。「会計報告を聞いて確認する」のが原義。" }],
   // banquet (18248)
   [18248, { coreImage: "「多くの人を招いた豪華な宴会・晩餐会」のがコアイメージ。公式な祝宴や表彰式での食事会。", usage: "「annual banquet（年次晩餐会）」「banquet hall（宴会場）」「farewell banquet（送別宴会）」「banquet for 200 guests（200名のための宴会）」のように使う。", synonymDifference: "banquet vs dinner vs reception: banquet は「格式ある大規模な宴会」（formal, ceremonial）。dinner は「夕食会」一般（casual to formal）。reception は「パーティー・歓迎会」（cocktail reception, wedding reception）。", englishDefinition: "A large formal meal for many people, often with speeches.", etymology: "古フランス語 banquet（小さな台・ベンチ）から。「テーブルを囲んで食事する」のが原義。" }],
-  // benchmark (18249)
-  [18249, { coreImage: "「比較・評価の基準となる指標・標準」のがコアイメージ。「ここを測量の基点とした」という測量用語から転じた。", usage: "「industry benchmark（業界標準）」「set a benchmark（基準を設定する）」「benchmark test（ベンチマークテスト）」「performance benchmark（パフォーマンスの指標）」のように使う。", synonymDifference: "benchmark vs standard vs criterion: benchmark は「他と比較するための具体的な指標・参照点」（quantifiable）。standard は「守るべき基準・水準」（quality standard）。criterion は「判断・評価の基準」（selection criterion）。", englishDefinition: "A standard or reference point used for comparison.", etymology: "bench（作業台）＋ mark（印）。測量で「基準点を台に刻む」のが原義。" }],
+  // benchmark (32060)
+  [32060, { coreImage: "「比較・評価の基準となる指標・標準」のがコアイメージ。「ここを測量の基点とした」という測量用語から転じた。", usage: "「industry benchmark（業界標準）」「set a benchmark（基準を設定する）」「benchmark test（ベンチマークテスト）」「performance benchmark（パフォーマンスの指標）」のように使う。", synonymDifference: "benchmark vs standard vs criterion: benchmark は「他と比較するための具体的な指標・参照点」（quantifiable）。standard は「守るべき基準・水準」（quality standard）。criterion は「判断・評価の基準」（selection criterion）。", englishDefinition: "A standard or reference point used for comparison.", etymology: "bench（作業台）＋ mark（印）。測量で「基準点を台に刻む」のが原義。" }],
   // bulk (30296)
   [30296, { coreImage: "「大量・大部分・かさばる大きさ」のがコアイメージ。「まとまった大きな量」という感覚。", usage: "「buy in bulk（大量購入する）」「bulk order（まとめ注文）」「the bulk of（〜の大部分）」「bulk discount（まとめ買い割引）」のように使う。", synonymDifference: "bulk vs volume vs quantity: bulk は「大量にまとまった量・かさ」（large undivided mass）。volume は「容積・量・音量」（volume of sales）。quantity は「数量・分量」（quantity discount）。", englishDefinition: "A large quantity or mass; the main part of something.", etymology: "古ノルド語 bulki（積荷・船倉）から。「船に積まれた大量の荷物」のが原義。" }],
-  // bureaucratic (30297)
-  [30297, { coreImage: "「官僚制度に典型的な・お役所的な・手続きが煩雑な」のがコアイメージ。ネガティブなニュアンスで使われることが多い。", usage: "「bureaucratic process（官僚的な手続き）」「bureaucratic red tape（お役所の繁文縟礼）」「bureaucratic system（官僚制度）」「too bureaucratic（お役所的すぎる）」のように使う。", synonymDifference: "bureaucratic vs administrative vs procedural: bureaucratic は「官僚的で非効率・形式主義的な」（negative connotation）。administrative は「管理・行政の」（neutral）。procedural は「手順・手続きに関する」（following procedures）。", englishDefinition: "Following official rules and procedures, often in a slow or inflexible way.", etymology: "フランス語 bureau（事務机・オフィス）＋ -cratic（支配する）。「机の上で支配する者」のが原義。" }],
-  // captivate (30298)
-  [30298, { coreImage: "「人の心・注意をすっかり捉えて離さない・魅了する」のがコアイメージ。「捕虜にする」という語源から「心を捕らえる」に転じた。", usage: "「captivate the audience（聴衆を魅了する）」「captivating performance（魅力的なパフォーマンス）」「captivated by（〜に魅了された）」「captivate attention（注意を惹きつける）」のように使う。", synonymDifference: "captivate vs fascinate vs charm: captivate は「完全に引き込んで離さない」（strongest, full attention）。fascinate は「不思議な力で惹きつける」（mysterious appeal）。charm は「魅力・愛嬌で惹きつける」（warmth/personality）。", englishDefinition: "To attract and hold the attention of someone; to fascinate.", etymology: "ラテン語 captivare（捕まえる）から。captivus（捕虜）＋ -ate。capture と同語源。" }],
-  // certify (18250)
-  [18250, { coreImage: "「公式機関が基準を満たすことを認定・証明する」のがコアイメージ。「確かにそうだと証明する」という確実性。", usage: "「certified accountant（認定会計士）」「certify a document（書類を認証する）」「ISO certified（ISO認定を受けた）」「certify compliance（コンプライアンスを証明する）」のように使う。", synonymDifference: "certify vs verify vs confirm: certify は「公式機関が正式に認定・証明する」（official certification）。verify は「正確さ・真実性を確認する」（check accuracy）。confirm は「すでにある情報を確かめる」（confirm reservation）。", englishDefinition: "To officially declare or confirm something, especially by issuing a certificate.", etymology: "ラテン語 certificare（確実にする）から。certus（確かな・certain と同語源）＋ facere（作る）。" }],
-  // chronic (18251)
-  [18251, { coreImage: "「長期間にわたって続く・慢性的な」のがコアイメージ。acute（急性・一時的）の反対。改善が難しく継続する状態。", usage: "「chronic illness（慢性疾患）」「chronic shortage（慢性的な不足）」「chronic pain（慢性的な痛み）」「chronic understaffing（慢性的な人員不足）」のように使う。", synonymDifference: "chronic vs persistent vs recurring: chronic は「長期間改善されない継続的な状態」（ongoing condition）。persistent は「粘り強く続く・なかなか消えない」（persistent cough）。recurring は「繰り返し起きる」（recurring problem）。", englishDefinition: "Lasting for a long time; recurring frequently.", etymology: "ギリシャ語 chronikos（時間の）から。chronos（時間・chronology と同語源）。" }],
-  // clarify (18252)
-  [18252, { coreImage: "「不明瞭な点・誤解を取り除いて明確にする・説明する」のがコアイメージ。「澄んだ・クリアな」という語源から。", usage: "「clarify a point（要点を明確にする）」「could you clarify?（明確にしてもらえますか？）」「clarify the process（プロセスを説明する）」「clarify misunderstandings（誤解を解く）」のように使う。", synonymDifference: "clarify vs explain vs specify: clarify は「あいまいな点を明確にする」（removing ambiguity）。explain は「理解できるように詳しく説明する」（giving details）。specify は「具体的に特定・指定する」（specify requirements）。", englishDefinition: "To make something clearer or easier to understand.", etymology: "ラテン語 clarificare（明るくする）から。clarus（明るい・clear と同語源）＋ facere（する）。" }],
+  // bureaucratic (20792)
+  [20792, { coreImage: "「官僚制度に典型的な・お役所的な・手続きが煩雑な」のがコアイメージ。ネガティブなニュアンスで使われることが多い。", usage: "「bureaucratic process（官僚的な手続き）」「bureaucratic red tape（お役所の繁文縟礼）」「bureaucratic system（官僚制度）」「too bureaucratic（お役所的すぎる）」のように使う。", synonymDifference: "bureaucratic vs administrative vs procedural: bureaucratic は「官僚的で非効率・形式主義的な」（negative connotation）。administrative は「管理・行政の」（neutral）。procedural は「手順・手続きに関する」（following procedures）。", englishDefinition: "Following official rules and procedures, often in a slow or inflexible way.", etymology: "フランス語 bureau（事務机・オフィス）＋ -cratic（支配する）。「机の上で支配する者」のが原義。" }],
+  // captivate (29188)
+  [29188, { coreImage: "「人の心・注意をすっかり捉えて離さない・魅了する」のがコアイメージ。「捕虜にする」という語源から「心を捕らえる」に転じた。", usage: "「captivate the audience（聴衆を魅了する）」「captivating performance（魅力的なパフォーマンス）」「captivated by（〜に魅了された）」「captivate attention（注意を惹きつける）」のように使う。", synonymDifference: "captivate vs fascinate vs charm: captivate は「完全に引き込んで離さない」（strongest, full attention）。fascinate は「不思議な力で惹きつける」（mysterious appeal）。charm は「魅力・愛嬌で惹きつける」（warmth/personality）。", englishDefinition: "To attract and hold the attention of someone; to fascinate.", etymology: "ラテン語 captivare（捕まえる）から。captivus（捕虜）＋ -ate。capture と同語源。" }],
+  // certify (25900)
+  [25900, { coreImage: "「公式機関が基準を満たすことを認定・証明する」のがコアイメージ。「確かにそうだと証明する」という確実性。", usage: "「certified accountant（認定会計士）」「certify a document（書類を認証する）」「ISO certified（ISO認定を受けた）」「certify compliance（コンプライアンスを証明する）」のように使う。", synonymDifference: "certify vs verify vs confirm: certify は「公式機関が正式に認定・証明する」（official certification）。verify は「正確さ・真実性を確認する」（check accuracy）。confirm は「すでにある情報を確かめる」（confirm reservation）。", englishDefinition: "To officially declare or confirm something, especially by issuing a certificate.", etymology: "ラテン語 certificare（確実にする）から。certus（確かな・certain と同語源）＋ facere（作る）。" }],
+  // chronic (31890)
+  [31890, { coreImage: "「長期間にわたって続く・慢性的な」のがコアイメージ。acute（急性・一時的）の反対。改善が難しく継続する状態。", usage: "「chronic illness（慢性疾患）」「chronic shortage（慢性的な不足）」「chronic pain（慢性的な痛み）」「chronic understaffing（慢性的な人員不足）」のように使う。", synonymDifference: "chronic vs persistent vs recurring: chronic は「長期間改善されない継続的な状態」（ongoing condition）。persistent は「粘り強く続く・なかなか消えない」（persistent cough）。recurring は「繰り返し起きる」（recurring problem）。", englishDefinition: "Lasting for a long time; recurring frequently.", etymology: "ギリシャ語 chronikos（時間の）から。chronos（時間・chronology と同語源）。" }],
+  // clarify (25926)
+  [25926, { coreImage: "「不明瞭な点・誤解を取り除いて明確にする・説明する」のがコアイメージ。「澄んだ・クリアな」という語源から。", usage: "「clarify a point（要点を明確にする）」「could you clarify?（明確にしてもらえますか？）」「clarify the process（プロセスを説明する）」「clarify misunderstandings（誤解を解く）」のように使う。", synonymDifference: "clarify vs explain vs specify: clarify は「あいまいな点を明確にする」（removing ambiguity）。explain は「理解できるように詳しく説明する」（giving details）。specify は「具体的に特定・指定する」（specify requirements）。", englishDefinition: "To make something clearer or easier to understand.", etymology: "ラテン語 clarificare（明るくする）から。clarus（明るい・clear と同語源）＋ facere（する）。" }],
   // cater (18253)
   [18253, { coreImage: "「食事・ニーズを提供して満足させる」のがコアイメージ。ケータリング（cater）が代表的な使い方。", usage: "「cater for events（イベントに仕出しをする）」「cater to needs（ニーズに応える）」「catering service（ケータリングサービス）」「cater to all tastes（あらゆる好みに対応する）」のように使う。", synonymDifference: "cater vs provide vs supply: cater は「特定のニーズ・好みに応じたサービスを提供する」（tailored service）。provide は「必要なものを供給・提供する」（general）。supply は「物資・材料を供給する」（physical goods）。", englishDefinition: "To provide food and services; to satisfy the needs of.", etymology: "中期英語 catour（仕入れ人）から。古フランス語 acater（買う）が語源。" }],
-  // compatible (18254)
-  [18254, { coreImage: "「システム・機器・人同士が問題なく一緒に機能できる・相性が良い」のがコアイメージ。「共に苦しめることができる」という語源から「共存可能」の意に。", usage: "「compatible software（互換性のあるソフトウェア）」「backward compatible（後方互換性がある）」「compatible devices（互換デバイス）」「compatible with our system（自社システムと互換）」のように使う。", synonymDifference: "compatible vs interoperable vs consistent: compatible は「一緒に機能できる・相性が合う」（general compatibility）。interoperable は「異なるシステム間で連携できる」（technical systems）。consistent は「矛盾がなく一貫した」（consistent results）。", englishDefinition: "Able to exist or work together without conflict.", etymology: "ラテン語 compatibilis（共に苦しめる）から。com-（共に）＋ pati（耐える・patient と同語源）。" }],
-  // compile (18255)
-  [18255, { coreImage: "「複数の情報・データをまとめて一つにする・編集する」のがコアイメージ。プログラミングでは「ソースコードを実行可能形式に変換する」意でも使われる。", usage: "「compile a report（報告書をまとめる）」「compile data（データを集計する）」「compile a list（リストを作成する）」「compile the code（コードをコンパイルする）」のように使う。", synonymDifference: "compile vs collect vs assemble: compile は「複数の素材を整理・編集してまとめる」（organized collection）。collect は「集める」（gathering）。assemble は「部品・人を一箇所に集める」（put together physically）。", englishDefinition: "To produce by assembling information; to convert source code.", etymology: "ラテン語 compilare（略奪する・集める）から。com-（共に）＋ pilare（押しつぶす）。" }],
-  // complement (18256)
-  [18256, { coreImage: "「不足を補って完全にする・補完する」のがコアイメージ。complement（補完）と compliment（称賛）はスペルが似ているが全く意味が異なる。", usage: "「complement each other（互いを補完する）」「complement the team（チームを補完する）」「a good complement to（〜の良い補完）」「complementary skills（補完的なスキル）」のように使う。", synonymDifference: "complement vs supplement vs enhance: complement は「不足を埋めて全体を完成させる」（makes complete）。supplement は「追加して補強する」（add to）。enhance は「品質・価値を高める」（improve quality）。", englishDefinition: "To add to something in a way that makes it better or complete.", etymology: "ラテン語 complementum（完全にするもの）から。com-（完全に）＋ plere（満たす・complete と同語源）。" }],
-  // concur (18258)
-  [18258, { coreImage: "「意見が一致する・同意する」のがコアイメージ。「共に走る・合流する」という語源から「意見が交わる」の意に。", usage: "「I concur（同意します）」「concur with the decision（決定に同意する）」「concur on the findings（調査結果に一致する）」「concurring opinion（同意意見）」のように使う。", synonymDifference: "concur vs agree vs consent: concur はより格式ばった「意見・判断が一致する」（formal/legal contexts）。agree は日常的な「同意・合意」（I agree）。consent は「許可・承認を与える」（give consent）。", englishDefinition: "To agree with an opinion or decision; to happen at the same time.", etymology: "ラテン語 concurrere（共に走る）から。con-（共に）＋ currere（走る・current と同語源）。" }],
-  // confidential (18259)
-  [18259, { coreImage: "「信頼して秘密にされる・機密扱いの」のがコアイメージ。「信頼を与えられた」という語源から「秘密を守る義務がある」。", usage: "「strictly confidential（極秘）」「confidential information（機密情報）」「keep it confidential（秘密にしておく）」「confidential document（機密文書）」のように使う。", synonymDifference: "confidential vs secret vs private: confidential は「信頼関係に基づき秘密扱い」（shared with selected people in confidence）。secret は「誰にも知られていない」（completely hidden）。private は「個人的・プライベートな」（personal matters）。", englishDefinition: "Intended to be kept secret; not to be shared publicly.", etymology: "ラテン語 confidens（信頼する）から。con-（完全に）＋ fidere（信頼する・confidence と同語源）。" }],
-  // constitute (18260)
-  [18260, { coreImage: "「全体を構成する・成立させる」のがコアイメージ。「一緒に置く・組み立てる」という語源から。また法的に「設立する」意でも使われる。", usage: "「constitute a majority（過半数を構成する）」「constitute a violation（違反を構成する）」「legally constituted（合法的に設立された）」「constitute the board（取締役会を構成する）」のように使う。", synonymDifference: "constitute vs compose vs form: constitute は「要素として全体を構成する」（the parts that make up the whole）。compose は「複数要素から構成される」（the whole is composed of parts）。form は「形・組織を作る」（form a committee）。", englishDefinition: "To make up or form; to be equivalent to; to establish legally.", etymology: "ラテン語 constituere（置く・確立する）から。con-（共に）＋ statuere（置く・status と同語源）。" }],
-  // contingent (18261)
-  [18261, { coreImage: "「特定の条件が満たされた場合にのみ成立する・条件付きの」のがコアイメージ。「たまたま触れる・偶然の」という語源から「条件次第」の意に。", usage: "「contingent on approval（承認次第の）」「contingent offer（条件付きオファー）」「contingent liability（偶発債務）」「contingency plan（緊急時対応計画）」のように使う。", synonymDifference: "contingent vs conditional vs dependent: contingent は「特定の条件・偶発的な出来事に左右される」（formal/legal）。conditional は「条件が満たされた場合の」（conditional approval）。dependent は「〜に依存している」（dependent on funding）。", englishDefinition: "Dependent on a condition; uncertain; a group sent as representatives.", etymology: "ラテン語 contingere（触れる・起きる）から。con-（共に）＋ tangere（触れる・tangent と同語源）。" }],
-  // credential (18263)
-  [18263, { coreImage: "「資格・能力・信頼性を証明するもの」のがコアイメージ。複数形 credentials でよく使われる。「信頼を付与するもの」という語源から。", usage: "「academic credentials（学歴・資格）」「check credentials（資格を確認する）」「impressive credentials（輝かしい実績）」「login credentials（ログイン情報）」のように使う。", synonymDifference: "credential vs qualification vs certificate: credential は「信頼性・能力を証明するもの全般」（broad term）。qualification は「特定の仕事・役割に必要な資格・能力」（job qualifications）。certificate は「修了・認定を証明する書類」（physical document）。", englishDefinition: "Qualifications or achievements used to establish trustworthiness or ability.", etymology: "ラテン語 credentia（信頼・信念）から。credere（信じる・credit と同語源）。" }],
-  // curtail (18264)
-  [18264, { coreImage: "「費用・活動・自由を削減する・短くする」のがコアイメージ。「尻尾を切る」という語源から「縮小する」の意に。", usage: "「curtail spending（支出を削減する）」「curtail operations（業務を縮小する）」「curtail rights（権利を制限する）」「curtail the program（プログラムを縮小する）」のように使う。", synonymDifference: "curtail vs reduce vs cut: curtail は「制限・縮小して通常より少なくする」（restrict/limit）。reduce は「量・程度を下げる」（reduce cost）。cut は「大幅に削除・削減する」（cut the budget）。", englishDefinition: "To reduce or limit something; to cut short.", etymology: "中期英語 curtal（尾を切られた馬）から。ラテン語 curtus（短い・curtate と関連）。" }],
-  // customary (18265)
-  [18265, { coreImage: "「慣習・習慣に基づいた・通例の」のがコアイメージ。特定のコミュニティや状況で「普通そうするもの」という規範。", usage: "「customary practice（慣習的な慣行）」「it is customary to（〜するのが慣例だ）」「customary law（慣習法）」「as is customary（慣例どおり）」のように使う。", synonymDifference: "customary vs traditional vs conventional: customary は「特定のグループ・状況での慣習的な行動」（what people usually do）。traditional は「長い歴史のある伝統的な」（passed down through generations）。conventional は「一般的に広く認められた標準的な」（conforming to norms）。", englishDefinition: "In accordance with custom; usual or expected.", etymology: "custom（慣習）＋ -ary（形容詞化）。ラテン語 consuetudo（習慣）から。" }],
-  // dedicate (18266)
-  [18266, { coreImage: "「時間・労力・人生を〜のために捧げる・専念する」のがコアイメージ。「神に奉納する」という宗教的語源から「完全に捧げる」の意に。", usage: "「dedicate oneself to（〜に専念する）」「dedicated employee（献身的な従業員）」「dedicated server（専用サーバー）」「dedicated to improving（改善に取り組む）」のように使う。", synonymDifference: "dedicate vs devote vs commit: dedicate は「〜のために全力を捧げる」（strong personal commitment）。devote は「時間・労力を費やす」（devote time to）。commit は「約束・コミットメントをする」（commit to a plan）。", englishDefinition: "To give fully to a purpose; to inscribe a book to someone.", etymology: "ラテン語 dedicare（神に捧げる）から。de-（完全に）＋ dicare（宣言する・indicate と関連）。" }],
-  // demolish (18267)
-  [18267, { coreImage: "「建物・構造物を完全に取り壊す・解体する」のがコアイメージ。また「議論・反論を完全に打ち破る」比喩にも使う。", usage: "「demolish a building（建物を取り壊す）」「demolish the old factory（古い工場を解体する）」「demolition work（解体工事）」「demolish an argument（議論を完全に論破する）」のように使う。", synonymDifference: "demolish vs destroy vs tear down: demolish は「計画的に建造物を解体する」（deliberate, structural）。destroy は「破壊する」全般（broader, violence ok）。tear down は「引き倒す・取り壊す」の口語表現（less formal）。", englishDefinition: "To pull down or completely destroy a building or structure.", etymology: "ラテン語 demoliri（取り壊す）から。de-（逆に・取り除く）＋ moliri（建設する・mole と関連）。" }],
-  // deplete (18268)
-  [18268, { coreImage: "「資源・蓄えを使い果たして枯渇させる」のがコアイメージ。「満タンから空に」という語源から。", usage: "「deplete resources（資源を枯渇させる）」「depleted inventory（在庫が底をつく）」「ozone depletion（オゾン層の枯渇）」「deplete funds（資金を使い果たす）」のように使う。", synonymDifference: "deplete vs exhaust vs drain: deplete は「資源・貯蓄が徐々に減って尽きる」（gradual reduction）。exhaust は「完全に使い尽くす」（exhaust all options）。drain は「液体・エネルギーが流れ出て減る」（drain the battery）。", englishDefinition: "To use up or reduce severely; to empty of resources.", etymology: "ラテン語 deplere（空にする）から。de-（反対・取り除く）＋ plere（満たす・complete と同語源）。" }],
-  // detour (18269)
-  [18269, { coreImage: "「本来のルートを避けて迂回する・回り道」のがコアイメージ。工事や事故による迂回路。比喩的に「寄り道」も。", usage: "「take a detour（迂回する）」「road detour（道路の迂回路）」「detour sign（迂回路の標識）」「make a detour through（〜を経由して迂回する）」のように使う。", synonymDifference: "detour vs bypass vs diversion: detour は「一時的な迂回路・回り道」（temporary route）。bypass は「本道を避けて直接つなぐ幹線バイパス」（permanent alternative route）。diversion は「交通を別の方向に誘導する」（traffic management）。", englishDefinition: "A route that avoids a main road; a roundabout way.", etymology: "フランス語 détour（回り道）から。dé-（逆に）＋ tourner（回る・tour と同語源）。" }],
-  // devise (18270)
-  [18270, { coreImage: "「アイデア・計画・方法を工夫・考案する」のがコアイメージ。「分けて考える→工夫する」という語源から。", usage: "「devise a plan（計画を考案する）」「devise a strategy（戦略を立てる）」「devise a solution（解決策を工夫する）」「devise a new method（新しい方法を考案する）」のように使う。", synonymDifference: "devise vs design vs invent: devise は「問題解決のための計画・方法を工夫して考える」（problem-solving focus）。design は「目的に合った形・システムを作る」（visual/structural design）。invent は「世界初の新しいものを発明する」（creating something new）。", englishDefinition: "To plan or invent a method or strategy.", etymology: "ラテン語 divisus（分けられた）から。de-（離れて）＋ videre（見る・divide と同語源）。「細かく分けて考える→工夫する」のが原義。" }],
-  // diminish (18271)
-  [18271, { coreImage: "「価値・重要性・量が徐々に減少する・小さくなる」のがコアイメージ。「価値を下げる・見くびる」という比喩にも使われる。", usage: "「diminishing returns（収穫逓減）」「diminish in value（価値が下がる）」「diminish the importance of（〜の重要性を下げる）」「diminished capacity（能力低下）」のように使う。", synonymDifference: "diminish vs decrease vs reduce: diminish は「重要性・影響力が小さくなる」（often gradual, qualitative）。decrease は「数量が減る」（quantitative: decrease in sales）。reduce は「意図的に減らす」（reduce costs）。", englishDefinition: "To make or become smaller, weaker, or less important.", etymology: "ラテン語 diminuere（小さくする）から。di-（離れて）＋ minuere（小さくする・minus と同語源）。" }],
+  // compatible (27428)
+  [27428, { coreImage: "「システム・機器・人同士が問題なく一緒に機能できる・相性が良い」のがコアイメージ。「共に苦しめることができる」という語源から「共存可能」の意に。", usage: "「compatible software（互換性のあるソフトウェア）」「backward compatible（後方互換性がある）」「compatible devices（互換デバイス）」「compatible with our system（自社システムと互換）」のように使う。", synonymDifference: "compatible vs interoperable vs consistent: compatible は「一緒に機能できる・相性が合う」（general compatibility）。interoperable は「異なるシステム間で連携できる」（technical systems）。consistent は「矛盾がなく一貫した」（consistent results）。", englishDefinition: "Able to exist or work together without conflict.", etymology: "ラテン語 compatibilis（共に苦しめる）から。com-（共に）＋ pati（耐える・patient と同語源）。" }],
+  // compile (25929)
+  [25929, { coreImage: "「複数の情報・データをまとめて一つにする・編集する」のがコアイメージ。プログラミングでは「ソースコードを実行可能形式に変換する」意でも使われる。", usage: "「compile a report（報告書をまとめる）」「compile data（データを集計する）」「compile a list（リストを作成する）」「compile the code（コードをコンパイルする）」のように使う。", synonymDifference: "compile vs collect vs assemble: compile は「複数の素材を整理・編集してまとめる」（organized collection）。collect は「集める」（gathering）。assemble は「部品・人を一箇所に集める」（put together physically）。", englishDefinition: "To produce by assembling information; to convert source code.", etymology: "ラテン語 compilare（略奪する・集める）から。com-（共に）＋ pilare（押しつぶす）。" }],
+  // complement (27160)
+  [27160, { coreImage: "「不足を補って完全にする・補完する」のがコアイメージ。complement（補完）と compliment（称賛）はスペルが似ているが全く意味が異なる。", usage: "「complement each other（互いを補完する）」「complement the team（チームを補完する）」「a good complement to（〜の良い補完）」「complementary skills（補完的なスキル）」のように使う。", synonymDifference: "complement vs supplement vs enhance: complement は「不足を埋めて全体を完成させる」（makes complete）。supplement は「追加して補強する」（add to）。enhance は「品質・価値を高める」（improve quality）。", englishDefinition: "To add to something in a way that makes it better or complete.", etymology: "ラテン語 complementum（完全にするもの）から。com-（完全に）＋ plere（満たす・complete と同語源）。" }],
+  // concur (31654)
+  [31654, { coreImage: "「意見が一致する・同意する」のがコアイメージ。「共に走る・合流する」という語源から「意見が交わる」の意に。", usage: "「I concur（同意します）」「concur with the decision（決定に同意する）」「concur on the findings（調査結果に一致する）」「concurring opinion（同意意見）」のように使う。", synonymDifference: "concur vs agree vs consent: concur はより格式ばった「意見・判断が一致する」（formal/legal contexts）。agree は日常的な「同意・合意」（I agree）。consent は「許可・承認を与える」（give consent）。", englishDefinition: "To agree with an opinion or decision; to happen at the same time.", etymology: "ラテン語 concurrere（共に走る）から。con-（共に）＋ currere（走る・current と同語源）。" }],
+  // confidential (19790)
+  [19790, { coreImage: "「信頼して秘密にされる・機密扱いの」のがコアイメージ。「信頼を与えられた」という語源から「秘密を守る義務がある」。", usage: "「strictly confidential（極秘）」「confidential information（機密情報）」「keep it confidential（秘密にしておく）」「confidential document（機密文書）」のように使う。", synonymDifference: "confidential vs secret vs private: confidential は「信頼関係に基づき秘密扱い」（shared with selected people in confidence）。secret は「誰にも知られていない」（completely hidden）。private は「個人的・プライベートな」（personal matters）。", englishDefinition: "Intended to be kept secret; not to be shared publicly.", etymology: "ラテン語 confidens（信頼する）から。con-（完全に）＋ fidere（信頼する・confidence と同語源）。" }],
+  // constitute (27190)
+  [27190, { coreImage: "「全体を構成する・成立させる」のがコアイメージ。「一緒に置く・組み立てる」という語源から。また法的に「設立する」意でも使われる。", usage: "「constitute a majority（過半数を構成する）」「constitute a violation（違反を構成する）」「legally constituted（合法的に設立された）」「constitute the board（取締役会を構成する）」のように使う。", synonymDifference: "constitute vs compose vs form: constitute は「要素として全体を構成する」（the parts that make up the whole）。compose は「複数要素から構成される」（the whole is composed of parts）。form は「形・組織を作る」（form a committee）。", englishDefinition: "To make up or form; to be equivalent to; to establish legally.", etymology: "ラテン語 constituere（置く・確立する）から。con-（共に）＋ statuere（置く・status と同語源）。" }],
+  // contingent (32234)
+  [32234, { coreImage: "「特定の条件が満たされた場合にのみ成立する・条件付きの」のがコアイメージ。「たまたま触れる・偶然の」という語源から「条件次第」の意に。", usage: "「contingent on approval（承認次第の）」「contingent offer（条件付きオファー）」「contingent liability（偶発債務）」「contingency plan（緊急時対応計画）」のように使う。", synonymDifference: "contingent vs conditional vs dependent: contingent は「特定の条件・偶発的な出来事に左右される」（formal/legal）。conditional は「条件が満たされた場合の」（conditional approval）。dependent は「〜に依存している」（dependent on funding）。", englishDefinition: "Dependent on a condition; uncertain; a group sent as representatives.", etymology: "ラテン語 contingere（触れる・起きる）から。con-（共に）＋ tangere（触れる・tangent と同語源）。" }],
+  // credential (30075)
+  [30075, { coreImage: "「資格・能力・信頼性を証明するもの」のがコアイメージ。複数形 credentials でよく使われる。「信頼を付与するもの」という語源から。", usage: "「academic credentials（学歴・資格）」「check credentials（資格を確認する）」「impressive credentials（輝かしい実績）」「login credentials（ログイン情報）」のように使う。", synonymDifference: "credential vs qualification vs certificate: credential は「信頼性・能力を証明するもの全般」（broad term）。qualification は「特定の仕事・役割に必要な資格・能力」（job qualifications）。certificate は「修了・認定を証明する書類」（physical document）。", englishDefinition: "Qualifications or achievements used to establish trustworthiness or ability.", etymology: "ラテン語 credentia（信頼・信念）から。credere（信じる・credit と同語源）。" }],
+  // curtail (31975)
+  [31975, { coreImage: "「費用・活動・自由を削減する・短くする」のがコアイメージ。「尻尾を切る」という語源から「縮小する」の意に。", usage: "「curtail spending（支出を削減する）」「curtail operations（業務を縮小する）」「curtail rights（権利を制限する）」「curtail the program（プログラムを縮小する）」のように使う。", synonymDifference: "curtail vs reduce vs cut: curtail は「制限・縮小して通常より少なくする」（restrict/limit）。reduce は「量・程度を下げる」（reduce cost）。cut は「大幅に削除・削減する」（cut the budget）。", englishDefinition: "To reduce or limit something; to cut short.", etymology: "中期英語 curtal（尾を切られた馬）から。ラテン語 curtus（短い・curtate と関連）。" }],
+  // customary (19794)
+  [19794, { coreImage: "「慣習・習慣に基づいた・通例の」のがコアイメージ。特定のコミュニティや状況で「普通そうするもの」という規範。", usage: "「customary practice（慣習的な慣行）」「it is customary to（〜するのが慣例だ）」「customary law（慣習法）」「as is customary（慣例どおり）」のように使う。", synonymDifference: "customary vs traditional vs conventional: customary は「特定のグループ・状況での慣習的な行動」（what people usually do）。traditional は「長い歴史のある伝統的な」（passed down through generations）。conventional は「一般的に広く認められた標準的な」（conforming to norms）。", englishDefinition: "In accordance with custom; usual or expected.", etymology: "custom（慣習）＋ -ary（形容詞化）。ラテン語 consuetudo（習慣）から。" }],
+  // dedicate (25752)
+  [25752, { coreImage: "「時間・労力・人生を〜のために捧げる・専念する」のがコアイメージ。「神に奉納する」という宗教的語源から「完全に捧げる」の意に。", usage: "「dedicate oneself to（〜に専念する）」「dedicated employee（献身的な従業員）」「dedicated server（専用サーバー）」「dedicated to improving（改善に取り組む）」のように使う。", synonymDifference: "dedicate vs devote vs commit: dedicate は「〜のために全力を捧げる」（strong personal commitment）。devote は「時間・労力を費やす」（devote time to）。commit は「約束・コミットメントをする」（commit to a plan）。", englishDefinition: "To give fully to a purpose; to inscribe a book to someone.", etymology: "ラテン語 dedicare（神に捧げる）から。de-（完全に）＋ dicare（宣言する・indicate と関連）。" }],
+  // demolish (25982)
+  [25982, { coreImage: "「建物・構造物を完全に取り壊す・解体する」のがコアイメージ。また「議論・反論を完全に打ち破る」比喩にも使う。", usage: "「demolish a building（建物を取り壊す）」「demolish the old factory（古い工場を解体する）」「demolition work（解体工事）」「demolish an argument（議論を完全に論破する）」のように使う。", synonymDifference: "demolish vs destroy vs tear down: demolish は「計画的に建造物を解体する」（deliberate, structural）。destroy は「破壊する」全般（broader, violence ok）。tear down は「引き倒す・取り壊す」の口語表現（less formal）。", englishDefinition: "To pull down or completely destroy a building or structure.", etymology: "ラテン語 demoliri（取り壊す）から。de-（逆に・取り除く）＋ moliri（建設する・mole と関連）。" }],
+  // deplete (29091)
+  [29091, { coreImage: "「資源・蓄えを使い果たして枯渇させる」のがコアイメージ。「満タンから空に」という語源から。", usage: "「deplete resources（資源を枯渇させる）」「depleted inventory（在庫が底をつく）」「ozone depletion（オゾン層の枯渇）」「deplete funds（資金を使い果たす）」のように使う。", synonymDifference: "deplete vs exhaust vs drain: deplete は「資源・貯蓄が徐々に減って尽きる」（gradual reduction）。exhaust は「完全に使い尽くす」（exhaust all options）。drain は「液体・エネルギーが流れ出て減る」（drain the battery）。", englishDefinition: "To use up or reduce severely; to empty of resources.", etymology: "ラテン語 deplere（空にする）から。de-（反対・取り除く）＋ plere（満たす・complete と同語源）。" }],
+  // detour (30178)
+  [30178, { coreImage: "「本来のルートを避けて迂回する・回り道」のがコアイメージ。工事や事故による迂回路。比喩的に「寄り道」も。", usage: "「take a detour（迂回する）」「road detour（道路の迂回路）」「detour sign（迂回路の標識）」「make a detour through（〜を経由して迂回する）」のように使う。", synonymDifference: "detour vs bypass vs diversion: detour は「一時的な迂回路・回り道」（temporary route）。bypass は「本道を避けて直接つなぐ幹線バイパス」（permanent alternative route）。diversion は「交通を別の方向に誘導する」（traffic management）。", englishDefinition: "A route that avoids a main road; a roundabout way.", etymology: "フランス語 détour（回り道）から。dé-（逆に）＋ tourner（回る・tour と同語源）。" }],
+  // devise (26982)
+  [26982, { coreImage: "「アイデア・計画・方法を工夫・考案する」のがコアイメージ。「分けて考える→工夫する」という語源から。", usage: "「devise a plan（計画を考案する）」「devise a strategy（戦略を立てる）」「devise a solution（解決策を工夫する）」「devise a new method（新しい方法を考案する）」のように使う。", synonymDifference: "devise vs design vs invent: devise は「問題解決のための計画・方法を工夫して考える」（problem-solving focus）。design は「目的に合った形・システムを作る」（visual/structural design）。invent は「世界初の新しいものを発明する」（creating something new）。", englishDefinition: "To plan or invent a method or strategy.", etymology: "ラテン語 divisus（分けられた）から。de-（離れて）＋ videre（見る・divide と同語源）。「細かく分けて考える→工夫する」のが原義。" }],
+  // diminish (29199)
+  [29199, { coreImage: "「価値・重要性・量が徐々に減少する・小さくなる」のがコアイメージ。「価値を下げる・見くびる」という比喩にも使われる。", usage: "「diminishing returns（収穫逓減）」「diminish in value（価値が下がる）」「diminish the importance of（〜の重要性を下げる）」「diminished capacity（能力低下）」のように使う。", synonymDifference: "diminish vs decrease vs reduce: diminish は「重要性・影響力が小さくなる」（often gradual, qualitative）。decrease は「数量が減る」（quantitative: decrease in sales）。reduce は「意図的に減らす」（reduce costs）。", englishDefinition: "To make or become smaller, weaker, or less important.", etymology: "ラテン語 diminuere（小さくする）から。di-（離れて）＋ minuere（小さくする・minus と同語源）。" }],
 
-  // discard (30321)
-  [30321, { coreImage: "「不要なものを捨てる・廃棄する」のがコアイメージ。「カードを捨てる」という語源から転じた。ゲームのカードを捨てることからビジネスの廃棄へ。", usage: "「discard old files（古いファイルを廃棄する）」「discard packaging（梱包材を捨てる）」「discard an idea（アイデアを捨てる）」「discard safely（安全に廃棄する）」のように使う。", synonymDifference: "discard vs dispose vs throw away: discard は「不要と判断して捨てる」（intentional rejection）。dispose は「適切な方法で処分する」（dispose of waste）。throw away は「捨てる」の口語表現（less formal）。", englishDefinition: "To throw away or get rid of something unwanted.", etymology: "dis-（離して）＋ card（カード）。トランプで「手札を捨てる」から転じた。" }],
-  // dispatch (18272)
-  [18272, { coreImage: "「迅速に発送する・派遣する」のがコアイメージ。「終わらせる→送り出す」という語源から「素早く送る」の意に。", usage: "「dispatch an order（注文を発送する）」「dispatch a team（チームを派遣する）」「dispatch center（配送センター）」「dispatch with speed（迅速に発送する）」のように使う。", synonymDifference: "dispatch vs send vs ship: dispatch は「素早く・公式に送り出す」（official/urgent）。send は「送る」の一般表現（send a message）。ship は「輸送機関で配送する」（ship the package）。", englishDefinition: "To send off quickly for a purpose; the sending of goods or people.", etymology: "スペイン語 despachar（急いで送る）から。des-（離れて）＋ pachar（解決する）。" }],
-  // dispose (30323)
-  [30323, { coreImage: "「廃棄物・不要物を適切な方法で処分する」のがコアイメージ。また「〜する気にさせる」の意でも使われる。", usage: "「dispose of waste（廃棄物を処分する）」「properly disposed（適切に処分された）」「well-disposed（好意的な）」「dispose of old equipment（古い機器を処分する）」のように使う。", synonymDifference: "dispose vs discard vs eliminate: dispose は「廃棄物を適切な手順で処分する」（proper disposal process）。discard は「不要と判断して捨てる」（simple rejection）。eliminate は「完全に取り除く・排除する」（eliminate a problem）。", englishDefinition: "To get rid of by throwing away or selling; to arrange or settle.", etymology: "ラテン語 disponere（配置する）から。dis-（分けて）＋ ponere（置く・position と同語源）。" }],
-  // elaborate (30324)
-  [30324, { coreImage: "「詳細に作り込まれた・精巧な」（形容詞）と「詳しく説明する・詳細を述べる」（動詞）のがコアイメージ。「手間をかけて作った」という語源から。", usage: "「elaborate plan（精巧な計画）」「elaborate on the point（その点を詳しく説明する）」「elaborate design（精巧なデザイン）」「could you elaborate?（詳しく説明してもらえますか？）」のように使う。", synonymDifference: "elaborate vs detailed vs complex: elaborate は「精巧に細部まで作り込まれた・手が込んだ」（painstakingly detailed）。detailed は「詳細な」（detailed report）。complex は「複雑な・構造が入り組んだ」（complex system）。", englishDefinition: "Detailed and complicated; to explain in more detail.", etymology: "ラテン語 elaboratus（労作した）から。e-（外に）＋ laborare（働く・labor と同語源）。" }],
-  // embrace (30325)
-  [30325, { coreImage: "「新しいアイデア・変化・機会を積極的に受け入れる」のがコアイメージ。「抱擁する」という身体的な動作から「心で受け入れる」比喩へ。", usage: "「embrace change（変化を受け入れる）」「embrace new technology（新技術を取り入れる）」「embrace diversity（多様性を尊重する）」「embrace the opportunity（機会を活かす）」のように使う。", synonymDifference: "embrace vs accept vs adopt: embrace は「熱意を持って積極的に受け入れる」（enthusiastically）。accept は「抵抗せずに受け入れる」（neutral）。adopt は「正式に採用・導入する」（adopt a policy）。", englishDefinition: "To accept something eagerly; to hold someone closely in your arms.", etymology: "古フランス語 embrasser（抱きしめる）から。em-（中に）＋ bras（腕・brace と関連）。" }],
-  // empower (30326)
-  [30326, { coreImage: "「人・組織に権限・能力・自信を与えて自律的に行動できるようにする」のがコアイメージ。エンパワーメント（empowerment）の動詞形。", usage: "「empower employees（従業員に権限を与える）」「empower communities（地域を力づける）」「feel empowered（エンパワーされた感覚）」「empower to make decisions（意思決定権を付与する）」のように使う。", synonymDifference: "empower vs authorize vs enable: empower は「内側から力を引き出して自律的にする」（builds capacity）。authorize は「公式な権限を与える」（grant official permission）。enable は「可能にする・条件を整える」（enable access）。", englishDefinition: "To give power, authority, or confidence to someone.", etymology: "em-（与える）＋ power（力）。「力を与える」のが原義。" }],
-  // enclose (18273)
-  [18273, { coreImage: "「書類・物を封筒・パッケージに同封する」のがコアイメージ。また「囲む・包む」という物理的意味でも使う。", usage: "「please find enclosed（同封をご確認ください）」「enclose a check（小切手を同封する）」「enclosed area（囲まれた区域）」「enclose a document（書類を同封する）」のように使う。", synonymDifference: "enclose vs include vs attach: enclose は「封筒・パッケージに物を入れる」（physical enclosure）。include は「含める」（broader scope）。attach は「ファイルを添付する」（digital: email attachment）。", englishDefinition: "To place something inside an envelope or package; to surround.", etymology: "en-（中に）＋ close（閉じる）。「中に入れて閉じる」のが原義。" }],
-  // enforce (18274)
-  [18274, { coreImage: "「法律・規則・決定を強制的に守らせる・施行する」のがコアイメージ。「力を加えて実行させる」という語源から。", usage: "「enforce a law（法律を施行する）」「enforce regulations（規則を遵守させる）」「enforce the policy（方針を徹底する）」「law enforcement（法執行）」のように使う。", synonymDifference: "enforce vs implement vs apply: enforce は「力・権威を使って守らせる」（compliance through authority）。implement は「計画・政策を実施する」（put into action）。apply は「原則・ルールを適用する」（apply a rule）。", englishDefinition: "To make sure a law or rule is obeyed.", etymology: "en-（強化）＋ force（力）。ラテン語 fortis（強い）と同語源。" }],
-  // enhance (18275)
-  [18275, { coreImage: "「品質・価値・能力をさらに高める・向上させる」のがコアイメージ。現状から「プラスアルファ」する意。", usage: "「enhance performance（性能を向上させる）」「enhance the user experience（ユーザー体験を向上させる）」「enhance skills（スキルを高める）」「enhance productivity（生産性を向上させる）」のように使う。", synonymDifference: "enhance vs improve vs upgrade: enhance は「現状の良さをさらに引き出す・高める」（emphasizing added value）。improve は「問題点を直してより良くする」（fix + improve）。upgrade は「より新しい・高い水準のものに更新する」（upgrade software）。", englishDefinition: "To improve the quality, value, or extent of something.", etymology: "古フランス語 enhaucier（高くする）から。en-（高める）＋ haut（高い・altitude と関連）。" }],
-  // ensure (18276)
-  [18276, { coreImage: "「確実に〜が起きるように・そうなるように保証する」のがコアイメージ。「安全にする」という語源から「確実性を担保する」の意に。", usage: "「ensure quality（品質を確保する）」「ensure compliance（コンプライアンスを確保する）」「ensure that...（〜であることを確保する）」「ensure safety（安全を確保する）」のように使う。", synonymDifference: "ensure vs assure vs insure: ensure は「〜が確実に起きるよう行動する」（make certain）。assure は「人に安心感を与える・保証する」（reassure people）。insure は「保険をかける」（insurance）。", englishDefinition: "To make certain that something happens or is the case.", etymology: "en-（強化）＋ sure（確かな）。ラテン語 securus（安全な）と同語源。" }],
+  // discard (30692)
+  [30692, { coreImage: "「不要なものを捨てる・廃棄する」のがコアイメージ。「カードを捨てる」という語源から転じた。ゲームのカードを捨てることからビジネスの廃棄へ。", usage: "「discard old files（古いファイルを廃棄する）」「discard packaging（梱包材を捨てる）」「discard an idea（アイデアを捨てる）」「discard safely（安全に廃棄する）」のように使う。", synonymDifference: "discard vs dispose vs throw away: discard は「不要と判断して捨てる」（intentional rejection）。dispose は「適切な方法で処分する」（dispose of waste）。throw away は「捨てる」の口語表現（less formal）。", englishDefinition: "To throw away or get rid of something unwanted.", etymology: "dis-（離して）＋ card（カード）。トランプで「手札を捨てる」から転じた。" }],
+  // dispatch (30179)
+  [30179, { coreImage: "「迅速に発送する・派遣する」のがコアイメージ。「終わらせる→送り出す」という語源から「素早く送る」の意に。", usage: "「dispatch an order（注文を発送する）」「dispatch a team（チームを派遣する）」「dispatch center（配送センター）」「dispatch with speed（迅速に発送する）」のように使う。", synonymDifference: "dispatch vs send vs ship: dispatch は「素早く・公式に送り出す」（official/urgent）。send は「送る」の一般表現（send a message）。ship は「輸送機関で配送する」（ship the package）。", englishDefinition: "To send off quickly for a purpose; the sending of goods or people.", etymology: "スペイン語 despachar（急いで送る）から。des-（離れて）＋ pachar（解決する）。" }],
+  // dispose (30478)
+  [30478, { coreImage: "「廃棄物・不要物を適切な方法で処分する」のがコアイメージ。また「〜する気にさせる」の意でも使われる。", usage: "「dispose of waste（廃棄物を処分する）」「properly disposed（適切に処分された）」「well-disposed（好意的な）」「dispose of old equipment（古い機器を処分する）」のように使う。", synonymDifference: "dispose vs discard vs eliminate: dispose は「廃棄物を適切な手順で処分する」（proper disposal process）。discard は「不要と判断して捨てる」（simple rejection）。eliminate は「完全に取り除く・排除する」（eliminate a problem）。", englishDefinition: "To get rid of by throwing away or selling; to arrange or settle.", etymology: "ラテン語 disponere（配置する）から。dis-（分けて）＋ ponere（置く・position と同語源）。" }],
+  // elaborate (29179)
+  [29179, { coreImage: "「詳細に作り込まれた・精巧な」（形容詞）と「詳しく説明する・詳細を述べる」（動詞）のがコアイメージ。「手間をかけて作った」という語源から。", usage: "「elaborate plan（精巧な計画）」「elaborate on the point（その点を詳しく説明する）」「elaborate design（精巧なデザイン）」「could you elaborate?（詳しく説明してもらえますか？）」のように使う。", synonymDifference: "elaborate vs detailed vs complex: elaborate は「精巧に細部まで作り込まれた・手が込んだ」（painstakingly detailed）。detailed は「詳細な」（detailed report）。complex は「複雑な・構造が入り組んだ」（complex system）。", englishDefinition: "Detailed and complicated; to explain in more detail.", etymology: "ラテン語 elaboratus（労作した）から。e-（外に）＋ laborare（働く・labor と同語源）。" }],
+  // embrace (29324)
+  [29324, { coreImage: "「新しいアイデア・変化・機会を積極的に受け入れる」のがコアイメージ。「抱擁する」という身体的な動作から「心で受け入れる」比喩へ。", usage: "「embrace change（変化を受け入れる）」「embrace new technology（新技術を取り入れる）」「embrace diversity（多様性を尊重する）」「embrace the opportunity（機会を活かす）」のように使う。", synonymDifference: "embrace vs accept vs adopt: embrace は「熱意を持って積極的に受け入れる」（enthusiastically）。accept は「抵抗せずに受け入れる」（neutral）。adopt は「正式に採用・導入する」（adopt a policy）。", englishDefinition: "To accept something eagerly; to hold someone closely in your arms.", etymology: "古フランス語 embrasser（抱きしめる）から。em-（中に）＋ bras（腕・brace と関連）。" }],
+  // empower (29094)
+  [29094, { coreImage: "「人・組織に権限・能力・自信を与えて自律的に行動できるようにする」のがコアイメージ。エンパワーメント（empowerment）の動詞形。", usage: "「empower employees（従業員に権限を与える）」「empower communities（地域を力づける）」「feel empowered（エンパワーされた感覚）」「empower to make decisions（意思決定権を付与する）」のように使う。", synonymDifference: "empower vs authorize vs enable: empower は「内側から力を引き出して自律的にする」（builds capacity）。authorize は「公式な権限を与える」（grant official permission）。enable は「可能にする・条件を整える」（enable access）。", englishDefinition: "To give power, authority, or confidence to someone.", etymology: "em-（与える）＋ power（力）。「力を与える」のが原義。" }],
+  // enclose (26079)
+  [26079, { coreImage: "「書類・物を封筒・パッケージに同封する」のがコアイメージ。また「囲む・包む」という物理的意味でも使う。", usage: "「please find enclosed（同封をご確認ください）」「enclose a check（小切手を同封する）」「enclosed area（囲まれた区域）」「enclose a document（書類を同封する）」のように使う。", synonymDifference: "enclose vs include vs attach: enclose は「封筒・パッケージに物を入れる」（physical enclosure）。include は「含める」（broader scope）。attach は「ファイルを添付する」（digital: email attachment）。", englishDefinition: "To place something inside an envelope or package; to surround.", etymology: "en-（中に）＋ close（閉じる）。「中に入れて閉じる」のが原義。" }],
+  // enforce (24847)
+  [24847, { coreImage: "「法律・規則・決定を強制的に守らせる・施行する」のがコアイメージ。「力を加えて実行させる」という語源から。", usage: "「enforce a law（法律を施行する）」「enforce regulations（規則を遵守させる）」「enforce the policy（方針を徹底する）」「law enforcement（法執行）」のように使う。", synonymDifference: "enforce vs implement vs apply: enforce は「力・権威を使って守らせる」（compliance through authority）。implement は「計画・政策を実施する」（put into action）。apply は「原則・ルールを適用する」（apply a rule）。", englishDefinition: "To make sure a law or rule is obeyed.", etymology: "en-（強化）＋ force（力）。ラテン語 fortis（強い）と同語源。" }],
+  // enhance (26084)
+  [26084, { coreImage: "「品質・価値・能力をさらに高める・向上させる」のがコアイメージ。現状から「プラスアルファ」する意。", usage: "「enhance performance（性能を向上させる）」「enhance the user experience（ユーザー体験を向上させる）」「enhance skills（スキルを高める）」「enhance productivity（生産性を向上させる）」のように使う。", synonymDifference: "enhance vs improve vs upgrade: enhance は「現状の良さをさらに引き出す・高める」（emphasizing added value）。improve は「問題点を直してより良くする」（fix + improve）。upgrade は「より新しい・高い水準のものに更新する」（upgrade software）。", englishDefinition: "To improve the quality, value, or extent of something.", etymology: "古フランス語 enhaucier（高くする）から。en-（高める）＋ haut（高い・altitude と関連）。" }],
+  // ensure (24849)
+  [24849, { coreImage: "「確実に〜が起きるように・そうなるように保証する」のがコアイメージ。「安全にする」という語源から「確実性を担保する」の意に。", usage: "「ensure quality（品質を確保する）」「ensure compliance（コンプライアンスを確保する）」「ensure that...（〜であることを確保する）」「ensure safety（安全を確保する）」のように使う。", synonymDifference: "ensure vs assure vs insure: ensure は「〜が確実に起きるよう行動する」（make certain）。assure は「人に安心感を与える・保証する」（reassure people）。insure は「保険をかける」（insurance）。", englishDefinition: "To make certain that something happens or is the case.", etymology: "en-（強化）＋ sure（確かな）。ラテン語 securus（安全な）と同語源。" }],
   // equivalent (18277)
   [18277, { coreImage: "「価値・意味・効果が等しい・同等の」のがコアイメージ。「等しい力・価値」という語源から。", usage: "「equivalent to（〜に相当する）」「full-time equivalent（フルタイム換算）」「the equivalent of（〜に相当するもの）」「equivalent salary（同等の給与）」のように使う。", synonymDifference: "equivalent vs equal vs comparable: equivalent は「異なる形で同じ価値・意味を持つ」（may look different but same value）。equal は「全く同じ」（equal pay）。comparable は「比較できるほど似ている」（comparable results）。", englishDefinition: "Equal in value, meaning, or effect; something having equal value.", etymology: "ラテン語 aequivalere（等しい価値を持つ）から。aequi-（等しい・equal と同語源）＋ valere（価値がある・value と同語源）。" }],
-  // exempt (30332)
-  [30332, { coreImage: "「義務・規則・税金などから免除された・適用外の」のがコアイメージ。「取り外されて自由な」という語源から。", usage: "「tax-exempt（免税の）」「exempt from duty（義務を免除された）」「exempt employees（免除対象の従業員）」「be exempt from regulations（規制から除外される）」のように使う。", synonymDifference: "exempt vs exclude vs waive: exempt は「義務・規則の適用を免除される」（not required to comply）。exclude は「グループ・対象から除外する」（not included）。waive は「権利・要件を意図的に放棄する」（waive a fee）。", englishDefinition: "Free from an obligation or liability; to release from a requirement.", etymology: "ラテン語 exemptus（取り外された）から。ex-（外に）＋ emere（取る・redeem と同語源）。" }],
-  // expedite (30333)
-  [30333, { coreImage: "「プロセス・手続きを通常より速く処理する・促進する」のがコアイメージ。「足かせを外して速くする」という語源から。", usage: "「expedite the process（プロセスを促進する）」「expedite your order（注文を急ぎ処理する）」「expedite delivery（配送を早める）」「expedited shipping（速達配送）」のように使う。", synonymDifference: "expedite vs accelerate vs speed up: expedite は「手続き・処理を迅速化する」（formal/official process）。accelerate は「速度・進行を速める」（broader: accelerate growth）。speed up は「スピードを上げる」の口語表現（less formal）。", englishDefinition: "To make a process happen more quickly.", etymology: "ラテン語 expedire（足かせを外す）から。ex-（外に）＋ pes（足・pedal と同語源）。「足かせから解放して速くする」のが原義。" }],
-  // explicit (18278)
-  [18278, { coreImage: "「あいまいさなく明確に・はっきりと述べられた」のがコアイメージ。「折りたたまれたものを広げた」という語源から「明らかにされた」の意に。", usage: "「explicit instructions（明確な指示）」「explicit consent（明示的な同意）」「be explicit about（〜について明確にする）」「explicit content（露骨なコンテンツ）」のように使う。", synonymDifference: "explicit vs implicit vs clear: explicit は「言葉で明確に述べられた」（stated directly）。implicit は「言葉では述べられていないが暗に含まれた」（implied）。clear は「分かりやすい・明確な」（broader）。", englishDefinition: "Clearly and directly stated; not implied.", etymology: "ラテン語 explicatus（折りほぐされた）から。ex-（外に）＋ plicare（折る・implicate と同語源）。" }],
-  // extract (18279)
-  [18279, { coreImage: "「必要な部分を引き出す・取り出す」のがコアイメージ。物理的な抽出からデータ抽出まで幅広く使われる。", usage: "「extract data（データを抽出する）」「extract information（情報を取り出す）」「tooth extraction（抜歯）」「extract key points（要点を抜き出す）」のように使う。", synonymDifference: "extract vs retrieve vs obtain: extract は「全体から必要な部分を引き出す」（selective removal）。retrieve は「保管されたものを取り出す」（stored data）。obtain は「努力して手に入れる」（formal: obtain permission）。", englishDefinition: "To take something out from a larger whole; a concentrated substance.", etymology: "ラテン語 extrahere（引き出す）から。ex-（外に）＋ trahere（引く・attract と同語源）。" }],
-  // feasible (18280)
-  [18280, { coreImage: "「実際に実行できる・現実的に可能な」のがコアイメージ。「できる・実現できる」という語源から。feasibility study（実現可能性調査）が頻出。", usage: "「feasible plan（実行可能な計画）」「feasibility study（フィジビリティ・スタディ）」「technically feasible（技術的に実現可能）」「financially feasible（財務的に実現可能）」のように使う。", synonymDifference: "feasible vs possible vs practical: feasible は「実際に実行できる現実的な可能性」（likely to succeed）。possible は「起こりうる・可能性がある」（might happen）。practical は「実用的で実際に使える」（practical solution）。", englishDefinition: "Possible to do easily or conveniently; likely to succeed.", etymology: "ラテン語 facere（する）から。faisable（できる）のフランス語形を経て英語に。" }],
-  // fiscal (30337)
-  [30337, { coreImage: "「政府・組織の財政・会計に関する」のがコアイメージ。fiscal year（会計年度）が最頻出の表現。", usage: "「fiscal year（会計年度）」「fiscal policy（財政政策）」「fiscal report（財務報告）」「fiscal quarter（四半期）」のように使う。", synonymDifference: "fiscal vs financial vs monetary: fiscal は「政府・組織の予算・税・歳出に関する」（government/organizational finance）。financial は「お金・資産・投資に関する」（broader financial matters）。monetary は「通貨・金融政策に関する」（monetary policy）。", englishDefinition: "Relating to government finances or the management of money.", etymology: "ラテン語 fiscus（財務省の金庫・かご）から。「国家財政を管理する金庫」が原義。" }],
-  // flaw (18281)
-  [18281, { coreImage: "「製品・計画・人格の欠点・欠陥・傷」のがコアイメージ。完璧を損なう「傷」の感覚。", usage: "「a flaw in the design（設計上の欠陥）」「flawed reasoning（欠点のある論理）」「fatal flaw（致命的な欠点）」「identify flaws（欠陥を見つける）」のように使う。", synonymDifference: "flaw vs defect vs weakness: flaw は「完全性を損なう欠点・傷」（subtle but important）。defect は「機能・品質の欠陥」（product defect/manufacturing）。weakness は「強みの反対・弱点」（personal weakness）。", englishDefinition: "A mark, fault, or weakness that makes something imperfect.", etymology: "古ノルド語 flaga（石の割れ目）から。「表面の傷・亀裂」のが原義。" }],
-  // forfeit (30339)
-  [30339, { coreImage: "「規則違反・契約不履行により財産・権利・機会を没収される・失う」のがコアイメージ。ペナルティとして失うこと。", usage: "「forfeit a deposit（保証金を没収される）」「forfeit the game（試合を没収負けになる）」「forfeit the right to（〜する権利を失う）」「forfeit clause（没収条項）」のように使う。", synonymDifference: "forfeit vs lose vs waive: forfeit は「違反・ペナルティにより失う」（penalty-based loss）。lose は「失う」一般（lose money）。waive は「自発的に権利を放棄する」（voluntary surrender）。", englishDefinition: "To lose or give up something as a penalty; a penalty or fine.", etymology: "古フランス語 forfaire（違反する）から。fors-（外で）＋ faire（する）。「規則の外で行動して没収される」のが原義。" }],
-  // fraction (30340)
-  [30340, { coreImage: "「全体のほんの一部分・わずかな量」のがコアイメージ。数学の「分数」も同じ語。「壊れた・割れた部分」という語源から。", usage: "「a fraction of the cost（費用のほんの一部）」「a small fraction（ごくわずか）」「fraction of the time（わずかな時間）」「mathematical fraction（数学の分数）」のように使う。", synonymDifference: "fraction vs portion vs part: fraction は「非常に少ない割合・部分」（implies small amount）。portion は「全体のある程度の割合」（a reasonable portion）。part は「部分」の最も一般的な表現（a part of）。", englishDefinition: "A small part or amount; a numerical division.", etymology: "ラテン語 fractio（分割・割ること）から。frangere（壊す・fragment と同語源）。" }],
-  // garment (18282)
-  [18282, { coreImage: "「衣服・衣類・着るもの」のがコアイメージ。衣料品業界（garment industry）では頻出の専門語。", usage: "「garment industry（衣料品業界）」「garment factory（縫製工場）」「formal garments（フォーマルウェア）」「garment care（衣類のケア）」のように使う。", synonymDifference: "garment vs clothing vs apparel: garment は「個々の衣服・衣類」（one specific item of clothing）。clothing は「衣類の総称」（clothing store）。apparel は「ビジネス・業界用語での衣料品」（apparel brand）。", englishDefinition: "A piece of clothing.", etymology: "古フランス語 garnement（装備品）から。garnir（装備する・garnish と関連）。" }],
-  // grasp (30342)
-  [30342, { coreImage: "「物をしっかりつかむ」と「概念・状況を理解する」の二つのコアイメージ。「しっかりつかむ→理解する」の比喩が美しい。", usage: "「grasp the concept（概念を把握する）」「grasp an opportunity（機会をつかむ）」「a firm grasp of（〜をしっかり理解している）」「within grasp（手の届く範囲に）」のように使う。", synonymDifference: "grasp vs understand vs comprehend: grasp は「すっと理解する・つかむ」（sudden clarity）。understand は「理解する」の一般的な表現。comprehend は「複雑なものを完全に理解する」（formal/deep understanding）。", englishDefinition: "To seize and hold firmly; to understand fully.", etymology: "中期英語 graspen（つかむ）から。ゲルマン語系の「つかむ」という動作を表す語。" }],
-  // hinder (30343)
-  [30343, { coreImage: "「進行・達成・発展を妨げる・邪魔する」のがコアイメージ。「後ろに引き留める」という語源から。", usage: "「hinder progress（進行を妨げる）」「hinder growth（成長を阻害する）」「hindered by（〜によって妨げられた）」「hinder the investigation（調査を妨害する）」のように使う。", synonymDifference: "hinder vs obstruct vs impede: hinder は「前進を遅らせる・妨げる」（slow down progress）。obstruct は「通路・視界を物理的にふさぐ」（block completely）。impede は「特定の活動・機能を妨げる」（formal: impede development）。", englishDefinition: "To delay or prevent the progress of something.", etymology: "古英語 hindrian（後ろに引き留める）から。hinder（後ろの・behind と関連）。" }],
-  // impose (30344)
-  [30344, { coreImage: "「税・罰則・制限などを強制的に課す・押し付ける」のがコアイメージ。「上に置く＝負担をかける」という語源から。", usage: "「impose a tax（税を課す）」「impose sanctions（制裁を課す）」「impose restrictions（制限を設ける）」「impose a fine（罰金を科す）」のように使う。", synonymDifference: "impose vs enforce vs levy: impose は「義務・負担・制限を強制的に課す」（place a burden on）。enforce は「既存のルール・法律を守らせる」（compliance）。levy は「税・料金を正式に徴収する」（levy a tax）。", englishDefinition: "To require someone to accept something; to place a burden on.", etymology: "ラテン語 imponere（上に置く）から。im-（上に）＋ ponere（置く・position と同語源）。" }],
-  // inaugural (30345)
-  [30345, { coreImage: "「就任・開業・開幕の最初の・記念すべき始まりの」のがコアイメージ。「予兆を読んで就任を祝福する」という語源から。", usage: "「inaugural speech（就任演説）」「inaugural ceremony（就任式・開業式）」「inaugural flight（就航初便）」「inaugural meeting（第1回総会）」のように使う。", synonymDifference: "inaugural vs opening vs first: inaugural は「就任・開業などの最初の式典・正式な開始」（formal, ceremonial）。opening は「開幕・開店・開会の」（opening ceremony）。first は「最初の」（first meeting）。", englishDefinition: "Marking the beginning of something; relating to a formal start.", etymology: "ラテン語 inaugurare（前兆を占う）から。augur（占い師）と同語源。「就任の前兆を占う儀式」から。" }],
-  // incidental (30346)
-  [30346, { coreImage: "「主要な活動に付随して生じる・偶発的な」のがコアイメージ。「主目的には入っていないが必然的に生じる」というニュアンス。", usage: "「incidental expenses（付随費用・雑費）」「incidental to（〜に付随する）」「incidental costs（偶発費用）」「incidental music（劇伴音楽）」のように使う。", synonymDifference: "incidental vs accidental vs minor: incidental は「主要なものに付随して生じる」（secondary but expected）。accidental は「全く意図せず偶然起きる」（unintended）。minor は「重要性・規模が小さい」（minor issue）。", englishDefinition: "Happening as a minor result of something else; not important.", etymology: "ラテン語 incidens（起きること）から。in-（上に）＋ cadere（落ちる・accident と同語源）。" }],
-  // incorporate (30347)
-  [30347, { coreImage: "「要素・フィードバックを既存のものに組み入れる」のがコアイメージ。また「会社を法人化する」という法的意味でも頻出。", usage: "「incorporate feedback（フィードバックを組み込む）」「incorporate into the design（デザインに取り入れる）」「incorporated company（法人）」「Inc.（Incorporated の略）」のように使う。", synonymDifference: "incorporate vs integrate vs include: incorporate は「新しい要素を既存の構造に組み込む」（embed into existing）。integrate は「別々の要素を統合して一体化する」（combine into one）。include は「範囲・リストに含める」（broader）。", englishDefinition: "To include or combine; to form a corporation.", etymology: "ラテン語 incorporare（体に組み込む）から。in-（中に）＋ corpus（体・corporation と同語源）。" }],
-  // induce (30348)
-  [30348, { coreImage: "「行動・状態・反応を引き起こす・誘発する」のがコアイメージ。「引き込む・導く」という語源から。", usage: "「induce a sale（購入を促す）」「induce sleep（眠気を誘う）」「price reduction to induce demand（需要を誘発するための値下げ）」「labor induction（分娩誘発）」のように使う。", synonymDifference: "induce vs cause vs prompt: induce は「特定の行動・反応を引き起こす・説得して促す」（persuasive or causal）。cause は「原因となって生じさせる」（direct causation）。prompt は「即座に行動させる・促す」（trigger quick action）。", englishDefinition: "To cause or bring about; to persuade someone to do something.", etymology: "ラテン語 inducere（中に導く）から。in-（中に）＋ ducere（導く・conduct と同語源）。" }],
-  // inherent (30349)
-  [30349, { coreImage: "「もともとその性質・存在に固有に備わっている・本来の」のがコアイメージ。後から付け加えられたのではなく「元々持っている」性質。", usage: "「inherent risk（固有のリスク）」「inherent in the process（プロセスに本来備わった）」「inherent challenges（固有の課題）」「inherent value（本来の価値）」のように使う。", synonymDifference: "inherent vs intrinsic vs innate: inherent は「特定のものに本来備わっている」（naturally part of something）。intrinsic は「物事の本質的・内在的な価値」（intrinsic value）。innate は「生まれつき持っている」（innate ability）。", englishDefinition: "Existing as a natural part of something; not learned.", etymology: "ラテン語 inhaerere（くっついている）から。in-（中に）＋ haerere（固着する・hesitate と関連）。" }],
-  // innovate (30350)
-  [30350, { coreImage: "「既存のものに新しいアイデア・方法を取り入れて革新する・刷新する」のがコアイメージ。innovation（革新）の動詞形。", usage: "「innovate constantly（常に革新し続ける）」「innovate in technology（技術で革新する）」「innovate to stay competitive（競争力を保つために革新する）」「drive innovation（イノベーションを推進する）」のように使う。", synonymDifference: "innovate vs invent vs create: innovate は「既存のものを革新・改善する」（improve existing）。invent は「世界初の新しいものを発明する」（create something new）。create は「作り出す」の一般的な表現（create a product）。", englishDefinition: "To introduce new ideas or methods.", etymology: "ラテン語 innovare（刷新する）から。in-（中に）＋ novare（新しくする・novel と同語源）。" }],
-  // installment (18283)
-  [18283, { coreImage: "「合計金額を分割した1回分の支払い」のがコアイメージ。分割払い（installment plan）でよく使われる。", usage: "「pay in installments（分割払いで支払う）」「monthly installment（月賦・月々の支払い）」「installment plan（分割払いプラン）」「final installment（最終回の支払い）」のように使う。", synonymDifference: "installment vs payment vs down payment: installment は「分割された1回分の支払い」（one of several payments）。payment は「支払い」全般（single or total）。down payment は「頭金・頭払い」（initial payment upfront）。", englishDefinition: "A regular payment of part of a total amount owed.", etymology: "install（設置する）＋ -ment。「設置・確立の一段階」のが原義。割賦販売で「一度に払わず段階的に払う」から。" }],
-  // intact (30352)
-  [30352, { coreImage: "「損傷・変更・破損なしにそのままの状態を保っている・無傷の」のがコアイメージ。「触れられていない」という語源から。", usage: "「remain intact（そのままの状態を保つ）」「arrive intact（無傷で届く）」「keep the structure intact（構造を維持する）」「the original intact（元のまま保存された）」のように使う。", synonymDifference: "intact vs undamaged vs preserved: intact は「手をつけられず完全な状態」（not touched or damaged）。undamaged は「傷や損傷のない」（physical condition）。preserved は「意図的に保存・維持された」（deliberate preservation）。", englishDefinition: "Not damaged or changed; complete and whole.", etymology: "ラテン語 intactus（触れられていない）から。in-（非）＋ tangere（触れる・tangent と同語源）。" }],
-  // intermediary (18284)
-  [18284, { coreImage: "「二者の間を取り持つ仲介者・媒介役」のがコアイメージ。間に入って双方の利益調整をする役割。", usage: "「act as an intermediary（仲介役を務める）」「financial intermediary（金融仲介機関）」「third-party intermediary（第三者仲介者）」「without intermediaries（仲介者なしで）」のように使う。", synonymDifference: "intermediary vs mediator vs broker: intermediary は「二者の間に立つ仲介役」（general, neutral）。mediator は「紛争解決のための調停者」（conflict resolution）。broker は「売買・交渉を取り次ぐ専門業者」（real estate broker, stock broker）。", englishDefinition: "A person or organization that helps negotiate between parties.", etymology: "ラテン語 intermediarius（中間の）から。inter-（間に）＋ medius（中間の・medium と同語源）。" }],
-  // jeopardize (30354)
-  [30354, { coreImage: "「大切なものを危険にさらす・損なう恐れがある」のがコアイメージ。「二分された試合」という語源から「不確かな危険」の意に。", usage: "「jeopardize the deal（取引を危険にさらす）」「jeopardize safety（安全を脅かす）」「jeopardize the relationship（関係を損なう）」「jeopardize one's career（キャリアを危険にさらす）」のように使う。", synonymDifference: "jeopardize vs endanger vs risk: jeopardize は「大切なものを危険にさらす」（put at risk）。endanger は「生命・存続を危機にさらす」（threaten survival）。risk は「危険を冒す・リスクを取る」（risk taking）。", englishDefinition: "To put something valuable in danger.", etymology: "古フランス語 jeu parti（二分された試合）から。jeu（試合）＋ parti（分割された）。結果が五分五分の「危うい状態」が原義。" }],
+  // exempt (29065)
+  [29065, { coreImage: "「義務・規則・税金などから免除された・適用外の」のがコアイメージ。「取り外されて自由な」という語源から。", usage: "「tax-exempt（免税の）」「exempt from duty（義務を免除された）」「exempt employees（免除対象の従業員）」「be exempt from regulations（規制から除外される）」のように使う。", synonymDifference: "exempt vs exclude vs waive: exempt は「義務・規則の適用を免除される」（not required to comply）。exclude は「グループ・対象から除外する」（not included）。waive は「権利・要件を意図的に放棄する」（waive a fee）。", englishDefinition: "Free from an obligation or liability; to release from a requirement.", etymology: "ラテン語 exemptus（取り外された）から。ex-（外に）＋ emere（取る・redeem と同語源）。" }],
+  // expedite (29130)
+  [29130, { coreImage: "「プロセス・手続きを通常より速く処理する・促進する」のがコアイメージ。「足かせを外して速くする」という語源から。", usage: "「expedite the process（プロセスを促進する）」「expedite your order（注文を急ぎ処理する）」「expedite delivery（配送を早める）」「expedited shipping（速達配送）」のように使う。", synonymDifference: "expedite vs accelerate vs speed up: expedite は「手続き・処理を迅速化する」（formal/official process）。accelerate は「速度・進行を速める」（broader: accelerate growth）。speed up は「スピードを上げる」の口語表現（less formal）。", englishDefinition: "To make a process happen more quickly.", etymology: "ラテン語 expedire（足かせを外す）から。ex-（外に）＋ pes（足・pedal と同語源）。「足かせから解放して速くする」のが原義。" }],
+  // explicit (30498)
+  [30498, { coreImage: "「あいまいさなく明確に・はっきりと述べられた」のがコアイメージ。「折りたたまれたものを広げた」という語源から「明らかにされた」の意に。", usage: "「explicit instructions（明確な指示）」「explicit consent（明示的な同意）」「be explicit about（〜について明確にする）」「explicit content（露骨なコンテンツ）」のように使う。", synonymDifference: "explicit vs implicit vs clear: explicit は「言葉で明確に述べられた」（stated directly）。implicit は「言葉では述べられていないが暗に含まれた」（implied）。clear は「分かりやすい・明確な」（broader）。", englishDefinition: "Clearly and directly stated; not implied.", etymology: "ラテン語 explicatus（折りほぐされた）から。ex-（外に）＋ plicare（折る・implicate と同語源）。" }],
+  // extract (26122)
+  [26122, { coreImage: "「必要な部分を引き出す・取り出す」のがコアイメージ。物理的な抽出からデータ抽出まで幅広く使われる。", usage: "「extract data（データを抽出する）」「extract information（情報を取り出す）」「tooth extraction（抜歯）」「extract key points（要点を抜き出す）」のように使う。", synonymDifference: "extract vs retrieve vs obtain: extract は「全体から必要な部分を引き出す」（selective removal）。retrieve は「保管されたものを取り出す」（stored data）。obtain は「努力して手に入れる」（formal: obtain permission）。", englishDefinition: "To take something out from a larger whole; a concentrated substance.", etymology: "ラテン語 extrahere（引き出す）から。ex-（外に）＋ trahere（引く・attract と同語源）。" }],
+  // feasible (30499)
+  [30499, { coreImage: "「実際に実行できる・現実的に可能な」のがコアイメージ。「できる・実現できる」という語源から。feasibility study（実現可能性調査）が頻出。", usage: "「feasible plan（実行可能な計画）」「feasibility study（フィジビリティ・スタディ）」「technically feasible（技術的に実現可能）」「financially feasible（財務的に実現可能）」のように使う。", synonymDifference: "feasible vs possible vs practical: feasible は「実際に実行できる現実的な可能性」（likely to succeed）。possible は「起こりうる・可能性がある」（might happen）。practical は「実用的で実際に使える」（practical solution）。", englishDefinition: "Possible to do easily or conveniently; likely to succeed.", etymology: "ラテン語 facere（する）から。faisable（できる）のフランス語形を経て英語に。" }],
+  // fiscal (26177)
+  [26177, { coreImage: "「政府・組織の財政・会計に関する」のがコアイメージ。fiscal year（会計年度）が最頻出の表現。", usage: "「fiscal year（会計年度）」「fiscal policy（財政政策）」「fiscal report（財務報告）」「fiscal quarter（四半期）」のように使う。", synonymDifference: "fiscal vs financial vs monetary: fiscal は「政府・組織の予算・税・歳出に関する」（government/organizational finance）。financial は「お金・資産・投資に関する」（broader financial matters）。monetary は「通貨・金融政策に関する」（monetary policy）。", englishDefinition: "Relating to government finances or the management of money.", etymology: "ラテン語 fiscus（財務省の金庫・かご）から。「国家財政を管理する金庫」が原義。" }],
+  // flaw (29350)
+  [29350, { coreImage: "「製品・計画・人格の欠点・欠陥・傷」のがコアイメージ。完璧を損なう「傷」の感覚。", usage: "「a flaw in the design（設計上の欠陥）」「flawed reasoning（欠点のある論理）」「fatal flaw（致命的な欠点）」「identify flaws（欠陥を見つける）」のように使う。", synonymDifference: "flaw vs defect vs weakness: flaw は「完全性を損なう欠点・傷」（subtle but important）。defect は「機能・品質の欠陥」（product defect/manufacturing）。weakness は「強みの反対・弱点」（personal weakness）。", englishDefinition: "A mark, fault, or weakness that makes something imperfect.", etymology: "古ノルド語 flaga（石の割れ目）から。「表面の傷・亀裂」のが原義。" }],
+  // forfeit (31780)
+  [31780, { coreImage: "「規則違反・契約不履行により財産・権利・機会を没収される・失う」のがコアイメージ。ペナルティとして失うこと。", usage: "「forfeit a deposit（保証金を没収される）」「forfeit the game（試合を没収負けになる）」「forfeit the right to（〜する権利を失う）」「forfeit clause（没収条項）」のように使う。", synonymDifference: "forfeit vs lose vs waive: forfeit は「違反・ペナルティにより失う」（penalty-based loss）。lose は「失う」一般（lose money）。waive は「自発的に権利を放棄する」（voluntary surrender）。", englishDefinition: "To lose or give up something as a penalty; a penalty or fine.", etymology: "古フランス語 forfaire（違反する）から。fors-（外で）＋ faire（する）。「規則の外で行動して没収される」のが原義。" }],
+  // fraction (32420)
+  [32420, { coreImage: "「全体のほんの一部分・わずかな量」のがコアイメージ。数学の「分数」も同じ語。「壊れた・割れた部分」という語源から。", usage: "「a fraction of the cost（費用のほんの一部）」「a small fraction（ごくわずか）」「fraction of the time（わずかな時間）」「mathematical fraction（数学の分数）」のように使う。", synonymDifference: "fraction vs portion vs part: fraction は「非常に少ない割合・部分」（implies small amount）。portion は「全体のある程度の割合」（a reasonable portion）。part は「部分」の最も一般的な表現（a part of）。", englishDefinition: "A small part or amount; a numerical division.", etymology: "ラテン語 fractio（分割・割ること）から。frangere（壊す・fragment と同語源）。" }],
+  // garment (27721)
+  [27721, { coreImage: "「衣服・衣類・着るもの」のがコアイメージ。衣料品業界（garment industry）では頻出の専門語。", usage: "「garment industry（衣料品業界）」「garment factory（縫製工場）」「formal garments（フォーマルウェア）」「garment care（衣類のケア）」のように使う。", synonymDifference: "garment vs clothing vs apparel: garment は「個々の衣服・衣類」（one specific item of clothing）。clothing は「衣類の総称」（clothing store）。apparel は「ビジネス・業界用語での衣料品」（apparel brand）。", englishDefinition: "A piece of clothing.", etymology: "古フランス語 garnement（装備品）から。garnir（装備する・garnish と関連）。" }],
+  // grasp (26277)
+  [26277, { coreImage: "「物をしっかりつかむ」と「概念・状況を理解する」の二つのコアイメージ。「しっかりつかむ→理解する」の比喩が美しい。", usage: "「grasp the concept（概念を把握する）」「grasp an opportunity（機会をつかむ）」「a firm grasp of（〜をしっかり理解している）」「within grasp（手の届く範囲に）」のように使う。", synonymDifference: "grasp vs understand vs comprehend: grasp は「すっと理解する・つかむ」（sudden clarity）。understand は「理解する」の一般的な表現。comprehend は「複雑なものを完全に理解する」（formal/deep understanding）。", englishDefinition: "To seize and hold firmly; to understand fully.", etymology: "中期英語 graspen（つかむ）から。ゲルマン語系の「つかむ」という動作を表す語。" }],
+  // hinder (26976)
+  [26976, { coreImage: "「進行・達成・発展を妨げる・邪魔する」のがコアイメージ。「後ろに引き留める」という語源から。", usage: "「hinder progress（進行を妨げる）」「hinder growth（成長を阻害する）」「hindered by（〜によって妨げられた）」「hinder the investigation（調査を妨害する）」のように使う。", synonymDifference: "hinder vs obstruct vs impede: hinder は「前進を遅らせる・妨げる」（slow down progress）。obstruct は「通路・視界を物理的にふさぐ」（block completely）。impede は「特定の活動・機能を妨げる」（formal: impede development）。", englishDefinition: "To delay or prevent the progress of something.", etymology: "古英語 hindrian（後ろに引き留める）から。hinder（後ろの・behind と関連）。" }],
+  // impose (26378)
+  [26378, { coreImage: "「税・罰則・制限などを強制的に課す・押し付ける」のがコアイメージ。「上に置く＝負担をかける」という語源から。", usage: "「impose a tax（税を課す）」「impose sanctions（制裁を課す）」「impose restrictions（制限を設ける）」「impose a fine（罰金を科す）」のように使う。", synonymDifference: "impose vs enforce vs levy: impose は「義務・負担・制限を強制的に課す」（place a burden on）。enforce は「既存のルール・法律を守らせる」（compliance）。levy は「税・料金を正式に徴収する」（levy a tax）。", englishDefinition: "To require someone to accept something; to place a burden on.", etymology: "ラテン語 imponere（上に置く）から。im-（上に）＋ ponere（置く・position と同語源）。" }],
+  // inaugural (19808)
+  [19808, { coreImage: "「就任・開業・開幕の最初の・記念すべき始まりの」のがコアイメージ。「予兆を読んで就任を祝福する」という語源から。", usage: "「inaugural speech（就任演説）」「inaugural ceremony（就任式・開業式）」「inaugural flight（就航初便）」「inaugural meeting（第1回総会）」のように使う。", synonymDifference: "inaugural vs opening vs first: inaugural は「就任・開業などの最初の式典・正式な開始」（formal, ceremonial）。opening は「開幕・開店・開会の」（opening ceremony）。first は「最初の」（first meeting）。", englishDefinition: "Marking the beginning of something; relating to a formal start.", etymology: "ラテン語 inaugurare（前兆を占う）から。augur（占い師）と同語源。「就任の前兆を占う儀式」から。" }],
+  // incidental (30501)
+  [30501, { coreImage: "「主要な活動に付随して生じる・偶発的な」のがコアイメージ。「主目的には入っていないが必然的に生じる」というニュアンス。", usage: "「incidental expenses（付随費用・雑費）」「incidental to（〜に付随する）」「incidental costs（偶発費用）」「incidental music（劇伴音楽）」のように使う。", synonymDifference: "incidental vs accidental vs minor: incidental は「主要なものに付随して生じる」（secondary but expected）。accidental は「全く意図せず偶然起きる」（unintended）。minor は「重要性・規模が小さい」（minor issue）。", englishDefinition: "Happening as a minor result of something else; not important.", etymology: "ラテン語 incidens（起きること）から。in-（上に）＋ cadere（落ちる・accident と同語源）。" }],
+  // incorporate (27004)
+  [27004, { coreImage: "「要素・フィードバックを既存のものに組み入れる」のがコアイメージ。また「会社を法人化する」という法的意味でも頻出。", usage: "「incorporate feedback（フィードバックを組み込む）」「incorporate into the design（デザインに取り入れる）」「incorporated company（法人）」「Inc.（Incorporated の略）」のように使う。", synonymDifference: "incorporate vs integrate vs include: incorporate は「新しい要素を既存の構造に組み込む」（embed into existing）。integrate は「別々の要素を統合して一体化する」（combine into one）。include は「範囲・リストに含める」（broader）。", englishDefinition: "To include or combine; to form a corporation.", etymology: "ラテン語 incorporare（体に組み込む）から。in-（中に）＋ corpus（体・corporation と同語源）。" }],
+  // induce (26977)
+  [26977, { coreImage: "「行動・状態・反応を引き起こす・誘発する」のがコアイメージ。「引き込む・導く」という語源から。", usage: "「induce a sale（購入を促す）」「induce sleep（眠気を誘う）」「price reduction to induce demand（需要を誘発するための値下げ）」「labor induction（分娩誘発）」のように使う。", synonymDifference: "induce vs cause vs prompt: induce は「特定の行動・反応を引き起こす・説得して促す」（persuasive or causal）。cause は「原因となって生じさせる」（direct causation）。prompt は「即座に行動させる・促す」（trigger quick action）。", englishDefinition: "To cause or bring about; to persuade someone to do something.", etymology: "ラテン語 inducere（中に導く）から。in-（中に）＋ ducere（導く・conduct と同語源）。" }],
+  // inherent (32012)
+  [32012, { coreImage: "「もともとその性質・存在に固有に備わっている・本来の」のがコアイメージ。後から付け加えられたのではなく「元々持っている」性質。", usage: "「inherent risk（固有のリスク）」「inherent in the process（プロセスに本来備わった）」「inherent challenges（固有の課題）」「inherent value（本来の価値）」のように使う。", synonymDifference: "inherent vs intrinsic vs innate: inherent は「特定のものに本来備わっている」（naturally part of something）。intrinsic は「物事の本質的・内在的な価値」（intrinsic value）。innate は「生まれつき持っている」（innate ability）。", englishDefinition: "Existing as a natural part of something; not learned.", etymology: "ラテン語 inhaerere（くっついている）から。in-（中に）＋ haerere（固着する・hesitate と関連）。" }],
+  // innovate (26984)
+  [26984, { coreImage: "「既存のものに新しいアイデア・方法を取り入れて革新する・刷新する」のがコアイメージ。innovation（革新）の動詞形。", usage: "「innovate constantly（常に革新し続ける）」「innovate in technology（技術で革新する）」「innovate to stay competitive（競争力を保つために革新する）」「drive innovation（イノベーションを推進する）」のように使う。", synonymDifference: "innovate vs invent vs create: innovate は「既存のものを革新・改善する」（improve existing）。invent は「世界初の新しいものを発明する」（create something new）。create は「作り出す」の一般的な表現（create a product）。", englishDefinition: "To introduce new ideas or methods.", etymology: "ラテン語 innovare（刷新する）から。in-（中に）＋ novare（新しくする・novel と同語源）。" }],
+  // installment (19711)
+  [19711, { coreImage: "「合計金額を分割した1回分の支払い」のがコアイメージ。分割払い（installment plan）でよく使われる。", usage: "「pay in installments（分割払いで支払う）」「monthly installment（月賦・月々の支払い）」「installment plan（分割払いプラン）」「final installment（最終回の支払い）」のように使う。", synonymDifference: "installment vs payment vs down payment: installment は「分割された1回分の支払い」（one of several payments）。payment は「支払い」全般（single or total）。down payment は「頭金・頭払い」（initial payment upfront）。", englishDefinition: "A regular payment of part of a total amount owed.", etymology: "install（設置する）＋ -ment。「設置・確立の一段階」のが原義。割賦販売で「一度に払わず段階的に払う」から。" }],
+  // intact (31323)
+  [31323, { coreImage: "「損傷・変更・破損なしにそのままの状態を保っている・無傷の」のがコアイメージ。「触れられていない」という語源から。", usage: "「remain intact（そのままの状態を保つ）」「arrive intact（無傷で届く）」「keep the structure intact（構造を維持する）」「the original intact（元のまま保存された）」のように使う。", synonymDifference: "intact vs undamaged vs preserved: intact は「手をつけられず完全な状態」（not touched or damaged）。undamaged は「傷や損傷のない」（physical condition）。preserved は「意図的に保存・維持された」（deliberate preservation）。", englishDefinition: "Not damaged or changed; complete and whole.", etymology: "ラテン語 intactus（触れられていない）から。in-（非）＋ tangere（触れる・tangent と同語源）。" }],
+  // intermediary (31633)
+  [31633, { coreImage: "「二者の間を取り持つ仲介者・媒介役」のがコアイメージ。間に入って双方の利益調整をする役割。", usage: "「act as an intermediary（仲介役を務める）」「financial intermediary（金融仲介機関）」「third-party intermediary（第三者仲介者）」「without intermediaries（仲介者なしで）」のように使う。", synonymDifference: "intermediary vs mediator vs broker: intermediary は「二者の間に立つ仲介役」（general, neutral）。mediator は「紛争解決のための調停者」（conflict resolution）。broker は「売買・交渉を取り次ぐ専門業者」（real estate broker, stock broker）。", englishDefinition: "A person or organization that helps negotiate between parties.", etymology: "ラテン語 intermediarius（中間の）から。inter-（間に）＋ medius（中間の・medium と同語源）。" }],
+  // jeopardize (31772)
+  [31772, { coreImage: "「大切なものを危険にさらす・損なう恐れがある」のがコアイメージ。「二分された試合」という語源から「不確かな危険」の意に。", usage: "「jeopardize the deal（取引を危険にさらす）」「jeopardize safety（安全を脅かす）」「jeopardize the relationship（関係を損なう）」「jeopardize one's career（キャリアを危険にさらす）」のように使う。", synonymDifference: "jeopardize vs endanger vs risk: jeopardize は「大切なものを危険にさらす」（put at risk）。endanger は「生命・存続を危機にさらす」（threaten survival）。risk は「危険を冒す・リスクを取る」（risk taking）。", englishDefinition: "To put something valuable in danger.", etymology: "古フランス語 jeu parti（二分された試合）から。jeu（試合）＋ parti（分割された）。結果が五分五分の「危うい状態」が原義。" }],
   // knowledgeable (18285)
   [18285, { coreImage: "「特定分野について深い知識・情報を持っている・精通した」のがコアイメージ。expert ほどの専門家でなくても幅広く知識を持つ状態。", usage: "「knowledgeable staff（博識なスタッフ）」「highly knowledgeable（非常に博識な）」「knowledgeable about regulations（規制に精通した）」「seek a knowledgeable advisor（博識な顧問を求める）」のように使う。", synonymDifference: "knowledgeable vs expert vs well-informed: knowledgeable は「幅広く多くのことを知っている」（broad knowledge）。expert は「特定分野の専門家」（specialist/deep expertise）。well-informed は「最新情報・事情を把握している」（up-to-date）。", englishDefinition: "Having or showing a lot of knowledge or information.", etymology: "knowledge（知識）＋ -able（できる形容詞化）。古英語 cnawan（知る・know と同語源）から。" }],
-  // lucrative (18286)
-  [18286, { coreImage: "「多くの利益・お金をもたらす・収益性が高い」のがコアイメージ。「利益を生む」という語源から。", usage: "「lucrative business（収益性の高いビジネス）」「lucrative contract（儲かる契約）」「lucrative market（利益を生む市場）」「prove lucrative（儲かることが証明される）」のように使う。", synonymDifference: "lucrative vs profitable vs rewarding: lucrative は「大きな金銭的利益をもたらす」（emphasis on high profit）。profitable は「利益が出る」（positive profit margin）。rewarding は「金銭以外に精神的・感情的に満足できる」（fulfilling）。", englishDefinition: "Producing a lot of money; highly profitable.", etymology: "ラテン語 lucrativus（利益になる）から。lucrum（利益・利得）が語源。" }],
-  // meticulous (30357)
-  [30357, { coreImage: "「細部にまで細心の注意を払う・綿密な」のがコアイメージ。「小さなことを恐れる」という語源から「細かいことに気を使う」の意に転じた。", usage: "「meticulous attention（細心の注意）」「meticulous planning（綿密な計画）」「meticulous record-keeping（丁寧な記録管理）」「be meticulous about（〜に細心の注意を払う）」のように使う。", synonymDifference: "meticulous vs thorough vs precise: meticulous は「細部への細心の注意・完璧主義的」（almost excessive attention to detail）。thorough は「抜けなく完全に行う」（thorough investigation）。precise は「正確さ・精度に注力する」（precise measurement）。", englishDefinition: "Showing great attention to detail; very careful and precise.", etymology: "ラテン語 meticulosus（恐れる・臆病な）から。metus（恐れ）が語源。「細かいことを怖れるほど注意深い」から転じた。" }],
-  // nominal (18287)
-  [18287, { coreImage: "「名目上の・実質的な意味をあまり持たない」のがコアイメージ。また「ごくわずかな・名ばかりの」費用・金額にも使われる。", usage: "「nominal fee（名目上のわずかな料金）」「nominal value（名目価値）」「nominal leader（名ばかりのリーダー）」「at a nominal cost（ほぼ無料で）」のように使う。", synonymDifference: "nominal vs token vs symbolic: nominal は「名目上の・実質を持たないごくわずかな」（name only/minimal）。token は「形だけの・象徴的な」（token gesture）。symbolic は「象徴的な意味を持つ」（symbolic act）。", englishDefinition: "In name only; very small in comparison to real value.", etymology: "ラテン語 nominalis（名前に関する）から。nomen（名前・name と同語源）。" }],
-  // offset (30360)
-  [30360, { coreImage: "「一方の影響・損失・費用を別のプラス要素で相殺・埋め合わせる」のがコアイメージ。「ずらして置く→バランスを取る」の感覚。", usage: "「offset losses（損失を相殺する）」「carbon offset（カーボンオフセット）」「offset costs（費用を埋め合わせる）」「offset the impact（影響を相殺する）」のように使う。", synonymDifference: "offset vs compensate vs balance: offset は「マイナスをプラスで打ち消す・相殺する」（neutralize negative）。compensate は「損失・不足を補償する」（make up for a loss）。balance は「バランスを取る・均衡させる」（balance the budget）。", englishDefinition: "To counteract or compensate for something.", etymology: "off-（離れて・ずれて）＋ set（置く）。「位置をずらして釣り合わせる」のが原義。" }],
+  // lucrative (29438)
+  [29438, { coreImage: "「多くの利益・お金をもたらす・収益性が高い」のがコアイメージ。「利益を生む」という語源から。", usage: "「lucrative business（収益性の高いビジネス）」「lucrative contract（儲かる契約）」「lucrative market（利益を生む市場）」「prove lucrative（儲かることが証明される）」のように使う。", synonymDifference: "lucrative vs profitable vs rewarding: lucrative は「大きな金銭的利益をもたらす」（emphasis on high profit）。profitable は「利益が出る」（positive profit margin）。rewarding は「金銭以外に精神的・感情的に満足できる」（fulfilling）。", englishDefinition: "Producing a lot of money; highly profitable.", etymology: "ラテン語 lucrativus（利益になる）から。lucrum（利益・利得）が語源。" }],
+  // meticulous (31998)
+  [31998, { coreImage: "「細部にまで細心の注意を払う・綿密な」のがコアイメージ。「小さなことを恐れる」という語源から「細かいことに気を使う」の意に転じた。", usage: "「meticulous attention（細心の注意）」「meticulous planning（綿密な計画）」「meticulous record-keeping（丁寧な記録管理）」「be meticulous about（〜に細心の注意を払う）」のように使う。", synonymDifference: "meticulous vs thorough vs precise: meticulous は「細部への細心の注意・完璧主義的」（almost excessive attention to detail）。thorough は「抜けなく完全に行う」（thorough investigation）。precise は「正確さ・精度に注力する」（precise measurement）。", englishDefinition: "Showing great attention to detail; very careful and precise.", etymology: "ラテン語 meticulosus（恐れる・臆病な）から。metus（恐れ）が語源。「細かいことを怖れるほど注意深い」から転じた。" }],
+  // nominal (30394)
+  [30394, { coreImage: "「名目上の・実質的な意味をあまり持たない」のがコアイメージ。また「ごくわずかな・名ばかりの」費用・金額にも使われる。", usage: "「nominal fee（名目上のわずかな料金）」「nominal value（名目価値）」「nominal leader（名ばかりのリーダー）」「at a nominal cost（ほぼ無料で）」のように使う。", synonymDifference: "nominal vs token vs symbolic: nominal は「名目上の・実質を持たないごくわずかな」（name only/minimal）。token は「形だけの・象徴的な」（token gesture）。symbolic は「象徴的な意味を持つ」（symbolic act）。", englishDefinition: "In name only; very small in comparison to real value.", etymology: "ラテン語 nominalis（名前に関する）から。nomen（名前・name と同語源）。" }],
+  // offset (29133)
+  [29133, { coreImage: "「一方の影響・損失・費用を別のプラス要素で相殺・埋め合わせる」のがコアイメージ。「ずらして置く→バランスを取る」の感覚。", usage: "「offset losses（損失を相殺する）」「carbon offset（カーボンオフセット）」「offset costs（費用を埋め合わせる）」「offset the impact（影響を相殺する）」のように使う。", synonymDifference: "offset vs compensate vs balance: offset は「マイナスをプラスで打ち消す・相殺する」（neutralize negative）。compensate は「損失・不足を補償する」（make up for a loss）。balance は「バランスを取る・均衡させる」（balance the budget）。", englishDefinition: "To counteract or compensate for something.", etymology: "off-（離れて・ずれて）＋ set（置く）。「位置をずらして釣り合わせる」のが原義。" }],
 
   // ── TOEIC 700 ───────────────────────────────────────────────────────────────
 
-  // acquisition (30361)
-  [30361, { coreImage: "「企業・資産・スキルを手に入れる・買収する」のがコアイメージ。M&A の「A」。「獲得する」という語源から。", usage: "「merger and acquisition（M&A）」「hostile acquisition（敵対的買収）」「talent acquisition（人材獲得）」「data acquisition（データ収集）」のように使う。", synonymDifference: "acquisition vs purchase vs merger: acquisition は「企業・大規模資産の正式な取得・買収」（formal/corporate）。purchase は「物を買う」一般的な表現。merger は「二社が合体する合併」（acquisition は一方が他方を取得）。", englishDefinition: "The act of obtaining something; a company or asset obtained.", etymology: "ラテン語 acquisitio（取得）から。ad-（向かって）＋ quaerere（求める・query と同語源）。" }],
-  // diligent (18290)
-  [18290, { coreImage: "「目標に向かって一生懸命・丁寧に取り組む・勤勉な」のがコアイメージ。「価値を見いだして努力する」という語源から。", usage: "「diligent worker（勤勉な働き手）」「diligent research（丹念な調査）」「diligently checked（丁寧に確認された）」「diligent in one's duties（職務に勤勉な）」のように使う。", synonymDifference: "diligent vs hardworking vs industrious: diligent は「注意深く丁寧に継続的に努力する」（careful + persistent）。hardworking は「懸命に働く」（effort/energy focused）。industrious は「活動的で勤勉な」（active/energetic）。", englishDefinition: "Showing careful and persistent effort.", etymology: "ラテン語 diligens（注意深い）から。diligere（価値を見いだす）。dis-（分けて）＋ legere（選ぶ）。" }],
-  // discretion (30366)
-  [30366, { coreImage: "「状況を判断して自分で決める裁量・判断力」のがコアイメージ。「分別・思慮深さ」という意味でも頻出。", usage: "「at your discretion（あなたの裁量で）」「use discretion（裁量を使う）」「discretionary spending（裁量支出）」「exercise discretion（慎重に判断する）」のように使う。", synonymDifference: "discretion vs judgment vs tact: discretion は「プライバシー・秘密を守る分別」または「自由な裁量」（authority to decide）。judgment は「善悪・優劣を判断する能力」（good judgment）。tact は「人の感情を傷つけない気遣い・機転」（social sensitivity）。", englishDefinition: "Freedom to decide; care in avoiding disclosure.", etymology: "ラテン語 discretio（分離・区別）から。discernere（分ける・discreet と同語源）。" }],
-  // modification (18295)
-  [18295, { coreImage: "「既存のものを少し変更・修正する」のがコアイメージ。大幅な変更ではなく「調整・改変」という感覚。", usage: "「make modifications（変更を加える）」「product modification（製品の改良）」「design modification（設計変更）」「minor modifications（軽微な変更）」のように使う。", synonymDifference: "modification vs revision vs amendment: modification は「既存のものに変更を加える」（changes to design/product）。revision は「内容を見直して改訂する」（revision of text/plan）。amendment は「法律・文書への正式な修正」（constitutional amendment）。", englishDefinition: "A small change or adjustment to something.", etymology: "ラテン語 modificatio（節度をつけること）から。modus（度・mode と同語源）＋ facere（する）。" }],
-  // negligible (30373)
-  [30373, { coreImage: "「影響・量・差が非常に小さくて無視できるほどの」のがコアイメージ。「見捨てられるほど小さい」という語源から。", usage: "「negligible impact（無視できるほどの影響）」「negligible cost（ごくわずかなコスト）」「negligible risk（取るに足りないリスク）」「negligible difference（ほぼ差がない）」のように使う。", synonymDifference: "negligible vs insignificant vs minimal: negligible は「無視してよいほど小さい・取るに足りない」（too small to matter）。insignificant は「重要性がない・些細な」（not significant）。minimal は「最小限の」（minimal effort）。", englishDefinition: "So small as to be not worth considering.", etymology: "ラテン語 neglegere（無視する）から。neg-（非）＋ legere（選ぶ・neglect と同語源）。" }],
-  // personnel (18296)
-  [18296, { coreImage: "「組織の人事部門・職員全体」のがコアイメージ。ビジネスでは「人材・社員」を指す重要語。personal（個人的な）と混同しやすいので注意。", usage: "「personnel department（人事部）」「personnel management（人事管理）」「qualified personnel（有資格者）」「hire additional personnel（追加人員を採用する）」のように使う。", synonymDifference: "personnel vs staff vs employees: personnel は「組織の人事・職員全体」（formal/HR term）。staff は「スタッフ・職員」（operational team）。employees は「雇用されている従業員」（legal/contractual term）。", englishDefinition: "The people employed in an organization; a human resources department.", etymology: "フランス語 personnel（個人的な→人員）から。ラテン語 personalis（個人の）が語源。" }],
-  // prerequisite (18297)
-  [18297, { coreImage: "「ある行動・状態を始める前に満たされていなければならない前提条件」のがコアイメージ。「前もって必要とされるもの」。", usage: "「a prerequisite for（〜の前提条件）」「prerequisite skills（前提スキル）」「meet the prerequisites（前提条件を満たす）」「English is a prerequisite（英語力が必要条件だ）」のように使う。", synonymDifference: "prerequisite vs requirement vs condition: prerequisite は「行動・状態に先立って必要な前提条件」（must be met before starting）。requirement は「必要とされる条件・要件」（what is needed）。condition は「何かが成立するための条件」（condition for approval）。", englishDefinition: "Something required as a prior condition for something else.", etymology: "pre-（前に）＋ requisite（必要なもの）。ラテン語 requirere（要求する）から。" }],
-  // proficiency (18298)
-  [18298, { coreImage: "「特定の分野・スキルで高い水準の能力・熟練度を持つ」のがコアイメージ。「前に進んで成果を出す」という語源から。", usage: "「language proficiency（語学力）」「English proficiency test（英語能力試験）」「high proficiency（高い熟練度）」「demonstrate proficiency（能力を示す）」のように使う。", synonymDifference: "proficiency vs skill vs competence: proficiency は「特定分野で高い水準に達した熟練度」（measured level of skill）。skill は「スキル・技能」（general ability）。competence は「十分な能力・資質」（adequate ability to perform）。", englishDefinition: "A high degree of skill or competence.", etymology: "ラテン語 proficere（前に進む）から。pro-（前に）＋ facere（する・profit と同語源）。" }],
-  // unanimous (30380)
-  [30380, { coreImage: "「全員の意見・投票が一致している・満場一致の」のがコアイメージ。「全員が同じ心を持つ」という語源から。", usage: "「unanimous decision（全会一致の決定）」「unanimous vote（満場一致の投票）」「unanimous agreement（全員の合意）」「reach a unanimous verdict（全員一致の評決に達する）」のように使う。", synonymDifference: "unanimous vs consensus vs united: unanimous は「全員が賛成・反対の全会一致」（complete agreement）。consensus は「おおむねの合意・過半数の意見の一致」（general agreement）。united は「共通の目的に向けて団結した」（working together）。", englishDefinition: "With full agreement from everyone involved.", etymology: "ラテン語 unanimus（同じ心を持つ）から。unus（一つ）＋ animus（心・animate と同語源）。" }],
+  // acquisition (27290)
+  [27290, { coreImage: "「企業・資産・スキルを手に入れる・買収する」のがコアイメージ。M&A の「A」。「獲得する」という語源から。", usage: "「merger and acquisition（M&A）」「hostile acquisition（敵対的買収）」「talent acquisition（人材獲得）」「data acquisition（データ収集）」のように使う。", synonymDifference: "acquisition vs purchase vs merger: acquisition は「企業・大規模資産の正式な取得・買収」（formal/corporate）。purchase は「物を買う」一般的な表現。merger は「二社が合体する合併」（acquisition は一方が他方を取得）。", englishDefinition: "The act of obtaining something; a company or asset obtained.", etymology: "ラテン語 acquisitio（取得）から。ad-（向かって）＋ quaerere（求める・query と同語源）。" }],
+  // diligent (29242)
+  [29242, { coreImage: "「目標に向かって一生懸命・丁寧に取り組む・勤勉な」のがコアイメージ。「価値を見いだして努力する」という語源から。", usage: "「diligent worker（勤勉な働き手）」「diligent research（丹念な調査）」「diligently checked（丁寧に確認された）」「diligent in one's duties（職務に勤勉な）」のように使う。", synonymDifference: "diligent vs hardworking vs industrious: diligent は「注意深く丁寧に継続的に努力する」（careful + persistent）。hardworking は「懸命に働く」（effort/energy focused）。industrious は「活動的で勤勉な」（active/energetic）。", englishDefinition: "Showing careful and persistent effort.", etymology: "ラテン語 diligens（注意深い）から。diligere（価値を見いだす）。dis-（分けて）＋ legere（選ぶ）。" }],
+  // discretion (34126)
+  [34126, { coreImage: "「状況を判断して自分で決める裁量・判断力」のがコアイメージ。「分別・思慮深さ」という意味でも頻出。", usage: "「at your discretion（あなたの裁量で）」「use discretion（裁量を使う）」「discretionary spending（裁量支出）」「exercise discretion（慎重に判断する）」のように使う。", synonymDifference: "discretion vs judgment vs tact: discretion は「プライバシー・秘密を守る分別」または「自由な裁量」（authority to decide）。judgment は「善悪・優劣を判断する能力」（good judgment）。tact は「人の感情を傷つけない気遣い・機転」（social sensitivity）。", englishDefinition: "Freedom to decide; care in avoiding disclosure.", etymology: "ラテン語 discretio（分離・区別）から。discernere（分ける・discreet と同語源）。" }],
+  // modification (29466)
+  [29466, { coreImage: "「既存のものを少し変更・修正する」のがコアイメージ。大幅な変更ではなく「調整・改変」という感覚。", usage: "「make modifications（変更を加える）」「product modification（製品の改良）」「design modification（設計変更）」「minor modifications（軽微な変更）」のように使う。", synonymDifference: "modification vs revision vs amendment: modification は「既存のものに変更を加える」（changes to design/product）。revision は「内容を見直して改訂する」（revision of text/plan）。amendment は「法律・文書への正式な修正」（constitutional amendment）。", englishDefinition: "A small change or adjustment to something.", etymology: "ラテン語 modificatio（節度をつけること）から。modus（度・mode と同語源）＋ facere（する）。" }],
+  // negligible (30809)
+  [30809, { coreImage: "「影響・量・差が非常に小さくて無視できるほどの」のがコアイメージ。「見捨てられるほど小さい」という語源から。", usage: "「negligible impact（無視できるほどの影響）」「negligible cost（ごくわずかなコスト）」「negligible risk（取るに足りないリスク）」「negligible difference（ほぼ差がない）」のように使う。", synonymDifference: "negligible vs insignificant vs minimal: negligible は「無視してよいほど小さい・取るに足りない」（too small to matter）。insignificant は「重要性がない・些細な」（not significant）。minimal は「最小限の」（minimal effort）。", englishDefinition: "So small as to be not worth considering.", etymology: "ラテン語 neglegere（無視する）から。neg-（非）＋ legere（選ぶ・neglect と同語源）。" }],
+  // personnel (28275)
+  [28275, { coreImage: "「組織の人事部門・職員全体」のがコアイメージ。ビジネスでは「人材・社員」を指す重要語。personal（個人的な）と混同しやすいので注意。", usage: "「personnel department（人事部）」「personnel management（人事管理）」「qualified personnel（有資格者）」「hire additional personnel（追加人員を採用する）」のように使う。", synonymDifference: "personnel vs staff vs employees: personnel は「組織の人事・職員全体」（formal/HR term）。staff は「スタッフ・職員」（operational team）。employees は「雇用されている従業員」（legal/contractual term）。", englishDefinition: "The people employed in an organization; a human resources department.", etymology: "フランス語 personnel（個人的な→人員）から。ラテン語 personalis（個人の）が語源。" }],
+  // prerequisite (30090)
+  [30090, { coreImage: "「ある行動・状態を始める前に満たされていなければならない前提条件」のがコアイメージ。「前もって必要とされるもの」。", usage: "「a prerequisite for（〜の前提条件）」「prerequisite skills（前提スキル）」「meet the prerequisites（前提条件を満たす）」「English is a prerequisite（英語力が必要条件だ）」のように使う。", synonymDifference: "prerequisite vs requirement vs condition: prerequisite は「行動・状態に先立って必要な前提条件」（must be met before starting）。requirement は「必要とされる条件・要件」（what is needed）。condition は「何かが成立するための条件」（condition for approval）。", englishDefinition: "Something required as a prior condition for something else.", etymology: "pre-（前に）＋ requisite（必要なもの）。ラテン語 requirere（要求する）から。" }],
+  // proficiency (31639)
+  [31639, { coreImage: "「特定の分野・スキルで高い水準の能力・熟練度を持つ」のがコアイメージ。「前に進んで成果を出す」という語源から。", usage: "「language proficiency（語学力）」「English proficiency test（英語能力試験）」「high proficiency（高い熟練度）」「demonstrate proficiency（能力を示す）」のように使う。", synonymDifference: "proficiency vs skill vs competence: proficiency は「特定分野で高い水準に達した熟練度」（measured level of skill）。skill は「スキル・技能」（general ability）。competence は「十分な能力・資質」（adequate ability to perform）。", englishDefinition: "A high degree of skill or competence.", etymology: "ラテン語 proficere（前に進む）から。pro-（前に）＋ facere（する・profit と同語源）。" }],
+  // unanimous (32649)
+  [32649, { coreImage: "「全員の意見・投票が一致している・満場一致の」のがコアイメージ。「全員が同じ心を持つ」という語源から。", usage: "「unanimous decision（全会一致の決定）」「unanimous vote（満場一致の投票）」「unanimous agreement（全員の合意）」「reach a unanimous verdict（全員一致の評決に達する）」のように使う。", synonymDifference: "unanimous vs consensus vs united: unanimous は「全員が賛成・反対の全会一致」（complete agreement）。consensus は「おおむねの合意・過半数の意見の一致」（general agreement）。united は「共通の目的に向けて団結した」（working together）。", englishDefinition: "With full agreement from everyone involved.", etymology: "ラテン語 unanimus（同じ心を持つ）から。unus（一つ）＋ animus（心・animate と同語源）。" }],
   // abide (30381)
   [30381, { coreImage: "「規則・決定に従う・守る」と「〜を耐え忍ぶ」の二つのコアイメージ。「そこに留まる・従い続ける」という語源から。", usage: "「abide by the rules（規則に従う）」「abide by the decision（決定に従う）」「can't abide（〜に耐えられない）」「abide by the law（法律を守る）」のように使う。", synonymDifference: "abide vs comply vs obey: abide by は「規則・決定に従い続ける」（ongoing compliance）。comply は「要求・規則に従って行動する」（meet requirements）。obey は「命令・権威に従う」（follow orders）。", englishDefinition: "To accept and act in accordance with a rule; to tolerate.", etymology: "古英語 abidan（待つ・留まる）から。a-（そこに）＋ bidan（待つ）。「留まり続ける→従い続ける」のが原義。" }],
-  // abolish (18302)
-  [18302, { coreImage: "「法律・制度・慣行を完全に廃止する・撤廃する」のがコアイメージ。「消し去る・取り除く」という語源から。", usage: "「abolish the policy（方針を廃止する）」「abolish slavery（奴隷制を廃止する）」「abolish the fee（手数料を廃止する）」「abolish old regulations（古い規制を撤廃する）」のように使う。", synonymDifference: "abolish vs eliminate vs repeal: abolish は「制度・慣行を公式に完全廃止する」（usually institutional）。eliminate は「存在を取り除く・排除する」（eliminate waste）。repeal は「法律・法令を正式に廃止する」（legal term: repeal a law）。", englishDefinition: "To formally end a practice, law, or institution.", etymology: "ラテン語 abolere（消す・破壊する）から。ab-（離れて）＋ olere（育つ）の逆。" }],
-  // accreditation (18303)
-  [18303, { coreImage: "「公的機関が基準を満たすことを正式に認定・認可する」のがコアイメージ。大学・病院・企業が取得する公式認定。", usage: "「receive accreditation（認定を受ける）」「ISO accreditation（ISO認定）」「accreditation body（認定機関）」「lose accreditation（認定を失う）」のように使う。", synonymDifference: "accreditation vs certification vs approval: accreditation は「機関・プログラムが基準を満たすことの公式認定」（institutional level）。certification は「個人・製品が基準を満たすことの証明」（individual/product level）。approval は「承認・許可」（general approval）。", englishDefinition: "Official recognition that an organization meets required standards.", etymology: "accredit（資格を認める）＋ -ation。ラテン語 credere（信じる）から。" }],
-  // adhere (30384)
-  [30384, { coreImage: "「規則・信念・計画に固く従い続ける」と「表面にくっつく・付着する」の二つのコアイメージ。「くっつく」という語源から「離れない→従い続ける」の比喩。", usage: "「adhere to guidelines（ガイドラインを守る）」「adhere to a schedule（スケジュールを守る）」「adhere to the policy（方針に従う）」「adhesive（接着剤）」のように使う。", synonymDifference: "adhere vs comply vs stick: adhere to は「原則・方針・約束に忠実に従い続ける」（principled adherence）。comply は「要求・規則に従って行動する」（meeting requirements）。stick to は「計画・決定から離れない」（口語的）。", englishDefinition: "To stick to a surface; to follow or support a rule or belief.", etymology: "ラテン語 adhaerere（くっつく）から。ad-（向かって）＋ haerere（固着する・hesitate と関連）。" }],
-  // adversely (30385)
-  [30385, { coreImage: "「不利に・有害な方向に・悪影響を与える形で」のがコアイメージ。adverse（不利な）の副詞形。", usage: "「adversely affect（悪影響を与える）」「adversely impacted（悪影響を受けた）」「adversely influence（悪い影響を及ぼす）」のように使う。", synonymDifference: "adversely vs negatively vs unfavorably: adversely は「有害・不利な影響を及ぼす形で」（formal, stronger）。negatively は「否定的に・消極的に」（broader）。unfavorably は「好ましくない形で」（unfavorably reviewed）。", englishDefinition: "In a way that is harmful or unfavorable.", etymology: "adverse（不利な）＋ -ly（副詞化）。ラテン語 adversus（向かい合った）から。" }],
-  // affiliate (18304)
-  [18304, { coreImage: "「会社・組織が別の会社と提携・関連している」のがコアイメージ。「子として採用する」という語源から「仲間に入れる・提携する」の意に。", usage: "「affiliated company（関連会社）」「affiliated with（〜と提携した）」「network of affiliates（提携ネットワーク）」「affiliate marketing（アフィリエイトマーケティング）」のように使う。", synonymDifference: "affiliate vs subsidiary vs partner: affiliate は「緩やかな提携関係にある関連組織」（loose association）。subsidiary は「親会社が過半数を持つ子会社」（tight control）。partner は「対等な協力関係のパートナー」（equal partnership）。", englishDefinition: "An organization formally connected to another; to connect officially.", etymology: "ラテン語 affiliare（息子として採用する）から。ad-（向かって）＋ filius（息子）。" }],
-  // alleviate (18305)
-  [18305, { coreImage: "「苦しみ・問題・負担を軽くする・和らげる」のがコアイメージ。「軽くする・持ち上げる」という語源から。eliminate（排除する）より穏やかに「楽にする」。", usage: "「alleviate pain（痛みを和らげる）」「alleviate the workload（業務負担を軽減する）」「alleviate concerns（懸念を和らげる）」「measures to alleviate（〜を緩和する措置）」のように使う。", synonymDifference: "alleviate vs mitigate vs relieve: alleviate は「苦しみ・問題をある程度軽くする」（make less severe）。mitigate は「リスク・影響を軽減する」（reduce negative impact）。relieve は「苦しみ・緊張を取り除く」（remove the burden）。", englishDefinition: "To make suffering or problems less severe.", etymology: "ラテン語 alleviare（軽くする）から。al-（向かって）＋ levis（軽い・levitate と同語源）。" }],
-  // amend (18306)
-  [18306, { coreImage: "「法律・文書・規則の欠点を修正・改善する」のがコアイメージ。「欠点を取り除く」という語源から。amendment（修正条項）も同語源。", usage: "「amend the contract（契約を修正する）」「amend the law（法律を改正する）」「amend a proposal（提案を修正する）」「constitutional amendment（憲法修正）」のように使う。", synonymDifference: "amend vs revise vs modify: amend は「法律・文書の欠点を修正する」（often formal/legal）。revise は「内容を見直して改訂する」（revise a manuscript）。modify は「設計・仕様を変更する」（modify the design）。", englishDefinition: "To make changes to correct or improve something.", etymology: "ラテン語 emendare（欠点を取り除く）から。e-（外に）＋ mendum（欠点・blame と関連）。" }],
-  // appraisal (30389)
-  [30389, { coreImage: "「価値・業績・品質を評価・査定する」のがコアイメージ。「価格をつける」という語源から「評価全般」に発展。", usage: "「performance appraisal（業績評価）」「annual appraisal（年次評価）」「property appraisal（不動産査定）」「appraisal process（評価プロセス）」のように使う。", synonymDifference: "appraisal vs evaluation vs assessment: appraisal は「個人の業績・不動産の価値を公式に評価」（formal valuation）。evaluation は「有効性・品質を評価・判断する」（assess effectiveness）。assessment は「状況・リスクを調べて評価する」（broader assessment）。", englishDefinition: "A formal assessment of value, quality, or performance.", etymology: "appraise（価値を査定する）＋ -al。古フランス語 aprisier（価格をつける）から。" }],
-  // arbitration (18307)
-  [18307, { coreImage: "「中立的な第三者が両者の紛争を解決する仲裁・調停プロセス」のがコアイメージ。裁判の代わりに使われることが多い。", usage: "「submit to arbitration（仲裁に委ねる）」「arbitration clause（仲裁条項）」「binding arbitration（拘束力のある仲裁）」「dispute resolution through arbitration（仲裁による紛争解決）」のように使う。", synonymDifference: "arbitration vs mediation vs litigation: arbitration は「第三者が判断を下す法的拘束力のある仲裁」（binding decision）。mediation は「調停者が両者の合意を促す調停」（facilitated negotiation）。litigation は「裁判所での訴訟」（court proceedings）。", englishDefinition: "The use of an independent person to settle a dispute outside court.", etymology: "ラテン語 arbitratio（裁定）から。arbiter（審判者）＋ -ation。" }],
+  // abolish (27282)
+  [27282, { coreImage: "「法律・制度・慣行を完全に廃止する・撤廃する」のがコアイメージ。「消し去る・取り除く」という語源から。", usage: "「abolish the policy（方針を廃止する）」「abolish slavery（奴隷制を廃止する）」「abolish the fee（手数料を廃止する）」「abolish old regulations（古い規制を撤廃する）」のように使う。", synonymDifference: "abolish vs eliminate vs repeal: abolish は「制度・慣行を公式に完全廃止する」（usually institutional）。eliminate は「存在を取り除く・排除する」（eliminate waste）。repeal は「法律・法令を正式に廃止する」（legal term: repeal a law）。", englishDefinition: "To formally end a practice, law, or institution.", etymology: "ラテン語 abolere（消す・破壊する）から。ab-（離れて）＋ olere（育つ）の逆。" }],
+  // accreditation (30070)
+  [30070, { coreImage: "「公的機関が基準を満たすことを正式に認定・認可する」のがコアイメージ。大学・病院・企業が取得する公式認定。", usage: "「receive accreditation（認定を受ける）」「ISO accreditation（ISO認定）」「accreditation body（認定機関）」「lose accreditation（認定を失う）」のように使う。", synonymDifference: "accreditation vs certification vs approval: accreditation は「機関・プログラムが基準を満たすことの公式認定」（institutional level）。certification は「個人・製品が基準を満たすことの証明」（individual/product level）。approval は「承認・許可」（general approval）。", englishDefinition: "Official recognition that an organization meets required standards.", etymology: "accredit（資格を認める）＋ -ation。ラテン語 credere（信じる）から。" }],
+  // adhere (30685)
+  [30685, { coreImage: "「規則・信念・計画に固く従い続ける」と「表面にくっつく・付着する」の二つのコアイメージ。「くっつく」という語源から「離れない→従い続ける」の比喩。", usage: "「adhere to guidelines（ガイドラインを守る）」「adhere to a schedule（スケジュールを守る）」「adhere to the policy（方針に従う）」「adhesive（接着剤）」のように使う。", synonymDifference: "adhere vs comply vs stick: adhere to は「原則・方針・約束に忠実に従い続ける」（principled adherence）。comply は「要求・規則に従って行動する」（meeting requirements）。stick to は「計画・決定から離れない」（口語的）。", englishDefinition: "To stick to a surface; to follow or support a rule or belief.", etymology: "ラテン語 adhaerere（くっつく）から。ad-（向かって）＋ haerere（固着する・hesitate と関連）。" }],
+  // adversely (27279)
+  [27279, { coreImage: "「不利に・有害な方向に・悪影響を与える形で」のがコアイメージ。adverse（不利な）の副詞形。", usage: "「adversely affect（悪影響を与える）」「adversely impacted（悪影響を受けた）」「adversely influence（悪い影響を及ぼす）」のように使う。", synonymDifference: "adversely vs negatively vs unfavorably: adversely は「有害・不利な影響を及ぼす形で」（formal, stronger）。negatively は「否定的に・消極的に」（broader）。unfavorably は「好ましくない形で」（unfavorably reviewed）。", englishDefinition: "In a way that is harmful or unfavorable.", etymology: "adverse（不利な）＋ -ly（副詞化）。ラテン語 adversus（向かい合った）から。" }],
+  // affiliate (31130)
+  [31130, { coreImage: "「会社・組織が別の会社と提携・関連している」のがコアイメージ。「子として採用する」という語源から「仲間に入れる・提携する」の意に。", usage: "「affiliated company（関連会社）」「affiliated with（〜と提携した）」「network of affiliates（提携ネットワーク）」「affiliate marketing（アフィリエイトマーケティング）」のように使う。", synonymDifference: "affiliate vs subsidiary vs partner: affiliate は「緩やかな提携関係にある関連組織」（loose association）。subsidiary は「親会社が過半数を持つ子会社」（tight control）。partner は「対等な協力関係のパートナー」（equal partnership）。", englishDefinition: "An organization formally connected to another; to connect officially.", etymology: "ラテン語 affiliare（息子として採用する）から。ad-（向かって）＋ filius（息子）。" }],
+  // alleviate (31964)
+  [31964, { coreImage: "「苦しみ・問題・負担を軽くする・和らげる」のがコアイメージ。「軽くする・持ち上げる」という語源から。eliminate（排除する）より穏やかに「楽にする」。", usage: "「alleviate pain（痛みを和らげる）」「alleviate the workload（業務負担を軽減する）」「alleviate concerns（懸念を和らげる）」「measures to alleviate（〜を緩和する措置）」のように使う。", synonymDifference: "alleviate vs mitigate vs relieve: alleviate は「苦しみ・問題をある程度軽くする」（make less severe）。mitigate は「リスク・影響を軽減する」（reduce negative impact）。relieve は「苦しみ・緊張を取り除く」（remove the burden）。", englishDefinition: "To make suffering or problems less severe.", etymology: "ラテン語 alleviare（軽くする）から。al-（向かって）＋ levis（軽い・levitate と同語源）。" }],
+  // amend (29087)
+  [29087, { coreImage: "「法律・文書・規則の欠点を修正・改善する」のがコアイメージ。「欠点を取り除く」という語源から。amendment（修正条項）も同語源。", usage: "「amend the contract（契約を修正する）」「amend the law（法律を改正する）」「amend a proposal（提案を修正する）」「constitutional amendment（憲法修正）」のように使う。", synonymDifference: "amend vs revise vs modify: amend は「法律・文書の欠点を修正する」（often formal/legal）。revise は「内容を見直して改訂する」（revise a manuscript）。modify は「設計・仕様を変更する」（modify the design）。", englishDefinition: "To make changes to correct or improve something.", etymology: "ラテン語 emendare（欠点を取り除く）から。e-（外に）＋ mendum（欠点・blame と関連）。" }],
+  // appraisal (20788)
+  [20788, { coreImage: "「価値・業績・品質を評価・査定する」のがコアイメージ。「価格をつける」という語源から「評価全般」に発展。", usage: "「performance appraisal（業績評価）」「annual appraisal（年次評価）」「property appraisal（不動産査定）」「appraisal process（評価プロセス）」のように使う。", synonymDifference: "appraisal vs evaluation vs assessment: appraisal は「個人の業績・不動産の価値を公式に評価」（formal valuation）。evaluation は「有効性・品質を評価・判断する」（assess effectiveness）。assessment は「状況・リスクを調べて評価する」（broader assessment）。", englishDefinition: "A formal assessment of value, quality, or performance.", etymology: "appraise（価値を査定する）＋ -al。古フランス語 aprisier（価格をつける）から。" }],
+  // arbitration (31856)
+  [31856, { coreImage: "「中立的な第三者が両者の紛争を解決する仲裁・調停プロセス」のがコアイメージ。裁判の代わりに使われることが多い。", usage: "「submit to arbitration（仲裁に委ねる）」「arbitration clause（仲裁条項）」「binding arbitration（拘束力のある仲裁）」「dispute resolution through arbitration（仲裁による紛争解決）」のように使う。", synonymDifference: "arbitration vs mediation vs litigation: arbitration は「第三者が判断を下す法的拘束力のある仲裁」（binding decision）。mediation は「調停者が両者の合意を促す調停」（facilitated negotiation）。litigation は「裁判所での訴訟」（court proceedings）。", englishDefinition: "The use of an independent person to settle a dispute outside court.", etymology: "ラテン語 arbitratio（裁定）から。arbiter（審判者）＋ -ation。" }],
 
-  // breach (18309)
-  [18309, { coreImage: "「契約・規則・信頼関係を破る・違反する」のがコアイメージ。「壁を突き破る」という物理的語源から「信頼・約束を破る」比喩へ。", usage: "「breach of contract（契約違反）」「security breach（セキュリティ侵害）」「breach of trust（信頼の裏切り）」「a breach of protocol（プロトコル違反）」のように使う。", synonymDifference: "breach vs violation vs infringement: breach は「契約・信頼の重大な違反」（serious breaking of agreement）。violation は「規則・権利の侵害」（violate a rule）。infringement は「著作権・特許の侵害」（IP focused）。", englishDefinition: "A failure to follow a law or agreement; a gap made by breaking through.", etymology: "古英語 bryce（壊れた状態）から。break と同語源。「壁の突破口・破れ目」のが原義。" }],
-  // bureaucracy (18310)
-  [18310, { coreImage: "「官僚制度・複雑な行政手続き」のがコアイメージ。bureaucratic（30297）の名詞形。ネガティブなニュアンスで使われることが多い。", usage: "「excessive bureaucracy（過度な官僚主義）」「cut through bureaucracy（お役所的な手続きを簡略化する）」「government bureaucracy（政府の官僚機構）」「trapped in bureaucracy（手続きに縛られる）」のように使う。", synonymDifference: "bureaucracy vs red tape vs administration: bureaucracy は「官僚制度そのもの」（the system）。red tape は「煩わしい官僚的手続き」（the hassle）。administration は「管理・運営」（neutral）。", englishDefinition: "A system of government or management with complex rules and procedures.", etymology: "フランス語 bureau（事務机）＋ ギリシャ語 kratos（支配）。「机が支配する→官僚制」。" }],
-  // collateral (30395)
-  [30395, { coreImage: "「融資を受けるために提供する担保・抵当」のがコアイメージ。また「付随的な・間接的な」という形容詞としても使われる。", usage: "「require collateral（担保を要求する）」「collateral damage（副次的被害）」「post collateral（担保を差し入れる）」「collateral asset（担保資産）」のように使う。", synonymDifference: "collateral vs security vs guarantee: collateral は「借入の担保として差し入れる資産」（specific asset pledged）。security は「担保・保証」の広義（security deposit）。guarantee は「第三者が支払いを保証する」（personal guarantee）。", englishDefinition: "Property pledged as security for a loan; incidental or secondary.", etymology: "ラテン語 collateralis（並列の）から。col-（共に）＋ latus（側・lateral と同語源）。" }],
-  // commence (18311)
-  [18311, { coreImage: "「公式なプロセス・作業を正式に開始する」のがコアイメージ。begin/start より格式ばった表現。", usage: "「commence construction（工事を開始する）」「commence operations（業務を開始する）」「upon commencement（開始とともに）」「commence proceedings（手続きを開始する）」のように使う。", synonymDifference: "commence vs begin vs start: commence は「公式・正式に開始する」（formal: legal/business）。begin は「始める」の標準的表現（more neutral）。start は「動き出す」（practical/informal）。", englishDefinition: "To begin or start, especially in a formal way.", etymology: "ラテン語 cominitiare（共に始める）から。com-（共に）＋ initiare（始める・initiate と同語源）。" }],
-  // commodity (18312)
-  [18312, { coreImage: "「市場で取引される原材料・農産物などの基礎商品」のがコアイメージ。価格が市場で決まる「同質化された商品」。", usage: "「commodity market（商品市場）」「commodity prices（一次産品の価格）」「agricultural commodity（農産物）」「commodity trading（商品取引）」のように使う。", synonymDifference: "commodity vs product vs goods: commodity は「市場で取引される標準化された一次産品」（oil, wheat, metals）。product は「製造・加工された製品」（differentiated）。goods は「商品・物品」の総称（broader）。", englishDefinition: "A basic good or raw material traded in large quantities.", etymology: "ラテン語 commoditas（利便・好都合）から。commodus（便利な・commode と関連）。" }],
-  // comparable (18313)
-  [18313, { coreImage: "「比較できるほど似ている・同等の」のがコアイメージ。「〜と比べることができる」という語源から。", usage: "「comparable price（同等の価格）」「comparable performance（同等の性能）」「comparable to industry standards（業界標準に匹敵する）」「comparable experience（同等の経験）」のように使う。", synonymDifference: "comparable vs equivalent vs similar: comparable は「比較できるほど似た・同水準の」（worth comparing）。equivalent は「等価・同等の」（equal value/function）。similar は「似た・類似の」（general similarity）。", englishDefinition: "Similar enough to be compared; of the same standard.", etymology: "compare（比較する）＋ -able（できる）。ラテン語 comparare（同等にする）から。" }],
-  // compliance (18314)
-  [18314, { coreImage: "「法律・規則・要求に従って行動すること・遵守」のがコアイメージ。comply（遵守する）の名詞形。企業活動で最重要語の一つ。", usage: "「regulatory compliance（法令遵守）」「compliance officer（コンプライアンス担当者）」「in compliance with（〜を遵守して）」「non-compliance（違反・不遵守）」のように使う。", synonymDifference: "compliance vs conformity vs adherence: compliance は「法律・規則への遵守」（law/regulation focus）。conformity は「社会規範・基準への適合」（social norms）。adherence は「方針・原則・約束への固い遵守」（principles/guidelines）。", englishDefinition: "The act of following a rule, standard, or law.", etymology: "comply（従う）＋ -ance。ラテン語 complere（満たす）から。" }],
-  // concession (30400)
-  [30400, { coreImage: "「交渉・紛争で自分の立場から譲歩する」のがコアイメージ。また「土地・権利の利権」や「施設内の売店」という意味でも使われる。", usage: "「make concessions（譲歩する）」「mutual concessions（相互の譲歩）」「trade concession（貿易上の利権）」「concession stand（売店・キオスク）」のように使う。", synonymDifference: "concession vs compromise vs trade-off: concession は「一方が自分の立場を譲る」（one party gives up）。compromise は「両者が歩み寄って妥協点を見つける」（both sides give）。trade-off は「何かを得るために何かを犠牲にする」（exchange）。", englishDefinition: "A grant of rights or privilege; a point given up in negotiation.", etymology: "ラテン語 concessio（許可・譲歩）から。con-（共に）＋ cedere（譲る・accede と同語源）。" }],
-  // contingency (18315)
-  [18315, { coreImage: "「予測不能・偶発的に起きる可能性がある事態」のがコアイメージ。contingent（30310）の名詞形。リスク管理で頻出。", usage: "「contingency plan（緊急時対応計画）」「contingency fund（不測事態のための積立金）」「plan for contingencies（不測事態に備える）」「unforeseen contingency（予期しない緊急事態）」のように使う。", synonymDifference: "contingency vs emergency vs risk: contingency は「起きるかもしれない不測の事態」（possible future event）。emergency は「実際に起きた緊急事態」（actual crisis）。risk は「損失・危険の可能性」（probability of harm）。", englishDefinition: "A possible future event that might require action; a plan for such an event.", etymology: "ラテン語 contingere（触れる・起きる）から。con-（共に）＋ tangere（触れる）。" }],
-  // convene (18316)
-  [18316, { coreImage: "「会議・委員会を招集する・開催する」のがコアイメージ。「共に集まる」という語源から。convention（大会）と同語源。", usage: "「convene a meeting（会議を招集する）」「convene a committee（委員会を召集する）」「convene urgently（緊急に召集する）」「the board convened（取締役会が招集された）」のように使う。", synonymDifference: "convene vs convoke vs assemble: convene は「公式な目的のために会議・委員会を招集する」（formal/official）。convoke は「より正式・命令的な召集」（less common）。assemble は「人・部品を集める・組み立てる」（broader）。", englishDefinition: "To bring together for a meeting; to arrange a formal gathering.", etymology: "ラテン語 convenire（共に来る）から。con-（共に）＋ venire（来る・venue と同語源）。" }],
-  // deem (30404)
-  [30404, { coreImage: "「公式・法的に〜とみなす・考える・判断する」のがコアイメージ。judgment を伴う「判定」の感覚。", usage: "「deemed necessary（必要とみなされた）」「deem it appropriate（適切と判断する）」「deemed a success（成功とみなされた）」「as deemed fit（適切と判断した場合に）」のように使う。", synonymDifference: "deem vs consider vs regard: deem は「公式・法的・権威的な判断として〜とみなす」（formal judgment）。consider は「〜だと思う・考える」（general consideration）。regard は「〜とみなす・扱う」（view as）。", englishDefinition: "To consider or judge in a particular way; to officially regard.", etymology: "古英語 deman（判断する）から。doom（運命・判決）と同語源。" }],
-  // depreciation (18318)
-  [18318, { coreImage: "「資産・設備の価値が時間とともに減少する・減価償却」のがコアイメージ。財務・会計の重要用語。", usage: "「depreciation of assets（資産の減価償却）」「annual depreciation（年間償却費）」「accumulated depreciation（減価償却累計額）」「currency depreciation（通貨の価値低下）」のように使う。", synonymDifference: "depreciation vs amortization vs devaluation: depreciation は「有形資産（設備・建物）の価値低下・減価償却」。amortization は「無形資産（特許・のれん）の償却」（intangible assets）。devaluation は「通貨の公式な切り下げ」（currency policy）。", englishDefinition: "A reduction in the value of an asset over time.", etymology: "depreciate（価値が下がる）＋ -ion。de-（下に）＋ pretium（価格・price と同語源）。" }],
-  // deteriorate (30406)
-  [30406, { coreImage: "「品質・状況・関係が徐々に悪化する・劣化する」のがコアイメージ。「より悪くなる」という語源から。", usage: "「conditions deteriorate（状況が悪化する）」「health deteriorated（健康が悪化した）」「deteriorating relationship（悪化する関係）」「allow to deteriorate（悪化させる）」のように使う。", synonymDifference: "deteriorate vs worsen vs degrade: deteriorate は「質・状態が徐々に悪化する」（gradual decline）。worsen は「悪くなる」の一般表現（worsen the situation）。degrade は「品質・地位が下がる・侮辱する」（also: environmental degradation）。", englishDefinition: "To become progressively worse in quality or condition.", etymology: "ラテン語 deteriorare（より悪くする）から。deterior（より悪い）が語源。" }],
+  // breach (33299)
+  [33299, { coreImage: "「契約・規則・信頼関係を破る・違反する」のがコアイメージ。「壁を突き破る」という物理的語源から「信頼・約束を破る」比喩へ。", usage: "「breach of contract（契約違反）」「security breach（セキュリティ侵害）」「breach of trust（信頼の裏切り）」「a breach of protocol（プロトコル違反）」のように使う。", synonymDifference: "breach vs violation vs infringement: breach は「契約・信頼の重大な違反」（serious breaking of agreement）。violation は「規則・権利の侵害」（violate a rule）。infringement は「著作権・特許の侵害」（IP focused）。", englishDefinition: "A failure to follow a law or agreement; a gap made by breaking through.", etymology: "古英語 bryce（壊れた状態）から。break と同語源。「壁の突破口・破れ目」のが原義。" }],
+  // bureaucracy (29271)
+  [29271, { coreImage: "「官僚制度・複雑な行政手続き」のがコアイメージ。bureaucratic（30297）の名詞形。ネガティブなニュアンスで使われることが多い。", usage: "「excessive bureaucracy（過度な官僚主義）」「cut through bureaucracy（お役所的な手続きを簡略化する）」「government bureaucracy（政府の官僚機構）」「trapped in bureaucracy（手続きに縛られる）」のように使う。", synonymDifference: "bureaucracy vs red tape vs administration: bureaucracy は「官僚制度そのもの」（the system）。red tape は「煩わしい官僚的手続き」（the hassle）。administration は「管理・運営」（neutral）。", englishDefinition: "A system of government or management with complex rules and procedures.", etymology: "フランス語 bureau（事務机）＋ ギリシャ語 kratos（支配）。「机が支配する→官僚制」。" }],
+  // collateral (32231)
+  [32231, { coreImage: "「融資を受けるために提供する担保・抵当」のがコアイメージ。また「付随的な・間接的な」という形容詞としても使われる。", usage: "「require collateral（担保を要求する）」「collateral damage（副次的被害）」「post collateral（担保を差し入れる）」「collateral asset（担保資産）」のように使う。", synonymDifference: "collateral vs security vs guarantee: collateral は「借入の担保として差し入れる資産」（specific asset pledged）。security は「担保・保証」の広義（security deposit）。guarantee は「第三者が支払いを保証する」（personal guarantee）。", englishDefinition: "Property pledged as security for a loan; incidental or secondary.", etymology: "ラテン語 collateralis（並列の）から。col-（共に）＋ latus（側・lateral と同語源）。" }],
+  // commence (29058)
+  [29058, { coreImage: "「公式なプロセス・作業を正式に開始する」のがコアイメージ。begin/start より格式ばった表現。", usage: "「commence construction（工事を開始する）」「commence operations（業務を開始する）」「upon commencement（開始とともに）」「commence proceedings（手続きを開始する）」のように使う。", synonymDifference: "commence vs begin vs start: commence は「公式・正式に開始する」（formal: legal/business）。begin は「始める」の標準的表現（more neutral）。start は「動き出す」（practical/informal）。", englishDefinition: "To begin or start, especially in a formal way.", etymology: "ラテン語 cominitiare（共に始める）から。com-（共に）＋ initiare（始める・initiate と同語源）。" }],
+  // commodity (31839)
+  [31839, { coreImage: "「市場で取引される原材料・農産物などの基礎商品」のがコアイメージ。価格が市場で決まる「同質化された商品」。", usage: "「commodity market（商品市場）」「commodity prices（一次産品の価格）」「agricultural commodity（農産物）」「commodity trading（商品取引）」のように使う。", synonymDifference: "commodity vs product vs goods: commodity は「市場で取引される標準化された一次産品」（oil, wheat, metals）。product は「製造・加工された製品」（differentiated）。goods は「商品・物品」の総称（broader）。", englishDefinition: "A basic good or raw material traded in large quantities.", etymology: "ラテン語 commoditas（利便・好都合）から。commodus（便利な・commode と関連）。" }],
+  // comparable (31455)
+  [31455, { coreImage: "「比較できるほど似ている・同等の」のがコアイメージ。「〜と比べることができる」という語源から。", usage: "「comparable price（同等の価格）」「comparable performance（同等の性能）」「comparable to industry standards（業界標準に匹敵する）」「comparable experience（同等の経験）」のように使う。", synonymDifference: "comparable vs equivalent vs similar: comparable は「比較できるほど似た・同水準の」（worth comparing）。equivalent は「等価・同等の」（equal value/function）。similar は「似た・類似の」（general similarity）。", englishDefinition: "Similar enough to be compared; of the same standard.", etymology: "compare（比較する）＋ -able（できる）。ラテン語 comparare（同等にする）から。" }],
+  // compliance (32135)
+  [32135, { coreImage: "「法律・規則・要求に従って行動すること・遵守」のがコアイメージ。comply（遵守する）の名詞形。企業活動で最重要語の一つ。", usage: "「regulatory compliance（法令遵守）」「compliance officer（コンプライアンス担当者）」「in compliance with（〜を遵守して）」「non-compliance（違反・不遵守）」のように使う。", synonymDifference: "compliance vs conformity vs adherence: compliance は「法律・規則への遵守」（law/regulation focus）。conformity は「社会規範・基準への適合」（social norms）。adherence は「方針・原則・約束への固い遵守」（principles/guidelines）。", englishDefinition: "The act of following a rule, standard, or law.", etymology: "comply（従う）＋ -ance。ラテン語 complere（満たす）から。" }],
+  // concession (27416)
+  [27416, { coreImage: "「交渉・紛争で自分の立場から譲歩する」のがコアイメージ。また「土地・権利の利権」や「施設内の売店」という意味でも使われる。", usage: "「make concessions（譲歩する）」「mutual concessions（相互の譲歩）」「trade concession（貿易上の利権）」「concession stand（売店・キオスク）」のように使う。", synonymDifference: "concession vs compromise vs trade-off: concession は「一方が自分の立場を譲る」（one party gives up）。compromise は「両者が歩み寄って妥協点を見つける」（both sides give）。trade-off は「何かを得るために何かを犠牲にする」（exchange）。", englishDefinition: "A grant of rights or privilege; a point given up in negotiation.", etymology: "ラテン語 concessio（許可・譲歩）から。con-（共に）＋ cedere（譲る・accede と同語源）。" }],
+  // contingency (31622)
+  [31622, { coreImage: "「予測不能・偶発的に起きる可能性がある事態」のがコアイメージ。contingent（30310）の名詞形。リスク管理で頻出。", usage: "「contingency plan（緊急時対応計画）」「contingency fund（不測事態のための積立金）」「plan for contingencies（不測事態に備える）」「unforeseen contingency（予期しない緊急事態）」のように使う。", synonymDifference: "contingency vs emergency vs risk: contingency は「起きるかもしれない不測の事態」（possible future event）。emergency は「実際に起きた緊急事態」（actual crisis）。risk は「損失・危険の可能性」（probability of harm）。", englishDefinition: "A possible future event that might require action; a plan for such an event.", etymology: "ラテン語 contingere（触れる・起きる）から。con-（共に）＋ tangere（触れる）。" }],
+  // convene (29060)
+  [29060, { coreImage: "「会議・委員会を招集する・開催する」のがコアイメージ。「共に集まる」という語源から。convention（大会）と同語源。", usage: "「convene a meeting（会議を招集する）」「convene a committee（委員会を召集する）」「convene urgently（緊急に召集する）」「the board convened（取締役会が招集された）」のように使う。", synonymDifference: "convene vs convoke vs assemble: convene は「公式な目的のために会議・委員会を招集する」（formal/official）。convoke は「より正式・命令的な召集」（less common）。assemble は「人・部品を集める・組み立てる」（broader）。", englishDefinition: "To bring together for a meeting; to arrange a formal gathering.", etymology: "ラテン語 convenire（共に来る）から。con-（共に）＋ venire（来る・venue と同語源）。" }],
+  // deem (25980)
+  [25980, { coreImage: "「公式・法的に〜とみなす・考える・判断する」のがコアイメージ。judgment を伴う「判定」の感覚。", usage: "「deemed necessary（必要とみなされた）」「deem it appropriate（適切と判断する）」「deemed a success（成功とみなされた）」「as deemed fit（適切と判断した場合に）」のように使う。", synonymDifference: "deem vs consider vs regard: deem は「公式・法的・権威的な判断として〜とみなす」（formal judgment）。consider は「〜だと思う・考える」（general consideration）。regard は「〜とみなす・扱う」（view as）。", englishDefinition: "To consider or judge in a particular way; to officially regard.", etymology: "古英語 deman（判断する）から。doom（運命・判決）と同語源。" }],
+  // depreciation (31845)
+  [31845, { coreImage: "「資産・設備の価値が時間とともに減少する・減価償却」のがコアイメージ。財務・会計の重要用語。", usage: "「depreciation of assets（資産の減価償却）」「annual depreciation（年間償却費）」「accumulated depreciation（減価償却累計額）」「currency depreciation（通貨の価値低下）」のように使う。", synonymDifference: "depreciation vs amortization vs devaluation: depreciation は「有形資産（設備・建物）の価値低下・減価償却」。amortization は「無形資産（特許・のれん）の償却」（intangible assets）。devaluation は「通貨の公式な切り下げ」（currency policy）。", englishDefinition: "A reduction in the value of an asset over time.", etymology: "depreciate（価値が下がる）＋ -ion。de-（下に）＋ pretium（価格・price と同語源）。" }],
+  // deteriorate (29092)
+  [29092, { coreImage: "「品質・状況・関係が徐々に悪化する・劣化する」のがコアイメージ。「より悪くなる」という語源から。", usage: "「conditions deteriorate（状況が悪化する）」「health deteriorated（健康が悪化した）」「deteriorating relationship（悪化する関係）」「allow to deteriorate（悪化させる）」のように使う。", synonymDifference: "deteriorate vs worsen vs degrade: deteriorate は「質・状態が徐々に悪化する」（gradual decline）。worsen は「悪くなる」の一般表現（worsen the situation）。degrade は「品質・地位が下がる・侮辱する」（also: environmental degradation）。", englishDefinition: "To become progressively worse in quality or condition.", etymology: "ラテン語 deteriorare（より悪くする）から。deterior（より悪い）が語源。" }],
   // disburse (30408)
   [30408, { coreImage: "「公式な手続きで資金・給付を支払う・支出する」のがコアイメージ。「財布から出す」という語源から。disbursement（支払い額）も頻出。", usage: "「disburse funds（資金を支払う）」「disburse grants（助成金を支出する）」「disburse salaries（給与を支払う）」「upon disbursement（支払い時に）」のように使う。", synonymDifference: "disburse vs pay vs distribute: disburse は「資金・給付を公式プロセスで支払う」（formal financial payment）。pay は「支払う」の一般表現。distribute は「複数に分配する」（distribute funds to multiple）。", englishDefinition: "To pay out money from a fund.", etymology: "de-（外に）＋ bursare（財布に入れる）。ラテン語 bursa（財布）から。" }],
-  // diversify (30409)
-  [30409, { coreImage: "「事業・投資・製品ラインを多様化・多角化する」のがコアイメージ。「一つに集中するリスクを分散する」戦略。", usage: "「diversify the business（事業を多角化する）」「diversify investments（投資を分散する）」「diversify the workforce（職場の多様性を高める）」「product diversification（製品の多様化）」のように使う。", synonymDifference: "diversify vs expand vs broaden: diversify は「異なる種類・方向に多様化してリスク分散する」（spread risk）。expand は「規模・範囲を拡大する」（grow bigger）。broaden は「視野・対象を広げる」（wider scope）。", englishDefinition: "To vary or spread into different types to reduce risk.", etymology: "diverse（多様な）＋ -ify（動詞化）。ラテン語 diversus（様々な）から。" }],
-  // downsize (18319)
-  [18319, { coreImage: "「人員・規模を削減する・縮小する」のがコアイメージ。特に企業のリストラ・人員削減で使われる。", usage: "「downsize the company（会社を縮小する）」「downsize by 10%（10%人員削減する）」「forced to downsize（縮小を余儀なくされた）」「downsizing initiative（人員削減施策）」のように使う。", synonymDifference: "downsize vs reduce vs lay off: downsize は「組織全体の規模を縮小する」（organizational restructuring）。reduce は「量・数を減らす」（reduce headcount）。lay off は「具体的に従業員を解雇する」（specific terminations）。", englishDefinition: "To reduce the number of employees; to make smaller in size.", etymology: "down-（下に）＋ size（規模）。「規模を縮小する」のが原義。" }],
-  // encompass (18320)
-  [18320, { coreImage: "「範囲・対象の全てを含む・包含する・網羅する」のがコアイメージ。「周りを囲んで中に含む」という語源から。", usage: "「encompass all departments（全部門を網羅する）」「encompass a wide range（幅広い範囲を包含する）」「the plan encompasses（計画は〜を含む）」「broadly encompassing（幅広くカバーする）」のように使う。", synonymDifference: "encompass vs include vs cover: encompass は「全体を完全に包含する」（comprehensive inclusion）。include は「リスト・グループに含める」（listed as part of）。cover は「対象範囲に含む・カバーする」（cover a topic）。", englishDefinition: "To include or contain completely; to surround.", etymology: "en-（中に）＋ compass（囲い・範囲）。「コンパスで囲む→包含する」のが原義。" }],
-  // endeavor (30412)
-  [30412, { coreImage: "「困難な目標に向けた真剣な努力・試み」のがコアイメージ。「義務から」という語源から「真剣な取り組み」の意に。", usage: "「endeavor to improve（改善しようと努める）」「in all our endeavors（全ての取り組みにおいて）」「human endeavor（人間の努力・試み）」「best endeavors（最大限の努力）」のように使う。", synonymDifference: "endeavor vs effort vs attempt: endeavor は「困難な目標への継続的・真剣な取り組み」（sustained serious effort）。effort は「費やされたエネルギー・労力」（amount of energy）。attempt は「成否に関わらず試みること」（trying once）。", englishDefinition: "A serious attempt or effort to do something.", etymology: "en-（中に）＋ devoir（義務・duty と同語源）。「義務の中に入る→真剣に取り組む」のが原義。" }],
-  // entail (30413)
-  [30413, { coreImage: "「〜を必然的に伴う・必要とする」のがコアイメージ。「何かをするには〜が必要」という論理的な含意。", usage: "「entail risk（リスクを伴う）」「the role entails（その役割には〜が伴う）」「what this entails（これが何を意味するか）」「entail significant cost（多大なコストを伴う）」のように使う。", synonymDifference: "entail vs involve vs require: entail は「自動的・必然的に伴う・含意する」（logically implies）。involve は「〜に関わる・含む」（includes as part）。require は「外部から〜が必要とされる」（external requirement）。", englishDefinition: "To make something necessary; to involve as a consequence.", etymology: "en-（中に）＋ tail（限定）。古フランス語 taille（切り口・限定）から。「遺産継承を限定する→必然的に伴う」のが原義。" }],
-  // equity (30414)
-  [30414, { coreImage: "「公正・公平」と「企業の株式・純資産」の二つのコアイメージ。「等しい・公平な」という語源から「公正さ」と「株主に帰属する資産」の両義を持つ。", usage: "「equity financing（株式による資金調達）」「shareholders' equity（株主資本）」「brand equity（ブランド価値）」「diversity and equity（多様性と公正）」のように使う。", synonymDifference: "equity vs fairness vs stock: equity は「公正さ」（fairness/justice）または「株式・純資産」（financial claim）。fairness は「公平さ」の一般表現。stock は「株式・在庫・原材料」（多義語）。", englishDefinition: "Fairness and justice; the value of shares in a company.", etymology: "ラテン語 aequitas（公平さ）から。aequus（等しい・equal と同語源）。" }],
-  // erroneous (30415)
-  [30415, { coreImage: "「間違い・誤りが含まれている・正確でない」のがコアイメージ。「さまよう→間違いを犯す」という語源から。error（誤り）と同語源。", usage: "「erroneous information（誤った情報）」「erroneous assumption（誤った仮定）」「erroneous data（不正確なデータ）」「erroneous conclusion（誤った結論）」のように使う。", synonymDifference: "erroneous vs wrong vs incorrect: erroneous は「誤りを含む・正確でない」（formal/written）。wrong は「間違いの」の一般表現（wrong answer）。incorrect は「正確・正確でない」（incorrect data）。", englishDefinition: "Containing errors; not correct or true.", etymology: "ラテン語 erroneus（さまよう）から。errare（さまよう・error と同語源）。" }],
-  // forthcoming (18323)
-  [18323, { coreImage: "「近い将来に起きる・公開される・近づいてくる」のがコアイメージ。また「率直な・協力的な」という意味でも使われる。", usage: "「forthcoming event（近く予定のイベント）」「forthcoming report（近刊の報告書）」「not forthcoming（情報を出そうとしない）」「be forthcoming about（〜について率直に話す）」のように使う。", synonymDifference: "forthcoming vs upcoming vs imminent: forthcoming は「近日公開・起こる予定の」または「率直な」（two meanings）。upcoming は「近く予定の・来たるべき」（upcoming meeting）。imminent は「今にも起きそうな・差し迫った」（imminent danger）。", englishDefinition: "About to happen or appear; willing to give information.", etymology: "forth-（前に）＋ coming（来る）。「前に向かって来る→近日公開」のが原義。" }],
-  // grievance (30419)
-  [30419, { coreImage: "「不公正な扱いへの正式な不満・苦情」のがコアイメージ。職場での苦情申し立て（grievance procedure）で頻出。", usage: "「file a grievance（苦情を申し立てる）」「grievance procedure（苦情申し立て手順）」「address grievances（不満に対処する）」「workplace grievance（職場の苦情）」のように使う。", synonymDifference: "grievance vs complaint vs dissatisfaction: grievance は「不公正な扱いへの正式な申し立て」（formal, often written）。complaint は「不満・苦情」一般（broader, informal ok）。dissatisfaction は「満足できない状態・不満感」（feeling）。", englishDefinition: "A formal complaint about something believed to be unfair.", etymology: "古フランス語 grevance（重荷・苦しみ）から。grever（重くする・grave と関連）。" }],
-  // inaugurate (30420)
-  [30420, { coreImage: "「新しい施設・制度・職位を正式に開始する・就任させる」のがコアイメージ。inaugural（30345）の動詞形。", usage: "「inaugurate a president（大統領を就任させる）」「inaugurate a new branch（新支店を開業する）」「inaugurate a policy（政策を施行する）」「inauguration ceremony（就任式・開業式）」のように使う。", synonymDifference: "inaugurate vs open vs launch: inaugurate は「公式な式典で正式に開始する」（formal, ceremonial）。open は「店・施設を開ける・開業する」（open a store）。launch は「製品・プログラムを市場・世界に打ち出す」（launch a product）。", englishDefinition: "To formally begin or open something; to induct into office.", etymology: "ラテン語 inaugurare（前兆を占う）から。augur（前兆を読む占い師）と同語源。" }],
+  // diversify (29129)
+  [29129, { coreImage: "「事業・投資・製品ラインを多様化・多角化する」のがコアイメージ。「一つに集中するリスクを分散する」戦略。", usage: "「diversify the business（事業を多角化する）」「diversify investments（投資を分散する）」「diversify the workforce（職場の多様性を高める）」「product diversification（製品の多様化）」のように使う。", synonymDifference: "diversify vs expand vs broaden: diversify は「異なる種類・方向に多様化してリスク分散する」（spread risk）。expand は「規模・範囲を拡大する」（grow bigger）。broaden は「視野・対象を広げる」（wider scope）。", englishDefinition: "To vary or spread into different types to reduce risk.", etymology: "diverse（多様な）＋ -ify（動詞化）。ラテン語 diversus（様々な）から。" }],
+  // downsize (27554)
+  [27554, { coreImage: "「人員・規模を削減する・縮小する」のがコアイメージ。特に企業のリストラ・人員削減で使われる。", usage: "「downsize the company（会社を縮小する）」「downsize by 10%（10%人員削減する）」「forced to downsize（縮小を余儀なくされた）」「downsizing initiative（人員削減施策）」のように使う。", synonymDifference: "downsize vs reduce vs lay off: downsize は「組織全体の規模を縮小する」（organizational restructuring）。reduce は「量・数を減らす」（reduce headcount）。lay off は「具体的に従業員を解雇する」（specific terminations）。", englishDefinition: "To reduce the number of employees; to make smaller in size.", etymology: "down-（下に）＋ size（規模）。「規模を縮小する」のが原義。" }],
+  // encompass (29062)
+  [29062, { coreImage: "「範囲・対象の全てを含む・包含する・網羅する」のがコアイメージ。「周りを囲んで中に含む」という語源から。", usage: "「encompass all departments（全部門を網羅する）」「encompass a wide range（幅広い範囲を包含する）」「the plan encompasses（計画は〜を含む）」「broadly encompassing（幅広くカバーする）」のように使う。", synonymDifference: "encompass vs include vs cover: encompass は「全体を完全に包含する」（comprehensive inclusion）。include は「リスト・グループに含める」（listed as part of）。cover は「対象範囲に含む・カバーする」（cover a topic）。", englishDefinition: "To include or contain completely; to surround.", etymology: "en-（中に）＋ compass（囲い・範囲）。「コンパスで囲む→包含する」のが原義。" }],
+  // endeavor (30959)
+  [30959, { coreImage: "「困難な目標に向けた真剣な努力・試み」のがコアイメージ。「義務から」という語源から「真剣な取り組み」の意に。", usage: "「endeavor to improve（改善しようと努める）」「in all our endeavors（全ての取り組みにおいて）」「human endeavor（人間の努力・試み）」「best endeavors（最大限の努力）」のように使う。", synonymDifference: "endeavor vs effort vs attempt: endeavor は「困難な目標への継続的・真剣な取り組み」（sustained serious effort）。effort は「費やされたエネルギー・労力」（amount of energy）。attempt は「成否に関わらず試みること」（trying once）。", englishDefinition: "A serious attempt or effort to do something.", etymology: "en-（中に）＋ devoir（義務・duty と同語源）。「義務の中に入る→真剣に取り組む」のが原義。" }],
+  // entail (27003)
+  [27003, { coreImage: "「〜を必然的に伴う・必要とする」のがコアイメージ。「何かをするには〜が必要」という論理的な含意。", usage: "「entail risk（リスクを伴う）」「the role entails（その役割には〜が伴う）」「what this entails（これが何を意味するか）」「entail significant cost（多大なコストを伴う）」のように使う。", synonymDifference: "entail vs involve vs require: entail は「自動的・必然的に伴う・含意する」（logically implies）。involve は「〜に関わる・含む」（includes as part）。require は「外部から〜が必要とされる」（external requirement）。", englishDefinition: "To make something necessary; to involve as a consequence.", etymology: "en-（中に）＋ tail（限定）。古フランス語 taille（切り口・限定）から。「遺産継承を限定する→必然的に伴う」のが原義。" }],
+  // equity (26075)
+  [26075, { coreImage: "「公正・公平」と「企業の株式・純資産」の二つのコアイメージ。「等しい・公平な」という語源から「公正さ」と「株主に帰属する資産」の両義を持つ。", usage: "「equity financing（株式による資金調達）」「shareholders' equity（株主資本）」「brand equity（ブランド価値）」「diversity and equity（多様性と公正）」のように使う。", synonymDifference: "equity vs fairness vs stock: equity は「公正さ」（fairness/justice）または「株式・純資産」（financial claim）。fairness は「公平さ」の一般表現。stock は「株式・在庫・原材料」（多義語）。", englishDefinition: "Fairness and justice; the value of shares in a company.", etymology: "ラテン語 aequitas（公平さ）から。aequus（等しい・equal と同語源）。" }],
+  // erroneous (30988)
+  [30988, { coreImage: "「間違い・誤りが含まれている・正確でない」のがコアイメージ。「さまよう→間違いを犯す」という語源から。error（誤り）と同語源。", usage: "「erroneous information（誤った情報）」「erroneous assumption（誤った仮定）」「erroneous data（不正確なデータ）」「erroneous conclusion（誤った結論）」のように使う。", synonymDifference: "erroneous vs wrong vs incorrect: erroneous は「誤りを含む・正確でない」（formal/written）。wrong は「間違いの」の一般表現（wrong answer）。incorrect は「正確・正確でない」（incorrect data）。", englishDefinition: "Containing errors; not correct or true.", etymology: "ラテン語 erroneus（さまよう）から。errare（さまよう・error と同語源）。" }],
+  // forthcoming (29353)
+  [29353, { coreImage: "「近い将来に起きる・公開される・近づいてくる」のがコアイメージ。また「率直な・協力的な」という意味でも使われる。", usage: "「forthcoming event（近く予定のイベント）」「forthcoming report（近刊の報告書）」「not forthcoming（情報を出そうとしない）」「be forthcoming about（〜について率直に話す）」のように使う。", synonymDifference: "forthcoming vs upcoming vs imminent: forthcoming は「近日公開・起こる予定の」または「率直な」（two meanings）。upcoming は「近く予定の・来たるべき」（upcoming meeting）。imminent は「今にも起きそうな・差し迫った」（imminent danger）。", englishDefinition: "About to happen or appear; willing to give information.", etymology: "forth-（前に）＋ coming（来る）。「前に向かって来る→近日公開」のが原義。" }],
+  // grievance (31144)
+  [31144, { coreImage: "「不公正な扱いへの正式な不満・苦情」のがコアイメージ。職場での苦情申し立て（grievance procedure）で頻出。", usage: "「file a grievance（苦情を申し立てる）」「grievance procedure（苦情申し立て手順）」「address grievances（不満に対処する）」「workplace grievance（職場の苦情）」のように使う。", synonymDifference: "grievance vs complaint vs dissatisfaction: grievance は「不公正な扱いへの正式な申し立て」（formal, often written）。complaint は「不満・苦情」一般（broader, informal ok）。dissatisfaction は「満足できない状態・不満感」（feeling）。", englishDefinition: "A formal complaint about something believed to be unfair.", etymology: "古フランス語 grevance（重荷・苦しみ）から。grever（重くする・grave と関連）。" }],
+  // inaugurate (31722)
+  [31722, { coreImage: "「新しい施設・制度・職位を正式に開始する・就任させる」のがコアイメージ。inaugural（30345）の動詞形。", usage: "「inaugurate a president（大統領を就任させる）」「inaugurate a new branch（新支店を開業する）」「inaugurate a policy（政策を施行する）」「inauguration ceremony（就任式・開業式）」のように使う。", synonymDifference: "inaugurate vs open vs launch: inaugurate は「公式な式典で正式に開始する」（formal, ceremonial）。open は「店・施設を開ける・開業する」（open a store）。launch は「製品・プログラムを市場・世界に打ち出す」（launch a product）。", englishDefinition: "To formally begin or open something; to induct into office.", etymology: "ラテン語 inaugurare（前兆を占う）から。augur（前兆を読む占い師）と同語源。" }],
 
-  // incline (18324)
-  [18324, { coreImage: "「〜する気持ちになる・傾く」と「坂・傾斜」の二つのコアイメージ。「傾く」という語源から「意向・態度の傾き」の比喩へ。", usage: "「inclined to agree（同意する気がある）」「be inclined toward（〜に傾いている）」「steep incline（急な坂道）」「natural inclination（自然な傾向）」のように使う。", synonymDifference: "incline vs tend vs lean: incline は「意向・態度が〜の方向に傾く」（formal: inclined to think）。tend は「習慣的に〜する傾向がある」（tend to be late）。lean は「体・意見を〜側に傾ける」（lean toward the option）。", englishDefinition: "To feel a tendency toward something; a slope.", etymology: "ラテン語 inclinare（傾ける）から。in-（向かって）＋ clinare（傾ける・recline と同語源）。" }],
-  // indispensable (30422)
-  [30422, { coreImage: "「なくてはならない・絶対に必要な」のがコアイメージ。「免除できない」という語源から「なしでは済まない」の意に。", usage: "「indispensable role（不可欠な役割）」「indispensable to the team（チームに不可欠な）」「indispensable tool（必須のツール）」「make oneself indispensable（なくてはならない存在になる）」のように使う。", synonymDifference: "indispensable vs essential vs necessary: indispensable は「なしでは成り立たない・絶対に必要な」（cannot do without）。essential は「最も重要な・本質的な」（core/fundamental）。necessary は「必要とされる」（broader, less strong）。", englishDefinition: "Too important to be without; absolutely necessary.", etymology: "in-（否定）＋ dispense（免除する）＋ -able。ラテン語 dispensare（配分する）から。" }],
-  // infrastructure (30423)
-  [30423, { coreImage: "「社会・組織が機能するための基盤となる設備・システム」のがコアイメージ。「構造物の下にある」という語源から「基礎的な仕組み」を指す。", usage: "「infrastructure investment（インフラ投資）」「digital infrastructure（デジタルインフラ）」「infrastructure maintenance（インフラ維持管理）」「critical infrastructure（重要インフラ）」のように使う。", synonymDifference: "infrastructure vs foundation vs system: infrastructure は「社会・組織が機能するための基盤的な設備・仕組み」（roads, networks, utilities）。foundation は「建物の基礎・組織の基盤」（basis/fundamentals）。system は「仕組み・制度・システム」（broader）。", englishDefinition: "The basic physical and organizational structures needed for operations.", etymology: "ラテン語 infra-（下に）＋ structura（構造物）。「構造物の下にある基盤」のが原義。" }],
-  // innovative (18325)
-  [18325, { coreImage: "「新しいアイデア・方法を取り入れた・革新的な」のがコアイメージ。innovate（30350）の形容詞形。", usage: "「innovative product（革新的な製品）」「innovative approach（斬新なアプローチ）」「innovative solution（革新的な解決策）」「innovative thinking（革新的な思考）」のように使う。", synonymDifference: "innovative vs creative vs original: innovative は「既存を革新・改善した新しい」（improvement on existing）。creative は「独創的・創造的な」（imaginary/artistic）。original は「他に模倣されない独自の」（unique/first）。", englishDefinition: "Featuring new methods or ideas; creative and forward-thinking.", etymology: "innovate（革新する）＋ -ive（形容詞化）。ラテン語 novus（新しい・novel と同語源）。" }],
-  // integral (18326)
-  [18326, { coreImage: "「全体の一部として不可欠・欠かせない」のがコアイメージ。「完全・全体」という語源から「それなしでは全体にならない」の意。", usage: "「integral part（不可欠な部分）」「integral to success（成功に不可欠な）」「integral component（重要なコンポーネント）」「play an integral role（重要な役割を果たす）」のように使う。", synonymDifference: "integral vs essential vs fundamental: integral は「全体を構成する上で欠かせない要素」（part of the whole）。essential は「最も重要な・本質的な」（core importance）。fundamental は「基本的・根本的な」（basic foundation）。", englishDefinition: "Necessary to make something complete; essential.", etymology: "ラテン語 integralis（全体の）から。integer（完全な数・整数）と同語源。" }],
-  // interim (18327)
-  [18327, { coreImage: "「永続的な解決・人材が決まるまでの暫定的・中間的な」のがコアイメージ。「その間に」という語源から「一時的・暫定」の意。", usage: "「interim manager（暫定マネージャー）」「interim report（中間報告）」「interim solution（暫定的な解決策）」「in the interim（その間に）」のように使う。", synonymDifference: "interim vs temporary vs provisional: interim は「永続的な状態が決まるまでの中間期」（gap period）。temporary は「限られた期間のみ続く」（temporary job）。provisional は「最終的な承認・決定が出るまでの仮の」（provisional license）。", englishDefinition: "Temporary or in between; relating to an intermediate period.", etymology: "ラテン語 interim（その間に）から。inter-（間に）＋ -im（時間を示す接尾辞）。" }],
-  // jurisdiction (18328)
-  [18328, { coreImage: "「法律・権威が及ぶ管轄範囲・裁判権」のがコアイメージ。「法を語る・宣言する」という語源から「権限が及ぶ範囲」の意に。", usage: "「under our jurisdiction（我々の管轄下で）」「outside their jurisdiction（管轄外で）」「tax jurisdiction（税務管轄）」「jurisdictional issue（管轄の問題）」のように使う。", synonymDifference: "jurisdiction vs authority vs territory: jurisdiction は「法的・行政的に権限が及ぶ範囲」（legal/official scope）。authority は「権力・権限」（the right to act）。territory は「物理的な地理的範囲」（geographical area）。", englishDefinition: "The official power to make legal decisions in a particular area.", etymology: "ラテン語 jurisdictio（法の宣言）から。jus（法律）＋ dicere（言う・dictate と同語源）。" }],
-  // leverage (30428)
-  [30428, { coreImage: "「てこの原理のように小さな力で大きな効果を得る・影響力を活用する」のがコアイメージ。ビジネスでは「資産・ネットワーク・立場を最大活用する」こと。", usage: "「leverage our expertise（専門知識を活かす）」「leverage technology（技術を活用する）」「financial leverage（財務レバレッジ）」「leverage a partnership（提携関係を活用する）」のように使う。", synonymDifference: "leverage vs utilize vs exploit: leverage は「既にある資産・能力を最大活用する」（maximize advantage）。utilize は「有効に使う・活用する」（formal: utilize resources）。exploit は「最大限に使う」（neutral）または「不当に利用する」（negative connotation）。", englishDefinition: "Power or influence to achieve an objective; using borrowed capital.", etymology: "lever（てこ）＋ -age（名詞化）。古フランス語 levier（持ち上げる道具）から。" }],
-  // mitigate (18331)
-  [18331, { coreImage: "「悪影響・リスク・被害を和らげる・軽減する」のがコアイメージ。「穏やかにする・柔らかくする」という語源から。eliminate より穏やか。", usage: "「mitigate risk（リスクを軽減する）」「mitigate damage（被害を緩和する）」「mitigate the impact（影響を和らげる）」「risk mitigation（リスク軽減策）」のように使う。", synonymDifference: "mitigate vs alleviate vs reduce: mitigate は「悪影響・リスクを部分的に和らげる」（reduce severity）。alleviate は「苦しみ・問題を軽くする」（make less severe）。reduce は「量・程度を減らす」（quantitative reduction）。", englishDefinition: "To reduce the severity of something harmful.", etymology: "ラテン語 mitigare（和らげる）から。mitis（穏やか・mild と同語源）＋ agere（する）。" }],
-  // monopoly (18332)
-  [18332, { coreImage: "「一社・一者が市場を独占する状態」のがコアイメージ。「一人で売る」という語源から。競争がなく支配的な立場。", usage: "「monopoly on the market（市場の独占）」「hold a monopoly（独占権を持つ）」「natural monopoly（自然独占）」「anti-monopoly law（独占禁止法）」のように使う。", synonymDifference: "monopoly vs oligopoly vs duopoly: monopoly は「1社による完全独占」（single seller）。oligopoly は「少数の企業が市場を支配する寡占」（few sellers）。duopoly は「2社による市場支配」（two sellers）。", englishDefinition: "Exclusive control of a market by a single entity.", etymology: "ギリシャ語 monopolion（単独販売）から。mono-（一つ）＋ polein（売る・monoploist と同語源）。" }],
+  // incline (30481)
+  [30481, { coreImage: "「〜する気持ちになる・傾く」と「坂・傾斜」の二つのコアイメージ。「傾く」という語源から「意向・態度の傾き」の比喩へ。", usage: "「inclined to agree（同意する気がある）」「be inclined toward（〜に傾いている）」「steep incline（急な坂道）」「natural inclination（自然な傾向）」のように使う。", synonymDifference: "incline vs tend vs lean: incline は「意向・態度が〜の方向に傾く」（formal: inclined to think）。tend は「習慣的に〜する傾向がある」（tend to be late）。lean は「体・意見を〜側に傾ける」（lean toward the option）。", englishDefinition: "To feel a tendency toward something; a slope.", etymology: "ラテン語 inclinare（傾ける）から。in-（向かって）＋ clinare（傾ける・recline と同語源）。" }],
+  // indispensable (29389)
+  [29389, { coreImage: "「なくてはならない・絶対に必要な」のがコアイメージ。「免除できない」という語源から「なしでは済まない」の意に。", usage: "「indispensable role（不可欠な役割）」「indispensable to the team（チームに不可欠な）」「indispensable tool（必須のツール）」「make oneself indispensable（なくてはならない存在になる）」のように使う。", synonymDifference: "indispensable vs essential vs necessary: indispensable は「なしでは成り立たない・絶対に必要な」（cannot do without）。essential は「最も重要な・本質的な」（core/fundamental）。necessary は「必要とされる」（broader, less strong）。", englishDefinition: "Too important to be without; absolutely necessary.", etymology: "in-（否定）＋ dispense（免除する）＋ -able。ラテン語 dispensare（配分する）から。" }],
+  // infrastructure (32110)
+  [32110, { coreImage: "「社会・組織が機能するための基盤となる設備・システム」のがコアイメージ。「構造物の下にある」という語源から「基礎的な仕組み」を指す。", usage: "「infrastructure investment（インフラ投資）」「digital infrastructure（デジタルインフラ）」「infrastructure maintenance（インフラ維持管理）」「critical infrastructure（重要インフラ）」のように使う。", synonymDifference: "infrastructure vs foundation vs system: infrastructure は「社会・組織が機能するための基盤的な設備・仕組み」（roads, networks, utilities）。foundation は「建物の基礎・組織の基盤」（basis/fundamentals）。system は「仕組み・制度・システム」（broader）。", englishDefinition: "The basic physical and organizational structures needed for operations.", etymology: "ラテン語 infra-（下に）＋ structura（構造物）。「構造物の下にある基盤」のが原義。" }],
+  // innovative (29396)
+  [29396, { coreImage: "「新しいアイデア・方法を取り入れた・革新的な」のがコアイメージ。innovate（30350）の形容詞形。", usage: "「innovative product（革新的な製品）」「innovative approach（斬新なアプローチ）」「innovative solution（革新的な解決策）」「innovative thinking（革新的な思考）」のように使う。", synonymDifference: "innovative vs creative vs original: innovative は「既存を革新・改善した新しい」（improvement on existing）。creative は「独創的・創造的な」（imaginary/artistic）。original は「他に模倣されない独自の」（unique/first）。", englishDefinition: "Featuring new methods or ideas; creative and forward-thinking.", etymology: "innovate（革新する）＋ -ive（形容詞化）。ラテン語 novus（新しい・novel と同語源）。" }],
+  // integral (32010)
+  [32010, { coreImage: "「全体の一部として不可欠・欠かせない」のがコアイメージ。「完全・全体」という語源から「それなしでは全体にならない」の意。", usage: "「integral part（不可欠な部分）」「integral to success（成功に不可欠な）」「integral component（重要なコンポーネント）」「play an integral role（重要な役割を果たす）」のように使う。", synonymDifference: "integral vs essential vs fundamental: integral は「全体を構成する上で欠かせない要素」（part of the whole）。essential は「最も重要な・本質的な」（core importance）。fundamental は「基本的・根本的な」（basic foundation）。", englishDefinition: "Necessary to make something complete; essential.", etymology: "ラテン語 integralis（全体の）から。integer（完全な数・整数）と同語源。" }],
+  // interim (33395)
+  [33395, { coreImage: "「永続的な解決・人材が決まるまでの暫定的・中間的な」のがコアイメージ。「その間に」という語源から「一時的・暫定」の意。", usage: "「interim manager（暫定マネージャー）」「interim report（中間報告）」「interim solution（暫定的な解決策）」「in the interim（その間に）」のように使う。", synonymDifference: "interim vs temporary vs provisional: interim は「永続的な状態が決まるまでの中間期」（gap period）。temporary は「限られた期間のみ続く」（temporary job）。provisional は「最終的な承認・決定が出るまでの仮の」（provisional license）。", englishDefinition: "Temporary or in between; relating to an intermediate period.", etymology: "ラテン語 interim（その間に）から。inter-（間に）＋ -im（時間を示す接尾辞）。" }],
+  // jurisdiction (31814)
+  [31814, { coreImage: "「法律・権威が及ぶ管轄範囲・裁判権」のがコアイメージ。「法を語る・宣言する」という語源から「権限が及ぶ範囲」の意に。", usage: "「under our jurisdiction（我々の管轄下で）」「outside their jurisdiction（管轄外で）」「tax jurisdiction（税務管轄）」「jurisdictional issue（管轄の問題）」のように使う。", synonymDifference: "jurisdiction vs authority vs territory: jurisdiction は「法的・行政的に権限が及ぶ範囲」（legal/official scope）。authority は「権力・権限」（the right to act）。territory は「物理的な地理的範囲」（geographical area）。", englishDefinition: "The official power to make legal decisions in a particular area.", etymology: "ラテン語 jurisdictio（法の宣言）から。jus（法律）＋ dicere（言う・dictate と同語源）。" }],
+  // leverage (31846)
+  [31846, { coreImage: "「てこの原理のように小さな力で大きな効果を得る・影響力を活用する」のがコアイメージ。ビジネスでは「資産・ネットワーク・立場を最大活用する」こと。", usage: "「leverage our expertise（専門知識を活かす）」「leverage technology（技術を活用する）」「financial leverage（財務レバレッジ）」「leverage a partnership（提携関係を活用する）」のように使う。", synonymDifference: "leverage vs utilize vs exploit: leverage は「既にある資産・能力を最大活用する」（maximize advantage）。utilize は「有効に使う・活用する」（formal: utilize resources）。exploit は「最大限に使う」（neutral）または「不当に利用する」（negative connotation）。", englishDefinition: "Power or influence to achieve an objective; using borrowed capital.", etymology: "lever（てこ）＋ -age（名詞化）。古フランス語 levier（持ち上げる道具）から。" }],
+  // mitigate (31723)
+  [31723, { coreImage: "「悪影響・リスク・被害を和らげる・軽減する」のがコアイメージ。「穏やかにする・柔らかくする」という語源から。eliminate より穏やか。", usage: "「mitigate risk（リスクを軽減する）」「mitigate damage（被害を緩和する）」「mitigate the impact（影響を和らげる）」「risk mitigation（リスク軽減策）」のように使う。", synonymDifference: "mitigate vs alleviate vs reduce: mitigate は「悪影響・リスクを部分的に和らげる」（reduce severity）。alleviate は「苦しみ・問題を軽くする」（make less severe）。reduce は「量・程度を減らす」（quantitative reduction）。", englishDefinition: "To reduce the severity of something harmful.", etymology: "ラテン語 mitigare（和らげる）から。mitis（穏やか・mild と同語源）＋ agere（する）。" }],
+  // monopoly (31849)
+  [31849, { coreImage: "「一社・一者が市場を独占する状態」のがコアイメージ。「一人で売る」という語源から。競争がなく支配的な立場。", usage: "「monopoly on the market（市場の独占）」「hold a monopoly（独占権を持つ）」「natural monopoly（自然独占）」「anti-monopoly law（独占禁止法）」のように使う。", synonymDifference: "monopoly vs oligopoly vs duopoly: monopoly は「1社による完全独占」（single seller）。oligopoly は「少数の企業が市場を支配する寡占」（few sellers）。duopoly は「2社による市場支配」（two sellers）。", englishDefinition: "Exclusive control of a market by a single entity.", etymology: "ギリシャ語 monopolion（単独販売）から。mono-（一つ）＋ polein（売る・monoploist と同語源）。" }],
   // obsolete (18335)
   [18335, { coreImage: "「時代遅れになって使われなくなった・廃れた」のがコアイメージ。「成長して離れていく」という語源から「時代が追い越した」の意に。", usage: "「obsolete technology（時代遅れの技術）」「become obsolete（廃れる・時代遅れになる）」「render obsolete（時代遅れにする）」「obsolete equipment（廃棄予定の設備）」のように使う。", synonymDifference: "obsolete vs outdated vs deprecated: obsolete は「完全に時代遅れで使われなくなった」（no longer used）。outdated は「最新ではなくなった」（needs updating）。deprecated は「推奨されなくなった」（software: avoid using）。", englishDefinition: "No longer in use; out of date.", etymology: "ラテン語 obsoletus（使い古された）から。ob-（向かって）＋ solere（習慣になる）の否定。" }],
-  // opt (18336)
-  [18336, { coreImage: "「複数の選択肢の中から積極的に一つを選ぶ」のがコアイメージ。「望む・選ぶ」という語源から。opt in/opt out の形でよく使われる。", usage: "「opt for a plan（プランを選ぶ）」「opt in to the program（プログラムに参加する）」「opt out（参加しないことを選ぶ）」「opt for the premium（プレミアムを選択する）」のように使う。", synonymDifference: "opt vs choose vs select: opt は「意識的・自発的に選ぶ」（willful choice, opt in/out）。choose は「選ぶ」の一般的な表現（choose a career）。select は「複数から慎重に選ぶ」（select a candidate）。", englishDefinition: "To make a choice; to decide in favor of.", etymology: "ラテン語 optare（望む・選ぶ）から。option（選択肢）と同語源。" }],
-  // overhaul (18337)
-  [18337, { coreImage: "「システム・機械・組織を徹底的に見直して改修・刷新する」のがコアイメージ。「追い越して引っ張り直す」という語源から「根本的な修理・刷新」の意に。", usage: "「overhaul the system（システムを刷新する）」「complete overhaul（完全な見直し）」「engine overhaul（エンジンのオーバーホール）」「policy overhaul（政策の抜本的改革）」のように使う。", synonymDifference: "overhaul vs revamp vs reform: overhaul は「機械・システムを分解して徹底修理・刷新する」（thorough repair/renewal）。revamp は「外観・スタイルを更新・改装する」（update appearance）。reform は「制度・組織を改善・改革する」（systemic change）。", englishDefinition: "To thoroughly examine and repair or update something.", etymology: "over-（超えて）＋ haul（引き寄せる）。「追い越して引き直す」のが原義。" }],
-  // pertinent (18338)
-  [18338, { coreImage: "「議論・問題・状況に直接関連している・適切な」のがコアイメージ。「到達する→関係する」という語源から。", usage: "「pertinent information（関連情報）」「pertinent to the case（そのケースに関連する）」「pertinent questions（的を射た質問）」「all pertinent documents（全ての関連書類）」のように使う。", synonymDifference: "pertinent vs relevant vs applicable: pertinent は「特定の状況・問題に直接関連する」（directly related）。relevant は「関連性がある」（related in some way）。applicable は「適用できる・当てはまる」（can be applied）。", englishDefinition: "Relevant or applicable to a particular situation.", etymology: "ラテン語 pertinere（到達する・関わる）から。per-（通して）＋ tenere（保つ・retain と同語源）。" }],
-  // plausible (18339)
-  [18339, { coreImage: "「証拠・論理に照らして十分にあり得る・もっともらしい」のがコアイメージ。「拍手喝采に値する」という語源から「承認できる・妥当」の意に。", usage: "「plausible explanation（もっともらしい説明）」「plausible scenario（あり得るシナリオ）」「sounds plausible（もっともらしく聞こえる）」「not entirely plausible（完全には納得できない）」のように使う。", synonymDifference: "plausible vs credible vs convincing: plausible は「あり得る・妥当性がある」（reasonable probability）。credible は「信頼できる・信憑性がある」（trustworthy source）。convincing は「説得力がある・信じさせる」（effective persuasion）。", englishDefinition: "Seeming reasonable or probable; believable.", etymology: "ラテン語 plausibilis（拍手に値する）から。plaudere（拍手する・applaud と同語源）。" }],
-  // portfolio (30440)
-  [30440, { coreImage: "「投資・作品・製品の多様な組み合わせ・一覧」のがコアイメージ。「書類を入れた鞄」という語源から「保有物の一覧」の意に転じた。", usage: "「investment portfolio（投資ポートフォリオ）」「product portfolio（製品ポートフォリオ）」「portfolio management（ポートフォリオ管理）」「diverse portfolio（多様なポートフォリオ）」のように使う。", synonymDifference: "portfolio vs collection vs holding: portfolio は「多様な資産・作品・製品の組み合わせ全体」（structured collection for management）。collection は「集めたもの・コレクション」（general gathering）。holding は「保有する資産・株式」（assets owned）。", englishDefinition: "A set of investments, products, or work samples.", etymology: "イタリア語 portafoglio（書類入れ）から。portare（運ぶ）＋ foglio（紙・folio と同語源）。" }],
-  // precede (18340)
-  [18340, { coreImage: "「時間・順序で前に来る・先行する」のがコアイメージ。「前を行く」という語源から。precedent（前例）と同語源。", usage: "「precede the meeting（会議に先立つ）」「preceded by（〜に先行された）」「as mentioned in the preceding section（前のセクションで述べたように）」「no precedent（前例がない）」のように使う。", synonymDifference: "precede vs anticipate vs lead up to: precede は「時間・順序で前に来る」（come before）。anticipate は「〜に先立って予想・対応する」（prepare in advance）。lead up to は「〜につながる・前触れになる」（build toward）。", englishDefinition: "To come before in time, order, or importance.", etymology: "ラテン語 praecedere（前を行く）から。prae-（前に）＋ cedere（行く・proceed と同語源）。" }],
-  // prohibit (18342)
-  [18342, { coreImage: "「法律・規則で行動を禁止する」のがコアイメージ。「前に立ちはだかって阻む」という語源から。", usage: "「prohibit smoking（喫煙を禁止する）」「prohibited from entering（入場を禁じられた）」「strictly prohibited（厳禁）」「prohibition（禁止・禁酒法）」のように使う。", synonymDifference: "prohibit vs forbid vs ban: prohibit は「法律・規則によって正式に禁止する」（formal/legal）。forbid は「禁じる」のやや格式ばった表現（I forbid you）。ban は「公式に禁止する・禁止措置を取る」（government ban）。", englishDefinition: "To formally forbid something by law or rule.", etymology: "ラテン語 prohibere（前に立って止める）から。pro-（前に）＋ habere（持つ・prohibit の反）。" }],
+  // opt (29190)
+  [29190, { coreImage: "「複数の選択肢の中から積極的に一つを選ぶ」のがコアイメージ。「望む・選ぶ」という語源から。opt in/opt out の形でよく使われる。", usage: "「opt for a plan（プランを選ぶ）」「opt in to the program（プログラムに参加する）」「opt out（参加しないことを選ぶ）」「opt for the premium（プレミアムを選択する）」のように使う。", synonymDifference: "opt vs choose vs select: opt は「意識的・自発的に選ぶ」（willful choice, opt in/out）。choose は「選ぶ」の一般的な表現（choose a career）。select は「複数から慎重に選ぶ」（select a candidate）。", englishDefinition: "To make a choice; to decide in favor of.", etymology: "ラテン語 optare（望む・選ぶ）から。option（選択肢）と同語源。" }],
+  // overhaul (32950)
+  [32950, { coreImage: "「システム・機械・組織を徹底的に見直して改修・刷新する」のがコアイメージ。「追い越して引っ張り直す」という語源から「根本的な修理・刷新」の意に。", usage: "「overhaul the system（システムを刷新する）」「complete overhaul（完全な見直し）」「engine overhaul（エンジンのオーバーホール）」「policy overhaul（政策の抜本的改革）」のように使う。", synonymDifference: "overhaul vs revamp vs reform: overhaul は「機械・システムを分解して徹底修理・刷新する」（thorough repair/renewal）。revamp は「外観・スタイルを更新・改装する」（update appearance）。reform は「制度・組織を改善・改革する」（systemic change）。", englishDefinition: "To thoroughly examine and repair or update something.", etymology: "over-（超えて）＋ haul（引き寄せる）。「追い越して引き直す」のが原義。" }],
+  // pertinent (30509)
+  [30509, { coreImage: "「議論・問題・状況に直接関連している・適切な」のがコアイメージ。「到達する→関係する」という語源から。", usage: "「pertinent information（関連情報）」「pertinent to the case（そのケースに関連する）」「pertinent questions（的を射た質問）」「all pertinent documents（全ての関連書類）」のように使う。", synonymDifference: "pertinent vs relevant vs applicable: pertinent は「特定の状況・問題に直接関連する」（directly related）。relevant は「関連性がある」（related in some way）。applicable は「適用できる・当てはまる」（can be applied）。", englishDefinition: "Relevant or applicable to a particular situation.", etymology: "ラテン語 pertinere（到達する・関わる）から。per-（通して）＋ tenere（保つ・retain と同語源）。" }],
+  // plausible (32118)
+  [32118, { coreImage: "「証拠・論理に照らして十分にあり得る・もっともらしい」のがコアイメージ。「拍手喝采に値する」という語源から「承認できる・妥当」の意に。", usage: "「plausible explanation（もっともらしい説明）」「plausible scenario（あり得るシナリオ）」「sounds plausible（もっともらしく聞こえる）」「not entirely plausible（完全には納得できない）」のように使う。", synonymDifference: "plausible vs credible vs convincing: plausible は「あり得る・妥当性がある」（reasonable probability）。credible は「信頼できる・信憑性がある」（trustworthy source）。convincing は「説得力がある・信じさせる」（effective persuasion）。", englishDefinition: "Seeming reasonable or probable; believable.", etymology: "ラテン語 plausibilis（拍手に値する）から。plaudere（拍手する・applaud と同語源）。" }],
+  // portfolio (31841)
+  [31841, { coreImage: "「投資・作品・製品の多様な組み合わせ・一覧」のがコアイメージ。「書類を入れた鞄」という語源から「保有物の一覧」の意に転じた。", usage: "「investment portfolio（投資ポートフォリオ）」「product portfolio（製品ポートフォリオ）」「portfolio management（ポートフォリオ管理）」「diverse portfolio（多様なポートフォリオ）」のように使う。", synonymDifference: "portfolio vs collection vs holding: portfolio は「多様な資産・作品・製品の組み合わせ全体」（structured collection for management）。collection は「集めたもの・コレクション」（general gathering）。holding は「保有する資産・株式」（assets owned）。", englishDefinition: "A set of investments, products, or work samples.", etymology: "イタリア語 portafoglio（書類入れ）から。portare（運ぶ）＋ foglio（紙・folio と同語源）。" }],
+  // precede (28307)
+  [28307, { coreImage: "「時間・順序で前に来る・先行する」のがコアイメージ。「前を行く」という語源から。precedent（前例）と同語源。", usage: "「precede the meeting（会議に先立つ）」「preceded by（〜に先行された）」「as mentioned in the preceding section（前のセクションで述べたように）」「no precedent（前例がない）」のように使う。", synonymDifference: "precede vs anticipate vs lead up to: precede は「時間・順序で前に来る」（come before）。anticipate は「〜に先立って予想・対応する」（prepare in advance）。lead up to は「〜につながる・前触れになる」（build toward）。", englishDefinition: "To come before in time, order, or importance.", etymology: "ラテン語 praecedere（前を行く）から。prae-（前に）＋ cedere（行く・proceed と同語源）。" }],
+  // prohibit (26729)
+  [26729, { coreImage: "「法律・規則で行動を禁止する」のがコアイメージ。「前に立ちはだかって阻む」という語源から。", usage: "「prohibit smoking（喫煙を禁止する）」「prohibited from entering（入場を禁じられた）」「strictly prohibited（厳禁）」「prohibition（禁止・禁酒法）」のように使う。", synonymDifference: "prohibit vs forbid vs ban: prohibit は「法律・規則によって正式に禁止する」（formal/legal）。forbid は「禁じる」のやや格式ばった表現（I forbid you）。ban は「公式に禁止する・禁止措置を取る」（government ban）。", englishDefinition: "To formally forbid something by law or rule.", etymology: "ラテン語 prohibere（前に立って止める）から。pro-（前に）＋ habere（持つ・prohibit の反）。" }],
   // proprietor (18343)
   [18343, { coreImage: "「店・事業の所有者・経営者」のがコアイメージ。「自分のものを所有する」という語源から「所有者・業主」の意。", usage: "「sole proprietor（個人事業主）」「proprietor of a restaurant（レストランの経営者）」「proprietorship（個人経営・所有権）」「proprietor's liability（経営者の責任）」のように使う。", synonymDifference: "proprietor vs owner vs manager: proprietor は「法的所有者として事業を経営する」（owns and runs）。owner は「所有者」（could hire someone else to manage）。manager は「経営・管理する人」（may not own）。", englishDefinition: "The owner of a business or property.", etymology: "ラテン語 proprietarius（所有者）から。proprius（自分自身の・proper と同語源）。" }],
-  // ratify (18344)
-  [18344, { coreImage: "「条約・合意・決定を正式に承認・批准する」のがコアイメージ。「固める・確認する」という語源から。", usage: "「ratify an agreement（協定を批准する）」「ratify the treaty（条約を批准する）」「ratify a decision（決定を承認する）」「ratification vote（批准投票）」のように使う。", synonymDifference: "ratify vs approve vs endorse: ratify は「条約・協定・法律を正式に批准・承認する」（official/formal legal approval）。approve は「承認する」（general approval）。endorse は「支持・推薦する」（recommend/support）。", englishDefinition: "To give formal consent to make something officially valid.", etymology: "ラテン語 ratificare（確認して固める）から。ratus（決定された）＋ facere（する）。" }],
-  // reconcile (30446)
-  [30446, { coreImage: "「対立・不一致を解消して和解・一致させる」のがコアイメージ。会計では「帳簿・数字を照合して一致させる」意でも頻出。", usage: "「reconcile differences（相違を調整する）」「reconcile the accounts（帳簿を照合する）」「hard to reconcile（折り合いをつけるのが難しい）」「bank reconciliation（銀行勘定照合）」のように使う。", synonymDifference: "reconcile vs resolve vs settle: reconcile は「対立・不一致を和解させる・一致させる」（bring into harmony）。resolve は「問題・紛争を解決する」（find a solution）。settle は「争い・支払いを決着させる」（settle a dispute）。", englishDefinition: "To restore friendly relations; to make accounts consistent.", etymology: "ラテン語 reconciliare（再び親しくする）から。re-（再び）＋ conciliare（まとめる・council と同語源）。" }],
-  // redundant (30447)
-  [30447, { coreImage: "「余剰の・不要な・冗長な」のがコアイメージ。英国では「会社都合で解雇された」という意味でよく使われる。", usage: "「redundant positions（余剰ポスト）」「made redundant（会社都合で解雇された）」「redundant information（冗長な情報）」「eliminate redundancies（冗長性を排除する）」のように使う。", synonymDifference: "redundant vs unnecessary vs superfluous: redundant は「余剰・重複して不要な」（surplus to requirements）。unnecessary は「必要でない」（not needed）。superfluous は「以上に過剰な・余計な」（more than needed）。", englishDefinition: "No longer needed; repeating what has already been said.", etymology: "ラテン語 redundare（溢れる）から。re-（再び）＋ unda（波・undulate と同語源）。" }],
-  // remittance (18345)
-  [18345, { coreImage: "「海外・遠方への送金・振り込み額」のがコアイメージ。国際取引・海外送金で頻出のビジネス用語。", usage: "「send a remittance（送金する）」「remittance advice（送金通知書）」「wire remittance（電信送金）」「international remittance（海外送金）」のように使う。", synonymDifference: "remittance vs transfer vs wire: remittance は「支払い義務のある送金・振り込み」（payment sent）。transfer は「お金・所有権を移動させる」（general transfer）。wire は「電信・電子送金」（electronic transfer method）。", englishDefinition: "A sum of money sent as payment, especially abroad.", etymology: "remit（送る・免除する）＋ -ance。ラテン語 remittere（送り返す・緩める）から。" }],
-  // renowned (18346)
-  [18346, { coreImage: "「広く知られ高く評価されている・名高い・著名な」のがコアイメージ。「再び名前が挙げられる」という語源から「名声が広まる」の意。", usage: "「world-renowned（世界的に有名な）」「renowned expert（著名な専門家）」「renowned for quality（品質で名高い）」「internationally renowned（国際的に著名な）」のように使う。", synonymDifference: "renowned vs famous vs prestigious: renowned は「特定の優れた点で広く認められ尊敬される」（respected for excellence）。famous は「多くの人に知られている」（widely known）。prestigious は「高い評価・地位がある格式高い」（high status）。", englishDefinition: "Known and respected by many people; famous.", etymology: "re-（再び）＋ nommer（名づける）。古フランス語。「繰り返し名が挙げられる→名声がある」のが原義。" }],
+  // ratify (31721)
+  [31721, { coreImage: "「条約・合意・決定を正式に承認・批准する」のがコアイメージ。「固める・確認する」という語源から。", usage: "「ratify an agreement（協定を批准する）」「ratify the treaty（条約を批准する）」「ratify a decision（決定を承認する）」「ratification vote（批准投票）」のように使う。", synonymDifference: "ratify vs approve vs endorse: ratify は「条約・協定・法律を正式に批准・承認する」（official/formal legal approval）。approve は「承認する」（general approval）。endorse は「支持・推薦する」（recommend/support）。", englishDefinition: "To give formal consent to make something officially valid.", etymology: "ラテン語 ratificare（確認して固める）から。ratus（決定された）＋ facere（する）。" }],
+  // reconcile (31744)
+  [31744, { coreImage: "「対立・不一致を解消して和解・一致させる」のがコアイメージ。会計では「帳簿・数字を照合して一致させる」意でも頻出。", usage: "「reconcile differences（相違を調整する）」「reconcile the accounts（帳簿を照合する）」「hard to reconcile（折り合いをつけるのが難しい）」「bank reconciliation（銀行勘定照合）」のように使う。", synonymDifference: "reconcile vs resolve vs settle: reconcile は「対立・不一致を和解させる・一致させる」（bring into harmony）。resolve は「問題・紛争を解決する」（find a solution）。settle は「争い・支払いを決着させる」（settle a dispute）。", englishDefinition: "To restore friendly relations; to make accounts consistent.", etymology: "ラテン語 reconciliare（再び親しくする）から。re-（再び）＋ conciliare（まとめる・council と同語源）。" }],
+  // redundant (29546)
+  [29546, { coreImage: "「余剰の・不要な・冗長な」のがコアイメージ。英国では「会社都合で解雇された」という意味でよく使われる。", usage: "「redundant positions（余剰ポスト）」「made redundant（会社都合で解雇された）」「redundant information（冗長な情報）」「eliminate redundancies（冗長性を排除する）」のように使う。", synonymDifference: "redundant vs unnecessary vs superfluous: redundant は「余剰・重複して不要な」（surplus to requirements）。unnecessary は「必要でない」（not needed）。superfluous は「以上に過剰な・余計な」（more than needed）。", englishDefinition: "No longer needed; repeating what has already been said.", etymology: "ラテン語 redundare（溢れる）から。re-（再び）＋ unda（波・undulate と同語源）。" }],
+  // remittance (32259)
+  [32259, { coreImage: "「海外・遠方への送金・振り込み額」のがコアイメージ。国際取引・海外送金で頻出のビジネス用語。", usage: "「send a remittance（送金する）」「remittance advice（送金通知書）」「wire remittance（電信送金）」「international remittance（海外送金）」のように使う。", synonymDifference: "remittance vs transfer vs wire: remittance は「支払い義務のある送金・振り込み」（payment sent）。transfer は「お金・所有権を移動させる」（general transfer）。wire は「電信・電子送金」（electronic transfer method）。", englishDefinition: "A sum of money sent as payment, especially abroad.", etymology: "remit（送る・免除する）＋ -ance。ラテン語 remittere（送り返す・緩める）から。" }],
+  // renowned (30514)
+  [30514, { coreImage: "「広く知られ高く評価されている・名高い・著名な」のがコアイメージ。「再び名前が挙げられる」という語源から「名声が広まる」の意。", usage: "「world-renowned（世界的に有名な）」「renowned expert（著名な専門家）」「renowned for quality（品質で名高い）」「internationally renowned（国際的に著名な）」のように使う。", synonymDifference: "renowned vs famous vs prestigious: renowned は「特定の優れた点で広く認められ尊敬される」（respected for excellence）。famous は「多くの人に知られている」（widely known）。prestigious は「高い評価・地位がある格式高い」（high status）。", englishDefinition: "Known and respected by many people; famous.", etymology: "re-（再び）＋ nommer（名づける）。古フランス語。「繰り返し名が挙げられる→名声がある」のが原義。" }],
   // retaliate (30450)
   [30450, { coreImage: "「不当な扱い・攻撃に対して同じように仕返しをする・報復する」のがコアイメージ。「同じ代価を返す」という語源から。", usage: "「retaliate against（〜に報復する）」「retaliate with sanctions（制裁で応じる）」「retaliatory measure（報復措置）」「threat of retaliation（報復の脅威）」のように使う。", synonymDifference: "retaliate vs counter vs revenge: retaliate は「受けた行動に対して同様の行動で応じる」（respond in kind）。counter は「対抗措置を取る」（counter an argument）。revenge は「個人的な恨みで仕返しをする」（more emotional/personal）。", englishDefinition: "To take action against someone in response to harm done.", etymology: "ラテン語 retaliare（同等の代価を返す）から。re-（返す）＋ talis（同等の）。" }],
 
@@ -3454,8 +3454,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "God be with ye（神があなたと共にありますように）が短縮・音変化してできた語。",
     },
   ],
-  // please (38003)
-  [38003,
+  // please (25165)
+  [25165,
     {
       coreImage:
         "依頼・要望を相手に柔らかく伝える「丁寧さのクッション」がコアイメージ。文の命令感を和らげる働きがある。",
@@ -3484,8 +3484,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "thank の複数形由来で、感謝の言葉を慣用的に表す定型表現として定着した。",
     },
   ],
-  // sorry (38005)
-  [38005,
+  // sorry (23158)
+  [23158,
     {
       coreImage:
         "相手への迷惑・遅れ・失敗に対して「遺憾の気持ちを示す」ことがコアイメージ。謝罪と共感の両方に使える。",
@@ -3529,8 +3529,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古英語 no（not any）由来。ゲルマン諸語に広く見られる否定語根。",
     },
   ],
-  // help (38008)
-  [38008,
+  // help (23017)
+  [23017,
     {
       coreImage:
         "困っている相手を「支えて状況を改善する」行為がコアイメージ。動詞・名詞の両方で使える高頻度語。",
@@ -3544,8 +3544,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古英語 helpan（助ける）から。古いゲルマン語根由来の基礎語彙。",
     },
   ],
-  // wait (38009)
-  [38009,
+  // wait (23495)
+  [23495,
     {
       coreImage:
         "行動を急がず「その場で時間を置く」ことがコアイメージ。相手への配慮や手続き上の必要を伝える基本動詞。",
@@ -3559,8 +3559,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古フランス語 waitier（見張る・注意して待つ）由来。",
     },
   ],
-  // stop (38010)
-  [38010,
+  // stop (23667)
+  [23667,
     {
       coreImage:
         "動いている行為・流れを「そこで止める」ことがコアイメージ。自動詞・他動詞の両方で使える。",
@@ -3574,8 +3574,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "中英語 stoppen（詰める・止める）由来。物理的停止から行為停止へ意味拡張した。",
     },
   ],
-  // understand (38011)
-  [38011,
+  // understand (23493)
+  [23493,
     {
       coreImage:
         "情報・意図・状況を「頭の中でつかむ」ことがコアイメージ。単なる聞き取りだけでなく、意味理解全般に使う。",
@@ -3589,8 +3589,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "under + stand の複合だが、語源的には「下に立つ」ではなく「間近で捉える」に近い意味発展をしている。",
     },
   ],
-  // repeat (38012)
-  [38012,
+  // repeat (23464)
+  [23464,
     {
       coreImage:
         "同じ内容を「もう一度繰り返す」ことがコアイメージ。聞き取り確認や学習定着の場面で非常に有用。",
@@ -3604,8 +3604,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 repetere（再び求める・取り戻す）に由来。re-（再び）+ petere（求める）。",
     },
   ],
-  // nice (38013)
-  [38013,
+  // nice (23155)
+  [23155,
     {
       coreImage:
         "対象を「感じがよい・好ましい」と評価する柔らかい形容詞がコアイメージ。ポジティブ評価の汎用語。",
@@ -3619,8 +3619,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "ラテン語 nescius（無知な）から意味変化を重ね、現代英語では「感じの良い」の肯定語義で定着した。",
     },
   ],
-  // good (38014)
-  [38014,
+  // good (23045)
+  [23045,
     {
       coreImage:
         "基準に照らして「望ましい・質が高い」と評価する最重要形容詞。道徳的に良い、人にとって有益など幅広い。",
@@ -3634,8 +3634,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "古英語 god 由来。ゲルマン語族の非常に基本的な評価語。",
     },
   ],
-  // bad (38015)
-  [38015,
+  // bad (23141)
+  [23141,
     {
       coreImage:
         "基準を下回る・望ましくない状態を示す否定評価語がコアイメージ。品質・状況・道徳のいずれにも使える。",
@@ -3799,8 +3799,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "take care（注意を払う）という句動詞的連語が定型挨拶化したもの。",
     },
   ],
-  // welcome (38106)
-  [38106,
+  // welcome (28941)
+  [28941,
     {
       coreImage:
         "相手を場に受け入れ「来訪を歓迎する」姿勢を示す語がコアイメージ。挨拶・応答の両方で使える。",
@@ -3859,8 +3859,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "one + more + time の語義通りの組み合わせが慣用化した表現。",
     },
   ],
-  // slowly (38110)
-  [38110,
+  // slowly (24397)
+  [24397,
     {
       coreImage:
         "動作・発話の速度を落として「ゆっくり」の様子を加える副詞がコアイメージ。聞き取り支援で実用性が高い。",
@@ -3919,8 +3919,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
         "take（取る・選ぶ）+ this one（これ）からなる実用句。",
     },
   ],
-  // better (38114)
-  [38114,
+  // better (25586)
+  [25586,
     {
       coreImage:
         "2つ以上を比較して「より良い方」を示す比較級がコアイメージ。選好・判断を簡潔に伝えられる。",
@@ -4540,8 +4540,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   [39508, { coreImage: "問題の重大性を下げて相手を安心させる緩和表現がコアイメージ。", usage: "「It's no big deal.」で「気にしないで」を自然に伝える。", synonymDifference: "no big deal vs it's fine: 前者は重要性の低さを強調、後者は受容を示す。", englishDefinition: "An expression meaning something is not important or serious.", etymology: "big deal（重大事）を否定して軽微さを示す口語句。" }],
   // that's fine (39509)
   [39509, { coreImage: "相手案を受け入れる許容返答がコアイメージ。穏やかな同意に使える。", usage: "「That's fine with me.」で同意を明確化。条件付き同意にも応用可能。", synonymDifference: "that's fine vs that's okay: ほぼ同義。fine の方がやや丁寧に響くことがある。", englishDefinition: "A phrase meaning something is acceptable.", etymology: "that is + fine の評価構文。" }],
-  // immediately (39510)
-  [39510, { coreImage: "遅延なく実行する「即時性」を明示する副詞がコアイメージ。", usage: "「I'll do it immediately.」で迅速対応を約束できる。書き言葉・業務連絡でも自然。", synonymDifference: "immediately vs right away: immediately はよりフォーマル。right away は口語で自然。", englishDefinition: "Without any delay; at once.", etymology: "im- + mediate（間に入る）で「間を置かず」が原義。" }],
+  // immediately (24373)
+  [24373, { coreImage: "遅延なく実行する「即時性」を明示する副詞がコアイメージ。", usage: "「I'll do it immediately.」で迅速対応を約束できる。書き言葉・業務連絡でも自然。", synonymDifference: "immediately vs right away: immediately はよりフォーマル。right away は口語で自然。", englishDefinition: "Without any delay; at once.", etymology: "im- + mediate（間に入る）で「間を置かず」が原義。" }],
   // just wait (39511)
   [39511, { coreImage: "短時間の待機を直接求める命令表現がコアイメージ。", usage: "「Just wait here.」のように場所指定を続けると明確。語調次第で強く聞こえる。", synonymDifference: "just wait vs wait a moment: 後者の方が丁寧で柔らかい。", englishDefinition: "A direct phrase telling someone to wait.", etymology: "just（ほんの）+ wait（待つ）の命令句。" }],
   // come along (39512)
@@ -5000,32 +5000,32 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   [38001, { coreImage: "相手との接触を穏やかに開始する基本挨拶がコアイメージ。", usage: "対面・電話どちらでも使える万能の冒頭表現。明るい語調で関係性を作る。", synonymDifference: "hello vs hi: hello は中立で汎用、hi はよりカジュアル。", englishDefinition: "A common greeting used when meeting or speaking to someone.", etymology: "感嘆詞 holla / hallo 系から発達した英語の基本挨拶。" }],
   // goodbye (38002)
   [38002, { coreImage: "会話や面会を終える際に関係を丁寧に閉じる別れの挨拶がコアイメージ。", usage: "別れ際の基本形。友人には「bye」、丁寧さを保つなら「goodbye」が安全。", synonymDifference: "goodbye vs bye: 意味は同じだが、goodbye の方が丁寧で改まる。", englishDefinition: "A polite expression used when leaving or ending a conversation.", etymology: "God be with ye（神のご加護を）由来の短縮形として定着。" }],
-  // please (38003)
-  [38003, { coreImage: "依頼・申し出に丁寧さを加える礼儀標識語がコアイメージ。", usage: "命令文や依頼文に添えて圧を下げる。単独で「どうぞ」の意味でも使える。", synonymDifference: "please vs kindly: kindly は書き言葉寄りで硬め。please は会話で自然。", englishDefinition: "A word used to make a request polite or to offer something courteously.", etymology: "please（喜ばせる）が「相手の意向を尊重する」機能語へ発達。" }],
+  // please (25165)
+  [25165, { coreImage: "依頼・申し出に丁寧さを加える礼儀標識語がコアイメージ。", usage: "命令文や依頼文に添えて圧を下げる。単独で「どうぞ」の意味でも使える。", synonymDifference: "please vs kindly: kindly は書き言葉寄りで硬め。please は会話で自然。", englishDefinition: "A word used to make a request polite or to offer something courteously.", etymology: "please（喜ばせる）が「相手の意向を尊重する」機能語へ発達。" }],
   // thanks (38004)
   [38004, { coreImage: "相手の行為に対する感謝を簡潔に示す返礼表現がコアイメージ。", usage: "カジュアル会話では最頻出。より丁寧にするなら「Thank you.」。", synonymDifference: "thanks vs thank you: thanks は口語的、thank you は中立〜丁寧。", englishDefinition: "An informal expression of gratitude.", etymology: "thank の複数形由来で、感謝表現として固定化。" }],
-  // sorry (38005)
-  [38005, { coreImage: "迷惑・不利益に対する謝意や遺憾を示す基本語がコアイメージ。", usage: "謝罪だけでなく、聞き返し「Sorry?」や共感「I'm sorry to hear that.」にも使う。", synonymDifference: "sorry vs excuse me: sorry は謝意中心、excuse me は注意喚起・割り込みに多い。", englishDefinition: "Used to apologize, show regret, or politely ask for repetition.", etymology: "古英語 sarig（悲しい）由来で「遺憾」の意味へ拡張。" }],
+  // sorry (23158)
+  [23158, { coreImage: "迷惑・不利益に対する謝意や遺憾を示す基本語がコアイメージ。", usage: "謝罪だけでなく、聞き返し「Sorry?」や共感「I'm sorry to hear that.」にも使う。", synonymDifference: "sorry vs excuse me: sorry は謝意中心、excuse me は注意喚起・割り込みに多い。", englishDefinition: "Used to apologize, show regret, or politely ask for repetition.", etymology: "古英語 sarig（悲しい）由来で「遺憾」の意味へ拡張。" }],
   // yes (38006)
   [38006, { coreImage: "相手の問い・提案に肯定で応答する最小単位がコアイメージ。", usage: "丁寧にするなら「Yes, please.」「Yes, I do.」のように補うと自然。", synonymDifference: "yes vs yeah: yes は中立、yeah は口語で砕けた肯定。", englishDefinition: "A word used to express agreement or affirmation.", etymology: "古英語 gese（その通り）に由来する肯定語。" }],
   // no (38007)
   [38007, { coreImage: "依頼・提案・質問に否定で応じる最小応答語がコアイメージ。", usage: "単独の no は強く聞こえることがあるため、丁寧には「No, thank you.」を使う。", synonymDifference: "no vs not: no は応答語・限定詞、not は文中否定副詞。", englishDefinition: "A word used to express refusal, denial, or negation.", etymology: "古英語 na（決して〜ない）由来の基本否定語。" }],
-  // help (38008)
-  [38008, { coreImage: "困っている相手の負担を減らす支援行為がコアイメージ。", usage: "「help + 人」「help with + 名詞」「help to do」で形が広い。会話では依頼形が頻出。", synonymDifference: "help vs assist: assist はよりフォーマル、help は日常で自然。", englishDefinition: "To make it easier for someone by giving support or assistance.", etymology: "古英語 helpan（助ける）に由来する基礎動詞。" }],
-  // wait (38009)
-  [38009, { coreImage: "行動を止めて時間経過を受け入れる待機行為がコアイメージ。", usage: "「wait a moment」「wait for + 人/物」が基本。for の有無で意味が変わる。", synonymDifference: "wait vs hold on: hold on は会話での短時間待機依頼に多い。", englishDefinition: "To stay where you are or delay action until something happens.", etymology: "古フランス語 waiter（見張る）が語源。" }],
-  // stop (38010)
-  [38010, { coreImage: "進行中の動作を中断・終了させる制止行為がコアイメージ。", usage: "自動詞「stop」他動詞「stop + 名詞/動名詞」の両方で使える。", synonymDifference: "stop vs quit: stop は一時停止も可、quit は完全にやめる含意が強い。", englishDefinition: "To end an action or prevent something from continuing.", etymology: "ゲルマン系語源を持つ基礎停止動詞。" }],
-  // understand (38011)
-  [38011, { coreImage: "情報の意味・意図を頭の中で把握する認知行為がコアイメージ。", usage: "「I understand.」は丁寧で便利な返答。「understand + wh節」も頻出。", synonymDifference: "understand vs know: understand は意味把握、know は知識保持。", englishDefinition: "To know the meaning of something or grasp what is meant.", etymology: "under + stand で「下で支える」から「把握する」へ意味発展。" }],
-  // repeat (38012)
-  [38012, { coreImage: "同じ内容をもう一度言う・行う再実行がコアイメージ。", usage: "聞き返しでは「Could you repeat that?」が自然で丁寧。", synonymDifference: "repeat vs say again: repeat はやや丁寧・明確、say again は口語。", englishDefinition: "To say or do something again.", etymology: "ラテン語 repetere（再び求める・繰り返す）由来。" }],
-  // nice (38013)
-  [38013, { coreImage: "相手や物事を感じよく肯定評価する柔らかい形容がコアイメージ。", usage: "「Nice to meet you.」「That's nice.」のように短く好意を示せる。", synonymDifference: "nice vs kind: nice は印象全般、kind は親切という性質。", englishDefinition: "Pleasant, agreeable, or kind in manner.", etymology: "ラテン語 nescius（無知な）から意味変遷し現代では肯定評価語に。" }],
-  // good (38014)
-  [38014, { coreImage: "質・状態・行為が望ましい基準を満たす基本評価語がコアイメージ。", usage: "挨拶（Good morning）や評価（good idea）など用途が非常に広い。", synonymDifference: "good vs well: good は形容詞、well は主に副詞。", englishDefinition: "Of high quality, satisfactory, or favorable.", etymology: "古英語 god（良い）に由来する最重要基礎語。" }],
-  // bad (38015)
-  [38015, { coreImage: "質・状態が望ましくないことを示す基本否定評価語がコアイメージ。", usage: "「too bad」は遺憾の定型。「bad at + 名詞/動名詞」で苦手表現になる。", synonymDifference: "bad vs poor: bad は広い否定、poor は質の低さを比較的穏やかに示す。", englishDefinition: "Not good; unpleasant or of low quality.", etymology: "古英語 baeddel 系を含む語源史を経て現代英語で一般化。" }],
+  // help (23017)
+  [23017, { coreImage: "困っている相手の負担を減らす支援行為がコアイメージ。", usage: "「help + 人」「help with + 名詞」「help to do」で形が広い。会話では依頼形が頻出。", synonymDifference: "help vs assist: assist はよりフォーマル、help は日常で自然。", englishDefinition: "To make it easier for someone by giving support or assistance.", etymology: "古英語 helpan（助ける）に由来する基礎動詞。" }],
+  // wait (23495)
+  [23495, { coreImage: "行動を止めて時間経過を受け入れる待機行為がコアイメージ。", usage: "「wait a moment」「wait for + 人/物」が基本。for の有無で意味が変わる。", synonymDifference: "wait vs hold on: hold on は会話での短時間待機依頼に多い。", englishDefinition: "To stay where you are or delay action until something happens.", etymology: "古フランス語 waiter（見張る）が語源。" }],
+  // stop (23667)
+  [23667, { coreImage: "進行中の動作を中断・終了させる制止行為がコアイメージ。", usage: "自動詞「stop」他動詞「stop + 名詞/動名詞」の両方で使える。", synonymDifference: "stop vs quit: stop は一時停止も可、quit は完全にやめる含意が強い。", englishDefinition: "To end an action or prevent something from continuing.", etymology: "ゲルマン系語源を持つ基礎停止動詞。" }],
+  // understand (23493)
+  [23493, { coreImage: "情報の意味・意図を頭の中で把握する認知行為がコアイメージ。", usage: "「I understand.」は丁寧で便利な返答。「understand + wh節」も頻出。", synonymDifference: "understand vs know: understand は意味把握、know は知識保持。", englishDefinition: "To know the meaning of something or grasp what is meant.", etymology: "under + stand で「下で支える」から「把握する」へ意味発展。" }],
+  // repeat (23464)
+  [23464, { coreImage: "同じ内容をもう一度言う・行う再実行がコアイメージ。", usage: "聞き返しでは「Could you repeat that?」が自然で丁寧。", synonymDifference: "repeat vs say again: repeat はやや丁寧・明確、say again は口語。", englishDefinition: "To say or do something again.", etymology: "ラテン語 repetere（再び求める・繰り返す）由来。" }],
+  // nice (23155)
+  [23155, { coreImage: "相手や物事を感じよく肯定評価する柔らかい形容がコアイメージ。", usage: "「Nice to meet you.」「That's nice.」のように短く好意を示せる。", synonymDifference: "nice vs kind: nice は印象全般、kind は親切という性質。", englishDefinition: "Pleasant, agreeable, or kind in manner.", etymology: "ラテン語 nescius（無知な）から意味変遷し現代では肯定評価語に。" }],
+  // good (23045)
+  [23045, { coreImage: "質・状態・行為が望ましい基準を満たす基本評価語がコアイメージ。", usage: "挨拶（Good morning）や評価（good idea）など用途が非常に広い。", synonymDifference: "good vs well: good は形容詞、well は主に副詞。", englishDefinition: "Of high quality, satisfactory, or favorable.", etymology: "古英語 god（良い）に由来する最重要基礎語。" }],
+  // bad (23141)
+  [23141, { coreImage: "質・状態が望ましくないことを示す基本否定評価語がコアイメージ。", usage: "「too bad」は遺憾の定型。「bad at + 名詞/動名詞」で苦手表現になる。", synonymDifference: "bad vs poor: bad は広い否定、poor は質の低さを比較的穏やかに示す。", englishDefinition: "Not good; unpleasant or of low quality.", etymology: "古英語 baeddel 系を含む語源史を経て現代英語で一般化。" }],
   // how (38016)
   [38016, { coreImage: "方法・状態・程度を尋ねる疑問副詞がコアイメージ。", usage: "「How are you?」「How do you... ?」で会話の入口を作る重要語。", synonymDifference: "how vs what: how は方法・状態、what は内容そのもの。", englishDefinition: "Used to ask about manner, condition, or degree.", etymology: "古英語 hu（どのように）由来の疑問副詞。" }],
   // where (38017)
@@ -5046,16 +5046,16 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   [38104, { coreImage: "再会を前提に会話を軽く閉じるカジュアル別れ表現がコアイメージ。", usage: "「See you tomorrow.」のように時を添えると自然。近しい関係で多用。", synonymDifference: "see you vs goodbye: see you は再会前提で親しみが強い。", englishDefinition: "An informal way to say goodbye, expecting to meet again.", etymology: "I will see you の省略が定型化した表現。" }],
   // take care (38105)
   [38105, { coreImage: "別れ際に相手の安全・健康を気遣う配慮表現がコアイメージ。", usage: "メール末尾や会話終盤で自然。温かいトーンを作れる。", synonymDifference: "take care vs bye: take care は気遣いを含み、bye は中立。", englishDefinition: "A phrase used when parting to wish someone well and safety.", etymology: "take care（注意を払う）が別れの挨拶機能を持つようになった。" }],
-  // welcome (38106)
-  [38106, { coreImage: "相手を受け入れる姿勢を示す歓迎表現がコアイメージ。", usage: "「Welcome to ...」で受け入れ先を示す。返答「You're welcome」とは機能が異なる。", synonymDifference: "welcome vs you're welcome: 前者は歓迎、後者は感謝への返答。", englishDefinition: "An expression used to greet someone pleasantly on arrival.", etymology: "古英語 wilcuma（望ましい来訪者）由来。" }],
+  // welcome (28941)
+  [28941, { coreImage: "相手を受け入れる姿勢を示す歓迎表現がコアイメージ。", usage: "「Welcome to ...」で受け入れ先を示す。返答「You're welcome」とは機能が異なる。", synonymDifference: "welcome vs you're welcome: 前者は歓迎、後者は感謝への返答。", englishDefinition: "An expression used to greet someone pleasantly on arrival.", etymology: "古英語 wilcuma（望ましい来訪者）由来。" }],
   // nice to see you (38107)
   [38107, { coreImage: "再会時の好意を直接伝える社交定型がコアイメージ。", usage: "初対面なら「Nice to meet you」、再会なら「Nice to see you」が自然。", synonymDifference: "nice to see you vs nice to meet you: 前者は再会、後者は初対面。", englishDefinition: "A polite phrase used when meeting someone again.", etymology: "nice + to see you の不定詞構文が挨拶定型化。" }],
   // how much (38108)
   [38108, { coreImage: "金額・量など不可算的な量を尋ねる疑問句がコアイメージ。", usage: "買い物では「How much is this?」が定番。可算名詞なら how many を使う。", synonymDifference: "how much vs how many: much は不可算、many は可算複数。", englishDefinition: "Used to ask about price or amount.", etymology: "how + much（どれほど多く）から成る疑問構文。" }],
   // one more time (38109)
   [38109, { coreImage: "同じ内容の再提示を丁寧に求める反復依頼がコアイメージ。", usage: "聞き取れない場面で「Could you say that one more time?」が実用的。", synonymDifference: "one more time vs again: 前者は依頼として明示的、again はより短く一般的。", englishDefinition: "An expression meaning one additional repetition.", etymology: "one + more + time の数量表現が依頼定型化。" }],
-  // slowly (38110)
-  [38110, { coreImage: "動作・発話速度を下げる様子を示す副詞がコアイメージ。", usage: "学習初級では「Speak slowly, please.」が非常に有用。", synonymDifference: "slowly vs gently: slowly は速度、gently は力加減・態度。", englishDefinition: "At a low speed; not quickly.", etymology: "slow + -ly（副詞化）で形成。" }],
+  // slowly (24397)
+  [24397, { coreImage: "動作・発話速度を下げる様子を示す副詞がコアイメージ。", usage: "学習初級では「Speak slowly, please.」が非常に有用。", synonymDifference: "slowly vs gently: slowly は速度、gently は力加減・態度。", englishDefinition: "At a low speed; not quickly.", etymology: "slow + -ly（副詞化）で形成。" }],
   // right now (38111)
   [38111, { coreImage: "遅延なしの現在時点を強調する時間句がコアイメージ。", usage: "緊急性を出せるが、命令調では強く響くため語調調整が必要。", synonymDifference: "right now vs now: right now の方が即時性の強調が強い。", englishDefinition: "At this exact moment; immediately.", etymology: "right（まさに）+ now による時点強調。" }],
   // over there (38112)
@@ -5066,34 +5066,34 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   [38114, { coreImage: "複数候補から距離のある対象を一つ選ぶ指示句がコアイメージ。", usage: "比較文脈で this one と対にして使うと明確。", synonymDifference: "that one vs this one: that は遠い対象、this は近い対象。", englishDefinition: "A phrase referring to one thing farther from the speaker.", etymology: "指示詞 that + one の選択構文。" }],
   // here you are (38115)
   [38115, { coreImage: "相手に物を渡す際の受け渡し定型がコアイメージ。", usage: "接客・日常どちらでも使える。「Here you go」と近い。", synonymDifference: "here you are vs here you go: 後者の方が口語で幅広く使われる。", englishDefinition: "A phrase used when giving something to someone.", etymology: "here + you are（ここにあります）が受け渡し定型化。" }],
-  // actually (38021)
-  [38021, { coreImage: "先行発言を修正・補足して実際の内容へ寄せる談話副詞がコアイメージ。", usage: "文頭で「Actually, ...」と置くと自然に軌道修正できる。", synonymDifference: "actually vs in fact: 後者はやや書き言葉寄りで強調が強い。", englishDefinition: "Used to introduce a correction, clarification, or surprising fact.", etymology: "actual（実際の）+ -ly の副詞化。" }],
-  // basically (38022)
-  [38022, { coreImage: "細部を省いて要点だけ示す要約マーカーがコアイメージ。", usage: "「Basically, ...」で説明を短く整理できる。", synonymDifference: "basically vs generally: basically は本質要約、generally は一般論。", englishDefinition: "In the most important ways; used to summarize.", etymology: "basic（基本）+ -ally 由来。" }],
-  // exactly (38023)
-  [38023, { coreImage: "一致・正確性を強く示す同意/程度副詞がコアイメージ。", usage: "相づち「Exactly.」として単独使用も頻出。", synonymDifference: "exactly vs precisely: precisely はややフォーマル。", englishDefinition: "Used to mean completely correct or in an exact manner.", etymology: "exact（正確な）+ -ly。" }],
-  // probably (38024)
-  [38024, { coreImage: "高い可能性を断定せず示す推量副詞がコアイメージ。", usage: "未来予測「I'll probably ...」で自然。", synonymDifference: "probably vs maybe: probably の方が確度が高い。", englishDefinition: "Likely to happen or be true.", etymology: "probable（ありそうな）+ -ly。" }],
-  // definitely (38025)
-  [38025, { coreImage: "不確実性を排して確信を示す強い断定副詞がコアイメージ。", usage: "「I'll definitely come.」で強い約束を表せる。", synonymDifference: "definitely vs certainly: 両者近いが definitely は会話で頻出。", englishDefinition: "Without doubt; certainly.", etymology: "definite（明確な）+ -ly。" }],
-  // anyway (38026)
-  [38026, { coreImage: "脱線を切り上げ本筋へ戻す話題転換マーカーがコアイメージ。", usage: "「Anyway, ...」で会話の流れを回収できる。", synonymDifference: "anyway vs by the way: 前者は本題回帰、後者は話題追加。", englishDefinition: "Used to change topic, return to the main point, or mean in any case.", etymology: "any + way が談話標識として固定化。" }],
-  // obviously (38027)
-  [38027, { coreImage: "共有されるべき明白さを前提化する評価副詞がコアイメージ。", usage: "主観が強く出るため、断定し過ぎない配慮が必要。", synonymDifference: "obviously vs clearly: obviously の方が「自明」含意が強い。", englishDefinition: "In a way that is easy to see, understand, or recognize.", etymology: "obvious（明白な）+ -ly。" }],
-  // unfortunately (38028)
-  [38028, { coreImage: "不都合な事実に遺憾の枠付けを与える談話副詞がコアイメージ。", usage: "断り・悪い知らせの緩衝材として文頭で使う。", synonymDifference: "unfortunately vs sadly: 前者は事実評価、後者は感情寄り。", englishDefinition: "Used to express regret that a situation is unpleasant.", etymology: "fortunate（幸運な）に否定接頭辞 un- を付加。" }],
-  // awesome (38029)
-  [38029, { coreImage: "強い好意・賞賛をカジュアルに示す高評価語がコアイメージ。", usage: "若年層会話で「That's awesome!」が頻出。", synonymDifference: "awesome vs great: awesome の方が感情強度が高い。", englishDefinition: "Extremely good or impressive (informal).", etymology: "awe（畏敬）由来だが現代会話では「最高」の口語義が主流。" }],
-  // amazing (38030)
-  [38030, { coreImage: "驚きと高評価を同時に示す感情形容がコアイメージ。", usage: "人・物・出来事いずれにも広く使える。", synonymDifference: "amazing vs awesome: amazing は驚き成分、awesome は口語賞賛色が強い。", englishDefinition: "Very surprising and very good.", etymology: "amaze（驚かせる）+ -ing。" }],
-  // terrible (38031)
-  [38031, { coreImage: "質・状況が非常に悪いと強く評価する否定形容がコアイメージ。", usage: "体調・天気・出来事の不満表現で頻出。", synonymDifference: "terrible vs bad: terrible の方が程度が強い。", englishDefinition: "Very bad or unpleasant.", etymology: "terror（恐れ）系語源から強い否定評価へ。" }],
-  // stuff (38032)
-  [38032, { coreImage: "具体名を挙げない「もの・こと」の総称として使う口語名詞がコアイメージ。", usage: "不可算扱いが基本で「a lot of stuff」が自然。", synonymDifference: "stuff vs things: stuff はより口語で雑多な集合感がある。", englishDefinition: "Informal word for things, materials, or matters.", etymology: "古フランス語 estoffe（材料）由来。" }],
-  // guess (38033)
-  [38033, { coreImage: "確証なしに妥当そうな答えを出す推測行為がコアイメージ。", usage: "「I guess ...」は断定を和らげる会話マーカーとして有用。", synonymDifference: "guess vs suppose: suppose の方がやや思考的で丁寧。", englishDefinition: "To form an opinion without complete information.", etymology: "中英語 gessen（推測する）由来。" }],
-  // figure (38034)
-  [38034, { coreImage: "情報を整理して理解・解決に到達する認知プロセスがコアイメージ。", usage: "「figure out」で「理解する・解決する」の句動詞として高頻度。", synonymDifference: "figure out vs understand: 前者は試行錯誤の過程を含む。", englishDefinition: "To understand or solve, especially after thinking.", etymology: "ラテン語 figura（形）由来。句動詞 figure out で意味拡張。" }],
+  // actually (24353)
+  [24353, { coreImage: "先行発言を修正・補足して実際の内容へ寄せる談話副詞がコアイメージ。", usage: "文頭で「Actually, ...」と置くと自然に軌道修正できる。", synonymDifference: "actually vs in fact: 後者はやや書き言葉寄りで強調が強い。", englishDefinition: "Used to introduce a correction, clarification, or surprising fact.", etymology: "actual（実際の）+ -ly の副詞化。" }],
+  // basically (24600)
+  [24600, { coreImage: "細部を省いて要点だけ示す要約マーカーがコアイメージ。", usage: "「Basically, ...」で説明を短く整理できる。", synonymDifference: "basically vs generally: basically は本質要約、generally は一般論。", englishDefinition: "In the most important ways; used to summarize.", etymology: "basic（基本）+ -ally 由来。" }],
+  // exactly (24366)
+  [24366, { coreImage: "一致・正確性を強く示す同意/程度副詞がコアイメージ。", usage: "相づち「Exactly.」として単独使用も頻出。", synonymDifference: "exactly vs precisely: precisely はややフォーマル。", englishDefinition: "Used to mean completely correct or in an exact manner.", etymology: "exact（正確な）+ -ly。" }],
+  // probably (24388)
+  [24388, { coreImage: "高い可能性を断定せず示す推量副詞がコアイメージ。", usage: "未来予測「I'll probably ...」で自然。", synonymDifference: "probably vs maybe: probably の方が確度が高い。", englishDefinition: "Likely to happen or be true.", etymology: "probable（ありそうな）+ -ly。" }],
+  // definitely (24756)
+  [24756, { coreImage: "不確実性を排して確信を示す強い断定副詞がコアイメージ。", usage: "「I'll definitely come.」で強い約束を表せる。", synonymDifference: "definitely vs certainly: 両者近いが definitely は会話で頻出。", englishDefinition: "Without doubt; certainly.", etymology: "definite（明確な）+ -ly。" }],
+  // anyway (24355)
+  [24355, { coreImage: "脱線を切り上げ本筋へ戻す話題転換マーカーがコアイメージ。", usage: "「Anyway, ...」で会話の流れを回収できる。", synonymDifference: "anyway vs by the way: 前者は本題回帰、後者は話題追加。", englishDefinition: "Used to change topic, return to the main point, or mean in any case.", etymology: "any + way が談話標識として固定化。" }],
+  // obviously (24382)
+  [24382, { coreImage: "共有されるべき明白さを前提化する評価副詞がコアイメージ。", usage: "主観が強く出るため、断定し過ぎない配慮が必要。", synonymDifference: "obviously vs clearly: obviously の方が「自明」含意が強い。", englishDefinition: "In a way that is easy to see, understand, or recognize.", etymology: "obvious（明白な）+ -ly。" }],
+  // unfortunately (24408)
+  [24408, { coreImage: "不都合な事実に遺憾の枠付けを与える談話副詞がコアイメージ。", usage: "断り・悪い知らせの緩衝材として文頭で使う。", synonymDifference: "unfortunately vs sadly: 前者は事実評価、後者は感情寄り。", englishDefinition: "Used to express regret that a situation is unpleasant.", etymology: "fortunate（幸運な）に否定接頭辞 un- を付加。" }],
+  // awesome (25580)
+  [25580, { coreImage: "強い好意・賞賛をカジュアルに示す高評価語がコアイメージ。", usage: "若年層会話で「That's awesome!」が頻出。", synonymDifference: "awesome vs great: awesome の方が感情強度が高い。", englishDefinition: "Extremely good or impressive (informal).", etymology: "awe（畏敬）由来だが現代会話では「最高」の口語義が主流。" }],
+  // amazing (25499)
+  [25499, { coreImage: "驚きと高評価を同時に示す感情形容がコアイメージ。", usage: "人・物・出来事いずれにも広く使える。", synonymDifference: "amazing vs awesome: amazing は驚き成分、awesome は口語賞賛色が強い。", englishDefinition: "Very surprising and very good.", etymology: "amaze（驚かせる）+ -ing。" }],
+  // terrible (23538)
+  [23538, { coreImage: "質・状況が非常に悪いと強く評価する否定形容がコアイメージ。", usage: "体調・天気・出来事の不満表現で頻出。", synonymDifference: "terrible vs bad: terrible の方が程度が強い。", englishDefinition: "Very bad or unpleasant.", etymology: "terror（恐れ）系語源から強い否定評価へ。" }],
+  // stuff (29706)
+  [29706, { coreImage: "具体名を挙げない「もの・こと」の総称として使う口語名詞がコアイメージ。", usage: "不可算扱いが基本で「a lot of stuff」が自然。", synonymDifference: "stuff vs things: stuff はより口語で雑多な集合感がある。", englishDefinition: "Informal word for things, materials, or matters.", etymology: "古フランス語 estoffe（材料）由来。" }],
+  // guess (23658)
+  [23658, { coreImage: "確証なしに妥当そうな答えを出す推測行為がコアイメージ。", usage: "「I guess ...」は断定を和らげる会話マーカーとして有用。", synonymDifference: "guess vs suppose: suppose の方がやや思考的で丁寧。", englishDefinition: "To form an opinion without complete information.", etymology: "中英語 gessen（推測する）由来。" }],
+  // figure (24895)
+  [24895, { coreImage: "情報を整理して理解・解決に到達する認知プロセスがコアイメージ。", usage: "「figure out」で「理解する・解決する」の句動詞として高頻度。", synonymDifference: "figure out vs understand: 前者は試行錯誤の過程を含む。", englishDefinition: "To understand or solve, especially after thinking.", etymology: "ラテン語 figura（形）由来。句動詞 figure out で意味拡張。" }],
   // kidding (38035)
   [38035, { coreImage: "発言を冗談枠で提示する軽い遊びの談話機能がコアイメージ。", usage: "「I'm kidding.」「Are you kidding me?」が定型。", synonymDifference: "kidding vs joking: 両者近いが kidding の方が会話で軽く砕ける。", englishDefinition: "Speaking playfully and not seriously.", etymology: "kid（からかう）由来の進行形表現。" }],
   // no problem (38116)
@@ -5324,40 +5324,40 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   [39724, { coreImage: "相手の達成可能性を信じて励ます応援定型がコアイメージ。", usage: "試験・発表前の声かけで効果的。", synonymDifference: "you got this vs good luck: 前者は能力への確信を強調。", englishDefinition: "An encouraging phrase meaning you can do it.", etymology: "have got（持っている）から能力所有比喩。" }],
   // works great (39726)
   [39726, { coreImage: "対象が非常にうまく機能することを示す強め評価がコアイメージ。", usage: "提案採用後の結果報告に使える。", synonymDifference: "works great vs works fine: 前者は評価が高い。", englishDefinition: "A phrase meaning it works very well.", etymology: "great を添えた機能評価表現。" }],
-  // apparently (38041)
-  [38041, { coreImage: "伝聞情報を断定せず導入する副詞がコアイメージ。", usage: "情報源が間接的なときに使う。", synonymDifference: "apparently vs obviously: 前者は伝聞、後者は自明性。", englishDefinition: "As far as one knows or has heard.", etymology: "apparent（明らかな）+ -ly。" }],
-  // supposedly (38042)
-  [38042, { coreImage: "真偽未確定の伝聞を距離を置いて示す副詞がコアイメージ。", usage: "噂・未確認情報に使う。", synonymDifference: "supposedly vs apparently: supposedly の方が懐疑含み。", englishDefinition: "According to what is generally believed or said.", etymology: "suppose 由来の副詞。" }],
-  // literally (38043)
-  [38043, { coreImage: "比喩でなく文字通りを示す副詞がコアイメージ。", usage: "口語では強調語としても使われるが誤解に注意。", synonymDifference: "literally vs actually: 前者は字義、後者は事実。", englishDefinition: "In a literal or exact sense.", etymology: "literal + -ly。" }],
-  // honestly (38044)
-  [38044, { coreImage: "率直さを前置きして本音を示す談話副詞がコアイメージ。", usage: "意見表明前の緩衝として有効。", synonymDifference: "honestly vs frankly: 近いが frankly の方が硬め。", englishDefinition: "In an honest way; used to introduce a truthful opinion.", etymology: "honest + -ly。" }],
-  // ridiculous (38045)
-  [38045, { coreImage: "合理性を欠くほど馬鹿げている評価がコアイメージ。", usage: "感情が強く出るため語調に注意。", synonymDifference: "ridiculous vs silly: ridiculous の方が強い非難。", englishDefinition: "Absurd or deserving mockery.", etymology: "ラテン語 ridere（笑う）系。" }],
-  // absolutely (38046)
-  [38046, { coreImage: "完全一致・全面肯定を示す強調副詞がコアイメージ。", usage: "同意返答「Absolutely.」で高頻度。", synonymDifference: "absolutely vs definitely: absolutely は全面性が強い。", englishDefinition: "Completely; certainly.", etymology: "absolute + -ly。" }],
-  // totally (38047)
-  [38047, { coreImage: "程度の高さを口語的に強調する副詞がコアイメージ。", usage: "カジュアル同意「Totally.」で使える。", synonymDifference: "totally vs completely: totally の方が口語的。", englishDefinition: "Completely (informal in many uses).", etymology: "total + -ly。" }],
+  // apparently (24562)
+  [24562, { coreImage: "伝聞情報を断定せず導入する副詞がコアイメージ。", usage: "情報源が間接的なときに使う。", synonymDifference: "apparently vs obviously: 前者は伝聞、後者は自明性。", englishDefinition: "As far as one knows or has heard.", etymology: "apparent（明らかな）+ -ly。" }],
+  // supposedly (29791)
+  [29791, { coreImage: "真偽未確定の伝聞を距離を置いて示す副詞がコアイメージ。", usage: "噂・未確認情報に使う。", synonymDifference: "supposedly vs apparently: supposedly の方が懐疑含み。", englishDefinition: "According to what is generally believed or said.", etymology: "suppose 由来の副詞。" }],
+  // literally (27999)
+  [27999, { coreImage: "比喩でなく文字通りを示す副詞がコアイメージ。", usage: "口語では強調語としても使われるが誤解に注意。", synonymDifference: "literally vs actually: 前者は字義、後者は事実。", englishDefinition: "In a literal or exact sense.", etymology: "literal + -ly。" }],
+  // honestly (24948)
+  [24948, { coreImage: "率直さを前置きして本音を示す談話副詞がコアイメージ。", usage: "意見表明前の緩衝として有効。", synonymDifference: "honestly vs frankly: 近いが frankly の方が硬め。", englishDefinition: "In an honest way; used to introduce a truthful opinion.", etymology: "honest + -ly。" }],
+  // ridiculous (28482)
+  [28482, { coreImage: "合理性を欠くほど馬鹿げている評価がコアイメージ。", usage: "感情が強く出るため語調に注意。", synonymDifference: "ridiculous vs silly: ridiculous の方が強い非難。", englishDefinition: "Absurd or deserving mockery.", etymology: "ラテン語 ridere（笑う）系。" }],
+  // absolutely (24528)
+  [24528, { coreImage: "完全一致・全面肯定を示す強調副詞がコアイメージ。", usage: "同意返答「Absolutely.」で高頻度。", synonymDifference: "absolutely vs definitely: absolutely は全面性が強い。", englishDefinition: "Completely; certainly.", etymology: "absolute + -ly。" }],
+  // totally (25330)
+  [25330, { coreImage: "程度の高さを口語的に強調する副詞がコアイメージ。", usage: "カジュアル同意「Totally.」で使える。", synonymDifference: "totally vs completely: totally の方が口語的。", englishDefinition: "Completely (informal in many uses).", etymology: "total + -ly。" }],
   // frustrating (38048)
   [38048, { coreImage: "思い通りにならずいら立ちを生む性質がコアイメージ。", usage: "状況・作業の難しさ評価に使う。", synonymDifference: "frustrating vs annoying: 前者は目的阻害の含意が強い。", englishDefinition: "Causing feelings of annoyance due to inability to progress.", etymology: "frustrate + -ing。" }],
-  // awkward (38049)
-  [38049, { coreImage: "場面が気まずい・ぎこちない状態を示す形容がコアイメージ。", usage: "人間関係の空気描写で頻出。", synonymDifference: "awkward vs uncomfortable: awkward は社会的気まずさ寄り。", englishDefinition: "Causing embarrassment or difficulty in social situations.", etymology: "語源不詳だが中英語期から「ぎこちない」義。" }],
-  // exhausted (38050)
-  [38050, { coreImage: "エネルギーを使い切った疲労状態がコアイメージ。", usage: "非常に疲れた状態を強く示す。", synonymDifference: "exhausted vs tired: exhausted の方が程度が強い。", englishDefinition: "Extremely tired.", etymology: "exhaust（使い果たす）の過去分詞形。" }],
-  // overwhelmed (38051)
-  [38051, { coreImage: "量や感情に圧倒され処理しきれない状態がコアイメージ。", usage: "仕事量・感情の両方で使える。", synonymDifference: "overwhelmed vs stressed: 前者は圧倒感、後者はストレス全般。", englishDefinition: "Feeling unable to cope because too much is happening.", etymology: "overwhelm（圧倒する）由来。" }],
-  // meanwhile (38052)
-  [38052, { coreImage: "同時進行の別事象をつなぐ時間副詞がコアイメージ。", usage: "文頭接続で流れを整理できる。", synonymDifference: "meanwhile vs in the meantime: ほぼ同義。", englishDefinition: "At the same time; during the same period.", etymology: "mean + while（その間）。" }],
-  // regardless (38053)
-  [38053, { coreImage: "条件差を無視して方針を維持する副詞がコアイメージ。", usage: "「regardless of ...」形が高頻度。", synonymDifference: "regardless vs anyway: 前者は条件非依存を明示。", englishDefinition: "Without being affected by something.", etymology: "regard + -less。" }],
+  // awkward (25581)
+  [25581, { coreImage: "場面が気まずい・ぎこちない状態を示す形容がコアイメージ。", usage: "人間関係の空気描写で頻出。", synonymDifference: "awkward vs uncomfortable: awkward は社会的気まずさ寄り。", englishDefinition: "Causing embarrassment or difficulty in social situations.", etymology: "語源不詳だが中英語期から「ぎこちない」義。" }],
+  // exhausted (27608)
+  [27608, { coreImage: "エネルギーを使い切った疲労状態がコアイメージ。", usage: "非常に疲れた状態を強く示す。", synonymDifference: "exhausted vs tired: exhausted の方が程度が強い。", englishDefinition: "Extremely tired.", etymology: "exhaust（使い果たす）の過去分詞形。" }],
+  // overwhelmed (30894)
+  [30894, { coreImage: "量や感情に圧倒され処理しきれない状態がコアイメージ。", usage: "仕事量・感情の両方で使える。", synonymDifference: "overwhelmed vs stressed: 前者は圧倒感、後者はストレス全般。", englishDefinition: "Feeling unable to cope because too much is happening.", etymology: "overwhelm（圧倒する）由来。" }],
+  // meanwhile (28044)
+  [28044, { coreImage: "同時進行の別事象をつなぐ時間副詞がコアイメージ。", usage: "文頭接続で流れを整理できる。", synonymDifference: "meanwhile vs in the meantime: ほぼ同義。", englishDefinition: "At the same time; during the same period.", etymology: "mean + while（その間）。" }],
+  // regardless (28443)
+  [28443, { coreImage: "条件差を無視して方針を維持する副詞がコアイメージ。", usage: "「regardless of ...」形が高頻度。", synonymDifference: "regardless vs anyway: 前者は条件非依存を明示。", englishDefinition: "Without being affected by something.", etymology: "regard + -less。" }],
   // whatsoever (38054)
   [38054, { coreImage: "否定文で「少しも〜ない」を強調する語がコアイメージ。", usage: "no/none/not と組み合わせる。", synonymDifference: "whatsoever vs at all: 前者はやや強調が強く硬め。", englishDefinition: "At all (used for emphasis, especially in negatives).", etymology: "what + so + ever の強調形。" }],
   // chill (38056)
   [38056, { coreImage: "緊張を下げて落ち着くことを表す口語語がコアイメージ。", usage: "動詞・形容詞で柔軟に使われる。", synonymDifference: "chill vs relax: chill の方がカジュアル。", englishDefinition: "To relax; calm.", etymology: "chill（冷える）から感情比喩へ。" }],
   // hassle (38058)
   [38058, { coreImage: "手間や面倒がかかる負担感がコアイメージ。", usage: "「It's a hassle.」で不便さを簡潔に示せる。", synonymDifference: "hassle vs trouble: hassle は日常的な面倒感。", englishDefinition: "An inconvenience or annoying difficulty.", etymology: "米口語起源語。" }],
-  // presumably (38060)
-  [38060, { coreImage: "合理的推定に基づく控えめ断定がコアイメージ。", usage: "客観寄りの推測導入に向く。", synonymDifference: "presumably vs probably: presumably は根拠前提が強い。", englishDefinition: "Used to convey what is assumed to be true.", etymology: "presume + -ably。" }],
+  // presumably (28346)
+  [28346, { coreImage: "合理的推定に基づく控えめ断定がコアイメージ。", usage: "客観寄りの推測導入に向く。", synonymDifference: "presumably vs probably: presumably は根拠前提が強い。", englishDefinition: "Used to convey what is assumed to be true.", etymology: "presume + -ably。" }],
   // fair enough (38131)
   [38131, { coreImage: "相手の言い分に妥当性を認める受容表現がコアイメージ。", usage: "完全同意でなくても受け入れを示せる。", synonymDifference: "fair enough vs exactly: 前者は限定的同意。", englishDefinition: "An expression accepting that something is reasonable.", etymology: "fair + enough の評価句。" }],
   // at least (38132)
@@ -5584,38 +5584,38 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   [39728, { coreImage: "最終的に判明した意外な事実を導入する句がコアイメージ。", usage: "予想とのズレを示す語りに有効。", synonymDifference: "as it turns out vs actually: 前者は結果判明の流れを含む。", englishDefinition: "In the end, it was found that...", etymology: "turn out（判明する）構文。" }],
   // when it comes to (39729)
   [39729, { coreImage: "話題領域を限定して評価・意見を述べる句がコアイメージ。", usage: "得意不得意や方針を領域別に述べる時に有効。", synonymDifference: "when it comes to vs regarding: 前者は会話的。", englishDefinition: "Regarding; in matters related to.", etymology: "come to（〜に至る）慣用句。" }],
-  // nonetheless (38061)
-  [38061, { coreImage: "逆条件を認めつつ結論を維持する逆接副詞がコアイメージ。", usage: "ややフォーマルな会話・文章で使う。", synonymDifference: "nonetheless vs however: 近いが nonetheless は譲歩感が強い。", englishDefinition: "In spite of that; nevertheless.", etymology: "none + the + less の融合形。" }],
-  // frankly (38062)
-  [38062, { coreImage: "率直な評価を前置きする副詞がコアイメージ。", usage: "厳しい意見前の導入に使う。", synonymDifference: "frankly vs honestly: frankly の方が直言的。", englishDefinition: "In an open and direct way.", etymology: "frank + -ly。" }],
-  // consequently (38063)
-  [38063, { coreImage: "原因からの結果を論理的に導く接続副詞がコアイメージ。", usage: "説明文での因果明示に有効。", synonymDifference: "consequently vs therefore: ほぼ同義だが consequently は経過感がある。", englishDefinition: "As a result.", etymology: "consequence 由来。" }],
-  // incidentally (38064)
-  [38064, { coreImage: "本筋に付随する情報を差し込む副詞がコアイメージ。", usage: "「ちなみに」を丁寧に述べる時に使う。", synonymDifference: "incidentally vs by the way: 前者がやや硬い。", englishDefinition: "By the way; in a related but not central way.", etymology: "incident + -ally。" }],
-  // admittedly (38065)
-  [38065, { coreImage: "不利な点を認めた上で主張を続ける譲歩副詞がコアイメージ。", usage: "議論でバランスを取るのに有効。", synonymDifference: "admittedly vs to be fair: 前者は自己譲歩が強い。", englishDefinition: "Used to concede a point before giving another view.", etymology: "admit の副詞形。" }],
-  // bizarre (38066)
-  [38066, { coreImage: "通常感覚から外れた奇妙さを示す形容がコアイメージ。", usage: "出来事や振る舞いの違和感描写に使う。", synonymDifference: "bizarre vs strange: bizarre の方が強い異様さ。", englishDefinition: "Very strange or unusual.", etymology: "フランス語 bizarre 由来。" }],
-  // outrageous (38067)
-  [38067, { coreImage: "常識を超えるほど過剰・不当だと評価する語がコアイメージ。", usage: "価格・行為への強い非難に使う。", synonymDifference: "outrageous vs unacceptable: 前者は感情強度が高い。", englishDefinition: "Shockingly bad or excessive.", etymology: "outrage 由来。" }],
-  // phenomenal (38068)
-  [38068, { coreImage: "並外れて優れていることを示す高評価語がコアイメージ。", usage: "成果や才能への強い賞賛で使う。", synonymDifference: "phenomenal vs excellent: phenomenal の方が驚きが強い。", englishDefinition: "Extraordinarily good; remarkable.", etymology: "phenomenon 由来。" }],
-  // devastating (38069)
-  [38069, { coreImage: "精神的・物理的に大きな打撃を与える性質がコアイメージ。", usage: "ニュース・結果の衝撃を表現できる。", synonymDifference: "devastating vs upsetting: 前者の方が破壊性が強い。", englishDefinition: "Causing severe shock or damage.", etymology: "devastate + -ing。" }],
+  // nonetheless (29489)
+  [29489, { coreImage: "逆条件を認めつつ結論を維持する逆接副詞がコアイメージ。", usage: "ややフォーマルな会話・文章で使う。", synonymDifference: "nonetheless vs however: 近いが nonetheless は譲歩感が強い。", englishDefinition: "In spite of that; nevertheless.", etymology: "none + the + less の融合形。" }],
+  // frankly (26187)
+  [26187, { coreImage: "率直な評価を前置きする副詞がコアイメージ。", usage: "厳しい意見前の導入に使う。", synonymDifference: "frankly vs honestly: frankly の方が直言的。", englishDefinition: "In an open and direct way.", etymology: "frank + -ly。" }],
+  // consequently (27192)
+  [27192, { coreImage: "原因からの結果を論理的に導く接続副詞がコアイメージ。", usage: "説明文での因果明示に有効。", synonymDifference: "consequently vs therefore: ほぼ同義だが consequently は経過感がある。", englishDefinition: "As a result.", etymology: "consequence 由来。" }],
+  // incidentally (30541)
+  [30541, { coreImage: "本筋に付随する情報を差し込む副詞がコアイメージ。", usage: "「ちなみに」を丁寧に述べる時に使う。", synonymDifference: "incidentally vs by the way: 前者がやや硬い。", englishDefinition: "By the way; in a related but not central way.", etymology: "incident + -ally。" }],
+  // admittedly (27278)
+  [27278, { coreImage: "不利な点を認めた上で主張を続ける譲歩副詞がコアイメージ。", usage: "議論でバランスを取るのに有効。", synonymDifference: "admittedly vs to be fair: 前者は自己譲歩が強い。", englishDefinition: "Used to concede a point before giving another view.", etymology: "admit の副詞形。" }],
+  // bizarre (25846)
+  [25846, { coreImage: "通常感覚から外れた奇妙さを示す形容がコアイメージ。", usage: "出来事や振る舞いの違和感描写に使う。", synonymDifference: "bizarre vs strange: bizarre の方が強い異様さ。", englishDefinition: "Very strange or unusual.", etymology: "フランス語 bizarre 由来。" }],
+  // outrageous (28178)
+  [28178, { coreImage: "常識を超えるほど過剰・不当だと評価する語がコアイメージ。", usage: "価格・行為への強い非難に使う。", synonymDifference: "outrageous vs unacceptable: 前者は感情強度が高い。", englishDefinition: "Shockingly bad or excessive.", etymology: "outrage 由来。" }],
+  // phenomenal (33337)
+  [33337, { coreImage: "並外れて優れていることを示す高評価語がコアイメージ。", usage: "成果や才能への強い賞賛で使う。", synonymDifference: "phenomenal vs excellent: phenomenal の方が驚きが強い。", englishDefinition: "Extraordinarily good; remarkable.", etymology: "phenomenon 由来。" }],
+  // devastating (27247)
+  [27247, { coreImage: "精神的・物理的に大きな打撃を与える性質がコアイメージ。", usage: "ニュース・結果の衝撃を表現できる。", synonymDifference: "devastating vs upsetting: 前者の方が破壊性が強い。", englishDefinition: "Causing severe shock or damage.", etymology: "devastate + -ing。" }],
   // excruciating (38070)
   [38070, { coreImage: "耐えがたいほどの痛み・苦痛を示す強意語がコアイメージ。", usage: "痛みだけでなく待ち時間の苦しさにも比喩使用。", synonymDifference: "excruciating vs painful: 前者は程度が極めて強い。", englishDefinition: "Extremely painful or intense.", etymology: "ラテン語 cruciare（拷問する）系。" }],
   // intriguing (38071)
   [38071, { coreImage: "好奇心を刺激してもっと知りたくさせる性質がコアイメージ。", usage: "アイデア評価で前向きに使える。", synonymDifference: "intriguing vs interesting: intriguing の方が引き込みが強い。", englishDefinition: "Arousing curiosity.", etymology: "intrigue 由来。" }],
-  // mediocre (38072)
-  [38072, { coreImage: "平均的で特に優れていない評価がコアイメージ。", usage: "やや否定的な中間評価として使う。", synonymDifference: "mediocre vs average: mediocre は価値判断がより低め。", englishDefinition: "Only moderate in quality; not very good.", etymology: "ラテン語 mediocris（中程度）。" }],
-  // salty (38077)
-  [38077, { coreImage: "不満で機嫌が悪い様子を示すスラング形容がコアイメージ。", usage: "若者口語。相手によっては失礼に響く。", synonymDifference: "salty vs annoyed: salty は口語で皮肉感を含む。", englishDefinition: "Irritated or resentful (slang).", etymology: "塩辛い印象から気難しさへ比喩化。" }],
+  // mediocre (28013)
+  [28013, { coreImage: "平均的で特に優れていない評価がコアイメージ。", usage: "やや否定的な中間評価として使う。", synonymDifference: "mediocre vs average: mediocre は価値判断がより低め。", englishDefinition: "Only moderate in quality; not very good.", etymology: "ラテン語 mediocris（中程度）。" }],
+  // salty (26832)
+  [26832, { coreImage: "不満で機嫌が悪い様子を示すスラング形容がコアイメージ。", usage: "若者口語。相手によっては失礼に響く。", synonymDifference: "salty vs annoyed: salty は口語で皮肉感を含む。", englishDefinition: "Irritated or resentful (slang).", etymology: "塩辛い印象から気難しさへ比喩化。" }],
   // sketchy (38078)
   [38078, { coreImage: "情報不足や怪しさで信用しづらい状態がコアイメージ。", usage: "場所・計画・人物の信頼性評価で使う。", synonymDifference: "sketchy vs suspicious: sketchy は根拠不足感を含む。", englishDefinition: "Shady or not trustworthy.", etymology: "sketch（粗い）から転義。" }],
-  // vibe (38079)
-  [38079, { coreImage: "言語化しにくい雰囲気・感じを示す口語名詞がコアイメージ。", usage: "場所や人の印象共有で頻出。", synonymDifference: "vibe vs atmosphere: vibe の方が口語で主観的。", englishDefinition: "The emotional feel or atmosphere of a place/person.", etymology: "vibration の短縮語。" }],
-  // cringe (38080)
-  [38080, { coreImage: "恥ずかしさで身が縮む感覚を示す語がコアイメージ。", usage: "若者口語で「痛い」感を表す。", synonymDifference: "cringe vs embarrassing: cringe は反応としての感覚が強い。", englishDefinition: "Causing embarrassment or secondhand awkwardness.", etymology: "cringe（身をすくめる）由来。" }],
+  // vibe (40300)
+  [40300, { coreImage: "言語化しにくい雰囲気・感じを示す口語名詞がコアイメージ。", usage: "場所や人の印象共有で頻出。", synonymDifference: "vibe vs atmosphere: vibe の方が口語で主観的。", englishDefinition: "The emotional feel or atmosphere of a place/person.", etymology: "vibration の短縮語。" }],
+  // cringe (33413)
+  [33413, { coreImage: "恥ずかしさで身が縮む感覚を示す語がコアイメージ。", usage: "若者口語で「痛い」感を表す。", synonymDifference: "cringe vs embarrassing: cringe は反応としての感覚が強い。", englishDefinition: "Causing embarrassment or secondhand awkwardness.", etymology: "cringe（身をすくめる）由来。" }],
   // in the long run (38146)
   [38146, { coreImage: "短期でなく長期的帰結を重視する時間句がコアイメージ。", usage: "戦略判断の説明で有効。", synonymDifference: "in the long run vs eventually: 前者は長期視点を明示。", englishDefinition: "Over a long period of time.", etymology: "long run（長い走行）比喩。" }],
   // as far as I know (38147)
@@ -5866,8 +5866,8 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   [38087, { coreImage: "かなり嬉しい・満足している状態を示す英国口語がコアイメージ。", usage: "成果報告の前向き表現に使う。", synonymDifference: "chuffed vs pleased: chuffed の方が口語で感情強め。", englishDefinition: "Very pleased (BrE informal).", etymology: "語源不詳の英国俗語。" }],
   // gobsmacked (38088)
   [38088, { coreImage: "驚きで言葉を失うほどの衝撃を示す英国口語がコアイメージ。", usage: "想定外の出来事への強い反応。", synonymDifference: "gobsmacked vs shocked: 前者は口語で驚愕度が高い。", englishDefinition: "Utterly astonished (BrE informal).", etymology: "gob（口）+ smacked（打たれた）比喩。" }],
-  // stingy (38089)
-  [38089, { coreImage: "お金や資源を出し惜しみする性質がコアイメージ。", usage: "人の気前の悪さを評価する語。", synonymDifference: "stingy vs cheap: stingy は人の性質、cheap は価格にも使う。", englishDefinition: "Unwilling to spend or share.", etymology: "sting（刺す）由来の否定的比喩。" }],
+  // stingy (29628)
+  [29628, { coreImage: "お金や資源を出し惜しみする性質がコアイメージ。", usage: "人の気前の悪さを評価する語。", synonymDifference: "stingy vs cheap: stingy は人の性質、cheap は価格にも使う。", englishDefinition: "Unwilling to spend or share.", etymology: "sting（刺す）由来の否定的比喩。" }],
   // snarky (38090)
   [38090, { coreImage: "皮肉・嫌味を含む語調を示す形容がコアイメージ。", usage: "発言態度の批判に使う。", synonymDifference: "snarky vs sarcastic: snarky は軽口・意地悪感、sarcastic は皮肉技法。", englishDefinition: "Sharply critical or mocking in tone.", etymology: "snark（皮肉）由来。" }],
   // flaky (38091)
@@ -6116,1194 +6116,1194 @@ export const handwrittenExtensions: [number, WordExtension][] = [
   [39698, { coreImage: "高負荷条件で耐性を検証する試験がコアイメージ。", usage: "運用前評価でリスク低減に有効。", synonymDifference: "stress test vs test: 前者は極限条件に特化。", englishDefinition: "A test under extreme conditions.", etymology: "工学・金融用語。" }],
   // take point (39699)
   [39699, { coreImage: "先頭で主担当を引き受ける行為がコアイメージ。", usage: "役割分担時の主担当指名で使う。", synonymDifference: "take point vs lead: 前者は当該タスク先頭担当の意味。", englishDefinition: "To take the lead role.", etymology: "先頭 point を取る軍事比喩。" }],
-  // throughput (39700)
-  [39700, { coreImage: "単位時間あたり処理量の指標がコアイメージ。", usage: "性能評価・業務効率で頻出。", synonymDifference: "throughput vs speed: 前者は処理量、後者は速度。", englishDefinition: "The amount processed in a given time.", etymology: "through + put の工学語。" }],
+  // throughput (29051)
+  [29051, { coreImage: "単位時間あたり処理量の指標がコアイメージ。", usage: "性能評価・業務効率で頻出。", synonymDifference: "throughput vs speed: 前者は処理量、後者は速度。", englishDefinition: "The amount processed in a given time.", etymology: "through + put の工学語。" }],
   // timebox (39701)
   [39701, { coreImage: "作業時間を先に固定して管理する手法がコアイメージ。", usage: "集中維持と遅延防止に有効。", synonymDifference: "timebox vs schedule: 前者は時間上限固定を強調。", englishDefinition: "To allocate a fixed time limit to a task.", etymology: "time + box 管理語。" }],
-  // triage (39702)
-  [39702, { coreImage: "優先度に応じて案件を分類し処理順を決める行為がコアイメージ。", usage: "障害対応・問い合わせ処理で重要。", synonymDifference: "triage vs prioritize: 前者は分類プロセスを含む。", englishDefinition: "To sort by urgency for action.", etymology: "医療トリアージ由来。" }],
+  // triage (32223)
+  [32223, { coreImage: "優先度に応じて案件を分類し処理順を決める行為がコアイメージ。", usage: "障害対応・問い合わせ処理で重要。", synonymDifference: "triage vs prioritize: 前者は分類プロセスを含む。", englishDefinition: "To sort by urgency for action.", etymology: "医療トリアージ由来。" }],
   // under pressure (39703)
   [39703, { coreImage: "時間・責任・状況から強い負荷がかかる状態がコアイメージ。", usage: "パフォーマンス条件説明で使う。", synonymDifference: "under pressure vs stressed: 前者は外的圧力を強調。", englishDefinition: "In a stressful, demanding situation.", etymology: "pressure（圧力）句。" }],
-  // upstream (39704)
-  [39704, { coreImage: "工程の上流段階を示す位置概念がコアイメージ。", usage: "問題の源流側対策を示す時に使う。", synonymDifference: "upstream vs earlier: 前者は工程構造を含む。", englishDefinition: "At an earlier stage in a process.", etymology: "川の上流比喩。" }],
+  // upstream (20804)
+  [20804, { coreImage: "工程の上流段階を示す位置概念がコアイメージ。", usage: "問題の源流側対策を示す時に使う。", synonymDifference: "upstream vs earlier: 前者は工程構造を含む。", englishDefinition: "At an earlier stage in a process.", etymology: "川の上流比喩。" }],
   // whiteboard it (39705)
   [39705, { coreImage: "ホワイトボードで可視化しながら考える行為がコアイメージ。", usage: "設計整理・認識合わせで有効。", synonymDifference: "whiteboard it vs discuss: 前者は図解可視化を含む。", englishDefinition: "To sketch and explain ideas on a whiteboard.", etymology: "whiteboard からの動詞化。" }],
   // workstream (39706)
   [39706, { coreImage: "プロジェクト内の独立した作業系統がコアイメージ。", usage: "大規模案件の分担管理で使う。", synonymDifference: "workstream vs task: 前者は継続する作業ライン。", englishDefinition: "A distinct stream of related work within a project.", etymology: "work + stream 合成語。" }],
   // alignment (39747)
   [39747, { coreImage: "目標・認識・行動がそろっている状態がコアイメージ。", usage: "組織協調の評価指標として重要。", synonymDifference: "alignment vs agreement: 前者は継続的整合を含む。", englishDefinition: "Shared understanding and coordinated direction.", etymology: "align（一直線にする）由来。" }],
-  // bandwidth (39748)
-  [39748, { coreImage: "時間・認知リソースの余力を示す比喩語がコアイメージ。", usage: "担当可能量の相談で頻出。", synonymDifference: "bandwidth vs time: 前者は処理能力全体を含む。", englishDefinition: "Available capacity to handle work.", etymology: "通信帯域から比喩転用。" }],
-  // bottleneck (39749)
-  [39749, { coreImage: "流れ全体を詰まらせる制約点がコアイメージ。", usage: "工程改善で優先的に特定する。", synonymDifference: "bottleneck vs issue: 前者は流量制限の主因。", englishDefinition: "A point that limits overall flow or progress.", etymology: "瓶の首比喩。" }],
+  // bandwidth (30005)
+  [30005, { coreImage: "時間・認知リソースの余力を示す比喩語がコアイメージ。", usage: "担当可能量の相談で頻出。", synonymDifference: "bandwidth vs time: 前者は処理能力全体を含む。", englishDefinition: "Available capacity to handle work.", etymology: "通信帯域から比喩転用。" }],
+  // bottleneck (31135)
+  [31135, { coreImage: "流れ全体を詰まらせる制約点がコアイメージ。", usage: "工程改善で優先的に特定する。", synonymDifference: "bottleneck vs issue: 前者は流量制限の主因。", englishDefinition: "A point that limits overall flow or progress.", etymology: "瓶の首比喩。" }],
   // dependency (39750)
   [39750, { coreImage: "他要素に依存して進行が決まる関係がコアイメージ。", usage: "計画遅延リスクの主要因として管理する。", synonymDifference: "dependency vs requirement: 前者は関係性、後者は必要条件。", englishDefinition: "A reliance on another task or component.", etymology: "depend 由来。" }],
-  // escalate (39751)
-  [39751, { coreImage: "解決困難事項を上位権限へ引き上げる行為がコアイメージ。", usage: "対応速度確保のための正式手段。", synonymDifference: "escalate vs report: 前者は権限レベルを上げる。", englishDefinition: "To raise an issue to a higher level for action.", etymology: "escalator と同根。" }],
+  // escalate (26990)
+  [26990, { coreImage: "解決困難事項を上位権限へ引き上げる行為がコアイメージ。", usage: "対応速度確保のための正式手段。", synonymDifference: "escalate vs report: 前者は権限レベルを上げる。", englishDefinition: "To raise an issue to a higher level for action.", etymology: "escalator と同根。" }],
   // fallback plan (39752)
   [39752, { coreImage: "主計画失敗時に切り替える代替計画がコアイメージ。", usage: "リスク管理で事前準備する。", synonymDifference: "fallback plan vs backup: 前者は計画単位、後者は資源複製にも使う。", englishDefinition: "A backup plan used if the primary plan fails.", etymology: "fall back（後退）由来。" }],
   // handoff (39753)
   [39753, { coreImage: "担当・責任・情報を次工程へ引き継ぐ行為がコアイメージ。", usage: "品質維持には手順化が重要。", synonymDifference: "handoff vs transfer: handoff は実務引継ぎの含意が強い。", englishDefinition: "Transfer of responsibility to another person or team.", etymology: "hand off（手渡す）由来。" }],
-  // iteration (39754)
-  [39754, { coreImage: "改善のため同工程を反復するサイクルがコアイメージ。", usage: "アジャイル開発や改善活動で頻出。", synonymDifference: "iteration vs repetition: 前者は改善目的の反復。", englishDefinition: "One repeated cycle of development or refinement.", etymology: "iterate（反復する）由来。" }],
-  // milestone (39755)
-  [39755, { coreImage: "進捗を測る重要達成点がコアイメージ。", usage: "計画管理で節目確認に使う。", synonymDifference: "milestone vs deadline: 前者は達成点、後者は期限。", englishDefinition: "A significant checkpoint in a project timeline.", etymology: "里程標（道標）由来。" }],
+  // iteration (30421)
+  [30421, { coreImage: "改善のため同工程を反復するサイクルがコアイメージ。", usage: "アジャイル開発や改善活動で頻出。", synonymDifference: "iteration vs repetition: 前者は改善目的の反復。", englishDefinition: "One repeated cycle of development or refinement.", etymology: "iterate（反復する）由来。" }],
+  // milestone (31635)
+  [31635, { coreImage: "進捗を測る重要達成点がコアイメージ。", usage: "計画管理で節目確認に使う。", synonymDifference: "milestone vs deadline: 前者は達成点、後者は期限。", englishDefinition: "A significant checkpoint in a project timeline.", etymology: "里程標（道標）由来。" }],
   // postmortem (39756)
   [39756, { coreImage: "事後に原因と学びを分析する振り返りがコアイメージ。", usage: "障害後改善の再発防止に不可欠。", synonymDifference: "postmortem vs review: 前者は失敗・事故後分析の色が強い。", englishDefinition: "A retrospective analysis after completion or failure.", etymology: "ラテン語 post mortem（死後）由来。" }],
-  // apple (10001)
-  [10001, { coreImage: "身近な果物の具体物を指す基礎名詞がコアイメージ。", usage: "可算名詞で「an apple / apples」が基本。", synonymDifference: "apple vs fruit: apple は種類名、fruit は果物全体。", englishDefinition: "A round fruit with red, green, or yellow skin.", etymology: "基礎語彙として初級段階で定着する語。" }],
-  // book (10002)
-  [10002, { coreImage: "読むために綴じられた本という具体物がコアイメージ。", usage: "「read a book」「a history book」の形で高頻度。", synonymDifference: "book vs textbook: textbook は教科書に限定。", englishDefinition: "A set of written or printed pages bound together.", etymology: "基礎語彙として長く使われる語。" }],
-  // cat (10003)
-  [10003, { coreImage: "猫という動物種を指す基礎名詞がコアイメージ。", usage: "可算名詞で「a cat / cats」。", synonymDifference: "cat vs kitten: kitten は子猫。", englishDefinition: "A small domesticated animal with fur and whiskers.", etymology: "日常語として初級で学ぶ動物名。" }],
-  // dog (10004)
-  [10004, { coreImage: "犬という動物種を指す基礎名詞がコアイメージ。", usage: "「walk a dog」「pet dog」などで使う。", synonymDifference: "dog vs puppy: puppy は子犬。", englishDefinition: "A domesticated animal often kept as a pet.", etymology: "初級英語で最重要の動物語彙。" }],
-  // eat (10005)
-  [10005, { coreImage: "食べ物を口にして摂取する行為がコアイメージ。", usage: "「eat breakfast」「eat with ...」で高頻度。", synonymDifference: "eat vs have: have は食事を取る婉曲用法でも使う。", englishDefinition: "To put food into your mouth and swallow it.", etymology: "最基礎動詞として早期に定着する語。" }],
-  // friend (10006)
-  [10006, { coreImage: "親しく付き合う相手という関係名詞がコアイメージ。", usage: "可算名詞で「a friend」「my friends」。", synonymDifference: "friend vs classmate: classmate は同級生で友人とは限らない。", englishDefinition: "A person you know well and like.", etymology: "人間関係語彙の基礎語。" }],
-  // go (10007)
-  [10007, { coreImage: "話し手の位置から離れて移動する行為がコアイメージ。", usage: "「go to school」「go home」が基本連語。", synonymDifference: "go vs come: go は離れる方向、come は近づく方向。", englishDefinition: "To move from one place to another.", etymology: "英語の最重要移動動詞。" }],
-  // house (10009)
-  [10009, { coreImage: "人が住む建物そのものを指す名詞がコアイメージ。", usage: "「a big house」「at my house」の形で使う。", synonymDifference: "house vs home: house は建物、home は生活の場。", englishDefinition: "A building where people live.", etymology: "生活語彙の中心となる基礎語。" }],
-  // know (10010)
-  [10010, { coreImage: "情報や事実を知っている状態がコアイメージ。", usage: "「know + 名詞」「know that ...」で使う。", synonymDifference: "know vs understand: know は知識保持、understand は理解。", englishDefinition: "To have information or knowledge about something.", etymology: "認知動詞の基礎語。" }],
-  // like (10011)
-  [10011, { coreImage: "好意を持つ、または似ていることを示す語がコアイメージ。", usage: "動詞「I like music」と前置詞「like this」の両用。", synonymDifference: "like vs love: love の方が感情強度が高い。", englishDefinition: "To enjoy or prefer; also used to show similarity.", etymology: "高頻度の多機能基礎語。" }],
-  // name (10013)
-  [10013, { coreImage: "人や物を識別する呼び名がコアイメージ。", usage: "「My name is ...」「family name」で頻出。", synonymDifference: "name vs title: title は肩書きや作品名。", englishDefinition: "The word by which a person or thing is known.", etymology: "自己紹介で最重要の基礎語。" }],
-  // old (10014)
-  [10014, { coreImage: "年数を経ている状態を示す形容がコアイメージ。", usage: "人にも物にも使えるが文脈で意味が変わる。", synonymDifference: "old vs aged: aged はややフォーマル。", englishDefinition: "Having existed for many years; not new.", etymology: "対義語 new と対で学ぶ基礎語。" }],
-  // play (10015)
-  [10015, { coreImage: "遊ぶ、または演奏する行為を表す多義動詞がコアイメージ。", usage: "「play soccer」「play the piano」で型が異なる。", synonymDifference: "play vs practice: play は実行、practice は練習。", englishDefinition: "To take part in a game; to perform music.", etymology: "初級で早く身につける多義動詞。" }],
-  // run (10016)
-  [10016, { coreImage: "足で速く移動する動作がコアイメージ。", usage: "自動詞が基本だが「run a shop」の他義もある。", synonymDifference: "run vs walk: run は歩くより速い移動。", englishDefinition: "To move quickly on foot.", etymology: "高頻度の基礎動詞。" }],
-  // school (10017)
-  [10017, { coreImage: "学ぶための教育機関・場所がコアイメージ。", usage: "「go to school」「at school」で頻出。", synonymDifference: "school vs class: class は授業・学級単位。", englishDefinition: "A place where children are educated.", etymology: "学習文脈の中心語彙。" }],
-  // teacher (10018)
-  [10018, { coreImage: "教える役割の人を指す職業名詞がコアイメージ。", usage: "可算名詞で「a teacher」「English teacher」。", synonymDifference: "teacher vs instructor: instructor は指導者一般でやや広い。", englishDefinition: "A person whose job is to teach.", etymology: "teach + -er の基本語形成。" }],
-  // use (10019)
-  [10019, { coreImage: "道具や方法を目的のために使う行為がコアイメージ。", usage: "「use + 名詞」「be used for ...」で使う。", synonymDifference: "use vs utilize: utilize はややフォーマル。", englishDefinition: "To do something with a tool or method for a purpose.", etymology: "実用語彙の基礎動詞。" }],
-  // very (10020)
-  [10020, { coreImage: "程度を強める基本強調副詞がコアイメージ。", usage: "形容詞・副詞を修飾して程度を上げる。", synonymDifference: "very vs really: really の方が口語で柔らかい場面がある。", englishDefinition: "Used to emphasize degree.", etymology: "最初期に習得する強調副詞。" }],
-  // water (10021)
-  [10021, { coreImage: "飲用や生活に不可欠な液体を指す名詞がコアイメージ。", usage: "通常不可算名詞で「some water」。", synonymDifference: "water vs drink: drink は飲料一般。", englishDefinition: "The clear liquid that people and animals drink.", etymology: "生活基盤語彙の基礎語。" }],
-  // year (10022)
-  [10022, { coreImage: "12か月の時間単位を示す名詞がコアイメージ。", usage: "「this year」「next year」で高頻度。", synonymDifference: "year vs month: year は月より長い単位。", englishDefinition: "A period of twelve months.", etymology: "時間表現の基本単位語。" }],
-  // zoo (10023)
-  [10023, { pronunciation: { us: "/dɔːɡ/", uk: "/dɒɡ/" }, coreImage: "動物を展示・保護する施設を指す名詞がコアイメージ。", usage: "「go to the zoo」が定型。", synonymDifference: "zoo vs aquarium: aquarium は水族館。", englishDefinition: "A place where animals are kept for people to see.", etymology: "初級学習で扱う施設語彙。" }],
-  // morning (10024)
-  [10024, { coreImage: "一日の始まりの時間帯を示す名詞がコアイメージ。", usage: "「in the morning」「Good morning」で頻出。", synonymDifference: "morning vs dawn: dawn は夜明けの瞬間寄り。", englishDefinition: "The early part of the day.", etymology: "時間帯語彙の基礎語。" }],
-  // night (10025)
-  [10025, { pronunciation: { us: "/ˈwɔːtər/", uk: "/ˈwɔːtə/" }, coreImage: "日没後の暗い時間帯を示す名詞がコアイメージ。", usage: "「at night」「Good night」が定型。", synonymDifference: "night vs evening: evening は夜の早い時間帯。", englishDefinition: "The time when it is dark outside.", etymology: "時間帯語彙の基礎語。" }],
-  // mother (10026)
-  [10026, { coreImage: "母親という家族関係を示す名詞がコアイメージ。", usage: "「my mother」「her mother」で使う。", synonymDifference: "mother vs mom: mom はより口語的。", englishDefinition: "A female parent.", etymology: "家族語彙の基本語。" }],
-  // father (10027)
-  [10027, { coreImage: "父親という家族関係を示す名詞がコアイメージ。", usage: "「my father」「his father」で使う。", synonymDifference: "father vs dad: dad はより口語的。", englishDefinition: "A male parent.", etymology: "家族語彙の基本語。" }],
-  // sister (10028)
-  [10028, { coreImage: "女性のきょうだいを示す家族名詞がコアイメージ。", usage: "「my sister」「older sister」などで使う。", synonymDifference: "sister vs sibling: sibling は性別中立。", englishDefinition: "A female sibling.", etymology: "家族関係の基礎語。" }],
-  // brother (10029)
-  [10029, { coreImage: "男性のきょうだいを示す家族名詞がコアイメージ。", usage: "「my brother」「younger brother」などで使う。", synonymDifference: "brother vs sibling: sibling は性別中立。", englishDefinition: "A male sibling.", etymology: "家族関係の基礎語。" }],
-  // time (10030)
-  [10030, { coreImage: "時刻・時間・機会を表す多義名詞がコアイメージ。", usage: "「What time...?」「have time to do」で頻出。", synonymDifference: "time vs hour: hour は60分の単位。", englishDefinition: "The passing of moments; a point in the day.", etymology: "非常に高頻度の基礎語。" }],
-  // read (10031)
-  [10031, { coreImage: "文字情報を見て内容を理解する行為がコアイメージ。", usage: "「read a book」「read about ...」で使う。", synonymDifference: "read vs study: read は読む行為、study は学習行為。", englishDefinition: "To look at written words and understand them.", etymology: "学習行為の中心動詞。" }],
-  // write (10032)
-  [10032, { coreImage: "文字を記して情報を表す行為がコアイメージ。", usage: "「write a letter」「write to ...」で使う。", synonymDifference: "write vs type: write は手書きにも広く使える。", englishDefinition: "To make letters or words on paper or screen.", etymology: "表現活動の基礎動詞。" }],
-  // speak (10033)
-  [10033, { coreImage: "声に出して言語を話す行為がコアイメージ。", usage: "「speak English」「speak to ...」で頻出。", synonymDifference: "speak vs talk: speak はややフォーマル、talk は口語的。", englishDefinition: "To say words out loud; to use a language.", etymology: "コミュニケーション基礎動詞。" }],
-  // listen (10034)
-  [10034, { coreImage: "意識して耳を傾ける行為がコアイメージ。", usage: "「listen to music」のように to が必要。", synonymDifference: "listen vs hear: listen は意図的、hear は自然に聞こえる。", englishDefinition: "To pay attention to sound.", etymology: "聴覚行為の基礎動詞。" }],
-  // want (10035)
-  [10035, { coreImage: "欲求や希望を表す基本動詞がコアイメージ。", usage: "「want + 名詞」「want to do」が基本。", synonymDifference: "want vs need: want は希望、need は必要。", englishDefinition: "To desire something; to wish to do something.", etymology: "初級で重要な欲求表現動詞。" }],
-  // bird (10036)
-  [10036, { coreImage: "羽とくちばしを持つ鳥類を指す名詞がコアイメージ。", usage: "可算名詞で「a bird / birds」。", synonymDifference: "bird vs chicken: chicken は鶏に限定。", englishDefinition: "An animal with feathers and wings.", etymology: "動物語彙の基礎語。" }],
-  // fish (10037)
-  [10037, { coreImage: "水中で生きる魚類を指す名詞がコアイメージ。", usage: "生き物としても食材としても使う。", synonymDifference: "fish vs seafood: seafood は魚介類全体。", englishDefinition: "An animal that lives in water and has gills.", etymology: "生活語彙と食語彙の両方で重要。" }],
-  // rabbit (10038)
-  [10038, { coreImage: "耳が長い小動物を指す名詞がコアイメージ。", usage: "「a rabbit」「pet rabbit」の形で使う。", synonymDifference: "rabbit vs hare: hare は野生で体が大きい種を指すことが多い。", englishDefinition: "A small animal with long ears.", etymology: "初級動物語彙。" }],
-  // horse (10039)
-  [10039, { coreImage: "人が乗ることもある大型の家畜動物がコアイメージ。", usage: "「ride a horse」が定型。", synonymDifference: "horse vs pony: pony は小型の馬。", englishDefinition: "A large animal used for riding or work.", etymology: "基本動物語彙。" }],
-  // cow (10040)
-  [10040, { coreImage: "乳を出す家畜としての牛を指す名詞がコアイメージ。", usage: "「a cow」「milk from cows」の形で使う。", synonymDifference: "cow vs bull: bull は雄牛。", englishDefinition: "A large farm animal, especially a female one kept for milk.", etymology: "家畜語彙の基礎語。" }],
-  // pig (10041)
-  [10041, { coreImage: "豚という家畜動物を指す名詞がコアイメージ。", usage: "動物名として使い、食肉では pork を使うことが多い。", synonymDifference: "pig vs pork: pig は動物、pork は豚肉。", englishDefinition: "A farm animal with a short snout.", etymology: "家畜語彙の基礎語。" }],
-  // monkey (10042)
-  [10042, { coreImage: "猿類の動物を指す名詞がコアイメージ。", usage: "「a monkey」「monkeys in the zoo」で使う。", synonymDifference: "monkey vs ape: ape は尾がない類人猿を指す。", englishDefinition: "An animal like an ape, usually with a tail.", etymology: "動物語彙の基礎語。" }],
-  // bear (10043)
-  [10043, { coreImage: "大型の哺乳類クマを指す名詞がコアイメージ。", usage: "動物名としての bear（名詞）をまず習得。", synonymDifference: "bear vs polar bear: 後者は種名。", englishDefinition: "A large, heavy wild animal with thick fur.", etymology: "基本動物語彙。" }],
-  // elephant (10044)
-  [10044, { pronunciation: { us: "/hɑːt/", uk: "/hɒt/" }, coreImage: "長い鼻を持つ大型動物を指す名詞がコアイメージ。", usage: "「an elephant」など不定冠詞に注意。", synonymDifference: "elephant vs mammal: mammal は分類語、elephant は種名。", englishDefinition: "A very large animal with a trunk.", etymology: "初級で扱う代表動物名。" }],
-  // lion (10045)
-  [10045, { coreImage: "ライオンという大型の肉食獣を指す名詞がコアイメージ。", usage: "「a lion」「the lion」を文脈で使い分ける。", synonymDifference: "lion vs tiger: 種が異なる。", englishDefinition: "A large wild cat, often called the king of beasts.", etymology: "動物語彙の基礎語。" }],
-  // tiger (10046)
-  [10046, { coreImage: "縞模様を持つ大型の肉食獣を指す名詞がコアイメージ。", usage: "「a tiger」などで使う。", synonymDifference: "tiger vs lion: 種が異なる大型ネコ科動物。", englishDefinition: "A large wild cat with orange fur and black stripes.", etymology: "動物語彙の基礎語。" }],
-  // chicken (10047)
-  [10047, { coreImage: "鶏（動物）と鶏肉（食材）の両義を持つ語がコアイメージ。", usage: "文脈で生き物か食べ物かを判別する。", synonymDifference: "chicken vs hen: hen は雌鶏、chicken は一般名。", englishDefinition: "A farm bird; also its meat as food.", etymology: "初級で重要な多義名詞。" }],
-  // egg (10048)
-  [10048, { coreImage: "殻に包まれた卵という具体物がコアイメージ。", usage: "可算名詞で「an egg」「eggs」。", synonymDifference: "egg vs omelet: egg は素材、omelet は料理。", englishDefinition: "An oval object laid by birds, often eaten as food.", etymology: "食語彙の基礎名詞。" }],
-  // milk (10049)
-  [10049, { pronunciation: { us: "/ˈɔːfən/", uk: "/ˈɒfən/" }, coreImage: "白い液体の飲料としての牛乳がコアイメージ。", usage: "通常不可算名詞で「some milk」。", synonymDifference: "milk vs dairy: dairy は乳製品全体。", englishDefinition: "A white liquid from animals, used as a drink.", etymology: "日常食語彙の基礎語。" }],
-  // bread (10050)
-  [10050, { coreImage: "小麦などで作る主食パンを指す名詞がコアイメージ。", usage: "不可算扱いが基本で「some bread」。", synonymDifference: "bread vs loaf: loaf はパン1斤の単位。", englishDefinition: "Food made from flour, water, and yeast, baked.", etymology: "基本食語彙の中心語。" }],
-  // rice (10051)
-  [10051, { coreImage: "米という穀物、または炊いたご飯を指す名詞がコアイメージ。", usage: "通常不可算で「some rice」。", synonymDifference: "rice vs grain: grain は穀物一般。", englishDefinition: "A small grain eaten as food, especially in Asia.", etymology: "食文化語彙の基礎語。" }],
-  // cake (10052)
-  [10052, { coreImage: "焼いて作る甘い菓子を指す名詞がコアイメージ。", usage: "可算名詞で「a cake」「a birthday cake」。", synonymDifference: "cake vs bread: cake は甘味菓子、bread は主食。", englishDefinition: "A sweet baked food made with flour and sugar.", etymology: "日常食語彙の基礎語。" }],
-  // orange (10053)
-  [10053, { coreImage: "オレンジという果物を指す名詞がコアイメージ。", usage: "色名としての orange も重要。", synonymDifference: "orange vs mandarin: mandarin はみかん系の別種。", englishDefinition: "A round citrus fruit with orange skin.", etymology: "果物語彙の基礎語。" }],
-  // banana (10054)
-  [10054, { coreImage: "長い形の果物バナナを指す名詞がコアイメージ。", usage: "可算名詞で「a banana / bananas」。", synonymDifference: "banana vs plantain: plantain は料理用バナナ。", englishDefinition: "A long curved yellow fruit.", etymology: "果物語彙の基礎語。" }],
-  // fruit (10055)
-  [10055, { coreImage: "果物全般をまとめる総称名詞がコアイメージ。", usage: "不可算扱いが多いが種類では可算用法もある。", synonymDifference: "fruit vs fruits: fruits は種類を区別する文脈で使う。", englishDefinition: "Sweet food that grows on trees or plants.", etymology: "食材分類の基本語。" }],
-  // vegetable (10056)
-  [10056, { coreImage: "野菜を指す食材分類名詞がコアイメージ。", usage: "可算で「a vegetable」、総称で vegetables。", synonymDifference: "vegetable vs fruit: 一般に甘味や食べ方で分類が異なる。", englishDefinition: "A plant eaten as food, such as carrot or cabbage.", etymology: "食材分類の基礎語。" }],
-  // meat (10057)
-  [10057, { coreImage: "動物由来の食肉全般を指す名詞がコアイメージ。", usage: "通常不可算名詞で使う。", synonymDifference: "meat vs beef: beef は牛肉、meat は肉全般。", englishDefinition: "Animal flesh eaten as food.", etymology: "食語彙の中心語。" }],
+  // apple (23035)
+  [23035, { coreImage: "身近な果物の具体物を指す基礎名詞がコアイメージ。", usage: "可算名詞で「an apple / apples」が基本。", synonymDifference: "apple vs fruit: apple は種類名、fruit は果物全体。", englishDefinition: "A round fruit with red, green, or yellow skin.", etymology: "基礎語彙として初級段階で定着する語。" }],
+  // book (23021)
+  [23021, { coreImage: "読むために綴じられた本という具体物がコアイメージ。", usage: "「read a book」「a history book」の形で高頻度。", synonymDifference: "book vs textbook: textbook は教科書に限定。", englishDefinition: "A set of written or printed pages bound together.", etymology: "基礎語彙として長く使われる語。" }],
+  // cat (23029)
+  [23029, { coreImage: "猫という動物種を指す基礎名詞がコアイメージ。", usage: "可算名詞で「a cat / cats」。", synonymDifference: "cat vs kitten: kitten は子猫。", englishDefinition: "A small domesticated animal with fur and whiskers.", etymology: "日常語として初級で学ぶ動物名。" }],
+  // dog (23028)
+  [23028, { coreImage: "犬という動物種を指す基礎名詞がコアイメージ。", usage: "「walk a dog」「pet dog」などで使う。", synonymDifference: "dog vs puppy: puppy は子犬。", englishDefinition: "A domesticated animal often kept as a pet.", etymology: "初級英語で最重要の動物語彙。" }],
+  // eat (23003)
+  [23003, { coreImage: "食べ物を口にして摂取する行為がコアイメージ。", usage: "「eat breakfast」「eat with ...」で高頻度。", synonymDifference: "eat vs have: have は食事を取る婉曲用法でも使う。", englishDefinition: "To put food into your mouth and swallow it.", etymology: "最基礎動詞として早期に定着する語。" }],
+  // friend (23023)
+  [23023, { coreImage: "親しく付き合う相手という関係名詞がコアイメージ。", usage: "可算名詞で「a friend」「my friends」。", synonymDifference: "friend vs classmate: classmate は同級生で友人とは限らない。", englishDefinition: "A person you know well and like.", etymology: "人間関係語彙の基礎語。" }],
+  // go (23001)
+  [23001, { coreImage: "話し手の位置から離れて移動する行為がコアイメージ。", usage: "「go to school」「go home」が基本連語。", synonymDifference: "go vs come: go は離れる方向、come は近づく方向。", englishDefinition: "To move from one place to another.", etymology: "英語の最重要移動動詞。" }],
+  // house (23121)
+  [23121, { coreImage: "人が住む建物そのものを指す名詞がコアイメージ。", usage: "「a big house」「at my house」の形で使う。", synonymDifference: "house vs home: house は建物、home は生活の場。", englishDefinition: "A building where people live.", etymology: "生活語彙の中心となる基礎語。" }],
+  // know (23056)
+  [23056, { coreImage: "情報や事実を知っている状態がコアイメージ。", usage: "「know + 名詞」「know that ...」で使う。", synonymDifference: "know vs understand: know は知識保持、understand は理解。", englishDefinition: "To have information or knowledge about something.", etymology: "認知動詞の基礎語。" }],
+  // like (23006)
+  [23006, { coreImage: "好意を持つ、または似ていることを示す語がコアイメージ。", usage: "動詞「I like music」と前置詞「like this」の両用。", synonymDifference: "like vs love: love の方が感情強度が高い。", englishDefinition: "To enjoy or prefer; also used to show similarity.", etymology: "高頻度の多機能基礎語。" }],
+  // name (23132)
+  [23132, { coreImage: "人や物を識別する呼び名がコアイメージ。", usage: "「My name is ...」「family name」で頻出。", synonymDifference: "name vs title: title は肩書きや作品名。", englishDefinition: "The word by which a person or thing is known.", etymology: "自己紹介で最重要の基礎語。" }],
+  // old (23044)
+  [23044, { coreImage: "年数を経ている状態を示す形容がコアイメージ。", usage: "人にも物にも使えるが文脈で意味が変わる。", synonymDifference: "old vs aged: aged はややフォーマル。", englishDefinition: "Having existed for many years; not new.", etymology: "対義語 new と対で学ぶ基礎語。" }],
+  // play (24476)
+  [24476, { coreImage: "遊ぶ、または演奏する行為を表す多義動詞がコアイメージ。", usage: "「play soccer」「play the piano」で型が異なる。", synonymDifference: "play vs practice: play は実行、practice は練習。", englishDefinition: "To take part in a game; to perform music.", etymology: "初級で早く身につける多義動詞。" }],
+  // run (24478)
+  [24478, { coreImage: "足で速く移動する動作がコアイメージ。", usage: "自動詞が基本だが「run a shop」の他義もある。", synonymDifference: "run vs walk: run は歩くより速い移動。", englishDefinition: "To move quickly on foot.", etymology: "高頻度の基礎動詞。" }],
+  // school (23020)
+  [23020, { coreImage: "学ぶための教育機関・場所がコアイメージ。", usage: "「go to school」「at school」で頻出。", synonymDifference: "school vs class: class は授業・学級単位。", englishDefinition: "A place where children are educated.", etymology: "学習文脈の中心語彙。" }],
+  // teacher (23024)
+  [23024, { coreImage: "教える役割の人を指す職業名詞がコアイメージ。", usage: "可算名詞で「a teacher」「English teacher」。", synonymDifference: "teacher vs instructor: instructor は指導者一般でやや広い。", englishDefinition: "A person whose job is to teach.", etymology: "teach + -er の基本語形成。" }],
+  // use (23067)
+  [23067, { coreImage: "道具や方法を目的のために使う行為がコアイメージ。", usage: "「use + 名詞」「be used for ...」で使う。", synonymDifference: "use vs utilize: utilize はややフォーマル。", englishDefinition: "To do something with a tool or method for a purpose.", etymology: "実用語彙の基礎動詞。" }],
+  // very (23649)
+  [23649, { coreImage: "程度を強める基本強調副詞がコアイメージ。", usage: "形容詞・副詞を修飾して程度を上げる。", synonymDifference: "very vs really: really の方が口語で柔らかい場面がある。", englishDefinition: "Used to emphasize degree.", etymology: "最初期に習得する強調副詞。" }],
+  // water (23030)
+  [23030, { coreImage: "飲用や生活に不可欠な液体を指す名詞がコアイメージ。", usage: "通常不可算名詞で「some water」。", synonymDifference: "water vs drink: drink は飲料一般。", englishDefinition: "The clear liquid that people and animals drink.", etymology: "生活基盤語彙の基礎語。" }],
+  // year (23390)
+  [23390, { coreImage: "12か月の時間単位を示す名詞がコアイメージ。", usage: "「this year」「next year」で高頻度。", synonymDifference: "year vs month: year は月より長い単位。", englishDefinition: "A period of twelve months.", etymology: "時間表現の基本単位語。" }],
+  // zoo (23391)
+  [23391, { pronunciation: { us: "/dɔːɡ/", uk: "/dɒɡ/" }, coreImage: "動物を展示・保護する施設を指す名詞がコアイメージ。", usage: "「go to the zoo」が定型。", synonymDifference: "zoo vs aquarium: aquarium は水族館。", englishDefinition: "A place where animals are kept for people to see.", etymology: "初級学習で扱う施設語彙。" }],
+  // morning (23031)
+  [23031, { coreImage: "一日の始まりの時間帯を示す名詞がコアイメージ。", usage: "「in the morning」「Good morning」で頻出。", synonymDifference: "morning vs dawn: dawn は夜明けの瞬間寄り。", englishDefinition: "The early part of the day.", etymology: "時間帯語彙の基礎語。" }],
+  // night (23134)
+  [23134, { pronunciation: { us: "/ˈwɔːtər/", uk: "/ˈwɔːtə/" }, coreImage: "日没後の暗い時間帯を示す名詞がコアイメージ。", usage: "「at night」「Good night」が定型。", synonymDifference: "night vs evening: evening は夜の早い時間帯。", englishDefinition: "The time when it is dark outside.", etymology: "時間帯語彙の基礎語。" }],
+  // mother (23026)
+  [23026, { coreImage: "母親という家族関係を示す名詞がコアイメージ。", usage: "「my mother」「her mother」で使う。", synonymDifference: "mother vs mom: mom はより口語的。", englishDefinition: "A female parent.", etymology: "家族語彙の基本語。" }],
+  // father (23027)
+  [23027, { coreImage: "父親という家族関係を示す名詞がコアイメージ。", usage: "「my father」「his father」で使う。", synonymDifference: "father vs dad: dad はより口語的。", englishDefinition: "A male parent.", etymology: "家族語彙の基本語。" }],
+  // sister (23078)
+  [23078, { coreImage: "女性のきょうだいを示す家族名詞がコアイメージ。", usage: "「my sister」「older sister」などで使う。", synonymDifference: "sister vs sibling: sibling は性別中立。", englishDefinition: "A female sibling.", etymology: "家族関係の基礎語。" }],
+  // brother (23077)
+  [23077, { coreImage: "男性のきょうだいを示す家族名詞がコアイメージ。", usage: "「my brother」「younger brother」などで使う。", synonymDifference: "brother vs sibling: sibling は性別中立。", englishDefinition: "A male sibling.", etymology: "家族関係の基礎語。" }],
+  // time (23352)
+  [23352, { coreImage: "時刻・時間・機会を表す多義名詞がコアイメージ。", usage: "「What time...?」「have time to do」で頻出。", synonymDifference: "time vs hour: hour は60分の単位。", englishDefinition: "The passing of moments; a point in the day.", etymology: "非常に高頻度の基礎語。" }],
+  // read (23008)
+  [23008, { coreImage: "文字情報を見て内容を理解する行為がコアイメージ。", usage: "「read a book」「read about ...」で使う。", synonymDifference: "read vs study: read は読む行為、study は学習行為。", englishDefinition: "To look at written words and understand them.", etymology: "学習行為の中心動詞。" }],
+  // write (23009)
+  [23009, { coreImage: "文字を記して情報を表す行為がコアイメージ。", usage: "「write a letter」「write to ...」で使う。", synonymDifference: "write vs type: write は手書きにも広く使える。", englishDefinition: "To make letters or words on paper or screen.", etymology: "表現活動の基礎動詞。" }],
+  // speak (23060)
+  [23060, { coreImage: "声に出して言語を話す行為がコアイメージ。", usage: "「speak English」「speak to ...」で頻出。", synonymDifference: "speak vs talk: speak はややフォーマル、talk は口語的。", englishDefinition: "To say words out loud; to use a language.", etymology: "コミュニケーション基礎動詞。" }],
+  // listen (23059)
+  [23059, { coreImage: "意識して耳を傾ける行為がコアイメージ。", usage: "「listen to music」のように to が必要。", synonymDifference: "listen vs hear: listen は意図的、hear は自然に聞こえる。", englishDefinition: "To pay attention to sound.", etymology: "聴覚行為の基礎動詞。" }],
+  // want (23019)
+  [23019, { coreImage: "欲求や希望を表す基本動詞がコアイメージ。", usage: "「want + 名詞」「want to do」が基本。", synonymDifference: "want vs need: want は希望、need は必要。", englishDefinition: "To desire something; to wish to do something.", etymology: "初級で重要な欲求表現動詞。" }],
+  // bird (23087)
+  [23087, { coreImage: "羽とくちばしを持つ鳥類を指す名詞がコアイメージ。", usage: "可算名詞で「a bird / birds」。", synonymDifference: "bird vs chicken: chicken は鶏に限定。", englishDefinition: "An animal with feathers and wings.", etymology: "動物語彙の基礎語。" }],
+  // fish (23111)
+  [23111, { coreImage: "水中で生きる魚類を指す名詞がコアイメージ。", usage: "生き物としても食材としても使う。", synonymDifference: "fish vs seafood: seafood は魚介類全体。", englishDefinition: "An animal that lives in water and has gills.", etymology: "生活語彙と食語彙の両方で重要。" }],
+  // rabbit (23262)
+  [23262, { coreImage: "耳が長い小動物を指す名詞がコアイメージ。", usage: "「a rabbit」「pet rabbit」の形で使う。", synonymDifference: "rabbit vs hare: hare は野生で体が大きい種を指すことが多い。", englishDefinition: "A small animal with long ears.", etymology: "初級動物語彙。" }],
+  // horse (23573)
+  [23573, { coreImage: "人が乗ることもある大型の家畜動物がコアイメージ。", usage: "「ride a horse」が定型。", synonymDifference: "horse vs pony: pony は小型の馬。", englishDefinition: "A large animal used for riding or work.", etymology: "基本動物語彙。" }],
+  // cow (23574)
+  [23574, { coreImage: "乳を出す家畜としての牛を指す名詞がコアイメージ。", usage: "「a cow」「milk from cows」の形で使う。", synonymDifference: "cow vs bull: bull は雄牛。", englishDefinition: "A large farm animal, especially a female one kept for milk.", etymology: "家畜語彙の基礎語。" }],
+  // pig (23578)
+  [23578, { coreImage: "豚という家畜動物を指す名詞がコアイメージ。", usage: "動物名として使い、食肉では pork を使うことが多い。", synonymDifference: "pig vs pork: pig は動物、pork は豚肉。", englishDefinition: "A farm animal with a short snout.", etymology: "家畜語彙の基礎語。" }],
+  // monkey (23576)
+  [23576, { coreImage: "猿類の動物を指す名詞がコアイメージ。", usage: "「a monkey」「monkeys in the zoo」で使う。", synonymDifference: "monkey vs ape: ape は尾がない類人猿を指す。", englishDefinition: "An animal like an ape, usually with a tail.", etymology: "動物語彙の基礎語。" }],
+  // bear (23399)
+  [23399, { coreImage: "大型の哺乳類クマを指す名詞がコアイメージ。", usage: "動物名としての bear（名詞）をまず習得。", synonymDifference: "bear vs polar bear: 後者は種名。", englishDefinition: "A large, heavy wild animal with thick fur.", etymology: "基本動物語彙。" }],
+  // elephant (23575)
+  [23575, { pronunciation: { us: "/hɑːt/", uk: "/hɒt/" }, coreImage: "長い鼻を持つ大型動物を指す名詞がコアイメージ。", usage: "「an elephant」など不定冠詞に注意。", synonymDifference: "elephant vs mammal: mammal は分類語、elephant は種名。", englishDefinition: "A very large animal with a trunk.", etymology: "初級で扱う代表動物名。" }],
+  // lion (23205)
+  [23205, { coreImage: "ライオンという大型の肉食獣を指す名詞がコアイメージ。", usage: "「a lion」「the lion」を文脈で使い分ける。", synonymDifference: "lion vs tiger: 種が異なる。", englishDefinition: "A large wild cat, often called the king of beasts.", etymology: "動物語彙の基礎語。" }],
+  // tiger (23351)
+  [23351, { coreImage: "縞模様を持つ大型の肉食獣を指す名詞がコアイメージ。", usage: "「a tiger」などで使う。", synonymDifference: "tiger vs lion: 種が異なる大型ネコ科動物。", englishDefinition: "A large wild cat with orange fur and black stripes.", etymology: "動物語彙の基礎語。" }],
+  // chicken (23165)
+  [23165, { coreImage: "鶏（動物）と鶏肉（食材）の両義を持つ語がコアイメージ。", usage: "文脈で生き物か食べ物かを判別する。", synonymDifference: "chicken vs hen: hen は雌鶏、chicken は一般名。", englishDefinition: "A farm bird; also its meat as food.", etymology: "初級で重要な多義名詞。" }],
+  // egg (23106)
+  [23106, { coreImage: "殻に包まれた卵という具体物がコアイメージ。", usage: "可算名詞で「an egg」「eggs」。", synonymDifference: "egg vs omelet: egg は素材、omelet は料理。", englishDefinition: "An oval object laid by birds, often eaten as food.", etymology: "食語彙の基礎名詞。" }],
+  // milk (23129)
+  [23129, { pronunciation: { us: "/ˈɔːfən/", uk: "/ˈɒfən/" }, coreImage: "白い液体の飲料としての牛乳がコアイメージ。", usage: "通常不可算名詞で「some milk」。", synonymDifference: "milk vs dairy: dairy は乳製品全体。", englishDefinition: "A white liquid from animals, used as a drink.", etymology: "日常食語彙の基礎語。" }],
+  // bread (23161)
+  [23161, { coreImage: "小麦などで作る主食パンを指す名詞がコアイメージ。", usage: "不可算扱いが基本で「some bread」。", synonymDifference: "bread vs loaf: loaf はパン1斤の単位。", englishDefinition: "Food made from flour, water, and yeast, baked.", etymology: "基本食語彙の中心語。" }],
+  // rice (23268)
+  [23268, { coreImage: "米という穀物、または炊いたご飯を指す名詞がコアイメージ。", usage: "通常不可算で「some rice」。", synonymDifference: "rice vs grain: grain は穀物一般。", englishDefinition: "A small grain eaten as food, especially in Asia.", etymology: "食文化語彙の基礎語。" }],
+  // cake (23091)
+  [23091, { coreImage: "焼いて作る甘い菓子を指す名詞がコアイメージ。", usage: "可算名詞で「a cake」「a birthday cake」。", synonymDifference: "cake vs bread: cake は甘味菓子、bread は主食。", englishDefinition: "A sweet baked food made with flour and sugar.", etymology: "日常食語彙の基礎語。" }],
+  // orange (23136)
+  [23136, { coreImage: "オレンジという果物を指す名詞がコアイメージ。", usage: "色名としての orange も重要。", synonymDifference: "orange vs mandarin: mandarin はみかん系の別種。", englishDefinition: "A round citrus fruit with orange skin.", etymology: "果物語彙の基礎語。" }],
+  // banana (23082)
+  [23082, { coreImage: "長い形の果物バナナを指す名詞がコアイメージ。", usage: "可算名詞で「a banana / bananas」。", synonymDifference: "banana vs plantain: plantain は料理用バナナ。", englishDefinition: "A long curved yellow fruit.", etymology: "果物語彙の基礎語。" }],
+  // fruit (23179)
+  [23179, { coreImage: "果物全般をまとめる総称名詞がコアイメージ。", usage: "不可算扱いが多いが種類では可算用法もある。", synonymDifference: "fruit vs fruits: fruits は種類を区別する文脈で使う。", englishDefinition: "Sweet food that grows on trees or plants.", etymology: "食材分類の基本語。" }],
+  // vegetable (23370)
+  [23370, { coreImage: "野菜を指す食材分類名詞がコアイメージ。", usage: "可算で「a vegetable」、総称で vegetables。", synonymDifference: "vegetable vs fruit: 一般に甘味や食べ方で分類が異なる。", englishDefinition: "A plant eaten as food, such as carrot or cabbage.", etymology: "食材分類の基礎語。" }],
+  // meat (23220)
+  [23220, { coreImage: "動物由来の食肉全般を指す名詞がコアイメージ。", usage: "通常不可算名詞で使う。", synonymDifference: "meat vs beef: beef は牛肉、meat は肉全般。", englishDefinition: "Animal flesh eaten as food.", etymology: "食語彙の中心語。" }],
   // tea (10058)
   [10058, { coreImage: "茶葉でいれる飲み物を指す名詞がコアイメージ。", usage: "不可算名詞で「a cup of tea」。", synonymDifference: "tea vs green tea: 後者は種類を限定。", englishDefinition: "A hot drink made from tea leaves.", etymology: "飲料語彙の基礎語。" }],
-  // juice (10059)
-  [10059, { coreImage: "果汁・野菜汁の飲料を指す名詞がコアイメージ。", usage: "不可算扱いが基本で種類は可算化する。", synonymDifference: "juice vs soda: juice は果汁飲料、soda は炭酸飲料。", englishDefinition: "Liquid from fruits or vegetables, often as a drink.", etymology: "飲料語彙の基礎語。" }],
-  // lunch (10060)
-  [10060, { coreImage: "昼の食事を指す名詞がコアイメージ。", usage: "「have lunch」「eat lunch」で頻出。", synonymDifference: "lunch vs dinner: lunch は昼食、dinner は夕食が一般。", englishDefinition: "The meal eaten in the middle of the day.", etymology: "食事時間語彙の基礎語。" }],
-  // dinner (10061)
-  [10061, { coreImage: "主に夕方以降の食事を指す名詞がコアイメージ。", usage: "「have dinner with ...」でよく使う。", synonymDifference: "dinner vs supper: 地域差があるが dinner の方が一般的。", englishDefinition: "The main meal of the day, usually in the evening.", etymology: "食事時間語彙の基礎語。" }],
-  // breakfast (10062)
-  [10062, { coreImage: "朝の最初の食事を指す名詞がコアイメージ。", usage: "「eat breakfast」「for breakfast」で使う。", synonymDifference: "breakfast vs brunch: brunch は朝昼兼用。", englishDefinition: "The first meal of the day.", etymology: "break + fast（断食を破る）由来。" }],
-  // flower (10063)
-  [10063, { coreImage: "植物の花の部分を指す名詞がコアイメージ。", usage: "可算名詞で「a flower」「flowers」。", synonymDifference: "flower vs plant: flower は植物の一部または花そのもの。", englishDefinition: "The colorful part of a plant.", etymology: "自然語彙の基礎語。" }],
-  // tree (10064)
-  [10064, { coreImage: "幹を持つ木本植物を指す名詞がコアイメージ。", usage: "「climb a tree」「plant a tree」で使う。", synonymDifference: "tree vs forest: forest は木が集まる場所。", englishDefinition: "A tall plant with a trunk and branches.", etymology: "自然語彙の基礎語。" }],
-  // mountain (10065)
-  [10065, { coreImage: "高い山地形を指す名詞がコアイメージ。", usage: "「climb a mountain」「in the mountains」で使う。", synonymDifference: "mountain vs hill: mountain の方が一般に高い。", englishDefinition: "A very high natural area of land.", etymology: "地理語彙の基礎語。" }],
-  // river (10066)
-  [10066, { coreImage: "陸地を流れる川を指す名詞がコアイメージ。", usage: "「cross a river」「along the river」で使う。", synonymDifference: "river vs stream: stream はより小さい流れ。", englishDefinition: "A large natural flow of water.", etymology: "地理語彙の基礎語。" }],
-  // sea (10067)
-  [10067, { coreImage: "海という広い水域を指す名詞がコアイメージ。", usage: "「by the sea」「go to sea」で使う。", synonymDifference: "sea vs ocean: ocean の方が規模が大きい。", englishDefinition: "A large area of salt water.", etymology: "地理語彙の基礎語。" }],
-  // sky (10068)
-  [10068, { coreImage: "地上から見える空間としての空がコアイメージ。", usage: "通常不可算で「in the sky」。", synonymDifference: "sky vs space: sky は地上から見える空、space は宇宙空間。", englishDefinition: "The space above the earth where clouds are seen.", etymology: "自然語彙の基礎語。" }],
+  // juice (23194)
+  [23194, { coreImage: "果汁・野菜汁の飲料を指す名詞がコアイメージ。", usage: "不可算扱いが基本で種類は可算化する。", synonymDifference: "juice vs soda: juice は果汁飲料、soda は炭酸飲料。", englishDefinition: "Liquid from fruits or vegetables, often as a drink.", etymology: "飲料語彙の基礎語。" }],
+  // lunch (23034)
+  [23034, { coreImage: "昼の食事を指す名詞がコアイメージ。", usage: "「have lunch」「eat lunch」で頻出。", synonymDifference: "lunch vs dinner: lunch は昼食、dinner は夕食が一般。", englishDefinition: "The meal eaten in the middle of the day.", etymology: "食事時間語彙の基礎語。" }],
+  // dinner (23104)
+  [23104, { coreImage: "主に夕方以降の食事を指す名詞がコアイメージ。", usage: "「have dinner with ...」でよく使う。", synonymDifference: "dinner vs supper: 地域差があるが dinner の方が一般的。", englishDefinition: "The main meal of the day, usually in the evening.", etymology: "食事時間語彙の基礎語。" }],
+  // breakfast (23038)
+  [23038, { coreImage: "朝の最初の食事を指す名詞がコアイメージ。", usage: "「eat breakfast」「for breakfast」で使う。", synonymDifference: "breakfast vs brunch: brunch は朝昼兼用。", englishDefinition: "The first meal of the day.", etymology: "break + fast（断食を破る）由来。" }],
+  // flower (23112)
+  [23112, { coreImage: "植物の花の部分を指す名詞がコアイメージ。", usage: "可算名詞で「a flower」「flowers」。", synonymDifference: "flower vs plant: flower は植物の一部または花そのもの。", englishDefinition: "The colorful part of a plant.", etymology: "自然語彙の基礎語。" }],
+  // tree (23364)
+  [23364, { coreImage: "幹を持つ木本植物を指す名詞がコアイメージ。", usage: "「climb a tree」「plant a tree」で使う。", synonymDifference: "tree vs forest: forest は木が集まる場所。", englishDefinition: "A tall plant with a trunk and branches.", etymology: "自然語彙の基礎語。" }],
+  // mountain (23225)
+  [23225, { coreImage: "高い山地形を指す名詞がコアイメージ。", usage: "「climb a mountain」「in the mountains」で使う。", synonymDifference: "mountain vs hill: mountain の方が一般に高い。", englishDefinition: "A very high natural area of land.", etymology: "地理語彙の基礎語。" }],
+  // river (23270)
+  [23270, { coreImage: "陸地を流れる川を指す名詞がコアイメージ。", usage: "「cross a river」「along the river」で使う。", synonymDifference: "river vs stream: stream はより小さい流れ。", englishDefinition: "A large natural flow of water.", etymology: "地理語彙の基礎語。" }],
+  // sea (23278)
+  [23278, { coreImage: "海という広い水域を指す名詞がコアイメージ。", usage: "「by the sea」「go to sea」で使う。", synonymDifference: "sea vs ocean: ocean の方が規模が大きい。", englishDefinition: "A large area of salt water.", etymology: "地理語彙の基礎語。" }],
+  // sky (23283)
+  [23283, { coreImage: "地上から見える空間としての空がコアイメージ。", usage: "通常不可算で「in the sky」。", synonymDifference: "sky vs space: sky は地上から見える空、space は宇宙空間。", englishDefinition: "The space above the earth where clouds are seen.", etymology: "自然語彙の基礎語。" }],
   // sun (10069)
   [10069, { coreImage: "地球を照らす恒星である太陽がコアイメージ。", usage: "「the sun」は定冠詞付きが基本。", synonymDifference: "sun vs star: sun は私たちの恒星、star は恒星一般。", englishDefinition: "The star that gives light and heat to Earth.", etymology: "自然・天体語彙の基礎語。" }],
   // moon (10070)
   [10070, { coreImage: "地球の衛星である月を指す名詞がコアイメージ。", usage: "「the moon」は定冠詞付きが基本。", synonymDifference: "moon vs satellite: satellite は衛星一般。", englishDefinition: "The natural satellite of Earth.", etymology: "自然・天体語彙の基礎語。" }],
-  // star (10071)
-  [10071, { coreImage: "夜空に見える星という天体を指す名詞がコアイメージ。", usage: "「a star」「the stars in the sky」で使う。", synonymDifference: "star vs sun: sun は私たちの恒星、star は恒星一般。", englishDefinition: "A bright object in the night sky.", etymology: "天体語彙の基礎語。" }],
-  // snow (10072)
-  [10072, { coreImage: "雪として降る氷の結晶を指す名詞がコアイメージ。", usage: "不可算扱いで「It is snowing.」「some snow」。", synonymDifference: "snow vs rain: snow は氷結晶、rain は液体の雨。", englishDefinition: "Soft white ice crystals falling from the sky.", etymology: "天候語彙の基礎語。" }],
-  // wind (10073)
-  [10073, { coreImage: "空気の流れとしての風を指す名詞がコアイメージ。", usage: "「strong wind」「the wind is cold」で使う。", synonymDifference: "wind vs breeze: breeze は弱い風。", englishDefinition: "Moving air.", etymology: "天候語彙の基礎語。" }],
-  // cloud (10074)
-  [10074, { coreImage: "空に浮かぶ雲を指す名詞がコアイメージ。", usage: "可算名詞で「a cloud / clouds」。", synonymDifference: "cloud vs fog: fog は地表近くの霧。", englishDefinition: "A white or gray mass in the sky made of tiny water drops.", etymology: "天候語彙の基礎語。" }],
-  // head (10075)
-  [10075, { coreImage: "体の上部で脳や顔を含む部位がコアイメージ。", usage: "「my head」「headache」で頻出。", synonymDifference: "head vs face: head は頭部全体、face は顔面。", englishDefinition: "The top part of the body with the brain and face.", etymology: "身体部位語彙の基礎語。" }],
-  // eye (10076)
-  [10076, { coreImage: "見る機能を担う目という器官がコアイメージ。", usage: "可算で「an eye」「my eyes」。", synonymDifference: "eye vs sight: eye は器官、sight は視力・視覚。", englishDefinition: "The organ used for seeing.", etymology: "身体部位語彙の基礎語。" }],
-  // ear (10077)
-  [10077, { coreImage: "聞く機能を担う耳という器官がコアイメージ。", usage: "可算で「an ear」「both ears」。", synonymDifference: "ear vs hearing: ear は器官、hearing は聴力。", englishDefinition: "The organ used for hearing.", etymology: "身体部位語彙の基礎語。" }],
-  // mouth (10078)
-  [10078, { coreImage: "食べる・話すための口の部位がコアイメージ。", usage: "「open your mouth」「mouth of a river」など多義もある。", synonymDifference: "mouth vs lips: mouth は口全体、lips は唇。", englishDefinition: "The opening in the face used for eating and speaking.", etymology: "身体部位語彙の基礎語。" }],
-  // nose (10079)
-  [10079, { coreImage: "においを感じ呼吸に使う鼻がコアイメージ。", usage: "可算で「a nose」「my nose」。", synonymDifference: "nose vs nostril: nostril は鼻の穴。", englishDefinition: "The part of the face used for smelling and breathing.", etymology: "身体部位語彙の基礎語。" }],
-  // hand (10080)
-  [10080, { coreImage: "物をつかむ手の部位がコアイメージ。", usage: "「raise your hand」「right hand」で頻出。", synonymDifference: "hand vs arm: hand は手、arm は腕。", englishDefinition: "The part at the end of your arm with fingers.", etymology: "身体部位語彙の基礎語。" }],
-  // foot (10081)
-  [10081, { coreImage: "立つ・歩くための足先部位がコアイメージ。", usage: "単複変化 foot/feet に注意。", synonymDifference: "foot vs leg: foot は足先、leg は脚全体。", englishDefinition: "The part at the end of your leg used for standing and walking.", etymology: "身体部位語彙の基礎語。" }],
-  // hair (10082)
-  [10082, { coreImage: "頭などに生える毛を指す名詞がコアイメージ。", usage: "通常不可算扱いで「long hair」。", synonymDifference: "hair vs fur: hair は人や一部動物の毛、fur は動物の体毛。", englishDefinition: "The strands growing from the skin, especially on the head.", etymology: "身体語彙の基礎語。" }],
-  // face (10083)
-  [10083, { coreImage: "目・鼻・口がある顔面部位がコアイメージ。", usage: "「wash your face」「happy face」で使う。", synonymDifference: "face vs expression: face は部位、expression は表情。", englishDefinition: "The front part of the head where eyes, nose, and mouth are.", etymology: "身体部位語彙の基礎語。" }],
-  // leg (10084)
-  [10084, { coreImage: "歩行を支える脚全体を指す名詞がコアイメージ。", usage: "可算で「a leg」「my legs」。", synonymDifference: "leg vs foot: leg は脚、foot は足先。", englishDefinition: "A limb used for standing and walking.", etymology: "身体部位語彙の基礎語。" }],
-  // finger (10085)
-  [10085, { coreImage: "手先の指を指す名詞がコアイメージ。", usage: "可算で「a finger」「ten fingers」。", synonymDifference: "finger vs thumb: thumb は親指で別語。", englishDefinition: "One of the long parts on your hand.", etymology: "身体部位語彙の基礎語。" }],
-  // heart (10086)
-  [10086, { coreImage: "心臓という器官、または心の比喩を示す語がコアイメージ。", usage: "身体意味と感情意味の両方を初級で押さえる。", synonymDifference: "heart vs mind: heart は感情寄り、mind は思考寄り。", englishDefinition: "The organ that pumps blood; also feelings or spirit.", etymology: "身体・感情の基礎多義語。" }],
+  // star (23295)
+  [23295, { coreImage: "夜空に見える星という天体を指す名詞がコアイメージ。", usage: "「a star」「the stars in the sky」で使う。", synonymDifference: "star vs sun: sun は私たちの恒星、star は恒星一般。", englishDefinition: "A bright object in the night sky.", etymology: "天体語彙の基礎語。" }],
+  // snow (23284)
+  [23284, { coreImage: "雪として降る氷の結晶を指す名詞がコアイメージ。", usage: "不可算扱いで「It is snowing.」「some snow」。", synonymDifference: "snow vs rain: snow は氷結晶、rain は液体の雨。", englishDefinition: "Soft white ice crystals falling from the sky.", etymology: "天候語彙の基礎語。" }],
+  // wind (23383)
+  [23383, { coreImage: "空気の流れとしての風を指す名詞がコアイメージ。", usage: "「strong wind」「the wind is cold」で使う。", synonymDifference: "wind vs breeze: breeze は弱い風。", englishDefinition: "Moving air.", etymology: "天候語彙の基礎語。" }],
+  // cloud (23168)
+  [23168, { coreImage: "空に浮かぶ雲を指す名詞がコアイメージ。", usage: "可算名詞で「a cloud / clouds」。", synonymDifference: "cloud vs fog: fog は地表近くの霧。", englishDefinition: "A white or gray mass in the sky made of tiny water drops.", etymology: "天候語彙の基礎語。" }],
+  // head (23118)
+  [23118, { coreImage: "体の上部で脳や顔を含む部位がコアイメージ。", usage: "「my head」「headache」で頻出。", synonymDifference: "head vs face: head は頭部全体、face は顔面。", englishDefinition: "The top part of the body with the brain and face.", etymology: "身体部位語彙の基礎語。" }],
+  // eye (23108)
+  [23108, { coreImage: "見る機能を担う目という器官がコアイメージ。", usage: "可算で「an eye」「my eyes」。", synonymDifference: "eye vs sight: eye は器官、sight は視力・視覚。", englishDefinition: "The organ used for seeing.", etymology: "身体部位語彙の基礎語。" }],
+  // ear (23175)
+  [23175, { coreImage: "聞く機能を担う耳という器官がコアイメージ。", usage: "可算で「an ear」「both ears」。", synonymDifference: "ear vs hearing: ear は器官、hearing は聴力。", englishDefinition: "The organ used for hearing.", etymology: "身体部位語彙の基礎語。" }],
+  // mouth (23227)
+  [23227, { coreImage: "食べる・話すための口の部位がコアイメージ。", usage: "「open your mouth」「mouth of a river」など多義もある。", synonymDifference: "mouth vs lips: mouth は口全体、lips は唇。", englishDefinition: "The opening in the face used for eating and speaking.", etymology: "身体部位語彙の基礎語。" }],
+  // nose (23231)
+  [23231, { coreImage: "においを感じ呼吸に使う鼻がコアイメージ。", usage: "可算で「a nose」「my nose」。", synonymDifference: "nose vs nostril: nostril は鼻の穴。", englishDefinition: "The part of the face used for smelling and breathing.", etymology: "身体部位語彙の基礎語。" }],
+  // hand (23116)
+  [23116, { coreImage: "物をつかむ手の部位がコアイメージ。", usage: "「raise your hand」「right hand」で頻出。", synonymDifference: "hand vs arm: hand は手、arm は腕。", englishDefinition: "The part at the end of your arm with fingers.", etymology: "身体部位語彙の基礎語。" }],
+  // foot (23177)
+  [23177, { coreImage: "立つ・歩くための足先部位がコアイメージ。", usage: "単複変化 foot/feet に注意。", synonymDifference: "foot vs leg: foot は足先、leg は脚全体。", englishDefinition: "The part at the end of your leg used for standing and walking.", etymology: "身体部位語彙の基礎語。" }],
+  // hair (23184)
+  [23184, { coreImage: "頭などに生える毛を指す名詞がコアイメージ。", usage: "通常不可算扱いで「long hair」。", synonymDifference: "hair vs fur: hair は人や一部動物の毛、fur は動物の体毛。", englishDefinition: "The strands growing from the skin, especially on the head.", etymology: "身体語彙の基礎語。" }],
+  // face (23109)
+  [23109, { coreImage: "目・鼻・口がある顔面部位がコアイメージ。", usage: "「wash your face」「happy face」で使う。", synonymDifference: "face vs expression: face は部位、expression は表情。", englishDefinition: "The front part of the head where eyes, nose, and mouth are.", etymology: "身体部位語彙の基礎語。" }],
+  // leg (23202)
+  [23202, { coreImage: "歩行を支える脚全体を指す名詞がコアイメージ。", usage: "可算で「a leg」「my legs」。", synonymDifference: "leg vs foot: leg は脚、foot は足先。", englishDefinition: "A limb used for standing and walking.", etymology: "身体部位語彙の基礎語。" }],
+  // finger (23585)
+  [23585, { coreImage: "手先の指を指す名詞がコアイメージ。", usage: "可算で「a finger」「ten fingers」。", synonymDifference: "finger vs thumb: thumb は親指で別語。", englishDefinition: "One of the long parts on your hand.", etymology: "身体部位語彙の基礎語。" }],
+  // heart (23185)
+  [23185, { coreImage: "心臓という器官、または心の比喩を示す語がコアイメージ。", usage: "身体意味と感情意味の両方を初級で押さえる。", synonymDifference: "heart vs mind: heart は感情寄り、mind は思考寄り。", englishDefinition: "The organ that pumps blood; also feelings or spirit.", etymology: "身体・感情の基礎多義語。" }],
   // body (10087)
   [10087, { coreImage: "頭・胴・手足を含む体全体を指す名詞がコアイメージ。", usage: "「my body」「body parts」で使う。", synonymDifference: "body vs shape: body は体そのもの、shape は体形。", englishDefinition: "The whole physical structure of a person or animal.", etymology: "身体語彙の中心語。" }],
-  // spring (10088)
-  [10088, { coreImage: "一年の季節としての春を指す名詞がコアイメージ。", usage: "季節名で通常冠詞なし「in spring」。", synonymDifference: "spring vs season: spring は季節名、season は区分名。", englishDefinition: "The season between winter and summer.", etymology: "季節語彙の基礎語。" }],
-  // summer (10089)
-  [10089, { coreImage: "暑い時期の季節としての夏がコアイメージ。", usage: "「in summer」「summer vacation」で頻出。", synonymDifference: "summer vs hot season: summer は正式な季節名。", englishDefinition: "The warmest season of the year.", etymology: "季節語彙の基礎語。" }],
-  // autumn (10090)
-  [10090, { coreImage: "夏と冬の間の季節としての秋がコアイメージ。", usage: "米語では fall も同義で頻出。", synonymDifference: "autumn vs fall: 意味同じで地域・文体差。", englishDefinition: "The season between summer and winter.", etymology: "季節語彙の基礎語。" }],
-  // winter (10091)
-  [10091, { pronunciation: { us: "/klæs/", uk: "/klɑːs/" }, coreImage: "寒い時期の季節としての冬がコアイメージ。", usage: "「in winter」「winter break」で使う。", synonymDifference: "winter vs cold weather: winter は季節、cold weather は天候状態。", englishDefinition: "The coldest season of the year.", etymology: "季節語彙の基礎語。" }],
-  // season (10092)
-  [10092, { pronunciation: { us: "/klɑːk/", uk: "/klɒk/" }, coreImage: "一年を区切る季節区分の概念がコアイメージ。", usage: "four seasons で4季を表す。", synonymDifference: "season vs weather: season は時期区分、weather は日々の天候。", englishDefinition: "One of the four parts of the year.", etymology: "時間区分語彙の基礎語。" }],
-  // garden (10093)
-  [10093, { coreImage: "花や野菜を育てる庭空間がコアイメージ。", usage: "「in the garden」「garden flowers」で使う。", synonymDifference: "garden vs yard: yard は庭全般、garden は栽培要素が強い。", englishDefinition: "A piece of land where flowers or vegetables are grown.", etymology: "生活空間語彙の基礎語。" }],
-  // lake (10094)
-  [10094, { coreImage: "陸地に囲まれた大きな水域がコアイメージ。", usage: "「by the lake」「a large lake」で使う。", synonymDifference: "lake vs pond: pond は一般に小さい池。", englishDefinition: "A large body of water surrounded by land.", etymology: "地理語彙の基礎語。" }],
-  // island (10095)
-  [10095, { coreImage: "水に囲まれた陸地としての島がコアイメージ。", usage: "「on an island」「island country」で使う。", synonymDifference: "island vs continent: continent は大陸。", englishDefinition: "A piece of land surrounded by water.", etymology: "地理語彙の基礎語。" }],
-  // stone (10096)
-  [10096, { coreImage: "石という硬い小さな岩片を指す名詞がコアイメージ。", usage: "可算で「a stone」「stones」。", synonymDifference: "stone vs rock: rock はより大きな岩全般にも使う。", englishDefinition: "A small piece of rock.", etymology: "自然物語彙の基礎語。" }],
-  // grass (10097)
-  [10097, { coreImage: "地面を覆う草や芝を指す名詞がコアイメージ。", usage: "通常不可算で「on the grass」。", synonymDifference: "grass vs plant: grass は草類、plant は植物一般。", englishDefinition: "Green plants with narrow leaves that cover the ground.", etymology: "自然語彙の基礎語。" }],
-  // air (10098)
-  [10098, { coreImage: "呼吸する空気という不可視の気体がコアイメージ。", usage: "通常不可算で「fresh air」。", synonymDifference: "air vs wind: air は気体そのもの、wind はその流れ。", englishDefinition: "The mixture of gases that people breathe.", etymology: "自然・科学語彙の基礎語。" }],
-  // earth (10099)
-  [10099, { coreImage: "地球、または土壌を示す多義名詞がコアイメージ。", usage: "文脈で planet の意味か soil の意味かを判別。", synonymDifference: "earth vs world: earth は地球体、world は世界概念。", englishDefinition: "The planet we live on; also soil.", etymology: "自然語彙の基礎多義語。" }],
-  // leaf (10100)
-  [10100, { coreImage: "植物の葉を指す名詞がコアイメージ。", usage: "単複 leaf/leaves の変化に注意。", synonymDifference: "leaf vs flower: leaf は葉、flower は花。", englishDefinition: "A flat green part of a plant.", etymology: "植物語彙の基礎語。" }],
-  // fox (10101)
-  [10101, { coreImage: "キツネという野生動物を指す名詞がコアイメージ。", usage: "可算で「a fox」「foxes」。", synonymDifference: "fox vs wolf: 種が異なるイヌ科動物。", englishDefinition: "A wild animal with red-brown fur and a bushy tail.", etymology: "動物語彙の基礎語。" }],
-  // snake (10102)
-  [10102, { coreImage: "脚のない爬虫類ヘビを指す名詞がコアイメージ。", usage: "可算で「a snake」「snakes」。", synonymDifference: "snake vs worm: snake は爬虫類、worm は環形動物。", englishDefinition: "A long, legless reptile.", etymology: "動物語彙の基礎語。" }],
-  // deer (10103)
-  [10103, { coreImage: "鹿という草食動物を指す名詞がコアイメージ。", usage: "単複同形 deer/deer に注意。", synonymDifference: "deer vs reindeer: reindeer はトナカイ種。", englishDefinition: "A hoofed animal with antlers (in males of many species).", etymology: "動物語彙の基礎語。" }],
-  // sheep (10104)
-  [10104, { coreImage: "羊という家畜動物を指す名詞がコアイメージ。", usage: "単複同形 sheep/sheep に注意。", synonymDifference: "sheep vs goat: 種が異なる家畜動物。", englishDefinition: "A farm animal kept for wool and meat.", etymology: "家畜語彙の基礎語。" }],
-  // frog (10105)
-  [10105, { coreImage: "水辺に住むカエルを指す名詞がコアイメージ。", usage: "可算で「a frog」「frogs」。", synonymDifference: "frog vs toad: toad は一般に皮膚が乾いたヒキガエル系。", englishDefinition: "A small animal with long back legs that jumps.", etymology: "動物語彙の基礎語。" }],
-  // insect (10106)
-  [10106, { coreImage: "昆虫という分類群を指す名詞がコアイメージ。", usage: "可算で「an insect」「insects」。", synonymDifference: "insect vs bug: bug は口語で虫全般を指すことが多い。", englishDefinition: "A small animal with six legs, such as an ant.", etymology: "生物分類語彙の基礎語。" }],
-  // pet (10107)
-  [10107, { coreImage: "人が飼う愛玩動物を指す名詞がコアイメージ。", usage: "「have a pet」「pet dog」で頻出。", synonymDifference: "pet vs animal: animal は動物一般、pet は飼育目的限定。", englishDefinition: "An animal kept at home for companionship.", etymology: "生活語彙の基礎語。" }],
-  // sugar (10108)
-  [10108, { coreImage: "甘味料としての砂糖を指す名詞がコアイメージ。", usage: "通常不可算で「some sugar」。", synonymDifference: "sugar vs salt: sugar は甘味、salt は塩味。", englishDefinition: "A sweet substance used in food and drink.", etymology: "調味料語彙の基礎語。" }],
-  // salt (10109)
-  [10109, { coreImage: "塩味をつける塩を指す名詞がコアイメージ。", usage: "通常不可算で「add salt」。", synonymDifference: "salt vs sugar: salt は塩味、sugar は甘味。", englishDefinition: "A white substance used to season food.", etymology: "調味料語彙の基礎語。" }],
-  // soup (10110)
-  [10110, { coreImage: "液体中心の料理スープを指す名詞がコアイメージ。", usage: "不可算扱いが多く「some soup」。", synonymDifference: "soup vs stew: stew は具材がより多く煮込まれる料理。", englishDefinition: "A liquid food made by cooking ingredients in water.", etymology: "食語彙の基礎語。" }],
-  // salad (10111)
-  [10111, { coreImage: "生野菜などを混ぜた料理としてのサラダがコアイメージ。", usage: "可算で「a salad」「salad dressing」で使う。", synonymDifference: "salad vs vegetable: salad は料理、vegetable は食材分類。", englishDefinition: "A dish of mixed raw vegetables, often with dressing.", etymology: "食事語彙の基礎語。" }],
-  // chocolate (10112)
-  [10112, { coreImage: "カカオ由来の甘い食品を指す名詞がコアイメージ。", usage: "不可算・可算の両用がある（some chocolate / a chocolate）。", synonymDifference: "chocolate vs candy: candy は甘い菓子全般。", englishDefinition: "A sweet food made from cacao.", etymology: "お菓子語彙の基礎語。" }],
+  // spring (23293)
+  [23293, { coreImage: "一年の季節としての春を指す名詞がコアイメージ。", usage: "季節名で通常冠詞なし「in spring」。", synonymDifference: "spring vs season: spring は季節名、season は区分名。", englishDefinition: "The season between winter and summer.", etymology: "季節語彙の基礎語。" }],
+  // summer (23040)
+  [23040, { coreImage: "暑い時期の季節としての夏がコアイメージ。", usage: "「in summer」「summer vacation」で頻出。", synonymDifference: "summer vs hot season: summer は正式な季節名。", englishDefinition: "The warmest season of the year.", etymology: "季節語彙の基礎語。" }],
+  // autumn (23395)
+  [23395, { coreImage: "夏と冬の間の季節としての秋がコアイメージ。", usage: "米語では fall も同義で頻出。", synonymDifference: "autumn vs fall: 意味同じで地域・文体差。", englishDefinition: "The season between summer and winter.", etymology: "季節語彙の基礎語。" }],
+  // winter (23385)
+  [23385, { pronunciation: { us: "/klæs/", uk: "/klɑːs/" }, coreImage: "寒い時期の季節としての冬がコアイメージ。", usage: "「in winter」「winter break」で使う。", synonymDifference: "winter vs cold weather: winter は季節、cold weather は天候状態。", englishDefinition: "The coldest season of the year.", etymology: "季節語彙の基礎語。" }],
+  // season (23279)
+  [23279, { pronunciation: { us: "/klɑːk/", uk: "/klɒk/" }, coreImage: "一年を区切る季節区分の概念がコアイメージ。", usage: "four seasons で4季を表す。", synonymDifference: "season vs weather: season は時期区分、weather は日々の天候。", englishDefinition: "One of the four parts of the year.", etymology: "時間区分語彙の基礎語。" }],
+  // garden (23115)
+  [23115, { coreImage: "花や野菜を育てる庭空間がコアイメージ。", usage: "「in the garden」「garden flowers」で使う。", synonymDifference: "garden vs yard: yard は庭全般、garden は栽培要素が強い。", englishDefinition: "A piece of land where flowers or vegetables are grown.", etymology: "生活空間語彙の基礎語。" }],
+  // lake (23199)
+  [23199, { coreImage: "陸地に囲まれた大きな水域がコアイメージ。", usage: "「by the lake」「a large lake」で使う。", synonymDifference: "lake vs pond: pond は一般に小さい池。", englishDefinition: "A large body of water surrounded by land.", etymology: "地理語彙の基礎語。" }],
+  // island (23192)
+  [23192, { coreImage: "水に囲まれた陸地としての島がコアイメージ。", usage: "「on an island」「island country」で使う。", synonymDifference: "island vs continent: continent は大陸。", englishDefinition: "A piece of land surrounded by water.", etymology: "地理語彙の基礎語。" }],
+  // stone (23298)
+  [23298, { coreImage: "石という硬い小さな岩片を指す名詞がコアイメージ。", usage: "可算で「a stone」「stones」。", synonymDifference: "stone vs rock: rock はより大きな岩全般にも使う。", englishDefinition: "A small piece of rock.", etymology: "自然物語彙の基礎語。" }],
+  // grass (23182)
+  [23182, { coreImage: "地面を覆う草や芝を指す名詞がコアイメージ。", usage: "通常不可算で「on the grass」。", synonymDifference: "grass vs plant: grass は草類、plant は植物一般。", englishDefinition: "Green plants with narrow leaves that cover the ground.", etymology: "自然語彙の基礎語。" }],
+  // air (23881)
+  [23881, { coreImage: "呼吸する空気という不可視の気体がコアイメージ。", usage: "通常不可算で「fresh air」。", synonymDifference: "air vs wind: air は気体そのもの、wind はその流れ。", englishDefinition: "The mixture of gases that people breathe.", etymology: "自然・科学語彙の基礎語。" }],
+  // earth (23940)
+  [23940, { coreImage: "地球、または土壌を示す多義名詞がコアイメージ。", usage: "文脈で planet の意味か soil の意味かを判別。", synonymDifference: "earth vs world: earth は地球体、world は世界概念。", englishDefinition: "The planet we live on; also soil.", etymology: "自然語彙の基礎多義語。" }],
+  // leaf (23201)
+  [23201, { coreImage: "植物の葉を指す名詞がコアイメージ。", usage: "単複 leaf/leaves の変化に注意。", synonymDifference: "leaf vs flower: leaf は葉、flower は花。", englishDefinition: "A flat green part of a plant.", etymology: "植物語彙の基礎語。" }],
+  // fox (23964)
+  [23964, { coreImage: "キツネという野生動物を指す名詞がコアイメージ。", usage: "可算で「a fox」「foxes」。", synonymDifference: "fox vs wolf: 種が異なるイヌ科動物。", englishDefinition: "A wild animal with red-brown fur and a bushy tail.", etymology: "動物語彙の基礎語。" }],
+  // snake (24115)
+  [24115, { coreImage: "脚のない爬虫類ヘビを指す名詞がコアイメージ。", usage: "可算で「a snake」「snakes」。", synonymDifference: "snake vs worm: snake は爬虫類、worm は環形動物。", englishDefinition: "A long, legless reptile.", etymology: "動物語彙の基礎語。" }],
+  // deer (23931)
+  [23931, { coreImage: "鹿という草食動物を指す名詞がコアイメージ。", usage: "単複同形 deer/deer に注意。", synonymDifference: "deer vs reindeer: reindeer はトナカイ種。", englishDefinition: "A hoofed animal with antlers (in males of many species).", etymology: "動物語彙の基礎語。" }],
+  // sheep (23577)
+  [23577, { coreImage: "羊という家畜動物を指す名詞がコアイメージ。", usage: "単複同形 sheep/sheep に注意。", synonymDifference: "sheep vs goat: 種が異なる家畜動物。", englishDefinition: "A farm animal kept for wool and meat.", etymology: "家畜語彙の基礎語。" }],
+  // frog (23579)
+  [23579, { coreImage: "水辺に住むカエルを指す名詞がコアイメージ。", usage: "可算で「a frog」「frogs」。", synonymDifference: "frog vs toad: toad は一般に皮膚が乾いたヒキガエル系。", englishDefinition: "A small animal with long back legs that jumps.", etymology: "動物語彙の基礎語。" }],
+  // insect (23991)
+  [23991, { coreImage: "昆虫という分類群を指す名詞がコアイメージ。", usage: "可算で「an insect」「insects」。", synonymDifference: "insect vs bug: bug は口語で虫全般を指すことが多い。", englishDefinition: "A small animal with six legs, such as an ant.", etymology: "生物分類語彙の基礎語。" }],
+  // pet (23241)
+  [23241, { coreImage: "人が飼う愛玩動物を指す名詞がコアイメージ。", usage: "「have a pet」「pet dog」で頻出。", synonymDifference: "pet vs animal: animal は動物一般、pet は飼育目的限定。", englishDefinition: "An animal kept at home for companionship.", etymology: "生活語彙の基礎語。" }],
+  // sugar (23302)
+  [23302, { coreImage: "甘味料としての砂糖を指す名詞がコアイメージ。", usage: "通常不可算で「some sugar」。", synonymDifference: "sugar vs salt: sugar は甘味、salt は塩味。", englishDefinition: "A sweet substance used in food and drink.", etymology: "調味料語彙の基礎語。" }],
+  // salt (23275)
+  [23275, { coreImage: "塩味をつける塩を指す名詞がコアイメージ。", usage: "通常不可算で「add salt」。", synonymDifference: "salt vs sugar: salt は塩味、sugar は甘味。", englishDefinition: "A white substance used to season food.", etymology: "調味料語彙の基礎語。" }],
+  // soup (23290)
+  [23290, { coreImage: "液体中心の料理スープを指す名詞がコアイメージ。", usage: "不可算扱いが多く「some soup」。", synonymDifference: "soup vs stew: stew は具材がより多く煮込まれる料理。", englishDefinition: "A liquid food made by cooking ingredients in water.", etymology: "食語彙の基礎語。" }],
+  // salad (23583)
+  [23583, { coreImage: "生野菜などを混ぜた料理としてのサラダがコアイメージ。", usage: "可算で「a salad」「salad dressing」で使う。", synonymDifference: "salad vs vegetable: salad は料理、vegetable は食材分類。", englishDefinition: "A dish of mixed raw vegetables, often with dressing.", etymology: "食事語彙の基礎語。" }],
+  // chocolate (23167)
+  [23167, { coreImage: "カカオ由来の甘い食品を指す名詞がコアイメージ。", usage: "不可算・可算の両用がある（some chocolate / a chocolate）。", synonymDifference: "chocolate vs candy: candy は甘い菓子全般。", englishDefinition: "A sweet food made from cacao.", etymology: "お菓子語彙の基礎語。" }],
   // cookie (10114)
   [10114, { pronunciation: { us: "/dʒɑːb/", uk: "/dʒɒb/" }, coreImage: "小型の焼き菓子クッキーを指す名詞がコアイメージ。", usage: "可算で「a cookie」「cookies」。", synonymDifference: "cookie vs biscuit: 地域差があり英米で語感が異なる。", englishDefinition: "A small sweet baked biscuit.", etymology: "食語彙の基礎語。" }],
-  // sandwich (10115)
-  [10115, { coreImage: "パンで具をはさんだ料理がコアイメージ。", usage: "可算で「a sandwich」「sandwiches」。", synonymDifference: "sandwich vs burger: burger は挟む具が主にパティ。", englishDefinition: "Food made by putting filling between slices of bread.", etymology: "人名由来の料理名。" }],
-  // pizza (10116)
-  [10116, { coreImage: "生地に具をのせて焼く料理ピザがコアイメージ。", usage: "不可算・可算の両方で使われる。", synonymDifference: "pizza vs pie: pie は別系統の料理。", englishDefinition: "A flat baked dish with cheese and toppings.", etymology: "イタリア語由来。" }],
-  // potato (10117)
-  [10117, { coreImage: "じゃがいもという野菜を指す名詞がコアイメージ。", usage: "可算で「a potato」「potatoes」。", synonymDifference: "potato vs sweet potato: 種類が異なる。", englishDefinition: "A starchy vegetable that grows underground.", etymology: "食材語彙の基礎語。" }],
-  // tomato (10118)
-  [10118, { coreImage: "トマトという食材を指す名詞がコアイメージ。", usage: "可算で「a tomato」「tomatoes」。", synonymDifference: "tomato vs ketchup: ketchup はトマト加工調味料。", englishDefinition: "A red round fruit used as a vegetable in cooking.", etymology: "食材語彙の基礎語。" }],
-  // lemon (10119)
-  [10119, { coreImage: "酸味の強い黄色い柑橘を指す名詞がコアイメージ。", usage: "可算で「a lemon」「lemons」。", synonymDifference: "lemon vs lime: 色・風味が異なる柑橘。", englishDefinition: "A sour yellow citrus fruit.", etymology: "果物語彙の基礎語。" }],
-  // grape (10120)
-  [10120, { coreImage: "房状になる小さな果実ブドウを指す名詞がコアイメージ。", usage: "可算で「a grape」「grapes」。", synonymDifference: "grape vs raisin: raisin は干しぶどう。", englishDefinition: "A small juicy fruit that grows in bunches.", etymology: "果物語彙の基礎語。" }],
-  // strawberry (10121)
-  [10121, { coreImage: "赤く小さい果実いちごを指す名詞がコアイメージ。", usage: "可算で「a strawberry」「strawberries」。", synonymDifference: "strawberry vs berry: berry は果実分類の総称。", englishDefinition: "A small red sweet fruit with seeds on the outside.", etymology: "果物語彙の基礎語。" }],
-  // cherry (10122)
-  [10122, { coreImage: "小さく丸い果実さくらんぼを指す名詞がコアイメージ。", usage: "可算で「a cherry」「cherries」。", synonymDifference: "cherry vs berry: cherry は核果で分類が異なる。", englishDefinition: "A small round red fruit with a stone.", etymology: "果物語彙の基礎語。" }],
-  // peach (10123)
-  [10123, { coreImage: "柔らかい果肉を持つ桃を指す名詞がコアイメージ。", usage: "可算で「a peach」「peaches」。", synonymDifference: "peach vs apricot: 種・大きさ・風味が異なる。", englishDefinition: "A soft round fruit with yellow or pink flesh.", etymology: "果物語彙の基礎語。" }],
-  // melon (10124)
-  [10124, { coreImage: "大きく甘い果実メロンを指す名詞がコアイメージ。", usage: "可算で「a melon」。", synonymDifference: "melon vs watermelon: watermelon はスイカ種。", englishDefinition: "A large sweet fruit with soft flesh.", etymology: "果物語彙の基礎語。" }],
-  // onion (10125)
-  [10125, { coreImage: "層状の球根野菜たまねぎを指す名詞がコアイメージ。", usage: "可算で「an onion」「onions」。", synonymDifference: "onion vs garlic: 種類と風味が異なる。", englishDefinition: "A round vegetable with layers and a strong smell.", etymology: "食材語彙の基礎語。" }],
-  // carrot (10126)
-  [10126, { coreImage: "細長い根菜にんじんを指す名詞がコアイメージ。", usage: "可算で「a carrot」「carrots」。", synonymDifference: "carrot vs radish: どちらも根菜だが種類が異なる。", englishDefinition: "An orange root vegetable.", etymology: "食材語彙の基礎語。" }],
-  // corn (10127)
-  [10127, { coreImage: "とうもろこし、または穀物一般を示す語がコアイメージ。", usage: "米語では主にとうもろこしの意味で使う。", synonymDifference: "corn vs maize: maize はより学術・国際的表現。", englishDefinition: "A yellow grain crop, especially maize.", etymology: "穀物語彙の基礎語。" }],
-  // butter (10128)
-  [10128, { coreImage: "乳脂肪由来のバターを指す名詞がコアイメージ。", usage: "不可算で「some butter」「butter bread」。", synonymDifference: "butter vs margarine: 原料と風味が異なる。", englishDefinition: "A soft yellow food made from cream.", etymology: "乳製品語彙の基礎語。" }],
-  // cheese (10129)
-  [10129, { coreImage: "発酵乳製品チーズを指す名詞がコアイメージ。", usage: "不可算が基本だが種類では可算化。", synonymDifference: "cheese vs milk: cheese は加工品、milk は原料。", englishDefinition: "A food made from milk, usually solid.", etymology: "乳製品語彙の基礎語。" }],
-  // noodle (10130)
-  [10130, { coreImage: "細長い麺状食品を指す名詞がコアイメージ。", usage: "通常複数で noodles がよく使われる。", synonymDifference: "noodle vs pasta: pasta はイタリア系麺類の総称。", englishDefinition: "A long thin strip of dough used as food.", etymology: "食語彙の基礎語。" }],
-  // forest (10131)
-  [10131, { coreImage: "木が密集して生える広い森を指す名詞がコアイメージ。", usage: "「in the forest」「a deep forest」で使う。", synonymDifference: "forest vs woods: woods はより小規模な森を指すことが多い。", englishDefinition: "A large area covered with trees.", etymology: "自然地形語彙の基礎語。" }],
-  // beach (10132)
-  [10132, { coreImage: "海や湖の砂浜・浜辺を指す名詞がコアイメージ。", usage: "「go to the beach」が定型。", synonymDifference: "beach vs coast: coast は海岸線全体、beach は浜辺部分。", englishDefinition: "A sandy or pebbly shore by the sea.", etymology: "地理・レジャー語彙の基礎語。" }],
-  // field (10133)
-  [10133, { coreImage: "開けた土地としての野原・畑を示す名詞がコアイメージ。", usage: "文脈で意味が変わる多義名詞。", synonymDifference: "field vs farm: field は土地、farm は農場全体。", englishDefinition: "An open area of land, often used for farming.", etymology: "地理・農業語彙の基礎多義語。" }],
-  // farm (10134)
-  [10134, { coreImage: "作物栽培や家畜飼育を行う農場がコアイメージ。", usage: "「on a farm」「farm animals」で使う。", synonymDifference: "farm vs field: farm は施設・経営単位、field は区画土地。", englishDefinition: "Land and buildings used for growing crops and raising animals.", etymology: "農業語彙の基礎語。" }],
-  // pond (10135)
-  [10135, { coreImage: "湖より小さい池を指す名詞がコアイメージ。", usage: "「in the pond」「a small pond」で使う。", synonymDifference: "pond vs lake: pond の方が一般に小さい。", englishDefinition: "A small area of still water.", etymology: "地理語彙の基礎語。" }],
-  // pen (10136)
-  [10136, { coreImage: "インクで書く筆記具ペンがコアイメージ。", usage: "可算で「a pen」「pen case」。", synonymDifference: "pen vs pencil: pen はインク、pencil は鉛筆芯。", englishDefinition: "A writing tool that uses ink.", etymology: "学用品語彙の基礎語。" }],
-  // pencil (10137)
-  [10137, { coreImage: "鉛筆芯で書く筆記具がコアイメージ。", usage: "可算で「a pencil」「colored pencils」。", synonymDifference: "pencil vs pen: pencil は消しやすく修正しやすい。", englishDefinition: "A writing tool with graphite inside.", etymology: "学用品語彙の基礎語。" }],
-  // eraser (10138)
-  [10138, { pronunciation: { us: "/fæst/", uk: "/fɑːst/" }, coreImage: "鉛筆の筆跡を消す消しゴムがコアイメージ。", usage: "「an eraser」「rubber（英）」の地域差もある。", synonymDifference: "eraser vs correction pen: 前者は鉛筆、後者はインク修正向け。", englishDefinition: "An object used to remove pencil marks.", etymology: "erase + -er の語形成。" }],
-  // ruler (10139)
-  [10139, { coreImage: "長さを測る・線を引く定規がコアイメージ。", usage: "可算で「a ruler」。", synonymDifference: "ruler vs scale: scale は目盛り概念全般にも使う。", englishDefinition: "A straight tool marked with units for measuring.", etymology: "学用品語彙の基礎語。" }],
-  // desk (10140)
-  [10140, { coreImage: "勉強や仕事で使う机を指す名詞がコアイメージ。", usage: "「at my desk」「school desk」で使う。", synonymDifference: "desk vs table: desk は作業用、table は汎用台。", englishDefinition: "A piece of furniture for writing or working.", etymology: "学校・生活語彙の基礎語。" }],
-  // chair (10141)
-  [10141, { coreImage: "一人用の椅子を指す名詞がコアイメージ。", usage: "可算で「a chair」「chairs」。", synonymDifference: "chair vs seat: seat は座る場所一般。", englishDefinition: "A seat for one person, usually with a back.", etymology: "家具語彙の基礎語。" }],
-  // classroom (10142)
-  [10142, { coreImage: "授業を行う教室空間を指す名詞がコアイメージ。", usage: "「in the classroom」「classroom rules」で使う。", synonymDifference: "classroom vs class: classroom は場所、class は授業/集団。", englishDefinition: "A room where students are taught.", etymology: "class + room の合成語。" }],
-  // blackboard (10143)
-  [10143, { coreImage: "チョークで書く黒板を指す名詞がコアイメージ。", usage: "近年は whiteboard との対比で使う。", synonymDifference: "blackboard vs whiteboard: 表面素材と使用ペンが異なる。", englishDefinition: "A dark board used for writing with chalk.", etymology: "school 用具語彙の基礎語。" }],
-  // notebook (10144)
-  [10144, { coreImage: "書き込み用のノート冊子がコアイメージ。", usage: "可算で「a notebook」「notebooks」。", synonymDifference: "notebook vs textbook: notebook は記録用、textbook は教材。", englishDefinition: "A book of blank pages for writing notes.", etymology: "note + book の合成語。" }],
+  // sandwich (23276)
+  [23276, { coreImage: "パンで具をはさんだ料理がコアイメージ。", usage: "可算で「a sandwich」「sandwiches」。", synonymDifference: "sandwich vs burger: burger は挟む具が主にパティ。", englishDefinition: "Food made by putting filling between slices of bread.", etymology: "人名由来の料理名。" }],
+  // pizza (23582)
+  [23582, { coreImage: "生地に具をのせて焼く料理ピザがコアイメージ。", usage: "不可算・可算の両方で使われる。", synonymDifference: "pizza vs pie: pie は別系統の料理。", englishDefinition: "A flat baked dish with cheese and toppings.", etymology: "イタリア語由来。" }],
+  // potato (23254)
+  [23254, { coreImage: "じゃがいもという野菜を指す名詞がコアイメージ。", usage: "可算で「a potato」「potatoes」。", synonymDifference: "potato vs sweet potato: 種類が異なる。", englishDefinition: "A starchy vegetable that grows underground.", etymology: "食材語彙の基礎語。" }],
+  // tomato (23580)
+  [23580, { coreImage: "トマトという食材を指す名詞がコアイメージ。", usage: "可算で「a tomato」「tomatoes」。", synonymDifference: "tomato vs ketchup: ketchup はトマト加工調味料。", englishDefinition: "A red round fruit used as a vegetable in cooking.", etymology: "食材語彙の基礎語。" }],
+  // lemon (23203)
+  [23203, { coreImage: "酸味の強い黄色い柑橘を指す名詞がコアイメージ。", usage: "可算で「a lemon」「lemons」。", synonymDifference: "lemon vs lime: 色・風味が異なる柑橘。", englishDefinition: "A sour yellow citrus fruit.", etymology: "果物語彙の基礎語。" }],
+  // grape (24412)
+  [24412, { coreImage: "房状になる小さな果実ブドウを指す名詞がコアイメージ。", usage: "可算で「a grape」「grapes」。", synonymDifference: "grape vs raisin: raisin は干しぶどう。", englishDefinition: "A small juicy fruit that grows in bunches.", etymology: "果物語彙の基礎語。" }],
+  // strawberry (29728)
+  [29728, { coreImage: "赤く小さい果実いちごを指す名詞がコアイメージ。", usage: "可算で「a strawberry」「strawberries」。", synonymDifference: "strawberry vs berry: berry は果実分類の総称。", englishDefinition: "A small red sweet fruit with seeds on the outside.", etymology: "果物語彙の基礎語。" }],
+  // cherry (25903)
+  [25903, { coreImage: "小さく丸い果実さくらんぼを指す名詞がコアイメージ。", usage: "可算で「a cherry」「cherries」。", synonymDifference: "cherry vs berry: cherry は核果で分類が異なる。", englishDefinition: "A small round red fruit with a stone.", etymology: "果物語彙の基礎語。" }],
+  // peach (26654)
+  [26654, { coreImage: "柔らかい果肉を持つ桃を指す名詞がコアイメージ。", usage: "可算で「a peach」「peaches」。", synonymDifference: "peach vs apricot: 種・大きさ・風味が異なる。", englishDefinition: "A soft round fruit with yellow or pink flesh.", etymology: "果物語彙の基礎語。" }],
+  // melon (26519)
+  [26519, { coreImage: "大きく甘い果実メロンを指す名詞がコアイメージ。", usage: "可算で「a melon」。", synonymDifference: "melon vs watermelon: watermelon はスイカ種。", englishDefinition: "A large sweet fruit with soft flesh.", etymology: "果物語彙の基礎語。" }],
+  // onion (26596)
+  [26596, { coreImage: "層状の球根野菜たまねぎを指す名詞がコアイメージ。", usage: "可算で「an onion」「onions」。", synonymDifference: "onion vs garlic: 種類と風味が異なる。", englishDefinition: "A round vegetable with layers and a strong smell.", etymology: "食材語彙の基礎語。" }],
+  // carrot (23904)
+  [23904, { coreImage: "細長い根菜にんじんを指す名詞がコアイメージ。", usage: "可算で「a carrot」「carrots」。", synonymDifference: "carrot vs radish: どちらも根菜だが種類が異なる。", englishDefinition: "An orange root vegetable.", etymology: "食材語彙の基礎語。" }],
+  // corn (24411)
+  [24411, { coreImage: "とうもろこし、または穀物一般を示す語がコアイメージ。", usage: "米語では主にとうもろこしの意味で使う。", synonymDifference: "corn vs maize: maize はより学術・国際的表現。", englishDefinition: "A yellow grain crop, especially maize.", etymology: "穀物語彙の基礎語。" }],
+  // butter (23897)
+  [23897, { coreImage: "乳脂肪由来のバターを指す名詞がコアイメージ。", usage: "不可算で「some butter」「butter bread」。", synonymDifference: "butter vs margarine: 原料と風味が異なる。", englishDefinition: "A soft yellow food made from cream.", etymology: "乳製品語彙の基礎語。" }],
+  // cheese (23581)
+  [23581, { coreImage: "発酵乳製品チーズを指す名詞がコアイメージ。", usage: "不可算が基本だが種類では可算化。", synonymDifference: "cheese vs milk: cheese は加工品、milk は原料。", englishDefinition: "A food made from milk, usually solid.", etymology: "乳製品語彙の基礎語。" }],
+  // noodle (23614)
+  [23614, { coreImage: "細長い麺状食品を指す名詞がコアイメージ。", usage: "通常複数で noodles がよく使われる。", synonymDifference: "noodle vs pasta: pasta はイタリア系麺類の総称。", englishDefinition: "A long thin strip of dough used as food.", etymology: "食語彙の基礎語。" }],
+  // forest (23178)
+  [23178, { coreImage: "木が密集して生える広い森を指す名詞がコアイメージ。", usage: "「in the forest」「a deep forest」で使う。", synonymDifference: "forest vs woods: woods はより小規模な森を指すことが多い。", englishDefinition: "A large area covered with trees.", etymology: "自然地形語彙の基礎語。" }],
+  // beach (23398)
+  [23398, { coreImage: "海や湖の砂浜・浜辺を指す名詞がコアイメージ。", usage: "「go to the beach」が定型。", synonymDifference: "beach vs coast: coast は海岸線全体、beach は浜辺部分。", englishDefinition: "A sandy or pebbly shore by the sea.", etymology: "地理・レジャー語彙の基礎語。" }],
+  // field (23954)
+  [23954, { coreImage: "開けた土地としての野原・畑を示す名詞がコアイメージ。", usage: "文脈で意味が変わる多義名詞。", synonymDifference: "field vs farm: field は土地、farm は農場全体。", englishDefinition: "An open area of land, often used for farming.", etymology: "地理・農業語彙の基礎多義語。" }],
+  // farm (23597)
+  [23597, { coreImage: "作物栽培や家畜飼育を行う農場がコアイメージ。", usage: "「on a farm」「farm animals」で使う。", synonymDifference: "farm vs field: farm は施設・経営単位、field は区画土地。", englishDefinition: "Land and buildings used for growing crops and raising animals.", etymology: "農業語彙の基礎語。" }],
+  // pond (24056)
+  [24056, { coreImage: "湖より小さい池を指す名詞がコアイメージ。", usage: "「in the pond」「a small pond」で使う。", synonymDifference: "pond vs lake: pond の方が一般に小さい。", englishDefinition: "A small area of still water.", etymology: "地理語彙の基礎語。" }],
+  // pen (23240)
+  [23240, { coreImage: "インクで書く筆記具ペンがコアイメージ。", usage: "可算で「a pen」「pen case」。", synonymDifference: "pen vs pencil: pen はインク、pencil は鉛筆芯。", englishDefinition: "A writing tool that uses ink.", etymology: "学用品語彙の基礎語。" }],
+  // pencil (23137)
+  [23137, { coreImage: "鉛筆芯で書く筆記具がコアイメージ。", usage: "可算で「a pencil」「colored pencils」。", synonymDifference: "pencil vs pen: pencil は消しやすく修正しやすい。", englishDefinition: "A writing tool with graphite inside.", etymology: "学用品語彙の基礎語。" }],
+  // eraser (23589)
+  [23589, { pronunciation: { us: "/fæst/", uk: "/fɑːst/" }, coreImage: "鉛筆の筆跡を消す消しゴムがコアイメージ。", usage: "「an eraser」「rubber（英）」の地域差もある。", synonymDifference: "eraser vs correction pen: 前者は鉛筆、後者はインク修正向け。", englishDefinition: "An object used to remove pencil marks.", etymology: "erase + -er の語形成。" }],
+  // ruler (23274)
+  [23274, { coreImage: "長さを測る・線を引く定規がコアイメージ。", usage: "可算で「a ruler」。", synonymDifference: "ruler vs scale: scale は目盛り概念全般にも使う。", englishDefinition: "A straight tool marked with units for measuring.", etymology: "学用品語彙の基礎語。" }],
+  // desk (23103)
+  [23103, { coreImage: "勉強や仕事で使う机を指す名詞がコアイメージ。", usage: "「at my desk」「school desk」で使う。", synonymDifference: "desk vs table: desk は作業用、table は汎用台。", englishDefinition: "A piece of furniture for writing or working.", etymology: "学校・生活語彙の基礎語。" }],
+  // chair (23094)
+  [23094, { coreImage: "一人用の椅子を指す名詞がコアイメージ。", usage: "可算で「a chair」「chairs」。", synonymDifference: "chair vs seat: seat は座る場所一般。", englishDefinition: "A seat for one person, usually with a back.", etymology: "家具語彙の基礎語。" }],
+  // classroom (23587)
+  [23587, { coreImage: "授業を行う教室空間を指す名詞がコアイメージ。", usage: "「in the classroom」「classroom rules」で使う。", synonymDifference: "classroom vs class: classroom は場所、class は授業/集団。", englishDefinition: "A room where students are taught.", etymology: "class + room の合成語。" }],
+  // blackboard (23588)
+  [23588, { coreImage: "チョークで書く黒板を指す名詞がコアイメージ。", usage: "近年は whiteboard との対比で使う。", synonymDifference: "blackboard vs whiteboard: 表面素材と使用ペンが異なる。", englishDefinition: "A dark board used for writing with chalk.", etymology: "school 用具語彙の基礎語。" }],
+  // notebook (23135)
+  [23135, { coreImage: "書き込み用のノート冊子がコアイメージ。", usage: "可算で「a notebook」「notebooks」。", synonymDifference: "notebook vs textbook: notebook は記録用、textbook は教材。", englishDefinition: "A book of blank pages for writing notes.", etymology: "note + book の合成語。" }],
   // textbook (10145)
   [10145, { coreImage: "授業用の教科書を指す名詞がコアイメージ。", usage: "「open your textbook」が教室定型。", synonymDifference: "textbook vs book: textbook は学習用に特化。", englishDefinition: "A book used for study in a class.", etymology: "text + book の合成語。" }],
-  // bag (10146)
-  [10146, { coreImage: "物を入れて運ぶ袋・かばんの総称がコアイメージ。", usage: "「school bag」「shopping bag」など用途で修飾。", synonymDifference: "bag vs backpack: backpack は背負うかばん。", englishDefinition: "A container used to carry things.", etymology: "生活語彙の基礎語。" }],
-  // map (10147)
-  [10147, { coreImage: "場所や地形を図示した地図がコアイメージ。", usage: "「look at a map」「map of Japan」で使う。", synonymDifference: "map vs globe: globe は地球儀の立体模型。", englishDefinition: "A drawing showing where places are.", etymology: "地理情報語彙の基礎語。" }],
-  // picture (10148)
-  [10148, { coreImage: "絵や写真として視覚情報を示す名詞がコアイメージ。", usage: "「take a picture」「picture book」で頻出。", synonymDifference: "picture vs photo: photo は写真に限定。", englishDefinition: "An image such as a drawing or photograph.", etymology: "視覚表現語彙の基礎語。" }],
-  // paper (10149)
-  [10149, { coreImage: "紙という素材、または書類を示す名詞がコアイメージ。", usage: "通常不可算だが論文などで可算用法もある。", synonymDifference: "paper vs notebook: paper は素材、notebook は冊子。", englishDefinition: "Material used for writing or printing.", etymology: "学習・生活語彙の基礎多義語。" }],
-  // test (10150)
-  [10150, { coreImage: "知識や能力を測る試験を指す名詞がコアイメージ。", usage: "「take a test」「math test」で使う。", synonymDifference: "test vs exam: exam の方がやや公式・大規模なことが多い。", englishDefinition: "An assessment to measure knowledge or ability.", etymology: "学校語彙の基礎語。" }],
-  // lesson (10151)
-  [10151, { coreImage: "授業1回分や学習単位を指す名詞がコアイメージ。", usage: "「today's lesson」「English lesson」で使う。", synonymDifference: "lesson vs class: lesson は内容単位、class は授業や集団。", englishDefinition: "A period of learning or teaching.", etymology: "教育語彙の基礎語。" }],
-  // class (10152)
-  [10152, { coreImage: "授業、または学級集団の両義を持つ語がコアイメージ。", usage: "文脈で「授業」か「クラス」を判別する。", synonymDifference: "class vs classroom: class は活動・集団、classroom は場所。", englishDefinition: "A lesson period or a group of students.", etymology: "学校語彙の高頻度多義語。" }],
-  // student (10153)
-  [10153, { coreImage: "学ぶ立場の人を示す名詞がコアイメージ。", usage: "可算で「a student」「students」。", synonymDifference: "student vs pupil: pupil は主に小中等教育で使われることがある。", englishDefinition: "A person who is learning at school or college.", etymology: "study 由来の学習者語彙。" }],
-  // library (10154)
-  [10154, { coreImage: "本を借りたり読んだりする図書館を指す名詞がコアイメージ。", usage: "「go to the library」「library card」で使う。", synonymDifference: "library vs bookstore: library は貸出/閲覧、bookstore は販売。", englishDefinition: "A place where books are kept for people to read or borrow.", etymology: "学校・公共施設語彙の基礎語。" }],
-  // gym (10155)
-  [10155, { coreImage: "運動する体育館・ジムを示す名詞がコアイメージ。", usage: "学校文脈では gymnasium の短縮として使う。", synonymDifference: "gym vs stadium: gym は屋内運動施設、stadium は大規模競技場。", englishDefinition: "A place for exercise or sports.", etymology: "gymnasium の短縮語。" }],
-  // family (10156)
-  [10156, { coreImage: "家族というまとまりの関係単位がコアイメージ。", usage: "集合的に不可算的扱いもあるが通常は可算。", synonymDifference: "family vs relative: relative は親族個人を指す。", englishDefinition: "A group of people related by blood or marriage.", etymology: "人間関係語彙の中心語。" }],
-  // parent (10157)
-  [10157, { coreImage: "親という立場を示す名詞がコアイメージ。", usage: "単数 parent、複数 parents を使い分ける。", synonymDifference: "parent vs father/mother: parent は父母を包括。", englishDefinition: "A father or mother.", etymology: "家族語彙の基礎語。" }],
+  // bag (23080)
+  [23080, { coreImage: "物を入れて運ぶ袋・かばんの総称がコアイメージ。", usage: "「school bag」「shopping bag」など用途で修飾。", synonymDifference: "bag vs backpack: backpack は背負うかばん。", englishDefinition: "A container used to carry things.", etymology: "生活語彙の基礎語。" }],
+  // map (23127)
+  [23127, { coreImage: "場所や地形を図示した地図がコアイメージ。", usage: "「look at a map」「map of Japan」で使う。", synonymDifference: "map vs globe: globe は地球儀の立体模型。", englishDefinition: "A drawing showing where places are.", etymology: "地理情報語彙の基礎語。" }],
+  // picture (23138)
+  [23138, { coreImage: "絵や写真として視覚情報を示す名詞がコアイメージ。", usage: "「take a picture」「picture book」で頻出。", synonymDifference: "picture vs photo: photo は写真に限定。", englishDefinition: "An image such as a drawing or photograph.", etymology: "視覚表現語彙の基礎語。" }],
+  // paper (23238)
+  [23238, { coreImage: "紙という素材、または書類を示す名詞がコアイメージ。", usage: "通常不可算だが論文などで可算用法もある。", synonymDifference: "paper vs notebook: paper は素材、notebook は冊子。", englishDefinition: "Material used for writing or printing.", etymology: "学習・生活語彙の基礎多義語。" }],
+  // test (23655)
+  [23655, { coreImage: "知識や能力を測る試験を指す名詞がコアイメージ。", usage: "「take a test」「math test」で使う。", synonymDifference: "test vs exam: exam の方がやや公式・大規模なことが多い。", englishDefinition: "An assessment to measure knowledge or ability.", etymology: "学校語彙の基礎語。" }],
+  // lesson (23590)
+  [23590, { coreImage: "授業1回分や学習単位を指す名詞がコアイメージ。", usage: "「today's lesson」「English lesson」で使う。", synonymDifference: "lesson vs class: lesson は内容単位、class は授業や集団。", englishDefinition: "A period of learning or teaching.", etymology: "教育語彙の基礎語。" }],
+  // class (23097)
+  [23097, { coreImage: "授業、または学級集団の両義を持つ語がコアイメージ。", usage: "文脈で「授業」か「クラス」を判別する。", synonymDifference: "class vs classroom: class は活動・集団、classroom は場所。", englishDefinition: "A lesson period or a group of students.", etymology: "学校語彙の高頻度多義語。" }],
+  // student (23301)
+  [23301, { coreImage: "学ぶ立場の人を示す名詞がコアイメージ。", usage: "可算で「a student」「students」。", synonymDifference: "student vs pupil: pupil は主に小中等教育で使われることがある。", englishDefinition: "A person who is learning at school or college.", etymology: "study 由来の学習者語彙。" }],
+  // library (23126)
+  [23126, { coreImage: "本を借りたり読んだりする図書館を指す名詞がコアイメージ。", usage: "「go to the library」「library card」で使う。", synonymDifference: "library vs bookstore: library は貸出/閲覧、bookstore は販売。", englishDefinition: "A place where books are kept for people to read or borrow.", etymology: "学校・公共施設語彙の基礎語。" }],
+  // gym (26291)
+  [26291, { coreImage: "運動する体育館・ジムを示す名詞がコアイメージ。", usage: "学校文脈では gymnasium の短縮として使う。", synonymDifference: "gym vs stadium: gym は屋内運動施設、stadium は大規模競技場。", englishDefinition: "A place for exercise or sports.", etymology: "gymnasium の短縮語。" }],
+  // family (23025)
+  [23025, { coreImage: "家族というまとまりの関係単位がコアイメージ。", usage: "集合的に不可算的扱いもあるが通常は可算。", synonymDifference: "family vs relative: relative は親族個人を指す。", englishDefinition: "A group of people related by blood or marriage.", etymology: "人間関係語彙の中心語。" }],
+  // parent (24042)
+  [24042, { coreImage: "親という立場を示す名詞がコアイメージ。", usage: "単数 parent、複数 parents を使い分ける。", synonymDifference: "parent vs father/mother: parent は父母を包括。", englishDefinition: "A father or mother.", etymology: "家族語彙の基礎語。" }],
   // grandfather (10158)
   [10158, { coreImage: "祖父という家族関係を示す名詞がコアイメージ。", usage: "「my grandfather」で使う。", synonymDifference: "grandfather vs grandparent: grandparent は祖父母を包括。", englishDefinition: "The father of your father or mother.", etymology: "grand + father の合成語。" }],
   // grandmother (10159)
   [10159, { coreImage: "祖母という家族関係を示す名詞がコアイメージ。", usage: "「my grandmother」で使う。", synonymDifference: "grandmother vs grandparent: grandparent は祖父母を包括。", englishDefinition: "The mother of your father or mother.", etymology: "grand + mother の合成語。" }],
-  // uncle (10160)
-  [10160, { coreImage: "おじ（親の兄弟・配偶者）を示す家族名詞がコアイメージ。", usage: "「my uncle」「an uncle of mine」で使う。", synonymDifference: "uncle vs aunt: uncle は男性、aunt は女性。", englishDefinition: "The brother of your mother or father, or the husband of your aunt.", etymology: "家族関係語彙の基礎語。" }],
-  // aunt (10161)
-  [10161, { coreImage: "おば（親の姉妹・配偶者）を示す家族名詞がコアイメージ。", usage: "「my aunt」「an aunt of mine」で使う。", synonymDifference: "aunt vs uncle: aunt は女性、uncle は男性。", englishDefinition: "The sister of your mother or father, or the wife of your uncle.", etymology: "家族関係語彙の基礎語。" }],
-  // cousin (10162)
-  [10162, { coreImage: "いとこ関係を示す親族名詞がコアイメージ。", usage: "英語では性別区別なく cousin を使う。", synonymDifference: "cousin vs sibling: cousin はいとこ、sibling は兄弟姉妹。", englishDefinition: "A child of your aunt or uncle.", etymology: "親族語彙の基礎語。" }],
-  // baby (10163)
-  [10163, { coreImage: "乳幼児の赤ちゃんを指す名詞がコアイメージ。", usage: "可算で「a baby」「babies」。", synonymDifference: "baby vs child: baby はより低年齢。", englishDefinition: "A very young child.", etymology: "人物語彙の基礎語。" }],
-  // boy (10164)
-  [10164, { coreImage: "男の子を指す人物名詞がコアイメージ。", usage: "可算で「a boy」「boys」。", synonymDifference: "boy vs man: boy は子ども、man は成人男性。", englishDefinition: "A male child.", etymology: "人物語彙の基礎語。" }],
-  // girl (10165)
-  [10165, { coreImage: "女の子を指す人物名詞がコアイメージ。", usage: "可算で「a girl」「girls」。", synonymDifference: "girl vs woman: girl は子ども、woman は成人女性。", englishDefinition: "A female child.", etymology: "人物語彙の基礎語。" }],
-  // man (10166)
-  [10166, { coreImage: "成人男性を指す人物名詞がコアイメージ。", usage: "可算で「a man」「men」。複数形に注意。", synonymDifference: "man vs boy: man は成人、boy は子ども。", englishDefinition: "An adult male person.", etymology: "人物語彙の高頻度基礎語。" }],
-  // woman (10167)
-  [10167, { coreImage: "成人女性を指す人物名詞がコアイメージ。", usage: "可算で「a woman」「women」。複数形発音に注意。", synonymDifference: "woman vs girl: woman は成人、girl は子ども。", englishDefinition: "An adult female person.", etymology: "人物語彙の高頻度基礎語。" }],
-  // child (10168)
-  [10168, { coreImage: "子ども一般を示す名詞がコアイメージ。", usage: "単複変化 child/children に注意。", synonymDifference: "child vs kid: kid はより口語的。", englishDefinition: "A young person; a son or daughter.", etymology: "家族・人物語彙の基礎語。" }],
-  // people (10169)
-  [10169, { coreImage: "人々の集合を示す名詞がコアイメージ。", usage: "複数扱いで「many people」。", synonymDifference: "people vs person: person は単数、people は複数。", englishDefinition: "Human beings in general or in groups.", etymology: "最重要の人物集合語彙。" }],
-  // room (10170)
-  [10170, { coreImage: "建物内の一つの部屋空間がコアイメージ。", usage: "可算で「a room」「my room」。", synonymDifference: "room vs space: room は部屋、space は空間一般。", englishDefinition: "A part of a building separated by walls.", etymology: "住居語彙の基礎語。" }],
-  // kitchen (10171)
-  [10171, { coreImage: "料理をする台所空間がコアイメージ。", usage: "「in the kitchen」「kitchen table」で使う。", synonymDifference: "kitchen vs dining room: kitchen は調理、dining room は食事。", englishDefinition: "The room where food is prepared.", etymology: "住居語彙の基礎語。" }],
+  // uncle (23367)
+  [23367, { coreImage: "おじ（親の兄弟・配偶者）を示す家族名詞がコアイメージ。", usage: "「my uncle」「an uncle of mine」で使う。", synonymDifference: "uncle vs aunt: uncle は男性、aunt は女性。", englishDefinition: "The brother of your mother or father, or the husband of your aunt.", etymology: "家族関係語彙の基礎語。" }],
+  // aunt (23884)
+  [23884, { coreImage: "おば（親の姉妹・配偶者）を示す家族名詞がコアイメージ。", usage: "「my aunt」「an aunt of mine」で使う。", synonymDifference: "aunt vs uncle: aunt は女性、uncle は男性。", englishDefinition: "The sister of your mother or father, or the wife of your uncle.", etymology: "家族関係語彙の基礎語。" }],
+  // cousin (23921)
+  [23921, { coreImage: "いとこ関係を示す親族名詞がコアイメージ。", usage: "英語では性別区別なく cousin を使う。", synonymDifference: "cousin vs sibling: cousin はいとこ、sibling は兄弟姉妹。", englishDefinition: "A child of your aunt or uncle.", etymology: "親族語彙の基礎語。" }],
+  // baby (23079)
+  [23079, { coreImage: "乳幼児の赤ちゃんを指す名詞がコアイメージ。", usage: "可算で「a baby」「babies」。", synonymDifference: "baby vs child: baby はより低年齢。", englishDefinition: "A very young child.", etymology: "人物語彙の基礎語。" }],
+  // boy (23088)
+  [23088, { coreImage: "男の子を指す人物名詞がコアイメージ。", usage: "可算で「a boy」「boys」。", synonymDifference: "boy vs man: boy は子ども、man は成人男性。", englishDefinition: "A male child.", etymology: "人物語彙の基礎語。" }],
+  // girl (23089)
+  [23089, { coreImage: "女の子を指す人物名詞がコアイメージ。", usage: "可算で「a girl」「girls」。", synonymDifference: "girl vs woman: girl は子ども、woman は成人女性。", englishDefinition: "A female child.", etymology: "人物語彙の基礎語。" }],
+  // man (23641)
+  [23641, { coreImage: "成人男性を指す人物名詞がコアイメージ。", usage: "可算で「a man」「men」。複数形に注意。", synonymDifference: "man vs boy: man は成人、boy は子ども。", englishDefinition: "An adult male person.", etymology: "人物語彙の高頻度基礎語。" }],
+  // woman (23642)
+  [23642, { coreImage: "成人女性を指す人物名詞がコアイメージ。", usage: "可算で「a woman」「women」。複数形発音に注意。", synonymDifference: "woman vs girl: woman は成人、girl は子ども。", englishDefinition: "An adult female person.", etymology: "人物語彙の高頻度基礎語。" }],
+  // child (23166)
+  [23166, { coreImage: "子ども一般を示す名詞がコアイメージ。", usage: "単複変化 child/children に注意。", synonymDifference: "child vs kid: kid はより口語的。", englishDefinition: "A young person; a son or daughter.", etymology: "家族・人物語彙の基礎語。" }],
+  // people (23622)
+  [23622, { coreImage: "人々の集合を示す名詞がコアイメージ。", usage: "複数扱いで「many people」。", synonymDifference: "people vs person: person は単数、people は複数。", englishDefinition: "Human beings in general or in groups.", etymology: "最重要の人物集合語彙。" }],
+  // room (23139)
+  [23139, { coreImage: "建物内の一つの部屋空間がコアイメージ。", usage: "可算で「a room」「my room」。", synonymDifference: "room vs space: room は部屋、space は空間一般。", englishDefinition: "A part of a building separated by walls.", etymology: "住居語彙の基礎語。" }],
+  // kitchen (23124)
+  [23124, { coreImage: "料理をする台所空間がコアイメージ。", usage: "「in the kitchen」「kitchen table」で使う。", synonymDifference: "kitchen vs dining room: kitchen は調理、dining room は食事。", englishDefinition: "The room where food is prepared.", etymology: "住居語彙の基礎語。" }],
   // bathroom (10172)
   [10172, { coreImage: "入浴・洗面・トイレ機能を持つ部屋がコアイメージ。", usage: "米英で含意差があるが初級では「お風呂場/トイレ」で扱う。", synonymDifference: "bathroom vs toilet/restroom: 地域・場面で使い分ける。", englishDefinition: "A room with a bath/shower and toilet facilities.", etymology: "住居語彙の基礎語。" }],
-  // bed (10173)
-  [10173, { coreImage: "寝るための寝具付き家具がコアイメージ。", usage: "「go to bed」「on the bed」で頻出。", synonymDifference: "bed vs sofa: bed は就寝用、sofa は座る家具。", englishDefinition: "A piece of furniture for sleeping.", etymology: "生活語彙の基礎語。" }],
-  // window (10174)
-  [10174, { coreImage: "光や空気を通す窓を指す名詞がコアイメージ。", usage: "「open the window」が定型。", synonymDifference: "window vs door: window は採光・換気、door は出入り。", englishDefinition: "An opening in a wall fitted with glass.", etymology: "住居語彙の基礎語。" }],
-  // door (10175)
-  [10175, { coreImage: "出入りのための扉を示す名詞がコアイメージ。", usage: "「close the door」「front door」で使う。", synonymDifference: "door vs gate: door は建物扉、gate は門。", englishDefinition: "A movable barrier used to open and close an entrance.", etymology: "住居語彙の基礎語。" }],
-  // table (10176)
-  [10176, { coreImage: "物を置くための台・机を示す家具名詞がコアイメージ。", usage: "「on the table」「dining table」で使う。", synonymDifference: "table vs desk: table は汎用、desk は作業向け。", englishDefinition: "A piece of furniture with a flat top and legs.", etymology: "家具語彙の基礎語。" }],
-  // floor (10177)
-  [10177, { coreImage: "床面、または建物の階を示す多義名詞がコアイメージ。", usage: "「on the floor」「second floor」で使う。", synonymDifference: "floor vs ground: floor は建物内床、ground は地面。", englishDefinition: "The lower surface of a room; also a level of a building.", etymology: "住居語彙の基礎多義語。" }],
-  // wall (10178)
-  [10178, { coreImage: "部屋や建物を囲う壁面がコアイメージ。", usage: "「on the wall」「wall clock」で使う。", synonymDifference: "wall vs fence: wall は建物/区画の壁、fence は柵。", englishDefinition: "A vertical structure forming the side of a room or building.", etymology: "住居語彙の基礎語。" }],
-  // roof (10179)
-  [10179, { coreImage: "建物上部を覆う屋根がコアイメージ。", usage: "「on the roof」「roof of the house」で使う。", synonymDifference: "roof vs ceiling: roof は外側上部、ceiling は室内天井。", englishDefinition: "The top covering of a building.", etymology: "建物部位語彙の基礎語。" }],
-  // key (10180)
-  [10180, { coreImage: "鍵を開閉する道具としてのキーがコアイメージ。", usage: "「a house key」「lose my key」で使う。", synonymDifference: "key vs lock: key は開ける側、lock は閉める機構。", englishDefinition: "A small metal object used to open a lock.", etymology: "生活語彙の基礎語。" }],
-  // clock (10181)
-  [10181, { coreImage: "置き時計・壁掛け時計を示す名詞がコアイメージ。", usage: "「wall clock」「the clock on the desk」で使う。", synonymDifference: "clock vs watch: clock は据え置き、watch は腕時計。", englishDefinition: "A device that shows the time, usually fixed in a place.", etymology: "時間語彙の基礎語。" }],
-  // watch (10182)
-  [10182, { coreImage: "身につける時計（腕時計）を示す名詞がコアイメージ。", usage: "名詞「a watch」と動詞「watch（見る）」の区別に注意。", synonymDifference: "watch vs clock: watch は携帯、clock は据え置き。", englishDefinition: "A small timepiece worn on the wrist.", etymology: "多義語として初級で重要。" }],
-  // telephone (10183)
-  [10183, { coreImage: "通話のための電話機を示す名詞がコアイメージ。", usage: "現代では phone がより口語的に頻用。", synonymDifference: "telephone vs phone: phone は短縮で口語的。", englishDefinition: "A device used for voice communication over distance.", etymology: "tele-（遠く）+ phone（音）由来。" }],
-  // computer (10184)
-  [10184, { coreImage: "計算・処理・情報利用を行うコンピュータ機器がコアイメージ。", usage: "「use a computer」「computer room」で使う。", synonymDifference: "computer vs laptop: laptop は携帯型の一種。", englishDefinition: "An electronic machine for processing information.", etymology: "現代生活語彙の基礎語。" }],
-  // camera (10185)
-  [10185, { coreImage: "写真や映像を撮る機器を示す名詞がコアイメージ。", usage: "「take a picture with a camera」で使う。", synonymDifference: "camera vs phone camera: 後者は機能内蔵型。", englishDefinition: "A device used to take photographs.", etymology: "生活・技術語彙の基礎語。" }],
-  // shirt (10186)
-  [10186, { coreImage: "上半身に着るシャツ衣類を指す名詞がコアイメージ。", usage: "可算で「a shirt」「white shirt」。", synonymDifference: "shirt vs T-shirt: T-shirt は形状が限定。", englishDefinition: "A piece of clothing worn on the upper body.", etymology: "衣類語彙の基礎語。" }],
-  // hat (10187)
-  [10187, { coreImage: "頭にかぶる帽子を示す名詞がコアイメージ。", usage: "可算で「a hat」「wear a hat」。", synonymDifference: "hat vs cap: cap はつば付きの軽装帽。", englishDefinition: "A covering worn on the head.", etymology: "衣類語彙の基礎語。" }],
-  // shoe (10188)
-  [10188, { coreImage: "足に履く靴を示す名詞がコアイメージ。", usage: "通常複数で「shoes」を使うことが多い。", synonymDifference: "shoe vs boot: boot は足首以上まで覆う靴。", englishDefinition: "A covering for the foot, usually with a sole.", etymology: "衣類語彙の基礎語。" }],
-  // umbrella (10189)
-  [10189, { coreImage: "雨を防ぐ傘を示す名詞がコアイメージ。", usage: "「take an umbrella」「open your umbrella」で使う。", synonymDifference: "umbrella vs parasol: parasol は日傘。", englishDefinition: "A device used for protection from rain.", etymology: "生活語彙の基礎語。" }],
-  // coat (10190)
-  [10190, { coreImage: "上着として外側に着るコートがコアイメージ。", usage: "可算で「a coat」「winter coat」。", synonymDifference: "coat vs jacket: coat の方が長く厚手なことが多い。", englishDefinition: "An outer piece of clothing worn over other clothes.", etymology: "衣類語彙の基礎語。" }],
+  // bed (23085)
+  [23085, { coreImage: "寝るための寝具付き家具がコアイメージ。", usage: "「go to bed」「on the bed」で頻出。", synonymDifference: "bed vs sofa: bed は就寝用、sofa は座る家具。", englishDefinition: "A piece of furniture for sleeping.", etymology: "生活語彙の基礎語。" }],
+  // window (23384)
+  [23384, { coreImage: "光や空気を通す窓を指す名詞がコアイメージ。", usage: "「open the window」が定型。", synonymDifference: "window vs door: window は採光・換気、door は出入り。", englishDefinition: "An opening in a wall fitted with glass.", etymology: "住居語彙の基礎語。" }],
+  // door (23105)
+  [23105, { coreImage: "出入りのための扉を示す名詞がコアイメージ。", usage: "「close the door」「front door」で使う。", synonymDifference: "door vs gate: door は建物扉、gate は門。", englishDefinition: "A movable barrier used to open and close an entrance.", etymology: "住居語彙の基礎語。" }],
+  // table (23343)
+  [23343, { coreImage: "物を置くための台・机を示す家具名詞がコアイメージ。", usage: "「on the table」「dining table」で使う。", synonymDifference: "table vs desk: table は汎用、desk は作業向け。", englishDefinition: "A piece of furniture with a flat top and legs.", etymology: "家具語彙の基礎語。" }],
+  // floor (23961)
+  [23961, { coreImage: "床面、または建物の階を示す多義名詞がコアイメージ。", usage: "「on the floor」「second floor」で使う。", synonymDifference: "floor vs ground: floor は建物内床、ground は地面。", englishDefinition: "The lower surface of a room; also a level of a building.", etymology: "住居語彙の基礎多義語。" }],
+  // wall (23375)
+  [23375, { coreImage: "部屋や建物を囲う壁面がコアイメージ。", usage: "「on the wall」「wall clock」で使う。", synonymDifference: "wall vs fence: wall は建物/区画の壁、fence は柵。", englishDefinition: "A vertical structure forming the side of a room or building.", etymology: "住居語彙の基礎語。" }],
+  // roof (23273)
+  [23273, { coreImage: "建物上部を覆う屋根がコアイメージ。", usage: "「on the roof」「roof of the house」で使う。", synonymDifference: "roof vs ceiling: roof は外側上部、ceiling は室内天井。", englishDefinition: "The top covering of a building.", etymology: "建物部位語彙の基礎語。" }],
+  // key (23195)
+  [23195, { coreImage: "鍵を開閉する道具としてのキーがコアイメージ。", usage: "「a house key」「lose my key」で使う。", synonymDifference: "key vs lock: key は開ける側、lock は閉める機構。", englishDefinition: "A small metal object used to open a lock.", etymology: "生活語彙の基礎語。" }],
+  // clock (23098)
+  [23098, { coreImage: "置き時計・壁掛け時計を示す名詞がコアイメージ。", usage: "「wall clock」「the clock on the desk」で使う。", synonymDifference: "clock vs watch: clock は据え置き、watch は腕時計。", englishDefinition: "A device that shows the time, usually fixed in a place.", etymology: "時間語彙の基礎語。" }],
+  // watch (23376)
+  [23376, { coreImage: "身につける時計（腕時計）を示す名詞がコアイメージ。", usage: "名詞「a watch」と動詞「watch（見る）」の区別に注意。", synonymDifference: "watch vs clock: watch は携帯、clock は据え置き。", englishDefinition: "A small timepiece worn on the wrist.", etymology: "多義語として初級で重要。" }],
+  // telephone (23347)
+  [23347, { coreImage: "通話のための電話機を示す名詞がコアイメージ。", usage: "現代では phone がより口語的に頻用。", synonymDifference: "telephone vs phone: phone は短縮で口語的。", englishDefinition: "A device used for voice communication over distance.", etymology: "tele-（遠く）+ phone（音）由来。" }],
+  // computer (23099)
+  [23099, { coreImage: "計算・処理・情報利用を行うコンピュータ機器がコアイメージ。", usage: "「use a computer」「computer room」で使う。", synonymDifference: "computer vs laptop: laptop は携帯型の一種。", englishDefinition: "An electronic machine for processing information.", etymology: "現代生活語彙の基礎語。" }],
+  // camera (23092)
+  [23092, { coreImage: "写真や映像を撮る機器を示す名詞がコアイメージ。", usage: "「take a picture with a camera」で使う。", synonymDifference: "camera vs phone camera: 後者は機能内蔵型。", englishDefinition: "A device used to take photographs.", etymology: "生活・技術語彙の基礎語。" }],
+  // shirt (23280)
+  [23280, { coreImage: "上半身に着るシャツ衣類を指す名詞がコアイメージ。", usage: "可算で「a shirt」「white shirt」。", synonymDifference: "shirt vs T-shirt: T-shirt は形状が限定。", englishDefinition: "A piece of clothing worn on the upper body.", etymology: "衣類語彙の基礎語。" }],
+  // hat (23117)
+  [23117, { coreImage: "頭にかぶる帽子を示す名詞がコアイメージ。", usage: "可算で「a hat」「wear a hat」。", synonymDifference: "hat vs cap: cap はつば付きの軽装帽。", englishDefinition: "A covering worn on the head.", etymology: "衣類語彙の基礎語。" }],
+  // shoe (23281)
+  [23281, { coreImage: "足に履く靴を示す名詞がコアイメージ。", usage: "通常複数で「shoes」を使うことが多い。", synonymDifference: "shoe vs boot: boot は足首以上まで覆う靴。", englishDefinition: "A covering for the foot, usually with a sole.", etymology: "衣類語彙の基礎語。" }],
+  // umbrella (23366)
+  [23366, { coreImage: "雨を防ぐ傘を示す名詞がコアイメージ。", usage: "「take an umbrella」「open your umbrella」で使う。", synonymDifference: "umbrella vs parasol: parasol は日傘。", englishDefinition: "A device used for protection from rain.", etymology: "生活語彙の基礎語。" }],
+  // coat (23169)
+  [23169, { coreImage: "上着として外側に着るコートがコアイメージ。", usage: "可算で「a coat」「winter coat」。", synonymDifference: "coat vs jacket: coat の方が長く厚手なことが多い。", englishDefinition: "An outer piece of clothing worn over other clothes.", etymology: "衣類語彙の基礎語。" }],
   // glasses (10191)
   [10191, { coreImage: "視力補正のために目にかける眼鏡がコアイメージ。", usage: "通常複数形で glasses を使う。", synonymDifference: "glasses vs sunglasses: 後者は日差し対策。", englishDefinition: "Lenses in a frame worn to help vision.", etymology: "日常生活語彙の基礎語。" }],
-  // park (10192)
-  [10192, { coreImage: "人が休んだり遊んだりする公園空間がコアイメージ。", usage: "「go to the park」で高頻度。", synonymDifference: "park vs garden: park は公共空間、garden は庭。", englishDefinition: "A public green area for recreation.", etymology: "場所語彙の基礎語。" }],
-  // hospital (10193)
-  [10193, { coreImage: "病気やけがの治療を行う病院施設がコアイメージ。", usage: "「go to the hospital」「in hospital」で使う。", synonymDifference: "hospital vs clinic: clinic は一般に小規模。", englishDefinition: "A place where sick or injured people are treated.", etymology: "公共施設語彙の基礎語。" }],
-  // store (10194)
-  [10194, { coreImage: "物を売る店を示す名詞がコアイメージ。", usage: "米語で shop より一般的に使われる。", synonymDifference: "store vs shop: 意味は近いが地域・語感差がある。", englishDefinition: "A place where goods are sold.", etymology: "買い物語彙の基礎語。" }],
-  // restaurant (10195)
-  [10195, { coreImage: "外食するための飲食店を指す名詞がコアイメージ。", usage: "「eat at a restaurant」で使う。", synonymDifference: "restaurant vs cafe: cafe は軽食・喫茶中心のことが多い。", englishDefinition: "A place where meals are cooked and served.", etymology: "外食語彙の基礎語。" }],
-  // station (10196)
-  [10196, { coreImage: "電車などが発着する駅を示す名詞がコアイメージ。", usage: "「at the station」「train station」で使う。", synonymDifference: "station vs stop: stop は停留所で規模が小さいことが多い。", englishDefinition: "A place where trains or buses arrive and leave.", etymology: "交通語彙の基礎語。" }],
-  // city (10197)
-  [10197, { coreImage: "人口が多く機能が集中した都市を示す名詞がコアイメージ。", usage: "「big city」「city life」で使う。", synonymDifference: "city vs town: city の方が一般に規模が大きい。", englishDefinition: "A large important town.", etymology: "地理語彙の基礎語。" }],
-  // town (10198)
-  [10198, { coreImage: "都市より小規模な町を示す名詞がコアイメージ。", usage: "「my town」「town center」で使う。", synonymDifference: "town vs village: village はさらに小規模な集落。", englishDefinition: "A place where people live, smaller than a city.", etymology: "地理語彙の基礎語。" }],
-  // country (10199)
-  [10199, { coreImage: "国家、または都市部以外の田舎を示す多義名詞がコアイメージ。", usage: "文脈で「国」か「田舎」を判別する。", synonymDifference: "country vs nation: nation は民族・国家概念寄り。", englishDefinition: "A nation; also rural area outside cities.", etymology: "地理・社会語彙の基礎多義語。" }],
-  // world (10200)
-  [10200, { coreImage: "地球全体や世界という広域概念がコアイメージ。", usage: "「around the world」「the world is ...」で使う。", synonymDifference: "world vs earth: world は社会・世界全体、earth は地球体。", englishDefinition: "The earth and all people and places on it.", etymology: "高頻度の基礎概念語。" }],
-  // road (10201)
-  [10201, { coreImage: "車や人が通る道路を示す名詞がコアイメージ。", usage: "「on the road」「main road」で使う。", synonymDifference: "road vs street: street は町中の通りの含意が強い。", englishDefinition: "A way for vehicles and people to travel.", etymology: "交通語彙の基礎語。" }],
-  // street (10202)
-  [10202, { coreImage: "建物が並ぶ通り・街路を示す名詞がコアイメージ。", usage: "「across the street」「street name」で使う。", synonymDifference: "street vs road: street は市街地、road は広域道路にも使う。", englishDefinition: "A public road in a town or city.", etymology: "交通・都市語彙の基礎語。" }],
-  // bridge (10203)
-  [10203, { coreImage: "川や谷を渡るための橋を示す名詞がコアイメージ。", usage: "「cross a bridge」「bridge over ...」で使う。", synonymDifference: "bridge vs tunnel: bridge は上を渡る、tunnel は下を通る。", englishDefinition: "A structure built over water or a gap for crossing.", etymology: "地理・交通語彙の基礎語。" }],
-  // church (10204)
-  [10204, { coreImage: "キリスト教の礼拝を行う教会施設がコアイメージ。", usage: "「go to church」で施設・活動の両義を持つ。", synonymDifference: "church vs temple: temple は宗教圏で別施設を指す。", englishDefinition: "A building used for Christian worship.", etymology: "施設語彙の基礎語。" }],
-  // museum (10205)
-  [10205, { coreImage: "美術品・資料を展示する博物館施設がコアイメージ。", usage: "「visit a museum」で頻出。", synonymDifference: "museum vs gallery: gallery は美術展示中心のことが多い。", englishDefinition: "A place where historical, scientific, or art objects are shown.", etymology: "公共施設語彙の基礎語。" }],
-  // theater (10206)
-  [10206, { coreImage: "演劇・映画を鑑賞する劇場施設がコアイメージ。", usage: "米語 theater / 英語 theatre の綴り差がある。", synonymDifference: "theater vs cinema: cinema は映画館意味が中心。", englishDefinition: "A place where plays or films are shown.", etymology: "文化施設語彙の基礎語。" }],
-  // pool (10207)
-  [10207, { coreImage: "泳ぐためのプールを示す名詞がコアイメージ。", usage: "「swim in the pool」が定型。", synonymDifference: "pool vs pond: pool は人工水槽、pond は自然の池。", englishDefinition: "A man-made area of water for swimming.", etymology: "施設語彙の基礎語。" }],
-  // bus (10208)
-  [10208, { coreImage: "複数人を運ぶバス交通手段がコアイメージ。", usage: "「take a bus」「by bus」で使う。", synonymDifference: "bus vs coach: coach は長距離バス文脈で使われる。", englishDefinition: "A large road vehicle for many passengers.", etymology: "交通語彙の基礎語。" }],
-  // train (10209)
-  [10209, { coreImage: "線路上を走る列車を示す名詞がコアイメージ。", usage: "「take the train」「train station」で使う。", synonymDifference: "train vs subway: subway は地下鉄を指す。", englishDefinition: "A series of connected railway vehicles.", etymology: "交通語彙の基礎語。" }],
-  // bike (10210)
-  [10210, { coreImage: "自転車を示す口語的名詞がコアイメージ。", usage: "bicycle の短縮語として日常で高頻度。", synonymDifference: "bike vs bicycle: 意味は同じで bike が口語的。", englishDefinition: "A two-wheeled vehicle you ride by pedaling.", etymology: "交通語彙の基礎語。" }],
-  // car (10211)
-  [10211, { coreImage: "自動車を示す基本名詞がコアイメージ。", usage: "「by car」「drive a car」で頻出。", synonymDifference: "car vs truck: truck は貨物車。", englishDefinition: "A road vehicle with an engine for a few passengers.", etymology: "交通語彙の最重要基礎語。" }],
+  // park (23651)
+  [23651, { coreImage: "人が休んだり遊んだりする公園空間がコアイメージ。", usage: "「go to the park」で高頻度。", synonymDifference: "park vs garden: park は公共空間、garden は庭。", englishDefinition: "A public green area for recreation.", etymology: "場所語彙の基礎語。" }],
+  // hospital (23037)
+  [23037, { coreImage: "病気やけがの治療を行う病院施設がコアイメージ。", usage: "「go to the hospital」「in hospital」で使う。", synonymDifference: "hospital vs clinic: clinic は一般に小規模。", englishDefinition: "A place where sick or injured people are treated.", etymology: "公共施設語彙の基礎語。" }],
+  // store (28699)
+  [28699, { coreImage: "物を売る店を示す名詞がコアイメージ。", usage: "米語で shop より一般的に使われる。", synonymDifference: "store vs shop: 意味は近いが地域・語感差がある。", englishDefinition: "A place where goods are sold.", etymology: "買い物語彙の基礎語。" }],
+  // restaurant (23267)
+  [23267, { coreImage: "外食するための飲食店を指す名詞がコアイメージ。", usage: "「eat at a restaurant」で使う。", synonymDifference: "restaurant vs cafe: cafe は軽食・喫茶中心のことが多い。", englishDefinition: "A place where meals are cooked and served.", etymology: "外食語彙の基礎語。" }],
+  // station (23036)
+  [23036, { coreImage: "電車などが発着する駅を示す名詞がコアイメージ。", usage: "「at the station」「train station」で使う。", synonymDifference: "station vs stop: stop は停留所で規模が小さいことが多い。", englishDefinition: "A place where trains or buses arrive and leave.", etymology: "交通語彙の基礎語。" }],
+  // city (23096)
+  [23096, { coreImage: "人口が多く機能が集中した都市を示す名詞がコアイメージ。", usage: "「big city」「city life」で使う。", synonymDifference: "city vs town: city の方が一般に規模が大きい。", englishDefinition: "A large important town.", etymology: "地理語彙の基礎語。" }],
+  // town (23361)
+  [23361, { coreImage: "都市より小規模な町を示す名詞がコアイメージ。", usage: "「my town」「town center」で使う。", synonymDifference: "town vs village: village はさらに小規模な集落。", englishDefinition: "A place where people live, smaller than a city.", etymology: "地理語彙の基礎語。" }],
+  // country (23100)
+  [23100, { coreImage: "国家、または都市部以外の田舎を示す多義名詞がコアイメージ。", usage: "文脈で「国」か「田舎」を判別する。", synonymDifference: "country vs nation: nation は民族・国家概念寄り。", englishDefinition: "A nation; also rural area outside cities.", etymology: "地理・社会語彙の基礎多義語。" }],
+  // world (23388)
+  [23388, { coreImage: "地球全体や世界という広域概念がコアイメージ。", usage: "「around the world」「the world is ...」で使う。", synonymDifference: "world vs earth: world は社会・世界全体、earth は地球体。", englishDefinition: "The earth and all people and places on it.", etymology: "高頻度の基礎概念語。" }],
+  // road (23271)
+  [23271, { coreImage: "車や人が通る道路を示す名詞がコアイメージ。", usage: "「on the road」「main road」で使う。", synonymDifference: "road vs street: street は町中の通りの含意が強い。", englishDefinition: "A way for vehicles and people to travel.", etymology: "交通語彙の基礎語。" }],
+  // street (23300)
+  [23300, { coreImage: "建物が並ぶ通り・街路を示す名詞がコアイメージ。", usage: "「across the street」「street name」で使う。", synonymDifference: "street vs road: street は市街地、road は広域道路にも使う。", englishDefinition: "A public road in a town or city.", etymology: "交通・都市語彙の基礎語。" }],
+  // bridge (23162)
+  [23162, { coreImage: "川や谷を渡るための橋を示す名詞がコアイメージ。", usage: "「cross a bridge」「bridge over ...」で使う。", synonymDifference: "bridge vs tunnel: bridge は上を渡る、tunnel は下を通る。", englishDefinition: "A structure built over water or a gap for crossing.", etymology: "地理・交通語彙の基礎語。" }],
+  // church (23095)
+  [23095, { coreImage: "キリスト教の礼拝を行う教会施設がコアイメージ。", usage: "「go to church」で施設・活動の両義を持つ。", synonymDifference: "church vs temple: temple は宗教圏で別施設を指す。", englishDefinition: "A building used for Christian worship.", etymology: "施設語彙の基礎語。" }],
+  // museum (23228)
+  [23228, { coreImage: "美術品・資料を展示する博物館施設がコアイメージ。", usage: "「visit a museum」で頻出。", synonymDifference: "museum vs gallery: gallery は美術展示中心のことが多い。", englishDefinition: "A place where historical, scientific, or art objects are shown.", etymology: "公共施設語彙の基礎語。" }],
+  // theater (24142)
+  [24142, { coreImage: "演劇・映画を鑑賞する劇場施設がコアイメージ。", usage: "米語 theater / 英語 theatre の綴り差がある。", synonymDifference: "theater vs cinema: cinema は映画館意味が中心。", englishDefinition: "A place where plays or films are shown.", etymology: "文化施設語彙の基礎語。" }],
+  // pool (23253)
+  [23253, { coreImage: "泳ぐためのプールを示す名詞がコアイメージ。", usage: "「swim in the pool」が定型。", synonymDifference: "pool vs pond: pool は人工水槽、pond は自然の池。", englishDefinition: "A man-made area of water for swimming.", etymology: "施設語彙の基礎語。" }],
+  // bus (23090)
+  [23090, { coreImage: "複数人を運ぶバス交通手段がコアイメージ。", usage: "「take a bus」「by bus」で使う。", synonymDifference: "bus vs coach: coach は長距離バス文脈で使われる。", englishDefinition: "A large road vehicle for many passengers.", etymology: "交通語彙の基礎語。" }],
+  // train (24484)
+  [24484, { coreImage: "線路上を走る列車を示す名詞がコアイメージ。", usage: "「take the train」「train station」で使う。", synonymDifference: "train vs subway: subway は地下鉄を指す。", englishDefinition: "A series of connected railway vehicles.", etymology: "交通語彙の基礎語。" }],
+  // bike (23403)
+  [23403, { coreImage: "自転車を示す口語的名詞がコアイメージ。", usage: "bicycle の短縮語として日常で高頻度。", synonymDifference: "bike vs bicycle: 意味は同じで bike が口語的。", englishDefinition: "A two-wheeled vehicle you ride by pedaling.", etymology: "交通語彙の基礎語。" }],
+  // car (23093)
+  [23093, { coreImage: "自動車を示す基本名詞がコアイメージ。", usage: "「by car」「drive a car」で頻出。", synonymDifference: "car vs truck: truck は貨物車。", englishDefinition: "A road vehicle with an engine for a few passengers.", etymology: "交通語彙の最重要基礎語。" }],
   // plane (10212)
   [10212, { coreImage: "空を飛ぶ飛行機を示す名詞がコアイメージ。", usage: "airplane の短縮として口語で頻出。", synonymDifference: "plane vs helicopter: 飛行方式が異なる。", englishDefinition: "An aircraft with wings and engines.", etymology: "交通語彙の基礎語。" }],
-  // ship (10213)
-  [10213, { coreImage: "海を航行する大型船を示す名詞がコアイメージ。", usage: "「by ship」「a large ship」で使う。", synonymDifference: "ship vs boat: ship の方が一般に大型。", englishDefinition: "A large boat used for travel or transport on water.", etymology: "交通語彙の基礎語。" }],
-  // ticket (10214)
-  [10214, { coreImage: "乗車・入場などの権利を示す券がコアイメージ。", usage: "「buy a ticket」「train ticket」で使う。", synonymDifference: "ticket vs pass: pass は一定期間有効の券を指すことが多い。", englishDefinition: "A printed or digital pass for travel or entry.", etymology: "移動・イベント語彙の基礎語。" }],
-  // box (10215)
-  [10215, { coreImage: "物を入れる四角い箱を示す名詞がコアイメージ。", usage: "可算で「a box」「boxes」。", synonymDifference: "box vs bag: box は硬い容器、bag は柔らかい袋。", englishDefinition: "A container with flat sides, usually square or rectangular.", etymology: "日用品語彙の基礎語。" }],
-  // cup (10216)
-  [10216, { coreImage: "飲み物を入れるカップ容器がコアイメージ。", usage: "可算で「a cup of tea」などで使う。", synonymDifference: "cup vs mug: mug は取っ手付きで大きめのことが多い。", englishDefinition: "A small container used for drinking.", etymology: "食器語彙の基礎語。" }],
-  // glass (10217)
-  [10217, { coreImage: "ガラス素材、またはガラス製コップを示す多義名詞がコアイメージ。", usage: "材質と容器の意味を文脈で区別する。", synonymDifference: "glass vs cup: glass は素材/器、cup は器の形状名。", englishDefinition: "A hard transparent material; also a drinking container.", etymology: "日用品語彙の基礎多義語。" }],
-  // plate (10218)
-  [10218, { coreImage: "料理をのせる皿を示す名詞がコアイメージ。", usage: "可算で「a plate」「plates」。", synonymDifference: "plate vs dish: dish は料理そのものの意味も持つ。", englishDefinition: "A flat dish used for serving food.", etymology: "食器語彙の基礎語。" }],
+  // ship (23595)
+  [23595, { coreImage: "海を航行する大型船を示す名詞がコアイメージ。", usage: "「by ship」「a large ship」で使う。", synonymDifference: "ship vs boat: ship の方が一般に大型。", englishDefinition: "A large boat used for travel or transport on water.", etymology: "交通語彙の基礎語。" }],
+  // ticket (23350)
+  [23350, { coreImage: "乗車・入場などの権利を示す券がコアイメージ。", usage: "「buy a ticket」「train ticket」で使う。", synonymDifference: "ticket vs pass: pass は一定期間有効の券を指すことが多い。", englishDefinition: "A printed or digital pass for travel or entry.", etymology: "移動・イベント語彙の基礎語。" }],
+  // box (23892)
+  [23892, { coreImage: "物を入れる四角い箱を示す名詞がコアイメージ。", usage: "可算で「a box」「boxes」。", synonymDifference: "box vs bag: box は硬い容器、bag は柔らかい袋。", englishDefinition: "A container with flat sides, usually square or rectangular.", etymology: "日用品語彙の基礎語。" }],
+  // cup (23101)
+  [23101, { coreImage: "飲み物を入れるカップ容器がコアイメージ。", usage: "可算で「a cup of tea」などで使う。", synonymDifference: "cup vs mug: mug は取っ手付きで大きめのことが多い。", englishDefinition: "A small container used for drinking.", etymology: "食器語彙の基礎語。" }],
+  // glass (23180)
+  [23180, { coreImage: "ガラス素材、またはガラス製コップを示す多義名詞がコアイメージ。", usage: "材質と容器の意味を文脈で区別する。", synonymDifference: "glass vs cup: glass は素材/器、cup は器の形状名。", englishDefinition: "A hard transparent material; also a drinking container.", etymology: "日用品語彙の基礎多義語。" }],
+  // plate (23250)
+  [23250, { coreImage: "料理をのせる皿を示す名詞がコアイメージ。", usage: "可算で「a plate」「plates」。", synonymDifference: "plate vs dish: dish は料理そのものの意味も持つ。", englishDefinition: "A flat dish used for serving food.", etymology: "食器語彙の基礎語。" }],
   // spoon (10219)
   [10219, { coreImage: "すくって食べるためのスプーンがコアイメージ。", usage: "可算で「a spoon」「spoons」。", synonymDifference: "spoon vs fork: spoon はすくう、fork は刺す。", englishDefinition: "An eating tool with a small bowl-shaped end.", etymology: "食器語彙の基礎語。" }],
-  // knife (10220)
-  [10220, { coreImage: "切るための刃物ナイフを示す名詞がコアイメージ。", usage: "単複変化 knife/knives に注意。", synonymDifference: "knife vs sword: knife は日常小型刃物、sword は大型武器。", englishDefinition: "A tool with a sharp blade for cutting.", etymology: "日用品語彙の基礎語。" }],
-  // fork (10221)
-  [10221, { coreImage: "食べ物を刺して食べるフォークがコアイメージ。", usage: "可算で「a fork」「fork and knife」。", synonymDifference: "fork vs spoon: fork は刺す、spoon はすくう。", englishDefinition: "An eating tool with prongs.", etymology: "食器語彙の基礎語。" }],
-  // bottle (10222)
-  [10222, { coreImage: "液体を入れるボトル・瓶容器がコアイメージ。", usage: "可算で「a bottle of water」。", synonymDifference: "bottle vs can: bottle は瓶、can は缶。", englishDefinition: "A container with a narrow neck for liquids.", etymology: "日用品語彙の基礎語。" }],
+  // knife (23198)
+  [23198, { coreImage: "切るための刃物ナイフを示す名詞がコアイメージ。", usage: "単複変化 knife/knives に注意。", synonymDifference: "knife vs sword: knife は日常小型刃物、sword は大型武器。", englishDefinition: "A tool with a sharp blade for cutting.", etymology: "日用品語彙の基礎語。" }],
+  // fork (23963)
+  [23963, { coreImage: "食べ物を刺して食べるフォークがコアイメージ。", usage: "可算で「a fork」「fork and knife」。", synonymDifference: "fork vs spoon: fork は刺す、spoon はすくう。", englishDefinition: "An eating tool with prongs.", etymology: "食器語彙の基礎語。" }],
+  // bottle (23406)
+  [23406, { coreImage: "液体を入れるボトル・瓶容器がコアイメージ。", usage: "可算で「a bottle of water」。", synonymDifference: "bottle vs can: bottle は瓶、can は缶。", englishDefinition: "A container with a narrow neck for liquids.", etymology: "日用品語彙の基礎語。" }],
   // towel (10223)
   [10223, { coreImage: "水分を拭き取るための布タオルがコアイメージ。", usage: "「bath towel」「paper towel」で使う。", synonymDifference: "towel vs tissue: towel は繰り返し使う布、tissue は薄紙。", englishDefinition: "A piece of cloth used for drying.", etymology: "生活語彙の基礎語。" }],
-  // soap (10224)
-  [10224, { pronunciation: { us: "/ˈɔːfɪs/", uk: "/ˈɒfɪs/" }, coreImage: "汚れを落とす石鹸を示す名詞がコアイメージ。", usage: "通常不可算で「some soap」。", synonymDifference: "soap vs shampoo: soap は洗浄剤一般、shampoo は髪用。", englishDefinition: "A substance used for washing.", etymology: "生活語彙の基礎語。" }],
-  // mirror (10225)
-  [10225, { coreImage: "像を映す鏡面の道具がコアイメージ。", usage: "可算で「a mirror」「look in the mirror」。", synonymDifference: "mirror vs window: mirror は反射、window は透過。", englishDefinition: "A surface that reflects images.", etymology: "生活語彙の基礎語。" }],
-  // present (10226)
-  [10226, { coreImage: "相手に贈るプレゼントを示す名詞がコアイメージ。", usage: "gift と同義で日常会話でよく使う。", synonymDifference: "present vs gift: 意味は近く、present は場面語として自然。", englishDefinition: "Something given to someone as a gift.", etymology: "与える行為由来の名詞化。" }],
-  // letter (10227)
-  [10227, { coreImage: "手紙、または文字1つを示す多義名詞がコアイメージ。", usage: "文脈で「手紙」か「文字」を判別する。", synonymDifference: "letter vs email: letter は紙の手紙、email は電子メール。", englishDefinition: "A written message; also a character of the alphabet.", etymology: "学習語彙の基礎多義語。" }],
-  // money (10228)
-  [10228, { coreImage: "支払いに使うお金全般を示す名詞がコアイメージ。", usage: "不可算で「much money」「save money」。", synonymDifference: "money vs cash: cash は現金、money はお金全般。", englishDefinition: "What people use to buy things.", etymology: "生活語彙の最重要基礎語。" }],
-  // game (10229)
-  [10229, { coreImage: "遊びのゲーム、または試合を示す名詞がコアイメージ。", usage: "「play a game」「soccer game」で使う。", synonymDifference: "game vs sport: sport は競技分野全体。", englishDefinition: "An activity with rules, often for fun or competition.", etymology: "娯楽語彙の基礎語。" }],
-  // toy (10230)
-  [10230, { coreImage: "子どもが遊ぶおもちゃを示す名詞がコアイメージ。", usage: "可算で「a toy」「toy box」。", synonymDifference: "toy vs tool: toy は遊ぶため、tool は作業の道具。", englishDefinition: "An object for children to play with.", etymology: "生活語彙の基礎語。" }],
+  // soap (23286)
+  [23286, { pronunciation: { us: "/ˈɔːfɪs/", uk: "/ˈɒfɪs/" }, coreImage: "汚れを落とす石鹸を示す名詞がコアイメージ。", usage: "通常不可算で「some soap」。", synonymDifference: "soap vs shampoo: soap は洗浄剤一般、shampoo は髪用。", englishDefinition: "A substance used for washing.", etymology: "生活語彙の基礎語。" }],
+  // mirror (23223)
+  [23223, { coreImage: "像を映す鏡面の道具がコアイメージ。", usage: "可算で「a mirror」「look in the mirror」。", synonymDifference: "mirror vs window: mirror は反射、window は透過。", englishDefinition: "A surface that reflects images.", etymology: "生活語彙の基礎語。" }],
+  // present (23255)
+  [23255, { coreImage: "相手に贈るプレゼントを示す名詞がコアイメージ。", usage: "gift と同義で日常会話でよく使う。", synonymDifference: "present vs gift: 意味は近く、present は場面語として自然。", englishDefinition: "Something given to someone as a gift.", etymology: "与える行為由来の名詞化。" }],
+  // letter (23125)
+  [23125, { coreImage: "手紙、または文字1つを示す多義名詞がコアイメージ。", usage: "文脈で「手紙」か「文字」を判別する。", synonymDifference: "letter vs email: letter は紙の手紙、email は電子メール。", englishDefinition: "A written message; also a character of the alphabet.", etymology: "学習語彙の基礎多義語。" }],
+  // money (23224)
+  [23224, { coreImage: "支払いに使うお金全般を示す名詞がコアイメージ。", usage: "不可算で「much money」「save money」。", synonymDifference: "money vs cash: cash は現金、money はお金全般。", englishDefinition: "What people use to buy things.", etymology: "生活語彙の最重要基礎語。" }],
+  // game (23114)
+  [23114, { coreImage: "遊びのゲーム、または試合を示す名詞がコアイメージ。", usage: "「play a game」「soccer game」で使う。", synonymDifference: "game vs sport: sport は競技分野全体。", englishDefinition: "An activity with rules, often for fun or competition.", etymology: "娯楽語彙の基礎語。" }],
+  // toy (23362)
+  [23362, { coreImage: "子どもが遊ぶおもちゃを示す名詞がコアイメージ。", usage: "可算で「a toy」「toy box」。", synonymDifference: "toy vs tool: toy は遊ぶため、tool は作業の道具。", englishDefinition: "An object for children to play with.", etymology: "生活語彙の基礎語。" }],
   // doll (10231)
   [10231, { coreImage: "人形おもちゃを示す名詞がコアイメージ。", usage: "可算で「a doll」「dolls」。", synonymDifference: "doll vs toy: doll はおもちゃの一種。", englishDefinition: "A toy in the shape of a person.", etymology: "玩具語彙の基礎語。" }],
-  // ball (10232)
-  [10232, { coreImage: "丸い形のボールを示す名詞がコアイメージ。", usage: "「kick a ball」「a tennis ball」で使う。", synonymDifference: "ball vs sphere: sphere は幾何学語でより形式的。", englishDefinition: "A round object used in games and sports.", etymology: "運動語彙の基礎語。" }],
-  // song (10233)
-  [10233, { coreImage: "歌詞と旋律を持つ1曲を示す名詞がコアイメージ。", usage: "可算で「a song」「favorite song」。", synonymDifference: "song vs music: song は曲単位、music は音楽全般。", englishDefinition: "A short piece of music with words.", etymology: "音楽語彙の基礎語。" }],
-  // music (10234)
-  [10234, { coreImage: "音楽という芸術・音の総称がコアイメージ。", usage: "通常不可算で「listen to music」。", synonymDifference: "music vs song: music は全体、song は1曲。", englishDefinition: "Vocal or instrumental sounds arranged in a pleasing way.", etymology: "文化語彙の基礎語。" }],
-  // movie (10235)
-  [10235, { coreImage: "映像作品としての映画を示す名詞がコアイメージ。", usage: "「watch a movie」「movie theater」で使う。", synonymDifference: "movie vs film: 意味は近く、movie が口語的。", englishDefinition: "A story shown in moving pictures.", etymology: "娯楽語彙の基礎語。" }],
-  // come (10236)
-  [10236, { coreImage: "話し手側へ近づく移動を示す動詞がコアイメージ。", usage: "go と対で方向を意識して使う。", synonymDifference: "come vs go: come は近づく、go は離れる。", englishDefinition: "To move toward the speaker or a place.", etymology: "移動動詞の最重要基礎語。" }],
-  // get (10237)
-  [10237, { coreImage: "得る・到達する・状態変化する多義動詞がコアイメージ。", usage: "「get a book」「get tired」など意味幅が広い。", synonymDifference: "get vs receive: receive は受け取る意味に限定されやすい。", englishDefinition: "To obtain; to become; to reach.", etymology: "初級で最重要の多義動詞。" }],
-  // have (10238)
-  [10238, { coreImage: "所有する、または食べる/経験するなどを示す基幹動詞がコアイメージ。", usage: "「have a pen」「have lunch」「have to ...」で頻出。", synonymDifference: "have vs own: own は所有に限定、have は機能が広い。", englishDefinition: "To possess, experience, or take.", etymology: "英文法の中核動詞。" }],
-  // see (10239)
-  [10239, { coreImage: "目に入る・会うという知覚/接触の動詞がコアイメージ。", usage: "「see a bird」「see my friend」で使う。", synonymDifference: "see vs look: see は自然知覚、look は意図して見る。", englishDefinition: "To notice with your eyes; to meet.", etymology: "知覚動詞の基礎語。" }],
-  // look (10240)
-  [10240, { coreImage: "意識して視線を向ける、または見た目を示す動詞がコアイメージ。", usage: "「look at ...」「look happy」で使う。", synonymDifference: "look vs see: look は能動、see は受動知覚。", englishDefinition: "To direct your eyes toward something; to appear.", etymology: "知覚動詞の基礎語。" }],
-  // say (10241)
-  [10241, { coreImage: "言葉を発する「言う」行為がコアイメージ。", usage: "発言内容中心で say + 内容 が基本。", synonymDifference: "say vs tell: say は内容、tell は相手を伴うことが多い。", englishDefinition: "To speak words.", etymology: "発話動詞の最重要基礎語。" }],
-  // tell (10242)
-  [10242, { coreImage: "相手に情報を伝える行為がコアイメージ。", usage: "tell + 人 + 内容 の形が基本。", synonymDifference: "tell vs say: tell は受け手を明示しやすい。", englishDefinition: "To give information to someone.", etymology: "伝達動詞の基礎語。" }],
-  // talk (10243)
-  [10243, { coreImage: "会話として話す行為がコアイメージ。", usage: "「talk with/to ...」「talk about ...」で使う。", synonymDifference: "talk vs speak: talk は会話的、speak はややフォーマル。", englishDefinition: "To say words in conversation.", etymology: "会話動詞の基礎語。" }],
-  // think (10244)
-  [10244, { coreImage: "頭の中で考える、または思う判断行為がコアイメージ。", usage: "「think about ...」「I think ...」で高頻度。", synonymDifference: "think vs believe: believe は信じる意味が強い。", englishDefinition: "To use your mind; to have an opinion.", etymology: "認知動詞の基礎語。" }],
-  // take (10245)
-  [10245, { coreImage: "取る・持っていくなど取得/移動の多義動詞がコアイメージ。", usage: "「take a bus」「take this」など用途が広い。", synonymDifference: "take vs bring: take は持って行く、bring は持って来る。", englishDefinition: "To get hold of; to carry with you.", etymology: "多義で高頻度の基幹動詞。" }],
-  // give (10246)
-  [10246, { coreImage: "相手に渡して与える行為がコアイメージ。", usage: "「give + 人 + 物」が基本文型。", synonymDifference: "give vs show: give は授受、show は見せる行為。", englishDefinition: "To hand something to someone.", etymology: "授受動詞の基礎語。" }],
-  // put (10247)
-  [10247, { coreImage: "物をある場所に置く配置動作がコアイメージ。", usage: "「put A on B」「put ... in ...」で使う。", synonymDifference: "put vs place: place はより丁寧・形式的。", englishDefinition: "To move something to a particular place.", etymology: "配置動詞の基礎語。" }],
-  // open (10248)
-  [10248, { coreImage: "閉じたものを開く操作がコアイメージ。", usage: "動詞と形容詞の両方で頻出。", synonymDifference: "open vs unlock: open は開ける全般、unlock は鍵を外す。", englishDefinition: "To make something no longer closed.", etymology: "反義語 close と対で学ぶ基礎語。" }],
-  // close (10249)
-  [10249, { coreImage: "開いているものを閉じる操作がコアイメージ。", usage: "動詞と形容詞の両方で使う。", synonymDifference: "close vs shut: 意味は近いが shut は口語で強めに響くことがある。", englishDefinition: "To make something no longer open.", etymology: "反義語 open と対で学ぶ基礎語。" }],
-  // walk (10250)
-  [10250, { coreImage: "足で歩いて移動する行為がコアイメージ。", usage: "「walk to school」「take a walk」で使う。", synonymDifference: "walk vs run: walk は歩行、run は走行。", englishDefinition: "To move by putting one foot in front of the other.", etymology: "移動動詞の基礎語。" }],
-  // swim (10251)
-  [10251, { coreImage: "水中で体を動かして進む動作がコアイメージ。", usage: "「swim in the pool」「go swimming」で使う。", synonymDifference: "swim vs dive: swim は泳ぐ、dive は潜る。", englishDefinition: "To move through water using your arms and legs.", etymology: "運動動詞の基礎語。" }],
-  // sing (10252)
-  [10252, { coreImage: "メロディに合わせて歌う行為がコアイメージ。", usage: "「sing a song」「sing well」で使う。", synonymDifference: "sing vs say: sing は旋律付き、say は発話。", englishDefinition: "To make musical sounds with your voice.", etymology: "音楽行為の基礎動詞。" }],
-  // dance (10253)
-  [10253, { coreImage: "音楽に合わせて踊る身体動作がコアイメージ。", usage: "「dance with ...」「dance to music」で使う。", synonymDifference: "dance vs jump: dance はリズム動作、jump は単発跳躍。", englishDefinition: "To move your body rhythmically to music.", etymology: "運動・文化語彙の基礎語。" }],
-  // cook (10254)
-  [10254, { coreImage: "食材を加熱・調理して料理を作る行為がコアイメージ。", usage: "「cook dinner」「cook for my family」で使う。", synonymDifference: "cook vs bake: cook は調理全般、bake は焼く調理。", englishDefinition: "To prepare food by heating it.", etymology: "生活動詞の基礎語。" }],
-  // wash (10255)
-  [10255, { coreImage: "水や洗剤で汚れを洗い落とす行為がコアイメージ。", usage: "「wash my hands」「wash the dishes」で使う。", synonymDifference: "wash vs clean: wash は水洗い、clean はきれいにする全般。", englishDefinition: "To clean with water.", etymology: "生活動詞の基礎語。" }],
-  // clean (10256)
-  [10256, { coreImage: "汚れを取り除いて清潔にする行為がコアイメージ。", usage: "「clean the room」「keep it clean」で使う。", synonymDifference: "clean vs wash: clean は広義、wash は水洗い中心。", englishDefinition: "To make something free from dirt.", etymology: "生活動詞の基礎語。" }],
-  // sleep (10257)
-  [10257, { coreImage: "休息のため眠る状態・行為がコアイメージ。", usage: "「sleep well」「go to sleep」で使う。", synonymDifference: "sleep vs rest: sleep は睡眠、rest は休息全般。", englishDefinition: "To be in a state of rest with eyes closed.", etymology: "生活動詞の基礎語。" }],
-  // wake (10258)
-  [10258, { coreImage: "眠りから目覚める動作がコアイメージ。", usage: "「wake up at six」「wake me up」で使う。", synonymDifference: "wake vs get up: wake は目覚め、get up は起き上がる。", englishDefinition: "To stop sleeping; to make someone stop sleeping.", etymology: "生活動詞の基礎語。" }],
-  // sit (10259)
-  [10259, { coreImage: "椅子などに座る姿勢になる動作がコアイメージ。", usage: "「sit down」「sit on a chair」で使う。", synonymDifference: "sit vs stand: sit は座る、stand は立つ。", englishDefinition: "To rest your body on your bottom.", etymology: "姿勢動詞の基礎語。" }],
-  // stand (10260)
-  [10260, { coreImage: "足で立つ姿勢を保つ動作がコアイメージ。", usage: "「stand up」「stand near the door」で使う。", synonymDifference: "stand vs sit: stand は立つ、sit は座る。", englishDefinition: "To be in an upright position on your feet.", etymology: "姿勢動詞の基礎語。" }],
-  // jump (10261)
-  [10261, { coreImage: "地面を蹴って跳び上がる動作がコアイメージ。", usage: "「jump high」「jump over ...」で使う。", synonymDifference: "jump vs hop: hop は片足で軽く跳ぶ。", englishDefinition: "To push yourself off the ground with your legs.", etymology: "運動動詞の基礎語。" }],
-  // fly (10262)
-  [10262, { coreImage: "空中を飛んで移動する動作がコアイメージ。", usage: "鳥・飛行機の動作にも人の移動にも使える。", synonymDifference: "fly vs travel: fly は空路移動、travel は移動全般。", englishDefinition: "To move through the air.", etymology: "移動動詞の基礎語。" }],
-  // catch (10263)
-  [10263, { coreImage: "動くものを受け止めてつかむ行為がコアイメージ。", usage: "「catch a ball」「catch a bus」など多義。", synonymDifference: "catch vs throw: catch は受ける、throw は投げる。", englishDefinition: "To take hold of something moving.", etymology: "運動動詞の基礎多義語。" }],
-  // throw (10264)
-  [10264, { coreImage: "物を手で離して投げる動作がコアイメージ。", usage: "「throw a ball」「throw away ...」で使う。", synonymDifference: "throw vs drop: throw は意図的、drop は落とす。", englishDefinition: "To send something through the air with your hand.", etymology: "運動動詞の基礎語。" }],
+  // ball (23081)
+  [23081, { coreImage: "丸い形のボールを示す名詞がコアイメージ。", usage: "「kick a ball」「a tennis ball」で使う。", synonymDifference: "ball vs sphere: sphere は幾何学語でより形式的。", englishDefinition: "A round object used in games and sports.", etymology: "運動語彙の基礎語。" }],
+  // song (23289)
+  [23289, { coreImage: "歌詞と旋律を持つ1曲を示す名詞がコアイメージ。", usage: "可算で「a song」「favorite song」。", synonymDifference: "song vs music: song は曲単位、music は音楽全般。", englishDefinition: "A short piece of music with words.", etymology: "音楽語彙の基礎語。" }],
+  // music (23032)
+  [23032, { coreImage: "音楽という芸術・音の総称がコアイメージ。", usage: "通常不可算で「listen to music」。", synonymDifference: "music vs song: music は全体、song は1曲。", englishDefinition: "Vocal or instrumental sounds arranged in a pleasing way.", etymology: "文化語彙の基礎語。" }],
+  // movie (23131)
+  [23131, { coreImage: "映像作品としての映画を示す名詞がコアイメージ。", usage: "「watch a movie」「movie theater」で使う。", synonymDifference: "movie vs film: 意味は近く、movie が口語的。", englishDefinition: "A story shown in moving pictures.", etymology: "娯楽語彙の基礎語。" }],
+  // come (23002)
+  [23002, { coreImage: "話し手側へ近づく移動を示す動詞がコアイメージ。", usage: "go と対で方向を意識して使う。", synonymDifference: "come vs go: come は近づく、go は離れる。", englishDefinition: "To move toward the speaker or a place.", etymology: "移動動詞の最重要基礎語。" }],
+  // get (23075)
+  [23075, { coreImage: "得る・到達する・状態変化する多義動詞がコアイメージ。", usage: "「get a book」「get tired」など意味幅が広い。", synonymDifference: "get vs receive: receive は受け取る意味に限定されやすい。", englishDefinition: "To obtain; to become; to reach.", etymology: "初級で最重要の多義動詞。" }],
+  // have (23640)
+  [23640, { coreImage: "所有する、または食べる/経験するなどを示す基幹動詞がコアイメージ。", usage: "「have a pen」「have lunch」「have to ...」で頻出。", synonymDifference: "have vs own: own は所有に限定、have は機能が広い。", englishDefinition: "To possess, experience, or take.", etymology: "英文法の中核動詞。" }],
+  // see (23057)
+  [23057, { coreImage: "目に入る・会うという知覚/接触の動詞がコアイメージ。", usage: "「see a bird」「see my friend」で使う。", synonymDifference: "see vs look: see は自然知覚、look は意図して見る。", englishDefinition: "To notice with your eyes; to meet.", etymology: "知覚動詞の基礎語。" }],
+  // look (23652)
+  [23652, { coreImage: "意識して視線を向ける、または見た目を示す動詞がコアイメージ。", usage: "「look at ...」「look happy」で使う。", synonymDifference: "look vs see: look は能動、see は受動知覚。", englishDefinition: "To direct your eyes toward something; to appear.", etymology: "知覚動詞の基礎語。" }],
+  // say (23469)
+  [23469, { coreImage: "言葉を発する「言う」行為がコアイメージ。", usage: "発言内容中心で say + 内容 が基本。", synonymDifference: "say vs tell: say は内容、tell は相手を伴うことが多い。", englishDefinition: "To speak words.", etymology: "発話動詞の最重要基礎語。" }],
+  // tell (23485)
+  [23485, { coreImage: "相手に情報を伝える行為がコアイメージ。", usage: "tell + 人 + 内容 の形が基本。", synonymDifference: "tell vs say: tell は受け手を明示しやすい。", englishDefinition: "To give information to someone.", etymology: "伝達動詞の基礎語。" }],
+  // talk (23653)
+  [23653, { coreImage: "会話として話す行為がコアイメージ。", usage: "「talk with/to ...」「talk about ...」で使う。", synonymDifference: "talk vs speak: talk は会話的、speak はややフォーマル。", englishDefinition: "To say words in conversation.", etymology: "会話動詞の基礎語。" }],
+  // think (23486)
+  [23486, { coreImage: "頭の中で考える、または思う判断行為がコアイメージ。", usage: "「think about ...」「I think ...」で高頻度。", synonymDifference: "think vs believe: believe は信じる意味が強い。", englishDefinition: "To use your mind; to have an opinion.", etymology: "認知動詞の基礎語。" }],
+  // take (23484)
+  [23484, { coreImage: "取る・持っていくなど取得/移動の多義動詞がコアイメージ。", usage: "「take a bus」「take this」など用途が広い。", synonymDifference: "take vs bring: take は持って行く、bring は持って来る。", englishDefinition: "To get hold of; to carry with you.", etymology: "多義で高頻度の基幹動詞。" }],
+  // give (23064)
+  [23064, { coreImage: "相手に渡して与える行為がコアイメージ。", usage: "「give + 人 + 物」が基本文型。", synonymDifference: "give vs show: give は授受、show は見せる行為。", englishDefinition: "To hand something to someone.", etymology: "授受動詞の基礎語。" }],
+  // put (23076)
+  [23076, { coreImage: "物をある場所に置く配置動作がコアイメージ。", usage: "「put A on B」「put ... in ...」で使う。", synonymDifference: "put vs place: place はより丁寧・形式的。", englishDefinition: "To move something to a particular place.", etymology: "配置動詞の基礎語。" }],
+  // open (23068)
+  [23068, { coreImage: "閉じたものを開く操作がコアイメージ。", usage: "動詞と形容詞の両方で頻出。", synonymDifference: "open vs unlock: open は開ける全般、unlock は鍵を外す。", englishDefinition: "To make something no longer closed.", etymology: "反義語 close と対で学ぶ基礎語。" }],
+  // close (23069)
+  [23069, { coreImage: "開いているものを閉じる操作がコアイメージ。", usage: "動詞と形容詞の両方で使う。", synonymDifference: "close vs shut: 意味は近いが shut は口語で強めに響くことがある。", englishDefinition: "To make something no longer open.", etymology: "反義語 open と対で学ぶ基礎語。" }],
+  // walk (23650)
+  [23650, { coreImage: "足で歩いて移動する行為がコアイメージ。", usage: "「walk to school」「take a walk」で使う。", synonymDifference: "walk vs run: walk は歩行、run は走行。", englishDefinition: "To move by putting one foot in front of the other.", etymology: "移動動詞の基礎語。" }],
+  // swim (23013)
+  [23013, { coreImage: "水中で体を動かして進む動作がコアイメージ。", usage: "「swim in the pool」「go swimming」で使う。", synonymDifference: "swim vs dive: swim は泳ぐ、dive は潜る。", englishDefinition: "To move through water using your arms and legs.", etymology: "運動動詞の基礎語。" }],
+  // sing (23070)
+  [23070, { coreImage: "メロディに合わせて歌う行為がコアイメージ。", usage: "「sing a song」「sing well」で使う。", synonymDifference: "sing vs say: sing は旋律付き、say は発話。", englishDefinition: "To make musical sounds with your voice.", etymology: "音楽行為の基礎動詞。" }],
+  // dance (23423)
+  [23423, { coreImage: "音楽に合わせて踊る身体動作がコアイメージ。", usage: "「dance with ...」「dance to music」で使う。", synonymDifference: "dance vs jump: dance はリズム動作、jump は単発跳躍。", englishDefinition: "To move your body rhythmically to music.", etymology: "運動・文化語彙の基礎語。" }],
+  // cook (23015)
+  [23015, { coreImage: "食材を加熱・調理して料理を作る行為がコアイメージ。", usage: "「cook dinner」「cook for my family」で使う。", synonymDifference: "cook vs bake: cook は調理全般、bake は焼く調理。", englishDefinition: "To prepare food by heating it.", etymology: "生活動詞の基礎語。" }],
+  // wash (23497)
+  [23497, { coreImage: "水や洗剤で汚れを洗い落とす行為がコアイメージ。", usage: "「wash my hands」「wash the dishes」で使う。", synonymDifference: "wash vs clean: wash は水洗い、clean はきれいにする全般。", englishDefinition: "To clean with water.", etymology: "生活動詞の基礎語。" }],
+  // clean (23143)
+  [23143, { coreImage: "汚れを取り除いて清潔にする行為がコアイメージ。", usage: "「clean the room」「keep it clean」で使う。", synonymDifference: "clean vs wash: clean は広義、wash は水洗い中心。", englishDefinition: "To make something free from dirt.", etymology: "生活動詞の基礎語。" }],
+  // sleep (23073)
+  [23073, { coreImage: "休息のため眠る状態・行為がコアイメージ。", usage: "「sleep well」「go to sleep」で使う。", synonymDifference: "sleep vs rest: sleep は睡眠、rest は休息全般。", englishDefinition: "To be in a state of rest with eyes closed.", etymology: "生活動詞の基礎語。" }],
+  // wake (23496)
+  [23496, { coreImage: "眠りから目覚める動作がコアイメージ。", usage: "「wake up at six」「wake me up」で使う。", synonymDifference: "wake vs get up: wake は目覚め、get up は起き上がる。", englishDefinition: "To stop sleeping; to make someone stop sleeping.", etymology: "生活動詞の基礎語。" }],
+  // sit (23071)
+  [23071, { coreImage: "椅子などに座る姿勢になる動作がコアイメージ。", usage: "「sit down」「sit on a chair」で使う。", synonymDifference: "sit vs stand: sit は座る、stand は立つ。", englishDefinition: "To rest your body on your bottom.", etymology: "姿勢動詞の基礎語。" }],
+  // stand (23072)
+  [23072, { coreImage: "足で立つ姿勢を保つ動作がコアイメージ。", usage: "「stand up」「stand near the door」で使う。", synonymDifference: "stand vs sit: stand は立つ、sit は座る。", englishDefinition: "To be in an upright position on your feet.", etymology: "姿勢動詞の基礎語。" }],
+  // jump (23660)
+  [23660, { coreImage: "地面を蹴って跳び上がる動作がコアイメージ。", usage: "「jump high」「jump over ...」で使う。", synonymDifference: "jump vs hop: hop は片足で軽く跳ぶ。", englishDefinition: "To push yourself off the ground with your legs.", etymology: "運動動詞の基礎語。" }],
+  // fly (23432)
+  [23432, { coreImage: "空中を飛んで移動する動作がコアイメージ。", usage: "鳥・飛行機の動作にも人の移動にも使える。", synonymDifference: "fly vs travel: fly は空路移動、travel は移動全般。", englishDefinition: "To move through the air.", etymology: "移動動詞の基礎語。" }],
+  // catch (23414)
+  [23414, { coreImage: "動くものを受け止めてつかむ行為がコアイメージ。", usage: "「catch a ball」「catch a bus」など多義。", synonymDifference: "catch vs throw: catch は受ける、throw は投げる。", englishDefinition: "To take hold of something moving.", etymology: "運動動詞の基礎多義語。" }],
+  // throw (23487)
+  [23487, { coreImage: "物を手で離して投げる動作がコアイメージ。", usage: "「throw a ball」「throw away ...」で使う。", synonymDifference: "throw vs drop: throw は意図的、drop は落とす。", englishDefinition: "To send something through the air with your hand.", etymology: "運動動詞の基礎語。" }],
   // kick (10265)
   [10265, { coreImage: "足で物を蹴る動作がコアイメージ。", usage: "「kick a ball」が定型。", synonymDifference: "kick vs hit: kick は足、hit は手や道具も含む。", englishDefinition: "To strike with your foot.", etymology: "運動動詞の基礎語。" }],
-  // hit (10266)
-  [10266, { coreImage: "叩く・当てる衝撃動作がコアイメージ。", usage: "「hit the ball」「hit the wall」で使う。", synonymDifference: "hit vs touch: hit は衝撃を伴う接触。", englishDefinition: "To strike something.", etymology: "動作動詞の基礎語。" }],
-  // draw (10267)
-  [10267, { coreImage: "線や絵を描く創作動作がコアイメージ。", usage: "「draw a picture」で初級頻出。", synonymDifference: "draw vs paint: draw は線中心、paint は色塗り中心。", englishDefinition: "To make a picture with lines.", etymology: "創作動詞の基礎語。" }],
-  // cut (10268)
-  [10268, { coreImage: "刃物などで切り分ける動作がコアイメージ。", usage: "「cut paper」「cut into pieces」で使う。", synonymDifference: "cut vs break: cut は刃などで切る、break は折る/壊す。", englishDefinition: "To divide something using a sharp tool.", etymology: "生活動詞の基礎語。" }],
-  // buy (10269)
-  [10269, { coreImage: "お金を払って物を買う行為がコアイメージ。", usage: "「buy a book」「buy for ...」で使う。", synonymDifference: "buy vs sell: buy は買う、sell は売る。", englishDefinition: "To get something by paying money.", etymology: "買い物動詞の基礎語。" }],
-  // sell (10270)
-  [10270, { coreImage: "商品を渡して代金を受け取る売る行為がコアイメージ。", usage: "「sell books」「sell to ...」で使う。", synonymDifference: "sell vs buy: sell は売る、buy は買う。", englishDefinition: "To give something to someone for money.", etymology: "買い物動詞の基礎語。" }],
-  // teach (10271)
-  [10271, { coreImage: "知識や技能を教える行為がコアイメージ。", usage: "teach + 人 + 内容 が基本。", synonymDifference: "teach vs tell: teach は学ばせる、tell は伝える。", englishDefinition: "To help someone learn something.", etymology: "教育動詞の基礎語。" }],
-  // learn (10272)
-  [10272, { coreImage: "知識や技能を学んで身につける行為がコアイメージ。", usage: "「learn English」「learn to ...」で使う。", synonymDifference: "learn vs study: learn は習得結果、study は学習行為。", englishDefinition: "To gain knowledge or skill.", etymology: "教育動詞の基礎語。" }],
-  // try (10273)
-  [10273, { coreImage: "成功未確定でも試みる行為がコアイメージ。", usage: "「try to do」「try this」で使う。", synonymDifference: "try vs test: try は試行、test は評価目的の試験。", englishDefinition: "To make an attempt.", etymology: "行為開始の基礎動詞。" }],
-  // need (10274)
-  [10274, { coreImage: "必要性がある状態を示す動詞がコアイメージ。", usage: "「need + 名詞」「need to do」が基本。", synonymDifference: "need vs want: need は必要、want は希望。", englishDefinition: "To require something because it is necessary.", etymology: "必要表現の基礎語。" }],
-  // hope (10275)
-  [10275, { coreImage: "よい結果を望む気持ちを示す動詞がコアイメージ。", usage: "「hope to do」「hope that ...」で使う。", synonymDifference: "hope vs wish: wish は実現困難な願望にも使う。", englishDefinition: "To want something to happen.", etymology: "感情動詞の基礎語。" }],
-  // love (10276)
-  [10276, { coreImage: "強い好意・愛情を示す動詞がコアイメージ。", usage: "「love music」「I love you」で使う。", synonymDifference: "love vs like: love の方が感情強度が高い。", englishDefinition: "To like very much; to feel deep affection.", etymology: "感情語彙の中心語。" }],
-  // feel (10277)
-  [10277, { coreImage: "感覚や感情を感じる内面的動詞がコアイメージ。", usage: "「feel happy」「feel like ...」で使う。", synonymDifference: "feel vs think: feel は感覚・感情、think は思考。", englishDefinition: "To experience a sensation or emotion.", etymology: "感覚動詞の基礎語。" }],
-  // enjoy (10278)
-  [10278, { coreImage: "行為や物事を楽しむ感情動詞がコアイメージ。", usage: "後ろは名詞か動名詞（enjoy music / enjoy playing）。", synonymDifference: "enjoy vs like: enjoy は実際の体験を楽しむ含意が強い。", englishDefinition: "To take pleasure in something.", etymology: "感情動詞の基礎語。" }],
-  // smile (10279)
-  [10279, { coreImage: "うれしさや親しみで微笑む動作がコアイメージ。", usage: "名詞「a smile」と動詞「smile」の両用。", synonymDifference: "smile vs laugh: smile は微笑む、laugh は声を出して笑う。", englishDefinition: "To make a happy expression with your mouth.", etymology: "感情表現語彙の基礎語。" }],
-  // cry (10280)
-  [10280, { coreImage: "涙を流して泣く行為がコアイメージ。", usage: "「cry loudly」「cry for help」で使う。", synonymDifference: "cry vs shout: cry は泣く/叫ぶ両義、shout は叫ぶ中心。", englishDefinition: "To shed tears when sad or hurt.", etymology: "感情動詞の基礎語。" }],
-  // laugh (10281)
-  [10281, { coreImage: "おかしさや喜びで笑う動作がコアイメージ。", usage: "「laugh at ...」「laugh with ...」で使う。", synonymDifference: "laugh vs smile: laugh は声を伴う笑い、smile は微笑み。", englishDefinition: "To make sounds because something is funny.", etymology: "感情表現の基礎動詞。" }],
-  // work (10282)
-  [10282, { coreImage: "働く、または機能するという行為/状態がコアイメージ。", usage: "「work hard」「it works」「work on ...」で高頻度。", synonymDifference: "work vs study: work は労働・作業、study は学習。", englishDefinition: "To do a job; to function.", etymology: "基幹動詞として非常に高頻度。" }],
-  // live (10283)
-  [10283, { coreImage: "住む、または生きる状態を示す動詞がコアイメージ。", usage: "「live in Tokyo」「live a long life」で使う。", synonymDifference: "live vs stay: live は定住、stay は一時滞在。", englishDefinition: "To reside; to be alive.", etymology: "生活動詞の基礎多義語。" }],
-  // move (10284)
-  [10284, { coreImage: "位置を変える、または引っ越す行為がコアイメージ。", usage: "「move the box」「move to Osaka」で使う。", synonymDifference: "move vs shift: shift は小さな移動・変更に使うことが多い。", englishDefinition: "To change position; to change residence.", etymology: "移動動詞の基礎語。" }],
-  // turn (10285)
-  [10285, { coreImage: "向きや状態を変える回転・転換がコアイメージ。", usage: "「turn left」「turn on the light」で多義。", synonymDifference: "turn vs rotate: rotate は物理回転をより厳密に示す。", englishDefinition: "To change direction or state.", etymology: "多義で高頻度の基礎動詞。" }],
-  // call (10286)
-  [10286, { coreImage: "呼ぶ、または電話する接触行為がコアイメージ。", usage: "「call my name」「call me later」で使う。", synonymDifference: "call vs phone: 意味は近く、call がより広い。", englishDefinition: "To shout to someone; to telephone.", etymology: "連絡動詞の基礎語。" }],
-  // ask (10287)
-  [10287, { coreImage: "質問する・依頼する行為がコアイメージ。", usage: "「ask a question」「ask for help」で使う。", synonymDifference: "ask vs tell: ask は求める、tell は伝える。", englishDefinition: "To request information or help.", etymology: "会話動詞の基礎語。" }],
-  // show (10288)
-  [10288, { coreImage: "見せて相手に分からせる行為がコアイメージ。", usage: "show + 人 + 物 の形で使う。", synonymDifference: "show vs tell: show は視覚提示、tell は言語伝達。", englishDefinition: "To let someone see something.", etymology: "提示動詞の基礎語。" }],
-  // find (10289)
-  [10289, { coreImage: "探して見つける、または気づく結果がコアイメージ。", usage: "「find my key」「find it difficult」で使う。", synonymDifference: "find vs look for: find は結果、look for は探す過程。", englishDefinition: "To discover or locate something.", etymology: "探索動詞の基礎語。" }],
-  // keep (10290)
-  [10290, { coreImage: "状態や所有を継続して保つことがコアイメージ。", usage: "「keep the door open」「keep a diary」で使う。", synonymDifference: "keep vs hold: keep は継続、hold は一時的保持。", englishDefinition: "To continue to have or maintain.", etymology: "継続動詞の基礎語。" }],
-  // bring (10291)
-  [10291, { coreImage: "話し手側へ持って来る移動授受がコアイメージ。", usage: "「bring me a pen」で使う。", synonymDifference: "bring vs take: bring はこちらへ、take はあちらへ。", englishDefinition: "To carry something toward a person or place.", etymology: "移動授受動詞の基礎語。" }],
-  // carry (10292)
-  [10292, { coreImage: "物を持ち運ぶ運搬行為がコアイメージ。", usage: "「carry a bag」「carry water」で使う。", synonymDifference: "carry vs bring: carry は運搬動作、bring は方向（こちら）を含む。", englishDefinition: "To hold and move something from one place to another.", etymology: "運搬動詞の基礎語。" }],
-  // hold (10293)
-  [10293, { coreImage: "手などで持って保持する動作がコアイメージ。", usage: "「hold my hand」「hold a cup」で使う。", synonymDifference: "hold vs keep: hold は保持動作、keep は継続状態。", englishDefinition: "To have something in your hand or arms.", etymology: "保持動詞の基礎語。" }],
-  // pull (10294)
-  [10294, { coreImage: "自分の方へ引っ張る力の方向がコアイメージ。", usage: "「pull the door」「pull a rope」で使う。", synonymDifference: "pull vs push: pull は引く、push は押す。", englishDefinition: "To move something toward yourself with force.", etymology: "力学動詞の基礎語。" }],
-  // push (10295)
-  [10295, { coreImage: "自分から離す方向へ押す力の作用がコアイメージ。", usage: "「push the door」「push the cart」で使う。", synonymDifference: "push vs pull: push は押す、pull は引く。", englishDefinition: "To move something away using force.", etymology: "力学動詞の基礎語。" }],
-  // drink (10296)
-  [10296, { coreImage: "液体を口から取り込む行為がコアイメージ。", usage: "名詞/動詞の両用。「drink water」「a drink」。", synonymDifference: "drink vs eat: drink は液体摂取、eat は固形摂取。", englishDefinition: "To take liquid into your mouth and swallow it.", etymology: "生活動詞の基礎語。" }],
-  // wear (10297)
-  [10297, { coreImage: "衣類や装飾品を身につけた状態を示す動詞がコアイメージ。", usage: "「wear a hat」「wear glasses」で使う。", synonymDifference: "wear vs put on: wear は着ている状態、put on は着る動作。", englishDefinition: "To have clothes or accessories on your body.", etymology: "衣類動詞の基礎語。" }],
-  // ride (10298)
-  [10298, { coreImage: "乗り物や動物に乗って移動する行為がコアイメージ。", usage: "「ride a bike」「ride a horse」で使う。", synonymDifference: "ride vs drive: ride は乗る側、drive は運転する側。", englishDefinition: "To travel on or in a vehicle or on an animal.", etymology: "移動動詞の基礎語。" }],
-  // drive (10299)
-  [10299, { coreImage: "車などを運転して動かす行為がコアイメージ。", usage: "「drive a car」「drive to school」で使う。", synonymDifference: "drive vs ride: drive は運転、ride は同乗/騎乗。", englishDefinition: "To control and operate a vehicle.", etymology: "交通動詞の基礎語。" }],
-  // visit (10300)
-  [10300, { coreImage: "人や場所を訪ねて行く行為がコアイメージ。", usage: "「visit my friend」「visit Japan」で使う。", synonymDifference: "visit vs go to: visit は訪問目的をより明確に示す。", englishDefinition: "To go to see a person or place.", etymology: "移動・交流動詞の基礎語。" }],
-  // meet (10301)
-  [10301, { coreImage: "人と会う・出会う接触行為がコアイメージ。", usage: "「meet my teacher」「Nice to meet you」で使う。", synonymDifference: "meet vs see: meet は会う行為、see は見る意味も広い。", englishDefinition: "To come together with someone.", etymology: "対人動詞の基礎語。" }],
-  // leave (10302)
-  [10302, { coreImage: "その場を去る、または残しておく行為がコアイメージ。", usage: "「leave home」「leave a message」で多義。", synonymDifference: "leave vs go: leave は出発点を離れることを強調。", englishDefinition: "To go away from a place; to let something remain.", etymology: "移動動詞の基礎多義語。" }],
-  // arrive (10303)
-  [10303, { coreImage: "目的地へ到着する結果がコアイメージ。", usage: "「arrive at/in ...」の前置詞に注意。", synonymDifference: "arrive vs reach: reach は他動詞で目的語を直接取る。", englishDefinition: "To get to a place.", etymology: "移動結果動詞の基礎語。" }],
-  // start (10304)
-  [10304, { coreImage: "行為や出来事の開始点を作ることがコアイメージ。", usage: "「start to do / doing」「start a game」で使う。", synonymDifference: "start vs begin: ほぼ同義で start の方が口語的。", englishDefinition: "To begin something.", etymology: "開始動詞の基礎語。" }],
-  // finish (10305)
-  [10305, { coreImage: "行為を最後まで終える完了がコアイメージ。", usage: "「finish homework」「finish doing ...」で使う。", synonymDifference: "finish vs end: finish は主体的完了、end は自動的終結にも使う。", englishDefinition: "To complete something.", etymology: "完了動詞の基礎語。" }],
-  // begin (10306)
-  [10306, { coreImage: "何かが始まる/始める開始動詞がコアイメージ。", usage: "start と同様に to do / doing と使う。", synonymDifference: "begin vs start: 意味は近いが begin はやや文語寄り。", englishDefinition: "To start; to come into existence.", etymology: "開始動詞の基礎語。" }],
-  // end (10307)
-  [10307, { coreImage: "物事の終わりに到達する終結がコアイメージ。", usage: "動詞・名詞の両用（The end）。", synonymDifference: "end vs finish: end は終点、finish は完了行為の含意。", englishDefinition: "To come to a stop; the final part.", etymology: "終結語彙の基礎語。" }],
-  // send (10308)
-  [10308, { coreImage: "物や情報を相手へ送る伝達行為がコアイメージ。", usage: "「send a letter to ...」が基本。", synonymDifference: "send vs give: send は離れた相手へ送る。", englishDefinition: "To make something go to someone.", etymology: "伝達動詞の基礎語。" }],
-  // pay (10309)
-  [10309, { coreImage: "代金を支払う行為がコアイメージ。", usage: "「pay money for ...」「pay by card」で使う。", synonymDifference: "pay vs spend: pay は支払い行為、spend は消費全体。", englishDefinition: "To give money for something.", etymology: "金銭動詞の基礎語。" }],
-  // grow (10310)
-  [10310, { coreImage: "育つ/育てる成長変化がコアイメージ。", usage: "自動詞・他動詞の両方で使える。", synonymDifference: "grow vs raise: grow は成長・栽培全般、raise は育てる行為に焦点。", englishDefinition: "To become bigger; to cultivate.", etymology: "変化動詞の基礎語。" }],
-  // build (10311)
-  [10311, { coreImage: "材料を組み合わせて作る・建てる行為がコアイメージ。", usage: "「build a house」「build a team」で使う。", synonymDifference: "build vs make: build は構造物構築、make は作る全般。", englishDefinition: "To make by putting parts together.", etymology: "制作動詞の基礎語。" }],
-  // break (10312)
-  [10312, { coreImage: "壊す/壊れることで連続性が断たれる変化がコアイメージ。", usage: "他動詞・自動詞の両用。", synonymDifference: "break vs cut: break は折れる・壊れる、cut は刃物で切る。", englishDefinition: "To damage so that something separates or stops working.", etymology: "変化動詞の基礎語。" }],
-  // pick (10313)
-  [10313, { coreImage: "複数から選び取る、または摘み取る行為がコアイメージ。", usage: "「pick a color」「pick flowers」で使う。", synonymDifference: "pick vs choose: pick は口語的で軽い選択。", englishDefinition: "To choose or to take by hand.", etymology: "選択動詞の基礎語。" }],
-  // drop (10314)
-  [10314, { coreImage: "手から下へ落とす行為がコアイメージ。", usage: "「drop a cup」「drop by（立ち寄る）」の句動詞もある。", synonymDifference: "drop vs fall: drop は落とす（他動詞）側、fall は落ちる（自動詞）側。", englishDefinition: "To let something fall.", etymology: "動作動詞の基礎語。" }],
-  // fall (10315)
-  [10315, { coreImage: "重力で下へ落ちる自動的動作がコアイメージ。", usage: "「fall down」「fall in love」で多義。", synonymDifference: "fall vs drop: fall は自動詞中心、drop は他動詞中心。", englishDefinition: "To move downward by gravity.", etymology: "移動変化動詞の基礎語。" }],
-  // climb (10316)
-  [10316, { coreImage: "上方向へ登る運動がコアイメージ。", usage: "「climb a mountain」「climb stairs」で使う。", synonymDifference: "climb vs go up: climb は身体動作の努力を含みやすい。", englishDefinition: "To go upward using hands and feet.", etymology: "運動動詞の基礎語。" }],
-  // change (10317)
-  [10317, { coreImage: "状態を変える/変わる変化がコアイメージ。", usage: "他動詞・自動詞の両用。", synonymDifference: "change vs turn: change は広い変化、turn は向きや状態の転換。", englishDefinition: "To make or become different.", etymology: "変化動詞の基礎語。" }],
-  // choose (10318)
-  [10318, { coreImage: "選択肢から意図して選ぶ行為がコアイメージ。", usage: "「choose A」「choose to do」で使う。", synonymDifference: "choose vs pick: choose の方がやや丁寧・明確。", englishDefinition: "To select one option from others.", etymology: "選択動詞の基礎語。" }],
-  // forget (10319)
-  [10319, { coreImage: "記憶や予定を思い出せない状態になることがコアイメージ。", usage: "「forget to do / doing」の使い分けに注意。", synonymDifference: "forget vs miss: forget は失念、miss は見逃し・不在。", englishDefinition: "To fail to remember.", etymology: "記憶動詞の基礎語。" }],
-  // remember (10320)
-  [10320, { coreImage: "記憶を保持・想起する認知行為がコアイメージ。", usage: "「remember to do / doing」で使う。", synonymDifference: "remember vs recall: recall はやや形式的。", englishDefinition: "To keep in mind or bring back to mind.", etymology: "記憶動詞の基礎語。" }],
-  // believe (10321)
-  [10321, { coreImage: "情報や人を真実だと信じる心的判断がコアイメージ。", usage: "「believe + 人/内容」で使う。", synonymDifference: "believe vs think: believe は信頼・確信の含意が強い。", englishDefinition: "To accept something as true.", etymology: "思考・信念動詞の基礎語。" }],
-  // wish (10322)
-  [10322, { coreImage: "実現してほしい願望を示す動詞がコアイメージ。", usage: "「wish to do」「I wish ...」で使う。", synonymDifference: "wish vs hope: wish は実現困難な願いにも使う。", englishDefinition: "To want something strongly.", etymology: "感情動詞の基礎語。" }],
-  // mean (10323)
-  [10323, { coreImage: "言葉や行為が何を意味するかを示す動詞がコアイメージ。", usage: "「What does it mean?」「I mean ...」で頻出。", synonymDifference: "mean vs say: mean は意味内容、say は発話行為。", englishDefinition: "To signify or intend.", etymology: "言語理解の基礎動詞。" }],
-  // check (10324)
-  [10324, { coreImage: "正確さや状態を確認する行為がコアイメージ。", usage: "「check answers」「check the time」で使う。", synonymDifference: "check vs confirm: confirm は確定・裏付けの含意が強い。", englishDefinition: "To examine something to make sure.", etymology: "確認動詞の基礎語。" }],
-  // taste (10325)
-  [10325, { coreImage: "味わう、または味がする感覚動詞がコアイメージ。", usage: "「taste the soup」「It tastes good」で両用。", synonymDifference: "taste vs try: taste は味覚確認、try は試す全般。", englishDefinition: "To perceive flavor; to have a flavor.", etymology: "感覚動詞の基礎多義語。" }],
-  // smell (10326)
-  [10326, { coreImage: "においを感じる、またはにおいがする感覚がコアイメージ。", usage: "「smell flowers」「It smells nice」で使う。", synonymDifference: "smell vs scent: smell は動詞/名詞、scent は名詞中心。", englishDefinition: "To notice an odor; to have an odor.", etymology: "感覚動詞の基礎語。" }],
-  // touch (10327)
-  [10327, { coreImage: "手などで触れる接触行為がコアイメージ。", usage: "「touch this」「don't touch」で使う。", synonymDifference: "touch vs hit: touch は軽い接触、hit は衝撃。", englishDefinition: "To put your hand or body on something.", etymology: "動作動詞の基礎語。" }],
-  // hear (10328)
-  [10328, { coreImage: "音が耳に入って聞こえる知覚がコアイメージ。", usage: "listen との違い（意図性）を対で学ぶ。", synonymDifference: "hear vs listen: hear は自然知覚、listen は意識して聞く。", englishDefinition: "To perceive sound with your ears.", etymology: "知覚動詞の基礎語。" }],
-  // hang (10329)
-  [10329, { coreImage: "掛ける・ぶら下がる位置関係がコアイメージ。", usage: "「hang a picture」「hang on the wall」で使う。", synonymDifference: "hang vs put: hang は吊るす配置に特化。", englishDefinition: "To suspend or be suspended from above.", etymology: "配置動詞の基礎語。" }],
-  // fill (10330)
-  [10330, { coreImage: "空間を満たしていっぱいにする行為がコアイメージ。", usage: "「fill the bottle with water」で使う。", synonymDifference: "fill vs cover: fill は内部を満たす、cover は表面を覆う。", englishDefinition: "To make full.", etymology: "状態変化動詞の基礎語。" }],
-  // count (10331)
-  [10331, { coreImage: "数を順に数える行為がコアイメージ。", usage: "「count to ten」「count apples」で使う。", synonymDifference: "count vs calculate: count は数える、calculate は計算する。", englishDefinition: "To determine number by naming numbers.", etymology: "数処理動詞の基礎語。" }],
-  // spell (10332)
-  [10332, { coreImage: "単語を文字でつづる行為がコアイメージ。", usage: "「How do you spell ...?」が定型。", synonymDifference: "spell vs write: spell は綴りを言う/書く、write は書く全般。", englishDefinition: "To write or say the letters of a word in order.", etymology: "語学学習動詞の基礎語。" }],
-  // share (10333)
-  [10333, { coreImage: "分け合う・共有する行為がコアイメージ。", usage: "「share with ...」「share ideas」で使う。", synonymDifference: "share vs give: share は分け合い、give は一方向授受。", englishDefinition: "To divide and use together.", etymology: "協働動詞の基礎語。" }],
-  // join (10334)
-  [10334, { coreImage: "集団や活動に参加して加わる行為がコアイメージ。", usage: "「join the club」「join us」で使う。", synonymDifference: "join vs attend: join はメンバー化、attend は参加出席。", englishDefinition: "To become part of a group or activity.", etymology: "参加動詞の基礎語。" }],
-  // win (10335)
-  [10335, { coreImage: "競争で勝利を得る結果がコアイメージ。", usage: "「win a game」「win first prize」で使う。", synonymDifference: "win vs beat: win は勝利獲得、beat は相手に勝つ。", englishDefinition: "To be victorious in a game or contest.", etymology: "競争語彙の基礎語。" }],
-  // big (10336)
-  [10336, { coreImage: "大きさ・規模が大きい状態を示す形容がコアイメージ。", usage: "「a big house」「big city」で頻出。", synonymDifference: "big vs large: ほぼ同義で big はより口語的。", englishDefinition: "Large in size or amount.", etymology: "形容詞基礎語。" }],
-  // small (10337)
-  [10337, { coreImage: "大きさ・規模が小さい状態を示す形容がコアイメージ。", usage: "「a small room」「small bag」で使う。", synonymDifference: "small vs little: little は主観的・感情的な用法も多い。", englishDefinition: "Little in size.", etymology: "形容詞基礎語。" }],
-  // long (10338)
-  [10338, { coreImage: "長さや時間が長い状態を示す形容がコアイメージ。", usage: "「long hair」「a long time」で多用。", synonymDifference: "long vs tall: long は長さ、tall は高さ。", englishDefinition: "Having great length or lasting much time.", etymology: "形容詞基礎語。" }],
-  // short (10339)
-  [10339, { coreImage: "長さが短い、または背が低い状態を示す形容がコアイメージ。", usage: "「short hair」「a short boy」で使う。", synonymDifference: "short vs low: short は長さ/身長、low は位置や高さ。", englishDefinition: "Not long; of little height.", etymology: "形容詞基礎語。" }],
-  // tall (10340)
-  [10340, { coreImage: "人や物の高さが高い状態を示す形容がコアイメージ。", usage: "「a tall building」「tall girl」で使う。", synonymDifference: "tall vs high: tall は縦に伸びた物体、high は位置・高さ全般。", englishDefinition: "Having greater than usual height.", etymology: "形容詞基礎語。" }],
-  // new (10341)
-  [10341, { coreImage: "時間が新しい・使用されていない状態がコアイメージ。", usage: "「a new book」「new student」で使う。", synonymDifference: "new vs old: new は新しい、old は古い。", englishDefinition: "Not old; recently made or discovered.", etymology: "基本対義語の中心語。" }],
-  // young (10342)
-  [10342, { coreImage: "年齢が若い状態を示す形容がコアイメージ。", usage: "人・動物・時期に広く使う。", synonymDifference: "young vs new: young は年齢、new は新しさ。", englishDefinition: "Having lived or existed for a short time.", etymology: "年齢表現の基礎語。" }],
-  // hot (10343)
-  [10343, { coreImage: "温度が高い、または暑い状態がコアイメージ。", usage: "天候と物体の両方に使える。", synonymDifference: "hot vs warm: hot の方が温度が高い。", englishDefinition: "Having a high temperature.", etymology: "温度形容詞の基礎語。" }],
-  // cold (10344)
-  [10344, { coreImage: "温度が低い、または寒い状態がコアイメージ。", usage: "天候・物体・体感に使う。", synonymDifference: "cold vs cool: cold の方が低温。", englishDefinition: "Having a low temperature.", etymology: "温度形容詞の基礎語。" }],
-  // warm (10345)
-  [10345, { coreImage: "やや暖かい快適温度がコアイメージ。", usage: "「warm day」「keep warm」で使う。", synonymDifference: "warm vs hot: warm は穏やかな暖かさ。", englishDefinition: "Moderately hot; pleasantly heated.", etymology: "温度形容詞の基礎語。" }],
-  // cool (10346)
-  [10346, { coreImage: "涼しい温度、またはかっこいい評価の両義がコアイメージ。", usage: "文脈で温度義か評価義かを判別。", synonymDifference: "cool vs cold: cool は冷たすぎない。", englishDefinition: "Slightly cold; also fashionable or impressive.", etymology: "多義形容詞の基礎語。" }],
-  // fast (10347)
-  [10347, { coreImage: "速度が速い状態を示す形容がコアイメージ。", usage: "副詞同形で「run fast」も可能。", synonymDifference: "fast vs quick: fast は速度、quick は時間の短さにも使う。", englishDefinition: "Moving at high speed.", etymology: "速度語彙の基礎語。" }],
-  // slow (10348)
-  [10348, { coreImage: "速度が遅い状態を示す形容がコアイメージ。", usage: "副詞は slowly が基本。", synonymDifference: "slow vs late: slow は速度、late は時刻遅れ。", englishDefinition: "Moving or happening with little speed.", etymology: "速度語彙の基礎語。" }],
-  // easy (10349)
-  [10349, { coreImage: "努力が少なくできる容易さがコアイメージ。", usage: "「easy question」「take it easy」で使う。", synonymDifference: "easy vs simple: easy は難易度、simple は構造の単純さ。", englishDefinition: "Not difficult.", etymology: "難易度語彙の基礎語。" }],
-  // hard (10350)
-  [10350, { coreImage: "難しい、または硬いという二つの核義がコアイメージ。", usage: "文脈で難易度義か物性義かを判別。", synonymDifference: "hard vs difficult: difficult は難しい義に限定されやすい。", englishDefinition: "Difficult; also solid and not soft.", etymology: "多義形容詞の基礎語。" }],
-  // beautiful (10351)
-  [10351, { coreImage: "見た目や性質が非常に美しい評価がコアイメージ。", usage: "人・景色・物の賞賛に使える。", synonymDifference: "beautiful vs pretty: beautiful の方が強い賞賛。", englishDefinition: "Very attractive and pleasing.", etymology: "評価形容詞の基礎語。" }],
-  // pretty (10352)
-  [10352, { coreImage: "かわいい・きれいな印象を示す形容がコアイメージ。", usage: "副詞「pretty + 形容詞（かなり）」の用法もある。", synonymDifference: "pretty vs cute: pretty はきれい寄り、cute は愛らしさ寄り。", englishDefinition: "Attractive in a delicate way.", etymology: "評価形容詞の基礎多義語。" }],
-  // cute (10353)
-  [10353, { coreImage: "小さく愛らしい印象を示す評価がコアイメージ。", usage: "人・動物・物の可愛さに使う。", synonymDifference: "cute vs pretty: cute は愛らしさ、pretty は整った美しさ。", englishDefinition: "Attractive in a charming way.", etymology: "評価形容詞の基礎語。" }],
-  // strong (10354)
-  [10354, { coreImage: "力・程度・意志が強い状態がコアイメージ。", usage: "身体、味、意見など幅広く使う。", synonymDifference: "strong vs powerful: powerful の方が影響力の規模が大きいことが多い。", englishDefinition: "Having great physical power or intensity.", etymology: "性質形容詞の基礎語。" }],
-  // weak (10355)
-  [10355, { coreImage: "力・程度が弱い状態を示す形容がコアイメージ。", usage: "身体、信号、主張などに使う。", synonymDifference: "weak vs soft: weak は力不足、soft は柔らかさ。", englishDefinition: "Not strong.", etymology: "性質形容詞の基礎語。" }],
-  // busy (10356)
-  [10356, { coreImage: "予定や作業で手が埋まっている状態がコアイメージ。", usage: "「I am busy now.」で高頻度。", synonymDifference: "busy vs occupied: occupied はより形式的。", englishDefinition: "Having a lot to do.", etymology: "生活状態語彙の基礎語。" }],
-  // free (10357)
-  [10357, { coreImage: "自由である、または無料である状態の両義がコアイメージ。", usage: "文脈で「時間が空いている」か「無料」かを判別。", synonymDifference: "free vs available: free は自由/無料、available は利用可能。", englishDefinition: "Not occupied or not costing money.", etymology: "多義形容詞の基礎語。" }],
-  // hungry (10358)
-  [10358, { coreImage: "空腹で食べたい体感状態がコアイメージ。", usage: "「I am hungry.」が定型。", synonymDifference: "hungry vs starving: starving の方が程度が強い。", englishDefinition: "Feeling a need to eat.", etymology: "体調形容詞の基礎語。" }],
-  // thirsty (10359)
-  [10359, { coreImage: "のどが渇いて飲みたい体感状態がコアイメージ。", usage: "「I am thirsty.」が定型。", synonymDifference: "thirsty vs dry: thirsty は人の感覚、dry は物の状態にも使う。", englishDefinition: "Feeling a need to drink.", etymology: "体調形容詞の基礎語。" }],
-  // tired (10360)
-  [10360, { coreImage: "疲れて休みが必要な状態がコアイメージ。", usage: "「I am tired.」「tired of ...」で使う。", synonymDifference: "tired vs sleepy: tired は疲労、sleepy は眠気。", englishDefinition: "Needing rest because of tiredness.", etymology: "体調形容詞の基礎語。" }],
-  // sick (10361)
-  [10361, { coreImage: "病気・体調不良の状態を示す形容がコアイメージ。", usage: "米語で病気義が強く、英語では ill もよく使う。", synonymDifference: "sick vs ill: 意味は近いが地域差・語感差がある。", englishDefinition: "Not healthy; ill.", etymology: "体調形容詞の基礎語。" }],
-  // fine (10362)
-  [10362, { coreImage: "問題ない・元気・良好を示す中立評価がコアイメージ。", usage: "返答「I am fine.」や評価「That is fine.」で使う。", synonymDifference: "fine vs good: fine は中立〜やや丁寧、good は一般評価。", englishDefinition: "Well; satisfactory; of good quality.", etymology: "高頻度評価語。" }],
-  // kind (10363)
-  [10363, { coreImage: "他者に優しく思いやりがある性質がコアイメージ。", usage: "「kind to people」「a kind person」で使う。", synonymDifference: "kind vs nice: kind は親切行為、nice は印象全般。", englishDefinition: "Friendly and caring toward others.", etymology: "性格形容詞の基礎語。" }],
-  // sad (10364)
-  [10364, { coreImage: "悲しく気分が落ち込んだ感情状態がコアイメージ。", usage: "「I feel sad.」で感情表現に使う。", synonymDifference: "sad vs upset: upset は動揺・不安も含む。", englishDefinition: "Unhappy or sorrowful.", etymology: "感情形容詞の基礎語。" }],
-  // angry (10365)
-  [10365, { coreImage: "怒りで感情が高ぶった状態がコアイメージ。", usage: "「angry with ...」「angry about ...」で使う。", synonymDifference: "angry vs mad: mad は口語で怒り義にも使われる。", englishDefinition: "Feeling strong displeasure.", etymology: "感情形容詞の基礎語。" }],
-  // afraid (10366)
-  [10366, { coreImage: "怖い、または不安を感じる状態がコアイメージ。", usage: "「afraid of ...」「I am afraid ...」で使う。", synonymDifference: "afraid vs scared: scared の方が口語的。", englishDefinition: "Feeling fear or worry.", etymology: "感情形容詞の基礎語。" }],
-  // surprised (10367)
-  [10367, { coreImage: "予想外に出会って驚いた状態がコアイメージ。", usage: "人が主語の受け身形容詞として使う。", synonymDifference: "surprised vs amazing: surprised は人の状態、amazing は原因側。", englishDefinition: "Feeling unexpected astonishment.", etymology: "surprise の過去分詞形容詞。" }],
-  // excited (10368)
-  [10368, { coreImage: "期待や刺激で気持ちが高まった状態がコアイメージ。", usage: "「excited about ...」が定型。", synonymDifference: "excited vs interesting: excited は人の感情、interesting は物の性質。", englishDefinition: "Very enthusiastic and eager.", etymology: "excite の過去分詞形容詞。" }],
-  // interested (10369)
-  [10369, { coreImage: "対象に関心を持っている心理状態がコアイメージ。", usage: "「interested in ...」の前置詞に注意。", synonymDifference: "interested vs interesting: interested は人の状態、interesting は対象の性質。", englishDefinition: "Wanting to know or learn more about something.", etymology: "interest の過去分詞形容詞。" }],
-  // important (10370)
-  [10370, { coreImage: "価値・影響が大きく大切である評価がコアイメージ。", usage: "「important for ...」「important thing」で使う。", synonymDifference: "important vs necessary: important は重要、necessary は必要。", englishDefinition: "Having great value or significance.", etymology: "評価形容詞の基礎語。" }],
-  // famous (10371)
-  [10371, { coreImage: "多くの人に知られている有名さがコアイメージ。", usage: "「famous for ...」「a famous singer」で使う。", synonymDifference: "famous vs popular: famous は知名度、popular は人気。", englishDefinition: "Known by many people.", etymology: "評価形容詞の基礎語。" }],
-  // popular (10372)
-  [10372, { coreImage: "多くの人に好まれている人気状態がコアイメージ。", usage: "「popular with students」が定型。", synonymDifference: "popular vs famous: popular は好感度、famous は認知度。", englishDefinition: "Liked by many people.", etymology: "評価形容詞の基礎語。" }],
-  // special (10373)
-  [10373, { coreImage: "普通と異なる特別性を示す形容がコアイメージ。", usage: "「special day」「special menu」で使う。", synonymDifference: "special vs particular: special は特別価値、particular は特定性。", englishDefinition: "Different from the usual and important.", etymology: "評価形容詞の基礎語。" }],
-  // different (10374)
-  [10374, { coreImage: "同一でない差異状態を示す形容がコアイメージ。", usage: "「different from ...」の前置詞に注意。", synonymDifference: "different vs same: opposite の関係。", englishDefinition: "Not the same.", etymology: "比較語彙の基礎語。" }],
-  // same (10375)
-  [10375, { coreImage: "差異がなく同一である状態がコアイメージ。", usage: "「the same as ...」で使う。", synonymDifference: "same vs similar: same は完全一致、similar は類似。", englishDefinition: "Exactly alike; not different.", etymology: "比較語彙の基礎語。" }],
-  // right (10376)
-  [10376, { coreImage: "正しい、または右側を示す多義形容がコアイメージ。", usage: "文脈で正誤義か方向義かを判別。", synonymDifference: "right vs correct: correct は正確性に限定されやすい。", englishDefinition: "Correct; also on the right side.", etymology: "高頻度多義語。" }],
-  // wrong (10377)
-  [10377, { pronunciation: { us: "/bæθ/", uk: "/bɑːθ/" }, coreImage: "正しくない誤り状態を示す形容がコアイメージ。", usage: "「You are wrong.」「wrong answer」で使う。", synonymDifference: "wrong vs mistaken: mistaken は人の思い違いに使うことが多い。", englishDefinition: "Not correct.", etymology: "正誤語彙の基礎語。" }],
-  // safe (10378)
-  [10378, { coreImage: "危険が少なく安心できる状態がコアイメージ。", usage: "「safe place」「be safe」で使う。", synonymDifference: "safe vs secure: secure は防御面の強固さを強調。", englishDefinition: "Free from danger.", etymology: "安全語彙の基礎語。" }],
-  // dangerous (10379)
-  [10379, { coreImage: "危険があり害を生む可能性が高い状態がコアイメージ。", usage: "「dangerous road」「dangerous animal」で使う。", synonymDifference: "dangerous vs risky: dangerous は危害可能性、risky は失敗可能性にも広い。", englishDefinition: "Likely to cause harm.", etymology: "安全対義語の基礎語。" }],
-  // dirty (10381)
-  [10381, { coreImage: "汚れが付いて不潔な状態がコアイメージ。", usage: "「dirty hands」「dirty room」で使う。", synonymDifference: "dirty vs messy: dirty は汚れ、messy は散らかり。", englishDefinition: "Not clean.", etymology: "状態形容詞の基礎語。" }],
-  // dark (10382)
-  [10382, { coreImage: "光が少なく暗い状態がコアイメージ。", usage: "「dark room」「it is dark」などで使う。", synonymDifference: "dark vs black: dark は明るさ、black は色。", englishDefinition: "Having little or no light.", etymology: "明暗語彙の基礎語。" }],
-  // bright (10383)
-  [10383, { coreImage: "光が多く明るい状態がコアイメージ。", usage: "部屋・色・人の知性にも比喩使用される。", synonymDifference: "bright vs light: bright は強い明るさ、light は明るい状態一般。", englishDefinition: "Giving out or reflecting much light.", etymology: "明暗語彙の基礎語。" }],
-  // heavy (10384)
-  [10384, { coreImage: "重さが大きい状態を示す形容がコアイメージ。", usage: "「heavy bag」「heavy rain」で物理/比喩両用。", synonymDifference: "heavy vs hard: heavy は重量、hard は硬さ・難しさ。", englishDefinition: "Having great weight.", etymology: "性質形容詞の基礎語。" }],
-  // light (10385)
-  [10385, { coreImage: "軽い、または明るいという多義状態がコアイメージ。", usage: "文脈で重量義か明暗義かを判別。", synonymDifference: "light vs bright: bright は明るさ強度、light は軽さ/明るさの広義。", englishDefinition: "Not heavy; also bright.", etymology: "多義形容詞の基礎語。" }],
-  // rich (10386)
-  [10386, { pronunciation: { us: "/ˈbɑːtəl/", uk: "/ˈbɒtəl/" }, coreImage: "お金や資源が豊かな状態がコアイメージ。", usage: "人・国・味（rich flavor）にも使える。", synonymDifference: "rich vs wealthy: wealthy の方が財産語感が明確なことが多い。", englishDefinition: "Having a lot of money or abundance.", etymology: "評価形容詞の基礎語。" }],
-  // poor (10387)
-  [10387, { coreImage: "お金が少ない、または質が低い状態を示す語がコアイメージ。", usage: "経済状態と品質評価の両義がある。", synonymDifference: "poor vs bad: poor は不足感や低水準を示しやすい。", englishDefinition: "Having little money; also of low quality.", etymology: "評価形容詞の基礎多義語。" }],
-  // wide (10388)
-  [10388, { pronunciation: { us: "/æsk/", uk: "/ɑːsk/" }, coreImage: "横幅が広い状態を示す形容がコアイメージ。", usage: "「wide road」「open wide」で使う。", synonymDifference: "wide vs broad: broad も近いが語感差がある。", englishDefinition: "Having great width.", etymology: "空間形容詞の基礎語。" }],
-  // narrow (10389)
-  [10389, { coreImage: "幅が狭い状態を示す形容がコアイメージ。", usage: "「narrow street」「narrow gap」で使う。", synonymDifference: "narrow vs small: narrow は幅限定、小さいは全体サイズ。", englishDefinition: "Not wide.", etymology: "空間形容詞の基礎語。" }],
-  // deep (10390)
-  [10390, { coreImage: "上面から底までの深さが大きい状態がコアイメージ。", usage: "「deep water」「deep sleep」で比喩もある。", synonymDifference: "deep vs high: deep は下方向、high は上方向。", englishDefinition: "Extending far down from the top.", etymology: "空間形容詞の基礎語。" }],
-  // high (10391)
-  [10391, { coreImage: "位置や高さが高い状態を示す形容がコアイメージ。", usage: "「high mountain」「high price」で使う。", synonymDifference: "high vs tall: high は位置・数値、tall は縦長の物体。", englishDefinition: "Far above the ground or above normal level.", etymology: "空間形容詞の基礎語。" }],
-  // low (10392)
-  [10392, { coreImage: "位置・高さ・量が低い状態を示す形容がコアイメージ。", usage: "「low table」「low voice」で使う。", synonymDifference: "low vs short: low は位置・程度、short は長さ。", englishDefinition: "Not high; near the ground or small in amount.", etymology: "空間・程度語彙の基礎語。" }],
-  // loud (10393)
-  [10393, { coreImage: "音量が大きく目立つ状態がコアイメージ。", usage: "「loud music」「too loud」で使う。", synonymDifference: "loud vs noisy: loud は音量、noisy は騒がしさ評価。", englishDefinition: "Having a high volume.", etymology: "音量語彙の基礎語。" }],
-  // quiet (10394)
-  [10394, { coreImage: "音が少なく静かな状態がコアイメージ。", usage: "「quiet room」「be quiet」で使う。", synonymDifference: "quiet vs silent: silent は無音に近い。", englishDefinition: "Making little or no noise.", etymology: "音量語彙の基礎語。" }],
-  // soft (10395)
-  [10395, { coreImage: "触感が柔らかい、または音がやさしい状態がコアイメージ。", usage: "物の硬さと音量の両方に使う。", synonymDifference: "soft vs weak: soft は硬さ/音量、weak は力不足。", englishDefinition: "Not hard; gentle in sound or touch.", etymology: "性質形容詞の基礎語。" }],
-  // sweet (10396)
-  [10396, { coreImage: "甘い味、または感じのよい評価を示す語がコアイメージ。", usage: "味覚義と性格評価義の両方がある。", synonymDifference: "sweet vs sugary: sugary は砂糖が多いことを強調。", englishDefinition: "Having a taste like sugar; also kind or pleasant.", etymology: "味覚語彙の基礎語。" }],
-  // sour (10397)
-  [10397, { coreImage: "酸っぱい味を示す味覚形容がコアイメージ。", usage: "「sour lemon」「taste sour」で使う。", synonymDifference: "sour vs bitter: sour は酸味、bitter は苦味。", englishDefinition: "Having an acid taste.", etymology: "味覚語彙の基礎語。" }],
-  // bitter (10398)
-  [10398, { coreImage: "苦い味、または苦々しい感情を示す語がコアイメージ。", usage: "味覚義を初級で優先して学ぶ。", synonymDifference: "bitter vs sour: bitter は苦味、sour は酸味。", englishDefinition: "Having a sharp, unpleasant taste.", etymology: "味覚語彙の基礎語。" }],
-  // spicy (10399)
-  [10399, { coreImage: "香辛料で辛い刺激がある味を示す形容がコアイメージ。", usage: "「spicy food」が定型。", synonymDifference: "spicy vs hot: spicy は香辛料の辛さ、hot は温度/辛さ両義。", englishDefinition: "Having a strong hot flavor from spices.", etymology: "味覚語彙の基礎語。" }],
-  // delicious (10400)
-  [10400, { coreImage: "食べ物がとてもおいしいという高評価がコアイメージ。", usage: "「This is delicious.」が定型。", synonymDifference: "delicious vs tasty: delicious の方が賞賛度が高い。", englishDefinition: "Very pleasant to taste.", etymology: "味覚評価語彙の基礎語。" }],
-  // fresh (10401)
-  [10401, { pronunciation: { us: "/dæns/", uk: "/dɑːns/" }, coreImage: "新鮮で古くない状態がコアイメージ。", usage: "食材・空気・情報などに使える。", synonymDifference: "fresh vs new: fresh は鮮度、new は新規性。", englishDefinition: "Recently made or picked; not old.", etymology: "状態形容詞の基礎語。" }],
-  // full (10402)
-  [10402, { coreImage: "中身がいっぱい、または満腹の状態がコアイメージ。", usage: "容器・時間・お腹など多義で使う。", synonymDifference: "full vs complete: full は充満、complete は完成。", englishDefinition: "Containing as much as possible; not hungry after eating.", etymology: "状態形容詞の基礎語。" }],
-  // empty (10403)
-  [10403, { coreImage: "中身がなく空っぽの状態がコアイメージ。", usage: "「empty box」「empty room」で使う。", synonymDifference: "empty vs free: empty は中身なし、free は空き/自由。", englishDefinition: "Containing nothing.", etymology: "状態形容詞の基礎語。" }],
-  // dry (10404)
-  [10404, { coreImage: "水分がなく乾いた状態がコアイメージ。", usage: "天気・衣服・肌などに使える。", synonymDifference: "dry vs thirsty: dry は物の状態、thirsty は人の感覚。", englishDefinition: "Not wet.", etymology: "状態形容詞の基礎語。" }],
-  // wet (10405)
-  [10405, { coreImage: "水分を含んで濡れている状態がコアイメージ。", usage: "「wet clothes」「wet floor」で使う。", synonymDifference: "wet vs damp: damp はしっとり程度で弱い。", englishDefinition: "Covered or soaked with water.", etymology: "状態形容詞の基礎語。" }],
-  // ready (10406)
-  [10406, { coreImage: "準備が整ってすぐ行動できる状態がコアイメージ。", usage: "「ready to do」「Are you ready?」が定型。", synonymDifference: "ready vs available: ready は準備完了、available は利用可能。", englishDefinition: "Prepared and able to do something.", etymology: "状態形容詞の基礎語。" }],
-  // late (10407)
-  [10407, { coreImage: "予定時刻より遅れている状態がコアイメージ。", usage: "「be late for school」で使う。", synonymDifference: "late vs slow: late は時間遅れ、slow は速度。", englishDefinition: "After the expected or usual time.", etymology: "時間形容詞の基礎語。" }],
-  // early (10408)
-  [10408, { coreImage: "予定時刻より早い、または早い段階の状態がコアイメージ。", usage: "「get up early」「early morning」で使う。", synonymDifference: "early vs fast: early は時刻、fast は速度。", englishDefinition: "Before the usual or expected time.", etymology: "時間形容詞の基礎語。" }],
-  // near (10409)
-  [10409, { coreImage: "距離が近い位置関係がコアイメージ。", usage: "形容詞/前置詞として「near the station」。", synonymDifference: "near vs next to: next to は隣接、near は近接。", englishDefinition: "Close in distance.", etymology: "位置語彙の基礎語。" }],
-  // far (10410)
-  [10410, { coreImage: "距離が遠い位置関係がコアイメージ。", usage: "「far from ...」「How far...?」で使う。", synonymDifference: "far vs long: far は距離、long は長さ/時間。", englishDefinition: "At a great distance.", etymology: "位置語彙の基礎語。" }],
-  // round (10411)
-  [10411, { coreImage: "丸い形状を示す形容がコアイメージ。", usage: "「round table」「a round ball」で使う。", synonymDifference: "round vs circle: round は形容、circle は名詞。", englishDefinition: "Shaped like a circle or ball.", etymology: "形状語彙の基礎語。" }],
-  // flat (10412)
-  [10412, { coreImage: "平らで起伏が少ない状態がコアイメージ。", usage: "地形・表面・声（flat voice）にも使う。", synonymDifference: "flat vs smooth: flat は平面性、smooth はなめらかさ。", englishDefinition: "Level and even; not raised.", etymology: "形状語彙の基礎語。" }],
-  // sharp (10413)
-  [10413, { coreImage: "先端や刃が鋭い、または感覚が鋭敏な状態がコアイメージ。", usage: "「sharp knife」「sharp eyes」で使う。", synonymDifference: "sharp vs pointed: sharp は切れ味、pointed は先端形状。", englishDefinition: "Having a fine edge or point.", etymology: "性質語彙の基礎語。" }],
-  // thick (10414)
-  [10414, { coreImage: "厚み・太さが大きい状態がコアイメージ。", usage: "本・壁・液体濃度にも使える。", synonymDifference: "thick vs fat: thick は物の厚さ、fat は体格。", englishDefinition: "Having a large distance between two sides.", etymology: "形状語彙の基礎語。" }],
-  // thin (10415)
-  [10415, { coreImage: "厚み・太さが小さい状態がコアイメージ。", usage: "紙・線・体格にも使う。", synonymDifference: "thin vs slim: slim は人に対して前向き評価が多い。", englishDefinition: "Having little thickness or width.", etymology: "形状語彙の基礎語。" }],
-  // always (10416)
-  [10416, { coreImage: "常に例外なく起こる頻度を示す副詞がコアイメージ。", usage: "頻度副詞の中で最も高い頻度。", synonymDifference: "always vs usually: always は100%、usually はそれ未満。", englishDefinition: "At all times; every time.", etymology: "頻度副詞の基礎語。" }],
-  // usually (10417)
-  [10417, { coreImage: "たいていの場合そうである高頻度を示す副詞がコアイメージ。", usage: "一般習慣の説明で使う。", synonymDifference: "usually vs often: usually の方が頻度が高いことが多い。", englishDefinition: "In most cases; normally.", etymology: "頻度副詞の基礎語。" }],
-  // often (10418)
-  [10418, { coreImage: "繰り返しよく起こる頻度を示す副詞がコアイメージ。", usage: "習慣行動の説明で高頻度。", synonymDifference: "often vs sometimes: often の方が頻度が高い。", englishDefinition: "Many times; frequently.", etymology: "頻度副詞の基礎語。" }],
-  // sometimes (10419)
-  [10419, { coreImage: "時々起こる中程度頻度を示す副詞がコアイメージ。", usage: "習慣の例外や不定期行動に使う。", synonymDifference: "sometimes vs often: sometimes の方が頻度が低い。", englishDefinition: "At times; occasionally.", etymology: "頻度副詞の基礎語。" }],
-  // never (10420)
-  [10420, { pronunciation: { us: "/læf/", uk: "/lɑːf/" }, coreImage: "一度も起こらない0%頻度を示す副詞がコアイメージ。", usage: "否定語として文中の not と併用しない。", synonymDifference: "never vs not often: never は0回、not often は低頻度。", englishDefinition: "Not at any time.", etymology: "否定頻度副詞の基礎語。" }],
-  // again (10421)
-  [10421, { coreImage: "もう一度の反復を示す副詞がコアイメージ。", usage: "「try again」「see you again」で使う。", synonymDifference: "again vs once more: 意味は近く once more はやや丁寧。", englishDefinition: "One more time.", etymology: "反復副詞の基礎語。" }],
-  // already (10422)
-  [10422, { coreImage: "予想より前にすでに完了した状態を示す副詞がコアイメージ。", usage: "完了表現と相性が高い。", synonymDifference: "already vs yet: already は肯定で先行完了、yet は否定/疑問で未了確認。", englishDefinition: "By this time; earlier than expected.", etymology: "時間副詞の基礎語。" }],
-  // still (10423)
-  [10423, { coreImage: "以前から続いて今も変わらない継続を示す副詞がコアイメージ。", usage: "「I still live here.」のように使う。", synonymDifference: "still vs yet: still は継続、yet は未了確認。", englishDefinition: "Continuing up to this time.", etymology: "継続副詞の基礎語。" }],
-  // just (10424)
-  [10424, { coreImage: "ちょうど・ただ・〜したばかり等の限定を示す多義副詞がコアイメージ。", usage: "文脈で「only」「exactly」「recently」の意味を判別。", synonymDifference: "just vs only: only は排他強調、just は時点/程度の軽い限定にも使う。", englishDefinition: "Exactly; only; a short time ago.", etymology: "高頻度多義副詞。" }],
-  // really (10425)
-  [10425, { coreImage: "本当に、または程度強調を示す副詞がコアイメージ。", usage: "「really good」「Do you really...?」で使う。", synonymDifference: "really vs very: really は真偽確認にも使える。", englishDefinition: "Truly; very.", etymology: "強調副詞の基礎語。" }],
-  // maybe (10426)
-  [10426, { coreImage: "確信を避けた推量を示す副詞がコアイメージ。", usage: "会話文頭で「Maybe ...」が自然。", synonymDifference: "maybe vs probably: probably の方が可能性が高い。", englishDefinition: "Perhaps; possibly.", etymology: "推量副詞の基礎語。" }],
-  // together (10427)
-  [10427, { coreImage: "一緒に同じ場所・行動を共有する副詞がコアイメージ。", usage: "「go together」「work together」で使う。", synonymDifference: "together vs with: together は状態副詞、with は前置詞。", englishDefinition: "With each other; in one group.", etymology: "関係副詞の基礎語。" }],
-  // outside (10428)
-  [10428, { coreImage: "建物や領域の外側を示す副詞がコアイメージ。", usage: "副詞・前置詞・名詞で使える。", synonymDifference: "outside vs out: outside は場所を明示、out は外へ出る動きも含む。", englishDefinition: "On or to the outside.", etymology: "位置副詞の基礎語。" }],
-  // inside (10429)
-  [10429, { coreImage: "建物や領域の内側を示す副詞がコアイメージ。", usage: "副詞・前置詞・名詞で使える。", synonymDifference: "inside vs in: inside は内側位置をより明示。", englishDefinition: "On or to the inside.", etymology: "位置副詞の基礎語。" }],
+  // hit (23439)
+  [23439, { coreImage: "叩く・当てる衝撃動作がコアイメージ。", usage: "「hit the ball」「hit the wall」で使う。", synonymDifference: "hit vs touch: hit は衝撃を伴う接触。", englishDefinition: "To strike something.", etymology: "動作動詞の基礎語。" }],
+  // draw (23425)
+  [23425, { coreImage: "線や絵を描く創作動作がコアイメージ。", usage: "「draw a picture」で初級頻出。", synonymDifference: "draw vs paint: draw は線中心、paint は色塗り中心。", englishDefinition: "To make a picture with lines.", etymology: "創作動詞の基礎語。" }],
+  // cut (23421)
+  [23421, { coreImage: "刃物などで切り分ける動作がコアイメージ。", usage: "「cut paper」「cut into pieces」で使う。", synonymDifference: "cut vs break: cut は刃などで切る、break は折る/壊す。", englishDefinition: "To divide something using a sharp tool.", etymology: "生活動詞の基礎語。" }],
+  // buy (23063)
+  [23063, { coreImage: "お金を払って物を買う行為がコアイメージ。", usage: "「buy a book」「buy for ...」で使う。", synonymDifference: "buy vs sell: buy は買う、sell は売る。", englishDefinition: "To get something by paying money.", etymology: "買い物動詞の基礎語。" }],
+  // sell (23470)
+  [23470, { coreImage: "商品を渡して代金を受け取る売る行為がコアイメージ。", usage: "「sell books」「sell to ...」で使う。", synonymDifference: "sell vs buy: sell は売る、buy は買う。", englishDefinition: "To give something to someone for money.", etymology: "買い物動詞の基礎語。" }],
+  // teach (23065)
+  [23065, { coreImage: "知識や技能を教える行為がコアイメージ。", usage: "teach + 人 + 内容 が基本。", synonymDifference: "teach vs tell: teach は学ばせる、tell は伝える。", englishDefinition: "To help someone learn something.", etymology: "教育動詞の基礎語。" }],
+  // learn (23066)
+  [23066, { coreImage: "知識や技能を学んで身につける行為がコアイメージ。", usage: "「learn English」「learn to ...」で使う。", synonymDifference: "learn vs study: learn は習得結果、study は学習行為。", englishDefinition: "To gain knowledge or skill.", etymology: "教育動詞の基礎語。" }],
+  // try (23491)
+  [23491, { coreImage: "成功未確定でも試みる行為がコアイメージ。", usage: "「try to do」「try this」で使う。", synonymDifference: "try vs test: try は試行、test は評価目的の試験。", englishDefinition: "To make an attempt.", etymology: "行為開始の基礎動詞。" }],
+  // need (23663)
+  [23663, { coreImage: "必要性がある状態を示す動詞がコアイメージ。", usage: "「need + 名詞」「need to do」が基本。", synonymDifference: "need vs want: need は必要、want は希望。", englishDefinition: "To require something because it is necessary.", etymology: "必要表現の基礎語。" }],
+  // hope (23659)
+  [23659, { coreImage: "よい結果を望む気持ちを示す動詞がコアイメージ。", usage: "「hope to do」「hope that ...」で使う。", synonymDifference: "hope vs wish: wish は実現困難な願望にも使う。", englishDefinition: "To want something to happen.", etymology: "感情動詞の基礎語。" }],
+  // love (23206)
+  [23206, { coreImage: "強い好意・愛情を示す動詞がコアイメージ。", usage: "「love music」「I love you」で使う。", synonymDifference: "love vs like: love の方が感情強度が高い。", englishDefinition: "To like very much; to feel deep affection.", etymology: "感情語彙の中心語。" }],
+  // feel (23429)
+  [23429, { coreImage: "感覚や感情を感じる内面的動詞がコアイメージ。", usage: "「feel happy」「feel like ...」で使う。", synonymDifference: "feel vs think: feel は感覚・感情、think は思考。", englishDefinition: "To experience a sensation or emotion.", etymology: "感覚動詞の基礎語。" }],
+  // enjoy (23428)
+  [23428, { coreImage: "行為や物事を楽しむ感情動詞がコアイメージ。", usage: "後ろは名詞か動名詞（enjoy music / enjoy playing）。", synonymDifference: "enjoy vs like: enjoy は実際の体験を楽しむ含意が強い。", englishDefinition: "To take pleasure in something.", etymology: "感情動詞の基礎語。" }],
+  // smile (23665)
+  [23665, { coreImage: "うれしさや親しみで微笑む動作がコアイメージ。", usage: "名詞「a smile」と動詞「smile」の両用。", synonymDifference: "smile vs laugh: smile は微笑む、laugh は声を出して笑う。", englishDefinition: "To make a happy expression with your mouth.", etymology: "感情表現語彙の基礎語。" }],
+  // cry (23419)
+  [23419, { coreImage: "涙を流して泣く行為がコアイメージ。", usage: "「cry loudly」「cry for help」で使う。", synonymDifference: "cry vs shout: cry は泣く/叫ぶ両義、shout は叫ぶ中心。", englishDefinition: "To shed tears when sad or hurt.", etymology: "感情動詞の基礎語。" }],
+  // laugh (23661)
+  [23661, { coreImage: "おかしさや喜びで笑う動作がコアイメージ。", usage: "「laugh at ...」「laugh with ...」で使う。", synonymDifference: "laugh vs smile: laugh は声を伴う笑い、smile は微笑み。", englishDefinition: "To make sounds because something is funny.", etymology: "感情表現の基礎動詞。" }],
+  // work (23671)
+  [23671, { coreImage: "働く、または機能するという行為/状態がコアイメージ。", usage: "「work hard」「it works」「work on ...」で高頻度。", synonymDifference: "work vs study: work は労働・作業、study は学習。", englishDefinition: "To do a job; to function.", etymology: "基幹動詞として非常に高頻度。" }],
+  // live (23448)
+  [23448, { coreImage: "住む、または生きる状態を示す動詞がコアイメージ。", usage: "「live in Tokyo」「live a long life」で使う。", synonymDifference: "live vs stay: live は定住、stay は一時滞在。", englishDefinition: "To reside; to be alive.", etymology: "生活動詞の基礎多義語。" }],
+  // move (24485)
+  [24485, { coreImage: "位置を変える、または引っ越す行為がコアイメージ。", usage: "「move the box」「move to Osaka」で使う。", synonymDifference: "move vs shift: shift は小さな移動・変更に使うことが多い。", englishDefinition: "To change position; to change residence.", etymology: "移動動詞の基礎語。" }],
+  // turn (23668)
+  [23668, { coreImage: "向きや状態を変える回転・転換がコアイメージ。", usage: "「turn left」「turn on the light」で多義。", synonymDifference: "turn vs rotate: rotate は物理回転をより厳密に示す。", englishDefinition: "To change direction or state.", etymology: "多義で高頻度の基礎動詞。" }],
+  // call (23672)
+  [23672, { coreImage: "呼ぶ、または電話する接触行為がコアイメージ。", usage: "「call my name」「call me later」で使う。", synonymDifference: "call vs phone: 意味は近く、call がより広い。", englishDefinition: "To shout to someone; to telephone.", etymology: "連絡動詞の基礎語。" }],
+  // ask (23408)
+  [23408, { coreImage: "質問する・依頼する行為がコアイメージ。", usage: "「ask a question」「ask for help」で使う。", synonymDifference: "ask vs tell: ask は求める、tell は伝える。", englishDefinition: "To request information or help.", etymology: "会話動詞の基礎語。" }],
+  // show (23664)
+  [23664, { coreImage: "見せて相手に分からせる行為がコアイメージ。", usage: "show + 人 + 物 の形で使う。", synonymDifference: "show vs tell: show は視覚提示、tell は言語伝達。", englishDefinition: "To let someone see something.", etymology: "提示動詞の基礎語。" }],
+  // find (23430)
+  [23430, { coreImage: "探して見つける、または気づく結果がコアイメージ。", usage: "「find my key」「find it difficult」で使う。", synonymDifference: "find vs look for: find は結果、look for は探す過程。", englishDefinition: "To discover or locate something.", etymology: "探索動詞の基礎語。" }],
+  // keep (23444)
+  [23444, { coreImage: "状態や所有を継続して保つことがコアイメージ。", usage: "「keep the door open」「keep a diary」で使う。", synonymDifference: "keep vs hold: keep は継続、hold は一時的保持。", englishDefinition: "To continue to have or maintain.", etymology: "継続動詞の基礎語。" }],
+  // bring (23411)
+  [23411, { coreImage: "話し手側へ持って来る移動授受がコアイメージ。", usage: "「bring me a pen」で使う。", synonymDifference: "bring vs take: bring はこちらへ、take はあちらへ。", englishDefinition: "To carry something toward a person or place.", etymology: "移動授受動詞の基礎語。" }],
+  // carry (23413)
+  [23413, { coreImage: "物を持ち運ぶ運搬行為がコアイメージ。", usage: "「carry a bag」「carry water」で使う。", synonymDifference: "carry vs bring: carry は運搬動作、bring は方向（こちら）を含む。", englishDefinition: "To hold and move something from one place to another.", etymology: "運搬動詞の基礎語。" }],
+  // hold (23705)
+  [23705, { coreImage: "手などで持って保持する動作がコアイメージ。", usage: "「hold my hand」「hold a cup」で使う。", synonymDifference: "hold vs keep: hold は保持動作、keep は継続状態。", englishDefinition: "To have something in your hand or arms.", etymology: "保持動詞の基礎語。" }],
+  // pull (23459)
+  [23459, { coreImage: "自分の方へ引っ張る力の方向がコアイメージ。", usage: "「pull the door」「pull a rope」で使う。", synonymDifference: "pull vs push: pull は引く、push は押す。", englishDefinition: "To move something toward yourself with force.", etymology: "力学動詞の基礎語。" }],
+  // push (23461)
+  [23461, { coreImage: "自分から離す方向へ押す力の作用がコアイメージ。", usage: "「push the door」「push the cart」で使う。", synonymDifference: "push vs pull: push は押す、pull は引く。", englishDefinition: "To move something away using force.", etymology: "力学動詞の基礎語。" }],
+  // drink (23004)
+  [23004, { coreImage: "液体を口から取り込む行為がコアイメージ。", usage: "名詞/動詞の両用。「drink water」「a drink」。", synonymDifference: "drink vs eat: drink は液体摂取、eat は固形摂取。", englishDefinition: "To take liquid into your mouth and swallow it.", etymology: "生活動詞の基礎語。" }],
+  // wear (23498)
+  [23498, { coreImage: "衣類や装飾品を身につけた状態を示す動詞がコアイメージ。", usage: "「wear a hat」「wear glasses」で使う。", synonymDifference: "wear vs put on: wear は着ている状態、put on は着る動作。", englishDefinition: "To have clothes or accessories on your body.", etymology: "衣類動詞の基礎語。" }],
+  // ride (23465)
+  [23465, { coreImage: "乗り物や動物に乗って移動する行為がコアイメージ。", usage: "「ride a bike」「ride a horse」で使う。", synonymDifference: "ride vs drive: ride は乗る側、drive は運転する側。", englishDefinition: "To travel on or in a vehicle or on an animal.", etymology: "移動動詞の基礎語。" }],
+  // drive (24487)
+  [24487, { coreImage: "車などを運転して動かす行為がコアイメージ。", usage: "「drive a car」「drive to school」で使う。", synonymDifference: "drive vs ride: drive は運転、ride は同乗/騎乗。", englishDefinition: "To control and operate a vehicle.", etymology: "交通動詞の基礎語。" }],
+  // visit (23669)
+  [23669, { coreImage: "人や場所を訪ねて行く行為がコアイメージ。", usage: "「visit my friend」「visit Japan」で使う。", synonymDifference: "visit vs go to: visit は訪問目的をより明確に示す。", englishDefinition: "To go to see a person or place.", etymology: "移動・交流動詞の基礎語。" }],
+  // meet (23450)
+  [23450, { coreImage: "人と会う・出会う接触行為がコアイメージ。", usage: "「meet my teacher」「Nice to meet you」で使う。", synonymDifference: "meet vs see: meet は会う行為、see は見る意味も広い。", englishDefinition: "To come together with someone.", etymology: "対人動詞の基礎語。" }],
+  // leave (23446)
+  [23446, { coreImage: "その場を去る、または残しておく行為がコアイメージ。", usage: "「leave home」「leave a message」で多義。", synonymDifference: "leave vs go: leave は出発点を離れることを強調。", englishDefinition: "To go away from a place; to let something remain.", etymology: "移動動詞の基礎多義語。" }],
+  // arrive (23407)
+  [23407, { coreImage: "目的地へ到着する結果がコアイメージ。", usage: "「arrive at/in ...」の前置詞に注意。", synonymDifference: "arrive vs reach: reach は他動詞で目的語を直接取る。", englishDefinition: "To get to a place.", etymology: "移動結果動詞の基礎語。" }],
+  // start (23666)
+  [23666, { coreImage: "行為や出来事の開始点を作ることがコアイメージ。", usage: "「start to do / doing」「start a game」で使う。", synonymDifference: "start vs begin: ほぼ同義で start の方が口語的。", englishDefinition: "To begin something.", etymology: "開始動詞の基礎語。" }],
+  // finish (23657)
+  [23657, { coreImage: "行為を最後まで終える完了がコアイメージ。", usage: "「finish homework」「finish doing ...」で使う。", synonymDifference: "finish vs end: finish は主体的完了、end は自動的終結にも使う。", englishDefinition: "To complete something.", etymology: "完了動詞の基礎語。" }],
+  // begin (23409)
+  [23409, { coreImage: "何かが始まる/始める開始動詞がコアイメージ。", usage: "start と同様に to do / doing と使う。", synonymDifference: "begin vs start: 意味は近いが begin はやや文語寄り。", englishDefinition: "To start; to come into existence.", etymology: "開始動詞の基礎語。" }],
+  // end (24474)
+  [24474, { coreImage: "物事の終わりに到達する終結がコアイメージ。", usage: "動詞・名詞の両用（The end）。", synonymDifference: "end vs finish: end は終点、finish は完了行為の含意。", englishDefinition: "To come to a stop; the final part.", etymology: "終結語彙の基礎語。" }],
+  // send (23471)
+  [23471, { coreImage: "物や情報を相手へ送る伝達行為がコアイメージ。", usage: "「send a letter to ...」が基本。", synonymDifference: "send vs give: send は離れた相手へ送る。", englishDefinition: "To make something go to someone.", etymology: "伝達動詞の基礎語。" }],
+  // pay (23724)
+  [23724, { coreImage: "代金を支払う行為がコアイメージ。", usage: "「pay money for ...」「pay by card」で使う。", synonymDifference: "pay vs spend: pay は支払い行為、spend は消費全体。", englishDefinition: "To give money for something.", etymology: "金銭動詞の基礎語。" }],
+  // grow (23434)
+  [23434, { coreImage: "育つ/育てる成長変化がコアイメージ。", usage: "自動詞・他動詞の両方で使える。", synonymDifference: "grow vs raise: grow は成長・栽培全般、raise は育てる行為に焦点。", englishDefinition: "To become bigger; to cultivate.", etymology: "変化動詞の基礎語。" }],
+  // build (23412)
+  [23412, { coreImage: "材料を組み合わせて作る・建てる行為がコアイメージ。", usage: "「build a house」「build a team」で使う。", synonymDifference: "build vs make: build は構造物構築、make は作る全般。", englishDefinition: "To make by putting parts together.", etymology: "制作動詞の基礎語。" }],
+  // break (23681)
+  [23681, { coreImage: "壊す/壊れることで連続性が断たれる変化がコアイメージ。", usage: "他動詞・自動詞の両用。", synonymDifference: "break vs cut: break は折れる・壊れる、cut は刃物で切る。", englishDefinition: "To damage so that something separates or stops working.", etymology: "変化動詞の基礎語。" }],
+  // pick (23458)
+  [23458, { coreImage: "複数から選び取る、または摘み取る行為がコアイメージ。", usage: "「pick a color」「pick flowers」で使う。", synonymDifference: "pick vs choose: pick は口語的で軽い選択。", englishDefinition: "To choose or to take by hand.", etymology: "選択動詞の基礎語。" }],
+  // drop (23426)
+  [23426, { coreImage: "手から下へ落とす行為がコアイメージ。", usage: "「drop a cup」「drop by（立ち寄る）」の句動詞もある。", synonymDifference: "drop vs fall: drop は落とす（他動詞）側、fall は落ちる（自動詞）側。", englishDefinition: "To let something fall.", etymology: "動作動詞の基礎語。" }],
+  // fall (24489)
+  [24489, { coreImage: "重力で下へ落ちる自動的動作がコアイメージ。", usage: "「fall down」「fall in love」で多義。", synonymDifference: "fall vs drop: fall は自動詞中心、drop は他動詞中心。", englishDefinition: "To move downward by gravity.", etymology: "移動変化動詞の基礎語。" }],
+  // climb (23417)
+  [23417, { coreImage: "上方向へ登る運動がコアイメージ。", usage: "「climb a mountain」「climb stairs」で使う。", synonymDifference: "climb vs go up: climb は身体動作の努力を含みやすい。", englishDefinition: "To go upward using hands and feet.", etymology: "運動動詞の基礎語。" }],
+  // change (23656)
+  [23656, { coreImage: "状態を変える/変わる変化がコアイメージ。", usage: "他動詞・自動詞の両用。", synonymDifference: "change vs turn: change は広い変化、turn は向きや状態の転換。", englishDefinition: "To make or become different.", etymology: "変化動詞の基礎語。" }],
+  // choose (23416)
+  [23416, { coreImage: "選択肢から意図して選ぶ行為がコアイメージ。", usage: "「choose A」「choose to do」で使う。", synonymDifference: "choose vs pick: choose の方がやや丁寧・明確。", englishDefinition: "To select one option from others.", etymology: "選択動詞の基礎語。" }],
+  // forget (23433)
+  [23433, { coreImage: "記憶や予定を思い出せない状態になることがコアイメージ。", usage: "「forget to do / doing」の使い分けに注意。", synonymDifference: "forget vs miss: forget は失念、miss は見逃し・不在。", englishDefinition: "To fail to remember.", etymology: "記憶動詞の基礎語。" }],
+  // remember (23463)
+  [23463, { coreImage: "記憶を保持・想起する認知行為がコアイメージ。", usage: "「remember to do / doing」で使う。", synonymDifference: "remember vs recall: recall はやや形式的。", englishDefinition: "To keep in mind or bring back to mind.", etymology: "記憶動詞の基礎語。" }],
+  // believe (23410)
+  [23410, { coreImage: "情報や人を真実だと信じる心的判断がコアイメージ。", usage: "「believe + 人/内容」で使う。", synonymDifference: "believe vs think: believe は信頼・確信の含意が強い。", englishDefinition: "To accept something as true.", etymology: "思考・信念動詞の基礎語。" }],
+  // wish (23670)
+  [23670, { coreImage: "実現してほしい願望を示す動詞がコアイメージ。", usage: "「wish to do」「I wish ...」で使う。", synonymDifference: "wish vs hope: wish は実現困難な願いにも使う。", englishDefinition: "To want something strongly.", etymology: "感情動詞の基礎語。" }],
+  // mean (23719)
+  [23719, { coreImage: "言葉や行為が何を意味するかを示す動詞がコアイメージ。", usage: "「What does it mean?」「I mean ...」で頻出。", synonymDifference: "mean vs say: mean は意味内容、say は発話行為。", englishDefinition: "To signify or intend.", etymology: "言語理解の基礎動詞。" }],
+  // check (23505)
+  [23505, { coreImage: "正確さや状態を確認する行為がコアイメージ。", usage: "「check answers」「check the time」で使う。", synonymDifference: "check vs confirm: confirm は確定・裏付けの含意が強い。", englishDefinition: "To examine something to make sure.", etymology: "確認動詞の基礎語。" }],
+  // taste (24498)
+  [24498, { coreImage: "味わう、または味がする感覚動詞がコアイメージ。", usage: "「taste the soup」「It tastes good」で両用。", synonymDifference: "taste vs try: taste は味覚確認、try は試す全般。", englishDefinition: "To perceive flavor; to have a flavor.", etymology: "感覚動詞の基礎多義語。" }],
+  // smell (26877)
+  [26877, { coreImage: "においを感じる、またはにおいがする感覚がコアイメージ。", usage: "「smell flowers」「It smells nice」で使う。", synonymDifference: "smell vs scent: smell は動詞/名詞、scent は名詞中心。", englishDefinition: "To notice an odor; to have an odor.", etymology: "感覚動詞の基礎語。" }],
+  // touch (23488)
+  [23488, { coreImage: "手などで触れる接触行為がコアイメージ。", usage: "「touch this」「don't touch」で使う。", synonymDifference: "touch vs hit: touch は軽い接触、hit は衝撃。", englishDefinition: "To put your hand or body on something.", etymology: "動作動詞の基礎語。" }],
+  // hear (23437)
+  [23437, { coreImage: "音が耳に入って聞こえる知覚がコアイメージ。", usage: "listen との違い（意図性）を対で学ぶ。", synonymDifference: "hear vs listen: hear は自然知覚、listen は意識して聞く。", englishDefinition: "To perceive sound with your ears.", etymology: "知覚動詞の基礎語。" }],
+  // hang (23703)
+  [23703, { coreImage: "掛ける・ぶら下がる位置関係がコアイメージ。", usage: "「hang a picture」「hang on the wall」で使う。", synonymDifference: "hang vs put: hang は吊るす配置に特化。", englishDefinition: "To suspend or be suspended from above.", etymology: "配置動詞の基礎語。" }],
+  // fill (23699)
+  [23699, { coreImage: "空間を満たしていっぱいにする行為がコアイメージ。", usage: "「fill the bottle with water」で使う。", synonymDifference: "fill vs cover: fill は内部を満たす、cover は表面を覆う。", englishDefinition: "To make full.", etymology: "状態変化動詞の基礎語。" }],
+  // count (25700)
+  [25700, { coreImage: "数を順に数える行為がコアイメージ。", usage: "「count to ten」「count apples」で使う。", synonymDifference: "count vs calculate: count は数える、calculate は計算する。", englishDefinition: "To determine number by naming numbers.", etymology: "数処理動詞の基礎語。" }],
+  // spell (23861)
+  [23861, { coreImage: "単語を文字でつづる行為がコアイメージ。", usage: "「How do you spell ...?」が定型。", synonymDifference: "spell vs write: spell は綴りを言う/書く、write は書く全般。", englishDefinition: "To write or say the letters of a word in order.", etymology: "語学学習動詞の基礎語。" }],
+  // share (23474)
+  [23474, { coreImage: "分け合う・共有する行為がコアイメージ。", usage: "「share with ...」「share ideas」で使う。", synonymDifference: "share vs give: share は分け合い、give は一方向授受。", englishDefinition: "To divide and use together.", etymology: "協働動詞の基礎語。" }],
+  // join (23709)
+  [23709, { coreImage: "集団や活動に参加して加わる行為がコアイメージ。", usage: "「join the club」「join us」で使う。", synonymDifference: "join vs attend: join はメンバー化、attend は参加出席。", englishDefinition: "To become part of a group or activity.", etymology: "参加動詞の基礎語。" }],
+  // win (23499)
+  [23499, { coreImage: "競争で勝利を得る結果がコアイメージ。", usage: "「win a game」「win first prize」で使う。", synonymDifference: "win vs beat: win は勝利獲得、beat は相手に勝つ。", englishDefinition: "To be victorious in a game or contest.", etymology: "競争語彙の基礎語。" }],
+  // big (23041)
+  [23041, { coreImage: "大きさ・規模が大きい状態を示す形容がコアイメージ。", usage: "「a big house」「big city」で頻出。", synonymDifference: "big vs large: ほぼ同義で big はより口語的。", englishDefinition: "Large in size or amount.", etymology: "形容詞基礎語。" }],
+  // small (23042)
+  [23042, { coreImage: "大きさ・規模が小さい状態を示す形容がコアイメージ。", usage: "「a small room」「small bag」で使う。", synonymDifference: "small vs little: little は主観的・感情的な用法も多い。", englishDefinition: "Little in size.", etymology: "形容詞基礎語。" }],
+  // long (23050)
+  [23050, { coreImage: "長さや時間が長い状態を示す形容がコアイメージ。", usage: "「long hair」「a long time」で多用。", synonymDifference: "long vs tall: long は長さ、tall は高さ。", englishDefinition: "Having great length or lasting much time.", etymology: "形容詞基礎語。" }],
+  // short (23157)
+  [23157, { coreImage: "長さが短い、または背が低い状態を示す形容がコアイメージ。", usage: "「short hair」「a short boy」で使う。", synonymDifference: "short vs low: short は長さ/身長、low は位置や高さ。", englishDefinition: "Not long; of little height.", etymology: "形容詞基礎語。" }],
+  // tall (23537)
+  [23537, { coreImage: "人や物の高さが高い状態を示す形容がコアイメージ。", usage: "「a tall building」「tall girl」で使う。", synonymDifference: "tall vs high: tall は縦に伸びた物体、high は位置・高さ全般。", englishDefinition: "Having greater than usual height.", etymology: "形容詞基礎語。" }],
+  // new (23043)
+  [23043, { coreImage: "時間が新しい・使用されていない状態がコアイメージ。", usage: "「a new book」「new student」で使う。", synonymDifference: "new vs old: new は新しい、old は古い。", englishDefinition: "Not old; recently made or discovered.", etymology: "基本対義語の中心語。" }],
+  // young (23160)
+  [23160, { coreImage: "年齢が若い状態を示す形容がコアイメージ。", usage: "人・動物・時期に広く使う。", synonymDifference: "young vs new: young は年齢、new は新しさ。", englishDefinition: "Having lived or existed for a short time.", etymology: "年齢表現の基礎語。" }],
+  // hot (23049)
+  [23049, { coreImage: "温度が高い、または暑い状態がコアイメージ。", usage: "天候と物体の両方に使える。", synonymDifference: "hot vs warm: hot の方が温度が高い。", englishDefinition: "Having a high temperature.", etymology: "温度形容詞の基礎語。" }],
+  // cold (23048)
+  [23048, { coreImage: "温度が低い、または寒い状態がコアイメージ。", usage: "天候・物体・体感に使う。", synonymDifference: "cold vs cool: cold の方が低温。", englishDefinition: "Having a low temperature.", etymology: "温度形容詞の基礎語。" }],
+  // warm (23544)
+  [23544, { coreImage: "やや暖かい快適温度がコアイメージ。", usage: "「warm day」「keep warm」で使う。", synonymDifference: "warm vs hot: warm は穏やかな暖かさ。", englishDefinition: "Moderately hot; pleasantly heated.", etymology: "温度形容詞の基礎語。" }],
+  // cool (23563)
+  [23563, { coreImage: "涼しい温度、またはかっこいい評価の両義がコアイメージ。", usage: "文脈で温度義か評価義かを判別。", synonymDifference: "cool vs cold: cool は冷たすぎない。", englishDefinition: "Slightly cold; also fashionable or impressive.", etymology: "多義形容詞の基礎語。" }],
+  // fast (23148)
+  [23148, { coreImage: "速度が速い状態を示す形容がコアイメージ。", usage: "副詞同形で「run fast」も可能。", synonymDifference: "fast vs quick: fast は速度、quick は時間の短さにも使う。", englishDefinition: "Moving at high speed.", etymology: "速度語彙の基礎語。" }],
+  // slow (23529)
+  [23529, { coreImage: "速度が遅い状態を示す形容がコアイメージ。", usage: "副詞は slowly が基本。", synonymDifference: "slow vs late: slow は速度、late は時刻遅れ。", englishDefinition: "Moving or happening with little speed.", etymology: "速度語彙の基礎語。" }],
+  // easy (23147)
+  [23147, { coreImage: "努力が少なくできる容易さがコアイメージ。", usage: "「easy question」「take it easy」で使う。", synonymDifference: "easy vs simple: easy は難易度、simple は構造の単純さ。", englishDefinition: "Not difficult.", etymology: "難易度語彙の基礎語。" }],
+  // hard (23317)
+  [23317, { coreImage: "難しい、または硬いという二つの核義がコアイメージ。", usage: "文脈で難易度義か物性義かを判別。", synonymDifference: "hard vs difficult: difficult は難しい義に限定されやすい。", englishDefinition: "Difficult; also solid and not soft.", etymology: "多義形容詞の基礎語。" }],
+  // beautiful (23142)
+  [23142, { coreImage: "見た目や性質が非常に美しい評価がコアイメージ。", usage: "人・景色・物の賞賛に使える。", synonymDifference: "beautiful vs pretty: beautiful の方が強い賞賛。", englishDefinition: "Very attractive and pleasing.", etymology: "評価形容詞の基礎語。" }],
+  // pretty (23156)
+  [23156, { coreImage: "かわいい・きれいな印象を示す形容がコアイメージ。", usage: "副詞「pretty + 形容詞（かなり）」の用法もある。", synonymDifference: "pretty vs cute: pretty はきれい寄り、cute は愛らしさ寄り。", englishDefinition: "Attractive in a delicate way.", etymology: "評価形容詞の基礎多義語。" }],
+  // cute (23305)
+  [23305, { coreImage: "小さく愛らしい印象を示す評価がコアイメージ。", usage: "人・動物・物の可愛さに使う。", synonymDifference: "cute vs pretty: cute は愛らしさ、pretty は整った美しさ。", englishDefinition: "Attractive in a charming way.", etymology: "評価形容詞の基礎語。" }],
+  // strong (23159)
+  [23159, { coreImage: "力・程度・意志が強い状態がコアイメージ。", usage: "身体、味、意見など幅広く使う。", synonymDifference: "strong vs powerful: powerful の方が影響力の規模が大きいことが多い。", englishDefinition: "Having great physical power or intensity.", etymology: "性質形容詞の基礎語。" }],
+  // weak (23545)
+  [23545, { coreImage: "力・程度が弱い状態を示す形容がコアイメージ。", usage: "身体、信号、主張などに使う。", synonymDifference: "weak vs soft: weak は力不足、soft は柔らかさ。", englishDefinition: "Not strong.", etymology: "性質形容詞の基礎語。" }],
+  // busy (23047)
+  [23047, { coreImage: "予定や作業で手が埋まっている状態がコアイメージ。", usage: "「I am busy now.」で高頻度。", synonymDifference: "busy vs occupied: occupied はより形式的。", englishDefinition: "Having a lot to do.", etymology: "生活状態語彙の基礎語。" }],
+  // free (23150)
+  [23150, { coreImage: "自由である、または無料である状態の両義がコアイメージ。", usage: "文脈で「時間が空いている」か「無料」かを判別。", synonymDifference: "free vs available: free は自由/無料、available は利用可能。", englishDefinition: "Not occupied or not costing money.", etymology: "多義形容詞の基礎語。" }],
+  // hungry (23153)
+  [23153, { coreImage: "空腹で食べたい体感状態がコアイメージ。", usage: "「I am hungry.」が定型。", synonymDifference: "hungry vs starving: starving の方が程度が強い。", englishDefinition: "Feeling a need to eat.", etymology: "体調形容詞の基礎語。" }],
+  // thirsty (23632)
+  [23632, { coreImage: "のどが渇いて飲みたい体感状態がコアイメージ。", usage: "「I am thirsty.」が定型。", synonymDifference: "thirsty vs dry: thirsty は人の感覚、dry は物の状態にも使う。", englishDefinition: "Feeling a need to drink.", etymology: "体調形容詞の基礎語。" }],
+  // tired (23541)
+  [23541, { coreImage: "疲れて休みが必要な状態がコアイメージ。", usage: "「I am tired.」「tired of ...」で使う。", synonymDifference: "tired vs sleepy: tired は疲労、sleepy は眠気。", englishDefinition: "Needing rest because of tiredness.", etymology: "体調形容詞の基礎語。" }],
+  // sick (23527)
+  [23527, { coreImage: "病気・体調不良の状態を示す形容がコアイメージ。", usage: "米語で病気義が強く、英語では ill もよく使う。", synonymDifference: "sick vs ill: 意味は近いが地域差・語感差がある。", englishDefinition: "Not healthy; ill.", etymology: "体調形容詞の基礎語。" }],
+  // fine (23149)
+  [23149, { coreImage: "問題ない・元気・良好を示す中立評価がコアイメージ。", usage: "返答「I am fine.」や評価「That is fine.」で使う。", synonymDifference: "fine vs good: fine は中立〜やや丁寧、good は一般評価。", englishDefinition: "Well; satisfactory; of good quality.", etymology: "高頻度評価語。" }],
+  // kind (23154)
+  [23154, { coreImage: "他者に優しく思いやりがある性質がコアイメージ。", usage: "「kind to people」「a kind person」で使う。", synonymDifference: "kind vs nice: kind は親切行為、nice は印象全般。", englishDefinition: "Friendly and caring toward others.", etymology: "性格形容詞の基礎語。" }],
+  // sad (23524)
+  [23524, { coreImage: "悲しく気分が落ち込んだ感情状態がコアイメージ。", usage: "「I feel sad.」で感情表現に使う。", synonymDifference: "sad vs upset: upset は動揺・不安も含む。", englishDefinition: "Unhappy or sorrowful.", etymology: "感情形容詞の基礎語。" }],
+  // angry (23304)
+  [23304, { coreImage: "怒りで感情が高ぶった状態がコアイメージ。", usage: "「angry with ...」「angry about ...」で使う。", synonymDifference: "angry vs mad: mad は口語で怒り義にも使われる。", englishDefinition: "Feeling strong displeasure.", etymology: "感情形容詞の基礎語。" }],
+  // afraid (23303)
+  [23303, { coreImage: "怖い、または不安を感じる状態がコアイメージ。", usage: "「afraid of ...」「I am afraid ...」で使う。", synonymDifference: "afraid vs scared: scared の方が口語的。", englishDefinition: "Feeling fear or worry.", etymology: "感情形容詞の基礎語。" }],
+  // surprised (24332)
+  [24332, { coreImage: "予想外に出会って驚いた状態がコアイメージ。", usage: "人が主語の受け身形容詞として使う。", synonymDifference: "surprised vs amazing: surprised は人の状態、amazing は原因側。", englishDefinition: "Feeling unexpected astonishment.", etymology: "surprise の過去分詞形容詞。" }],
+  // excited (24240)
+  [24240, { coreImage: "期待や刺激で気持ちが高まった状態がコアイメージ。", usage: "「excited about ...」が定型。", synonymDifference: "excited vs interesting: excited は人の感情、interesting は物の性質。", englishDefinition: "Very enthusiastic and eager.", etymology: "excite の過去分詞形容詞。" }],
+  // interested (24266)
+  [24266, { coreImage: "対象に関心を持っている心理状態がコアイメージ。", usage: "「interested in ...」の前置詞に注意。", synonymDifference: "interested vs interesting: interested は人の状態、interesting は対象の性質。", englishDefinition: "Wanting to know or learn more about something.", etymology: "interest の過去分詞形容詞。" }],
+  // important (23319)
+  [23319, { coreImage: "価値・影響が大きく大切である評価がコアイメージ。", usage: "「important for ...」「important thing」で使う。", synonymDifference: "important vs necessary: important は重要、necessary は必要。", englishDefinition: "Having great value or significance.", etymology: "評価形容詞の基礎語。" }],
+  // famous (23310)
+  [23310, { coreImage: "多くの人に知られている有名さがコアイメージ。", usage: "「famous for ...」「a famous singer」で使う。", synonymDifference: "famous vs popular: famous は知名度、popular は人気。", englishDefinition: "Known by many people.", etymology: "評価形容詞の基礎語。" }],
+  // popular (23517)
+  [23517, { coreImage: "多くの人に好まれている人気状態がコアイメージ。", usage: "「popular with students」が定型。", synonymDifference: "popular vs famous: popular は好感度、famous は認知度。", englishDefinition: "Liked by many people.", etymology: "評価形容詞の基礎語。" }],
+  // special (23532)
+  [23532, { coreImage: "普通と異なる特別性を示す形容がコアイメージ。", usage: "「special day」「special menu」で使う。", synonymDifference: "special vs particular: special は特別価値、particular は特定性。", englishDefinition: "Different from the usual and important.", etymology: "評価形容詞の基礎語。" }],
+  // different (23145)
+  [23145, { coreImage: "同一でない差異状態を示す形容がコアイメージ。", usage: "「different from ...」の前置詞に注意。", synonymDifference: "different vs same: opposite の関係。", englishDefinition: "Not the same.", etymology: "比較語彙の基礎語。" }],
+  // same (23526)
+  [23526, { coreImage: "差異がなく同一である状態がコアイメージ。", usage: "「the same as ...」で使う。", synonymDifference: "same vs similar: same は完全一致、similar は類似。", englishDefinition: "Exactly alike; not different.", etymology: "比較語彙の基礎語。" }],
+  // right (23522)
+  [23522, { coreImage: "正しい、または右側を示す多義形容がコアイメージ。", usage: "文脈で正誤義か方向義かを判別。", synonymDifference: "right vs correct: correct は正確性に限定されやすい。", englishDefinition: "Correct; also on the right side.", etymology: "高頻度多義語。" }],
+  // wrong (23551)
+  [23551, { pronunciation: { us: "/bæθ/", uk: "/bɑːθ/" }, coreImage: "正しくない誤り状態を示す形容がコアイメージ。", usage: "「You are wrong.」「wrong answer」で使う。", synonymDifference: "wrong vs mistaken: mistaken は人の思い違いに使うことが多い。", englishDefinition: "Not correct.", etymology: "正誤語彙の基礎語。" }],
+  // safe (23525)
+  [23525, { coreImage: "危険が少なく安心できる状態がコアイメージ。", usage: "「safe place」「be safe」で使う。", synonymDifference: "safe vs secure: secure は防御面の強固さを強調。", englishDefinition: "Free from danger.", etymology: "安全語彙の基礎語。" }],
+  // dangerous (24231)
+  [24231, { coreImage: "危険があり害を生む可能性が高い状態がコアイメージ。", usage: "「dangerous road」「dangerous animal」で使う。", synonymDifference: "dangerous vs risky: dangerous は危害可能性、risky は失敗可能性にも広い。", englishDefinition: "Likely to cause harm.", etymology: "安全対義語の基礎語。" }],
+  // dirty (24235)
+  [24235, { coreImage: "汚れが付いて不潔な状態がコアイメージ。", usage: "「dirty hands」「dirty room」で使う。", synonymDifference: "dirty vs messy: dirty は汚れ、messy は散らかり。", englishDefinition: "Not clean.", etymology: "状態形容詞の基礎語。" }],
+  // dark (23144)
+  [23144, { coreImage: "光が少なく暗い状態がコアイメージ。", usage: "「dark room」「it is dark」などで使う。", synonymDifference: "dark vs black: dark は明るさ、black は色。", englishDefinition: "Having little or no light.", etymology: "明暗語彙の基礎語。" }],
+  // bright (23561)
+  [23561, { coreImage: "光が多く明るい状態がコアイメージ。", usage: "部屋・色・人の知性にも比喩使用される。", synonymDifference: "bright vs light: bright は強い明るさ、light は明るい状態一般。", englishDefinition: "Giving out or reflecting much light.", etymology: "明暗語彙の基礎語。" }],
+  // heavy (23318)
+  [23318, { coreImage: "重さが大きい状態を示す形容がコアイメージ。", usage: "「heavy bag」「heavy rain」で物理/比喩両用。", synonymDifference: "heavy vs hard: heavy は重量、hard は硬さ・難しさ。", englishDefinition: "Having great weight.", etymology: "性質形容詞の基礎語。" }],
+  // light (24479)
+  [24479, { coreImage: "軽い、または明るいという多義状態がコアイメージ。", usage: "文脈で重量義か明暗義かを判別。", synonymDifference: "light vs bright: bright は明るさ強度、light は軽さ/明るさの広義。", englishDefinition: "Not heavy; also bright.", etymology: "多義形容詞の基礎語。" }],
+  // rich (23521)
+  [23521, { pronunciation: { us: "/ˈbɑːtəl/", uk: "/ˈbɒtəl/" }, coreImage: "お金や資源が豊かな状態がコアイメージ。", usage: "人・国・味（rich flavor）にも使える。", synonymDifference: "rich vs wealthy: wealthy の方が財産語感が明確なことが多い。", englishDefinition: "Having a lot of money or abundance.", etymology: "評価形容詞の基礎語。" }],
+  // poor (23516)
+  [23516, { coreImage: "お金が少ない、または質が低い状態を示す語がコアイメージ。", usage: "経済状態と品質評価の両義がある。", synonymDifference: "poor vs bad: poor は不足感や低水準を示しやすい。", englishDefinition: "Having little money; also of low quality.", etymology: "評価形容詞の基礎多義語。" }],
+  // wide (23548)
+  [23548, { pronunciation: { us: "/æsk/", uk: "/ɑːsk/" }, coreImage: "横幅が広い状態を示す形容がコアイメージ。", usage: "「wide road」「open wide」で使う。", synonymDifference: "wide vs broad: broad も近いが語感差がある。", englishDefinition: "Having great width.", etymology: "空間形容詞の基礎語。" }],
+  // narrow (23512)
+  [23512, { coreImage: "幅が狭い状態を示す形容がコアイメージ。", usage: "「narrow street」「narrow gap」で使う。", synonymDifference: "narrow vs small: narrow は幅限定、小さいは全体サイズ。", englishDefinition: "Not wide.", etymology: "空間形容詞の基礎語。" }],
+  // deep (23307)
+  [23307, { coreImage: "上面から底までの深さが大きい状態がコアイメージ。", usage: "「deep water」「deep sleep」で比喩もある。", synonymDifference: "deep vs high: deep は下方向、high は上方向。", englishDefinition: "Extending far down from the top.", etymology: "空間形容詞の基礎語。" }],
+  // high (23152)
+  [23152, { coreImage: "位置や高さが高い状態を示す形容がコアイメージ。", usage: "「high mountain」「high price」で使う。", synonymDifference: "high vs tall: high は位置・数値、tall は縦長の物体。", englishDefinition: "Far above the ground or above normal level.", etymology: "空間形容詞の基礎語。" }],
+  // low (26488)
+  [26488, { coreImage: "位置・高さ・量が低い状態を示す形容がコアイメージ。", usage: "「low table」「low voice」で使う。", synonymDifference: "low vs short: low は位置・程度、short は長さ。", englishDefinition: "Not high; near the ground or small in amount.", etymology: "空間・程度語彙の基礎語。" }],
+  // loud (23509)
+  [23509, { coreImage: "音量が大きく目立つ状態がコアイメージ。", usage: "「loud music」「too loud」で使う。", synonymDifference: "loud vs noisy: loud は音量、noisy は騒がしさ評価。", englishDefinition: "Having a high volume.", etymology: "音量語彙の基礎語。" }],
+  // quiet (23518)
+  [23518, { coreImage: "音が少なく静かな状態がコアイメージ。", usage: "「quiet room」「be quiet」で使う。", synonymDifference: "quiet vs silent: silent は無音に近い。", englishDefinition: "Making little or no noise.", etymology: "音量語彙の基礎語。" }],
+  // soft (23531)
+  [23531, { coreImage: "触感が柔らかい、または音がやさしい状態がコアイメージ。", usage: "物の硬さと音量の両方に使う。", synonymDifference: "soft vs weak: soft は硬さ/音量、weak は力不足。", englishDefinition: "Not hard; gentle in sound or touch.", etymology: "性質形容詞の基礎語。" }],
+  // sweet (23536)
+  [23536, { coreImage: "甘い味、または感じのよい評価を示す語がコアイメージ。", usage: "味覚義と性格評価義の両方がある。", synonymDifference: "sweet vs sugary: sugary は砂糖が多いことを強調。", englishDefinition: "Having a taste like sugar; also kind or pleasant.", etymology: "味覚語彙の基礎語。" }],
+  // sour (24327)
+  [24327, { coreImage: "酸っぱい味を示す味覚形容がコアイメージ。", usage: "「sour lemon」「taste sour」で使う。", synonymDifference: "sour vs bitter: sour は酸味、bitter は苦味。", englishDefinition: "Having an acid taste.", etymology: "味覚語彙の基礎語。" }],
+  // bitter (24598)
+  [24598, { coreImage: "苦い味、または苦々しい感情を示す語がコアイメージ。", usage: "味覚義を初級で優先して学ぶ。", synonymDifference: "bitter vs sour: bitter は苦味、sour は酸味。", englishDefinition: "Having a sharp, unpleasant taste.", etymology: "味覚語彙の基礎語。" }],
+  // spicy (29613)
+  [29613, { coreImage: "香辛料で辛い刺激がある味を示す形容がコアイメージ。", usage: "「spicy food」が定型。", synonymDifference: "spicy vs hot: spicy は香辛料の辛さ、hot は温度/辛さ両義。", englishDefinition: "Having a strong hot flavor from spices.", etymology: "味覚語彙の基礎語。" }],
+  // delicious (24233)
+  [24233, { coreImage: "食べ物がとてもおいしいという高評価がコアイメージ。", usage: "「This is delicious.」が定型。", synonymDifference: "delicious vs tasty: delicious の方が賞賛度が高い。", englishDefinition: "Very pleasant to taste.", etymology: "味覚評価語彙の基礎語。" }],
+  // fresh (23313)
+  [23313, { pronunciation: { us: "/dæns/", uk: "/dɑːns/" }, coreImage: "新鮮で古くない状態がコアイメージ。", usage: "食材・空気・情報などに使える。", synonymDifference: "fresh vs new: fresh は鮮度、new は新規性。", englishDefinition: "Recently made or picked; not old.", etymology: "状態形容詞の基礎語。" }],
+  // full (23314)
+  [23314, { coreImage: "中身がいっぱい、または満腹の状態がコアイメージ。", usage: "容器・時間・お腹など多義で使う。", synonymDifference: "full vs complete: full は充満、complete は完成。", englishDefinition: "Containing as much as possible; not hungry after eating.", etymology: "状態形容詞の基礎語。" }],
+  // empty (24238)
+  [24238, { coreImage: "中身がなく空っぽの状態がコアイメージ。", usage: "「empty box」「empty room」で使う。", synonymDifference: "empty vs free: empty は中身なし、free は空き/自由。", englishDefinition: "Containing nothing.", etymology: "状態形容詞の基礎語。" }],
+  // dry (23308)
+  [23308, { coreImage: "水分がなく乾いた状態がコアイメージ。", usage: "天気・衣服・肌などに使える。", synonymDifference: "dry vs thirsty: dry は物の状態、thirsty は人の感覚。", englishDefinition: "Not wet.", etymology: "状態形容詞の基礎語。" }],
+  // wet (23546)
+  [23546, { coreImage: "水分を含んで濡れている状態がコアイメージ。", usage: "「wet clothes」「wet floor」で使う。", synonymDifference: "wet vs damp: damp はしっとり程度で弱い。", englishDefinition: "Covered or soaked with water.", etymology: "状態形容詞の基礎語。" }],
+  // ready (23519)
+  [23519, { coreImage: "準備が整ってすぐ行動できる状態がコアイメージ。", usage: "「ready to do」「Are you ready?」が定型。", synonymDifference: "ready vs available: ready は準備完了、available は利用可能。", englishDefinition: "Prepared and able to do something.", etymology: "状態形容詞の基礎語。" }],
+  // late (23321)
+  [23321, { coreImage: "予定時刻より遅れている状態がコアイメージ。", usage: "「be late for school」で使う。", synonymDifference: "late vs slow: late は時間遅れ、slow は速度。", englishDefinition: "After the expected or usual time.", etymology: "時間形容詞の基礎語。" }],
+  // early (23146)
+  [23146, { coreImage: "予定時刻より早い、または早い段階の状態がコアイメージ。", usage: "「get up early」「early morning」で使う。", synonymDifference: "early vs fast: early は時刻、fast は速度。", englishDefinition: "Before the usual or expected time.", etymology: "時間形容詞の基礎語。" }],
+  // near (23513)
+  [23513, { coreImage: "距離が近い位置関係がコアイメージ。", usage: "形容詞/前置詞として「near the station」。", synonymDifference: "near vs next to: next to は隣接、near は近接。", englishDefinition: "Close in distance.", etymology: "位置語彙の基礎語。" }],
+  // far (23571)
+  [23571, { coreImage: "距離が遠い位置関係がコアイメージ。", usage: "「far from ...」「How far...?」で使う。", synonymDifference: "far vs long: far は距離、long は長さ/時間。", englishDefinition: "At a great distance.", etymology: "位置語彙の基礎語。" }],
+  // round (23523)
+  [23523, { coreImage: "丸い形状を示す形容がコアイメージ。", usage: "「round table」「a round ball」で使う。", synonymDifference: "round vs circle: round は形容、circle は名詞。", englishDefinition: "Shaped like a circle or ball.", etymology: "形状語彙の基礎語。" }],
+  // flat (23564)
+  [23564, { coreImage: "平らで起伏が少ない状態がコアイメージ。", usage: "地形・表面・声（flat voice）にも使う。", synonymDifference: "flat vs smooth: flat は平面性、smooth はなめらかさ。", englishDefinition: "Level and even; not raised.", etymology: "形状語彙の基礎語。" }],
+  // sharp (24318)
+  [24318, { coreImage: "先端や刃が鋭い、または感覚が鋭敏な状態がコアイメージ。", usage: "「sharp knife」「sharp eyes」で使う。", synonymDifference: "sharp vs pointed: sharp は切れ味、pointed は先端形状。", englishDefinition: "Having a fine edge or point.", etymology: "性質語彙の基礎語。" }],
+  // thick (23539)
+  [23539, { coreImage: "厚み・太さが大きい状態がコアイメージ。", usage: "本・壁・液体濃度にも使える。", synonymDifference: "thick vs fat: thick は物の厚さ、fat は体格。", englishDefinition: "Having a large distance between two sides.", etymology: "形状語彙の基礎語。" }],
+  // thin (23540)
+  [23540, { coreImage: "厚み・太さが小さい状態がコアイメージ。", usage: "紙・線・体格にも使う。", synonymDifference: "thin vs slim: slim は人に対して前向き評価が多い。", englishDefinition: "Having little thickness or width.", etymology: "形状語彙の基礎語。" }],
+  // always (23051)
+  [23051, { coreImage: "常に例外なく起こる頻度を示す副詞がコアイメージ。", usage: "頻度副詞の中で最も高い頻度。", synonymDifference: "always vs usually: always は100%、usually はそれ未満。", englishDefinition: "At all times; every time.", etymology: "頻度副詞の基礎語。" }],
+  // usually (23052)
+  [23052, { coreImage: "たいていの場合そうである高頻度を示す副詞がコアイメージ。", usage: "一般習慣の説明で使う。", synonymDifference: "usually vs often: usually の方が頻度が高いことが多い。", englishDefinition: "In most cases; normally.", etymology: "頻度副詞の基礎語。" }],
+  // often (23054)
+  [23054, { coreImage: "繰り返しよく起こる頻度を示す副詞がコアイメージ。", usage: "習慣行動の説明で高頻度。", synonymDifference: "often vs sometimes: often の方が頻度が高い。", englishDefinition: "Many times; frequently.", etymology: "頻度副詞の基礎語。" }],
+  // sometimes (23053)
+  [23053, { coreImage: "時々起こる中程度頻度を示す副詞がコアイメージ。", usage: "習慣の例外や不定期行動に使う。", synonymDifference: "sometimes vs often: sometimes の方が頻度が低い。", englishDefinition: "At times; occasionally.", etymology: "頻度副詞の基礎語。" }],
+  // never (23055)
+  [23055, { pronunciation: { us: "/læf/", uk: "/lɑːf/" }, coreImage: "一度も起こらない0%頻度を示す副詞がコアイメージ。", usage: "否定語として文中の not と併用しない。", synonymDifference: "never vs not often: never は0回、not often は低頻度。", englishDefinition: "Not at any time.", etymology: "否定頻度副詞の基礎語。" }],
+  // again (23209)
+  [23209, { coreImage: "もう一度の反復を示す副詞がコアイメージ。", usage: "「try again」「see you again」で使う。", synonymDifference: "again vs once more: 意味は近く once more はやや丁寧。", englishDefinition: "One more time.", etymology: "反復副詞の基礎語。" }],
+  // already (23211)
+  [23211, { coreImage: "予想より前にすでに完了した状態を示す副詞がコアイメージ。", usage: "完了表現と相性が高い。", synonymDifference: "already vs yet: already は肯定で先行完了、yet は否定/疑問で未了確認。", englishDefinition: "By this time; earlier than expected.", etymology: "時間副詞の基礎語。" }],
+  // still (24400)
+  [24400, { coreImage: "以前から続いて今も変わらない継続を示す副詞がコアイメージ。", usage: "「I still live here.」のように使う。", synonymDifference: "still vs yet: still は継続、yet は未了確認。", englishDefinition: "Continuing up to this time.", etymology: "継続副詞の基礎語。" }],
+  // just (23639)
+  [23639, { coreImage: "ちょうど・ただ・〜したばかり等の限定を示す多義副詞がコアイメージ。", usage: "文脈で「only」「exactly」「recently」の意味を判別。", synonymDifference: "just vs only: only は排他強調、just は時点/程度の軽い限定にも使う。", englishDefinition: "Exactly; only; a short time ago.", etymology: "高頻度多義副詞。" }],
+  // really (23638)
+  [23638, { coreImage: "本当に、または程度強調を示す副詞がコアイメージ。", usage: "「really good」「Do you really...?」で使う。", synonymDifference: "really vs very: really は真偽確認にも使える。", englishDefinition: "Truly; very.", etymology: "強調副詞の基礎語。" }],
+  // maybe (24377)
+  [24377, { coreImage: "確信を避けた推量を示す副詞がコアイメージ。", usage: "会話文頭で「Maybe ...」が自然。", synonymDifference: "maybe vs probably: probably の方が可能性が高い。", englishDefinition: "Perhaps; possibly.", etymology: "推量副詞の基礎語。" }],
+  // together (23635)
+  [23635, { coreImage: "一緒に同じ場所・行動を共有する副詞がコアイメージ。", usage: "「go together」「work together」で使う。", synonymDifference: "together vs with: together は状態副詞、with は前置詞。", englishDefinition: "With each other; in one group.", etymology: "関係副詞の基礎語。" }],
+  // outside (23636)
+  [23636, { coreImage: "建物や領域の外側を示す副詞がコアイメージ。", usage: "副詞・前置詞・名詞で使える。", synonymDifference: "outside vs out: outside は場所を明示、out は外へ出る動きも含む。", englishDefinition: "On or to the outside.", etymology: "位置副詞の基礎語。" }],
+  // inside (26408)
+  [26408, { coreImage: "建物や領域の内側を示す副詞がコアイメージ。", usage: "副詞・前置詞・名詞で使える。", synonymDifference: "inside vs in: inside は内側位置をより明示。", englishDefinition: "On or to the inside.", etymology: "位置副詞の基礎語。" }],
   // here (10430)
   [10430, { pronunciation: { us: "/pæs/", uk: "/pɑːs/" }, coreImage: "話し手の近くの場所を指す副詞がコアイメージ。", usage: "「come here」「here is ...」で高頻度。", synonymDifference: "here vs there: here は近い場所、there は離れた場所。", englishDefinition: "In or at this place.", etymology: "指示副詞の基礎語。" }],
   // there (10431)
   [10431, { coreImage: "話し手から離れた場所を指す副詞がコアイメージ。", usage: "「go there」「there is ...」で使う。", synonymDifference: "there vs here: there は遠い場所、here は近い場所。", englishDefinition: "In or at that place.", etymology: "指示副詞の基礎語。" }],
-  // everywhere (10432)
-  [10432, { coreImage: "あらゆる場所を網羅する副詞がコアイメージ。", usage: "「look everywhere」で全域探索を表せる。", synonymDifference: "everywhere vs anywhere: everywhere は全域、anywhere はどこか/どこでも。", englishDefinition: "In all places.", etymology: "場所副詞の基礎語。" }],
-  // enough (10433)
-  [10433, { coreImage: "必要量に達して十分である程度を示す語がコアイメージ。", usage: "副詞・形容詞・代名詞で使われる多機能語。", synonymDifference: "enough vs too: enough は十分、too は過剰。", englishDefinition: "As much as needed.", etymology: "程度語彙の基礎語。" }],
-  // almost (10434)
-  [10434, { coreImage: "完全には達していないが近い状態を示す副詞がコアイメージ。", usage: "数値・時間・完了度の近接表現で使う。", synonymDifference: "almost vs nearly: ほぼ同義で置換可能な場面が多い。", englishDefinition: "Nearly; not quite.", etymology: "程度副詞の基礎語。" }],
-  // also (10435)
-  [10435, { coreImage: "追加情報として「〜もまた」を示す副詞がコアイメージ。", usage: "文中で add の役割を持ち too と使い分ける。", synonymDifference: "also vs too: also は文中、too は文末で使われやすい。", englishDefinition: "In addition; too.", etymology: "接続副詞の基礎語。" }],
-  // soccer (10436)
-  [10436, { coreImage: "足でボールを扱う競技サッカーを指す名詞がコアイメージ。", usage: "不可算寄りで play soccer が定型。", synonymDifference: "soccer vs football: 地域で指す競技が異なる場合がある。", englishDefinition: "A sport where players kick a ball to score goals.", etymology: "スポーツ語彙の基礎語。" }],
-  // baseball (10437)
-  [10437, { coreImage: "バットとボールで得点する野球競技がコアイメージ。", usage: "play baseball が基本。", synonymDifference: "baseball vs softball: ルールやボールが異なる関連競技。", englishDefinition: "A sport played with bat, ball, and bases.", etymology: "スポーツ語彙の基礎語。" }],
-  // basketball (10438)
-  [10438, { coreImage: "リングにボールを入れて得点する競技がコアイメージ。", usage: "play basketball で使う。", synonymDifference: "basketball vs volleyball: ボール扱いと得点法が異なる。", englishDefinition: "A sport where players score by shooting a ball through a hoop.", etymology: "スポーツ語彙の基礎語。" }],
-  // tennis (10439)
-  [10439, { coreImage: "ラケットでボールを打ち合う競技がコアイメージ。", usage: "play tennis の形で高頻度。", synonymDifference: "tennis vs table tennis: 後者は卓球で別競技。", englishDefinition: "A sport played by hitting a ball over a net.", etymology: "スポーツ語彙の基礎語。" }],
+  // everywhere (23570)
+  [23570, { coreImage: "あらゆる場所を網羅する副詞がコアイメージ。", usage: "「look everywhere」で全域探索を表せる。", synonymDifference: "everywhere vs anywhere: everywhere は全域、anywhere はどこか/どこでも。", englishDefinition: "In all places.", etymology: "場所副詞の基礎語。" }],
+  // enough (23217)
+  [23217, { coreImage: "必要量に達して十分である程度を示す語がコアイメージ。", usage: "副詞・形容詞・代名詞で使われる多機能語。", synonymDifference: "enough vs too: enough は十分、too は過剰。", englishDefinition: "As much as needed.", etymology: "程度語彙の基礎語。" }],
+  // almost (23566)
+  [23566, { coreImage: "完全には達していないが近い状態を示す副詞がコアイメージ。", usage: "数値・時間・完了度の近接表現で使う。", synonymDifference: "almost vs nearly: ほぼ同義で置換可能な場面が多い。", englishDefinition: "Nearly; not quite.", etymology: "程度副詞の基礎語。" }],
+  // also (23212)
+  [23212, { coreImage: "追加情報として「〜もまた」を示す副詞がコアイメージ。", usage: "文中で add の役割を持ち too と使い分ける。", synonymDifference: "also vs too: also は文中、too は文末で使われやすい。", englishDefinition: "In addition; too.", etymology: "接続副詞の基礎語。" }],
+  // soccer (23287)
+  [23287, { coreImage: "足でボールを扱う競技サッカーを指す名詞がコアイメージ。", usage: "不可算寄りで play soccer が定型。", synonymDifference: "soccer vs football: 地域で指す競技が異なる場合がある。", englishDefinition: "A sport where players kick a ball to score goals.", etymology: "スポーツ語彙の基礎語。" }],
+  // baseball (23083)
+  [23083, { coreImage: "バットとボールで得点する野球競技がコアイメージ。", usage: "play baseball が基本。", synonymDifference: "baseball vs softball: ルールやボールが異なる関連競技。", englishDefinition: "A sport played with bat, ball, and bases.", etymology: "スポーツ語彙の基礎語。" }],
+  // basketball (23084)
+  [23084, { coreImage: "リングにボールを入れて得点する競技がコアイメージ。", usage: "play basketball で使う。", synonymDifference: "basketball vs volleyball: ボール扱いと得点法が異なる。", englishDefinition: "A sport where players score by shooting a ball through a hoop.", etymology: "スポーツ語彙の基礎語。" }],
+  // tennis (23348)
+  [23348, { coreImage: "ラケットでボールを打ち合う競技がコアイメージ。", usage: "play tennis の形で高頻度。", synonymDifference: "tennis vs table tennis: 後者は卓球で別競技。", englishDefinition: "A sport played by hitting a ball over a net.", etymology: "スポーツ語彙の基礎語。" }],
   // volleyball (10440)
   [10440, { coreImage: "ネット越しにボールを打ち合う競技がコアイメージ。", usage: "play volleyball で使う。", synonymDifference: "volleyball vs basketball: 得点方法・用具が異なる。", englishDefinition: "A sport where teams hit a ball over a net.", etymology: "スポーツ語彙の基礎語。" }],
-  // race (10441)
-  [10441, { coreImage: "速さを競う競走・レースがコアイメージ。", usage: "「win a race」「car race」で使う。", synonymDifference: "race vs game: race は速さ競争、game は遊戯・試合全般。", englishDefinition: "A competition to see who is fastest.", etymology: "競技語彙の基礎語。" }],
-  // team (10442)
-  [10442, { coreImage: "共通目的で協力するチーム集団がコアイメージ。", usage: "「team members」「our team」で使う。", synonymDifference: "team vs group: team は協働目的が明確。", englishDefinition: "A group of people working or playing together.", etymology: "協働語彙の基礎語。" }],
-  // practice (10443)
-  [10443, { coreImage: "上達のための反復練習がコアイメージ。", usage: "名詞として「soccer practice」で使う。", synonymDifference: "practice vs game: practice は練習、game は本番試合。", englishDefinition: "Repeated exercise to improve skill.", etymology: "学習・競技語彙の基礎語。" }],
-  // contest (10444)
-  [10444, { coreImage: "勝敗・評価を競う大会やコンテストがコアイメージ。", usage: "「speech contest」「math contest」で使う。", synonymDifference: "contest vs competition: 近いが contest はイベント名で使いやすい。", englishDefinition: "A competition where people try to win.", etymology: "競争語彙の基礎語。" }],
-  // event (10445)
-  [10445, { coreImage: "行事や出来事をまとめて示す名詞がコアイメージ。", usage: "学校行事・特別予定に広く使う。", synonymDifference: "event vs party: party は祝賀会、event はより広い概念。", englishDefinition: "An organized occasion or happening.", etymology: "行事語彙の基礎語。" }],
-  // party (10446)
-  [10446, { coreImage: "人が集まって祝うパーティーの場がコアイメージ。", usage: "「birthday party」「have a party」で使う。", synonymDifference: "party vs event: party は社交・祝賀色が強い。", englishDefinition: "A social gathering for celebration.", etymology: "行事語彙の基礎語。" }],
-  // holiday (10447)
-  [10447, { coreImage: "祝日や休みの日を示す名詞がコアイメージ。", usage: "英米で vacation との使い分けに差がある。", synonymDifference: "holiday vs vacation: holiday は祝日/休暇日、vacation はまとまった休暇。", englishDefinition: "A day of celebration or time off.", etymology: "時間語彙の基礎語。" }],
-  // vacation (10448)
-  [10448, { coreImage: "まとまった休暇期間を示す名詞がコアイメージ。", usage: "「summer vacation」で頻出。", synonymDifference: "vacation vs holiday: vacation は期間、holiday は日単位も含む。", englishDefinition: "A period of time spent away from work or school.", etymology: "時間語彙の基礎語。" }],
-  // birthday (10449)
-  [10449, { pronunciation: { us: "/stɑːp/", uk: "/stɒp/" }, coreImage: "生まれた日を祝う誕生日概念がコアイメージ。", usage: "「happy birthday」「birthday party」で使う。", synonymDifference: "birthday vs anniversary: anniversary は記念日一般。", englishDefinition: "The day each year on which someone was born.", etymology: "生活行事語彙の基礎語。" }],
-  // weekend (10450)
-  [10450, { coreImage: "週の終わりの休日期間を示す名詞がコアイメージ。", usage: "「on the weekend」「this weekend」で使う。", synonymDifference: "weekend vs weekday: weekend は週末、weekday は平日。", englishDefinition: "Saturday and Sunday.", etymology: "時間語彙の基礎語。" }],
-  // trip (10451)
-  [10451, { coreImage: "比較的短い旅行・移動を示す名詞がコアイメージ。", usage: "「school trip」「take a trip」で使う。", synonymDifference: "trip vs travel: trip は名詞で具体的な旅行、travel は行為全般。", englishDefinition: "A journey, especially for pleasure.", etymology: "移動語彙の基礎語。" }],
-  // idea (10452)
-  [10452, { coreImage: "頭に浮かぶ考え・着想を示す名詞がコアイメージ。", usage: "「good idea」「I have an idea.」で使う。", synonymDifference: "idea vs thought: thought は思考過程・考え全般。", englishDefinition: "A thought or suggestion.", etymology: "思考語彙の基礎語。" }],
-  // problem (10453)
-  [10453, { coreImage: "解決が必要な問題・困りごとがコアイメージ。", usage: "「solve a problem」「no problem」で使う。", synonymDifference: "problem vs question: problem は課題、question は質問。", englishDefinition: "A difficulty that needs a solution.", etymology: "課題語彙の基礎語。" }],
-  // story (10454)
-  [10454, { coreImage: "出来事を語る物語・話がコアイメージ。", usage: "「read a story」「tell a story」で使う。", synonymDifference: "story vs history: story は物語、history は歴史。", englishDefinition: "A description of events, real or imaginary.", etymology: "表現語彙の基礎語。" }],
-  // news (10455)
-  [10455, { coreImage: "新しい知らせ・報道情報を示す名詞がコアイメージ。", usage: "通常不可算で「some news」「the news」。", synonymDifference: "news vs information: news は新規性、information は情報一般。", englishDefinition: "Information about recent events.", etymology: "情報語彙の基礎語。" }],
+  // race (24071)
+  [24071, { coreImage: "速さを競う競走・レースがコアイメージ。", usage: "「win a race」「car race」で使う。", synonymDifference: "race vs game: race は速さ競争、game は遊戯・試合全般。", englishDefinition: "A competition to see who is fastest.", etymology: "競技語彙の基礎語。" }],
+  // team (23346)
+  [23346, { coreImage: "共通目的で協力するチーム集団がコアイメージ。", usage: "「team members」「our team」で使う。", synonymDifference: "team vs group: team は協働目的が明確。", englishDefinition: "A group of people working or playing together.", etymology: "協働語彙の基礎語。" }],
+  // practice (24495)
+  [24495, { coreImage: "上達のための反復練習がコアイメージ。", usage: "名詞として「soccer practice」で使う。", synonymDifference: "practice vs game: practice は練習、game は本番試合。", englishDefinition: "Repeated exercise to improve skill.", etymology: "学習・競技語彙の基礎語。" }],
+  // contest (23916)
+  [23916, { coreImage: "勝敗・評価を競う大会やコンテストがコアイメージ。", usage: "「speech contest」「math contest」で使う。", synonymDifference: "contest vs competition: 近いが contest はイベント名で使いやすい。", englishDefinition: "A competition where people try to win.", etymology: "競争語彙の基礎語。" }],
+  // event (24419)
+  [24419, { coreImage: "行事や出来事をまとめて示す名詞がコアイメージ。", usage: "学校行事・特別予定に広く使う。", synonymDifference: "event vs party: party は祝賀会、event はより広い概念。", englishDefinition: "An organized occasion or happening.", etymology: "行事語彙の基礎語。" }],
+  // party (23239)
+  [23239, { coreImage: "人が集まって祝うパーティーの場がコアイメージ。", usage: "「birthday party」「have a party」で使う。", synonymDifference: "party vs event: party は社交・祝賀色が強い。", englishDefinition: "A social gathering for celebration.", etymology: "行事語彙の基礎語。" }],
+  // holiday (23188)
+  [23188, { coreImage: "祝日や休みの日を示す名詞がコアイメージ。", usage: "英米で vacation との使い分けに差がある。", synonymDifference: "holiday vs vacation: holiday は祝日/休暇日、vacation はまとまった休暇。", englishDefinition: "A day of celebration or time off.", etymology: "時間語彙の基礎語。" }],
+  // vacation (23369)
+  [23369, { coreImage: "まとまった休暇期間を示す名詞がコアイメージ。", usage: "「summer vacation」で頻出。", synonymDifference: "vacation vs holiday: vacation は期間、holiday は日単位も含む。", englishDefinition: "A period of time spent away from work or school.", etymology: "時間語彙の基礎語。" }],
+  // birthday (23039)
+  [23039, { pronunciation: { us: "/stɑːp/", uk: "/stɒp/" }, coreImage: "生まれた日を祝う誕生日概念がコアイメージ。", usage: "「happy birthday」「birthday party」で使う。", synonymDifference: "birthday vs anniversary: anniversary は記念日一般。", englishDefinition: "The day each year on which someone was born.", etymology: "生活行事語彙の基礎語。" }],
+  // weekend (23342)
+  [23342, { coreImage: "週の終わりの休日期間を示す名詞がコアイメージ。", usage: "「on the weekend」「this weekend」で使う。", synonymDifference: "weekend vs weekday: weekend は週末、weekday は平日。", englishDefinition: "Saturday and Sunday.", etymology: "時間語彙の基礎語。" }],
+  // trip (23365)
+  [23365, { coreImage: "比較的短い旅行・移動を示す名詞がコアイメージ。", usage: "「school trip」「take a trip」で使う。", synonymDifference: "trip vs travel: trip は名詞で具体的な旅行、travel は行為全般。", englishDefinition: "A journey, especially for pleasure.", etymology: "移動語彙の基礎語。" }],
+  // idea (23191)
+  [23191, { coreImage: "頭に浮かぶ考え・着想を示す名詞がコアイメージ。", usage: "「good idea」「I have an idea.」で使う。", synonymDifference: "idea vs thought: thought は思考過程・考え全般。", englishDefinition: "A thought or suggestion.", etymology: "思考語彙の基礎語。" }],
+  // problem (24066)
+  [24066, { coreImage: "解決が必要な問題・困りごとがコアイメージ。", usage: "「solve a problem」「no problem」で使う。", synonymDifference: "problem vs question: problem は課題、question は質問。", englishDefinition: "A difficulty that needs a solution.", etymology: "課題語彙の基礎語。" }],
+  // story (23299)
+  [23299, { coreImage: "出来事を語る物語・話がコアイメージ。", usage: "「read a story」「tell a story」で使う。", synonymDifference: "story vs history: story は物語、history は歴史。", englishDefinition: "A description of events, real or imaginary.", etymology: "表現語彙の基礎語。" }],
+  // news (23230)
+  [23230, { coreImage: "新しい知らせ・報道情報を示す名詞がコアイメージ。", usage: "通常不可算で「some news」「the news」。", synonymDifference: "news vs information: news は新規性、information は情報一般。", englishDefinition: "Information about recent events.", etymology: "情報語彙の基礎語。" }],
   // thing (10456)
   [10456, { coreImage: "具体物や事柄を広く指せる汎用名詞がコアイメージ。", usage: "語が出ない時の代用にもなる高頻度語。", synonymDifference: "thing vs object: object は物体に限定されやすい。", englishDefinition: "An object, event, or matter.", etymology: "最重要汎用名詞。" }],
-  // place (10457)
-  [10457, { coreImage: "場所・空間を示す汎用名詞がコアイメージ。", usage: "「this place」「a good place to ...」で使う。", synonymDifference: "place vs location: location の方が位置情報として形式的。", englishDefinition: "A particular position or area.", etymology: "位置語彙の基礎語。" }],
-  // way (10458)
-  [10458, { coreImage: "道、または方法を示す多義名詞がコアイメージ。", usage: "「the way to school」「a way to do」で使う。", synonymDifference: "way vs road: way は方法義も持つ。", englishDefinition: "A route; also a method.", etymology: "高頻度多義名詞。" }],
-  // part (10459)
-  [10459, { coreImage: "全体の一部、または役割を示す名詞がコアイメージ。", usage: "「part of ...」「play a part」で使う。", synonymDifference: "part vs piece: piece は分割片、part は機能的部分にも使う。", englishDefinition: "A section of a whole; a role.", etymology: "構成語彙の基礎語。" }],
-  // example (10460)
-  [10460, { coreImage: "理解のために示す具体例がコアイメージ。", usage: "「for example」「an example of ...」で頻出。", synonymDifference: "example vs sample: sample は見本物体の意味が強い。", englishDefinition: "A specific case used to explain something.", etymology: "説明語彙の基礎語。" }],
-  // life (10461)
-  [10461, { coreImage: "人生や生活全体を示す名詞がコアイメージ。", usage: "「my life」「school life」で使う。", synonymDifference: "life vs living: life は名詞中心、living は生活様式にも使う。", englishDefinition: "A person's existence and way of living.", etymology: "抽象基礎語彙。" }],
-  // dream (10462)
-  [10462, { coreImage: "睡眠中の夢、または将来の夢を示す名詞がコアイメージ。", usage: "文脈で睡眠義と目標義を判別。", synonymDifference: "dream vs goal: dream は願望、goal は具体目標。", englishDefinition: "A series of images during sleep; also a strong wish.", etymology: "抽象語彙の基礎語。" }],
-  // future (10463)
-  [10463, { coreImage: "これから先の時間・将来を示す名詞がコアイメージ。", usage: "「in the future」「future plan」で使う。", synonymDifference: "future vs tomorrow: future は広い将来、tomorrow は明日。", englishDefinition: "The time that is to come.", etymology: "時間概念語彙の基礎語。" }],
-  // plan (10464)
-  [10464, { coreImage: "事前に決める計画・予定がコアイメージ。", usage: "名詞/動詞の両用があるが初級では名詞中心。", synonymDifference: "plan vs schedule: plan は計画内容、schedule は時刻表。", englishDefinition: "A set of intended actions for the future.", etymology: "計画語彙の基礎語。" }],
-  // job (10465)
-  [10465, { coreImage: "仕事・職業としての役割を示す名詞がコアイメージ。", usage: "「have a job」「good job（よくやった）」で多用。", synonymDifference: "job vs work: job は職務単位、work は労働全般。", englishDefinition: "A person's regular work or task.", etymology: "職業語彙の基礎語。" }],
-  // doctor (10466)
-  [10466, { coreImage: "診療を行う医者という職業名がコアイメージ。", usage: "「see a doctor」が定型。", synonymDifference: "doctor vs nurse: doctor は診断治療、nurse は看護。", englishDefinition: "A person qualified to treat illness.", etymology: "職業語彙の基礎語。" }],
-  // nurse (10467)
-  [10467, { coreImage: "患者を看護する看護師職がコアイメージ。", usage: "「a nurse in a hospital」で使う。", synonymDifference: "nurse vs doctor: nurse は看護中心、doctor は診断治療中心。", englishDefinition: "A healthcare professional who cares for patients.", etymology: "職業語彙の基礎語。" }],
-  // pilot (10468)
-  [10468, { coreImage: "飛行機を操縦する職業人を示す名詞がコアイメージ。", usage: "「an airline pilot」で使う。", synonymDifference: "pilot vs driver: pilot は航空機、driver は車両。", englishDefinition: "A person who flies an aircraft.", etymology: "職業語彙の基礎語。" }],
-  // police (10469)
-  [10469, { coreImage: "治安を守る警察組織・警察官集合を示す名詞がコアイメージ。", usage: "通常集合名詞として使う。", synonymDifference: "police vs officer: officer は個々の警察官。", englishDefinition: "The organization responsible for law and order.", etymology: "公共職務語彙の基礎語。" }],
-  // king (10470)
-  [10470, { coreImage: "王国の男性君主を示す名詞がコアイメージ。", usage: "歴史・物語文脈で頻出。", synonymDifference: "king vs prince: king は君主、prince は王子。", englishDefinition: "A male ruler of a country.", etymology: "人物語彙の基礎語。" }],
-  // queen (10471)
-  [10471, { pronunciation: { us: "/læst/", uk: "/lɑːst/" }, coreImage: "女王という女性君主を示す名詞がコアイメージ。", usage: "king と対で覚える。", synonymDifference: "queen vs princess: queen は君主、princess は王女。", englishDefinition: "A female ruler of a country.", etymology: "人物語彙の基礎語。" }],
-  // princess (10472)
-  [10472, { coreImage: "王女・お姫様を示す名詞がコアイメージ。", usage: "物語語彙として子ども向け文脈で高頻度。", synonymDifference: "princess vs queen: princess は王女、queen は女王。", englishDefinition: "A daughter of a king or queen.", etymology: "人物語彙の基礎語。" }],
-  // hero (10473)
-  [10473, { coreImage: "勇敢な行動で称賛される人物像がコアイメージ。", usage: "物語・スポーツ文脈でも使う。", synonymDifference: "hero vs star: hero は行為評価、star は人気評価。", englishDefinition: "A person admired for bravery or great deeds.", etymology: "人物評価語彙の基礎語。" }],
-  // math (10474)
-  [10474, { coreImage: "数学という教科・学問領域がコアイメージ。", usage: "米語 math / 英語 maths の差がある。", synonymDifference: "math vs science: 教科分野が異なる。", englishDefinition: "The study of numbers, shapes, and patterns.", etymology: "教科語彙の基礎語。" }],
-  // science (10475)
-  [10475, { coreImage: "自然現象を扱う理科・科学領域がコアイメージ。", usage: "学校教科と学問分野の両方で使う。", synonymDifference: "science vs art: 分野が異なる学習領域。", englishDefinition: "The study of the natural world.", etymology: "教科語彙の基礎語。" }],
+  // place (24481)
+  [24481, { coreImage: "場所・空間を示す汎用名詞がコアイメージ。", usage: "「this place」「a good place to ...」で使う。", synonymDifference: "place vs location: location の方が位置情報として形式的。", englishDefinition: "A particular position or area.", etymology: "位置語彙の基礎語。" }],
+  // way (23647)
+  [23647, { coreImage: "道、または方法を示す多義名詞がコアイメージ。", usage: "「the way to school」「a way to do」で使う。", synonymDifference: "way vs road: way は方法義も持つ。", englishDefinition: "A route; also a method.", etymology: "高頻度多義名詞。" }],
+  // part (26641)
+  [26641, { coreImage: "全体の一部、または役割を示す名詞がコアイメージ。", usage: "「part of ...」「play a part」で使う。", synonymDifference: "part vs piece: piece は分割片、part は機能的部分にも使う。", englishDefinition: "A section of a whole; a role.", etymology: "構成語彙の基礎語。" }],
+  // example (23949)
+  [23949, { coreImage: "理解のために示す具体例がコアイメージ。", usage: "「for example」「an example of ...」で頻出。", synonymDifference: "example vs sample: sample は見本物体の意味が強い。", englishDefinition: "A specific case used to explain something.", etymology: "説明語彙の基礎語。" }],
+  // life (23643)
+  [23643, { coreImage: "人生や生活全体を示す名詞がコアイメージ。", usage: "「my life」「school life」で使う。", synonymDifference: "life vs living: life は名詞中心、living は生活様式にも使う。", englishDefinition: "A person's existence and way of living.", etymology: "抽象基礎語彙。" }],
+  // dream (23673)
+  [23673, { coreImage: "睡眠中の夢、または将来の夢を示す名詞がコアイメージ。", usage: "文脈で睡眠義と目標義を判別。", synonymDifference: "dream vs goal: dream は願望、goal は具体目標。", englishDefinition: "A series of images during sleep; also a strong wish.", etymology: "抽象語彙の基礎語。" }],
+  // future (24251)
+  [24251, { coreImage: "これから先の時間・将来を示す名詞がコアイメージ。", usage: "「in the future」「future plan」で使う。", synonymDifference: "future vs tomorrow: future は広い将来、tomorrow は明日。", englishDefinition: "The time that is to come.", etymology: "時間概念語彙の基礎語。" }],
+  // plan (24494)
+  [24494, { coreImage: "事前に決める計画・予定がコアイメージ。", usage: "名詞/動詞の両用があるが初級では名詞中心。", synonymDifference: "plan vs schedule: plan は計画内容、schedule は時刻表。", englishDefinition: "A set of intended actions for the future.", etymology: "計画語彙の基礎語。" }],
+  // job (23123)
+  [23123, { coreImage: "仕事・職業としての役割を示す名詞がコアイメージ。", usage: "「have a job」「good job（よくやった）」で多用。", synonymDifference: "job vs work: job は職務単位、work は労働全般。", englishDefinition: "A person's regular work or task.", etymology: "職業語彙の基礎語。" }],
+  // doctor (23172)
+  [23172, { coreImage: "診療を行う医者という職業名がコアイメージ。", usage: "「see a doctor」が定型。", synonymDifference: "doctor vs nurse: doctor は診断治療、nurse は看護。", englishDefinition: "A person qualified to treat illness.", etymology: "職業語彙の基礎語。" }],
+  // nurse (23235)
+  [23235, { coreImage: "患者を看護する看護師職がコアイメージ。", usage: "「a nurse in a hospital」で使う。", synonymDifference: "nurse vs doctor: nurse は看護中心、doctor は診断治療中心。", englishDefinition: "A healthcare professional who cares for patients.", etymology: "職業語彙の基礎語。" }],
+  // pilot (23247)
+  [23247, { coreImage: "飛行機を操縦する職業人を示す名詞がコアイメージ。", usage: "「an airline pilot」で使う。", synonymDifference: "pilot vs driver: pilot は航空機、driver は車両。", englishDefinition: "A person who flies an aircraft.", etymology: "職業語彙の基礎語。" }],
+  // police (23252)
+  [23252, { coreImage: "治安を守る警察組織・警察官集合を示す名詞がコアイメージ。", usage: "通常集合名詞として使う。", synonymDifference: "police vs officer: officer は個々の警察官。", englishDefinition: "The organization responsible for law and order.", etymology: "公共職務語彙の基礎語。" }],
+  // king (23196)
+  [23196, { coreImage: "王国の男性君主を示す名詞がコアイメージ。", usage: "歴史・物語文脈で頻出。", synonymDifference: "king vs prince: king は君主、prince は王子。", englishDefinition: "A male ruler of a country.", etymology: "人物語彙の基礎語。" }],
+  // queen (23260)
+  [23260, { pronunciation: { us: "/læst/", uk: "/lɑːst/" }, coreImage: "女王という女性君主を示す名詞がコアイメージ。", usage: "king と対で覚える。", synonymDifference: "queen vs princess: queen は君主、princess は王女。", englishDefinition: "A female ruler of a country.", etymology: "人物語彙の基礎語。" }],
+  // princess (24064)
+  [24064, { coreImage: "王女・お姫様を示す名詞がコアイメージ。", usage: "物語語彙として子ども向け文脈で高頻度。", synonymDifference: "princess vs queen: princess は王女、queen は女王。", englishDefinition: "A daughter of a king or queen.", etymology: "人物語彙の基礎語。" }],
+  // hero (23981)
+  [23981, { coreImage: "勇敢な行動で称賛される人物像がコアイメージ。", usage: "物語・スポーツ文脈でも使う。", synonymDifference: "hero vs star: hero は行為評価、star は人気評価。", englishDefinition: "A person admired for bravery or great deeds.", etymology: "人物評価語彙の基礎語。" }],
+  // math (23128)
+  [23128, { coreImage: "数学という教科・学問領域がコアイメージ。", usage: "米語 math / 英語 maths の差がある。", synonymDifference: "math vs science: 教科分野が異なる。", englishDefinition: "The study of numbers, shapes, and patterns.", etymology: "教科語彙の基礎語。" }],
+  // science (23277)
+  [23277, { coreImage: "自然現象を扱う理科・科学領域がコアイメージ。", usage: "学校教科と学問分野の両方で使う。", synonymDifference: "science vs art: 分野が異なる学習領域。", englishDefinition: "The study of the natural world.", etymology: "教科語彙の基礎語。" }],
   // history (10476)
   [10476, { coreImage: "過去の出来事の連なりを示す歴史がコアイメージ。", usage: "教科名としても一般名詞としても使う。", synonymDifference: "history vs story: history は事実の過去、story は物語。", englishDefinition: "The study or record of past events.", etymology: "教科語彙の基礎語。" }],
-  // art (10477)
-  [10477, { coreImage: "美術・芸術表現全般を示す名詞がコアイメージ。", usage: "「art class」「modern art」で使う。", synonymDifference: "art vs craft: art は芸術表現、craft は手工芸技能。", englishDefinition: "Creative expression such as painting and sculpture.", etymology: "教科・文化語彙の基礎語。" }],
-  // subject (10478)
-  [10478, { coreImage: "学校で学ぶ科目、または話題対象を示す多義名詞がコアイメージ。", usage: "初級では教科義を優先して学ぶ。", synonymDifference: "subject vs topic: topic は話題、subject は教科義も強い。", englishDefinition: "A topic of study in school; also a topic.", etymology: "学習語彙の基礎多義語。" }],
-  // homework (10479)
-  [10479, { coreImage: "家で行う課題としての宿題がコアイメージ。", usage: "通常不可算で do homework が定型。", synonymDifference: "homework vs housework: homework は学習課題、housework は家事。", englishDefinition: "School work to be done at home.", etymology: "学習語彙の基礎語。" }],
-  // language (10480)
-  [10480, { coreImage: "言語システムや言葉を示す名詞がコアイメージ。", usage: "「English language」「body language」で使う。", synonymDifference: "language vs word: language は体系、word は単語。", englishDefinition: "A system of communication using words.", etymology: "言語語彙の基礎語。" }],
-  // word (10481)
-  [10481, { coreImage: "意味を持つ最小単位としての単語がコアイメージ。", usage: "「new word」「in other words」で使う。", synonymDifference: "word vs sentence: word は単語、sentence は文。", englishDefinition: "A single unit of language with meaning.", etymology: "言語語彙の基礎語。" }],
-  // voice (10482)
-  [10482, { coreImage: "人が発する声そのものを示す名詞がコアイメージ。", usage: "「loud voice」「voice message」で使う。", synonymDifference: "voice vs sound: voice は人の声、sound は音一般。", englishDefinition: "The sound made when a person speaks or sings.", etymology: "音声語彙の基礎語。" }],
-  // sound (10483)
-  [10483, { coreImage: "耳に届く音全般を示す名詞がコアイメージ。", usage: "名詞/動詞の両用だが初級は名詞中心。", synonymDifference: "sound vs noise: sound は中立、noise は騒音寄り。", englishDefinition: "Something you hear.", etymology: "聴覚語彙の基礎語。" }],
-  // chance (10485)
-  [10485, { coreImage: "機会、または可能性を示す名詞がコアイメージ。", usage: "「a chance to do」「by chance」で使う。", synonymDifference: "chance vs opportunity: opportunity の方が計画的好機の響き。", englishDefinition: "An opportunity or possibility.", etymology: "抽象語彙の基礎語。" }],
+  // art (23394)
+  [23394, { coreImage: "美術・芸術表現全般を示す名詞がコアイメージ。", usage: "「art class」「modern art」で使う。", synonymDifference: "art vs craft: art は芸術表現、craft は手工芸技能。", englishDefinition: "Creative expression such as painting and sculpture.", etymology: "教科・文化語彙の基礎語。" }],
+  // subject (23591)
+  [23591, { coreImage: "学校で学ぶ科目、または話題対象を示す多義名詞がコアイメージ。", usage: "初級では教科義を優先して学ぶ。", synonymDifference: "subject vs topic: topic は話題、subject は教科義も強い。", englishDefinition: "A topic of study in school; also a topic.", etymology: "学習語彙の基礎多義語。" }],
+  // homework (23189)
+  [23189, { coreImage: "家で行う課題としての宿題がコアイメージ。", usage: "通常不可算で do homework が定型。", synonymDifference: "homework vs housework: homework は学習課題、housework は家事。", englishDefinition: "School work to be done at home.", etymology: "学習語彙の基礎語。" }],
+  // language (24420)
+  [24420, { coreImage: "言語システムや言葉を示す名詞がコアイメージ。", usage: "「English language」「body language」で使う。", synonymDifference: "language vs word: language は体系、word は単語。", englishDefinition: "A system of communication using words.", etymology: "言語語彙の基礎語。" }],
+  // word (23387)
+  [23387, { coreImage: "意味を持つ最小単位としての単語がコアイメージ。", usage: "「new word」「in other words」で使う。", synonymDifference: "word vs sentence: word は単語、sentence は文。", englishDefinition: "A single unit of language with meaning.", etymology: "言語語彙の基礎語。" }],
+  // voice (23373)
+  [23373, { coreImage: "人が発する声そのものを示す名詞がコアイメージ。", usage: "「loud voice」「voice message」で使う。", synonymDifference: "voice vs sound: voice は人の声、sound は音一般。", englishDefinition: "The sound made when a person speaks or sings.", etymology: "音声語彙の基礎語。" }],
+  // sound (23749)
+  [23749, { coreImage: "耳に届く音全般を示す名詞がコアイメージ。", usage: "名詞/動詞の両用だが初級は名詞中心。", synonymDifference: "sound vs noise: sound は中立、noise は騒音寄り。", englishDefinition: "Something you hear.", etymology: "聴覚語彙の基礎語。" }],
+  // chance (23908)
+  [23908, { coreImage: "機会、または可能性を示す名詞がコアイメージ。", usage: "「a chance to do」「by chance」で使う。", synonymDifference: "chance vs opportunity: opportunity の方が計画的好機の響き。", englishDefinition: "An opportunity or possibility.", etymology: "抽象語彙の基礎語。" }],
   // today (11991)
   [11991, { coreImage: "現在の日を指す時間名詞/副詞がコアイメージ。", usage: "名詞・副詞の両用（Today is ... / I go today）。", synonymDifference: "today vs now: today は日単位、now は時点。", englishDefinition: "The present day.", etymology: "時間語彙の基礎語。" }],
   // yesterday (11992)
   [11992, { coreImage: "今日の前の日を示す時間語がコアイメージ。", usage: "過去時制文で頻出。", synonymDifference: "yesterday vs last night: yesterday は日全体、last night は昨夜。", englishDefinition: "The day before today.", etymology: "時間語彙の基礎語。" }],
-  // tomorrow (12006)
-  [12006, { coreImage: "今日の次の日を示す時間語がコアイメージ。", usage: "未来予定表現で頻出。", synonymDifference: "tomorrow vs next day: tomorrow は話し手基準の翌日。", englishDefinition: "The day after today.", etymology: "時間語彙の基礎語。" }],
-  // week (12007)
-  [12007, { coreImage: "7日間の時間単位を示す名詞がコアイメージ。", usage: "「this week」「next week」で高頻度。", synonymDifference: "week vs weekend: week は7日、weekend は週末。", englishDefinition: "A period of seven days.", etymology: "時間単位語彙の基礎語。" }],
-  // month (12014)
-  [12014, { coreImage: "約1か月の時間単位を示す名詞がコアイメージ。", usage: "「last month」「every month」で使う。", synonymDifference: "month vs year: month は12分の1年。", englishDefinition: "One of the twelve parts of a year.", etymology: "時間単位語彙の基礎語。" }],
-  // color (12015)
-  [12015, { coreImage: "色という視覚的属性を示す名詞がコアイメージ。", usage: "米語 color / 英語 colour の綴り差がある。", synonymDifference: "color vs shade: shade は色調の細かな差。", englishDefinition: "The appearance of things caused by reflected light.", etymology: "視覚語彙の基礎語。" }],
-  // number (12016)
-  [12016, { coreImage: "数や番号を示す名詞がコアイメージ。", usage: "「phone number」「a large number of ...」で使う。", synonymDifference: "number vs amount: number は可算、amount は不可算量。", englishDefinition: "A figure showing quantity or order.", etymology: "数概念語彙の基礎語。" }],
-  // weather (12019)
-  [12019, { coreImage: "その時々の天気状態を示す名詞がコアイメージ。", usage: "通常不可算で「nice weather」。", synonymDifference: "weather vs climate: weather は短期、climate は長期傾向。", englishDefinition: "The condition of the atmosphere at a time.", etymology: "天候語彙の基礎語。" }],
-  // rain (12012)
-  [12012, { coreImage: "雨（名詞）と雨が降る（動詞）の核義がコアイメージ。", usage: "名詞「heavy rain」、動詞「It rains.」で使う。", synonymDifference: "rain vs snow: 降るものが液体か氷結晶かで異なる。", englishDefinition: "Water drops falling from clouds; to fall as rain.", etymology: "天候語彙の基礎多義語。" }],
-  // sunny (12000)
-  [12000, { coreImage: "日差しが出て晴れている状態がコアイメージ。", usage: "「sunny day」「It is sunny.」で使う。", synonymDifference: "sunny vs bright: sunny は天気、bright は明るさ全般。", englishDefinition: "Bright with sunshine.", etymology: "sun + -y の形容化。" }],
-  // study (12001)
-  [12001, { coreImage: "学習して知識を得る行為がコアイメージ。", usage: "「study English」「study for a test」で使う。", synonymDifference: "study vs learn: study は行為、learn は習得結果。", englishDefinition: "To spend time learning.", etymology: "学習動詞の基礎語。" }],
-  // answer (12002)
-  [12002, { coreImage: "答え（名詞）と答える（動詞）の授受がコアイメージ。", usage: "「answer a question」「the right answer」で使う。", synonymDifference: "answer vs reply: reply は応答一般、answer は質問への答えが中心。", englishDefinition: "A response; to respond to a question.", etymology: "会話語彙の基礎多義語。" }],
-  // question (12003)
-  [12003, { coreImage: "知りたい内容を問う質問がコアイメージ。", usage: "「ask a question」が定型。", synonymDifference: "question vs problem: question は問い、problem は課題。", englishDefinition: "A sentence asking for information.", etymology: "会話語彙の基礎語。" }],
-  // sport (12004)
-  [12004, { coreImage: "身体活動を伴う競技全般を示す名詞がコアイメージ。", usage: "不可算的に「play sport(s)」で使う。", synonymDifference: "sport vs game: sport は競技分野、game は個別試合。", englishDefinition: "Physical activity done for fun or competition.", etymology: "競技語彙の基礎語。" }],
-  // large (12018)
-  [12018, { coreImage: "大きいサイズをやや形式的に示す形容がコアイメージ。", usage: "big のフォーマル寄り同義として使う。", synonymDifference: "large vs big: 意味は近く large がやや形式的。", englishDefinition: "Big in size or amount.", etymology: "サイズ形容詞の基礎語。" }],
-  // afternoon (11986)
-  [11986, { coreImage: "昼から夕方までの午後時間帯がコアイメージ。", usage: "「in the afternoon」「Good afternoon」で使う。", synonymDifference: "afternoon vs evening: afternoon は昼後、evening は日没前後。", englishDefinition: "The part of the day after noon.", etymology: "時間語彙の基礎語。" }],
-  // evening (11987)
-  [11987, { coreImage: "夕方から夜前までの時間帯がコアイメージ。", usage: "「in the evening」「good evening」で使う。", synonymDifference: "evening vs night: evening は夜の早い時間帯。", englishDefinition: "The period from late afternoon to night.", etymology: "時間語彙の基礎語。" }],
+  // tomorrow (23354)
+  [23354, { coreImage: "今日の次の日を示す時間語がコアイメージ。", usage: "未来予定表現で頻出。", synonymDifference: "tomorrow vs next day: tomorrow は話し手基準の翌日。", englishDefinition: "The day after today.", etymology: "時間語彙の基礎語。" }],
+  // week (23379)
+  [23379, { coreImage: "7日間の時間単位を示す名詞がコアイメージ。", usage: "「this week」「next week」で高頻度。", synonymDifference: "week vs weekend: week は7日、weekend は週末。", englishDefinition: "A period of seven days.", etymology: "時間単位語彙の基礎語。" }],
+  // month (23130)
+  [23130, { coreImage: "約1か月の時間単位を示す名詞がコアイメージ。", usage: "「last month」「every month」で使う。", synonymDifference: "month vs year: month は12分の1年。", englishDefinition: "One of the twelve parts of a year.", etymology: "時間単位語彙の基礎語。" }],
+  // color (23171)
+  [23171, { coreImage: "色という視覚的属性を示す名詞がコアイメージ。", usage: "米語 color / 英語 colour の綴り差がある。", synonymDifference: "color vs shade: shade は色調の細かな差。", englishDefinition: "The appearance of things caused by reflected light.", etymology: "視覚語彙の基礎語。" }],
+  // number (23233)
+  [23233, { coreImage: "数や番号を示す名詞がコアイメージ。", usage: "「phone number」「a large number of ...」で使う。", synonymDifference: "number vs amount: number は可算、amount は不可算量。", englishDefinition: "A figure showing quantity or order.", etymology: "数概念語彙の基礎語。" }],
+  // weather (23378)
+  [23378, { coreImage: "その時々の天気状態を示す名詞がコアイメージ。", usage: "通常不可算で「nice weather」。", synonymDifference: "weather vs climate: weather は短期、climate は長期傾向。", englishDefinition: "The condition of the atmosphere at a time.", etymology: "天候語彙の基礎語。" }],
+  // rain (23265)
+  [23265, { coreImage: "雨（名詞）と雨が降る（動詞）の核義がコアイメージ。", usage: "名詞「heavy rain」、動詞「It rains.」で使う。", synonymDifference: "rain vs snow: 降るものが液体か氷結晶かで異なる。", englishDefinition: "Water drops falling from clouds; to fall as rain.", etymology: "天候語彙の基礎多義語。" }],
+  // sunny (23630)
+  [23630, { coreImage: "日差しが出て晴れている状態がコアイメージ。", usage: "「sunny day」「It is sunny.」で使う。", synonymDifference: "sunny vs bright: sunny は天気、bright は明るさ全般。", englishDefinition: "Bright with sunshine.", etymology: "sun + -y の形容化。" }],
+  // study (24477)
+  [24477, { coreImage: "学習して知識を得る行為がコアイメージ。", usage: "「study English」「study for a test」で使う。", synonymDifference: "study vs learn: study は行為、learn は習得結果。", englishDefinition: "To spend time learning.", etymology: "学習動詞の基礎語。" }],
+  // answer (23676)
+  [23676, { coreImage: "答え（名詞）と答える（動詞）の授受がコアイメージ。", usage: "「answer a question」「the right answer」で使う。", synonymDifference: "answer vs reply: reply は応答一般、answer は質問への答えが中心。", englishDefinition: "A response; to respond to a question.", etymology: "会話語彙の基礎多義語。" }],
+  // question (24483)
+  [24483, { coreImage: "知りたい内容を問う質問がコアイメージ。", usage: "「ask a question」が定型。", synonymDifference: "question vs problem: question は問い、problem は課題。", englishDefinition: "A sentence asking for information.", etymology: "会話語彙の基礎語。" }],
+  // sport (23292)
+  [23292, { coreImage: "身体活動を伴う競技全般を示す名詞がコアイメージ。", usage: "不可算的に「play sport(s)」で使う。", synonymDifference: "sport vs game: sport は競技分野、game は個別試合。", englishDefinition: "Physical activity done for fun or competition.", etymology: "競技語彙の基礎語。" }],
+  // large (24270)
+  [24270, { coreImage: "大きいサイズをやや形式的に示す形容がコアイメージ。", usage: "big のフォーマル寄り同義として使う。", synonymDifference: "large vs big: 意味は近く large がやや形式的。", englishDefinition: "Big in size or amount.", etymology: "サイズ形容詞の基礎語。" }],
+  // afternoon (23392)
+  [23392, { coreImage: "昼から夕方までの午後時間帯がコアイメージ。", usage: "「in the afternoon」「Good afternoon」で使う。", synonymDifference: "afternoon vs evening: afternoon は昼後、evening は日没前後。", englishDefinition: "The part of the day after noon.", etymology: "時間語彙の基礎語。" }],
+  // evening (23176)
+  [23176, { coreImage: "夕方から夜前までの時間帯がコアイメージ。", usage: "「in the evening」「good evening」で使う。", synonymDifference: "evening vs night: evening は夜の早い時間帯。", englishDefinition: "The period from late afternoon to night.", etymology: "時間語彙の基礎語。" }],
   // bedroom (11988)
   [11988, { coreImage: "寝るための部屋（寝室）を示す名詞がコアイメージ。", usage: "「my bedroom」「bedroom door」で使う。", synonymDifference: "bedroom vs living room: 用途が異なる部屋名。", englishDefinition: "A room used for sleeping.", etymology: "bed + room の合成語。" }],
-  // market (11989)
-  [11989, { coreImage: "市場や販売の場を示す名詞がコアイメージ。", usage: "「supermarket」「local market」で使う。", synonymDifference: "market vs store: market は市場概念、store は個店。", englishDefinition: "A place where goods are bought and sold.", etymology: "買い物語彙の基礎語。" }],
+  // market (24015)
+  [24015, { coreImage: "市場や販売の場を示す名詞がコアイメージ。", usage: "「supermarket」「local market」で使う。", synonymDifference: "market vs store: market は市場概念、store は個店。", englishDefinition: "A place where goods are bought and sold.", etymology: "買い物語彙の基礎語。" }],
   // wallet (11990)
   [11990, { coreImage: "お金やカードを入れる財布がコアイメージ。", usage: "可算で「a wallet」「my wallet」。", synonymDifference: "wallet vs purse: 地域で使い分けが異なる場合がある。", englishDefinition: "A small case for money and cards.", etymology: "日用品語彙の基礎語。" }],
   // borrowed (11991)
   [11991, { coreImage: "借りた状態を示す過去分詞形容がコアイメージ。", usage: "「a borrowed book」で受動状態を示す。", synonymDifference: "borrowed vs lent: borrowed は借りた側、lent は貸した側。", englishDefinition: "Taken temporarily from someone else.", etymology: "borrow の過去分詞形容。" }],
-  // carefully (11992)
-  [11992, { coreImage: "注意深く丁寧に行う様子を示す副詞がコアイメージ。", usage: "「read carefully」「drive carefully」で使う。", synonymDifference: "carefully vs slowly: carefully は注意性、slowly は速度。", englishDefinition: "In a cautious and attentive way.", etymology: "careful + -ly。" }],
-  // village (12006)
-  [12006, { coreImage: "小規模な集落としての村がコアイメージ。", usage: "「small village」「village life」で使う。", synonymDifference: "village vs town: village の方が一般に小さい。", englishDefinition: "A small community in the countryside.", etymology: "地理語彙の基礎語。" }],
-  // cleaner (12007)
-  [12007, { coreImage: "clean の比較級として「よりきれいな」状態がコアイメージ。", usage: "A is cleaner than B の比較で使う。", synonymDifference: "cleaner vs cleanest: cleaner は2者比較、cleanest は最上級。", englishDefinition: "More clean.", etymology: "clean の比較級。" }],
+  // carefully (24359)
+  [24359, { coreImage: "注意深く丁寧に行う様子を示す副詞がコアイメージ。", usage: "「read carefully」「drive carefully」で使う。", synonymDifference: "carefully vs slowly: carefully は注意性、slowly は速度。", englishDefinition: "In a cautious and attentive way.", etymology: "careful + -ly。" }],
+  // village (24168)
+  [24168, { coreImage: "小規模な集落としての村がコアイメージ。", usage: "「small village」「village life」で使う。", synonymDifference: "village vs town: village の方が一般に小さい。", englishDefinition: "A small community in the countryside.", etymology: "地理語彙の基礎語。" }],
+  // cleaner (25673)
+  [25673, { coreImage: "clean の比較級として「よりきれいな」状態がコアイメージ。", usage: "A is cleaner than B の比較で使う。", synonymDifference: "cleaner vs cleanest: cleaner は2者比較、cleanest は最上級。", englishDefinition: "More clean.", etymology: "clean の比較級。" }],
   // warmer (12014)
   [12014, { coreImage: "warm の比較級として「より暖かい」状態がコアイメージ。", usage: "warmer than で比較表現に使う。", synonymDifference: "warmer vs warmest: warmer は比較級、warmest は最上級。", englishDefinition: "More warm.", etymology: "warm の比較級。" }],
-  // phone (12015)
-  [12015, { coreImage: "電話機、または電話する行為を示す語がコアイメージ。", usage: "名詞「my phone」、動詞「phone me」で使える。", synonymDifference: "phone vs telephone: phone は短縮で口語的。", englishDefinition: "A device for calling; also to call someone.", etymology: "telephone の短縮形。" }],
-  // pocket (12016)
-  [12016, { coreImage: "服についた小さな収納部ポケットがコアイメージ。", usage: "「in my pocket」「pocket money」で使う。", synonymDifference: "pocket vs bag: pocket は衣服一体、bag は独立容器。", englishDefinition: "A small sewn-in pouch in clothing.", etymology: "衣服語彙の基礎語。" }],
-  // soon (12019)
-  [12019, { coreImage: "遠くない未来にすぐ起こる時期を示す副詞がコアイメージ。", usage: "「see you soon」「come soon」で使う。", synonymDifference: "soon vs early: soon は近未来、early は基準より早い。", englishDefinition: "In a short time from now.", etymology: "時間副詞の基礎語。" }],
-  // transport (12012)
-  [12012, { coreImage: "運ぶ行為（動詞）や輸送手段（名詞）を示す語がコアイメージ。", usage: "初級では動詞「transport goods」を中心に学ぶ。", synonymDifference: "transport vs carry: transport は体系的輸送、carry は手で運ぶ動作。", englishDefinition: "To move people or goods from one place to another.", etymology: "移送語彙の基礎多義語。" }],
-  // radio (12000)
-  [12000, { coreImage: "ラジオ機器、または放送媒体を示す名詞がコアイメージ。", usage: "「listen to the radio」「radio station」で使う。", synonymDifference: "radio vs TV: 媒体が音声中心か映像中心かで異なる。", englishDefinition: "A device or system for receiving audio broadcasts.", etymology: "メディア語彙の基礎語。" }],
-  // bench (12001)
-  [12001, { coreImage: "複数人が座れる長椅子を示す名詞がコアイメージ。", usage: "「sit on a bench」で使う。", synonymDifference: "bench vs chair: bench は長椅子、chair は一人用椅子。", englishDefinition: "A long seat for several people.", etymology: "家具語彙の基礎語。" }],
-  // care (12002)
-  [12002, { coreImage: "気にかける・世話する行為を示す動詞がコアイメージ。", usage: "「care about ...」「take care of ...」で使う。", synonymDifference: "care vs mind: care は関心・配慮、mind は気にする/嫌がる文脈が多い。", englishDefinition: "To be concerned about; to look after.", etymology: "感情・配慮動詞の基礎語。" }],
-  // apron (12003)
-  [12003, { coreImage: "衣服の前面を守るエプロンがコアイメージ。", usage: "「wear an apron while cooking」で使う。", synonymDifference: "apron vs coat: apron は保護用前掛け。", englishDefinition: "A protective garment worn over clothes.", etymology: "生活語彙の基礎語。" }],
+  // phone (23242)
+  [23242, { coreImage: "電話機、または電話する行為を示す語がコアイメージ。", usage: "名詞「my phone」、動詞「phone me」で使える。", synonymDifference: "phone vs telephone: phone は短縮で口語的。", englishDefinition: "A device for calling; also to call someone.", etymology: "telephone の短縮形。" }],
+  // pocket (23251)
+  [23251, { coreImage: "服についた小さな収納部ポケットがコアイメージ。", usage: "「in my pocket」「pocket money」で使う。", synonymDifference: "pocket vs bag: pocket は衣服一体、bag は独立容器。", englishDefinition: "A small sewn-in pouch in clothing.", etymology: "衣服語彙の基礎語。" }],
+  // soon (24399)
+  [24399, { coreImage: "遠くない未来にすぐ起こる時期を示す副詞がコアイメージ。", usage: "「see you soon」「come soon」で使う。", synonymDifference: "soon vs early: soon は近未来、early は基準より早い。", englishDefinition: "In a short time from now.", etymology: "時間副詞の基礎語。" }],
+  // transport (25336)
+  [25336, { coreImage: "運ぶ行為（動詞）や輸送手段（名詞）を示す語がコアイメージ。", usage: "初級では動詞「transport goods」を中心に学ぶ。", synonymDifference: "transport vs carry: transport は体系的輸送、carry は手で運ぶ動作。", englishDefinition: "To move people or goods from one place to another.", etymology: "移送語彙の基礎多義語。" }],
+  // radio (23264)
+  [23264, { coreImage: "ラジオ機器、または放送媒体を示す名詞がコアイメージ。", usage: "「listen to the radio」「radio station」で使う。", synonymDifference: "radio vs TV: 媒体が音声中心か映像中心かで異なる。", englishDefinition: "A device or system for receiving audio broadcasts.", etymology: "メディア語彙の基礎語。" }],
+  // bench (23402)
+  [23402, { coreImage: "複数人が座れる長椅子を示す名詞がコアイメージ。", usage: "「sit on a bench」で使う。", synonymDifference: "bench vs chair: bench は長椅子、chair は一人用椅子。", englishDefinition: "A long seat for several people.", etymology: "家具語彙の基礎語。" }],
+  // care (24640)
+  [24640, { coreImage: "気にかける・世話する行為を示す動詞がコアイメージ。", usage: "「care about ...」「take care of ...」で使う。", synonymDifference: "care vs mind: care は関心・配慮、mind は気にする/嫌がる文脈が多い。", englishDefinition: "To be concerned about; to look after.", etymology: "感情・配慮動詞の基礎語。" }],
+  // apron (31273)
+  [31273, { coreImage: "衣服の前面を守るエプロンがコアイメージ。", usage: "「wear an apron while cooking」で使う。", synonymDifference: "apron vs coat: apron は保護用前掛け。", englishDefinition: "A protective garment worn over clothes.", etymology: "生活語彙の基礎語。" }],
   // bucket (12004)
   [12004, { coreImage: "液体や物を入れる取っ手付き容器がコアイメージ。", usage: "可算で「a bucket of water」。", synonymDifference: "bucket vs bottle: bucket は開口が大きい容器。", englishDefinition: "A round open container with a handle.", etymology: "日用品語彙の基礎語。" }],
-  // carpet (12018)
-  [12018, { coreImage: "床に敷くじゅうたんを示す名詞がコアイメージ。", usage: "「on the carpet」「carpet floor」で使う。", synonymDifference: "carpet vs rug: rug は可搬の小型敷物が多い。", englishDefinition: "A thick floor covering made of fabric.", etymology: "住居語彙の基礎語。" }],
+  // carpet (23903)
+  [23903, { coreImage: "床に敷くじゅうたんを示す名詞がコアイメージ。", usage: "「on the carpet」「carpet floor」で使う。", synonymDifference: "carpet vs rug: rug は可搬の小型敷物が多い。", englishDefinition: "A thick floor covering made of fabric.", etymology: "住居語彙の基礎語。" }],
   // closet (11986)
   [11986, { coreImage: "衣類等を収納するクローゼット空間がコアイメージ。", usage: "米語で closet、英語で wardrobe も用いる。", synonymDifference: "closet vs cupboard: closet は主に衣類収納、cupboard は食器棚。", englishDefinition: "A small storage space for clothes or items.", etymology: "住居語彙の基礎語。" }],
-  // dollar (11987)
-  [11987, { coreImage: "ドルという通貨単位を示す名詞がコアイメージ。", usage: "数値とともに「ten dollars」で使う。", synonymDifference: "dollar vs cent: dollar は主単位、cent は補助単位。", englishDefinition: "A unit of money used in several countries.", etymology: "通貨語彙の基礎語。" }],
-  // drawer (11988)
-  [11988, { coreImage: "机や家具の引き出し部分を示す名詞がコアイメージ。", usage: "「open the drawer」で使う。", synonymDifference: "drawer vs shelf: drawer は引き出す収納、shelf は棚板。", englishDefinition: "A sliding box-like storage part in furniture.", etymology: "家具語彙の基礎語。" }],
-  // garage (11989)
-  [11989, { coreImage: "車を入れるガレージ空間がコアイメージ。", usage: "「park in the garage」で使う。", synonymDifference: "garage vs parking lot: garage は建物内保管、parking lot は駐車場。", englishDefinition: "A building or space for keeping a car.", etymology: "住居語彙の基礎語。" }],
-  // glove (11990)
-  [11990, { coreImage: "手にはめる手袋を示す名詞がコアイメージ。", usage: "通常複数で gloves を使うことが多い。", synonymDifference: "glove vs mitten: mitten は指をまとめる手袋。", englishDefinition: "A covering for the hand.", etymology: "衣類語彙の基礎語。" }],
-  // hammer (11991)
-  [11991, { coreImage: "打つための工具かなづちを示す名詞がコアイメージ。", usage: "「use a hammer」で使う。", synonymDifference: "hammer vs mallet: mallet は木槌で用途が異なる。", englishDefinition: "A tool used for hitting nails.", etymology: "工具語彙の基礎語。" }],
-  // jar (11992)
-  [11992, { coreImage: "口の広いびん容器を示す名詞がコアイメージ。", usage: "「a jar of jam」で使う。", synonymDifference: "jar vs bottle: jar は広口、bottle は細口。", englishDefinition: "A wide-mouthed container, usually made of glass.", etymology: "容器語彙の基礎語。" }],
+  // dollar (23938)
+  [23938, { coreImage: "ドルという通貨単位を示す名詞がコアイメージ。", usage: "数値とともに「ten dollars」で使う。", synonymDifference: "dollar vs cent: dollar は主単位、cent は補助単位。", englishDefinition: "A unit of money used in several countries.", etymology: "通貨語彙の基礎語。" }],
+  // drawer (26021)
+  [26021, { coreImage: "机や家具の引き出し部分を示す名詞がコアイメージ。", usage: "「open the drawer」で使う。", synonymDifference: "drawer vs shelf: drawer は引き出す収納、shelf は棚板。", englishDefinition: "A sliding box-like storage part in furniture.", etymology: "家具語彙の基礎語。" }],
+  // garage (23966)
+  [23966, { coreImage: "車を入れるガレージ空間がコアイメージ。", usage: "「park in the garage」で使う。", synonymDifference: "garage vs parking lot: garage は建物内保管、parking lot は駐車場。", englishDefinition: "A building or space for keeping a car.", etymology: "住居語彙の基礎語。" }],
+  // glove (23181)
+  [23181, { coreImage: "手にはめる手袋を示す名詞がコアイメージ。", usage: "通常複数で gloves を使うことが多い。", synonymDifference: "glove vs mitten: mitten は指をまとめる手袋。", englishDefinition: "A covering for the hand.", etymology: "衣類語彙の基礎語。" }],
+  // hammer (26294)
+  [26294, { coreImage: "打つための工具かなづちを示す名詞がコアイメージ。", usage: "「use a hammer」で使う。", synonymDifference: "hammer vs mallet: mallet は木槌で用途が異なる。", englishDefinition: "A tool used for hitting nails.", etymology: "工具語彙の基礎語。" }],
+  // jar (26417)
+  [26417, { coreImage: "口の広いびん容器を示す名詞がコアイメージ。", usage: "「a jar of jam」で使う。", synonymDifference: "jar vs bottle: jar は広口、bottle は細口。", englishDefinition: "A wide-mouthed container, usually made of glass.", etymology: "容器語彙の基礎語。" }],
   // keychain (12006)
   [12006, { coreImage: "鍵をまとめるキーホルダーを示す名詞がコアイメージ。", usage: "「put keys on a keychain」で使う。", synonymDifference: "keychain vs key ring: ほぼ同義。", englishDefinition: "A ring or holder for keys.", etymology: "key + chain の合成語。" }],
-  // lamp (12007)
-  [12007, { coreImage: "明かりを照らすランプを示す名詞がコアイメージ。", usage: "「desk lamp」「turn on the lamp」で使う。", synonymDifference: "lamp vs light: lamp は器具、light は光そのものも指す。", englishDefinition: "A device that gives light.", etymology: "照明語彙の基礎語。" }],
-  // magnet (12014)
-  [12014, { coreImage: "鉄などを引きつける磁石がコアイメージ。", usage: "科学学習や日用品文脈で使う。", synonymDifference: "magnet vs metal: magnet は磁性機能を持つ物。", englishDefinition: "An object that attracts iron and some metals.", etymology: "科学語彙の基礎語。" }],
-  // napkin (12015)
-  [12015, { coreImage: "食事時に口や手を拭くナプキンがコアイメージ。", usage: "cloth napkin / paper napkin で区別可能。", synonymDifference: "napkin vs towel: napkin は食事用、towel は汎用拭き取り。", englishDefinition: "A piece of cloth or paper used at meals.", etymology: "食事語彙の基礎語。" }],
-  // oven (12016)
-  [12016, { coreImage: "食べ物を焼くオーブン加熱器具がコアイメージ。", usage: "「bake in the oven」で使う。", synonymDifference: "oven vs microwave: 加熱方式と用途が異なる。", englishDefinition: "A closed appliance for baking or roasting.", etymology: "調理語彙の基礎語。" }],
-  // paddle (12019)
-  [12019, { coreImage: "水をこぐ・打つためのパドル道具がコアイメージ。", usage: "スポーツや舟遊びで使う語。", synonymDifference: "paddle vs oar: oar は船をこぐ長いオールで用途がやや異なる。", englishDefinition: "A short oar used for rowing or paddling.", etymology: "道具語彙の基礎語。" }],
+  // lamp (23200)
+  [23200, { coreImage: "明かりを照らすランプを示す名詞がコアイメージ。", usage: "「desk lamp」「turn on the lamp」で使う。", synonymDifference: "lamp vs light: lamp は器具、light は光そのものも指す。", englishDefinition: "A device that gives light.", etymology: "照明語彙の基礎語。" }],
+  // magnet (31406)
+  [31406, { coreImage: "鉄などを引きつける磁石がコアイメージ。", usage: "科学学習や日用品文脈で使う。", synonymDifference: "magnet vs metal: magnet は磁性機能を持つ物。", englishDefinition: "An object that attracts iron and some metals.", etymology: "科学語彙の基礎語。" }],
+  // napkin (26572)
+  [26572, { coreImage: "食事時に口や手を拭くナプキンがコアイメージ。", usage: "cloth napkin / paper napkin で区別可能。", synonymDifference: "napkin vs towel: napkin は食事用、towel は汎用拭き取り。", englishDefinition: "A piece of cloth or paper used at meals.", etymology: "食事語彙の基礎語。" }],
+  // oven (26620)
+  [26620, { coreImage: "食べ物を焼くオーブン加熱器具がコアイメージ。", usage: "「bake in the oven」で使う。", synonymDifference: "oven vs microwave: 加熱方式と用途が異なる。", englishDefinition: "A closed appliance for baking or roasting.", etymology: "調理語彙の基礎語。" }],
+  // paddle (26629)
+  [26629, { coreImage: "水をこぐ・打つためのパドル道具がコアイメージ。", usage: "スポーツや舟遊びで使う語。", synonymDifference: "paddle vs oar: oar は船をこぐ長いオールで用途がやや異なる。", englishDefinition: "A short oar used for rowing or paddling.", etymology: "道具語彙の基礎語。" }],
   // quilt (12012)
   [12012, { coreImage: "中綿入りの掛け布・キルトを示す名詞がコアイメージ。", usage: "寝具文脈で使う。", synonymDifference: "quilt vs blanket: quilt は中綿縫製、blanket は毛布全般。", englishDefinition: "A warm bed covering made of stitched layers.", etymology: "生活語彙の基礎語。" }],
-  // receipt (12000)
-  [12000, { coreImage: "支払いの証明として渡されるレシートがコアイメージ。", usage: "「keep the receipt」が実用表現。", synonymDifference: "receipt vs bill: bill は請求、receipt は支払済み証明。", englishDefinition: "A paper showing that payment was made.", etymology: "買い物語彙の基礎語。" }],
-  // shelf (12001)
-  [12001, { coreImage: "物を置く棚板を示す名詞がコアイメージ。", usage: "可算で「a shelf」「bookshelf」。", synonymDifference: "shelf vs drawer: shelf は開放収納、drawer は引き出し収納。", englishDefinition: "A flat board for holding things.", etymology: "家具語彙の基礎語。" }],
-  // tablet (12002)
-  [12002, { coreImage: "タブレット端末を示す名詞がコアイメージ。", usage: "「use a tablet for study」で使う。", synonymDifference: "tablet vs laptop: 形状・入力方式が異なる。", englishDefinition: "A small touchscreen computer.", etymology: "技術語彙の基礎語。" }],
+  // receipt (28415)
+  [28415, { coreImage: "支払いの証明として渡されるレシートがコアイメージ。", usage: "「keep the receipt」が実用表現。", synonymDifference: "receipt vs bill: bill は請求、receipt は支払済み証明。", englishDefinition: "A paper showing that payment was made.", etymology: "買い物語彙の基礎語。" }],
+  // shelf (24099)
+  [24099, { coreImage: "物を置く棚板を示す名詞がコアイメージ。", usage: "可算で「a shelf」「bookshelf」。", synonymDifference: "shelf vs drawer: shelf は開放収納、drawer は引き出し収納。", englishDefinition: "A flat board for holding things.", etymology: "家具語彙の基礎語。" }],
+  // tablet (28711)
+  [28711, { coreImage: "タブレット端末を示す名詞がコアイメージ。", usage: "「use a tablet for study」で使う。", synonymDifference: "tablet vs laptop: 形状・入力方式が異なる。", englishDefinition: "A small touchscreen computer.", etymology: "技術語彙の基礎語。" }],
   // utensil (12003)
   [12003, { coreImage: "調理・食事に使う器具の総称がコアイメージ。", usage: "fork/spoon などの集合名として使える。", synonymDifference: "utensil vs tool: utensil は主に台所・食事用途。", englishDefinition: "A tool used in cooking or eating.", etymology: "台所語彙の基礎語。" }],
   // vase (12004)
   [12004, { coreImage: "花を生ける花瓶を示す名詞がコアイメージ。", usage: "「a vase of flowers」で使う。", synonymDifference: "vase vs pot: vase は観賞花用、pot は調理・栽培容器にも使う。", englishDefinition: "A decorative container for flowers.", etymology: "生活語彙の基礎語。" }],
-  // whistle (12018)
-  [12018, { coreImage: "笛、または笛を吹く行為を示す語がコアイメージ。", usage: "名詞/動詞の両用がある。", synonymDifference: "whistle vs bell: whistle は吹く音、bell は打鐘音。", englishDefinition: "A small instrument that makes a high sound; to make that sound.", etymology: "音具語彙の基礎多義語。" }],
-  // yard (11986)
-  [11986, { coreImage: "家の周囲の庭・敷地を示す名詞がコアイメージ。", usage: "米語で庭の意味が一般的。", synonymDifference: "yard vs garden: yard は敷地全般、garden は栽培要素が強い。", englishDefinition: "The area around a house.", etymology: "住居語彙の基礎語。" }],
+  // whistle (28990)
+  [28990, { coreImage: "笛、または笛を吹く行為を示す語がコアイメージ。", usage: "名詞/動詞の両用がある。", synonymDifference: "whistle vs bell: whistle は吹く音、bell は打鐘音。", englishDefinition: "A small instrument that makes a high sound; to make that sound.", etymology: "音具語彙の基礎多義語。" }],
+  // yard (23389)
+  [23389, { coreImage: "家の周囲の庭・敷地を示す名詞がコアイメージ。", usage: "米語で庭の意味が一般的。", synonymDifference: "yard vs garden: yard は敷地全般、garden は栽培要素が強い。", englishDefinition: "The area around a house.", etymology: "住居語彙の基礎語。" }],
   // zipper (11987)
   [11987, { coreImage: "衣類や袋を開閉するファスナー部品がコアイメージ。", usage: "「zipper on my bag」で使う。", synonymDifference: "zipper vs button: いずれも留め具だが方式が異なる。", englishDefinition: "A fastening device with interlocking teeth.", etymology: "衣類語彙の基礎語。" }],
   // tidy (11988)
   [11988, { coreImage: "片づけて整頓する行為/整った状態がコアイメージ。", usage: "動詞「tidy the room」、形容詞用法もある。", synonymDifference: "tidy vs clean: tidy は整頓、clean は汚れ除去。", englishDefinition: "To make neat and organized.", etymology: "生活動詞の基礎語。" }],
   // wander (11989)
   [11989, { coreImage: "目的なく歩き回る移動行為がコアイメージ。", usage: "「wander around the park」で使う。", synonymDifference: "wander vs walk: wander はあてもなく歩く含意。", englishDefinition: "To walk around without a clear direction.", etymology: "移動動詞の基礎語。" }],
-  // hallway (11991)
-  [11991, { coreImage: "部屋と部屋をつなぐ廊下空間がコアイメージ。", usage: "「in the hallway」で使う。", synonymDifference: "hallway vs corridor: ほぼ同義で corridor がやや形式的。", englishDefinition: "A passage inside a building.", etymology: "住居語彙の基礎語。" }],
+  // hallway (31348)
+  [31348, { coreImage: "部屋と部屋をつなぐ廊下空間がコアイメージ。", usage: "「in the hallway」で使う。", synonymDifference: "hallway vs corridor: ほぼ同義で corridor がやや形式的。", englishDefinition: "A passage inside a building.", etymology: "住居語彙の基礎語。" }],
   // lunchbox (11992)
   [11992, { coreImage: "弁当を入れて持ち運ぶ箱がコアイメージ。", usage: "「pack a lunchbox」で使う。", synonymDifference: "lunchbox vs box: lunchbox は用途特化。", englishDefinition: "A container for carrying lunch.", etymology: "lunch + box の合成語。" }],
-  // appointment (12007)
-  [12007, { coreImage: "特定時刻に会う予約・約束がコアイメージ。", usage: "「make an appointment」が定型。", synonymDifference: "appointment vs reservation: appointment は面会予約、reservation は席や部屋予約。", englishDefinition: "An arrangement to meet at a specific time.", etymology: "ビジネス基礎語彙。" }],
-  // employee (12014)
-  [12014, { coreImage: "組織に雇われて働く従業員がコアイメージ。", usage: "可算で「an employee」「employees」。", synonymDifference: "employee vs employer: employee は雇われる側、employer は雇う側。", englishDefinition: "A person paid to work for a company.", etymology: "雇用語彙の基礎語。" }],
-  // invoice (12015)
-  [12015, { coreImage: "支払請求内容を示す請求書がコアイメージ。", usage: "「send an invoice」で使う。", synonymDifference: "invoice vs receipt: invoice は請求、receipt は支払済み証明。", englishDefinition: "A document requesting payment.", etymology: "商務語彙の基礎語。" }],
-  // purchase (12016)
-  [12016, { coreImage: "購入（名詞）と購入する（動詞）の商取引行為がコアイメージ。", usage: "buy よりややフォーマル。", synonymDifference: "purchase vs buy: purchase の方が文書・業務で使われやすい。", englishDefinition: "To buy; an act of buying.", etymology: "商務語彙の基礎多義語。" }],
-  // reservation (12019)
-  [12019, { coreImage: "席・部屋などを前もって押さえる予約がコアイメージ。", usage: "「make a reservation」が定型。", synonymDifference: "reservation vs appointment: reservation は資源予約、appointment は面会予約。", englishDefinition: "An arrangement to keep a place or seat.", etymology: "予約語彙の基礎語。" }],
-  // schedule (12012)
-  [12012, { coreImage: "予定表（名詞）と予定を組む（動詞）の時間管理がコアイメージ。", usage: "名詞中心だが動詞用法も重要。", synonymDifference: "schedule vs plan: schedule は時刻配置、plan は方針全体。", englishDefinition: "A timetable; to arrange a time.", etymology: "時間管理語彙の基礎多義語。" }],
-  // attach (12000)
-  [12000, { coreImage: "物やファイルを付ける・添付する行為がコアイメージ。", usage: "「attach A to B」「attach a file」で使う。", synonymDifference: "attach vs connect: attach は物理/文書添付、connect は接続関係全般。", englishDefinition: "To fasten or add something to another thing.", etymology: "実務動詞の基礎語。" }],
-  // careful (10488)
-  [10488, { coreImage: "注意深くミスを避ける姿勢がコアイメージ。", usage: "「be careful」「careful with ...」で使う。", synonymDifference: "careful vs cautious: cautious は危険回避の慎重さが強い。", englishDefinition: "Giving attention to avoid mistakes or danger.", etymology: "care + -ful。" }],
-  // decide (10489)
-  [10489, { coreImage: "選択肢から最終的に決める判断がコアイメージ。", usage: "「decide to do」「decide on ...」で使う。", synonymDifference: "decide vs choose: decide は最終決定、choose は選択行為。", englishDefinition: "To make a choice after thinking.", etymology: "判断動詞の基礎語。" }],
-  // foreign (10491)
-  [10491, { coreImage: "自国・自分の環境の外にある外国性がコアイメージ。", usage: "「foreign country」「foreign language」で使う。", synonymDifference: "foreign vs international: foreign は外来性、international は国際間関係。", englishDefinition: "Belonging to another country.", etymology: "比較文化語彙の基礎語。" }],
-  // health (10493)
-  [10493, { coreImage: "身体や心の健康状態を示す名詞がコアイメージ。", usage: "不可算で「good health」「health problem」。", synonymDifference: "health vs healthy: health は名詞、healthy は形容詞。", englishDefinition: "The condition of being well.", etymology: "体調語彙の基礎語。" }],
-  // instead (10494)
-  [10494, { coreImage: "別の選択へ置き換える代替関係がコアイメージ。", usage: "「instead of ...」「I stayed home instead.」で使う。", synonymDifference: "instead vs alternatively: alternatively はやや形式的。", englishDefinition: "In place of something else.", etymology: "接続副詞の基礎語。" }],
-  // joke (10495)
-  [10495, { coreImage: "人を笑わせる冗談内容がコアイメージ。", usage: "名詞「a joke」、動詞「joke about ...」の両用。", synonymDifference: "joke vs lie: joke は冗談、lie は嘘。", englishDefinition: "Something said to make people laugh.", etymology: "会話語彙の基礎語。" }],
-  // member (10498)
-  [10498, { coreImage: "集団に属する構成員を示す名詞がコアイメージ。", usage: "「team member」「club member」で使う。", synonymDifference: "member vs staff: member は所属者一般、staff は職員集団。", englishDefinition: "A person who belongs to a group.", etymology: "集団語彙の基礎語。" }],
-  // notice (10499)
-  [10499, { coreImage: "気づく（動詞）と通知（名詞）の両義がコアイメージ。", usage: "初級では動詞「notice + 名詞」を優先。", synonymDifference: "notice vs realize: realize は理解に重心、notice は知覚に重心。", englishDefinition: "To become aware of; an announcement.", etymology: "知覚語彙の多義語。" }],
-  // opinion (10500)
-  [10500, { coreImage: "個人の考え・意見を示す名詞がコアイメージ。", usage: "「in my opinion」「your opinion」で使う。", synonymDifference: "opinion vs fact: opinion は主観、fact は事実。", englishDefinition: "A personal view or belief.", etymology: "思考語彙の基礎語。" }],
-  // quickly (10502)
-  [10502, { coreImage: "動作が速く行われる様子を示す副詞がコアイメージ。", usage: "「run quickly」「answer quickly」で使う。", synonymDifference: "quickly vs fast: fast は副詞同形、quickly は標準副詞形。", englishDefinition: "At high speed; rapidly.", etymology: "quick + -ly。" }],
-  // receive (10503)
-  [10503, { coreImage: "受け取る側として受領する行為がコアイメージ。", usage: "「receive a letter」「receive from ...」で使う。", synonymDifference: "receive vs get: receive はややフォーマル。", englishDefinition: "To be given or sent something.", etymology: "授受動詞の基礎語。" }],
-  // solve (10504)
-  [10504, { coreImage: "問題を解いて解決する行為がコアイメージ。", usage: "「solve a problem」「solve a puzzle」で使う。", synonymDifference: "solve vs answer: solve は課題解決、answer は問いへの返答。", englishDefinition: "To find the answer to a problem.", etymology: "課題動詞の基礎語。" }],
-  // useful (10506)
-  [10506, { coreImage: "役に立って実用価値がある状態がコアイメージ。", usage: "「useful tool」「be useful for ...」で使う。", synonymDifference: "useful vs helpful: useful は道具価値、helpful は人の助けにも広い。", englishDefinition: "Helpful and practical.", etymology: "use + -ful。" }],
-  // wonder (10508)
-  [10508, { coreImage: "不思議に思って考える心理動作がコアイメージ。", usage: "「I wonder if ...」が定型。", synonymDifference: "wonder vs ask: wonder は内面的疑問、ask は外向き質問。", englishDefinition: "To think curiously about something.", etymology: "思考動詞の基礎語。" }],
-  // advice (10509)
-  [10509, { coreImage: "助言として他者に示す提案内容がコアイメージ。", usage: "不可算名詞で「some advice」。", synonymDifference: "advice vs suggestion: advice は助言一般、suggestion は提案案。", englishDefinition: "Helpful suggestions about what to do.", etymology: "助言語彙の基礎語。" }],
-  // borrow (10510)
-  [10510, { coreImage: "他者から借りる受け手側行為がコアイメージ。", usage: "「borrow A from B」が基本。", synonymDifference: "borrow vs lend: borrow は借りる、lend は貸す。", englishDefinition: "To take and use something belonging to someone else.", etymology: "授受動詞の基礎語。" }],
-  // culture (10511)
-  [10511, { coreImage: "社会の文化・慣習のまとまりがコアイメージ。", usage: "「Japanese culture」のように使う。", synonymDifference: "culture vs custom: custom は個別習慣、culture は体系全体。", englishDefinition: "The ideas, customs, and arts of a society.", etymology: "社会語彙の基礎語。" }],
-  // environment (10512)
-  [10512, { coreImage: "自然環境や周囲状況の枠組みがコアイメージ。", usage: "「protect the environment」で高頻度。", synonymDifference: "environment vs nature: environment は周囲条件、nature は自然そのもの。", englishDefinition: "The natural world or surroundings.", etymology: "社会・科学語彙の基礎語。" }],
-  // information (10515)
-  [10515, { coreImage: "知識やデータとしての情報を示す名詞がコアイメージ。", usage: "不可算で「some information」。", synonymDifference: "information vs news: information は情報全般、news は新しい知らせ。", englishDefinition: "Facts or knowledge provided about something.", etymology: "情報語彙の基礎語。" }],
-  // suggest (10516)
-  [10516, { coreImage: "案を提案して示唆する行為がコアイメージ。", usage: "「suggest doing」「suggest that ...」で使う。", synonymDifference: "suggest vs advise: advise は助言相手への働きかけが強い。", englishDefinition: "To propose an idea.", etymology: "提案動詞の基礎語。" }],
-  // recently (10517)
-  [10517, { coreImage: "最近の期間内で起きたことを示す副詞がコアイメージ。", usage: "現在完了と相性が高い。", synonymDifference: "recently vs lately: 近いが lately は継続傾向に使われやすい。", englishDefinition: "In the near past.", etymology: "recent + -ly。" }],
-  // accident (10519)
-  [10519, { coreImage: "意図せず起こる事故・不慮の出来事がコアイメージ。", usage: "「traffic accident」「by accident」で使う。", synonymDifference: "accident vs incident: accident は不慮性が強い。", englishDefinition: "An unexpected event causing damage or injury.", etymology: "出来事語彙の基礎語。" }],
-  // age (10523)
-  [10523, { coreImage: "年齢、または時代を示す多義名詞がコアイメージ。", usage: "初級では年齢義を優先。「at the age of ...」。", synonymDifference: "age vs year: age は年齢、year は年の単位。", englishDefinition: "How old someone is; also a period in history.", etymology: "時間概念語彙の基礎語。" }],
-  // area (10524)
-  [10524, { coreImage: "地域・範囲として区切られた領域がコアイメージ。", usage: "「this area」「study area」で使う。", synonymDifference: "area vs place: area は範囲性、place は地点性。", englishDefinition: "A region or part of a place.", etymology: "空間語彙の基礎語。" }],
+  // appointment (24545)
+  [24545, { coreImage: "特定時刻に会う予約・約束がコアイメージ。", usage: "「make an appointment」が定型。", synonymDifference: "appointment vs reservation: appointment は面会予約、reservation は席や部屋予約。", englishDefinition: "An arrangement to meet at a specific time.", etymology: "ビジネス基礎語彙。" }],
+  // employee (27582)
+  [27582, { coreImage: "組織に雇われて働く従業員がコアイメージ。", usage: "可算で「an employee」「employees」。", synonymDifference: "employee vs employer: employee は雇われる側、employer は雇う側。", englishDefinition: "A person paid to work for a company.", etymology: "雇用語彙の基礎語。" }],
+  // invoice (33687)
+  [33687, { coreImage: "支払請求内容を示す請求書がコアイメージ。", usage: "「send an invoice」で使う。", synonymDifference: "invoice vs receipt: invoice は請求、receipt は支払済み証明。", englishDefinition: "A document requesting payment.", etymology: "商務語彙の基礎語。" }],
+  // purchase (28391)
+  [28391, { coreImage: "購入（名詞）と購入する（動詞）の商取引行為がコアイメージ。", usage: "buy よりややフォーマル。", synonymDifference: "purchase vs buy: purchase の方が文書・業務で使われやすい。", englishDefinition: "To buy; an act of buying.", etymology: "商務語彙の基礎多義語。" }],
+  // reservation (29563)
+  [29563, { coreImage: "席・部屋などを前もって押さえる予約がコアイメージ。", usage: "「make a reservation」が定型。", synonymDifference: "reservation vs appointment: reservation は資源予約、appointment は面会予約。", englishDefinition: "An arrangement to keep a place or seat.", etymology: "予約語彙の基礎語。" }],
+  // schedule (25283)
+  [25283, { coreImage: "予定表（名詞）と予定を組む（動詞）の時間管理がコアイメージ。", usage: "名詞中心だが動詞用法も重要。", synonymDifference: "schedule vs plan: schedule は時刻配置、plan は方針全体。", englishDefinition: "A timetable; to arrange a time.", etymology: "時間管理語彙の基礎多義語。" }],
+  // attach (24571)
+  [24571, { coreImage: "物やファイルを付ける・添付する行為がコアイメージ。", usage: "「attach A to B」「attach a file」で使う。", synonymDifference: "attach vs connect: attach は物理/文書添付、connect は接続関係全般。", englishDefinition: "To fasten or add something to another thing.", etymology: "実務動詞の基礎語。" }],
+  // careful (24219)
+  [24219, { coreImage: "注意深くミスを避ける姿勢がコアイメージ。", usage: "「be careful」「careful with ...」で使う。", synonymDifference: "careful vs cautious: cautious は危険回避の慎重さが強い。", englishDefinition: "Giving attention to avoid mistakes or danger.", etymology: "care + -ful。" }],
+  // decide (23690)
+  [23690, { coreImage: "選択肢から最終的に決める判断がコアイメージ。", usage: "「decide to do」「decide on ...」で使う。", synonymDifference: "decide vs choose: decide は最終決定、choose は選択行為。", englishDefinition: "To make a choice after thinking.", etymology: "判断動詞の基礎語。" }],
+  // foreign (24248)
+  [24248, { coreImage: "自国・自分の環境の外にある外国性がコアイメージ。", usage: "「foreign country」「foreign language」で使う。", synonymDifference: "foreign vs international: foreign は外来性、international は国際間関係。", englishDefinition: "Belonging to another country.", etymology: "比較文化語彙の基礎語。" }],
+  // health (24418)
+  [24418, { coreImage: "身体や心の健康状態を示す名詞がコアイメージ。", usage: "不可算で「good health」「health problem」。", synonymDifference: "health vs healthy: health は名詞、healthy は形容詞。", englishDefinition: "The condition of being well.", etymology: "体調語彙の基礎語。" }],
+  // instead (24374)
+  [24374, { coreImage: "別の選択へ置き換える代替関係がコアイメージ。", usage: "「instead of ...」「I stayed home instead.」で使う。", synonymDifference: "instead vs alternatively: alternatively はやや形式的。", englishDefinition: "In place of something else.", etymology: "接続副詞の基礎語。" }],
+  // joke (23995)
+  [23995, { coreImage: "人を笑わせる冗談内容がコアイメージ。", usage: "名詞「a joke」、動詞「joke about ...」の両用。", synonymDifference: "joke vs lie: joke は冗談、lie は嘘。", englishDefinition: "Something said to make people laugh.", etymology: "会話語彙の基礎語。" }],
+  // member (23221)
+  [23221, { coreImage: "集団に属する構成員を示す名詞がコアイメージ。", usage: "「team member」「club member」で使う。", synonymDifference: "member vs staff: member は所属者一般、staff は職員集団。", englishDefinition: "A person who belongs to a group.", etymology: "集団語彙の基礎語。" }],
+  // notice (23720)
+  [23720, { coreImage: "気づく（動詞）と通知（名詞）の両義がコアイメージ。", usage: "初級では動詞「notice + 名詞」を優先。", synonymDifference: "notice vs realize: realize は理解に重心、notice は知覚に重心。", englishDefinition: "To become aware of; an announcement.", etymology: "知覚語彙の多義語。" }],
+  // opinion (24038)
+  [24038, { coreImage: "個人の考え・意見を示す名詞がコアイメージ。", usage: "「in my opinion」「your opinion」で使う。", synonymDifference: "opinion vs fact: opinion は主観、fact は事実。", englishDefinition: "A personal view or belief.", etymology: "思考語彙の基礎語。" }],
+  // quickly (24390)
+  [24390, { coreImage: "動作が速く行われる様子を示す副詞がコアイメージ。", usage: "「run quickly」「answer quickly」で使う。", synonymDifference: "quickly vs fast: fast は副詞同形、quickly は標準副詞形。", englishDefinition: "At high speed; rapidly.", etymology: "quick + -ly。" }],
+  // receive (23738)
+  [23738, { coreImage: "受け取る側として受領する行為がコアイメージ。", usage: "「receive a letter」「receive from ...」で使う。", synonymDifference: "receive vs get: receive はややフォーマル。", englishDefinition: "To be given or sent something.", etymology: "授受動詞の基礎語。" }],
+  // solve (23748)
+  [23748, { coreImage: "問題を解いて解決する行為がコアイメージ。", usage: "「solve a problem」「solve a puzzle」で使う。", synonymDifference: "solve vs answer: solve は課題解決、answer は問いへの返答。", englishDefinition: "To find the answer to a problem.", etymology: "課題動詞の基礎語。" }],
+  // useful (24342)
+  [24342, { coreImage: "役に立って実用価値がある状態がコアイメージ。", usage: "「useful tool」「be useful for ...」で使う。", synonymDifference: "useful vs helpful: useful は道具価値、helpful は人の助けにも広い。", englishDefinition: "Helpful and practical.", etymology: "use + -ful。" }],
+  // wonder (24501)
+  [24501, { coreImage: "不思議に思って考える心理動作がコアイメージ。", usage: "「I wonder if ...」が定型。", synonymDifference: "wonder vs ask: wonder は内面的疑問、ask は外向き質問。", englishDefinition: "To think curiously about something.", etymology: "思考動詞の基礎語。" }],
+  // advice (23879)
+  [23879, { coreImage: "助言として他者に示す提案内容がコアイメージ。", usage: "不可算名詞で「some advice」。", synonymDifference: "advice vs suggestion: advice は助言一般、suggestion は提案案。", englishDefinition: "Helpful suggestions about what to do.", etymology: "助言語彙の基礎語。" }],
+  // borrow (23680)
+  [23680, { coreImage: "他者から借りる受け手側行為がコアイメージ。", usage: "「borrow A from B」が基本。", synonymDifference: "borrow vs lend: borrow は借りる、lend は貸す。", englishDefinition: "To take and use something belonging to someone else.", etymology: "授受動詞の基礎語。" }],
+  // culture (23925)
+  [23925, { coreImage: "社会の文化・慣習のまとまりがコアイメージ。", usage: "「Japanese culture」のように使う。", synonymDifference: "culture vs custom: custom は個別習慣、culture は体系全体。", englishDefinition: "The ideas, customs, and arts of a society.", etymology: "社会語彙の基礎語。" }],
+  // environment (24839)
+  [24839, { coreImage: "自然環境や周囲状況の枠組みがコアイメージ。", usage: "「protect the environment」で高頻度。", synonymDifference: "environment vs nature: environment は周囲条件、nature は自然そのもの。", englishDefinition: "The natural world or surroundings.", etymology: "社会・科学語彙の基礎語。" }],
+  // information (23990)
+  [23990, { coreImage: "知識やデータとしての情報を示す名詞がコアイメージ。", usage: "不可算で「some information」。", synonymDifference: "information vs news: information は情報全般、news は新しい知らせ。", englishDefinition: "Facts or knowledge provided about something.", etymology: "情報語彙の基礎語。" }],
+  // suggest (23755)
+  [23755, { coreImage: "案を提案して示唆する行為がコアイメージ。", usage: "「suggest doing」「suggest that ...」で使う。", synonymDifference: "suggest vs advise: advise は助言相手への働きかけが強い。", englishDefinition: "To propose an idea.", etymology: "提案動詞の基礎語。" }],
+  // recently (24393)
+  [24393, { coreImage: "最近の期間内で起きたことを示す副詞がコアイメージ。", usage: "現在完了と相性が高い。", synonymDifference: "recently vs lately: 近いが lately は継続傾向に使われやすい。", englishDefinition: "In the near past.", etymology: "recent + -ly。" }],
+  // accident (23875)
+  [23875, { coreImage: "意図せず起こる事故・不慮の出来事がコアイメージ。", usage: "「traffic accident」「by accident」で使う。", synonymDifference: "accident vs incident: accident は不慮性が強い。", englishDefinition: "An unexpected event causing damage or injury.", etymology: "出来事語彙の基礎語。" }],
+  // age (23880)
+  [23880, { coreImage: "年齢、または時代を示す多義名詞がコアイメージ。", usage: "初級では年齢義を優先。「at the age of ...」。", synonymDifference: "age vs year: age は年齢、year は年の単位。", englishDefinition: "How old someone is; also a period in history.", etymology: "時間概念語彙の基礎語。" }],
+  // area (23883)
+  [23883, { coreImage: "地域・範囲として区切られた領域がコアイメージ。", usage: "「this area」「study area」で使う。", synonymDifference: "area vs place: area は範囲性、place は地点性。", englishDefinition: "A region or part of a place.", etymology: "空間語彙の基礎語。" }],
   // activity (10525)
   [10525, { coreImage: "人が行う活動・行動単位がコアイメージ。", usage: "「school activities」で複数使いが多い。", synonymDifference: "activity vs action: activity は継続的活動、action は行為1回にも使う。", englishDefinition: "Something that people do.", etymology: "行為語彙の基礎語。" }],
-  // adventure (10526)
-  [10526, { coreImage: "わくわくする冒険的体験がコアイメージ。", usage: "物語や旅行文脈で使いやすい。", synonymDifference: "adventure vs trip: adventure は未知性・挑戦性が強い。", englishDefinition: "An exciting and unusual experience.", etymology: "物語語彙の基礎語。" }],
-  // airport (10527)
-  [10527, { coreImage: "飛行機が発着する空港施設がコアイメージ。", usage: "「at the airport」「airport bus」で使う。", synonymDifference: "airport vs station: airport は航空、station は鉄道等。", englishDefinition: "A place where aircraft land and take off.", etymology: "交通語彙の基礎語。" }],
-  // apartment (10528)
-  [10528, { coreImage: "集合住宅の一室としての住居がコアイメージ。", usage: "米語 apartment、英語 flat の違いを意識。", synonymDifference: "apartment vs house: apartment は集合住宅、house は独立家屋。", englishDefinition: "A set of rooms for living, usually in a building.", etymology: "住居語彙の基礎語。" }],
-  // attention (10529)
-  [10529, { coreImage: "注意・注目を向ける心の焦点がコアイメージ。", usage: "「pay attention to ...」が定型。", synonymDifference: "attention vs interest: attention は集中、interest は関心。", englishDefinition: "Notice or concentration on something.", etymology: "認知語彙の基礎語。" }],
-  // audience (10530)
-  [10530, { coreImage: "話や演技を聞く・見る観客集団がコアイメージ。", usage: "単数形で集合を表すことが多い。", synonymDifference: "audience vs crowd: audience は鑑賞目的の集団、crowd は群衆一般。", englishDefinition: "The people watching or listening to a performance.", etymology: "集合語彙の基礎語。" }],
+  // adventure (24181)
+  [24181, { coreImage: "わくわくする冒険的体験がコアイメージ。", usage: "物語や旅行文脈で使いやすい。", synonymDifference: "adventure vs trip: adventure は未知性・挑戦性が強い。", englishDefinition: "An exciting and unusual experience.", etymology: "物語語彙の基礎語。" }],
+  // airport (23393)
+  [23393, { coreImage: "飛行機が発着する空港施設がコアイメージ。", usage: "「at the airport」「airport bus」で使う。", synonymDifference: "airport vs station: airport は航空、station は鉄道等。", englishDefinition: "A place where aircraft land and take off.", etymology: "交通語彙の基礎語。" }],
+  // apartment (24182)
+  [24182, { coreImage: "集合住宅の一室としての住居がコアイメージ。", usage: "米語 apartment、英語 flat の違いを意識。", synonymDifference: "apartment vs house: apartment は集合住宅、house は独立家屋。", englishDefinition: "A set of rooms for living, usually in a building.", etymology: "住居語彙の基礎語。" }],
+  // attention (24553)
+  [24553, { coreImage: "注意・注目を向ける心の焦点がコアイメージ。", usage: "「pay attention to ...」が定型。", synonymDifference: "attention vs interest: attention は集中、interest は関心。", englishDefinition: "Notice or concentration on something.", etymology: "認知語彙の基礎語。" }],
+  // audience (24574)
+  [24574, { coreImage: "話や演技を聞く・見る観客集団がコアイメージ。", usage: "単数形で集合を表すことが多い。", synonymDifference: "audience vs crowd: audience は鑑賞目的の集団、crowd は群衆一般。", englishDefinition: "The people watching or listening to a performance.", etymology: "集合語彙の基礎語。" }],
 ];
