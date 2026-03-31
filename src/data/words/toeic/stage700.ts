@@ -11809,4 +11809,16 @@ export const words: RawWord[] = [
     ],
     categories: ["business"],
   },
+  {
+    id: 93015,
+    word: "property",
+    meaning: "財産、物件、特性",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The family owns a large property near the lake.", ja: "その家族は湖の近くに大きな物件を所有している。", context: "不動産" },
+      { en: "Stealing other people's property is against the law.", ja: "他人の財産を盗むことは法律違反だ。", context: "法律" },
+      { en: "Water has unique chemical properties at low temperatures.", ja: "水は低温で独特の化学的特性を持つ。", context: "科学" },
+    ],
+    categories: ["daily"],
+  },
 ];
