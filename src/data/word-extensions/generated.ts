@@ -91,20 +91,48 @@ function buildCoreImage(word: ExtensionSourceWord): string {
   }
 }
 
+/**
+ * 同じwordで異なる品詞のmeaningを取得する（他品詞の補足表示用）
+ */
+function getOtherPosMeanings(word: ExtensionSourceWord): string {
+  const others = ALL_SOURCE_WORDS.filter(
+    (w) => w.word.toLowerCase() === word.word.toLowerCase() && w.partOfSpeech !== word.partOfSpeech
+  );
+  if (others.length === 0) return "";
+  const seen = new Set<string>();
+  const parts: string[] = [];
+  for (const o of others) {
+    const key = o.partOfSpeech;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const label = PART_OF_SPEECH_LABEL[o.partOfSpeech] || o.partOfSpeech;
+    parts.push(`${label}では「${pickPrimaryMeaning(o.meaning)}」`);
+  }
+  return parts.length > 0 ? `\n\n※ ${word.word} は${parts.join("、")}の意味もある。` : "";
+}
+
 function buildUsage(word: ExtensionSourceWord): string {
   const m = pickPrimaryMeaning(word.meaning);
+  const otherPos = getOtherPosMeanings(word);
+  let base: string;
   switch (word.partOfSpeech) {
     case "noun":
-      return `「a/the ${word.word}」「${word.word} + of ...」の形で使われることが多い。意味は「${m}」で、可算・不可算や前置詞との相性を例文で確認すると実用性が上がる。`;
+      base = `「a/the ${word.word}」「${word.word} + of ...」の形で使われることが多い。意味は「${m}」で、可算・不可算や前置詞との相性を例文で確認すると実用性が上がる。`;
+      break;
     case "verb":
-      return `「${word.word} + 名詞」「${word.word} + to do / that ...」などで使う。意味「${verbForm(m)}」が誰に何を及ぼすかを例文単位で覚えるのが効果的。`;
+      base = `「${word.word} + 名詞」「${word.word} + to do / that ...」などで使う。意味「${verbForm(m)}」が誰に何を及ぼすかを例文単位で覚えるのが効果的。`;
+      break;
     case "adjective":
-      return `「${word.word} + 名詞」「be動詞 + ${word.word}」で使う。意味「${adjForm(m)}」を、対象や場面とセットで覚えると定着しやすい。`;
+      base = `「${word.word} + 名詞」「be動詞 + ${word.word}」で使う。意味「${adjForm(m)}」を、対象や場面とセットで覚えると定着しやすい。`;
+      break;
     case "adverb":
-      return `主に「動詞 + ${word.word}」「${word.word}, 文」の形で使う。意味「${advForm(m)}」がどの語を修飾するかを意識すると誤用を防げる。`;
+      base = `主に「動詞 + ${word.word}」「${word.word}, 文」の形で使う。意味「${advForm(m)}」がどの語を修飾するかを意識すると誤用を防げる。`;
+      break;
     default:
-      return `会話・定型表現の中で使われることが多い語。意味「${m}」を単体ではなくフレーズごと覚えると運用しやすい。`;
+      base = `会話・定型表現の中で使われることが多い語。意味「${m}」を単体ではなくフレーズごと覚えると運用しやすい。`;
+      break;
   }
+  return base + otherPos;
 }
 
 function buildSynonymDifference(word: ExtensionSourceWord): string {
