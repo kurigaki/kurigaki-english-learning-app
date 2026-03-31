@@ -493,4 +493,292 @@ export const words: RawWord[] = [
     ],
     categories: ["communication"],
   },
+  {
+    id: 40501,
+    word: "you bet",
+    meaning: "もちろん",
+    partOfSpeech: "other",
+    examples: [
+      { en: "Can you help me? You bet!", ja: "手伝ってくれる？もちろん！", context: "日常" },
+      { en: "You bet I will be there.", ja: "もちろん行くよ。", context: "日常" },
+      { en: "Is this restaurant good? You bet.", ja: "このレストランいい？もちろん。", context: "食事" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40502,
+    word: "no worries",
+    meaning: "大丈夫だよ",
+    partOfSpeech: "other",
+    examples: [
+      { en: "Sorry for being late. No worries.", ja: "遅れてごめん。大丈夫だよ。", context: "日常" },
+      { en: "No worries, I can handle it.", ja: "大丈夫、私がやるよ。", context: "仕事" },
+      { en: "Thanks for your help. No worries at all.", ja: "助けてくれてありがとう。全然大丈夫。", context: "日常" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40503,
+    word: "fair enough",
+    meaning: "なるほどね",
+    partOfSpeech: "other",
+    examples: [
+      { en: "I need more time. Fair enough.", ja: "もう少し時間が必要。なるほどね。", context: "仕事" },
+      { en: "Fair enough, let us try your idea.", ja: "なるほど、あなたのアイデアを試そう。", context: "会議" },
+      { en: "I do not agree. Fair enough.", ja: "同意しないよ。それはそうだね。", context: "議論" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40504,
+    word: "break the ice",
+    meaning: "場を和ませる",
+    partOfSpeech: "other",
+    examples: [
+      { en: "She told a joke to break the ice.", ja: "彼女は場を和ませるために冗談を言った。", context: "社交" },
+      { en: "How do you break the ice at parties?", ja: "パーティーでどうやって場を和ませる？", context: "社交" },
+      { en: "A simple question can break the ice.", ja: "簡単な質問で場が和むことがある。", context: "社交" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40505,
+    word: "pull it off",
+    meaning: "やり遂げる",
+    partOfSpeech: "other",
+    examples: [
+      { en: "She pulled it off despite the challenges.", ja: "困難にもかかわらず彼女はやり遂げた。", context: "仕事" },
+      { en: "Do you think we can pull it off?", ja: "やり遂げられると思う？", context: "日常" },
+      { en: "He pulled off an amazing performance.", ja: "彼は素晴らしいパフォーマンスをやり遂げた。", context: "娯楽" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40506,
+    word: "give me a break",
+    meaning: "勘弁して",
+    partOfSpeech: "other",
+    examples: [
+      { en: "Give me a break, I just started.", ja: "勘弁してよ、始めたばかりなのに。", context: "日常" },
+      { en: "Oh, give me a break.", ja: "ああ、勘弁してくれ。", context: "日常" },
+      { en: "Give me a break, that is ridiculous.", ja: "勘弁して、それはばかげている。", context: "議論" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40507,
+    word: "you know what",
+    meaning: "あのさ",
+    partOfSpeech: "other",
+    examples: [
+      { en: "You know what, I changed my mind.", ja: "あのさ、気が変わった。", context: "会話" },
+      { en: "You know what? Let us just go.", ja: "ねえ、もう行こうよ。", context: "日常" },
+      { en: "You know what I mean?", ja: "私の言ってること分かる？", context: "会話" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40508,
+    word: "go with the flow",
+    meaning: "流れに任せる",
+    partOfSpeech: "other",
+    examples: [
+      { en: "I decided to just go with the flow.", ja: "流れに任せることにした。", context: "日常" },
+      { en: "Sometimes it is better to go with the flow.", ja: "時には流れに任せた方がいい。", context: "日常" },
+      { en: "She always goes with the flow.", ja: "彼女はいつも流れに任せる。", context: "日常" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40509,
+    word: "get out of hand",
+    meaning: "手に負えなくなる",
+    partOfSpeech: "other",
+    examples: [
+      { en: "The situation got out of hand quickly.", ja: "状況はすぐに手に負えなくなった。", context: "日常" },
+      { en: "Do not let the argument get out of hand.", ja: "議論が手に負えなくならないようにして。", context: "仕事" },
+      { en: "The party got out of hand.", ja: "パーティーが手に負えなくなった。", context: "社交" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40510,
+    word: "miss the point",
+    meaning: "要点を見失う",
+    partOfSpeech: "other",
+    examples: [
+      { en: "I think you are missing the point.", ja: "要点を見失っていると思う。", context: "議論" },
+      { en: "He completely missed the point.", ja: "彼は完全に要点を見失った。", context: "会議" },
+      { en: "Do not miss the point of the discussion.", ja: "議論の要点を見失わないで。", context: "学術" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40511,
+    word: "not my cup of tea",
+    meaning: "好みではない",
+    partOfSpeech: "other",
+    examples: [
+      { en: "Horror movies are not my cup of tea.", ja: "ホラー映画は好みではない。", context: "娯楽" },
+      { en: "Hiking is not really my cup of tea.", ja: "ハイキングはあまり好みではない。", context: "趣味" },
+      { en: "That style is not my cup of tea.", ja: "そのスタイルは好みではない。", context: "日常" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40512,
+    word: "that ship has sailed",
+    meaning: "もう手遅れだ",
+    partOfSpeech: "other",
+    examples: [
+      { en: "I wanted to apply but that ship has sailed.", ja: "応募したかったがもう手遅れだ。", context: "仕事" },
+      { en: "Sorry, but that ship has sailed.", ja: "残念だけど、もう手遅れだよ。", context: "日常" },
+      { en: "We missed the deadline. That ship has sailed.", ja: "締め切りを逃した。もう手遅れだ。", context: "仕事" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40513,
+    word: "time will tell",
+    meaning: "時が経てば分かる",
+    partOfSpeech: "other",
+    examples: [
+      { en: "Only time will tell if it works.", ja: "うまくいくかは時が経てば分かる。", context: "仕事" },
+      { en: "Time will tell who was right.", ja: "誰が正しかったか時が経てば分かる。", context: "議論" },
+      { en: "We will see. Time will tell.", ja: "見てみよう。時が経てば分かる。", context: "日常" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40514,
+    word: "to each their own",
+    meaning: "人それぞれだ",
+    partOfSpeech: "other",
+    examples: [
+      { en: "I do not like it but to each their own.", ja: "私は好きじゃないけど、人それぞれだ。", context: "日常" },
+      { en: "To each their own. Everyone has different tastes.", ja: "人それぞれだ。みんな好みが違う。", context: "日常" },
+      { en: "Some people love it. To each their own.", ja: "好きな人もいる。人それぞれだ。", context: "日常" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40515,
+    word: "worth a shot",
+    meaning: "やってみる価値あり",
+    partOfSpeech: "other",
+    examples: [
+      { en: "It might not work but it is worth a shot.", ja: "うまくいかないかもしれないが、やってみる価値はある。", context: "日常" },
+      { en: "Applying for the job is worth a shot.", ja: "その仕事に応募する価値はある。", context: "仕事" },
+      { en: "Let us try it. It is worth a shot.", ja: "やってみよう。価値はある。", context: "日常" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40516,
+    word: "sketchy",
+    meaning: "怪しい",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "That website looks sketchy.", ja: "あのウェブサイトは怪しい。", context: "技術" },
+      { en: "The neighborhood felt a bit sketchy.", ja: "その界隈はちょっと怪しかった。", context: "旅行" },
+      { en: "He gave me a sketchy explanation.", ja: "彼は怪しい説明をした。", context: "日常" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40517,
+    word: "chill",
+    meaning: "リラックスした",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "She is really chill about everything.", ja: "彼女は何事にもリラックスしている。", context: "日常" },
+      { en: "Let us have a chill weekend.", ja: "のんびりした週末を過ごそう。", context: "日常" },
+      { en: "The atmosphere was very chill.", ja: "雰囲気がとてもリラックスしていた。", context: "社交" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40518,
+    word: "spot-on",
+    meaning: "ぴったりの",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "Your analysis was spot-on.", ja: "あなたの分析はぴったりだった。", context: "仕事" },
+      { en: "That is a spot-on description.", ja: "それはぴったりの描写だ。", context: "日常" },
+      { en: "Her prediction was spot-on.", ja: "彼女の予想はぴったりだった。", context: "日常" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40519,
+    word: "over the top",
+    meaning: "やりすぎの",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "The decoration was a bit over the top.", ja: "装飾はちょっとやりすぎだった。", context: "イベント" },
+      { en: "His reaction was completely over the top.", ja: "彼の反応は完全にやりすぎだった。", context: "日常" },
+      { en: "Do not be over the top with the presentation.", ja: "プレゼンでやりすぎないで。", context: "仕事" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40520,
+    word: "savvy",
+    meaning: "精通した",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "She is very tech-savvy.", ja: "彼女はとてもテクノロジーに精通している。", context: "技術" },
+      { en: "A savvy investor knows when to sell.", ja: "精通した投資家は売り時を知っている。", context: "金融" },
+      { en: "He is business-savvy.", ja: "彼はビジネスに精通している。", context: "仕事" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40521,
+    word: "wind up",
+    meaning: "結局〜になる",
+    partOfSpeech: "other",
+    examples: [
+      { en: "We wound up staying until midnight.", ja: "結局深夜まで残ることになった。", context: "社交" },
+      { en: "She wound up getting the job.", ja: "彼女は結局その仕事を得た。", context: "仕事" },
+      { en: "If you are not careful, you will wind up in trouble.", ja: "気をつけないと困ったことになるよ。", context: "日常" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40522,
+    word: "catch on",
+    meaning: "流行る、理解する",
+    partOfSpeech: "other",
+    examples: [
+      { en: "The trend quickly caught on.", ja: "そのトレンドはすぐに流行った。", context: "社会" },
+      { en: "It took a while but she caught on.", ja: "時間がかかったが彼女は理解した。", context: "教育" },
+      { en: "The idea never really caught on.", ja: "そのアイデアはあまり流行らなかった。", context: "ビジネス" }
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 40523,
+    word: "tone it down",
+    meaning: "控えめにする",
+    partOfSpeech: "other",
+    examples: [
+      { en: "Can you tone it down a little?", ja: "少し控えめにしてくれる？", context: "日常" },
+      { en: "She was asked to tone down her criticism.", ja: "彼女は批判を控えめにするよう言われた。", context: "仕事" },
+      { en: "Tone it down, you are being too loud.", ja: "控えめにして、うるさいよ。", context: "日常" }
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 40524,
+    word: "ring a bell",
+    meaning: "聞き覚えがある",
+    partOfSpeech: "other",
+    examples: [
+      { en: "Does the name ring a bell?", ja: "その名前に聞き覚えがある？", context: "会話" },
+      { en: "That story rings a bell.", ja: "その話は聞き覚えがある。", context: "日常" },
+      { en: "It does not ring a bell at all.", ja: "全く聞き覚えがない。", context: "会話" }
+    ],
+    categories: ["communication"],
+  },
 ];
