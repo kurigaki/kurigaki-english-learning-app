@@ -3,12 +3,15 @@
 import { useState } from "react";
 import { SpeakButton } from "@/components/ui/SpeakButton";
 import { PartOfSpeech, PronunciationData, PronunciationVariant } from "@/types";
+import { WordMeaningByPos, getPosLabel } from "@/lib/word-lookup";
 
 type WordHeaderProps = {
   word: string;
   meaning: string;
   pronunciation?: string | PronunciationData;
   partOfSpeech?: PartOfSpeech;
+  /** 他品詞のmeaning一覧（単語詳細画面で複数品詞を表示するため） */
+  otherMeanings?: WordMeaningByPos[];
 };
 
 const partOfSpeechLabels: Record<PartOfSpeech, string> = {
@@ -49,6 +52,7 @@ export const WordHeader = ({
   meaning,
   pronunciation,
   partOfSpeech,
+  otherMeanings,
 }: WordHeaderProps) => {
   const [variant, setVariant] = useState<PronunciationVariant>("us");
   const showVariantToggle = hasUkPronunciation(pronunciation);
@@ -108,7 +112,22 @@ export const WordHeader = ({
       </div>
 
       {/* 意味 */}
-      <p className="text-2xl font-medium text-slate-800 dark:text-slate-100">{meaning}</p>
+      <div className="space-y-1">
+        <p className="text-2xl font-medium text-slate-800 dark:text-slate-100">
+          {partOfSpeech && <span className="text-base text-slate-400 dark:text-slate-500 mr-1">({getPosLabel(partOfSpeech)})</span>}
+          {meaning}
+        </p>
+        {otherMeanings && otherMeanings.length > 0 && (
+          <div className="space-y-0.5">
+            {otherMeanings.map((m) => (
+              <p key={m.partOfSpeech} className="text-base text-slate-500 dark:text-slate-400">
+                <span className="text-slate-400 dark:text-slate-500">({getPosLabel(m.partOfSpeech)})</span>
+                {m.meaning}
+              </p>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };

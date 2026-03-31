@@ -18,6 +18,7 @@ import {
 import type { ManualMasteryLevel } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import { getMasteryBadgeClass } from "@/lib/mastery-style";
+import { getMultiPosMeanings } from "@/lib/word-lookup";
 import { useWordDetail } from "@/lib/hooks/useWordDetail";
 import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
@@ -194,6 +195,9 @@ export default function WordDetailPage() {
               meaning={word.meaning}
               pronunciation={wordExt?.pronunciation}
               partOfSpeech={word.partOfSpeech}
+              otherMeanings={getMultiPosMeanings(word.word).filter(
+                (m) => m.partOfSpeech !== word.partOfSpeech
+              )}
             />
 
             {/* 記憶度 */}
