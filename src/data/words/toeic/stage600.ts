@@ -182,18 +182,6 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 18408,
-    word: "addressee",
-    meaning: "受取人",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The addressee of this letter has moved.", ja: "この手紙の受取人は引っ越した。", context: "日常" },
-      { en: "Please write the addressee's name clearly.", ja: "受取人の名前をはっきり書いてください。", context: "郵便" },
-      { en: "The package was returned to the addressee.", ja: "その荷物は受取人に返送された。", context: "郵便" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 18409,
     word: "administration",
     meaning: "管理",
@@ -310,18 +298,6 @@ export const words: RawWord[] = [
       { en: "This airline flies to more than fifty countries.", ja: "この航空会社は50か国以上に就航している。", context: "旅行" },
       { en: "The airline canceled the flight due to snow.", ja: "その航空会社は雪のためフライトを欠航した。", context: "旅行" },
       { en: "She works as a pilot for a major airline.", ja: "彼女は大手航空会社のパイロットとして働いている。", context: "仕事" },
-    ],
-    categories: ["travel"],
-  },
-  {
-    id: 18421,
-    word: "aboard",
-    meaning: "乗って",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "All passengers are now aboard the ship.", ja: "全乗客が今、船に乗っている。", context: "旅行" },
-      { en: "Welcome aboard this flight to London.", ja: "ロンドン行きのこのフライトへようこそ。", context: "旅行" },
-      { en: "The captain invited everyone to come aboard.", ja: "船長は皆に乗船するよう招いた。", context: "旅行" },
     ],
     categories: ["travel"],
   },
@@ -626,18 +602,6 @@ export const words: RawWord[] = [
     categories: ["travel", "daily"],
   },
   {
-    id: 18456,
-    word: "battery",
-    meaning: "電池",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The battery of my phone is almost dead.", ja: "携帯電話の電池がほとんどなくなりました。", context: "テクノロジー" },
-      { en: "He replaced the batteries in the remote.", ja: "彼はリモコンの電池を交換しました。", context: "家庭" },
-      { en: "This toy needs two AA batteries.", ja: "このおもちゃには単三電池が2本必要です。", context: "買い物" },
-    ],
-    categories: ["daily", "technology"],
-  },
-  {
     id: 18457,
     word: "behalf",
     meaning: "代わり",
@@ -854,18 +818,6 @@ export const words: RawWord[] = [
     categories: ["daily", "technology"],
   },
   {
-    id: 18496,
-    word: "buddy",
-    meaning: "仲間",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "He went fishing with his buddy last Sunday.", ja: "彼は先週の日曜日に仲間と釣りに行きました。", context: "趣味" },
-      { en: "She has been his study buddy since April.", ja: "彼女は4月から彼の勉強仲間です。", context: "学校" },
-      { en: "The two dogs are good buddies.", ja: "その2匹の犬はよい相棒です。", context: "日常" },
-    ],
-    categories: ["communication", "daily"],
-  },
-  {
     id: 18497,
     word: "budget",
     meaning: "予算",
@@ -974,18 +926,6 @@ export const words: RawWord[] = [
     categories: ["travel", "daily"],
   },
   {
-    id: 18511,
-    word: "calculator",
-    meaning: "電卓",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She used a calculator to solve the problem.", ja: "彼女はその問題を解くために電卓を使いました。", context: "学校" },
-      { en: "The calculator runs on solar power.", ja: "その電卓は太陽光で動きます。", context: "日常" },
-      { en: "Students are not allowed to use calculators here.", ja: "ここでは生徒は電卓を使うことができません。", context: "学校" },
-    ],
-    categories: ["school", "technology"],
-  },
-  {
     id: 18512,
     word: "caller",
     meaning: "電話をかける人",
@@ -1008,18 +948,6 @@ export const words: RawWord[] = [
       { en: "We visited three capitals during our trip.", ja: "旅行中に3つの首都を訪れました。", context: "旅行" },
     ],
     categories: ["daily", "travel"],
-  },
-  {
-    id: 18516,
-    word: "car park",
-    meaning: "駐車場",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The car park behind the mall is always full.", ja: "モールの裏の駐車場はいつも満車です。", context: "日常" },
-      { en: "We left the car in the underground car park.", ja: "私たちは地下駐車場に車を停めました。", context: "買い物" },
-      { en: "The car park charges two dollars per hour.", ja: "その駐車場は1時間2ドルかかります。", context: "交通" },
-    ],
-    categories: ["travel", "daily"],
   },
   {
     id: 18517,
@@ -1068,30 +996,6 @@ export const words: RawWord[] = [
       { en: "The central library was built last year.", ja: "中央図書館は去年建てられた。", context: "地域" },
     ],
     categories: ["daily", "travel"],
-  },
-  {
-    id: 18524,
-    word: "cash",
-    meaning: "現金",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Do you have enough cash to pay?", ja: "支払うのに十分な現金はありますか？", context: "買い物" },
-      { en: "Many shops now prefer cards over cash.", ja: "今や多くの店がカードのほうを好む。", context: "社会" },
-      { en: "She keeps some cash in her wallet.", ja: "彼女は財布にいくらかの現金を入れている。", context: "日常" },
-    ],
-    categories: ["shopping", "daily"],
-  },
-  {
-    id: 18525,
-    word: "cashpoint",
-    meaning: "現金引出機",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "There is a cashpoint near the station.", ja: "駅の近くにATMがある。", context: "地域" },
-      { en: "She withdrew money from the cashpoint.", ja: "彼女はATMからお金を引き出した。", context: "買い物" },
-      { en: "The cashpoint was out of order yesterday.", ja: "昨日そのATMは故障していた。", context: "日常" },
-    ],
-    categories: ["shopping"],
   },
   {
     id: 18528,
@@ -1322,18 +1226,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 18563,
-    word: "controversial",
-    meaning: "議論を呼ぶ",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The new law was highly controversial.", ja: "その新しい法律は大いに議論を呼んだ。", context: "政治" },
-      { en: "He wrote a controversial article about education.", ja: "彼は教育について議論を呼ぶ記事を書いた。", context: "メディア" },
-      { en: "The decision was controversial among the students.", ja: "その決定は生徒たちの間で議論を呼んだ。", context: "学校" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 18564,
     word: "communicate",
     meaning: "伝達する",
@@ -1464,18 +1356,6 @@ export const words: RawWord[] = [
       { en: "Each department has its own budget.", ja: "各部門にはそれぞれの予算がある。", context: "ビジネス" },
     ],
     categories: ["business", "education"],
-  },
-  {
-    id: 18594,
-    word: "department store",
-    meaning: "百貨店",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "We bought shoes at the department store.", ja: "私たちは百貨店で靴を買った。", context: "買い物" },
-      { en: "The department store has many floors.", ja: "その百貨店にはたくさんの階がある。", context: "日常" },
-      { en: "A new department store opened last month.", ja: "先月、新しい百貨店が開店した。", context: "ニュース" },
-    ],
-    categories: ["shopping", "daily"],
   },
   {
     id: 18596,
@@ -1838,30 +1718,6 @@ export const words: RawWord[] = [
     categories: ["daily", "health"],
   },
   {
-    id: 18669,
-    word: "allowance",
-    meaning: "お小遣い",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She saves half of her monthly allowance.", ja: "彼女は毎月のお小遣いの半分を貯金する。", context: "家庭" },
-      { en: "His parents give him a weekly allowance.", ja: "彼の両親は毎週お小遣いをくれる。", context: "家庭" },
-      { en: "The children spent their allowance on candy.", ja: "子供たちはお小遣いをお菓子に使った。", context: "買い物" },
-    ],
-    categories: ["daily", "family"],
-  },
-  {
-    id: 18670,
-    word: "alphabet",
-    meaning: "アルファベット",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The English alphabet has twenty-six letters.", ja: "英語のアルファベットは26文字ある。", context: "学校" },
-      { en: "Young children learn the alphabet through songs.", ja: "幼い子供は歌でアルファベットを学ぶ。", context: "教育" },
-      { en: "The words are listed in alphabetical order.", ja: "単語はアルファベット順に並んでいる。", context: "学校" },
-    ],
-    categories: ["school"],
-  },
-  {
     id: 18671,
     word: "absolutely",
     meaning: "絶対に",
@@ -2004,18 +1860,6 @@ export const words: RawWord[] = [
       { en: "She moved to the advanced level in English.", ja: "彼女は英語の上級レベルに進んだ。", context: "学校" },
     ],
     categories: ["school"],
-  },
-  {
-    id: 18695,
-    word: "allergic",
-    meaning: "アレルギーの",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "She is allergic to cats and cannot keep one.", ja: "彼女は猫アレルギーで飼うことができない。", context: "健康" },
-      { en: "Many children are allergic to certain foods.", ja: "多くの子供が特定の食べ物にアレルギーがある。", context: "健康" },
-      { en: "He found out he was allergic to pollen.", ja: "彼は花粉アレルギーだとわかった。", context: "健康" },
-    ],
-    categories: ["daily", "health"],
   },
   {
     id: 18696,
@@ -2570,18 +2414,6 @@ export const words: RawWord[] = [
     categories: ["daily", "health"],
   },
   {
-    id: 18766,
-    word: "bang",
-    meaning: "大きな音",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "We heard a loud bang outside.", ja: "外で大きな音が聞こえました。", context: "日常" },
-      { en: "The door closed with a bang.", ja: "ドアがバタンと閉まりました。", context: "家庭" },
-      { en: "A sudden bang surprised everyone in the room.", ja: "突然の大きな音で部屋にいた全員が驚きました。", context: "学校" },
-    ],
-    categories: ["daily"],
-  },
-  {
     id: 18767,
     word: "bank account",
     meaning: "銀行口座",
@@ -2606,18 +2438,6 @@ export const words: RawWord[] = [
     categories: ["society", "daily"],
   },
   {
-    id: 18770,
-    word: "barman",
-    meaning: "バーテンダー",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The barman served drinks to the guests.", ja: "バーテンダーが客に飲み物を出しました。", context: "飲食" },
-      { en: "He worked as a barman during college.", ja: "彼は大学時代にバーテンダーとして働きました。", context: "仕事" },
-      { en: "The barman recommended a popular cocktail.", ja: "バーテンダーが人気のカクテルを勧めました。", context: "会話" },
-    ],
-    categories: ["daily", "food"],
-  },
-  {
     id: 18771,
     word: "base",
     meaning: "土台",
@@ -2628,18 +2448,6 @@ export const words: RawWord[] = [
       { en: "The company has its base in London.", ja: "その会社はロンドンに拠点を置いています。", context: "仕事" },
     ],
     categories: ["daily", "society"],
-  },
-  {
-    id: 18772,
-    word: "basement",
-    meaning: "地下室",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Old boxes are kept in the basement.", ja: "古い箱が地下室に保管されています。", context: "家庭" },
-      { en: "The basement was used as a music studio.", ja: "地下室は音楽スタジオとして使われました。", context: "趣味" },
-      { en: "Water leaked into the basement after the rain.", ja: "雨の後、地下室に水が漏れました。", context: "日常" },
-    ],
-    categories: ["daily", "home"],
   },
   {
     id: 18773,
@@ -2736,18 +2544,6 @@ export const words: RawWord[] = [
       { en: "The new park will benefit the whole town.", ja: "新しい公園は町全体に利益をもたらします。", context: "社会" },
     ],
     categories: ["daily", "health"],
-  },
-  {
-    id: 18787,
-    word: "biology",
-    meaning: "生物学",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Biology is her favorite subject at school.", ja: "生物学は彼女の学校で一番好きな科目です。", context: "学校" },
-      { en: "They learned about cells in biology class.", ja: "彼らは生物の授業で細胞について学びました。", context: "理科" },
-      { en: "The biology lab has many microscopes.", ja: "生物学の実験室にはたくさんの顕微鏡があります。", context: "学校" },
-    ],
-    categories: ["school", "science"],
   },
   {
     id: 18792,
@@ -2894,18 +2690,6 @@ export const words: RawWord[] = [
     categories: ["daily", "nature"],
   },
   {
-    id: 18823,
-    word: "brass",
-    meaning: "真ちゅう",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The door handle was made of brass.", ja: "ドアの取っ手は真ちゅうでできていました。", context: "日常" },
-      { en: "She plays a brass instrument in the band.", ja: "彼女はバンドで金管楽器を演奏します。", context: "音楽" },
-      { en: "The old clock had a shiny brass frame.", ja: "その古い時計には光る真ちゅうのフレームがありました。", context: "日常" },
-    ],
-    categories: ["daily"],
-  },
-  {
     id: 18826,
     word: "calculation",
     meaning: "計算",
@@ -2918,42 +2702,6 @@ export const words: RawWord[] = [
     categories: ["school", "daily"],
   },
   {
-    id: 18827,
-    word: "calmness",
-    meaning: "落ち着き",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Her calmness helped everyone feel safe.", ja: "彼女の落ち着きがみんなを安心させました。", context: "学校" },
-      { en: "He showed great calmness during the earthquake.", ja: "彼は地震の間、すばらしい落ち着きを見せました。", context: "日常" },
-      { en: "The calmness of the lake was beautiful.", ja: "湖の穏やかさは美しかったです。", context: "自然" },
-    ],
-    categories: ["emotion", "daily"],
-  },
-  {
-    id: 18829,
-    word: "can",
-    meaning: "缶",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "He opened a can of juice with a pull tab.", ja: "彼はプルタブでジュースの缶を開けました。", context: "日常" },
-      { en: "Please put the empty can in the recycling bin.", ja: "空き缶をリサイクル箱に入れてください。", context: "学校" },
-      { en: "She bought three cans of soup at the store.", ja: "彼女は店でスープの缶を3つ買いました。", context: "買い物" },
-    ],
-    categories: ["daily", "food"],
-  },
-  {
-    id: 18830,
-    word: "cancer",
-    meaning: "がん",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The doctor is doing research on cancer treatment.", ja: "医者はがんの治療法について研究しています。", context: "科学" },
-      { en: "Early detection of cancer can save lives.", ja: "がんの早期発見は命を救えます。", context: "健康" },
-      { en: "Many people donated money for cancer research.", ja: "多くの人ががん研究のためにお金を寄付しました。", context: "社会" },
-    ],
-    categories: ["daily", "health"],
-  },
-  {
     id: 18832,
     word: "capacity",
     meaning: "収容力、能力",
@@ -2964,18 +2712,6 @@ export const words: RawWord[] = [
       { en: "The hotel was filled to full capacity.", ja: "ホテルは満室でした。", context: "旅行" },
     ],
     categories: ["daily"],
-  },
-  {
-    id: 18833,
-    word: "capital letter",
-    meaning: "大文字",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Write the first word with a capital letter.", ja: "最初の単語を大文字で書きなさい。", context: "学校" },
-      { en: "Names of countries start with a capital letter.", ja: "国の名前は大文字で始まります。", context: "学校" },
-      { en: "She forgot to use a capital letter at the start.", ja: "彼女は文頭に大文字を使うのを忘れました。", context: "学校" },
-    ],
-    categories: ["school"],
   },
   {
     id: 18836,
@@ -3084,18 +2820,6 @@ export const words: RawWord[] = [
       { en: "He gave a word of caution to the team.", ja: "彼はチームに注意の言葉をかけた。", context: "スポーツ" },
     ],
     categories: ["daily"],
-  },
-  {
-    id: 18858,
-    word: "central heating",
-    meaning: "集中暖房",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The house has central heating.", ja: "その家には集中暖房がある。", context: "家庭" },
-      { en: "Central heating keeps the room warm.", ja: "集中暖房が部屋を暖かく保つ。", context: "家庭" },
-      { en: "We turned on the central heating in winter.", ja: "私たちは冬に集中暖房をつけた。", context: "季節" },
-    ],
-    categories: ["daily", "home"],
   },
   {
     id: 18860,
@@ -3660,42 +3384,6 @@ export const words: RawWord[] = [
       { en: "An emergency meeting was called after the accident.", ja: "事故の後、緊急会議が招集された。", context: "仕事" },
     ],
     categories: ["daily"],
-  },
-  {
-    id: 18984,
-    word: "hazardous",
-    meaning: "危険な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Workers must wear masks around hazardous materials.", ja: "作業員は危険な物質の周囲ではマスクを着けなければならない。", context: "仕事" },
-      { en: "Driving in fog can be very hazardous.", ja: "霧の中での運転はとても危険になりうる。", context: "交通" },
-      { en: "The chemical was labeled as hazardous waste.", ja: "その化学物質は危険廃棄物と表示されていた。", context: "環境" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 18999,
-    word: "hardware",
-    meaning: "金物・機器",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The store sells computer hardware and accessories.", ja: "その店はコンピュータ機器と周辺機器を販売している。", context: "技術" },
-      { en: "The hardware store has every tool you need.", ja: "その金物店には必要な道具が全て揃っている。", context: "日常" },
-      { en: "New hardware was installed in the office.", ja: "新しい機器がオフィスに導入された。", context: "仕事" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 19005,
-    word: "hazard",
-    meaning: "危険要因",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Icy roads are a major hazard for drivers.", ja: "凍った道路はドライバーにとって大きな危険要因だ。", context: "交通" },
-      { en: "The sign warned about fire hazards in the area.", ja: "その標識はその地域の火災の危険要因を警告していた。", context: "日常" },
-      { en: "Smoking is a serious health hazard.", ja: "喫煙は深刻な健康上の危険要因だ。", context: "健康" },
-    ],
-    categories: ["communication"],
   },
   {
     id: 19007,
@@ -4790,18 +4478,6 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 91001,
-    word: "accommodate",
-    meaning: "収容する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The hotel can accommodate 200 guests.", ja: "そのホテルは200人の宿泊客を収容できる。", context: "旅行" },
-      { en: "We need to accommodate different opinions.", ja: "異なる意見に対応する必要がある。", context: "仕事" },
-      { en: "The schedule was changed to accommodate her.", ja: "彼女に合わせてスケジュールが変更された。", context: "仕事" },
-    ],
-    categories: ["daily"],
-  },
-  {
     id: 91002,
     word: "consequence",
     meaning: "結果",
@@ -5212,8 +4888,8 @@ export const words: RawWord[] = [
   {
     id: 92024,
     word: "implement",
-    meaning: "道具",
-    partOfSpeech: "noun",
+    meaning: "実施する",
+    partOfSpeech: "verb",
     examples: [
       { en: "Farmers use various implements to work the land.", ja: "農家は土地を耕すために様々な道具を使う。", context: "日常" },
       { en: "Stone implements were found at the ancient site.", ja: "古代の遺跡で石の道具が見つかった。", context: "科学" },
@@ -6742,18 +6418,6 @@ export const words: RawWord[] = [
       { en: "The restaurant offers a wide selection of hot beverages.", ja: "そのレストランは豊富な温かい飲料を提供している。", context: "ビジネス" },
       { en: "Alcoholic beverages are not permitted in the park area.", ja: "公園内ではアルコール飲料は許可されていない。", context: "日常" },
       { en: "Tea remains the most popular beverage in many countries.", ja: "紅茶は多くの国で最も人気のある飲料である。", context: "文化" },
-    ],
-    categories: ["business"],
-  },
-  {
-    id: 93010,
-    word: "diploma",
-    meaning: "卒業証書",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She received her diploma at the graduation ceremony.", ja: "彼女は卒業式で卒業証書を受け取った。", context: "学校" },
-      { en: "A high school diploma is required for this job.", ja: "この仕事には高校の卒業証書が必要だ。", context: "仕事" },
-      { en: "He framed his diploma and hung it on the wall.", ja: "彼は卒業証書を額に入れて壁に掛けた。", context: "家庭" },
     ],
     categories: ["business"],
   },

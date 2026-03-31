@@ -11821,4 +11821,52 @@ export const words: RawWord[] = [
     ],
     categories: ["daily"],
   },
+  {
+    id: 94000,
+    word: "controversial",
+    meaning: "議論を呼ぶ",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "The new law was highly controversial.", ja: "その新しい法律は大いに議論を呼んだ。", context: "政治" },
+      { en: "He wrote a controversial article about education.", ja: "彼は教育について議論を呼ぶ記事を書いた。", context: "メディア" },
+      { en: "The decision was controversial among the students.", ja: "その決定は生徒たちの間で議論を呼んだ。", context: "学校" },
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 94001,
+    word: "basement",
+    meaning: "地下室",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Old boxes are kept in the basement.", ja: "古い箱が地下室に保管されています。", context: "家庭" },
+      { en: "The basement was used as a music studio.", ja: "地下室は音楽スタジオとして使われました。", context: "趣味" },
+      { en: "Water leaked into the basement after the rain.", ja: "雨の後、地下室に水が漏れました。", context: "日常" },
+    ],
+    categories: ["daily", "home"],
+  },
+  {
+    id: 94002,
+    word: "hardware",
+    meaning: "金物・機器",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The store sells computer hardware and accessories.", ja: "その店はコンピュータ機器と周辺機器を販売している。", context: "技術" },
+      { en: "The hardware store has every tool you need.", ja: "その金物店には必要な道具が全て揃っている。", context: "日常" },
+      { en: "New hardware was installed in the office.", ja: "新しい機器がオフィスに導入された。", context: "仕事" },
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 94003,
+    word: "accommodate",
+    meaning: "収容する",
+    partOfSpeech: "verb",
+    examples: [
+      { en: "The hotel can accommodate 200 guests.", ja: "そのホテルは200人の宿泊客を収容できる。", context: "旅行" },
+      { en: "We need to accommodate different opinions.", ja: "異なる意見に対応する必要がある。", context: "仕事" },
+      { en: "The schedule was changed to accommodate her.", ja: "彼女に合わせてスケジュールが変更された。", context: "仕事" },
+    ],
+    categories: ["daily"],
+  },
 ];

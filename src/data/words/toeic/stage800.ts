@@ -12793,4 +12793,40 @@ export const words: RawWord[] = [
     ],
     categories: ["business"],
   },
+  {
+    id: 94004,
+    word: "addressee",
+    meaning: "受取人",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The addressee of this letter has moved.", ja: "この手紙の受取人は引っ越した。", context: "日常" },
+      { en: "Please write the addressee's name clearly.", ja: "受取人の名前をはっきり書いてください。", context: "郵便" },
+      { en: "The package was returned to the addressee.", ja: "その荷物は受取人に返送された。", context: "郵便" },
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 94005,
+    word: "hazardous",
+    meaning: "危険な",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "Workers must wear masks around hazardous materials.", ja: "作業員は危険な物質の周囲ではマスクを着けなければならない。", context: "仕事" },
+      { en: "Driving in fog can be very hazardous.", ja: "霧の中での運転はとても危険になりうる。", context: "交通" },
+      { en: "The chemical was labeled as hazardous waste.", ja: "その化学物質は危険廃棄物と表示されていた。", context: "環境" },
+    ],
+    categories: ["communication"],
+  },
+  {
+    id: 94006,
+    word: "hazard",
+    meaning: "危険要因",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Icy roads are a major hazard for drivers.", ja: "凍った道路はドライバーにとって大きな危険要因だ。", context: "交通" },
+      { en: "The sign warned about fire hazards in the area.", ja: "その標識はその地域の火災の危険要因を警告していた。", context: "日常" },
+      { en: "Smoking is a serious health hazard.", ja: "喫煙は深刻な健康上の危険要因だ。", context: "健康" },
+    ],
+    categories: ["communication"],
+  },
 ];
