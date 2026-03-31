@@ -2594,18 +2594,6 @@ export const words: RawWord[] = [
     categories: ["communication", "business"],
   },
   {
-    id: 21484,
-    word: "wordlessly",
-    meaning: "無言で",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "He wordlessly handed her the letter and left.", ja: "彼は無言で彼女に手紙を渡して去った。", context: "日常" },
-      { en: "They sat wordlessly staring at the sunset together.", ja: "彼らは無言で一緒に夕日を見つめていた。", context: "日常" },
-      { en: "She wordlessly pointed to the exit sign above.", ja: "彼女は無言で頭上の出口標識を指さした。", context: "日常" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 21485,
     word: "wrongly",
     meaning: "誤って",
@@ -2666,18 +2654,6 @@ export const words: RawWord[] = [
     categories: ["daily", "technology"],
   },
   {
-    id: 21490,
-    word: "wit",
-    meaning: "機知",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Her quick wit always made the audience laugh.", ja: "彼女の素早い機知がいつも観客を笑わせた。", context: "娯楽" },
-      { en: "The writer was famous for his sharp wit.", ja: "その作家は鋭い機知で有名だった。", context: "文学" },
-      { en: "He used his wit to defuse the tense situation.", ja: "彼は機知を使って緊迫した状況を和らげた。", context: "コミュニケーション" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 21491,
     word: "withdrawal",
     meaning: "撤退",
@@ -2712,54 +2688,6 @@ export const words: RawWord[] = [
       { en: "The company held a leadership workshop for all managers.", ja: "会社は全管理職向けのリーダーシップ研修を開催した。", context: "ビジネス" },
     ],
     categories: ["business", "hobby"],
-  },
-  {
-    id: 21494,
-    word: "wristwatch",
-    meaning: "腕時計",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "He received a luxury wristwatch as a retirement gift.", ja: "彼は退職祝いに高級腕時計を受け取った。", context: "日常" },
-      { en: "Her wristwatch stopped working during the long meeting.", ja: "長い会議の途中で彼女の腕時計が止まった。", context: "ビジネス" },
-      { en: "Smart wristwatches can track your daily health data.", ja: "スマート腕時計は日々の健康データを追跡できる。", context: "技術" },
-    ],
-    categories: ["daily", "technology"],
-  },
-  {
-    id: 21495,
-    word: "yell",
-    meaning: "叫び声",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "A yell of excitement came from the winning team.", ja: "勝利チームから興奮の叫び声が上がった。", context: "スポーツ" },
-      { en: "The coach let out a yell to motivate players.", ja: "コーチは選手を奮い立たせるために叫び声を上げた。", context: "スポーツ" },
-      { en: "His yell echoed loudly throughout the empty hallway.", ja: "彼の叫び声が空っぽの廊下中に大きく響いた。", context: "日常" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 21496,
-    word: "zoom",
-    meaning: "急上昇",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The camera has a powerful zoom for distant objects.", ja: "そのカメラは遠くの物体用の強力なズームを持つ。", context: "技術" },
-      { en: "Sales showed a sudden zoom in the final quarter.", ja: "売上は最終四半期に急上昇を示した。", context: "ビジネス" },
-      { en: "The race car passed with a loud zoom.", ja: "レースカーが大きな音を立てて通過した。", context: "スポーツ" },
-    ],
-    categories: ["technology"],
-  },
-  {
-    id: 21499,
-    word: "witty",
-    meaning: "機知に富む",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "His witty remarks always brightened up the meeting.", ja: "彼の機知に富んだ発言がいつも会議を明るくした。", context: "ビジネス" },
-      { en: "The audience loved the witty dialogue in the play.", ja: "観客はその劇の機知に富んだ対話を気に入った。", context: "芸術" },
-      { en: "She gave a witty speech that impressed all guests.", ja: "彼女は全員を感心させる機知に富んだスピーチをした。", context: "コミュニケーション" },
-    ],
-    categories: ["communication"],
   },
   {
     id: 21500,
@@ -3216,18 +3144,6 @@ export const words: RawWord[] = [
       { en: "Becoming a reporter requires strong communication skills.", ja: "記者になるには強いコミュニケーション能力が必要だ。", context: "キャリア" },
     ],
     categories: ["communication", "business"],
-  },
-  {
-    id: 21543,
-    word: "algorithm",
-    meaning: "アルゴリズム",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The algorithm sorts data quickly.", ja: "そのアルゴリズムはデータを素早く整列させる。", context: "IT" },
-      { en: "Engineers designed a new search algorithm.", ja: "技術者たちは新しい検索アルゴリズムを設計した。", context: "開発" },
-      { en: "This algorithm reduces processing time by half.", ja: "このアルゴリズムは処理時間を半分に短縮する。", context: "技術" },
-    ],
-    categories: ["technology"],
   },
   {
     id: 21544,
@@ -9204,18 +9120,6 @@ export const words: RawWord[] = [
       { en: "LED lights consume far fewer watts than incandescent ones.", ja: "LED照明は白熱灯よりはるかに少ないワット数で済む。", context: "省エネ" },
     ],
     categories: ["technology", "daily"],
-  },
-  {
-    id: 22071,
-    word: "algebra",
-    meaning: "代数学",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Algebra uses letters to represent unknown numbers in equations.", ja: "代数学は方程式で未知の数を文字で表す。", context: "数学" },
-      { en: "She excelled at algebra throughout her high school years.", ja: "彼女は高校時代を通じて代数学に秀でていた。", context: "学校" },
-      { en: "Linear algebra is fundamental to computer science.", ja: "線形代数学はコンピュータ科学の基礎だ。", context: "技術" },
-    ],
-    categories: ["school", "technology"],
   },
   {
     id: 22072,
