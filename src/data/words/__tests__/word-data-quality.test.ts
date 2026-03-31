@@ -39,12 +39,14 @@ const courseDataSets: CourseDataSet[] = [
 // ═══════════════════════════════════════
 
 describe.each(courseDataSets)("$name コース", ({ words, course }) => {
-  it("word の重複がない", () => {
+  it("word+partOfSpeech の重複がない", () => {
+    // 同じwordでも品詞が異なれば別エントリとして許容（例: run=名詞 と run=動詞）
     const seen = new Set<string>();
     const dups: string[] = [];
     for (const w of words) {
-      if (seen.has(w.word)) dups.push(w.word);
-      seen.add(w.word);
+      const key = w.word + "|" + w.partOfSpeech;
+      if (seen.has(key)) dups.push(w.word + "(" + w.partOfSpeech + ")");
+      seen.add(key);
     }
     expect(dups).toEqual([]);
   });
