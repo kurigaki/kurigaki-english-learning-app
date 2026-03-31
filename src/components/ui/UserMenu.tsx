@@ -303,6 +303,18 @@ export const UserMenu = () => {
               </svg>
               クレジット
             </Link>
+            <a
+              href="https://accurate-latency-744.notion.site/334beb8c682480a198a6f347354105c8?pvs=105"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700 transition-colors"
+            >
+              <svg className="w-5 h-5 text-slate-400 dark:text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              お問い合わせ
+            </a>
           </nav>
 
           {/* ログアウト（ログイン時のみ） */}
