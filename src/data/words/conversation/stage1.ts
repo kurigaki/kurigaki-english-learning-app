@@ -3757,4 +3757,28 @@ export const words: RawWord[] = [
     ],
     categories: ["daily"],
   },
+  {
+    id: 38314,
+    word: "pencil",
+    meaning: "鉛筆",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "I need a pencil.", ja: "鉛筆が必要です。", context: "学校" },
+      { en: "Do you have a pencil?", ja: "鉛筆を持っていますか？", context: "学校" },
+      { en: "She wrote with a pencil.", ja: "彼女は鉛筆で書いた。", context: "日常" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 38315,
+    word: "thousand",
+    meaning: "千",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "It costs two thousand yen.", ja: "2千円です。", context: "買い物" },
+      { en: "A thousand people came.", ja: "千人の人が来た。", context: "日常" },
+      { en: "He ran a thousand meters.", ja: "彼は千メートル走った。", context: "スポーツ" },
+    ],
+    categories: ["daily"],
+  },
 ];
