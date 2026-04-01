@@ -2,7 +2,7 @@ import type { RawWord } from "../types";
 
 export const words: RawWord[] = [
   {
-    id: 82001,
+    id: 38766,
     word: "admit",
     meaning: "認める",
     partOfSpeech: "verb",
@@ -14,7 +14,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82002,
+    id: 38767,
     word: "advise",
     meaning: "助言する",
     partOfSpeech: "verb",
@@ -26,7 +26,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82003,
+    id: 38768,
     word: "announce",
     meaning: "発表する",
     partOfSpeech: "verb",
@@ -38,7 +38,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82004,
+    id: 38769,
     word: "apologize",
     meaning: "謝罪する",
     partOfSpeech: "verb",
@@ -50,7 +50,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82005,
+    id: 38770,
     word: "approve",
     meaning: "承認する",
     partOfSpeech: "verb",
@@ -62,7 +62,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82006,
+    id: 38771,
     word: "argue",
     meaning: "主張する",
     partOfSpeech: "verb",
@@ -74,7 +74,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82008,
+    id: 38772,
     word: "avoid",
     meaning: "避ける",
     partOfSpeech: "verb",
@@ -86,7 +86,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82009,
+    id: 38773,
     word: "blame",
     meaning: "責める",
     partOfSpeech: "verb",
@@ -98,7 +98,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82010,
+    id: 38774,
     word: "bother",
     meaning: "悩ませる",
     partOfSpeech: "verb",
@@ -110,7 +110,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82011,
+    id: 38775,
     word: "cancel",
     meaning: "取り消す",
     partOfSpeech: "verb",
@@ -122,7 +122,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82012,
+    id: 38776,
     word: "claim",
     meaning: "主張する",
     partOfSpeech: "verb",
@@ -134,7 +134,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82013,
+    id: 38777,
     word: "comment",
     meaning: "コメントする",
     partOfSpeech: "verb",
@@ -146,7 +146,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82014,
+    id: 38778,
     word: "communicate",
     meaning: "伝え合う",
     partOfSpeech: "verb",
@@ -158,7 +158,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82015,
+    id: 38779,
     word: "confirm",
     meaning: "確認する",
     partOfSpeech: "verb",
@@ -170,7 +170,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82016,
+    id: 38780,
     word: "consider",
     meaning: "考慮する",
     partOfSpeech: "verb",
@@ -182,7 +182,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82017,
+    id: 38781,
     word: "convince",
     meaning: "説得する",
     partOfSpeech: "verb",
@@ -194,7 +194,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82018,
+    id: 38782,
     word: "criticize",
     meaning: "批判する",
     partOfSpeech: "verb",
@@ -206,7 +206,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82019,
+    id: 38783,
     word: "debate",
     meaning: "討論する",
     partOfSpeech: "verb",
@@ -218,7 +218,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82020,
+    id: 38784,
     word: "demand",
     meaning: "要求する",
     partOfSpeech: "verb",
@@ -230,7 +230,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82021,
+    id: 38785,
     word: "deny",
     meaning: "否定する",
     partOfSpeech: "verb",
@@ -242,7 +242,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82022,
+    id: 38786,
     word: "depend",
     meaning: "依存する",
     partOfSpeech: "verb",
@@ -254,7 +254,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82023,
+    id: 38787,
     word: "deserve",
     meaning: "値する",
     partOfSpeech: "verb",
@@ -266,7 +266,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82024,
+    id: 38788,
     word: "disagree",
     meaning: "反対する",
     partOfSpeech: "verb",
@@ -278,7 +278,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82025,
+    id: 38789,
     word: "discuss",
     meaning: "話し合う",
     partOfSpeech: "verb",
@@ -290,7 +290,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82026,
+    id: 38790,
     word: "doubt",
     meaning: "疑う",
     partOfSpeech: "verb",
@@ -302,7 +302,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82027,
+    id: 38791,
     word: "encourage",
     meaning: "励ます",
     partOfSpeech: "verb",
@@ -314,7 +314,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82028,
+    id: 38792,
     word: "expect",
     meaning: "期待する",
     partOfSpeech: "verb",
@@ -326,7 +326,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82029,
+    id: 38793,
     word: "express",
     meaning: "表現する",
     partOfSpeech: "verb",
@@ -338,7 +338,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82030,
+    id: 38794,
     word: "insist",
     meaning: "主張し続ける",
     partOfSpeech: "verb",
@@ -350,7 +350,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82031,
+    id: 38795,
     word: "mention",
     meaning: "言及する",
     partOfSpeech: "verb",
@@ -362,7 +362,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82032,
+    id: 38796,
     word: "persuade",
     meaning: "説得する",
     partOfSpeech: "verb",
@@ -374,7 +374,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82033,
+    id: 38797,
     word: "predict",
     meaning: "予測する",
     partOfSpeech: "verb",
@@ -386,7 +386,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82034,
+    id: 38798,
     word: "pretend",
     meaning: "ふりをする",
     partOfSpeech: "verb",
@@ -398,7 +398,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82035,
+    id: 38799,
     word: "recommend",
     meaning: "薦める",
     partOfSpeech: "verb",
@@ -410,7 +410,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82037,
+    id: 38800,
     word: "regret",
     meaning: "後悔する",
     partOfSpeech: "verb",
@@ -422,7 +422,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82038,
+    id: 38801,
     word: "remind",
     meaning: "思い出させる",
     partOfSpeech: "verb",
@@ -434,7 +434,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82039,
+    id: 38802,
     word: "require",
     meaning: "必要とする",
     partOfSpeech: "verb",
@@ -446,7 +446,7 @@ export const words: RawWord[] = [
     categories: ["opinion", "discussion"],
   },
   {
-    id: 82042,
+    id: 38803,
     word: "achieve",
     meaning: "達成する",
     partOfSpeech: "verb",
@@ -458,7 +458,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82044,
+    id: 38804,
     word: "apply",
     meaning: "応募する",
     partOfSpeech: "verb",
@@ -470,7 +470,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82045,
+    id: 38805,
     word: "arrange",
     meaning: "手配する",
     partOfSpeech: "verb",
@@ -482,7 +482,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82046,
+    id: 38806,
     word: "attempt",
     meaning: "試みる",
     partOfSpeech: "verb",
@@ -494,7 +494,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82047,
+    id: 38807,
     word: "behave",
     meaning: "振る舞う",
     partOfSpeech: "verb",
@@ -506,7 +506,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82048,
+    id: 38808,
     word: "compete",
     meaning: "競争する",
     partOfSpeech: "verb",
@@ -518,7 +518,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82049,
+    id: 38809,
     word: "concentrate",
     meaning: "集中する",
     partOfSpeech: "verb",
@@ -530,7 +530,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82050,
+    id: 38810,
     word: "confuse",
     meaning: "混乱させる",
     partOfSpeech: "verb",
@@ -542,7 +542,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82051,
+    id: 38811,
     word: "connect",
     meaning: "つなげる",
     partOfSpeech: "verb",
@@ -554,7 +554,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82052,
+    id: 38812,
     word: "cope",
     meaning: "対処する",
     partOfSpeech: "verb",
@@ -566,7 +566,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82053,
+    id: 38813,
     word: "defeat",
     meaning: "打ち負かす",
     partOfSpeech: "verb",
@@ -578,7 +578,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82054,
+    id: 38814,
     word: "define",
     meaning: "定義する",
     partOfSpeech: "verb",
@@ -590,7 +590,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82055,
+    id: 38815,
     word: "determine",
     meaning: "決定する",
     partOfSpeech: "verb",
@@ -602,7 +602,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82056,
+    id: 38816,
     word: "develop",
     meaning: "発展させる",
     partOfSpeech: "verb",
@@ -614,7 +614,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82058,
+    id: 38817,
     word: "establish",
     meaning: "設立する",
     partOfSpeech: "verb",
@@ -626,7 +626,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82061,
+    id: 38818,
     word: "examine",
     meaning: "調べる",
     partOfSpeech: "verb",
@@ -638,7 +638,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82062,
+    id: 38819,
     word: "experience",
     meaning: "経験する",
     partOfSpeech: "verb",
@@ -650,7 +650,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82063,
+    id: 38820,
     word: "explore",
     meaning: "探求する",
     partOfSpeech: "verb",
@@ -662,7 +662,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82064,
+    id: 38821,
     word: "grab",
     meaning: "つかむ",
     partOfSpeech: "verb",
@@ -674,7 +674,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82065,
+    id: 38822,
     word: "guarantee",
     meaning: "保証する",
     partOfSpeech: "verb",
@@ -686,7 +686,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82066,
+    id: 38823,
     word: "handle",
     meaning: "対処する",
     partOfSpeech: "verb",
@@ -698,7 +698,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82067,
+    id: 38824,
     word: "identify",
     meaning: "特定する",
     partOfSpeech: "verb",
@@ -710,7 +710,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82068,
+    id: 38825,
     word: "improve",
     meaning: "改善する",
     partOfSpeech: "verb",
@@ -722,7 +722,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82069,
+    id: 38826,
     word: "increase",
     meaning: "増加する",
     partOfSpeech: "verb",
@@ -734,7 +734,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82070,
+    id: 38827,
     word: "indicate",
     meaning: "示す",
     partOfSpeech: "verb",
@@ -746,7 +746,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82071,
+    id: 38828,
     word: "influence",
     meaning: "影響する",
     partOfSpeech: "verb",
@@ -758,7 +758,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82073,
+    id: 38829,
     word: "maintain",
     meaning: "維持する",
     partOfSpeech: "verb",
@@ -770,7 +770,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82074,
+    id: 38830,
     word: "observe",
     meaning: "観察する",
     partOfSpeech: "verb",
@@ -782,7 +782,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82076,
+    id: 38831,
     word: "perform",
     meaning: "実行する",
     partOfSpeech: "verb",
@@ -794,7 +794,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82077,
+    id: 38832,
     word: "permit",
     meaning: "許可する",
     partOfSpeech: "verb",
@@ -806,7 +806,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82079,
+    id: 38833,
     word: "promote",
     meaning: "促進する",
     partOfSpeech: "verb",
@@ -818,7 +818,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82080,
+    id: 38834,
     word: "prove",
     meaning: "証明する",
     partOfSpeech: "verb",
@@ -830,7 +830,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82081,
+    id: 38835,
     word: "realize",
     meaning: "気づく",
     partOfSpeech: "verb",
@@ -842,7 +842,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82082,
+    id: 38836,
     word: "recognize",
     meaning: "認識する",
     partOfSpeech: "verb",
@@ -854,7 +854,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82083,
+    id: 38837,
     word: "recover",
     meaning: "回復する",
     partOfSpeech: "verb",
@@ -866,7 +866,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82084,
+    id: 38838,
     word: "reflect",
     meaning: "反省する",
     partOfSpeech: "verb",
@@ -878,7 +878,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82085,
+    id: 38839,
     word: "relate",
     meaning: "関連づける",
     partOfSpeech: "verb",
@@ -890,7 +890,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82086,
+    id: 38840,
     word: "research",
     meaning: "調査する",
     partOfSpeech: "verb",
@@ -902,7 +902,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82088,
+    id: 38841,
     word: "respond",
     meaning: "反応する",
     partOfSpeech: "verb",
@@ -914,7 +914,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82089,
+    id: 38842,
     word: "solve",
     meaning: "解く",
     partOfSpeech: "verb",
@@ -926,7 +926,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82090,
+    id: 38843,
     word: "struggle",
     meaning: "もがく",
     partOfSpeech: "verb",
@@ -938,7 +938,7 @@ export const words: RawWord[] = [
     categories: ["action", "mental"],
   },
   {
-    id: 82091,
+    id: 38844,
     word: "ability",
     meaning: "能力",
     partOfSpeech: "noun",
@@ -950,7 +950,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82092,
+    id: 38845,
     word: "achievement",
     meaning: "達成",
     partOfSpeech: "noun",
@@ -962,7 +962,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82093,
+    id: 38846,
     word: "advantage",
     meaning: "利点",
     partOfSpeech: "noun",
@@ -974,7 +974,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82094,
+    id: 38847,
     word: "agreement",
     meaning: "合意",
     partOfSpeech: "noun",
@@ -986,7 +986,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82095,
+    id: 38848,
     word: "attitude",
     meaning: "態度",
     partOfSpeech: "noun",
@@ -998,7 +998,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82096,
+    id: 38849,
     word: "benefit",
     meaning: "利益",
     partOfSpeech: "noun",
@@ -1010,7 +1010,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82097,
+    id: 38850,
     word: "cause",
     meaning: "原因",
     partOfSpeech: "noun",
@@ -1022,7 +1022,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82098,
+    id: 38851,
     word: "challenge",
     meaning: "課題",
     partOfSpeech: "noun",
@@ -1034,7 +1034,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82101,
+    id: 38852,
     word: "comparison",
     meaning: "比較",
     partOfSpeech: "noun",
@@ -1046,7 +1046,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82102,
+    id: 38853,
     word: "competition",
     meaning: "競争",
     partOfSpeech: "noun",
@@ -1058,7 +1058,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82103,
+    id: 38854,
     word: "complaint",
     meaning: "苦情",
     partOfSpeech: "noun",
@@ -1070,7 +1070,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82104,
+    id: 38855,
     word: "conclusion",
     meaning: "結論",
     partOfSpeech: "noun",
@@ -1082,7 +1082,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82105,
+    id: 38856,
     word: "condition",
     meaning: "条件",
     partOfSpeech: "noun",
@@ -1094,7 +1094,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82106,
+    id: 38857,
     word: "connection",
     meaning: "繋がり",
     partOfSpeech: "noun",
@@ -1106,7 +1106,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82110,
+    id: 38858,
     word: "courage",
     meaning: "勇気",
     partOfSpeech: "noun",
@@ -1118,7 +1118,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82111,
+    id: 38859,
     word: "crisis",
     meaning: "危機",
     partOfSpeech: "noun",
@@ -1130,7 +1130,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82112,
+    id: 38860,
     word: "decision",
     meaning: "決断",
     partOfSpeech: "noun",
@@ -1142,7 +1142,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82113,
+    id: 38861,
     word: "description",
     meaning: "描写",
     partOfSpeech: "noun",
@@ -1154,7 +1154,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82114,
+    id: 38862,
     word: "detail",
     meaning: "詳細",
     partOfSpeech: "noun",
@@ -1166,7 +1166,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82115,
+    id: 38863,
     word: "development",
     meaning: "発展",
     partOfSpeech: "noun",
@@ -1178,7 +1178,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82117,
+    id: 38864,
     word: "difficulty",
     meaning: "困難",
     partOfSpeech: "noun",
@@ -1190,7 +1190,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82119,
+    id: 38865,
     word: "economy",
     meaning: "経済",
     partOfSpeech: "noun",
@@ -1202,7 +1202,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82120,
+    id: 38866,
     word: "education",
     meaning: "教育",
     partOfSpeech: "noun",
@@ -1214,7 +1214,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82121,
+    id: 38867,
     word: "effect",
     meaning: "影響",
     partOfSpeech: "noun",
@@ -1226,7 +1226,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82123,
+    id: 38868,
     word: "environment",
     meaning: "環境",
     partOfSpeech: "noun",
@@ -1238,7 +1238,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82124,
+    id: 38869,
     word: "evidence",
     meaning: "証拠",
     partOfSpeech: "noun",
@@ -1250,7 +1250,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82125,
+    id: 38870,
     word: "exception",
     meaning: "例外",
     partOfSpeech: "noun",
@@ -1262,7 +1262,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82127,
+    id: 38871,
     word: "explanation",
     meaning: "説明",
     partOfSpeech: "noun",
@@ -1274,7 +1274,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82128,
+    id: 38872,
     word: "expression",
     meaning: "表現",
     partOfSpeech: "noun",
@@ -1286,7 +1286,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82130,
+    id: 38873,
     word: "failure",
     meaning: "失敗",
     partOfSpeech: "noun",
@@ -1298,7 +1298,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82131,
+    id: 38874,
     word: "freedom",
     meaning: "自由",
     partOfSpeech: "noun",
@@ -1310,7 +1310,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82132,
+    id: 38875,
     word: "generation",
     meaning: "世代",
     partOfSpeech: "noun",
@@ -1322,7 +1322,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82133,
+    id: 38876,
     word: "goal",
     meaning: "目標",
     partOfSpeech: "noun",
@@ -1334,7 +1334,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82134,
+    id: 38877,
     word: "growth",
     meaning: "成長",
     partOfSpeech: "noun",
@@ -1346,7 +1346,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82135,
+    id: 38878,
     word: "habit",
     meaning: "習慣",
     partOfSpeech: "noun",
@@ -1358,7 +1358,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82136,
+    id: 38879,
     word: "identity",
     meaning: "アイデンティティ",
     partOfSpeech: "noun",
@@ -1370,7 +1370,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82137,
+    id: 38880,
     word: "impact",
     meaning: "影響",
     partOfSpeech: "noun",
@@ -1382,7 +1382,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82138,
+    id: 38881,
     word: "impression",
     meaning: "印象",
     partOfSpeech: "noun",
@@ -1394,7 +1394,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82139,
+    id: 38882,
     word: "improvement",
     meaning: "改善",
     partOfSpeech: "noun",
@@ -1406,7 +1406,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82140,
+    id: 38883,
     word: "income",
     meaning: "収入",
     partOfSpeech: "noun",
@@ -1418,7 +1418,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82141,
+    id: 38884,
     word: "influence",
     meaning: "影響力",
     partOfSpeech: "noun",
@@ -1430,7 +1430,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82142,
+    id: 38885,
     word: "instruction",
     meaning: "指示",
     partOfSpeech: "noun",
@@ -1442,7 +1442,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82143,
+    id: 38886,
     word: "intention",
     meaning: "意図",
     partOfSpeech: "noun",
@@ -1454,7 +1454,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82144,
+    id: 38887,
     word: "issue",
     meaning: "問題",
     partOfSpeech: "noun",
@@ -1466,7 +1466,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82145,
+    id: 38888,
     word: "justice",
     meaning: "正義",
     partOfSpeech: "noun",
@@ -1478,7 +1478,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82146,
+    id: 38889,
     word: "knowledge",
     meaning: "知識",
     partOfSpeech: "noun",
@@ -1490,7 +1490,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82147,
+    id: 38890,
     word: "lack",
     meaning: "欠如",
     partOfSpeech: "noun",
@@ -1502,7 +1502,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82148,
+    id: 38891,
     word: "limit",
     meaning: "限界",
     partOfSpeech: "noun",
@@ -1514,7 +1514,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82149,
+    id: 38892,
     word: "method",
     meaning: "方法",
     partOfSpeech: "noun",
@@ -1526,7 +1526,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82150,
+    id: 38893,
     word: "mood",
     meaning: "気分",
     partOfSpeech: "noun",
@@ -1538,7 +1538,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82151,
+    id: 38894,
     word: "movement",
     meaning: "運動",
     partOfSpeech: "noun",
@@ -1550,7 +1550,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82152,
+    id: 38895,
     word: "observation",
     meaning: "観察",
     partOfSpeech: "noun",
@@ -1562,7 +1562,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82153,
+    id: 38896,
     word: "occasion",
     meaning: "機会",
     partOfSpeech: "noun",
@@ -1574,7 +1574,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82155,
+    id: 38897,
     word: "opportunity",
     meaning: "機会",
     partOfSpeech: "noun",
@@ -1586,7 +1586,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82156,
+    id: 38898,
     word: "organization",
     meaning: "組織",
     partOfSpeech: "noun",
@@ -1598,7 +1598,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82157,
+    id: 38899,
     word: "pattern",
     meaning: "パターン",
     partOfSpeech: "noun",
@@ -1610,7 +1610,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82158,
+    id: 38900,
     word: "period",
     meaning: "期間",
     partOfSpeech: "noun",
@@ -1622,7 +1622,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82159,
+    id: 38901,
     word: "permission",
     meaning: "許可",
     partOfSpeech: "noun",
@@ -1634,7 +1634,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82160,
+    id: 38902,
     word: "pleasure",
     meaning: "喜び",
     partOfSpeech: "noun",
@@ -1646,7 +1646,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82161,
+    id: 38903,
     word: "policy",
     meaning: "政策",
     partOfSpeech: "noun",
@@ -1658,7 +1658,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82162,
+    id: 38904,
     word: "possibility",
     meaning: "可能性",
     partOfSpeech: "noun",
@@ -1670,7 +1670,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82163,
+    id: 38905,
     word: "potential",
     meaning: "可能性",
     partOfSpeech: "noun",
@@ -1682,7 +1682,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82164,
+    id: 38906,
     word: "pressure",
     meaning: "プレッシャー",
     partOfSpeech: "noun",
@@ -1694,7 +1694,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82165,
+    id: 38907,
     word: "principle",
     meaning: "原則",
     partOfSpeech: "noun",
@@ -1706,7 +1706,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82166,
+    id: 38908,
     word: "process",
     meaning: "過程",
     partOfSpeech: "noun",
@@ -1718,7 +1718,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82167,
+    id: 38909,
     word: "progress",
     meaning: "進歩",
     partOfSpeech: "noun",
@@ -1730,7 +1730,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82168,
+    id: 38910,
     word: "purpose",
     meaning: "目的",
     partOfSpeech: "noun",
@@ -1742,7 +1742,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82169,
+    id: 38911,
     word: "quality",
     meaning: "質",
     partOfSpeech: "noun",
@@ -1754,7 +1754,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82170,
+    id: 38912,
     word: "range",
     meaning: "範囲",
     partOfSpeech: "noun",
@@ -1766,7 +1766,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82171,
+    id: 38913,
     word: "reaction",
     meaning: "反応",
     partOfSpeech: "noun",
@@ -1778,7 +1778,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82172,
+    id: 38914,
     word: "reality",
     meaning: "現実",
     partOfSpeech: "noun",
@@ -1790,7 +1790,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82174,
+    id: 38915,
     word: "relationship",
     meaning: "関係",
     partOfSpeech: "noun",
@@ -1802,7 +1802,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82175,
+    id: 38916,
     word: "reputation",
     meaning: "評判",
     partOfSpeech: "noun",
@@ -1814,7 +1814,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82176,
+    id: 38917,
     word: "research",
     meaning: "研究",
     partOfSpeech: "noun",
@@ -1826,7 +1826,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82177,
+    id: 38918,
     word: "resource",
     meaning: "資源",
     partOfSpeech: "noun",
@@ -1838,7 +1838,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82178,
+    id: 38919,
     word: "responsibility",
     meaning: "責任",
     partOfSpeech: "noun",
@@ -1850,7 +1850,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82180,
+    id: 38920,
     word: "risk",
     meaning: "リスク",
     partOfSpeech: "noun",
@@ -1862,7 +1862,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82181,
+    id: 38921,
     word: "role",
     meaning: "役割",
     partOfSpeech: "noun",
@@ -1874,7 +1874,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82182,
+    id: 38922,
     word: "solution",
     meaning: "解決策",
     partOfSpeech: "noun",
@@ -1886,7 +1886,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82183,
+    id: 38923,
     word: "source",
     meaning: "情報源",
     partOfSpeech: "noun",
@@ -1898,7 +1898,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82184,
+    id: 38924,
     word: "standard",
     meaning: "基準",
     partOfSpeech: "noun",
@@ -1910,7 +1910,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82185,
+    id: 38925,
     word: "strategy",
     meaning: "戦略",
     partOfSpeech: "noun",
@@ -1922,7 +1922,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82186,
+    id: 38926,
     word: "strength",
     meaning: "強み",
     partOfSpeech: "noun",
@@ -1934,7 +1934,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82187,
+    id: 38927,
     word: "success",
     meaning: "成功",
     partOfSpeech: "noun",
@@ -1946,7 +1946,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82189,
+    id: 38928,
     word: "theory",
     meaning: "理論",
     partOfSpeech: "noun",
@@ -1958,7 +1958,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82190,
+    id: 38929,
     word: "tradition",
     meaning: "伝統",
     partOfSpeech: "noun",
@@ -1970,7 +1970,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82191,
+    id: 38930,
     word: "trend",
     meaning: "トレンド",
     partOfSpeech: "noun",
@@ -1982,7 +1982,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82192,
+    id: 38931,
     word: "truth",
     meaning: "真実",
     partOfSpeech: "noun",
@@ -1994,7 +1994,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82193,
+    id: 38932,
     word: "variety",
     meaning: "多様性",
     partOfSpeech: "noun",
@@ -2006,7 +2006,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82194,
+    id: 38933,
     word: "view",
     meaning: "見解",
     partOfSpeech: "noun",
@@ -2018,7 +2018,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82195,
+    id: 38934,
     word: "vision",
     meaning: "ビジョン",
     partOfSpeech: "noun",
@@ -2030,7 +2030,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82196,
+    id: 38935,
     word: "weakness",
     meaning: "弱点",
     partOfSpeech: "noun",
@@ -2042,7 +2042,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82197,
+    id: 38936,
     word: "wealth",
     meaning: "富",
     partOfSpeech: "noun",
@@ -2054,7 +2054,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82198,
+    id: 38937,
     word: "athlete",
     meaning: "アスリート",
     partOfSpeech: "noun",
@@ -2066,7 +2066,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82199,
+    id: 38938,
     word: "audience",
     meaning: "聴衆",
     partOfSpeech: "noun",
@@ -2078,7 +2078,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82200,
+    id: 38939,
     word: "candidate",
     meaning: "候補者",
     partOfSpeech: "noun",
@@ -2090,7 +2090,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82201,
+    id: 38940,
     word: "citizen",
     meaning: "市民",
     partOfSpeech: "noun",
@@ -2102,7 +2102,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82202,
+    id: 38941,
     word: "colleague",
     meaning: "同僚",
     partOfSpeech: "noun",
@@ -2114,7 +2114,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82203,
+    id: 38942,
     word: "expert",
     meaning: "専門家",
     partOfSpeech: "noun",
@@ -2126,7 +2126,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82204,
+    id: 38943,
     word: "journalist",
     meaning: "ジャーナリスト",
     partOfSpeech: "noun",
@@ -2138,7 +2138,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82205,
+    id: 38944,
     word: "lawyer",
     meaning: "弁護士",
     partOfSpeech: "noun",
@@ -2150,7 +2150,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82206,
+    id: 38945,
     word: "leader",
     meaning: "リーダー",
     partOfSpeech: "noun",
@@ -2162,7 +2162,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82207,
+    id: 38946,
     word: "opponent",
     meaning: "相手",
     partOfSpeech: "noun",
@@ -2174,7 +2174,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82208,
+    id: 38947,
     word: "politician",
     meaning: "政治家",
     partOfSpeech: "noun",
@@ -2186,7 +2186,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82209,
+    id: 38948,
     word: "volunteer",
     meaning: "ボランティア",
     partOfSpeech: "noun",
@@ -2198,7 +2198,7 @@ export const words: RawWord[] = [
     categories: ["people", "roles"],
   },
   {
-    id: 82210,
+    id: 38949,
     word: "anxious",
     meaning: "不安な",
     partOfSpeech: "adjective",
@@ -2210,7 +2210,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82211,
+    id: 38950,
     word: "ashamed",
     meaning: "恥ずかしい",
     partOfSpeech: "adjective",
@@ -2222,7 +2222,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82212,
+    id: 38951,
     word: "bitter",
     meaning: "苦い",
     partOfSpeech: "adjective",
@@ -2234,7 +2234,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82213,
+    id: 38952,
     word: "compassionate",
     meaning: "思いやりある",
     partOfSpeech: "adjective",
@@ -2246,7 +2246,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82214,
+    id: 38953,
     word: "content",
     meaning: "満足している",
     partOfSpeech: "adjective",
@@ -2258,7 +2258,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82215,
+    id: 38954,
     word: "depressed",
     meaning: "落ち込んだ",
     partOfSpeech: "adjective",
@@ -2270,7 +2270,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82216,
+    id: 38955,
     word: "desperate",
     meaning: "絶望的な",
     partOfSpeech: "adjective",
@@ -2282,7 +2282,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82217,
+    id: 38956,
     word: "frustrated",
     meaning: "欲求不満な",
     partOfSpeech: "adjective",
@@ -2294,7 +2294,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82218,
+    id: 38957,
     word: "guilty",
     meaning: "罪悪感を感じる",
     partOfSpeech: "adjective",
@@ -2306,7 +2306,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82219,
+    id: 38958,
     word: "hopeful",
     meaning: "希望に満ちた",
     partOfSpeech: "adjective",
@@ -2318,7 +2318,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82220,
+    id: 38959,
     word: "irritated",
     meaning: "イライラした",
     partOfSpeech: "adjective",
@@ -2330,7 +2330,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82221,
+    id: 38960,
     word: "miserable",
     meaning: "惨めな",
     partOfSpeech: "adjective",
@@ -2342,7 +2342,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82222,
+    id: 38961,
     word: "optimistic",
     meaning: "楽観的な",
     partOfSpeech: "adjective",
@@ -2354,7 +2354,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82223,
+    id: 38962,
     word: "overwhelmed",
     meaning: "圧倒された",
     partOfSpeech: "adjective",
@@ -2366,7 +2366,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82224,
+    id: 38963,
     word: "relieved",
     meaning: "安堵した",
     partOfSpeech: "adjective",
@@ -2378,7 +2378,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 82228,
+    id: 38964,
     word: "absolute",
     meaning: "絶対的な",
     partOfSpeech: "adjective",
@@ -2390,7 +2390,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82229,
+    id: 38965,
     word: "acceptable",
     meaning: "許容できる",
     partOfSpeech: "adjective",
@@ -2402,7 +2402,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82230,
+    id: 38966,
     word: "accurate",
     meaning: "正確な",
     partOfSpeech: "adjective",
@@ -2414,7 +2414,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82231,
+    id: 38967,
     word: "appropriate",
     meaning: "適切な",
     partOfSpeech: "adjective",
@@ -2426,7 +2426,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82232,
+    id: 38968,
     word: "aware",
     meaning: "意識している",
     partOfSpeech: "adjective",
@@ -2438,7 +2438,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82233,
+    id: 38969,
     word: "capable",
     meaning: "能力のある",
     partOfSpeech: "adjective",
@@ -2450,7 +2450,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82234,
+    id: 38970,
     word: "complex",
     meaning: "複雑な",
     partOfSpeech: "adjective",
@@ -2462,7 +2462,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82236,
+    id: 38971,
     word: "critical",
     meaning: "重要な",
     partOfSpeech: "adjective",
@@ -2474,7 +2474,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82237,
+    id: 38972,
     word: "effective",
     meaning: "効果的な",
     partOfSpeech: "adjective",
@@ -2486,7 +2486,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82240,
+    id: 38973,
     word: "frequent",
     meaning: "頻繁な",
     partOfSpeech: "adjective",
@@ -2498,7 +2498,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82242,
+    id: 38974,
     word: "genuine",
     meaning: "真の",
     partOfSpeech: "adjective",
@@ -2510,7 +2510,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82243,
+    id: 38975,
     word: "global",
     meaning: "グローバルな",
     partOfSpeech: "adjective",
@@ -2522,7 +2522,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82244,
+    id: 38976,
     word: "ideal",
     meaning: "理想的な",
     partOfSpeech: "adjective",
@@ -2534,7 +2534,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82246,
+    id: 38977,
     word: "logical",
     meaning: "論理的な",
     partOfSpeech: "adjective",
@@ -2546,7 +2546,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82247,
+    id: 38978,
     word: "moral",
     meaning: "道徳的な",
     partOfSpeech: "adjective",
@@ -2558,7 +2558,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82248,
+    id: 38979,
     word: "mutual",
     meaning: "相互の",
     partOfSpeech: "adjective",
@@ -2570,7 +2570,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82249,
+    id: 38980,
     word: "obvious",
     meaning: "明白な",
     partOfSpeech: "adjective",
@@ -2582,7 +2582,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82250,
+    id: 38981,
     word: "particular",
     meaning: "特定の",
     partOfSpeech: "adjective",
@@ -2594,7 +2594,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82251,
+    id: 38982,
     word: "permanent",
     meaning: "永続的な",
     partOfSpeech: "adjective",
@@ -2606,7 +2606,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82252,
+    id: 38983,
     word: "practical",
     meaning: "実用的な",
     partOfSpeech: "adjective",
@@ -2618,7 +2618,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82253,
+    id: 38984,
     word: "relevant",
     meaning: "関連する",
     partOfSpeech: "adjective",
@@ -2630,7 +2630,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82254,
+    id: 38985,
     word: "reliable",
     meaning: "信頼できる",
     partOfSpeech: "adjective",
@@ -2642,7 +2642,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82255,
+    id: 38986,
     word: "remarkable",
     meaning: "注目すべき",
     partOfSpeech: "adjective",
@@ -2654,7 +2654,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82256,
+    id: 38987,
     word: "responsible",
     meaning: "責任ある",
     partOfSpeech: "adjective",
@@ -2666,7 +2666,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82258,
+    id: 38988,
     word: "stable",
     meaning: "安定した",
     partOfSpeech: "adjective",
@@ -2678,7 +2678,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82261,
+    id: 38989,
     word: "suitable",
     meaning: "適した",
     partOfSpeech: "adjective",
@@ -2690,7 +2690,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82262,
+    id: 38990,
     word: "temporary",
     meaning: "一時的な",
     partOfSpeech: "adjective",
@@ -2702,7 +2702,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82263,
+    id: 38991,
     word: "typical",
     meaning: "典型的な",
     partOfSpeech: "adjective",
@@ -2714,7 +2714,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82264,
+    id: 38992,
     word: "unique",
     meaning: "独自の",
     partOfSpeech: "adjective",
@@ -2726,7 +2726,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82265,
+    id: 38993,
     word: "valuable",
     meaning: "価値ある",
     partOfSpeech: "adjective",
@@ -2738,7 +2738,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82266,
+    id: 38994,
     word: "vital",
     meaning: "不可欠な",
     partOfSpeech: "adjective",
@@ -2750,7 +2750,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82267,
+    id: 38995,
     word: "widespread",
     meaning: "広く普及した",
     partOfSpeech: "adjective",
@@ -2762,7 +2762,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82268,
+    id: 38996,
     word: "absolutely",
     meaning: "絶対に",
     partOfSpeech: "adverb",
@@ -2774,7 +2774,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82269,
+    id: 38997,
     word: "apparently",
     meaning: "どうやら",
     partOfSpeech: "adverb",
@@ -2786,7 +2786,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82270,
+    id: 38998,
     word: "approximately",
     meaning: "おおよそ",
     partOfSpeech: "adverb",
@@ -2798,7 +2798,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82271,
+    id: 38999,
     word: "basically",
     meaning: "基本的に",
     partOfSpeech: "adverb",
@@ -2810,7 +2810,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82272,
+    id: 39000,
     word: "constantly",
     meaning: "常に",
     partOfSpeech: "adverb",
@@ -2822,7 +2822,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82273,
+    id: 39001,
     word: "currently",
     meaning: "現在",
     partOfSpeech: "adverb",
@@ -2834,7 +2834,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82274,
+    id: 39002,
     word: "definitely",
     meaning: "確かに",
     partOfSpeech: "adverb",
@@ -2846,7 +2846,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82275,
+    id: 39003,
     word: "entirely",
     meaning: "完全に",
     partOfSpeech: "adverb",
@@ -2858,7 +2858,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82276,
+    id: 39004,
     word: "essentially",
     meaning: "本質的に",
     partOfSpeech: "adverb",
@@ -2870,7 +2870,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82277,
+    id: 39005,
     word: "eventually",
     meaning: "最終的に",
     partOfSpeech: "adverb",
@@ -2882,7 +2882,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82278,
+    id: 39006,
     word: "frequently",
     meaning: "頻繁に",
     partOfSpeech: "adverb",
@@ -2894,7 +2894,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82279,
+    id: 39007,
     word: "gradually",
     meaning: "徐々に",
     partOfSpeech: "adverb",
@@ -2906,7 +2906,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82280,
+    id: 39008,
     word: "increasingly",
     meaning: "ますます",
     partOfSpeech: "adverb",
@@ -2918,7 +2918,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82281,
+    id: 39009,
     word: "indeed",
     meaning: "確かに",
     partOfSpeech: "adverb",
@@ -2930,7 +2930,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82282,
+    id: 39010,
     word: "particularly",
     meaning: "特に",
     partOfSpeech: "adverb",
@@ -2942,7 +2942,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82283,
+    id: 39011,
     word: "previously",
     meaning: "以前に",
     partOfSpeech: "adverb",
@@ -2954,7 +2954,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82286,
+    id: 39012,
     word: "significantly",
     meaning: "大幅に",
     partOfSpeech: "adverb",
@@ -2966,7 +2966,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82287,
+    id: 39013,
     word: "slightly",
     meaning: "わずかに",
     partOfSpeech: "adverb",
@@ -2978,7 +2978,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82288,
+    id: 39014,
     word: "strongly",
     meaning: "強く",
     partOfSpeech: "adverb",
@@ -2990,7 +2990,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82289,
+    id: 39015,
     word: "typically",
     meaning: "典型的に",
     partOfSpeech: "adverb",
@@ -3002,7 +3002,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82290,
+    id: 39016,
     word: "ultimately",
     meaning: "最終的に",
     partOfSpeech: "adverb",
@@ -3014,7 +3014,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 82291,
+    id: 39017,
     word: "according to",
     meaning: "によると",
     partOfSpeech: "other",
@@ -3026,7 +3026,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82292,
+    id: 39018,
     word: "actually",
     meaning: "実は",
     partOfSpeech: "adverb",
@@ -3038,7 +3038,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82294,
+    id: 39019,
     word: "after all",
     meaning: "結局のところ",
     partOfSpeech: "other",
@@ -3050,7 +3050,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82295,
+    id: 39020,
     word: "as a result",
     meaning: "その結果",
     partOfSpeech: "other",
@@ -3062,7 +3062,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82296,
+    id: 39021,
     word: "as long as",
     meaning: "〜する限り",
     partOfSpeech: "other",
@@ -3074,7 +3074,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82297,
+    id: 39022,
     word: "besides",
     meaning: "それに加えて",
     partOfSpeech: "adverb",
@@ -3086,7 +3086,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82299,
+    id: 39023,
     word: "despite",
     meaning: "にもかかわらず",
     partOfSpeech: "other",
@@ -3098,7 +3098,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82300,
+    id: 39024,
     word: "even though",
     meaning: "〜にもかかわらず",
     partOfSpeech: "other",
@@ -3110,7 +3110,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82304,
+    id: 39025,
     word: "in addition",
     meaning: "さらに",
     partOfSpeech: "other",
@@ -3122,7 +3122,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82305,
+    id: 39026,
     word: "in case",
     meaning: "〜に備えて",
     partOfSpeech: "other",
@@ -3134,7 +3134,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82306,
+    id: 39027,
     word: "in fact",
     meaning: "実際に",
     partOfSpeech: "other",
@@ -3146,7 +3146,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82307,
+    id: 39028,
     word: "meanwhile",
     meaning: "その間",
     partOfSpeech: "adverb",
@@ -3158,7 +3158,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82310,
+    id: 39029,
     word: "on the other hand",
     meaning: "一方で",
     partOfSpeech: "other",
@@ -3170,7 +3170,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82311,
+    id: 39030,
     word: "otherwise",
     meaning: "そうでなければ",
     partOfSpeech: "adverb",
@@ -3182,7 +3182,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82313,
+    id: 39031,
     word: "regarding",
     meaning: "〜に関して",
     partOfSpeech: "other",
@@ -3194,7 +3194,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82314,
+    id: 39032,
     word: "therefore",
     meaning: "したがって",
     partOfSpeech: "adverb",
@@ -3206,7 +3206,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82316,
+    id: 39033,
     word: "whereas",
     meaning: "〜に対して",
     partOfSpeech: "other",
@@ -3218,7 +3218,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82317,
+    id: 39034,
     word: "whether",
     meaning: "〜かどうか",
     partOfSpeech: "other",
@@ -3230,7 +3230,7 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 82318,
+    id: 39035,
     word: "advertisement",
     meaning: "広告",
     partOfSpeech: "noun",
@@ -3242,7 +3242,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82319,
+    id: 39036,
     word: "article",
     meaning: "記事",
     partOfSpeech: "noun",
@@ -3254,7 +3254,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82320,
+    id: 39037,
     word: "broadcast",
     meaning: "放送",
     partOfSpeech: "noun",
@@ -3266,7 +3266,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82321,
+    id: 39038,
     word: "channel",
     meaning: "チャンネル",
     partOfSpeech: "noun",
@@ -3278,7 +3278,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82322,
+    id: 39039,
     word: "data",
     meaning: "データ",
     partOfSpeech: "noun",
@@ -3290,7 +3290,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82323,
+    id: 39040,
     word: "device",
     meaning: "デバイス",
     partOfSpeech: "noun",
@@ -3302,7 +3302,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82324,
+    id: 39041,
     word: "internet",
     meaning: "インターネット",
     partOfSpeech: "noun",
@@ -3314,7 +3314,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82325,
+    id: 39042,
     word: "media",
     meaning: "メディア",
     partOfSpeech: "noun",
@@ -3326,7 +3326,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82326,
+    id: 39043,
     word: "network",
     meaning: "ネットワーク",
     partOfSpeech: "noun",
@@ -3338,7 +3338,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82327,
+    id: 39044,
     word: "software",
     meaning: "ソフトウェア",
     partOfSpeech: "noun",
@@ -3350,7 +3350,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82328,
+    id: 39045,
     word: "screen",
     meaning: "画面",
     partOfSpeech: "noun",
@@ -3362,7 +3362,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82329,
+    id: 39046,
     word: "website",
     meaning: "ウェブサイト",
     partOfSpeech: "noun",
@@ -3374,7 +3374,7 @@ export const words: RawWord[] = [
     categories: ["media", "technology"],
   },
   {
-    id: 82330,
+    id: 39047,
     word: "climate",
     meaning: "気候",
     partOfSpeech: "noun",
@@ -3386,7 +3386,7 @@ export const words: RawWord[] = [
     categories: ["environment", "society"],
   },
   {
-    id: 82331,
+    id: 39048,
     word: "conflict",
     meaning: "紛争",
     partOfSpeech: "noun",
@@ -3398,7 +3398,7 @@ export const words: RawWord[] = [
     categories: ["environment", "society"],
   },
   {
-    id: 82334,
+    id: 39049,
     word: "election",
     meaning: "選挙",
     partOfSpeech: "noun",
@@ -3410,7 +3410,7 @@ export const words: RawWord[] = [
     categories: ["environment", "society"],
   },
   {
-    id: 82335,
+    id: 39050,
     word: "energy",
     meaning: "エネルギー",
     partOfSpeech: "noun",
@@ -3422,7 +3422,7 @@ export const words: RawWord[] = [
     categories: ["environment", "society"],
   },
   {
-    id: 82336,
+    id: 39051,
     word: "equality",
     meaning: "平等",
     partOfSpeech: "noun",
@@ -3434,7 +3434,7 @@ export const words: RawWord[] = [
     categories: ["environment", "society"],
   },
   {
-    id: 82338,
+    id: 39052,
     word: "pollution",
     meaning: "汚染",
     partOfSpeech: "noun",
@@ -3446,7 +3446,7 @@ export const words: RawWord[] = [
     categories: ["environment", "society"],
   },
   {
-    id: 82339,
+    id: 39053,
     word: "poverty",
     meaning: "貧困",
     partOfSpeech: "noun",
@@ -3458,7 +3458,7 @@ export const words: RawWord[] = [
     categories: ["environment", "society"],
   },
   {
-    id: 82340,
+    id: 39054,
     word: "protest",
     meaning: "抗議",
     partOfSpeech: "noun",
@@ -3470,7 +3470,7 @@ export const words: RawWord[] = [
     categories: ["environment", "society"],
   },
   {
-    id: 82342,
+    id: 39055,
     word: "stuff",
     meaning: "もの",
     partOfSpeech: "noun",
@@ -3482,7 +3482,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82343,
+    id: 39056,
     word: "whatever",
     meaning: "何でも",
     partOfSpeech: "other",
@@ -3494,7 +3494,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82344,
+    id: 39057,
     word: "guy",
     meaning: "人",
     partOfSpeech: "noun",
@@ -3506,7 +3506,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82345,
+    id: 39058,
     word: "awesome",
     meaning: "すごい",
     partOfSpeech: "adjective",
@@ -3518,7 +3518,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82346,
+    id: 39059,
     word: "totally",
     meaning: "完全に",
     partOfSpeech: "adverb",
@@ -3530,7 +3530,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82347,
+    id: 39060,
     word: "literally",
     meaning: "文字通り",
     partOfSpeech: "adverb",
@@ -3542,7 +3542,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82348,
+    id: 39061,
     word: "pretty",
     meaning: "かなり",
     partOfSpeech: "adverb",
@@ -3554,7 +3554,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82349,
+    id: 39062,
     word: "honestly",
     meaning: "正直に言って",
     partOfSpeech: "adverb",
@@ -3566,7 +3566,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82350,
+    id: 39063,
     word: "massive",
     meaning: "巨大な",
     partOfSpeech: "adjective",
@@ -3578,7 +3578,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82351,
+    id: 39064,
     word: "brilliant",
     meaning: "素晴らしい",
     partOfSpeech: "adjective",
@@ -3590,7 +3590,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82352,
+    id: 39065,
     word: "decent",
     meaning: "まともな",
     partOfSpeech: "adjective",
@@ -3602,7 +3602,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82353,
+    id: 39066,
     word: "ridiculous",
     meaning: "馬鹿げた",
     partOfSpeech: "adjective",
@@ -3614,7 +3614,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82354,
+    id: 39067,
     word: "incredible",
     meaning: "信じられない",
     partOfSpeech: "adjective",
@@ -3626,7 +3626,7 @@ export const words: RawWord[] = [
     categories: ["spoken", "informal"],
   },
   {
-    id: 82355,
+    id: 39068,
     word: "proposal",
     meaning: "提案",
     partOfSpeech: "noun",
@@ -3638,7 +3638,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82356,
+    id: 39069,
     word: "quantity",
     meaning: "量",
     partOfSpeech: "noun",
@@ -3650,7 +3650,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82357,
+    id: 39070,
     word: "reference",
     meaning: "参照",
     partOfSpeech: "noun",
@@ -3662,7 +3662,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82359,
+    id: 39071,
     word: "response",
     meaning: "返答",
     partOfSpeech: "noun",
@@ -3674,7 +3674,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82360,
+    id: 39072,
     word: "review",
     meaning: "見直し",
     partOfSpeech: "noun",
@@ -3686,7 +3686,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82361,
+    id: 39073,
     word: "rule",
     meaning: "規則",
     partOfSpeech: "noun",
@@ -3698,7 +3698,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82362,
+    id: 39074,
     word: "selection",
     meaning: "選択",
     partOfSpeech: "noun",
@@ -3710,7 +3710,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82363,
+    id: 39075,
     word: "sense",
     meaning: "感覚",
     partOfSpeech: "noun",
@@ -3722,7 +3722,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82364,
+    id: 39076,
     word: "series",
     meaning: "シリーズ",
     partOfSpeech: "noun",
@@ -3734,7 +3734,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82365,
+    id: 39077,
     word: "service",
     meaning: "サービス",
     partOfSpeech: "noun",
@@ -3746,7 +3746,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82366,
+    id: 39078,
     word: "session",
     meaning: "セッション",
     partOfSpeech: "noun",
@@ -3758,7 +3758,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82367,
+    id: 39079,
     word: "shape",
     meaning: "形",
     partOfSpeech: "noun",
@@ -3770,7 +3770,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82368,
+    id: 39080,
     word: "signal",
     meaning: "信号",
     partOfSpeech: "noun",
@@ -3782,7 +3782,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82370,
+    id: 39081,
     word: "statement",
     meaning: "声明",
     partOfSpeech: "noun",
@@ -3794,7 +3794,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82371,
+    id: 39082,
     word: "status",
     meaning: "状態",
     partOfSpeech: "noun",
@@ -3806,7 +3806,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82374,
+    id: 39083,
     word: "suggestion",
     meaning: "提案",
     partOfSpeech: "noun",
@@ -3818,7 +3818,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82375,
+    id: 39084,
     word: "summary",
     meaning: "要約",
     partOfSpeech: "noun",
@@ -3830,7 +3830,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82378,
+    id: 39085,
     word: "system",
     meaning: "システム",
     partOfSpeech: "noun",
@@ -3842,7 +3842,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82379,
+    id: 39086,
     word: "target",
     meaning: "目標",
     partOfSpeech: "noun",
@@ -3854,7 +3854,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82380,
+    id: 39087,
     word: "technology",
     meaning: "技術",
     partOfSpeech: "noun",
@@ -3866,7 +3866,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82381,
+    id: 39088,
     word: "theme",
     meaning: "テーマ",
     partOfSpeech: "noun",
@@ -3878,7 +3878,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82382,
+    id: 39089,
     word: "topic",
     meaning: "話題",
     partOfSpeech: "noun",
@@ -3890,7 +3890,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82383,
+    id: 39090,
     word: "version",
     meaning: "バージョン",
     partOfSpeech: "noun",
@@ -3902,7 +3902,7 @@ export const words: RawWord[] = [
     categories: ["abstract"],
   },
   {
-    id: 82384,
+    id: 39091,
     word: "additional",
     meaning: "追加の",
     partOfSpeech: "adjective",
@@ -3914,7 +3914,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82385,
+    id: 39092,
     word: "available",
     meaning: "利用可能な",
     partOfSpeech: "adjective",
@@ -3926,7 +3926,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82386,
+    id: 39093,
     word: "constant",
     meaning: "絶え間ない",
     partOfSpeech: "adjective",
@@ -3938,7 +3938,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82387,
+    id: 39094,
     word: "current",
     meaning: "現在の",
     partOfSpeech: "adjective",
@@ -3950,7 +3950,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82388,
+    id: 39095,
     word: "direct",
     meaning: "直接の",
     partOfSpeech: "adjective",
@@ -3962,7 +3962,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82389,
+    id: 39096,
     word: "familiar",
     meaning: "なじみのある",
     partOfSpeech: "adjective",
@@ -3974,7 +3974,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82390,
+    id: 39097,
     word: "general",
     meaning: "一般的な",
     partOfSpeech: "adjective",
@@ -3986,7 +3986,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82391,
+    id: 39098,
     word: "immediate",
     meaning: "即座の",
     partOfSpeech: "adjective",
@@ -3998,7 +3998,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82394,
+    id: 39099,
     word: "legal",
     meaning: "法的な",
     partOfSpeech: "adjective",
@@ -4010,7 +4010,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82395,
+    id: 39100,
     word: "mental",
     meaning: "精神的な",
     partOfSpeech: "adjective",
@@ -4022,7 +4022,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82396,
+    id: 39101,
     word: "minor",
     meaning: "小さな",
     partOfSpeech: "adjective",
@@ -4034,7 +4034,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82397,
+    id: 39102,
     word: "natural",
     meaning: "自然な",
     partOfSpeech: "adjective",
@@ -4046,7 +4046,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82398,
+    id: 39103,
     word: "negative",
     meaning: "否定的な",
     partOfSpeech: "adjective",
@@ -4058,7 +4058,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82399,
+    id: 39104,
     word: "official",
     meaning: "公式の",
     partOfSpeech: "adjective",
@@ -4070,7 +4070,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82400,
+    id: 39105,
     word: "original",
     meaning: "独創的な",
     partOfSpeech: "adjective",
@@ -4082,7 +4082,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82401,
+    id: 39106,
     word: "physical",
     meaning: "身体的な",
     partOfSpeech: "adjective",
@@ -4094,7 +4094,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82402,
+    id: 39107,
     word: "positive",
     meaning: "肯定的な",
     partOfSpeech: "adjective",
@@ -4106,7 +4106,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82403,
+    id: 39108,
     word: "previous",
     meaning: "以前の",
     partOfSpeech: "adjective",
@@ -4118,7 +4118,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82404,
+    id: 39109,
     word: "primary",
     meaning: "主要な",
     partOfSpeech: "adjective",
@@ -4130,7 +4130,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82405,
+    id: 39110,
     word: "professional",
     meaning: "専門的な",
     partOfSpeech: "adjective",
@@ -4142,7 +4142,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82406,
+    id: 39111,
     word: "reasonable",
     meaning: "合理的な",
     partOfSpeech: "adjective",
@@ -4154,7 +4154,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82407,
+    id: 39112,
     word: "slight",
     meaning: "わずかな",
     partOfSpeech: "adjective",
@@ -4166,7 +4166,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82408,
+    id: 39113,
     word: "specific",
     meaning: "具体的な",
     partOfSpeech: "adjective",
@@ -4178,7 +4178,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82409,
+    id: 39114,
     word: "steady",
     meaning: "着実な",
     partOfSpeech: "adjective",
@@ -4190,7 +4190,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82410,
+    id: 39115,
     word: "technical",
     meaning: "専門的な",
     partOfSpeech: "adjective",
@@ -4202,7 +4202,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 82412,
+    id: 39116,
     word: "recall",
     meaning: "思い出す",
     partOfSpeech: "verb",
@@ -4214,7 +4214,7 @@ export const words: RawWord[] = [
     categories: ["narration"],
   },
   {
-    id: 82415,
+    id: 39117,
     word: "conclude",
     meaning: "結論づける",
     partOfSpeech: "verb",
@@ -4226,7 +4226,7 @@ export const words: RawWord[] = [
     categories: ["narration"],
   },
   {
-    id: 82419,
+    id: 39118,
     word: "contrast",
     meaning: "対比する",
     partOfSpeech: "verb",
@@ -4238,7 +4238,7 @@ export const words: RawWord[] = [
     categories: ["narration"],
   },
   {
-    id: 82420,
+    id: 39119,
     word: "emphasize",
     meaning: "強調する",
     partOfSpeech: "verb",
@@ -4250,7 +4250,7 @@ export const words: RawWord[] = [
     categories: ["narration"],
   },
   {
-    id: 82427,
+    id: 39120,
     word: "position",
     meaning: "立場",
     partOfSpeech: "noun",
@@ -4262,7 +4262,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82485,
+    id: 39121,
     word: "besides",
     meaning: "その上に",
     partOfSpeech: "other",
@@ -4274,7 +4274,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82494,
+    id: 39122,
     word: "meanwhile",
     meaning: "その間に",
     partOfSpeech: "other",
@@ -4286,7 +4286,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82498,
+    id: 39123,
     word: "otherwise",
     meaning: "さもなければ",
     partOfSpeech: "other",
@@ -4298,7 +4298,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82501,
+    id: 39124,
     word: "therefore",
     meaning: "したがって",
     partOfSpeech: "other",
@@ -4310,7 +4310,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82505,
+    id: 39125,
     word: "in general",
     meaning: "一般的に",
     partOfSpeech: "other",
@@ -4322,7 +4322,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82512,
+    id: 39126,
     word: "pretty much",
     meaning: "ほぼ",
     partOfSpeech: "adverb",
@@ -4334,7 +4334,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82519,
+    id: 39127,
     word: "kind of",
     meaning: "少し",
     partOfSpeech: "adverb",
@@ -4346,7 +4346,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82520,
+    id: 39128,
     word: "sort of",
     meaning: "何となく",
     partOfSpeech: "adverb",
@@ -4358,7 +4358,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82565,
+    id: 39129,
     word: "briefly",
     meaning: "手短に",
     partOfSpeech: "adverb",
@@ -4370,7 +4370,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82571,
+    id: 39130,
     word: "extremely",
     meaning: "非常に",
     partOfSpeech: "adverb",
@@ -4382,7 +4382,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82600,
+    id: 39131,
     word: "commitment",
     meaning: "取り組み",
     partOfSpeech: "noun",
@@ -4394,7 +4394,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 84079,
+    id: 39132,
     word: "find out",
     meaning: "知る・調べる",
     partOfSpeech: "other",
@@ -4406,7 +4406,7 @@ export const words: RawWord[] = [
     categories: ["knowledge"],
   },
   {
-    id: 84084,
+    id: 39133,
     word: "give up",
     meaning: "諦める",
     partOfSpeech: "other",
@@ -4418,7 +4418,7 @@ export const words: RawWord[] = [
     categories: ["attitude"],
   },
   {
-    id: 84076,
+    id: 39134,
     word: "end up",
     meaning: "結局〜になる",
     partOfSpeech: "other",
@@ -4430,7 +4430,7 @@ export const words: RawWord[] = [
     categories: ["outcome"],
   },
   {
-    id: 84093,
+    id: 39135,
     word: "pick up",
     meaning: "拾う・習得する",
     partOfSpeech: "other",
@@ -4442,7 +4442,7 @@ export const words: RawWord[] = [
     categories: ["learning"],
   },
   {
-    id: 84100,
+    id: 39136,
     word: "show up",
     meaning: "現れる・来る",
     partOfSpeech: "other",
@@ -4454,7 +4454,7 @@ export const words: RawWord[] = [
     categories: ["action"],
   },
   {
-    id: 84107,
+    id: 39137,
     word: "turn out",
     meaning: "結局〜になる",
     partOfSpeech: "other",
@@ -4466,7 +4466,7 @@ export const words: RawWord[] = [
     categories: ["outcome"],
   },
   {
-    id: 84106,
+    id: 39138,
     word: "turn down",
     meaning: "断る・音量を下げる",
     partOfSpeech: "other",
@@ -4478,7 +4478,7 @@ export const words: RawWord[] = [
     categories: ["decision"],
   },
   {
-    id: 84108,
+    id: 39139,
     word: "turn up",
     meaning: "現れる・音量を上げる",
     partOfSpeech: "other",
@@ -4490,7 +4490,7 @@ export const words: RawWord[] = [
     categories: ["action"],
   },
   {
-    id: 84110,
+    id: 39140,
     word: "work out",
     meaning: "うまくいく・運動する",
     partOfSpeech: "other",
@@ -4502,7 +4502,7 @@ export const words: RawWord[] = [
     categories: ["outcome"],
   },
   {
-    id: 84099,
+    id: 39141,
     word: "set up",
     meaning: "設置する・準備する",
     partOfSpeech: "other",
@@ -4514,7 +4514,7 @@ export const words: RawWord[] = [
     categories: ["work"],
   },
   {
-    id: 84104,
+    id: 39142,
     word: "take off",
     meaning: "離陸する",
     partOfSpeech: "other",
@@ -4526,7 +4526,7 @@ export const words: RawWord[] = [
     categories: ["progress"],
   },
   {
-    id: 84092,
+    id: 39143,
     word: "make up",
     meaning: "仲直りする",
     partOfSpeech: "other",
@@ -4538,7 +4538,7 @@ export const words: RawWord[] = [
     categories: ["social"],
   },
   {
-    id: 84072,
+    id: 39144,
     word: "carry on",
     meaning: "続ける",
     partOfSpeech: "other",
@@ -4550,7 +4550,7 @@ export const words: RawWord[] = [
     categories: ["action"],
   },
   {
-    id: 84101,
+    id: 39145,
     word: "sort out",
     meaning: "解決する・整理する",
     partOfSpeech: "other",
@@ -4562,7 +4562,7 @@ export const words: RawWord[] = [
     categories: ["problem-solving"],
   },
   {
-    id: 84083,
+    id: 39146,
     word: "get rid of",
     meaning: "取り除く・処分する",
     partOfSpeech: "other",
@@ -4574,7 +4574,7 @@ export const words: RawWord[] = [
     categories: ["action"],
   },
   {
-    id: 84089,
+    id: 39147,
     word: "look forward to",
     meaning: "楽しみにする",
     partOfSpeech: "other",
@@ -4586,7 +4586,7 @@ export const words: RawWord[] = [
     categories: ["emotion"],
   },
   {
-    id: 84088,
+    id: 39148,
     word: "keep up with",
     meaning: "ついていく",
     partOfSpeech: "other",
@@ -4598,7 +4598,7 @@ export const words: RawWord[] = [
     categories: ["action"],
   },
   {
-    id: 84074,
+    id: 39149,
     word: "come up with",
     meaning: "思いつく・考え出す",
     partOfSpeech: "other",
@@ -4610,7 +4610,7 @@ export const words: RawWord[] = [
     categories: ["creativity"],
   },
   {
-    id: 84071,
+    id: 39150,
     word: "bring up",
     meaning: "話題を持ち出す",
     partOfSpeech: "other",
@@ -4622,7 +4622,7 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 84105,
+    id: 39151,
     word: "take over",
     meaning: "引き継ぐ・乗っ取る",
     partOfSpeech: "other",
@@ -4634,7 +4634,7 @@ export const words: RawWord[] = [
     categories: ["work"],
   },
   {
-    id: 81018,
+    id: 39152,
     word: "compare",
     meaning: "比べる",
     partOfSpeech: "verb",
@@ -4646,7 +4646,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81019,
+    id: 39153,
     word: "complain",
     meaning: "不満を言う",
     partOfSpeech: "verb",
@@ -4658,7 +4658,7 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 81021,
+    id: 39154,
     word: "control",
     meaning: "管理する",
     partOfSpeech: "verb",
@@ -4670,7 +4670,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81024,
+    id: 39155,
     word: "create",
     meaning: "作る、創造する",
     partOfSpeech: "verb",
@@ -4682,7 +4682,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81028,
+    id: 39156,
     word: "deliver",
     meaning: "届ける、配達する",
     partOfSpeech: "verb",
@@ -4694,7 +4694,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81029,
+    id: 39157,
     word: "describe",
     meaning: "説明する",
     partOfSpeech: "verb",
@@ -4706,7 +4706,7 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 81030,
+    id: 39158,
     word: "destroy",
     meaning: "破壊する",
     partOfSpeech: "verb",
@@ -4718,7 +4718,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81032,
+    id: 39159,
     word: "discover",
     meaning: "発見する",
     partOfSpeech: "verb",
@@ -4730,7 +4730,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81033,
+    id: 39160,
     word: "divide",
     meaning: "分ける、割る",
     partOfSpeech: "verb",
@@ -4742,7 +4742,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81039,
+    id: 39161,
     word: "escape",
     meaning: "逃げる、脱出する",
     partOfSpeech: "verb",
@@ -4754,7 +4754,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81040,
+    id: 39162,
     word: "explain",
     meaning: "説明する",
     partOfSpeech: "verb",
@@ -4766,7 +4766,7 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 81057,
+    id: 39163,
     word: "imagine",
     meaning: "想像する",
     partOfSpeech: "verb",
@@ -4778,7 +4778,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81061,
+    id: 39164,
     word: "judge",
     meaning: "判断する、判定する",
     partOfSpeech: "verb",
@@ -4790,7 +4790,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81067,
+    id: 39165,
     word: "lead",
     meaning: "導く、率いる",
     partOfSpeech: "verb",
@@ -4802,7 +4802,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81073,
+    id: 39166,
     word: "manage",
     meaning: "管理する",
     partOfSpeech: "verb",
@@ -4814,7 +4814,7 @@ export const words: RawWord[] = [
     categories: ["daily", "work"],
   },
   {
-    id: 81079,
+    id: 39167,
     word: "obey",
     meaning: "従う、守る",
     partOfSpeech: "verb",
@@ -4826,7 +4826,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81082,
+    id: 39168,
     word: "organize",
     meaning: "整理する、企画する",
     partOfSpeech: "verb",
@@ -4838,7 +4838,7 @@ export const words: RawWord[] = [
     categories: ["daily", "work"],
   },
   {
-    id: 81092,
+    id: 39169,
     word: "produce",
     meaning: "生産する、生み出す",
     partOfSpeech: "verb",
@@ -4850,7 +4850,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81101,
+    id: 39170,
     word: "reduce",
     meaning: "減らす",
     partOfSpeech: "verb",
@@ -4862,7 +4862,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81102,
+    id: 39171,
     word: "refuse",
     meaning: "断る",
     partOfSpeech: "verb",
@@ -4874,7 +4874,7 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 81104,
+    id: 39172,
     word: "remain",
     meaning: "残る、とどまる",
     partOfSpeech: "verb",
@@ -4886,7 +4886,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81106,
+    id: 39173,
     word: "remove",
     meaning: "取り除く、外す",
     partOfSpeech: "verb",
@@ -4898,7 +4898,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81109,
+    id: 39174,
     word: "replace",
     meaning: "取り替える",
     partOfSpeech: "verb",
@@ -4910,7 +4910,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81113,
+    id: 39175,
     word: "sail",
     meaning: "帆走する、航海する",
     partOfSpeech: "verb",
@@ -4922,7 +4922,7 @@ export const words: RawWord[] = [
     categories: ["daily", "travel"],
   },
   {
-    id: 81115,
+    id: 39176,
     word: "search",
     meaning: "探す、調べる",
     partOfSpeech: "verb",
@@ -4934,7 +4934,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81117,
+    id: 39177,
     word: "separate",
     meaning: "分ける、分離する",
     partOfSpeech: "verb",
@@ -4946,7 +4946,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81118,
+    id: 39178,
     word: "serve",
     meaning: "提供する、奉仕する",
     partOfSpeech: "verb",
@@ -4958,7 +4958,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81119,
+    id: 39179,
     word: "settle",
     meaning: "落ち着く、解決する",
     partOfSpeech: "verb",
@@ -4970,7 +4970,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81129,
+    id: 39180,
     word: "spread",
     meaning: "広げる、塗る",
     partOfSpeech: "verb",
@@ -4982,7 +4982,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81132,
+    id: 39181,
     word: "succeed",
     meaning: "成功する",
     partOfSpeech: "verb",
@@ -4994,7 +4994,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81133,
+    id: 39182,
     word: "suggest",
     meaning: "提案する",
     partOfSpeech: "verb",
@@ -5006,7 +5006,7 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 81134,
+    id: 39183,
     word: "supply",
     meaning: "供給する、支給する",
     partOfSpeech: "verb",
@@ -5018,7 +5018,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81135,
+    id: 39184,
     word: "support",
     meaning: "支援する、支持する",
     partOfSpeech: "verb",
@@ -5030,7 +5030,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81136,
+    id: 39185,
     word: "suppose",
     meaning: "思う、仮定する",
     partOfSpeech: "verb",
@@ -5042,7 +5042,7 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 81138,
+    id: 39186,
     word: "survive",
     meaning: "生き延びる",
     partOfSpeech: "verb",
@@ -5054,7 +5054,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81146,
+    id: 39187,
     word: "treat",
     meaning: "扱う、おごる",
     partOfSpeech: "verb",
@@ -5066,7 +5066,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81152,
+    id: 39188,
     word: "waste",
     meaning: "無駄にする",
     partOfSpeech: "verb",
@@ -5078,7 +5078,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81157,
+    id: 39189,
     word: "wrap",
     meaning: "包む",
     partOfSpeech: "verb",
@@ -5090,7 +5090,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 81353,
+    id: 39190,
     word: "independent",
     meaning: "独立した",
     partOfSpeech: "adjective",
@@ -5102,7 +5102,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 81236,
+    id: 39191,
     word: "confident",
     meaning: "自信のある",
     partOfSpeech: "adjective",
@@ -5114,7 +5114,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 81241,
+    id: 39192,
     word: "embarrassed",
     meaning: "恥ずかしい",
     partOfSpeech: "adjective",
@@ -5126,7 +5126,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 81240,
+    id: 39193,
     word: "disappointed",
     meaning: "失望した",
     partOfSpeech: "adjective",
@@ -5138,7 +5138,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 81247,
+    id: 39194,
     word: "grateful",
     meaning: "感謝している",
     partOfSpeech: "adjective",
@@ -5150,7 +5150,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 81239,
+    id: 39195,
     word: "curious",
     meaning: "好奇心旺盛な",
     partOfSpeech: "adjective",
@@ -5162,7 +5162,7 @@ export const words: RawWord[] = [
     categories: ["feelings"],
   },
   {
-    id: 81409,
+    id: 39196,
     word: "violent",
     meaning: "激しい、暴力的な",
     partOfSpeech: "adjective",
@@ -5174,7 +5174,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 81408,
+    id: 39197,
     word: "various",
     meaning: "様々な",
     partOfSpeech: "adjective",
@@ -5186,7 +5186,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 81352,
+    id: 39198,
     word: "impossible",
     meaning: "不可能な",
     partOfSpeech: "adjective",
@@ -5198,7 +5198,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 81371,
+    id: 39199,
     word: "powerful",
     meaning: "強力な",
     partOfSpeech: "adjective",
@@ -5210,7 +5210,7 @@ export const words: RawWord[] = [
     categories: ["adjectives"],
   },
   {
-    id: 81439,
+    id: 39200,
     word: "obviously",
     meaning: "明らかに",
     partOfSpeech: "adverb",
@@ -5222,7 +5222,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 81457,
+    id: 39201,
     word: "unfortunately",
     meaning: "残念ながら",
     partOfSpeech: "adverb",
@@ -5234,7 +5234,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 81430,
+    id: 39202,
     word: "hardly",
     meaning: "ほとんど〜ない",
     partOfSpeech: "adverb",
@@ -5246,7 +5246,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 81432,
+    id: 39203,
     word: "immediately",
     meaning: "すぐに",
     partOfSpeech: "adverb",
@@ -5258,7 +5258,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 81423,
+    id: 39204,
     word: "especially",
     meaning: "特に",
     partOfSpeech: "adverb",
@@ -5270,7 +5270,7 @@ export const words: RawWord[] = [
     categories: ["adverbs"],
   },
   {
-    id: 84073,
+    id: 39205,
     word: "come across",
     meaning: "偶然出会う",
     partOfSpeech: "other",
@@ -5282,7 +5282,7 @@ export const words: RawWord[] = [
     categories: ["social"],
   },
   {
-    id: 84077,
+    id: 39206,
     word: "fall behind",
     meaning: "遅れを取る",
     partOfSpeech: "other",
@@ -5294,7 +5294,7 @@ export const words: RawWord[] = [
     categories: ["progress"],
   },
   {
-    id: 84085,
+    id: 39207,
     word: "go through",
     meaning: "経験する",
     partOfSpeech: "other",
@@ -5306,7 +5306,7 @@ export const words: RawWord[] = [
     categories: ["experience"],
   },
   {
-    id: 84087,
+    id: 39208,
     word: "hold on",
     meaning: "待って・しがみつく",
     partOfSpeech: "other",
@@ -5318,7 +5318,7 @@ export const words: RawWord[] = [
     categories: ["action"],
   },
   {
-    id: 84086,
+    id: 39209,
     word: "hang out",
     meaning: "つるむ・遊ぶ",
     partOfSpeech: "other",
@@ -5330,7 +5330,7 @@ export const words: RawWord[] = [
     categories: ["social"],
   },
   {
-    id: 84097,
+    id: 39210,
     word: "run into",
     meaning: "偶然出会う",
     partOfSpeech: "other",
@@ -5342,7 +5342,7 @@ export const words: RawWord[] = [
     categories: ["social"],
   },
   {
-    id: 84180,
+    id: 39211,
     word: "no way",
     meaning: "まさか・絶対嫌",
     partOfSpeech: "other",
@@ -5354,7 +5354,7 @@ export const words: RawWord[] = [
     categories: ["reaction"],
   },
   {
-    id: 84157,
+    id: 39212,
     word: "no worries",
     meaning: "大丈夫・気にしないで",
     partOfSpeech: "other",
@@ -5366,7 +5366,7 @@ export const words: RawWord[] = [
     categories: ["response"],
   },
   {
-    id: 84156,
+    id: 39213,
     word: "my bad",
     meaning: "私のミスだった",
     partOfSpeech: "other",
@@ -5378,7 +5378,7 @@ export const words: RawWord[] = [
     categories: ["apology"],
   },
   {
-    id: 84158,
+    id: 39214,
     word: "same here",
     meaning: "私もそう",
     partOfSpeech: "other",
@@ -5390,7 +5390,7 @@ export const words: RawWord[] = [
     categories: ["agreement"],
   },
   {
-    id: 84159,
+    id: 39215,
     word: "you bet",
     meaning: "もちろん・確かに",
     partOfSpeech: "other",
@@ -5402,7 +5402,7 @@ export const words: RawWord[] = [
     categories: ["agreement"],
   },
   {
-    id: 84165,
+    id: 39216,
     word: "makes sense",
     meaning: "なるほど・合理的だ",
     partOfSpeech: "other",
@@ -5414,7 +5414,7 @@ export const words: RawWord[] = [
     categories: ["understanding"],
   },
   {
-    id: 84163,
+    id: 39217,
     word: "fair enough",
     meaning: "まあそうだね",
     partOfSpeech: "other",
@@ -5426,7 +5426,7 @@ export const words: RawWord[] = [
     categories: ["agreement"],
   },
   {
-    id: 84194,
+    id: 39218,
     word: "by the way",
     meaning: "ところで",
     partOfSpeech: "other",
@@ -5438,7 +5438,7 @@ export const words: RawWord[] = [
     categories: ["transition"],
   },
   {
-    id: 84185,
+    id: 39219,
     word: "I suppose",
     meaning: "そうかもしれない",
     partOfSpeech: "other",
@@ -5450,7 +5450,7 @@ export const words: RawWord[] = [
     categories: ["qualification"],
   },
   {
-    id: 84184,
+    id: 39220,
     word: "I guess so",
     meaning: "まあそうかな",
     partOfSpeech: "other",
@@ -5462,7 +5462,7 @@ export const words: RawWord[] = [
     categories: ["qualification"],
   },
   {
-    id: 84193,
+    id: 39221,
     word: "believe it or not",
     meaning: "信じがたいが",
     partOfSpeech: "other",
@@ -5474,7 +5474,7 @@ export const words: RawWord[] = [
     categories: ["emphasis"],
   },
   {
-    id: 84188,
+    id: 39222,
     word: "it depends",
     meaning: "場合による",
     partOfSpeech: "other",
@@ -5486,7 +5486,7 @@ export const words: RawWord[] = [
     categories: ["qualification"],
   },
   {
-    id: 82601,
+    id: 39223,
     word: "seem",
     meaning: "〜のようだ",
     partOfSpeech: "verb",
@@ -5498,7 +5498,7 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 82602,
+    id: 39224,
     word: "quite",
     meaning: "かなり",
     partOfSpeech: "adverb",
@@ -5510,7 +5510,7 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 82603,
+    id: 39225,
     word: "in my opinion",
     meaning: "私の意見では",
     partOfSpeech: "other",
