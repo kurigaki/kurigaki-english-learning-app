@@ -61,11 +61,12 @@ export const COURSE_DEFINITIONS: Record<Course, CourseDefinition> = {
   conversation: {
     name: "英会話",
     stages: [
-      { stage: "1", displayName: "超初歩" },
-      { stage: "2", displayName: "初級" },
-      { stage: "3", displayName: "中級" },
-      { stage: "4", displayName: "上級" },
-      { stage: "5", displayName: "ネイティブ" },
+      { stage: "a1", displayName: "A1 旅行英会話" },
+      { stage: "a2", displayName: "A2 日常英会話" },
+      { stage: "b1", displayName: "B1 社交英会話" },
+      { stage: "b2", displayName: "B2 ディスカッション" },
+      { stage: "c1", displayName: "C1 ネイティブ表現" },
+      { stage: "c2", displayName: "C2 達人表現" },
     ],
   },
 };
