@@ -2966,18 +2966,6 @@ export const words: RawWord[] = [
     categories: ["places"],
   },
   {
-    id: 70249,
-    word: "please",
-    meaning: "お願いします",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "Please sit down.", ja: "座ってください。", context: "instruction" },
-      { en: "Pass me the salt, please.", ja: "塩を渡してください。", context: "request" },
-      { en: "Please be quiet.", ja: "静かにしてください。", context: "instruction" },
-    ],
-    categories: ["core"],
-  },
-  {
     id: 70250,
     word: "thank",
     meaning: "感謝する",
@@ -4610,18 +4598,6 @@ export const words: RawWord[] = [
     categories: ["colors"],
   },
   {
-    id: 70397,
-    word: "orange",
-    meaning: "オレンジ色の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "She wore an orange jacket.", ja: "彼女はオレンジ色のジャケットを着た。", context: "orange" },
-      { en: "The sunset was orange.", ja: "夕焼けはオレンジ色だった。", context: "orange" },
-      { en: "He has an orange bag.", ja: "彼はオレンジ色のバッグを持っている。", context: "orange" },
-    ],
-    categories: ["colors"],
-  },
-  {
     id: 70398,
     word: "pink",
     meaning: "ピンクの",
@@ -5474,18 +5450,6 @@ export const words: RawWord[] = [
     categories: ["greetings"],
   },
   {
-    id: 70478,
-    word: "apple",
-    meaning: "リンゴ色の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "She wore an apple-green jacket.", ja: "彼女はリンゴグリーンのジャケットを着た。", context: "apple" },
-      { en: "The apple-colored bag was pretty.", ja: "リンゴ色のバッグはかわいかった。", context: "apple" },
-      { en: "Her cheeks were apple-red.", ja: "彼女の頬はリンゴのように赤かった。", context: "apple" },
-    ],
-    categories: ["colors"],
-  },
-  {
     id: 70482,
     word: "score",
     meaning: "得点する",
@@ -5500,7 +5464,7 @@ export const words: RawWord[] = [
   {
     id: 70483,
     word: "paint",
-    meaning: "色を塗る",
+    meaning: "ペンキ・塗料",
     partOfSpeech: "noun",
     examples: [
       { en: "She bought new paints for art class.", ja: "彼女は美術の授業のために新しい絵の具を買った。", context: "paint" },

@@ -3292,7 +3292,7 @@ export const words: RawWord[] = [
   {
     id: 74325,
     word: "forge",
-    meaning: "偽造する",
+    meaning: "鍛造場",
     partOfSpeech: "noun",
     examples: [
       { en: "He was arrested for trying to forge official documents.", ja: "彼は公文書を偽造しようとして逮捕された。", context: "forge" },

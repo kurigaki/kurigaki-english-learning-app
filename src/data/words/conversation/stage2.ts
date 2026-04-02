@@ -2764,7 +2764,7 @@ export const words: RawWord[] = [
   {
     id: 38546,
     word: "store",
-    meaning: "店、保管する",
+    meaning: "店",
     partOfSpeech: "noun",
     examples: [
       { en: "She stopped at the store to buy some food.", ja: "彼女は食べ物を買うために店に寄った。", context: "日常" },
@@ -2848,7 +2848,7 @@ export const words: RawWord[] = [
   {
     id: 38553,
     word: "guide",
-    meaning: "ガイド、案内する",
+    meaning: "ガイド・案内人",
     partOfSpeech: "noun",
     examples: [
       { en: "The tour guide explained the history of the area.", ja: "ツアーガイドはその地域の歴史を説明した。", context: "旅行" },

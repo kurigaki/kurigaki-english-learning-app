@@ -2488,7 +2488,7 @@ export const words: RawWord[] = [
   {
     id: 71212,
     word: "judge",
-    meaning: "審査員・判断する",
+    meaning: "審査員・裁判官",
     partOfSpeech: "noun",
     examples: [
       { en: "The judge made a fair decision.", ja: "審査員は公平な判断を下した。", context: "law" },
@@ -3010,18 +3010,6 @@ export const words: RawWord[] = [
       { en: "She has a gentle voice.", ja: "彼女は穏やかな声をしている。", context: "gentle" },
       { en: "The gentle breeze felt nice.", ja: "穏やかな風が気持ちよかった。", context: "gentle" },
       { en: "He is gentle with animals.", ja: "彼は動物に優しい。", context: "gentle" },
-    ],
-    categories: ["adjective"],
-  },
-  {
-    id: 71258,
-    word: "gold",
-    meaning: "金色の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "She wore a gold ring.", ja: "彼女は金の指輪をしていた。", context: "gold" },
-      { en: "He won the gold medal.", ja: "彼は金メダルを獲得した。", context: "gold" },
-      { en: "The gold sunset was beautiful.", ja: "金色の夕焼けが美しかった。", context: "gold" },
     ],
     categories: ["adjective"],
   },

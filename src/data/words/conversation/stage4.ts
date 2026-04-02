@@ -4192,7 +4192,7 @@ export const words: RawWord[] = [
   {
     id: 39582,
     word: "leverage",
-    meaning: "影響力・活用する",
+    meaning: "影響力・てこ",
     partOfSpeech: "noun",
     examples: [
       { en: "They used data as leverage in negotiations.", ja: "彼らは交渉で影響力としてデータを使った。", context: "Power or advantage in a situation." },

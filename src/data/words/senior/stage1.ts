@@ -7972,7 +7972,7 @@ export const words: RawWord[] = [
   {
     id: 73803,
     word: "approach",
-    meaning: "方法・接近する",
+    meaning: "方法・接近",
     partOfSpeech: "noun",
     examples: [
       { en: "We need a new approach to this problem.", ja: "この問題には新しいアプローチが必要だ。", context: "仕事" },
