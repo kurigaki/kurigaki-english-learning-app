@@ -7780,8 +7780,8 @@ export const words: RawWord[] = [
   {
     id: 23649,
     word: "very",
-    meaning: "まさにその",
-    partOfSpeech: "adjective",
+    meaning: "とても",
+    partOfSpeech: "adverb",
     examples: [
       { en: "This is the very place where we first met.", ja: "ここは私たちが初めて出会ったまさにその場所だ。", context: "日常" },
       { en: "The very idea of skydiving frightens many people.", ja: "スカイダイビングという考え自体が多くの人を怖がらせる。", context: "娯楽" },

@@ -2464,7 +2464,7 @@ export const words: RawWord[] = [
   {
     id: 74247,
     word: "arguably",
-    meaning: "間違いなく",
+    meaning: "おそらく",
     partOfSpeech: "adverb",
     examples: [
       { en: "Climate change is arguably the greatest challenge of our time.", ja: "気候変動は間違いなく我々の時代最大の課題だ。", context: "environment" },
@@ -4694,18 +4694,6 @@ export const words: RawWord[] = [
     categories: ["economy"],
   },
   {
-    id: 74456,
-    word: "faction",
-    meaning: "派閥を形成する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The opposition has begun to faction into smaller groups.", ja: "野党はより小さなグループに分派し始めた。", context: "faction" },
-      { en: "The large party factionized after the leadership scandal.", ja: "大政党はリーダーシップスキャンダルの後に派閥化した。", context: "faction" },
-      { en: "Members began to faction along ideological lines.", ja: "メンバーはイデオロギー的な路線に沿って派閥を形成し始めた。", context: "faction" },
-    ],
-    categories: ["social"],
-  },
-  {
     id: 74459,
     word: "rhetoric",
     meaning: "修辞",
@@ -4790,18 +4778,6 @@ export const words: RawWord[] = [
     categories: ["history"],
   },
   {
-    id: 74471,
-    word: "genocide",
-    meaning: "大量虐殺する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The regime sought to genocide an entire ethnic group.", ja: "政権は民族グループ全体を大量虐殺しようとした。", context: "genocide" },
-      { en: "History teaches us about leaders who attempted to genocide minorities.", ja: "歴史は少数民族を大量虐殺しようとした指導者たちについて教えてくれる。", context: "genocide" },
-      { en: "International law prohibits any attempts to genocide a group.", ja: "国際法はグループを大量虐殺するいかなる試みも禁じている。", context: "genocide" },
-    ],
-    categories: ["history"],
-  },
-  {
     id: 74472,
     word: "colonialism",
     meaning: "植民地主義",
@@ -4824,18 +4800,6 @@ export const words: RawWord[] = [
       { en: "Political emancipation gives citizens the right to participate in government.", ja: "政治的解放は市民が政府に参加する権利を与える。", context: "emancipation" },
     ],
     categories: ["history"],
-  },
-  {
-    id: 74478,
-    word: "subsidy",
-    meaning: "補助する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The government subsidized housing costs for low-income families.", ja: "政府は低所得家族のための住宅費を補助した。", context: "subsidy" },
-      { en: "The city subsidized public transportation to reduce traffic.", ja: "市は交通渋滞を減らすために公共交通機関を補助した。", context: "subsidy" },
-      { en: "Governments often subsidize agriculture to protect food security.", ja: "政府はしばしば食料安全保障を守るために農業を補助する。", context: "subsidy" },
-    ],
-    categories: ["economy"],
   },
   {
     id: 74480,
@@ -7240,7 +7204,7 @@ export const words: RawWord[] = [
   {
     id: 74724,
     word: "segregation",
-    meaning: "人種差別",
+    meaning: "隔離・分離",
     partOfSpeech: "noun",
     examples: [
       { en: "Racial segregation ended in the 1960s.", ja: "人種差別は1960年代に終わった。", context: "歴史" },

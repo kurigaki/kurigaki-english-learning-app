@@ -110,18 +110,6 @@ export const words: RawWord[] = [
     categories: ["finance", "daily"],
   },
   {
-    id: 19950,
-    word: "indefinite article",
-    meaning: "不定冠詞",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "An indefinite article is used before a noun mentioned for the first time.", ja: "不定冠詞は初めて言及する名詞の前に使われる。", context: "文法" },
-      { en: "Choosing the right indefinite article depends on the next sound.", ja: "正しい不定冠詞の選択は次の音に依存する。", context: "教育" },
-      { en: "Many languages around the world have no indefinite article.", ja: "世界の多くの言語には不定冠詞がない。", context: "言語" },
-    ],
-    categories: ["communication", "academic"],
-  },
-  {
     id: 19951,
     word: "index",
     meaning: "索引",
@@ -142,18 +130,6 @@ export const words: RawWord[] = [
       { en: "The detective made a clever inference from the clues.", ja: "探偵は手がかりから巧みな推論を行った。", context: "読書" },
       { en: "Drawing inferences is a key skill in reading comprehension.", ja: "推論を導くことは読解における重要な技能だ。", context: "学校" },
       { en: "His inference was based on limited evidence.", ja: "彼の推論は限られた証拠に基づいていた。", context: "学術" },
-    ],
-    categories: ["communication", "academic"],
-  },
-  {
-    id: 19953,
-    word: "infinitive",
-    meaning: "不定詞",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The infinitive is the base form of a verb in English.", ja: "不定詞は英語の動詞の原形だ。", context: "文法" },
-      { en: "An infinitive phrase can act as a noun in a sentence.", ja: "不定詞句は文中で名詞の役割を果たすことがある。", context: "教育" },
-      { en: "We studied how to use infinitives after certain verbs.", ja: "特定の動詞の後に不定詞を使う方法を学んだ。", context: "学校" },
     ],
     categories: ["communication", "academic"],
   },
@@ -396,18 +372,6 @@ export const words: RawWord[] = [
       { en: "Many modern inventions make our lives easier.", ja: "多くの近代的な発明が私たちの生活を楽にしています。", context: "技術" },
     ],
     categories: ["technology", "science"],
-  },
-  {
-    id: 19974,
-    word: "inverted commas",
-    meaning: "引用符",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Put the title in inverted commas when you write.", ja: "書くときはタイトルを引用符で囲んでください。", context: "学校" },
-      { en: "Inverted commas show that someone is speaking.", ja: "引用符は誰かが話していることを示します。", context: "文法" },
-      { en: "The word was placed in inverted commas for emphasis.", ja: "その単語は強調のために引用符で囲まれていました。", context: "文章" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 19975,
@@ -3230,18 +3194,6 @@ export const words: RawWord[] = [
     categories: ["daily", "travel"],
   },
   {
-    id: 20210,
-    word: "off",
-    meaning: "離れて、休んで",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "Please turn the lights off before leaving.", ja: "出かける前にライトを消してください。", context: "日常" },
-      { en: "The meeting was called off due to bad weather.", ja: "悪天候のため会議は中止された。", context: "ビジネス" },
-      { en: "He took a day off to rest at home.", ja: "彼は家で休むために1日休暇を取った。", context: "仕事" },
-    ],
-    categories: ["daily", "business"],
-  },
-  {
     id: 20211,
     word: "offhand",
     meaning: "ぶっきらぼうな",
@@ -3264,18 +3216,6 @@ export const words: RawWord[] = [
       { en: "He officially resigned from his position yesterday.", ja: "彼は昨日正式にそのポストを辞任した。", context: "ビジネス" },
     ],
     categories: ["communication", "business"],
-  },
-  {
-    id: 20213,
-    word: "on",
-    meaning: "続けて、先へ",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "The show must go on despite the rain.", ja: "雨にもかかわらずショーは続けなければならない。", context: "イベント" },
-      { en: "She kept on studying until late at night.", ja: "彼女は夜遅くまで勉強し続けた。", context: "学校" },
-      { en: "The meeting dragged on for over three hours.", ja: "会議は3時間以上も延々と続いた。", context: "ビジネス" },
-    ],
-    categories: ["daily", "communication"],
   },
   {
     id: 20214,
@@ -3720,18 +3660,6 @@ export const words: RawWord[] = [
       { en: "Participants must register before the deadline.", ja: "参加者は締切前に登録しなければならない。", context: "ビジネス" },
     ],
     categories: ["communication", "event"],
-  },
-  {
-    id: 20251,
-    word: "participle",
-    meaning: "分詞",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The teacher explained how to use the past participle.", ja: "先生は過去分詞の使い方を説明した。", context: "学校" },
-      { en: "Present participles often end in the suffix -ing.", ja: "現在分詞はしばしば接尾辞-ingで終わる。", context: "文法" },
-      { en: "Understanding participles helps you write better sentences.", ja: "分詞を理解すると、より良い文が書ける。", context: "学習" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 20252,
@@ -4214,18 +4142,6 @@ export const words: RawWord[] = [
     categories: ["culture", "technology"],
   },
   {
-    id: 20292,
-    word: "phrasal verb",
-    meaning: "句動詞",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "English learners often struggle with phrasal verbs.", ja: "英語学習者はしばしば句動詞に苦労する。", context: "教育" },
-      { en: "The textbook has a list of common phrasal verbs.", ja: "その教科書にはよく使う句動詞のリストがある。", context: "学校" },
-      { en: "A phrasal verb can have multiple meanings.", ja: "句動詞は複数の意味を持つことがある。", context: "言語" },
-    ],
-    categories: ["education", "communication"],
-  },
-  {
     id: 20293,
     word: "phrase",
     meaning: "句、表現",
@@ -4284,18 +4200,6 @@ export const words: RawWord[] = [
       { en: "Different countries use different shapes of power plugs.", ja: "国によって電源プラグの形状が異なる。", context: "旅行" },
     ],
     categories: ["daily", "technology"],
-  },
-  {
-    id: 20298,
-    word: "plural",
-    meaning: "複数形",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The plural of child is children in English.", ja: "childの複数形は英語ではchildrenだ。", context: "教育" },
-      { en: "Some nouns have irregular plural forms in English.", ja: "英語では不規則な複数形を持つ名詞がある。", context: "言語" },
-      { en: "Learning plurals is basic for any language student.", ja: "複数形を学ぶことはどの言語学習者にとっても基本だ。", context: "学校" },
-    ],
-    categories: ["education", "communication"],
   },
   {
     id: 20299,
@@ -4562,18 +4466,6 @@ export const words: RawWord[] = [
     categories: ["daily", "communication"],
   },
   {
-    id: 20321,
-    word: "prefix",
-    meaning: "接頭辞",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The prefix 'un' often gives a word the opposite meaning.", ja: "接頭辞のunはしばしば単語に反対の意味を与える。", context: "文法" },
-      { en: "Learning prefixes helps you understand new vocabulary faster.", ja: "接頭辞を学ぶと新しい語彙をより速く理解できる。", context: "学習" },
-      { en: "The word 'preview' contains the prefix 'pre' meaning before.", ja: "previewという単語は「前の」を意味する接頭辞preを含む。", context: "学校" },
-    ],
-    categories: ["school", "communication"],
-  },
-  {
     id: 20322,
     word: "preparation",
     meaning: "準備",
@@ -4584,18 +4476,6 @@ export const words: RawWord[] = [
       { en: "The preparation of traditional dishes takes many hours.", ja: "伝統料理の準備には何時間もかかる。", context: "料理" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 20323,
-    word: "preposition",
-    meaning: "前置詞",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The word 'in' is a commonly used English preposition.", ja: "inという語はよく使われる英語の前置詞だ。", context: "文法" },
-      { en: "Students often struggle with prepositions in English.", ja: "生徒たちは英語の前置詞でよくつまずく。", context: "学校" },
-      { en: "Choosing the correct preposition changes the sentence meaning.", ja: "正しい前置詞を選ぶと文の意味が変わる。", context: "学習" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 20324,
@@ -4680,18 +4560,6 @@ export const words: RawWord[] = [
       { en: "The postal worker sorted hundreds of letters every day.", ja: "郵便局員は毎日何百通もの手紙を仕分けした。", context: "仕事" },
     ],
     categories: ["daily", "communication"],
-  },
-  {
-    id: 20331,
-    word: "predicative",
-    meaning: "叙述的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The adjective 'alive' is used only in predicative position.", ja: "形容詞aliveは叙述的な位置でのみ使われる。", context: "文法" },
-      { en: "Some adjectives can be both attributive and predicative.", ja: "一部の形容詞は限定的にも叙述的にも使える。", context: "学校" },
-      { en: "Understanding predicative usage improves your writing skills.", ja: "叙述的用法の理解は文章力を向上させる。", context: "学習" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 20332,
@@ -5556,18 +5424,6 @@ export const words: RawWord[] = [
       { en: "Students raised many queries after the lecture.", ja: "講義後に生徒たちは多くの質問をした。", context: "学校" },
     ],
     categories: ["communication", "technology"],
-  },
-  {
-    id: 20404,
-    word: "question mark",
-    meaning: "疑問符",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Always put a question mark at the end.", ja: "文末には必ず疑問符を付けなさい。", context: "学校" },
-      { en: "A big question mark hangs over the project.", ja: "そのプロジェクトには大きな疑問が残っている。", context: "ビジネス" },
-      { en: "The future remains a question mark for many people.", ja: "未来は多くの人にとってまだ不確かなものだ。", context: "社会" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 20405,
@@ -7070,18 +6926,6 @@ export const words: RawWord[] = [
     categories: ["communication", "daily"],
   },
   {
-    id: 20530,
-    word: "second",
-    meaning: "2番目に",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "She finished second in the national swimming competition.", ja: "彼女は全国水泳大会で2番目にゴールした。", context: "スポーツ" },
-      { en: "Tokyo ranks second among the most populated cities.", ja: "東京は最も人口の多い都市の中で2番目に位置する。", context: "地理" },
-      { en: "This is the second most popular tourist destination.", ja: "ここは2番目に人気のある観光地だ。", context: "旅行" },
-    ],
-    categories: ["daily", "communication"],
-  },
-  {
     id: 20531,
     word: "secondly",
     meaning: "第二に",
@@ -7478,18 +7322,6 @@ export const words: RawWord[] = [
     categories: ["travel", "nature"],
   },
   {
-    id: 20564,
-    word: "second person",
-    meaning: "二人称",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The pronoun 'you' is used in the second person.", ja: "代名詞の「you」は二人称で使われる。", context: "文法" },
-      { en: "Write this essay using the second person point of view.", ja: "この作文を二人称の視点で書きなさい。", context: "学校" },
-      { en: "Second person narration creates a unique reading experience.", ja: "二人称の語りは独特な読書体験を生み出す。", context: "文学" },
-    ],
-    categories: ["school", "communication"],
-  },
-  {
     id: 20565,
     word: "secretary",
     meaning: "秘書",
@@ -7548,18 +7380,6 @@ export const words: RawWord[] = [
       { en: "Parents should teach children to be sensible.", ja: "親は子供に分別を持つよう教えるべきだ。", context: "家庭" },
     ],
     categories: ["communication", "daily"],
-  },
-  {
-    id: 20570,
-    word: "serial",
-    meaning: "連続の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The company released serial updates to the software.", ja: "その会社はソフトウェアの連続的な更新を公開した。", context: "テクノロジー" },
-      { en: "Each product has a unique serial number on it.", ja: "各製品には固有の連続番号が付いている。", context: "ビジネス" },
-      { en: "The magazine published a serial story every month.", ja: "その雑誌は毎月連続小説を掲載した。", context: "文化" },
-    ],
-    categories: ["daily", "business"],
   },
   {
     id: 20571,
@@ -7776,18 +7596,6 @@ export const words: RawWord[] = [
       { en: "The best seller on the list was a mystery novel.", ja: "リストの一番の売れ筋はミステリー小説だった。", context: "文化" },
     ],
     categories: ["business", "daily"],
-  },
-  {
-    id: 20589,
-    word: "semicolon",
-    meaning: "セミコロン",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Use a semicolon to connect two related sentences.", ja: "2つの関連した文をつなぐにはセミコロンを使う。", context: "学校" },
-      { en: "The student forgot to add a semicolon in the code.", ja: "その学生はコードにセミコロンを追加し忘れた。", context: "テクノロジー" },
-      { en: "A semicolon is stronger than a comma in writing.", ja: "セミコロンは文章ではコンマより強い区切りだ。", context: "言語学" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 20590,
@@ -8112,18 +7920,6 @@ export const words: RawWord[] = [
       { en: "The boat glided smoothly across the calm lake.", ja: "ボートは穏やかな湖を滑らかに滑っていった。", context: "自然" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 20617,
-    word: "so",
-    meaning: "そのように",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "The rules state so, and we must follow them.", ja: "規則はそのように定めており、従わなければならない。", context: "社会" },
-      { en: "Do you really think so about this new plan?", ja: "この新しい計画についてそのように思いますか。", context: "ビジネス" },
-      { en: "The coach told us to practice, and we did so.", ja: "コーチは練習するよう言い、私たちはそのようにした。", context: "スポーツ" },
-    ],
-    categories: ["communication", "daily"],
   },
   {
     id: 20618,
@@ -9230,18 +9026,6 @@ export const words: RawWord[] = [
     categories: ["description"],
   },
   {
-    id: 20710,
-    word: "in",
-    meaning: "中に",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "Please come in and have a seat.", ja: "どうぞ中に入ってお座りください。", context: "日常" },
-      { en: "The train pulled in right on schedule.", ja: "電車はちょうど時刻通りに入ってきた。", context: "交通" },
-      { en: "She handed in her report before the deadline.", ja: "彼女は締め切り前にレポートを提出した。", context: "学校" },
-    ],
-    categories: ["daily"],
-  },
-  {
     id: 20711,
     word: "increasingly",
     meaning: "ますます",
@@ -9506,18 +9290,6 @@ export const words: RawWord[] = [
     categories: ["daily", "health"],
   },
   {
-    id: 20733,
-    word: "it",
-    meaning: "それ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The team discussed it at the weekly meeting.", ja: "チームは週次会議でそれを議論しました。", context: "仕事" },
-      { en: "She picked up the book and read it carefully.", ja: "彼女はその本を手に取り注意深く読みました。", context: "日常" },
-      { en: "The children enjoyed it more than we expected.", ja: "子供たちは私たちが予想した以上にそれを楽しみました。", context: "家庭" },
-    ],
-    categories: ["daily"],
-  },
-  {
     id: 20734,
     word: "inside",
     meaning: "内部の",
@@ -9610,18 +9382,6 @@ export const words: RawWord[] = [
       { en: "This course is designed for intermediate learners.", ja: "このコースは中級の学習者向けに設計されています。", context: "学校" },
       { en: "She passed the intermediate level exam last month.", ja: "彼女は先月中級レベルの試験に合格しました。", context: "資格" },
       { en: "The ski resort offers slopes for intermediate skiers.", ja: "そのスキーリゾートには中級者向けのゲレンデがあります。", context: "スポーツ" },
-    ],
-    categories: ["school"],
-  },
-  {
-    id: 20742,
-    word: "intransitive",
-    meaning: "自動詞の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The verb 'arrive' is an intransitive verb.", ja: "動詞「arrive」は自動詞です。", context: "文法" },
-      { en: "Students often confuse transitive and intransitive verbs.", ja: "生徒はしばしば他動詞と自動詞を混同します。", context: "学校" },
-      { en: "Intransitive verbs do not take a direct object.", ja: "自動詞は直接目的語を取りません。", context: "文法" },
     ],
     categories: ["school"],
   },

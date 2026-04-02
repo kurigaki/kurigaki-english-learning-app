@@ -688,7 +688,7 @@ export const words: RawWord[] = [
   {
     id: 75073,
     word: "forego",
-    meaning: "先行する",
+    meaning: "控える・断念する",
     partOfSpeech: "verb",
     examples: [
       { en: "She decided to forego dessert.", ja: "彼女はデザートを控えることにした。", context: "forego dessert" },
@@ -1216,7 +1216,7 @@ export const words: RawWord[] = [
   {
     id: 75122,
     word: "cynicism",
-    meaning: "懐疑主義",
+    meaning: "冷笑主義",
     partOfSpeech: "noun",
     examples: [
       { en: "Cynicism toward politics has grown.", ja: "政治への懐疑主義が高まっている。", context: "cynicism toward politics" },
@@ -1780,7 +1780,7 @@ export const words: RawWord[] = [
   {
     id: 75182,
     word: "cynical",
-    meaning: "懐疑的な",
+    meaning: "冷笑的な",
     partOfSpeech: "adjective",
     examples: [
       { en: "She was cynical about the promises made.", ja: "彼女はなされた約束について懐疑的だった。", context: "cynical about promises" },
@@ -4960,7 +4960,7 @@ export const words: RawWord[] = [
   {
     id: 75517,
     word: "circumnavigate",
-    meaning: "迂回する",
+    meaning: "周航する",
     partOfSpeech: "verb",
     examples: [
       { en: "Magellan circumnavigated the globe.", ja: "マゼランは地球を一周した。", context: "history" },

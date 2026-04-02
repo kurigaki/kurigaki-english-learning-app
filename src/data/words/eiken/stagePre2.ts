@@ -1589,7 +1589,7 @@ export const words: RawWord[] = [
     id: 25588,
     word: "bar",
     meaning: "酒場",
-    partOfSpeech: "verb",
+    partOfSpeech: "noun",
     examples: [
       { en: "Dogs are barred from entering the restaurant.", ja: "犬はそのレストランへの入店が禁止されています。", context: "飲食" },
       { en: "The rule bars students from using phones.", ja: "そのルールは生徒の携帯使用を禁止しています。", context: "学校" },
@@ -4721,7 +4721,7 @@ export const words: RawWord[] = [
     id: 25849,
     word: "blurt",
     meaning: "うっかり言う",
-    partOfSpeech: "noun",
+    partOfSpeech: "verb",
     examples: [
       { en: "His blurt surprised everyone in the meeting.", ja: "彼の失言は会議の全員を驚かせた。", context: "ビジネス" },
       { en: "That blurt caused a serious misunderstanding.", ja: "あの失言は深刻な誤解を生んだ。", context: "人間関係" },
@@ -4744,8 +4744,8 @@ export const words: RawWord[] = [
   {
     id: 25851,
     word: "bombard",
-    meaning: "砲撃",
-    partOfSpeech: "noun",
+    meaning: "砲撃する",
+    partOfSpeech: "verb",
     examples: [
       { en: "The city suffered a heavy bombard during the war.", ja: "その都市は戦争中にひどい砲撃を受けた。", context: "歴史" },
       { en: "The bombard lasted for three days straight.", ja: "砲撃は3日間続いた。", context: "歴史" },

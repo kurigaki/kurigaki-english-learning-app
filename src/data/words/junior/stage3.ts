@@ -2378,18 +2378,6 @@ export const words: RawWord[] = [
     categories: ["general"],
   },
   {
-    id: 72216,
-    word: "economy",
-    meaning: "節約する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "We need to economize on water.", ja: "水を節約する必要がある。", context: "economize water" },
-      { en: "Try to economize your energy.", ja: "エネルギーを節約するようにしてください。", context: "economize energy" },
-      { en: "They economized on food costs.", ja: "彼らは食費を節約した。", context: "economize food" },
-    ],
-    categories: ["general"],
-  },
-  {
     id: 72217,
     word: "research",
     meaning: "調査する",
@@ -2474,18 +2462,6 @@ export const words: RawWord[] = [
     categories: ["general"],
   },
   {
-    id: 72225,
-    word: "source",
-    meaning: "出所とする",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The journalist sourced the information carefully.", ja: "記者は情報の出所を慎重に確認した。", context: "source information" },
-      { en: "Where did you source this data?", ja: "このデータの出所はどこですか？", context: "source data" },
-      { en: "They sourced ingredients locally.", ja: "彼らは地元で材料を調達した。", context: "source ingredients" },
-    ],
-    categories: ["general"],
-  },
-  {
     id: 72226,
     word: "network",
     meaning: "ネットワークを作る",
@@ -2523,25 +2499,13 @@ export const words: RawWord[] = [
   },
   {
     id: 72229,
-    word: "device",
+    word: "devise",
     meaning: "考案する",
     partOfSpeech: "verb",
     examples: [
       { en: "She devised a new teaching method.", ja: "彼女は新しい教授法を考案した。", context: "devise a method" },
       { en: "He devised a plan to solve the problem.", ja: "彼は問題を解決するための計画を考案した。", context: "devise a plan" },
       { en: "They devised a clever strategy.", ja: "彼らは賢い戦略を考案した。", context: "devise a strategy" },
-    ],
-    categories: ["general"],
-  },
-  {
-    id: 72230,
-    word: "factor",
-    meaning: "考慮する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Did you factor in the cost?", ja: "コストを考慮しましたか？", context: "factor in cost" },
-      { en: "Factor the weather into your plans.", ja: "計画に天気を考慮してください。", context: "factor in weather" },
-      { en: "Please factor in all risks.", ja: "すべてのリスクを考慮してください。", context: "factor in risks" },
     ],
     categories: ["general"],
   },
