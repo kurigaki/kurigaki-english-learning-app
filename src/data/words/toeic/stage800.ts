@@ -734,18 +734,6 @@ export const words: RawWord[] = [
     categories: ["business", "communication"],
   },
   {
-    id: 20005,
-    word: "jumper",
-    meaning: "セーター",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She wore a red jumper to school.", ja: "彼女は学校に赤いセーターを着て行った。", context: "学校" },
-      { en: "He bought a warm jumper for winter.", ja: "彼は冬のために暖かいセーターを買った。", context: "買い物" },
-      { en: "The jumper was made of soft wool.", ja: "そのセーターは柔らかいウールでできていた。", context: "ファッション" },
-    ],
-    categories: ["daily", "shopping"],
-  },
-  {
     id: 20006,
     word: "juror",
     meaning: "陪審員",
@@ -1260,18 +1248,6 @@ export const words: RawWord[] = [
       { en: "She designed the school logo for a contest.", ja: "彼女はコンテストのために学校のロゴをデザインしました。", context: "学校" },
     ],
     categories: ["business"],
-  },
-  {
-    id: 20049,
-    word: "lorry",
-    meaning: "トラック",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "A large lorry blocked the narrow road.", ja: "大きなトラックが狭い道をふさいでいました。", context: "交通" },
-      { en: "The lorry delivered furniture to the new office.", ja: "トラックが新しいオフィスに家具を届けました。", context: "ビジネス" },
-      { en: "He has been driving lorries for twenty years.", ja: "彼は20年間トラックを運転しています。", context: "仕事" },
-    ],
-    categories: ["travel", "daily"],
   },
   {
     id: 20050,
@@ -1814,18 +1790,6 @@ export const words: RawWord[] = [
     categories: ["communication", "daily"],
   },
   {
-    id: 20095,
-    word: "mausoleum",
-    meaning: "霊廟",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The mausoleum was built for the ancient king.", ja: "その霊廟は古代の王のために建てられた。", context: "歴史" },
-      { en: "Tourists visit the famous mausoleum every year.", ja: "観光客は毎年その有名な霊廟を訪れる。", context: "旅行" },
-      { en: "The marble mausoleum stood in the garden.", ja: "大理石の霊廟が庭に建っていた。", context: "建築" },
-    ],
-    categories: ["culture", "travel"],
-  },
-  {
     id: 20096,
     word: "mayor",
     meaning: "市長",
@@ -2124,18 +2088,6 @@ export const words: RawWord[] = [
       { en: "Many people use an instant messenger app daily.", ja: "多くの人が毎日インスタントメッセンジャーを使う。", context: "技術" },
     ],
     categories: ["communication", "business"],
-  },
-  {
-    id: 20121,
-    word: "microcomputer",
-    meaning: "マイコン",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The engineer programmed the microcomputer for the robot.", ja: "技術者はロボット用のマイコンをプログラムした。", context: "技術" },
-      { en: "Early microcomputers changed the tech industry.", ja: "初期のマイコンは技術産業を変えた。", context: "歴史" },
-      { en: "Students learned to build a simple microcomputer.", ja: "生徒たちは簡単なマイコンの組み立てを学んだ。", context: "学校" },
-    ],
-    categories: ["technology", "school"],
   },
   {
     id: 20122,
@@ -2508,18 +2460,6 @@ export const words: RawWord[] = [
       { en: "A fellow motorist helped change the flat tire.", ja: "別の運転者がパンクしたタイヤの交換を手伝った。", context: "日常" },
     ],
     categories: ["daily", "travel"],
-  },
-  {
-    id: 20153,
-    word: "motorway",
-    meaning: "高速道路",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Traffic was heavy on the motorway this morning.", ja: "今朝、高速道路は混雑していた。", context: "交通" },
-      { en: "The new motorway connects two major cities.", ja: "その新しい高速道路は二つの主要都市をつなぐ。", context: "社会" },
-      { en: "Drivers should take breaks on long motorway trips.", ja: "運転者は長距離の高速道路走行で休憩を取るべきだ。", context: "旅行" },
-    ],
-    categories: ["travel", "daily"],
   },
   {
     id: 20154,
@@ -3842,30 +3782,6 @@ export const words: RawWord[] = [
     categories: ["communication", "school"],
   },
   {
-    id: 20267,
-    word: "pence",
-    meaning: "ペンス（通貨単位）",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The candy costs only fifty pence at this shop.", ja: "このお店ではそのキャンディーはたった50ペンスだ。", context: "買い物" },
-      { en: "He found a few pence in his jacket pocket.", ja: "彼はジャケットのポケットに数ペンスを見つけた。", context: "日常" },
-      { en: "One pound equals one hundred pence in Britain.", ja: "イギリスでは1ポンドは100ペンスに等しい。", context: "文化" },
-    ],
-    categories: ["daily", "finance"],
-  },
-  {
-    id: 20268,
-    word: "penny",
-    meaning: "ペニー（通貨）",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She saved every penny for her trip abroad.", ja: "彼女は海外旅行のために1ペニーも無駄にしなかった。", context: "旅行" },
-      { en: "The old coin collection included a rare penny.", ja: "古いコインのコレクションには珍しいペニーが含まれていた。", context: "趣味" },
-      { en: "A penny dropped and rolled under the table.", ja: "ペニーが落ちてテーブルの下に転がった。", context: "日常" },
-    ],
-    categories: ["daily", "finance"],
-  },
-  {
     id: 20269,
     word: "pension",
     meaning: "年金",
@@ -4094,30 +4010,6 @@ export const words: RawWord[] = [
     categories: ["communication", "daily"],
   },
   {
-    id: 20288,
-    word: "petrol",
-    meaning: "ガソリン",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The price of petrol has risen sharply this month.", ja: "今月ガソリンの価格が急上昇した。", context: "経済" },
-      { en: "We need to stop and fill up with petrol.", ja: "立ち寄ってガソリンを入れる必要がある。", context: "旅行" },
-      { en: "Electric cars use no petrol and produce less pollution.", ja: "電気自動車はガソリンを使わず汚染も少ない。", context: "環境" },
-    ],
-    categories: ["daily", "travel"],
-  },
-  {
-    id: 20289,
-    word: "petrol station",
-    meaning: "ガソリンスタンド",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "There is a petrol station about two miles ahead.", ja: "約2マイル先にガソリンスタンドがある。", context: "旅行" },
-      { en: "The petrol station closes at ten every night.", ja: "そのガソリンスタンドは毎晩10時に閉まる。", context: "日常" },
-      { en: "She works part-time at the local petrol station.", ja: "彼女は地元のガソリンスタンドでアルバイトをしている。", context: "仕事" },
-    ],
-    categories: ["daily", "travel"],
-  },
-  {
     id: 20290,
     word: "photocopy",
     meaning: "コピー、複写",
@@ -4212,18 +4104,6 @@ export const words: RawWord[] = [
       { en: "There are many pluses to working from home.", ja: "在宅勤務には多くのプラス面がある。", context: "仕事" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 20300,
-    word: "pocket money",
-    meaning: "お小遣い",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She saves half of her weekly pocket money.", ja: "彼女は毎週のお小遣いの半分を貯金している。", context: "家庭" },
-      { en: "Children learn about money management through pocket money.", ja: "子供はお小遣いを通じてお金の管理を学ぶ。", context: "教育" },
-      { en: "His pocket money is enough to buy lunch at school.", ja: "彼のお小遣いは学校で昼食を買うのに十分だ。", context: "学校" },
-    ],
-    categories: ["daily", "finance"],
   },
   {
     id: 20301,
@@ -7192,7 +7072,7 @@ export const words: RawWord[] = [
   {
     id: 20553,
     word: "scheme",
-    meaning: "策略",
+    meaning: "計画・制度",
     partOfSpeech: "noun",
     examples: [
       { en: "The government introduced a new recycling scheme.", ja: "政府は新しいリサイクル計画を導入した。", context: "環境" },
@@ -7296,18 +7176,6 @@ export const words: RawWord[] = [
       { en: "A well-written script is the backbone of any good film.", ja: "よく書かれた台本はどんな良い映画の土台でもある。", context: "文化" },
     ],
     categories: ["culture", "communication"],
-  },
-  {
-    id: 20562,
-    word: "scrooge",
-    meaning: "けちな人",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Nobody wants to be called a scrooge at holiday time.", ja: "休暇シーズンにけちな人と呼ばれたい人はいない。", context: "日常" },
-      { en: "The character Scrooge learns the value of generosity.", ja: "スクルージというキャラクターは寛大さの価値を学ぶ。", context: "文学" },
-      { en: "Don't be such a scrooge and share with your friends.", ja: "そんなけちな人にならないで友達と分け合いなさい。", context: "人間関係" },
-    ],
-    categories: ["communication", "culture"],
   },
   {
     id: 20563,
@@ -8244,18 +8112,6 @@ export const words: RawWord[] = [
       { en: "Free software is available for basic photo editing.", ja: "基本的な写真編集用の無料ソフトウェアが利用可能だ。", context: "日常" },
     ],
     categories: ["technology", "business"],
-  },
-  {
-    id: 20645,
-    word: "soliloquy",
-    meaning: "独白",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The actor delivered a powerful soliloquy on stage.", ja: "その俳優は舞台で力強い独白を披露した。", context: "芸術" },
-      { en: "Shakespeare is famous for his dramatic soliloquy scenes.", ja: "シェイクスピアは劇的な独白の場面で有名だ。", context: "文学" },
-      { en: "The soliloquy revealed the true feelings of the character.", ja: "その独白は登場人物の本当の気持ちを明らかにした。", context: "娯楽" },
-    ],
-    categories: ["culture", "communication"],
   },
   {
     id: 20646,
@@ -11582,18 +11438,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 20926,
-    word: "bellwether",
-    meaning: "先導者",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "This stock is a bellwether for the tech sector.", ja: "この株はテック業界の先導者です。", context: "金融" },
-      { en: "The firm is a bellwether of industry trends.", ja: "その会社は業界トレンドの先導者です。", context: "市場" },
-      { en: "Bellwether indicators suggest economic recovery.", ja: "先導者的指標が景気回復を示唆しています。", context: "経済" },
-    ],
-    categories: ["finance", "business"],
-  },
-  {
     id: 20927,
     word: "blight",
     meaning: "荒廃",
@@ -11616,18 +11460,6 @@ export const words: RawWord[] = [
       { en: "Business at the port has been brisk this quarter.", ja: "今四半期の港の業務は活発でした。", context: "物流" },
     ],
     categories: ["business", "finance"],
-  },
-  {
-    id: 20929,
-    word: "bulwark",
-    meaning: "防壁",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Strong governance is a bulwark against fraud.", ja: "強いガバナンスは詐欺への防壁です。", context: "コンプラ" },
-      { en: "The reserve fund serves as a bulwark in crises.", ja: "準備金が危機時の防壁として機能します。", context: "財務" },
-      { en: "Innovation is the bulwark of competitive advantage.", ja: "イノベーションが競争優位の防壁です。", context: "経営" },
-    ],
-    categories: ["business"],
   },
   {
     id: 20930,

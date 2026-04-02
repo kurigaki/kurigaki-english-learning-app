@@ -2836,7 +2836,7 @@ export const words: RawWord[] = [
   {
     id: 18628,
     word: "column",
-    meaning: "柱",
+    meaning: "欄・コラム",
     partOfSpeech: "noun",
     examples: [
       { en: "The temple was supported by tall columns.", ja: "その寺院は高い柱で支えられていた。", context: "歴史" },
@@ -2932,7 +2932,7 @@ export const words: RawWord[] = [
   {
     id: 18636,
     word: "conduct",
-    meaning: "行動",
+    meaning: "行動・実施",
     partOfSpeech: "noun",
     examples: [
       { en: "His conduct in class was always excellent.", ja: "授業での彼の行動はいつも素晴らしかった。", context: "学校" },
@@ -5860,7 +5860,7 @@ export const words: RawWord[] = [
   {
     id: 18880,
     word: "key",
-    meaning: "かぎ",
+    meaning: "鍵・重要な",
     partOfSpeech: "noun",
     examples: [
       { en: "Where is the key to this door?", ja: "このドアのかぎはどこですか？", context: "家庭" },
@@ -5992,7 +5992,7 @@ export const words: RawWord[] = [
   {
     id: 18891,
     word: "plant",
-    meaning: "植物",
+    meaning: "植物・工場",
     partOfSpeech: "noun",
     examples: [
       { en: "She waters the plants every morning.", ja: "彼女は毎朝植物に水をあげます。", context: "家庭" },

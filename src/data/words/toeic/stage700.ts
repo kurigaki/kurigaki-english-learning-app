@@ -10444,7 +10444,7 @@ export const words: RawWord[] = [
   {
     id: 19791,
     word: "consecutive",
-    meaning: "連番の",
+    meaning: "連続した",
     partOfSpeech: "adjective",
     examples: [
       { en: "Sales grew for five consecutive quarters.", ja: "5四半期連続で売上が成長しました。", context: "業績" },
@@ -12016,7 +12016,7 @@ export const words: RawWord[] = [
   {
     id: 19922,
     word: "decline",
-    meaning: "衰退",
+    meaning: "衰退・断る",
     partOfSpeech: "noun",
     examples: [
       { en: "There has been a decline in population.", ja: "人口の減少が見られる。", context: "社会" },
