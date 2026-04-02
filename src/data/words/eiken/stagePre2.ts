@@ -12314,18 +12314,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 26482,
-    word: "lorry",
-    meaning: "トラック",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "A large lorry blocked the narrow road.", ja: "大きなトラックが狭い道をふさいでいました。", context: "交通" },
-      { en: "The lorry delivered furniture to the new office.", ja: "トラックが新しいオフィスに家具を届けました。", context: "ビジネス" },
-      { en: "He has been driving lorries for twenty years.", ja: "彼は20年間トラックを運転しています。", context: "仕事" },
-    ],
-    categories: ["travel", "daily"],
-  },
-  {
     id: 26483,
     word: "lot",
     meaning: "たくさん、用地",
@@ -14652,18 +14640,6 @@ export const words: RawWord[] = [
       { en: "Try to see things from the customer's perspective.", ja: "顧客の視点から物事を見るようにしよう。", context: "ビジネス" },
     ],
     categories: ["communication", "culture"],
-  },
-  {
-    id: 26677,
-    word: "petrol",
-    meaning: "ガソリン",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The price of petrol has risen sharply this month.", ja: "今月ガソリンの価格が急上昇した。", context: "経済" },
-      { en: "We need to stop and fill up with petrol.", ja: "立ち寄ってガソリンを入れる必要がある。", context: "旅行" },
-      { en: "Electric cars use no petrol and produce less pollution.", ja: "電気自動車はガソリンを使わず汚染も少ない。", context: "環境" },
-    ],
-    categories: ["daily", "travel"],
   },
   {
     id: 26678,

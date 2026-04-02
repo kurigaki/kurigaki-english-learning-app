@@ -998,18 +998,6 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 27137,
-    word: "car park",
-    meaning: "駐車場",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The car park behind the mall is always full.", ja: "モールの裏の駐車場はいつも満車です。", context: "日常" },
-      { en: "We left the car in the underground car park.", ja: "私たちは地下駐車場に車を停めました。", context: "買い物" },
-      { en: "The car park charges two dollars per hour.", ja: "その駐車場は1時間2ドルかかります。", context: "交通" },
-    ],
-    categories: ["travel", "daily"],
-  },
-  {
     id: 27138,
     word: "careless",
     meaning: "不注意な",
@@ -1104,18 +1092,6 @@ export const words: RawWord[] = [
       { en: "The teacher warned us about carelessness.", ja: "先生は私たちに不注意について警告した。", context: "学校" },
     ],
     categories: ["daily"],
-  },
-  {
-    id: 27146,
-    word: "cashpoint",
-    meaning: "現金引出機",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "There is a cashpoint near the station.", ja: "駅の近くにATMがある。", context: "地域" },
-      { en: "She withdrew money from the cashpoint.", ja: "彼女はATMからお金を引き出した。", context: "買い物" },
-      { en: "The cashpoint was out of order yesterday.", ja: "昨日そのATMは故障していた。", context: "日常" },
-    ],
-    categories: ["shopping"],
   },
   {
     id: 27147,
@@ -1488,18 +1464,6 @@ export const words: RawWord[] = [
       { en: "She enjoys walking through the countryside.", ja: "彼女は田舎を歩くのを楽しんでいる。", context: "趣味" },
     ],
     categories: ["daily", "nature"],
-  },
-  {
-    id: 27178,
-    word: "courgette",
-    meaning: "ズッキーニ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She added courgette to the vegetable soup.", ja: "彼女は野菜スープにズッキーニを加えた。", context: "料理" },
-      { en: "Courgettes grow well in warm weather.", ja: "ズッキーニは暖かい気候でよく育つ。", context: "園芸" },
-      { en: "He grilled the courgette with olive oil.", ja: "彼はズッキーニをオリーブオイルでグリルした。", context: "料理" },
-    ],
-    categories: ["food"],
   },
   {
     id: 27179,
@@ -3216,18 +3180,6 @@ export const words: RawWord[] = [
       { en: "Each character has a unique attribute in the game.", ja: "ゲームの各キャラクターには独自の特性があります。", context: "趣味" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 27322,
-    word: "aubergine",
-    meaning: "なす",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She added aubergine to the pasta sauce.", ja: "彼女はパスタソースになすを加えました。", context: "料理" },
-      { en: "Aubergine is a popular vegetable in many countries.", ja: "なすは多くの国で人気のある野菜です。", context: "食文化" },
-      { en: "We grow aubergine in our garden every summer.", ja: "私たちは毎年夏に庭でなすを育てています。", context: "家庭" },
-    ],
-    categories: ["food", "nature"],
   },
   {
     id: 27323,
@@ -12492,18 +12444,6 @@ export const words: RawWord[] = [
       { en: "A fellow motorist helped change the flat tire.", ja: "別の運転者がパンクしたタイヤの交換を手伝った。", context: "日常" },
     ],
     categories: ["daily", "travel"],
-  },
-  {
-    id: 28095,
-    word: "motorway",
-    meaning: "高速道路",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Traffic was heavy on the motorway this morning.", ja: "今朝、高速道路は混雑していた。", context: "交通" },
-      { en: "The new motorway connects two major cities.", ja: "その新しい高速道路は二つの主要都市をつなぐ。", context: "社会" },
-      { en: "Drivers should take breaks on long motorway trips.", ja: "運転者は長距離の高速道路走行で休憩を取るべきだ。", context: "旅行" },
-    ],
-    categories: ["travel", "daily"],
   },
   {
     id: 28096,
