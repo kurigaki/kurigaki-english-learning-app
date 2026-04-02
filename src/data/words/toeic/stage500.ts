@@ -1456,7 +1456,7 @@ export const words: RawWord[] = [
   {
     id: 18142,
     word: "suit",
-    meaning: "スーツ・適する",
+    meaning: "スーツ",
     partOfSpeech: "noun",
     examples: [
       { en: "My father wears a suit to work.", ja: "父は仕事にスーツを着ていく。", context: "仕事" },
@@ -3652,7 +3652,7 @@ export const words: RawWord[] = [
   {
     id: 18356,
     word: "present",
-    meaning: "現在の・提示する",
+    meaning: "プレゼント・現在",
     partOfSpeech: "noun",
     examples: [
       { en: "She gives him a present.", ja: "彼女は彼にプレゼントをあげます。", context: "イベント" },

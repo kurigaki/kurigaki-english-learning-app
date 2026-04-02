@@ -3508,7 +3508,7 @@ export const words: RawWord[] = [
   {
     id: 19213,
     word: "disregard",
-    meaning: "無視する",
+    meaning: "無視",
     partOfSpeech: "noun",
     examples: [
       { en: "His disregard for safety rules caused the accident.", ja: "安全規則の無視が事故を引き起こした。", context: "仕事" },
@@ -5584,7 +5584,7 @@ export const words: RawWord[] = [
   {
     id: 19386,
     word: "exile",
-    meaning: "亡命させる",
+    meaning: "亡命・追放",
     partOfSpeech: "noun",
     examples: [
       { en: "The writer spent years in exile abroad.", ja: "その作家は海外で何年も追放生活を送った。", context: "文化" },

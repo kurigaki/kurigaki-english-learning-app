@@ -18292,7 +18292,7 @@ export const words: RawWord[] = [
   {
     id: 33309,
     word: "libel",
-    meaning: "文書で中傷する",
+    meaning: "名誉毀損",
     partOfSpeech: "noun",
     examples: [
       { en: "The actor filed a libel suit against the tabloid.", ja: "その俳優はタブロイド紙に対し名誉毀損訴訟を起こした。", context: "報道" },

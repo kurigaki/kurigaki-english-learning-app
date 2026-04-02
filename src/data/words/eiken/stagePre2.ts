@@ -7684,7 +7684,7 @@ export const words: RawWord[] = [
   {
     id: 26096,
     word: "exile",
-    meaning: "亡命させる",
+    meaning: "亡命・追放",
     partOfSpeech: "noun",
     examples: [
       { en: "The writer spent years in exile abroad.", ja: "その作家は海外で何年も追放生活を送った。", context: "文化" },

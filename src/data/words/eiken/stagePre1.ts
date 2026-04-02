@@ -1144,7 +1144,7 @@ export const words: RawWord[] = [
   {
     id: 29314,
     word: "disregard",
-    meaning: "無視する",
+    meaning: "無視",
     partOfSpeech: "noun",
     examples: [
       { en: "His disregard for safety rules caused the accident.", ja: "安全規則の無視が事故を引き起こした。", context: "仕事" },
