@@ -1418,18 +1418,6 @@ export const words: RawWord[] = [
     categories: ["politics"],
   },
   {
-    id: 74143,
-    word: "collateral",
-    meaning: "担保",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The bank required property as collateral for the loan.", ja: "銀行はローンの担保として不動産を要求した。", context: "business" },
-      { en: "Civilian casualties are often described as collateral damage in war.", ja: "民間人の死傷者は戦争でしばしば副次的被害と呼ばれる。", context: "history" },
-      { en: "The company provided stocks as collateral for its financial obligations.", ja: "会社は財務上の義務のために株を担保として提供した。", context: "economy" },
-    ],
-    categories: ["business"],
-  },
-  {
     id: 74145,
     word: "communism",
     meaning: "共産主義",
@@ -1488,18 +1476,6 @@ export const words: RawWord[] = [
       { en: "The congregation included members from diverse backgrounds.", ja: "その集会は多様な背景を持つメンバーで構成されていた。", context: "culture" },
     ],
     categories: ["culture"],
-  },
-  {
-    id: 74151,
-    word: "conscription",
-    meaning: "徴兵制",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Conscription was introduced during World War II to fill military ranks.", ja: "第二次世界大戦中に軍の兵員を補充するために徴兵制が導入された。", context: "history" },
-      { en: "Many countries have abolished mandatory conscription.", ja: "多くの国が義務的な徴兵制を廃止した。", context: "politics" },
-      { en: "Debates over conscription often reflect views on individual freedom.", ja: "徴兵制をめぐる議論はしばしば個人の自由に関する見解を反映する。", context: "society" },
-    ],
-    categories: ["history"],
   },
   {
     id: 74154,
@@ -1620,18 +1596,6 @@ export const words: RawWord[] = [
       { en: "The university revised its curriculum to meet industry demands.", ja: "大学は産業界の需要に応えるためにカリキュラムを改訂した。", context: "business" },
     ],
     categories: ["education"],
-  },
-  {
-    id: 74166,
-    word: "cyberspace",
-    meaning: "サイバー空間",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Governments struggle to regulate activities in cyberspace.", ja: "政府はサイバー空間での活動を規制するのに苦労している。", context: "technology" },
-      { en: "Cyberspace has become a new battlefield for international espionage.", ja: "サイバー空間は国際スパイ活動の新たな戦場となっている。", context: "politics" },
-      { en: "The economy increasingly depends on activities in cyberspace.", ja: "経済はサイバー空間での活動にますます依存している。", context: "economy" },
-    ],
-    categories: ["technology"],
   },
   {
     id: 74167,
@@ -3266,30 +3230,6 @@ export const words: RawWord[] = [
     categories: ["general"],
   },
   {
-    id: 74318,
-    word: "feud",
-    meaning: "不和",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The two families had a feud that lasted for generations.", ja: "2つの家族は何世代にもわたる不和を抱えていた。", context: "feud" },
-      { en: "The business feud between rivals attracted media attention.", ja: "ライバル間のビジネスの不和はメディアの注目を集めた。", context: "feud" },
-      { en: "The politicians' public feud embarrassed their party.", ja: "政治家たちの公開の不和は彼らの政党を困惑させた。", context: "feud" },
-    ],
-    categories: ["social"],
-  },
-  {
-    id: 74319,
-    word: "fiasco",
-    meaning: "大失敗",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The product launch turned into a complete fiasco.", ja: "製品の発売は完全な大失敗に終わった。", context: "fiasco" },
-      { en: "The poorly planned event was an embarrassing fiasco.", ja: "杜撰に計画されたイベントは恥ずかしい大失敗だった。", context: "fiasco" },
-      { en: "The diplomatic mission ended in a fiasco.", ja: "外交使節団は大失敗に終わった。", context: "fiasco" },
-    ],
-    categories: ["general"],
-  },
-  {
     id: 74320,
     word: "fidelity",
     meaning: "忠実さ",
@@ -3420,18 +3360,6 @@ export const words: RawWord[] = [
       { en: "His grievance was that he was passed over for promotion.", ja: "彼の不満は昇進を見送られたことだった。", context: "grievance" },
     ],
     categories: ["social"],
-  },
-  {
-    id: 74334,
-    word: "guerrilla",
-    meaning: "ゲリラ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Guerrilla warfare was used to resist the occupation.", ja: "占領に抵抗するためにゲリラ戦が使われた。", context: "guerrilla" },
-      { en: "The guerrilla fighters operated in remote mountain regions.", ja: "ゲリラ戦闘員は辺鄙な山岳地帯で活動した。", context: "guerrilla" },
-      { en: "Guerrilla marketing uses unconventional tactics to promote products.", ja: "ゲリラマーケティングは製品を宣伝するために型破りな戦術を使う。", context: "guerrilla" },
-    ],
-    categories: ["history"],
   },
   {
     id: 74335,
@@ -3636,18 +3564,6 @@ export const words: RawWord[] = [
       { en: "He was admired for his sharp intellect and quick thinking.", ja: "彼は鋭い知性と素早い思考力で称えられた。", context: "intellect" },
     ],
     categories: ["general"],
-  },
-  {
-    id: 74357,
-    word: "intelligentsia",
-    meaning: "知識人層",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The intelligentsia debated the future of the nation.", ja: "知識人層は国の未来を議論した。", context: "intelligentsia" },
-      { en: "During the revolution, the intelligentsia played a key role.", ja: "革命中、知識人層は重要な役割を果たした。", context: "intelligentsia" },
-      { en: "The intelligentsia often leads social and cultural movements.", ja: "知識人層はしばしば社会的・文化的運動を主導する。", context: "intelligentsia" },
-    ],
-    categories: ["social"],
   },
   {
     id: 74358,
@@ -4152,30 +4068,6 @@ export const words: RawWord[] = [
       { en: "Political patronage can lead to corruption within government.", ja: "政治的な後援は政府内の汚職につながることがある。", context: "patronage" },
     ],
     categories: ["social"],
-  },
-  {
-    id: 74404,
-    word: "pedagogy",
-    meaning: "教授法",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Modern pedagogy emphasizes student-centered learning.", ja: "現代の教授法は学生中心の学習を強調する。", context: "pedagogy" },
-      { en: "Effective pedagogy requires understanding how students learn.", ja: "効果的な教授法は学生がどのように学ぶかを理解することを必要とする。", context: "pedagogy" },
-      { en: "The teacher updated her pedagogy to include digital tools.", ja: "教師はデジタルツールを含めるために教授法を更新した。", context: "pedagogy" },
-    ],
-    categories: ["general"],
-  },
-  {
-    id: 74405,
-    word: "pedigree",
-    meaning: "血統",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The dog had an impressive pedigree going back several generations.", ja: "その犬は何世代にもわたる印象的な血統を持っていた。", context: "pedigree" },
-      { en: "The candidate's academic pedigree made him the top choice.", ja: "候補者の学術的な経歴は彼を最有力候補にした。", context: "pedigree" },
-      { en: "A champion athlete often has a strong pedigree of coaches and mentors.", ja: "チャンピオン選手はしばしばコーチやメンターの強い血統を持っている。", context: "pedigree" },
-    ],
-    categories: ["general"],
   },
   {
     id: 74406,
@@ -4766,18 +4658,6 @@ export const words: RawWord[] = [
     categories: ["social"],
   },
   {
-    id: 74469,
-    word: "feudalism",
-    meaning: "封建制度",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Feudalism was the dominant social system in medieval Europe.", ja: "封建制度は中世ヨーロッパで支配的な社会制度だった。", context: "feudalism" },
-      { en: "The end of feudalism led to the rise of a middle class.", ja: "封建制度の終焉は中産階級の台頭につながった。", context: "feudalism" },
-      { en: "Feudalism required peasants to work in exchange for protection.", ja: "封建制度は農民が保護と引き換えに働くことを求めた。", context: "feudalism" },
-    ],
-    categories: ["history"],
-  },
-  {
     id: 74472,
     word: "colonialism",
     meaning: "植民地主義",
@@ -4812,18 +4692,6 @@ export const words: RawWord[] = [
       { en: "Nations embargoed the regime after reports of human rights abuses.", ja: "人権侵害の報告の後、各国はその政権を禁輸にした。", context: "embargo" },
     ],
     categories: ["economy"],
-  },
-  {
-    id: 74483,
-    word: "insurrection",
-    meaning: "反乱",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The insurrection against the colonial government lasted three years.", ja: "植民地政府に対する反乱は3年間続いた。", context: "insurrection" },
-      { en: "The government called in the military to suppress the insurrection.", ja: "政府は反乱を鎮圧するために軍隊を呼び込んだ。", context: "insurrection" },
-      { en: "A popular insurrection overthrew the dictator.", ja: "民衆の反乱が独裁者を打倒した。", context: "insurrection" },
-    ],
-    categories: ["history"],
   },
   {
     id: 74484,
@@ -5354,18 +5222,6 @@ export const words: RawWord[] = [
     categories: ["arts"],
   },
   {
-    id: 74532,
-    word: "consecrate",
-    meaning: "神聖にする",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The priest consecrated the church.", ja: "司祭は教会を神聖にした。", context: "宗教" },
-      { en: "The ground was consecrated.", ja: "その土地は神聖にされた。", context: "歴史" },
-      { en: "They consecrated the temple.", ja: "彼らは神殿を神聖にした。", context: "文化" },
-    ],
-    categories: ["religion"],
-  },
-  {
     id: 74533,
     word: "console",
     meaning: "慰める",
@@ -5762,18 +5618,6 @@ export const words: RawWord[] = [
     categories: ["history"],
   },
   {
-    id: 74573,
-    word: "embezzle",
-    meaning: "横領する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "He embezzled company funds.", ja: "彼は会社の資金を横領した。", context: "犯罪" },
-      { en: "She was caught embezzling money.", ja: "彼女はお金を横領して捕まった。", context: "法律" },
-      { en: "The official embezzled public funds.", ja: "役人は公金を横領した。", context: "政治" },
-    ],
-    categories: ["law"],
-  },
-  {
     id: 74575,
     word: "emigrate",
     meaning: "移住する",
@@ -6134,18 +5978,6 @@ export const words: RawWord[] = [
     categories: ["science"],
   },
   {
-    id: 74622,
-    word: "inoculate",
-    meaning: "予防接種する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Children should be inoculated.", ja: "子供は予防接種を受けるべきだ。", context: "医療" },
-      { en: "She was inoculated against flu.", ja: "彼女はインフルエンザに予防接種された。", context: "健康" },
-      { en: "The vaccine inoculates millions.", ja: "ワクチンは何百万人にも予防接種する。", context: "社会" },
-    ],
-    categories: ["health"],
-  },
-  {
     id: 74623,
     word: "instigate",
     meaning: "扇動する",
@@ -6266,18 +6098,6 @@ export const words: RawWord[] = [
     categories: ["society"],
   },
   {
-    id: 74637,
-    word: "patrimony",
-    meaning: "世襲財産",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The patrimony was passed to the son.", ja: "世襲財産は息子に渡された。", context: "歴史" },
-      { en: "Cultural patrimony must be protected.", ja: "文化的遺産は守られなければならない。", context: "文化" },
-      { en: "The church has vast patrimony.", ja: "教会は広大な世襲財産を持つ。", context: "宗教" },
-    ],
-    categories: ["history"],
-  },
-  {
     id: 74638,
     word: "patron",
     meaning: "後援者",
@@ -6360,18 +6180,6 @@ export const words: RawWord[] = [
       { en: "He was at the pinnacle of his career.", ja: "彼はキャリアの頂点にいた。", context: "仕事" },
     ],
     categories: ["society"],
-  },
-  {
-    id: 74647,
-    word: "pittance",
-    meaning: "少額",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Workers earned a pittance.", ja: "労働者は少額の賃金を稼いだ。", context: "労働" },
-      { en: "She was paid a pittance for her work.", ja: "彼女は仕事で少額しか払われなかった。", context: "経済" },
-      { en: "A pittance is barely enough to live on.", ja: "少額はかろうじて生活できる程度だ。", context: "社会" },
-    ],
-    categories: ["economy"],
   },
   {
     id: 74648,
@@ -6686,18 +6494,6 @@ export const words: RawWord[] = [
     categories: ["science"],
   },
   {
-    id: 74675,
-    word: "proletariat",
-    meaning: "労働者階級",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Marx wrote about the proletariat.", ja: "マルクスは労働者階級について書いた。", context: "政治" },
-      { en: "The proletariat rose in revolution.", ja: "労働者階級は革命で立ち上がった。", context: "歴史" },
-      { en: "The proletariat demands rights.", ja: "労働者階級は権利を要求する。", context: "社会" },
-    ],
-    categories: ["politics"],
-  },
-  {
     id: 74678,
     word: "prophecy",
     meaning: "予言",
@@ -6744,30 +6540,6 @@ export const words: RawWord[] = [
       { en: "The protocol ensures consistency.", ja: "手順は一貫性を確保する。", context: "仕事" },
     ],
     categories: ["science"],
-  },
-  {
-    id: 74682,
-    word: "provenance",
-    meaning: "出所",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The painting's provenance is documented.", ja: "絵画の出所は記録されている。", context: "芸術" },
-      { en: "Provenance affects the value of art.", ja: "出所は芸術の価値に影響する。", context: "文化" },
-      { en: "Historical provenance was researched.", ja: "歴史的な出所が調査された。", context: "学術" },
-    ],
-    categories: ["arts"],
-  },
-  {
-    id: 74683,
-    word: "providence",
-    meaning: "神の摂理",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "He believed in divine providence.", ja: "彼は神の摂理を信じた。", context: "宗教" },
-      { en: "Providence guided their journey.", ja: "神の摂理が彼らの旅を導いた。", context: "文化" },
-      { en: "She trusted in providence.", ja: "彼女は神の摂理を信頼した。", context: "哲学" },
-    ],
-    categories: ["religion"],
   },
   {
     id: 74684,
