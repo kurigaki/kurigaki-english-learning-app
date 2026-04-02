@@ -23,7 +23,13 @@ export type Stage =
   | "600"
   | "700"
   | "800"
-  | "900";
+  | "900"
+  | "a1"
+  | "a2"
+  | "b1"
+  | "b2"
+  | "c1"
+  | "c2";
 
 // 品詞（5種に簡素化）
 export type PartOfSpeech = "noun" | "verb" | "adjective" | "adverb" | "other";
