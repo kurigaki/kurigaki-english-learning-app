@@ -1228,7 +1228,7 @@ export const words: RawWord[] = [
   {
     id: 72112,
     word: "medicine",
-    meaning: "医学",
+    meaning: "薬・医学",
     partOfSpeech: "noun",
     examples: [
       { en: "He is studying medicine at university.", ja: "彼は大学で医学を学んでいる。", context: "study medicine" },
@@ -1588,7 +1588,7 @@ export const words: RawWord[] = [
   {
     id: 72145,
     word: "officer",
-    meaning: "警察官",
+    meaning: "役人・将校",
     partOfSpeech: "noun",
     examples: [
       { en: "A police officer directed the traffic.", ja: "警察官が交通を整理した。", context: "police officer" },

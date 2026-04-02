@@ -484,7 +484,7 @@ export const words: RawWord[] = [
   {
     id: 71041,
     word: "feed",
-    meaning: "与える",
+    meaning: "食べ物を与える",
     partOfSpeech: "verb",
     examples: [
       { en: "Don't forget to feed the cat.", ja: "猫に餌を与えるのを忘れないで。", context: "animal" },
@@ -2968,7 +2968,7 @@ export const words: RawWord[] = [
   {
     id: 71254,
     word: "friendly",
-    meaning: "親切な",
+    meaning: "友好的な",
     partOfSpeech: "adjective",
     examples: [
       { en: "Our new neighbor is very friendly.", ja: "新しい隣人はとても親切だ。", context: "friendly" },
@@ -3052,7 +3052,7 @@ export const words: RawWord[] = [
   {
     id: 71261,
     word: "guilty",
-    meaning: "有罪の",
+    meaning: "罪を犯した・有罪の",
     partOfSpeech: "adjective",
     examples: [
       { en: "He felt guilty about lying.", ja: "彼は嘘をついたことに罪悪感を感じた。", context: "guilty" },

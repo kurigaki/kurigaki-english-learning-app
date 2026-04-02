@@ -3074,18 +3074,6 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 39015,
-    word: "besides",
-    meaning: "それに加えて",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "She is smart; besides, she works very hard.", ja: "彼女は賢い。それに加えて、とても努力家だ。", context: "評価" },
-      { en: "Besides, there are other options available.", ja: "それに加えて、他の選択肢もある。", context: "議論" },
-      { en: "I don't want to go; besides, I'm tired.", ja: "私は行きたくない。それに加えて、疲れている。", context: "会話" },
-    ],
-    categories: ["connectors"],
-  },
-  {
     id: 39016,
     word: "despite",
     meaning: "にもかかわらず",
@@ -3146,18 +3134,6 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 39021,
-    word: "meanwhile",
-    meaning: "その間",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "She went shopping; meanwhile, he cooked dinner.", ja: "彼女は買い物に行った。その間、彼は夕食を作った。", context: "日常" },
-      { en: "Meanwhile, the situation at work was improving.", ja: "その間、職場の状況は改善していた。", context: "体験" },
-      { en: "Meanwhile, let's discuss the next steps.", ja: "その間、次のステップについて話し合いましょう。", context: "会議" },
-    ],
-    categories: ["connectors"],
-  },
-  {
     id: 39022,
     word: "on the other hand",
     meaning: "一方で",
@@ -3170,18 +3146,6 @@ export const words: RawWord[] = [
     categories: ["connectors"],
   },
   {
-    id: 39023,
-    word: "otherwise",
-    meaning: "そうでなければ",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "Study hard; otherwise, you'll fail the exam.", ja: "一生懸命勉強しなさい。そうでなければ、試験に落ちる。", context: "学習" },
-      { en: "Contact me; otherwise, I won't know.", ja: "連絡してください。そうでなければ、私は知らない。", context: "会話" },
-      { en: "Be careful; otherwise, you'll make a mistake.", ja: "気をつけてください。そうでなければ、ミスをする。", context: "アドバイス" },
-    ],
-    categories: ["connectors"],
-  },
-  {
     id: 39024,
     word: "regarding",
     meaning: "〜に関して",
@@ -3190,18 +3154,6 @@ export const words: RawWord[] = [
       { en: "Regarding the proposal, I have some questions.", ja: "提案に関して、いくつか質問があります。", context: "ビジネス" },
       { en: "She emailed regarding the meeting schedule.", ja: "彼女は会議のスケジュールに関してメールを送った。", context: "職場" },
       { en: "Regarding your concern, let's discuss it today.", ja: "あなたの懸念に関して、今日話し合いましょう。", context: "会話" },
-    ],
-    categories: ["connectors"],
-  },
-  {
-    id: 39025,
-    word: "therefore",
-    meaning: "したがって",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "She studied hard; therefore, she passed.", ja: "彼女は努力した。したがって、合格した。", context: "体験" },
-      { en: "The problem is serious; therefore, act now.", ja: "問題は深刻だ。したがって、今すぐ行動してください。", context: "議論" },
-      { en: "I agree with you; therefore, I'll support it.", ja: "あなたに同意する。したがって、支持します。", context: "意見" },
     ],
     categories: ["connectors"],
   },
