@@ -3590,18 +3590,6 @@ export const words: RawWord[] = [
     categories: ["ritual"],
   },
   {
-    id: 75397,
-    word: "irony",
-    meaning: "皮肉",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "There is a bitter irony in his failure.", ja: "彼の失敗には苦い皮肉がある。", context: "failure" },
-      { en: "The irony of the situation was not lost on anyone.", ja: "状況の皮肉は誰にも伝わった。", context: "situation" },
-      { en: "She appreciated the irony in his remark.", ja: "彼女は彼の発言の皮肉を理解した。", context: "remark" },
-    ],
-    categories: ["language"],
-  },
-  {
     id: 75398,
     word: "jeopardy",
     meaning: "危険",
@@ -3996,18 +3984,6 @@ export const words: RawWord[] = [
       { en: "She wrote a parody of the classic novel for fun.", ja: "彼女は楽しみのためにその古典小説のパロディを書いた。", context: "novel" },
     ],
     categories: ["humor"],
-  },
-  {
-    id: 75440,
-    word: "phenomenon",
-    meaning: "現象",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Climate change is a global phenomenon.", ja: "気候変動は世界的な現象だ。", context: "climate" },
-      { en: "The northern lights are a natural phenomenon.", ja: "オーロラは自然現象だ。", context: "lights" },
-      { en: "Social media is a relatively new phenomenon.", ja: "ソーシャルメディアは比較的新しい現象だ。", context: "media" },
-    ],
-    categories: ["science"],
   },
   {
     id: 75441,
@@ -5338,18 +5314,6 @@ export const words: RawWord[] = [
       { en: "The surgeon demonstrated great dexterity.", ja: "外科医は優れた器用さを示した。", context: "medicine" },
       { en: "Manual dexterity is needed for this job.", ja: "この仕事には手の器用さが必要だ。", context: "career" },
       { en: "Dexterity improves with practice.", ja: "器用さは練習で向上する。", context: "skill" },
-    ],
-    categories: ["academic"],
-  },
-  {
-    id: 75601,
-    word: "dialect",
-    meaning: "方言",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She speaks a regional dialect.", ja: "彼女は地方の方言を話す。", context: "language" },
-      { en: "Dialects reflect cultural identity.", ja: "方言は文化的アイデンティティを反映する。", context: "culture" },
-      { en: "The dialect was hard to understand.", ja: "その方言は理解しにくかった。", context: "communication" },
     ],
     categories: ["academic"],
   },

@@ -434,18 +434,6 @@ export const words: RawWord[] = [
     categories: ["environment"],
   },
   {
-    id: 74047,
-    word: "devise",
-    meaning: "考案する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Scientists devised a new method to detect cancer early.", ja: "科学者たちは早期にがんを検出する新しい方法を考案した。", context: "health" },
-      { en: "The team devised a strategy to reduce production costs.", ja: "チームは生産コストを削減する戦略を考案した。", context: "business" },
-      { en: "Engineers devised a system to filter contaminated water.", ja: "エンジニアは汚染された水をろ過するシステムを考案した。", context: "environment" },
-    ],
-    categories: ["science"],
-  },
-  {
     id: 74048,
     word: "discard",
     meaning: "捨てる",

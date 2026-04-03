@@ -1526,18 +1526,6 @@ export const words: RawWord[] = [
     categories: ["people"],
   },
   {
-    id: 72139,
-    word: "candidate",
-    meaning: "候補者",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She is a candidate for president.", ja: "彼女は大統領候補だ。", context: "candidate for president" },
-      { en: "The candidates debated on TV.", ja: "候補者たちはテレビで討論した。", context: "candidates debated" },
-      { en: "He is the best candidate for the job.", ja: "彼はその職の最適な候補者だ。", context: "best candidate" },
-    ],
-    categories: ["people"],
-  },
-  {
     id: 72140,
     word: "citizen",
     meaning: "市民",
@@ -2294,18 +2282,6 @@ export const words: RawWord[] = [
     categories: ["connector"],
   },
   {
-    id: 72207,
-    word: "furthermore",
-    meaning: "さらに",
-    partOfSpeech: "other",
-    examples: [
-      { en: "She is smart. Furthermore, she is kind.", ja: "彼女は賢い。さらに、親切でもある。", context: "furthermore kind" },
-      { en: "Furthermore, we need more time.", ja: "さらに、もっと時間が必要だ。", context: "furthermore more time" },
-      { en: "The price is low. Furthermore, it is high quality.", ja: "価格が低い。さらに、高品質だ。", context: "furthermore high quality" },
-    ],
-    categories: ["connector"],
-  },
-  {
     id: 72208,
     word: "however",
     meaning: "しかしながら",
@@ -2326,30 +2302,6 @@ export const words: RawWord[] = [
       { en: "In addition, we need more volunteers.", ja: "加えて、もっとボランティアが必要だ。", context: "in addition need" },
       { en: "She speaks French. In addition, she speaks Spanish.", ja: "彼女はフランス語を話す。加えて、スペイン語も話す。", context: "in addition speaks" },
       { en: "In addition to studying, she works part-time.", ja: "勉強に加えて、彼女はアルバイトをしている。", context: "in addition works" },
-    ],
-    categories: ["connector"],
-  },
-  {
-    id: 72210,
-    word: "moreover",
-    meaning: "その上",
-    partOfSpeech: "other",
-    examples: [
-      { en: "He is talented. Moreover, he works hard.", ja: "彼は才能がある。その上、一生懸命働く。", context: "moreover works hard" },
-      { en: "Moreover, the cost is too high.", ja: "その上、コストが高すぎる。", context: "moreover cost" },
-      { en: "The plan is good. Moreover, it is cheap.", ja: "その計画は良い。その上、安価だ。", context: "moreover cheap" },
-    ],
-    categories: ["connector"],
-  },
-  {
-    id: 72211,
-    word: "nevertheless",
-    meaning: "それにもかかわらず",
-    partOfSpeech: "other",
-    examples: [
-      { en: "It was hard. Nevertheless, she continued.", ja: "大変だった。それにもかかわらず、彼女は続けた。", context: "nevertheless continued" },
-      { en: "It is risky. Nevertheless, we should try.", ja: "リスクがある。それにもかかわらず、試みるべきだ。", context: "nevertheless try" },
-      { en: "Nevertheless, I believe we can win.", ja: "それにもかかわらず、私たちは勝てると信じている。", context: "nevertheless believe" },
     ],
     categories: ["connector"],
   },
@@ -2494,18 +2446,6 @@ export const words: RawWord[] = [
       { en: "She volunteered to clean the beach.", ja: "彼女は海岸清掃のボランティアをした。", context: "volunteer to clean" },
       { en: "He volunteers every weekend.", ja: "彼は毎週末ボランティアをしている。", context: "volunteer every weekend" },
       { en: "Many students volunteered for the event.", ja: "多くの生徒がそのイベントでボランティアをした。", context: "volunteer for event" },
-    ],
-    categories: ["general"],
-  },
-  {
-    id: 72229,
-    word: "devise",
-    meaning: "考案する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She devised a new teaching method.", ja: "彼女は新しい教授法を考案した。", context: "devise a method" },
-      { en: "He devised a plan to solve the problem.", ja: "彼は問題を解決するための計画を考案した。", context: "devise a plan" },
-      { en: "They devised a clever strategy.", ja: "彼らは賢い戦略を考案した。", context: "devise a strategy" },
     ],
     categories: ["general"],
   },
@@ -2786,18 +2726,6 @@ export const words: RawWord[] = [
     categories: ["action"],
   },
   {
-    id: 72270,
-    word: "classify",
-    meaning: "分類する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Scientists classify animals by species.", ja: "科学者たちは動物を種類で分類する。", context: "science" },
-      { en: "Please classify these books by subject.", ja: "これらの本を教科ごとに分類してください。", context: "study" },
-      { en: "We classified the data into groups.", ja: "私たちはデータをグループに分類した。", context: "research" },
-    ],
-    categories: ["study"],
-  },
-  {
     id: 72271,
     word: "combine",
     meaning: "組み合わせる",
@@ -2870,18 +2798,6 @@ export const words: RawWord[] = [
     categories: ["description"],
   },
   {
-    id: 72279,
-    word: "convey",
-    meaning: "伝える",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Her smile conveyed happiness.", ja: "彼女の笑顔は幸せを伝えた。", context: "communication" },
-      { en: "Words cannot always convey feelings.", ja: "言葉は必ずしも気持ちを伝えられるわけではない。", context: "communication" },
-      { en: "The letter conveyed a message of hope.", ja: "その手紙は希望のメッセージを伝えた。", context: "communication" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 72280,
     word: "cooperate",
     meaning: "協力する",
@@ -2892,18 +2808,6 @@ export const words: RawWord[] = [
       { en: "Students cooperated to finish the project.", ja: "生徒たちはプロジェクトを終わらせるために協力した。", context: "school" },
     ],
     categories: ["social"],
-  },
-  {
-    id: 72281,
-    word: "cultivate",
-    meaning: "耕す",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Farmers cultivate the land every spring.", ja: "農家は毎春土地を耕す。", context: "agriculture" },
-      { en: "He cultivated a love of reading in his students.", ja: "彼は生徒たちに読書への愛情を育てた。", context: "education" },
-      { en: "We should cultivate good habits.", ja: "私たちは良い習慣を育てるべきだ。", context: "life" },
-    ],
-    categories: ["action"],
   },
   {
     id: 72282,
@@ -2952,18 +2856,6 @@ export const words: RawWord[] = [
       { en: "He was educated at a famous university.", ja: "彼は有名な大学で教育を受けた。", context: "education" },
     ],
     categories: ["education"],
-  },
-  {
-    id: 72290,
-    word: "eliminate",
-    meaning: "取り除く",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "We should eliminate poverty worldwide.", ja: "私たちは世界規模で貧困を取り除くべきだ。", context: "society" },
-      { en: "Exercise can help eliminate stress.", ja: "運動はストレスを取り除くのに役立つ。", context: "health" },
-      { en: "The team eliminated unnecessary steps.", ja: "チームは不必要な手順を取り除いた。", context: "work" },
-    ],
-    categories: ["action"],
   },
   {
     id: 72292,
@@ -3252,18 +3144,6 @@ export const words: RawWord[] = [
       { en: "She relies on her friends for support.", ja: "彼女は支援を求めて友人に頼っている。", context: "friendship" },
     ],
     categories: ["social"],
-  },
-  {
-    id: 72316,
-    word: "restrict",
-    meaning: "制限する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Access to the building is restricted.", ja: "建物へのアクセスは制限されている。", context: "security" },
-      { en: "The government restricted travel during the pandemic.", ja: "政府はパンデミック中の旅行を制限した。", context: "health" },
-      { en: "Rules restrict the use of mobile phones in school.", ja: "規則は学校での携帯電話の使用を制限している。", context: "school" },
-    ],
-    categories: ["action"],
   },
   {
     id: 72317,
@@ -3674,18 +3554,6 @@ export const words: RawWord[] = [
     categories: ["thinking"],
   },
   {
-    id: 72357,
-    word: "constitution",
-    meaning: "憲法",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The country's constitution protects human rights.", ja: "その国の憲法は人権を保護している。", context: "law" },
-      { en: "Japan's constitution was written after World War II.", ja: "日本の憲法は第二次世界大戦後に作成された。", context: "history" },
-      { en: "Every democratic country has a constitution.", ja: "すべての民主主義国家は憲法を持っている。", context: "democracy" },
-    ],
-    categories: ["law"],
-  },
-  {
     id: 72358,
     word: "contrast",
     meaning: "対比",
@@ -3782,18 +3650,6 @@ export const words: RawWord[] = [
     categories: ["time"],
   },
   {
-    id: 72368,
-    word: "democracy",
-    meaning: "民主主義",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Democracy gives people the power to vote.", ja: "民主主義は人々に投票する権力を与える。", context: "society" },
-      { en: "Many countries fight to maintain democracy.", ja: "多くの国が民主主義を維持するために戦っている。", context: "history" },
-      { en: "Education is important for a strong democracy.", ja: "教育は強い民主主義には重要だ。", context: "education" },
-    ],
-    categories: ["society"],
-  },
-  {
     id: 72369,
     word: "department",
     meaning: "部門",
@@ -3828,18 +3684,6 @@ export const words: RawWord[] = [
       { en: "Floods and typhoons are common disasters in Japan.", ja: "洪水と台風は日本では一般的な災害だ。", context: "nature" },
     ],
     categories: ["nature"],
-  },
-  {
-    id: 72372,
-    word: "discipline",
-    meaning: "規律",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Discipline is important for success.", ja: "成功には規律が重要だ。", context: "values" },
-      { en: "The teacher maintained discipline in the class.", ja: "先生はクラスで規律を維持した。", context: "school" },
-      { en: "Self-discipline helps you reach your goals.", ja: "自己規律は目標の達成を助ける。", context: "values" },
-    ],
-    categories: ["manner"],
   },
   {
     id: 72373,
@@ -4046,18 +3890,6 @@ export const words: RawWord[] = [
     categories: ["organization"],
   },
   {
-    id: 72391,
-    word: "insurance",
-    meaning: "保険",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Everyone should have health insurance.", ja: "誰もが健康保険を持つべきだ。", context: "health" },
-      { en: "Car insurance is required by law.", ja: "自動車保険は法律で必要とされている。", context: "law" },
-      { en: "The insurance covered the cost of repairs.", ja: "保険が修理費を賄った。", context: "daily" },
-    ],
-    categories: ["economics"],
-  },
-  {
     id: 72392,
     word: "lack",
     meaning: "不足",
@@ -4154,18 +3986,6 @@ export const words: RawWord[] = [
     categories: ["social"],
   },
   {
-    id: 72401,
-    word: "philosophy",
-    meaning: "哲学",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Philosophy asks big questions about life.", ja: "哲学は人生についての大きな疑問を問う。", context: "education" },
-      { en: "He studied philosophy at university.", ja: "彼は大学で哲学を学んだ。", context: "education" },
-      { en: "Eastern philosophy has influenced the world.", ja: "東洋哲学は世界に影響を与えてきた。", context: "culture" },
-    ],
-    categories: ["education"],
-  },
-  {
     id: 72404,
     word: "principle",
     meaning: "原則",
@@ -4214,18 +4034,6 @@ export const words: RawWord[] = [
     categories: ["economics"],
   },
   {
-    id: 72408,
-    word: "proportion",
-    meaning: "割合",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "A large proportion of students walk to school.", ja: "多くの割合の生徒が学校に歩いて通っている。", context: "school" },
-      { en: "The proportion of adults using smartphones has grown.", ja: "スマートフォンを使用する大人の割合が増えた。", context: "technology" },
-      { en: "Mix the ingredients in the right proportion.", ja: "正しい割合で材料を混ぜてください。", context: "cooking" },
-    ],
-    categories: ["math"],
-  },
-  {
     id: 72409,
     word: "quantity",
     meaning: "数量",
@@ -4260,18 +4068,6 @@ export const words: RawWord[] = [
       { en: "With regard to your question, here is the answer.", ja: "あなたの質問に関して、ここに答えがある。", context: "communication" },
     ],
     categories: ["manner"],
-  },
-  {
-    id: 72412,
-    word: "revolution",
-    meaning: "革命",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The French Revolution changed European history.", ja: "フランス革命はヨーロッパの歴史を変えた。", context: "history" },
-      { en: "The industrial revolution created many new jobs.", ja: "産業革命は多くの新しい雇用を生み出した。", context: "history" },
-      { en: "The digital revolution has changed our lives.", ja: "デジタル革命は私たちの生活を変えた。", context: "technology" },
-    ],
-    categories: ["history"],
   },
   {
     id: 72414,
@@ -4430,30 +4226,6 @@ export const words: RawWord[] = [
     categories: ["economics"],
   },
   {
-    id: 72429,
-    word: "conservative",
-    meaning: "保守的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Some people prefer conservative values.", ja: "保守的な価値観を好む人もいる。", context: "society" },
-      { en: "His views on education are very conservative.", ja: "教育についての彼の見解は非常に保守的だ。", context: "education" },
-      { en: "A conservative approach reduces risk.", ja: "保守的なアプローチはリスクを減らす。", context: "thinking" },
-    ],
-    categories: ["society"],
-  },
-  {
-    id: 72430,
-    word: "controversial",
-    meaning: "論争的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The new law was very controversial.", ja: "その新しい法律は非常に論争的だった。", context: "law" },
-      { en: "Animal testing is a controversial topic.", ja: "動物実験は論争的なトピックだ。", context: "science" },
-      { en: "The politician made a controversial statement.", ja: "その政治家は論争的な発言をした。", context: "society" },
-    ],
-    categories: ["society"],
-  },
-  {
     id: 72431,
     word: "creative",
     meaning: "創造的な",
@@ -4476,30 +4248,6 @@ export const words: RawWord[] = [
       { en: "His words were cruel and hurtful.", ja: "彼の言葉は残酷で傷つくものだった。", context: "manner" },
     ],
     categories: ["values"],
-  },
-  {
-    id: 72433,
-    word: "democratic",
-    meaning: "民主的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The country held democratic elections.", ja: "その国は民主的な選挙を行った。", context: "society" },
-      { en: "A democratic society values freedom of speech.", ja: "民主的な社会は言論の自由を重視する。", context: "society" },
-      { en: "The decision was made in a democratic way.", ja: "決定は民主的な方法でなされた。", context: "organization" },
-    ],
-    categories: ["society"],
-  },
-  {
-    id: 72434,
-    word: "desperate",
-    meaning: "必死な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "She was desperate to find her lost dog.", ja: "彼女は迷子の犬を見つけようと必死だった。", context: "daily" },
-      { en: "He made a desperate attempt to save time.", ja: "彼は時間を節約しようと必死な試みをした。", context: "action" },
-      { en: "The family was in a desperate situation.", ja: "その家族は必死な状況にいた。", context: "society" },
-    ],
-    categories: ["emotion"],
   },
   {
     id: 72435,
@@ -4906,18 +4654,6 @@ export const words: RawWord[] = [
       { en: "In spite of the cold, she went swimming.", ja: "寒さにもかかわらず、彼女は泳ぎに行った。", context: "determination" },
       { en: "In spite of the difficulty, he succeeded.", ja: "困難にもかかわらず、彼は成功した。", context: "values" },
       { en: "In spite of the rain, the event was held.", ja: "雨にもかかわらず、イベントは開催された。", context: "event" },
-    ],
-    categories: ["connector"],
-  },
-  {
-    id: 72472,
-    word: "provided that",
-    meaning: "〜という条件で",
-    partOfSpeech: "other",
-    examples: [
-      { en: "You can go, provided that you finish your homework.", ja: "宿題を終えるという条件で、あなたは行ってもいい。", context: "school" },
-      { en: "Provided that everyone agrees, the plan will proceed.", ja: "全員が同意するという条件で、計画は進む。", context: "planning" },
-      { en: "You may use my bike, provided that you return it.", ja: "返却するという条件で、私の自転車を使っていいですよ。", context: "daily" },
     ],
     categories: ["connector"],
   },

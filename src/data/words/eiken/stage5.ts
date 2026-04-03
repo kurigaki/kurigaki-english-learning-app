@@ -254,18 +254,6 @@ export const words: RawWord[] = [
     categories: ["school", "hobby"],
   },
   {
-    id: 23022,
-    word: "book",
-    meaning: "予約する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She booked a hotel room online.", ja: "彼女はオンラインでホテルの部屋を予約した。", context: "旅行" },
-      { en: "I booked a table for two.", ja: "2人用のテーブルを予約した。", context: "食事" },
-      { en: "The flight was fully booked.", ja: "飛行機は満席だった。", context: "旅行" },
-    ],
-    categories: ["travel"],
-  },
-  {
     id: 23023,
     word: "friend",
     meaning: "友達",
@@ -1418,18 +1406,6 @@ export const words: RawWord[] = [
     categories: ["daily", "body"],
   },
   {
-    id: 23119,
-    word: "head",
-    meaning: "向かう",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She headed home after work.", ja: "仕事の後、彼女は家に向かった。", context: "日常" },
-      { en: "He heads the research department.", ja: "彼は研究部門を率いている。", context: "仕事" },
-      { en: "We headed north along the coast.", ja: "海岸沿いに北へ向かった。", context: "旅行" },
-    ],
-    categories: ["daily"],
-  },
-  {
     id: 23120,
     word: "home",
     meaning: "家・自宅",
@@ -1452,18 +1428,6 @@ export const words: RawWord[] = [
       { en: "He cleans the house every Saturday morning.", ja: "彼は毎週土曜の朝に家を掃除します。", context: "家庭" },
     ],
     categories: ["daily", "home"],
-  },
-  {
-    id: 23122,
-    word: "house",
-    meaning: "収容する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The building houses a museum.", ja: "その建物は美術館を収容している。", context: "文化" },
-      { en: "The shelter houses fifty people.", ja: "その避難所は50人を収容している。", context: "社会" },
-      { en: "The library houses rare books.", ja: "その図書館は貴重な本を収蔵している。", context: "教育" },
-    ],
-    categories: ["daily"],
   },
   {
     id: 23123,
@@ -2798,18 +2762,6 @@ export const words: RawWord[] = [
     categories: ["school", "daily"],
   },
   {
-    id: 23234,
-    word: "number",
-    meaning: "番号をつける",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Please number the pages.", ja: "ページに番号をつけてください。", context: "学校" },
-      { en: "The crowd numbered over a thousand.", ja: "群衆は千人以上だった。", context: "社会" },
-      { en: "His days are numbered.", ja: "彼の日々は限られている。", context: "日常" },
-    ],
-    categories: ["daily"],
-  },
-  {
     id: 23235,
     word: "nurse",
     meaning: "看護師",
@@ -3084,18 +3036,6 @@ export const words: RawWord[] = [
       { en: "What is the prize for the winner?", ja: "優勝者の賞は何ですか？", context: "イベント" },
     ],
     categories: ["school"],
-  },
-  {
-    id: 23258,
-    word: "prize",
-    meaning: "大切にする",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She prizes her collection of old books.", ja: "彼女は古い本のコレクションを大切にしている。", context: "趣味" },
-      { en: "He prizes honesty above all.", ja: "彼は何よりも正直さを大切にしている。", context: "日常" },
-      { en: "This painting is highly prized.", ja: "この絵は高く評価されている。", context: "芸術" },
-    ],
-    categories: ["daily"],
   },
   {
     id: 23259,
@@ -3540,18 +3480,6 @@ export const words: RawWord[] = [
       { en: "That star is very bright.", ja: "あの星はとても明るいです。", context: "日常" },
     ],
     categories: ["daily", "nature"],
-  },
-  {
-    id: 23296,
-    word: "star",
-    meaning: "主演する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She starred in the new movie.", ja: "彼女は新しい映画で主演した。", context: "娯楽" },
-      { en: "He starred as the villain.", ja: "彼は悪役で主演した。", context: "娯楽" },
-      { en: "The film stars two famous actors.", ja: "その映画は2人の有名な俳優が出演している。", context: "娯楽" },
-    ],
-    categories: ["daily"],
   },
   {
     id: 23297,
@@ -4476,18 +4404,6 @@ export const words: RawWord[] = [
       { en: "Can you hear my voice?", ja: "私の声が聞こえますか？", context: "日常" },
     ],
     categories: ["daily", "communication"],
-  },
-  {
-    id: 23374,
-    word: "voice",
-    meaning: "声に出す",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She voiced her concerns at the meeting.", ja: "彼女は会議で懸念を声に出した。", context: "仕事" },
-      { en: "Many people voiced their opposition.", ja: "多くの人が反対の声を上げた。", context: "社会" },
-      { en: "He voiced his support for the plan.", ja: "彼は計画への支持を表明した。", context: "仕事" },
-    ],
-    categories: ["communication"],
   },
   {
     id: 23375,
@@ -7474,18 +7390,6 @@ export const words: RawWord[] = [
       { en: "She gets a gift from her friend.", ja: "彼女は友達から贈り物をもらいます。", context: "イベント" },
       { en: "He buys a gift for his mother.", ja: "彼は母のために贈り物を買います。", context: "買い物" },
       { en: "Thank you for the wonderful gift.", ja: "すばらしい贈り物をありがとう。", context: "会話" },
-    ],
-    categories: ["daily"],
-  },
-  {
-    id: 23624,
-    word: "gift",
-    meaning: "贈る",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She gifted him a watch for his birthday.", ja: "彼の誕生日に時計を贈った。", context: "行事" },
-      { en: "The company gifted each employee a bonus.", ja: "会社は各社員にボーナスを贈った。", context: "仕事" },
-      { en: "He gifted the painting to the museum.", ja: "彼は美術館に絵を寄贈した。", context: "芸術" },
     ],
     categories: ["daily"],
   },
