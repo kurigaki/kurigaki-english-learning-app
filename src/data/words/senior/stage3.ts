@@ -734,18 +734,6 @@ export const words: RawWord[] = [
     categories: ["academic"],
   },
   {
-    id: 75080,
-    word: "compulsory",
-    meaning: "義務的な",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Education is compulsory up to age sixteen.", ja: "教育は16歳まで義務的である。", context: "compulsory up to age" },
-      { en: "Military service was compulsory in that era.", ja: "その時代は兵役が義務だった。", context: "compulsory in that era" },
-      { en: "The training was made compulsory for all staff.", ja: "研修は全スタッフに義務付けられた。", context: "compulsory for staff" },
-    ],
-    categories: ["academic"],
-  },
-  {
     id: 75081,
     word: "abstinence",
     meaning: "節制",

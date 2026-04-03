@@ -3122,18 +3122,6 @@ export const words: RawWord[] = [
     categories: ["general"],
   },
   {
-    id: 74305,
-    word: "precedent",
-    meaning: "先例の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The court's decision set a precedent for future cases.", ja: "裁判所の決定は将来の事件に先例を設けた。", context: "precedent" },
-      { en: "There is no precedent for such a dramatic policy change.", ja: "そのような劇的な政策変更の先例はない。", context: "precedent" },
-      { en: "Following precedent, the judge ruled in favor of the plaintiff.", ja: "先例に従い、裁判官は原告の利益のために判決を下した。", context: "precedent" },
-    ],
-    categories: ["social"],
-  },
-  {
     id: 74306,
     word: "prevalent",
     meaning: "広まっている",
@@ -3240,18 +3228,6 @@ export const words: RawWord[] = [
       { en: "Fidelity to one's principles is essential for integrity.", ja: "自分の原則への忠実さは誠実さに不可欠だ。", context: "fidelity" },
     ],
     categories: ["general"],
-  },
-  {
-    id: 74321,
-    word: "fiscal",
-    meaning: "財政の",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The government announced its fiscal policy for the new year.", ja: "政府は新年の財政政策を発表した。", context: "fiscal" },
-      { en: "The fiscal deficit grew due to increased spending.", ja: "支出の増加により財政赤字が拡大した。", context: "fiscal" },
-      { en: "Sound fiscal management is key to economic stability.", ja: "健全な財政管理は経済安定の鍵だ。", context: "fiscal" },
-    ],
-    categories: ["economy"],
   },
   {
     id: 74322,
@@ -4536,18 +4512,6 @@ export const words: RawWord[] = [
       { en: "She felt she was being taken for granted at her workplace.", ja: "彼女は職場で当然のように扱われていると感じた。", context: "take for granted" },
     ],
     categories: ["general"],
-  },
-  {
-    id: 74448,
-    word: "indigenous",
-    meaning: "先住の",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The rights of indigenous peoples are protected under international law.", ja: "先住民族の権利は国際法の下で保護されている。", context: "indigenous" },
-      { en: "Indigenous communities often have deep ecological knowledge.", ja: "先住民族のコミュニティはしばしば深い生態学的知識を持っている。", context: "indigenous" },
-      { en: "The festival celebrates the culture of indigenous peoples.", ja: "祭りは先住民族の文化を祝う。", context: "indigenous" },
-    ],
-    categories: ["social"],
   },
   {
     id: 74450,
@@ -7224,18 +7188,6 @@ export const words: RawWord[] = [
       { en: "Temperature threshold triggers alarms.", ja: "温度のしきい値がアラームを起動する。", context: "技術" },
     ],
     categories: ["science"],
-  },
-  {
-    id: 74749,
-    word: "totalitarian",
-    meaning: "全体主義的",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "A totalitarian regime controls all.", ja: "全体主義的な政権はすべてを支配する。", context: "政治" },
-      { en: "Totalitarian states suppress freedom.", ja: "全体主義国家は自由を抑圧する。", context: "歴史" },
-      { en: "He rejected totalitarian ideas.", ja: "彼は全体主義的な考えを拒否した。", context: "哲学" },
-    ],
-    categories: ["politics"],
   },
   {
     id: 74751,

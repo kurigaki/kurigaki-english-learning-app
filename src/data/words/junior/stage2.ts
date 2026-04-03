@@ -772,7 +772,7 @@ export const words: RawWord[] = [
   {
     id: 71065,
     word: "manage",
-    meaning: "管理する",
+    meaning: "なんとかする・管理",
     partOfSpeech: "verb",
     examples: [
       { en: "She manages the school library.", ja: "彼女は学校の図書館を管理している。", context: "work" },
@@ -1144,7 +1144,7 @@ export const words: RawWord[] = [
   {
     id: 71096,
     word: "serve",
-    meaning: "給仕する",
+    meaning: "提供する・仕える",
     partOfSpeech: "verb",
     examples: [
       { en: "The waiter served the food quickly.", ja: "ウェイターはすばやく料理を給仕した。", context: "restaurant" },

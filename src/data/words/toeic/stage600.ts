@@ -1709,7 +1709,7 @@ export const words: RawWord[] = [
     id: 18498,
     word: "bar",
     meaning: "酒場",
-    partOfSpeech: "verb",
+    partOfSpeech: "noun",
     examples: [
       { en: "Dogs are barred from entering the restaurant.", ja: "犬はそのレストランへの入店が禁止されています。", context: "飲食" },
       { en: "The rule bars students from using phones.", ja: "そのルールは生徒の携帯使用を禁止しています。", context: "学校" },
@@ -2656,7 +2656,7 @@ export const words: RawWord[] = [
   {
     id: 18577,
     word: "commit",
-    meaning: "犯す",
+    meaning: "取り組む・約束する",
     partOfSpeech: "verb",
     examples: [
       { en: "He committed a serious mistake at work.", ja: "彼は仕事で重大なミスを犯した。", context: "仕事" },

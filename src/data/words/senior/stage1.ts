@@ -2344,7 +2344,7 @@ export const words: RawWord[] = [
   {
     id: 73254,
     word: "aggressive",
-    meaning: "積極的な",
+    meaning: "攻撃的な",
     partOfSpeech: "adjective",
     examples: [
       { en: "An aggressive approach can be effective in business.", ja: "積極的なアプローチはビジネスで効果的だ。", context: "business" },
@@ -2548,7 +2548,7 @@ export const words: RawWord[] = [
   {
     id: 73280,
     word: "crucial",
-    meaning: "不可欠な",
+    meaning: "極めて重要な",
     partOfSpeech: "adjective",
     examples: [
       { en: "Sleep is crucial for mental health.", ja: "睡眠は精神的健康に不可欠だ。", context: "health" },
@@ -3988,7 +3988,7 @@ export const words: RawWord[] = [
   {
     id: 73420,
     word: "instrument",
-    meaning: "楽器",
+    meaning: "器具・手段",
     partOfSpeech: "noun",
     examples: [
       { en: "She plays the violin, which is a string instrument.", ja: "彼女はバイオリンを弾く。これは弦楽器だ。", context: "violin" },
@@ -4480,7 +4480,7 @@ export const words: RawWord[] = [
   {
     id: 73462,
     word: "passage",
-    meaning: "通路",
+    meaning: "一節・通路",
     partOfSpeech: "noun",
     examples: [
       { en: "The secret passage led to the castle's hidden room.", ja: "その秘密の通路は城の隠し部屋に続いていた。", context: "castle" },
@@ -5164,7 +5164,7 @@ export const words: RawWord[] = [
   {
     id: 73525,
     word: "compile",
-    meaning: "編集する",
+    meaning: "編纂する",
     partOfSpeech: "verb",
     examples: [
       { en: "She compiled a list of resources.", ja: "彼女はリソースのリストをまとめた。", context: "compile" },
@@ -6568,7 +6568,7 @@ export const words: RawWord[] = [
   {
     id: 73647,
     word: "adolescence",
-    meaning: "青春期",
+    meaning: "思春期",
     partOfSpeech: "noun",
     examples: [
       { en: "Adolescence is a time of change.", ja: "青春期は変化の時期だ。", context: "adolescence" },

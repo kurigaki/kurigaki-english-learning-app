@@ -386,18 +386,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 18948,
-    word: "amplifier",
-    meaning: "増幅器",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The guitarist connected his guitar to the amplifier.", ja: "ギタリストはギターをアンプに接続した。", context: "音楽" },
-      { en: "A good amplifier makes the sound much clearer.", ja: "良い増幅器は音をずっとクリアにする。", context: "技術" },
-      { en: "The band bought a new amplifier for their concerts.", ja: "バンドはコンサート用に新しいアンプを購入した。", context: "音楽" },
-    ],
-    categories: ["technology", "culture"],
-  },
-  {
     id: 18949,
     word: "amplify",
     meaning: "増幅する",
@@ -432,18 +420,6 @@ export const words: RawWord[] = [
       { en: "Divers found an old anchor on the ocean floor.", ja: "ダイバーは海底で古いいかりを発見した。", context: "冒険" },
     ],
     categories: ["travel", "nature"],
-  },
-  {
-    id: 18952,
-    word: "anchorage",
-    meaning: "停泊地",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The bay provides a safe anchorage for small boats.", ja: "その湾は小型船に安全な停泊地を提供している。", context: "旅行" },
-      { en: "The fleet moved to a new anchorage overnight.", ja: "艦隊は一晩で新しい停泊地に移動した。", context: "歴史" },
-      { en: "Finding a good anchorage was essential for the voyage.", ja: "良い停泊地を見つけることが航海に不可欠だった。", context: "冒険" },
-    ],
-    categories: ["travel"],
   },
   {
     id: 18953,
@@ -504,18 +480,6 @@ export const words: RawWord[] = [
       { en: "They found an antique map in the old house.", ja: "彼らは古い家で骨董の地図を見つけた。", context: "冒険" },
     ],
     categories: ["culture", "shopping"],
-  },
-  {
-    id: 18958,
-    word: "antistatic",
-    meaning: "静電気防止の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "He bought an antistatic spray for his clothes.", ja: "彼は服用の静電気防止スプレーを買った。", context: "買い物" },
-      { en: "The factory requires antistatic flooring for safety.", ja: "その工場は安全のため静電気防止の床が必要だ。", context: "ビジネス" },
-      { en: "Antistatic bags protect electronic parts from damage.", ja: "静電気防止袋は電子部品を損傷から守る。", context: "技術" },
-    ],
-    categories: ["technology", "daily"],
   },
   {
     id: 18959,
@@ -902,18 +866,6 @@ export const words: RawWord[] = [
     categories: ["finance", "business"],
   },
   {
-    id: 18991,
-    word: "barbershop",
-    meaning: "床屋",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "He goes to the barbershop once a month.", ja: "彼は月に1回床屋に行きます。", context: "日常" },
-      { en: "The old barbershop on the corner was always busy.", ja: "角にある古い床屋はいつも混んでいました。", context: "町" },
-      { en: "She waited for her brother outside the barbershop.", ja: "彼女は床屋の外で弟を待ちました。", context: "家庭" },
-    ],
-    categories: ["daily", "shopping"],
-  },
-  {
     id: 18992,
     word: "barrier",
     meaning: "障壁",
@@ -936,18 +888,6 @@ export const words: RawWord[] = [
       { en: "Water leaked into the basement after the rain.", ja: "雨の後、地下室に水が漏れました。", context: "日常" },
     ],
     categories: ["daily", "home"],
-  },
-  {
-    id: 18994,
-    word: "bathhouse",
-    meaning: "銭湯",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The old bathhouse is a popular tourist attraction.", ja: "その古い銭湯は人気の観光スポットです。", context: "旅行" },
-      { en: "We visited a traditional Japanese bathhouse last summer.", ja: "去年の夏、伝統的な日本の銭湯を訪れました。", context: "文化" },
-      { en: "The bathhouse closes at ten o'clock every night.", ja: "銭湯は毎晩10時に閉まります。", context: "日常" },
-    ],
-    categories: ["culture", "travel"],
   },
   {
     id: 18995,
@@ -1044,18 +984,6 @@ export const words: RawWord[] = [
       { en: "Online bidding has become very popular in recent years.", ja: "オンライン入札は近年非常に人気になっています。", context: "技術" },
     ],
     categories: ["business", "finance"],
-  },
-  {
-    id: 19003,
-    word: "bikini",
-    meaning: "ビキニ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She bought a new bikini for the beach trip.", ja: "彼女はビーチ旅行のために新しいビキニを買いました。", context: "買い物" },
-      { en: "Bikinis are popular swimwear in many tropical countries.", ja: "ビキニは多くの熱帯の国で人気の水着です。", context: "旅行" },
-      { en: "The store had a wide selection of bikinis.", ja: "その店にはビキニの品揃えが豊富でした。", context: "買い物" },
-    ],
-    categories: ["shopping", "travel"],
   },
   {
     id: 19004,
@@ -1454,30 +1382,6 @@ export const words: RawWord[] = [
     categories: ["communication", "culture"],
   },
   {
-    id: 19037,
-    word: "caravan",
-    meaning: "キャラバン",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The family traveled across Europe in a caravan.", ja: "家族はキャラバンでヨーロッパを横断した。", context: "旅行" },
-      { en: "A caravan of traders crossed the desert long ago.", ja: "かつて商人の隊商が砂漠を横断した。", context: "歴史" },
-      { en: "They parked their caravan near the beautiful lake.", ja: "彼らは美しい湖の近くにキャラバンを停めた。", context: "旅行" },
-    ],
-    categories: ["travel"],
-  },
-  {
-    id: 19038,
-    word: "cardigan",
-    meaning: "カーディガン",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She wore a light blue cardigan over her shirt.", ja: "彼女はシャツの上に水色のカーディガンを羽織った。", context: "ファッション" },
-      { en: "This wool cardigan keeps you warm in autumn.", ja: "このウールのカーディガンは秋に暖かく保ってくれる。", context: "季節" },
-      { en: "He bought a new cardigan at the department store.", ja: "彼はデパートで新しいカーディガンを買った。", context: "買い物" },
-    ],
-    categories: ["daily", "shopping"],
-  },
-  {
     id: 19039,
     word: "cargo",
     meaning: "貨物",
@@ -1836,18 +1740,6 @@ export const words: RawWord[] = [
       { en: "A good relationship with colleagues is important.", ja: "同僚とのよい関係は大切です。", context: "ビジネス" },
     ],
     categories: ["business", "communication"],
-  },
-  {
-    id: 19069,
-    word: "collocation",
-    meaning: "連語、語の組合せ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Learning collocations helps you sound more natural.", ja: "連語を学ぶとより自然に聞こえます。", context: "英語学習" },
-      { en: "The teacher explained common English collocations.", ja: "先生がよく使われる英語の連語を説明しました。", context: "授業" },
-      { en: "A dictionary of collocations is very useful.", ja: "連語辞典はとても役に立ちます。", context: "学習" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 19070,
@@ -3026,18 +2918,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19168,
-    word: "cubism",
-    meaning: "キュビズム",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Picasso is well known for developing cubism.", ja: "ピカソはキュビズムを発展させたことで有名だ。", context: "文化" },
-      { en: "Cubism changed the way people see art.", ja: "キュビズムは人々の芸術の見方を変えた。", context: "文化" },
-      { en: "The exhibition features early works of cubism.", ja: "その展覧会はキュビズムの初期作品を特集している。", context: "文化" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19169,
     word: "culmination",
     meaning: "最高潮",
@@ -3086,18 +2966,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 19173,
-    word: "cyberaddict",
-    meaning: "ネット依存者",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The number of cyberaddicts is growing worldwide.", ja: "ネット依存者の数は世界中で増えている。", context: "社会" },
-      { en: "Young cyberaddicts often skip school.", ja: "若いネット依存者はしばしば学校を休む。", context: "学校" },
-      { en: "Experts warn parents about raising cyberaddicts.", ja: "専門家はネット依存者を生む危険を親に警告している。", context: "家庭" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 19174,
     word: "cybercrime",
     meaning: "サイバー犯罪",
@@ -3108,30 +2976,6 @@ export const words: RawWord[] = [
       { en: "Businesses lose billions of dollars to cybercrime.", ja: "企業はサイバー犯罪で数十億ドルを失っている。", context: "仕事" },
     ],
     categories: ["technology"],
-  },
-  {
-    id: 19175,
-    word: "cyberpet",
-    meaning: "電子ペット",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Children enjoyed taking care of their cyberpets.", ja: "子どもたちは電子ペットの世話を楽しんだ。", context: "趣味" },
-      { en: "Cyberpets were very popular in the 1990s.", ja: "電子ペットは1990年代にとても人気があった。", context: "文化" },
-      { en: "She brought her cyberpet to school every day.", ja: "彼女は毎日電子ペットを学校に持って行った。", context: "学校" },
-    ],
-    categories: ["technology"],
-  },
-  {
-    id: 19176,
-    word: "cyberschool",
-    meaning: "ネット学校",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "More students are enrolling in cyberschools.", ja: "より多くの生徒がネット学校に入学している。", context: "学校" },
-      { en: "The cyberschool offers courses in many subjects.", ja: "そのネット学校は多くの科目のコースを提供している。", context: "学校" },
-      { en: "She graduated from a cyberschool last year.", ja: "彼女は昨年ネット学校を卒業した。", context: "学校" },
-    ],
-    categories: ["technology", "school"],
   },
   {
     id: 19177,

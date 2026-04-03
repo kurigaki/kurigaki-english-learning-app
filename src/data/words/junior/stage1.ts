@@ -3292,7 +3292,7 @@ export const words: RawWord[] = [
   {
     id: 70277,
     word: "save",
-    meaning: "救う",
+    meaning: "救う・貯める",
     partOfSpeech: "verb",
     examples: [
       { en: "The firefighter saved the cat.", ja: "消防士が猫を救った。", context: "save" },
@@ -3316,7 +3316,7 @@ export const words: RawWord[] = [
   {
     id: 70279,
     word: "spend",
-    meaning: "過ごす",
+    meaning: "使う・過ごす",
     partOfSpeech: "verb",
     examples: [
       { en: "We spent the weekend at the beach.", ja: "私たちは週末をビーチで過ごした。", context: "spend" },
@@ -3472,7 +3472,7 @@ export const words: RawWord[] = [
   {
     id: 70292,
     word: "miss",
-    meaning: "恋しく思う",
+    meaning: "寂しい・乗り遅れる",
     partOfSpeech: "verb",
     examples: [
       { en: "I miss my old friends.", ja: "昔の友達が恋しい。", context: "miss" },
@@ -3940,7 +3940,7 @@ export const words: RawWord[] = [
   {
     id: 70341,
     word: "grade",
-    meaning: "成績",
+    meaning: "学年・成績",
     partOfSpeech: "noun",
     examples: [
       { en: "She gets good grades in school.", ja: "彼女は学校で良い成績を取っている。", context: "grade" },
@@ -4828,7 +4828,7 @@ export const words: RawWord[] = [
   {
     id: 70417,
     word: "free",
-    meaning: "暇な",
+    meaning: "無料の・自由な",
     partOfSpeech: "adjective",
     examples: [
       { en: "Are you free this afternoon?", ja: "今日の午後は暇ですか？", context: "free" },

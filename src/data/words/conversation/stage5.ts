@@ -3759,7 +3759,7 @@ export const words: RawWord[] = [
   },
   {
     id: 39982,
-    word: "passed away",
+    word: "pass away",
     meaning: "亡くなった",
     partOfSpeech: "verb",
     examples: [

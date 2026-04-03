@@ -1816,7 +1816,7 @@ export const words: RawWord[] = [
   {
     id: 72167,
     word: "critical",
-    meaning: "重要な",
+    meaning: "批判的な・重要な",
     partOfSpeech: "adjective",
     examples: [
       { en: "Water is critical for survival.", ja: "水は生存にとって重要だ。", context: "critical for survival" },
@@ -2080,7 +2080,7 @@ export const words: RawWord[] = [
   {
     id: 72189,
     word: "apparently",
-    meaning: "明らかに",
+    meaning: "どうやら〜らしい",
     partOfSpeech: "adverb",
     examples: [
       { en: "He was apparently unhappy.", ja: "彼は明らかに不幸そうだった。", context: "apparently unhappy" },
@@ -4636,7 +4636,7 @@ export const words: RawWord[] = [
   {
     id: 72447,
     word: "remarkable",
-    meaning: "目立つ",
+    meaning: "注目すべき",
     partOfSpeech: "adjective",
     examples: [
       { en: "She made remarkable progress in English.", ja: "彼女は英語で目立つ進歩をした。", context: "study" },
