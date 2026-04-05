@@ -36,6 +36,7 @@ type WordWithStats = {
   isBookmarked: boolean;
   example?: string;
   exampleJa?: string;
+  frequencyTier: 1 | 2 | 3;
 };
 
 type SortOption = WordListSortOption;
@@ -179,6 +180,7 @@ export default function WordListPage() {
           isBookmarked: bookmarkedSet.has(word.id),
           example: word.example,
           exampleJa: word.exampleJa,
+          frequencyTier: word.frequencyTier,
         };
       });
 
@@ -799,6 +801,8 @@ export default function WordListPage() {
                           <div className="flex-1 min-w-0">
                             <p className="font-bold text-base sm:text-sm text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 transition-colors break-words">
                               {word.word}
+                              {word.frequencyTier === 1 && <span className="ml-1 text-[10px] text-orange-500 font-normal">★頻出</span>}
+                              {word.frequencyTier === 3 && <span className="ml-1 text-[10px] text-slate-400 font-normal">発展</span>}
                             </p>
                             <p className="text-sm sm:text-xs text-slate-500 dark:text-slate-400 break-words">
                               {word.meaning}

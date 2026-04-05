@@ -2138,18 +2138,34 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     const isProgMode = !weakOnly && !!course && !stage && (courseDef?.stages.length ?? 0) > 0;
     setProgressiveStages(isProgMode ? courseDef!.stages : undefined);
 
+    // 単語レベル設定を取得（クイズ設定と共有）
+    let savedWordLevel = "standard";
+    try {
+      const raw = localStorage.getItem("english-app-quiz-settings");
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed.wordLevel === "essential" || parsed.wordLevel === "standard" || parsed.wordLevel === "all") {
+          savedWordLevel = parsed.wordLevel;
+        }
+      }
+    } catch { /* ignore */ }
+
     let url = "/api/dungeon-words";
+    const params: string[] = [];
     if (weakOnly) {
       const weakIds = storage.getWeakWords();
       if (weakIds.length > 0) {
-        url += "?wordIds=" + weakIds.join(",");
+        params.push("wordIds=" + weakIds.join(","));
       }
     } else if (course) {
-      url += "?course=" + encodeURIComponent(course);
-      if (stage) url += "&stage=" + encodeURIComponent(stage);
+      params.push("course=" + encodeURIComponent(course));
+      if (stage) params.push("stage=" + encodeURIComponent(stage));
       // プログレッシブモードはステージなしで全単語をロード（limit を大きめに）
-      if (isProgMode) url += "&limit=300";
+      if (isProgMode) params.push("limit=300");
     }
+    // 単語レベルを常に付与
+    params.push("wordLevel=" + savedWordLevel);
+    if (params.length > 0) url += "?" + params.join("&");
     let qs: DungeonQuestion[] = [];
     try {
       const res = await fetch(url);
