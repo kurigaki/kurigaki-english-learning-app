@@ -1,7 +1,10 @@
-import type { Course, Stage } from "@/data/words/types";
+import type { Course, Stage, FrequencyTier } from "@/data/words/types";
 import type { Category } from "@/data/words";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { QuestionTypeRatios } from "@/types";
+
+// 単語レベル設定（頻出度ティアのフィルタ）
+export type WordLevelMode = "essential" | "standard" | "all";
 
 // クイズ設定の型
 export type QuizSettings = {
@@ -11,6 +14,7 @@ export type QuizSettings = {
   difficulties: number[];  // 空配列は「全難易度」
   includeBookmarksOnly: boolean;
   typeRatios: QuestionTypeRatios;
+  wordLevel: WordLevelMode; // "essential"=頻出のみ, "standard"=標準, "all"=全て
 };
 
 export const defaultTypeRatios: QuestionTypeRatios = {
@@ -28,7 +32,17 @@ export const defaultQuizSettings: QuizSettings = {
   difficulties: [],
   includeBookmarksOnly: false,
   typeRatios: { ...defaultTypeRatios },
+  wordLevel: "standard",
 };
+
+/** WordLevelMode → 許可するfrequencyTierの集合 */
+export function getAllowedTiers(mode: WordLevelMode): Set<FrequencyTier> {
+  switch (mode) {
+    case "essential": return new Set<FrequencyTier>([1]);
+    case "standard":  return new Set<FrequencyTier>([1, 2]);
+    case "all":       return new Set<FrequencyTier>([1, 2, 3]);
+  }
+}
 
 // カテゴリリスト（loadQuizSettings のバリデーションで参照するため先に定義）
 export const ALL_CATEGORIES: Category[] = [
@@ -105,7 +119,11 @@ export function loadQuizSettings(): QuizSettings {
       speaking:  typeof tr.speaking  === "number" ? tr.speaking  : defaultTypeRatios.speaking,
     };
 
-    return { course, stage, categories, difficulties, includeBookmarksOnly, typeRatios };
+    const VALID_WORD_LEVELS: WordLevelMode[] = ["essential", "standard", "all"];
+    const wordLevel: WordLevelMode = typeof p.wordLevel === "string" && VALID_WORD_LEVELS.includes(p.wordLevel as WordLevelMode)
+      ? (p.wordLevel as WordLevelMode) : "standard";
+
+    return { course, stage, categories, difficulties, includeBookmarksOnly, typeRatios, wordLevel };
   } catch (e) {
     console.warn("[Quiz] Failed to load quiz settings:", e);
     return { ...defaultQuizSettings };

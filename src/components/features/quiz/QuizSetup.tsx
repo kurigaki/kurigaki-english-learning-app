@@ -7,6 +7,7 @@ import { Card, Button } from "@/components/ui";
 import type { QuestionTypeRatios } from "@/types";
 import {
   QuizSettings,
+  WordLevelMode,
   defaultQuizSettings,
   defaultTypeRatios,
   ALL_CATEGORIES,
@@ -266,6 +267,37 @@ export const QuizSetup = ({
               {quizSettings.difficulties.length === 0
                 ? "全難易度から出題"
                 : `難易度${quizSettings.difficulties.sort().join(", ")}を選択中`}
+            </p>
+          </Card>
+
+          {/* 単語レベル */}
+          <Card className="!p-3">
+            <h2 className="text-xs font-bold text-slate-700 dark:text-slate-200 mb-2">単語レベル</h2>
+            <div className="flex gap-1.5">
+              {([
+                { value: "essential" as WordLevelMode, label: "合格に必要な語", emoji: "🎯" },
+                { value: "standard" as WordLevelMode, label: "おすすめ", emoji: "📚" },
+                { value: "all" as WordLevelMode, label: "全ての語", emoji: "🔥" },
+              ]).map((opt) => (
+                <button
+                  key={opt.value}
+                  onClick={() => setQuizSettings((prev) => ({ ...prev, wordLevel: opt.value }))}
+                  className={`flex-1 py-1.5 px-2 rounded-md text-xs font-medium transition-all ${
+                    quizSettings.wordLevel === opt.value
+                      ? "bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-200 ring-1 ring-primary-300"
+                      : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-600"
+                  }`}
+                >
+                  <span className="emoji-icon">{opt.emoji}</span> {opt.label}
+                </button>
+              ))}
+            </div>
+            <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
+              {quizSettings.wordLevel === "essential"
+                ? "頻出語のみ出題（初学者向け）"
+                : quizSettings.wordLevel === "standard"
+                ? "頻出語+標準語を出題"
+                : "発展語を含む全ての語を出題"}
             </p>
           </Card>
 

@@ -28,9 +28,16 @@ export async function GET(request: NextRequest) {
   const stage = params.get("stage") as Stage | null;
   const limit = Math.min(parseInt(params.get("limit") ?? "150", 10), 500);
   const wordIdsParam = params.get("wordIds");
+  const wordLevel = params.get("wordLevel") ?? "standard"; // essential/standard/all
 
   // 出題対象単語
   let pool = course ? getWordsByCourse(course, stage ?? undefined) : allWords;
+
+  // 頻出度ティアフィルタ
+  if (wordLevel !== "all") {
+    const maxTier = wordLevel === "essential" ? 1 : 2;
+    pool = pool.filter((w) => w.frequencyTier <= maxTier);
+  }
   if (wordIdsParam) {
     const ids = new Set(wordIdsParam.split(",").map(Number).filter((n) => !Number.isNaN(n)));
     pool = allWords.filter((w) => ids.has(w.id));

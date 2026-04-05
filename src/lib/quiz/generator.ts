@@ -1,7 +1,7 @@
 import { Word, getWordsByCourse } from "@/data/words";
 import { Question, QuestionType, QuestionTypeRatios } from "@/types";
 import { shuffleArray, pickRandom } from "@/lib/shuffle";
-import { QuizSettings } from "./settings";
+import { QuizSettings, getAllowedTiers } from "./settings";
 
 /**
  * 比率設定と例文の有無に基づいて問題タイプを選択する。
@@ -238,6 +238,12 @@ export function filterWordsBySettings(
   // 難易度フィルター
   if (settings.difficulties.length > 0) {
     filtered = filtered.filter((w) => settings.difficulties.includes(w.difficulty));
+  }
+
+  // 頻出度ティアフィルター
+  if (settings.wordLevel && settings.wordLevel !== "all") {
+    const allowedTiers = getAllowedTiers(settings.wordLevel);
+    filtered = filtered.filter((w) => allowedTiers.has(w.frequencyTier));
   }
 
   // ブックマークのみ
