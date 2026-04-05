@@ -28081,4 +28081,17 @@ export const words: RawWord[] = [
     categories: ["communication"],
     frequencyTier: 3,
   },
+  {
+    id: 50372,
+    word: "analyse",
+    meaning: "分析する",
+    partOfSpeech: "verb",
+    examples: [
+      { en: "Scientists analyse data to find patterns.", ja: "科学者はパターンを見つけるためにデータを分析する。", context: "science" },
+      { en: "She analysed the results of the experiment carefully.", ja: "彼女は実験結果を注意深く分析した。", context: "science" },
+      { en: "The report analyses the economic situation.", ja: "その報告書は経済状況を分析している。", context: "economics" },
+    ],
+    categories: ["study"],
+    frequencyTier: 3,
+  },
 ];

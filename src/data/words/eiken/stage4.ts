@@ -11103,4 +11103,17 @@ export const words: RawWord[] = [
     categories: ["general"],
     frequencyTier: 3,
   },
+  {
+    id: 50317,
+    word: "wine",
+    meaning: "ワイン",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "He ordered a glass of red wine.", ja: "彼は赤ワインを一杯注文した。", context: "food" },
+      { en: "France is famous for its wine.", ja: "フランスはワインで有名だ。", context: "culture" },
+      { en: "Wine is made from grapes.", ja: "ワインはブドウから作られる。", context: "food" },
+    ],
+    categories: ["food"],
+    frequencyTier: 3,
+  },
 ];

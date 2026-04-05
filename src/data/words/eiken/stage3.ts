@@ -12910,4 +12910,17 @@ export const words: RawWord[] = [
     categories: ["general"],
     frequencyTier: 3,
   },
+  {
+    id: 50326,
+    word: "birth",
+    meaning: "誕生",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "What is your date of birth?", ja: "あなたの生年月日はいつですか。", context: "daily" },
+      { en: "The birth of a baby is a special event.", ja: "赤ちゃんの誕生は特別な出来事だ。", context: "family" },
+      { en: "She celebrated the birth of her nephew.", ja: "彼女は甥っ子の誕生を祝った。", context: "family" },
+    ],
+    categories: ["daily"],
+    frequencyTier: 3,
+  },
 ];

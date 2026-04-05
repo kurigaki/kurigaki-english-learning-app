@@ -8711,4 +8711,17 @@ export const words: RawWord[] = [
     categories: ["general"],
     frequencyTier: 3,
   },
+  {
+    id: 50305,
+    word: "moon",
+    meaning: "月",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The moon is bright tonight.", ja: "今夜は月が明るい。", context: "nature" },
+      { en: "We can see the full moon from here.", ja: "ここから満月が見える。", context: "nature" },
+      { en: "The moon goes around the earth.", ja: "月は地球の周りを回っている。", context: "science" },
+    ],
+    categories: ["nature"],
+    frequencyTier: 3,
+  },
 ];
