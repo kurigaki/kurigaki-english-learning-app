@@ -2,7 +2,7 @@ import type { RawWord } from "../types";
 
 export const words: RawWord[] = [
   {
-    id: 23650,
+    id: 23682,
     word: "walk",
     meaning: "散歩",
     partOfSpeech: "noun",
@@ -15,7 +15,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23651,
+    id: 23683,
     word: "park",
     meaning: "駐車する",
     partOfSpeech: "verb",
@@ -28,7 +28,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23652,
+    id: 23684,
     word: "look",
     meaning: "見ること、外見",
     partOfSpeech: "noun",
@@ -41,7 +41,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23653,
+    id: 23685,
     word: "talk",
     meaning: "話、講演",
     partOfSpeech: "noun",
@@ -54,7 +54,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23654,
+    id: 23686,
     word: "light",
     meaning: "軽い、明るい",
     partOfSpeech: "adjective",
@@ -67,7 +67,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23655,
+    id: 23687,
     word: "test",
     meaning: "検査する",
     partOfSpeech: "verb",
@@ -80,7 +80,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23656,
+    id: 23688,
     word: "change",
     meaning: "変化、おつり",
     partOfSpeech: "noun",
@@ -93,7 +93,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23657,
+    id: 23689,
     word: "finish",
     meaning: "終わり",
     partOfSpeech: "noun",
@@ -106,7 +106,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23658,
+    id: 23690,
     word: "guess",
     meaning: "推測",
     partOfSpeech: "noun",
@@ -119,7 +119,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23659,
+    id: 23691,
     word: "hope",
     meaning: "希望",
     partOfSpeech: "noun",
@@ -132,7 +132,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23660,
+    id: 23692,
     word: "jump",
     meaning: "跳躍",
     partOfSpeech: "noun",
@@ -145,7 +145,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23661,
+    id: 23693,
     word: "laugh",
     meaning: "笑い",
     partOfSpeech: "noun",
@@ -158,7 +158,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23662,
+    id: 23694,
     word: "miss",
     meaning: "失敗、ミス",
     partOfSpeech: "noun",
@@ -171,7 +171,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23663,
+    id: 23695,
     word: "need",
     meaning: "必要性",
     partOfSpeech: "noun",
@@ -184,7 +184,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23664,
+    id: 23696,
     word: "show",
     meaning: "ショー、番組",
     partOfSpeech: "noun",
@@ -197,7 +197,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23665,
+    id: 23697,
     word: "smile",
     meaning: "笑顔",
     partOfSpeech: "noun",
@@ -210,7 +210,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23666,
+    id: 23698,
     word: "start",
     meaning: "開始、出発",
     partOfSpeech: "noun",
@@ -223,7 +223,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23667,
+    id: 23699,
     word: "stop",
     meaning: "停留所、中止",
     partOfSpeech: "noun",
@@ -236,7 +236,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23668,
+    id: 23700,
     word: "turn",
     meaning: "順番、曲がり角",
     partOfSpeech: "noun",
@@ -249,7 +249,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23669,
+    id: 23701,
     word: "visit",
     meaning: "訪問",
     partOfSpeech: "noun",
@@ -262,7 +262,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23670,
+    id: 23702,
     word: "wish",
     meaning: "願い",
     partOfSpeech: "noun",
@@ -275,7 +275,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23671,
+    id: 23703,
     word: "work",
     meaning: "仕事、作品",
     partOfSpeech: "noun",
@@ -288,7 +288,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23672,
+    id: 23704,
     word: "call",
     meaning: "電話、呼びかけ",
     partOfSpeech: "noun",
@@ -301,7 +301,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23673,
+    id: 23705,
     word: "dream",
     meaning: "夢を見る",
     partOfSpeech: "verb",
@@ -314,7 +314,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23674,
+    id: 23706,
     word: "agree",
     meaning: "賛成する",
     partOfSpeech: "verb",
@@ -327,7 +327,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23675,
+    id: 23707,
     word: "allow",
     meaning: "許す",
     partOfSpeech: "verb",
@@ -340,7 +340,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23676,
+    id: 23708,
     word: "answer",
     meaning: "答える",
     partOfSpeech: "verb",
@@ -353,7 +353,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23677,
+    id: 23709,
     word: "appear",
     meaning: "現れる",
     partOfSpeech: "verb",
@@ -366,7 +366,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23678,
+    id: 23710,
     word: "become",
     meaning: "〜になる",
     partOfSpeech: "verb",
@@ -379,7 +379,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23679,
+    id: 23711,
     word: "belong",
     meaning: "属する",
     partOfSpeech: "verb",
@@ -392,7 +392,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23680,
+    id: 23712,
     word: "borrow",
     meaning: "借りる",
     partOfSpeech: "verb",
@@ -405,7 +405,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23681,
+    id: 23713,
     word: "break",
     meaning: "壊す",
     partOfSpeech: "verb",
@@ -418,7 +418,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23682,
+    id: 23714,
     word: "break",
     meaning: "休憩",
     partOfSpeech: "noun",
@@ -431,7 +431,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23683,
+    id: 23715,
     word: "burn",
     meaning: "燃える、焼く",
     partOfSpeech: "verb",
@@ -444,7 +444,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23684,
+    id: 23716,
     word: "continue",
     meaning: "続ける",
     partOfSpeech: "verb",
@@ -457,7 +457,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23685,
+    id: 23717,
     word: "copy",
     meaning: "写す、コピーする",
     partOfSpeech: "verb",
@@ -470,7 +470,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23686,
+    id: 23718,
     word: "cost",
     meaning: "費用がかかる",
     partOfSpeech: "verb",
@@ -483,7 +483,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23687,
+    id: 23719,
     word: "cover",
     meaning: "覆う",
     partOfSpeech: "verb",
@@ -496,7 +496,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23688,
+    id: 23720,
     word: "cross",
     meaning: "渡る",
     partOfSpeech: "verb",
@@ -509,7 +509,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23689,
+    id: 23721,
     word: "cross",
     meaning: "十字、交差",
     partOfSpeech: "noun",
@@ -522,7 +522,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23690,
+    id: 23722,
     word: "decide",
     meaning: "決める",
     partOfSpeech: "verb",
@@ -535,7 +535,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23691,
+    id: 23723,
     word: "describe",
     meaning: "描写する",
     partOfSpeech: "verb",
@@ -548,7 +548,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23692,
+    id: 23724,
     word: "die",
     meaning: "死ぬ",
     partOfSpeech: "verb",
@@ -561,7 +561,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23693,
+    id: 23725,
     word: "discover",
     meaning: "発見する",
     partOfSpeech: "verb",
@@ -574,7 +574,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23694,
+    id: 23726,
     word: "enter",
     meaning: "入る",
     partOfSpeech: "verb",
@@ -587,7 +587,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23695,
+    id: 23727,
     word: "explain",
     meaning: "説明する",
     partOfSpeech: "verb",
@@ -600,7 +600,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23696,
+    id: 23728,
     word: "fall",
     meaning: "落ちる",
     partOfSpeech: "verb",
@@ -613,7 +613,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23697,
+    id: 23729,
     word: "feed",
     meaning: "えさをやる",
     partOfSpeech: "verb",
@@ -626,7 +626,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23698,
+    id: 23730,
     word: "fight",
     meaning: "戦う",
     partOfSpeech: "verb",
@@ -639,7 +639,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23699,
+    id: 23731,
     word: "fill",
     meaning: "満たす",
     partOfSpeech: "verb",
@@ -652,7 +652,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23700,
+    id: 23732,
     word: "fit",
     meaning: "合う",
     partOfSpeech: "verb",
@@ -665,7 +665,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23701,
+    id: 23733,
     word: "fit",
     meaning: "発作、ぴったり",
     partOfSpeech: "noun",
@@ -678,7 +678,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23702,
+    id: 23734,
     word: "follow",
     meaning: "ついて行く",
     partOfSpeech: "verb",
@@ -691,7 +691,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23703,
+    id: 23735,
     word: "hang",
     meaning: "掛ける",
     partOfSpeech: "verb",
@@ -704,7 +704,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23704,
+    id: 23736,
     word: "hate",
     meaning: "大嫌いである",
     partOfSpeech: "verb",
@@ -717,7 +717,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23705,
+    id: 23737,
     word: "hold",
     meaning: "持つ、開催する",
     partOfSpeech: "verb",
@@ -730,7 +730,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23706,
+    id: 23738,
     word: "hurry",
     meaning: "急ぐ",
     partOfSpeech: "verb",
@@ -743,7 +743,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23707,
+    id: 23739,
     word: "imagine",
     meaning: "想像する",
     partOfSpeech: "verb",
@@ -756,7 +756,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23708,
+    id: 23740,
     word: "invite",
     meaning: "招待する",
     partOfSpeech: "verb",
@@ -769,7 +769,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23709,
+    id: 23741,
     word: "join",
     meaning: "参加する",
     partOfSpeech: "verb",
@@ -782,7 +782,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23710,
+    id: 23742,
     word: "kill",
     meaning: "殺す",
     partOfSpeech: "verb",
@@ -795,7 +795,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23711,
+    id: 23743,
     word: "knock",
     meaning: "ノックする",
     partOfSpeech: "verb",
@@ -808,7 +808,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23712,
+    id: 23744,
     word: "land",
     meaning: "着陸する",
     partOfSpeech: "verb",
@@ -821,7 +821,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23713,
+    id: 23745,
     word: "lay",
     meaning: "置く、横たえる",
     partOfSpeech: "verb",
@@ -834,7 +834,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23714,
+    id: 23746,
     word: "lead",
     meaning: "導く",
     partOfSpeech: "verb",
@@ -847,7 +847,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23715,
+    id: 23747,
     word: "lend",
     meaning: "貸す",
     partOfSpeech: "verb",
@@ -860,7 +860,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23716,
+    id: 23748,
     word: "lie",
     meaning: "横になる、うそをつく",
     partOfSpeech: "verb",
@@ -873,7 +873,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23717,
+    id: 23749,
     word: "lift",
     meaning: "持ち上げる",
     partOfSpeech: "verb",
@@ -886,7 +886,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23718,
+    id: 23750,
     word: "lift",
     meaning: "持ち上げ、乗せる",
     partOfSpeech: "noun",
@@ -899,7 +899,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23719,
+    id: 23751,
     word: "mean",
     meaning: "意味する",
     partOfSpeech: "verb",
@@ -912,7 +912,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23720,
+    id: 23752,
     word: "notice",
     meaning: "気づく",
     partOfSpeech: "verb",
@@ -925,7 +925,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23721,
+    id: 23753,
     word: "notice",
     meaning: "通知、掲示",
     partOfSpeech: "noun",
@@ -938,7 +938,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23722,
+    id: 23754,
     word: "offer",
     meaning: "申し出る",
     partOfSpeech: "verb",
@@ -951,7 +951,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23723,
+    id: 23755,
     word: "order",
     meaning: "注文する",
     partOfSpeech: "verb",
@@ -964,7 +964,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23724,
+    id: 23756,
     word: "pay",
     meaning: "払う",
     partOfSpeech: "verb",
@@ -977,7 +977,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23725,
+    id: 23757,
     word: "plan",
     meaning: "計画する",
     partOfSpeech: "verb",
@@ -990,7 +990,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23726,
+    id: 23758,
     word: "point",
     meaning: "指さす",
     partOfSpeech: "verb",
@@ -1003,7 +1003,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23727,
+    id: 23759,
     word: "point",
     meaning: "点、要点",
     partOfSpeech: "noun",
@@ -1016,7 +1016,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23728,
+    id: 23760,
     word: "pour",
     meaning: "注ぐ",
     partOfSpeech: "verb",
@@ -1029,7 +1029,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23729,
+    id: 23761,
     word: "practice",
     meaning: "練習する",
     partOfSpeech: "verb",
@@ -1042,7 +1042,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23730,
+    id: 23762,
     word: "prepare",
     meaning: "準備する",
     partOfSpeech: "verb",
@@ -1055,7 +1055,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23731,
+    id: 23763,
     word: "produce",
     meaning: "生産する",
     partOfSpeech: "verb",
@@ -1068,7 +1068,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23732,
+    id: 23764,
     word: "produce",
     meaning: "農産物",
     partOfSpeech: "noun",
@@ -1081,7 +1081,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23733,
+    id: 23765,
     word: "promise",
     meaning: "約束する",
     partOfSpeech: "verb",
@@ -1094,7 +1094,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23734,
+    id: 23766,
     word: "promise",
     meaning: "約束",
     partOfSpeech: "noun",
@@ -1107,7 +1107,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23735,
+    id: 23767,
     word: "protect",
     meaning: "守る",
     partOfSpeech: "verb",
@@ -1120,7 +1120,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23736,
+    id: 23768,
     word: "raise",
     meaning: "上げる、育てる",
     partOfSpeech: "verb",
@@ -1133,7 +1133,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23737,
+    id: 23769,
     word: "reach",
     meaning: "届く、到着する",
     partOfSpeech: "verb",
@@ -1146,7 +1146,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23738,
+    id: 23770,
     word: "receive",
     meaning: "受け取る",
     partOfSpeech: "verb",
@@ -1159,7 +1159,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23739,
+    id: 23771,
     word: "record",
     meaning: "記録する",
     partOfSpeech: "verb",
@@ -1172,7 +1172,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23740,
+    id: 23772,
     word: "return",
     meaning: "戻る、返す",
     partOfSpeech: "verb",
@@ -1185,7 +1185,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23741,
+    id: 23773,
     word: "rise",
     meaning: "上がる",
     partOfSpeech: "verb",
@@ -1198,7 +1198,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23742,
+    id: 23774,
     word: "rise",
     meaning: "上昇、台頭",
     partOfSpeech: "noun",
@@ -1211,7 +1211,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23743,
+    id: 23775,
     word: "serve",
     meaning: "出す、仕える",
     partOfSpeech: "verb",
@@ -1224,7 +1224,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23744,
+    id: 23776,
     word: "shake",
     meaning: "振る",
     partOfSpeech: "verb",
@@ -1237,7 +1237,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23745,
+    id: 23777,
     word: "shoot",
     meaning: "撃つ",
     partOfSpeech: "verb",
@@ -1250,7 +1250,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23746,
+    id: 23778,
     word: "shout",
     meaning: "叫ぶ",
     partOfSpeech: "verb",
@@ -1263,7 +1263,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23747,
+    id: 23779,
     word: "shut",
     meaning: "閉める",
     partOfSpeech: "verb",
@@ -1276,7 +1276,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23748,
+    id: 23780,
     word: "solve",
     meaning: "解く",
     partOfSpeech: "verb",
@@ -1289,7 +1289,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23749,
+    id: 23781,
     word: "sound",
     meaning: "〜に聞こえる",
     partOfSpeech: "verb",
@@ -1302,7 +1302,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23750,
+    id: 23782,
     word: "sound",
     meaning: "音",
     partOfSpeech: "noun",
@@ -1315,7 +1315,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23751,
+    id: 23783,
     word: "spread",
     meaning: "広げる",
     partOfSpeech: "verb",
@@ -1328,7 +1328,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23752,
+    id: 23784,
     word: "spread",
     meaning: "広がり",
     partOfSpeech: "noun",
@@ -1341,7 +1341,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23753,
+    id: 23785,
     word: "steal",
     meaning: "盗む",
     partOfSpeech: "verb",
@@ -1354,7 +1354,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23754,
+    id: 23786,
     word: "stick",
     meaning: "貼る、くっつく",
     partOfSpeech: "verb",
@@ -1367,7 +1367,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23755,
+    id: 23787,
     word: "suggest",
     meaning: "提案する",
     partOfSpeech: "verb",
@@ -1380,7 +1380,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23756,
+    id: 23788,
     word: "suppose",
     meaning: "〜と思う",
     partOfSpeech: "verb",
@@ -1393,7 +1393,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23757,
+    id: 23789,
     word: "surprise",
     meaning: "驚かせる",
     partOfSpeech: "verb",
@@ -1406,7 +1406,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23758,
+    id: 23790,
     word: "taste",
     meaning: "味がする",
     partOfSpeech: "verb",
@@ -1419,7 +1419,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23759,
+    id: 23791,
     word: "tear",
     meaning: "破る",
     partOfSpeech: "verb",
@@ -1432,7 +1432,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23760,
+    id: 23792,
     word: "trouble",
     meaning: "困らせる",
     partOfSpeech: "verb",
@@ -1445,7 +1445,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23761,
+    id: 23793,
     word: "trust",
     meaning: "信頼する",
     partOfSpeech: "verb",
@@ -1458,7 +1458,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23762,
+    id: 23794,
     word: "waste",
     meaning: "無駄にする",
     partOfSpeech: "verb",
@@ -1471,7 +1471,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23763,
+    id: 23795,
     word: "wonder",
     meaning: "不思議に思う",
     partOfSpeech: "verb",
@@ -1484,7 +1484,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23764,
+    id: 23796,
     word: "wrap",
     meaning: "包む",
     partOfSpeech: "verb",
@@ -1497,7 +1497,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23765,
+    id: 23797,
     word: "accept",
     meaning: "受け入れる",
     partOfSpeech: "verb",
@@ -1510,7 +1510,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23766,
+    id: 23798,
     word: "add",
     meaning: "加える",
     partOfSpeech: "verb",
@@ -1523,7 +1523,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23767,
+    id: 23799,
     word: "apologize",
     meaning: "謝る",
     partOfSpeech: "verb",
@@ -1536,7 +1536,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23768,
+    id: 23800,
     word: "attack",
     meaning: "攻撃する",
     partOfSpeech: "verb",
@@ -1549,7 +1549,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23769,
+    id: 23801,
     word: "attack",
     meaning: "攻撃",
     partOfSpeech: "noun",
@@ -1562,7 +1562,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23770,
+    id: 23802,
     word: "bake",
     meaning: "焼く",
     partOfSpeech: "verb",
@@ -1575,7 +1575,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23771,
+    id: 23803,
     word: "beat",
     meaning: "打つ、負かす",
     partOfSpeech: "verb",
@@ -1588,7 +1588,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23772,
+    id: 23804,
     word: "bite",
     meaning: "かむ",
     partOfSpeech: "verb",
@@ -1601,7 +1601,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23773,
+    id: 23805,
     word: "bite",
     meaning: "一口、噛むこと",
     partOfSpeech: "noun",
@@ -1614,7 +1614,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23774,
+    id: 23806,
     word: "blow",
     meaning: "吹く",
     partOfSpeech: "verb",
@@ -1627,7 +1627,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23775,
+    id: 23807,
     word: "blow",
     meaning: "打撃",
     partOfSpeech: "noun",
@@ -1640,7 +1640,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23776,
+    id: 23808,
     word: "boil",
     meaning: "沸かす",
     partOfSpeech: "verb",
@@ -1653,7 +1653,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23777,
+    id: 23809,
     word: "bore",
     meaning: "退屈させる",
     partOfSpeech: "verb",
@@ -1666,7 +1666,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23778,
+    id: 23810,
     word: "bow",
     meaning: "おじぎをする",
     partOfSpeech: "verb",
@@ -1679,7 +1679,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23779,
+    id: 23811,
     word: "breathe",
     meaning: "呼吸する",
     partOfSpeech: "verb",
@@ -1692,7 +1692,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23780,
+    id: 23812,
     word: "celebrate",
     meaning: "祝う",
     partOfSpeech: "verb",
@@ -1705,7 +1705,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23781,
+    id: 23813,
     word: "cheat",
     meaning: "不正をする",
     partOfSpeech: "verb",
@@ -1718,7 +1718,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23782,
+    id: 23814,
     word: "compare",
     meaning: "比べる",
     partOfSpeech: "verb",
@@ -1731,7 +1731,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23783,
+    id: 23815,
     word: "complain",
     meaning: "不満を言う",
     partOfSpeech: "verb",
@@ -1744,7 +1744,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23784,
+    id: 23816,
     word: "connect",
     meaning: "つなぐ",
     partOfSpeech: "verb",
@@ -1757,7 +1757,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23785,
+    id: 23817,
     word: "consider",
     meaning: "よく考える",
     partOfSpeech: "verb",
@@ -1770,7 +1770,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23786,
+    id: 23818,
     word: "create",
     meaning: "作り出す",
     partOfSpeech: "verb",
@@ -1783,7 +1783,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23787,
+    id: 23819,
     word: "deliver",
     meaning: "届ける",
     partOfSpeech: "verb",
@@ -1796,7 +1796,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23788,
+    id: 23820,
     word: "destroy",
     meaning: "破壊する",
     partOfSpeech: "verb",
@@ -1809,7 +1809,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23789,
+    id: 23821,
     word: "dig",
     meaning: "掘る",
     partOfSpeech: "verb",
@@ -1822,7 +1822,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23790,
+    id: 23822,
     word: "disappear",
     meaning: "消える",
     partOfSpeech: "verb",
@@ -1835,7 +1835,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23791,
+    id: 23823,
     word: "divide",
     meaning: "分ける",
     partOfSpeech: "verb",
@@ -1848,7 +1848,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23792,
+    id: 23824,
     word: "doubt",
     meaning: "疑う",
     partOfSpeech: "verb",
@@ -1861,7 +1861,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23793,
+    id: 23825,
     word: "doubt",
     meaning: "疑い",
     partOfSpeech: "noun",
@@ -1874,7 +1874,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23794,
+    id: 23826,
     word: "educate",
     meaning: "教育する",
     partOfSpeech: "verb",
@@ -1887,7 +1887,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23795,
+    id: 23827,
     word: "encourage",
     meaning: "励ます",
     partOfSpeech: "verb",
@@ -1900,7 +1900,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23796,
+    id: 23828,
     word: "escape",
     meaning: "逃げる",
     partOfSpeech: "verb",
@@ -1913,7 +1913,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23797,
+    id: 23829,
     word: "escape",
     meaning: "脱出",
     partOfSpeech: "noun",
@@ -1926,7 +1926,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23798,
+    id: 23830,
     word: "examine",
     meaning: "調べる",
     partOfSpeech: "verb",
@@ -1939,7 +1939,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23799,
+    id: 23831,
     word: "exchange",
     meaning: "取り替える",
     partOfSpeech: "verb",
@@ -1952,7 +1952,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23800,
+    id: 23832,
     word: "experience",
     meaning: "経験する",
     partOfSpeech: "verb",
@@ -1965,7 +1965,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23801,
+    id: 23833,
     word: "express",
     meaning: "表現する",
     partOfSpeech: "verb",
@@ -1978,7 +1978,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23802,
+    id: 23834,
     word: "fail",
     meaning: "失敗する",
     partOfSpeech: "verb",
@@ -1991,7 +1991,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23803,
+    id: 23835,
     word: "fear",
     meaning: "恐れる",
     partOfSpeech: "verb",
@@ -2004,7 +2004,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23804,
+    id: 23836,
     word: "fear",
     meaning: "恐怖",
     partOfSpeech: "noun",
@@ -2017,7 +2017,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23805,
+    id: 23837,
     word: "fix",
     meaning: "修理する",
     partOfSpeech: "verb",
@@ -2030,7 +2030,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23806,
+    id: 23838,
     word: "fix",
     meaning: "修正、窮地",
     partOfSpeech: "noun",
@@ -2043,7 +2043,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23807,
+    id: 23839,
     word: "float",
     meaning: "浮かぶ",
     partOfSpeech: "verb",
@@ -2056,7 +2056,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23808,
+    id: 23840,
     word: "flow",
     meaning: "流れる",
     partOfSpeech: "verb",
@@ -2069,7 +2069,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23809,
+    id: 23841,
     word: "fold",
     meaning: "折りたたむ",
     partOfSpeech: "verb",
@@ -2082,7 +2082,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23810,
+    id: 23842,
     word: "force",
     meaning: "強制する",
     partOfSpeech: "verb",
@@ -2095,7 +2095,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23811,
+    id: 23843,
     word: "fry",
     meaning: "揚げる",
     partOfSpeech: "verb",
@@ -2108,7 +2108,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23812,
+    id: 23844,
     word: "greet",
     meaning: "挨拶する",
     partOfSpeech: "verb",
@@ -2121,7 +2121,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23813,
+    id: 23845,
     word: "harvest",
     meaning: "収穫する",
     partOfSpeech: "verb",
@@ -2134,7 +2134,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23814,
+    id: 23846,
     word: "heat",
     meaning: "温める",
     partOfSpeech: "verb",
@@ -2147,7 +2147,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23815,
+    id: 23847,
     word: "heat",
     meaning: "熱、暑さ",
     partOfSpeech: "noun",
@@ -2160,7 +2160,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23816,
+    id: 23848,
     word: "hire",
     meaning: "雇う",
     partOfSpeech: "verb",
@@ -2173,7 +2173,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23817,
+    id: 23849,
     word: "hire",
     meaning: "雇用、レンタル",
     partOfSpeech: "noun",
@@ -2186,7 +2186,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23818,
+    id: 23850,
     word: "introduce",
     meaning: "紹介する",
     partOfSpeech: "verb",
@@ -2199,7 +2199,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23819,
+    id: 23851,
     word: "manage",
     meaning: "管理する",
     partOfSpeech: "verb",
@@ -2212,7 +2212,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23820,
+    id: 23852,
     word: "measure",
     meaning: "測る",
     partOfSpeech: "verb",
@@ -2225,7 +2225,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23821,
+    id: 23853,
     word: "melt",
     meaning: "溶ける",
     partOfSpeech: "verb",
@@ -2238,7 +2238,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23822,
+    id: 23854,
     word: "mix",
     meaning: "混ぜる",
     partOfSpeech: "verb",
@@ -2251,7 +2251,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23823,
+    id: 23855,
     word: "mix",
     meaning: "混合物",
     partOfSpeech: "noun",
@@ -2264,7 +2264,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23824,
+    id: 23856,
     word: "obey",
     meaning: "従う",
     partOfSpeech: "verb",
@@ -2277,7 +2277,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23825,
+    id: 23857,
     word: "operate",
     meaning: "操作する",
     partOfSpeech: "verb",
@@ -2290,7 +2290,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23826,
+    id: 23858,
     word: "organize",
     meaning: "整理する",
     partOfSpeech: "verb",
@@ -2303,7 +2303,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23827,
+    id: 23859,
     word: "perform",
     meaning: "演じる",
     partOfSpeech: "verb",
@@ -2316,7 +2316,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23828,
+    id: 23860,
     word: "press",
     meaning: "押す",
     partOfSpeech: "verb",
@@ -2329,7 +2329,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23829,
+    id: 23861,
     word: "prevent",
     meaning: "防ぐ",
     partOfSpeech: "verb",
@@ -2342,7 +2342,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23830,
+    id: 23862,
     word: "print",
     meaning: "印刷する",
     partOfSpeech: "verb",
@@ -2355,7 +2355,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23831,
+    id: 23863,
     word: "print",
     meaning: "印刷、版画",
     partOfSpeech: "noun",
@@ -2368,7 +2368,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23832,
+    id: 23864,
     word: "publish",
     meaning: "出版する",
     partOfSpeech: "verb",
@@ -2381,7 +2381,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23833,
+    id: 23865,
     word: "punish",
     meaning: "罰する",
     partOfSpeech: "verb",
@@ -2394,7 +2394,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23834,
+    id: 23866,
     word: "reduce",
     meaning: "減らす",
     partOfSpeech: "verb",
@@ -2407,7 +2407,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23835,
+    id: 23867,
     word: "refuse",
     meaning: "断る",
     partOfSpeech: "verb",
@@ -2420,7 +2420,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23836,
+    id: 23868,
     word: "regret",
     meaning: "後悔する",
     partOfSpeech: "verb",
@@ -2433,7 +2433,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23837,
+    id: 23869,
     word: "relax",
     meaning: "くつろぐ",
     partOfSpeech: "verb",
@@ -2446,7 +2446,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23838,
+    id: 23870,
     word: "release",
     meaning: "解放する",
     partOfSpeech: "verb",
@@ -2459,7 +2459,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23839,
+    id: 23871,
     word: "release",
     meaning: "公開、解放",
     partOfSpeech: "noun",
@@ -2472,7 +2472,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23840,
+    id: 23872,
     word: "remain",
     meaning: "残る",
     partOfSpeech: "verb",
@@ -2485,7 +2485,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23841,
+    id: 23873,
     word: "remove",
     meaning: "取り除く",
     partOfSpeech: "verb",
@@ -2498,7 +2498,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23842,
+    id: 23874,
     word: "repair",
     meaning: "修繕する",
     partOfSpeech: "verb",
@@ -2511,7 +2511,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23843,
+    id: 23875,
     word: "repair",
     meaning: "修理",
     partOfSpeech: "noun",
@@ -2524,7 +2524,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23844,
+    id: 23876,
     word: "replace",
     meaning: "交換する",
     partOfSpeech: "verb",
@@ -2537,7 +2537,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23845,
+    id: 23877,
     word: "require",
     meaning: "必要とする",
     partOfSpeech: "verb",
@@ -2550,7 +2550,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23846,
+    id: 23878,
     word: "respect",
     meaning: "尊敬する",
     partOfSpeech: "verb",
@@ -2563,7 +2563,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23847,
+    id: 23879,
     word: "respond",
     meaning: "返答する",
     partOfSpeech: "verb",
@@ -2576,7 +2576,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23848,
+    id: 23880,
     word: "review",
     meaning: "復習する",
     partOfSpeech: "verb",
@@ -2589,7 +2589,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23849,
+    id: 23881,
     word: "review",
     meaning: "レビュー、評論",
     partOfSpeech: "noun",
@@ -2602,7 +2602,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23850,
+    id: 23882,
     word: "rob",
     meaning: "奪う",
     partOfSpeech: "verb",
@@ -2615,7 +2615,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23851,
+    id: 23883,
     word: "sail",
     meaning: "航海する",
     partOfSpeech: "verb",
@@ -2628,7 +2628,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23852,
+    id: 23884,
     word: "search",
     meaning: "探す",
     partOfSpeech: "verb",
@@ -2641,7 +2641,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23853,
+    id: 23885,
     word: "search",
     meaning: "捜索、検索",
     partOfSpeech: "noun",
@@ -2654,7 +2654,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23854,
+    id: 23886,
     word: "separate",
     meaning: "分離する",
     partOfSpeech: "verb",
@@ -2667,7 +2667,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23855,
+    id: 23887,
     word: "settle",
     meaning: "落ち着く",
     partOfSpeech: "verb",
@@ -2680,7 +2680,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23856,
+    id: 23888,
     word: "sign",
     meaning: "署名する",
     partOfSpeech: "verb",
@@ -2693,7 +2693,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23857,
+    id: 23889,
     word: "sign",
     meaning: "標識、兆候",
     partOfSpeech: "noun",
@@ -2706,7 +2706,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23858,
+    id: 23890,
     word: "sink",
     meaning: "沈む",
     partOfSpeech: "verb",
@@ -2719,7 +2719,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23859,
+    id: 23891,
     word: "slide",
     meaning: "滑る",
     partOfSpeech: "verb",
@@ -2732,7 +2732,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23860,
+    id: 23892,
     word: "slip",
     meaning: "滑る、すべる",
     partOfSpeech: "verb",
@@ -2745,7 +2745,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23861,
+    id: 23893,
     word: "spell",
     meaning: "つづる",
     partOfSpeech: "verb",
@@ -2758,7 +2758,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23862,
+    id: 23894,
     word: "spill",
     meaning: "こぼす",
     partOfSpeech: "verb",
@@ -2771,7 +2771,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23863,
+    id: 23895,
     word: "stretch",
     meaning: "伸ばす",
     partOfSpeech: "verb",
@@ -2784,7 +2784,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23864,
+    id: 23896,
     word: "succeed",
     meaning: "成功する",
     partOfSpeech: "verb",
@@ -2797,7 +2797,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23865,
+    id: 23897,
     word: "suffer",
     meaning: "苦しむ",
     partOfSpeech: "verb",
@@ -2810,7 +2810,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23866,
+    id: 23898,
     word: "supply",
     meaning: "供給する",
     partOfSpeech: "verb",
@@ -2823,7 +2823,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23867,
+    id: 23899,
     word: "support",
     meaning: "支える",
     partOfSpeech: "verb",
@@ -2836,7 +2836,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23868,
+    id: 23900,
     word: "survive",
     meaning: "生き残る",
     partOfSpeech: "verb",
@@ -2849,7 +2849,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23869,
+    id: 23901,
     word: "swallow",
     meaning: "飲み込む",
     partOfSpeech: "verb",
@@ -2862,7 +2862,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23870,
+    id: 23902,
     word: "swing",
     meaning: "揺れる",
     partOfSpeech: "verb",
@@ -2875,7 +2875,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23871,
+    id: 23903,
     word: "translate",
     meaning: "翻訳する",
     partOfSpeech: "verb",
@@ -2888,7 +2888,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23872,
+    id: 23904,
     word: "treat",
     meaning: "扱う",
     partOfSpeech: "verb",
@@ -2901,7 +2901,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23873,
+    id: 23905,
     word: "warn",
     meaning: "警告する",
     partOfSpeech: "verb",
@@ -2914,7 +2914,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23874,
+    id: 23906,
     word: "weigh",
     meaning: "重さを量る",
     partOfSpeech: "verb",
@@ -2927,7 +2927,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23875,
+    id: 23907,
     word: "accident",
     meaning: "事故",
     partOfSpeech: "noun",
@@ -2940,7 +2940,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23876,
+    id: 23908,
     word: "address",
     meaning: "住所",
     partOfSpeech: "noun",
@@ -2953,7 +2953,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23877,
+    id: 23909,
     word: "address",
     meaning: "対処する、演説する",
     partOfSpeech: "verb",
@@ -2966,7 +2966,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23878,
+    id: 23910,
     word: "adult",
     meaning: "大人",
     partOfSpeech: "noun",
@@ -2979,7 +2979,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23879,
+    id: 23911,
     word: "advice",
     meaning: "助言",
     partOfSpeech: "noun",
@@ -2992,7 +2992,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23880,
+    id: 23912,
     word: "age",
     meaning: "年齢",
     partOfSpeech: "noun",
@@ -3005,7 +3005,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23881,
+    id: 23913,
     word: "air",
     meaning: "空気",
     partOfSpeech: "noun",
@@ -3018,7 +3018,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23882,
+    id: 23914,
     word: "animal",
     meaning: "動物",
     partOfSpeech: "noun",
@@ -3031,7 +3031,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23883,
+    id: 23915,
     word: "area",
     meaning: "地域",
     partOfSpeech: "noun",
@@ -3044,7 +3044,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23884,
+    id: 23916,
     word: "aunt",
     meaning: "おば",
     partOfSpeech: "noun",
@@ -3057,7 +3057,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23885,
+    id: 23917,
     word: "band",
     meaning: "バンド",
     partOfSpeech: "noun",
@@ -3070,7 +3070,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23886,
+    id: 23918,
     word: "basket",
     meaning: "かご",
     partOfSpeech: "noun",
@@ -3083,7 +3083,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23887,
+    id: 23919,
     word: "bean",
     meaning: "豆",
     partOfSpeech: "noun",
@@ -3096,7 +3096,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23888,
+    id: 23920,
     word: "bill",
     meaning: "請求書",
     partOfSpeech: "noun",
@@ -3109,7 +3109,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23889,
+    id: 23921,
     word: "blood",
     meaning: "血",
     partOfSpeech: "noun",
@@ -3122,7 +3122,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23890,
+    id: 23922,
     word: "bottom",
     meaning: "底",
     partOfSpeech: "noun",
@@ -3135,7 +3135,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23891,
+    id: 23923,
     word: "bowl",
     meaning: "ボウル",
     partOfSpeech: "noun",
@@ -3148,7 +3148,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23892,
+    id: 23924,
     word: "box",
     meaning: "箱",
     partOfSpeech: "noun",
@@ -3161,7 +3161,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23893,
+    id: 23925,
     word: "brain",
     meaning: "脳",
     partOfSpeech: "noun",
@@ -3174,7 +3174,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23894,
+    id: 23926,
     word: "brush",
     meaning: "ブラシ",
     partOfSpeech: "noun",
@@ -3187,7 +3187,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23895,
+    id: 23927,
     word: "brush",
     meaning: "磨く、払う",
     partOfSpeech: "verb",
@@ -3200,7 +3200,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23896,
+    id: 23928,
     word: "building",
     meaning: "建物",
     partOfSpeech: "noun",
@@ -3213,7 +3213,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23897,
+    id: 23929,
     word: "butter",
     meaning: "バター",
     partOfSpeech: "noun",
@@ -3226,7 +3226,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23898,
+    id: 23930,
     word: "cage",
     meaning: "かご、おり",
     partOfSpeech: "noun",
@@ -3239,7 +3239,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23899,
+    id: 23931,
     word: "calendar",
     meaning: "カレンダー",
     partOfSpeech: "noun",
@@ -3252,7 +3252,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23900,
+    id: 23932,
     word: "camp",
     meaning: "キャンプ",
     partOfSpeech: "noun",
@@ -3265,7 +3265,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23901,
+    id: 23933,
     word: "candle",
     meaning: "ろうそく",
     partOfSpeech: "noun",
@@ -3278,7 +3278,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23902,
+    id: 23934,
     word: "candy",
     meaning: "飴、お菓子",
     partOfSpeech: "noun",
@@ -3291,7 +3291,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23903,
+    id: 23935,
     word: "carpet",
     meaning: "じゅうたん",
     partOfSpeech: "noun",
@@ -3304,7 +3304,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23904,
+    id: 23936,
     word: "carrot",
     meaning: "にんじん",
     partOfSpeech: "noun",
@@ -3317,7 +3317,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23905,
+    id: 23937,
     word: "case",
     meaning: "場合、箱",
     partOfSpeech: "noun",
@@ -3330,7 +3330,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23906,
+    id: 23938,
     word: "ceiling",
     meaning: "天井",
     partOfSpeech: "noun",
@@ -3343,7 +3343,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23907,
+    id: 23939,
     word: "center",
     meaning: "中心、センター",
     partOfSpeech: "noun",
@@ -3356,7 +3356,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23908,
+    id: 23940,
     word: "chance",
     meaning: "機会",
     partOfSpeech: "noun",
@@ -3369,7 +3369,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23909,
+    id: 23941,
     word: "character",
     meaning: "登場人物、性格",
     partOfSpeech: "noun",
@@ -3382,7 +3382,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23910,
+    id: 23942,
     word: "circle",
     meaning: "円、輪",
     partOfSpeech: "noun",
@@ -3395,7 +3395,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23911,
+    id: 23943,
     word: "clerk",
     meaning: "店員",
     partOfSpeech: "noun",
@@ -3408,7 +3408,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23912,
+    id: 23944,
     word: "climate",
     meaning: "気候",
     partOfSpeech: "noun",
@@ -3421,7 +3421,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23913,
+    id: 23945,
     word: "club",
     meaning: "部活、クラブ",
     partOfSpeech: "noun",
@@ -3434,7 +3434,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23914,
+    id: 23946,
     word: "coach",
     meaning: "コーチ、監督",
     partOfSpeech: "noun",
@@ -3447,7 +3447,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23915,
+    id: 23947,
     word: "college",
     meaning: "大学",
     partOfSpeech: "noun",
@@ -3460,7 +3460,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23916,
+    id: 23948,
     word: "contest",
     meaning: "コンテスト",
     partOfSpeech: "noun",
@@ -3473,7 +3473,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23917,
+    id: 23949,
     word: "control",
     meaning: "管理、制御",
     partOfSpeech: "noun",
@@ -3486,7 +3486,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23918,
+    id: 23950,
     word: "conversation",
     meaning: "会話",
     partOfSpeech: "noun",
@@ -3499,7 +3499,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23919,
+    id: 23951,
     word: "cotton",
     meaning: "綿、木綿",
     partOfSpeech: "noun",
@@ -3512,7 +3512,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23920,
+    id: 23952,
     word: "course",
     meaning: "講座、コース",
     partOfSpeech: "noun",
@@ -3525,7 +3525,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23921,
+    id: 23953,
     word: "cousin",
     meaning: "いとこ",
     partOfSpeech: "noun",
@@ -3538,7 +3538,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23922,
+    id: 23954,
     word: "cream",
     meaning: "クリーム",
     partOfSpeech: "noun",
@@ -3551,7 +3551,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23923,
+    id: 23955,
     word: "crowd",
     meaning: "群衆、人混み",
     partOfSpeech: "noun",
@@ -3564,7 +3564,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23924,
+    id: 23956,
     word: "crowd",
     meaning: "群がる",
     partOfSpeech: "verb",
@@ -3577,7 +3577,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23925,
+    id: 23957,
     word: "culture",
     meaning: "文化",
     partOfSpeech: "noun",
@@ -3590,7 +3590,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23926,
+    id: 23958,
     word: "curtain",
     meaning: "カーテン",
     partOfSpeech: "noun",
@@ -3603,7 +3603,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23927,
+    id: 23959,
     word: "customer",
     meaning: "客",
     partOfSpeech: "noun",
@@ -3616,7 +3616,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23928,
+    id: 23960,
     word: "deal",
     meaning: "取引、量",
     partOfSpeech: "noun",
@@ -3629,7 +3629,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23929,
+    id: 23961,
     word: "deal",
     meaning: "対処する、取引する",
     partOfSpeech: "verb",
@@ -3642,7 +3642,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23930,
+    id: 23962,
     word: "death",
     meaning: "死",
     partOfSpeech: "noun",
@@ -3655,7 +3655,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23931,
+    id: 23963,
     word: "deer",
     meaning: "シカ",
     partOfSpeech: "noun",
@@ -3668,7 +3668,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23932,
+    id: 23964,
     word: "degree",
     meaning: "度、程度",
     partOfSpeech: "noun",
@@ -3681,7 +3681,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23933,
+    id: 23965,
     word: "dentist",
     meaning: "歯医者",
     partOfSpeech: "noun",
@@ -3694,7 +3694,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23934,
+    id: 23966,
     word: "desert",
     meaning: "砂漠",
     partOfSpeech: "noun",
@@ -3707,7 +3707,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23935,
+    id: 23967,
     word: "diary",
     meaning: "日記",
     partOfSpeech: "noun",
@@ -3720,7 +3720,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23936,
+    id: 23968,
     word: "dictionary",
     meaning: "辞書",
     partOfSpeech: "noun",
@@ -3733,7 +3733,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23937,
+    id: 23969,
     word: "dish",
     meaning: "皿、料理",
     partOfSpeech: "noun",
@@ -3746,7 +3746,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23938,
+    id: 23970,
     word: "dollar",
     meaning: "ドル",
     partOfSpeech: "noun",
@@ -3759,7 +3759,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23939,
+    id: 23971,
     word: "driver",
     meaning: "運転手",
     partOfSpeech: "noun",
@@ -3772,7 +3772,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23940,
+    id: 23972,
     word: "earth",
     meaning: "地球、大地",
     partOfSpeech: "noun",
@@ -3785,7 +3785,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23941,
+    id: 23973,
     word: "east",
     meaning: "東",
     partOfSpeech: "noun",
@@ -3798,7 +3798,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23942,
+    id: 23974,
     word: "edge",
     meaning: "端、ふち",
     partOfSpeech: "noun",
@@ -3811,7 +3811,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23943,
+    id: 23975,
     word: "effect",
     meaning: "効果、影響",
     partOfSpeech: "noun",
@@ -3824,7 +3824,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23944,
+    id: 23976,
     word: "election",
     meaning: "選挙",
     partOfSpeech: "noun",
@@ -3837,7 +3837,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23945,
+    id: 23977,
     word: "energy",
     meaning: "エネルギー",
     partOfSpeech: "noun",
@@ -3850,7 +3850,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23946,
+    id: 23978,
     word: "engine",
     meaning: "エンジン",
     partOfSpeech: "noun",
@@ -3863,7 +3863,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23947,
+    id: 23979,
     word: "entrance",
     meaning: "入り口",
     partOfSpeech: "noun",
@@ -3876,7 +3876,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23948,
+    id: 23980,
     word: "envelope",
     meaning: "封筒",
     partOfSpeech: "noun",
@@ -3889,7 +3889,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23949,
+    id: 23981,
     word: "example",
     meaning: "例",
     partOfSpeech: "noun",
@@ -3902,7 +3902,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23950,
+    id: 23982,
     word: "fact",
     meaning: "事実",
     partOfSpeech: "noun",
@@ -3915,7 +3915,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23951,
+    id: 23983,
     word: "fan",
     meaning: "ファン、扇風機",
     partOfSpeech: "noun",
@@ -3928,7 +3928,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23952,
+    id: 23984,
     word: "fence",
     meaning: "柵、フェンス",
     partOfSpeech: "noun",
@@ -3941,7 +3941,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23953,
+    id: 23985,
     word: "festival",
     meaning: "祭り",
     partOfSpeech: "noun",
@@ -3954,7 +3954,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23954,
+    id: 23986,
     word: "field",
     meaning: "野原、分野",
     partOfSpeech: "noun",
@@ -3967,7 +3967,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23955,
+    id: 23987,
     word: "film",
     meaning: "映画、フィルム",
     partOfSpeech: "noun",
@@ -3980,7 +3980,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23956,
+    id: 23988,
     word: "film",
     meaning: "撮影する",
     partOfSpeech: "verb",
@@ -3993,7 +3993,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23957,
+    id: 23989,
     word: "fire",
     meaning: "火、火事",
     partOfSpeech: "noun",
@@ -4006,7 +4006,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23958,
+    id: 23990,
     word: "fire",
     meaning: "解雇する、発砲する",
     partOfSpeech: "verb",
@@ -4019,7 +4019,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23959,
+    id: 23991,
     word: "flag",
     meaning: "旗",
     partOfSpeech: "noun",
@@ -4032,7 +4032,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23960,
+    id: 23992,
     word: "flight",
     meaning: "飛行、便",
     partOfSpeech: "noun",
@@ -4045,7 +4045,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23961,
+    id: 23993,
     word: "floor",
     meaning: "床、階",
     partOfSpeech: "noun",
@@ -4058,7 +4058,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23962,
+    id: 23994,
     word: "fog",
     meaning: "霧",
     partOfSpeech: "noun",
@@ -4071,7 +4071,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23963,
+    id: 23995,
     word: "fork",
     meaning: "フォーク",
     partOfSpeech: "noun",
@@ -4084,7 +4084,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23964,
+    id: 23996,
     word: "fox",
     meaning: "キツネ",
     partOfSpeech: "noun",
@@ -4097,7 +4097,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23965,
+    id: 23997,
     word: "furniture",
     meaning: "家具",
     partOfSpeech: "noun",
@@ -4110,7 +4110,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23966,
+    id: 23998,
     word: "garage",
     meaning: "車庫",
     partOfSpeech: "noun",
@@ -4123,7 +4123,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23967,
+    id: 23999,
     word: "gate",
     meaning: "門、ゲート",
     partOfSpeech: "noun",
@@ -4136,7 +4136,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23968,
+    id: 24000,
     word: "goal",
     meaning: "目標、ゴール",
     partOfSpeech: "noun",
@@ -4149,7 +4149,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23969,
+    id: 24001,
     word: "god",
     meaning: "神",
     partOfSpeech: "noun",
@@ -4162,7 +4162,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23970,
+    id: 24002,
     word: "grade",
     meaning: "成績、学年",
     partOfSpeech: "noun",
@@ -4175,7 +4175,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23971,
+    id: 24003,
     word: "group",
     meaning: "グループ、集団",
     partOfSpeech: "noun",
@@ -4188,7 +4188,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23972,
+    id: 24004,
     word: "group",
     meaning: "グループ分けする",
     partOfSpeech: "verb",
@@ -4201,7 +4201,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23973,
+    id: 24005,
     word: "guest",
     meaning: "招待客",
     partOfSpeech: "noun",
@@ -4214,7 +4214,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23974,
+    id: 24006,
     word: "guide",
     meaning: "ガイド、案内人",
     partOfSpeech: "noun",
@@ -4227,7 +4227,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23975,
+    id: 24007,
     word: "guy",
     meaning: "男の人、やつ",
     partOfSpeech: "noun",
@@ -4240,7 +4240,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23976,
+    id: 24008,
     word: "habit",
     meaning: "習慣",
     partOfSpeech: "noun",
@@ -4253,7 +4253,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23977,
+    id: 24009,
     word: "hall",
     meaning: "ホール、廊下",
     partOfSpeech: "noun",
@@ -4266,7 +4266,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23978,
+    id: 24010,
     word: "happiness",
     meaning: "幸福",
     partOfSpeech: "noun",
@@ -4279,7 +4279,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23979,
+    id: 24011,
     word: "harbor",
     meaning: "港",
     partOfSpeech: "noun",
@@ -4292,7 +4292,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23980,
+    id: 24012,
     word: "height",
     meaning: "高さ、身長",
     partOfSpeech: "noun",
@@ -4305,7 +4305,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23981,
+    id: 24013,
     word: "hero",
     meaning: "英雄、ヒーロー",
     partOfSpeech: "noun",
@@ -4318,7 +4318,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23982,
+    id: 24014,
     word: "hole",
     meaning: "穴",
     partOfSpeech: "noun",
@@ -4331,7 +4331,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23983,
+    id: 24015,
     word: "honey",
     meaning: "はちみつ",
     partOfSpeech: "noun",
@@ -4344,7 +4344,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23984,
+    id: 24016,
     word: "hotel",
     meaning: "ホテル",
     partOfSpeech: "noun",
@@ -4357,7 +4357,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23985,
+    id: 24017,
     word: "human",
     meaning: "人間",
     partOfSpeech: "noun",
@@ -4370,7 +4370,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23986,
+    id: 24018,
     word: "humor",
     meaning: "ユーモア",
     partOfSpeech: "noun",
@@ -4383,7 +4383,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23987,
+    id: 24019,
     word: "husband",
     meaning: "夫",
     partOfSpeech: "noun",
@@ -4396,7 +4396,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23988,
+    id: 24020,
     word: "ice cream",
     meaning: "アイスクリーム",
     partOfSpeech: "noun",
@@ -4409,7 +4409,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23989,
+    id: 24021,
     word: "industry",
     meaning: "産業",
     partOfSpeech: "noun",
@@ -4422,7 +4422,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23990,
+    id: 24022,
     word: "information",
     meaning: "情報",
     partOfSpeech: "noun",
@@ -4435,7 +4435,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23991,
+    id: 24023,
     word: "insect",
     meaning: "昆虫",
     partOfSpeech: "noun",
@@ -4448,7 +4448,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23992,
+    id: 24024,
     word: "interview",
     meaning: "面接、インタビュー",
     partOfSpeech: "noun",
@@ -4461,7 +4461,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23993,
+    id: 24025,
     word: "jaw",
     meaning: "あご",
     partOfSpeech: "noun",
@@ -4474,7 +4474,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23994,
+    id: 24026,
     word: "jeans",
     meaning: "ジーンズ",
     partOfSpeech: "noun",
@@ -4487,7 +4487,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 23995,
+    id: 24027,
     word: "joke",
     meaning: "冗談",
     partOfSpeech: "noun",
@@ -4500,7 +4500,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23996,
+    id: 24028,
     word: "joke",
     meaning: "冗談を言う",
     partOfSpeech: "verb",
@@ -4513,7 +4513,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23997,
+    id: 24029,
     word: "journey",
     meaning: "旅、旅行",
     partOfSpeech: "noun",
@@ -4526,7 +4526,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23998,
+    id: 24030,
     word: "joy",
     meaning: "喜び",
     partOfSpeech: "noun",
@@ -4539,7 +4539,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23999,
+    id: 24031,
     word: "judge",
     meaning: "裁判官、審判",
     partOfSpeech: "noun",
@@ -4552,7 +4552,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24000,
+    id: 24032,
     word: "judge",
     meaning: "判断する、審査する",
     partOfSpeech: "verb",
@@ -4565,7 +4565,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24001,
+    id: 24033,
     word: "kid",
     meaning: "子供",
     partOfSpeech: "noun",
@@ -4578,7 +4578,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24002,
+    id: 24034,
     word: "knowledge",
     meaning: "知識",
     partOfSpeech: "noun",
@@ -4591,7 +4591,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24003,
+    id: 24035,
     word: "lane",
     meaning: "小道、車線",
     partOfSpeech: "noun",
@@ -4604,7 +4604,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24004,
+    id: 24036,
     word: "leather",
     meaning: "革",
     partOfSpeech: "noun",
@@ -4617,7 +4617,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24005,
+    id: 24037,
     word: "level",
     meaning: "レベル、水準",
     partOfSpeech: "noun",
@@ -4630,7 +4630,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24006,
+    id: 24038,
     word: "level",
     meaning: "水平にする",
     partOfSpeech: "verb",
@@ -4643,7 +4643,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24007,
+    id: 24039,
     word: "lid",
     meaning: "ふた",
     partOfSpeech: "noun",
@@ -4656,7 +4656,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24008,
+    id: 24040,
     word: "line",
     meaning: "線、列",
     partOfSpeech: "noun",
@@ -4669,7 +4669,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24009,
+    id: 24041,
     word: "line",
     meaning: "列に並ぶ",
     partOfSpeech: "verb",
@@ -4682,7 +4682,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24010,
+    id: 24042,
     word: "list",
     meaning: "リスト、一覧",
     partOfSpeech: "noun",
@@ -4695,7 +4695,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24011,
+    id: 24043,
     word: "machine",
     meaning: "機械",
     partOfSpeech: "noun",
@@ -4708,7 +4708,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24012,
+    id: 24044,
     word: "mail",
     meaning: "郵便",
     partOfSpeech: "noun",
@@ -4721,7 +4721,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24013,
+    id: 24045,
     word: "manager",
     meaning: "管理者",
     partOfSpeech: "noun",
@@ -4734,7 +4734,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24014,
+    id: 24046,
     word: "mark",
     meaning: "印、点数",
     partOfSpeech: "noun",
@@ -4747,7 +4747,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24015,
+    id: 24047,
     word: "market",
     meaning: "市場",
     partOfSpeech: "noun",
@@ -4760,7 +4760,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24016,
+    id: 24048,
     word: "material",
     meaning: "材料",
     partOfSpeech: "noun",
@@ -4773,7 +4773,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24017,
+    id: 24049,
     word: "matter",
     meaning: "問題、事柄",
     partOfSpeech: "noun",
@@ -4786,7 +4786,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24018,
+    id: 24050,
     word: "meaning",
     meaning: "意味",
     partOfSpeech: "noun",
@@ -4799,7 +4799,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24019,
+    id: 24051,
     word: "meeting",
     meaning: "会議",
     partOfSpeech: "noun",
@@ -4812,7 +4812,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24020,
+    id: 24052,
     word: "memory",
     meaning: "記憶",
     partOfSpeech: "noun",
@@ -4825,7 +4825,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24021,
+    id: 24053,
     word: "message",
     meaning: "伝言",
     partOfSpeech: "noun",
@@ -4838,7 +4838,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24022,
+    id: 24054,
     word: "metal",
     meaning: "金属",
     partOfSpeech: "noun",
@@ -4851,7 +4851,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24023,
+    id: 24055,
     word: "middle",
     meaning: "真ん中",
     partOfSpeech: "noun",
@@ -4864,7 +4864,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24024,
+    id: 24056,
     word: "mind",
     meaning: "心、精神",
     partOfSpeech: "noun",
@@ -4877,7 +4877,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24025,
+    id: 24057,
     word: "mind",
     meaning: "気にする",
     partOfSpeech: "verb",
@@ -4890,7 +4890,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24026,
+    id: 24058,
     word: "mistake",
     meaning: "間違い",
     partOfSpeech: "noun",
@@ -4903,7 +4903,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24027,
+    id: 24059,
     word: "moment",
     meaning: "瞬間",
     partOfSpeech: "noun",
@@ -4916,7 +4916,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24028,
+    id: 24060,
     word: "monster",
     meaning: "怪物",
     partOfSpeech: "noun",
@@ -4929,7 +4929,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24029,
+    id: 24061,
     word: "mood",
     meaning: "気分",
     partOfSpeech: "noun",
@@ -4942,7 +4942,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24030,
+    id: 24062,
     word: "nature",
     meaning: "自然",
     partOfSpeech: "noun",
@@ -4955,7 +4955,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24031,
+    id: 24063,
     word: "neighbor",
     meaning: "隣人",
     partOfSpeech: "noun",
@@ -4968,7 +4968,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24032,
+    id: 24064,
     word: "nest",
     meaning: "巣",
     partOfSpeech: "noun",
@@ -4981,7 +4981,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24033,
+    id: 24065,
     word: "net",
     meaning: "網",
     partOfSpeech: "noun",
@@ -4994,7 +4994,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24034,
+    id: 24066,
     word: "noise",
     meaning: "騒音",
     partOfSpeech: "noun",
@@ -5007,7 +5007,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24035,
+    id: 24067,
     word: "north",
     meaning: "北",
     partOfSpeech: "noun",
@@ -5020,7 +5020,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24036,
+    id: 24068,
     word: "ocean",
     meaning: "大洋",
     partOfSpeech: "noun",
@@ -5033,7 +5033,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24037,
+    id: 24069,
     word: "oil",
     meaning: "油",
     partOfSpeech: "noun",
@@ -5046,7 +5046,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24038,
+    id: 24070,
     word: "opinion",
     meaning: "意見",
     partOfSpeech: "noun",
@@ -5059,7 +5059,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24039,
+    id: 24071,
     word: "pair",
     meaning: "1組",
     partOfSpeech: "noun",
@@ -5072,7 +5072,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24040,
+    id: 24072,
     word: "palace",
     meaning: "宮殿",
     partOfSpeech: "noun",
@@ -5085,7 +5085,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24041,
+    id: 24073,
     word: "pan",
     meaning: "フライパン",
     partOfSpeech: "noun",
@@ -5098,7 +5098,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24042,
+    id: 24074,
     word: "parent",
     meaning: "親",
     partOfSpeech: "noun",
@@ -5111,7 +5111,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24043,
+    id: 24075,
     word: "passenger",
     meaning: "乗客",
     partOfSpeech: "noun",
@@ -5124,7 +5124,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24044,
+    id: 24076,
     word: "path",
     meaning: "小道",
     partOfSpeech: "noun",
@@ -5137,7 +5137,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24045,
+    id: 24077,
     word: "peace",
     meaning: "平和",
     partOfSpeech: "noun",
@@ -5150,7 +5150,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24046,
+    id: 24078,
     word: "pepper",
     meaning: "こしょう",
     partOfSpeech: "noun",
@@ -5163,7 +5163,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24047,
+    id: 24079,
     word: "performance",
     meaning: "演技、公演",
     partOfSpeech: "noun",
@@ -5176,7 +5176,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24048,
+    id: 24080,
     word: "period",
     meaning: "期間",
     partOfSpeech: "noun",
@@ -5189,7 +5189,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24049,
+    id: 24081,
     word: "person",
     meaning: "人",
     partOfSpeech: "noun",
@@ -5202,7 +5202,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24050,
+    id: 24082,
     word: "photograph",
     meaning: "写真",
     partOfSpeech: "noun",
@@ -5215,7 +5215,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24051,
+    id: 24083,
     word: "piece",
     meaning: "1つ、かけら",
     partOfSpeech: "noun",
@@ -5228,7 +5228,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24052,
+    id: 24084,
     word: "pillow",
     meaning: "まくら",
     partOfSpeech: "noun",
@@ -5241,7 +5241,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24053,
+    id: 24085,
     word: "pipe",
     meaning: "管、パイプ",
     partOfSpeech: "noun",
@@ -5254,7 +5254,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24054,
+    id: 24086,
     word: "planet",
     meaning: "惑星",
     partOfSpeech: "noun",
@@ -5267,7 +5267,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24055,
+    id: 24087,
     word: "pollution",
     meaning: "汚染",
     partOfSpeech: "noun",
@@ -5280,7 +5280,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24056,
+    id: 24088,
     word: "pond",
     meaning: "池",
     partOfSpeech: "noun",
@@ -5293,7 +5293,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24057,
+    id: 24089,
     word: "population",
     meaning: "人口",
     partOfSpeech: "noun",
@@ -5306,7 +5306,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24058,
+    id: 24090,
     word: "position",
     meaning: "位置、立場",
     partOfSpeech: "noun",
@@ -5319,7 +5319,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24059,
+    id: 24091,
     word: "position",
     meaning: "配置する",
     partOfSpeech: "verb",
@@ -5332,7 +5332,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24060,
+    id: 24092,
     word: "pot",
     meaning: "鍋、ポット",
     partOfSpeech: "noun",
@@ -5345,7 +5345,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24061,
+    id: 24093,
     word: "pound",
     meaning: "ポンド",
     partOfSpeech: "noun",
@@ -5358,7 +5358,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24062,
+    id: 24094,
     word: "power",
     meaning: "力、電力",
     partOfSpeech: "noun",
@@ -5371,7 +5371,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24063,
+    id: 24095,
     word: "president",
     meaning: "大統領、会長",
     partOfSpeech: "noun",
@@ -5384,7 +5384,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24064,
+    id: 24096,
     word: "princess",
     meaning: "王女",
     partOfSpeech: "noun",
@@ -5397,7 +5397,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24065,
+    id: 24097,
     word: "prison",
     meaning: "刑務所",
     partOfSpeech: "noun",
@@ -5410,7 +5410,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24066,
+    id: 24098,
     word: "problem",
     meaning: "問題",
     partOfSpeech: "noun",
@@ -5423,7 +5423,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24067,
+    id: 24099,
     word: "product",
     meaning: "製品",
     partOfSpeech: "noun",
@@ -5436,7 +5436,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24068,
+    id: 24100,
     word: "project",
     meaning: "計画",
     partOfSpeech: "noun",
@@ -5449,7 +5449,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24069,
+    id: 24101,
     word: "project",
     meaning: "映し出す、予測する",
     partOfSpeech: "verb",
@@ -5462,7 +5462,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24070,
+    id: 24102,
     word: "purpose",
     meaning: "目的",
     partOfSpeech: "noun",
@@ -5475,7 +5475,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24071,
+    id: 24103,
     word: "race",
     meaning: "競走、人種",
     partOfSpeech: "noun",
@@ -5488,7 +5488,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24072,
+    id: 24104,
     word: "race",
     meaning: "競争する",
     partOfSpeech: "verb",
@@ -5501,7 +5501,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24073,
+    id: 24105,
     word: "rainbow",
     meaning: "虹",
     partOfSpeech: "noun",
@@ -5514,7 +5514,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24074,
+    id: 24106,
     word: "reason",
     meaning: "理由",
     partOfSpeech: "noun",
@@ -5527,7 +5527,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24075,
+    id: 24107,
     word: "region",
     meaning: "地域、地方",
     partOfSpeech: "noun",
@@ -5540,7 +5540,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24076,
+    id: 24108,
     word: "report",
     meaning: "報告",
     partOfSpeech: "noun",
@@ -5553,7 +5553,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24077,
+    id: 24109,
     word: "rest",
     meaning: "休息",
     partOfSpeech: "noun",
@@ -5566,7 +5566,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24078,
+    id: 24110,
     word: "rest",
     meaning: "休む",
     partOfSpeech: "verb",
@@ -5579,7 +5579,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24079,
+    id: 24111,
     word: "result",
     meaning: "結果",
     partOfSpeech: "noun",
@@ -5592,7 +5592,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24080,
+    id: 24112,
     word: "result",
     meaning: "結果として生じる",
     partOfSpeech: "verb",
@@ -5605,7 +5605,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24081,
+    id: 24113,
     word: "rocket",
     meaning: "ロケット",
     partOfSpeech: "noun",
@@ -5618,7 +5618,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24082,
+    id: 24114,
     word: "role",
     meaning: "役割",
     partOfSpeech: "noun",
@@ -5631,7 +5631,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24083,
+    id: 24115,
     word: "root",
     meaning: "根",
     partOfSpeech: "noun",
@@ -5644,7 +5644,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24084,
+    id: 24116,
     word: "rope",
     meaning: "ロープ",
     partOfSpeech: "noun",
@@ -5657,7 +5657,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24085,
+    id: 24117,
     word: "row",
     meaning: "列",
     partOfSpeech: "noun",
@@ -5670,7 +5670,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24086,
+    id: 24118,
     word: "rule",
     meaning: "規則",
     partOfSpeech: "noun",
@@ -5683,7 +5683,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24087,
+    id: 24119,
     word: "rule",
     meaning: "支配する、裁定する",
     partOfSpeech: "verb",
@@ -5696,7 +5696,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24088,
+    id: 24120,
     word: "rush",
     meaning: "急ぐこと",
     partOfSpeech: "noun",
@@ -5709,7 +5709,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24089,
+    id: 24121,
     word: "rush",
     meaning: "急ぐ",
     partOfSpeech: "verb",
@@ -5722,7 +5722,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24090,
+    id: 24122,
     word: "sand",
     meaning: "砂",
     partOfSpeech: "noun",
@@ -5735,7 +5735,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24091,
+    id: 24123,
     word: "scene",
     meaning: "場面",
     partOfSpeech: "noun",
@@ -5748,7 +5748,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24092,
+    id: 24124,
     word: "score",
     meaning: "得点",
     partOfSpeech: "noun",
@@ -5761,7 +5761,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24093,
+    id: 24125,
     word: "score",
     meaning: "得点する",
     partOfSpeech: "verb",
@@ -5774,7 +5774,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24094,
+    id: 24126,
     word: "screen",
     meaning: "画面",
     partOfSpeech: "noun",
@@ -5787,7 +5787,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24095,
+    id: 24127,
     word: "screen",
     meaning: "選別する、上映する",
     partOfSpeech: "verb",
@@ -5800,7 +5800,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24096,
+    id: 24128,
     word: "seed",
     meaning: "種",
     partOfSpeech: "noun",
@@ -5813,7 +5813,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24097,
+    id: 24129,
     word: "shadow",
     meaning: "影",
     partOfSpeech: "noun",
@@ -5826,7 +5826,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24098,
+    id: 24130,
     word: "shape",
     meaning: "形",
     partOfSpeech: "noun",
@@ -5839,7 +5839,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24099,
+    id: 24131,
     word: "shelf",
     meaning: "棚",
     partOfSpeech: "noun",
@@ -5852,7 +5852,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24100,
+    id: 24132,
     word: "shell",
     meaning: "殻、貝殻",
     partOfSpeech: "noun",
@@ -5865,7 +5865,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24101,
+    id: 24133,
     word: "shock",
     meaning: "衝撃",
     partOfSpeech: "noun",
@@ -5878,7 +5878,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24102,
+    id: 24134,
     word: "shock",
     meaning: "衝撃を与える",
     partOfSpeech: "verb",
@@ -5891,7 +5891,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24103,
+    id: 24135,
     word: "side",
     meaning: "側、面",
     partOfSpeech: "noun",
@@ -5904,7 +5904,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24104,
+    id: 24136,
     word: "sight",
     meaning: "光景、視力",
     partOfSpeech: "noun",
@@ -5917,7 +5917,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24105,
+    id: 24137,
     word: "silence",
     meaning: "沈黙",
     partOfSpeech: "noun",
@@ -5930,7 +5930,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24106,
+    id: 24138,
     word: "silver",
     meaning: "銀",
     partOfSpeech: "noun",
@@ -5943,7 +5943,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24107,
+    id: 24139,
     word: "singer",
     meaning: "歌手",
     partOfSpeech: "noun",
@@ -5956,7 +5956,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24108,
+    id: 24140,
     word: "sir",
     meaning: "〜さん（男性）",
     partOfSpeech: "noun",
@@ -5969,7 +5969,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24109,
+    id: 24141,
     word: "situation",
     meaning: "状況",
     partOfSpeech: "noun",
@@ -5982,7 +5982,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24110,
+    id: 24142,
     word: "size",
     meaning: "大きさ",
     partOfSpeech: "noun",
@@ -5995,7 +5995,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24111,
+    id: 24143,
     word: "skill",
     meaning: "技術",
     partOfSpeech: "noun",
@@ -6008,7 +6008,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24112,
+    id: 24144,
     word: "skin",
     meaning: "肌、皮",
     partOfSpeech: "noun",
@@ -6021,7 +6021,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24113,
+    id: 24145,
     word: "smoke",
     meaning: "煙",
     partOfSpeech: "noun",
@@ -6034,7 +6034,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24114,
+    id: 24146,
     word: "smoke",
     meaning: "喫煙する",
     partOfSpeech: "verb",
@@ -6047,7 +6047,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24115,
+    id: 24147,
     word: "snake",
     meaning: "ヘビ",
     partOfSpeech: "noun",
@@ -6060,7 +6060,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24116,
+    id: 24148,
     word: "soil",
     meaning: "土",
     partOfSpeech: "noun",
@@ -6073,7 +6073,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24117,
+    id: 24149,
     word: "soul",
     meaning: "魂",
     partOfSpeech: "noun",
@@ -6086,7 +6086,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24118,
+    id: 24150,
     word: "south",
     meaning: "南",
     partOfSpeech: "noun",
@@ -6099,7 +6099,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24119,
+    id: 24151,
     word: "speech",
     meaning: "演説",
     partOfSpeech: "noun",
@@ -6112,7 +6112,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24120,
+    id: 24152,
     word: "speed",
     meaning: "速さ",
     partOfSpeech: "noun",
@@ -6125,7 +6125,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24121,
+    id: 24153,
     word: "spider",
     meaning: "クモ",
     partOfSpeech: "noun",
@@ -6138,7 +6138,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24122,
+    id: 24154,
     word: "spirit",
     meaning: "精神",
     partOfSpeech: "noun",
@@ -6151,7 +6151,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24123,
+    id: 24155,
     word: "staff",
     meaning: "職員",
     partOfSpeech: "noun",
@@ -6164,7 +6164,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24124,
+    id: 24156,
     word: "stage",
     meaning: "舞台、段階",
     partOfSpeech: "noun",
@@ -6177,7 +6177,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24125,
+    id: 24157,
     word: "stage",
     meaning: "上演する、仕組む",
     partOfSpeech: "verb",
@@ -6190,7 +6190,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24126,
+    id: 24158,
     word: "stair",
     meaning: "階段",
     partOfSpeech: "noun",
@@ -6203,7 +6203,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24127,
+    id: 24159,
     word: "step",
     meaning: "歩み、段",
     partOfSpeech: "noun",
@@ -6216,7 +6216,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24128,
+    id: 24160,
     word: "storm",
     meaning: "嵐",
     partOfSpeech: "noun",
@@ -6229,7 +6229,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24129,
+    id: 24161,
     word: "stranger",
     meaning: "見知らぬ人",
     partOfSpeech: "noun",
@@ -6242,7 +6242,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24130,
+    id: 24162,
     word: "stream",
     meaning: "小川",
     partOfSpeech: "noun",
@@ -6255,7 +6255,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24131,
+    id: 24163,
     word: "stress",
     meaning: "ストレス",
     partOfSpeech: "noun",
@@ -6268,7 +6268,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24132,
+    id: 24164,
     word: "stress",
     meaning: "強調する",
     partOfSpeech: "verb",
@@ -6281,7 +6281,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24133,
+    id: 24165,
     word: "success",
     meaning: "成功",
     partOfSpeech: "noun",
@@ -6294,7 +6294,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24134,
+    id: 24166,
     word: "suit",
     meaning: "スーツ、背広",
     partOfSpeech: "noun",
@@ -6307,7 +6307,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24135,
+    id: 24167,
     word: "sunset",
     meaning: "日没、夕焼け",
     partOfSpeech: "noun",
@@ -6320,7 +6320,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24136,
+    id: 24168,
     word: "symbol",
     meaning: "記号、象徴",
     partOfSpeech: "noun",
@@ -6333,7 +6333,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24137,
+    id: 24169,
     word: "system",
     meaning: "制度、仕組み",
     partOfSpeech: "noun",
@@ -6346,7 +6346,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24138,
+    id: 24170,
     word: "tail",
     meaning: "しっぽ",
     partOfSpeech: "noun",
@@ -6359,7 +6359,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24139,
+    id: 24171,
     word: "teenager",
     meaning: "10代の若者",
     partOfSpeech: "noun",
@@ -6372,7 +6372,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24140,
+    id: 24172,
     word: "temperature",
     meaning: "気温、温度",
     partOfSpeech: "noun",
@@ -6385,7 +6385,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24141,
+    id: 24173,
     word: "tent",
     meaning: "テント",
     partOfSpeech: "noun",
@@ -6398,7 +6398,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24142,
+    id: 24174,
     word: "theater",
     meaning: "劇場",
     partOfSpeech: "noun",
@@ -6411,7 +6411,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24143,
+    id: 24175,
     word: "thought",
     meaning: "考え",
     partOfSpeech: "noun",
@@ -6424,7 +6424,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24144,
+    id: 24176,
     word: "throat",
     meaning: "のど",
     partOfSpeech: "noun",
@@ -6437,7 +6437,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24145,
+    id: 24177,
     word: "thunder",
     meaning: "雷",
     partOfSpeech: "noun",
@@ -6450,7 +6450,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24146,
+    id: 24178,
     word: "tip",
     meaning: "先端、助言",
     partOfSpeech: "noun",
@@ -6463,7 +6463,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24147,
+    id: 24179,
     word: "title",
     meaning: "題名、タイトル",
     partOfSpeech: "noun",
@@ -6476,7 +6476,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24148,
+    id: 24180,
     word: "toe",
     meaning: "つま先、足の指",
     partOfSpeech: "noun",
@@ -6489,7 +6489,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24149,
+    id: 24181,
     word: "tool",
     meaning: "道具",
     partOfSpeech: "noun",
@@ -6502,7 +6502,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24150,
+    id: 24182,
     word: "tourist",
     meaning: "観光客",
     partOfSpeech: "noun",
@@ -6515,7 +6515,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24151,
+    id: 24183,
     word: "track",
     meaning: "線路、走路",
     partOfSpeech: "noun",
@@ -6528,7 +6528,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24152,
+    id: 24184,
     word: "trade",
     meaning: "貿易、取引",
     partOfSpeech: "noun",
@@ -6541,7 +6541,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24153,
+    id: 24185,
     word: "tradition",
     meaning: "伝統",
     partOfSpeech: "noun",
@@ -6554,7 +6554,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24154,
+    id: 24186,
     word: "traffic",
     meaning: "交通、渋滞",
     partOfSpeech: "noun",
@@ -6567,7 +6567,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24155,
+    id: 24187,
     word: "trick",
     meaning: "いたずら、技",
     partOfSpeech: "noun",
@@ -6580,7 +6580,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24156,
+    id: 24188,
     word: "trick",
     meaning: "だます",
     partOfSpeech: "verb",
@@ -6593,7 +6593,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24157,
+    id: 24189,
     word: "truck",
     meaning: "トラック",
     partOfSpeech: "noun",
@@ -6606,7 +6606,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24158,
+    id: 24190,
     word: "truth",
     meaning: "真実",
     partOfSpeech: "noun",
@@ -6619,7 +6619,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24159,
+    id: 24191,
     word: "twin",
     meaning: "双子",
     partOfSpeech: "noun",
@@ -6632,7 +6632,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24160,
+    id: 24192,
     word: "type",
     meaning: "種類、型",
     partOfSpeech: "noun",
@@ -6645,7 +6645,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24161,
+    id: 24193,
     word: "type",
     meaning: "タイプする",
     partOfSpeech: "verb",
@@ -6658,7 +6658,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24162,
+    id: 24194,
     word: "university",
     meaning: "総合大学",
     partOfSpeech: "noun",
@@ -6671,7 +6671,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24163,
+    id: 24195,
     word: "valley",
     meaning: "谷",
     partOfSpeech: "noun",
@@ -6684,7 +6684,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24164,
+    id: 24196,
     word: "value",
     meaning: "価値",
     partOfSpeech: "noun",
@@ -6697,7 +6697,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24165,
+    id: 24197,
     word: "value",
     meaning: "大切にする",
     partOfSpeech: "verb",
@@ -6710,7 +6710,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24166,
+    id: 24198,
     word: "view",
     meaning: "景色、眺め",
     partOfSpeech: "noun",
@@ -6723,7 +6723,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24167,
+    id: 24199,
     word: "view",
     meaning: "見る、見なす",
     partOfSpeech: "verb",
@@ -6736,7 +6736,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24168,
+    id: 24200,
     word: "village",
     meaning: "村",
     partOfSpeech: "noun",
@@ -6749,7 +6749,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24169,
+    id: 24201,
     word: "war",
     meaning: "戦争",
     partOfSpeech: "noun",
@@ -6762,7 +6762,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24170,
+    id: 24202,
     word: "wave",
     meaning: "波",
     partOfSpeech: "noun",
@@ -6775,7 +6775,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24171,
+    id: 24203,
     word: "wealth",
     meaning: "富、財産",
     partOfSpeech: "noun",
@@ -6788,7 +6788,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24172,
+    id: 24204,
     word: "weapon",
     meaning: "武器",
     partOfSpeech: "noun",
@@ -6801,7 +6801,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24173,
+    id: 24205,
     word: "wedding",
     meaning: "結婚式",
     partOfSpeech: "noun",
@@ -6814,7 +6814,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24174,
+    id: 24206,
     word: "weight",
     meaning: "重さ、体重",
     partOfSpeech: "noun",
@@ -6827,7 +6827,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24175,
+    id: 24207,
     word: "weight",
     meaning: "重りをつける",
     partOfSpeech: "verb",
@@ -6840,7 +6840,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24176,
+    id: 24208,
     word: "wife",
     meaning: "妻",
     partOfSpeech: "noun",
@@ -6853,7 +6853,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24177,
+    id: 24209,
     word: "wing",
     meaning: "翼、羽",
     partOfSpeech: "noun",
@@ -6866,7 +6866,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24178,
+    id: 24210,
     word: "wool",
     meaning: "羊毛、ウール",
     partOfSpeech: "noun",
@@ -6879,7 +6879,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24179,
+    id: 24211,
     word: "youth",
     meaning: "青春、若者",
     partOfSpeech: "noun",
@@ -6892,7 +6892,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24180,
+    id: 24212,
     word: "zone",
     meaning: "地帯、区域",
     partOfSpeech: "noun",
@@ -6905,7 +6905,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24181,
+    id: 24213,
     word: "adventure",
     meaning: "冒険",
     partOfSpeech: "noun",
@@ -6918,7 +6918,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24182,
+    id: 24214,
     word: "apartment",
     meaning: "アパート、集合住宅",
     partOfSpeech: "noun",
@@ -6931,7 +6931,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24183,
+    id: 24215,
     word: "article",
     meaning: "記事",
     partOfSpeech: "noun",
@@ -6944,7 +6944,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24184,
+    id: 24216,
     word: "brick",
     meaning: "レンガ",
     partOfSpeech: "noun",
@@ -6957,7 +6957,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24185,
+    id: 24217,
     word: "bullet",
     meaning: "弾丸",
     partOfSpeech: "noun",
@@ -6970,7 +6970,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24186,
+    id: 24218,
     word: "cave",
     meaning: "洞窟",
     partOfSpeech: "noun",
@@ -6983,7 +6983,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24187,
+    id: 24219,
     word: "chain",
     meaning: "鎖、チェーン",
     partOfSpeech: "noun",
@@ -6996,7 +6996,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24188,
+    id: 24220,
     word: "channel",
     meaning: "チャンネル",
     partOfSpeech: "noun",
@@ -7009,7 +7009,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24189,
+    id: 24221,
     word: "chart",
     meaning: "図表、グラフ",
     partOfSpeech: "noun",
@@ -7022,7 +7022,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24190,
+    id: 24222,
     word: "chest",
     meaning: "胸",
     partOfSpeech: "noun",
@@ -7035,7 +7035,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24191,
+    id: 24223,
     word: "childhood",
     meaning: "子供時代",
     partOfSpeech: "noun",
@@ -7048,7 +7048,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24192,
+    id: 24224,
     word: "cliff",
     meaning: "崖",
     partOfSpeech: "noun",
@@ -7061,7 +7061,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24193,
+    id: 24225,
     word: "cloth",
     meaning: "布",
     partOfSpeech: "noun",
@@ -7074,7 +7074,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24194,
+    id: 24226,
     word: "comedy",
     meaning: "喜劇、コメディ",
     partOfSpeech: "noun",
@@ -7087,7 +7087,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24195,
+    id: 24227,
     word: "concert",
     meaning: "コンサート",
     partOfSpeech: "noun",
@@ -7100,7 +7100,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24196,
+    id: 24228,
     word: "condition",
     meaning: "状態、条件",
     partOfSpeech: "noun",
@@ -7113,7 +7113,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24197,
+    id: 24229,
     word: "connection",
     meaning: "つながり、接続",
     partOfSpeech: "noun",
@@ -7126,7 +7126,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24198,
+    id: 24230,
     word: "counter",
     meaning: "カウンター",
     partOfSpeech: "noun",
@@ -7139,7 +7139,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24199,
+    id: 24231,
     word: "crop",
     meaning: "作物、農作物",
     partOfSpeech: "noun",
@@ -7152,7 +7152,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24200,
+    id: 24232,
     word: "cure",
     meaning: "治療法",
     partOfSpeech: "noun",
@@ -7165,7 +7165,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24201,
+    id: 24233,
     word: "cure",
     meaning: "治す",
     partOfSpeech: "verb",
@@ -7178,7 +7178,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24202,
+    id: 24234,
     word: "date",
     meaning: "日付、日にち",
     partOfSpeech: "noun",
@@ -7191,7 +7191,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24203,
+    id: 24235,
     word: "date",
     meaning: "日付を記す",
     partOfSpeech: "verb",
@@ -7204,7 +7204,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24204,
+    id: 24236,
     word: "decision",
     meaning: "決定",
     partOfSpeech: "noun",
@@ -7217,7 +7217,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24205,
+    id: 24237,
     word: "delivery",
     meaning: "配達",
     partOfSpeech: "noun",
@@ -7230,7 +7230,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24206,
+    id: 24238,
     word: "able",
     meaning: "できる",
     partOfSpeech: "adjective",
@@ -7243,7 +7243,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24207,
+    id: 24239,
     word: "alive",
     meaning: "生きている",
     partOfSpeech: "adjective",
@@ -7256,7 +7256,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24208,
+    id: 24240,
     word: "alone",
     meaning: "一人の",
     partOfSpeech: "adjective",
@@ -7269,7 +7269,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24209,
+    id: 24241,
     word: "asleep",
     meaning: "眠っている",
     partOfSpeech: "adjective",
@@ -7282,7 +7282,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24210,
+    id: 24242,
     word: "awful",
     meaning: "ひどい",
     partOfSpeech: "adjective",
@@ -7295,7 +7295,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24211,
+    id: 24243,
     word: "basic",
     meaning: "基本的な",
     partOfSpeech: "adjective",
@@ -7308,7 +7308,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24212,
+    id: 24244,
     word: "blind",
     meaning: "目の見えない",
     partOfSpeech: "adjective",
@@ -7321,7 +7321,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24213,
+    id: 24245,
     word: "boring",
     meaning: "退屈な",
     partOfSpeech: "adjective",
@@ -7334,7 +7334,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24214,
+    id: 24246,
     word: "born",
     meaning: "生まれた",
     partOfSpeech: "adjective",
@@ -7347,7 +7347,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24215,
+    id: 24247,
     word: "brave",
     meaning: "勇敢な",
     partOfSpeech: "adjective",
@@ -7360,7 +7360,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24216,
+    id: 24248,
     word: "broad",
     meaning: "広い",
     partOfSpeech: "adjective",
@@ -7373,7 +7373,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24217,
+    id: 24249,
     word: "broken",
     meaning: "壊れた",
     partOfSpeech: "adjective",
@@ -7386,7 +7386,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24218,
+    id: 24250,
     word: "calm",
     meaning: "穏やかな",
     partOfSpeech: "adjective",
@@ -7399,7 +7399,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24219,
+    id: 24251,
     word: "careful",
     meaning: "注意深い",
     partOfSpeech: "adjective",
@@ -7412,7 +7412,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24220,
+    id: 24252,
     word: "cheap",
     meaning: "安い",
     partOfSpeech: "adjective",
@@ -7425,7 +7425,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24221,
+    id: 24253,
     word: "cheerful",
     meaning: "明るい、陽気な",
     partOfSpeech: "adjective",
@@ -7438,7 +7438,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24222,
+    id: 24254,
     word: "classic",
     meaning: "古典的な",
     partOfSpeech: "adjective",
@@ -7451,7 +7451,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24223,
+    id: 24255,
     word: "clever",
     meaning: "賢い",
     partOfSpeech: "adjective",
@@ -7464,7 +7464,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24224,
+    id: 24256,
     word: "comfortable",
     meaning: "快適な",
     partOfSpeech: "adjective",
@@ -7477,7 +7477,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24225,
+    id: 24257,
     word: "common",
     meaning: "一般的な",
     partOfSpeech: "adjective",
@@ -7490,7 +7490,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24226,
+    id: 24258,
     word: "complete",
     meaning: "完全な",
     partOfSpeech: "adjective",
@@ -7503,7 +7503,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24227,
+    id: 24259,
     word: "correct",
     meaning: "正しい",
     partOfSpeech: "adjective",
@@ -7516,7 +7516,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24228,
+    id: 24260,
     word: "crazy",
     meaning: "夢中の、変な",
     partOfSpeech: "adjective",
@@ -7529,7 +7529,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24229,
+    id: 24261,
     word: "crowded",
     meaning: "混雑した",
     partOfSpeech: "adjective",
@@ -7542,7 +7542,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24230,
+    id: 24262,
     word: "curious",
     meaning: "好奇心の強い",
     partOfSpeech: "adjective",
@@ -7555,7 +7555,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24231,
+    id: 24263,
     word: "dangerous",
     meaning: "危険な",
     partOfSpeech: "adjective",
@@ -7568,7 +7568,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24232,
+    id: 24264,
     word: "deaf",
     meaning: "耳の聞こえない",
     partOfSpeech: "adjective",
@@ -7581,7 +7581,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24233,
+    id: 24265,
     word: "delicious",
     meaning: "おいしい",
     partOfSpeech: "adjective",
@@ -7594,7 +7594,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24234,
+    id: 24266,
     word: "difficult",
     meaning: "難しい",
     partOfSpeech: "adjective",
@@ -7607,7 +7607,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24235,
+    id: 24267,
     word: "dirty",
     meaning: "汚い",
     partOfSpeech: "adjective",
@@ -7620,7 +7620,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24236,
+    id: 24268,
     word: "dull",
     meaning: "鈍い、退屈な",
     partOfSpeech: "adjective",
@@ -7633,7 +7633,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24237,
+    id: 24269,
     word: "electric",
     meaning: "電気の",
     partOfSpeech: "adjective",
@@ -7646,7 +7646,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24238,
+    id: 24270,
     word: "empty",
     meaning: "空の",
     partOfSpeech: "adjective",
@@ -7659,7 +7659,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24239,
+    id: 24271,
     word: "equal",
     meaning: "等しい",
     partOfSpeech: "adjective",
@@ -7672,7 +7672,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24240,
+    id: 24272,
     word: "excited",
     meaning: "興奮した",
     partOfSpeech: "adjective",
@@ -7685,7 +7685,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24241,
+    id: 24273,
     word: "expensive",
     meaning: "高価な",
     partOfSpeech: "adjective",
@@ -7698,7 +7698,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24242,
+    id: 24274,
     word: "extra",
     meaning: "追加の",
     partOfSpeech: "adjective",
@@ -7711,7 +7711,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24243,
+    id: 24275,
     word: "fair",
     meaning: "公平な",
     partOfSpeech: "adjective",
@@ -7724,7 +7724,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24244,
+    id: 24276,
     word: "false",
     meaning: "偽りの",
     partOfSpeech: "adjective",
@@ -7737,7 +7737,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24245,
+    id: 24277,
     word: "familiar",
     meaning: "よく知っている",
     partOfSpeech: "adjective",
@@ -7750,7 +7750,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24246,
+    id: 24278,
     word: "fierce",
     meaning: "激しい",
     partOfSpeech: "adjective",
@@ -7763,7 +7763,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24247,
+    id: 24279,
     word: "final",
     meaning: "最後の",
     partOfSpeech: "adjective",
@@ -7776,7 +7776,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24248,
+    id: 24280,
     word: "foreign",
     meaning: "外国の",
     partOfSpeech: "adjective",
@@ -7789,7 +7789,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24249,
+    id: 24281,
     word: "friendly",
     meaning: "親しみやすい",
     partOfSpeech: "adjective",
@@ -7802,7 +7802,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24250,
+    id: 24282,
     word: "frozen",
     meaning: "凍った",
     partOfSpeech: "adjective",
@@ -7815,7 +7815,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24251,
+    id: 24283,
     word: "future",
     meaning: "将来の",
     partOfSpeech: "adjective",
@@ -7828,7 +7828,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24252,
+    id: 24284,
     word: "gentle",
     meaning: "優しい",
     partOfSpeech: "adjective",
@@ -7841,7 +7841,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24253,
+    id: 24285,
     word: "gold",
     meaning: "金色の",
     partOfSpeech: "adjective",
@@ -7854,7 +7854,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24254,
+    id: 24286,
     word: "grand",
     meaning: "壮大な",
     partOfSpeech: "adjective",
@@ -7867,7 +7867,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24255,
+    id: 24287,
     word: "grown",
     meaning: "成長した",
     partOfSpeech: "adjective",
@@ -7880,7 +7880,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24256,
+    id: 24288,
     word: "guilty",
     meaning: "罪を犯した",
     partOfSpeech: "adjective",
@@ -7893,7 +7893,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24257,
+    id: 24289,
     word: "handsome",
     meaning: "ハンサムな",
     partOfSpeech: "adjective",
@@ -7906,7 +7906,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24258,
+    id: 24290,
     word: "helpful",
     meaning: "役に立つ",
     partOfSpeech: "adjective",
@@ -7919,7 +7919,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24259,
+    id: 24291,
     word: "honest",
     meaning: "正直な",
     partOfSpeech: "adjective",
@@ -7932,7 +7932,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24260,
+    id: 24292,
     word: "horrible",
     meaning: "恐ろしい",
     partOfSpeech: "adjective",
@@ -7945,7 +7945,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24261,
+    id: 24293,
     word: "huge",
     meaning: "巨大な",
     partOfSpeech: "adjective",
@@ -7958,7 +7958,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24262,
+    id: 24294,
     word: "humble",
     meaning: "謙虚な",
     partOfSpeech: "adjective",
@@ -7971,7 +7971,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24263,
+    id: 24295,
     word: "ill",
     meaning: "病気の",
     partOfSpeech: "adjective",
@@ -7984,7 +7984,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24264,
+    id: 24296,
     word: "impossible",
     meaning: "不可能な",
     partOfSpeech: "adjective",
@@ -7997,7 +7997,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24265,
+    id: 24297,
     word: "independent",
     meaning: "独立した",
     partOfSpeech: "adjective",
@@ -8010,7 +8010,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24266,
+    id: 24298,
     word: "interested",
     meaning: "興味がある",
     partOfSpeech: "adjective",
@@ -8023,7 +8023,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24267,
+    id: 24299,
     word: "international",
     meaning: "国際的な",
     partOfSpeech: "adjective",
@@ -8036,7 +8036,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24268,
+    id: 24300,
     word: "junior",
     meaning: "年下の",
     partOfSpeech: "adjective",
@@ -8049,7 +8049,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24269,
+    id: 24301,
     word: "known",
     meaning: "知られている",
     partOfSpeech: "adjective",
@@ -8062,7 +8062,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24270,
+    id: 24302,
     word: "large",
     meaning: "大きい",
     partOfSpeech: "adjective",
@@ -8075,7 +8075,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24271,
+    id: 24303,
     word: "left",
     meaning: "左の",
     partOfSpeech: "adjective",
@@ -8088,7 +8088,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24272,
+    id: 24304,
     word: "likely",
     meaning: "ありそうな",
     partOfSpeech: "adjective",
@@ -8101,7 +8101,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24273,
+    id: 24305,
     word: "lively",
     meaning: "活発な",
     partOfSpeech: "adjective",
@@ -8114,7 +8114,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24274,
+    id: 24306,
     word: "local",
     meaning: "地元の",
     partOfSpeech: "adjective",
@@ -8127,7 +8127,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24275,
+    id: 24307,
     word: "lonely",
     meaning: "寂しい",
     partOfSpeech: "adjective",
@@ -8140,7 +8140,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24276,
+    id: 24308,
     word: "loose",
     meaning: "ゆるい",
     partOfSpeech: "adjective",
@@ -8153,7 +8153,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24277,
+    id: 24309,
     word: "lovely",
     meaning: "すてきな",
     partOfSpeech: "adjective",
@@ -8166,7 +8166,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24278,
+    id: 24310,
     word: "modern",
     meaning: "現代の",
     partOfSpeech: "adjective",
@@ -8179,7 +8179,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24279,
+    id: 24311,
     word: "natural",
     meaning: "自然の",
     partOfSpeech: "adjective",
@@ -8192,7 +8192,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24280,
+    id: 24312,
     word: "neat",
     meaning: "きちんとした",
     partOfSpeech: "adjective",
@@ -8205,7 +8205,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24281,
+    id: 24313,
     word: "nervous",
     meaning: "緊張した",
     partOfSpeech: "adjective",
@@ -8218,7 +8218,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24282,
+    id: 24314,
     word: "noisy",
     meaning: "うるさい",
     partOfSpeech: "adjective",
@@ -8231,7 +8231,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24283,
+    id: 24315,
     word: "normal",
     meaning: "普通の",
     partOfSpeech: "adjective",
@@ -8244,7 +8244,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24284,
+    id: 24316,
     word: "opposite",
     meaning: "反対の",
     partOfSpeech: "adjective",
@@ -8257,7 +8257,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24285,
+    id: 24317,
     word: "ordinary",
     meaning: "ふつうの",
     partOfSpeech: "adjective",
@@ -8270,7 +8270,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24286,
+    id: 24318,
     word: "outer",
     meaning: "外側の",
     partOfSpeech: "adjective",
@@ -8283,7 +8283,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24287,
+    id: 24319,
     word: "pale",
     meaning: "青白い",
     partOfSpeech: "adjective",
@@ -8296,7 +8296,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24288,
+    id: 24320,
     word: "past",
     meaning: "過去の",
     partOfSpeech: "adjective",
@@ -8309,7 +8309,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24289,
+    id: 24321,
     word: "patient",
     meaning: "辛抱強い",
     partOfSpeech: "adjective",
@@ -8322,7 +8322,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24290,
+    id: 24322,
     word: "perfect",
     meaning: "完璧な",
     partOfSpeech: "adjective",
@@ -8335,7 +8335,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24291,
+    id: 24323,
     word: "personal",
     meaning: "個人的な",
     partOfSpeech: "adjective",
@@ -8348,7 +8348,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24292,
+    id: 24324,
     word: "plain",
     meaning: "質素な",
     partOfSpeech: "adjective",
@@ -8361,7 +8361,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24293,
+    id: 24325,
     word: "pleasant",
     meaning: "心地よい",
     partOfSpeech: "adjective",
@@ -8374,7 +8374,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24294,
+    id: 24326,
     word: "plenty",
     meaning: "十分な",
     partOfSpeech: "adjective",
@@ -8387,7 +8387,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24295,
+    id: 24327,
     word: "polite",
     meaning: "礼儀正しい",
     partOfSpeech: "adjective",
@@ -8400,7 +8400,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24296,
+    id: 24328,
     word: "possible",
     meaning: "可能な",
     partOfSpeech: "adjective",
@@ -8413,7 +8413,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24297,
+    id: 24329,
     word: "powerful",
     meaning: "力強い",
     partOfSpeech: "adjective",
@@ -8426,7 +8426,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24298,
+    id: 24330,
     word: "private",
     meaning: "私的な",
     partOfSpeech: "adjective",
@@ -8439,7 +8439,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24299,
+    id: 24331,
     word: "probable",
     meaning: "見込みのある",
     partOfSpeech: "adjective",
@@ -8452,7 +8452,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24300,
+    id: 24332,
     word: "professional",
     meaning: "プロの",
     partOfSpeech: "adjective",
@@ -8465,7 +8465,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24301,
+    id: 24333,
     word: "proper",
     meaning: "適切な",
     partOfSpeech: "adjective",
@@ -8478,7 +8478,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24302,
+    id: 24334,
     word: "proud",
     meaning: "誇りに思う",
     partOfSpeech: "adjective",
@@ -8491,7 +8491,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24303,
+    id: 24335,
     word: "public",
     meaning: "公共の",
     partOfSpeech: "adjective",
@@ -8504,7 +8504,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24304,
+    id: 24336,
     word: "pure",
     meaning: "純粋な",
     partOfSpeech: "adjective",
@@ -8517,7 +8517,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24305,
+    id: 24337,
     word: "quick",
     meaning: "速い",
     partOfSpeech: "adjective",
@@ -8530,7 +8530,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24306,
+    id: 24338,
     word: "rare",
     meaning: "珍しい",
     partOfSpeech: "adjective",
@@ -8543,7 +8543,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24307,
+    id: 24339,
     word: "raw",
     meaning: "生の",
     partOfSpeech: "adjective",
@@ -8556,7 +8556,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24308,
+    id: 24340,
     word: "regular",
     meaning: "規則正しい",
     partOfSpeech: "adjective",
@@ -8569,7 +8569,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24309,
+    id: 24341,
     word: "responsible",
     meaning: "責任がある",
     partOfSpeech: "adjective",
@@ -8582,7 +8582,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24310,
+    id: 24342,
     word: "rough",
     meaning: "粗い",
     partOfSpeech: "adjective",
@@ -8595,7 +8595,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24311,
+    id: 24343,
     word: "rude",
     meaning: "失礼な",
     partOfSpeech: "adjective",
@@ -8608,7 +8608,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24312,
+    id: 24344,
     word: "scary",
     meaning: "怖い",
     partOfSpeech: "adjective",
@@ -8621,7 +8621,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24313,
+    id: 24345,
     word: "secret",
     meaning: "秘密の",
     partOfSpeech: "adjective",
@@ -8634,7 +8634,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24314,
+    id: 24346,
     word: "selfish",
     meaning: "わがままな",
     partOfSpeech: "adjective",
@@ -8647,7 +8647,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24315,
+    id: 24347,
     word: "senior",
     meaning: "年上の",
     partOfSpeech: "adjective",
@@ -8660,7 +8660,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24316,
+    id: 24348,
     word: "serious",
     meaning: "真剣な",
     partOfSpeech: "adjective",
@@ -8673,7 +8673,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24317,
+    id: 24349,
     word: "several",
     meaning: "いくつかの",
     partOfSpeech: "adjective",
@@ -8686,7 +8686,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24318,
+    id: 24350,
     word: "sharp",
     meaning: "鋭い",
     partOfSpeech: "adjective",
@@ -8699,7 +8699,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24319,
+    id: 24351,
     word: "shy",
     meaning: "恥ずかしがりの",
     partOfSpeech: "adjective",
@@ -8712,7 +8712,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24320,
+    id: 24352,
     word: "silent",
     meaning: "静かな",
     partOfSpeech: "adjective",
@@ -8725,7 +8725,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24321,
+    id: 24353,
     word: "silly",
     meaning: "おろかな",
     partOfSpeech: "adjective",
@@ -8738,7 +8738,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24322,
+    id: 24354,
     word: "similar",
     meaning: "似ている",
     partOfSpeech: "adjective",
@@ -8751,7 +8751,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24323,
+    id: 24355,
     word: "single",
     meaning: "たった一つの",
     partOfSpeech: "adjective",
@@ -8764,7 +8764,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24324,
+    id: 24356,
     word: "smart",
     meaning: "利口な",
     partOfSpeech: "adjective",
@@ -8777,7 +8777,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24325,
+    id: 24357,
     word: "smooth",
     meaning: "なめらかな",
     partOfSpeech: "adjective",
@@ -8790,7 +8790,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24326,
+    id: 24358,
     word: "social",
     meaning: "社会的な",
     partOfSpeech: "adjective",
@@ -8803,7 +8803,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24327,
+    id: 24359,
     word: "sour",
     meaning: "酸っぱい",
     partOfSpeech: "adjective",
@@ -8816,7 +8816,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24328,
+    id: 24360,
     word: "spare",
     meaning: "余分の",
     partOfSpeech: "adjective",
@@ -8829,7 +8829,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24329,
+    id: 24361,
     word: "strict",
     meaning: "厳しい",
     partOfSpeech: "adjective",
@@ -8842,7 +8842,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24330,
+    id: 24362,
     word: "stupid",
     meaning: "ばかな",
     partOfSpeech: "adjective",
@@ -8855,7 +8855,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24331,
+    id: 24363,
     word: "sudden",
     meaning: "突然の",
     partOfSpeech: "adjective",
@@ -8868,7 +8868,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24332,
+    id: 24364,
     word: "surprised",
     meaning: "驚いた",
     partOfSpeech: "adjective",
@@ -8881,7 +8881,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24333,
+    id: 24365,
     word: "surprising",
     meaning: "驚くべき",
     partOfSpeech: "adjective",
@@ -8894,7 +8894,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24334,
+    id: 24366,
     word: "tight",
     meaning: "きつい",
     partOfSpeech: "adjective",
@@ -8907,7 +8907,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24335,
+    id: 24367,
     word: "tiny",
     meaning: "とても小さい",
     partOfSpeech: "adjective",
@@ -8920,7 +8920,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24336,
+    id: 24368,
     word: "tough",
     meaning: "大変な、丈夫な",
     partOfSpeech: "adjective",
@@ -8933,7 +8933,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24337,
+    id: 24369,
     word: "traditional",
     meaning: "伝統的な",
     partOfSpeech: "adjective",
@@ -8946,7 +8946,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24338,
+    id: 24370,
     word: "unfair",
     meaning: "不公平な",
     partOfSpeech: "adjective",
@@ -8959,7 +8959,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24339,
+    id: 24371,
     word: "unhappy",
     meaning: "不幸な、悲しい",
     partOfSpeech: "adjective",
@@ -8972,7 +8972,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24340,
+    id: 24372,
     word: "unique",
     meaning: "独特な",
     partOfSpeech: "adjective",
@@ -8985,7 +8985,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24341,
+    id: 24373,
     word: "unusual",
     meaning: "異例の",
     partOfSpeech: "adjective",
@@ -8998,7 +8998,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24342,
+    id: 24374,
     word: "useful",
     meaning: "有用な",
     partOfSpeech: "adjective",
@@ -9011,7 +9011,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24343,
+    id: 24375,
     word: "usual",
     meaning: "いつもの",
     partOfSpeech: "adjective",
@@ -9024,7 +9024,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24344,
+    id: 24376,
     word: "various",
     meaning: "さまざまな",
     partOfSpeech: "adjective",
@@ -9037,7 +9037,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24345,
+    id: 24377,
     word: "violent",
     meaning: "暴力的な、激しい",
     partOfSpeech: "adjective",
@@ -9050,7 +9050,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24346,
+    id: 24378,
     word: "visible",
     meaning: "見える",
     partOfSpeech: "adjective",
@@ -9063,7 +9063,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24347,
+    id: 24379,
     word: "western",
     meaning: "西の、西洋の",
     partOfSpeech: "adjective",
@@ -9076,7 +9076,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24348,
+    id: 24380,
     word: "whole",
     meaning: "全体の",
     partOfSpeech: "adjective",
@@ -9089,7 +9089,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24349,
+    id: 24381,
     word: "wise",
     meaning: "賢明な",
     partOfSpeech: "adjective",
@@ -9102,7 +9102,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24350,
+    id: 24382,
     word: "wooden",
     meaning: "木製の",
     partOfSpeech: "adjective",
@@ -9115,7 +9115,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24351,
+    id: 24383,
     word: "worth",
     meaning: "価値がある",
     partOfSpeech: "adjective",
@@ -9128,7 +9128,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24352,
+    id: 24384,
     word: "above",
     meaning: "上に",
     partOfSpeech: "adverb",
@@ -9141,7 +9141,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24353,
+    id: 24385,
     word: "actually",
     meaning: "実は",
     partOfSpeech: "adverb",
@@ -9154,7 +9154,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24354,
+    id: 24386,
     word: "ahead",
     meaning: "前方に",
     partOfSpeech: "adverb",
@@ -9167,7 +9167,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24355,
+    id: 24387,
     word: "anyway",
     meaning: "とにかく",
     partOfSpeech: "adverb",
@@ -9180,7 +9180,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24356,
+    id: 24388,
     word: "anymore",
     meaning: "もう（〜ない）",
     partOfSpeech: "adverb",
@@ -9193,7 +9193,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24357,
+    id: 24389,
     word: "anywhere",
     meaning: "どこにも、どこかに",
     partOfSpeech: "adverb",
@@ -9206,7 +9206,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24358,
+    id: 24390,
     word: "besides",
     meaning: "そのうえ",
     partOfSpeech: "adverb",
@@ -9219,7 +9219,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24359,
+    id: 24391,
     word: "carefully",
     meaning: "注意深く",
     partOfSpeech: "adverb",
@@ -9232,7 +9232,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24360,
+    id: 24392,
     word: "certainly",
     meaning: "確かに、もちろん",
     partOfSpeech: "adverb",
@@ -9245,7 +9245,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24361,
+    id: 24393,
     word: "clearly",
     meaning: "はっきりと",
     partOfSpeech: "adverb",
@@ -9258,7 +9258,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24362,
+    id: 24394,
     word: "completely",
     meaning: "完全に",
     partOfSpeech: "adverb",
@@ -9271,7 +9271,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24363,
+    id: 24395,
     word: "deeply",
     meaning: "深く",
     partOfSpeech: "adverb",
@@ -9284,7 +9284,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24364,
+    id: 24396,
     word: "easily",
     meaning: "簡単に",
     partOfSpeech: "adverb",
@@ -9297,7 +9297,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24365,
+    id: 24397,
     word: "especially",
     meaning: "特に",
     partOfSpeech: "adverb",
@@ -9310,7 +9310,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24366,
+    id: 24398,
     word: "exactly",
     meaning: "正確に、ちょうど",
     partOfSpeech: "adverb",
@@ -9323,7 +9323,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24367,
+    id: 24399,
     word: "forever",
     meaning: "永遠に",
     partOfSpeech: "adverb",
@@ -9336,7 +9336,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24368,
+    id: 24400,
     word: "forward",
     meaning: "前へ",
     partOfSpeech: "adverb",
@@ -9349,7 +9349,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24369,
+    id: 24401,
     word: "gently",
     meaning: "やさしく",
     partOfSpeech: "adverb",
@@ -9362,7 +9362,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24370,
+    id: 24402,
     word: "gradually",
     meaning: "少しずつ",
     partOfSpeech: "adverb",
@@ -9375,7 +9375,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24371,
+    id: 24403,
     word: "hopefully",
     meaning: "うまくいけば",
     partOfSpeech: "adverb",
@@ -9388,7 +9388,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24372,
+    id: 24404,
     word: "however",
     meaning: "しかしながら",
     partOfSpeech: "adverb",
@@ -9401,7 +9401,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24373,
+    id: 24405,
     word: "immediately",
     meaning: "すぐに",
     partOfSpeech: "adverb",
@@ -9414,7 +9414,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24374,
+    id: 24406,
     word: "instead",
     meaning: "代わりに",
     partOfSpeech: "adverb",
@@ -9427,7 +9427,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24375,
+    id: 24407,
     word: "lately",
     meaning: "最近",
     partOfSpeech: "adverb",
@@ -9440,7 +9440,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24376,
+    id: 24408,
     word: "mainly",
     meaning: "主に",
     partOfSpeech: "adverb",
@@ -9453,7 +9453,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24377,
+    id: 24409,
     word: "maybe",
     meaning: "たぶん",
     partOfSpeech: "adverb",
@@ -9466,7 +9466,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24378,
+    id: 24410,
     word: "mostly",
     meaning: "ほとんど、大部分は",
     partOfSpeech: "adverb",
@@ -9479,7 +9479,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24379,
+    id: 24411,
     word: "naturally",
     meaning: "自然に、当然",
     partOfSpeech: "adverb",
@@ -9492,7 +9492,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24380,
+    id: 24412,
     word: "nearly",
     meaning: "ほぼ、もう少しで",
     partOfSpeech: "adverb",
@@ -9505,7 +9505,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24381,
+    id: 24413,
     word: "normally",
     meaning: "普通は",
     partOfSpeech: "adverb",
@@ -9518,7 +9518,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24382,
+    id: 24414,
     word: "obviously",
     meaning: "明らかに",
     partOfSpeech: "adverb",
@@ -9531,7 +9531,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24383,
+    id: 24415,
     word: "once",
     meaning: "一度、かつて",
     partOfSpeech: "adverb",
@@ -9544,7 +9544,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24384,
+    id: 24416,
     word: "online",
     meaning: "オンラインで",
     partOfSpeech: "adverb",
@@ -9557,7 +9557,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24385,
+    id: 24417,
     word: "perhaps",
     meaning: "もしかしたら",
     partOfSpeech: "adverb",
@@ -9570,7 +9570,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24386,
+    id: 24418,
     word: "personally",
     meaning: "個人的に",
     partOfSpeech: "adverb",
@@ -9583,7 +9583,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24387,
+    id: 24419,
     word: "possibly",
     meaning: "もしかすると",
     partOfSpeech: "adverb",
@@ -9596,7 +9596,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24388,
+    id: 24420,
     word: "probably",
     meaning: "おそらく",
     partOfSpeech: "adverb",
@@ -9609,7 +9609,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24389,
+    id: 24421,
     word: "properly",
     meaning: "きちんと",
     partOfSpeech: "adverb",
@@ -9622,7 +9622,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24390,
+    id: 24422,
     word: "quickly",
     meaning: "速く",
     partOfSpeech: "adverb",
@@ -9635,7 +9635,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24391,
+    id: 24423,
     word: "quietly",
     meaning: "静かに",
     partOfSpeech: "adverb",
@@ -9648,7 +9648,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24392,
+    id: 24424,
     word: "rather",
     meaning: "かなり、むしろ",
     partOfSpeech: "adverb",
@@ -9661,7 +9661,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24393,
+    id: 24425,
     word: "recently",
     meaning: "最近、先ごろ",
     partOfSpeech: "adverb",
@@ -9674,7 +9674,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24394,
+    id: 24426,
     word: "regularly",
     meaning: "定期的に",
     partOfSpeech: "adverb",
@@ -9687,7 +9687,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24395,
+    id: 24427,
     word: "seriously",
     meaning: "真剣に",
     partOfSpeech: "adverb",
@@ -9700,7 +9700,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24396,
+    id: 24428,
     word: "simply",
     meaning: "単に、簡単に",
     partOfSpeech: "adverb",
@@ -9713,7 +9713,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24397,
+    id: 24429,
     word: "slowly",
     meaning: "ゆっくりと",
     partOfSpeech: "adverb",
@@ -9726,7 +9726,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24398,
+    id: 24430,
     word: "somewhere",
     meaning: "どこかに",
     partOfSpeech: "adverb",
@@ -9739,7 +9739,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24399,
+    id: 24431,
     word: "soon",
     meaning: "すぐに、もうすぐ",
     partOfSpeech: "adverb",
@@ -9752,7 +9752,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24400,
+    id: 24432,
     word: "still",
     meaning: "まだ、それでも",
     partOfSpeech: "adverb",
@@ -9765,7 +9765,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24401,
+    id: 24433,
     word: "suddenly",
     meaning: "突然",
     partOfSpeech: "adverb",
@@ -9778,7 +9778,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24402,
+    id: 24434,
     word: "surely",
     meaning: "きっと、確実に",
     partOfSpeech: "adverb",
@@ -9791,7 +9791,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24403,
+    id: 24435,
     word: "then",
     meaning: "それから、その時",
     partOfSpeech: "adverb",
@@ -9804,7 +9804,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24404,
+    id: 24436,
     word: "therefore",
     meaning: "そのため",
     partOfSpeech: "adverb",
@@ -9817,7 +9817,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24405,
+    id: 24437,
     word: "though",
     meaning: "でも、〜だけれども",
     partOfSpeech: "adverb",
@@ -9830,7 +9830,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24406,
+    id: 24438,
     word: "tonight",
     meaning: "今夜",
     partOfSpeech: "adverb",
@@ -9843,7 +9843,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24407,
+    id: 24439,
     word: "twice",
     meaning: "二度、2倍",
     partOfSpeech: "adverb",
@@ -9856,7 +9856,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24408,
+    id: 24440,
     word: "unfortunately",
     meaning: "残念ながら",
     partOfSpeech: "adverb",
@@ -9869,7 +9869,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 24409,
+    id: 24441,
     word: "well",
     meaning: "上手に、よく",
     partOfSpeech: "adverb",
@@ -9882,7 +9882,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24410,
+    id: 24442,
     word: "yet",
     meaning: "まだ、もう",
     partOfSpeech: "adverb",
@@ -9895,7 +9895,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24411,
+    id: 24443,
     word: "corn",
     meaning: "とうもろこし",
     partOfSpeech: "noun",
@@ -9908,7 +9908,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24412,
+    id: 24444,
     word: "grape",
     meaning: "ぶどう",
     partOfSpeech: "noun",
@@ -9921,7 +9921,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24413,
+    id: 24445,
     word: "lens",
     meaning: "レンズ",
     partOfSpeech: "noun",
@@ -9934,7 +9934,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24414,
+    id: 24446,
     word: "marsh",
     meaning: "湿地",
     partOfSpeech: "noun",
@@ -9947,7 +9947,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24415,
+    id: 24447,
     word: "mat",
     meaning: "マット",
     partOfSpeech: "noun",
@@ -9960,7 +9960,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24416,
+    id: 24448,
     word: "oar",
     meaning: "オール",
     partOfSpeech: "noun",
@@ -9973,7 +9973,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24417,
+    id: 24449,
     word: "paste",
     meaning: "のり",
     partOfSpeech: "noun",
@@ -9986,7 +9986,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24418,
+    id: 24450,
     word: "health",
     meaning: "健康",
     partOfSpeech: "noun",
@@ -9999,7 +9999,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24419,
+    id: 24451,
     word: "event",
     meaning: "行事、出来事",
     partOfSpeech: "noun",
@@ -10012,7 +10012,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24420,
+    id: 24452,
     word: "language",
     meaning: "言語",
     partOfSpeech: "noun",
@@ -10025,7 +10025,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24421,
+    id: 24453,
     word: "for example",
     meaning: "例えば",
     partOfSpeech: "other",
@@ -10038,7 +10038,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24422,
+    id: 24454,
     word: "in front of",
     meaning: "〜の前に",
     partOfSpeech: "other",
@@ -10051,7 +10051,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24423,
+    id: 24455,
     word: "a lot of",
     meaning: "たくさんの",
     partOfSpeech: "other",
@@ -10064,7 +10064,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24424,
+    id: 24456,
     word: "each other",
     meaning: "お互い",
     partOfSpeech: "other",
@@ -10077,7 +10077,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24425,
+    id: 24457,
     word: "look for",
     meaning: "〜を探す",
     partOfSpeech: "verb",
@@ -10090,7 +10090,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24426,
+    id: 24458,
     word: "get up",
     meaning: "起きる",
     partOfSpeech: "verb",
@@ -10103,7 +10103,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24427,
+    id: 24459,
     word: "at least",
     meaning: "少なくとも",
     partOfSpeech: "other",
@@ -10116,7 +10116,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24428,
+    id: 24460,
     word: "on time",
     meaning: "時間通りに",
     partOfSpeech: "other",
@@ -10129,7 +10129,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24429,
+    id: 24461,
     word: "how about",
     meaning: "〜はどう？",
     partOfSpeech: "other",
@@ -10142,7 +10142,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24430,
+    id: 24462,
     word: "what about",
     meaning: "〜はどうか",
     partOfSpeech: "other",
@@ -10155,7 +10155,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24431,
+    id: 24463,
     word: "would like to",
     meaning: "〜したい",
     partOfSpeech: "other",
@@ -10168,7 +10168,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24432,
+    id: 24464,
     word: "used to",
     meaning: "以前は〜した",
     partOfSpeech: "other",
@@ -10181,7 +10181,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24433,
+    id: 24465,
     word: "had better",
     meaning: "〜した方がいい",
     partOfSpeech: "other",
@@ -10194,7 +10194,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24434,
+    id: 24466,
     word: "not only",
     meaning: "〜だけでなく",
     partOfSpeech: "other",
@@ -10207,7 +10207,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24435,
+    id: 24467,
     word: "such as",
     meaning: "〜のような",
     partOfSpeech: "other",
@@ -10220,7 +10220,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24436,
+    id: 24468,
     word: "more and more",
     meaning: "ますます",
     partOfSpeech: "other",
@@ -10233,7 +10233,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24437,
+    id: 24469,
     word: "one of",
     meaning: "〜のひとつ",
     partOfSpeech: "other",
@@ -10246,7 +10246,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24438,
+    id: 24470,
     word: "kind of",
     meaning: "ちょっと",
     partOfSpeech: "other",
@@ -10259,7 +10259,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24439,
+    id: 24471,
     word: "a few",
     meaning: "少しの（数）",
     partOfSpeech: "other",
@@ -10272,7 +10272,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24440,
+    id: 24472,
     word: "a little",
     meaning: "少しの（量）",
     partOfSpeech: "other",
@@ -10285,7 +10285,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24441,
+    id: 24473,
     word: "come back",
     meaning: "戻る",
     partOfSpeech: "verb",
@@ -10298,7 +10298,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24442,
+    id: 24474,
     word: "go back",
     meaning: "帰る、戻る",
     partOfSpeech: "verb",
@@ -10311,7 +10311,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24443,
+    id: 24475,
     word: "go on",
     meaning: "続ける、起こる",
     partOfSpeech: "verb",
@@ -10324,7 +10324,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24444,
+    id: 24476,
     word: "put on",
     meaning: "着る、つける",
     partOfSpeech: "verb",
@@ -10337,7 +10337,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24445,
+    id: 24477,
     word: "turn on",
     meaning: "つける（電源）",
     partOfSpeech: "verb",
@@ -10350,7 +10350,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24446,
+    id: 24478,
     word: "turn off",
     meaning: "消す（電源）",
     partOfSpeech: "verb",
@@ -10363,7 +10363,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24447,
+    id: 24479,
     word: "come in",
     meaning: "中に入る",
     partOfSpeech: "verb",
@@ -10376,7 +10376,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24448,
+    id: 24480,
     word: "go out",
     meaning: "出かける",
     partOfSpeech: "verb",
@@ -10389,7 +10389,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24449,
+    id: 24481,
     word: "sit down",
     meaning: "座る",
     partOfSpeech: "verb",
@@ -10402,7 +10402,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24450,
+    id: 24482,
     word: "stand up",
     meaning: "立ち上がる",
     partOfSpeech: "verb",
@@ -10415,7 +10415,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24451,
+    id: 24483,
     word: "all over",
     meaning: "至る所に",
     partOfSpeech: "other",
@@ -10428,7 +10428,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24452,
+    id: 24484,
     word: "right now",
     meaning: "今すぐ",
     partOfSpeech: "other",
@@ -10441,7 +10441,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24453,
+    id: 24485,
     word: "one day",
     meaning: "ある日、いつか",
     partOfSpeech: "other",
@@ -10454,7 +10454,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24454,
+    id: 24486,
     word: "some day",
     meaning: "いつか",
     partOfSpeech: "other",
@@ -10467,7 +10467,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24455,
+    id: 24487,
     word: "next to",
     meaning: "〜の隣に",
     partOfSpeech: "other",
@@ -10480,7 +10480,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24456,
+    id: 24488,
     word: "at first",
     meaning: "最初は",
     partOfSpeech: "other",
@@ -10493,7 +10493,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24457,
+    id: 24489,
     word: "at last",
     meaning: "ついに",
     partOfSpeech: "other",
@@ -10506,7 +10506,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24458,
+    id: 24490,
     word: "of course",
     meaning: "もちろん",
     partOfSpeech: "other",
@@ -10519,7 +10519,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24459,
+    id: 24491,
     word: "so that",
     meaning: "〜するために",
     partOfSpeech: "other",
@@ -10532,7 +10532,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24460,
+    id: 24492,
     word: "go to bed",
     meaning: "寝る",
     partOfSpeech: "other",
@@ -10545,7 +10545,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24461,
+    id: 24493,
     word: "have a good time",
     meaning: "楽しむ",
     partOfSpeech: "other",
@@ -10558,7 +10558,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24462,
+    id: 24494,
     word: "take a bath",
     meaning: "お風呂に入る",
     partOfSpeech: "other",
@@ -10571,7 +10571,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24463,
+    id: 24495,
     word: "go shopping",
     meaning: "買い物に行く",
     partOfSpeech: "other",
@@ -10584,7 +10584,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24464,
+    id: 24496,
     word: "take a walk",
     meaning: "散歩する",
     partOfSpeech: "other",
@@ -10597,7 +10597,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24465,
+    id: 24497,
     word: "stay up",
     meaning: "起きている",
     partOfSpeech: "other",
@@ -10610,7 +10610,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24466,
+    id: 24498,
     word: "help out",
     meaning: "手伝う",
     partOfSpeech: "other",
@@ -10623,7 +10623,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24467,
+    id: 24499,
     word: "take out",
     meaning: "取り出す",
     partOfSpeech: "other",
@@ -10636,7 +10636,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24468,
+    id: 24500,
     word: "wait for",
     meaning: "〜を待つ",
     partOfSpeech: "other",
@@ -10649,7 +10649,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24469,
+    id: 24501,
     word: "talk about",
     meaning: "〜について話す",
     partOfSpeech: "other",
@@ -10662,7 +10662,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24470,
+    id: 24502,
     word: "write down",
     meaning: "書き留める",
     partOfSpeech: "other",
@@ -10675,7 +10675,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24471,
+    id: 24503,
     word: "have fun",
     meaning: "楽しく過ごす",
     partOfSpeech: "other",
@@ -10688,7 +10688,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24472,
+    id: 24504,
     word: "not at all",
     meaning: "全然〜ない",
     partOfSpeech: "other",
@@ -10701,7 +10701,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24473,
+    id: 24505,
     word: "too much",
     meaning: "〜しすぎる",
     partOfSpeech: "other",
@@ -10714,7 +10714,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 24474,
+    id: 24506,
     word: "end",
     meaning: "終わり、端",
     partOfSpeech: "noun",
@@ -10727,7 +10727,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 24475,
+    id: 24507,
     word: "store",
     meaning: "店",
     partOfSpeech: "noun",
@@ -10740,7 +10740,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23022,
+    id: 24508,
     word: "book",
     meaning: "予約する",
     partOfSpeech: "verb",
@@ -10753,7 +10753,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23119,
+    id: 24509,
     word: "head",
     meaning: "向かう",
     partOfSpeech: "verb",
@@ -10766,7 +10766,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23122,
+    id: 24510,
     word: "house",
     meaning: "収容する",
     partOfSpeech: "verb",
@@ -10779,7 +10779,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23234,
+    id: 24511,
     word: "number",
     meaning: "番号をつける",
     partOfSpeech: "verb",
@@ -10792,7 +10792,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23258,
+    id: 24512,
     word: "prize",
     meaning: "大切にする",
     partOfSpeech: "verb",
@@ -10805,7 +10805,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 23296,
+    id: 24513,
     word: "star",
     meaning: "主演する",
     partOfSpeech: "verb",
@@ -10818,7 +10818,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23374,
+    id: 24514,
     word: "voice",
     meaning: "声に出す",
     partOfSpeech: "verb",
@@ -10831,7 +10831,7 @@ export const words: RawWord[] = [
     frequencyTier: 1,
   },
   {
-    id: 23624,
+    id: 24515,
     word: "gift",
     meaning: "贈る",
     partOfSpeech: "verb",
@@ -10844,7 +10844,7 @@ export const words: RawWord[] = [
     frequencyTier: 2,
   },
   {
-    id: 50019,
+    id: 24516,
     word: "bank account",
     meaning: "銀行口座",
     partOfSpeech: "noun",
@@ -10857,7 +10857,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50020,
+    id: 24517,
     word: "capital letter",
     meaning: "大文字",
     partOfSpeech: "noun",
@@ -10870,7 +10870,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50021,
+    id: 24518,
     word: "classical music",
     meaning: "クラシック音楽",
     partOfSpeech: "noun",
@@ -10883,7 +10883,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50022,
+    id: 24519,
     word: "common sense",
     meaning: "常識",
     partOfSpeech: "noun",
@@ -10896,7 +10896,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50023,
+    id: 24520,
     word: "department store",
     meaning: "デパート",
     partOfSpeech: "noun",
@@ -10909,7 +10909,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50024,
+    id: 24521,
     word: "exclamation mark",
     meaning: "感嘆符",
     partOfSpeech: "noun",
@@ -10922,7 +10922,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50025,
+    id: 24522,
     word: "frying pan",
     meaning: "フライパン",
     partOfSpeech: "noun",
@@ -10935,7 +10935,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50026,
+    id: 24523,
     word: "full stop",
     meaning: "終止符",
     partOfSpeech: "noun",
@@ -10948,7 +10948,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50027,
+    id: 24524,
     word: "grocery store",
     meaning: "食料品店",
     partOfSpeech: "noun",
@@ -10961,7 +10961,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50028,
+    id: 24525,
     word: "junk food",
     meaning: "ジャンクフード",
     partOfSpeech: "noun",
@@ -10974,7 +10974,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50029,
+    id: 24526,
     word: "main course",
     meaning: "メインコース",
     partOfSpeech: "noun",
@@ -10987,7 +10987,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50030,
+    id: 24527,
     word: "mineral water",
     meaning: "ミネラルウォーター",
     partOfSpeech: "noun",
@@ -11000,7 +11000,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50031,
+    id: 24528,
     word: "mixing bowl",
     meaning: "ボウル",
     partOfSpeech: "noun",
@@ -11013,7 +11013,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50032,
+    id: 24529,
     word: "olive oil",
     meaning: "オリーブオイル",
     partOfSpeech: "noun",
@@ -11026,7 +11026,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50033,
+    id: 24530,
     word: "question mark",
     meaning: "疑問符",
     partOfSpeech: "noun",
@@ -11039,7 +11039,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50034,
+    id: 24531,
     word: "remote control",
     meaning: "リモコン",
     partOfSpeech: "noun",
@@ -11052,7 +11052,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50035,
+    id: 24532,
     word: "soft drink",
     meaning: "ソフトドリンク",
     partOfSpeech: "noun",
@@ -11065,7 +11065,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50036,
+    id: 24533,
     word: "steering wheel",
     meaning: "ハンドル",
     partOfSpeech: "noun",
@@ -11078,7 +11078,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50037,
+    id: 24534,
     word: "traffic jam",
     meaning: "渋滞",
     partOfSpeech: "noun",
@@ -11091,7 +11091,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50038,
+    id: 24535,
     word: "weather forecast",
     meaning: "天気予報",
     partOfSpeech: "noun",
@@ -11104,7 +11104,7 @@ export const words: RawWord[] = [
     frequencyTier: 3,
   },
   {
-    id: 50317,
+    id: 24536,
     word: "wine",
     meaning: "ワイン",
     partOfSpeech: "noun",
@@ -11114,6 +11114,240 @@ export const words: RawWord[] = [
       { en: "Wine is made from grapes.", ja: "ワインはブドウから作られる。", context: "food" },
     ],
     categories: ["food"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24537,
+    word: "album",
+    meaning: "アルバム",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "She bought a new music album.", ja: "彼女は新しい音楽アルバムを買った。", context: "music" },
+      { en: "I put photos in my album.", ja: "私はアルバムに写真を入れた。", context: "memory" },
+      { en: "His album sold one million copies.", ja: "彼のアルバムは百万枚売れた。", context: "music" },
+    ],
+    categories: ["entertainment"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24538,
+    word: "bedroom",
+    meaning: "寝室",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "My bedroom is on the second floor.", ja: "私の寝室は2階にある。", context: "home" },
+      { en: "She decorated her bedroom nicely.", ja: "彼女は寝室をきれいに飾った。", context: "interior" },
+      { en: "The bedroom has a big window.", ja: "寝室には大きな窓がある。", context: "home" },
+    ],
+    categories: ["home"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24539,
+    word: "bucket",
+    meaning: "バケツ",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Fill the bucket with water.", ja: "バケツを水で満たしなさい。", context: "chore" },
+      { en: "She carried a bucket of sand.", ja: "彼女は砂のバケツを運んだ。", context: "work" },
+      { en: "The bucket list includes travel.", ja: "バケットリストには旅行がある。", context: "goal" },
+    ],
+    categories: ["daily_life"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24540,
+    word: "button",
+    meaning: "ボタン",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Press the button to start.", ja: "ボタンを押して始めなさい。", context: "device" },
+      { en: "Sew a button on the shirt.", ja: "シャツにボタンを縫いつけなさい。", context: "sewing" },
+      { en: "The elevator button is broken.", ja: "エレベーターのボタンが壊れている。", context: "building" },
+    ],
+    categories: ["clothing"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24541,
+    word: "cinema",
+    meaning: "映画館",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Let's go to the cinema tonight.", ja: "今夜映画館に行こう。", context: "leisure" },
+      { en: "The cinema is near the station.", ja: "映画館は駅の近くにある。", context: "location" },
+      { en: "We saw a film at the cinema.", ja: "私たちは映画館で映画を見た。", context: "event" },
+    ],
+    categories: ["entertainment"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24542,
+    word: "code",
+    meaning: "規則・コード",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Follow the dress code please.", ja: "ドレスコードに従ってください。", context: "rule" },
+      { en: "The code of conduct is strict.", ja: "行動規範は厳しい。", context: "rule" },
+      { en: "Enter the secret code here.", ja: "ここに秘密のコードを入れなさい。", context: "technology" },
+    ],
+    categories: ["society"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24543,
+    word: "collection",
+    meaning: "コレクション",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "She has a large stamp collection.", ja: "彼女は大きな切手コレクションを持っている。", context: "hobby" },
+      { en: "The museum has a great art collection.", ja: "博物館は素晴らしい美術コレクションがある。", context: "culture" },
+      { en: "He started a coin collection.", ja: "彼はコイン収集を始めた。", context: "hobby" },
+    ],
+    categories: ["hobby"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24544,
+    word: "counsel",
+    meaning: "助言・カウンセル",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "She sought counsel from a lawyer.", ja: "彼女は弁護士に助言を求めた。", context: "legal" },
+      { en: "The school provides free counsel.", ja: "学校は無料のカウンセルを提供している。", context: "education" },
+      { en: "Take counsel before deciding.", ja: "決める前に助言を求めなさい。", context: "advice" },
+    ],
+    categories: ["support"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24545,
+    word: "dad",
+    meaning: "お父さん",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "My dad works at a hospital.", ja: "私の父は病院で働いている。", context: "family" },
+      { en: "Dad made breakfast this morning.", ja: "今朝、お父さんが朝食を作った。", context: "home" },
+      { en: "She called her dad on the phone.", ja: "彼女は父親に電話をした。", context: "family" },
+    ],
+    categories: ["family"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24546,
+    word: "defense",
+    meaning: "防御・守備",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The team has a strong defense.", ja: "チームは強い守備を持っている。", context: "sports" },
+      { en: "National defense is important.", ja: "国防は重要だ。", context: "politics" },
+      { en: "He played defense in the game.", ja: "彼は試合で守備を担当した。", context: "sports" },
+    ],
+    categories: ["sports"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24547,
+    word: "difference",
+    meaning: "違い・差",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "There is a big difference.", ja: "大きな違いがある。", context: "comparison" },
+      { en: "Notice the difference between them.", ja: "それらの違いに気づきなさい。", context: "learning" },
+      { en: "Age difference doesn't matter.", ja: "年齢差は関係ない。", context: "relationship" },
+    ],
+    categories: ["general"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24548,
+    word: "disk",
+    meaning: "ディスク・円盤",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Save the file on a disk.", ja: "ファイルをディスクに保存しなさい。", context: "computer" },
+      { en: "The disk is full of data.", ja: "ディスクはデータでいっぱいだ。", context: "computer" },
+      { en: "Insert the disk into the drive.", ja: "ドライブにディスクを入れなさい。", context: "device" },
+    ],
+    categories: ["technology"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24549,
+    word: "farmer",
+    meaning: "農家・農民",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The farmer grows rice and wheat.", ja: "農家は米と小麦を育てる。", context: "agriculture" },
+      { en: "Farmers work hard every day.", ja: "農民は毎日一生懸命働く。", context: "work" },
+      { en: "She became a farmer after college.", ja: "彼女は大学後に農家になった。", context: "career" },
+    ],
+    categories: ["occupation"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24550,
+    word: "forum",
+    meaning: "フォーラム",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Join the online forum.", ja: "オンラインフォーラムに参加しなさい。", context: "internet" },
+      { en: "The forum discussed climate change.", ja: "フォーラムは気候変動について議論した。", context: "environment" },
+      { en: "He posted on the community forum.", ja: "彼はコミュニティフォーラムに投稿した。", context: "internet" },
+    ],
+    categories: ["communication"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24551,
+    word: "ghost",
+    meaning: "幽霊・ゴースト",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Do you believe in ghosts?", ja: "あなたは幽霊を信じますか？", context: "supernatural" },
+      { en: "The ghost story scared us.", ja: "幽霊の話は私たちを怖がらせた。", context: "story" },
+      { en: "Halloween is full of ghost decorations.", ja: "ハロウィンは幽霊の飾りでいっぱいだ。", context: "holiday" },
+    ],
+    categories: ["culture"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24552,
+    word: "gram",
+    meaning: "グラム",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Add 200 grams of sugar.", ja: "砂糖を200グラム加えなさい。", context: "cooking" },
+      { en: "The letter weighs 30 grams.", ja: "手紙は30グラムの重さだ。", context: "postal" },
+      { en: "One gram equals 0.035 ounces.", ja: "1グラムは0.035オンスに相当する。", context: "science" },
+    ],
+    categories: ["measurement"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24553,
+    word: "grammar",
+    meaning: "文法",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Study English grammar carefully.", ja: "英語の文法を注意深く学びなさい。", context: "study" },
+      { en: "Grammar rules can be complex.", ja: "文法規則は複雑になることがある。", context: "language" },
+      { en: "She corrected my grammar mistake.", ja: "彼女は私の文法ミスを直した。", context: "learning" },
+    ],
+    categories: ["language"],
+    frequencyTier: 3,
+  },
+  {
+    id: 24554,
+    word: "grandmother",
+    meaning: "祖母・おばあちゃん",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "My grandmother makes delicious food.", ja: "私の祖母は美味しい料理を作る。", context: "family" },
+      { en: "Visit your grandmother on holidays.", ja: "休日に祖母を訪ねなさい。", context: "family" },
+      { en: "She looks just like her grandmother.", ja: "彼女は祖母にそっくりだ。", context: "family" },
+    ],
+    categories: ["family"],
     frequencyTier: 3,
   },
 ];
