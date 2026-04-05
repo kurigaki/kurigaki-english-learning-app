@@ -9621,4 +9621,43 @@ export const words: RawWord[] = [
     categories: ["finance"],
     frequencyTier: 3,
   },
+  {
+    id: 50001,
+    word: "accretion",
+    meaning: "増加・付加",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The accretion of interest made the loan more expensive.", ja: "利子の増加がローンをより高額にした。", context: "finance" },
+      { en: "The accretion of new clients helped the company grow.", ja: "新規顧客の付加が会社の成長を助けた。", context: "business" },
+      { en: "The accretion of assets was recorded in the report.", ja: "資産の増加は報告書に記録された。", context: "accounting" },
+    ],
+    categories: ["business"],
+    frequencyTier: 3,
+  },
+  {
+    id: 50002,
+    word: "accrual",
+    meaning: "発生額",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The accrual of expenses was recorded at month end.", ja: "費用の発生額は月末に記録された。", context: "accounting" },
+      { en: "Accrual accounting reflects costs when they occur.", ja: "発生主義会計はコストが発生した時点で反映する。", context: "finance" },
+      { en: "The accrual of interest was added to the balance.", ja: "利息の発生額が残高に加算された。", context: "finance" },
+    ],
+    categories: ["business"],
+    frequencyTier: 3,
+  },
+  {
+    id: 50003,
+    word: "addendum",
+    meaning: "追補・付録",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "An addendum was attached to the contract.", ja: "追補が契約書に添付された。", context: "legal" },
+      { en: "Please read the addendum before signing.", ja: "署名前に付録をお読みください。", context: "business" },
+      { en: "The report included an addendum with new data.", ja: "報告書には新しいデータの追補が含まれていた。", context: "business" },
+    ],
+    categories: ["business"],
+    frequencyTier: 3,
+  },
 ];

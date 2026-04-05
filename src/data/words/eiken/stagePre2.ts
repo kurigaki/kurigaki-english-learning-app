@@ -20749,4 +20749,43 @@ export const words: RawWord[] = [
     categories: ["academic"],
     frequencyTier: 3,
   },
+  {
+    id: 50052,
+    word: "first person",
+    meaning: "一人称",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The story is written in the first person.", ja: "その物語は一人称で書かれている。", context: "education" },
+      { en: "I and we are first person pronouns.", ja: "IとweはI人称の代名詞だ。", context: "education" },
+      { en: "She wrote her diary in the first person.", ja: "彼女は一人称で日記を書いた。", context: "education" },
+    ],
+    categories: ["general"],
+    frequencyTier: 3,
+  },
+  {
+    id: 50053,
+    word: "second person",
+    meaning: "二人称",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "You is the second person pronoun in English.", ja: "youは英語の二人称代名詞だ。", context: "education" },
+      { en: "The instructions are written in the second person.", ja: "その説明書は二人称で書かれている。", context: "education" },
+      { en: "He used the second person when giving advice.", ja: "彼はアドバイスをする時に二人称を使った。", context: "education" },
+    ],
+    categories: ["general"],
+    frequencyTier: 3,
+  },
+  {
+    id: 50054,
+    word: "third person",
+    meaning: "三人称",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "She is a third person singular pronoun.", ja: "sheは三人称単数の代名詞だ。", context: "education" },
+      { en: "Add s to verbs in the third person singular.", ja: "三人称単数では動詞にsを付ける。", context: "education" },
+      { en: "The novel is told from a third person perspective.", ja: "その小説は三人称の視点から語られている。", context: "education" },
+    ],
+    categories: ["general"],
+    frequencyTier: 3,
+  },
 ];

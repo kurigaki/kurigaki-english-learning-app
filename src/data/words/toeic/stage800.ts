@@ -13352,4 +13352,30 @@ export const words: RawWord[] = [
     categories: ["business"],
     frequencyTier: 3,
   },
+  {
+    id: 50004,
+    word: "throughput",
+    meaning: "処理能力",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The factory increased its throughput this year.", ja: "工場は今年の処理能力を向上させた。", context: "manufacturing" },
+      { en: "High throughput is essential for our server.", ja: "高い処理能力はサーバーにとって不可欠だ。", context: "technology" },
+      { en: "We need to improve throughput to meet demand.", ja: "需要に応えるために処理能力を改善する必要がある。", context: "operations" },
+    ],
+    categories: ["business"],
+    frequencyTier: 3,
+  },
+  {
+    id: 50005,
+    word: "webcam",
+    meaning: "ウェブカメラ",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "She turned on her webcam for the meeting.", ja: "彼女はミーティングのためにウェブカメラをオンにした。", context: "technology" },
+      { en: "He bought a new webcam for video calls.", ja: "彼はビデオ通話用に新しいウェブカメラを購入した。", context: "technology" },
+      { en: "The webcam was built into the laptop.", ja: "ウェブカメラはノートパソコンに内蔵されていた。", context: "technology" },
+    ],
+    categories: ["business"],
+    frequencyTier: 3,
+  },
 ];
