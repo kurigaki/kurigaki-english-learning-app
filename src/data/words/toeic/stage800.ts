@@ -14,18 +14,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 19948,
-    word: "aberration",
-    meaning: "逸脱行為",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The spike in returns was a statistical aberration.", ja: "返品の急増は統計的な逸脱でした。", context: "分析" },
-      { en: "The poor quarter was an aberration, not a trend.", ja: "不振な四半期は傾向ではなく逸脱でした。", context: "決算" },
-      { en: "Any aberration from the process must be reported.", ja: "工程からの逸脱は報告する必要があります。", context: "品質" },
-    ],
-    categories: ["business"],
-  },
-  {
     id: 19951,
     word: "abolish",
     meaning: "廃止する",
@@ -266,42 +254,6 @@ export const words: RawWord[] = [
     categories: ["culture", "communication"],
   },
   {
-    id: 19978,
-    word: "affable",
-    meaning: "愛想のよい",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The new director has an affable management style.", ja: "新しい取締役は親しみやすい経営スタイルです。", context: "経営" },
-      { en: "Her affable personality makes client meetings pleasant.", ja: "彼女の親しみやすい性格が顧客との会議を快適にします。", context: "営業" },
-      { en: "An affable receptionist sets a welcoming tone.", ja: "親しみやすい受付が歓迎的な雰囲気を作ります。", context: "オフィス" },
-    ],
-    categories: ["communication", "business"],
-  },
-  {
-    id: 19979,
-    word: "affectionate",
-    meaning: "愛情深い",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The grandmother was affectionate with her grandchildren.", ja: "祖母は孫たちに愛情深かった。", context: "家庭" },
-      { en: "He wrote an affectionate letter to his wife.", ja: "彼は妻に愛情深い手紙を書いた。", context: "日常" },
-      { en: "Dogs are known to be affectionate animals.", ja: "犬は愛情深い動物として知られている。", context: "動物" },
-    ],
-    categories: ["family", "communication"],
-  },
-  {
-    id: 19980,
-    word: "affectionately",
-    meaning: "愛情を込めて",
-    partOfSpeech: "adverb",
-    examples: [
-      { en: "The mother affectionately hugged her child.", ja: "母親は愛情を込めて子供を抱きしめた。", context: "家庭" },
-      { en: "He affectionately called her by her nickname.", ja: "彼は愛情を込めて彼女をあだ名で呼んだ。", context: "日常" },
-      { en: "The dog affectionately greeted its owner at the door.", ja: "犬は愛情を込めて玄関で飼い主を迎えた。", context: "動物" },
-    ],
-    categories: ["family", "communication"],
-  },
-  {
     id: 19982,
     word: "aggregate",
     meaning: "総計の",
@@ -312,18 +264,6 @@ export const words: RawWord[] = [
       { en: "The report showed aggregate growth across all sectors.", ja: "報告書はすべての部門にわたる総合的な成長を示しました。", context: "経営" },
     ],
     categories: ["finance", "business"],
-  },
-  {
-    id: 19983,
-    word: "altruistic",
-    meaning: "利他的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The donation was an altruistic gesture by the firm.", ja: "寄付は会社による利他的な行為でした。", context: "CSR" },
-      { en: "Altruistic leadership inspires employee loyalty.", ja: "利他的なリーダーシップが社員の忠誠心を鼓舞します。", context: "経営" },
-      { en: "Not all CSR efforts are purely altruistic.", ja: "全てのCSR活動が純粋に利他的とは限りません。", context: "企業倫理" },
-    ],
-    categories: ["business"],
   },
   {
     id: 19984,
@@ -362,18 +302,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 19987,
-    word: "amnesty",
-    meaning: "恩赦",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "A tax amnesty encouraged voluntary compliance.", ja: "税の恩赦が自発的な遵守を促しました。", context: "税務" },
-      { en: "The company offered amnesty for self-reported errors.", ja: "会社が自己申告の誤りに恩赦を提供しました。", context: "コンプラ" },
-      { en: "An amnesty period was granted for late filings.", ja: "遅延申告に恩赦期間が与えられました。", context: "規制" },
-    ],
-    categories: ["business"],
-  },
-  {
     id: 19988,
     word: "analogous",
     meaning: "類似の",
@@ -396,18 +324,6 @@ export const words: RawWord[] = [
       { en: "Analogies help students understand difficult ideas.", ja: "類比は生徒が難しい考えを理解するのに役立つ。", context: "教育" },
     ],
     categories: ["school", "communication"],
-  },
-  {
-    id: 19990,
-    word: "annex",
-    meaning: "併合する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The company annexed a smaller competitor.", ja: "会社が小さな競合を併合しました。", context: "M&A" },
-      { en: "The annex building was added last year.", ja: "別館が昨年追加されました。", context: "施設" },
-      { en: "Details are included in the annex of the report.", ja: "詳細は報告書の付録に含まれています。", context: "報告" },
-    ],
-    categories: ["business"],
   },
   {
     id: 19991,
@@ -1322,30 +1238,6 @@ export const words: RawWord[] = [
     categories: ["description"],
   },
   {
-    id: 20068,
-    word: "imprison",
-    meaning: "投獄する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The court decided to imprison him for five years.", ja: "裁判所は彼を5年間投獄することを決めた。", context: "法律" },
-      { en: "The dictator imprisoned anyone who opposed the government.", ja: "独裁者は政府に反対する者を投獄した。", context: "政治" },
-      { en: "She felt imprisoned by her daily routine.", ja: "彼女は毎日の日課に囚われていると感じた。", context: "日常" },
-    ],
-    categories: ["society"],
-  },
-  {
-    id: 20069,
-    word: "imprisonment",
-    meaning: "投獄",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The judge sentenced him to ten years of imprisonment.", ja: "裁判官は彼に10年の投獄を言い渡した。", context: "法律" },
-      { en: "False imprisonment is a serious criminal offense.", ja: "不当な監禁は重大な刑事犯罪である。", context: "法律" },
-      { en: "After years of imprisonment, he was finally released.", ja: "何年もの投獄の後、彼はようやく釈放された。", context: "社会" },
-    ],
-    categories: ["society"],
-  },
-  {
     id: 20070,
     word: "improbable",
     meaning: "ありそうもない",
@@ -1452,42 +1344,6 @@ export const words: RawWord[] = [
       { en: "The shelter was inadequate against the heavy storm.", ja: "その避難所は激しい嵐には不十分だった。", context: "災害" },
     ],
     categories: ["description"],
-  },
-  {
-    id: 20079,
-    word: "inanimate",
-    meaning: "無生物の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Rocks and metals are examples of inanimate objects.", ja: "岩や金属は無生物の例である。", context: "科学" },
-      { en: "The child talked to inanimate toys as friends.", ja: "その子は無生物のおもちゃに友達のように話しかけた。", context: "日常" },
-      { en: "Artists sometimes give inanimate things human qualities.", ja: "芸術家は無生物に人間の性質を与えることがある。", context: "芸術" },
-    ],
-    categories: ["description", "science"],
-  },
-  {
-    id: 20080,
-    word: "inborn",
-    meaning: "生まれつきの",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "She has an inborn talent for playing the violin.", ja: "彼女にはバイオリンの生まれつきの才能がある。", context: "音楽" },
-      { en: "Curiosity is an inborn trait in most children.", ja: "好奇心はほとんどの子どもに生まれつき備わった特性だ。", context: "教育" },
-      { en: "Scientists studied whether leadership is an inborn quality.", ja: "科学者はリーダーシップが生まれつきの資質か研究した。", context: "学術" },
-    ],
-    categories: ["description"],
-  },
-  {
-    id: 20081,
-    word: "incense",
-    meaning: "お香",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The temple was filled with the scent of incense.", ja: "寺院はお香の香りで満たされていた。", context: "文化" },
-      { en: "Burning incense can help create a relaxing atmosphere.", ja: "お香を焚くとリラックスした雰囲気を作れる。", context: "日常" },
-      { en: "Various types of incense are sold at the market.", ja: "市場ではさまざまな種類のお香が売られている。", context: "買い物" },
-    ],
-    categories: ["daily", "culture"],
   },
   {
     id: 20082,
@@ -1610,18 +1466,6 @@ export const words: RawWord[] = [
     categories: ["business", "finance"],
   },
   {
-    id: 20092,
-    word: "incurable",
-    meaning: "治療不能の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Doctors once considered the disease to be incurable.", ja: "医者はかつてその病気を治療不能とみなした。", context: "医療" },
-      { en: "He is an incurable optimist who never gives up.", ja: "彼は決してあきらめない筋金入りの楽天家だ。", context: "日常" },
-      { en: "New research may help patients with incurable conditions.", ja: "新しい研究が治療不能な疾患の患者を助けるかもしれない。", context: "科学" },
-    ],
-    categories: ["health", "description"],
-  },
-  {
     id: 20093,
     word: "indebted",
     meaning: "恩義のある",
@@ -1682,18 +1526,6 @@ export const words: RawWord[] = [
     categories: ["description"],
   },
   {
-    id: 20098,
-    word: "indescribable",
-    meaning: "言葉にできない",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The joy of holding her baby was indescribable.", ja: "赤ちゃんを抱いた喜びは言葉にできなかった。", context: "家庭" },
-      { en: "They witnessed an indescribable beauty in the aurora.", ja: "彼らはオーロラに言葉にできない美しさを目撃した。", context: "旅行" },
-      { en: "The earthquake caused indescribable damage to the city.", ja: "地震はその都市に言葉にできない被害をもたらした。", context: "災害" },
-    ],
-    categories: ["emotion", "description"],
-  },
-  {
     id: 20099,
     word: "index",
     meaning: "索引",
@@ -1728,18 +1560,6 @@ export const words: RawWord[] = [
       { en: "The program respects indigenous cultural values.", ja: "そのプログラムは土着の文化的価値を尊重します。", context: "社会" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 20102,
-    word: "indignity",
-    meaning: "屈辱的扱い",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Having to wait in line for hours was an indignity.", ja: "何時間も列に並ばされるのは屈辱だった。", context: "日常" },
-      { en: "The prisoners suffered many indignities during captivity.", ja: "囚人たちは捕虜の間に多くの屈辱を受けた。", context: "歴史" },
-      { en: "She refused to accept the indignity of being ignored.", ja: "彼女は無視されるという屈辱を受け入れることを拒否した。", context: "社会" },
-    ],
-    categories: ["emotion"],
   },
   {
     id: 20103,
@@ -8270,18 +8090,6 @@ export const words: RawWord[] = [
     categories: ["travel", "daily"],
   },
   {
-    id: 20647,
-    word: "raincoat",
-    meaning: "レインコート",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Bring a raincoat in case the weather changes.", ja: "天気が変わるかもしれないのでレインコートを持って行きなさい。", context: "日常" },
-      { en: "She bought a bright yellow raincoat for the trip.", ja: "彼女は旅行用に明るい黄色のレインコートを買った。", context: "買い物" },
-      { en: "The children wore raincoats to the outdoor event.", ja: "子供たちは屋外イベントにレインコートを着て行った。", context: "イベント" },
-    ],
-    categories: ["daily", "travel"],
-  },
-  {
     id: 20648,
     word: "ramp",
     meaning: "傾斜路、スロープ",
@@ -10826,18 +10634,6 @@ export const words: RawWord[] = [
     categories: ["communication", "school"],
   },
   {
-    id: 20860,
-    word: "slap",
-    meaning: "平手打ち",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The sudden slap on the table surprised everyone.", ja: "テーブルへの突然の平手打ちに皆が驚いた。", context: "日常" },
-      { en: "A slap of cold wind hit them as they left.", ja: "彼らが出ると冷たい風の一撃が当たった。", context: "天気" },
-      { en: "The comedian got a playful slap on the back.", ja: "そのコメディアンは背中に軽い平手打ちを受けた。", context: "娯楽" },
-    ],
-    categories: ["daily", "communication"],
-  },
-  {
     id: 20861,
     word: "slash",
     meaning: "切り傷、斜線",
@@ -10874,18 +10670,6 @@ export const words: RawWord[] = [
     categories: ["communication", "daily"],
   },
   {
-    id: 20864,
-    word: "sliver",
-    meaning: "薄片",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Only a sliver of sunlight came through the curtain.", ja: "カーテンからわずかな薄片の日光だけが差し込んだ。", context: "日常" },
-      { en: "She cut a sliver of cheese to taste the flavor.", ja: "彼女は味を確かめるためにチーズの薄片を切った。", context: "料理" },
-      { en: "A sliver of glass was stuck in his finger.", ja: "ガラスの薄片が彼の指に刺さっていた。", context: "健康" },
-    ],
-    categories: ["daily", "communication"],
-  },
-  {
     id: 20865,
     word: "slogan",
     meaning: "スローガン",
@@ -10920,18 +10704,6 @@ export const words: RawWord[] = [
       { en: "The boat glided smoothly across the calm lake.", ja: "ボートは穏やかな湖を滑らかに滑っていった。", context: "自然" },
     ],
     categories: ["daily", "business"],
-  },
-  {
-    id: 20868,
-    word: "sneer",
-    meaning: "あざ笑い",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "His sneer made the younger students feel uncomfortable.", ja: "彼のあざ笑いは年下の生徒を不快にさせた。", context: "学校" },
-      { en: "She ignored the sneer and continued her presentation.", ja: "彼女はあざ笑いを無視してプレゼンを続けた。", context: "ビジネス" },
-      { en: "The villain gave a cold sneer in the movie.", ja: "映画の中で悪役が冷たいあざ笑いを浮かべた。", context: "娯楽" },
-    ],
-    categories: ["emotion", "communication"],
   },
   {
     id: 20869,

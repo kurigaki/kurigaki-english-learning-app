@@ -2402,42 +2402,6 @@ export const words: RawWord[] = [
     categories: ["general"],
   },
   {
-    id: 72224,
-    word: "feature",
-    meaning: "特徴を持つ",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The new phone features a large screen.", ja: "新しい電話は大きな画面を特徴としている。", context: "feature a screen" },
-      { en: "The movie features famous actors.", ja: "その映画は有名な俳優が出演している。", context: "feature actors" },
-      { en: "The event features live music.", ja: "そのイベントには生演奏が含まれる。", context: "feature music" },
-    ],
-    categories: ["general"],
-  },
-  {
-    id: 72226,
-    word: "network",
-    meaning: "ネットワークを作る",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She networked with many professionals.", ja: "彼女は多くのプロと交流した。", context: "network with professionals" },
-      { en: "It is important to network at events.", ja: "イベントでは人脈を作ることが大切だ。", context: "network at events" },
-      { en: "He networked to find a new job.", ja: "彼は新しい仕事を見つけるために人脈を活かした。", context: "network to find job" },
-    ],
-    categories: ["general"],
-  },
-  {
-    id: 72227,
-    word: "screen",
-    meaning: "選別する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "All applicants were screened.", ja: "全ての応募者が選別された。", context: "screen applicants" },
-      { en: "The doctor screened patients for the disease.", ja: "医師は患者を疾患について選別した。", context: "screen patients" },
-      { en: "They screened the candidates carefully.", ja: "彼らは候補者を慎重に選別した。", context: "screen candidates" },
-    ],
-    categories: ["general"],
-  },
-  {
     id: 72228,
     word: "volunteer",
     meaning: "ボランティアをする",
@@ -2638,18 +2602,6 @@ export const words: RawWord[] = [
       { en: "Bend your knees when you lift heavy things.", ja: "重いものを持つときは膝を曲げてください。", context: "health" },
       { en: "The tree branches bend in the wind.", ja: "木の枝が風で曲がる。", context: "nature" },
       { en: "She bent down to pick up the coin.", ja: "彼女はコインを拾うためにかがんだ。", context: "daily" },
-    ],
-    categories: ["action"],
-  },
-  {
-    id: 72263,
-    word: "bless",
-    meaning: "祝福する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "May God bless you and your family.", ja: "神があなたとご家族を祝福しますように。", context: "culture" },
-      { en: "The priest blessed the newborn baby.", ja: "神父は生まれたばかりの赤ちゃんを祝福した。", context: "culture" },
-      { en: "We felt blessed to have such friends.", ja: "そのような友人がいることを祝福されたと感じた。", context: "friendship" },
     ],
     categories: ["action"],
   },
@@ -3772,7 +3724,7 @@ export const words: RawWord[] = [
   {
     id: 72380,
     word: "figure",
-    meaning: "数字",
+    meaning: "数字・人物",
     partOfSpeech: "noun",
     examples: [
       { en: "The figures show a rise in temperature.", ja: "数字は気温の上昇を示している。", context: "science" },
@@ -4008,18 +3960,6 @@ export const words: RawWord[] = [
       { en: "Education is a priority in this country.", ja: "教育はこの国での優先事項だ。", context: "education" },
     ],
     categories: ["planning"],
-  },
-  {
-    id: 72406,
-    word: "profession",
-    meaning: "職業",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Teaching is a rewarding profession.", ja: "教育は充実した職業だ。", context: "career" },
-      { en: "She entered the medical profession.", ja: "彼女は医療の職業に就いた。", context: "career" },
-      { en: "His profession requires many years of training.", ja: "彼の職業は何年もの訓練を必要とする。", context: "career" },
-    ],
-    categories: ["career"],
   },
   {
     id: 72407,
@@ -4696,8 +4636,8 @@ export const words: RawWord[] = [
   {
     id: 72477,
     word: "select",
-    meaning: "選ばれた",
-    partOfSpeech: "adjective",
+    meaning: "選ぶ",
+    partOfSpeech: "verb",
     examples: [
       { en: "Only a select group of students won awards.", ja: "選ばれた少数の生徒だけが賞を受賞した。", context: "school" },
       { en: "He was one of the select few invited.", ja: "彼は招待された選ばれた少数の一人だった。", context: "event" },

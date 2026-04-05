@@ -3916,7 +3916,7 @@ export const words: RawWord[] = [
   {
     id: 29599,
     word: "skateboarding",
-    meaning: "スケボー",
+    meaning: "スケートボード",
     partOfSpeech: "noun",
     examples: [
       { en: "Skateboarding became an official Olympic sport recently.", ja: "スケボーは最近正式なオリンピック競技になった。", context: "スポーツ" },
@@ -8642,18 +8642,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 30003,
-    word: "algorithm",
-    meaning: "アルゴリズム",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The algorithm sorts data quickly.", ja: "そのアルゴリズムはデータを素早く整列させる。", context: "IT" },
-      { en: "Engineers designed a new search algorithm.", ja: "技術者たちは新しい検索アルゴリズムを設計した。", context: "開発" },
-      { en: "This algorithm reduces processing time by half.", ja: "このアルゴリズムは処理時間を半分に短縮する。", context: "技術" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 30004,
     word: "automation",
     meaning: "自動化",
@@ -8666,18 +8654,6 @@ export const words: RawWord[] = [
     categories: ["technology", "business"],
   },
   {
-    id: 30005,
-    word: "bandwidth",
-    meaning: "帯域幅",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Streaming video requires high bandwidth.", ja: "動画のストリーミングには高い帯域幅が必要だ。", context: "通信" },
-      { en: "The office upgraded its bandwidth last month.", ja: "そのオフィスは先月帯域幅を増強した。", context: "IT" },
-      { en: "Limited bandwidth causes slow downloads.", ja: "帯域幅が限られるとダウンロードが遅くなる。", context: "技術" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 30006,
     word: "biometric",
     meaning: "生体認証の",
@@ -8688,18 +8664,6 @@ export const words: RawWord[] = [
       { en: "Biometric data must be stored securely.", ja: "生体認証データは安全に保管されなければならない。", context: "IT" },
     ],
     categories: ["technology"],
-  },
-  {
-    id: 30007,
-    word: "cloud computing",
-    meaning: "クラウド処理",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Cloud computing lets firms store data online.", ja: "クラウド処理により企業はデータをオンラインで保存できる。", context: "ビジネス" },
-      { en: "Many schools now rely on cloud computing.", ja: "多くの学校が今やクラウド処理に頼っている。", context: "教育" },
-      { en: "Cloud computing reduces the need for hardware.", ja: "クラウド処理はハードウェアの必要性を減らす。", context: "IT" },
-    ],
-    categories: ["technology", "business"],
   },
   {
     id: 30008,
@@ -8722,18 +8686,6 @@ export const words: RawWord[] = [
       { en: "The bank suffered a serious cyberattack.", ja: "その銀行は深刻なサイバー攻撃を受けた。", context: "金融" },
       { en: "Governments must defend against cyberattacks.", ja: "政府はサイバー攻撃に対して防御しなければならない。", context: "社会" },
       { en: "A cyberattack can shut down entire networks.", ja: "サイバー攻撃はネットワーク全体を停止させ得る。", context: "IT" },
-    ],
-    categories: ["technology"],
-  },
-  {
-    id: 30010,
-    word: "debug",
-    meaning: "不具合を修正する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "She spent hours trying to debug the code.", ja: "彼女はコードの不具合修正に何時間も費やした。", context: "開発" },
-      { en: "The team used special tools to debug.", ja: "チームは特殊なツールを使って不具合を修正した。", context: "IT" },
-      { en: "Learning to debug is a key skill.", ja: "デバッグを学ぶことは重要なスキルだ。", context: "教育" },
     ],
     categories: ["technology"],
   },
@@ -8774,18 +8726,6 @@ export const words: RawWord[] = [
     categories: ["technology"],
   },
   {
-    id: 30016,
-    word: "firewall",
-    meaning: "防火壁",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "A firewall blocks unauthorized network access.", ja: "ファイアウォールは不正なネットワークアクセスを遮断する。", context: "セキュリティ" },
-      { en: "The company installed a stronger firewall.", ja: "その会社はより強力なファイアウォールを設置した。", context: "ビジネス" },
-      { en: "Without a firewall, systems are vulnerable.", ja: "ファイアウォールがなければシステムは脆弱だ。", context: "IT" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 30017,
     word: "gigabyte",
     meaning: "ギガバイト",
@@ -8798,18 +8738,6 @@ export const words: RawWord[] = [
     categories: ["technology"],
   },
   {
-    id: 30018,
-    word: "hacking",
-    meaning: "不正侵入",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Hacking is a growing threat to businesses.", ja: "不正侵入は企業にとって増大する脅威だ。", context: "ビジネス" },
-      { en: "The police arrested the man for hacking.", ja: "警察はその男を不正侵入で逮捕した。", context: "社会" },
-      { en: "Strong passwords help prevent hacking attempts.", ja: "強力なパスワードは不正侵入の試みを防ぐ。", context: "セキュリティ" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 30019,
     word: "interface",
     meaning: "操作画面",
@@ -8818,18 +8746,6 @@ export const words: RawWord[] = [
       { en: "The app has a simple user interface.", ja: "そのアプリはシンプルな操作画面を持つ。", context: "IT" },
       { en: "A clear interface improves user experience.", ja: "明確な操作画面はユーザー体験を向上させる。", context: "デザイン" },
       { en: "Designers updated the website interface today.", ja: "デザイナーたちは今日ウェブサイトの操作画面を更新した。", context: "開発" },
-    ],
-    categories: ["technology"],
-  },
-  {
-    id: 30020,
-    word: "malware",
-    meaning: "悪意あるソフト",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Malware can steal personal information.", ja: "マルウェアは個人情報を盗み得る。", context: "セキュリティ" },
-      { en: "The scan detected malware on his laptop.", ja: "スキャンが彼のノートPCでマルウェアを検出した。", context: "IT" },
-      { en: "Never open links that may contain malware.", ja: "マルウェアを含む可能性のあるリンクは決して開くな。", context: "日常" },
     ],
     categories: ["technology"],
   },
@@ -8894,18 +8810,6 @@ export const words: RawWord[] = [
     categories: ["technology"],
   },
   {
-    id: 30029,
-    word: "pixel",
-    meaning: "画素",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Each pixel represents a tiny dot of color.", ja: "各画素は色の小さな点を表す。", context: "技術" },
-      { en: "The screen displays millions of pixels.", ja: "その画面は何百万もの画素を表示する。", context: "IT" },
-      { en: "Higher pixel counts produce sharper images.", ja: "画素数が多いほど鮮明な画像になる。", context: "デザイン" },
-    ],
-    categories: ["technology"],
-  },
-  {
     id: 30031,
     word: "prototype",
     meaning: "試作品",
@@ -8926,18 +8830,6 @@ export const words: RawWord[] = [
       { en: "Robotics is transforming the manufacturing sector.", ja: "ロボット工学は製造業を変革している。", context: "産業" },
       { en: "She won a national robotics competition.", ja: "彼女は全国ロボット工学大会で優勝した。", context: "教育" },
       { en: "Advances in robotics create new job types.", ja: "ロボット工学の進歩は新しい職種を生み出す。", context: "社会" },
-    ],
-    categories: ["technology"],
-  },
-  {
-    id: 30033,
-    word: "router",
-    meaning: "ルーター",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Restart the router to fix the connection.", ja: "接続を直すにはルーターを再起動しなさい。", context: "IT" },
-      { en: "The router distributes the signal to devices.", ja: "ルーターは機器に信号を分配する。", context: "技術" },
-      { en: "A new router improved our download speed.", ja: "新しいルーターでダウンロード速度が向上した。", context: "日常" },
     ],
     categories: ["technology"],
   },
@@ -9292,7 +9184,7 @@ export const words: RawWord[] = [
   {
     id: 30063,
     word: "renewable energy",
-    meaning: "再生可能エネ",
+    meaning: "再生エネルギー",
     partOfSpeech: "noun",
     examples: [
       { en: "Renewable energy includes solar and wind power.", ja: "再生可能エネルギーには太陽光と風力が含まれる。", context: "環境" },
@@ -10598,18 +10490,6 @@ export const words: RawWord[] = [
     categories: ["crime", "society"],
   },
   {
-    id: 30172,
-    word: "carriageway",
-    meaning: "車道",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The dual carriageway connects the two major cities.", ja: "その二車線車道は2つの主要都市を結んでいます。", context: "道路" },
-      { en: "Road works blocked one lane of the carriageway.", ja: "道路工事が車道の1車線を塞ぎました。", context: "交通" },
-      { en: "Cyclists should avoid riding on the main carriageway.", ja: "自転車は主要車道を走るのを避けるべきです。", context: "安全" },
-    ],
-    categories: ["transport"],
-  },
-  {
     id: 30173,
     word: "commuter",
     meaning: "通勤者",
@@ -11464,7 +11344,7 @@ export const words: RawWord[] = [
   {
     id: 30244,
     word: "cadence",
-    meaning: "終止形",
+    meaning: "抑揚・リズム",
     partOfSpeech: "noun",
     examples: [
       { en: "The piece ended with a perfect cadence.", ja: "その曲は完全な終止形で終わった。", context: "音楽" },
@@ -13438,18 +13318,6 @@ export const words: RawWord[] = [
       { en: "Acculturation occurs when two cultures come into sustained contact.", ja: "文化変容は二つの文化が持続的に接触するときに起こります。", context: "社会学" },
       { en: "The study examined acculturation patterns among recent immigrants.", ja: "その研究は最近の移民の文化変容パターンを調査しました。", context: "学術" },
       { en: "Acculturation can lead to both cultural enrichment and stress.", ja: "文化変容は文化的な豊かさとストレスの両方をもたらす可能性があります。", context: "社会" },
-    ],
-    categories: ["culture"],
-  },
-  {
-    id: 30440,
-    word: "anomie",
-    meaning: "アノミー",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Anomie arises when social norms break down in society.", ja: "アノミーは社会で社会規範が崩壊したときに生じます。", context: "社会学" },
-      { en: "Rapid social change can produce feelings of anomie.", ja: "急速な社会変化はアノミーの感覚を生み出す可能性があります。", context: "社会" },
-      { en: "The concept of anomie was developed by a French sociologist.", ja: "アノミーの概念はフランスの社会学者によって発展させられました。", context: "学術" },
     ],
     categories: ["culture"],
   },
@@ -21290,18 +21158,6 @@ export const words: RawWord[] = [
     categories: ["academic"],
   },
   {
-    id: 31094,
-    word: "skulk",
-    meaning: "こそこそ動く",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "A suspicious figure skulked in the shadows near the warehouse.", ja: "不審な人物が倉庫の近くの影にこそこそ潜んでいた。", context: "犯罪" },
-      { en: "The fox skulked around the henhouse waiting for an opportunity.", ja: "キツネは機会を待って鶏小屋の周りをこそこそ動いた。", context: "自然" },
-      { en: "He skulked away from the party without saying goodbye to anyone.", ja: "彼は誰にも別れを言わずにパーティーからこそこそ去った。", context: "日常" },
-    ],
-    categories: ["academic"],
-  },
-  {
     id: 31095,
     word: "snatch",
     meaning: "ひったくる・奪う",
@@ -22298,18 +22154,6 @@ export const words: RawWord[] = [
     categories: ["academic"],
   },
   {
-    id: 31178,
-    word: "cobalt",
-    meaning: "コバルト",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Cobalt is essential for manufacturing rechargeable lithium-ion batteries today.", ja: "コバルトは今日の充電式リチウムイオン電池の製造に不可欠である。", context: "科学" },
-      { en: "The artist mixed cobalt blue pigment to paint the sky.", ja: "画家は空を描くためにコバルトブルーの顔料を混ぜた。", context: "芸術" },
-      { en: "Mining cobalt raises serious ethical concerns in some developing nations.", ja: "コバルトの採掘は一部の発展途上国で深刻な倫理的懸念を引き起こす。", context: "社会" },
-    ],
-    categories: ["academic"],
-  },
-  {
     id: 31179,
     word: "enamel",
     meaning: "エナメル・琺瑯",
@@ -22570,18 +22414,6 @@ export const words: RawWord[] = [
       { en: "Crops struggle to grow in arid regions without proper irrigation.", ja: "適切な灌漑なしでは乾燥地域で作物の栽培は困難だ。", context: "農業" },
       { en: "The arid desert stretches for hundreds of miles without water.", ja: "乾燥した砂漠は水のないまま何百マイルも広がっている。", context: "地理" },
       { en: "Scientists are developing drought-resistant plants suitable for arid climates.", ja: "科学者たちは乾燥した気候に適した耐干ばつ植物を開発している。", context: "科学" },
-    ],
-    categories: ["academic"],
-  },
-  {
-    id: 31202,
-    word: "bucolic",
-    meaning: "牧歌的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The bucolic landscape of rolling hills charmed every visiting tourist.", ja: "なだらかな丘の牧歌的な風景が訪れる全ての観光客を魅了した。", context: "旅行" },
-      { en: "They retired to a bucolic village far from the busy city.", ja: "彼らは賑やかな都市から遠い牧歌的な村に引退した。", context: "日常" },
-      { en: "The painter captured the bucolic beauty of the countryside in spring.", ja: "画家は春の田園の牧歌的な美しさを描き上げた。", context: "芸術" },
     ],
     categories: ["academic"],
   },
@@ -23338,30 +23170,6 @@ export const words: RawWord[] = [
       { en: "The protesters felt righteous anger at the government's decision.", ja: "抗議者たちは政府の決定に対して正義の怒りを感じた。", context: "社会" },
       { en: "He believed he was fighting for a righteous cause.", ja: "彼は正義の大義のために戦っていると信じていた。", context: "社会" },
       { en: "Righteous people stand up for what they believe is right.", ja: "正義の人は自分が正しいと信じることのために立ち上がる。", context: "日常" },
-    ],
-    categories: ["academic"],
-  },
-  {
-    id: 31267,
-    word: "sacrilegious",
-    meaning: "冒涜的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Some considered the artwork sacrilegious and deeply offensive.", ja: "一部の人はその作品を冒涜的で非常に不快だとみなした。", context: "文化" },
-      { en: "The comedian's sacrilegious jokes upset many religious viewers.", ja: "そのコメディアンの冒涜的な冗談は多くの宗教的な視聴者を怒らせた。", context: "社会" },
-      { en: "Desecrating a temple was seen as a sacrilegious act.", ja: "寺院を冒涜することは冒涜的な行為とみなされた。", context: "文化" },
-    ],
-    categories: ["academic"],
-  },
-  {
-    id: 31268,
-    word: "sanctimonious",
-    meaning: "偽善ぶった",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "His sanctimonious lectures annoyed everyone in the office.", ja: "彼の偽善ぶった説教はオフィスの全員を苛立たせた。", context: "ビジネス" },
-      { en: "The editorial had a sanctimonious tone that readers disliked.", ja: "その社説は読者が嫌う偽善ぶった口調だった。", context: "社会" },
-      { en: "Nobody likes a sanctimonious person who judges others harshly.", ja: "他人を厳しく裁く偽善ぶった人を誰も好まない。", context: "日常" },
     ],
     categories: ["academic"],
   },
@@ -24686,18 +24494,6 @@ export const words: RawWord[] = [
     categories: ["daily"],
   },
   {
-    id: 31387,
-    word: "slovenly",
-    meaning: "だらしない",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "His slovenly appearance made a poor impression at the job interview.", ja: "彼のだらしない外見が就職面接で悪い印象を与えた。", context: "ビジネス" },
-      { en: "The slovenly room was littered with dirty clothes and empty bottles.", ja: "だらしない部屋に汚れた服と空き瓶が散らかっていた。", context: "日常" },
-      { en: "She criticized his slovenly habits and urged him to change.", ja: "彼女は彼のだらしない習慣を批判し変わるよう促した。", context: "日常" },
-    ],
-    categories: ["daily"],
-  },
-  {
     id: 31388,
     word: "statuesque",
     meaning: "彫像のような",
@@ -24754,18 +24550,6 @@ export const words: RawWord[] = [
       { en: "He split the firewood with a heavy axe.", ja: "彼は重い斧で薪を割った。", context: "日常" },
       { en: "The lumberjack sharpened his axe before work.", ja: "木こりは仕事の前に斧を研いだ。", context: "日常" },
       { en: "An old axe was found buried in the garden.", ja: "古い斧が庭に埋まっているのが見つかった。", context: "日常" },
-    ],
-    categories: ["daily"],
-  },
-  {
-    id: 31393,
-    word: "bellows",
-    meaning: "ふいご",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The blacksmith pumped the bellows to feed the fire.", ja: "鍛冶屋はふいごを押して火を勢いづけた。", context: "日常" },
-      { en: "Old bellows hung on the wall of the cabin.", ja: "古いふいごが小屋の壁に掛かっていた。", context: "日常" },
-      { en: "She used the bellows to revive the dying embers.", ja: "彼女はふいごで消えかけの残り火を蘇らせた。", context: "日常" },
     ],
     categories: ["daily"],
   },
@@ -25078,18 +24862,6 @@ export const words: RawWord[] = [
       { en: "The aromatic herbs filled the kitchen with a pleasant scent.", ja: "芳香のあるハーブが台所を心地よい香りで満たした。", context: "日常" },
       { en: "Aromatic spices are essential in many Asian dishes.", ja: "芳香のある香辛料は多くのアジア料理に欠かせない。", context: "日常" },
       { en: "She brewed an aromatic tea from dried lavender flowers.", ja: "彼女は乾燥ラベンダーの花で芳香のあるお茶を入れた。", context: "日常" },
-    ],
-    categories: ["daily"],
-  },
-  {
-    id: 31421,
-    word: "cacophonous",
-    meaning: "不協和音の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The cacophonous noise of traffic made conversation impossible.", ja: "不協和音のような交通騒音で会話が不可能だった。", context: "日常" },
-      { en: "A cacophonous mix of horns echoed through the street.", ja: "不協和音のクラクションの混合が通りに響いた。", context: "日常" },
-      { en: "The band's cacophonous rehearsal annoyed the entire building.", ja: "バンドの不協和音のリハーサルがビル全体を困らせた。", context: "日常" },
     ],
     categories: ["daily"],
   },
@@ -26290,18 +26062,6 @@ export const words: RawWord[] = [
       { en: "The lab serves as an adjunct to the clinic.", ja: "その研究室は診療所の付属施設として機能している。", context: "学術" },
       { en: "The software is a useful adjunct to training.", ja: "そのソフトウェアは研修の有用な補助手段だ。", context: "ビジネス" },
       { en: "He works as an adjunct professor at the university.", ja: "彼は大学で非常勤教授として働いている。", context: "学術" },
-    ],
-    categories: ["academic"],
-  },
-  {
-    id: 31522,
-    word: "alchemy",
-    meaning: "錬金術",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Medieval scholars practiced alchemy in secret labs.", ja: "中世の学者は秘密の研究室で錬金術を行った。", context: "学術" },
-      { en: "The book explores the history of alchemy.", ja: "その本は錬金術の歴史を探究している。", context: "学術" },
-      { en: "Modern chemistry evolved from ancient alchemy.", ja: "現代の化学は古代の錬金術から発展した。", context: "学術" },
     ],
     categories: ["academic"],
   },
@@ -28372,7 +28132,7 @@ export const words: RawWord[] = [
   {
     id: 31695,
     word: "allure",
-    meaning: "妖艶な魅力",
+    meaning: "魅力・魅惑",
     partOfSpeech: "noun",
     examples: [
       { en: "The allure of Paris attracts millions yearly.", ja: "パリの魅力は毎年何百万人を引きつける。", context: "旅行" },

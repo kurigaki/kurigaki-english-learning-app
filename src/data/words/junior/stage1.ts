@@ -292,7 +292,7 @@ export const words: RawWord[] = [
   {
     id: 70025,
     word: "work",
-    meaning: "働く、勉強する",
+    meaning: "働く・機能する",
     partOfSpeech: "verb",
     examples: [
       { en: "My father works in a city.", ja: "父は都市で働いています。", context: "family" },
@@ -4216,7 +4216,7 @@ export const words: RawWord[] = [
   {
     id: 70365,
     word: "ocean",
-    meaning: "海",
+    meaning: "大洋",
     partOfSpeech: "noun",
     examples: [
       { en: "The ocean is very deep and wide.", ja: "海はとても深くて広い。", context: "ocean" },
@@ -6130,6 +6130,42 @@ export const words: RawWord[] = [
       { en: "Can you give me an example?", ja: "例を挙げてもらえますか。", context: "学校" },
       { en: "For example, I like tennis.", ja: "例えばテニスが好きです。", context: "会話" },
       { en: "This is a good example.", ja: "これは良い例です。", context: "学校" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 70701,
+    word: "keep",
+    meaning: "保つ・〜し続ける",
+    partOfSpeech: "verb",
+    examples: [
+      { en: "Keep trying!", ja: "頑張り続けて！", context: "日常" },
+      { en: "Please keep quiet.", ja: "静かにしてください。", context: "学校" },
+      { en: "She keeps a diary every day.", ja: "彼女は毎日日記をつけている。", context: "日常" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 70702,
+    word: "let",
+    meaning: "〜させる",
+    partOfSpeech: "verb",
+    examples: [
+      { en: "Let me try.", ja: "やらせてください。", context: "日常" },
+      { en: "Let's go to the park.", ja: "公園に行きましょう。", context: "日常" },
+      { en: "Please let me know.", ja: "教えてください。", context: "会話" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 70703,
+    word: "maybe",
+    meaning: "たぶん",
+    partOfSpeech: "adverb",
+    examples: [
+      { en: "Maybe it will rain tomorrow.", ja: "たぶん明日は雨だ。", context: "天気" },
+      { en: "Maybe you are right.", ja: "たぶん君が正しい。", context: "会話" },
+      { en: "Maybe I will go later.", ja: "たぶん後で行くよ。", context: "日常" },
     ],
     categories: ["daily"],
   },

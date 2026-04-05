@@ -1790,18 +1790,6 @@ export const words: RawWord[] = [
     categories: ["academic"],
   },
   {
-    id: 75195,
-    word: "effervescent",
-    meaning: "活気ある",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Her effervescent personality lit up the room.", ja: "彼女の活気ある個性が部屋を明るくした。", context: "effervescent personality" },
-      { en: "The effervescent liquid fizzed in the glass.", ja: "活発に泡立つ液体がグラスの中で泡立った。", context: "effervescent liquid" },
-      { en: "He brought an effervescent energy to the team.", ja: "彼はチームに活気あるエネルギーをもたらした。", context: "effervescent energy" },
-    ],
-    categories: ["academic"],
-  },
-  {
     id: 75196,
     word: "egregious",
     meaning: "とんでもない",
@@ -2378,18 +2366,6 @@ export const words: RawWord[] = [
     categories: ["desire"],
   },
   {
-    id: 75279,
-    word: "inscrutable",
-    meaning: "不可解な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Her inscrutable expression revealed nothing.", ja: "彼女の不可解な表情は何も明かさなかった。", context: "expression" },
-      { en: "The ancient text remained inscrutable to scholars.", ja: "古代のテキストは学者にとって不可解なままだった。", context: "text" },
-      { en: "His inscrutable motives puzzled his colleagues.", ja: "彼の不可解な動機は同僚を困惑させた。", context: "motives" },
-    ],
-    categories: ["mystery"],
-  },
-  {
     id: 75280,
     word: "insidious",
     meaning: "じわじわ危険",
@@ -2592,18 +2568,6 @@ export const words: RawWord[] = [
       { en: "He shrugged in a nonchalant manner.", ja: "彼は無頓着な様子で肩をすくめた。", context: "manner" },
     ],
     categories: ["attitude"],
-  },
-  {
-    id: 75304,
-    word: "nondescript",
-    meaning: "特徴のない",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "He drove a nondescript gray car to avoid attention.", ja: "彼は注目を避けるため特徴のないグレーの車を運転した。", context: "car" },
-      { en: "The building had a nondescript exterior.", ja: "その建物は特徴のない外観を持っていた。", context: "building" },
-      { en: "He wore nondescript clothes to blend in.", ja: "彼は溶け込むため特徴のない服を着た。", context: "clothes" },
-    ],
-    categories: ["appearance"],
   },
   {
     id: 75305,
@@ -3230,18 +3194,6 @@ export const words: RawWord[] = [
     categories: ["uncertainty"],
   },
   {
-    id: 75367,
-    word: "threadbare",
-    meaning: "使い古された",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The threadbare curtains needed to be replaced.", ja: "使い古されたカーテンは交換が必要だった。", context: "curtains" },
-      { en: "He wore a threadbare jacket despite the cold.", ja: "彼は寒さにもかかわらず使い古されたジャケットを着ていた。", context: "jacket" },
-      { en: "The threadbare excuse fooled nobody.", ja: "使い古された言い訳は誰も騙さなかった。", context: "excuse" },
-    ],
-    categories: ["condition"],
-  },
-  {
     id: 75368,
     word: "transient",
     meaning: "一時的な",
@@ -3336,18 +3288,6 @@ export const words: RawWord[] = [
       { en: "She became vindictive after being betrayed.", ja: "裏切られた後、彼女は復讐心のある気持ちになった。", context: "betrayed" },
     ],
     categories: ["emotion"],
-  },
-  {
-    id: 75376,
-    word: "vivacious",
-    meaning: "活気のある",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Her vivacious personality lit up the room.", ja: "彼女の活気のある性格は部屋を明るくした。", context: "personality" },
-      { en: "The vivacious child charmed everyone she met.", ja: "活気のある子どもは会う人皆を魅了した。", context: "child" },
-      { en: "His vivacious humor made him a popular speaker.", ja: "彼の活気のあるユーモアは彼を人気のある演説者にした。", context: "humor" },
-    ],
-    categories: ["personality"],
   },
   {
     id: 75377,
@@ -4726,18 +4666,6 @@ export const words: RawWord[] = [
       { en: "He beseeched the king for mercy.", ja: "彼は王に慈悲を懇願した。", context: "history" },
       { en: "She beseeched her parents for help.", ja: "彼女は両親に助けを懇願した。", context: "family" },
       { en: "The refugees beseeched aid workers.", ja: "難民は援助者に懇願した。", context: "humanitarian" },
-    ],
-    categories: ["academic"],
-  },
-  {
-    id: 75517,
-    word: "circumnavigate",
-    meaning: "周航する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Magellan circumnavigated the globe.", ja: "マゼランは地球を一周した。", context: "history" },
-      { en: "The ship circumnavigated the island.", ja: "船は島を迂回した。", context: "navigation" },
-      { en: "They circumnavigated bureaucratic hurdles.", ja: "彼らは官僚的障壁を迂回した。", context: "management" },
     ],
     categories: ["academic"],
   },

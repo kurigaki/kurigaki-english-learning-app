@@ -2498,18 +2498,6 @@ export const words: RawWord[] = [
     categories: ["education"],
   },
   {
-    id: 71215,
-    word: "lane",
-    meaning: "車線・通路",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Stay in your lane while driving.", ja: "運転中は車線を守ってください。", context: "traffic" },
-      { en: "She swam in lane three.", ja: "彼女は3レーンで泳いだ。", context: "sports" },
-      { en: "The bike lane is separate from the road.", ja: "自転車専用レーンは道路とは分かれている。", context: "traffic" },
-    ],
-    categories: ["traffic"],
-  },
-  {
     id: 71217,
     word: "leather",
     meaning: "革",
@@ -2892,18 +2880,6 @@ export const words: RawWord[] = [
       { en: "Keep the plants alive with water.", ja: "水で植物を生かしてください。", context: "gardening" },
     ],
     categories: ["life"],
-  },
-  {
-    id: 71251,
-    word: "fierce",
-    meaning: "激しい、獰猛な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The fierce lion roared loudly.", ja: "獰猛なライオンが大きく吠えた。", context: "fierce" },
-      { en: "The storm was fierce last night.", ja: "昨夜の嵐は激しかった。", context: "fierce" },
-      { en: "She gave a fierce look to her opponent.", ja: "彼女は相手に鋭い視線を向けた。", context: "fierce" },
-    ],
-    categories: ["adjective"],
   },
   {
     id: 71252,
@@ -5234,18 +5210,6 @@ export const words: RawWord[] = [
     categories: ["noun"],
   },
   {
-    id: 71450,
-    word: "wool",
-    meaning: "羊毛",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The sweater is made of wool.", ja: "そのセーターは羊毛でできている。", context: "wool" },
-      { en: "Wool keeps you warm in winter.", ja: "羊毛は冬に暖かくしてくれる。", context: "wool" },
-      { en: "She knitted a wool scarf.", ja: "彼女は羊毛のスカーフを編んだ。", context: "wool" },
-    ],
-    categories: ["noun"],
-  },
-  {
     id: 71451,
     word: "youth",
     meaning: "若者",
@@ -5302,18 +5266,6 @@ export const words: RawWord[] = [
       { en: "She wrote an article for the school paper.", ja: "彼女は学校新聞に記事を書いた。", context: "article" },
       { en: "I read a great article online.", ja: "私はオンラインで素晴らしい記事を読んだ。", context: "article" },
       { en: "The article was about climate change.", ja: "その記事は気候変動についてだった。", context: "article" },
-    ],
-    categories: ["noun"],
-  },
-  {
-    id: 71456,
-    word: "brick",
-    meaning: "レンガ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The house is built with red bricks.", ja: "その家は赤いレンガで建てられている。", context: "brick" },
-      { en: "She laid bricks in the garden.", ja: "彼女は庭にレンガを敷いた。", context: "brick" },
-      { en: "The brick wall was very thick.", ja: "レンガの壁はとても厚かった。", context: "brick" },
     ],
     categories: ["noun"],
   },

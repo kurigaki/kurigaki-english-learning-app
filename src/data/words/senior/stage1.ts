@@ -52,7 +52,7 @@ export const words: RawWord[] = [
   {
     id: 73005,
     word: "address",
-    meaning: "取り組む",
+    meaning: "取り組む・演説する",
     partOfSpeech: "verb",
     examples: [
       { en: "The government must address this issue.", ja: "政府はこの問題に取り組まなければならない。", context: "society" },
@@ -2008,7 +2008,7 @@ export const words: RawWord[] = [
   {
     id: 73220,
     word: "faculty",
-    meaning: "教授陣",
+    meaning: "学部・能力",
     partOfSpeech: "noun",
     examples: [
       { en: "The faculty supports students throughout the year.", ja: "教授陣は一年を通じて学生を支援する。", context: "education" },
@@ -3736,7 +3736,7 @@ export const words: RawWord[] = [
   {
     id: 73393,
     word: "plain",
-    meaning: "明白な",
+    meaning: "質素な・明白な",
     partOfSpeech: "adjective",
     examples: [
       { en: "He spoke in plain language that everyone could understand.", ja: "彼は誰でも理解できる明白な言葉で話した。", context: "language" },
@@ -8296,7 +8296,7 @@ export const words: RawWord[] = [
   {
     id: 72281,
     word: "cultivate",
-    meaning: "耕す",
+    meaning: "耕す・育てる",
     partOfSpeech: "verb",
     examples: [
       { en: "Farmers cultivate the land every spring.", ja: "農家は毎春土地を耕す。", context: "agriculture" },
@@ -8472,5 +8472,149 @@ export const words: RawWord[] = [
       { en: "You may use my bike, provided that you return it.", ja: "返却するという条件で、私の自転車を使っていいですよ。", context: "daily" },
     ],
     categories: ["connector"],
+  },
+  {
+    id: 73951,
+    word: "equivalent",
+    meaning: "同等の",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "This amount is equivalent to 1000 yen.", ja: "この金額は1000円に相当する。", context: "数学" },
+      { en: "There is no equivalent word in Japanese.", ja: "日本語に同等の言葉はない。", context: "言語" },
+      { en: "The two systems are roughly equivalent.", ja: "二つの制度はほぼ同等だ。", context: "社会" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 73952,
+    word: "fortune",
+    meaning: "運・財産",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "He made a fortune in business.", ja: "彼は事業で財産を築いた。", context: "ビジネス" },
+      { en: "She had the good fortune to win.", ja: "彼女は幸運にも勝った。", context: "日常" },
+      { en: "Fortune favors the brave.", ja: "運は勇者に味方する。", context: "格言" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 73953,
+    word: "satellite",
+    meaning: "衛星",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The satellite orbits the Earth.", ja: "衛星は地球を周回する。", context: "科学" },
+      { en: "We watched it via satellite TV.", ja: "衛星テレビで見た。", context: "メディア" },
+      { en: "Japan launched a new satellite.", ja: "日本は新しい衛星を打ち上げた。", context: "技術" },
+    ],
+    categories: ["science"],
+  },
+  {
+    id: 73954,
+    word: "scholar",
+    meaning: "学者",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "She is a leading scholar in this field.", ja: "彼女はこの分野の第一人者だ。", context: "学術" },
+      { en: "The scholar published a new paper.", ja: "その学者は新しい論文を発表した。", context: "研究" },
+      { en: "He received a scholarship as a top scholar.", ja: "彼は優秀な学者として奨学金を得た。", context: "教育" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 73955,
+    word: "suburb",
+    meaning: "郊外",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "They moved to the suburbs.", ja: "彼らは郊外に引っ越した。", context: "生活" },
+      { en: "The suburb is quiet and safe.", ja: "その郊外は静かで安全だ。", context: "住居" },
+      { en: "Many families live in the suburbs.", ja: "多くの家族が郊外に住んでいる。", context: "社会" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 73956,
+    word: "symptom",
+    meaning: "症状",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "What are the symptoms of the disease?", ja: "その病気の症状は何ですか。", context: "医療" },
+      { en: "He showed no symptoms.", ja: "彼には症状が出なかった。", context: "健康" },
+      { en: "Fever is a common symptom.", ja: "熱はよくある症状だ。", context: "健康" },
+    ],
+    categories: ["health"],
+  },
+  {
+    id: 73957,
+    word: "tropical",
+    meaning: "熱帯の",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "Tropical forests are being destroyed.", ja: "熱帯林が破壊されている。", context: "環境" },
+      { en: "They visited a tropical island.", ja: "彼らは熱帯の島を訪れた。", context: "旅行" },
+      { en: "Tropical fish are colorful.", ja: "熱帯魚は色鮮やかだ。", context: "自然" },
+    ],
+    categories: ["nature"],
+  },
+  {
+    id: 73958,
+    word: "urban",
+    meaning: "都市の",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "Urban areas are growing rapidly.", ja: "都市部は急速に拡大している。", context: "社会" },
+      { en: "Urban life can be stressful.", ja: "都市生活はストレスが多い。", context: "生活" },
+      { en: "The urban population is increasing.", ja: "都市人口が増加している。", context: "統計" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 73959,
+    word: "volunteer",
+    meaning: "ボランティア",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "She works as a volunteer.", ja: "彼女はボランティアとして働く。", context: "社会" },
+      { en: "Volunteers helped clean the park.", ja: "ボランティアが公園の清掃を手伝った。", context: "地域" },
+      { en: "He volunteered to help.", ja: "彼は進んで手伝った。", context: "日常" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 73960,
+    word: "radiation",
+    meaning: "放射線",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "Radiation can be harmful to health.", ja: "放射線は健康に有害な場合がある。", context: "科学" },
+      { en: "The area has high radiation levels.", ja: "その地域は放射線量が高い。", context: "環境" },
+      { en: "UV radiation causes sunburn.", ja: "紫外線が日焼けを引き起こす。", context: "健康" },
+    ],
+    categories: ["science"],
+  },
+  {
+    id: 73961,
+    word: "prosperity",
+    meaning: "繁栄",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The country enjoyed a period of prosperity.", ja: "その国は繁栄の時代を楽しんだ。", context: "歴史" },
+      { en: "Economic prosperity is not everything.", ja: "経済的繁栄が全てではない。", context: "社会" },
+      { en: "They worked hard for prosperity.", ja: "彼らは繁栄のために懸命に働いた。", context: "経済" },
+    ],
+    categories: ["daily"],
+  },
+  {
+    id: 73962,
+    word: "immune",
+    meaning: "免疫の",
+    partOfSpeech: "adjective",
+    examples: [
+      { en: "She is immune to the virus.", ja: "彼女はそのウイルスに免疫がある。", context: "医療" },
+      { en: "No one is immune to criticism.", ja: "批判に免疫のある人はいない。", context: "社会" },
+      { en: "The vaccine builds immune response.", ja: "ワクチンは免疫反応を高める。", context: "科学" },
+    ],
+    categories: ["health"],
   },
 ];

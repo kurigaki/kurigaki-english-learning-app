@@ -782,18 +782,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 21075,
-    word: "castigate",
-    meaning: "叱責する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Critics castigated the government for its slow response.", ja: "批評家たちは政府の遅い対応を厳しく批判した。", context: "政治" },
-      { en: "The editorial castigated corporate greed and negligence.", ja: "社説は企業の強欲と怠慢を厳しく批判した。", context: "メディア" },
-      { en: "Activists castigated the policy as fundamentally flawed.", ja: "活動家たちは政策を根本的に欠陥があると批判した。", context: "社会" },
-    ],
-    categories: ["communication", "society"],
-  },
-  {
     id: 21076,
     word: "cater to",
     meaning: "〜に応える",
@@ -852,18 +840,6 @@ export const words: RawWord[] = [
       { en: "The central bank issued new currency last month.", ja: "中央銀行は先月新しい通貨を発行しました。", context: "金融政策" },
     ],
     categories: ["finance"],
-  },
-  {
-    id: 21081,
-    word: "chastise",
-    meaning: "懲らしめる",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The teacher chastised the students for their carelessness.", ja: "教師は生徒たちの不注意を叱責した。", context: "教育" },
-      { en: "Media outlets chastised the politician for lying.", ja: "メディアは政治家の嘘を叱責した。", context: "メディア" },
-      { en: "The coach chastised the team after a poor performance.", ja: "コーチはチームの不振を叱責した。", context: "スポーツ" },
-    ],
-    categories: ["communication"],
   },
   {
     id: 21082,
@@ -1248,18 +1224,6 @@ export const words: RawWord[] = [
       { en: "Consolidation of accounts makes budgeting much easier.", ja: "口座の統合は予算管理をはるかに容易にする。", context: "金融" },
     ],
     categories: ["finance", "business"],
-  },
-  {
-    id: 21114,
-    word: "constellation",
-    meaning: "星座",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Ancient navigators relied on constellations to traverse vast open seas.", ja: "古代の航海者たちは広大な外洋を横断するために星座に頼りました。", context: "歴史" },
-      { en: "The constellation Orion is visible from both hemispheres of Earth.", ja: "オリオン座は地球の両半球から見ることができます。", context: "科学" },
-      { en: "Different cultures assigned distinct mythological meanings to the same constellation.", ja: "異なる文化が同じ星座に独自の神話的意味を付与しました。", context: "文化" },
-    ],
-    categories: ["technology"],
   },
   {
     id: 21115,
@@ -2112,30 +2076,6 @@ export const words: RawWord[] = [
       { en: "Only graduates are eligible for the position.", ja: "卒業生のみがその職の資格がある。", context: "ビジネス" },
     ],
     categories: ["business"],
-  },
-  {
-    id: 21186,
-    word: "emancipate",
-    meaning: "解放する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "The proclamation emancipated millions of enslaved people.", ja: "その宣言は何百万人もの奴隷にされた人々を解放した。", context: "歴史" },
-      { en: "Education can emancipate individuals from cycles of poverty.", ja: "教育は個人を貧困の連鎖から解放しうる。", context: "社会" },
-      { en: "Legal reforms gradually emancipated women in many societies.", ja: "法的改革が多くの社会で女性を徐々に解放した。", context: "歴史" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 21187,
-    word: "emancipation",
-    meaning: "解放",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The emancipation of enslaved people marked a turning point.", ja: "奴隷とされた人々の解放は転換点を示しました。", context: "歴史" },
-      { en: "Economic emancipation remains elusive for marginalized communities worldwide.", ja: "経済的解放は世界中の疎外されたコミュニティにとって依然として手の届かないものです。", context: "社会" },
-      { en: "Not until emancipation was achieved could true equality begin.", ja: "解放が達成されて初めて真の平等が始まることができました。", context: "歴史" },
-    ],
-    categories: ["communication"],
   },
   {
     id: 21188,
@@ -3458,18 +3398,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 21298,
-    word: "lingerie",
-    meaning: "女性用下着",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The department store has a large lingerie section.", ja: "そのデパートには大きな女性用下着売り場がある。", context: "買い物" },
-      { en: "French lingerie brands are popular around the world.", ja: "フランスの下着ブランドは世界中で人気がある。", context: "ビジネス" },
-      { en: "She received a gift set of silk lingerie.", ja: "彼女はシルクの下着のギフトセットをもらった。", context: "贈り物" },
-    ],
-    categories: ["fashion", "shopping"],
-  },
-  {
     id: 21299,
     word: "liquidate",
     meaning: "清算する",
@@ -3626,18 +3554,6 @@ export const words: RawWord[] = [
     categories: ["academic", "business"],
   },
   {
-    id: 21312,
-    word: "mannequin",
-    meaning: "マネキン",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The mannequin displayed the newest spring outfit.", ja: "マネキンには最新の春の服が飾られていた。", context: "買い物" },
-      { en: "Store mannequins help customers visualize outfits.", ja: "店のマネキンは客が服装を想像する助けになる。", context: "小売" },
-      { en: "The artist used a mannequin for posing reference.", ja: "その芸術家はポーズの参考にマネキンを使った。", context: "芸術" },
-    ],
-    categories: ["fashion", "shopping"],
-  },
-  {
     id: 21313,
     word: "margin call",
     meaning: "追証",
@@ -3662,18 +3578,6 @@ export const words: RawWord[] = [
     categories: ["academic", "business"],
   },
   {
-    id: 21315,
-    word: "marina",
-    meaning: "ヨットハーバー",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The marina can hold over two hundred boats.", ja: "そのヨットハーバーには200隻以上の船が停泊できる。", context: "施設" },
-      { en: "We rented a sailboat from the local marina.", ja: "私たちは地元のヨットハーバーでヨットを借りた。", context: "レジャー" },
-      { en: "The new marina boosted tourism in the coastal town.", ja: "新しいヨットハーバーがその海沿いの町の観光を後押しした。", context: "経済" },
-    ],
-    categories: ["marine", "travel"],
-  },
-  {
     id: 21316,
     word: "maritime",
     meaning: "海の",
@@ -3696,18 +3600,6 @@ export const words: RawWord[] = [
       { en: "Small market cap stocks tend to be more volatile.", ja: "時価総額が小さい株式はより変動が大きい傾向があります。", context: "投資" },
     ],
     categories: ["finance", "business"],
-  },
-  {
-    id: 21318,
-    word: "masculine",
-    meaning: "男性的な",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "Society often associates strength with masculine traits.", ja: "社会はしばしば強さを男性的な特徴と結びつける。", context: "社会" },
-      { en: "The adjective takes a masculine ending here.", ja: "この形容詞はここでは男性形の語尾をとる。", context: "言語" },
-      { en: "Traditional masculine roles are evolving in modern times.", ja: "伝統的な男性の役割は現代において変化している。", context: "文化" },
-    ],
-    categories: ["culture", "communication"],
   },
   {
     id: 21319,
@@ -4046,18 +3938,6 @@ export const words: RawWord[] = [
     categories: ["communication", "education"],
   },
   {
-    id: 21347,
-    word: "nylon",
-    meaning: "ナイロン",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Nylon stockings became popular in the 1940s.", ja: "ナイロンのストッキングは1940年代に普及した。", context: "歴史" },
-      { en: "The tent is made from lightweight nylon fabric.", ja: "そのテントは軽量のナイロン生地で作られている。", context: "アウトドア" },
-      { en: "Nylon dries faster than most natural fabrics.", ja: "ナイロンは天然繊維よりも早く乾く。", context: "素材" },
-    ],
-    categories: ["fashion", "technology"],
-  },
-  {
     id: 21348,
     word: "obligate",
     meaning: "義務づける",
@@ -4116,18 +3996,6 @@ export const words: RawWord[] = [
       { en: "Safety regulations for oil rigs have become much stricter.", ja: "石油掘削装置の安全規制はかなり厳しくなった。", context: "政策" },
     ],
     categories: ["technology", "business"],
-  },
-  {
-    id: 21353,
-    word: "oligarchy",
-    meaning: "寡頭政治",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The nation was effectively ruled by an oligarchy.", ja: "その国は実質的に寡頭政治によって支配されていた。", context: "政治" },
-      { en: "An oligarchy concentrates power among a few elites.", ja: "寡頭政治は少数のエリートに権力を集中させる。", context: "政治" },
-      { en: "Critics warned that corporate oligarchy was growing.", ja: "批判者は企業の寡頭支配が拡大していると警告した。", context: "金融" },
-    ],
-    categories: ["finance", "culture"],
   },
   {
     id: 21354,
@@ -4200,18 +4068,6 @@ export const words: RawWord[] = [
       { en: "The manager overrode the automatic system settings.", ja: "管理者はシステムの自動設定を手動で変更した。", context: "技術" },
     ],
     categories: ["academic", "business"],
-  },
-  {
-    id: 21360,
-    word: "paperback",
-    meaning: "文庫本",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The paperback version will be released next month.", ja: "文庫版は来月発売される。", context: "出版" },
-      { en: "Paperbacks are lighter and easier to carry around.", ja: "文庫本は軽くて持ち運びやすい。", context: "日常" },
-      { en: "She always buys paperbacks for reading on the train.", ja: "彼女は電車で読むためにいつも文庫本を買う。", context: "通勤" },
-    ],
-    categories: ["literature", "shopping"],
   },
   {
     id: 21361,
@@ -4310,30 +4166,6 @@ export const words: RawWord[] = [
     categories: ["society", "business"],
   },
   {
-    id: 21369,
-    word: "pickpocket",
-    meaning: "スリ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Tourists should beware of pickpockets in crowded areas.", ja: "観光客は混雑した場所でスリに注意すべきです。", context: "旅行" },
-      { en: "A pickpocket stole her wallet on the subway.", ja: "スリが地下鉄で彼女の財布を盗みました。", context: "犯罪" },
-      { en: "The pickpocket was caught by an alert bystander.", ja: "スリは注意深い傍観者に捕まりました。", context: "防犯" },
-    ],
-    categories: ["crime", "travel"],
-  },
-  {
-    id: 21370,
-    word: "pier",
-    meaning: "桟橋",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Fishermen gathered on the old wooden pier at dawn.", ja: "漁師たちは夜明けに古い木製の桟橋に集まりました。", context: "漁業" },
-      { en: "The ferry departs from pier number seven.", ja: "フェリーは7番桟橋から出発します。", context: "交通" },
-      { en: "Tourists enjoyed the sunset view from the pier.", ja: "観光客は桟橋から夕日の景色を楽しみました。", context: "観光" },
-    ],
-    categories: ["transport", "travel"],
-  },
-  {
     id: 21371,
     word: "pioneer",
     meaning: "先駆者",
@@ -4370,18 +4202,6 @@ export const words: RawWord[] = [
     categories: ["communication", "society"],
   },
   {
-    id: 21374,
-    word: "planetarium",
-    meaning: "プラネタリウム",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Students visited the planetarium on a field trip.", ja: "生徒たちは遠足でプラネタリウムを訪れた。", context: "学校" },
-      { en: "The planetarium show explained how stars are formed.", ja: "プラネタリウムのショーは星の形成過程を説明した。", context: "教育" },
-      { en: "A new planetarium opened downtown last month.", ja: "先月、繁華街に新しいプラネタリウムが開館した。", context: "文化" },
-    ],
-    categories: ["technology", "culture"],
-  },
-  {
     id: 21375,
     word: "play down",
     meaning: "軽視する",
@@ -4404,18 +4224,6 @@ export const words: RawWord[] = [
       { en: "Modern plumbing improved public health dramatically.", ja: "近代的な配管は公衆衛生を劇的に改善しました。", context: "歴史" },
     ],
     categories: ["architecture", "technology"],
-  },
-  {
-    id: 21377,
-    word: "polyester",
-    meaning: "ポリエステル",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Polyester is a durable and affordable synthetic fabric.", ja: "ポリエステルは丈夫で手頃な合成繊維だ。", context: "素材" },
-      { en: "Most sportswear is made from polyester blends.", ja: "スポーツウェアの多くはポリエステル混紡だ。", context: "スポーツ" },
-      { en: "The curtains are made of flame-resistant polyester.", ja: "そのカーテンは難燃性ポリエステル製だ。", context: "実用" },
-    ],
-    categories: ["fashion", "technology"],
   },
   {
     id: 21378,
@@ -5762,30 +5570,6 @@ export const words: RawWord[] = [
     categories: ["emotion"],
   },
   {
-    id: 21490,
-    word: "splash",
-    meaning: "はね",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The children made a big splash jumping into the pool.", ja: "子供たちはプールに飛び込んで大きな水しぶきを上げました。", context: "日常" },
-      { en: "A splash of color brightened up the dull room.", ja: "色のひとはねが地味な部屋を明るくしました。", context: "インテリア" },
-      { en: "The news made quite a splash in the media.", ja: "そのニュースはメディアでかなりの話題を呼びました。", context: "社会" },
-    ],
-    categories: ["daily"],
-  },
-  {
-    id: 21491,
-    word: "splatter",
-    meaning: "飛沫",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Paint splatters covered the artist's studio floor.", ja: "絵の具の飛沫がそのアーティストのスタジオの床を覆っていました。", context: "芸術" },
-      { en: "The mud splatter on his jacket ruined his appearance.", ja: "ジャケットの泥の飛沫が彼の見た目を台無しにしました。", context: "日常" },
-      { en: "Removing the oil splatter from the wall proved difficult.", ja: "壁から油の飛沫を取り除くのは困難であると分かりました。", context: "家事" },
-    ],
-    categories: ["daily", "culture"],
-  },
-  {
     id: 21492,
     word: "split",
     meaning: "分裂",
@@ -5832,18 +5616,6 @@ export const words: RawWord[] = [
       { en: "The team secured a new sponsor for the upcoming season.", ja: "チームは来シーズンに向けて新しいスポンサーを確保しました。", context: "スポーツ" },
     ],
     categories: ["business", "sports"],
-  },
-  {
-    id: 21496,
-    word: "spray",
-    meaning: "噴霧",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The gardener used a spray to protect the plants.", ja: "庭師は植物を守るためにスプレーを使いました。", context: "園芸" },
-      { en: "A fine spray of water cooled the outdoor diners.", ja: "細かい水の噴霧が屋外の食事客を涼しくしました。", context: "日常" },
-      { en: "The ocean spray refreshed the sailors on deck.", ja: "海の飛沫が甲板の船員たちをさわやかにしました。", context: "旅行" },
-    ],
-    categories: ["daily", "nature"],
   },
   {
     id: 21497,
@@ -5954,18 +5726,6 @@ export const words: RawWord[] = [
     categories: ["shopping", "culture"],
   },
   {
-    id: 21506,
-    word: "stammer",
-    meaning: "どもる",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Nervous about the speech, he began to stammer on stage.", ja: "スピーチに緊張して、彼はステージでどもり始めました。", context: "仕事" },
-      { en: "The witness stammered while answering the lawyer's questions.", ja: "証人は弁護士の質問に答えるときにどもりました。", context: "法律" },
-      { en: "She used to stammer but overcame it through speech therapy.", ja: "彼女は以前どもっていましたが、言語療法で克服しました。", context: "健康" },
-    ],
-    categories: ["communication", "health"],
-  },
-  {
     id: 21507,
     word: "standby",
     meaning: "待機の",
@@ -6012,18 +5772,6 @@ export const words: RawWord[] = [
       { en: "She joined a tech startup after college.", ja: "彼女は大学卒業後にIT新興企業に入った。", context: "キャリア" },
     ],
     categories: ["technology", "business"],
-  },
-  {
-    id: 21511,
-    word: "starving",
-    meaning: "飢えた",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "After the long hike, everyone was absolutely starving.", ja: "長いハイキングの後、全員がとても空腹でした。", context: "アウトドア" },
-      { en: "The rescue team brought food for the starving villagers.", ja: "救助隊は飢えた村人たちに食料を届けました。", context: "社会" },
-      { en: "Not until noon did the starving travelers find a restaurant.", ja: "正午になってようやく、飢えた旅行者たちはレストランを見つけました。", context: "旅行" },
-    ],
-    categories: ["daily", "health"],
   },
   {
     id: 21512,
@@ -6156,18 +5904,6 @@ export const words: RawWord[] = [
       { en: "Steered by experienced hands, the project avoided major setbacks.", ja: "経験豊富な手で導かれ、そのプロジェクトは大きな挫折を免れました。", context: "ビジネス" },
     ],
     categories: ["travel", "business"],
-  },
-  {
-    id: 21523,
-    word: "steering wheel",
-    meaning: "ハンドル",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She gripped the steering wheel tightly during the storm.", ja: "彼女は嵐の間、ハンドルをしっかり握りました。", context: "交通" },
-      { en: "The steering wheel of the classic car was made of wood.", ja: "そのクラシックカーのハンドルは木製でした。", context: "趣味" },
-      { en: "Adjusting the steering wheel position improved his driving comfort.", ja: "ハンドルの位置を調整することで運転の快適さが向上しました。", context: "日常" },
-    ],
-    categories: ["travel", "technology"],
   },
   {
     id: 21524,
@@ -6350,18 +6086,6 @@ export const words: RawWord[] = [
     categories: ["business", "daily"],
   },
   {
-    id: 21539,
-    word: "storyteller",
-    meaning: "語り手",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The old man was a gifted storyteller.", ja: "その老人は才能ある語り手だった。", context: "文化" },
-      { en: "A great storyteller can captivate any audience.", ja: "優れた語り手はどんな聴衆も魅了できる。", context: "芸術" },
-      { en: "The children gathered around the storyteller eagerly.", ja: "子供たちは語り手の周りに熱心に集まった。", context: "教育" },
-    ],
-    categories: ["culture", "communication"],
-  },
-  {
     id: 21540,
     word: "straightforward",
     meaning: "率直な、簡単な",
@@ -6482,18 +6206,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 21550,
-    word: "subjugate",
-    meaning: "征服する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "Colonial powers sought to subjugate indigenous populations.", ja: "植民地列強は先住民を征服しようとした。", context: "歴史" },
-      { en: "Tyrants subjugate citizens through fear and propaganda.", ja: "暴君は恐怖とプロパガンダで市民を屈服させる。", context: "政治" },
-      { en: "Technology should empower people rather than subjugate them.", ja: "技術は人々を屈服させるのではなく力を与えるべきだ。", context: "社会" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 21551,
     word: "subsidiary",
     meaning: "子会社",
@@ -6578,30 +6290,6 @@ export const words: RawWord[] = [
     categories: ["daily", "business"],
   },
   {
-    id: 21558,
-    word: "suede",
-    meaning: "スエード革",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She bought a pair of brown suede boots.", ja: "彼女は茶色のスエードのブーツを買った。", context: "買い物" },
-      { en: "Suede requires special care to avoid water damage.", ja: "スエードは水によるダメージを防ぐため特別な手入れが要る。", context: "手入れ" },
-      { en: "The sofa was upholstered in soft gray suede.", ja: "そのソファは柔らかい灰色のスエードで張られていた。", context: "インテリア" },
-    ],
-    categories: ["fashion", "shopping"],
-  },
-  {
-    id: 21559,
-    word: "suffrage",
-    meaning: "参政権",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Universal suffrage was achieved only after decades of struggle.", ja: "普通参政権は数十年の闘争を経てようやく達成されました。", context: "歴史" },
-      { en: "The suffrage movement empowered women to participate in governance.", ja: "参政権運動は女性たちに統治に参加する力を与えました。", context: "社会" },
-      { en: "Denying suffrage to any citizen undermines the foundation of democracy.", ja: "いかなる市民からも参政権を奪うことは民主主義の基盤を損ないます。", context: "政治" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 21560,
     word: "suitably",
     meaning: "ふさわしく",
@@ -6624,18 +6312,6 @@ export const words: RawWord[] = [
       { en: "To sum up, the project was a success.", ja: "要約すると、プロジェクトは成功だった。", context: "ビジネス" },
     ],
     categories: ["communication"],
-  },
-  {
-    id: 21562,
-    word: "sunbathe",
-    meaning: "日光浴する",
-    partOfSpeech: "verb",
-    examples: [
-      { en: "They sunbathed on the sandy beach all afternoon.", ja: "彼らは午後ずっと砂浜で日光浴した。", context: "旅行" },
-      { en: "She likes to sunbathe in the backyard garden.", ja: "彼女は裏庭で日光浴するのが好きだ。", context: "日常" },
-      { en: "Tourists sunbathe near the resort swimming pool.", ja: "観光客がリゾートのプール近くで日光浴する。", context: "旅行" },
-    ],
-    categories: ["travel", "daily"],
   },
   {
     id: 21563,
@@ -6818,18 +6494,6 @@ export const words: RawWord[] = [
     categories: ["communication", "daily"],
   },
   {
-    id: 21578,
-    word: "sweatshirt",
-    meaning: "スウェット",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "He wore a gray sweatshirt to the gym.", ja: "彼はジムにグレーのトレーナーを着て行った。", context: "スポーツ" },
-      { en: "She bought a new sweatshirt at the store.", ja: "彼女は店で新しいトレーナーを買った。", context: "買い物" },
-      { en: "The sweatshirt kept him warm during the hike.", ja: "そのトレーナーはハイキング中彼を暖かく保った。", context: "旅行" },
-    ],
-    categories: ["shopping", "daily"],
-  },
-  {
     id: 21579,
     word: "swift",
     meaning: "素早い",
@@ -6852,18 +6516,6 @@ export const words: RawWord[] = [
       { en: "The company made a switch in leadership.", ja: "その会社は指導者の交代を行った。", context: "ビジネス" },
     ],
     categories: ["technology", "daily"],
-  },
-  {
-    id: 21581,
-    word: "syllable",
-    meaning: "音節",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The word has three syllables.", ja: "その単語は三音節だ。", context: "言語" },
-      { en: "Stress falls on the second syllable.", ja: "アクセントは二番目の音節にある。", context: "発音" },
-      { en: "Each syllable should be pronounced clearly.", ja: "各音節をはっきり発音すべきだ。", context: "学習" },
-    ],
-    categories: ["school", "communication"],
   },
   {
     id: 21582,

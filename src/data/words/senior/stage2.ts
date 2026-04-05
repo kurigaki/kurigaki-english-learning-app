@@ -760,7 +760,7 @@ export const words: RawWord[] = [
   {
     id: 74084,
     word: "forge",
-    meaning: "築く",
+    meaning: "築く・偽造する",
     partOfSpeech: "verb",
     examples: [
       { en: "The two nations worked to forge a lasting peace agreement.", ja: "二国は永続的な平和協定を築くために働いた。", context: "politics" },
@@ -1828,7 +1828,7 @@ export const words: RawWord[] = [
   {
     id: 74195,
     word: "acute",
-    meaning: "深刻な",
+    meaning: "鋭い・急性の",
     partOfSpeech: "adjective",
     examples: [
       { en: "The patient experienced acute pain following the surgery.", ja: "患者は手術後に急性の痛みを経験した。", context: "health" },
@@ -6412,7 +6412,7 @@ export const words: RawWord[] = [
   {
     id: 74672,
     word: "profile",
-    meaning: "横顔",
+    meaning: "概要・人物像",
     partOfSpeech: "noun",
     examples: [
       { en: "The journalist wrote his profile.", ja: "記者は彼の人物紹介を書いた。", context: "メディア" },

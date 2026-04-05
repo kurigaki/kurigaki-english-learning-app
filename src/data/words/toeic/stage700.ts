@@ -1070,18 +1070,6 @@ export const words: RawWord[] = [
     categories: ["culture", "travel"],
   },
   {
-    id: 19011,
-    word: "blade",
-    meaning: "刃",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Be careful with the sharp blade of the knife.", ja: "ナイフの鋭い刃に気をつけてください。", context: "家庭" },
-      { en: "The blade of the ice skate needed to be sharpened.", ja: "アイススケートの刃は研ぐ必要がありました。", context: "スポーツ" },
-      { en: "Wind turbine blades can be over 50 meters long.", ja: "風力タービンの羽は50メートル以上になることがあります。", context: "技術" },
-    ],
-    categories: ["daily", "technology"],
-  },
-  {
     id: 19012,
     word: "blindly",
     meaning: "盲目的に",
@@ -1260,18 +1248,6 @@ export const words: RawWord[] = [
       { en: "Updating your browser improves security and speed.", ja: "ブラウザを更新するとセキュリティと速度が向上する。", context: "IT" },
     ],
     categories: ["technology"],
-  },
-  {
-    id: 19027,
-    word: "bumper",
-    meaning: "バンパー",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The front bumper was damaged in the accident.", ja: "前のバンパーが事故で損傷した。", context: "交通" },
-      { en: "He replaced the old bumper with a new one.", ja: "彼は古いバンパーを新しいものに交換した。", context: "車" },
-      { en: "The bumper protected the car from further damage.", ja: "バンパーが車をさらなる損傷から守った。", context: "交通" },
-    ],
-    categories: ["travel", "daily"],
   },
   {
     id: 19028,
@@ -1538,18 +1514,6 @@ export const words: RawWord[] = [
     categories: ["emotion", "communication"],
   },
   {
-    id: 19052,
-    word: "cheerfulness",
-    meaning: "快活さ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Her cheerfulness brightened the whole room.", ja: "彼女の快活さが部屋全体を明るくしました。", context: "日常" },
-      { en: "The teacher's cheerfulness made class enjoyable.", ja: "先生の快活さが授業を楽しくしました。", context: "学校" },
-      { en: "His cheerfulness helped the team stay positive.", ja: "彼の快活さがチームを前向きにしました。", context: "スポーツ" },
-    ],
-    categories: ["emotion", "communication"],
-  },
-  {
     id: 19053,
     word: "chip",
     meaning: "かけら、チップ",
@@ -1632,18 +1596,6 @@ export const words: RawWord[] = [
       { en: "This sentence contains a relative clause.", ja: "この文には関係節が含まれています。", context: "英語学習" },
     ],
     categories: ["business", "school"],
-  },
-  {
-    id: 19060,
-    word: "clearness",
-    meaning: "明瞭さ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The clearness of his explanation was impressive.", ja: "彼の説明の明瞭さは見事でした。", context: "授業" },
-      { en: "We admired the clearness of the lake water.", ja: "私たちはその湖の水の透明さに感心しました。", context: "自然" },
-      { en: "Clearness in writing helps readers understand better.", ja: "文章の明瞭さは読者の理解を助けます。", context: "作文" },
-    ],
-    categories: ["communication", "school"],
   },
   {
     id: 19061,
@@ -4250,18 +4202,6 @@ export const words: RawWord[] = [
     categories: ["daily", "shopping"],
   },
   {
-    id: 19283,
-    word: "dumb",
-    meaning: "口のきけない",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "He was struck dumb by the shocking news.", ja: "彼は衝撃的なニュースに言葉を失った。", context: "日常" },
-      { en: "The class fell dumb when the principal entered.", ja: "校長が入ってくるとクラスは黙り込んだ。", context: "学校" },
-      { en: "She stood dumb with surprise for a moment.", ja: "彼女は驚きでしばらく言葉が出なかった。", context: "日常" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19284,
     word: "duplicate",
     meaning: "複製",
@@ -4346,18 +4286,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19291,
-    word: "dynasty",
-    meaning: "王朝",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The Ming dynasty ruled China for centuries.", ja: "明王朝は何世紀にもわたり中国を支配した。", context: "文化" },
-      { en: "The dynasty ended when the last king fell.", ja: "最後の王が倒れたとき王朝は終わった。", context: "文化" },
-      { en: "Students learned about the Egyptian dynasty in class.", ja: "生徒たちは授業でエジプトの王朝について学んだ。", context: "学校" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19292,
     word: "eager",
     meaning: "熱望する",
@@ -4418,18 +4346,6 @@ export const words: RawWord[] = [
     categories: ["business"],
   },
   {
-    id: 19297,
-    word: "earring",
-    meaning: "イヤリング",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She wore silver earrings to the party.", ja: "彼女はパーティーに銀のイヤリングをつけて行った。", context: "日常" },
-      { en: "He gave her a pair of pearl earrings.", ja: "彼は彼女に真珠のイヤリングを一組贈った。", context: "買い物" },
-      { en: "The earring fell off while she was dancing.", ja: "踊っている間にイヤリングが落ちた。", context: "日常" },
-    ],
-    categories: ["daily", "shopping"],
-  },
-  {
     id: 19298,
     word: "ease",
     meaning: "容易さ",
@@ -4466,18 +4382,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19301,
-    word: "eco",
-    meaning: "エコ",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The brand promotes eco products for everyday use.", ja: "そのブランドは日常使い向けのエコ製品を宣伝している。", context: "買い物" },
-      { en: "Eco awareness has grown among young people.", ja: "エコへの意識が若者の間で高まっている。", context: "社会" },
-      { en: "The hotel offers an eco tour of the forest.", ja: "そのホテルは森のエコツアーを提供している。", context: "旅行" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19302,
     word: "economic",
     meaning: "経済の",
@@ -4510,18 +4414,6 @@ export const words: RawWord[] = [
       { en: "The country's economy grew rapidly last year.", ja: "その国の経済は昨年急速に成長した。", context: "社会" },
       { en: "Tourism is vital to the island's economy.", ja: "観光はその島の経済にとって不可欠だ。", context: "旅行" },
       { en: "The global economy faces many challenges today.", ja: "世界経済は今日多くの課題に直面している。", context: "社会" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 19305,
-    word: "ecstasy",
-    meaning: "有頂天",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The fans were in ecstasy after the victory.", ja: "ファンたちは勝利の後、有頂天だった。", context: "スポーツ" },
-      { en: "She danced with ecstasy when she heard the news.", ja: "彼女はその知らせを聞いて歓喜して踊った。", context: "日常" },
-      { en: "The musician played with pure ecstasy on stage.", ja: "その音楽家はステージ上で純粋な歓喜とともに演奏した。", context: "音楽" },
     ],
     categories: ["communication"],
   },
@@ -4946,18 +4838,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19341,
-    word: "emperor",
-    meaning: "皇帝",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The emperor ruled the country for fifty years.", ja: "皇帝は50年間その国を治めた。", context: "歴史" },
-      { en: "Japan still has an emperor as head of state.", ja: "日本にはまだ国家元首としての天皇がいる。", context: "社会" },
-      { en: "The ancient emperor built a grand palace.", ja: "古代の皇帝は壮大な宮殿を建てた。", context: "歴史" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19342,
     word: "emphasis",
     meaning: "強調",
@@ -4978,18 +4858,6 @@ export const words: RawWord[] = [
       { en: "She emphatically denied the accusation against her.", ja: "彼女は自分への告発を断固として否定した。", context: "社会" },
       { en: "He emphatically stated that the plan was wrong.", ja: "彼はその計画が間違いだと断固として述べた。", context: "仕事" },
       { en: "The coach emphatically praised the team's effort.", ja: "コーチはチームの努力を力強く称えた。", context: "スポーツ" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 19344,
-    word: "empire",
-    meaning: "帝国",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The Roman Empire lasted for many centuries.", ja: "ローマ帝国は何世紀にもわたって続いた。", context: "歴史" },
-      { en: "He built a business empire from nothing.", ja: "彼は何もないところからビジネス帝国を築いた。", context: "仕事" },
-      { en: "The empire expanded across three continents.", ja: "その帝国は三大陸にまたがって拡大した。", context: "歴史" },
     ],
     categories: ["communication"],
   },
@@ -7886,18 +7754,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19586,
-    word: "frigate",
-    meaning: "フリゲート艦",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The navy sent a frigate to the area.", ja: "海軍はその地域にフリゲート艦を送った。", context: "社会" },
-      { en: "A frigate can travel at high speed.", ja: "フリゲート艦は高速で移動できる。", context: "技術" },
-      { en: "The old frigate is now displayed in a museum.", ja: "その古いフリゲート艦は今博物館に展示されている。", context: "文化" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19587,
     word: "fright",
     meaning: "恐怖",
@@ -8054,18 +7910,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19600,
-    word: "funeral",
-    meaning: "葬式",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Many people attended the funeral ceremony.", ja: "多くの人が葬式に参列した。", context: "文化" },
-      { en: "The funeral was held at the local church.", ja: "葬式は地元の教会で行われた。", context: "文化" },
-      { en: "Flowers were placed around the funeral hall.", ja: "葬式場の周りに花が置かれた。", context: "文化" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19601,
     word: "furious",
     meaning: "激怒した",
@@ -8162,18 +8006,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19609,
-    word: "gangster",
-    meaning: "暴力団員",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The movie is about a famous gangster.", ja: "その映画は有名な暴力団員についてだ。", context: "映画" },
-      { en: "The police caught the gangster after a long chase.", ja: "警察は長い追跡の後その暴力団員を捕まえた。", context: "社会" },
-      { en: "Gangster films were popular in the 1990s.", ja: "暴力団員の映画は1990年代に人気だった。", context: "映画" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19610,
     word: "gateway",
     meaning: "入り口",
@@ -8208,18 +8040,6 @@ export const words: RawWord[] = [
       { en: "The school promotes gender diversity.", ja: "その学校は性別の多様性を促進している。", context: "学校" },
     ],
     categories: ["communication"],
-  },
-  {
-    id: 19613,
-    word: "gene",
-    meaning: "遺伝子",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "Scientists discovered a new gene for eye color.", ja: "科学者は目の色の新しい遺伝子を発見した。", context: "科学" },
-      { en: "Genes are passed from parents to children.", ja: "遺伝子は親から子へ受け継がれる。", context: "科学" },
-      { en: "The research focuses on human gene therapy.", ja: "その研究は人間の遺伝子治療に焦点を当てている。", context: "健康" },
-    ],
-    categories: ["communication", "science"],
   },
   {
     id: 19614,
@@ -8330,18 +8150,6 @@ export const words: RawWord[] = [
     categories: ["communication", "science"],
   },
   {
-    id: 19623,
-    word: "genetics",
-    meaning: "遺伝学",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "She studies genetics at the university.", ja: "彼女は大学で遺伝学を学んでいる。", context: "学校" },
-      { en: "Genetics plays a role in many diseases.", ja: "遺伝学は多くの病気に役割を果たしている。", context: "科学" },
-      { en: "The field of genetics has advanced rapidly.", ja: "遺伝学の分野は急速に進歩した。", context: "科学" },
-    ],
-    categories: ["communication", "science"],
-  },
-  {
     id: 19624,
     word: "genius",
     meaning: "天才",
@@ -8414,18 +8222,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19630,
-    word: "geology",
-    meaning: "地質学",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "He chose geology as his major in college.", ja: "彼は大学で地質学を専攻に選んだ。", context: "学校" },
-      { en: "The geology of this area shows volcanic activity.", ja: "この地域の地質学は火山活動を示している。", context: "科学" },
-      { en: "Geology helps us understand the Earth's history.", ja: "地質学は地球の歴史を理解するのに役立つ。", context: "科学" },
-    ],
-    categories: ["communication", "science"],
-  },
-  {
     id: 19631,
     word: "gesture",
     meaning: "身振り",
@@ -8434,18 +8230,6 @@ export const words: RawWord[] = [
       { en: "He made a friendly gesture to the visitor.", ja: "彼は訪問者に友好的な身振りをした。", context: "日常" },
       { en: "A thumbs up is a common gesture of approval.", ja: "親指を立てるのは承認の一般的な身振りだ。", context: "文化" },
       { en: "Her kind gesture touched everyone's heart.", ja: "彼女の親切な身振りは皆の心を打った。", context: "日常" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 19632,
-    word: "ghetto",
-    meaning: "ゲットー",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The old ghetto has become a tourist area.", ja: "古いゲットーは観光地になった。", context: "旅行" },
-      { en: "Many families struggled to leave the ghetto.", ja: "多くの家族がゲットーを出ることに苦労した。", context: "歴史" },
-      { en: "The history of the ghetto is taught in school.", ja: "ゲットーの歴史は学校で教えられている。", context: "学校" },
     ],
     categories: ["communication"],
   },
@@ -8470,18 +8254,6 @@ export const words: RawWord[] = [
       { en: "Please finish the task within the given time.", ja: "所定の時間内にその課題を終えてください。", context: "学校" },
       { en: "The students followed the given instructions carefully.", ja: "生徒たちは所定の指示に注意深く従った。", context: "学校" },
       { en: "At any given moment, many planes are flying.", ja: "どの所定の瞬間にも多くの飛行機が飛んでいる。", context: "旅行" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 19635,
-    word: "glacis",
-    meaning: "緩斜面",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The castle was protected by a wide glacis.", ja: "その城は広い緩斜面で守られていた。", context: "歴史" },
-      { en: "Soldiers advanced across the open glacis.", ja: "兵士たちは開けた緩斜面を横切って進んだ。", context: "歴史" },
-      { en: "The glacis sloped gently toward the river.", ja: "緩斜面は川に向かって緩やかに傾いていた。", context: "地理" },
     ],
     categories: ["communication"],
   },
@@ -8522,18 +8294,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19639,
-    word: "glocal",
-    meaning: "地球と地域の",
-    partOfSpeech: "adjective",
-    examples: [
-      { en: "The company adopted a glocal business strategy.", ja: "その会社は地球と地域の経営戦略を採用した。", context: "仕事" },
-      { en: "Glocal thinking helps solve community problems.", ja: "地球と地域の考え方は地域の問題解決に役立つ。", context: "社会" },
-      { en: "Students learned about glocal approaches in class.", ja: "生徒たちは授業で地球と地域の手法を学んだ。", context: "学校" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19640,
     word: "glorify",
     meaning: "賛美する",
@@ -8570,30 +8330,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19643,
-    word: "goalkeeper",
-    meaning: "ゴールキーパー",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The goalkeeper blocked three shots in the game.", ja: "ゴールキーパーは試合で3本のシュートを止めた。", context: "スポーツ" },
-      { en: "She has been the team's goalkeeper since April.", ja: "彼女は4月からチームのゴールキーパーだ。", context: "スポーツ" },
-      { en: "The goalkeeper dived to catch the fast ball.", ja: "ゴールキーパーは速いボールを捕るために飛んだ。", context: "スポーツ" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 19644,
-    word: "goddess",
-    meaning: "女神",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The ancient Greeks worshipped the goddess Athena.", ja: "古代ギリシャ人は女神アテナを崇拝した。", context: "文化" },
-      { en: "The statue of the goddess stands in the museum.", ja: "女神の像は博物館に立っている。", context: "文化" },
-      { en: "She looked like a goddess in her evening gown.", ja: "彼女はイブニングドレスを着て女神のようだった。", context: "日常" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19645,
     word: "godly",
     meaning: "信心深い",
@@ -8618,18 +8354,6 @@ export const words: RawWord[] = [
     categories: ["communication"],
   },
   {
-    id: 19647,
-    word: "golfer",
-    meaning: "ゴルフ選手",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The professional golfer won the tournament easily.", ja: "プロのゴルフ選手は大会を楽に勝ち取った。", context: "スポーツ" },
-      { en: "Many golfers gathered at the charity event.", ja: "多くのゴルフ選手がチャリティーイベントに集まった。", context: "スポーツ" },
-      { en: "She is the youngest golfer on the national team.", ja: "彼女は代表チームで最年少のゴルフ選手だ。", context: "スポーツ" },
-    ],
-    categories: ["communication"],
-  },
-  {
     id: 19648,
     word: "goodwill",
     meaning: "善意",
@@ -8638,18 +8362,6 @@ export const words: RawWord[] = [
       { en: "The donation was a gesture of goodwill.", ja: "その寄付は善意の表れだった。", context: "社会" },
       { en: "They exchanged gifts as a sign of goodwill.", ja: "彼らは善意の印として贈り物を交換した。", context: "日常" },
       { en: "Goodwill between the two nations has grown.", ja: "両国間の善意が育ってきた。", context: "社会" },
-    ],
-    categories: ["communication"],
-  },
-  {
-    id: 19649,
-    word: "gorge",
-    meaning: "峡谷",
-    partOfSpeech: "noun",
-    examples: [
-      { en: "The river flows through a deep narrow gorge.", ja: "川は深く狭い峡谷を流れている。", context: "地理" },
-      { en: "Tourists admired the view from the gorge trail.", ja: "観光客は峡谷のトレイルからの景色を眺めた。", context: "旅行" },
-      { en: "The gorge was carved by water over centuries.", ja: "峡谷は何世紀もの水によって削られた。", context: "科学" },
     ],
     categories: ["communication"],
   },

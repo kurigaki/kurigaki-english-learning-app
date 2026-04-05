@@ -3760,7 +3760,7 @@ export const words: RawWord[] = [
   {
     id: 39982,
     word: "pass away",
-    meaning: "亡くなった",
+    meaning: "亡くなる",
     partOfSpeech: "verb",
     examples: [
       { en: "Her grandfather passed away last week.", ja: "彼女の祖父が先週亡くなった。", context: "日常" },
