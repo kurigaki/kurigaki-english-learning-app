@@ -12,6 +12,7 @@ export const words: RawWord[] = [
       { en: "The law was abolished after years of public protest.", ja: "その法律は長年の抗議運動の末に廃止された。", context: "history" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74002,
@@ -24,6 +25,7 @@ export const words: RawWord[] = [
       { en: "The city council administers local infrastructure projects.", ja: "市議会は地域のインフラ事業を管理する。", context: "governance" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74003,
@@ -36,6 +38,7 @@ export const words: RawWord[] = [
       { en: "The court affirmed the lower court's decision.", ja: "裁判所は下級審の判決を支持した。", context: "law" },
     ],
     categories: ["communication"],
+    frequencyTier: 2,
   },
   {
     id: 74004,
@@ -48,6 +51,7 @@ export const words: RawWord[] = [
       { en: "The new regulations alienated small business owners.", ja: "新しい規制は中小企業主を疎外した。", context: "economy" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74005,
@@ -60,6 +64,7 @@ export const words: RawWord[] = [
       { en: "Counseling helps alleviate stress and anxiety.", ja: "カウンセリングはストレスや不安を和らげるのに役立つ。", context: "mental health" },
     ],
     categories: ["health"],
+    frequencyTier: 3,
   },
   {
     id: 74007,
@@ -72,6 +77,7 @@ export const words: RawWord[] = [
       { en: "The community applauded the volunteers for their efforts.", ja: "地域社会はボランティアの努力を称えた。", context: "society" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74009,
@@ -84,6 +90,7 @@ export const words: RawWord[] = [
       { en: "New students may find it hard to assimilate into the school environment.", ja: "新入生は学校環境に順応するのが難しいと感じることがある。", context: "education" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74011,
@@ -96,6 +103,7 @@ export const words: RawWord[] = [
       { en: "Nations sometimes take actions to avenge attacks on their soil.", ja: "国家は自国への攻撃に対して報復行動をとることがある。", context: "politics" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74012,
@@ -108,6 +116,7 @@ export const words: RawWord[] = [
       { en: "The scientist beheld an unexpected result under the microscope.", ja: "科学者は顕微鏡下で予期せぬ結果を目の当たりにした。", context: "science" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74013,
@@ -120,6 +129,7 @@ export const words: RawWord[] = [
       { en: "Nature bestows great beauty on this region.", ja: "自然はこの地域に大きな美しさを与えている。", context: "nature" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74014,
@@ -132,6 +142,7 @@ export const words: RawWord[] = [
       { en: "The soldiers breached the enemy's defensive line.", ja: "兵士たちは敵の防衛ラインを突破した。", context: "history" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74015,
@@ -144,6 +155,7 @@ export const words: RawWord[] = [
       { en: "The drug was approved to bypass the usual lengthy review.", ja: "その薬は通常の長い審査を省略して承認された。", context: "health" },
     ],
     categories: ["technology"],
+    frequencyTier: 3,
   },
   {
     id: 74016,
@@ -156,6 +168,7 @@ export const words: RawWord[] = [
       { en: "The event organizers catered for over 500 guests.", ja: "イベント主催者は500人以上のゲストに食事を提供した。", context: "culture" },
     ],
     categories: ["business"],
+    frequencyTier: 3,
   },
   {
     id: 74017,
@@ -168,6 +181,7 @@ export const words: RawWord[] = [
       { en: "The laboratory certified the results of the experiment.", ja: "研究所は実験の結果を証明した。", context: "science" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74019,
@@ -180,6 +194,7 @@ export const words: RawWord[] = [
       { en: "Democracy and monarchy coexisted in some historical societies.", ja: "民主主義と君主制は歴史上の一部の社会で共存した。", context: "history" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74020,
@@ -192,6 +207,7 @@ export const words: RawWord[] = [
       { en: "The ceremony commemorated the scientist's contributions to medicine.", ja: "式典はその科学者の医学への貢献を記念した。", context: "science" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74021,
@@ -204,6 +220,7 @@ export const words: RawWord[] = [
       { en: "She was commended for her bravery during the crisis.", ja: "彼女は危機の際の勇気を称賛された。", context: "society" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74022,
@@ -216,6 +233,7 @@ export const words: RawWord[] = [
       { en: "The law compels citizens to pay taxes.", ja: "法律は市民に税金を支払うことを義務付けている。", context: "law" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74025,
@@ -228,6 +246,7 @@ export const words: RawWord[] = [
       { en: "She was condemned for her controversial remarks.", ja: "彼女は物議を醸した発言で非難された。", context: "communication" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74026,
@@ -240,6 +259,7 @@ export const words: RawWord[] = [
       { en: "The school confiscated mobile phones during the exam.", ja: "学校は試験中に携帯電話を没収した。", context: "education" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74027,
@@ -252,6 +272,7 @@ export const words: RawWord[] = [
       { en: "Some teenagers struggle to conform to adult expectations.", ja: "一部のティーンエイジャーは大人の期待に合わせることに苦労する。", context: "education" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74028,
@@ -264,6 +285,7 @@ export const words: RawWord[] = [
       { en: "The museum works to conserve historic artifacts.", ja: "博物館は歴史的遺物を保護するために取り組んでいる。", context: "culture" },
     ],
     categories: ["environment"],
+    frequencyTier: 2,
   },
   {
     id: 74030,
@@ -276,6 +298,7 @@ export const words: RawWord[] = [
       { en: "Bacteria can contaminate food if proper hygiene is not maintained.", ja: "適切な衛生管理が行われなければ、細菌が食品を汚染することがある。", context: "health" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74032,
@@ -288,6 +311,7 @@ export const words: RawWord[] = [
       { en: "Experts convened to address the growing threat of cybercrime.", ja: "専門家たちはサイバー犯罪の増大する脅威に対処するために集まった。", context: "technology" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74033,
@@ -300,6 +324,7 @@ export const words: RawWord[] = [
       { en: "Scientists study how temperature correlates with sea level rise.", ja: "科学者たちは気温と海面上昇の相関を研究している。", context: "environment" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74034,
@@ -312,6 +337,7 @@ export const words: RawWord[] = [
       { en: "Diplomacy can counteract the threat of armed conflict.", ja: "外交は武力衝突の脅威を打ち消すことができる。", context: "politics" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74035,
@@ -324,6 +350,7 @@ export const words: RawWord[] = [
       { en: "The starving population craved basic necessities like food and clean water.", ja: "飢えた人々は食料や清潔な水などの基本的な必需品を切望した。", context: "society" },
     ],
     categories: ["psychology"],
+    frequencyTier: 3,
   },
   {
     id: 74036,
@@ -336,6 +363,7 @@ export const words: RawWord[] = [
       { en: "Parents try to curb excessive screen time for their children.", ja: "親は子供の過度なスクリーンタイムを制限しようとする。", context: "society" },
     ],
     categories: ["policy"],
+    frequencyTier: 3,
   },
   {
     id: 74037,
@@ -348,6 +376,7 @@ export const words: RawWord[] = [
       { en: "Phishing emails deceive people into revealing passwords.", ja: "フィッシングメールは人々をだましてパスワードを明かさせる。", context: "technology" },
     ],
     categories: ["communication"],
+    frequencyTier: 2,
   },
   {
     id: 74038,
@@ -360,6 +389,7 @@ export const words: RawWord[] = [
       { en: "The court decreed that the company must pay damages.", ja: "裁判所はその会社が損害賠償を支払わなければならないと命じた。", context: "law" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74039,
@@ -372,6 +402,7 @@ export const words: RawWord[] = [
       { en: "The government deemed the area unsafe for habitation.", ja: "政府はその地域を居住に安全でないとみなした。", context: "society" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74040,
@@ -384,6 +415,7 @@ export const words: RawWord[] = [
       { en: "UV radiation can degrade plastic materials over time.", ja: "紫外線は時間の経過とともにプラスチック素材を劣化させることがある。", context: "science" },
     ],
     categories: ["environment"],
+    frequencyTier: 2,
   },
   {
     id: 74041,
@@ -396,6 +428,7 @@ export const words: RawWord[] = [
       { en: "The government demolished slums to build affordable housing.", ja: "政府はスラムを取り壊して低所得者向け住宅を建設した。", context: "policy" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74042,
@@ -408,6 +441,7 @@ export const words: RawWord[] = [
       { en: "Several nations denounced the use of chemical weapons.", ja: "いくつかの国が化学兵器の使用を非難した。", context: "history" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74043,
@@ -420,6 +454,7 @@ export const words: RawWord[] = [
       { en: "Aid workers were deployed to areas affected by the earthquake.", ja: "援助活動家は地震の被害を受けた地域に派遣された。", context: "society" },
     ],
     categories: ["military"],
+    frequencyTier: 3,
   },
   {
     id: 74046,
@@ -432,6 +467,7 @@ export const words: RawWord[] = [
       { en: "Air quality deteriorated significantly during the industrial boom.", ja: "産業ブーム中に大気質は著しく悪化した。", context: "environment" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74048,
@@ -444,6 +480,7 @@ export const words: RawWord[] = [
       { en: "The scientist discarded the faulty data before analysis.", ja: "科学者は分析の前に欠陥のあるデータを破棄した。", context: "science" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74049,
@@ -456,6 +493,7 @@ export const words: RawWord[] = [
       { en: "The author disclaimed ownership of the leaked manuscript.", ja: "著者は流出した原稿の所有権を放棄した。", context: "culture" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74051,
@@ -468,6 +506,7 @@ export const words: RawWord[] = [
       { en: "Activists demanded the dismantling of discriminatory systems.", ja: "活動家たちは差別的な制度の解体を要求した。", context: "rights" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74052,
@@ -480,6 +519,7 @@ export const words: RawWord[] = [
       { en: "The commander dispatched soldiers to reinforce the border.", ja: "司令官は国境を強化するために兵士を派遣した。", context: "history" },
     ],
     categories: ["military"],
+    frequencyTier: 3,
   },
   {
     id: 74053,
@@ -492,6 +532,7 @@ export const words: RawWord[] = [
       { en: "The sunny weather dispelled the gloomy atmosphere.", ja: "晴れた天気が暗い雰囲気を払拭した。", context: "nature" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74054,
@@ -504,6 +545,7 @@ export const words: RawWord[] = [
       { en: "New technology can displace workers in certain industries.", ja: "新技術は特定の産業で労働者を追い出すことがある。", context: "economy" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74056,
@@ -516,6 +558,7 @@ export const words: RawWord[] = [
       { en: "The earthquake disrupted power supplies for several days.", ja: "地震は数日間にわたって電力供給を混乱させた。", context: "environment" },
     ],
     categories: ["technology"],
+    frequencyTier: 3,
   },
   {
     id: 74057,
@@ -528,6 +571,7 @@ export const words: RawWord[] = [
       { en: "Universities disseminate research findings through academic journals.", ja: "大学は学術誌を通じて研究成果を普及させる。", context: "education" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74058,
@@ -540,6 +584,7 @@ export const words: RawWord[] = [
       { en: "Scientific theories sometimes diverge from popular belief.", ja: "科学理論は時に一般的な信念と乖離することがある。", context: "science" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74059,
@@ -552,6 +597,7 @@ export const words: RawWord[] = [
       { en: "The new road was designed to divert traffic away from the city center.", ja: "新しい道路は市街地から交通を迂回させるように設計された。", context: "technology" },
     ],
     categories: ["policy"],
+    frequencyTier: 3,
   },
   {
     id: 74063,
@@ -564,6 +610,7 @@ export const words: RawWord[] = [
       { en: "The machine automatically ejects defective products.", ja: "その機械は欠陥品を自動的に排出する。", context: "business" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74064,
@@ -576,6 +623,7 @@ export const words: RawWord[] = [
       { en: "She was elevated to a senior management position.", ja: "彼女はシニア管理職に昇進した。", context: "business" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74066,
@@ -588,6 +636,7 @@ export const words: RawWord[] = [
       { en: "The new building embodies modern architectural design.", ja: "新しい建物は現代建築のデザインを体現している。", context: "culture" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74067,
@@ -600,6 +649,7 @@ export const words: RawWord[] = [
       { en: "Reforms were enacted to improve the education system.", ja: "教育制度を改善するための改革が実施された。", context: "education" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74068,
@@ -612,6 +662,7 @@ export const words: RawWord[] = [
       { en: "The curriculum encompasses both science and humanities subjects.", ja: "カリキュラムは理系と文系の科目を包含している。", context: "education" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74072,
@@ -624,6 +675,7 @@ export const words: RawWord[] = [
       { en: "Scientists envision a world where diseases can be eliminated by gene editing.", ja: "科学者たちは遺伝子編集によって病気が排除できる世界を思い描く。", context: "science" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74073,
@@ -636,6 +688,7 @@ export const words: RawWord[] = [
       { en: "Repeated criticism can erode a person's confidence.", ja: "繰り返される批判は人の自信を侵食することがある。", context: "psychology" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74074,
@@ -648,6 +701,7 @@ export const words: RawWord[] = [
       { en: "The dispute over trade escalated into a diplomatic crisis.", ja: "貿易をめぐる紛争は外交危機に発展した。", context: "economy" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74075,
@@ -660,6 +714,7 @@ export const words: RawWord[] = [
       { en: "The politician evaded direct answers to the journalist's questions.", ja: "政治家はジャーナリストの質問に対する直接的な回答を回避した。", context: "communication" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74076,
@@ -672,6 +727,7 @@ export const words: RawWord[] = [
       { en: "The novel evokes a vivid picture of life in wartime.", ja: "その小説は戦時中の生活の鮮明な描写を呼び起こす。", context: "culture" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74077,
@@ -684,6 +740,7 @@ export const words: RawWord[] = [
       { en: "The crowd exclaimed in surprise at the unexpected announcement.", ja: "群衆は予期せぬ発表に驚きの声を上げた。", context: "society" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74078,
@@ -696,6 +753,7 @@ export const words: RawWord[] = [
       { en: "Students from low-income families are exempt from tuition fees.", ja: "低所得家庭の学生は授業料を免除される。", context: "education" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74079,
@@ -708,6 +766,7 @@ export const words: RawWord[] = [
       { en: "The president exerted pressure on Congress to pass the bill.", ja: "大統領は法案を可決させるために議会に圧力をかけた。", context: "politics" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74080,
@@ -720,6 +779,7 @@ export const words: RawWord[] = [
       { en: "Many intellectuals were exiled during the revolution.", ja: "革命中に多くの知識人が追放された。", context: "history" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74081,
@@ -732,6 +792,7 @@ export const words: RawWord[] = [
       { en: "The new law extinguished the rights previously enjoyed by citizens.", ja: "新しい法律は市民がかつて享受していた権利を消滅させた。", context: "rights" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74082,
@@ -744,6 +805,7 @@ export const words: RawWord[] = [
       { en: "He fabricated an alibi for the night of the crime.", ja: "彼は犯行当夜のアリバイをでっち上げた。", context: "law" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74083,
@@ -756,6 +818,7 @@ export const words: RawWord[] = [
       { en: "Democracy can flourish only when citizens are educated.", ja: "民主主義は市民が教育を受けているときにのみ繁栄できる。", context: "politics" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74084,
@@ -768,6 +831,7 @@ export const words: RawWord[] = [
       { en: "The criminal forged documents to obtain a visa.", ja: "犯人はビザを取得するために書類を偽造した。", context: "law" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74085,
@@ -780,6 +844,7 @@ export const words: RawWord[] = [
       { en: "The curriculum was formalized by the ministry of education.", ja: "カリキュラムは教育省によって正式化された。", context: "education" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74086,
@@ -792,6 +857,7 @@ export const words: RawWord[] = [
       { en: "The government introduced policies to foster innovation.", ja: "政府はイノベーションを育成する政策を導入した。", context: "economy" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74087,
@@ -804,6 +870,7 @@ export const words: RawWord[] = [
       { en: "The film was hailed by critics as a masterpiece.", ja: "その映画は批評家たちによって傑作と称えられた。", context: "culture" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74088,
@@ -816,6 +883,7 @@ export const words: RawWord[] = [
       { en: "Online trolls often harass public figures on social media.", ja: "ネットトロルはソーシャルメディアで公人に嫌がらせをすることが多い。", context: "technology" },
     ],
     categories: ["rights"],
+    frequencyTier: 3,
   },
   {
     id: 74089,
@@ -828,6 +896,7 @@ export const words: RawWord[] = [
       { en: "The village harbored refugees escaping from the war zone.", ja: "その村は戦争地帯から逃げてきた難民をかくまった。", context: "history" },
     ],
     categories: ["law"],
+    frequencyTier: 2,
   },
   {
     id: 74090,
@@ -840,6 +909,7 @@ export const words: RawWord[] = [
       { en: "Researchers want to harness artificial intelligence for medical diagnosis.", ja: "研究者たちは医療診断のための人工知能を活用したいと考えている。", context: "health" },
     ],
     categories: ["technology"],
+    frequencyTier: 3,
   },
   {
     id: 74091,
@@ -852,6 +922,7 @@ export const words: RawWord[] = [
       { en: "Guilt can haunt a person for years after committing a wrong.", ja: "罪を犯した後、罪悪感は何年もその人を悩ませることがある。", context: "psychology" },
     ],
     categories: ["psychology"],
+    frequencyTier: 3,
   },
   {
     id: 74092,
@@ -864,6 +935,7 @@ export const words: RawWord[] = [
       { en: "Drivers who heed traffic rules help prevent accidents.", ja: "交通ルールを守るドライバーは事故防止に役立つ。", context: "society" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74093,
@@ -876,6 +948,7 @@ export const words: RawWord[] = [
       { en: "The documentary heightened awareness of climate change.", ja: "そのドキュメンタリーは気候変動への意識を高めた。", context: "environment" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74095,
@@ -888,6 +961,7 @@ export const words: RawWord[] = [
       { en: "The book ignited a national debate on education reform.", ja: "その本は教育改革に関する国民的議論に火をつけた。", context: "education" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74096,
@@ -900,6 +974,7 @@ export const words: RawWord[] = [
       { en: "Immersing oneself in nature can reduce stress levels.", ja: "自然に浸ることはストレスレベルを下げることができる。", context: "health" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74097,
@@ -912,6 +987,7 @@ export const words: RawWord[] = [
       { en: "The disease impaired her vision significantly.", ja: "その病気は彼女の視力を著しく損なった。", context: "health" },
     ],
     categories: ["health"],
+    frequencyTier: 3,
   },
   {
     id: 74098,
@@ -924,6 +1000,7 @@ export const words: RawWord[] = [
       { en: "The possibility of impeachment increased pressure on the official.", ja: "弾劾の可能性は官僚への圧力を高めた。", context: "politics" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74099,
@@ -936,6 +1013,7 @@ export const words: RawWord[] = [
       { en: "Lack of funding impedes scientific research.", ja: "資金不足は科学研究を妨げる。", context: "science" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74100,
@@ -948,6 +1026,7 @@ export const words: RawWord[] = [
       { en: "New documents implicated the government in covering up the truth.", ja: "新しい文書は政府が真実を隠蔽していることに関係していることを示した。", context: "politics" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74101,
@@ -960,6 +1039,7 @@ export const words: RawWord[] = [
       { en: "The factory was inaugurated to boost regional employment.", ja: "工場は地域の雇用を促進するために開設された。", context: "economy" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74102,
@@ -972,6 +1052,7 @@ export const words: RawWord[] = [
       { en: "The propaganda was designed to incite rebellion.", ja: "プロパガンダは反乱を扇動するように設計されていた。", context: "history" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74103,
@@ -984,6 +1065,7 @@ export const words: RawWord[] = [
       { en: "Children should not be allowed to indulge in too much screen time.", ja: "子供たちはスクリーンタイムにふけることを許されるべきではない。", context: "education" },
     ],
     categories: ["psychology"],
+    frequencyTier: 3,
   },
   {
     id: 74104,
@@ -996,6 +1078,7 @@ export const words: RawWord[] = [
       { en: "The verdict inflicted a heavy fine on the corporation.", ja: "判決はその企業に重い罰金を科した。", context: "law" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74105,
@@ -1008,6 +1091,7 @@ export const words: RawWord[] = [
       { en: "Some species that once inhabited rainforests are now extinct.", ja: "かつて熱帯雨林に生息していた一部の種は今や絶滅した。", context: "environment" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74106,
@@ -1020,6 +1104,7 @@ export const words: RawWord[] = [
       { en: "Engineers injected new technology into the aging infrastructure.", ja: "エンジニアは老朽化したインフラに新しい技術を注入した。", context: "technology" },
     ],
     categories: ["health"],
+    frequencyTier: 2,
   },
   {
     id: 74107,
@@ -1032,6 +1117,7 @@ export const words: RawWord[] = [
       { en: "Ancient rulers inscribed laws on stone tablets.", ja: "古代の支配者は石碑に法律を刻んだ。", context: "history" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74108,
@@ -1044,6 +1130,7 @@ export const words: RawWord[] = [
       { en: "The goalkeeper intercepted the opponent's pass.", ja: "ゴールキーパーは相手のパスをインターセプトした。", context: "culture" },
     ],
     categories: ["technology"],
+    frequencyTier: 3,
   },
   {
     id: 74109,
@@ -1056,6 +1143,7 @@ export const words: RawWord[] = [
       { en: "Government surveillance can intrude on citizens' privacy.", ja: "政府の監視は市民のプライバシーを侵害することがある。", context: "rights" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74110,
@@ -1068,6 +1156,7 @@ export const words: RawWord[] = [
       { en: "Environmental groups invoked international law to challenge the project.", ja: "環境グループはそのプロジェクトに異議を唱えるために国際法を援用した。", context: "law" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74111,
@@ -1080,6 +1169,7 @@ export const words: RawWord[] = [
       { en: "Citizens lamented the decline in public services.", ja: "市民たちは公共サービスの低下を嘆いた。", context: "society" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74112,
@@ -1092,6 +1182,7 @@ export const words: RawWord[] = [
       { en: "The abolition of child labor improved conditions for millions.", ja: "児童労働の廃止は何百万もの人々の状況を改善した。", context: "rights" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74113,
@@ -1104,6 +1195,7 @@ export const words: RawWord[] = [
       { en: "The leaders reached an accord on climate change measures.", ja: "指導者たちは気候変動対策について合意に達した。", context: "environment" },
     ],
     categories: ["politics"],
+    frequencyTier: 1,
   },
   {
     id: 74114,
@@ -1116,6 +1208,7 @@ export const words: RawWord[] = [
       { en: "Knowledge acquisition is a lifelong process.", ja: "知識の取得は生涯を通じた過程である。", context: "education" },
     ],
     categories: ["business"],
+    frequencyTier: 2,
   },
   {
     id: 74115,
@@ -1128,6 +1221,7 @@ export const words: RawWord[] = [
       { en: "The aftermath of the financial crisis affected millions of workers.", ja: "金融危機の余波は何百万もの労働者に影響を与えた。", context: "economy" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74116,
@@ -1140,6 +1234,7 @@ export const words: RawWord[] = [
       { en: "Her allegiance to the cause never wavered even under pressure.", ja: "彼女の大義への忠誠は圧力の下でさえ揺らがなかった。", context: "culture" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74117,
@@ -1152,6 +1247,7 @@ export const words: RawWord[] = [
       { en: "The allocation of medical supplies during a pandemic requires careful planning.", ja: "パンデミック時の医療物資の配分には慎重な計画が必要だ。", context: "health" },
     ],
     categories: ["economy"],
+    frequencyTier: 2,
   },
   {
     id: 74118,
@@ -1164,6 +1260,7 @@ export const words: RawWord[] = [
       { en: "The critic provided fresh ammunition for the opposition party.", ja: "批評家は野党に新たな攻撃材料を提供した。", context: "politics" },
     ],
     categories: ["military"],
+    frequencyTier: 3,
   },
   {
     id: 74120,
@@ -1176,6 +1273,7 @@ export const words: RawWord[] = [
       { en: "The city fell into anarchy after the power outage.", ja: "停電の後、都市は無政府状態に陥った。", context: "society" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74121,
@@ -1188,6 +1286,7 @@ export const words: RawWord[] = [
       { en: "The union became an antagonist to management in contract negotiations.", ja: "組合は契約交渉でマネジメントへの対立者となった。", context: "business" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74122,
@@ -1200,6 +1299,7 @@ export const words: RawWord[] = [
       { en: "The propaganda apparatus of the regime controlled the media.", ja: "政権のプロパガンダ機構はメディアを支配していた。", context: "history" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74123,
@@ -1212,6 +1312,7 @@ export const words: RawWord[] = [
       { en: "Labor arbitration helped avoid a nationwide strike.", ja: "労働仲裁は全国的なストライキを回避するのに役立った。", context: "economy" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74124,
@@ -1224,6 +1325,7 @@ export const words: RawWord[] = [
       { en: "Archaeologists discovered bronze age artifacts at the excavation site.", ja: "考古学者たちは発掘現場で青銅器時代の遺物を発見した。", context: "history" },
     ],
     categories: ["history"],
+    frequencyTier: 2,
   },
   {
     id: 74125,
@@ -1236,6 +1338,7 @@ export const words: RawWord[] = [
       { en: "The investigation into the assassination revealed a political conspiracy.", ja: "暗殺の調査は政治的陰謀を明らかにした。", context: "law" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74126,
@@ -1248,6 +1351,7 @@ export const words: RawWord[] = [
       { en: "International law protects the right to seek asylum.", ja: "国際法は亡命を求める権利を保護している。", context: "law" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74127,
@@ -1260,6 +1364,7 @@ export const words: RawWord[] = [
       { en: "The atrocities of the genocide shocked the international community.", ja: "ジェノサイドの残虐行為は国際社会に衝撃を与えた。", context: "history" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74128,
@@ -1272,6 +1377,7 @@ export const words: RawWord[] = [
       { en: "Austerity policies can reduce government spending but harm the poor.", ja: "緊縮政策は政府支出を削減できるが、貧困層を傷つけることがある。", context: "policy" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74129,
@@ -1284,6 +1390,7 @@ export const words: RawWord[] = [
       { en: "Universities value academic autonomy in research and teaching.", ja: "大学は研究と教育における学術的自律性を重視する。", context: "education" },
     ],
     categories: ["politics"],
+    frequencyTier: 2,
   },
   {
     id: 74130,
@@ -1296,6 +1403,7 @@ export const words: RawWord[] = [
       { en: "The company's decision to raise prices led to a consumer backlash.", ja: "価格引き上げの決定は消費者の反発を招いた。", context: "business" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74131,
@@ -1308,6 +1416,7 @@ export const words: RawWord[] = [
       { en: "Critics questioned whether the taxpayer bailout was justified.", ja: "批評家たちは納税者による救済が正当化されるかを疑問視した。", context: "policy" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74132,
@@ -1320,6 +1429,7 @@ export const words: RawWord[] = [
       { en: "The product set a new benchmark in energy efficiency.", ja: "その製品はエネルギー効率の新しい基準を設定した。", context: "technology" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74133,
@@ -1332,6 +1442,7 @@ export const words: RawWord[] = [
       { en: "Protecting biodiversity is essential for ecosystem health.", ja: "生物多様性を保護することは生態系の健全性に不可欠だ。", context: "science" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74134,
@@ -1344,6 +1455,7 @@ export const words: RawWord[] = [
       { en: "The peace deal served as a blueprint for future negotiations.", ja: "その平和協定は将来の交渉の青写真として機能した。", context: "politics" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74135,
@@ -1356,6 +1468,7 @@ export const words: RawWord[] = [
       { en: "The trade boycott disrupted economic relations between the nations.", ja: "貿易ボイコットは国家間の経済関係を混乱させた。", context: "economy" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74136,
@@ -1368,6 +1481,7 @@ export const words: RawWord[] = [
       { en: "The volunteer brigade helped clean up after the flood.", ja: "ボランティア隊は洪水後の清掃を手伝った。", context: "society" },
     ],
     categories: ["military"],
+    frequencyTier: 3,
   },
   {
     id: 74139,
@@ -1380,6 +1494,7 @@ export const words: RawWord[] = [
       { en: "Wartime censorship was used to control public information.", ja: "戦時中の検閲は公的情報を管理するために使われた。", context: "history" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74140,
@@ -1392,6 +1507,7 @@ export const words: RawWord[] = [
       { en: "The documentary serves as a chronicle of the civil rights movement.", ja: "そのドキュメンタリーは公民権運動の記録として機能している。", context: "history" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74141,
@@ -1404,6 +1520,7 @@ export const words: RawWord[] = [
       { en: "Education plays a key role in developing responsible citizenship.", ja: "教育は責任ある市民権を育てる上で重要な役割を果たす。", context: "education" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74145,
@@ -1416,6 +1533,7 @@ export const words: RawWord[] = [
       { en: "Students study communism as part of political science courses.", ja: "学生は政治学の課程の一部として共産主義を学ぶ。", context: "education" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74146,
@@ -1428,6 +1546,7 @@ export const words: RawWord[] = [
       { en: "Compliance with public health guidelines is essential during a pandemic.", ja: "パンデミック中は公衆衛生ガイドラインの遵守が不可欠だ。", context: "health" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74147,
@@ -1440,6 +1559,7 @@ export const words: RawWord[] = [
       { en: "The company offered price concessions to retain key clients.", ja: "会社は主要な顧客を確保するために価格の譲歩を申し出た。", context: "business" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74148,
@@ -1452,6 +1572,7 @@ export const words: RawWord[] = [
       { en: "The Swiss Confederation has a long tradition of neutrality.", ja: "スイス連邦は長い中立の伝統を持っている。", context: "history" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74150,
@@ -1464,6 +1585,7 @@ export const words: RawWord[] = [
       { en: "The congregation included members from diverse backgrounds.", ja: "その集会は多様な背景を持つメンバーで構成されていた。", context: "culture" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74154,
@@ -1476,6 +1598,7 @@ export const words: RawWord[] = [
       { en: "The consulate was evacuated due to security threats.", ja: "セキュリティの脅威により領事館が避難した。", context: "history" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74155,
@@ -1488,6 +1611,7 @@ export const words: RawWord[] = [
       { en: "The army trained for all possible contingencies in the field.", ja: "軍は現場でのあらゆる不測の事態に備えて訓練した。", context: "military" },
     ],
     categories: ["policy"],
+    frequencyTier: 3,
   },
   {
     id: 74157,
@@ -1500,6 +1624,7 @@ export const words: RawWord[] = [
       { en: "Naval convoys protected merchant ships during the war.", ja: "海軍の護送船団は戦争中に商船を守った。", context: "history" },
     ],
     categories: ["military"],
+    frequencyTier: 3,
   },
   {
     id: 74158,
@@ -1512,6 +1637,7 @@ export const words: RawWord[] = [
       { en: "The copyright on the novel expired 70 years after the author's death.", ja: "その小説の著作権は著者の死後70年で切れた。", context: "culture" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74159,
@@ -1524,6 +1650,7 @@ export const words: RawWord[] = [
       { en: "A wildlife corridor allows animals to move between habitats.", ja: "野生動物の回廊は動物が生息地の間を移動できるようにする。", context: "environment" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74160,
@@ -1536,6 +1663,7 @@ export const words: RawWord[] = [
       { en: "International condemnation followed the coup immediately.", ja: "クーデターの後、すぐに国際的な非難が続いた。", context: "politics" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74161,
@@ -1548,6 +1676,7 @@ export const words: RawWord[] = [
       { en: "Scientific credibility is established through peer-reviewed research.", ja: "科学的信頼性は査読済みの研究によって確立される。", context: "science" },
     ],
     categories: ["communication"],
+    frequencyTier: 2,
   },
   {
     id: 74162,
@@ -1560,6 +1689,7 @@ export const words: RawWord[] = [
       { en: "Multiple criteria are used to evaluate job applicants.", ja: "複数の基準が求職者を評価するために使用される。", context: "business" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74163,
@@ -1572,6 +1702,7 @@ export const words: RawWord[] = [
       { en: "The political creed of the party emphasized freedom of expression.", ja: "その党の政治的信条は表現の自由を強調していた。", context: "politics" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74164,
@@ -1584,6 +1715,7 @@ export const words: RawWord[] = [
       { en: "The university revised its curriculum to meet industry demands.", ja: "大学は産業界の需要に応えるためにカリキュラムを改訂した。", context: "business" },
     ],
     categories: ["education"],
+    frequencyTier: 2,
   },
   {
     id: 74167,
@@ -1596,6 +1728,7 @@ export const words: RawWord[] = [
       { en: "Cleanup teams cleared debris from the streets after the storm.", ja: "嵐の後、清掃チームが通りから瓦礫を撤去した。", context: "society" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74169,
@@ -1608,6 +1741,7 @@ export const words: RawWord[] = [
       { en: "The small nation acted in defiance of international sanctions.", ja: "その小国は国際制裁に反抗して行動した。", context: "politics" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74171,
@@ -1620,6 +1754,7 @@ export const words: RawWord[] = [
       { en: "The delegation presented its demands at the UN conference.", ja: "代表団は国連会議でその要求を提示した。", context: "politics" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74172,
@@ -1632,6 +1767,7 @@ export const words: RawWord[] = [
       { en: "Demography research helps governments anticipate future needs.", ja: "人口統計調査は政府が将来の需要を予測するのに役立つ。", context: "policy" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74173,
@@ -1644,6 +1780,7 @@ export const words: RawWord[] = [
       { en: "Different denominations of coins and notes are used in daily transactions.", ja: "日常の取引では様々な額面の硬貨や紙幣が使われる。", context: "economy" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74174,
@@ -1656,6 +1793,7 @@ export const words: RawWord[] = [
       { en: "The deportation of skilled workers can damage the economy.", ja: "熟練労働者の強制送還は経済に損害を与えることがある。", context: "economy" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74175,
@@ -1668,6 +1806,7 @@ export const words: RawWord[] = [
       { en: "Deregulation can stimulate economic growth but also create risks.", ja: "規制緩和は経済成長を刺激できるが、リスクも生み出すことがある。", context: "policy" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74177,
@@ -1680,6 +1819,7 @@ export const words: RawWord[] = [
       { en: "The immigration detention center housed hundreds of asylum seekers.", ja: "入国管理拘留センターには何百人もの亡命希望者が収容されていた。", context: "society" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74178,
@@ -1692,6 +1832,7 @@ export const words: RawWord[] = [
       { en: "The presence of armed guards served as a deterrent to theft.", ja: "武装警備員の存在は盗難への抑止力として機能した。", context: "society" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74179,
@@ -1704,6 +1845,7 @@ export const words: RawWord[] = [
       { en: "Civil society organizations fight against the rise of dictatorship.", ja: "市民社会組織は独裁政治の台頭と戦う。", context: "society" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74180,
@@ -1716,6 +1858,7 @@ export const words: RawWord[] = [
       { en: "Economic diplomacy plays an important role in international relations.", ja: "経済外交は国際関係で重要な役割を果たす。", context: "economy" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74183,
@@ -1728,6 +1871,7 @@ export const words: RawWord[] = [
       { en: "Canada became a self-governing dominion within the British Empire.", ja: "カナダは大英帝国内の自治的な自治領となった。", context: "history" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74185,
@@ -1740,6 +1884,7 @@ export const words: RawWord[] = [
       { en: "The dynasty ruled the country for over three centuries.", ja: "その王朝は三世紀以上にわたって国を統治した。", context: "history" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74186,
@@ -1752,6 +1897,7 @@ export const words: RawWord[] = [
       { en: "The oil embargo caused fuel prices to skyrocket worldwide.", ja: "石油禁輸は世界中で燃料価格を急騰させた。", context: "history" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74187,
@@ -1764,6 +1910,7 @@ export const words: RawWord[] = [
       { en: "The government introduced incentives to reduce emigration of skilled workers.", ja: "政府は熟練労働者の移住を減らすためのインセンティブを導入した。", context: "policy" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74188,
@@ -1776,6 +1923,7 @@ export const words: RawWord[] = [
       { en: "Developing empathy in children is essential for social harmony.", ja: "子供たちの共感を育てることは社会的調和に不可欠だ。", context: "society" },
     ],
     categories: ["psychology"],
+    frequencyTier: 3,
   },
   {
     id: 74189,
@@ -1788,6 +1936,7 @@ export const words: RawWord[] = [
       { en: "Her endeavor to achieve equality inspired many followers.", ja: "平等を達成するための彼女の努力は多くの支持者にインスピレーションを与えた。", context: "society" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74191,
@@ -1800,6 +1949,7 @@ export const words: RawWord[] = [
       { en: "The region maintained political equilibrium through careful diplomacy.", ja: "地域は慎重な外交によって政治的均衡を維持した。", context: "politics" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74192,
@@ -1812,6 +1962,7 @@ export const words: RawWord[] = [
       { en: "The Cold War was characterized by intense espionage between superpowers.", ja: "冷戦は超大国間の激しいスパイ活動によって特徴づけられた。", context: "history" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74193,
@@ -1824,6 +1975,7 @@ export const words: RawWord[] = [
       { en: "The census collects data on the ethnicity of residents.", ja: "国勢調査は住民の民族性に関するデータを収集する。", context: "policy" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74195,
@@ -1836,6 +1988,7 @@ export const words: RawWord[] = [
       { en: "An acute economic crisis forced the government to seek international aid.", ja: "深刻な経済危機は政府に国際支援を求めることを余儀なくさせた。", context: "economy" },
     ],
     categories: ["health"],
+    frequencyTier: 2,
   },
   {
     id: 74196,
@@ -1848,6 +2001,7 @@ export const words: RawWord[] = [
       { en: "Adverse economic conditions led to widespread unemployment.", ja: "不利な経済状況は広範な失業をもたらした。", context: "economy" },
     ],
     categories: ["environment"],
+    frequencyTier: 2,
   },
   {
     id: 74197,
@@ -1860,6 +2014,7 @@ export const words: RawWord[] = [
       { en: "The museum's aesthetic appeal attracts millions of visitors each year.", ja: "博物館の美的魅力は毎年何百万人もの訪問者を引き付ける。", context: "culture" },
     ],
     categories: ["culture"],
+    frequencyTier: 2,
   },
   {
     id: 74198,
@@ -1872,6 +2027,7 @@ export const words: RawWord[] = [
       { en: "Affluent nations have a responsibility to assist developing countries.", ja: "裕福な国々は発展途上国を援助する責任を持っている。", context: "politics" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74199,
@@ -1884,6 +2040,7 @@ export const words: RawWord[] = [
       { en: "Scientific results can sometimes be ambiguous and difficult to interpret.", ja: "科学的結果は時に曖昧で解釈が難しいことがある。", context: "science" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74200,
@@ -1896,6 +2053,7 @@ export const words: RawWord[] = [
       { en: "The stadium has ample seating capacity for large events.", ja: "そのスタジアムは大規模なイベントのための十分な座席容量がある。", context: "culture" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74201,
@@ -1908,6 +2066,7 @@ export const words: RawWord[] = [
       { en: "The policy seemed arbitrary and without clear justification.", ja: "その政策は恣意的で明確な根拠を欠いているように見えた。", context: "policy" },
     ],
     categories: ["law"],
+    frequencyTier: 2,
   },
   {
     id: 74202,
@@ -1920,6 +2079,7 @@ export const words: RawWord[] = [
       { en: "The austere design of the office reflected the company's minimalist philosophy.", ja: "オフィスの簡素なデザインは会社のミニマリスト哲学を反映していた。", context: "business" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74203,
@@ -1932,6 +2092,7 @@ export const words: RawWord[] = [
       { en: "The university operates as an autonomous institution with academic freedom.", ja: "大学は学問の自由を持つ自律的な機関として運営されている。", context: "education" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74204,
@@ -1944,6 +2105,7 @@ export const words: RawWord[] = [
       { en: "Benevolent donations helped fund medical research worldwide.", ja: "慈悲深い寄付は世界中の医学研究に資金を提供するのに役立った。", context: "health" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74205,
@@ -1956,6 +2118,7 @@ export const words: RawWord[] = [
       { en: "The bilateral summit addressed issues of shared environmental concern.", ja: "二国間首脳会談は共通の環境問題に取り組んだ。", context: "environment" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74206,
@@ -1968,6 +2131,7 @@ export const words: RawWord[] = [
       { en: "A blunt object was used to break the window during the break-in.", ja: "不法侵入の際に鈍器が窓を割るために使われた。", context: "law" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74207,
@@ -1980,6 +2144,7 @@ export const words: RawWord[] = [
       { en: "Streamlining bureaucratic procedures can improve public service delivery.", ja: "官僚的な手続きを合理化することで公共サービスの提供を改善できる。", context: "policy" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74209,
@@ -1992,6 +2157,7 @@ export const words: RawWord[] = [
       { en: "Clandestine networks helped smuggle refugees across the border.", ja: "秘密のネットワークが難民を国境を越えて密かに運ぶのを助けた。", context: "history" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74210,
@@ -2004,6 +2170,7 @@ export const words: RawWord[] = [
       { en: "Economic coercive pressure was used to influence the smaller nation's policy.", ja: "経済的な強制圧力が小国の政策に影響を与えるために使われた。", context: "economy" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74211,
@@ -2016,6 +2183,7 @@ export const words: RawWord[] = [
       { en: "Her speech was coherent, logical, and persuasive throughout.", ja: "彼女のスピーチは終始一貫していて、論理的で説得力があった。", context: "communication" },
     ],
     categories: ["communication"],
+    frequencyTier: 2,
   },
   {
     id: 74213,
@@ -2028,6 +2196,7 @@ export const words: RawWord[] = [
       { en: "Communal farming helped the village survive the drought.", ja: "共同農業は村が干ばつを生き延びるのに役立った。", context: "environment" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74214,
@@ -2040,6 +2209,7 @@ export const words: RawWord[] = [
       { en: "Economic growth and environmental protection are not always compatible.", ja: "経済成長と環境保護は常に両立するわけではない。", context: "environment" },
     ],
     categories: ["technology"],
+    frequencyTier: 3,
   },
   {
     id: 74216,
@@ -2052,6 +2222,7 @@ export const words: RawWord[] = [
       { en: "A concise explanation helped the audience grasp the complex topic.", ja: "簡潔な説明は聴衆が複雑なトピックを把握するのに役立った。", context: "communication" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74217,
@@ -2064,6 +2235,7 @@ export const words: RawWord[] = [
       { en: "A warm and supportive classroom is conducive to learning.", ja: "温かく支援的な教室環境は学習を促進する。", context: "education" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74218,
@@ -2076,6 +2248,7 @@ export const words: RawWord[] = [
       { en: "Confidential negotiations led to a breakthrough in the peace talks.", ja: "秘密交渉が和平会談の突破口をもたらした。", context: "politics" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74219,
@@ -2088,6 +2261,7 @@ export const words: RawWord[] = [
       { en: "A conscientious doctor takes time to explain options to each patient.", ja: "誠実な医師は各患者に選択肢を説明する時間をとる。", context: "health" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74220,
@@ -2100,6 +2274,7 @@ export const words: RawWord[] = [
       { en: "Heavy rain fell on five consecutive days, causing flooding.", ja: "5日連続の大雨が洪水を引き起こした。", context: "environment" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74221,
@@ -2112,6 +2287,7 @@ export const words: RawWord[] = [
       { en: "Constitutional reforms were required to allow the presidential term extension.", ja: "大統領任期の延長を認めるために憲法改正が必要だった。", context: "politics" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74222,
@@ -2124,6 +2300,7 @@ export const words: RawWord[] = [
       { en: "A covert network of spies operated throughout the Cold War.", ja: "冷戦を通じてスパイの秘密ネットワークが活動していた。", context: "history" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74223,
@@ -2136,6 +2313,7 @@ export const words: RawWord[] = [
       { en: "The cumulative costs of the project exceeded the initial budget.", ja: "プロジェクトの累積コストは当初の予算を超えた。", context: "business" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74224,
@@ -2148,6 +2326,7 @@ export const words: RawWord[] = [
       { en: "She gave a defiant speech against the government's censorship policies.", ja: "彼女は政府の検閲政策に対して反抗的なスピーチをした。", context: "communication" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74225,
@@ -2160,6 +2339,7 @@ export const words: RawWord[] = [
       { en: "She felt desolate and alone after losing her closest friends.", ja: "最親友を失った後、彼女は荒涼とした孤独感を感じた。", context: "psychology" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74226,
@@ -2172,6 +2352,7 @@ export const words: RawWord[] = [
       { en: "Corruption is detrimental to economic growth and social trust.", ja: "汚職は経済成長と社会的信頼に有害だ。", context: "society" },
     ],
     categories: ["health"],
+    frequencyTier: 3,
   },
   {
     id: 74227,
@@ -2184,6 +2365,7 @@ export const words: RawWord[] = [
       { en: "Devout communities often play important roles in charitable work.", ja: "信心深いコミュニティはしばしば慈善活動において重要な役割を果たす。", context: "culture" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74228,
@@ -2196,6 +2378,7 @@ export const words: RawWord[] = [
       { en: "The diplomat handled the sensitive matter in a discreet manner.", ja: "外交官はデリケートな問題を慎重な方法で処理した。", context: "politics" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74229,
@@ -2208,6 +2391,7 @@ export const words: RawWord[] = [
       { en: "Governments are banning disposable straws and bags to reduce waste.", ja: "政府は廃棄物を減らすために使い捨てストローと袋を禁止している。", context: "policy" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74230,
@@ -2220,6 +2404,7 @@ export const words: RawWord[] = [
       { en: "The dormant virus can be reactivated under certain conditions.", ja: "休眠ウイルスは特定の条件下で再活性化する可能性がある。", context: "health" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74231,
@@ -2232,6 +2417,7 @@ export const words: RawWord[] = [
       { en: "She delivered an elaborate explanation of the scientific findings.", ja: "彼女は科学的発見の詳細な説明をした。", context: "science" },
     ],
     categories: ["culture"],
+    frequencyTier: 2,
   },
   {
     id: 74232,
@@ -2244,6 +2430,7 @@ export const words: RawWord[] = [
       { en: "Empirical research shows a link between poverty and poor health outcomes.", ja: "経験的研究は貧困と健康状態の悪化との関連を示している。", context: "health" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74233,
@@ -2256,6 +2443,7 @@ export const words: RawWord[] = [
       { en: "The island is home to several endemic species found nowhere else.", ja: "その島は他のどこにも見られないいくつかの固有種の生息地だ。", context: "environment" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74234,
@@ -2268,6 +2456,7 @@ export const words: RawWord[] = [
       { en: "Equitable access to education is a key goal of social policy.", ja: "教育への公平なアクセスは社会政策の主要な目標だ。", context: "education" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74235,
@@ -2280,6 +2469,7 @@ export const words: RawWord[] = [
       { en: "Erratic economic policies create uncertainty for investors.", ja: "不規則な経済政策は投資家にとって不確実性を生み出す。", context: "economy" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74236,
@@ -2292,6 +2482,7 @@ export const words: RawWord[] = [
       { en: "Ethnic conflicts have historically led to mass displacement of populations.", ja: "民族紛争は歴史的に大規模な人口の移動につながってきた。", context: "history" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74237,
@@ -2304,6 +2495,7 @@ export const words: RawWord[] = [
       { en: "Children under five are exempt from the entrance fee.", ja: "5歳未満の子供は入場料を免除されている。", context: "society" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74238,
@@ -2316,6 +2508,7 @@ export const words: RawWord[] = [
       { en: "The contract must include explicit terms to avoid misunderstandings.", ja: "誤解を避けるために契約書には明示的な条件が含まれなければならない。", context: "business" },
     ],
     categories: ["communication"],
+    frequencyTier: 2,
   },
   {
     id: 74239,
@@ -2328,6 +2521,7 @@ export const words: RawWord[] = [
       { en: "The language spoken by the tribe is now considered extinct.", ja: "その部族によって話されていた言語は現在絶滅したと考えられている。", context: "culture" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74240,
@@ -2340,6 +2534,7 @@ export const words: RawWord[] = [
       { en: "The extravagant wedding ceremony was criticized as wasteful.", ja: "贅沢な結婚式は無駄遣いとして批判された。", context: "culture" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74241,
@@ -2352,6 +2547,7 @@ export const words: RawWord[] = [
       { en: "Renewable energy is becoming an increasingly feasible alternative.", ja: "再生可能エネルギーはますます実現可能な代替手段となっている。", context: "environment" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74242,
@@ -2364,6 +2560,7 @@ export const words: RawWord[] = [
       { en: "The report highlighted fiscal deficits that threatened public services.", ja: "報告書は公共サービスを脅かす財政赤字を強調した。", context: "policy" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74243,
@@ -2376,6 +2573,7 @@ export const words: RawWord[] = [
       { en: "The company faced formidable competition from global tech giants.", ja: "会社はグローバルなテクノロジー大手から手強い競争に直面した。", context: "business" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74244,
@@ -2388,6 +2586,7 @@ export const words: RawWord[] = [
       { en: "Talent was abundantly clear in the young musician's performance.", ja: "若い音楽家の演奏に才能が豊かに現れていた。", context: "culture" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74245,
@@ -2400,6 +2599,7 @@ export const words: RawWord[] = [
       { en: "Climate change is adversely impacting agricultural productivity.", ja: "気候変動は農業生産性に悪影響を与えている。", context: "science" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74246,
@@ -2412,6 +2612,7 @@ export const words: RawWord[] = [
       { en: "She allegedly received bribes from a foreign government.", ja: "彼女は外国政府から賄賂を受け取ったとされている。", context: "politics" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74247,
@@ -2424,6 +2625,7 @@ export const words: RawWord[] = [
       { en: "The decision was arguably the most important one taken that century.", ja: "その決定は間違いなくその世紀に取られた最も重要なものだった。", context: "history" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74248,
@@ -2436,6 +2638,7 @@ export const words: RawWord[] = [
       { en: "The system operates autonomously using artificial intelligence.", ja: "そのシステムは人工知能を使って自律的に動作する。", context: "technology" },
     ],
     categories: ["technology"],
+    frequencyTier: 3,
   },
   {
     id: 74249,
@@ -2448,6 +2651,7 @@ export const words: RawWord[] = [
       { en: "The school system in the area has been chronically underfunded.", ja: "その地域の学校システムは慢性的に資金不足だった。", context: "education" },
     ],
     categories: ["health"],
+    frequencyTier: 3,
   },
   {
     id: 74250,
@@ -2460,6 +2664,7 @@ export const words: RawWord[] = [
       { en: "The plan was coherently structured to address all key challenges.", ja: "計画はすべての主要な課題に対処するために一貫して構成されていた。", context: "policy" },
     ],
     categories: ["communication"],
+    frequencyTier: 3,
   },
   {
     id: 74251,
@@ -2472,6 +2677,7 @@ export const words: RawWord[] = [
       { en: "The fragile peace between the two nations was easily disturbed.", ja: "両国間の脆い平和は簡単に乱された。", context: "fragile" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74252,
@@ -2484,6 +2690,7 @@ export const words: RawWord[] = [
       { en: "The fraudulent documents were seized by authorities.", ja: "不正な文書は当局に押収された。", context: "fraudulent" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74253,
@@ -2496,6 +2703,7 @@ export const words: RawWord[] = [
       { en: "The rescue team made a futile search in the dark.", ja: "救助隊は暗闇の中で無駄な捜索をした。", context: "futile" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74254,
@@ -2508,6 +2716,7 @@ export const words: RawWord[] = [
       { en: "The graphic violence in the film shocked many viewers.", ja: "映画の生々しい暴力シーンは多くの視聴者を驚かせた。", context: "graphic" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74255,
@@ -2520,6 +2729,7 @@ export const words: RawWord[] = [
       { en: "The gravitational force between objects depends on their mass.", ja: "物体間の重力は質量に依存する。", context: "gravitational" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74256,
@@ -2532,6 +2742,7 @@ export const words: RawWord[] = [
       { en: "The chemical plant released hazardous gases into the air.", ja: "化学工場は有害ガスを大気中に放出した。", context: "hazardous" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74257,
@@ -2544,6 +2755,7 @@ export const words: RawWord[] = [
       { en: "Researchers are studying hereditary factors in cancer risk.", ja: "研究者たちはがんリスクの遺伝的要因を研究している。", context: "hereditary" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74258,
@@ -2556,6 +2768,7 @@ export const words: RawWord[] = [
       { en: "The hierarchical system made communication between teams difficult.", ja: "階層的な制度はチーム間のコミュニケーションを困難にした。", context: "hierarchical" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74259,
@@ -2568,6 +2781,7 @@ export const words: RawWord[] = [
       { en: "A humane approach to punishment focuses on rehabilitation.", ja: "人道的な刑罰のアプローチはリハビリテーションに焦点を当てる。", context: "humane" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74260,
@@ -2580,6 +2794,7 @@ export const words: RawWord[] = [
       { en: "They discussed a hypothetical scenario in which prices doubled.", ja: "彼らは物価が2倍になる仮定のシナリオについて議論した。", context: "hypothetical" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74261,
@@ -2592,6 +2807,7 @@ export const words: RawWord[] = [
       { en: "He was charged with engaging in illicit financial activities.", ja: "彼は不法な金融活動に関与したとして起訴された。", context: "illicit" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74262,
@@ -2604,6 +2820,7 @@ export const words: RawWord[] = [
       { en: "The earthquake caused immense damage to the city.", ja: "地震は都市に甚大な被害をもたらした。", context: "immense" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74263,
@@ -2616,6 +2833,7 @@ export const words: RawWord[] = [
       { en: "Scientists warned of the imminent collapse of the glacier.", ja: "科学者たちは氷河の差し迫った崩壊について警告した。", context: "imminent" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74264,
@@ -2628,6 +2846,7 @@ export const words: RawWord[] = [
       { en: "The mediator tried to give an impartial assessment of the dispute.", ja: "調停者は紛争の公平な評価を与えようとした。", context: "impartial" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74265,
@@ -2640,6 +2859,7 @@ export const words: RawWord[] = [
       { en: "The general gave an imperative order to advance.", ja: "将軍は進軍の命令を下した。", context: "imperative" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74266,
@@ -2652,6 +2872,7 @@ export const words: RawWord[] = [
       { en: "The contract contained several implicit conditions.", ja: "契約にはいくつかの暗黙の条件が含まれていた。", context: "implicit" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74267,
@@ -2664,6 +2885,7 @@ export const words: RawWord[] = [
       { en: "This is the inaugural edition of our annual science fair.", ja: "これは私たちの年次科学展の第1回です。", context: "inaugural" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74268,
@@ -2676,6 +2898,7 @@ export const words: RawWord[] = [
       { en: "Indigenous farming methods are often more sustainable.", ja: "先住民の農業手法はしばしばより持続可能だ。", context: "indigenous" },
     ],
     categories: ["social"],
+    frequencyTier: 2,
   },
   {
     id: 74269,
@@ -2688,6 +2911,7 @@ export const words: RawWord[] = [
       { en: "She became an indispensable member of the research team.", ja: "彼女は研究チームの欠かせないメンバーになった。", context: "indispensable" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74270,
@@ -2700,6 +2924,7 @@ export const words: RawWord[] = [
       { en: "Industrial pollution has damaged the local ecosystem.", ja: "産業公害は地域の生態系を損なった。", context: "industrial" },
     ],
     categories: ["economy"],
+    frequencyTier: 2,
   },
   {
     id: 74271,
@@ -2712,6 +2937,7 @@ export const words: RawWord[] = [
       { en: "The design had an inherent flaw that caused failures.", ja: "そのデザインには故障を引き起こす固有の欠陥があった。", context: "inherent" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74272,
@@ -2724,6 +2950,7 @@ export const words: RawWord[] = [
       { en: "The innovative technology reduced production costs significantly.", ja: "革新的な技術が生産コストを大幅に削減した。", context: "innovative" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74273,
@@ -2736,6 +2963,7 @@ export const words: RawWord[] = [
       { en: "She played an integral role in the success of the project.", ja: "彼女はプロジェクトの成功に不可欠な役割を果たした。", context: "integral" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74274,
@@ -2748,6 +2976,7 @@ export const words: RawWord[] = [
       { en: "The patient required intensive care after the surgery.", ja: "患者は手術後に集中治療が必要だった。", context: "intensive" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74275,
@@ -2760,6 +2989,7 @@ export const words: RawWord[] = [
       { en: "The interim report will be submitted next month.", ja: "暫定報告書は来月提出される予定だ。", context: "interim" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74276,
@@ -2772,6 +3002,7 @@ export const words: RawWord[] = [
       { en: "The scientist studied the intrinsic properties of the material.", ja: "科学者はその材料の本質的な特性を研究した。", context: "intrinsic" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74277,
@@ -2784,6 +3015,7 @@ export const words: RawWord[] = [
       { en: "The government took steps to control invasive plant species.", ja: "政府は侵略的な植物種を制御するための措置を講じた。", context: "invasive" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74278,
@@ -2796,6 +3028,7 @@ export const words: RawWord[] = [
       { en: "Judicial reform is necessary to ensure fair trials.", ja: "公正な裁判を確保するために司法改革が必要だ。", context: "judicial" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74279,
@@ -2808,6 +3041,7 @@ export const words: RawWord[] = [
       { en: "His behavior was criticized as juvenile and immature.", ja: "彼の行動は幼稚で未熟だと批判された。", context: "juvenile" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74280,
@@ -2820,6 +3054,7 @@ export const words: RawWord[] = [
       { en: "The surgeon made a lateral incision to access the organ.", ja: "外科医は臓器にアクセスするために横切開を行った。", context: "lateral" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74281,
@@ -2832,6 +3067,7 @@ export const words: RawWord[] = [
       { en: "The senator proposed a major legislative change to the tax code.", ja: "上院議員は税法への大きな立法変更を提案した。", context: "legislative" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74282,
@@ -2844,6 +3080,7 @@ export const words: RawWord[] = [
       { en: "Even small doses of this substance can be lethal.", ja: "この物質のごく少量でも致命的になりうる。", context: "lethal" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74283,
@@ -2856,6 +3093,7 @@ export const words: RawWord[] = [
       { en: "Drivers are liable for accidents caused by negligence.", ja: "ドライバーは不注意によって引き起こされた事故の責任を負う。", context: "liable" },
     ],
     categories: ["social"],
+    frequencyTier: 2,
   },
   {
     id: 74284,
@@ -2868,6 +3106,7 @@ export const words: RawWord[] = [
       { en: "She has remarkable linguistic skills in five languages.", ja: "彼女は5つの言語で並外れた言語能力を持っている。", context: "linguistic" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74285,
@@ -2880,6 +3119,7 @@ export const words: RawWord[] = [
       { en: "The tech industry is known for its lucrative salaries.", ja: "テック業界は儲かる給与で知られている。", context: "lucrative" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74286,
@@ -2892,6 +3132,7 @@ export const words: RawWord[] = [
       { en: "Mandatory voting is practiced in some democracies.", ja: "いくつかの民主主義国では強制投票が行われている。", context: "mandatory" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74287,
@@ -2904,6 +3145,7 @@ export const words: RawWord[] = [
       { en: "The plan had only marginal support from the committee.", ja: "その計画は委員会からわずかな支持しか得られなかった。", context: "marginal" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74288,
@@ -2916,6 +3158,7 @@ export const words: RawWord[] = [
       { en: "The museum displayed medieval weapons and armor.", ja: "博物館は中世の武器と鎧を展示した。", context: "medieval" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74289,
@@ -2928,6 +3171,7 @@ export const words: RawWord[] = [
       { en: "She moved from a rural town to a metropolitan lifestyle.", ja: "彼女は田舎の町から大都市的なライフスタイルへ移った。", context: "metropolitan" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74290,
@@ -2940,6 +3184,7 @@ export const words: RawWord[] = [
       { en: "The government cracked down on militant activities in the region.", ja: "政府はその地域での過激な活動を取り締まった。", context: "militant" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74291,
@@ -2952,6 +3197,7 @@ export const words: RawWord[] = [
       { en: "International monetary cooperation is essential for stability.", ja: "国際的な金融協力は安定のために不可欠だ。", context: "monetary" },
     ],
     categories: ["economy"],
+    frequencyTier: 2,
   },
   {
     id: 74292,
@@ -2964,6 +3210,7 @@ export const words: RawWord[] = [
       { en: "New municipal regulations require restaurants to recycle waste.", ja: "新しい市の規制はレストランに廃棄物のリサイクルを求めている。", context: "municipal" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74293,
@@ -2976,6 +3223,7 @@ export const words: RawWord[] = [
       { en: "The amount of pollution from that single factory is negligible.", ja: "その一つの工場からの汚染量は無視できる程度だ。", context: "negligible" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74294,
@@ -2988,6 +3236,7 @@ export const words: RawWord[] = [
       { en: "The change was nominal and had little impact on operations.", ja: "その変更は名目上のもので、業務への影響はほとんどなかった。", context: "nominal" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74295,
@@ -3000,6 +3249,7 @@ export const words: RawWord[] = [
       { en: "The company became notorious for its poor labor practices.", ja: "その会社は劣悪な労働慣行で悪名高くなった。", context: "notorious" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74296,
@@ -3012,6 +3262,7 @@ export const words: RawWord[] = [
       { en: "The factory's obsolete machinery needed to be replaced.", ja: "工場の時代遅れの機械は交換が必要だった。", context: "obsolete" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74297,
@@ -3024,6 +3275,7 @@ export const words: RawWord[] = [
       { en: "The orthodox approach was rejected in favor of a new method.", ja: "新しい方法を支持して正統なアプローチは拒否された。", context: "orthodox" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74298,
@@ -3036,6 +3288,7 @@ export const words: RawWord[] = [
       { en: "Financial stability is of paramount importance for the government.", ja: "財政安定は政府にとって最重要だ。", context: "paramount" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74299,
@@ -3048,6 +3301,7 @@ export const words: RawWord[] = [
       { en: "The journalist was criticized for his partisan reporting.", ja: "そのジャーナリストは党派的な報道で批判された。", context: "partisan" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74300,
@@ -3060,6 +3314,7 @@ export const words: RawWord[] = [
       { en: "Her patriotic spirit inspired others to serve their community.", ja: "彼女の愛国的な精神は他者を地域社会に奉仕するよう奮い立てた。", context: "patriotic" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74301,
@@ -3072,6 +3327,7 @@ export const words: RawWord[] = [
       { en: "The company faces perpetual challenges from competitors.", ja: "会社は競合他社からの永続的な課題に直面している。", context: "perpetual" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74302,
@@ -3084,6 +3340,7 @@ export const words: RawWord[] = [
       { en: "Scientists proposed a plausible theory about the extinction.", ja: "科学者たちは絶滅についてもっともらしい理論を提唱した。", context: "plausible" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74303,
@@ -3096,6 +3353,7 @@ export const words: RawWord[] = [
       { en: "Scientists conduct research at polar stations year-round.", ja: "科学者たちは一年中極地の基地で研究を行う。", context: "polar" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74304,
@@ -3108,6 +3366,7 @@ export const words: RawWord[] = [
       { en: "We need to be pragmatic about what is achievable in the time available.", ja: "利用可能な時間内で何が達成できるかについて実用的でなければならない。", context: "pragmatic" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74306,
@@ -3120,6 +3379,7 @@ export const words: RawWord[] = [
       { en: "The use of smartphones is prevalent among young people.", ja: "若者の間でスマートフォンの使用が広まっている。", context: "prevalent" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74307,
@@ -3132,6 +3392,7 @@ export const words: RawWord[] = [
       { en: "Progressive tax systems charge higher rates for higher incomes.", ja: "累進税制は高い収入に対してより高い税率を課す。", context: "progressive" },
     ],
     categories: ["social"],
+    frequencyTier: 2,
   },
   {
     id: 74308,
@@ -3144,6 +3405,7 @@ export const words: RawWord[] = [
       { en: "A provisional license allows new drivers to practice.", ja: "仮免許は新しいドライバーが練習することを許可する。", context: "provisional" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74309,
@@ -3156,6 +3418,7 @@ export const words: RawWord[] = [
       { en: "The politician made a provocative claim about immigration.", ja: "その政治家は移民について挑発的な主張をした。", context: "provocative" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74310,
@@ -3168,6 +3431,7 @@ export const words: RawWord[] = [
       { en: "Punitive action was taken against companies that violated regulations.", ja: "規制に違反した企業に罰則的な措置が取られた。", context: "punitive" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74311,
@@ -3180,6 +3444,7 @@ export const words: RawWord[] = [
       { en: "The financial crisis triggered an exodus of investors.", ja: "金融危機は投資家の大量脱出を引き起こした。", context: "exodus" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74314,
@@ -3192,6 +3457,7 @@ export const words: RawWord[] = [
       { en: "There was significant fallout from the failed business deal.", ja: "失敗したビジネス取引からの重大な悪影響があった。", context: "fallout" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74316,
@@ -3204,6 +3470,7 @@ export const words: RawWord[] = [
       { en: "The soldiers suffered from extreme fatigue after the battle.", ja: "兵士たちは戦闘後に極度の疲労に苦しんだ。", context: "fatigue" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74320,
@@ -3216,6 +3483,7 @@ export const words: RawWord[] = [
       { en: "Fidelity to one's principles is essential for integrity.", ja: "自分の原則への忠実さは誠実さに不可欠だ。", context: "fidelity" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74322,
@@ -3228,6 +3496,7 @@ export const words: RawWord[] = [
       { en: "Local folklore was passed down through generations by storytellers.", ja: "地元の民間伝承は語り手によって世代を超えて受け継がれた。", context: "folklore" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74323,
@@ -3240,6 +3509,7 @@ export const words: RawWord[] = [
       { en: "New materials are at the forefront of aerospace technology.", ja: "新しい材料は航空宇宙技術の最前線にある。", context: "forefront" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74324,
@@ -3252,6 +3522,7 @@ export const words: RawWord[] = [
       { en: "The small protest was a forerunner of a larger movement.", ja: "小さな抗議は大きな運動の先駆けだった。", context: "forerunner" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74325,
@@ -3264,6 +3535,7 @@ export const words: RawWord[] = [
       { en: "They worked to forge a strong alliance between the nations.", ja: "彼らは国家間の強い同盟を築こうとした。", context: "forge" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74326,
@@ -3276,6 +3548,7 @@ export const words: RawWord[] = [
       { en: "The military ordered the fortification of strategic positions.", ja: "軍は戦略的な陣地の要塞化を命じた。", context: "fortification" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74328,
@@ -3288,6 +3561,7 @@ export const words: RawWord[] = [
       { en: "Running a franchise requires following the parent company's rules.", ja: "フランチャイズの経営は親会社のルールに従う必要がある。", context: "franchise" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74330,
@@ -3300,6 +3574,7 @@ export const words: RawWord[] = [
       { en: "Globalization has accelerated the spread of culture and ideas.", ja: "グローバル化は文化や思想の普及を加速させた。", context: "globalization" },
     ],
     categories: ["economy"],
+    frequencyTier: 2,
   },
   {
     id: 74332,
@@ -3312,6 +3587,7 @@ export const words: RawWord[] = [
       { en: "He felt gratitude toward his teachers for their support.", ja: "彼は支援してくれた教師たちへの感謝を感じた。", context: "gratitude" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74333,
@@ -3324,6 +3600,7 @@ export const words: RawWord[] = [
       { en: "His grievance was that he was passed over for promotion.", ja: "彼の不満は昇進を見送られたことだった。", context: "grievance" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74335,
@@ -3336,6 +3613,7 @@ export const words: RawWord[] = [
       { en: "The organization works to protect endangered species' habitats.", ja: "その組織は絶滅危惧種の生息地を保護するために活動している。", context: "habitat" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74336,
@@ -3348,6 +3626,7 @@ export const words: RawWord[] = [
       { en: "The misinformation campaign caused havoc in the election.", ja: "誤情報キャンペーンは選挙に大混乱をもたらした。", context: "havoc" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74337,
@@ -3360,6 +3639,7 @@ export const words: RawWord[] = [
       { en: "The rising power challenged the existing hegemony.", ja: "台頭する勢力は既存の覇権に挑戦した。", context: "hegemony" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74338,
@@ -3372,6 +3652,7 @@ export const words: RawWord[] = [
       { en: "Seasons differ between the two hemispheres of the Earth.", ja: "地球の2つの半球では季節が異なる。", context: "hemisphere" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74341,
@@ -3384,6 +3665,7 @@ export const words: RawWord[] = [
       { en: "Fans gathered to pay homage to the legendary musician.", ja: "ファンたちは伝説的な音楽家に敬意を示すために集まった。", context: "homage" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74342,
@@ -3396,6 +3678,7 @@ export const words: RawWord[] = [
       { en: "The hostage crisis lasted for several days.", ja: "人質危機は数日間続いた。", context: "hostage" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74343,
@@ -3408,6 +3691,7 @@ export const words: RawWord[] = [
       { en: "A true humanitarian puts the needs of others first.", ja: "真の人道主義者は他者のニーズを優先する。", context: "humanitarian" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74345,
@@ -3420,6 +3704,7 @@ export const words: RawWord[] = [
       { en: "Herd immunity occurs when most of a population is immune.", ja: "集団免疫は人口の大部分が免疫を持つときに発生する。", context: "immunity" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74346,
@@ -3432,6 +3717,7 @@ export const words: RawWord[] = [
       { en: "The legacy of imperialism still affects many developing nations.", ja: "帝国主義の遺産は今でも多くの発展途上国に影響を与えている。", context: "imperialism" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74347,
@@ -3444,6 +3730,7 @@ export const words: RawWord[] = [
       { en: "Scientists are studying the implications of climate change.", ja: "科学者たちは気候変動の影響を研究している。", context: "implication" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74348,
@@ -3456,6 +3743,7 @@ export const words: RawWord[] = [
       { en: "The incidence of crime in the area decreased significantly.", ja: "その地域での犯罪の発生率が大幅に減少した。", context: "incidence" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74349,
@@ -3468,6 +3756,7 @@ export const words: RawWord[] = [
       { en: "There is no inclination in the data to support that theory.", ja: "そのデータにはその理論を支持する傾向はない。", context: "inclination" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74350,
@@ -3480,6 +3769,7 @@ export const words: RawWord[] = [
       { en: "Modern infantry units are equipped with advanced weapons.", ja: "現代の歩兵部隊は高度な武器を装備している。", context: "infantry" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74353,
@@ -3492,6 +3782,7 @@ export const words: RawWord[] = [
       { en: "Social injustice affects the most vulnerable people in society.", ja: "社会的不正は社会で最も脆弱な人々に影響を与える。", context: "injustice" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74354,
@@ -3504,6 +3795,7 @@ export const words: RawWord[] = [
       { en: "Government forces eventually defeated the insurgency.", ja: "政府軍は最終的に反乱を鎮圧した。", context: "insurgency" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74355,
@@ -3516,6 +3808,7 @@ export const words: RawWord[] = [
       { en: "The audit confirmed the financial integrity of the organization.", ja: "監査は組織の財務的完全性を確認した。", context: "integrity" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74356,
@@ -3528,6 +3821,7 @@ export const words: RawWord[] = [
       { en: "He was admired for his sharp intellect and quick thinking.", ja: "彼は鋭い知性と素早い思考力で称えられた。", context: "intellect" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74358,
@@ -3540,6 +3834,7 @@ export const words: RawWord[] = [
       { en: "Government intervention in the economy can both help and harm.", ja: "経済への政府介入は助けにもなり害にもなる。", context: "intervention" },
     ],
     categories: ["social"],
+    frequencyTier: 2,
   },
   {
     id: 74359,
@@ -3552,6 +3847,7 @@ export const words: RawWord[] = [
       { en: "Determining jurisdiction in international cases can be complex.", ja: "国際案件での管轄権の決定は複雑になることがある。", context: "jurisdiction" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74360,
@@ -3564,6 +3860,7 @@ export const words: RawWord[] = [
       { en: "The new bridge became a landmark of modern architecture.", ja: "新しい橋は現代建築のランドマークとなった。", context: "landmark" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74361,
@@ -3576,6 +3873,7 @@ export const words: RawWord[] = [
       { en: "The manager gave her employees latitude to make their own decisions.", ja: "マネージャーは従業員に独自の決定を下す裁量を与えた。", context: "latitude" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74362,
@@ -3588,6 +3886,7 @@ export const words: RawWord[] = [
       { en: "We must protect the legacy of our cultural heritage.", ja: "私たちは文化遺産の遺産を守らなければならない。", context: "legacy" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74363,
@@ -3600,6 +3899,7 @@ export const words: RawWord[] = [
       { en: "The legitimacy of the law was challenged in court.", ja: "法律の正当性が裁判所で争われた。", context: "legitimacy" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74364,
@@ -3612,6 +3912,7 @@ export const words: RawWord[] = [
       { en: "The council voted to levy a tax on plastic bags.", ja: "議会はビニール袋に税を課すことに投票した。", context: "levy" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74365,
@@ -3624,6 +3925,7 @@ export const words: RawWord[] = [
       { en: "Effective liaison is crucial for coordinating large projects.", ja: "効果的な連絡は大きなプロジェクトを調整するために重要だ。", context: "liaison" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74366,
@@ -3636,6 +3938,7 @@ export const words: RawWord[] = [
       { en: "The liberation of women has been an ongoing social struggle.", ja: "女性の解放は継続的な社会的闘いだ。", context: "liberation" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74367,
@@ -3648,6 +3951,7 @@ export const words: RawWord[] = [
       { en: "He wanted to avoid litigation and settle the case out of court.", ja: "彼は訴訟を避けて示談で解決したかった。", context: "litigation" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74368,
@@ -3660,6 +3964,7 @@ export const words: RawWord[] = [
       { en: "Many workers in the fishing industry depend on it for their livelihood.", ja: "漁業の多くの労働者はそれを生計のために頼っている。", context: "livelihood" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74369,
@@ -3672,6 +3977,7 @@ export const words: RawWord[] = [
       { en: "The hotel lobby was decorated with flowers and artwork.", ja: "ホテルのロビーは花と芸術作品で飾られていた。", context: "lobby" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74370,
@@ -3684,6 +3990,7 @@ export const words: RawWord[] = [
       { en: "Proper logistics planning ensures products arrive on time.", ja: "適切な物流計画は製品が時間通りに届くことを確保する。", context: "logistics" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74371,
@@ -3696,6 +4003,7 @@ export const words: RawWord[] = [
       { en: "The disaster was of such magnitude that it required international aid.", ja: "その災害は国際支援を必要とするほどの規模だった。", context: "magnitude" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74372,
@@ -3708,6 +4016,7 @@ export const words: RawWord[] = [
       { en: "There was no malice in his words; he was simply being honest.", ja: "彼の言葉に悪意はなく、単に正直なだけだった。", context: "malice" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74373,
@@ -3720,6 +4029,7 @@ export const words: RawWord[] = [
       { en: "The manager had a mandate to restructure the entire department.", ja: "マネージャーは部署全体を再編する権限を持っていた。", context: "mandate" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74374,
@@ -3732,6 +4042,7 @@ export const words: RawWord[] = [
       { en: "The revolutionary manifesto called for sweeping social changes.", ja: "革命的なマニフェストは大規模な社会変革を求めた。", context: "manifesto" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74376,
@@ -3744,6 +4055,7 @@ export const words: RawWord[] = [
       { en: "International mediation helped end the civil war.", ja: "国際調停は内戦を終わらせるのに役立った。", context: "mediation" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74377,
@@ -3756,6 +4068,7 @@ export const words: RawWord[] = [
       { en: "The memoir became a bestseller due to its honest portrayal.", ja: "回顧録は正直な描写のためにベストセラーになった。", context: "memoir" },
     ],
     categories: ["culture"],
+    frequencyTier: 3,
   },
   {
     id: 74378,
@@ -3768,6 +4081,7 @@ export const words: RawWord[] = [
       { en: "The counterfeit merchandise was seized at the border.", ja: "偽造品は国境で押収された。", context: "merchandise" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74379,
@@ -3780,6 +4094,7 @@ export const words: RawWord[] = [
       { en: "The broken clock was a metaphor for lost time.", ja: "壊れた時計は失われた時間の比喩だった。", context: "metaphor" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74380,
@@ -3792,6 +4107,7 @@ export const words: RawWord[] = [
       { en: "The government tried to disarm the illegal militias.", ja: "政府は違法な民兵を武装解除しようとした。", context: "militia" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74381,
@@ -3804,6 +4120,7 @@ export const words: RawWord[] = [
       { en: "Allegations of misconduct led to an investigation.", ja: "不正行為の申し立ては調査につながった。", context: "misconduct" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74382,
@@ -3816,6 +4133,7 @@ export const words: RawWord[] = [
       { en: "The campaign gained momentum as the election day approached.", ja: "選挙日が近づくにつれてキャンペーンが勢いを増した。", context: "momentum" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74384,
@@ -3828,6 +4146,7 @@ export const words: RawWord[] = [
       { en: "The commander worked hard to maintain morale among troops.", ja: "司令官は部隊の士気を維持するために懸命に努力した。", context: "morale" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74385,
@@ -3840,6 +4159,7 @@ export const words: RawWord[] = [
       { en: "The environmental group called for a moratorium on pesticide use.", ja: "環境グループは農薬使用の一時停止を求めた。", context: "moratorium" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74386,
@@ -3852,6 +4172,7 @@ export const words: RawWord[] = [
       { en: "Humans have always been aware of their own mortality.", ja: "人間は常に自分たちの死に気づいてきた。", context: "mortality" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74387,
@@ -3864,6 +4185,7 @@ export const words: RawWord[] = [
       { en: "There was no clear motive for the attack.", ja: "その攻撃には明確な動機がなかった。", context: "motive" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74388,
@@ -3876,6 +4198,7 @@ export const words: RawWord[] = [
       { en: "Several municipalities joined together to build the new hospital.", ja: "いくつかの自治体が新しい病院を建設するために協力した。", context: "municipality" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74390,
@@ -3888,6 +4211,7 @@ export const words: RawWord[] = [
       { en: "Negligence in safety procedures can lead to serious accidents.", ja: "安全手順の過失は深刻な事故につながりうる。", context: "negligence" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74391,
@@ -3900,6 +4224,7 @@ export const words: RawWord[] = [
       { en: "The country declared its neutrality during the conflict.", ja: "その国は紛争中に中立性を宣言した。", context: "neutrality" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74392,
@@ -3912,6 +4237,7 @@ export const words: RawWord[] = [
       { en: "Working from home has become the new norm since the pandemic.", ja: "在宅勤務はパンデミック以来新しい規範になった。", context: "norm" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74393,
@@ -3924,6 +4250,7 @@ export const words: RawWord[] = [
       { en: "Nostalgia for the past can sometimes prevent progress.", ja: "過去への郷愁はときに進歩を妨げることがある。", context: "nostalgia" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74394,
@@ -3936,6 +4263,7 @@ export const words: RawWord[] = [
       { en: "The company's notoriety for poor service drove away customers.", ja: "サービスの悪さによる会社の悪名は顧客を遠ざけた。", context: "notoriety" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74395,
@@ -3948,6 +4276,7 @@ export const words: RawWord[] = [
       { en: "Citizens have an obligation to follow the law.", ja: "市民には法律に従う義務がある。", context: "obligation" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74396,
@@ -3960,6 +4289,7 @@ export const words: RawWord[] = [
       { en: "His omission from the list was an oversight.", ja: "リストから彼を省略したのは見落としだった。", context: "omission" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74397,
@@ -3972,6 +4302,7 @@ export const words: RawWord[] = [
       { en: "The oppression of minorities led to widespread protests.", ja: "少数民族の抑圧は広範な抗議につながった。", context: "oppression" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74398,
@@ -3984,6 +4315,7 @@ export const words: RawWord[] = [
       { en: "Businesses must comply with local ordinances or face fines.", ja: "企業は地域の条例に従わなければ罰金に直面する。", context: "ordinance" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74399,
@@ -3996,6 +4328,7 @@ export const words: RawWord[] = [
       { en: "Due to an oversight, the report was sent to the wrong person.", ja: "見落としにより、報告書は間違った人に送られた。", context: "oversight" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74400,
@@ -4008,6 +4341,7 @@ export const words: RawWord[] = [
       { en: "The political party published a pamphlet attacking its rivals.", ja: "政党はライバルを攻撃するパンフレットを出版した。", context: "pamphlet" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74401,
@@ -4020,6 +4354,7 @@ export const words: RawWord[] = [
       { en: "She challenged the existing paradigm in her field of research.", ja: "彼女は自分の研究分野の既存のパラダイムに挑戦した。", context: "paradigm" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74403,
@@ -4032,6 +4367,7 @@ export const words: RawWord[] = [
       { en: "Political patronage can lead to corruption within government.", ja: "政治的な後援は政府内の汚職につながることがある。", context: "patronage" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74406,
@@ -4044,6 +4380,7 @@ export const words: RawWord[] = [
       { en: "The fishing village was located on a small peninsula.", ja: "漁村は小さな半島に位置していた。", context: "peninsula" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74407,
@@ -4056,6 +4393,7 @@ export const words: RawWord[] = [
       { en: "The results were empirically confirmed in multiple studies.", ja: "結果は複数の研究で実証的に確認された。", context: "empirically" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74409,
@@ -4068,6 +4406,7 @@ export const words: RawWord[] = [
       { en: "The contract explicitly outlines the responsibilities of each party.", ja: "契約書は各当事者の責任を明示的に概説している。", context: "explicitly" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74410,
@@ -4080,6 +4419,7 @@ export const words: RawWord[] = [
       { en: "The system needs to be fundamentally reformed.", ja: "そのシステムは根本的に改革される必要がある。", context: "fundamentally" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74411,
@@ -4092,6 +4432,7 @@ export const words: RawWord[] = [
       { en: "The foundation generously funded the research project.", ja: "財団はその研究プロジェクトに寛大に資金を提供した。", context: "generously" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74412,
@@ -4104,6 +4445,7 @@ export const words: RawWord[] = [
       { en: "The apology seemed genuinely heartfelt and sincere.", ja: "謝罪は真に心からのものであり誠実に見えた。", context: "genuinely" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74413,
@@ -4116,6 +4458,7 @@ export const words: RawWord[] = [
       { en: "The committee reviewed all applications impartially.", ja: "委員会はすべての申請を公平に審査した。", context: "impartially" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74414,
@@ -4128,6 +4471,7 @@ export const words: RawWord[] = [
       { en: "The agreement implicitly included responsibilities not written down.", ja: "その合意は書き留められていない責任を暗黙のうちに含んでいた。", context: "implicitly" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74415,
@@ -4140,6 +4484,7 @@ export const words: RawWord[] = [
       { en: "The scientist inadvertently discovered a new compound.", ja: "科学者はうっかり新しい化合物を発見した。", context: "inadvertently" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74417,
@@ -4152,6 +4497,7 @@ export const words: RawWord[] = [
       { en: "The company hired indiscriminately without proper screening.", ja: "会社は適切な審査なしに無差別に採用した。", context: "indiscriminately" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74418,
@@ -4164,6 +4510,7 @@ export const words: RawWord[] = [
       { en: "The system is inherently flawed and needs to be replaced.", ja: "そのシステムは本質的に欠陥があり交換が必要だ。", context: "inherently" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74419,
@@ -4176,6 +4523,7 @@ export const words: RawWord[] = [
       { en: "Attempts to cut corners invariably lead to mistakes.", ja: "手抜きの試みは常に間違いにつながる。", context: "invariably" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74420,
@@ -4188,6 +4536,7 @@ export const words: RawWord[] = [
       { en: "Ironically, the harder he tried, the more mistakes he made.", ja: "皮肉にも、彼が懸命に努力すればするほど、より多くのミスをした。", context: "ironically" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74421,
@@ -4200,6 +4549,7 @@ export const words: RawWord[] = [
       { en: "Citizens can legitimately protest against government decisions.", ja: "市民は政府の決定に対して正当に抗議できる。", context: "legitimately" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74422,
@@ -4212,6 +4562,7 @@ export const words: RawWord[] = [
       { en: "She prefers working alone as opposed to being in a group.", ja: "彼女はグループに対して一人で働くことを好む。", context: "as opposed to" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74423,
@@ -4224,6 +4575,7 @@ export const words: RawWord[] = [
       { en: "Refugees are often at the mercy of the decisions of authorities.", ja: "難民はしばしば当局の決定のなすがままになっている。", context: "at the mercy of" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74424,
@@ -4236,6 +4588,7 @@ export const words: RawWord[] = [
       { en: "Any secret is bound to come out eventually.", ja: "どんな秘密も必ずいつかは漏れるものだ。", context: "be bound to" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74425,
@@ -4248,6 +4601,7 @@ export const words: RawWord[] = [
       { en: "This plant is liable to wilt in direct sunlight.", ja: "この植物は直射日光で枯れがちだ。", context: "be liable to" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74426,
@@ -4260,6 +4614,7 @@ export const words: RawWord[] = [
       { en: "Employees are subject to performance reviews each year.", ja: "従業員は毎年業績評価を受ける。", context: "be subject to" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74427,
@@ -4272,6 +4627,7 @@ export const words: RawWord[] = [
       { en: "You should bear in mind the needs of your audience.", ja: "聴衆のニーズを心に留めておくべきだ。", context: "bear in mind" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74428,
@@ -4284,6 +4640,7 @@ export const words: RawWord[] = [
       { en: "The audit brought to light several accounting errors.", ja: "監査はいくつかの会計ミスを明るみに出した。", context: "bring to light" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74429,
@@ -4296,6 +4653,7 @@ export const words: RawWord[] = [
       { en: "The failure of the project calls into question the entire strategy.", ja: "プロジェクトの失敗は戦略全体を疑問視させる。", context: "call into question" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74430,
@@ -4308,6 +4666,7 @@ export const words: RawWord[] = [
       { en: "The treaty came into effect after all parties ratified it.", ja: "条約はすべての当事者が批准した後に発効した。", context: "come into effect" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74431,
@@ -4320,6 +4679,7 @@ export const words: RawWord[] = [
       { en: "Eventually, he came to terms with the fact that he had to change.", ja: "最終的に、彼は変わらなければならないという事実を受け入れた。", context: "come to terms with" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74432,
@@ -4332,6 +4692,7 @@ export const words: RawWord[] = [
       { en: "The dirt road gave way to a smooth highway.", ja: "砂利道は滑らかな幹線道路に変わった。", context: "give way to" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74433,
@@ -4344,6 +4705,7 @@ export const words: RawWord[] = [
       { en: "Health and happiness often go hand in hand.", ja: "健康と幸福はしばしば密接に関連している。", context: "go hand in hand" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74434,
@@ -4356,6 +4718,7 @@ export const words: RawWord[] = [
       { en: "New regulations were introduced in the wake of the financial crisis.", ja: "金融危機の後に新しい規制が導入された。", context: "in the wake of" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74435,
@@ -4368,6 +4731,7 @@ export const words: RawWord[] = [
       { en: "The drug is used in conjunction with other treatments.", ja: "その薬は他の治療法と連携して使用される。", context: "in conjunction with" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74436,
@@ -4380,6 +4744,7 @@ export const words: RawWord[] = [
       { en: "Infrastructure must keep pace with population growth.", ja: "インフラは人口増加に遅れずついていかなければならない。", context: "keep pace with" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74437,
@@ -4392,6 +4757,7 @@ export const words: RawWord[] = [
       { en: "Childhood education lays the groundwork for lifelong learning.", ja: "幼児教育は生涯学習の基盤を築く。", context: "lay the groundwork" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74438,
@@ -4404,6 +4770,7 @@ export const words: RawWord[] = [
       { en: "He made a compelling case for adopting the new policy.", ja: "彼は新しい政策採用について説得力のある主張をした。", context: "make a case for" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74439,
@@ -4416,6 +4783,7 @@ export const words: RawWord[] = [
       { en: "She objected on the grounds that the plan was too costly.", ja: "計画が費用がかかりすぎるという理由で彼女は反対した。", context: "on the grounds that" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74440,
@@ -4428,6 +4796,7 @@ export const words: RawWord[] = [
       { en: "The breakthrough paved the way for a cure for the disease.", ja: "その突破口は疾患の治療への道を開いた。", context: "pave the way for" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74441,
@@ -4440,6 +4809,7 @@ export const words: RawWord[] = [
       { en: "Genetics plays a role in determining personality traits.", ja: "遺伝は性格特性の決定に役割を果たしている。", context: "play a role in" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74442,
@@ -4452,6 +4822,7 @@ export const words: RawWord[] = [
       { en: "The agreement set a precedent for international cooperation.", ja: "その合意は国際協力の先例を作った。", context: "set a precedent" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74443,
@@ -4464,6 +4835,7 @@ export const words: RawWord[] = [
       { en: "Historical documents shed light on the lives of ordinary people.", ja: "歴史的文書は普通の人々の生活を明らかにする。", context: "shed light on" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74444,
@@ -4476,6 +4848,7 @@ export const words: RawWord[] = [
       { en: "Both countries stand to gain from the trade agreement.", ja: "両国は貿易協定から利益を得る立場にある。", context: "stand to gain" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74445,
@@ -4488,6 +4861,7 @@ export const words: RawWord[] = [
       { en: "Pollution takes a toll on marine ecosystems.", ja: "汚染は海洋生態系に打撃を与える。", context: "take a toll on" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74446,
@@ -4500,6 +4874,7 @@ export const words: RawWord[] = [
       { en: "She felt she was being taken for granted at her workplace.", ja: "彼女は職場で当然のように扱われていると感じた。", context: "take for granted" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74450,
@@ -4512,6 +4887,7 @@ export const words: RawWord[] = [
       { en: "The organization lobbied for stricter food safety regulations.", ja: "組織はより厳格な食品安全規制のためにロビー活動をした。", context: "lobby" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74451,
@@ -4524,6 +4900,7 @@ export const words: RawWord[] = [
       { en: "The school board mandated a new curriculum for all grades.", ja: "教育委員会はすべての学年に新しいカリキュラムを義務付けた。", context: "mandate" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74452,
@@ -4536,6 +4913,7 @@ export const words: RawWord[] = [
       { en: "The state plans to levy a surcharge on high-income earners.", ja: "州は高所得者に追加料金を課す計画だ。", context: "levy" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74459,
@@ -4548,6 +4926,7 @@ export const words: RawWord[] = [
       { en: "She was skilled in the rhetoric of persuasion.", ja: "彼女は説得の修辞に長けていた。", context: "rhetoric" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74460,
@@ -4560,6 +4939,7 @@ export const words: RawWord[] = [
       { en: "A military tribunal was convened to try the officers.", ja: "将校を裁くために軍事裁判所が召集された。", context: "tribunal" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74461,
@@ -4572,6 +4952,7 @@ export const words: RawWord[] = [
       { en: "Digital sovereignty refers to a country's control over its own data.", ja: "デジタル主権は自国のデータに対する国の管理を指す。", context: "sovereignty" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74462,
@@ -4584,6 +4965,7 @@ export const words: RawWord[] = [
       { en: "Critics argued that the subsidies created unfair competition.", ja: "批評家たちは補助金が不公正な競争を生み出したと主張した。", context: "subsidy" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74463,
@@ -4596,6 +4978,7 @@ export const words: RawWord[] = [
       { en: "Building consensus takes time but leads to stronger decisions.", ja: "合意形成には時間がかかるが、より強い決断につながる。", context: "consensus" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74465,
@@ -4608,6 +4991,7 @@ export const words: RawWord[] = [
       { en: "Both sides used propaganda during the cold war.", ja: "冷戦中、双方がプロパガンダを使用した。", context: "propaganda" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74472,
@@ -4620,6 +5004,7 @@ export const words: RawWord[] = [
       { en: "Resistance to colonialism sparked independence movements worldwide.", ja: "植民地主義への抵抗は世界中で独立運動を引き起こした。", context: "colonialism" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74473,
@@ -4632,6 +5017,7 @@ export const words: RawWord[] = [
       { en: "Political emancipation gives citizens the right to participate in government.", ja: "政治的解放は市民が政府に参加する権利を与える。", context: "emancipation" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74480,
@@ -4644,6 +5030,7 @@ export const words: RawWord[] = [
       { en: "Nations embargoed the regime after reports of human rights abuses.", ja: "人権侵害の報告の後、各国はその政権を禁輸にした。", context: "embargo" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74484,
@@ -4656,6 +5043,7 @@ export const words: RawWord[] = [
       { en: "Lack of accountability in government leads to corruption.", ja: "政府の説明責任の欠如は汚職につながる。", context: "accountability" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74485,
@@ -4668,6 +5056,7 @@ export const words: RawWord[] = [
       { en: "The patient showed rapid deterioration after the operation.", ja: "患者は手術後に急速な悪化を示した。", context: "deterioration" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74486,
@@ -4680,6 +5069,7 @@ export const words: RawWord[] = [
       { en: "The collaboration produced outstanding results.", ja: "その協力は優れた成果をもたらした。", context: "collaboration" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74487,
@@ -4692,6 +5082,7 @@ export const words: RawWord[] = [
       { en: "The proliferation of fake news is a challenge for journalism.", ja: "フェイクニュースの拡散はジャーナリズムの課題だ。", context: "proliferation" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74488,
@@ -4704,6 +5095,7 @@ export const words: RawWord[] = [
       { en: "The stratification of the rock layers revealed millions of years of history.", ja: "岩層の地層化は何百万年もの歴史を明らかにした。", context: "stratification" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74489,
@@ -4716,6 +5108,7 @@ export const words: RawWord[] = [
       { en: "Many small companies were absorbed into the growing conglomerate.", ja: "多くの小企業が成長する複合企業に吸収された。", context: "conglomerate" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74490,
@@ -4728,6 +5121,7 @@ export const words: RawWord[] = [
       { en: "The truth and reconciliation commission helped heal deep divisions.", ja: "真実と和解委員会は深い分裂の回復を助けた。", context: "reconciliation" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74491,
@@ -4740,6 +5134,7 @@ export const words: RawWord[] = [
       { en: "The new sanctions targeted the oil and gas sector.", ja: "新しい制裁は石油・ガスセクターを標的にした。", context: "sanction" },
     ],
     categories: ["social"],
+    frequencyTier: 2,
   },
   {
     id: 74492,
@@ -4752,6 +5147,7 @@ export const words: RawWord[] = [
       { en: "Communities showed solidarity after the natural disaster.", ja: "コミュニティは自然災害後に連帯を示した。", context: "solidarity" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74493,
@@ -4764,6 +5160,7 @@ export const words: RawWord[] = [
       { en: "The scientist warned against making claims based on mere speculation.", ja: "科学者は単なる憶測に基づいて主張することに警告した。", context: "speculation" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74494,
@@ -4776,6 +5173,7 @@ export const words: RawWord[] = [
       { en: "The energy transition to renewables will take several decades.", ja: "再生可能エネルギーへのエネルギー移行には数十年かかるだろう。", context: "transition" },
     ],
     categories: ["general"],
+    frequencyTier: 2,
   },
   {
     id: 74495,
@@ -4788,6 +5186,7 @@ export const words: RawWord[] = [
       { en: "The welfare state provides support to those in need.", ja: "福祉国家は必要な人々に支援を提供する。", context: "welfare" },
     ],
     categories: ["social"],
+    frequencyTier: 2,
   },
   {
     id: 74496,
@@ -4800,6 +5199,7 @@ export const words: RawWord[] = [
       { en: "All member states must complete ratification for the pact to take effect.", ja: "協定が発効するためにはすべての加盟国が批准を完了しなければならない。", context: "ratification" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74497,
@@ -4812,6 +5212,7 @@ export const words: RawWord[] = [
       { en: "Resistance movements fought against totalitarianism across Europe.", ja: "レジスタンス運動はヨーロッパ中で全体主義に対して戦った。", context: "totalitarianism" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74498,
@@ -4824,6 +5225,7 @@ export const words: RawWord[] = [
       { en: "The urbanization rate in developing countries is accelerating.", ja: "発展途上国の都市化率が加速している。", context: "urbanization" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74499,
@@ -4836,6 +5238,7 @@ export const words: RawWord[] = [
       { en: "Showing vulnerability can be a sign of emotional strength.", ja: "脆弱性を示すことは感情的な強さの証になりうる。", context: "vulnerability" },
     ],
     categories: ["general"],
+    frequencyTier: 3,
   },
   {
     id: 74500,
@@ -4848,6 +5251,7 @@ export const words: RawWord[] = [
       { en: "Education is one of the best ways to combat xenophobia.", ja: "教育は外国人嫌悪と戦うための最善の方法の一つだ。", context: "xenophobia" },
     ],
     categories: ["social"],
+    frequencyTier: 3,
   },
   {
     id: 74501,
@@ -4860,6 +5264,7 @@ export const words: RawWord[] = [
       { en: "The film was widely acclaimed.", ja: "その映画は広く称賛された。", context: "芸術" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74502,
@@ -4872,6 +5277,7 @@ export const words: RawWord[] = [
       { en: "The room accommodates six people.", ja: "その部屋は6人を収容できる。", context: "空間" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74503,
@@ -4884,6 +5290,7 @@ export const words: RawWord[] = [
       { en: "They adjourned the session early.", ja: "彼らは会議を早めに打ち切った。", context: "政治" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74505,
@@ -4896,6 +5303,7 @@ export const words: RawWord[] = [
       { en: "Delay will aggravate the problem.", ja: "遅延は問題を悪化させるだろう。", context: "社会" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74506,
@@ -4908,6 +5316,7 @@ export const words: RawWord[] = [
       { en: "She alleged abuse by her employer.", ja: "彼女は雇用主による虐待を申し立てた。", context: "労働" },
     ],
     categories: ["law"],
+    frequencyTier: 2,
   },
   {
     id: 74507,
@@ -4920,6 +5329,7 @@ export const words: RawWord[] = [
       { en: "She alluded to the problem.", ja: "彼女はその問題をほのめかした。", context: "対話" },
     ],
     categories: ["language"],
+    frequencyTier: 3,
   },
   {
     id: 74508,
@@ -4932,6 +5342,7 @@ export const words: RawWord[] = [
       { en: "The region was annexed in 1900.", ja: "その地域は1900年に併合された。", context: "地理" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74509,
@@ -4944,6 +5355,7 @@ export const words: RawWord[] = [
       { en: "The gift appeased the child.", ja: "プレゼントは子供をなだめた。", context: "家庭" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74510,
@@ -4956,6 +5368,7 @@ export const words: RawWord[] = [
       { en: "He was apprehended at the border.", ja: "彼は国境で逮捕された。", context: "治安" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74511,
@@ -4968,6 +5381,7 @@ export const words: RawWord[] = [
       { en: "They aspire to live abroad.", ja: "彼らは海外生活を熱望する。", context: "生活" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74512,
@@ -4980,6 +5394,7 @@ export const words: RawWord[] = [
       { en: "Records attest to the event.", ja: "記録がその出来事を証明する。", context: "歴史" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74513,
@@ -4992,6 +5407,7 @@ export const words: RawWord[] = [
       { en: "She was bewildered by the result.", ja: "彼女は結果に困惑した。", context: "学習" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74514,
@@ -5004,6 +5420,7 @@ export const words: RawWord[] = [
       { en: "The company bribed inspectors.", ja: "その会社は検査官に賄賂を贈った。", context: "企業" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74515,
@@ -5016,6 +5433,7 @@ export const words: RawWord[] = [
       { en: "The machine needs calibrating.", ja: "その機械は調整が必要だ。", context: "工業" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74516,
@@ -5028,6 +5446,7 @@ export const words: RawWord[] = [
       { en: "He failed to capitalize on it.", ja: "彼はそれを活用しそびれた。", context: "失敗" },
     ],
     categories: ["business"],
+    frequencyTier: 3,
   },
   {
     id: 74517,
@@ -5040,6 +5459,7 @@ export const words: RawWord[] = [
       { en: "His speech captivated everyone.", ja: "彼のスピーチは全員を魅了した。", context: "演説" },
     ],
     categories: ["arts"],
+    frequencyTier: 3,
   },
   {
     id: 74518,
@@ -5052,6 +5472,7 @@ export const words: RawWord[] = [
       { en: "She circumvented the system.", ja: "彼女はシステムを回避した。", context: "技術" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74519,
@@ -5064,6 +5485,7 @@ export const words: RawWord[] = [
       { en: "Workers were coerced to comply.", ja: "労働者は従うよう強制された。", context: "労働" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74520,
@@ -5076,6 +5498,7 @@ export const words: RawWord[] = [
       { en: "She collaborated with researchers.", ja: "彼女は研究者と協力した。", context: "学術" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74521,
@@ -5088,6 +5511,7 @@ export const words: RawWord[] = [
       { en: "Their views collided sharply.", ja: "彼らの意見は激しく衝突した。", context: "対話" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74522,
@@ -5100,6 +5524,7 @@ export const words: RawWord[] = [
       { en: "Classes commenced in April.", ja: "授業は4月に始まった。", context: "学校" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74523,
@@ -5112,6 +5537,7 @@ export const words: RawWord[] = [
       { en: "Many people commute from suburbs.", ja: "多くの人が郊外から通勤する。", context: "交通" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74526,
@@ -5124,6 +5550,7 @@ export const words: RawWord[] = [
       { en: "Her skills complement his.", ja: "彼女のスキルは彼のものを補完する。", context: "協力" },
     ],
     categories: ["daily"],
+    frequencyTier: 2,
   },
   {
     id: 74527,
@@ -5136,6 +5563,7 @@ export const words: RawWord[] = [
       { en: "The team conceded a goal.", ja: "チームはゴールを許した。", context: "スポーツ" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74528,
@@ -5148,6 +5576,7 @@ export const words: RawWord[] = [
       { en: "She concurred with the plan.", ja: "彼女は計画に同意した。", context: "会議" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74529,
@@ -5160,6 +5589,7 @@ export const words: RawWord[] = [
       { en: "She confided her fears.", ja: "彼女は恐れを打ち明けた。", context: "感情" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74531,
@@ -5172,6 +5602,7 @@ export const words: RawWord[] = [
       { en: "The name conjures mystery.", ja: "その名前は神秘を呼び起こす。", context: "文学" },
     ],
     categories: ["arts"],
+    frequencyTier: 3,
   },
   {
     id: 74533,
@@ -5184,6 +5615,7 @@ export const words: RawWord[] = [
       { en: "Music consoled her in hard times.", ja: "音楽は辛い時に彼女を慰めた。", context: "心理" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74534,
@@ -5196,6 +5628,7 @@ export const words: RawWord[] = [
       { en: "They conspired against the company.", ja: "彼らは会社に対して陰謀を企てた。", context: "企業" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74535,
@@ -5208,6 +5641,7 @@ export const words: RawWord[] = [
       { en: "He was constrained to comply.", ja: "彼は従うことを余儀なくされた。", context: "法律" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74537,
@@ -5220,6 +5654,7 @@ export const words: RawWord[] = [
       { en: "Light rays converge at a point.", ja: "光線は一点に収束する。", context: "物理" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74539,
@@ -5232,6 +5667,7 @@ export const words: RawWord[] = [
       { en: "He coordinated with other teams.", ja: "彼は他のチームと調整した。", context: "協力" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74540,
@@ -5244,6 +5680,7 @@ export const words: RawWord[] = [
       { en: "Years of work culminated in success.", ja: "長年の努力が成功へと達した。", context: "人生" },
     ],
     categories: ["arts"],
+    frequencyTier: 3,
   },
   {
     id: 74542,
@@ -5256,6 +5693,7 @@ export const words: RawWord[] = [
       { en: "He curtailed his working hours.", ja: "彼は労働時間を削減した。", context: "労働" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74543,
@@ -5268,6 +5706,7 @@ export const words: RawWord[] = [
       { en: "The report debunked the theory.", ja: "報告書は理論を暴いた。", context: "学術" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74544,
@@ -5280,6 +5719,7 @@ export const words: RawWord[] = [
       { en: "They deciphered the message.", ja: "彼らはメッセージを解読した。", context: "通信" },
     ],
     categories: ["language"],
+    frequencyTier: 3,
   },
   {
     id: 74545,
@@ -5292,6 +5732,7 @@ export const words: RawWord[] = [
       { en: "Bacteria decompose dead organisms.", ja: "バクテリアは死んだ生物を分解する。", context: "生物" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74546,
@@ -5304,6 +5745,7 @@ export const words: RawWord[] = [
       { en: "The cost was deducted from wages.", ja: "費用は賃金から差し引かれた。", context: "労働" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74547,
@@ -5316,6 +5758,7 @@ export const words: RawWord[] = [
       { en: "The soldier defected during war.", ja: "兵士は戦争中に亡命した。", context: "戦争" },
     ],
     categories: ["politics"],
+    frequencyTier: 2,
   },
   {
     id: 74548,
@@ -5328,6 +5771,7 @@ export const words: RawWord[] = [
       { en: "The meeting was deferred.", ja: "会議は先送りにされた。", context: "仕事" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74549,
@@ -5340,6 +5784,7 @@ export const words: RawWord[] = [
       { en: "The surface deflects heat.", ja: "表面は熱をそらす。", context: "物理" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74550,
@@ -5352,6 +5797,7 @@ export const words: RawWord[] = [
       { en: "Managers delegate responsibility.", ja: "管理者は責任を委任する。", context: "経営" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74551,
@@ -5364,6 +5810,7 @@ export const words: RawWord[] = [
       { en: "She deliberated on the matter.", ja: "彼女はその件について熟慮した。", context: "判断" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74552,
@@ -5376,6 +5823,7 @@ export const words: RawWord[] = [
       { en: "His energy was depleted.", ja: "彼のエネルギーは使い果たされた。", context: "健康" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74553,
@@ -5388,6 +5836,7 @@ export const words: RawWord[] = [
       { en: "Leaders deplored the tragedy.", ja: "指導者たちは悲劇を嘆いた。", context: "政治" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74554,
@@ -5400,6 +5849,7 @@ export const words: RawWord[] = [
       { en: "They detained the protesters.", ja: "彼らは抗議者を拘留した。", context: "権利" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74555,
@@ -5412,6 +5862,7 @@ export const words: RawWord[] = [
       { en: "Security cameras deter theft.", ja: "防犯カメラは窃盗を防ぐ。", context: "安全" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74556,
@@ -5424,6 +5875,7 @@ export const words: RawWord[] = [
       { en: "Information diffuses quickly online.", ja: "情報はオンラインで素早く拡散する。", context: "技術" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74557,
@@ -5436,6 +5888,7 @@ export const words: RawWord[] = [
       { en: "Dilute the juice before drinking.", ja: "飲む前にジュースを薄めなさい。", context: "食事" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74560,
@@ -5448,6 +5901,7 @@ export const words: RawWord[] = [
       { en: "The report discredited the claim.", ja: "報告書はその主張を否定した。", context: "メディア" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74561,
@@ -5460,6 +5914,7 @@ export const words: RawWord[] = [
       { en: "She was discriminated against.", ja: "彼女は差別を受けた。", context: "社会" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74562,
@@ -5472,6 +5927,7 @@ export const words: RawWord[] = [
       { en: "Wind dislodged the tiles.", ja: "風がタイルを外した。", context: "建物" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74563,
@@ -5484,6 +5940,7 @@ export const words: RawWord[] = [
       { en: "His behavior dismayed his parents.", ja: "彼の行動は両親を落胆させた。", context: "家庭" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74564,
@@ -5496,6 +5953,7 @@ export const words: RawWord[] = [
       { en: "The fog dispersed by noon.", ja: "霧は正午までに散った。", context: "天気" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74566,
@@ -5508,6 +5966,7 @@ export const words: RawWord[] = [
       { en: "Bias distorts judgment.", ja: "偏見は判断を歪める。", context: "心理" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74568,
@@ -5520,6 +5979,7 @@ export const words: RawWord[] = [
       { en: "Schools diversify learning methods.", ja: "学校は学習方法を多様化する。", context: "教育" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74569,
@@ -5532,6 +5992,7 @@ export const words: RawWord[] = [
       { en: "His savings dwindled away.", ja: "彼の貯蓄は徐々に消えた。", context: "経済" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74570,
@@ -5544,6 +6005,7 @@ export const words: RawWord[] = [
       { en: "He elaborated his argument.", ja: "彼は議論を詳しく展開した。", context: "対話" },
     ],
     categories: ["language"],
+    frequencyTier: 2,
   },
   {
     id: 74571,
@@ -5556,6 +6018,7 @@ export const words: RawWord[] = [
       { en: "He eluded capture for years.", ja: "彼は何年も捕獲を逃れた。", context: "歴史" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74572,
@@ -5568,6 +6031,7 @@ export const words: RawWord[] = [
       { en: "Education emancipates the mind.", ja: "教育は心を解放する。", context: "哲学" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74575,
@@ -5580,6 +6044,7 @@ export const words: RawWord[] = [
       { en: "Many people emigrated during war.", ja: "多くの人が戦争中に移住した。", context: "歴史" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74576,
@@ -5592,6 +6057,7 @@ export const words: RawWord[] = [
       { en: "She felt empowered by the speech.", ja: "彼女はスピーチで力を与えられた。", context: "感情" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74577,
@@ -5604,6 +6070,7 @@ export const words: RawWord[] = [
       { en: "The fence encloses the field.", ja: "フェンスは畑を囲んでいる。", context: "農業" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74579,
@@ -5616,6 +6083,7 @@ export const words: RawWord[] = [
       { en: "They engraved the stone tablet.", ja: "彼らは石板に彫り刻んだ。", context: "歴史" },
     ],
     categories: ["arts"],
+    frequencyTier: 3,
   },
   {
     id: 74580,
@@ -5628,6 +6096,7 @@ export const words: RawWord[] = [
       { en: "Chaos ensued when the lights went out.", ja: "電気が消えると混乱が続いた。", context: "日常" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74581,
@@ -5640,6 +6109,7 @@ export const words: RawWord[] = [
       { en: "Ads entice consumers to buy.", ja: "広告は消費者を買うよう誘惑する。", context: "経済" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74582,
@@ -5652,6 +6122,7 @@ export const words: RawWord[] = [
       { en: "The army entrenched its position.", ja: "軍は陣地を固めた。", context: "戦争" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74583,
@@ -5664,6 +6135,7 @@ export const words: RawWord[] = [
       { en: "He enumerated the items.", ja: "彼は項目を列挙した。", context: "学習" },
     ],
     categories: ["language"],
+    frequencyTier: 3,
   },
   {
     id: 74585,
@@ -5676,6 +6148,7 @@ export const words: RawWord[] = [
       { en: "The city was evacuated quickly.", ja: "市は素早く避難された。", context: "緊急" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74587,
@@ -5688,6 +6161,7 @@ export const words: RawWord[] = [
       { en: "They excavated a buried city.", ja: "彼らは埋もれた都市を発掘した。", context: "古代" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74588,
@@ -5700,6 +6174,7 @@ export const words: RawWord[] = [
       { en: "He excerpted the report.", ja: "彼は報告書を抜粋した。", context: "仕事" },
     ],
     categories: ["language"],
+    frequencyTier: 3,
   },
   {
     id: 74589,
@@ -5712,6 +6187,7 @@ export const words: RawWord[] = [
       { en: "They executed the order quickly.", ja: "彼らは命令を素早く実行した。", context: "軍事" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74591,
@@ -5724,6 +6200,7 @@ export const words: RawWord[] = [
       { en: "Gas is expelled from the engine.", ja: "ガスはエンジンから排出される。", context: "科学" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74593,
@@ -5736,6 +6213,7 @@ export const words: RawWord[] = [
       { en: "The gang extorted the community.", ja: "ギャングは地域から金を強要した。", context: "社会" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74595,
@@ -5748,6 +6226,7 @@ export const words: RawWord[] = [
       { en: "Countries extradite fugitives.", ja: "国々は逃亡者を引き渡す。", context: "政治" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74597,
@@ -5760,6 +6239,7 @@ export const words: RawWord[] = [
       { en: "The economy faltered in 2008.", ja: "経済は2008年によろめいた。", context: "経済" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74598,
@@ -5772,6 +6252,7 @@ export const words: RawWord[] = [
       { en: "Her mood fluctuates rapidly.", ja: "彼女の気分は急激に変動する。", context: "心理" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74599,
@@ -5784,6 +6265,7 @@ export const words: RawWord[] = [
       { en: "She forfeited her deposit.", ja: "彼女は保証金を失った。", context: "経済" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74601,
@@ -5796,6 +6278,7 @@ export const words: RawWord[] = [
       { en: "Society was fractured by conflict.", ja: "社会は紛争によって分断された。", context: "歴史" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74602,
@@ -5808,6 +6291,7 @@ export const words: RawWord[] = [
       { en: "Metal fuses when heated.", ja: "金属は熱せられると溶ける。", context: "工業" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74603,
@@ -5820,6 +6304,7 @@ export const words: RawWord[] = [
       { en: "His injury hampered performance.", ja: "彼の怪我はパフォーマンスを妨げた。", context: "スポーツ" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74605,
@@ -5832,6 +6317,7 @@ export const words: RawWord[] = [
       { en: "The crane hoisted the cargo.", ja: "クレーンは貨物を引き上げた。", context: "工業" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74606,
@@ -5844,6 +6330,7 @@ export const words: RawWord[] = [
       { en: "She hovered nervously near the door.", ja: "彼女は緊張してドアの近くでうろついた。", context: "感情" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74608,
@@ -5856,6 +6343,7 @@ export const words: RawWord[] = [
       { en: "He hypothesized about the results.", ja: "彼は結果について仮説を立てた。", context: "実験" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74610,
@@ -5868,6 +6356,7 @@ export const words: RawWord[] = [
       { en: "Candles illuminated the church.", ja: "ろうそくが教会を照らした。", context: "宗教" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74614,
@@ -5880,6 +6369,7 @@ export const words: RawWord[] = [
       { en: "They implored for help.", ja: "彼らは助けを懇願した。", context: "緊急" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74616,
@@ -5892,6 +6382,7 @@ export const words: RawWord[] = [
       { en: "He improvised a shelter.", ja: "彼は避難所を即興で作った。", context: "生存" },
     ],
     categories: ["arts"],
+    frequencyTier: 3,
   },
   {
     id: 74617,
@@ -5904,6 +6395,7 @@ export const words: RawWord[] = [
       { en: "The project incurred costs.", ja: "プロジェクトはコストを被った。", context: "仕事" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74619,
@@ -5916,6 +6408,7 @@ export const words: RawWord[] = [
       { en: "Agents infiltrated the enemy camp.", ja: "工作員は敵のキャンプに潜入した。", context: "戦争" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74620,
@@ -5928,6 +6421,7 @@ export const words: RawWord[] = [
       { en: "The drug inhibits the enzyme.", ja: "薬は酵素を抑制する。", context: "医療" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74623,
@@ -5940,6 +6434,7 @@ export const words: RawWord[] = [
       { en: "Media instigated public anger.", ja: "メディアは世論の怒りを扇動した。", context: "情報" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74624,
@@ -5952,6 +6447,7 @@ export const words: RawWord[] = [
       { en: "They institutionalized education.", ja: "彼らは教育を制度化した。", context: "歴史" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74627,
@@ -5964,6 +6460,7 @@ export const words: RawWord[] = [
       { en: "Agents interrogated the prisoner.", ja: "工作員は囚人を尋問した。", context: "戦争" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74628,
@@ -5976,6 +6473,7 @@ export const words: RawWord[] = [
       { en: "Doctors intervened to save him.", ja: "医師は彼を救うために介入した。", context: "医療" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74629,
@@ -5988,6 +6486,7 @@ export const words: RawWord[] = [
       { en: "The enemy intimidated the village.", ja: "敵は村を脅かした。", context: "戦争" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74630,
@@ -6000,6 +6499,7 @@ export const words: RawWord[] = [
       { en: "The office was inundated with calls.", ja: "オフィスは電話で溢れかえった。", context: "仕事" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74631,
@@ -6012,6 +6512,7 @@ export const words: RawWord[] = [
       { en: "The lens inverts the image.", ja: "レンズは像を逆にする。", context: "物理" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74634,
@@ -6024,6 +6525,7 @@ export const words: RawWord[] = [
       { en: "Partition caused great suffering.", ja: "分割は大きな苦しみをもたらした。", context: "社会" },
     ],
     categories: ["history"],
+    frequencyTier: 2,
   },
   {
     id: 74635,
@@ -6036,6 +6538,7 @@ export const words: RawWord[] = [
       { en: "Patents protect intellectual property.", ja: "特許は知的財産を守る。", context: "法律" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74636,
@@ -6048,6 +6551,7 @@ export const words: RawWord[] = [
       { en: "Ancient patriarchs held great power.", ja: "古代の家長は大きな権力を持った。", context: "歴史" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74638,
@@ -6060,6 +6564,7 @@ export const words: RawWord[] = [
       { en: "She became the patron of the arts.", ja: "彼女は芸術の後援者になった。", context: "歴史" },
     ],
     categories: ["arts"],
+    frequencyTier: 3,
   },
   {
     id: 74639,
@@ -6072,6 +6577,7 @@ export const words: RawWord[] = [
       { en: "The peasant revolt shook Europe.", ja: "農民反乱はヨーロッパを揺るがした。", context: "歴史" },
     ],
     categories: ["history"],
+    frequencyTier: 2,
   },
   {
     id: 74642,
@@ -6084,6 +6590,7 @@ export const words: RawWord[] = [
       { en: "Refugees fled persecution.", ja: "難民は迫害から逃げた。", context: "社会" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74643,
@@ -6096,6 +6603,7 @@ export const words: RawWord[] = [
       { en: "The petition gained thousands of signatures.", ja: "請願書は数千の署名を集めた。", context: "社会" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74644,
@@ -6108,6 +6616,7 @@ export const words: RawWord[] = [
       { en: "He showed great piety.", ja: "彼は深い信心を示した。", context: "道徳" },
     ],
     categories: ["religion"],
+    frequencyTier: 3,
   },
   {
     id: 74645,
@@ -6120,6 +6629,7 @@ export const words: RawWord[] = [
       { en: "Pilgrims travel great distances.", ja: "巡礼者は長距離を旅する。", context: "歴史" },
     ],
     categories: ["religion"],
+    frequencyTier: 3,
   },
   {
     id: 74646,
@@ -6132,6 +6642,7 @@ export const words: RawWord[] = [
       { en: "He was at the pinnacle of his career.", ja: "彼はキャリアの頂点にいた。", context: "仕事" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74648,
@@ -6144,6 +6655,7 @@ export const words: RawWord[] = [
       { en: "Digital platforms shape public opinion.", ja: "デジタル基盤が世論を形成する。", context: "情報" },
     ],
     categories: ["politics"],
+    frequencyTier: 2,
   },
   {
     id: 74649,
@@ -6156,6 +6668,7 @@ export const words: RawWord[] = [
       { en: "The defense made a plea for leniency.", ja: "弁護側は寛大な処置を嘆願した。", context: "裁判" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74650,
@@ -6168,6 +6681,7 @@ export const words: RawWord[] = [
       { en: "The plight of children drew attention.", ja: "子供たちの苦境が注目を集めた。", context: "権利" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74651,
@@ -6180,6 +6694,7 @@ export const words: RawWord[] = [
       { en: "Colonizers engaged in plunder.", ja: "植民地支配者は略奪を行った。", context: "社会" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74652,
@@ -6192,6 +6707,7 @@ export const words: RawWord[] = [
       { en: "The populace was discontent.", ja: "民衆は不満を持っていた。", context: "歴史" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74653,
@@ -6204,6 +6720,7 @@ export const words: RawWord[] = [
       { en: "His portfolio includes many projects.", ja: "彼のポートフォリオには多くのプロジェクトがある。", context: "仕事" },
     ],
     categories: ["economy"],
+    frequencyTier: 2,
   },
   {
     id: 74654,
@@ -6216,6 +6733,7 @@ export const words: RawWord[] = [
       { en: "Posterity will judge our actions.", ja: "後世は私たちの行動を判断するだろう。", context: "哲学" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74655,
@@ -6228,6 +6746,7 @@ export const words: RawWord[] = [
       { en: "His postulate was widely debated.", ja: "彼の仮定は広く議論された。", context: "研究" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74656,
@@ -6240,6 +6759,7 @@ export const words: RawWord[] = [
       { en: "The ruling set a dangerous precedent.", ja: "その判決は危険な先例を設けた。", context: "社会" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74657,
@@ -6252,6 +6772,7 @@ export const words: RawWord[] = [
       { en: "The precinct reported results early.", ja: "選挙区は早めに結果を報告した。", context: "政治" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74658,
@@ -6264,6 +6785,7 @@ export const words: RawWord[] = [
       { en: "High precipitation causes flooding.", ja: "高い降水量は洪水を引き起こす。", context: "環境" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74659,
@@ -6276,6 +6798,7 @@ export const words: RawWord[] = [
       { en: "He followed in his predecessor's steps.", ja: "彼は前任者の足跡をたどった。", context: "歴史" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74660,
@@ -6288,6 +6811,7 @@ export const words: RawWord[] = [
       { en: "The country faced a grave predicament.", ja: "その国は深刻な苦境に直面した。", context: "政治" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74662,
@@ -6300,6 +6824,7 @@ export const words: RawWord[] = [
       { en: "Small signs were the prelude.", ja: "小さな兆候が前兆だった。", context: "社会" },
     ],
     categories: ["music"],
+    frequencyTier: 3,
   },
   {
     id: 74663,
@@ -6312,6 +6837,7 @@ export const words: RawWord[] = [
       { en: "The course has several prerequisites.", ja: "そのコースにはいくつかの前提条件がある。", context: "学習" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74664,
@@ -6324,6 +6850,7 @@ export const words: RawWord[] = [
       { en: "Prescriptions regulate drug use.", ja: "処方箋は薬の使用を規制する。", context: "法律" },
     ],
     categories: ["health"],
+    frequencyTier: 3,
   },
   {
     id: 74665,
@@ -6336,6 +6863,7 @@ export const words: RawWord[] = [
       { en: "Food preservation extends shelf life.", ja: "食品保存は保存期間を延ばす。", context: "科学" },
     ],
     categories: ["environment"],
+    frequencyTier: 3,
   },
   {
     id: 74666,
@@ -6348,6 +6876,7 @@ export const words: RawWord[] = [
       { en: "Prestige matters in some cultures.", ja: "名声は一部の文化で重要だ。", context: "社会" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74667,
@@ -6360,6 +6889,7 @@ export const words: RawWord[] = [
       { en: "The prevalence of poverty concerns leaders.", ja: "貧困の蔓延は指導者を懸念させる。", context: "社会" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74668,
@@ -6372,6 +6902,7 @@ export const words: RawWord[] = [
       { en: "Congress launched a probe.", ja: "議会は調査を開始した。", context: "政治" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74669,
@@ -6384,6 +6915,7 @@ export const words: RawWord[] = [
       { en: "Proceeds from sales fund research.", ja: "売上収益は研究に充てられる。", context: "学術" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74670,
@@ -6396,6 +6928,7 @@ export const words: RawWord[] = [
       { en: "A formal proclamation was made.", ja: "公式な宣言が行われた。", context: "法律" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74671,
@@ -6408,6 +6941,7 @@ export const words: RawWord[] = [
       { en: "Child prodigies need special support.", ja: "天才児は特別な支援が必要だ。", context: "社会" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74672,
@@ -6420,6 +6954,7 @@ export const words: RawWord[] = [
       { en: "The suspect's profile was released.", ja: "容疑者のプロフィールが公開された。", context: "法律" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74673,
@@ -6432,6 +6967,7 @@ export const words: RawWord[] = [
       { en: "Laws create prohibitions on violence.", ja: "法律は暴力に対する禁止を設ける。", context: "社会" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74674,
@@ -6444,6 +6980,7 @@ export const words: RawWord[] = [
       { en: "Film projections lit the screen.", ja: "フィルム投影がスクリーンを照らした。", context: "芸術" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74678,
@@ -6456,6 +6993,7 @@ export const words: RawWord[] = [
       { en: "She fulfilled the prophecy.", ja: "彼女は予言を果たした。", context: "文学" },
     ],
     categories: ["religion"],
+    frequencyTier: 3,
   },
   {
     id: 74679,
@@ -6468,6 +7006,7 @@ export const words: RawWord[] = [
       { en: "The prosecution argued strongly.", ja: "起訴側は強く主張した。", context: "裁判" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74680,
@@ -6480,6 +7019,7 @@ export const words: RawWord[] = [
       { en: "Every story needs a protagonist.", ja: "すべての物語には主人公が必要だ。", context: "教育" },
     ],
     categories: ["literature"],
+    frequencyTier: 3,
   },
   {
     id: 74681,
@@ -6492,6 +7032,7 @@ export const words: RawWord[] = [
       { en: "The protocol ensures consistency.", ja: "手順は一貫性を確保する。", context: "仕事" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74684,
@@ -6504,6 +7045,7 @@ export const words: RawWord[] = [
       { en: "Provisions were made for emergencies.", ja: "緊急時のための備えがなされた。", context: "社会" },
     ],
     categories: ["law"],
+    frequencyTier: 2,
   },
   {
     id: 74685,
@@ -6516,6 +7058,7 @@ export const words: RawWord[] = [
       { en: "Proxy wars were common.", ja: "代理戦争は一般的だった。", context: "歴史" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74686,
@@ -6528,6 +7071,7 @@ export const words: RawWord[] = [
       { en: "The publication date was delayed.", ja: "出版日が延期された。", context: "メディア" },
     ],
     categories: ["arts"],
+    frequencyTier: 2,
   },
   {
     id: 74687,
@@ -6540,6 +7084,7 @@ export const words: RawWord[] = [
       { en: "He was in quarantine for two weeks.", ja: "彼は2週間隔離されていた。", context: "社会" },
     ],
     categories: ["health"],
+    frequencyTier: 3,
   },
   {
     id: 74688,
@@ -6552,6 +7097,7 @@ export const words: RawWord[] = [
       { en: "Quotas ensure equal representation.", ja: "割り当ては平等な代表を確保する。", context: "政治" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74690,
@@ -6564,6 +7110,7 @@ export const words: RawWord[] = [
       { en: "He gave no clear rationale.", ja: "彼は明確な根拠を示さなかった。", context: "議論" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74691,
@@ -6576,6 +7123,7 @@ export const words: RawWord[] = [
       { en: "This is beyond my realm.", ja: "これは私の領域を超えている。", context: "日常" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74692,
@@ -6588,6 +7136,7 @@ export const words: RawWord[] = [
       { en: "The rebellion sought freedom.", ja: "反乱は自由を求めた。", context: "政治" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74693,
@@ -6600,6 +7149,7 @@ export const words: RawWord[] = [
       { en: "Economic recession followed the crisis.", ja: "経済危機の後に景気後退が続いた。", context: "歴史" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74695,
@@ -6612,6 +7162,7 @@ export const words: RawWord[] = [
       { en: "The referendum outcome was close.", ja: "国民投票の結果は接戦だった。", context: "社会" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74696,
@@ -6624,6 +7175,7 @@ export const words: RawWord[] = [
       { en: "Educational reformation is ongoing.", ja: "教育改革は進行中だ。", context: "教育" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74697,
@@ -6636,6 +7188,7 @@ export const words: RawWord[] = [
       { en: "Host countries accept refugees.", ja: "受け入れ国は難民を受け入れる。", context: "国際" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74698,
@@ -6648,6 +7201,7 @@ export const words: RawWord[] = [
       { en: "The regime fell after years of conflict.", ja: "政権は長年の紛争の後に崩壊した。", context: "政治" },
     ],
     categories: ["politics"],
+    frequencyTier: 2,
   },
   {
     id: 74699,
@@ -6660,6 +7214,7 @@ export const words: RawWord[] = [
       { en: "The registry office handles births.", ja: "登録所は出生を管理する。", context: "社会" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74700,
@@ -6672,6 +7227,7 @@ export const words: RawWord[] = [
       { en: "Drug rehabilitation programs save lives.", ja: "薬物更生プログラムは命を救う。", context: "健康" },
     ],
     categories: ["health"],
+    frequencyTier: 2,
   },
   {
     id: 74701,
@@ -6684,6 +7240,7 @@ export const words: RawWord[] = [
       { en: "The reign of terror began.", ja: "恐怖政治が始まった。", context: "歴史" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74702,
@@ -6696,6 +7253,7 @@ export const words: RawWord[] = [
       { en: "Sacred relics attract pilgrims.", ja: "聖なる遺物は巡礼者を引き寄せる。", context: "宗教" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74703,
@@ -6708,6 +7266,7 @@ export const words: RawWord[] = [
       { en: "Reluctance to change is natural.", ja: "変化への消極さは自然なことだ。", context: "心理" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74704,
@@ -6720,6 +7279,7 @@ export const words: RawWord[] = [
       { en: "Only a remnant remained.", ja: "残存物だけが残った。", context: "日常" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74705,
@@ -6732,6 +7292,7 @@ export const words: RawWord[] = [
       { en: "The city experienced a renaissance.", ja: "その都市は復興を経験した。", context: "社会" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74706,
@@ -6744,6 +7305,7 @@ export const words: RawWord[] = [
       { en: "Major renovation was needed.", ja: "大規模な改修が必要だった。", context: "日常" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74707,
@@ -6756,6 +7318,7 @@ export const words: RawWord[] = [
       { en: "The company made reparations.", ja: "会社は賠償を行った。", context: "法律" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74708,
@@ -6768,6 +7331,7 @@ export const words: RawWord[] = [
       { en: "He expanded his skill repertoire.", ja: "彼はスキルのレパートリーを広げた。", context: "仕事" },
     ],
     categories: ["arts"],
+    frequencyTier: 2,
   },
   {
     id: 74709,
@@ -6780,6 +7344,7 @@ export const words: RawWord[] = [
       { en: "Psychological repression causes harm.", ja: "心理的抑圧は害をもたらす。", context: "心理" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74710,
@@ -6792,6 +7357,7 @@ export const words: RawWord[] = [
       { en: "Unauthorized reproduction is illegal.", ja: "無断複製は違法だ。", context: "法律" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74711,
@@ -6804,6 +7370,7 @@ export const words: RawWord[] = [
       { en: "A republic values democratic elections.", ja: "共和国は民主的選挙を重視する。", context: "社会" },
     ],
     categories: ["politics"],
+    frequencyTier: 2,
   },
   {
     id: 74712,
@@ -6816,6 +7383,7 @@ export const words: RawWord[] = [
       { en: "Her resentment was justified.", ja: "彼女の恨みは正当だった。", context: "社会" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74713,
@@ -6828,6 +7396,7 @@ export const words: RawWord[] = [
       { en: "The reservoir stores energy.", ja: "その貯水池はエネルギーを蓄える。", context: "技術" },
     ],
     categories: ["environment"],
+    frequencyTier: 2,
   },
   {
     id: 74714,
@@ -6840,6 +7409,7 @@ export const words: RawWord[] = [
       { en: "Pesticide residue on food is harmful.", ja: "食品の農薬残留物は有害だ。", context: "健康" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74715,
@@ -6852,6 +7422,7 @@ export const words: RawWord[] = [
       { en: "Restitution helps restore justice.", ja: "弁償は正義の回復を助ける。", context: "社会" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74716,
@@ -6864,6 +7435,7 @@ export const words: RawWord[] = [
       { en: "Restraint is a virtue.", ja: "自制は美徳だ。", context: "道徳" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74717,
@@ -6876,6 +7448,7 @@ export const words: RawWord[] = [
       { en: "Economic resurrection took years.", ja: "経済の復活には何年もかかった。", context: "経済" },
     ],
     categories: ["religion"],
+    frequencyTier: 3,
   },
   {
     id: 74718,
@@ -6888,6 +7461,7 @@ export const words: RawWord[] = [
       { en: "She feared retaliation.", ja: "彼女は報復を恐れた。", context: "感情" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74721,
@@ -6900,6 +7474,7 @@ export const words: RawWord[] = [
       { en: "She found sanctuary in music.", ja: "彼女は音楽に安らぎを見つけた。", context: "感情" },
     ],
     categories: ["religion"],
+    frequencyTier: 3,
   },
   {
     id: 74722,
@@ -6912,6 +7487,7 @@ export const words: RawWord[] = [
       { en: "His actions faced intense scrutiny.", ja: "彼の行動は激しい精査を受けた。", context: "法律" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74723,
@@ -6924,6 +7500,7 @@ export const words: RawWord[] = [
       { en: "The region declared secession.", ja: "地域は分離を宣言した。", context: "社会" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74724,
@@ -6936,6 +7513,7 @@ export const words: RawWord[] = [
       { en: "Segregation was declared illegal.", ja: "人種差別は違法と宣言された。", context: "法律" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74725,
@@ -6948,6 +7526,7 @@ export const words: RawWord[] = [
       { en: "The semiconductor industry grew fast.", ja: "半導体産業は急速に成長した。", context: "経済" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74726,
@@ -6960,6 +7539,7 @@ export const words: RawWord[] = [
       { en: "A siege prevented supplies.", ja: "包囲は物資の補給を阻止した。", context: "軍事" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74727,
@@ -6972,6 +7552,7 @@ export const words: RawWord[] = [
       { en: "Public skepticism grew.", ja: "一般大衆の懐疑心が高まった。", context: "社会" },
     ],
     categories: ["philosophy"],
+    frequencyTier: 3,
   },
   {
     id: 74730,
@@ -6984,6 +7565,7 @@ export const words: RawWord[] = [
       { en: "The museum holds animal specimens.", ja: "博物館は動物の標本を所蔵する。", context: "文化" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74732,
@@ -6996,6 +7578,7 @@ export const words: RawWord[] = [
       { en: "Cultural stagnation hinders growth.", ja: "文化の停滞は成長を妨げる。", context: "社会" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74733,
@@ -7008,6 +7591,7 @@ export const words: RawWord[] = [
       { en: "The statute of limitations expired.", ja: "時効が切れた。", context: "法律" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74734,
@@ -7020,6 +7604,7 @@ export const words: RawWord[] = [
       { en: "Stereotypes often reflect bias.", ja: "固定観念はしばしば偏見を反映する。", context: "心理" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74735,
@@ -7032,6 +7617,7 @@ export const words: RawWord[] = [
       { en: "The stipulations were clearly stated.", ja: "規定は明確に述べられた。", context: "社会" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74736,
@@ -7044,6 +7630,7 @@ export const words: RawWord[] = [
       { en: "Submission of the report was delayed.", ja: "報告書の提出が遅れた。", context: "学術" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74738,
@@ -7056,6 +7643,7 @@ export const words: RawWord[] = [
       { en: "Business succession planning is vital.", ja: "事業継承計画は重要だ。", context: "経済" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74739,
@@ -7068,6 +7656,7 @@ export const words: RawWord[] = [
       { en: "Universal suffrage allows all to vote.", ja: "普通選挙権により全員が投票できる。", context: "政治" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74740,
@@ -7080,6 +7669,7 @@ export const words: RawWord[] = [
       { en: "They reached the summit of the mountain.", ja: "彼らは山頂に達した。", context: "自然" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74741,
@@ -7092,6 +7682,7 @@ export const words: RawWord[] = [
       { en: "Technological supremacy matters today.", ja: "今日では技術的覇権が重要だ。", context: "科学" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74742,
@@ -7104,6 +7695,7 @@ export const words: RawWord[] = [
       { en: "Intelligence agencies conduct surveillance.", ja: "情報機関は監視を行う。", context: "政治" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74743,
@@ -7116,6 +7708,7 @@ export const words: RawWord[] = [
       { en: "Bridge suspension allows flexibility.", ja: "橋の吊り構造は柔軟性を可能にする。", context: "建築" },
     ],
     categories: ["education"],
+    frequencyTier: 3,
   },
   {
     id: 74744,
@@ -7128,6 +7721,7 @@ export const words: RawWord[] = [
       { en: "Photosynthesis is a natural synthesis.", ja: "光合成は自然な合成だ。", context: "生物" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74745,
@@ -7140,6 +7734,7 @@ export const words: RawWord[] = [
       { en: "Trade wars involve tariffs.", ja: "貿易戦争は関税を伴う。", context: "国際" },
     ],
     categories: ["economy"],
+    frequencyTier: 3,
   },
   {
     id: 74746,
@@ -7152,6 +7747,7 @@ export const words: RawWord[] = [
       { en: "His tenure was marked by change.", ja: "彼の在職期間は変化によって特徴づけられた。", context: "歴史" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74747,
@@ -7164,6 +7760,7 @@ export const words: RawWord[] = [
       { en: "Written testimony was submitted.", ja: "書面による証言が提出された。", context: "法律" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74748,
@@ -7176,6 +7773,7 @@ export const words: RawWord[] = [
       { en: "Temperature threshold triggers alarms.", ja: "温度のしきい値がアラームを起動する。", context: "技術" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74751,
@@ -7188,6 +7786,7 @@ export const words: RawWord[] = [
       { en: "Transparency builds trust.", ja: "透明性は信頼を築く。", context: "社会" },
     ],
     categories: ["society"],
+    frequencyTier: 2,
   },
   {
     id: 74753,
@@ -7200,6 +7799,7 @@ export const words: RawWord[] = [
       { en: "Tribute was demanded by the empire.", ja: "帝国によって貢物が要求された。", context: "歴史" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74754,
@@ -7212,6 +7812,7 @@ export const words: RawWord[] = [
       { en: "Turmoil erupted after the election.", ja: "選挙後に混乱が噴き出した。", context: "社会" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74755,
@@ -7224,6 +7825,7 @@ export const words: RawWord[] = [
       { en: "Freedom ends where tyranny begins.", ja: "専制政治が始まるところで自由は終わる。", context: "哲学" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74756,
@@ -7236,6 +7838,7 @@ export const words: RawWord[] = [
       { en: "The ultimatum was rejected.", ja: "最終通告は拒否された。", context: "歴史" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74757,
@@ -7248,6 +7851,7 @@ export const words: RawWord[] = [
       { en: "Unrest spread across the country.", ja: "不安は国中に広まった。", context: "社会" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74758,
@@ -7260,6 +7864,7 @@ export const words: RawWord[] = [
       { en: "Economic upheaval hurt millions.", ja: "経済的変動は何百万人もを傷つけた。", context: "経済" },
     ],
     categories: ["history"],
+    frequencyTier: 3,
   },
   {
     id: 74759,
@@ -7272,6 +7877,7 @@ export const words: RawWord[] = [
       { en: "Utopia remains an ideal, not reality.", ja: "理想郷は理想であり現実ではない。", context: "思想" },
     ],
     categories: ["philosophy"],
+    frequencyTier: 3,
   },
   {
     id: 74760,
@@ -7284,6 +7890,7 @@ export const words: RawWord[] = [
       { en: "Mass vaccination ended the epidemic.", ja: "大規模予防接種が流行を終わらせた。", context: "社会" },
     ],
     categories: ["health"],
+    frequencyTier: 3,
   },
   {
     id: 74761,
@@ -7296,6 +7903,7 @@ export const words: RawWord[] = [
       { en: "Validity tests confirm accuracy.", ja: "妥当性試験は正確さを確認する。", context: "科学" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
   {
     id: 74762,
@@ -7308,6 +7916,7 @@ export const words: RawWord[] = [
       { en: "Not guilty was the verdict.", ja: "評決は無罪だった。", context: "裁判" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74763,
@@ -7320,6 +7929,7 @@ export const words: RawWord[] = [
       { en: "The tool's versatility is useful.", ja: "その道具の多機能性は便利だ。", context: "科学" },
     ],
     categories: ["arts"],
+    frequencyTier: 3,
   },
   {
     id: 74764,
@@ -7332,6 +7942,7 @@ export const words: RawWord[] = [
       { en: "She is a veteran teacher.", ja: "彼女はベテランの教師だ。", context: "教育" },
     ],
     categories: ["history"],
+    frequencyTier: 2,
   },
   {
     id: 74765,
@@ -7344,6 +7955,7 @@ export const words: RawWord[] = [
       { en: "He exercised his right of veto.", ja: "彼は拒否権を行使した。", context: "法律" },
     ],
     categories: ["politics"],
+    frequencyTier: 3,
   },
   {
     id: 74766,
@@ -7356,6 +7968,7 @@ export const words: RawWord[] = [
       { en: "The incident occurred in the vicinity.", ja: "その出来事は付近で起きた。", context: "社会" },
     ],
     categories: ["daily"],
+    frequencyTier: 3,
   },
   {
     id: 74767,
@@ -7368,6 +7981,7 @@ export const words: RawWord[] = [
       { en: "The violation led to penalties.", ja: "違反は罰則につながった。", context: "社会" },
     ],
     categories: ["law"],
+    frequencyTier: 3,
   },
   {
     id: 74787,
@@ -7380,6 +7994,7 @@ export const words: RawWord[] = [
       { en: "Citizens must adhere to laws.", ja: "市民は法律に固守しなければならない。", context: "社会" },
     ],
     categories: ["society"],
+    frequencyTier: 3,
   },
   {
     id: 74789,
@@ -7392,6 +8007,7 @@ export const words: RawWord[] = [
       { en: "Technology amplifies human ability.", ja: "技術は人間の能力を増幅する。", context: "科学" },
     ],
     categories: ["science"],
+    frequencyTier: 3,
   },
   {
     id: 74790,
@@ -7404,6 +8020,7 @@ export const words: RawWord[] = [
       { en: "It is important to articulate well.", ja: "はっきり述べることは重要だ。", context: "教育" },
     ],
     categories: ["language"],
+    frequencyTier: 2,
   },
   {
     id: 74797,
@@ -7416,5 +8033,6 @@ export const words: RawWord[] = [
       { en: "His work distinguished him.", ja: "彼の業績が彼を際立たせた。", context: "社会" },
     ],
     categories: ["science"],
+    frequencyTier: 2,
   },
 ];

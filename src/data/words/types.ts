@@ -41,6 +41,9 @@ export type WordExampleEntry = {
   context: string;
 };
 
+// 頻出度ティア（1=頻出, 2=標準, 3=発展）
+export type FrequencyTier = 1 | 2 | 3;
+
 // データファイルに格納する型（冗長フィールドを含まない最小形）
 // course/stage はファイルの場所から、difficulty は course:stage から導出される
 export type RawWord = {
@@ -50,6 +53,7 @@ export type RawWord = {
   partOfSpeech: PartOfSpeech;
   examples: [WordExampleEntry, WordExampleEntry, WordExampleEntry];
   categories: [string, ...string[]]; // 1個以上必須、[0]が主カテゴリ
+  frequencyTier?: FrequencyTier; // 1=頻出, 2=標準, 3=発展。未設定時はデフォルト2
 };
 
 // ランタイム型（enrichWords で RawWord に course/stage/difficulty 等を付与した完全型）
@@ -68,4 +72,5 @@ export type Word = {
   difficulty: Difficulty;
   category: string;     // categories[0]
   categories: string[];
+  frequencyTier: FrequencyTier; // 1=頻出, 2=標準, 3=発展
 };

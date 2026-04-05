@@ -24,5 +24,6 @@ export function enrichWords(
     exampleJa: raw.examples[0].ja,
     category: raw.categories[0],
     categories: [...raw.categories],
+    frequencyTier: raw.frequencyTier ?? 2, // 未設定時は「標準」
   }));
 }
