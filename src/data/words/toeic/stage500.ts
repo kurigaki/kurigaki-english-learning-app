@@ -2375,7 +2375,7 @@ export const words: RawWord[] = [
     examples: [
       { en: "What does this word mean?", ja: "この単語はどういう意味ですか？", context: "学校" },
       { en: "She didn't mean to hurt you.", ja: "彼女はあなたを傷つけるつもりはなかった。", context: "日常" },
-      { en: "This sign means 'no parking' here.", ja: "この標識はここが駐車禁止だという意味だ。", context: "交通" },
+      { en: "This sign means 'no parking here.", ja: "この標識はここが駐車禁止だという意味だ。", context: "交通" },
     ],
     categories: ["communication"],
     frequencyTier: 1,
