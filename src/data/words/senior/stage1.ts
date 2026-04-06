@@ -11116,4 +11116,43 @@ export const words: RawWord[] = [
     categories: ["文化・社会"],
     frequencyTier: 3,
   },
+  {
+    id: 13858,
+    word: "access",
+    meaning: "アクセスする",
+    partOfSpeech: "verb",
+    examples: [
+      { en: "You can access the website free.", ja: "ウェブサイトに無料でアクセスできる。", context: "access website" },
+      { en: "She accessed her email.", ja: "メールにアクセスした。", context: "access email" },
+      { en: "Please access the file here.", ja: "ここでファイルにアクセスして。", context: "access file" },
+    ],
+    categories: ["会話A1"],
+    frequencyTier: 3,
+  },
+  {
+    id: 13861,
+    word: "address",
+    meaning: "住所",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "What is your home address?", ja: "自宅の住所は何ですか？", context: "home address" },
+      { en: "She wrote the address on the envelope.", ja: "封筒に住所を書いた。", context: "write address" },
+      { en: "Please confirm your billing address.", ja: "請求先住所を確認して。", context: "billing address" },
+    ],
+    categories: ["会話A1"],
+    frequencyTier: 3,
+  },
+  {
+    id: 13862,
+    word: "advance",
+    meaning: "予約する",
+    partOfSpeech: "verb",
+    examples: [
+      { en: "Book the tickets in advance.", ja: "事前にチケットを予約して。", context: "advance booking" },
+      { en: "She paid in advance.", ja: "事前に支払った。", context: "pay advance" },
+      { en: "Reserve your seat in advance.", ja: "事前に席を予約して。", context: "seat advance" },
+    ],
+    categories: ["会話A1"],
+    frequencyTier: 3,
+  },
 ];

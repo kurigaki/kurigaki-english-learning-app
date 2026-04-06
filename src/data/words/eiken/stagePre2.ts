@@ -21568,4 +21568,30 @@ export const words: RawWord[] = [
     categories: ["time"],
     frequencyTier: 3,
   },
+  {
+    id: 27238,
+    word: "landmark",
+    meaning: "名所",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The tower is a famous landmark.", ja: "その塔は有名な名所だ。", context: "famous landmark" },
+      { en: "She photographed the landmark.", ja: "名所を撮影した。", context: "photograph landmark" },
+      { en: "The landmark attracts many tourists.", ja: "名所は多くの観光客を引き付ける。", context: "landmark tourists" },
+    ],
+    categories: ["英検準2"],
+    frequencyTier: 3,
+  },
+  {
+    id: 27239,
+    word: "relevance",
+    meaning: "関連性",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "The relevance of the topic was clear.", ja: "トピックの関連性は明確だった。", context: "topic relevance" },
+      { en: "She questioned its relevance.", ja: "関連性を疑問視した。", context: "question relevance" },
+      { en: "Data relevance affects decisions.", ja: "データの関連性が決定に影響する。", context: "data relevance" },
+    ],
+    categories: ["英検準2"],
+    frequencyTier: 3,
+  },
 ];

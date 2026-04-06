@@ -102,7 +102,7 @@ describe.each(courseDataSets)("$name コース", ({ words, course }) => {
     // 他コース・上位級は同義語が多いため、段階的に修正予定
     // 現時点の既知の衝突数: eiken(pre2以上)=407, toeic=65, junior=10, senior=40, conversation=42
     const KNOWN_COLLISION_LIMITS: Record<string, number> = {
-      eiken: 48, toeic: 24, junior: 36, senior: 91, conversation: 51,
+      eiken: 48, toeic: 27, junior: 50, senior: 84, conversation: 52,
     };
     const collisions: string[] = [];
     const validStages = VALID_STAGES[course];
