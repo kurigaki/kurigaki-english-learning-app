@@ -5,6 +5,7 @@ import { Question } from "@/types";
 import { getQuestionPrompt, getQuestionDisplay } from "@/lib/quiz/display";
 import { parseDictationParts } from "@/lib/quiz/generator";
 import { getTranslationInfo } from "@/lib/quiz/translation";
+import { getMasterMeaning } from "@/lib/word-lookup";
 import { InQuizSettings, AudioMode } from "@/lib/quiz/in-quiz-settings";
 import { speakSentence } from "@/lib/audio";
 
@@ -668,6 +669,17 @@ export const QuizSession = ({
                           <span className="text-slate-500 dark:text-slate-400 ml-1">({currentQuestion.word.meaning})</span>
                         )}
                       </p>
+                      {(() => {
+                        const masterMeaning = getMasterMeaning(currentQuestion.word.id);
+                        if (masterMeaning && masterMeaning !== currentQuestion.word.meaning && masterMeaning.includes("・")) {
+                          return (
+                            <p className="text-slate-400 dark:text-slate-500 truncate">
+                              他の意味: {masterMeaning}
+                            </p>
+                          );
+                        }
+                        return null;
+                      })()}
                     </div>
                   </div>
                   <SpeakButton

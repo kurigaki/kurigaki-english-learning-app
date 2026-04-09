@@ -1,11 +1,19 @@
-import { words } from "@/data/words";
+import { masterWords } from "@/data/words";
 
 /**
  * 単語(小文字)→IDのルックアップMap
  * モジュールレベルで一度だけ生成してO(1)検索を実現
  */
 const wordLookupMap = new Map<string, number>(
-  words.map((w) => [w.word.toLowerCase(), w.id])
+  masterWords.map((w) => [w.word.toLowerCase(), w.id])
+);
+
+/**
+ * ID→MasterWord meaning のルックアップMap
+ * コース別meaningではなく、全語義を含むmaster meaningを取得するために使用
+ */
+const masterMeaningMap = new Map<number, string>(
+  masterWords.map((w) => [w.id, w.meaning])
 );
 
 /**
@@ -14,6 +22,14 @@ const wordLookupMap = new Map<string, number>(
  */
 export const findWordId = (word: string): number | null =>
   wordLookupMap.get(word.toLowerCase()) ?? null;
+
+/**
+ * IDからmaster meaning（全語義）を取得する
+ * コース別meaningではなく、辞書レベルの包括的な意味を返す
+ * 例: interest → "興味・関心・利子"（TOEICコースでword.meaning="利子"でも全義を返す）
+ */
+export const getMasterMeaning = (id: number): string | null =>
+  masterMeaningMap.get(id) ?? null;
 
 /**
  * 品詞ごとのmeaning情報
@@ -45,7 +61,7 @@ export const getPosLabel = (pos: string): string => POS_LABEL[pos] ?? pos;
 export function getMultiPosMeanings(word: string): WordMeaningByPos[] {
   const lower = word.toLowerCase();
   const seen = new Map<string, string>(); // pos → meaning
-  for (const w of words) {
+  for (const w of masterWords) {
     if (w.word.toLowerCase() !== lower) continue;
     if (!seen.has(w.partOfSpeech)) {
       seen.set(w.partOfSpeech, w.meaning);

@@ -10682,7 +10682,7 @@
       "nature",
       "daily"
     ],
-    "frequencyTier": 2,
+    "frequencyTier": 1,
     "courses": [
       {
         "course": "junior",
@@ -22895,7 +22895,7 @@
       "daily",
       "communication"
     ],
-    "frequencyTier": 3,
+    "frequencyTier": 1,
     "courses": [
       {
         "course": "junior",
@@ -24237,7 +24237,7 @@
       "daily",
       "communication"
     ],
-    "frequencyTier": 2,
+    "frequencyTier": 1,
     "courses": [
       {
         "course": "junior",

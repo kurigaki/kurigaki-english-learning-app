@@ -38,6 +38,7 @@ type WordWithStats = {
   example?: string;
   exampleJa?: string;
   frequencyTier: 1 | 2 | 3;
+  courseNames?: string[];
 };
 
 type SortOption = WordListSortOption;
@@ -191,6 +192,7 @@ export default function WordListPage() {
           example: word.examples[0].en,
           exampleJa: word.examples[0].ja,
           frequencyTier: word.frequencyTier,
+          courseNames: Array.from(new Set(word.courses.map((c) => c.course))),
         };
       });
 
@@ -817,6 +819,20 @@ export default function WordListPage() {
                             <p className="text-sm sm:text-xs text-slate-500 dark:text-slate-400 break-words">
                               {word.meaning}
                             </p>
+                            {!selectedCourse && word.courseNames && word.courseNames.length > 1 && (
+                              <div className="flex flex-wrap gap-0.5 mt-0.5">
+                                {word.courseNames.map((c) => {
+                                  const labels: Record<string, string> = {
+                                    junior: "中学", senior: "高校", eiken: "英検", toeic: "TOEIC", conversation: "会話"
+                                  };
+                                  return (
+                                    <span key={c} className="text-[9px] px-1 py-0 rounded bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">
+                                      {labels[c] || c}
+                                    </span>
+                                  );
+                                })}
+                              </div>
+                            )}
                             <div
                               className="mt-1 flex items-center gap-1 sm:hidden"
                               onClick={(e) => {
