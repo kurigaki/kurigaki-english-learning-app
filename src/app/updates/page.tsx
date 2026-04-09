@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import {
   APP_UPDATES,
@@ -7,7 +8,13 @@ import {
   formatUpdateDate,
 } from "@/data/updates";
 
+const INITIAL_SHOW_COUNT = 5;
+
 export default function UpdatesPage() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleUpdates = showAll ? APP_UPDATES : APP_UPDATES.slice(0, INITIAL_SHOW_COUNT);
+  const hasMore = APP_UPDATES.length > INITIAL_SHOW_COUNT;
+
   return (
     <div className="main-content-scroll px-4 pt-6">
       <div className="max-w-4xl mx-auto">
@@ -30,7 +37,7 @@ export default function UpdatesPage() {
 
         {/* アップデートリスト */}
         <div className="space-y-4">
-          {APP_UPDATES.map((update, index) => {
+          {visibleUpdates.map((update, index) => {
             const categoryConfig = UPDATE_CATEGORY_CONFIG[update.category];
             return (
               <div
@@ -75,6 +82,18 @@ export default function UpdatesPage() {
             );
           })}
         </div>
+
+        {/* もっと見る */}
+        {hasMore && !showAll && (
+          <div className="text-center mt-4">
+            <button
+              onClick={() => setShowAll(true)}
+              className="text-sm text-primary-600 dark:text-primary-400 hover:underline"
+            >
+              過去のお知らせをもっと見る（{APP_UPDATES.length - INITIAL_SHOW_COUNT}件）
+            </button>
+          </div>
+        )}
 
         {/* フッター */}
         <div className="mt-8 text-center text-sm text-slate-400 dark:text-slate-500">

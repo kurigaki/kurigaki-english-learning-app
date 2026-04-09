@@ -132503,7 +132503,8 @@
       },
       {
         "course": "toeic",
-        "stage": "900"
+        "stage": "900",
+        "meaning": "利害関係"
       }
     ]
   },

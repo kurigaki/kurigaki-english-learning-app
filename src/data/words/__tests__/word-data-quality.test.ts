@@ -256,6 +256,44 @@ describe("全コース統合", () => {
 });
 
 // ═══════════════════════════════════════
+// courseMeaning整合性テスト
+// ═══════════════════════════════════════
+
+describe("courseMeaning整合性", () => {
+  it("course meaningの全語義がmaster meaningに含まれる", () => {
+    const bad: string[] = [];
+    for (const w of masterWords) {
+      for (const c of w.courses) {
+        if (!c.meaning) continue;
+        for (const sense of c.meaning.split("・")) {
+          const senseClean = sense.replace(/する$|な$|の$|に$|い$|く$/, "");
+          if (senseClean.length <= 1) continue;
+          const found = w.meaning.split("・").some((ms) => {
+            const msClean = ms.replace(/する$|な$|の$|に$|い$|く$/, "");
+            return ms.includes(senseClean) || senseClean.includes(msClean) || ms === sense;
+          });
+          if (!found) {
+            bad.push(`${w.word}(${w.partOfSpeech}): course ${c.course}:${c.stage} meaning "${sense}" not in master "${w.meaning}"`);
+          }
+        }
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it("courseMeaningが設定された語は2コース以上に所属", () => {
+    const bad: string[] = [];
+    for (const w of masterWords) {
+      const hasCM = w.courses.some((c) => c.meaning);
+      if (hasCM && w.courses.length < 2) {
+        bad.push(`${w.word}: has courseMeaning but only 1 course`);
+      }
+    }
+    expect(bad).toEqual([]);
+  });
+});
+
+// ═══════════════════════════════════════
 // getWordsForCourse ユニットテスト
 // ═══════════════════════════════════════
 
