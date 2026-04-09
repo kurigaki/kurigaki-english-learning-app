@@ -88047,11 +88047,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre1"
+        "stage": "pre1",
+        "meaning": "指導者"
       },
       {
         "course": "toeic",
-        "stage": "800"
+        "stage": "800",
+        "meaning": "指導者"
       }
     ]
   },
@@ -117804,11 +117806,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre1"
+        "stage": "pre1",
+        "meaning": "交換"
       },
       {
         "course": "toeic",
-        "stage": "800"
+        "stage": "800",
+        "meaning": "代替品"
       }
     ]
   },
@@ -134873,7 +134877,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre1"
+        "stage": "pre1",
+        "meaning": "在庫・蓄え"
       },
       {
         "course": "toeic",
@@ -139124,11 +139129,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre1"
+        "stage": "pre1",
+        "meaning": "優れた"
       },
       {
         "course": "toeic",
-        "stage": "900"
+        "stage": "900",
+        "meaning": "上位の"
       }
     ]
   },

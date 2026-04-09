@@ -431,11 +431,13 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "説明"
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "口座"
       },
       {
         "course": "toeic",
@@ -444,7 +446,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "口座"
       }
     ]
   },
@@ -733,11 +736,13 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "対処する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "対処する"
       },
       {
         "course": "toeic",
@@ -2641,23 +2646,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "現れる"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "〜のように見える"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "現れる"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "現れる"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "現れる"
       }
     ]
   },
@@ -3015,23 +3025,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "言い争い"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "議論"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "議論・言い争い"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "議論"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "言い争い"
       }
     ]
   },
@@ -3114,11 +3129,13 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "条項"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "記事"
       },
       {
         "course": "toeic",
@@ -3127,7 +3144,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "記事"
       }
     ]
   },
@@ -3569,23 +3587,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "出席する"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "出席する"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "出席する"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "出席する"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "出席する"
       }
     ]
   },
@@ -4066,19 +4089,23 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "平均の"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "平均の"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "平均の"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "普通の"
       }
     ]
   },
@@ -4357,11 +4384,13 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "均衡"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "バランス"
       },
       {
         "course": "toeic",
@@ -4370,7 +4399,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "バランス"
       }
     ]
   },
@@ -5074,7 +5104,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "紙幣"
       },
       {
         "course": "toeic",
@@ -5083,7 +5114,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "紙幣"
       }
     ]
   },
@@ -6193,7 +6225,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "休憩"
       },
       {
         "course": "toeic",
@@ -6231,15 +6264,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "壊す"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "壊す"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "壊す"
       }
     ]
   },
@@ -7238,11 +7274,13 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "運動・選挙運動"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "運動"
       },
       {
         "course": "toeic",
@@ -7251,7 +7289,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "キャンペーン"
       }
     ]
   },
@@ -7522,7 +7561,8 @@
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "首都"
       },
       {
         "course": "toeic",
@@ -7834,11 +7874,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "場合"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "場合・事件"
       },
       {
         "course": "toeic",
@@ -8115,11 +8157,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "細胞"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "細胞"
       }
     ]
   },
@@ -8510,15 +8554,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "チャンス"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "チャンス・機会"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "チャンス"
       }
     ]
   },
@@ -8653,11 +8700,13 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "特質・特性"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "性格・登場人物"
       },
       {
         "course": "toeic",
@@ -8752,7 +8801,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "料金・充電"
       },
       {
         "course": "toeic",
@@ -10472,15 +10522,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "コメント"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "コメント・意見"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "意見"
       }
     ]
   },
@@ -10566,19 +10619,23 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "よくある"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "一般的な"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "一般的な・共通の"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "よくある"
       }
     ]
   },
@@ -10730,7 +10787,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "会社"
       },
       {
         "course": "toeic",
@@ -10739,7 +10797,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "会社"
       }
     ]
   },
@@ -10963,11 +11022,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "完全な"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "完全な"
       }
     ]
   },
@@ -11298,15 +11359,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "心配"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "懸念"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "心配・懸念"
       },
       {
         "course": "toeic",
@@ -11315,7 +11379,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "心配"
       }
     ]
   },
@@ -11387,15 +11452,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "状態"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "条件"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "状態"
       },
       {
         "course": "toeic",
@@ -11404,7 +11472,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "体調"
       }
     ]
   },
@@ -11740,23 +11809,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "考える"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "検討する・考慮する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "考える"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "検討する"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "考える"
       }
     ]
   },
@@ -12399,11 +12473,13 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "契約"
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "契約"
       },
       {
         "course": "toeic",
@@ -13424,11 +13500,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "覆う"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "覆う"
       },
       {
         "course": "toeic",
@@ -13437,7 +13515,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "覆う"
       }
     ]
   },
@@ -14405,11 +14484,13 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "現在の"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "流れ・電流"
       },
       {
         "course": "toeic",
@@ -14418,7 +14499,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "現在の"
       }
     ]
   },
@@ -14616,19 +14698,23 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "損害"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "損害・ダメージ"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "損害"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "ダメージ"
       }
     ]
   },
@@ -14708,11 +14794,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "日付"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "日付・デート"
       }
     ]
   },
@@ -14816,7 +14904,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "取引"
       },
       {
         "course": "toeic",
@@ -14825,7 +14914,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "取引"
       }
     ]
   },
@@ -14858,11 +14948,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "対処する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "対処する・取引する"
       },
       {
         "course": "toeic",
@@ -15265,7 +15357,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "程度・度"
       },
       {
         "course": "toeic",
@@ -15889,23 +15982,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "説明する"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "描写する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "説明する・描写する"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "説明する"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "説明する"
       }
     ]
   },
@@ -16211,23 +16309,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "決める"
       },
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "決定する・特定する"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "決定する"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "決定する"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "決める"
       }
     ]
   },
@@ -16263,15 +16366,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "発展する"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "発展させる"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "発展させる・開発する"
       },
       {
         "course": "toeic",
@@ -16280,7 +16386,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "発展する"
       }
     ]
   },
@@ -16548,15 +16655,18 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "差"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "違い"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "違い"
       }
     ]
   },
@@ -17950,15 +18060,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "薬"
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "薬・薬物"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "薬"
       }
     ]
   },
@@ -18379,19 +18492,23 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "効果"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "効果・影響"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "効果"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "影響"
       }
     ]
   },
@@ -19999,23 +20116,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "行事"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "出来事"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "行事・イベント"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "イベント"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "イベント"
       }
     ]
   },
@@ -20099,11 +20221,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "正確に"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "ちょうど"
       }
     ]
   },
@@ -20404,11 +20528,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "運動"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "運動・練習"
       }
     ]
   },
@@ -20893,11 +21019,13 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "表現する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "表現する"
       },
       {
         "course": "toeic",
@@ -20906,7 +21034,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "表現する"
       }
     ]
   },
@@ -21071,23 +21200,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "施設"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "施設・設備"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "施設"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "施設・設備"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "施設"
       }
     ]
   },
@@ -21630,15 +21764,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "恐怖"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "恐怖・恐れ"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "恐怖"
       }
     ]
   },
@@ -21790,7 +21927,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "フィードバック"
       },
       {
         "course": "eiken",
@@ -21798,11 +21936,13 @@
       },
       {
         "course": "toeic",
-        "stage": "700"
+        "stage": "700",
+        "meaning": "フィードバック・意見"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "フィードバック"
       }
     ]
   },
@@ -21921,7 +22061,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "野原"
       },
       {
         "course": "toeic",
@@ -22080,7 +22221,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "満たす"
       },
       {
         "course": "toeic",
@@ -22089,7 +22231,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "満たす"
       }
     ]
   },
@@ -22123,15 +22266,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "映画"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "映画"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "映画"
       }
     ]
   },
@@ -22315,11 +22461,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "火・火事"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "火・火事"
       }
     ]
   },
@@ -22687,7 +22835,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "床・階"
       },
       {
         "course": "toeic",
@@ -22956,11 +23105,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "力"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "力・強制する"
       }
     ]
   },
@@ -23426,15 +23577,18 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "前へ"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "転送する"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "前へ"
       }
     ]
   },
@@ -23934,23 +24088,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "資金"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "基金"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "資金・基金"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "資金"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "資金"
       }
     ]
   },
@@ -24025,11 +24184,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "将来"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "将来・未来"
       }
     ]
   },
@@ -24063,15 +24224,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "得る"
       },
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "得る・増す"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "得る"
       }
     ]
   },
@@ -25075,23 +25239,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "ゴール"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "目標"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "目標・ゴール"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "目標"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "目標"
       }
     ]
   },
@@ -26249,19 +26418,23 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "人"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "男性・人"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "人"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "人"
       }
     ]
   },
@@ -27307,7 +27480,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "持つ"
       },
       {
         "course": "toeic",
@@ -27316,7 +27490,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "持つ"
       }
     ]
   },
@@ -29308,23 +29483,28 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "示す"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "示す・指摘する"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "示す"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "示す"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "示す"
       }
     ]
   },
@@ -29957,19 +30137,23 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "例"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "例・場合"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "例"
       },
       {
         "course": "toeic",
-        "stage": "800"
+        "stage": "800",
+        "meaning": "例"
       }
     ]
   },
@@ -30670,7 +30854,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "インタビュー"
       },
       {
         "course": "toeic",
@@ -30679,7 +30864,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "インタビュー"
       }
     ]
   },
@@ -31562,11 +31748,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "裁判官"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "審査員・裁判官"
       }
     ]
   },
@@ -31599,11 +31787,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "判断する"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "判断する"
       }
     ]
   },
@@ -32198,11 +32388,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "土地"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "着陸する・土地"
       }
     ]
   },
@@ -32556,11 +32748,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "導く"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "導く"
       },
       {
         "course": "toeic",
@@ -32569,7 +32763,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "導く"
       }
     ]
   },
@@ -33054,15 +33249,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "レベル"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "レベル・水準"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "水準"
       }
     ]
   },
@@ -33449,7 +33647,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "線・列"
       },
       {
         "course": "toeic",
@@ -33592,11 +33791,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "リスト"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "リスト・一覧"
       }
     ]
   },
@@ -33754,19 +33955,23 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "地元の"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "地元の"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "現地の"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "地元の"
       }
     ]
   },
@@ -34615,11 +34820,13 @@
       },
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "管理する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "なんとかする"
       },
       {
         "course": "toeic",
@@ -34628,7 +34835,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "なんとかする"
       }
     ]
   },
@@ -35145,7 +35353,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "問題・事柄"
       },
       {
         "course": "toeic",
@@ -35581,7 +35790,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "集まり"
       },
       {
         "course": "toeic",
@@ -35590,7 +35800,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "集まり"
       }
     ]
   },
@@ -35995,11 +36206,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "心"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "心・精神"
       }
     ]
   },
@@ -38242,11 +38455,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "通知"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "通知"
       }
     ]
   },
@@ -38768,19 +38983,23 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "職業"
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "占領"
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "職業"
       },
       {
         "course": "toeic",
-        "stage": "700"
+        "stage": "700",
+        "meaning": "職業"
       }
     ]
   },
@@ -39038,11 +39257,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "一度"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "一度"
       }
     ]
   },
@@ -39251,11 +39472,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "操作する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "操作する"
       },
       {
         "course": "toeic",
@@ -39577,11 +39800,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "注文する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "注文する"
       },
       {
         "course": "toeic",
@@ -39590,7 +39815,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "注文する"
       }
     ]
   },
@@ -40820,19 +41046,23 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "忍耐"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "忍耐・根気"
       },
       {
         "course": "toeic",
-        "stage": "700"
+        "stage": "700",
+        "meaning": "忍耐"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "忍耐"
       }
     ]
   },
@@ -41414,7 +41644,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "演技・公演"
       },
       {
         "course": "toeic",
@@ -41423,7 +41654,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b2"
+        "stage": "b2",
+        "meaning": "演技"
       }
     ]
   },
@@ -41499,19 +41731,23 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "期間"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "期間"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "期間"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "期間"
       }
     ]
   },
@@ -42260,7 +42496,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "点・要点"
       },
       {
         "course": "toeic",
@@ -42561,11 +42798,13 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "立場"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "位置"
       },
       {
         "course": "toeic",
@@ -42574,7 +42813,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "位置・立場"
       }
     ]
   },
@@ -42942,7 +43182,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "練習する"
       },
       {
         "course": "toeic",
@@ -42951,7 +43192,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b2"
+        "stage": "b2",
+        "meaning": "練習する"
       }
     ]
   },
@@ -43187,11 +43429,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "押す"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "押す"
       }
     ]
   },
@@ -44868,15 +45112,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "競走"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "人種・競走"
       },
       {
         "course": "conversation",
-        "stage": "b2"
+        "stage": "b2",
+        "meaning": "競走"
       }
     ]
   },
@@ -45013,15 +45260,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "上げる"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "上げる・育てる"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "上げる"
       }
     ]
   },
@@ -45178,15 +45428,18 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "かなり・むしろ"
       },
       {
         "course": "toeic",
-        "stage": "500"
+        "stage": "500",
+        "meaning": "むしろ"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "むしろ"
       }
     ]
   },
@@ -45451,11 +45704,13 @@
       },
       {
         "course": "toeic",
-        "stage": "800"
+        "stage": "800",
+        "meaning": "領収書"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "レシート"
       }
     ]
   },
@@ -47004,11 +47259,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "休息"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "休息・残り"
       }
     ]
   },
@@ -47301,11 +47558,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "戻る"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "戻る・返す"
       },
       {
         "course": "toeic",
@@ -47314,7 +47573,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "戻る"
       }
     ]
   },
@@ -47347,11 +47607,13 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "レビュー"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "レビュー"
       }
     ]
   },
@@ -47488,15 +47750,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "上がる"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "上がる・昇る"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "上がる"
       }
     ]
   },
@@ -49115,7 +49380,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "仕える"
       },
       {
         "course": "toeic",
@@ -49124,7 +49390,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "提供する"
       }
     ]
   },
@@ -49158,11 +49425,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "サービス"
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "サービス"
       },
       {
         "course": "toeic",
@@ -49171,7 +49440,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "サービス"
       }
     ]
   },
@@ -50020,11 +50290,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "合図する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "署名する・合図する"
       },
       {
         "course": "toeic",
@@ -50033,7 +50305,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "合図する"
       }
     ]
   },
@@ -51504,11 +51777,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "音"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "音・響き"
       }
     ]
   },
@@ -52635,7 +52910,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "店"
       },
       {
         "course": "toeic",
@@ -52644,7 +52920,8 @@
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "店"
       }
     ]
   },
@@ -52951,11 +53228,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "物"
       },
       {
         "course": "conversation",
-        "stage": "a2"
+        "stage": "a2",
+        "meaning": "物"
       }
     ]
   },
@@ -53552,11 +53831,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "支援する"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "支援する・支える"
       },
       {
         "course": "toeic",
@@ -53565,7 +53846,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "支える"
       }
     ]
   },
@@ -54340,7 +54622,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "課題・仕事"
       },
       {
         "course": "toeic",
@@ -55475,7 +55758,8 @@
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "線路・道"
       },
       {
         "course": "toeic",
@@ -55975,15 +56259,18 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "困難"
       },
       {
         "course": "eiken",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "困難・問題"
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "問題"
       }
     ]
   },
@@ -56881,11 +57168,13 @@
     "courses": [
       {
         "course": "junior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "価値"
       },
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "価値"
       },
       {
         "course": "toeic",
@@ -56894,7 +57183,8 @@
       },
       {
         "course": "conversation",
-        "stage": "b1"
+        "stage": "b1",
+        "meaning": "価値"
       }
     ]
   },

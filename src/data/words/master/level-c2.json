@@ -16523,5 +16523,6605 @@
         "stage": "c2"
       }
     ]
+  },
+  {
+    "id": 50501,
+    "word": "etherize",
+    "meaning": "エーテルで麻酔をかける、麻酔処置を施す",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The surgeon etherized the patient before the operation.",
+        "ja": "外科医は手術前に患者に麻酔をかけた。",
+        "context": "医療"
+      },
+      {
+        "en": "In the 19th century, dentists etherized patients routinely.",
+        "ja": "19世紀には歯科医が日常的に患者に麻酔をかけていた。",
+        "context": "歴史"
+      },
+      {
+        "en": "The veterinarian etherized the animal for the procedure.",
+        "ja": "獣医は処置のために動物に麻酔をかけた。",
+        "context": "動物病院"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50502,
+    "word": "trepan",
+    "meaning": "頭蓋骨に穿孔する、穿頭術を施す",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Ancient healers trepanned skulls to release evil spirits.",
+        "ja": "古代の治療師は悪霊を解放するために頭蓋骨に穴を開けた。",
+        "context": "歴史"
+      },
+      {
+        "en": "The neurosurgeon trepanned the patient to relieve cranial pressure.",
+        "ja": "脳外科医は頭蓋内圧を緩和するために穿頭術を行った。",
+        "context": "医療"
+      },
+      {
+        "en": "Archaeological evidence shows humans were trepanned as early as 5000 BCE.",
+        "ja": "考古学的証拠は紀元前5000年にはすでに穿頭術が行われていたことを示す。",
+        "context": "考古学"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50503,
+    "word": "iatrogenesis",
+    "meaning": "医原病、医療行為に起因する疾患や障害",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Iatrogenesis is a serious concern in modern healthcare.",
+        "ja": "医原病は現代医療における深刻な懸念である。",
+        "context": "医療"
+      },
+      {
+        "en": "The report highlighted iatrogenesis as the third leading cause of death.",
+        "ja": "報告書は医原病を死因の第3位として強調した。",
+        "context": "研究"
+      },
+      {
+        "en": "Reducing iatrogenesis requires systemic reform of hospital protocols.",
+        "ja": "医原病を減らすには病院プロトコルの体系的改革が必要である。",
+        "context": "政策"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50504,
+    "word": "pharmacopoeia",
+    "meaning": "薬局方、公定処方集、医薬品の公式基準書",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The national pharmacopoeia was updated to include new compounds.",
+        "ja": "国の薬局方が新しい化合物を含むよう更新された。",
+        "context": "医薬品"
+      },
+      {
+        "en": "Every country maintains its own pharmacopoeia of approved drugs.",
+        "ja": "各国は独自の承認薬の薬局方を維持している。",
+        "context": "規制"
+      },
+      {
+        "en": "The pharmacopoeia dates back to the 16th century.",
+        "ja": "その薬局方は16世紀にまで遡る。",
+        "context": "歴史"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50505,
+    "word": "anaphylaxis",
+    "meaning": "アナフィラキシー、急性の重篤なアレルギー反応",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The patient went into anaphylaxis after eating shellfish.",
+        "ja": "患者は甲殻類を食べた後アナフィラキシーを起こした。",
+        "context": "救急"
+      },
+      {
+        "en": "Anaphylaxis can be fatal without immediate treatment.",
+        "ja": "アナフィラキシーは即座の治療なしには致命的になりうる。",
+        "context": "医療"
+      },
+      {
+        "en": "She carries an EpiPen in case of anaphylaxis.",
+        "ja": "彼女はアナフィラキシーに備えてエピペンを携帯している。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50506,
+    "word": "idiopathic",
+    "meaning": "特発性の、原因不明の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The patient was diagnosed with idiopathic pulmonary fibrosis.",
+        "ja": "患者は特発性肺線維症と診断された。",
+        "context": "医療"
+      },
+      {
+        "en": "Many autoimmune conditions are considered idiopathic.",
+        "ja": "多くの自己免疫疾患は特発性とみなされている。",
+        "context": "研究"
+      },
+      {
+        "en": "Idiopathic pain is frustrating for both patients and doctors.",
+        "ja": "特発性の痛みは患者と医師双方にとって厄介である。",
+        "context": "診察"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50507,
+    "word": "subclinical",
+    "meaning": "無症候性の、臨床的に顕在化していない",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Subclinical infections can spread without anyone noticing.",
+        "ja": "無症候性の感染は誰にも気づかれずに広がりうる。",
+        "context": "感染症"
+      },
+      {
+        "en": "The blood test revealed a subclinical thyroid disorder.",
+        "ja": "血液検査で無症候性の甲状腺疾患が判明した。",
+        "context": "検査"
+      },
+      {
+        "en": "Subclinical inflammation may contribute to chronic diseases.",
+        "ja": "無症候性の炎症が慢性疾患の一因となりうる。",
+        "context": "研究"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50508,
+    "word": "asymptomatic",
+    "meaning": "無症状の、症状が現れていない",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Many carriers of the virus are completely asymptomatic.",
+        "ja": "そのウイルスのキャリアの多くは完全に無症状である。",
+        "context": "感染症"
+      },
+      {
+        "en": "Asymptomatic patients can still transmit the disease.",
+        "ja": "無症状の患者でも病気を伝染させうる。",
+        "context": "公衆衛生"
+      },
+      {
+        "en": "Screening detected the condition while he was still asymptomatic.",
+        "ja": "検診により彼がまだ無症状のうちに病状が検出された。",
+        "context": "健康診断"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50509,
+    "word": "intravenously",
+    "meaning": "静脈内に、点滴で",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The medication was administered intravenously for faster effect.",
+        "ja": "薬はより速い効果のために静脈内投与された。",
+        "context": "治療"
+      },
+      {
+        "en": "Fluids were given intravenously to prevent dehydration.",
+        "ja": "脱水を防ぐために点滴で水分が投与された。",
+        "context": "救急"
+      },
+      {
+        "en": "Antibiotics delivered intravenously are more potent.",
+        "ja": "静脈内投与される抗生物質はより強力である。",
+        "context": "医療"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50510,
+    "word": "symptomatically",
+    "meaning": "症状に基づいて、対症的に",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The disease was treated symptomatically while awaiting test results.",
+        "ja": "検査結果を待つ間、対症的に治療された。",
+        "context": "医療"
+      },
+      {
+        "en": "Symptomatically, the two conditions are nearly identical.",
+        "ja": "症状面では、2つの疾患はほぼ同一である。",
+        "context": "診断"
+      },
+      {
+        "en": "She improved symptomatically but the underlying cause remained.",
+        "ja": "彼女は症状的に改善したが根本原因は残った。",
+        "context": "治療"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50511,
+    "word": "seigniorage",
+    "meaning": "通貨発行益、貨幣の額面価値と製造費用の差額",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Governments earn seigniorage from the minting of coins.",
+        "ja": "政府は硬貨の鋳造から通貨発行益を得る。",
+        "context": "経済"
+      },
+      {
+        "en": "Seigniorage is an often overlooked source of government revenue.",
+        "ja": "通貨発行益は見過ごされがちな政府歳入源である。",
+        "context": "財政"
+      },
+      {
+        "en": "Digital currencies challenge the concept of traditional seigniorage.",
+        "ja": "デジタル通貨は従来の通貨発行益の概念に挑戦している。",
+        "context": "金融技術"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50512,
+    "word": "usufruct",
+    "meaning": "用益権、他人の所有物を使用し収益を得る権利",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The widow was granted usufruct of the estate for her lifetime.",
+        "ja": "未亡人は生涯にわたり不動産の用益権を付与された。",
+        "context": "法律"
+      },
+      {
+        "en": "Usufruct allows use of property without owning it outright.",
+        "ja": "用益権は完全に所有せずに財産を使用することを認める。",
+        "context": "不動産"
+      },
+      {
+        "en": "The usufruct expires upon the death of the beneficiary.",
+        "ja": "用益権は受益者の死亡時に失効する。",
+        "context": "相続"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50513,
+    "word": "actuarial",
+    "meaning": "保険数理の、アクチュアリーに関する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Actuarial analysis revealed the pension fund was underfunded.",
+        "ja": "保険数理分析により年金基金が資金不足であることが判明した。",
+        "context": "年金"
+      },
+      {
+        "en": "She pursued an actuarial career after studying mathematics.",
+        "ja": "彼女は数学を学んだ後、保険数理のキャリアを追求した。",
+        "context": "職業"
+      },
+      {
+        "en": "Actuarial tables help insurers calculate premiums.",
+        "ja": "保険数理表は保険会社が保険料を算出するのに役立つ。",
+        "context": "保険"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50514,
+    "word": "fungible",
+    "meaning": "代替可能な、同種同量のものと交換可能な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Currency is fungible—one dollar is interchangeable with another.",
+        "ja": "通貨は代替可能であり、1ドルは別の1ドルと交換可能である。",
+        "context": "経済"
+      },
+      {
+        "en": "Unlike art, commodities are fungible assets.",
+        "ja": "芸術品と異なり、商品は代替可能な資産である。",
+        "context": "投資"
+      },
+      {
+        "en": "Non-fungible tokens represent unique digital ownership.",
+        "ja": "非代替性トークンは唯一のデジタル所有権を表す。",
+        "context": "暗号資産"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50515,
+    "word": "illiquid",
+    "meaning": "流動性の低い、容易に現金化できない",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Real estate is typically considered an illiquid asset.",
+        "ja": "不動産は一般的に流動性の低い資産とみなされる。",
+        "context": "投資"
+      },
+      {
+        "en": "The fund collapsed because it held too many illiquid positions.",
+        "ja": "そのファンドは流動性の低いポジションを持ちすぎて破綻した。",
+        "context": "金融危機"
+      },
+      {
+        "en": "Illiquid markets are prone to sudden price swings.",
+        "ja": "流動性の低い市場は急激な価格変動を起こしやすい。",
+        "context": "市場"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50516,
+    "word": "countercyclical",
+    "meaning": "景気循環に逆行する、反景気循環的な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Countercyclical fiscal policy aims to stabilize the economy.",
+        "ja": "反景気循環的な財政政策は経済の安定化を目指す。",
+        "context": "経済政策"
+      },
+      {
+        "en": "The government adopted countercyclical spending measures.",
+        "ja": "政府は反景気循環的な支出措置を採用した。",
+        "context": "財政"
+      },
+      {
+        "en": "Gold is often viewed as a countercyclical investment.",
+        "ja": "金はしばしば反景気循環的な投資とみなされる。",
+        "context": "投資"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50517,
+    "word": "fiscally",
+    "meaning": "財政的に、財務上",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The government must act fiscally responsibly.",
+        "ja": "政府は財政的に責任ある行動をしなければならない。",
+        "context": "政治"
+      },
+      {
+        "en": "The program is fiscally unsustainable in the long term.",
+        "ja": "そのプログラムは長期的に財政的に持続不可能である。",
+        "context": "政策"
+      },
+      {
+        "en": "Fiscally conservative policies were adopted after the crisis.",
+        "ja": "危機後に財政保守的な政策が採用された。",
+        "context": "経済"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50518,
+    "word": "fiduciarily",
+    "meaning": "信認義務に基づいて、受託者として",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The advisor is fiduciarily bound to prioritize client interests.",
+        "ja": "そのアドバイザーは信認義務に基づいて顧客の利益を優先する義務がある。",
+        "context": "金融"
+      },
+      {
+        "en": "They must act fiduciarily when managing trust funds.",
+        "ja": "彼らは信託資金を管理する際に受託者として行動しなければならない。",
+        "context": "法律"
+      },
+      {
+        "en": "Fiduciarily speaking, the decision was impeccable.",
+        "ja": "受託者としての観点から言えば、その決定は完璧だった。",
+        "context": "投資"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50519,
+    "word": "instantiate",
+    "meaning": "インスタンス化する、クラスからオブジェクトを生成する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The factory pattern instantiates objects without exposing creation logic.",
+        "ja": "ファクトリーパターンは生成ロジックを公開せずにオブジェクトをインスタンス化する。",
+        "context": "設計"
+      },
+      {
+        "en": "You can instantiate the class with default parameters.",
+        "ja": "デフォルトパラメータでそのクラスをインスタンス化できる。",
+        "context": "プログラミング"
+      },
+      {
+        "en": "The framework automatically instantiates services at startup.",
+        "ja": "そのフレームワークは起動時にサービスを自動的にインスタンス化する。",
+        "context": "開発"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50520,
+    "word": "tokenize",
+    "meaning": "トークン化する、データを意味のある最小単位に分割する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The NLP model tokenizes sentences into individual words.",
+        "ja": "NLPモデルは文を個々の単語にトークン化する。",
+        "context": "AI"
+      },
+      {
+        "en": "Credit card numbers are tokenized for secure processing.",
+        "ja": "クレジットカード番号は安全な処理のためにトークン化される。",
+        "context": "セキュリティ"
+      },
+      {
+        "en": "The compiler tokenizes the source code during lexical analysis.",
+        "ja": "コンパイラは字句解析中にソースコードをトークン化する。",
+        "context": "プログラミング"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50521,
+    "word": "idempotency",
+    "meaning": "冪等性、同一操作を何度実行しても同じ結果が得られる性質",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Idempotency ensures that retrying a request produces the same result.",
+        "ja": "冪等性はリクエストの再試行が同じ結果を生むことを保証する。",
+        "context": "API設計"
+      },
+      {
+        "en": "PUT requests should guarantee idempotency by design.",
+        "ja": "PUTリクエストは設計上、冪等性を保証すべきである。",
+        "context": "REST"
+      },
+      {
+        "en": "Idempotency keys prevent duplicate payment processing.",
+        "ja": "冪等性キーは二重決済処理を防止する。",
+        "context": "決済"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50522,
+    "word": "middleware",
+    "meaning": "ミドルウェア、アプリケーション間の通信や処理を仲介するソフトウェア",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The authentication middleware validates tokens before each request.",
+        "ja": "認証ミドルウェアは各リクエスト前にトークンを検証する。",
+        "context": "バックエンド"
+      },
+      {
+        "en": "Message-oriented middleware decouples producer and consumer services.",
+        "ja": "メッセージ指向ミドルウェアはプロデューサーとコンシューマーのサービスを分離する。",
+        "context": "アーキテクチャ"
+      },
+      {
+        "en": "Custom middleware was added to log all API calls.",
+        "ja": "すべてのAPI呼び出しを記録するためにカスタムミドルウェアが追加された。",
+        "context": "開発"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50523,
+    "word": "asynchronous",
+    "meaning": "非同期の、処理の完了を待たずに次の処理に進む方式の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Asynchronous programming prevents the UI from freezing during data fetches.",
+        "ja": "非同期プログラミングはデータ取得中にUIがフリーズするのを防ぐ。",
+        "context": "フロントエンド"
+      },
+      {
+        "en": "The system uses asynchronous message queues for scalability.",
+        "ja": "そのシステムはスケーラビリティのために非同期メッセージキューを使用する。",
+        "context": "アーキテクチャ"
+      },
+      {
+        "en": "Asynchronous replication reduces write latency at the cost of consistency.",
+        "ja": "非同期レプリケーションは一貫性を犠牲にして書き込み遅延を削減する。",
+        "context": "データベース"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50524,
+    "word": "immutable",
+    "meaning": "不変の、変更不可能な、作成後に状態が変わらない",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Immutable data structures simplify concurrent programming.",
+        "ja": "不変データ構造は並行プログラミングを簡素化する。",
+        "context": "プログラミング"
+      },
+      {
+        "en": "Blockchain records are immutable once confirmed.",
+        "ja": "ブロックチェーンの記録は確認されると不変である。",
+        "context": "ブロックチェーン"
+      },
+      {
+        "en": "Using immutable objects eliminates a whole class of bugs.",
+        "ja": "不変オブジェクトの使用はバグの一分類全体を排除する。",
+        "context": "開発"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50525,
+    "word": "polymorphic",
+    "meaning": "多態性の、同一インターフェースで異なる動作を実現する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Polymorphic methods allow different classes to share a common interface.",
+        "ja": "多態性メソッドにより異なるクラスが共通のインターフェースを共有できる。",
+        "context": "OOP"
+      },
+      {
+        "en": "The rendering engine uses polymorphic dispatch for shape drawing.",
+        "ja": "レンダリングエンジンは図形描画に多態性ディスパッチを使用する。",
+        "context": "設計"
+      },
+      {
+        "en": "Polymorphic malware changes its code to evade antivirus detection.",
+        "ja": "多態性マルウェアはウイルス対策の検出を回避するためにコードを変化させる。",
+        "context": "セキュリティ"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50526,
+    "word": "deterministically",
+    "meaning": "決定論的に、同一入力に対して常に同一の出力を生成する形で",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The function behaves deterministically regardless of execution order.",
+        "ja": "その関数は実行順序に関係なく決定論的に動作する。",
+        "context": "プログラミング"
+      },
+      {
+        "en": "Tests must run deterministically to be reliable.",
+        "ja": "テストが信頼できるためには決定論的に実行されなければならない。",
+        "context": "テスト"
+      },
+      {
+        "en": "The build system deterministically produces the same output every time.",
+        "ja": "ビルドシステムは毎回決定論的に同じ出力を生成する。",
+        "context": "CI/CD"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50527,
+    "word": "heuristically",
+    "meaning": "ヒューリスティックに、経験則や近似的手法に基づいて",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The system heuristically determines the best route for data packets.",
+        "ja": "システムはデータパケットの最適経路をヒューリスティックに決定する。",
+        "context": "ネットワーク"
+      },
+      {
+        "en": "The classifier heuristically assigns categories to new documents.",
+        "ja": "分類器は新しいドキュメントにヒューリスティックにカテゴリを割り当てる。",
+        "context": "AI"
+      },
+      {
+        "en": "Memory is heuristically allocated based on usage patterns.",
+        "ja": "メモリは使用パターンに基づいてヒューリスティックに割り当てられる。",
+        "context": "OS"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50528,
+    "word": "ossify",
+    "meaning": "骨化する、硬化する、柔軟性を失って固まる",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Cartilage gradually ossifies into bone during development.",
+        "ja": "軟骨は発達の過程で徐々に骨に変わる。",
+        "context": "生物学"
+      },
+      {
+        "en": "The coral reef ossified over thousands of years.",
+        "ja": "そのサンゴ礁は何千年もかけて石灰化した。",
+        "context": "海洋"
+      },
+      {
+        "en": "Without reform, institutions tend to ossify over time.",
+        "ja": "改革なしには、組織は時間とともに硬直化する傾向がある。",
+        "context": "社会"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50529,
+    "word": "effloresce",
+    "meaning": "開花する、白華現象を起こす、結晶が表面に析出する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Salt deposits effloresced on the walls after the flood receded.",
+        "ja": "洪水が引いた後、壁面に塩分が白華現象として析出した。",
+        "context": "建築"
+      },
+      {
+        "en": "The crystal effloresced into a fine white powder.",
+        "ja": "結晶は微細な白い粉末として析出した。",
+        "context": "化学"
+      },
+      {
+        "en": "Wildflowers effloresced across the meadow in spring.",
+        "ja": "春になると牧草地一面に野花が咲き誇った。",
+        "context": "自然"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50530,
+    "word": "caldera",
+    "meaning": "カルデラ、火山の噴火後に形成された大規模な陥没地形",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The lake formed inside the ancient caldera millions of years ago.",
+        "ja": "その湖は数百万年前に古代のカルデラの内部に形成された。",
+        "context": "地質学"
+      },
+      {
+        "en": "Yellowstone sits atop one of the world's largest calderas.",
+        "ja": "イエローストーンは世界最大級のカルデラの上に位置している。",
+        "context": "地理"
+      },
+      {
+        "en": "The caldera eruption devastated the surrounding ecosystem.",
+        "ja": "カルデラ噴火は周囲の生態系を壊滅させた。",
+        "context": "災害"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50531,
+    "word": "symbiont",
+    "meaning": "共生生物、他の生物と共生関係にある生物",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Zooxanthellae are essential symbionts of coral reefs.",
+        "ja": "褐虫藻はサンゴ礁の不可欠な共生生物である。",
+        "context": "海洋生物学"
+      },
+      {
+        "en": "The fungal symbiont provides nutrients to the host plant.",
+        "ja": "菌類の共生生物が宿主植物に栄養を供給する。",
+        "context": "植物学"
+      },
+      {
+        "en": "Disrupting the symbiont relationship can kill both organisms.",
+        "ja": "共生関係を破壊すると両方の生物が死滅する可能性がある。",
+        "context": "生態学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50532,
+    "word": "pelagic",
+    "meaning": "遠洋の、外洋性の、沿岸から離れた深海域に関する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Pelagic fish species include tuna, swordfish, and mackerel.",
+        "ja": "遠洋性魚種にはマグロ、メカジキ、サバが含まれる。",
+        "context": "漁業"
+      },
+      {
+        "en": "Pelagic sediments accumulate slowly on the deep ocean floor.",
+        "ja": "遠洋性堆積物は深海底にゆっくりと蓄積する。",
+        "context": "地質学"
+      },
+      {
+        "en": "The research vessel studied pelagic ecosystems in the Pacific.",
+        "ja": "調査船は太平洋の遠洋生態系を研究した。",
+        "context": "海洋学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50533,
+    "word": "deciduous",
+    "meaning": "落葉性の、季節的に葉を落とす",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Deciduous forests display spectacular colors in autumn.",
+        "ja": "落葉樹林は秋に壮観な色彩を見せる。",
+        "context": "自然"
+      },
+      {
+        "en": "Oak and maple are common deciduous tree species.",
+        "ja": "オークとカエデは一般的な落葉樹種である。",
+        "context": "植物学"
+      },
+      {
+        "en": "Deciduous trees conserve water by shedding leaves in winter.",
+        "ja": "落葉樹は冬に葉を落とすことで水分を保存する。",
+        "context": "生態学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50534,
+    "word": "geologically",
+    "meaning": "地質学的に、地質の観点から",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "Geologically speaking, the island is relatively young.",
+        "ja": "地質学的に言えば、その島は比較的新しい。",
+        "context": "地質学"
+      },
+      {
+        "en": "The region is geologically active with frequent seismic events.",
+        "ja": "その地域は地質学的に活発で、頻繁な地震活動がある。",
+        "context": "自然"
+      },
+      {
+        "en": "Geologically, this area was once beneath the sea.",
+        "ja": "地質学的に見ると、この地域はかつて海底にあった。",
+        "context": "科学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50535,
+    "word": "sympatrically",
+    "meaning": "同所的に、同じ地理的領域に共存する形で",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The two species evolved sympatrically without geographic isolation.",
+        "ja": "その2種は地理的隔離なしに同所的に進化した。",
+        "context": "進化生物学"
+      },
+      {
+        "en": "Sympatrically occurring species must develop niche differentiation.",
+        "ja": "同所的に生息する種はニッチの分化を発達させなければならない。",
+        "context": "生態学"
+      },
+      {
+        "en": "Reproductive isolation can occur sympatrically through behavioral changes.",
+        "ja": "行動の変化を通じて生殖的隔離が同所的に起こりうる。",
+        "context": "生物学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50536,
+    "word": "allegorize",
+    "meaning": "寓意化する、比喩的に表現する、物語に隠された意味を込める",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Medieval writers often allegorized moral lessons through animal tales.",
+        "ja": "中世の作家は動物物語を通じて道徳的教訓をしばしば寓意化した。",
+        "context": "文学"
+      },
+      {
+        "en": "The painting allegorizes the triumph of virtue over vice.",
+        "ja": "その絵は美徳の悪徳に対する勝利を寓意化している。",
+        "context": "美術"
+      },
+      {
+        "en": "Scholars debated whether the poem was meant to allegorize political events.",
+        "ja": "学者たちはその詩が政治的事件を寓意化する意図だったか議論した。",
+        "context": "学術"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50537,
+    "word": "decontextualize",
+    "meaning": "文脈から切り離す、本来の背景から引き剥がして解釈する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Quoting someone out of context decontextualizes their message.",
+        "ja": "文脈から外して引用すると、その人のメッセージが脱文脈化される。",
+        "context": "メディア"
+      },
+      {
+        "en": "Social media tends to decontextualize complex cultural debates.",
+        "ja": "ソーシャルメディアは複雑な文化的議論を脱文脈化する傾向がある。",
+        "context": "社会"
+      },
+      {
+        "en": "The artifact was decontextualized when removed from its sacred site.",
+        "ja": "その遺物は聖地から持ち出されたとき文脈を失った。",
+        "context": "考古学"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50538,
+    "word": "iconography",
+    "meaning": "図像学、図像体系、ある文化や時代に特有のイメージや象徴の体系",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Byzantine iconography heavily influenced Eastern Orthodox art.",
+        "ja": "ビザンチンの図像学は東方正教会の芸術に大きな影響を与えた。",
+        "context": "美術史"
+      },
+      {
+        "en": "The iconography of pop culture is studied in university courses.",
+        "ja": "ポップカルチャーの図像体系は大学の講座で研究されている。",
+        "context": "教育"
+      },
+      {
+        "en": "Buddhist iconography varies significantly across Asian cultures.",
+        "ja": "仏教の図像体系はアジアの文化圏によって大きく異なる。",
+        "context": "宗教"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50539,
+    "word": "heterodox",
+    "meaning": "異端の、正統から外れた、通説に反する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "His heterodox views on economics challenged mainstream theory.",
+        "ja": "彼の異端的な経済観は主流理論に挑戦した。",
+        "context": "学術"
+      },
+      {
+        "en": "The artist's heterodox approach defied gallery conventions.",
+        "ja": "そのアーティストの異端的なアプローチはギャラリーの慣習に逆らった。",
+        "context": "芸術"
+      },
+      {
+        "en": "Heterodox religious movements often faced persecution.",
+        "ja": "異端的な宗教運動はしばしば迫害に直面した。",
+        "context": "歴史"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50540,
+    "word": "palimpsestic",
+    "meaning": "重層的な、古い記述の上に新しい記述を重ねた、多層的な痕跡を残す",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The city has a palimpsestic quality, with layers of history visible in its architecture.",
+        "ja": "その都市は建築に歴史の層が見える重層的な性質を持つ。",
+        "context": "都市"
+      },
+      {
+        "en": "The manuscript reveals palimpsestic traces of earlier texts.",
+        "ja": "その写本には以前のテキストの重層的な痕跡が見られる。",
+        "context": "文献学"
+      },
+      {
+        "en": "Cultural identity is often palimpsestic, shaped by successive influences.",
+        "ja": "文化的アイデンティティはしばしば重層的であり、連続する影響によって形成される。",
+        "context": "文化論"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50541,
+    "word": "diachronically",
+    "meaning": "通時的に、時間的変遷を追って",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The language was studied diachronically to trace its evolution.",
+        "ja": "その言語は進化をたどるために通時的に研究された。",
+        "context": "言語学"
+      },
+      {
+        "en": "Diachronically, the institution has undergone radical transformations.",
+        "ja": "通時的に見ると、その機関は根本的な変容を遂げてきた。",
+        "context": "歴史"
+      },
+      {
+        "en": "Analyzing myths diachronically reveals how societies change.",
+        "ja": "神話を通時的に分析すると社会の変化が明らかになる。",
+        "context": "人類学"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50542,
+    "word": "semiotically",
+    "meaning": "記号論的に、記号や象徴の意味体系に基づいて",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The advertisement can be read semiotically as a cultural text.",
+        "ja": "その広告は記号論的に文化テクストとして読むことができる。",
+        "context": "メディア研究"
+      },
+      {
+        "en": "Semiotically, the flag represents far more than national identity.",
+        "ja": "記号論的には、旗は国民的アイデンティティ以上のものを表す。",
+        "context": "文化論"
+      },
+      {
+        "en": "The film operates semiotically on multiple levels.",
+        "ja": "その映画は記号論的に複数のレベルで機能している。",
+        "context": "映画"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50543,
+    "word": "plagiarize",
+    "meaning": "盗用する、剽窃する、他人の著作やアイデアを自分のものとして発表する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The student was expelled for plagiarizing an entire thesis.",
+        "ja": "その学生は論文全体を盗用したため退学処分となった。",
+        "context": "大学"
+      },
+      {
+        "en": "Self-plagiarizing by resubmitting old work is also prohibited.",
+        "ja": "過去の課題を再提出する自己盗用も禁止されている。",
+        "context": "学術"
+      },
+      {
+        "en": "AI tools have made it easier to detect when students plagiarize.",
+        "ja": "AIツールにより学生の盗用検出が容易になった。",
+        "context": "教育"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50544,
+    "word": "autodidact",
+    "meaning": "独学者、独学で学問を修めた人",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Lincoln was a famous autodidact who taught himself law.",
+        "ja": "リンカーンは独学で法律を学んだ有名な独学者だった。",
+        "context": "歴史"
+      },
+      {
+        "en": "The internet has empowered a new generation of autodidacts.",
+        "ja": "インターネットは新世代の独学者を力づけた。",
+        "context": "教育"
+      },
+      {
+        "en": "As an autodidact, she read voraciously across many disciplines.",
+        "ja": "独学者として、彼女は多くの分野にわたって貪欲に読書した。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50545,
+    "word": "viva voce",
+    "meaning": "口頭試問、口述試験、特に学位論文の口頭審査",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The doctoral candidate passed her viva voce with distinction.",
+        "ja": "その博士課程候補者は優秀な成績で口頭試問に合格した。",
+        "context": "大学院"
+      },
+      {
+        "en": "Preparing for the viva voce is one of the most stressful parts of a PhD.",
+        "ja": "口頭試問の準備は博士課程で最もストレスの大きい部分の一つである。",
+        "context": "大学院"
+      },
+      {
+        "en": "The viva voce lasted nearly three hours.",
+        "ja": "口頭試問はほぼ3時間続いた。",
+        "context": "学術"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50546,
+    "word": "Socratic",
+    "meaning": "ソクラテス式の、対話と問答を通じて真理に導く教育法の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The Socratic method stimulates critical thinking through questioning.",
+        "ja": "ソクラテス式教授法は問いかけを通じて批判的思考を刺激する。",
+        "context": "教育"
+      },
+      {
+        "en": "Law schools are famous for using the Socratic approach.",
+        "ja": "法科大学院はソクラテス式アプローチの使用で有名である。",
+        "context": "法学"
+      },
+      {
+        "en": "The teacher's Socratic style challenged students to defend their ideas.",
+        "ja": "その教師のソクラテス式スタイルは学生に自分の考えを弁護するよう促した。",
+        "context": "授業"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50547,
+    "word": "pedagogically",
+    "meaning": "教育学的に、教授法の観点から",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The curriculum was pedagogically sound but lacked practical application.",
+        "ja": "カリキュラムは教育学的に健全だが実践的な応用に欠けていた。",
+        "context": "教育"
+      },
+      {
+        "en": "Pedagogically, group work develops collaboration skills.",
+        "ja": "教育学的には、グループワークは協調スキルを発達させる。",
+        "context": "授業"
+      },
+      {
+        "en": "The textbook was praised as pedagogically innovative.",
+        "ja": "その教科書は教育学的に革新的であると称賛された。",
+        "context": "出版"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50548,
+    "word": "declutter",
+    "meaning": "断捨離する、不要物を整理して片付ける",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "She spent the weekend decluttering her entire apartment.",
+        "ja": "彼女は週末をかけてアパート全体を断捨離した。",
+        "context": "日常"
+      },
+      {
+        "en": "Decluttering your workspace can improve productivity.",
+        "ja": "作業スペースを断捨離すると生産性が向上する。",
+        "context": "仕事"
+      },
+      {
+        "en": "I need to declutter my inbox; there are thousands of unread emails.",
+        "ja": "受信トレイを整理しなければ。未読メールが何千通もある。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50549,
+    "word": "perambulate",
+    "meaning": "巡り歩く、散策する、ゆっくりとあちこち歩き回る",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Retirees perambulate through the park every morning.",
+        "ja": "退職者たちは毎朝公園を散策する。",
+        "context": "日常"
+      },
+      {
+        "en": "We perambulated the old town, admiring the architecture.",
+        "ja": "私たちは建築を鑑賞しながら旧市街を巡り歩いた。",
+        "context": "旅行"
+      },
+      {
+        "en": "The dog loves to perambulate around the neighborhood.",
+        "ja": "犬は近所を歩き回るのが大好きだ。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50550,
+    "word": "serendipity",
+    "meaning": "セレンディピティ、思いがけない幸運な発見、偶然の産物",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Finding that rare book at a garage sale was pure serendipity.",
+        "ja": "ガレージセールでその希少本を見つけたのは純粋なセレンディピティだった。",
+        "context": "日常"
+      },
+      {
+        "en": "Many great inventions were the result of serendipity.",
+        "ja": "多くの偉大な発明はセレンディピティの結果だった。",
+        "context": "科学"
+      },
+      {
+        "en": "Serendipity brought them together at a random coffee shop.",
+        "ja": "セレンディピティが偶然のコーヒーショップで二人を引き合わせた。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50551,
+    "word": "redolent",
+    "meaning": "強い香りがする、～を連想させる、思い出させる",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The kitchen was redolent of freshly baked bread.",
+        "ja": "キッチンは焼きたてのパンの香りでいっぱいだった。",
+        "context": "日常"
+      },
+      {
+        "en": "The old house was redolent of her childhood memories.",
+        "ja": "その古い家は彼女の子供時代の思い出を連想させた。",
+        "context": "日常"
+      },
+      {
+        "en": "The garden was redolent with the scent of jasmine.",
+        "ja": "庭はジャスミンの香りに満ちていた。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50552,
+    "word": "sartorial",
+    "meaning": "仕立ての、衣服に関する、装いの",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "His sartorial elegance was the envy of his colleagues.",
+        "ja": "彼の装いの優雅さは同僚の羨望の的だった。",
+        "context": "仕事"
+      },
+      {
+        "en": "The designer is known for her impeccable sartorial taste.",
+        "ja": "そのデザイナーは完璧な装いのセンスで知られている。",
+        "context": "ファッション"
+      },
+      {
+        "en": "Sartorial choices can communicate status and personality.",
+        "ja": "服装の選択は地位と人柄を伝えることができる。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50553,
+    "word": "dissemble",
+    "meaning": "本心を隠す、偽る、感情や意図をごまかす",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "She dissembled her disappointment with a forced smile.",
+        "ja": "彼女は無理な笑顔で失望を隠した。",
+        "context": "日常"
+      },
+      {
+        "en": "Politicians often dissemble when confronted with difficult questions.",
+        "ja": "政治家は難しい質問に直面するとしばしば本心を隠す。",
+        "context": "政治"
+      },
+      {
+        "en": "He dissembled so convincingly that no one suspected the truth.",
+        "ja": "彼は説得力を持って偽ったため、誰も真実を疑わなかった。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50554,
+    "word": "bombastic",
+    "meaning": "大仰な、仰々しい、空虚で誇張された",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "His bombastic speech was full of empty promises.",
+        "ja": "彼の大仰なスピーチは空約束に満ちていた。",
+        "context": "政治"
+      },
+      {
+        "en": "The bombastic writing style distracted from the actual content.",
+        "ja": "仰々しい文体が実際の内容から注意をそらした。",
+        "context": "文学"
+      },
+      {
+        "en": "Critics described the performance as bombastic and overwrought.",
+        "ja": "批評家はその演技を大仰で凝りすぎていると評した。",
+        "context": "演劇"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50555,
+    "word": "euphemistically",
+    "meaning": "婉曲的に、遠回しな表現で、直接的な言い方を避けて",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The company euphemistically called the layoffs \"workforce restructuring.\"",
+        "ja": "会社は解雇を婉曲的に「人員再編」と呼んだ。",
+        "context": "ビジネス"
+      },
+      {
+        "en": "Death is euphemistically referred to as \"passing away.\"",
+        "ja": "死は婉曲的に「他界」と言い換えられる。",
+        "context": "日常"
+      },
+      {
+        "en": "The failure was euphemistically described as a \"learning opportunity.\"",
+        "ja": "その失敗は婉曲的に「学びの機会」と表現された。",
+        "context": "仕事"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50556,
+    "word": "sententiously",
+    "meaning": "格言めかして、もったいぶって、説教じみた口調で",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "He sententiously reminded everyone that \"time waits for no one.\"",
+        "ja": "彼はもったいぶって皆に「時は人を待たず」と念を押した。",
+        "context": "日常"
+      },
+      {
+        "en": "She sententiously lectured her children on the value of hard work.",
+        "ja": "彼女は説教じみた口調で子供たちに勤勉の価値を説いた。",
+        "context": "家庭"
+      },
+      {
+        "en": "The judge sententiously delivered the verdict.",
+        "ja": "裁判官は格言めかして判決を言い渡した。",
+        "context": "法廷"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50557,
+    "word": "outmaneuver",
+    "meaning": "戦術的に出し抜く、巧みに優位に立つ",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The smaller team outmaneuvered their opponents with superior tactics.",
+        "ja": "小さいチームは優れた戦術で対戦相手を出し抜いた。",
+        "context": "スポーツ"
+      },
+      {
+        "en": "The chess player outmaneuvered her rival in the endgame.",
+        "ja": "チェスプレイヤーは終盤で対戦相手を出し抜いた。",
+        "context": "チェス"
+      },
+      {
+        "en": "He outmaneuvered three defenders before scoring.",
+        "ja": "彼は得点する前に3人のディフェンダーを出し抜いた。",
+        "context": "サッカー"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50558,
+    "word": "baulk",
+    "meaning": "ためらう、尻込みする、障害にぶつかって立ち止まる",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The horse baulked at the final fence.",
+        "ja": "馬は最後のフェンスで尻込みした。",
+        "context": "乗馬"
+      },
+      {
+        "en": "He baulked at the prospect of running another marathon.",
+        "ja": "彼はもう一つマラソンを走る見込みにためらった。",
+        "context": "マラソン"
+      },
+      {
+        "en": "The gymnast baulked before attempting the difficult vault.",
+        "ja": "体操選手は難しい跳馬を試みる前に尻込みした。",
+        "context": "体操"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50559,
+    "word": "peloton",
+    "meaning": "ペロトン、集団走行する自転車選手の一団",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The breakaway group was absorbed back into the peloton.",
+        "ja": "逃げ集団はペロトンに吸収された。",
+        "context": "自転車"
+      },
+      {
+        "en": "Riding in the peloton reduces wind resistance significantly.",
+        "ja": "ペロトンの中で走ることで風の抵抗が大幅に減る。",
+        "context": "自転車"
+      },
+      {
+        "en": "The peloton stretched out over several kilometers on the climb.",
+        "ja": "登りでペロトンは数キロメートルにわたって伸びた。",
+        "context": "自転車レース"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50560,
+    "word": "doping",
+    "meaning": "ドーピング、競技能力向上のための禁止薬物使用",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The athlete was banned for two years after a doping violation.",
+        "ja": "その選手はドーピング違反で2年間の出場停止処分を受けた。",
+        "context": "スポーツ"
+      },
+      {
+        "en": "Anti-doping agencies conduct random tests throughout the season.",
+        "ja": "アンチドーピング機関はシーズンを通じてランダムに検査を実施する。",
+        "context": "規制"
+      },
+      {
+        "en": "The doping scandal tarnished the reputation of the entire sport.",
+        "ja": "ドーピングスキャンダルがそのスポーツ全体の評判を傷つけた。",
+        "context": "メディア"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50561,
+    "word": "decathlon",
+    "meaning": "十種競技、10種目から成る陸上複合競技",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "He won the gold medal in the decathlon at the Olympics.",
+        "ja": "彼はオリンピックの十種競技で金メダルを獲得した。",
+        "context": "オリンピック"
+      },
+      {
+        "en": "The decathlon tests an athlete's versatility across multiple disciplines.",
+        "ja": "十種競技は複数の種目にわたる選手の万能性を試す。",
+        "context": "陸上"
+      },
+      {
+        "en": "Training for the decathlon requires mastery of sprinting, jumping, and throwing.",
+        "ja": "十種競技のトレーニングには短距離走、跳躍、投擲の習得が必要である。",
+        "context": "トレーニング"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50562,
+    "word": "plyometrics",
+    "meaning": "プライオメトリクス、爆発的なジャンプ動作を用いた筋力トレーニング法",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Plyometrics are essential for developing explosive power.",
+        "ja": "プライオメトリクスは爆発的パワーの向上に不可欠である。",
+        "context": "トレーニング"
+      },
+      {
+        "en": "Basketball players use plyometrics to increase their vertical leap.",
+        "ja": "バスケットボール選手は垂直跳びを伸ばすためにプライオメトリクスを使う。",
+        "context": "バスケ"
+      },
+      {
+        "en": "Plyometrics should be done on a soft surface to protect joints.",
+        "ja": "プライオメトリクスは関節を守るために柔らかい地面で行うべきである。",
+        "context": "フィットネス"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50563,
+    "word": "calisthenic",
+    "meaning": "自重トレーニングの、器具なしで行う体操的な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Calisthenic exercises require no equipment and can be done anywhere.",
+        "ja": "自重トレーニングは器具不要でどこでも行える。",
+        "context": "フィットネス"
+      },
+      {
+        "en": "His calisthenic routine includes push-ups, pull-ups, and dips.",
+        "ja": "彼の自重トレーニングメニューには腕立て伏せ、懸垂、ディップスが含まれる。",
+        "context": "トレーニング"
+      },
+      {
+        "en": "Calisthenic movements improve both strength and flexibility.",
+        "ja": "自重トレーニングの動きは筋力と柔軟性の両方を向上させる。",
+        "context": "健康"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50564,
+    "word": "ergogenic",
+    "meaning": "運動能力を向上させる、パフォーマンスを高める作用がある",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Caffeine is a well-documented ergogenic aid for endurance sports.",
+        "ja": "カフェインは持久系スポーツにおいて十分に文書化されたエルゴジェニック補助物質である。",
+        "context": "栄養学"
+      },
+      {
+        "en": "The ergogenic effects of creatine have been extensively studied.",
+        "ja": "クレアチンのエルゴジェニック効果は広範に研究されてきた。",
+        "context": "研究"
+      },
+      {
+        "en": "Not all ergogenic supplements are safe or effective.",
+        "ja": "すべてのエルゴジェニックサプリメントが安全で効果的であるわけではない。",
+        "context": "健康"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50565,
+    "word": "aerobically",
+    "meaning": "有酸素的に、酸素を利用したエネルギー代謝で",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "Training aerobically improves cardiovascular endurance.",
+        "ja": "有酸素的にトレーニングすることで心血管系の持久力が向上する。",
+        "context": "トレーニング"
+      },
+      {
+        "en": "The body burns fat more efficiently when exercising aerobically.",
+        "ja": "有酸素的に運動すると体はより効率的に脂肪を燃焼する。",
+        "context": "健康"
+      },
+      {
+        "en": "Marathon runners must be aerobically fit to compete at elite levels.",
+        "ja": "マラソンランナーはエリートレベルで競うには有酸素的に適した状態でなければならない。",
+        "context": "陸上"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50566,
+    "word": "anaerobically",
+    "meaning": "無酸素的に、酸素を使わないエネルギー代謝で",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "Muscles work anaerobically during short, intense bursts of activity.",
+        "ja": "筋肉は短く激しい活動の間、無酸素的に働く。",
+        "context": "生理学"
+      },
+      {
+        "en": "Sprinters train anaerobically to maximize explosive power.",
+        "ja": "スプリンターは爆発的パワーを最大化するために無酸素的にトレーニングする。",
+        "context": "陸上"
+      },
+      {
+        "en": "Energy is produced anaerobically when oxygen supply is insufficient.",
+        "ja": "酸素供給が不十分なときエネルギーは無酸素的に生産される。",
+        "context": "科学"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50567,
+    "word": "blanch",
+    "meaning": "湯通しする、さっと茹でる、食材を短時間熱湯に通してすぐ冷水に取る",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Blanch the tomatoes before peeling them.",
+        "ja": "トマトの皮をむく前に湯通ししてください。",
+        "context": "料理"
+      },
+      {
+        "en": "The chef blanched the green beans to preserve their color.",
+        "ja": "シェフは色を保つためにインゲンを湯通しした。",
+        "context": "レストラン"
+      },
+      {
+        "en": "Blanching almonds makes it easy to remove their skins.",
+        "ja": "アーモンドを湯通しすると皮が簡単に取れる。",
+        "context": "製菓"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50568,
+    "word": "julienne",
+    "meaning": "千切りにする、食材を細い棒状に切る",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Julienne the carrots into thin, even strips.",
+        "ja": "人参を細く均等な千切りにしてください。",
+        "context": "料理"
+      },
+      {
+        "en": "The chef julienned the vegetables with remarkable speed.",
+        "ja": "シェフは驚くべき速さで野菜を千切りにした。",
+        "context": "レストラン"
+      },
+      {
+        "en": "Julienned ginger adds texture and flavor to the stir-fry.",
+        "ja": "千切りにした生姜は炒め物に食感と風味を加える。",
+        "context": "料理"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50569,
+    "word": "caramelize",
+    "meaning": "カラメル化する、砂糖や食材を加熱して褐色に色づかせ甘味を引き出す",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Caramelize the onions slowly over low heat for the best flavor.",
+        "ja": "最高の風味のために弱火でゆっくり玉ねぎをカラメル化してください。",
+        "context": "料理"
+      },
+      {
+        "en": "The sugar caramelized into a golden syrup.",
+        "ja": "砂糖がカラメル化して黄金色のシロップになった。",
+        "context": "製菓"
+      },
+      {
+        "en": "Caramelizing brings out the natural sweetness of vegetables.",
+        "ja": "カラメル化は野菜の自然な甘みを引き出す。",
+        "context": "料理"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50570,
+    "word": "umami",
+    "meaning": "旨味、甘味・酸味・塩味・苦味に次ぐ第5の基本味",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Parmesan cheese is rich in umami flavor.",
+        "ja": "パルメザンチーズは旨味が豊富である。",
+        "context": "食材"
+      },
+      {
+        "en": "Umami was first identified by Japanese chemist Kikunae Ikeda.",
+        "ja": "旨味は日本の化学者池田菊苗によって初めて同定された。",
+        "context": "科学"
+      },
+      {
+        "en": "Fermented foods tend to have a deep umami character.",
+        "ja": "発酵食品は深い旨味の特性を持つ傾向がある。",
+        "context": "料理"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50571,
+    "word": "mise en place",
+    "meaning": "ミゼンプラス、調理に必要な材料と道具をあらかじめすべて準備すること",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "A proper mise en place is essential for professional cooking.",
+        "ja": "適切なミゼンプラスはプロの料理に不可欠である。",
+        "context": "料理"
+      },
+      {
+        "en": "Before starting, ensure your mise en place is complete.",
+        "ja": "始める前に、ミゼンプラスが完了していることを確認してください。",
+        "context": "料理教室"
+      },
+      {
+        "en": "The chef's meticulous mise en place impressed the kitchen inspectors.",
+        "ja": "シェフの几帳面なミゼンプラスは厨房検査官を感心させた。",
+        "context": "レストラン"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50572,
+    "word": "gastronomy",
+    "meaning": "美食学、料理の芸術と科学、食文化の学問的研究",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Molecular gastronomy applies scientific techniques to cooking.",
+        "ja": "分子ガストロノミーは科学的技法を料理に応用する。",
+        "context": "料理"
+      },
+      {
+        "en": "French gastronomy is recognized as a UNESCO cultural heritage.",
+        "ja": "フランスの美食学はユネスコ文化遺産として認められている。",
+        "context": "文化"
+      },
+      {
+        "en": "The city is a capital of gastronomy, attracting food lovers worldwide.",
+        "ja": "その都市は美食の首都であり、世界中の食通を引きつけている。",
+        "context": "旅行"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50573,
+    "word": "oenological",
+    "meaning": "醸造学の、ワイン製造の科学に関する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Oenological research has improved wine production techniques.",
+        "ja": "醸造学的研究がワイン製造技術を改善してきた。",
+        "context": "ワイン"
+      },
+      {
+        "en": "The region offers oenological tours through its famous vineyards.",
+        "ja": "その地域は有名なブドウ畑を巡る醸造学ツアーを提供している。",
+        "context": "旅行"
+      },
+      {
+        "en": "Her oenological expertise was evident in her wine selections.",
+        "ja": "彼女の醸造学の専門知識はワインの選択に明らかだった。",
+        "context": "食事"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50574,
+    "word": "herbaceous",
+    "meaning": "草本の香りがする、生の緑のハーブを思わせる風味のある",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The olive oil has herbaceous notes of basil and thyme.",
+        "ja": "そのオリーブオイルはバジルとタイムの草本の香りがある。",
+        "context": "食材"
+      },
+      {
+        "en": "The wine has an herbaceous quality with hints of bell pepper.",
+        "ja": "そのワインはピーマンを思わせる草本的な特質がある。",
+        "context": "ワイン"
+      },
+      {
+        "en": "Fresh herbs lend an herbaceous brightness to the dish.",
+        "ja": "新鮮なハーブが料理に草本の明るさを加える。",
+        "context": "料理"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50575,
+    "word": "gastronomically",
+    "meaning": "美食学的に、食文化の観点から",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The region is gastronomically renowned for its seafood.",
+        "ja": "その地域は美食学的にシーフードで名高い。",
+        "context": "旅行"
+      },
+      {
+        "en": "Gastronomically, Japan offers one of the most diverse cuisines.",
+        "ja": "美食学的に見ると、日本は最も多様な料理の一つを提供する。",
+        "context": "食文化"
+      },
+      {
+        "en": "The dish is gastronomically innovative yet rooted in tradition.",
+        "ja": "その料理は美食学的に革新的でありながら伝統に根ざしている。",
+        "context": "レストラン"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50576,
+    "word": "olfactorily",
+    "meaning": "嗅覚的に、においの観点から",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The truffle is olfactorily one of the most complex ingredients.",
+        "ja": "トリュフは嗅覚的に最も複雑な食材の一つである。",
+        "context": "食材"
+      },
+      {
+        "en": "Olfactorily, the spice market was an overwhelming experience.",
+        "ja": "嗅覚的にスパイス市場は圧倒的な体験だった。",
+        "context": "旅行"
+      },
+      {
+        "en": "Wine is evaluated olfactorily before tasting.",
+        "ja": "ワインはテイスティングの前に嗅覚的に評価される。",
+        "context": "ワイン"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50577,
+    "word": "marquetry",
+    "meaning": "寄木細工、象嵌細工、異なる色や素材の木片を組み合わせた装飾技法",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The tabletop features stunning marquetry with dozens of wood varieties.",
+        "ja": "そのテーブルトップは数十種類の木材を使った見事な寄木細工を特徴としている。",
+        "context": "木工"
+      },
+      {
+        "en": "Italian marquetry from the Renaissance is highly prized.",
+        "ja": "ルネサンス期のイタリアの寄木細工は非常に珍重されている。",
+        "context": "美術史"
+      },
+      {
+        "en": "Learning marquetry requires years of practice.",
+        "ja": "寄木細工を学ぶには何年もの練習が必要である。",
+        "context": "工芸"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50578,
+    "word": "kiln",
+    "meaning": "窯、陶芸用の焼成炉、高温で焼き固めるための炉",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The pottery was fired in a kiln at over 1200 degrees Celsius.",
+        "ja": "陶器は摂氏1200度以上の窯で焼成された。",
+        "context": "陶芸"
+      },
+      {
+        "en": "Loading the kiln correctly is crucial for even heat distribution.",
+        "ja": "窯を正しく装填することは均等な熱分布に不可欠である。",
+        "context": "工芸"
+      },
+      {
+        "en": "The ancient kiln was discovered during an archaeological excavation.",
+        "ja": "古代の窯は考古学的発掘中に発見された。",
+        "context": "考古学"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50579,
+    "word": "lapidary",
+    "meaning": "宝石加工の、宝石研磨に関する、精緻で優雅な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "His lapidary skills transformed rough stones into dazzling gems.",
+        "ja": "彼の宝石加工の技術は原石を眩い宝石に変えた。",
+        "context": "宝石"
+      },
+      {
+        "en": "The lapidary prose of the essay was a pleasure to read.",
+        "ja": "そのエッセイの精緻な散文は読む喜びだった。",
+        "context": "文学"
+      },
+      {
+        "en": "She studied lapidary arts at a specialized workshop.",
+        "ja": "彼女は専門のワークショップで宝石加工の技術を学んだ。",
+        "context": "工芸"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50580,
+    "word": "virtuosic",
+    "meaning": "名人芸的な、超絶技巧の、卓越した技量を示す",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The pianist delivered a virtuosic performance of Liszt.",
+        "ja": "ピアニストはリストの名人芸的な演奏を披露した。",
+        "context": "音楽"
+      },
+      {
+        "en": "His virtuosic guitar work left the audience speechless.",
+        "ja": "彼の超絶技巧のギター演奏は聴衆を絶句させた。",
+        "context": "音楽"
+      },
+      {
+        "en": "The virtuosic display of calligraphy mesmerized the crowd.",
+        "ja": "超絶技巧の書道の披露が群衆を魅了した。",
+        "context": "書道"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50581,
+    "word": "catharsis",
+    "meaning": "カタルシス、浄化、抑圧された感情を解放することによる精神的浄化",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Writing in her journal provided a much-needed catharsis.",
+        "ja": "日記を書くことが彼女に切実に必要なカタルシスを与えた。",
+        "context": "日常"
+      },
+      {
+        "en": "The audience experienced catharsis through the tragic ending.",
+        "ja": "観客は悲劇的な結末を通じてカタルシスを経験した。",
+        "context": "演劇"
+      },
+      {
+        "en": "Crying can be a form of emotional catharsis.",
+        "ja": "泣くことは感情的なカタルシスの一形態でありうる。",
+        "context": "心理学"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50582,
+    "word": "weltschmerz",
+    "meaning": "世界苦、世の中の理想と現実のずれから来る深い悲しみ",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The poet expressed a profound weltschmerz in his later works.",
+        "ja": "詩人は後期の作品で深い世界苦を表現した。",
+        "context": "文学"
+      },
+      {
+        "en": "Adolescent weltschmerz is a common theme in coming-of-age novels.",
+        "ja": "思春期の世界苦は成長小説の一般的なテーマである。",
+        "context": "文学"
+      },
+      {
+        "en": "A sense of weltschmerz pervaded the post-war generation.",
+        "ja": "世界苦の感覚が戦後世代に浸透した。",
+        "context": "歴史"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50583,
+    "word": "viscerally",
+    "meaning": "内臓的に、本能的に、理屈ではなく直感的に深く",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The horror film affected viewers viscerally.",
+        "ja": "そのホラー映画は観客に本能的な影響を与えた。",
+        "context": "映画"
+      },
+      {
+        "en": "She viscerally recoiled from the idea of public speaking.",
+        "ja": "彼女は人前で話すという考えに本能的に身をすくめた。",
+        "context": "日常"
+      },
+      {
+        "en": "The injustice was felt viscerally by the entire community.",
+        "ja": "その不正義はコミュニティ全体に内臓的に感じられた。",
+        "context": "社会"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50584,
+    "word": "synergize",
+    "meaning": "相乗効果を生む、協力して個々の力の合計以上の成果を出す",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The merger allowed both companies to synergize their strengths.",
+        "ja": "合併により両社が強みの相乗効果を生むことができた。",
+        "context": "M&A"
+      },
+      {
+        "en": "Cross-functional teams synergize by combining diverse expertise.",
+        "ja": "機能横断チームは多様な専門知識を組み合わせることで相乗効果を生む。",
+        "context": "組織"
+      },
+      {
+        "en": "We need to synergize our marketing and sales efforts.",
+        "ja": "マーケティングと営業の取り組みの相乗効果を生む必要がある。",
+        "context": "戦略"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50585,
+    "word": "bootstrap",
+    "meaning": "自力で立ち上げる、外部資金に頼らず事業を開始・成長させる",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "She bootstrapped her startup from a garage to a billion-dollar company.",
+        "ja": "彼女はスタートアップをガレージから10億ドル企業に自力で成長させた。",
+        "context": "起業"
+      },
+      {
+        "en": "Bootstrapping forces founders to be resourceful and frugal.",
+        "ja": "自己資金での起業は創業者に創意工夫と倹約を強いる。",
+        "context": "スタートアップ"
+      },
+      {
+        "en": "They bootstrapped the business using personal savings.",
+        "ja": "彼らは個人の貯蓄を使って事業を自力で立ち上げた。",
+        "context": "経営"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50586,
+    "word": "onboard",
+    "meaning": "新規参入者を受け入れ教育する、オンボーディングする",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "It takes about two weeks to fully onboard a new employee.",
+        "ja": "新入社員を完全にオンボーディングするのに約2週間かかる。",
+        "context": "人事"
+      },
+      {
+        "en": "The platform makes it easy to onboard new users.",
+        "ja": "そのプラットフォームは新規ユーザーのオンボーディングを容易にする。",
+        "context": "SaaS"
+      },
+      {
+        "en": "We need to onboard the new team members before the project begins.",
+        "ja": "プロジェクト開始前に新しいチームメンバーをオンボーディングする必要がある。",
+        "context": "マネジメント"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50587,
+    "word": "deliverable",
+    "meaning": "成果物、納品物、プロジェクトで完成が求められる具体的な成果",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The contract specifies all deliverables and their deadlines.",
+        "ja": "契約はすべての成果物とその期限を明記している。",
+        "context": "契約"
+      },
+      {
+        "en": "We need to finalize the deliverables before the client meeting.",
+        "ja": "クライアントミーティングの前に成果物を最終確定する必要がある。",
+        "context": "プロジェクト"
+      },
+      {
+        "en": "Each sprint produces concrete deliverables for review.",
+        "ja": "各スプリントはレビュー用の具体的な成果物を生む。",
+        "context": "アジャイル"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50588,
+    "word": "scalability",
+    "meaning": "スケーラビリティ、拡張可能性、需要増加に応じて効率的に拡大できる能力",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Investors want to see evidence of scalability before committing funds.",
+        "ja": "投資家は資金を投じる前にスケーラビリティの証拠を見たがる。",
+        "context": "投資"
+      },
+      {
+        "en": "The platform's scalability allows it to serve millions of users.",
+        "ja": "そのプラットフォームのスケーラビリティにより何百万人ものユーザーに対応できる。",
+        "context": "テクノロジー"
+      },
+      {
+        "en": "Scalability is one of our key competitive advantages.",
+        "ja": "スケーラビリティは我々の主要な競争優位性の一つである。",
+        "context": "経営"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50589,
+    "word": "holistically",
+    "meaning": "全体論的に、包括的に、全体を統合して捉える視点で",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "We need to approach the problem holistically rather than piecemeal.",
+        "ja": "問題に断片的ではなく全体論的にアプローチする必要がある。",
+        "context": "経営"
+      },
+      {
+        "en": "The strategy was holistically designed to address all stakeholder needs.",
+        "ja": "その戦略はすべてのステークホルダーのニーズに対処するよう全体論的に設計された。",
+        "context": "戦略"
+      },
+      {
+        "en": "Performance should be evaluated holistically, not just by numbers.",
+        "ja": "パフォーマンスは数字だけでなく全体論的に評価されるべきである。",
+        "context": "人事"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50590,
+    "word": "circumnavigate",
+    "meaning": "周航する、地球を一周する、障害を迂回する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Magellan's crew was the first to circumnavigate the globe.",
+        "ja": "マゼランの乗組員は初めて地球を周航した。",
+        "context": "歴史"
+      },
+      {
+        "en": "The yacht circumnavigated the island in three days.",
+        "ja": "ヨットは3日で島を周航した。",
+        "context": "航海"
+      },
+      {
+        "en": "She found a way to circumnavigate the bureaucratic obstacles.",
+        "ja": "彼女は官僚的な障害を迂回する方法を見つけた。",
+        "context": "比喩"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50591,
+    "word": "sojourn",
+    "meaning": "一時滞在する、短期間逗留する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "They sojourned in a small Italian village for the summer.",
+        "ja": "彼らは夏の間、イタリアの小さな村に滞在した。",
+        "context": "旅行"
+      },
+      {
+        "en": "The artist sojourned in Paris to study Impressionism.",
+        "ja": "その芸術家は印象派を学ぶためにパリに滞在した。",
+        "context": "芸術"
+      },
+      {
+        "en": "We sojourned at a remote monastery during our pilgrimage.",
+        "ja": "巡礼中に僻地の修道院に逗留した。",
+        "context": "旅行"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50592,
+    "word": "layover",
+    "meaning": "乗り継ぎ待ち、トランジットの待機時間、経由地での滞在",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "We have a six-hour layover in Singapore on the way to Sydney.",
+        "ja": "シドニーに向かう途中、シンガポールで6時間の乗り継ぎ待ちがある。",
+        "context": "航空"
+      },
+      {
+        "en": "The airline provided a hotel for passengers with overnight layovers.",
+        "ja": "航空会社は夜間乗り継ぎの乗客にホテルを提供した。",
+        "context": "航空"
+      },
+      {
+        "en": "A long layover is a chance to explore a new city briefly.",
+        "ja": "長い乗り継ぎ待ちは新しい都市を短時間探索するチャンスである。",
+        "context": "旅行"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50593,
+    "word": "cosmopolitan",
+    "meaning": "国際的な、世界各地の文化に通じた、洗練された都会的な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "London is one of the most cosmopolitan cities in the world.",
+        "ja": "ロンドンは世界で最もコスモポリタンな都市の一つである。",
+        "context": "旅行"
+      },
+      {
+        "en": "Her cosmopolitan upbringing in five countries shaped her worldview.",
+        "ja": "5か国での国際的な育ちが彼女の世界観を形成した。",
+        "context": "日常"
+      },
+      {
+        "en": "The restaurant offers a cosmopolitan menu with dishes from every continent.",
+        "ja": "そのレストランは各大陸の料理を揃えた国際的なメニューを提供する。",
+        "context": "食事"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50594,
+    "word": "itinerant",
+    "meaning": "巡回する、遍歴の、各地を移動しながら働く",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Itinerant merchants sold goods from village to village.",
+        "ja": "巡回商人は村から村へ商品を売った。",
+        "context": "歴史"
+      },
+      {
+        "en": "The itinerant musician performed in a different city each night.",
+        "ja": "巡回ミュージシャンは毎晩異なる都市で演奏した。",
+        "context": "音楽"
+      },
+      {
+        "en": "Itinerant workers follow seasonal employment opportunities.",
+        "ja": "巡回労働者は季節的な雇用機会を追う。",
+        "context": "社会"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50595,
+    "word": "vicariously",
+    "meaning": "代理的に、他人の体験を通じて間接的に",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "She traveled vicariously through her friend's Instagram photos.",
+        "ja": "彼女は友人のインスタグラム写真を通じて代理的に旅をした。",
+        "context": "日常"
+      },
+      {
+        "en": "He lives vicariously through adventure documentaries.",
+        "ja": "彼は冒険ドキュメンタリーを通じて代理的に生きている。",
+        "context": "日常"
+      },
+      {
+        "en": "Parents sometimes experience college vicariously through their children.",
+        "ja": "親はときに子供を通じて代理的に大学生活を経験する。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50596,
+    "word": "insufflate",
+    "meaning": "吹送する、体腔に気体や粉末を吹き込む医療処置を行う",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The surgeon insufflated carbon dioxide into the abdominal cavity.",
+        "ja": "外科医は腹腔に二酸化炭素を吹送した。",
+        "context": "手術"
+      },
+      {
+        "en": "The powder was insufflated through a specialized device.",
+        "ja": "粉末は専用の器具を通じて吹送された。",
+        "context": "治療"
+      },
+      {
+        "en": "Insufflating the colon allows better visualization during colonoscopy.",
+        "ja": "結腸への送気は大腸内視鏡検査中のより良い視覚化を可能にする。",
+        "context": "検査"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50597,
+    "word": "thromboembolism",
+    "meaning": "血栓塞栓症、血管内で形成された血栓が血流で移動し別の血管を閉塞する病態",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Deep vein thromboembolism is a risk during long-haul flights.",
+        "ja": "深部静脈血栓塞栓症は長距離フライト中のリスクである。",
+        "context": "健康"
+      },
+      {
+        "en": "The patient developed pulmonary thromboembolism after surgery.",
+        "ja": "患者は手術後に肺血栓塞栓症を発症した。",
+        "context": "医療"
+      },
+      {
+        "en": "Anticoagulants are prescribed to prevent thromboembolism.",
+        "ja": "血栓塞栓症を予防するために抗凝固薬が処方される。",
+        "context": "治療"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50598,
+    "word": "dequeue",
+    "meaning": "キューから取り出す、先頭の要素をキューから削除して返す",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The consumer thread dequeues messages from the buffer.",
+        "ja": "コンシューマースレッドはバッファからメッセージをデキューする。",
+        "context": "プログラミング"
+      },
+      {
+        "en": "Tasks are dequeued in order of priority.",
+        "ja": "タスクは優先度の順にデキューされる。",
+        "context": "OS"
+      },
+      {
+        "en": "The worker dequeues jobs from the task queue every second.",
+        "ja": "ワーカーは毎秒タスクキューからジョブをデキューする。",
+        "context": "バックエンド"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50599,
+    "word": "sharding",
+    "meaning": "シャーディング、データベースを複数のサーバーに水平分割して分散配置する技法",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Database sharding distributes data across multiple servers for scalability.",
+        "ja": "データベースシャーディングはスケーラビリティのためにデータを複数のサーバーに分散する。",
+        "context": "データベース"
+      },
+      {
+        "en": "Sharding reduced query response times by seventy percent.",
+        "ja": "シャーディングによりクエリ応答時間が70パーセント短縮された。",
+        "context": "インフラ"
+      },
+      {
+        "en": "Choosing the right sharding key is crucial for even data distribution.",
+        "ja": "適切なシャーディングキーの選択は均等なデータ分散に不可欠である。",
+        "context": "設計"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50600,
+    "word": "stratify",
+    "meaning": "層状にする、地層として堆積する、層を成して分化する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Sediments stratify over time, creating distinct geological layers.",
+        "ja": "堆積物は時間とともに層状になり、明確な地質層を形成する。",
+        "context": "地質学"
+      },
+      {
+        "en": "Lake waters stratify by temperature during summer months.",
+        "ja": "湖の水は夏の間に温度により層状化する。",
+        "context": "湖沼学"
+      },
+      {
+        "en": "The rock was beautifully stratified in alternating colors.",
+        "ja": "その岩石は交互の色で美しく層状化していた。",
+        "context": "自然"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50601,
+    "word": "littoral",
+    "meaning": "沿岸の、水辺の、湖や海の岸辺に関する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Littoral zones support diverse plant and animal communities.",
+        "ja": "沿岸帯は多様な動植物群集を支えている。",
+        "context": "生態学"
+      },
+      {
+        "en": "The littoral drift transports sand along the coastline.",
+        "ja": "沿岸漂砂が海岸線に沿って砂を運搬する。",
+        "context": "海洋学"
+      },
+      {
+        "en": "Littoral warfare requires specialized naval training.",
+        "ja": "沿岸戦闘には専門的な海軍訓練が必要である。",
+        "context": "軍事"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50602,
+    "word": "anthologize",
+    "meaning": "選集に収録する、優れた作品を選んで一冊にまとめる",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Her poems have been anthologized in numerous literary collections.",
+        "ja": "彼女の詩は多数の文学選集に収録されている。",
+        "context": "文学"
+      },
+      {
+        "en": "The editor anthologized the best short stories of the decade.",
+        "ja": "編集者はその10年間の最優秀短編小説を選集にまとめた。",
+        "context": "出版"
+      },
+      {
+        "en": "Only canonized works tend to be anthologized in school textbooks.",
+        "ja": "正典に加えられた作品のみが学校の教科書に収録される傾向がある。",
+        "context": "教育"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50603,
+    "word": "romanticize",
+    "meaning": "美化する、ロマンチックに理想化する、現実を過度に美しく描く",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Films often romanticize the past, ignoring its harsh realities.",
+        "ja": "映画はしばしば過去を美化し、厳しい現実を無視する。",
+        "context": "映画"
+      },
+      {
+        "en": "We should not romanticize poverty as somehow ennobling.",
+        "ja": "貧困を何かしら高貴なものとして美化すべきではない。",
+        "context": "社会"
+      },
+      {
+        "en": "Travel writing tends to romanticize exotic cultures.",
+        "ja": "旅行記は異国の文化を美化する傾向がある。",
+        "context": "文学"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50604,
+    "word": "commodify",
+    "meaning": "商品化する、本来商品でないものに経済的価値を付与して取引対象にする",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Social media has commodified personal relationships and attention.",
+        "ja": "ソーシャルメディアは個人的な関係と注目を商品化した。",
+        "context": "社会"
+      },
+      {
+        "en": "Critics argue that tourism commodifies indigenous cultures.",
+        "ja": "批評家は観光が先住民文化を商品化していると主張する。",
+        "context": "文化"
+      },
+      {
+        "en": "Education should not be commodified like any other consumer product.",
+        "ja": "教育は他の消費者製品のように商品化されるべきではない。",
+        "context": "教育"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50605,
+    "word": "patois",
+    "meaning": "方言、特定の地域や社会集団に固有の非標準的な言語変種",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The characters in the novel speak in Jamaican patois.",
+        "ja": "小説の登場人物はジャマイカのパトワで話す。",
+        "context": "文学"
+      },
+      {
+        "en": "The patois of the region preserves archaic French expressions.",
+        "ja": "その地域のパトワは古風なフランス語表現を保存している。",
+        "context": "言語学"
+      },
+      {
+        "en": "Understanding local patois requires immersion in the community.",
+        "ja": "地域のパトワを理解するにはコミュニティへの没入が必要である。",
+        "context": "文化"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50606,
+    "word": "apotropaic",
+    "meaning": "魔除けの、災厄を追い払うための",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Gargoyles served an apotropaic function on medieval churches.",
+        "ja": "ガーゴイルは中世の教会で魔除けの機能を果たした。",
+        "context": "建築"
+      },
+      {
+        "en": "The necklace was believed to have apotropaic powers.",
+        "ja": "そのネックレスは魔除けの力があると信じられていた。",
+        "context": "民俗"
+      },
+      {
+        "en": "Apotropaic rituals are common across many ancient cultures.",
+        "ja": "魔除けの儀式は多くの古代文化で一般的である。",
+        "context": "人類学"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50607,
+    "word": "habilitation",
+    "meaning": "大学教授資格取得、博士号後に教授資格を得るための学位論文と審査",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "In Germany, habilitation is required before one can become a full professor.",
+        "ja": "ドイツでは正教授になる前に大学教授資格取得が必要である。",
+        "context": "大学"
+      },
+      {
+        "en": "She completed her habilitation thesis on quantum optics.",
+        "ja": "彼女は量子光学に関する教授資格論文を完成させた。",
+        "context": "学術"
+      },
+      {
+        "en": "The habilitation process can take several years beyond the doctorate.",
+        "ja": "教授資格取得の過程は博士号取得後に数年かかることがある。",
+        "context": "教育"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50608,
+    "word": "curricular",
+    "meaning": "カリキュラムの、教育課程に関する、教育計画に組み込まれた",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Curricular reform is needed to prepare students for the digital age.",
+        "ja": "デジタル時代に学生を備えさせるためにカリキュラム改革が必要である。",
+        "context": "教育"
+      },
+      {
+        "en": "Extra-curricular activities complement the formal curricular program.",
+        "ja": "課外活動は正規のカリキュラムプログラムを補完する。",
+        "context": "学校"
+      },
+      {
+        "en": "The curricular framework was redesigned around competency-based learning.",
+        "ja": "カリキュラムの枠組みはコンピテンシーベースの学習を中心に再設計された。",
+        "context": "教育改革"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50609,
+    "word": "scholastic",
+    "meaning": "学業の、学問的な、スコラ哲学的な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Her scholastic achievements earned her a full scholarship.",
+        "ja": "彼女の学業成績が全額奨学金を獲得させた。",
+        "context": "大学"
+      },
+      {
+        "en": "Scholastic aptitude tests measure academic potential.",
+        "ja": "学力適性検査は学問的可能性を測定する。",
+        "context": "教育"
+      },
+      {
+        "en": "The scholastic tradition of medieval Europe shaped modern universities.",
+        "ja": "中世ヨーロッパのスコラ哲学的伝統が現代の大学を形成した。",
+        "context": "歴史"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50610,
+    "word": "scholastically",
+    "meaning": "学問的に、学業面で、学術的な観点から",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "She performed scholastically at the top of her class.",
+        "ja": "彼女は学業面でクラスのトップの成績を収めた。",
+        "context": "学校"
+      },
+      {
+        "en": "Scholastically rigorous programs attract the best students.",
+        "ja": "学問的に厳格なプログラムは最優秀の学生を引きつける。",
+        "context": "大学"
+      },
+      {
+        "en": "The student excelled scholastically despite personal hardships.",
+        "ja": "その学生は個人的な困難にもかかわらず学業面で秀でた。",
+        "context": "教育"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50611,
+    "word": "confabulate",
+    "meaning": "歓談する、打ち解けて話す、（心理学で）作話する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The neighbors confabulated over the garden fence every evening.",
+        "ja": "隣人たちは毎晩庭のフェンス越しに歓談した。",
+        "context": "日常"
+      },
+      {
+        "en": "Memory patients sometimes confabulate, filling gaps with fabricated details.",
+        "ja": "記憶障害の患者はときに作話し、記憶の空白を作られた詳細で埋める。",
+        "context": "心理学"
+      },
+      {
+        "en": "We confabulated for hours over coffee at the kitchen table.",
+        "ja": "私たちはキッチンテーブルでコーヒーを飲みながら何時間も歓談した。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50612,
+    "word": "nondescript",
+    "meaning": "特徴のない、目立たない、印象に残らない平凡な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "They met in a nondescript office building on the outskirts of town.",
+        "ja": "彼らは町外れの特徴のないオフィスビルで会った。",
+        "context": "日常"
+      },
+      {
+        "en": "He was wearing nondescript clothing to avoid attention.",
+        "ja": "彼は注目を避けるために目立たない服を着ていた。",
+        "context": "日常"
+      },
+      {
+        "en": "The nondescript exterior hid a surprisingly elegant interior.",
+        "ja": "特徴のない外観は驚くほど優雅な内装を隠していた。",
+        "context": "建築"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50613,
+    "word": "discursive",
+    "meaning": "散漫な、話が脱線しがちな、あちこち飛ぶ論述の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "His discursive writing style makes his essays hard to follow.",
+        "ja": "彼の散漫な文体はエッセイを追いにくくする。",
+        "context": "文学"
+      },
+      {
+        "en": "The lecture was enjoyably discursive, covering many tangential topics.",
+        "ja": "その講義は楽しく散漫で、多くの脱線的話題を扱った。",
+        "context": "大学"
+      },
+      {
+        "en": "Discursive reasoning explores ideas from multiple angles.",
+        "ja": "散漫な推論は複数の角度からアイデアを探求する。",
+        "context": "哲学"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50614,
+    "word": "epigrammatic",
+    "meaning": "警句的な、簡潔で機知に富んだ、寸鉄人を刺す",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Oscar Wilde was famous for his epigrammatic wit.",
+        "ja": "オスカー・ワイルドは警句的な機知で有名だった。",
+        "context": "文学"
+      },
+      {
+        "en": "The speech was filled with epigrammatic observations about human nature.",
+        "ja": "そのスピーチは人間性についての警句的な観察に満ちていた。",
+        "context": "スピーチ"
+      },
+      {
+        "en": "Her epigrammatic style made complex ideas accessible.",
+        "ja": "彼女の警句的なスタイルは複雑な概念をわかりやすくした。",
+        "context": "文学"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50615,
+    "word": "volley",
+    "meaning": "ボレーする、ボールが地面に落ちる前に打ち返す",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The tennis player volleyed the return with perfect timing.",
+        "ja": "テニス選手は完璧なタイミングでリターンをボレーした。",
+        "context": "テニス"
+      },
+      {
+        "en": "She volleyed the ball into the corner of the net.",
+        "ja": "彼女はボールをネットの隅にボレーした。",
+        "context": "バレーボール"
+      },
+      {
+        "en": "He volleyed three consecutive shots past the goalkeeper.",
+        "ja": "彼はゴールキーパーを越えて3連続のボレーシュートを放った。",
+        "context": "サッカー"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50616,
+    "word": "proprioceptive",
+    "meaning": "固有受容性の、自分の体の位置や動きを感知する能力に関する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Proprioceptive training improves balance and body awareness.",
+        "ja": "固有受容性トレーニングはバランスと身体認識を向上させる。",
+        "context": "トレーニング"
+      },
+      {
+        "en": "Ankle sprains impair proprioceptive function in the affected joint.",
+        "ja": "足首の捻挫は損傷した関節の固有受容性機能を損なう。",
+        "context": "リハビリ"
+      },
+      {
+        "en": "Gymnasts rely heavily on proprioceptive feedback during routines.",
+        "ja": "体操選手は演技中に固有受容性のフィードバックに大きく依存する。",
+        "context": "体操"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50617,
+    "word": "VO2max",
+    "meaning": "最大酸素摂取量の、有酸素運動の上限能力を示す指標の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "VO2max testing measures the maximum rate of oxygen consumption.",
+        "ja": "VO2maxテストは酸素消費の最大速度を測定する。",
+        "context": "生理学"
+      },
+      {
+        "en": "Elite endurance athletes typically have high VO2max values.",
+        "ja": "エリート持久系アスリートは通常高いVO2max値を持つ。",
+        "context": "スポーツ科学"
+      },
+      {
+        "en": "Improving your VO2max capacity requires consistent aerobic training.",
+        "ja": "VO2max能力の向上には一貫した有酸素トレーニングが必要である。",
+        "context": "トレーニング"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50618,
+    "word": "sapid",
+    "meaning": "風味のある、味わい深い、味覚に訴える豊かな風味を持つ",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The broth was sapid with layers of complex flavors.",
+        "ja": "そのブロスは複雑な風味の層を持ち味わい深かった。",
+        "context": "料理"
+      },
+      {
+        "en": "A sapid wine pairs well with rich, savory dishes.",
+        "ja": "風味のあるワインは濃厚なおかず料理とよく合う。",
+        "context": "ワイン"
+      },
+      {
+        "en": "The chef created a sapid reduction from the pan drippings.",
+        "ja": "シェフはフライパンの肉汁から風味豊かなソースを作った。",
+        "context": "レストラン"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50619,
+    "word": "emboss",
+    "meaning": "浮き彫りにする、紙や革などに凸状の模様を押し出す",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The leather journal was embossed with the owner's initials.",
+        "ja": "革の手帳にはオーナーのイニシャルが浮き彫りにされていた。",
+        "context": "レザークラフト"
+      },
+      {
+        "en": "Wedding invitations are often embossed with elegant designs.",
+        "ja": "結婚式の招待状はしばしばエレガントなデザインで浮き彫り加工される。",
+        "context": "印刷"
+      },
+      {
+        "en": "The machine can emboss intricate patterns onto metal sheets.",
+        "ja": "その機械は金属板に精巧な模様を浮き彫りにできる。",
+        "context": "工芸"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50620,
+    "word": "gild",
+    "meaning": "金箔を貼る、金メッキを施す、表面を金で装飾する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The craftsman gilded the picture frame with 24-karat gold leaf.",
+        "ja": "職人は24金の金箔で額縁に金箔を貼った。",
+        "context": "額装"
+      },
+      {
+        "en": "Medieval illuminators gilded manuscript pages with real gold.",
+        "ja": "中世の彩飾師は本物の金で写本のページに金箔を施した。",
+        "context": "書道"
+      },
+      {
+        "en": "The dome of the cathedral was gilded during the restoration.",
+        "ja": "大聖堂のドームは修復中に金メッキされた。",
+        "context": "建築"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50621,
+    "word": "anneal",
+    "meaning": "焼き鈍しする、金属やガラスを加熱後ゆっくり冷却して内部応力を除去する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The glassblower annealed the vase to prevent cracking.",
+        "ja": "ガラス職人は割れを防ぐために花瓶を焼き鈍しした。",
+        "context": "ガラス工芸"
+      },
+      {
+        "en": "Copper must be annealed periodically during the shaping process.",
+        "ja": "銅は成形過程中に定期的に焼き鈍しする必要がある。",
+        "context": "金工"
+      },
+      {
+        "en": "Annealing the steel made it easier to work with.",
+        "ja": "鋼を焼き鈍しすることで加工しやすくなった。",
+        "context": "鍛冶"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50622,
+    "word": "cloisonne",
+    "meaning": "七宝焼き、金属の小区画に釉薬を入れて焼成する装飾技法",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The vase was decorated with exquisite cloisonne enamel work.",
+        "ja": "その花瓶は精緻な七宝焼きの琺瑯細工で装飾されていた。",
+        "context": "工芸"
+      },
+      {
+        "en": "Japanese cloisonne reached its artistic peak in the Meiji era.",
+        "ja": "日本の七宝焼きは明治時代に芸術的頂点に達した。",
+        "context": "美術史"
+      },
+      {
+        "en": "Each piece of cloisonne requires dozens of hours of meticulous work.",
+        "ja": "七宝焼きの各作品には数十時間の入念な作業が必要である。",
+        "context": "工芸"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50623,
+    "word": "intaglio",
+    "meaning": "凹版、表面を彫り込んで作る版画技法、凹刻された宝石や印章",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Intaglio printing produces images with rich, deep tones.",
+        "ja": "凹版印刷は豊かで深い色調の画像を生み出す。",
+        "context": "版画"
+      },
+      {
+        "en": "The ancient Roman ring featured an intaglio portrait.",
+        "ja": "その古代ローマの指輪は凹刻された肖像を特徴としていた。",
+        "context": "骨董"
+      },
+      {
+        "en": "Students learned various intaglio techniques including etching and engraving.",
+        "ja": "学生たちはエッチングや彫刻を含む様々な凹版技法を学んだ。",
+        "context": "美術教育"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50624,
+    "word": "damascene",
+    "meaning": "ダマスカス模様の、金属に金銀の象嵌を施した",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The damascene sword blade displayed a distinctive watered pattern.",
+        "ja": "ダマスカス模様の剣の刃は特徴的な波紋を示した。",
+        "context": "刀剣"
+      },
+      {
+        "en": "Damascene jewelry from Toledo is famous worldwide.",
+        "ja": "トレドのダマスカス模様のジュエリーは世界的に有名である。",
+        "context": "ジュエリー"
+      },
+      {
+        "en": "The artist created damascene inlay on the wooden box.",
+        "ja": "芸術家は木箱にダマスカス模様の象嵌を施した。",
+        "context": "工芸"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50625,
+    "word": "deftly",
+    "meaning": "巧みに、手際よく、器用に",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "The potter deftly shaped the clay into an elegant vase.",
+        "ja": "陶芸家は巧みに粘土をエレガントな花瓶に形作った。",
+        "context": "陶芸"
+      },
+      {
+        "en": "She deftly wove the threads into an intricate tapestry.",
+        "ja": "彼女は糸を手際よく精巧なタペストリーに織り上げた。",
+        "context": "織物"
+      },
+      {
+        "en": "The woodcarver deftly handled the chisel to create fine details.",
+        "ja": "木彫り師は器用にノミを扱い精細なディテールを作り出した。",
+        "context": "木彫り"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50626,
+    "word": "abominate",
+    "meaning": "忌み嫌う、心底から嫌悪する、激しく憎む",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "She abominated cruelty in any form.",
+        "ja": "彼女はいかなる形の残酷さも忌み嫌った。",
+        "context": "日常"
+      },
+      {
+        "en": "He abominated hypocrisy above all other faults.",
+        "ja": "彼は他のすべての欠点の中で偽善を最も忌み嫌った。",
+        "context": "日常"
+      },
+      {
+        "en": "The public abominated the corruption that had been exposed.",
+        "ja": "国民は暴露された腐敗を心底から嫌悪した。",
+        "context": "社会"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50627,
+    "word": "execrate",
+    "meaning": "呪う、激しく嫌悪する、強い憎しみを込めて非難する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The tyrant was execrated by the oppressed populace.",
+        "ja": "暴君は抑圧された民衆から呪われた。",
+        "context": "歴史"
+      },
+      {
+        "en": "She execrated the betrayal that had destroyed their friendship.",
+        "ja": "彼女は友情を破壊した裏切りを激しく嫌悪した。",
+        "context": "日常"
+      },
+      {
+        "en": "Corruption is universally execrated yet stubbornly persistent.",
+        "ja": "腐敗は普遍的に嫌悪されながらも頑固に存続している。",
+        "context": "社会"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50628,
+    "word": "anhedonia",
+    "meaning": "無快感症、快感を感じる能力の喪失、楽しみや喜びを感じられない状態",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Anhedonia is a core symptom of clinical depression.",
+        "ja": "無快感症は臨床的うつ病の中核症状である。",
+        "context": "心理学"
+      },
+      {
+        "en": "He experienced profound anhedonia, finding no joy in activities he once loved.",
+        "ja": "彼は深い無快感症を経験し、かつて愛した活動に喜びを見出せなかった。",
+        "context": "日常"
+      },
+      {
+        "en": "Treatment for anhedonia often involves a combination of therapy and medication.",
+        "ja": "無快感症の治療はしばしば療法と薬物の組み合わせを含む。",
+        "context": "医療"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50629,
+    "word": "moat",
+    "meaning": "堀、（ビジネスで）参入障壁、競合他社を寄せ付けない持続的な競争優位性",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Strong brand recognition serves as an economic moat.",
+        "ja": "強いブランド認知度は経済的な堀として機能する。",
+        "context": "経営"
+      },
+      {
+        "en": "Warren Buffett looks for companies with wide competitive moats.",
+        "ja": "ウォーレン・バフェットは広い競争的な堀を持つ企業を探す。",
+        "context": "投資"
+      },
+      {
+        "en": "Network effects create a powerful moat for platform businesses.",
+        "ja": "ネットワーク効果はプラットフォームビジネスに強力な堀を作る。",
+        "context": "テクノロジー"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50630,
+    "word": "leverageable",
+    "meaning": "てこ入れ可能な、活用して拡大できる、レバレッジをかけられる",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Our existing customer base is highly leverageable for cross-selling.",
+        "ja": "既存の顧客基盤はクロスセリングに対して非常にてこ入れ可能である。",
+        "context": "マーケティング"
+      },
+      {
+        "en": "The technology platform is leverageable across multiple verticals.",
+        "ja": "その技術プラットフォームは複数の業界セグメントにわたってレバレッジ可能である。",
+        "context": "テクノロジー"
+      },
+      {
+        "en": "Brand equity is one of the most leverageable assets a company owns.",
+        "ja": "ブランドエクイティは企業が所有する最もレバレッジ可能な資産の一つである。",
+        "context": "経営"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50631,
+    "word": "accretive",
+    "meaning": "付加価値を生む、企業価値を増加させる、一株当たり利益を押し上げる",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The acquisition is expected to be accretive to earnings within two years.",
+        "ja": "その買収は2年以内に利益に付加価値を生むと予想される。",
+        "context": "M&A"
+      },
+      {
+        "en": "Only accretive investments will be considered by the board.",
+        "ja": "取締役会は付加価値を生む投資のみを検討する。",
+        "context": "投資"
+      },
+      {
+        "en": "The deal was immediately accretive to shareholder value.",
+        "ja": "その取引は即座に株主価値を増加させた。",
+        "context": "金融"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50632,
+    "word": "bucolic",
+    "meaning": "田園的な、牧歌的な、のどかな田舎の風景を特徴とする",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The bucolic countryside was a welcome change from city life.",
+        "ja": "牧歌的な田舎は都会生活からの歓迎すべき変化だった。",
+        "context": "旅行"
+      },
+      {
+        "en": "They stayed at a bucolic farmhouse surrounded by rolling hills.",
+        "ja": "彼らはなだらかな丘に囲まれた牧歌的な農家に滞在した。",
+        "context": "旅行"
+      },
+      {
+        "en": "The painting depicts a bucolic scene of shepherds and meadows.",
+        "ja": "その絵は羊飼いと牧草地の田園的な場面を描いている。",
+        "context": "美術"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50633,
+    "word": "insular",
+    "meaning": "島国的な、閉鎖的な、外部の影響を受けない孤立した",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The insular community had little contact with the outside world.",
+        "ja": "その閉鎖的なコミュニティは外の世界との接触がほとんどなかった。",
+        "context": "旅行"
+      },
+      {
+        "en": "Travel helps overcome insular thinking and broadens perspectives.",
+        "ja": "旅行は閉鎖的な考え方を克服し、視野を広げるのに役立つ。",
+        "context": "文化"
+      },
+      {
+        "en": "The island's insular geography preserved its unique traditions.",
+        "ja": "その島の島国的な地理が独自の伝統を保存した。",
+        "context": "地理"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50634,
+    "word": "wayfaring",
+    "meaning": "旅をする、長い旅路を歩む、放浪の旅に関する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The wayfaring pilgrim had walked for forty days.",
+        "ja": "旅するその巡礼者は40日間歩き続けていた。",
+        "context": "巡礼"
+      },
+      {
+        "en": "Medieval wayfaring merchants brought exotic goods to European markets.",
+        "ja": "中世の旅する商人がヨーロッパの市場に異国の商品をもたらした。",
+        "context": "歴史"
+      },
+      {
+        "en": "The inn offered shelter to weary wayfaring travelers.",
+        "ja": "その宿屋は疲れた旅人に避難所を提供した。",
+        "context": "旅行"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50635,
+    "word": "trephine",
+    "meaning": "穿頭器で穿孔する、円形の穿頭器を使って骨に孔を開ける外科的処置",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The surgeon trephined the skull to relieve intracranial pressure.",
+        "ja": "外科医は頭蓋内圧を緩和するために頭蓋骨を穿頭器で穿孔した。",
+        "context": "手術"
+      },
+      {
+        "en": "Trephining has been practiced since prehistoric times.",
+        "ja": "穿頭術は先史時代から行われてきた。",
+        "context": "歴史"
+      },
+      {
+        "en": "The bone was trephined to allow drainage of the abscess.",
+        "ja": "膿瘍の排膿のために骨が穿孔された。",
+        "context": "医療"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50636,
+    "word": "iatrogenic",
+    "meaning": "医原性の、医療処置によって引き起こされた",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Iatrogenic infections are a major concern in hospital settings.",
+        "ja": "医原性感染症は病院環境での大きな懸念である。",
+        "context": "医療"
+      },
+      {
+        "en": "The adverse reaction was determined to be iatrogenic in origin.",
+        "ja": "その有害反応は医原性であると判定された。",
+        "context": "診断"
+      },
+      {
+        "en": "Reducing iatrogenic harm requires better training and protocols.",
+        "ja": "医原性の害を減らすにはより良い訓練とプロトコルが必要である。",
+        "context": "政策"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50637,
+    "word": "disburse",
+    "meaning": "支出する、資金を公式に支払う、配分する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The foundation disbursed grants to twenty research institutions.",
+        "ja": "財団は20の研究機関に助成金を支出した。",
+        "context": "助成"
+      },
+      {
+        "en": "Funds will be disbursed upon completion of each project phase.",
+        "ja": "資金はプロジェクトの各フェーズ完了時に支出される。",
+        "context": "契約"
+      },
+      {
+        "en": "The insurance company promptly disbursed the claim settlement.",
+        "ja": "保険会社は速やかに保険金を支払った。",
+        "context": "保険"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50638,
+    "word": "deserialize",
+    "meaning": "デシリアライズする、シリアライズされたデータをオブジェクトに復元する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The application deserializes JSON payloads into domain objects.",
+        "ja": "アプリケーションはJSONペイロードをドメインオブジェクトにデシリアライズする。",
+        "context": "開発"
+      },
+      {
+        "en": "Deserializing untrusted data can introduce security vulnerabilities.",
+        "ja": "信頼されないデータのデシリアライズはセキュリティの脆弱性を導入する可能性がある。",
+        "context": "セキュリティ"
+      },
+      {
+        "en": "The cache layer deserializes stored values on read requests.",
+        "ja": "キャッシュ層は読み取りリクエスト時に格納された値をデシリアライズする。",
+        "context": "バックエンド"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50639,
+    "word": "orchestrator",
+    "meaning": "オーケストレーター、複数のサービスやコンテナを統合管理する仕組み",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Kubernetes is the most popular container orchestrator in production.",
+        "ja": "Kubernetesは本番環境で最も人気のあるコンテナオーケストレーターである。",
+        "context": "インフラ"
+      },
+      {
+        "en": "The orchestrator schedules workloads across available nodes.",
+        "ja": "オーケストレーターは利用可能なノード間でワークロードをスケジュールする。",
+        "context": "クラウド"
+      },
+      {
+        "en": "A workflow orchestrator coordinates the execution of microservices.",
+        "ja": "ワークフローオーケストレーターはマイクロサービスの実行を調整する。",
+        "context": "アーキテクチャ"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50640,
+    "word": "monolithic",
+    "meaning": "モノリシックな、単一の巨大なコードベースとして構築された",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The monolithic application became difficult to scale and maintain.",
+        "ja": "モノリシックなアプリケーションはスケールと保守が困難になった。",
+        "context": "開発"
+      },
+      {
+        "en": "Migrating from monolithic to microservices architecture took two years.",
+        "ja": "モノリシックからマイクロサービスアーキテクチャへの移行に2年かかった。",
+        "context": "IT"
+      },
+      {
+        "en": "Monolithic deployments require redeploying the entire application for any change.",
+        "ja": "モノリシックなデプロイメントではいかなる変更でもアプリケーション全体の再デプロイが必要である。",
+        "context": "DevOps"
+      }
+    ],
+    "categories": [
+      "technology"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50641,
+    "word": "accrete",
+    "meaning": "付着して成長する、物質が徐々に堆積して大きくなる",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The planet accreted from dust and gas over millions of years.",
+        "ja": "その惑星は何百万年もかけて塵とガスが付着して成長した。",
+        "context": "天文学"
+      },
+      {
+        "en": "Coral reefs accrete slowly, building up layers of calcium carbonate.",
+        "ja": "サンゴ礁はゆっくりと付着成長し、炭酸カルシウムの層を積み上げる。",
+        "context": "海洋"
+      },
+      {
+        "en": "Sediment accreted along the riverbank during the flood season.",
+        "ja": "洪水シーズン中に川岸に沿って堆積物が付着成長した。",
+        "context": "地質学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50642,
+    "word": "invigilate",
+    "meaning": "試験監督する、試験中に不正がないか監視する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Three teachers invigilated the final examination.",
+        "ja": "3人の教師が最終試験を監督した。",
+        "context": "学校"
+      },
+      {
+        "en": "The graduate assistants were trained to invigilate exams properly.",
+        "ja": "大学院助手は試験を適切に監督するよう訓練された。",
+        "context": "大学"
+      },
+      {
+        "en": "Online proctoring software invigilates remote examinations.",
+        "ja": "オンライン監督ソフトウェアがリモート試験を監督する。",
+        "context": "教育技術"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50643,
+    "word": "extramural",
+    "meaning": "学外の、大学の正規課程以外の、壁の外の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The university offers extramural courses for working professionals.",
+        "ja": "大学は社会人向けに学外課程を提供している。",
+        "context": "教育"
+      },
+      {
+        "en": "Extramural research collaborations bring diverse perspectives.",
+        "ja": "学外の研究協力は多様な視点をもたらす。",
+        "context": "学術"
+      },
+      {
+        "en": "Students can earn credits through extramural study programs.",
+        "ja": "学生は学外学習プログラムを通じて単位を取得できる。",
+        "context": "大学"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50644,
+    "word": "absquatulate",
+    "meaning": "こっそり逃げ出す、急いでその場を立ち去る",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "He absquatulated from the party before anyone noticed.",
+        "ja": "彼は誰にも気づかれる前にパーティーからこっそり逃げ出した。",
+        "context": "日常"
+      },
+      {
+        "en": "The cat absquatulated the moment the veterinarian appeared.",
+        "ja": "猫は獣医が現れた瞬間にこっそり逃げ出した。",
+        "context": "日常"
+      },
+      {
+        "en": "She absquatulated from the boring meeting during the coffee break.",
+        "ja": "彼女はコーヒーブレイク中に退屈な会議からこっそり抜け出した。",
+        "context": "仕事"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50645,
+    "word": "cogitate",
+    "meaning": "熟考する、じっくりと深く考える",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "She cogitated on the problem for days before finding a solution.",
+        "ja": "彼女は解決策を見つけるまで何日もその問題について熟考した。",
+        "context": "日常"
+      },
+      {
+        "en": "He sat in his armchair, cogitating about the meaning of life.",
+        "ja": "彼は肘掛け椅子に座り、人生の意味について熟考した。",
+        "context": "日常"
+      },
+      {
+        "en": "The committee cogitated over the proposal for several weeks.",
+        "ja": "委員会は提案について数週間にわたって熟考した。",
+        "context": "仕事"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50646,
+    "word": "imbroglio",
+    "meaning": "紛糾、混乱した困難な状況、もつれた問題",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The scheduling imbroglio left everyone confused about the meeting time.",
+        "ja": "スケジュールの紛糾で全員が会議時間について混乱した。",
+        "context": "仕事"
+      },
+      {
+        "en": "The political imbroglio dominated headlines for weeks.",
+        "ja": "政治的な紛糾が何週間もヘッドラインを独占した。",
+        "context": "社会"
+      },
+      {
+        "en": "We found ourselves in an imbroglio of conflicting obligations.",
+        "ja": "私たちは矛盾する義務の紛糾の中にいることに気づいた。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50647,
+    "word": "rigmarole",
+    "meaning": "面倒な手続き、煩雑で無意味に複雑な過程",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The visa application involved an incredible rigmarole of paperwork.",
+        "ja": "ビザ申請は信じられないほど煩雑な書類手続きを伴った。",
+        "context": "旅行"
+      },
+      {
+        "en": "We had to go through the whole rigmarole of returning the defective product.",
+        "ja": "不良品を返品するための面倒な手続き全体を経なければならなかった。",
+        "context": "日常"
+      },
+      {
+        "en": "Why is there so much rigmarole involved in opening a simple bank account?",
+        "ja": "単純な銀行口座を開設するのになぜこれほど面倒な手続きがあるのか？",
+        "context": "金融"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50648,
+    "word": "parlance",
+    "meaning": "用語、言い回し、特定の分野や集団に特有の言葉遣い",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "In legal parlance, this is known as \"force majeure.\"",
+        "ja": "法律用語では、これは「不可抗力」として知られている。",
+        "context": "法律"
+      },
+      {
+        "en": "In common parlance, the disease is called the flu.",
+        "ja": "日常の言い回しでは、その病気はインフルエンザと呼ばれている。",
+        "context": "日常"
+      },
+      {
+        "en": "Silicon Valley parlance is full of terms like \"pivot\" and \"disrupt.\"",
+        "ja": "シリコンバレーの用語は「ピボット」や「ディスラプト」のような言葉に満ちている。",
+        "context": "ビジネス"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50649,
+    "word": "locution",
+    "meaning": "言い回し、語法、特定の表現形式や言葉の使い方",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "That locution is peculiar to the American South.",
+        "ja": "その言い回しはアメリカ南部特有のものである。",
+        "context": "言語学"
+      },
+      {
+        "en": "Legal locutions can be baffling to the uninitiated.",
+        "ja": "法律の語法は素人にとって当惑させるものでありうる。",
+        "context": "法律"
+      },
+      {
+        "en": "The author's unusual locutions give the text its distinctive voice.",
+        "ja": "著者の独特な言い回しがテキストに特徴的な声を与えている。",
+        "context": "文学"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50650,
+    "word": "periphrasis",
+    "meaning": "迂言法、直接的な表現を避けてより多くの言葉で婉曲に述べること",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "\"The place where I lay my head at night\" is a periphrasis for \"home.\"",
+        "ja": "「夜に頭を横たえる場所」は「家」の迂言法である。",
+        "context": "言語"
+      },
+      {
+        "en": "Bureaucratic writing is notorious for its excessive periphrasis.",
+        "ja": "官僚的な文章は過度の迂言法で悪名高い。",
+        "context": "行政"
+      },
+      {
+        "en": "Use direct language instead of periphrasis in your essays.",
+        "ja": "エッセイでは迂言法の代わりに直接的な言語を使いなさい。",
+        "context": "教育"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50651,
+    "word": "apodictic",
+    "meaning": "疑いの余地がない、論証的に確実な、絶対的に真実な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Mathematical proofs provide apodictic certainty.",
+        "ja": "数学的証明は論証的に確実な確信を提供する。",
+        "context": "数学"
+      },
+      {
+        "en": "Few claims in politics are truly apodictic.",
+        "ja": "政治における主張で本当に疑いの余地がないものはほとんどない。",
+        "context": "政治"
+      },
+      {
+        "en": "The scientist sought apodictic evidence to support the hypothesis.",
+        "ja": "科学者は仮説を支持する確実な証拠を求めた。",
+        "context": "研究"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50652,
+    "word": "spar",
+    "meaning": "スパーリングする、練習で格闘する、言葉で軽く争う",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The boxers sparred for three rounds in preparation for the fight.",
+        "ja": "ボクサーたちは試合に備えて3ラウンドスパーリングした。",
+        "context": "ボクシング"
+      },
+      {
+        "en": "The debaters sparred over economic policy for twenty minutes.",
+        "ja": "討論者たちは経済政策について20分間言葉で争った。",
+        "context": "比喩"
+      },
+      {
+        "en": "Sparring with experienced partners accelerates skill development.",
+        "ja": "経験豊富なパートナーとのスパーリングは技術の発達を加速する。",
+        "context": "格闘技"
+      }
+    ],
+    "categories": [
+      "sports"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50653,
+    "word": "frisson",
+    "meaning": "身震い、ぞくっとする興奮、背筋を走るスリルや感動の震え",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "A frisson of excitement ran through the audience as the curtain rose.",
+        "ja": "幕が上がると興奮の身震いが観客を駆け抜けた。",
+        "context": "演劇"
+      },
+      {
+        "en": "She felt a frisson of fear when she heard footsteps behind her.",
+        "ja": "背後に足音を聞いたとき彼女は恐怖の身震いを感じた。",
+        "context": "日常"
+      },
+      {
+        "en": "The thriller provides a delicious frisson on every page.",
+        "ja": "そのスリラーは各ページでぞくぞくする興奮を提供する。",
+        "context": "文学"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50654,
+    "word": "synergy",
+    "meaning": "相乗効果、複数の要素が結合して個別の合計以上の効果を生むこと",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The merger created synergies that reduced operating costs by 30 percent.",
+        "ja": "合併により運営コストを30パーセント削減する相乗効果が生まれた。",
+        "context": "M&A"
+      },
+      {
+        "en": "Cross-departmental synergy is essential for innovation.",
+        "ja": "部門横断的な相乗効果はイノベーションに不可欠である。",
+        "context": "組織"
+      },
+      {
+        "en": "The synergy between marketing and product teams drove rapid growth.",
+        "ja": "マーケティングチームと製品チームの相乗効果が急速な成長を推進した。",
+        "context": "経営"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50655,
+    "word": "commoditized",
+    "meaning": "コモディティ化した、差別化が困難になり価格だけで競争する状態の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Cloud storage has become a commoditized service with razor-thin margins.",
+        "ja": "クラウドストレージは非常に薄い利益率のコモディティ化したサービスになった。",
+        "context": "IT"
+      },
+      {
+        "en": "In a commoditized market, branding becomes a key differentiator.",
+        "ja": "コモディティ化した市場では、ブランディングが重要な差別化要因になる。",
+        "context": "マーケティング"
+      },
+      {
+        "en": "Companies must innovate to avoid their products becoming commoditized.",
+        "ja": "企業は製品がコモディティ化するのを避けるためにイノベーションしなければならない。",
+        "context": "経営"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50656,
+    "word": "caravanserai",
+    "meaning": "隊商宿、シルクロード沿いの旅人が休息するための宿泊施設",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Ancient caravanserais dotted the Silk Road, providing shelter for traders.",
+        "ja": "古代の隊商宿がシルクロードに点在し、商人に避難所を提供していた。",
+        "context": "歴史"
+      },
+      {
+        "en": "The restored caravanserai now serves as a boutique hotel.",
+        "ja": "修復された隊商宿は現在ブティックホテルとして機能している。",
+        "context": "旅行"
+      },
+      {
+        "en": "Each caravanserai was a day's journey apart.",
+        "ja": "各隊商宿は1日の旅程の間隔で配置されていた。",
+        "context": "地理"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50657,
+    "word": "entourage",
+    "meaning": "随行員、要人に付き従う一団、取り巻き",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The celebrity arrived with a large entourage of assistants.",
+        "ja": "その有名人は大勢の助手の随行員を連れて到着した。",
+        "context": "日常"
+      },
+      {
+        "en": "The diplomat's entourage included security personnel and translators.",
+        "ja": "外交官の随行員にはセキュリティ要員と通訳者が含まれていた。",
+        "context": "外交"
+      },
+      {
+        "en": "Traveling with such a large entourage requires careful planning.",
+        "ja": "これほど大勢の随行員と旅行するには慎重な計画が必要である。",
+        "context": "旅行"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50658,
+    "word": "fisc",
+    "meaning": "国庫、国家の財政機関",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Revenue from the new tax will flow directly to the fisc.",
+        "ja": "新税からの歳入は直接国庫に入る。",
+        "context": "財政"
+      },
+      {
+        "en": "The fisc was depleted by years of military spending.",
+        "ja": "国庫は長年の軍事支出によって枯渇した。",
+        "context": "政治"
+      },
+      {
+        "en": "Protecting the fisc from fraud is a primary duty of the auditor general.",
+        "ja": "国庫を詐欺から守ることは会計検査院長の主要な義務である。",
+        "context": "行政"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50659,
+    "word": "glossolalia",
+    "meaning": "異言、恍惚状態での意味不明な発話、舌語り",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Glossolalia occurs in many Pentecostal worship services.",
+        "ja": "異言は多くのペンテコステ派の礼拝で起こる。",
+        "context": "宗教"
+      },
+      {
+        "en": "Linguists study glossolalia as a form of non-linguistic vocalization.",
+        "ja": "言語学者は異言を非言語的発声の一形態として研究する。",
+        "context": "言語学"
+      },
+      {
+        "en": "The phenomenon of glossolalia has been documented across cultures.",
+        "ja": "異言の現象は文化を超えて記録されてきた。",
+        "context": "人類学"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50660,
+    "word": "besot",
+    "meaning": "心を奪う、夢中にさせる、判断力を失わせるほど酔わせる",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "He was completely besotted with the idea of becoming famous.",
+        "ja": "彼は有名になるという考えに完全に心を奪われていた。",
+        "context": "日常"
+      },
+      {
+        "en": "The teenager was besotted with her new classmate.",
+        "ja": "ティーンエイジャーは新しいクラスメートに夢中だった。",
+        "context": "日常"
+      },
+      {
+        "en": "Power can besot those who wield it.",
+        "ja": "権力はそれを行使する者の判断力を失わせうる。",
+        "context": "社会"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50661,
+    "word": "disconsolate",
+    "meaning": "慰めがたい、失望して暗い気持ちの、深く落ち込んだ",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The disconsolate child cried for hours after losing her toy.",
+        "ja": "慰めがたい子供はおもちゃを失って何時間も泣いた。",
+        "context": "日常"
+      },
+      {
+        "en": "He sat disconsolate on the bench after the team's defeat.",
+        "ja": "彼はチームの敗北後、落ち込んでベンチに座っていた。",
+        "context": "スポーツ"
+      },
+      {
+        "en": "The disconsolate widow could not be comforted.",
+        "ja": "慰めがたい未亡人は慰められなかった。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50662,
+    "word": "rusticate",
+    "meaning": "退学処分にする、一時的に大学から追放する（英国用法）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "He was rusticated for a term after violating university regulations.",
+        "ja": "彼は大学の規則に違反したため一学期間退学処分にされた。",
+        "context": "大学"
+      },
+      {
+        "en": "Students caught cheating face being rusticated.",
+        "ja": "不正行為が見つかった学生は退学処分のリスクに直面する。",
+        "context": "教育"
+      },
+      {
+        "en": "The tradition of rusticating troublesome students dates back centuries.",
+        "ja": "問題のある学生を退学処分にする伝統は何世紀も遡る。",
+        "context": "歴史"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50663,
+    "word": "karst",
+    "meaning": "カルスト地形の、石灰岩の溶解によって形成された独特の地形の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Karst landscapes feature sinkholes, caves, and underground rivers.",
+        "ja": "カルスト地形は陥没穴、洞窟、地下河川を特徴とする。",
+        "context": "地質学"
+      },
+      {
+        "en": "The karst terrain makes road construction extremely challenging.",
+        "ja": "カルスト地形は道路建設を非常に困難にする。",
+        "context": "建築"
+      },
+      {
+        "en": "Karst aquifers are vulnerable to contamination from surface pollution.",
+        "ja": "カルスト帯水層は地表汚染からの汚染に対して脆弱である。",
+        "context": "環境"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50664,
+    "word": "bijou",
+    "meaning": "小粒で精巧な、こぢんまりとして美しい、宝石のように精緻な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The bijou gallery displayed miniature paintings by local artists.",
+        "ja": "そのこぢんまりとした画廊は地元アーティストのミニチュア絵画を展示していた。",
+        "context": "美術"
+      },
+      {
+        "en": "They converted the cottage into a bijou holiday retreat.",
+        "ja": "彼らはコテージをこぢんまりとした休暇用の隠れ家に改装した。",
+        "context": "日常"
+      },
+      {
+        "en": "The bijou theater seats only forty people.",
+        "ja": "その小粒で美しい劇場はわずか40人しか座れない。",
+        "context": "演劇"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50665,
+    "word": "organoleptic",
+    "meaning": "官能検査の、人間の感覚器官で評価する方法の、味・香り・質感を感覚的に判断する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Organoleptic evaluation is essential in wine quality assessment.",
+        "ja": "官能検査はワインの品質評価に不可欠である。",
+        "context": "ワイン"
+      },
+      {
+        "en": "The organoleptic properties of the cheese develop during aging.",
+        "ja": "チーズの官能特性は熟成中に発達する。",
+        "context": "食品科学"
+      },
+      {
+        "en": "Trained panels conduct organoleptic tests to evaluate new products.",
+        "ja": "訓練されたパネルが新製品を評価するために官能検査を実施する。",
+        "context": "食品"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50666,
+    "word": "chiaroscuro",
+    "meaning": "明暗法、絵画における光と影の劇的な対比表現",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Caravaggio was a master of chiaroscuro technique.",
+        "ja": "カラヴァッジョは明暗法の達人だった。",
+        "context": "美術"
+      },
+      {
+        "en": "The film's cinematography uses chiaroscuro to create mood.",
+        "ja": "その映画の撮影は雰囲気を作り出すために明暗法を使用する。",
+        "context": "映画"
+      },
+      {
+        "en": "Chiaroscuro gives the portrait a dramatic three-dimensional quality.",
+        "ja": "明暗法が肖像画に劇的な立体感を与えている。",
+        "context": "美術"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50667,
+    "word": "gallivant",
+    "meaning": "遊び歩く、楽しみを求めてあちこち出歩く",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "She spent her twenties gallivanting around Europe.",
+        "ja": "彼女は20代をヨーロッパ中を遊び歩いて過ごした。",
+        "context": "旅行"
+      },
+      {
+        "en": "He gallivanted from one island to another during the summer.",
+        "ja": "彼は夏の間、島から島へと遊び歩いた。",
+        "context": "旅行"
+      },
+      {
+        "en": "Stop gallivanting and come home; dinner is ready.",
+        "ja": "遊び歩くのをやめて帰ってきなさい。夕食ができている。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50668,
+    "word": "borborygmus",
+    "meaning": "腹鳴、胃腸の蠕動運動によって生じるゴロゴロという音",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "An embarrassing borborygmus interrupted the quiet meeting.",
+        "ja": "恥ずかしい腹鳴が静かな会議を中断した。",
+        "context": "日常"
+      },
+      {
+        "en": "Borborygmus is a perfectly normal sign of digestion.",
+        "ja": "腹鳴は消化の完全に正常な徴候である。",
+        "context": "医療"
+      },
+      {
+        "en": "The loud borborygmus echoed through the silent examination room.",
+        "ja": "大きな腹鳴が静かな検査室に響き渡った。",
+        "context": "病院"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50669,
+    "word": "spatchcock",
+    "meaning": "鶏の背骨を取り除いて平たく開いて焼く調理法",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Spatchcocking the chicken reduces roasting time by nearly half.",
+        "ja": "鶏をスパッチコックにすると焼き時間がほぼ半分に短縮される。",
+        "context": "料理"
+      },
+      {
+        "en": "The chef spatchcocked the turkey for a crispy, evenly cooked result.",
+        "ja": "シェフはパリパリで均等に焼けた仕上がりのために七面鳥をスパッチコックにした。",
+        "context": "レストラン"
+      },
+      {
+        "en": "Spatchcocked birds grill beautifully over high heat.",
+        "ja": "スパッチコックにした鳥は強火でグリルすると美しく焼ける。",
+        "context": "BBQ"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50670,
+    "word": "oleograph",
+    "meaning": "油彩複製画、油絵に似せて制作された石版印刷の複製",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Victorian parlors were decorated with colorful oleographs.",
+        "ja": "ヴィクトリア朝の応接間はカラフルな油彩複製画で装飾されていた。",
+        "context": "美術史"
+      },
+      {
+        "en": "The oleograph captured the vivid colors of the original oil painting.",
+        "ja": "油彩複製画は原画の鮮やかな色彩を捉えていた。",
+        "context": "印刷"
+      },
+      {
+        "en": "Collecting antique oleographs has become a niche hobby.",
+        "ja": "アンティークの油彩複製画の収集はニッチな趣味になっている。",
+        "context": "コレクション"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50671,
+    "word": "proleptic",
+    "meaning": "先取りの、未来の出来事をあたかも既に起こったかのように述べる修辞法の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The proleptic use of the title foreshadows the character's eventual rise.",
+        "ja": "称号の先取り的使用は登場人物の最終的な台頭を予示する。",
+        "context": "文学"
+      },
+      {
+        "en": "Proleptic narration creates dramatic irony by revealing future events.",
+        "ja": "先取り的叙述は未来の出来事を明かすことで劇的アイロニーを作り出す。",
+        "context": "文学"
+      },
+      {
+        "en": "The artist's proleptic vision anticipated movements decades ahead.",
+        "ja": "その芸術家の先取り的ビジョンは数十年先の運動を先取りした。",
+        "context": "芸術"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50672,
+    "word": "pluviometer",
+    "meaning": "雨量計、降水量を測定する計器",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The weather station recorded over 200mm on the pluviometer.",
+        "ja": "気象観測所は雨量計で200mm以上を記録した。",
+        "context": "気象学"
+      },
+      {
+        "en": "A network of pluviometers monitors rainfall across the watershed.",
+        "ja": "雨量計のネットワークが流域全体の降雨量を監視する。",
+        "context": "水文学"
+      },
+      {
+        "en": "The antique brass pluviometer was still accurate after a century.",
+        "ja": "アンティークの真鍮の雨量計は1世紀後も正確だった。",
+        "context": "科学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50673,
+    "word": "incunabulum",
+    "meaning": "揺籃期の印刷本、1501年以前にヨーロッパで活版印刷された書物",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The library owns a rare incunabulum printed by Gutenberg.",
+        "ja": "その図書館はグーテンベルクが印刷した希少な揺籃期本を所有している。",
+        "context": "書誌学"
+      },
+      {
+        "en": "Only about 30,000 incunabula are known to survive.",
+        "ja": "約30,000冊の揺籃期印刷本が現存すると知られている。",
+        "context": "歴史"
+      },
+      {
+        "en": "The incunabulum was displayed in a climate-controlled case.",
+        "ja": "揺籃期本は温湿度管理されたケースに展示された。",
+        "context": "博物館"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50674,
+    "word": "sphygmomanometer",
+    "meaning": "血圧計、動脈の血圧を測定する医療機器",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The nurse wrapped the sphygmomanometer cuff around the patient's arm.",
+        "ja": "看護師は血圧計のカフを患者の腕に巻いた。",
+        "context": "医療"
+      },
+      {
+        "en": "Digital sphygmomanometers have largely replaced mercury models.",
+        "ja": "デジタル血圧計は水銀型をほぼ置き換えた。",
+        "context": "医療機器"
+      },
+      {
+        "en": "Regular use of a sphygmomanometer helps monitor hypertension.",
+        "ja": "血圧計の定期的な使用は高血圧の監視に役立つ。",
+        "context": "健康管理"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50675,
+    "word": "abstemiously",
+    "meaning": "節制して、飲食を控えめにして、禁欲的に",
+    "partOfSpeech": "adverb",
+    "examples": [
+      {
+        "en": "He lived abstemiously, rarely indulging in luxuries.",
+        "ja": "彼は節制して暮らし、めったに贅沢にふけらなかった。",
+        "context": "日常"
+      },
+      {
+        "en": "She ate abstemiously in preparation for the medical tests.",
+        "ja": "彼女は医学的検査に備えて飲食を控えめにした。",
+        "context": "健康"
+      },
+      {
+        "en": "The monk lived abstemiously, owning almost nothing.",
+        "ja": "修道士は禁欲的に暮らし、ほとんど何も所有しなかった。",
+        "context": "宗教"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50676,
+    "word": "deliquesce",
+    "meaning": "潮解する、空気中の水分を吸収して液化する、溶け出す",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Certain salts deliquesce when exposed to humid air.",
+        "ja": "特定の塩は湿った空気にさらされると潮解する。",
+        "context": "化学"
+      },
+      {
+        "en": "The sugar cube began to deliquesce in the damp kitchen.",
+        "ja": "砂糖の塊が湿った台所で潮解し始めた。",
+        "context": "日常"
+      },
+      {
+        "en": "Mushrooms deliquesce as they age, turning into a dark liquid.",
+        "ja": "キノコは老化するにつれて潮解し、暗い液体に変わる。",
+        "context": "生物学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50677,
+    "word": "prandial",
+    "meaning": "食事の、食事に関する、食事の時間帯の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Post-prandial blood sugar levels are monitored in diabetic patients.",
+        "ja": "食後の血糖値は糖尿病患者で監視される。",
+        "context": "医療"
+      },
+      {
+        "en": "A pre-prandial walk can improve digestion.",
+        "ja": "食前の散歩は消化を改善できる。",
+        "context": "健康"
+      },
+      {
+        "en": "The prandial ritual of the family dinner is disappearing in modern life.",
+        "ja": "家族の夕食という食事の儀式は現代生活で消えつつある。",
+        "context": "社会"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50678,
+    "word": "apophatic",
+    "meaning": "否定神学的な、言葉で定義できないものを否定によって表現する方法の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Apophatic theology describes God by stating what God is not.",
+        "ja": "否定神学は神でないものを述べることで神を描写する。",
+        "context": "宗教"
+      },
+      {
+        "en": "The apophatic approach acknowledges the limits of human language.",
+        "ja": "否定的アプローチは人間の言語の限界を認める。",
+        "context": "哲学"
+      },
+      {
+        "en": "Mystical traditions often employ apophatic discourse.",
+        "ja": "神秘主義の伝統はしばしば否定的言説を用いる。",
+        "context": "文化"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50679,
+    "word": "plenary",
+    "meaning": "全体の、全員出席の、完全な権限を持つ",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The plenary session of the conference attracted all delegates.",
+        "ja": "会議の全体セッションはすべての代議員を集めた。",
+        "context": "学術"
+      },
+      {
+        "en": "Plenary powers were granted to the committee to resolve the dispute.",
+        "ja": "紛争を解決するための全権が委員会に付与された。",
+        "context": "政治"
+      },
+      {
+        "en": "The plenary lecture opened the three-day symposium.",
+        "ja": "全体講演が3日間のシンポジウムを開幕した。",
+        "context": "教育"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50680,
+    "word": "impecunious",
+    "meaning": "無一文の、金銭的に困窮した、貧乏な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The impecunious student survived on instant noodles for months.",
+        "ja": "無一文の学生は何ヶ月もインスタントラーメンで生き延びた。",
+        "context": "日常"
+      },
+      {
+        "en": "Despite being impecunious, he refused to accept charity.",
+        "ja": "無一文にもかかわらず、彼は慈善を受けることを拒んだ。",
+        "context": "日常"
+      },
+      {
+        "en": "Many impecunious artists only gained recognition after death.",
+        "ja": "多くの貧乏な芸術家は死後にのみ認知を得た。",
+        "context": "芸術"
+      }
+    ],
+    "categories": [
+      "finance"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50681,
+    "word": "tintinnabulation",
+    "meaning": "鈴の音、金属的な響きのある連続した音、チリンチリンという音",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The tintinnabulation of wind chimes filled the garden.",
+        "ja": "風鈴のチリンチリンという音が庭を満たした。",
+        "context": "日常"
+      },
+      {
+        "en": "Edgar Allan Poe celebrated the tintinnabulation of bells in his poem.",
+        "ja": "エドガー・アラン・ポーは詩の中で鈴の音を称えた。",
+        "context": "文学"
+      },
+      {
+        "en": "The tintinnabulation of the brass bells echoed through the temple.",
+        "ja": "真鍮の鈴の音が寺院に響き渡った。",
+        "context": "文化"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50682,
+    "word": "defenestrate",
+    "meaning": "窓から投げ出す、突然解任する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "In the famous Defenestration of Prague, officials were defenestrated.",
+        "ja": "有名なプラハ窓外投擲事件で、官吏たちが窓から投げ出された。",
+        "context": "歴史"
+      },
+      {
+        "en": "The board effectively defenestrated the CEO at the emergency meeting.",
+        "ja": "取締役会は緊急会議でCEOを事実上解任した。",
+        "context": "ビジネス"
+      },
+      {
+        "en": "She jokingly threatened to defenestrate his laptop if he kept ignoring her.",
+        "ja": "彼女は彼が無視し続けるならノートパソコンを窓から投げ出すと冗談めかして脅した。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50683,
+    "word": "pareidolia",
+    "meaning": "パレイドリア、ランダムなパターンの中に顔や意味のある形を見出す心理現象",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Pareidolia explains why people see faces in clouds.",
+        "ja": "パレイドリアは人々が雲の中に顔を見る理由を説明する。",
+        "context": "心理学"
+      },
+      {
+        "en": "The phenomenon of pareidolia is hardwired into human visual processing.",
+        "ja": "パレイドリアの現象は人間の視覚処理に組み込まれている。",
+        "context": "科学"
+      },
+      {
+        "en": "Artists sometimes exploit pareidolia to create ambiguous images.",
+        "ja": "アーティストはときにパレイドリアを利用して曖昧なイメージを作る。",
+        "context": "芸術"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50684,
+    "word": "synesthesia",
+    "meaning": "共感覚、ある感覚への刺激が別の感覚も同時に引き起こす神経学的現象",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "People with synesthesia may see colors when they hear music.",
+        "ja": "共感覚を持つ人は音楽を聞くと色が見えることがある。",
+        "context": "心理学"
+      },
+      {
+        "en": "The poet's use of synesthesia creates vivid sensory imagery.",
+        "ja": "詩人の共感覚の使用は鮮やかな感覚的イメージを作り出す。",
+        "context": "文学"
+      },
+      {
+        "en": "Research into synesthesia reveals surprising connections between senses.",
+        "ja": "共感覚の研究は感覚間の驚くべき接続を明らかにする。",
+        "context": "科学"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50685,
+    "word": "bathymetric",
+    "meaning": "水深測量の、海底や湖底の深さを測定・地図化する方法の",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Bathymetric surveys mapped the ocean floor in unprecedented detail.",
+        "ja": "水深測量調査が前例のない詳細さで海底を地図化した。",
+        "context": "海洋学"
+      },
+      {
+        "en": "The bathymetric chart revealed an underwater mountain range.",
+        "ja": "水深図は海底山脈を明らかにした。",
+        "context": "地質学"
+      },
+      {
+        "en": "Bathymetric data is essential for submarine navigation.",
+        "ja": "水深データは潜水艦の航行に不可欠である。",
+        "context": "軍事"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50686,
+    "word": "mycological",
+    "meaning": "菌類学の、キノコや真菌の研究に関する",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Mycological research has led to important pharmaceutical discoveries.",
+        "ja": "菌類学的研究は重要な薬学的発見につながってきた。",
+        "context": "科学"
+      },
+      {
+        "en": "The mycological society organizes annual foraging expeditions.",
+        "ja": "菌類学協会は年次採集遠征を組織している。",
+        "context": "自然"
+      },
+      {
+        "en": "Mycological identification requires careful examination of spore structure.",
+        "ja": "菌類学的同定には胞子構造の注意深い検査が必要である。",
+        "context": "生物学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50687,
+    "word": "hapax legomenon",
+    "meaning": "ハパックス・レゴメノン、ある文書やコーパス中に1回だけ出現する語",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The word is a hapax legomenon, appearing only once in the entire corpus.",
+        "ja": "その語はハパックス・レゴメノンであり、コーパス全体で1回しか出現しない。",
+        "context": "言語学"
+      },
+      {
+        "en": "Biblical scholars study hapax legomena to understand rare Hebrew terms.",
+        "ja": "聖書学者は稀なヘブライ語の用語を理解するためにハパックス・レゴメナを研究する。",
+        "context": "学術"
+      },
+      {
+        "en": "Translating a hapax legomenon requires extensive contextual analysis.",
+        "ja": "ハパックス・レゴメノンの翻訳には広範な文脈分析が必要である。",
+        "context": "翻訳"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50688,
+    "word": "alexithymic",
+    "meaning": "失感情症的な、自分の感情を認識・表現することが困難な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Alexithymic individuals struggle to describe their feelings.",
+        "ja": "失感情症的な人は自分の感情を描写するのに苦労する。",
+        "context": "心理学"
+      },
+      {
+        "en": "The character's alexithymic nature creates tension in relationships.",
+        "ja": "その登場人物の失感情症的な性質が関係に緊張を生む。",
+        "context": "文学"
+      },
+      {
+        "en": "Therapy can help alexithymic patients develop emotional awareness.",
+        "ja": "療法は失感情症的な患者が感情的認識を発達させるのを助けることができる。",
+        "context": "医療"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50689,
+    "word": "defeasible",
+    "meaning": "取消し可能な、条件付きで無効にできる、反証可能な",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "A defeasible contract can be voided if certain conditions are met.",
+        "ja": "取消し可能な契約は特定の条件が満たされれば無効にできる。",
+        "context": "法律"
+      },
+      {
+        "en": "Defeasible reasoning allows conclusions to be revised with new evidence.",
+        "ja": "取消し可能な推論は新しい証拠で結論を修正することを許す。",
+        "context": "論理学"
+      },
+      {
+        "en": "The agreement was defeasible upon breach of the terms.",
+        "ja": "その合意は条件違反時に取消し可能であった。",
+        "context": "契約"
+      }
+    ],
+    "categories": [
+      "business"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50690,
+    "word": "thalassotherapy",
+    "meaning": "海洋療法、海水・海藻・海泥などを利用した治療法やスパトリートメント",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Thalassotherapy resorts offer treatments using heated seawater.",
+        "ja": "海洋療法リゾートは加温した海水を使用した治療を提供する。",
+        "context": "健康"
+      },
+      {
+        "en": "French thalassotherapy centers attract visitors from across Europe.",
+        "ja": "フランスの海洋療法センターはヨーロッパ中から訪問者を引きつける。",
+        "context": "旅行"
+      },
+      {
+        "en": "The benefits of thalassotherapy for skin conditions are well documented.",
+        "ja": "皮膚疾患に対する海洋療法の利点は十分に文書化されている。",
+        "context": "医療"
+      }
+    ],
+    "categories": [
+      "health"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50691,
+    "word": "numismatics",
+    "meaning": "貨幣学、硬貨・紙幣・メダルの収集と研究",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Numismatics combines history, art, and economics.",
+        "ja": "貨幣学は歴史、芸術、経済学を組み合わせる。",
+        "context": "学術"
+      },
+      {
+        "en": "His passion for numismatics began with a collection of Roman coins.",
+        "ja": "彼の貨幣学への情熱はローマ硬貨のコレクションから始まった。",
+        "context": "趣味"
+      },
+      {
+        "en": "Advances in numismatics have helped date archaeological sites.",
+        "ja": "貨幣学の進歩は考古学的遺跡の年代測定に役立ってきた。",
+        "context": "考古学"
+      }
+    ],
+    "categories": [
+      "hobby"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50692,
+    "word": "lemniscate",
+    "meaning": "レムニスケート、8の字型の数学曲線、無限大記号の形状",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The lemniscate of Bernoulli resembles a figure-eight curve.",
+        "ja": "ベルヌーイのレムニスケートは8の字の曲線に似ている。",
+        "context": "数学"
+      },
+      {
+        "en": "The infinity symbol is based on the lemniscate.",
+        "ja": "無限大記号はレムニスケートに基づいている。",
+        "context": "数学"
+      },
+      {
+        "en": "Students explored the properties of the lemniscate in calculus class.",
+        "ja": "学生は微積分の授業でレムニスケートの性質を探求した。",
+        "context": "教育"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50693,
+    "word": "usquebaugh",
+    "meaning": "ウシュクベー、ゲール語に由来するウイスキーの古称",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The old Scottish tavern served usquebaugh to weary travelers.",
+        "ja": "古いスコットランドの酒場は疲れた旅人にウシュクベーを出した。",
+        "context": "歴史"
+      },
+      {
+        "en": "Usquebaugh literally means \"water of life\" in Gaelic.",
+        "ja": "ウシュクベーはゲール語で文字通り「命の水」を意味する。",
+        "context": "語源"
+      },
+      {
+        "en": "The earliest written reference to usquebaugh dates from the 15th century.",
+        "ja": "ウシュクベーへの最も古い文献上の言及は15世紀に遡る。",
+        "context": "食文化"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50694,
+    "word": "caduceus",
+    "meaning": "カドゥケウス、2匹の蛇が巻きついた翼のある杖、医療のシンボル",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The caduceus is often mistakenly used as a medical symbol.",
+        "ja": "カドゥケウスはしばしば誤って医療のシンボルとして使われる。",
+        "context": "文化"
+      },
+      {
+        "en": "The true medical symbol is the Rod of Asclepius, not the caduceus.",
+        "ja": "真の医療シンボルはアスクレピオスの杖であり、カドゥケウスではない。",
+        "context": "歴史"
+      },
+      {
+        "en": "Hermes carried a caduceus as a symbol of commerce and negotiation.",
+        "ja": "ヘルメスは商業と交渉のシンボルとしてカドゥケウスを持っていた。",
+        "context": "神話"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50695,
+    "word": "parapraxis",
+    "meaning": "錯誤行為、無意識の心理が表面化した言い間違いや行為の失敗（フロイト的失言）",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Calling your teacher \"Mom\" is a classic parapraxis.",
+        "ja": "先生を「お母さん」と呼ぶのは典型的な錯誤行為である。",
+        "context": "心理学"
+      },
+      {
+        "en": "Freud believed every parapraxis reveals an unconscious wish.",
+        "ja": "フロイトはすべての錯誤行為が無意識の願望を明らかにすると信じた。",
+        "context": "精神分析"
+      },
+      {
+        "en": "The politician's parapraxis during the speech went viral online.",
+        "ja": "政治家のスピーチ中の錯誤行為がオンラインでバイラルになった。",
+        "context": "メディア"
+      }
+    ],
+    "categories": [
+      "emotion"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50696,
+    "word": "vertiginous",
+    "meaning": "めまいがするような、目がくらむほどの、極度に高い",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "The vertiginous cliff path was not for the faint-hearted.",
+        "ja": "めまいがするような崖の道は気の弱い人向きではなかった。",
+        "context": "旅行"
+      },
+      {
+        "en": "Property prices rose at a vertiginous rate in the city center.",
+        "ja": "中心部の不動産価格はめまいがするような速度で上昇した。",
+        "context": "経済"
+      },
+      {
+        "en": "The vertiginous view from the observation deck stunned visitors.",
+        "ja": "展望台からの目がくらむような眺めが訪問者を驚かせた。",
+        "context": "旅行"
+      }
+    ],
+    "categories": [
+      "travel"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50697,
+    "word": "degust",
+    "meaning": "吟味して味わう、食品やワインを丁寧にテイスティングする",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The sommelier invited guests to degust five vintage wines.",
+        "ja": "ソムリエはゲストに5種のヴィンテージワインを吟味するよう招いた。",
+        "context": "ワイン"
+      },
+      {
+        "en": "Degusting requires slowing down and engaging all the senses.",
+        "ja": "吟味して味わうことにはペースを落としてすべての感覚を働かせることが必要である。",
+        "context": "食事"
+      },
+      {
+        "en": "The chef prepared a degustation menu of twelve small courses.",
+        "ja": "シェフは12の小さなコースからなる吟味メニューを用意した。",
+        "context": "レストラン"
+      }
+    ],
+    "categories": [
+      "food"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50698,
+    "word": "pretermit",
+    "meaning": "省略する、意図的に見過ごす、注意を払わずに通り過ぎる",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "The syllabus pretermits several important chapters on methodology.",
+        "ja": "シラバスは方法論に関するいくつかの重要な章を省略している。",
+        "context": "教育"
+      },
+      {
+        "en": "We cannot pretermit the ethical implications of this research.",
+        "ja": "この研究の倫理的含意を見過ごすことはできない。",
+        "context": "学術"
+      },
+      {
+        "en": "The committee pretermitted minor procedural irregularities.",
+        "ja": "委員会は些細な手続き上の不備を見過ごした。",
+        "context": "行政"
+      }
+    ],
+    "categories": [
+      "school"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50699,
+    "word": "flocculent",
+    "meaning": "綿毛状の、ふわふわした塊が浮遊する、羊毛のようにもこもこした",
+    "partOfSpeech": "adjective",
+    "examples": [
+      {
+        "en": "Flocculent clouds drifted slowly across the summer sky.",
+        "ja": "綿毛状の雲が夏の空をゆっくり漂った。",
+        "context": "自然"
+      },
+      {
+        "en": "The chemical reaction produced a flocculent precipitate.",
+        "ja": "化学反応により綿毛状の沈殿物が生成された。",
+        "context": "化学"
+      },
+      {
+        "en": "Flocculent sediment settled to the bottom of the test tube.",
+        "ja": "綿毛状の堆積物が試験管の底に沈んだ。",
+        "context": "科学"
+      }
+    ],
+    "categories": [
+      "nature"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
+  },
+  {
+    "id": 50700,
+    "word": "panopticon",
+    "meaning": "パノプティコン、中央から全房を監視できる環状監獄建築、全方位監視の比喩",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "Bentham designed the panopticon as an efficient prison layout.",
+        "ja": "ベンサムはパノプティコンを効率的な監獄の配置として設計した。",
+        "context": "哲学"
+      },
+      {
+        "en": "Foucault used the panopticon as a metaphor for modern surveillance.",
+        "ja": "フーコーはパノプティコンを現代の監視の比喩として用いた。",
+        "context": "社会学"
+      },
+      {
+        "en": "Social media has created a digital panopticon where privacy is eroded.",
+        "ja": "ソーシャルメディアはプライバシーが侵食されるデジタルパノプティコンを作り出した。",
+        "context": "テクノロジー"
+      }
+    ],
+    "categories": [
+      "culture"
+    ],
+    "frequencyTier": 3,
+    "courses": [
+      {
+        "course": "conversation",
+        "stage": "c2"
+      }
+    ]
   }
 ]
