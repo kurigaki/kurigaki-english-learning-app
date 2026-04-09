@@ -1,13 +1,18 @@
-import { juniorWords } from "./junior";
-import { seniorWords } from "./senior";
-import { toeicWords } from "./toeic";
-import { eikenWords } from "./eiken";
-import { conversationWords } from "./conversation";
+import { masterWords } from "./master";
+import { getWordsForCourse } from "./enrich";
 import type { Course, Stage } from "./types";
 
-export { juniorWords, seniorWords, toeicWords, eikenWords, conversationWords };
+// マスターリスト（13,311語、重複なし）
+export { masterWords };
 
-// 全コースの単語を統合
+// コース別ビュー（Word型 = MasterWord & コース固有情報）
+export const juniorWords = getWordsForCourse(masterWords, "junior");
+export const seniorWords = getWordsForCourse(masterWords, "senior");
+export const toeicWords = getWordsForCourse(masterWords, "toeic");
+export const eikenWords = getWordsForCourse(masterWords, "eiken");
+export const conversationWords = getWordsForCourse(masterWords, "conversation");
+
+// 後方互換（コース別ビューの合計、重複を含む）
 export const allWords = [
   ...juniorWords,
   ...seniorWords,

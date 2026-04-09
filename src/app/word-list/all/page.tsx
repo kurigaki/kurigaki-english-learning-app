@@ -5,7 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Course, Stage } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
-import { words, categoryLabels, Category, getWordsByCourse } from "@/data/words";
+import { masterWords, categoryLabels, Category, getWordsByCourse } from "@/data/words";
+import { DIFFICULTY_MAP } from "@/data/words/difficulty";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
 import { Card, SpeakButton } from "@/components/ui";
@@ -162,24 +163,33 @@ export default function WordListPage() {
       const books = vocabularyBooks.getMyVocabBooks();
       const bookmarkedSet = new Set(books.flatMap((b) => b.wordIds));
 
-      const enrichedWords: WordWithStats[] = words.map((word) => {
+      // masterWordsを使用（重複なし、14,085語）
+      // コース選択時はcourseWordIdsでフィルタするため、全語を対象にする
+      const enrichedWords: WordWithStats[] = masterWords.map((word) => {
         const stats = statsMap.get(word.id);
         const accuracy = stats?.accuracy ?? null;
         const attempts = stats?.totalAttempts ?? 0;
+        // difficultyはcoursesの最低値を使用（全コース表示用）
+        const minDifficulty = Math.min(
+          ...word.courses.map((c) => {
+            const key = `${c.course}:${c.stage}`;
+            return (DIFFICULTY_MAP as Record<string, number>)[key] ?? 7;
+          })
+        );
 
         return {
           id: word.id,
           word: word.word,
           meaning: word.meaning,
-          category: word.category,
-          categories: word.categories,
-          difficulty: word.difficulty,
+          category: word.categories[0],
+          categories: [...word.categories],
+          difficulty: minDifficulty,
           mastery: getMasteryLevel(accuracy, attempts),
           accuracy,
           attempts,
           isBookmarked: bookmarkedSet.has(word.id),
-          example: word.example,
-          exampleJa: word.exampleJa,
+          example: word.examples[0].en,
+          exampleJa: word.examples[0].ja,
           frequencyTier: word.frequencyTier,
         };
       });
