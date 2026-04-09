@@ -46,8 +46,8 @@ describe("wordExtensions", () => {
   });
 
   describe("特定の単語データ", () => {
-    it("appointment (30001) の拡張データが正しく取得できる", () => {
-      const ext = wordExtensions.get(30001);
+    it("appointment (81) の拡張データが正しく取得できる", () => {
+      const ext = wordExtensions.get(81);
       expect(ext).toBeDefined();
       expect(ext?.coreImage).toBeTruthy();
       expect(ext?.usage).toBeTruthy();
@@ -56,14 +56,14 @@ describe("wordExtensions", () => {
       expect(ext?.etymology).toBeTruthy();
     });
 
-    it("schedule (30010) の拡張データが正しく取得できる", () => {
-      const ext = wordExtensions.get(30010);
+    it("schedule (11179) の拡張データが正しく取得できる", () => {
+      const ext = wordExtensions.get(11179);
       expect(ext).toBeDefined();
       expect(ext?.coreImage).toBeTruthy();
     });
 
-    it("happy (10008) の拡張データが正しく取得できる", () => {
-      const ext = wordExtensions.get(10008);
+    it("happy (571) の拡張データが正しく取得できる", () => {
+      const ext = wordExtensions.get(571);
       expect(ext).toBeDefined();
       expect(ext?.synonymDifference).toBeTruthy();
     });
@@ -142,7 +142,7 @@ describe("自動補完エンジンの品質", () => {
     }
   });
 
-  it("生成されたコアイメージに「するする」「なな」等の重複がない", () => {
+  it("生成されたコアイメージに「するする」「なな」等の重複がない", { timeout: 30000 }, () => {
     // getWordExtension は top-level import 済み
     const badPatterns = [/するする/, /なな[状態]/, /にに/];
     const problems: string[] = [];

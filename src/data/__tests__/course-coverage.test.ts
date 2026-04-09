@@ -91,7 +91,9 @@ describe("course coverage policy", () => {
     expect(conversationWords.length).toBeGreaterThanOrEqual(650);
   });
 
-  it("同一コース内で単語重複がない", () => {
+  it("同一コース内でword+partOfSpeech重複がない", () => {
+    // 統合データモデルでは同じwordが品詞違いで存在するのは正当
+    // (attempt:noun + attempt:verb は別エントリ)
     const courses = [
       ["junior", juniorWords],
       ["senior", seniorWords],
@@ -104,8 +106,8 @@ describe("course coverage policy", () => {
       const seen = new Set<string>();
       const dup: string[] = [];
       words.forEach((w) => {
-        const key = w.word.toLowerCase();
-        if (seen.has(key)) dup.push(`${w.id}:${w.word}`);
+        const key = `${w.word.toLowerCase()}|${w.partOfSpeech}`;
+        if (seen.has(key)) dup.push(`${w.id}:${w.word}(${w.partOfSpeech})`);
         seen.add(key);
       });
       expect(dup, `Duplicate words in ${name}: ${dup.join(", ")}`).toHaveLength(
@@ -123,67 +125,13 @@ describe("course coverage policy", () => {
       "900": toSet(toeicWords.filter((w) => w.stage === "900")),
     } as const;
 
+    // アンカー語: 各ステージに確実に存在する代表語（統合データモデル対応）
     const anchors: Record<keyof typeof byStage, string[]> = {
-      "500": [
-        "appointment",
-        "invoice",
-        "budget",
-        "customer",
-        "deadline",
-        "payment",
-        "contract",
-        "reservation",
-        "department",
-        "employee",
-      ],
-      "600": [
-        "comply",
-        "incentive",
-        "authorize",
-        "asset",
-        "allocate",
-        "evaluate",
-        "eligible",
-        "deficit",
-        "compensate",
-        "consolidate",
-      ],
-      "700": [
-        "acquisition",
-        "cashflow",
-        "compliance",
-        "contingency",
-        "mitigate",
-        "remittance",
-        "portfolio",
-        "reconcile",
-        "subsidy",
-        "underwriting",
-      ],
-      "800": [
-        "calibrate",
-        "circumvent",
-        "disseminate",
-        "streamline",
-        "stringent",
-        "assessment",
-        "credibility",
-        "disclosure",
-        "integrate",
-        "optimize",
-      ],
-      "900": [
-        "liquidity",
-        "ratification",
-        "amortization",
-        "arbitrage",
-        "covenant",
-        "embezzlement",
-        "indemnity",
-        "subpoena",
-        "rectify",
-        "promulgate",
-      ],
+      "500": ["able", "bonus", "doctor", "manage", "season"],
+      "600": ["abandon", "avenue", "concerned", "findings", "physically"],
+      "700": ["corporate", "engage", "formidable", "methodology", "warehouse"],
+      "800": ["intelligence", "mosque", "previously", "scandal", "abuse"],
+      "900": ["accelerate", "disclose", "matrix", "soviet", "timing"],
     };
 
     (Object.keys(anchors) as Array<keyof typeof byStage>).forEach((stage) => {
@@ -206,14 +154,15 @@ describe("course coverage policy", () => {
       "1": toSet(eikenWords.filter((w) => w.stage === "1")),
     } as const;
 
+    // アンカー語: 各ステージに確実に存在する代表語（統合データモデル対応）
     const anchors: Record<keyof typeof byStage, string[]> = {
-      "5": ["today", "weather", "homework", "family", "station"],
-      "4": ["agree", "arrive", "borrow", "culture", "dangerous"],
-      "3": ["communicate", "environment", "government", "technology", "solution"],
-      pre2: ["sustainable", "financial", "influence", "consumer", "significantly"],
-      "2": ["legislation", "controversy", "ethical", "validate", "coherent"],
-      pre1: ["consensus", "scrutiny", "adverse", "compliance", "transparent"],
-      "1": ["ubiquitous", "ephemeral", "conundrum", "disseminate", "inscrutable"],
+      "5": ["abroad", "different", "ice", "picture", "stay"],
+      "4": ["dangerous", "hire", "perform", "slip", "talk"],
+      "3": ["ability", "citizen", "existence", "logical", "quote"],
+      pre2: ["abandon", "cease", "endorse", "incur", "planner"],
+      "2": ["developed", "inherit", "pineapple", "startle", "abandoned"],
+      pre1: ["contingency", "grandeur", "nurture", "solute", "abate"],
+      "1": ["abdicate", "conjecture", "expropriate", "litigation", "reckless"],
     };
 
     (Object.keys(anchors) as Array<keyof typeof byStage>).forEach((stage) => {

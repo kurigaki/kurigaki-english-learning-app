@@ -111,8 +111,50 @@ export default function CreditsPage() {
           </div>
         </section>
 
+        {/* 語彙データ */}
+        <section className="mb-8">
+          <h2 className="text-lg font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center gap-2">
+            <span className="emoji-icon">📚</span>
+            <span>語彙データ参考文献</span>
+          </h2>
+          <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
+            単語の選定・レベル分け・頻出度判定に以下の学術リソースを参考にしています。
+            意味・例文・カテゴリは全て独自作成です。
+          </p>
+          <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 divide-y divide-slate-100 dark:divide-slate-700">
+            <div className="p-4">
+              <p className="font-medium text-slate-800 dark:text-slate-200">New General Service List (NGSL) v1.2</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Browne, C., Culligan, B., and Phillips, J. / CC BY-SA 4.0</p>
+            </div>
+            <div className="p-4">
+              <p className="font-medium text-slate-800 dark:text-slate-200">TOEIC Service List (TSL) v1.2</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Browne, C. and Culligan, B. / CC BY-SA 4.0</p>
+            </div>
+            <div className="p-4">
+              <p className="font-medium text-slate-800 dark:text-slate-200">Business Service List (BSL) v1.01</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Browne, C. and Culligan, B. / CC BY-SA 4.0</p>
+            </div>
+            <div className="p-4">
+              <p className="font-medium text-slate-800 dark:text-slate-200">New Academic Word List (NAWL) v1.2</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Browne, C., Culligan, B., and Phillips, J. / CC BY-SA 4.0</p>
+            </div>
+            <div className="p-4">
+              <p className="font-medium text-slate-800 dark:text-slate-200">NGSL-Spoken v1.2</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Browne, C. and Culligan, B. / CC BY-SA 4.0</p>
+            </div>
+            <div className="p-4">
+              <p className="font-medium text-slate-800 dark:text-slate-200">CEFR-J Wordlist v1.6</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">東京外国語大学 投野由紀夫研究室</p>
+            </div>
+            <div className="p-4">
+              <p className="font-medium text-slate-800 dark:text-slate-200">WordNet 3.0</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Copyright 2006 by Princeton University</p>
+            </div>
+          </div>
+        </section>
+
         <p className="text-xs text-slate-400 dark:text-slate-500 text-center">
-          素材提供者の皆さまに感謝いたします。
+          素材提供者・研究者の皆さまに感謝いたします。
         </p>
       </div>
     </div>

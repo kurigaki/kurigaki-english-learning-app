@@ -44,33 +44,35 @@ export type WordExampleEntry = {
 // 頻出度ティア（1=頻出, 2=標準, 3=発展）
 export type FrequencyTier = 1 | 2 | 3;
 
-// データファイルに格納する型（冗長フィールドを含まない最小形）
-// course/stage はファイルの場所から、difficulty は course:stage から導出される
-export type RawWord = {
+// コース所属情報
+export type CourseAssignment = {
+  course: Course;
+  stage: Stage;
+  meaning?: string;  // コース固有のmeaning（省略時はMasterWordのmeaningを使用）
+};
+
+// マスター型 — データの源泉。1語1エントリで複数コースに所属する
+// master/*.ts に格納
+export type MasterWord = {
   id: number;
   word: string;
   meaning: string;
   partOfSpeech: PartOfSpeech;
   examples: [WordExampleEntry, WordExampleEntry, WordExampleEntry];
-  categories: [string, ...string[]]; // 1個以上必須、[0]が主カテゴリ
-  frequencyTier?: FrequencyTier; // 1=頻出, 2=標準, 3=発展。未設定時はデフォルト2
+  categories: [string, ...string[]];
+  frequencyTier: FrequencyTier;
+  courses: CourseAssignment[];
 };
 
-// ランタイム型（enrichWords で RawWord に course/stage/difficulty 等を付与した完全型）
-// category/categories は string で定義（Category union の組み合わせ爆発を回避）
-// UI表示には categoryLabels を使用し、正しさはテストで保証する
-export type Word = {
-  id: number;
-  word: string;
-  meaning: string;
-  partOfSpeech: PartOfSpeech;
+// ランタイム型 — MasterWord の全フィールド + コース固有の導出フィールド
+// コース別フィルタ時に getWordsForCourse() で生成される
+// 既存コードの word.course / word.stage / word.difficulty はそのまま動く
+// 新コードは word.courses で全コース情報にアクセスできる
+export type Word = MasterWord & {
   course: Course;
   stage: Stage;
   example: string;      // examples[0].en
   exampleJa: string;    // examples[0].ja
-  examples: [WordExampleEntry, WordExampleEntry, WordExampleEntry];
   difficulty: Difficulty;
   category: string;     // categories[0]
-  categories: string[];
-  frequencyTier: FrequencyTier; // 1=頻出, 2=標準, 3=発展
 };

@@ -1,29 +1,44 @@
 import { DIFFICULTY_MAP } from "./difficulty";
-import type { RawWord, Word, Course, Stage } from "./types";
+import type { MasterWord, Word, Course, Stage } from "./types";
 
 /**
- * RawWord[] に course/stage/difficulty 等の導出フィールドを付与して Word[] に変換する。
- * データファイルは「他から導出できない情報」のみを持ち、この関数が残りを補完する。
+ * MasterWord[] から特定コースの Word[] を生成する。
+ * MasterWordの全フィールドを引き継ぎつつ、コース固有の導出フィールドを付与する。
+ *
+ * - meaning: CourseAssignment.meaning があればそれを使用、なければ MasterWord.meaning
+ * - courses: MasterWordの全コース情報を引き継ぐ（word.coursesで他コース情報にアクセス可能）
  */
-export function enrichWords(
-  rawWords: RawWord[],
+export function getWordsForCourse(
+  masterWords: MasterWord[],
   course: Course,
-  stage: Stage,
+  stage?: Stage,
 ): Word[] {
-  const key = `${course}:${stage}`;
-  const difficulty = DIFFICULTY_MAP[key];
-  if (!difficulty) {
-    throw new Error(`No difficulty mapping for "${key}"`);
-  }
-  return rawWords.map((raw) => ({
-    ...raw,
-    course,
-    stage,
-    difficulty,
-    example: raw.examples[0].en,
-    exampleJa: raw.examples[0].ja,
-    category: raw.categories[0],
-    categories: [...raw.categories],
-    frequencyTier: raw.frequencyTier ?? 2, // 未設定時は「標準」
-  }));
+  return masterWords
+    .filter((w) =>
+      w.courses.some(
+        (c) => c.course === course && (!stage || c.stage === stage),
+      ),
+    )
+    .map((w) => {
+      const assignment = w.courses.find(
+        (c) => c.course === course && (!stage || c.stage === stage),
+      )!;
+      const diffKey = `${course}:${assignment.stage}`;
+      const difficulty = DIFFICULTY_MAP[diffKey];
+      if (!difficulty) {
+        throw new Error(`No difficulty mapping for "${diffKey}" (word: ${w.word})`);
+      }
+      return {
+        ...w,
+        // コース固有meaningがあればそれを使用（クイズで出題される意味）
+        meaning: assignment.meaning ?? w.meaning,
+        course,
+        stage: assignment.stage,
+        difficulty,
+        example: w.examples[0].en,
+        exampleJa: w.examples[0].ja,
+        category: w.categories[0],
+        categories: [...w.categories],
+      };
+    });
 }
