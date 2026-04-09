@@ -15468,7 +15468,7 @@
       "daily",
       "shopping"
     ],
-    "frequencyTier": 2,
+    "frequencyTier": 1,
     "courses": [
       {
         "course": "junior",
@@ -35572,7 +35572,7 @@
       "business",
       "school"
     ],
-    "frequencyTier": 3,
+    "frequencyTier": 1,
     "courses": [
       {
         "course": "junior",

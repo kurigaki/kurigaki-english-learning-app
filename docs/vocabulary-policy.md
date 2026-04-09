@@ -171,47 +171,53 @@
 
 ## 4. 単語データの必須フィールド
 
-### 4.1 MasterWord型（保存形式）— `master/level-{cefr}.ts` に格納
+### 4.1 MasterWord型（保存形式）— `master/level-{cefr}.json` に格納
 
-```typescript
+> **2026-04-09改訂**: TSからJSONに移行。データとロジックを分離。
+
+```json
 {
-  id: number,            // ユニークID（CEFRレベル × 10,000帯）
-  word: string,          // 英単語（小文字統一。フレーズも可）
-  meaning: string,       // 日本語の意味（自作。簡潔に10文字以内。全コース統一）
-  partOfSpeech: string,  // 品詞: "noun" | "verb" | "adjective" | "adverb" | "other"
-  examples: [            // 例文3件（必須。クイズ・ダンジョンでランダム出題に使用）
-    { en: string, ja: string, context: string },
-    { en: string, ja: string, context: string },
-    { en: string, ja: string, context: string },
+  "id": 10735,
+  "word": "interest",
+  "meaning": "興味・関心・利子",
+  "partOfSpeech": "noun",
+  "examples": [
+    { "en": "She has a deep interest in science.", "ja": "彼女は科学に深い興味を持っています。", "context": "学校" },
+    { "en": "The bank offers a high interest rate.", "ja": "その銀行は高い利子率を提供しています。", "context": "金融" },
+    { "en": "His talk sparked great interest.", "ja": "彼の話は大きな関心を呼びました。", "context": "社会" }
   ],
-  categories: string[],  // 複数カテゴリ（必須。最低1つ。[0]が主カテゴリ）
-  frequencyTier: 1|2|3,  // 頻出度ティア（1=頻出, 2=標準, 3=発展）
-  courses: [             // 所属コース一覧（必須。最低1つ）
-    { course: string, stage: string },
-    // ...
-  ],
+  "categories": ["daily", "finance"],
+  "frequencyTier": 1,
+  "courses": [
+    { "course": "junior", "stage": "1", "meaning": "興味" },
+    { "course": "eiken", "stage": "3" },
+    { "course": "toeic", "stage": "500", "meaning": "利子" }
+  ]
 }
+```
+
+**meaning品質基準:**
+- 文字数制限なし（辞書レベルの正確さを優先）
+- 多義語は全主要語義を「・」区切りで記載
+- コース別meaningはcourses配列の`meaning?`フィールドで設定
+- master meaningにはcourse meaningの全語義が含まれること（整合性保証）
 ```
 
 ### 4.2 Word型（ランタイム型）— アプリが消費する型
 
 ```typescript
-// RawWord を getWordsForCourse() でコース別にフィルタ・展開した型
-// アプリの全UIコンポーネント・ロジックはこの型を使用する
+// MasterWord + コース固有フィールド
+// getWordsForCourse() でコース別にフィルタ・展開した型
 {
-  id: number,
-  word: string,
-  meaning: string,
-  partOfSpeech: string,
-  course: string,        // ← getWordsForCourseがフィルタ結果として付与
-  stage: string,         // ← 同上
-  example: string,       // ← examples[0].en から導出
-  exampleJa: string,     // ← examples[0].ja から導出
-  examples: [...],
-  difficulty: number,    // ← course:stage から DIFFICULTY_MAP で導出
-  category: string,      // ← categories[0] から導出
-  categories: string[],
-  frequencyTier: 1|2|3,
+  // MasterWordの全フィールドを継承 +
+  course: string,        // コースコンテキスト
+  stage: string,         // ステージ
+  meaning: string,       // コース別meaning（設定時）またはmaster meaning
+  example: string,       // examples[0].en から導出
+  exampleJa: string,     // examples[0].ja から導出
+  difficulty: number,    // course:stage → DIFFICULTY_MAP（CEFR 6段階: 1-6）
+  category: string,      // categories[0] から導出
+  courses: [...],        // 全コース情報（word.coursesで他コース参照可能）
 }
 ```
 

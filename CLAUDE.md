@@ -154,7 +154,7 @@ GitHub操作は以下のツールを使用してください。
 - コンポーネントは `components/ui`（汎用）と `components/features`（機能別）に分離
 - 状態は最小限に保つ（必要以上にuseStateを増やさない）
 - 型定義は `src/types/index.ts` に集約
-- 単語データは `src/data/words/` にコース別で静的定義
+- 単語データは `src/data/words/master/level-{a1-c2}.json` にCEFRレベル別JSON。1語1エントリで複数コースに所属（MasterWord型）
 
 ### 日付文字列のタイムゾーン
 
@@ -364,13 +364,21 @@ src/
 │   ├── vocabulary-books.ts       # My単語帳・お気に入り・最近見た単語帳管理（localStorage）
 │   └── vocab-book-meta.ts        # bookId→表示名/emoji/gradient/quizHref を共通解決
 ├── data/                         # 静的データ
-│   ├── words/                    # 単語データ（コース別.jsファイル + 型定義）
-│   │   ├── types.ts              # 統一Word型
+│   ├── words/                    # 単語データ（統合データモデル）
+│   │   ├── types.ts              # MasterWord型・Word型・CourseAssignment型
+│   │   ├── enrich.ts             # getWordsForCourse()（MasterWord→Word変換）
 │   │   ├── category.ts           # Category型・ラベル
-│   │   ├── difficulty.ts         # Difficulty型・ラベル
+│   │   ├── difficulty.ts         # Difficulty型（CEFR 6段階: 1-6）
 │   │   ├── courses.ts            # コース定義マスタ
-│   │   ├── index.ts              # allWords統合 + 再エクスポート
-│   │   └── *.js                  # コース別データ（junior/senior/toeic/eiken/conversation）
+│   │   ├── index.ts              # masterWords + コース別エクスポート
+│   │   └── master/               # 単語データ（CEFRレベル別JSON）
+│   │       ├── level-a1.json     # A1基礎（ID 1-10,000）
+│   │       ├── level-a2.json     # A2初級（ID 10,001-20,000）
+│   │       ├── level-b1.json     # B1中級（ID 20,001-30,000）
+│   │       ├── level-b2.json     # B2上級（ID 30,001-40,000）
+│   │       ├── level-c1.json     # C1上級者（ID 40,001-50,000）
+│   │       ├── level-c2.json     # C2達人（ID 50,001-60,000）
+│   │       └── index.ts          # JSON import + 型キャスト
 │   ├── word-extensions/          # 単語拡張データ（詳細画面専用）
 │   │   ├── index.ts              # Map統合 + getWordExtension()
 │   │   ├── manual.ts             # 手書き拡張（TOEIC/Junior等）
@@ -401,20 +409,33 @@ type PronunciationData = {
   uk?: string;  // UK発音記号 (例: /ˈʃedjuːl/) - 差がある場合のみ
 };
 
-// 統一Word型（src/data/words/types.ts）
-type Word = {
+// マスター型（src/data/words/types.ts — master/*.jsonに格納）
+type MasterWord = {
   id: number;
   word: string;
-  meaning: string;
+  meaning: string;              // 辞書レベルの全語義（文字数制限なし）
   partOfSpeech: PartOfSpeech;
+  examples: [WordExampleEntry, WordExampleEntry, WordExampleEntry];
+  categories: [string, ...string[]];
+  frequencyTier: 1 | 2 | 3;    // 1=頻出, 2=標準, 3=発展
+  courses: CourseAssignment[];   // 所属コース一覧
+};
+
+// コース所属情報
+type CourseAssignment = {
   course: Course;
   stage: Stage;
-  example?: string;
-  exampleJa?: string;
-  difficulty: Difficulty;       // 1-7（course+stageから事前計算）
+  meaning?: string;             // コース別meaning（TOEIC=利子, 中学=興味 等）
+};
+
+// ランタイム型（MasterWord + コース固有フィールド）
+type Word = MasterWord & {
+  course: Course;
+  stage: Stage;
+  difficulty: Difficulty;       // CEFR 6段階: 1=A1, 2=A2, 3=B1, 4=B2, 5=C1, 6=C2
+  example: string;
+  exampleJa: string;
   category: string;
-  categories?: string[];
-  frequencyRank?: number;
 };
 
 // 単語拡張データ（src/types/index.ts — 単語詳細画面専用）
