@@ -109,7 +109,11 @@ function formatEntry(w: MasterWord): string {
 
   const cats = w.categories.map((c) => `"${escapeString(c)}"`).join(", ");
   const courses = w.courses
-    .map((c) => `{ course: "${c.course}", stage: "${c.stage}" }`)
+    .map((c) => {
+      const parts = [`course: "${c.course}"`, `stage: "${c.stage}"`];
+      if (c.meaning) parts.push(`meaning: "${escapeString(c.meaning)}"`);
+      return `{ ${parts.join(", ")} }`;
+    })
     .join(", ");
 
   return `  {
