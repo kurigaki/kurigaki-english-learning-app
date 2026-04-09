@@ -6661,7 +6661,7 @@
       "daily",
       "business"
     ],
-    "frequencyTier": 2,
+    "frequencyTier": 1,
     "courses": [
       {
         "course": "junior",
@@ -41552,7 +41552,7 @@
       "finance",
       "daily"
     ],
-    "frequencyTier": 2,
+    "frequencyTier": 1,
     "courses": [
       {
         "course": "junior",

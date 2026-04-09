@@ -19,6 +19,8 @@ import type { ManualMasteryLevel } from "@/lib/storage";
 import { MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import { getMasteryBadgeClass } from "@/lib/mastery-style";
 import { getMultiPosMeanings } from "@/lib/word-lookup";
+import { masterWords } from "@/data/words";
+import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { useWordDetail } from "@/lib/hooks/useWordDetail";
 import BookmarkSelectDialog from "@/components/features/word-list/BookmarkSelectDialog";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
@@ -199,6 +201,34 @@ export default function WordDetailPage() {
                 (m) => m.partOfSpeech !== word.partOfSpeech
               )}
             />
+
+            {/* コース別の意味 */}
+            {(() => {
+              const master = masterWords.find((m) => m.id === word.id);
+              if (!master) return null;
+              const coursesWithMeaning = master.courses.filter((c) => c.meaning);
+              if (coursesWithMeaning.length === 0) return null;
+              const courseLabels: Record<string, string> = {
+                junior: "中学", senior: "高校", eiken: "英検", toeic: "TOEIC", conversation: "会話"
+              };
+              return (
+                <div className="py-3 border-b border-slate-100 dark:border-slate-700">
+                  <p className="text-xs text-slate-400 dark:text-slate-500 mb-1.5">コース別の意味</p>
+                  <div className="flex flex-wrap gap-2">
+                    {master.courses.map((c, i) => {
+                      const displayMeaning = c.meaning || master.meaning;
+                      const stageLabel = COURSE_DEFINITIONS[c.course]?.stages.find((s) => s.stage === c.stage)?.displayName || c.stage;
+                      return (
+                        <div key={i} className="text-xs bg-slate-50 dark:bg-slate-800 rounded px-2 py-1 border border-slate-200 dark:border-slate-700">
+                          <span className="text-slate-400 dark:text-slate-500">{courseLabels[c.course] || c.course} {stageLabel}</span>
+                          <span className="ml-1 text-slate-700 dark:text-slate-200 font-medium">{displayMeaning}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* 記憶度 */}
             <WordMastery
