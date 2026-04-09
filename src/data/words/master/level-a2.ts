@@ -5,7 +5,7 @@ import type { MasterWord } from "../types";
  * ID範囲: 10001 - 20000
  * 現在: 1447語
  */
-export const words: MasterWord[] = [
+export const words = [
   {
     id: 10001,
     word: "a few",
@@ -20264,4 +20264,4 @@ export const words: MasterWord[] = [
     frequencyTier: 2,
     courses: [{ course: "junior", stage: "2" }, { course: "eiken", stage: "4" }],
   },
-];
+] as MasterWord[];
