@@ -17373,7 +17373,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "譲歩"
       },
       {
         "course": "toeic",
@@ -24848,7 +24849,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "枯渇させる・使い果たす"
       },
       {
         "course": "toeic",
@@ -28298,7 +28300,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "立ち退かせる・取って代わる"
       },
       {
         "course": "toeic",
@@ -29678,7 +29681,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "そらす・迂回させる"
       },
       {
         "course": "toeic",
@@ -51174,7 +51178,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "扇動する・駆り立てる"
       }
     ]
   },
@@ -53175,7 +53180,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "抑制する・妨げる"
       }
     ]
   },
@@ -55832,7 +55838,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "発動する・援用する"
       },
       {
         "course": "toeic",
@@ -79485,7 +79492,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "推定する"
       },
       {
         "course": "toeic",
@@ -80558,7 +80566,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "概要・プロフィール"
       },
       {
         "course": "toeic",
@@ -81694,7 +81703,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "提供・規定"
       },
       {
         "course": "toeic",
@@ -102676,7 +102686,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "在任期間・終身在職権"
       },
       {
         "course": "toeic",
@@ -103031,7 +103042,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "証言・証拠"
       },
       {
         "course": "toeic",
@@ -112858,7 +112870,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "船・容器"
       },
       {
         "course": "toeic",

@@ -5416,7 +5416,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "訴え・魅力"
       },
       {
         "course": "toeic",
@@ -7100,7 +7101,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "主張する・断言する"
       },
       {
         "course": "toeic",
@@ -16279,7 +16281,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "内閣・戸棚"
       },
       {
         "course": "toeic",
@@ -19998,7 +20001,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "引用する・言及する"
       },
       {
         "course": "toeic",
@@ -20323,7 +20327,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "分類する"
       },
       {
         "course": "toeic",
@@ -21919,7 +21924,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "犯す・専念する"
       },
       {
         "course": "toeic",
@@ -23024,7 +23030,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "作曲する・構成する"
       }
     ]
   },
@@ -23692,7 +23699,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "具体的な"
       },
       {
         "course": "toeic",
@@ -24133,7 +24141,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "制限する・閉じ込める"
       }
     ]
   },
@@ -24757,7 +24766,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "保全する・節約する"
       }
     ]
   },
@@ -25242,7 +25252,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "構成する・～に相当する"
       },
       {
         "course": "conversation",
@@ -25322,7 +25333,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "相談する・参照する"
       },
       {
         "course": "toeic",
@@ -25450,7 +25462,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "熟慮する"
       },
       {
         "course": "conversation",
@@ -28184,7 +28197,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "粗い・原油の"
       }
     ]
   },
@@ -30444,7 +30458,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "宣言する・申告する"
       },
       {
         "course": "conversation",
@@ -31060,7 +31075,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "逆らう・拒む"
       },
       {
         "course": "toeic",
@@ -31472,7 +31488,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "示す・実演する"
       },
       {
         "course": "toeic",
@@ -32211,7 +32228,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "由来する・引き出す"
       },
       {
         "course": "conversation",
@@ -33566,7 +33584,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "命じる・左右する"
       }
     ]
   },
@@ -33671,7 +33690,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "分化"
       }
     ]
   },
@@ -34680,7 +34700,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "開示する・明らかにする"
       },
       {
         "course": "toeic",
@@ -34965,7 +34986,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "解雇する・却下する"
       },
       {
         "course": "toeic",
@@ -35211,7 +35233,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "溶かす・溶ける・解散する"
       }
     ]
   },
@@ -38994,7 +39017,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "要素・元素"
       },
       {
         "course": "toeic",
@@ -39905,7 +39929,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "支持する・推薦する"
       },
       {
         "course": "toeic",
@@ -40518,7 +40543,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "事業・企業"
       },
       {
         "course": "toeic",
@@ -41778,7 +41804,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "不動産・遺産"
       },
       {
         "course": "toeic",
@@ -43148,7 +43175,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "除外する・排除する"
       },
       {
         "course": "toeic",
@@ -44303,7 +44331,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "搾取する・活用する"
       },
       {
         "course": "toeic",
@@ -53345,7 +53374,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "優美・恵み"
       },
       {
         "course": "toeic",
@@ -54064,7 +54094,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "総計の・粗野な"
       },
       {
         "course": "toeic",
@@ -57485,7 +57516,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "地平線・視野"
       }
     ]
   },
@@ -59042,7 +59074,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "説明する・例示する"
       },
       {
         "course": "conversation",
@@ -59778,7 +59811,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "課す・押し付ける"
       },
       {
         "course": "toeic",
@@ -61294,7 +61328,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "誘発する・引き起こす"
       }
     ]
   },
@@ -62729,7 +62764,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "設置する・導入する"
       },
       {
         "course": "toeic",
@@ -63455,7 +63491,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "解釈する・通訳する"
       },
       {
         "course": "toeic",
@@ -77007,7 +77044,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "客観的な"
       },
       {
         "course": "toeic",
@@ -78688,7 +78726,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "軌道・周回"
       }
     ]
   },
@@ -78799,7 +78838,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "臓器・器官"
       }
     ]
   },
@@ -85312,7 +85352,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "部分"
       },
       {
         "course": "toeic",
@@ -88674,7 +88715,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "割合・比率"
       },
       {
         "course": "toeic",
@@ -88861,7 +88903,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "見込み・展望"
       },
       {
         "course": "toeic",
@@ -95204,7 +95247,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "解決・決意"
       },
       {
         "course": "toeic",
@@ -95897,7 +95941,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "収益・収入"
       },
       {
         "course": "toeic",
@@ -95946,7 +95991,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "逆にする・覆す"
       },
       {
         "course": "toeic",
@@ -95996,7 +96042,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "改訂する・修正する"
       },
       {
         "course": "toeic",
@@ -99246,7 +99293,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "部分・区分"
       },
       {
         "course": "toeic",
@@ -104017,7 +104065,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "刺激する・促進する"
       },
       {
         "course": "toeic",
@@ -104629,7 +104678,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "提出する・服従する"
       },
       {
         "course": "toeic",
@@ -105697,7 +105747,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "一時停止する・停学にする"
       },
       {
         "course": "toeic",
@@ -105753,7 +105804,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "維持する・持続させる"
       },
       {
         "course": "toeic",
@@ -105935,7 +105987,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "取り組む・タックルする"
       },
       {
         "course": "toeic",
@@ -108842,7 +108895,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "我慢する・容認する"
       },
       {
         "course": "toeic",
@@ -109588,7 +109642,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "変える・一変させる"
       },
       {
         "course": "toeic",
@@ -110135,7 +110190,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "裁判・試練"
       },
       {
         "course": "conversation",
@@ -111178,7 +111234,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "着手する・引き受ける"
       },
       {
         "course": "toeic",
@@ -113319,7 +113376,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "違反する・侵害する"
       },
       {
         "course": "toeic",
@@ -115697,7 +115755,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "引き出す・撤退する"
       },
       {
         "course": "toeic",
@@ -116284,7 +116343,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "生み出す・譲る"
       },
       {
         "course": "toeic",

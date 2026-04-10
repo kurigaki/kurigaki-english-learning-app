@@ -5345,7 +5345,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "賞・授与する"
       },
       {
         "course": "toeic",
@@ -8954,7 +8955,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "育てる・繁殖させる"
       },
       {
         "course": "conversation",
@@ -10313,7 +10315,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "容量・能力"
       },
       {
         "course": "toeic",
@@ -13441,7 +13444,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "献身・約束"
       },
       {
         "course": "toeic",
@@ -13917,7 +13921,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "変換する"
       },
       {
         "course": "toeic",
@@ -14360,7 +14365,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "数える・重要である"
       },
       {
         "course": "toeic",
@@ -17196,7 +17202,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "規律・訓練"
       },
       {
         "course": "toeic",
@@ -17623,7 +17630,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "国内の・家庭の"
       },
       {
         "course": "toeic",
@@ -19157,7 +19165,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "入場・記入・応募"
       },
       {
         "course": "toeic",
@@ -19560,7 +19569,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "試験・検査"
       },
       {
         "course": "toeic",
@@ -22563,7 +22573,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "ガス・ガソリン"
       }
     ]
   },

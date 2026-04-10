@@ -4626,7 +4626,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "お買い得品・取引"
       },
       {
         "course": "toeic",
@@ -6026,7 +6027,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "向かっている・必ず〜する"
       },
       {
         "course": "toeic",
@@ -8478,7 +8480,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "部屋・議院"
       }
     ]
   },
@@ -10628,7 +10631,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "委員会・手数料"
       },
       {
         "course": "toeic",
@@ -11563,7 +11567,8 @@
     "courses": [
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "行為・実施する"
       },
       {
         "course": "toeic",
@@ -12767,7 +12772,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "慣習・大会・条約"
       },
       {
         "course": "toeic",
@@ -17707,7 +17713,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "分割・部門"
       },
       {
         "course": "toeic",
@@ -18915,7 +18922,7 @@
       "technology",
       "business"
     ],
-    "frequencyTier": 2,
+    "frequencyTier": 1,
     "courses": [
       {
         "course": "junior",
@@ -23626,7 +23633,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "公式・方式"
       },
       {
         "course": "toeic",
@@ -26094,7 +26102,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "助成金・認める"
       },
       {
         "course": "toeic",
@@ -27760,7 +27769,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "保持者・所有者"
       },
       {
         "course": "toeic",
@@ -28091,7 +28101,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "主催者・主催する"
       }
     ]
   },
@@ -29706,7 +29717,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "索引・指標"
       },
       {
         "course": "toeic",
@@ -29898,7 +29910,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "インフレ・物価上昇"
       },
       {
         "course": "toeic",
@@ -30045,7 +30058,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "主導権・取り組み"
       },
       {
         "course": "toeic",
@@ -30550,7 +30564,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "楽器・道具"
       },
       {
         "course": "toeic",
@@ -30697,7 +30712,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "知性・知能"
       },
       {
         "course": "toeic",
@@ -30991,7 +31007,7 @@
     "categories": [
       "technology"
     ],
-    "frequencyTier": 3,
+    "frequencyTier": 1,
     "courses": [
       {
         "course": "junior",
@@ -31926,7 +31942,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "雑誌・日誌"
       },
       {
         "course": "toeic",
@@ -35345,7 +35362,8 @@
       },
       {
         "course": "eiken",
-        "stage": "pre2"
+        "stage": "pre2",
+        "meaning": "余白・差"
       },
       {
         "course": "toeic",
@@ -40459,7 +40477,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "概要・要約"
       },
       {
         "course": "toeic",
@@ -41662,7 +41681,8 @@
       },
       {
         "course": "eiken",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "罰則・罰金"
       },
       {
         "course": "toeic",
