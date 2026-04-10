@@ -1,6 +1,7 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import { words, Word } from "@/data/words";
+import { words as rawWords, Word } from "@/data/words";
+import { useContentFilterEnabled } from "@/lib/content-filter";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { Question, Achievement } from "@/types";
 import { getAchievementById } from "@/data/achievements";
@@ -46,6 +47,16 @@ export const useQuiz = () => {
   const srsReview = searchParams.get("srsReview");
   const bookmarksOnly = searchParams.get("bookmarksOnly");
   const bookWordsParam = searchParams.get("bookWords");
+
+  // コンテンツフィルタ: 有効時はセンシティブ単語を出題対象から除外
+  const contentFilterEnabled = useContentFilterEnabled();
+  const words = useMemo(
+    () =>
+      contentFilterEnabled
+        ? rawWords.filter((w) => !w.contentFlags || w.contentFlags.length === 0)
+        : rawWords,
+    [contentFilterEnabled],
+  );
 
   const [phase, setPhase] = useState<QuizPhase>("setup");
   const [quizSettings, setQuizSettings] = useState<QuizSettings>(() => loadQuizSettings());
@@ -548,7 +559,7 @@ export const useQuiz = () => {
     setShowPerfectScore(false);
     sessionStartTimeRef.current = Date.now();
     hasAutoPlayedRef.current = new Set();
-  }, [bookmarkedIds, weakWordIds, studiedWordIds, srsWordIds]);
+  }, [bookmarkedIds, weakWordIds, studiedWordIds, srsWordIds, words]);
 
   const startRetrySessionWithWordIds = useCallback((wordIds: number[]) => {
     const ratios = quizSettings.typeRatios ?? defaultQuizSettings.typeRatios;
@@ -583,7 +594,7 @@ export const useQuiz = () => {
     setShowPerfectScore(false);
     sessionStartTimeRef.current = Date.now();
     hasAutoPlayedRef.current = new Set();
-  }, [quizSettings.typeRatios]);
+  }, [quizSettings.typeRatios, words]);
 
   useEffect(() => {
     if (!dataLoaded) return;
@@ -642,7 +653,7 @@ export const useQuiz = () => {
     }
     if (phase === "quiz" && questions.length > 0) return;
     setPhase("setup");
-  }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, bookWordsParam, weakWordIds, srsWordIds, bookmarkedIds, startNewSession, startRetrySessionWithWordIds, phase, questions.length, quizSettings]);
+  }, [dataLoaded, reviewWordId, weakOnly, srsReview, bookmarksOnly, bookWordsParam, weakWordIds, srsWordIds, bookmarkedIds, startNewSession, startRetrySessionWithWordIds, phase, questions.length, quizSettings, words]);
 
   useEffect(() => {
     if (isFinished && !isRestoredFromSession && answeredWords.length > 0) {

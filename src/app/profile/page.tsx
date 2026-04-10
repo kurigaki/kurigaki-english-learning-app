@@ -7,6 +7,10 @@ import { useAuth, useSupabaseAvailable } from "@/lib/auth-context";
 import { AvatarUpload } from "@/components/features/auth";
 import { Card, Button } from "@/components/ui";
 import { deleteAvatar } from "@/lib/supabase/storage";
+import {
+  getContentFilterEnabled,
+  setContentFilterEnabled,
+} from "@/lib/content-filter";
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -16,6 +20,7 @@ export default function ProfilePage() {
 
   const [displayName, setDisplayName] = useState("");
   const [isSaving, setIsSaving] = useState(false);
+  const [contentFilter, setContentFilter] = useState(false);
   const [message, setMessage] = useState<{
     type: "success" | "error";
     text: string;
@@ -27,6 +32,16 @@ export default function ProfilePage() {
       setDisplayName(user.profile.display_name);
     }
   }, [user]);
+
+  // コンテンツフィルタの初期値を localStorage から読込
+  useEffect(() => {
+    setContentFilter(getContentFilterEnabled());
+  }, []);
+
+  const handleContentFilterToggle = (next: boolean) => {
+    setContentFilter(next);
+    setContentFilterEnabled(next);
+  };
 
   // 未ログインの場合はログインページへリダイレクト
   useEffect(() => {
@@ -206,6 +221,35 @@ export default function ProfilePage() {
             >
               {isSaving ? "保存中..." : "変更を保存"}
             </Button>
+
+            {/* 学習設定 */}
+            <div className="pt-6 border-t border-slate-200 dark:border-slate-700">
+              <h2 className="text-base font-bold text-slate-800 dark:text-slate-100 mb-4 flex items-center gap-2">
+                <span>🛡</span>
+                <span>学習設定</span>
+              </h2>
+
+              <label className="flex items-start gap-3 cursor-pointer select-none">
+                <div className="relative flex-shrink-0 mt-0.5">
+                  <input
+                    type="checkbox"
+                    checked={contentFilter}
+                    onChange={(e) => handleContentFilterToggle(e.target.checked)}
+                    className="sr-only peer"
+                  />
+                  <div className="w-11 h-6 bg-slate-200 dark:bg-slate-700 rounded-full peer-checked:bg-primary-500 transition-colors" />
+                  <div className="absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transition-transform peer-checked:translate-x-5" />
+                </div>
+                <div className="flex-1">
+                  <div className="text-sm font-semibold text-slate-800 dark:text-slate-100">
+                    センシティブな単語を非表示
+                  </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+                    飲酒・喫煙・暴力などの語を学習対象から除外します。未成年の学習者や、そのような語を避けたい方向けの設定です。
+                  </p>
+                </div>
+              </label>
+            </div>
           </div>
         </Card>
       </div>

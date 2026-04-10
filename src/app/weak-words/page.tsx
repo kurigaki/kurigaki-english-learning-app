@@ -11,6 +11,7 @@ import { saveWeakWordSort, getAndClearWeakWordSort } from "@/lib/navigation-stat
 import { saveWordNavState } from "@/lib/word-nav-state";
 import type { WordStats, ManualMasteryLevel } from "@/lib/storage";
 import { words, Word } from "@/data/words";
+import { useContentFilterEnabled } from "@/lib/content-filter";
 import { isWeakWord } from "@/types";
 import { getDisplayedManualMastery, MANUAL_MASTERY_OPTIONS_ORDERED } from "@/lib/manual-mastery";
 import { getAccuracyBadgeClass } from "@/lib/accuracy-style";
@@ -25,6 +26,7 @@ export default function WeakWordsPage() {
   const router = useRouter();
   // isLoading: 認証初期化中はデータを読み込まない（Supabaseセッションが未準備のため）
   const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
+  const contentFilterEnabled = useContentFilterEnabled();
   const [weakWords, setWeakWords] = useState<WeakWord[]>([]);
   const [wordStatsMap, setWordStatsMap] = useState<Map<number, WordStats>>(new Map());
   const [manualMemoryById, setManualMemoryById] = useState<Record<number, ManualMasteryLevel>>({});
@@ -49,6 +51,7 @@ export default function WeakWordsPage() {
       if (isWeakWord(stats.accuracy, stats.totalAttempts)) {
         const word = words.find((w) => w.id === wordId);
         if (word) {
+          if (contentFilterEnabled && word.contentFlags && word.contentFlags.length > 0) return;
           weak.push({ ...word, stats });
         }
       }
@@ -66,7 +69,7 @@ export default function WeakWordsPage() {
     }
 
     setWeakWords(weak);
-  }, [sortBy]);
+  }, [sortBy, contentFilterEnabled]);
 
   useEffect(() => {
     setIsMounted(true);

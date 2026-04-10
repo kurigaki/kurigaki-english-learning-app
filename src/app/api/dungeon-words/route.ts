@@ -29,9 +29,15 @@ export async function GET(request: NextRequest) {
   const limit = Math.min(parseInt(params.get("limit") ?? "150", 10), 500);
   const wordIdsParam = params.get("wordIds");
   const wordLevel = params.get("wordLevel") ?? "standard"; // essential/standard/all
+  const contentFilter = params.get("contentFilter") === "1";
 
   // 出題対象単語
   let pool = course ? getWordsByCourse(course, stage ?? undefined) : allWords;
+
+  // コンテンツフィルタ（センシティブ単語を除外）
+  if (contentFilter) {
+    pool = pool.filter((w) => !w.contentFlags || w.contentFlags.length === 0);
+  }
 
   // 頻出度ティアフィルタ
   if (wordLevel !== "all") {
@@ -41,11 +47,17 @@ export async function GET(request: NextRequest) {
   if (wordIdsParam) {
     const ids = new Set(wordIdsParam.split(",").map(Number).filter((n) => !Number.isNaN(n)));
     pool = allWords.filter((w) => ids.has(w.id));
+    if (contentFilter) {
+      pool = pool.filter((w) => !w.contentFlags || w.contentFlags.length === 0);
+    }
   }
   const selected = shuffleArray(pool).slice(0, limit);
 
-  // 誤答候補：全単語の meaning から重複除去
-  const allMeanings = Array.from(new Set(allWords.map((w) => w.meaning)));
+  // 誤答候補：全単語の meaning から重複除去（コンテンツフィルタ適用）
+  const distractorSource = contentFilter
+    ? allWords.filter((w) => !w.contentFlags || w.contentFlags.length === 0)
+    : allWords;
+  const allMeanings = Array.from(new Set(distractorSource.map((w) => w.meaning)));
 
   const questions: DungeonQuestion[] = selected.map((w) => {
     const ans = w.meaning;

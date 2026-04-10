@@ -112,6 +112,10 @@
       "daily"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "sexual",
+      "sensitive"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -388,6 +392,10 @@
       "communication"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "violence",
+      "sensitive"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -2280,6 +2288,9 @@
       "health"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "substance"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -6751,6 +6762,9 @@
       "daily"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "substance"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -8004,6 +8018,9 @@
       "daily"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -12041,6 +12058,9 @@
       "daily"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "substance"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -23815,6 +23835,9 @@
       "communication"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -38683,6 +38706,9 @@
       "daily"
     ],
     "frequencyTier": 1,
+    "contentFlags": [
+      "substance"
+    ],
     "courses": [
       {
         "course": "junior",

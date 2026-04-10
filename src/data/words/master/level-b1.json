@@ -74353,6 +74353,9 @@
       "daily"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "eiken",
@@ -90325,6 +90328,9 @@
       "daily"
     ],
     "frequencyTier": 3,
+    "contentFlags": [
+      "sensitive"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -101411,6 +101417,9 @@
       "culture"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "sensitive"
+    ],
     "courses": [
       {
         "course": "eiken",
@@ -107586,6 +107595,9 @@
       "emotion"
     ],
     "frequencyTier": 3,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "eiken",
@@ -107619,6 +107631,9 @@
       "daily"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -113463,6 +113478,9 @@
       "daily"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "junior",

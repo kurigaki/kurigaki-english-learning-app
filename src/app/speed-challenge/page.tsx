@@ -5,7 +5,8 @@ import { useAuth } from "@/lib/auth-context";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { words, Word } from "@/data/words";
+import { words as rawWords, Word } from "@/data/words";
+import { useContentFilterEnabled } from "@/lib/content-filter";
 import Confetti from "react-confetti";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { storage } from "@/lib/storage";
@@ -121,13 +122,13 @@ function generateQuestion(word: Word, allWords: Word[], mode: SpeedChallengeMode
   };
 }
 
-function getNextQuestion(usedWordIds: Set<number>, mode: SpeedChallengeMode, wordPool?: Word[]): Question {
-  const pool = wordPool && wordPool.length > 0 ? wordPool : words;
+function getNextQuestion(usedWordIds: Set<number>, mode: SpeedChallengeMode, wordPool: Word[], distractorPool: Word[]): Question {
+  const pool = wordPool.length > 0 ? wordPool : distractorPool;
   const availableWords = pool.filter((w) => !usedWordIds.has(w.id));
   // 全ての単語を使い切ったら、再度全体から選ぶ
   const wordsToChooseFrom = availableWords.length > 0 ? availableWords : pool;
   const randomWord = wordsToChooseFrom[Math.floor(Math.random() * wordsToChooseFrom.length)];
-  return generateQuestion(randomWord, words, mode);
+  return generateQuestion(randomWord, distractorPool, mode);
 }
 
 type GameState = "ready" | "playing" | "paused" | "finished";
@@ -326,6 +327,14 @@ declare global {
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
 export default function SpeedChallengePage() {
+  const contentFilterEnabled = useContentFilterEnabled();
+  const words = useMemo(
+    () =>
+      contentFilterEnabled
+        ? rawWords.filter((w) => !w.contentFlags || w.contentFlags.length === 0)
+        : rawWords,
+    [contentFilterEnabled],
+  );
   const [state, dispatch] = useReducer(speedChallengeReducer, initialState);
   const { gameState, timeLeft, timeLimit, score, correctCount, combo, maxCombo, question, usedWordIds, totalQuestions, highScore, isNewHighScore, showingAchievement, pendingAchievements, showPerfectScore, feedback, answeredWords, recognizedText, earnedXp, levelUp, scoreDiff, ranking, showComboLost, showComboMilestone, showComebackEffect } = state;
   const [wordFilter, setWordFilter] = useState<"all" | "correct" | "incorrect">("all");
@@ -413,7 +422,7 @@ export default function SpeedChallengePage() {
         : [];
       setSettingsLabel(context.settingsLabel);
     }
-  }, []);
+  }, [words]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -678,9 +687,9 @@ export default function SpeedChallengePage() {
     setHasNotifiedHighScore(false);
     setHasNotifiedCloseToHighScore(false);
     setRevealedWords(new Set());
-    const firstQuestion = getNextQuestion(new Set(), mode, wordPoolRef.current);
+    const firstQuestion = getNextQuestion(new Set(), mode, wordPoolRef.current, words);
     dispatch({ type: "START_GAME", payload: { question: firstQuestion, timeLimit: timeLimitSetting } });
-  }, [dispatch, mode, timeLimitSetting]);
+  }, [dispatch, mode, timeLimitSetting, words]);
 
   useEffect(() => {
     if (gameState === "playing") {
@@ -1034,7 +1043,7 @@ export default function SpeedChallengePage() {
     setTimeout(() => dispatch({ type: "SET_FEEDBACK", payload: null }), FEEDBACK_DURATION_MS);
 
     // 次の問題
-    const newQuestion = getNextQuestion(usedWordIds, mode, wordPoolRef.current);
+    const newQuestion = getNextQuestion(usedWordIds, mode, wordPoolRef.current, words);
     dispatch({ type: "ANSWER", payload: { correct, answeredWord, nextQuestion: newQuestion } });
   };
 
@@ -1277,7 +1286,7 @@ export default function SpeedChallengePage() {
       }
       setIsLoadingRankings(false);
     }
-  }, [isAuthenticated, user, showHighScores, rankingPeriod, timeLimitSetting, mode, speakingDifficulty]);
+  }, [isAuthenticated, user, showHighScores, rankingPeriod, timeLimitSetting, mode, speakingDifficulty, words]);
 
   useEffect(() => {
     fetchRankings();

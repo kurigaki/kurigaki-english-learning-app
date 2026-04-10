@@ -6,7 +6,9 @@ import Link from "next/link";
 import type { Course, Stage } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
 import { masterWords, categoryLabels, Category, getWordsByCourse } from "@/data/words";
+import type { ContentFlag } from "@/data/words/types";
 import { DIFFICULTY_MAP } from "@/data/words/difficulty";
+import { useContentFilterEnabled } from "@/lib/content-filter";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
 import { Card, SpeakButton } from "@/components/ui";
@@ -38,6 +40,7 @@ type WordWithStats = {
   example?: string;
   exampleJa?: string;
   frequencyTier: 1 | 2 | 3;
+  contentFlags?: ContentFlag[];
   courseNames?: string[];
 };
 
@@ -109,6 +112,7 @@ const mapLegacyMasteryToMemory = (legacy: MasteryLevel | "all"): ManualMasteryLe
 export default function WordListPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const contentFilterEnabled = useContentFilterEnabled();
   const initialMastery = (searchParams.get("mastery") as MasteryLevel | null) ?? "all";
   const initialCourse = (searchParams.get("course") as Course | null);
 
@@ -201,6 +205,7 @@ export default function WordListPage() {
           example: word.examples[0].en,
           exampleJa: word.examples[0].ja,
           frequencyTier: word.frequencyTier,
+          contentFlags: word.contentFlags,
           courseNames: Array.from(new Set(word.courses.map((c) => c.course))),
         };
       });
@@ -298,6 +303,7 @@ export default function WordListPage() {
   // filteredWords / filteredAccuracyCounts / filteredMemoryCounts の共通母集団
   const baseFilteredWords = useMemo(() => {
     return wordsWithStats.filter((word) => {
+      if (contentFilterEnabled && word.contentFlags && word.contentFlags.length > 0) return false;
       if (courseWordIds && !courseWordIds.has(word.id)) return false;
       if (showBookmarksOnly && !word.isBookmarked) return false;
       if (selectedCategory !== "all") {
@@ -317,7 +323,7 @@ export default function WordListPage() {
       }
       return true;
     });
-  }, [wordsWithStats, courseWordIds, showBookmarksOnly, selectedCategory, selectedDifficulty, selectedTier, searchQuery]);
+  }, [wordsWithStats, contentFilterEnabled, courseWordIds, showBookmarksOnly, selectedCategory, selectedDifficulty, selectedTier, searchQuery]);
 
   // Filter words based on search, category, difficulty, bookmarks, accuracy, and memory
   const filteredWords = useMemo(() => {

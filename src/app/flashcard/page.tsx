@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { words as allWordList } from "@/data/words";
+import { useContentFilterEnabled } from "@/lib/content-filter";
 import {
   getFlashcardSession,
   saveQuickFlashcardSession,
@@ -16,6 +17,7 @@ import FlashcardView from "@/components/features/word-list/FlashcardView";
 
 export default function FlashcardPage() {
   const router = useRouter();
+  const contentFilterEnabled = useContentFilterEnabled();
   const [wordIds, setWordIds] = useState<number[] | null>(null);
   const [initialIndex, setInitialIndex] = useState(0);
   const [statsMap, setStatsMap] = useState<Map<number, WordStats>>(new Map());
@@ -42,6 +44,7 @@ export default function FlashcardPage() {
     for (const id of wordIds) {
       const w = wordById.get(id);
       if (!w) continue;
+      if (contentFilterEnabled && w.contentFlags && w.contentFlags.length > 0) continue;
       const stats = statsMap.get(id);
       const accuracy = stats?.accuracy ?? null;
       const attempts = stats?.totalAttempts ?? 0;
@@ -55,7 +58,7 @@ export default function FlashcardPage() {
       });
     }
     return result;
-  }, [wordIds, statsMap]);
+  }, [wordIds, statsMap, contentFilterEnabled]);
 
   if (!isMounted || !wordIds) return null;
 

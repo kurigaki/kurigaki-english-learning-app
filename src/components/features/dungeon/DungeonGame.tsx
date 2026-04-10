@@ -2165,6 +2165,10 @@ export function DungeonGame({ initialWordId }: { initialWordId?: number } = {}) 
     }
     // 単語レベルを常に付与
     params.push("wordLevel=" + savedWordLevel);
+    // コンテンツフィルタ（localStorage から読取）
+    if (typeof window !== "undefined" && localStorage.getItem("content_filter_enabled") === "true") {
+      params.push("contentFilter=1");
+    }
     if (params.length > 0) url += "?" + params.join("&");
     let qs: DungeonQuestion[] = [];
     try {

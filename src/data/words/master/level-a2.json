@@ -18176,6 +18176,9 @@
       "daily"
     ],
     "frequencyTier": 1,
+    "contentFlags": [
+      "substance"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -32443,6 +32446,9 @@
       "daily"
     ],
     "frequencyTier": 1,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "eiken",
@@ -37678,6 +37684,9 @@
       "culture"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -51691,6 +51700,9 @@
       "health"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "substance"
+    ],
     "courses": [
       {
         "course": "eiken",
@@ -57915,6 +57927,9 @@
       "opinion"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -58476,6 +58491,9 @@
       "culture"
     ],
     "frequencyTier": 2,
+    "contentFlags": [
+      "violence"
+    ],
     "courses": [
       {
         "course": "junior",
@@ -58950,6 +58968,9 @@
       "food"
     ],
     "frequencyTier": 3,
+    "contentFlags": [
+      "substance"
+    ],
     "courses": [
       {
         "course": "eiken",

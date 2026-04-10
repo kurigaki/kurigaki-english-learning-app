@@ -7,6 +7,7 @@ import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
 import { vocabularyBooks, type MyVocabBook } from "@/lib/vocabulary-books";
 import { words as allWords } from "@/data/words";
+import { useContentFilterEnabled } from "@/lib/content-filter";
 import { SpeakButton, Card, ProgressBar } from "@/components/ui";
 import type { Word } from "@/data/words";
 import type { SrsStatus, SrsProgress } from "@/lib/srs";
@@ -74,6 +75,7 @@ function ReviewPageContent() {
   const searchParams = useSearchParams();
   const mode = (searchParams.get("mode") as ReviewMode) ?? "srs";
   const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
+  const contentFilterEnabled = useContentFilterEnabled();
 
   // ----- リストフェーズの状態 -----
   const [reviewWords, setReviewWords] = useState<ReviewWord[]>([]);
@@ -130,11 +132,14 @@ function ReviewPageContent() {
     setMyBooks(books);
     setBookmarkedWordIds(Array.from(bookmarkedSet));
 
+    const isFiltered = (w: { contentFlags?: import("@/data/words/types").ContentFlag[] }) =>
+      contentFilterEnabled && w.contentFlags && w.contentFlags.length > 0;
+
     if (mode === "srs") {
       const dueWords = await unifiedStorage.getDailyReviewBatch();
       const dueMap = new Map(dueWords.map((p) => [p.wordId, p]));
       const result: ReviewWord[] = allWords
-        .filter((w) => dueMap.has(w.id))
+        .filter((w) => dueMap.has(w.id) && !isFiltered(w))
         .map((w) => {
           const stats = statsMap.get(w.id);
           return {
@@ -150,7 +155,7 @@ function ReviewPageContent() {
       statsMap.forEach((stats, wordId) => {
         if (isWeakWord(stats.accuracy, stats.totalAttempts)) {
           const word = allWords.find((w) => w.id === wordId);
-          if (word) {
+          if (word && !isFiltered(word)) {
             result.push({ ...word, accuracy: stats.accuracy, attempts: stats.totalAttempts });
           }
         }
@@ -159,7 +164,7 @@ function ReviewPageContent() {
       setReviewWords(result);
     }
     setIsLoading(false);
-  }, [mode]);
+  }, [mode, contentFilterEnabled]);
 
   const getDisplayedMastery = useCallback((wordId: number): ManualMasteryLevel => (
     getDisplayedManualMastery(wordId, wordStatsMap, manualMemoryById)

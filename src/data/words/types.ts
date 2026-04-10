@@ -44,6 +44,13 @@ export type WordExampleEntry = {
 // 頻出度ティア（1=頻出, 2=標準, 3=発展）
 export type FrequencyTier = 1 | 2 | 3;
 
+// コンテンツフラグ（センシティブ単語の分類）
+// substance: 飲酒・喫煙・薬物
+// violence:  暴力・武器・犯罪
+// sexual:    性・生殖関連
+// sensitive: その他センシティブ（政治的含意・差別 等）
+export type ContentFlag = "substance" | "violence" | "sexual" | "sensitive";
+
 // コース所属情報
 export type CourseAssignment = {
   course: Course;
@@ -61,6 +68,7 @@ export type MasterWord = {
   examples: [WordExampleEntry, WordExampleEntry, WordExampleEntry];
   categories: [string, ...string[]];
   frequencyTier: FrequencyTier;
+  contentFlags?: ContentFlag[];
   courses: CourseAssignment[];
 };
 

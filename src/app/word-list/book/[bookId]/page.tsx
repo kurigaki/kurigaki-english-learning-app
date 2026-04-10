@@ -27,7 +27,8 @@ import BookStudySettingsDialog, {
 import BookProgressBar from "@/components/features/word-list/BookProgressBar";
 import BookFilterSheet from "@/components/features/word-list/BookFilterSheet";
 import CreateBookDialog from "@/components/features/word-list/CreateBookDialog";
-import type { Course } from "@/data/words/types";
+import type { ContentFlag, Course } from "@/data/words/types";
+import { useContentFilterEnabled } from "@/lib/content-filter";
 import type { BookDetailFilter, WordDisplayMode, WordListSortOption } from "@/types";
 
 type BookWord = {
@@ -35,6 +36,7 @@ type BookWord = {
   word: string;
   meaning: string;
   frequencyTier: 1 | 2 | 3;
+  contentFlags?: ContentFlag[];
 };
 
 // 記憶度ソート用の数値マッピング
@@ -62,11 +64,12 @@ function resolveBookWords(
   const parts = bookId.split(":");
   const type = parts[0];
 
-  const toBookWord = (w: { id: number; word: string; meaning: string; frequencyTier: 1 | 2 | 3 }): BookWord => ({
+  const toBookWord = (w: { id: number; word: string; meaning: string; frequencyTier: 1 | 2 | 3; contentFlags?: ContentFlag[] }): BookWord => ({
     id: w.id,
     word: w.word,
     meaning: w.meaning,
     frequencyTier: w.frequencyTier,
+    contentFlags: w.contentFlags,
   });
 
   if (type === "course") {
@@ -137,6 +140,7 @@ export default function BookDetailPage() {
   const router = useRouter();
   const rawBookId = params.bookId as string;
   const bookId = decodeURIComponent(rawBookId);
+  const contentFilterEnabled = useContentFilterEnabled();
 
   const [isMounted, setIsMounted] = useState(false);
   // My単語帳リスト（bookMeta/bookWords の解決 と BookmarkSelectDialog の両方で共用）
@@ -213,10 +217,15 @@ export default function BookDetailPage() {
   );
 
   const filteredWords = useMemo(() => {
+    // 0. コンテンツフィルター
+    let result = contentFilterEnabled
+      ? bookWords.filter((w) => !w.contentFlags || w.contentFlags.length === 0)
+      : bookWords;
+
     // 1. 検索フィルター
-    let result = !searchQuery
-      ? bookWords
-      : bookWords.filter(
+    result = !searchQuery
+      ? result
+      : result.filter(
           (w) =>
             w.word.toLowerCase().includes(searchQuery.toLowerCase()) ||
             w.meaning.toLowerCase().includes(searchQuery.toLowerCase())
@@ -288,7 +297,7 @@ export default function BookDetailPage() {
     }
 
     return result;
-  }, [bookWords, searchQuery, statsMap, manualMap, listSortBy, listFilter]);
+  }, [bookWords, contentFilterEnabled, searchQuery, statsMap, manualMap, listSortBy, listFilter]);
 
   const handleToggleFavorite = useCallback(() => {
     const next = vocabularyBooks.toggleFavoriteBook(bookId);

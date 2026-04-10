@@ -1,8 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { unifiedStorage } from "@/lib/unified-storage";
-import { words } from "@/data/words";
+import { words as rawWords } from "@/data/words";
+import { useContentFilterEnabled } from "@/lib/content-filter";
 import { isWeakWord } from "@/types";
 import { pickDailyWords } from "@/lib/daily-words";
 import type { Word } from "@/data/words";
@@ -21,6 +22,14 @@ export type UserProgress = {
 export const useHomeData = () => {
   const router = useRouter();
   const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
+  const contentFilterEnabled = useContentFilterEnabled();
+  const words = useMemo(
+    () =>
+      contentFilterEnabled
+        ? rawWords.filter((w) => !w.contentFlags || w.contentFlags.length === 0)
+        : rawWords,
+    [contentFilterEnabled],
+  );
   const [userProgress, setUserProgress] = useState<UserProgress | null>(null);
   const [weakWordCount, setWeakWordCount] = useState(0);
   const [srsReviewCount, setSrsReviewCount] = useState(0);
@@ -60,7 +69,7 @@ export const useHomeData = () => {
 
     const dueWords = await unifiedStorage.getDailyReviewBatch();
     setSrsReviewCount(dueWords.length);
-  }, []);
+  }, [words]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -71,7 +80,7 @@ export const useHomeData = () => {
     if (progress) {
       setSavedProgressInfo({ answeredCount: progress.currentIndex + 1, total: progress.questions.length });
     }
-  }, []);
+  }, [words]);
 
   useEffect(() => {
     if (!isAuthLoading) {
