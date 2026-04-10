@@ -1746,6 +1746,10 @@
       {
         "course": "conversation",
         "stage": "a2"
+      },
+      {
+        "course": "senior",
+        "stage": "1"
       }
     ]
   },
@@ -28246,6 +28250,10 @@
       {
         "course": "conversation",
         "stage": "a2"
+      },
+      {
+        "course": "senior",
+        "stage": "1"
       }
     ]
   },
@@ -55438,6 +55446,10 @@
       {
         "course": "toeic",
         "stage": "500"
+      },
+      {
+        "course": "senior",
+        "stage": "1"
       }
     ]
   },
