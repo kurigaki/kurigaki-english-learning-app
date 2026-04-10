@@ -18867,7 +18867,8 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "排除する"
       },
       {
         "course": "eiken",
@@ -19237,7 +19238,8 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "強調"
       },
       {
         "course": "eiken",
@@ -19610,7 +19612,8 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "強化する"
       },
       {
         "course": "eiken",
@@ -19713,7 +19716,8 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "確実にする"
       },
       {
         "course": "eiken",
@@ -31027,7 +31031,8 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "解釈"
       },
       {
         "course": "eiken",

@@ -368,7 +368,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "吸収"
       },
       {
         "course": "eiken",
@@ -24140,7 +24141,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "代表団"
       },
       {
         "course": "eiken",
@@ -25547,7 +25549,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "検出"
       },
       {
         "course": "eiken",
@@ -25618,7 +25621,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "拘留"
       },
       {
         "course": "eiken",
@@ -33355,7 +33359,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "制定する"
       },
       {
         "course": "eiken",
@@ -54531,7 +54536,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "傍受する"
       },
       {
         "course": "eiken",
@@ -55821,7 +55827,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "発動する"
       },
       {
         "course": "eiken",
@@ -59655,7 +59662,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "線形の"
       },
       {
         "course": "eiken",
@@ -72506,7 +72514,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "枠組み"
       },
       {
         "course": "eiken",
@@ -73082,7 +73091,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "分割"
       },
       {
         "course": "eiken",
@@ -81156,7 +81166,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "伝播する"
       },
       {
         "course": "eiken",
@@ -81567,7 +81578,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "議定書"
       },
       {
         "course": "eiken",
@@ -82782,7 +82794,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "検疫"
       },
       {
         "course": "eiken",
@@ -85739,7 +85752,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "回帰"
       },
       {
         "course": "eiken",
@@ -102388,7 +102402,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "時間の"
       },
       {
         "course": "eiken",

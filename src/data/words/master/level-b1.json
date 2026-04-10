@@ -19993,7 +19993,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "引用する"
       },
       {
         "course": "eiken",
@@ -23436,7 +23437,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "概念"
       },
       {
         "course": "eiken",
@@ -24126,7 +24128,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "限定する"
       },
       {
         "course": "eiken",
@@ -24749,7 +24752,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "保全する"
       },
       {
         "course": "eiken",
@@ -25233,7 +25237,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "構成する"
       },
       {
         "course": "eiken",
@@ -25440,7 +25445,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "熟慮する"
       },
       {
         "course": "eiken",
@@ -31609,7 +31615,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "示す"
       },
       {
         "course": "eiken",
@@ -35083,7 +35090,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "処分する"
       },
       {
         "course": "eiken",
@@ -39431,7 +39439,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "排出する"
       },
       {
         "course": "eiken",
@@ -41892,7 +41901,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "推定"
       },
       {
         "course": "eiken",
@@ -42692,7 +42702,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "進化する"
       },
       {
         "course": "eiken",
@@ -43304,7 +43315,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "行政の"
       },
       {
         "course": "eiken",
@@ -46441,7 +46453,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "出生率"
       },
       {
         "course": "eiken",
@@ -46516,7 +46529,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "繊維"
       },
       {
         "course": "eiken",
@@ -59414,7 +59428,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "免疫の"
       },
       {
         "course": "eiken",
@@ -61274,7 +61289,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "誘発する"
       },
       {
         "course": "eiken",
@@ -67173,7 +67189,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "立法機関"
       },
       {
         "course": "eiken",
@@ -82452,7 +82469,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "浸透する"
       },
       {
         "course": "eiken",
@@ -82830,7 +82848,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "持続する"
       },
       {
         "course": "eiken",
@@ -84151,7 +84170,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "基盤"
       },
       {
         "course": "eiken",
@@ -87546,7 +87566,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "2"
+        "stage": "2",
+        "meaning": "探査機"
       },
       {
         "course": "eiken",
@@ -88131,7 +88152,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "進展"
       },
       {
         "course": "eiken",
@@ -89246,7 +89268,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "引き起こす"
       },
       {
         "course": "eiken",
@@ -90406,7 +90429,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "放射線"
       },
       {
         "course": "eiken",
@@ -99261,7 +99285,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "押収する"
       },
       {
         "course": "eiken",

@@ -68,7 +68,8 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "放棄する"
       },
       {
         "course": "eiken",
@@ -240,7 +241,8 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "不在"
       },
       {
         "course": "eiken",
@@ -5391,7 +5393,8 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "認識"
       },
       {
         "course": "eiken",
@@ -10442,7 +10445,8 @@
       },
       {
         "course": "senior",
-        "stage": "1"
+        "stage": "1",
+        "meaning": "炭素"
       },
       {
         "course": "eiken",
