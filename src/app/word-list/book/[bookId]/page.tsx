@@ -34,6 +34,7 @@ type BookWord = {
   id: number;
   word: string;
   meaning: string;
+  frequencyTier: 1 | 2 | 3;
 };
 
 // 記憶度ソート用の数値マッピング
@@ -49,6 +50,7 @@ const DEFAULT_FILTER: BookDetailFilter = {
   accuracyRange: [0, 100],
   daysSince: null,
   masteryLevels: [],
+  tiers: [],
 };
 
 function resolveBookWords(
@@ -60,18 +62,25 @@ function resolveBookWords(
   const parts = bookId.split(":");
   const type = parts[0];
 
+  const toBookWord = (w: { id: number; word: string; meaning: string; frequencyTier: 1 | 2 | 3 }): BookWord => ({
+    id: w.id,
+    word: w.word,
+    meaning: w.meaning,
+    frequencyTier: w.frequencyTier,
+  });
+
   if (type === "course") {
     const course = parts[1] as Course;
     const stage = parts[2];
     const raw = getWordsByCourse(course, stage as Parameters<typeof getWordsByCourse>[1]);
-    return raw.map((w) => ({ id: w.id, word: w.word, meaning: w.meaning }));
+    return raw.map(toBookWord);
   }
 
   if (type === "mastery") {
     const level = parts[1] as ManualMasteryLevel;
     return allWordList
       .filter((w) => getDisplayedManualMastery(w.id, statsMap, manualMap) === level)
-      .map((w) => ({ id: w.id, word: w.word, meaning: w.meaning }));
+      .map(toBookWord);
   }
 
   if (type === "accuracy") {
@@ -83,7 +92,7 @@ function resolveBookWords(
           const stats = statsMap.get(w.id);
           return stats && stats.totalAttempts > 0 && stats.accuracy === 100;
         })
-        .map((w) => ({ id: w.id, word: w.word, meaning: w.meaning }));
+        .map(toBookWord);
     }
     const [lo, hi] = range.split("-").map(Number);
     return allWordList
@@ -93,7 +102,7 @@ function resolveBookWords(
         const acc = stats.accuracy;
         return acc >= lo && acc < hi;
       })
-      .map((w) => ({ id: w.id, word: w.word, meaning: w.meaning }));
+      .map(toBookWord);
   }
 
   if (type === "recommended") {
@@ -103,7 +112,7 @@ function resolveBookWords(
     const wordSet = new Map<number, BookWord>();
     for (const course of recBook.courses) {
       for (const w of getWordsByCourse(course as Course)) {
-        wordSet.set(w.id, { id: w.id, word: w.word, meaning: w.meaning });
+        wordSet.set(w.id, toBookWord(w));
       }
     }
     return Array.from(wordSet.values());
@@ -117,7 +126,7 @@ function resolveBookWords(
     return myBook.wordIds
       .map((wid) => wordById.get(wid))
       .filter((w): w is NonNullable<typeof w> => !!w)
-      .map((w) => ({ id: w.id, word: w.word, meaning: w.meaning }));
+      .map(toBookWord);
   }
 
   return [];
@@ -241,7 +250,12 @@ export default function BookDetailPage() {
       });
     }
 
-    // 5. ソート
+    // 5. 頻出度ティアフィルター
+    if (listFilter.tiers.length > 0) {
+      result = result.filter((w) => listFilter.tiers.includes(w.frequencyTier));
+    }
+
+    // 6. ソート
     if (listSortBy !== "default") {
       result = [...result].sort((a, b) => {
         switch (listSortBy) {
@@ -305,7 +319,8 @@ export default function BookDetailPage() {
       listFilter.accuracyRange[0] > 0 ||
       listFilter.accuracyRange[1] < 100 ||
       listFilter.daysSince !== null ||
-      listFilter.masteryLevels.length > 0,
+      listFilter.masteryLevels.length > 0 ||
+      listFilter.tiers.length > 0,
     [listFilter]
   );
 

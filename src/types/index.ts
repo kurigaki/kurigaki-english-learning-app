@@ -205,6 +205,7 @@ export type BookDetailFilter = {
   accuracyRange: [number, number]; // [0, 100] = 全範囲（フィルターなし）
   daysSince: number | null;        // null = 絞り込みなし
   masteryLevels: ManualMasteryLevel[]; // 空配列 = 全て表示
+  tiers: (1 | 2 | 3)[];            // 空配列 = 全て表示
 };
 
 // 単語表示モード（単語帳詳細）

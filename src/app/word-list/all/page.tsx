@@ -68,6 +68,13 @@ const memoryFilterOptions: { key: ManualMasteryLevel | "all"; label: string }[] 
   { key: "unlearned", label: "未学習単語" },
 ];
 
+const TIER_BUTTONS: { key: 1 | 2 | 3 | "all"; label: string; activeClass: string }[] = [
+  { key: "all", label: "全て",  activeClass: "bg-primary-500 text-white shadow-sm" },
+  { key: 1,     label: "★頻出", activeClass: "bg-orange-500 text-white shadow-sm" },
+  { key: 2,     label: "標準",  activeClass: "bg-primary-500 text-white shadow-sm" },
+  { key: 3,     label: "発展",  activeClass: "bg-slate-500 text-white shadow-sm" },
+];
+
 const accuracyFilterOptions: { key: WordListAccuracyFilter; label: string }[] = [
   { key: "all", label: "全て" },
   { key: "100", label: "100%" },
@@ -117,6 +124,7 @@ export default function WordListPage() {
     mapLegacyMasteryToMemory(["new", "learning", "familiar", "mastered"].includes(initialMastery) ? initialMastery as MasteryLevel : "all")
   );
   const [selectedAccuracy, setSelectedAccuracy] = useState<WordListAccuracyFilter>("all");
+  const [selectedTier, setSelectedTier] = useState<1 | 2 | 3 | "all">("all");
   const [sortOption, setSortOption] = useState<SortOption>("default");
   const [wordsWithStats, setWordsWithStats] = useState<WordWithStats[]>([]);
   const [manualMasteryById, setManualMasteryById] = useState<Record<number, ManualMasteryLevel>>({});
@@ -144,6 +152,7 @@ export default function WordListPage() {
       mapLegacyMasteryToMemory(filterSession.selectedMastery ?? "all")
     );
     setSelectedAccuracy(filterSession.selectedAccuracy ?? "all");
+    setSelectedTier(filterSession.selectedTier ?? "all");
     setSearchQuery(filterSession.searchQuery);
     setShowBookmarksOnly(filterSession.showBookmarksOnly);
     setSortOption(filterSession.sortOption);
@@ -298,6 +307,7 @@ export default function WordListPage() {
         if (!wordCategories.includes(selectedCategory)) return false;
       }
       if (selectedDifficulty !== "all" && word.difficulty !== selectedDifficulty) return false;
+      if (selectedTier !== "all" && word.frequencyTier !== selectedTier) return false;
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         return (
@@ -307,7 +317,7 @@ export default function WordListPage() {
       }
       return true;
     });
-  }, [wordsWithStats, courseWordIds, showBookmarksOnly, selectedCategory, selectedDifficulty, searchQuery]);
+  }, [wordsWithStats, courseWordIds, showBookmarksOnly, selectedCategory, selectedDifficulty, selectedTier, searchQuery]);
 
   // Filter words based on search, category, difficulty, bookmarks, accuracy, and memory
   const filteredWords = useMemo(() => {
@@ -387,6 +397,7 @@ export default function WordListPage() {
       selectedDifficulty,
       selectedMemory,
       selectedAccuracy,
+      selectedTier,
       searchQuery,
       showBookmarksOnly,
       sortOption,
@@ -403,6 +414,7 @@ export default function WordListPage() {
     selectedDifficulty,
     selectedMemory,
     selectedAccuracy,
+    selectedTier,
     searchQuery,
     showBookmarksOnly,
     sortOption,
@@ -717,6 +729,24 @@ export default function WordListPage() {
             </select>
           </div>
 
+          {/* Filters Row 4: 頻出度ティア */}
+          <div className="flex items-center gap-1">
+            <span className="text-[11px] font-medium text-slate-600 dark:text-slate-300 px-1 whitespace-nowrap">レベル</span>
+            {TIER_BUTTONS.map(({ key, label, activeClass }) => (
+              <button
+                key={key}
+                onClick={() => setSelectedTier(key)}
+                className={`px-2 py-1 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+                  selectedTier === key
+                    ? activeClass
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary-300"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
           {/* Results count */}
           <p className="text-xs text-slate-500 dark:text-slate-400">
             {filteredWords.length}語
@@ -726,6 +756,7 @@ export default function WordListPage() {
             {searchQuery && ` (「${searchQuery}」)`}
             {courseLabel && ` / ${courseLabel}${stageLabel ? ` - ${stageLabel}` : ""}`}
             {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
+            {selectedTier !== "all" && ` / ${selectedTier === 1 ? "★頻出" : selectedTier === 2 ? "標準" : "発展"}`}
           </p>
         </div>
 
@@ -801,6 +832,7 @@ export default function WordListPage() {
                               selectedDifficulty,
                               selectedMemory,
                               selectedAccuracy,
+                              selectedTier,
                               searchQuery,
                               showBookmarksOnly,
                               sortOption,

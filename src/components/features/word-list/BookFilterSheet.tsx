@@ -11,6 +11,12 @@ const MASTERY_OPTIONS: { key: ManualMasteryLevel; label: string }[] = [
   { key: "remembered",label: "覚えた単語" },
 ];
 
+const TIER_OPTIONS: { key: 1 | 2 | 3; label: string; activeClass: string }[] = [
+  { key: 1, label: "★頻出", activeClass: "bg-orange-500 border-orange-500 text-white" },
+  { key: 2, label: "標準",   activeClass: "bg-primary-500 border-primary-500 text-white" },
+  { key: 3, label: "発展",   activeClass: "bg-slate-500 border-slate-500 text-white" },
+];
+
 type Props = {
   filter: BookDetailFilter;
   onApply: (filter: BookDetailFilter) => void;
@@ -25,11 +31,16 @@ export default function BookFilterSheet({ filter, onApply, onClose }: Props) {
   const [masteryLevels, setMasteryLevels] = useState<ManualMasteryLevel[]>(
     filter.masteryLevels as ManualMasteryLevel[]
   );
+  const [tiers, setTiers] = useState<(1 | 2 | 3)[]>(filter.tiers ?? []);
 
   const toggleMastery = (key: ManualMasteryLevel) => {
     setMasteryLevels((prev) =>
       prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
     );
+  };
+
+  const toggleTier = (key: 1 | 2 | 3) => {
+    setTiers((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]));
   };
 
   const handleReset = () => {
@@ -38,6 +49,7 @@ export default function BookFilterSheet({ filter, onApply, onClose }: Props) {
     setDaysSinceEnabled(false);
     setDaysSinceVal(7);
     setMasteryLevels([]);
+    setTiers([]);
   };
 
   const handleApply = () => {
@@ -45,6 +57,7 @@ export default function BookFilterSheet({ filter, onApply, onClose }: Props) {
       accuracyRange: [accMin, accMax],
       daysSince: daysSinceEnabled ? daysSinceVal : null,
       masteryLevels,
+      tiers,
     });
   };
 
@@ -151,7 +164,7 @@ export default function BookFilterSheet({ filter, onApply, onClose }: Props) {
         </div>
 
         {/* 記憶度 */}
-        <div className="mb-6">
+        <div className="mb-5">
           <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
             記憶度
             <span className="text-xs font-normal text-slate-400 ml-1">（選択なしで全て表示）</span>
@@ -166,6 +179,32 @@ export default function BookFilterSheet({ filter, onApply, onClose }: Props) {
                   className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
                     isChecked
                       ? "bg-primary-500 border-primary-500 text-white"
+                      : "bg-slate-50 dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300"
+                  }`}
+                >
+                  {opt.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 頻出度ティア */}
+        <div className="mb-6">
+          <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
+            レベル
+            <span className="text-xs font-normal text-slate-400 ml-1">（選択なしで全て表示）</span>
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {TIER_OPTIONS.map((opt) => {
+              const isChecked = tiers.includes(opt.key);
+              return (
+                <button
+                  key={opt.key}
+                  onClick={() => toggleTier(opt.key)}
+                  className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+                    isChecked
+                      ? opt.activeClass
                       : "bg-slate-50 dark:bg-slate-700 border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300"
                   }`}
                 >

@@ -25,6 +25,7 @@ export type FlashcardSessionState = {
   selectedDifficulty: number | "all";
   selectedMemory?: ManualMasteryLevel | "all";
   selectedAccuracy?: WordListAccuracyFilter;
+  selectedTier?: 1 | 2 | 3 | "all";
   selectedMastery?: MasteryLevel | "all"; // legacy
   flashcardWordIds?: number[];
   searchQuery: string;
