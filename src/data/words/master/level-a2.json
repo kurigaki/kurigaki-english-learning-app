@@ -5490,6 +5490,11 @@
         "stage": "a2",
         "meaning": "紙幣",
         "tier": 2
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
       }
     ]
   },
@@ -5812,6 +5817,11 @@
       {
         "course": "toeic",
         "stage": "500",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
         "tier": 1
       }
     ]
@@ -7115,6 +7125,11 @@
         "course": "conversation",
         "stage": "a2",
         "tier": 3
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ]
   },
@@ -13370,6 +13385,11 @@
         "stage": "700",
         "meaning": "契約・契約書",
         "tier": 1
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ]
   },
@@ -15663,6 +15683,11 @@
         "course": "toeic",
         "stage": "500",
         "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
       }
     ]
   },
@@ -16945,6 +16970,11 @@
       {
         "course": "toeic",
         "stage": "500",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
         "tier": 1
       }
     ]
@@ -21196,6 +21226,11 @@
         "course": "toeic",
         "stage": "500",
         "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
       }
     ]
   },
@@ -24473,6 +24508,11 @@
         "course": "conversation",
         "stage": "a2",
         "meaning": "便",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
         "tier": 1
       }
     ]
@@ -29381,6 +29421,11 @@
         "course": "eiken",
         "stage": "4",
         "tier": 3
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ]
   },
@@ -40813,6 +40858,11 @@
         "course": "conversation",
         "stage": "b2",
         "tier": 2
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ]
   },
@@ -49205,6 +49255,11 @@
         "stage": "a2",
         "meaning": "レシート",
         "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
       }
     ]
   },
@@ -50783,6 +50838,11 @@
       {
         "course": "conversation",
         "stage": "b1",
+        "tier": 1
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
         "tier": 1
       }
     ]
@@ -52504,6 +52564,11 @@
         "course": "conversation",
         "stage": "a2",
         "tier": 3
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ]
   },
@@ -52736,6 +52801,11 @@
         "course": "eiken",
         "stage": "pre2",
         "tier": 2
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
       }
     ]
   },
@@ -57678,6 +57748,11 @@
       {
         "course": "toeic",
         "stage": "500",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
         "tier": 1
       }
     ]

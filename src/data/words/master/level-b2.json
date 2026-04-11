@@ -58561,6 +58561,11 @@
         "course": "toeic",
         "stage": "700",
         "tier": 2
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ]
   },
@@ -63494,6 +63499,11 @@
         "course": "toeic",
         "stage": "800",
         "tier": 2
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
       }
     ]
   },
@@ -76722,6 +76732,11 @@
         "course": "toeic",
         "stage": "800",
         "tier": 2
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
       }
     ]
   },
