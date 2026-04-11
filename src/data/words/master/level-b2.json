@@ -937,17 +937,17 @@
     "examples": [
       {
         "en": "Benefits accrue to those who invest early.",
-        "ja": "早期に投資する人に利益が生じる。",
+        "ja": "早期に投資する人に利益が生じます。",
         "context": "金融"
       },
       {
         "en": "Unpaid interest continues to accrue over time.",
-        "ja": "未払い利息は時間の経過とともに生じ続ける。",
+        "ja": "未払い利息は時間の経過とともに生じ続けます。",
         "context": "金融"
       },
       {
         "en": "Experience accrued during the internship proved invaluable.",
-        "ja": "インターン中に蓄積された経験は非常に貴重だった。",
+        "ja": "インターン中に蓄積された経験は非常に貴重でした。",
         "context": "キャリア"
       }
     ],
@@ -1731,17 +1731,17 @@
     "examples": [
       {
         "en": "The agency administers federal education grants.",
-        "ja": "その機関は連邦教育助成金を管理している。",
+        "ja": "その機関は連邦教育助成金を管理しています。",
         "context": "policy"
       },
       {
         "en": "Nurses administer medicine to patients every morning.",
-        "ja": "看護師は毎朝患者に薬を投与する。",
+        "ja": "看護師は毎朝患者に薬を投与します。",
         "context": "health"
       },
       {
         "en": "The city council administers local infrastructure projects.",
-        "ja": "市議会は地域のインフラ事業を管理する。",
+        "ja": "市議会は地域のインフラ事業を管理します。",
         "context": "governance"
       }
     ],
@@ -1953,17 +1953,17 @@
     "examples": [
       {
         "en": "The principal admonished students about campus safety.",
-        "ja": "校長は生徒たちにキャンパスの安全について戒めた。",
+        "ja": "校長は生徒たちにキャンパスの安全について戒めました。",
         "context": "教育"
       },
       {
         "en": "Doctors admonish patients to reduce sugar intake.",
-        "ja": "医師は患者に糖分摂取を減らすよう戒める。",
+        "ja": "医師は患者に糖分摂取を減らすよう戒めます。",
         "context": "健康"
       },
       {
         "en": "The referee admonished the player for rough play.",
-        "ja": "審判はその選手を荒いプレーについて戒めた。",
+        "ja": "審判はその選手を荒いプレーについて戒めました。",
         "context": "スポーツ"
       }
     ],
@@ -2436,12 +2436,12 @@
       },
       {
         "en": "Political affiliation affects voting.",
-        "ja": "政治的所属は投票に影響する。",
+        "ja": "政治的所属は投票に影響します。",
         "context": "politics"
       },
       {
         "en": "She has no religious affiliation.",
-        "ja": "彼女は宗教的所属を持たない。",
+        "ja": "彼女は宗教的所属を持っていません。",
         "context": "religion"
       }
     ],
@@ -2474,17 +2474,17 @@
     "examples": [
       {
         "en": "The president affirmed the country's commitment to peace.",
-        "ja": "大統領は平和への国の取り組みを断言した。",
+        "ja": "大統領は平和への国の取り組みを断言しました。",
         "context": "politics"
       },
       {
         "en": "She affirmed her belief in equal rights for all citizens.",
-        "ja": "彼女はすべての市民の平等な権利を信じると断言した。",
+        "ja": "彼女はすべての市民の平等な権利を信じると断言しました。",
         "context": "rights"
       },
       {
         "en": "The court affirmed the lower court's decision.",
-        "ja": "裁判所は下級審の判決を支持した。",
+        "ja": "裁判所は下級審の判決を支持しました。",
         "context": "law"
       }
     ],
@@ -3312,17 +3312,17 @@
     "examples": [
       {
         "en": "The new policy aims to alleviate poverty in rural areas.",
-        "ja": "新しい政策は地方の貧困を緩和することを目指す。",
+        "ja": "新しい政策は地方の貧困を緩和することを目指します。",
         "context": "政治"
       },
       {
         "en": "Medication can alleviate symptoms but not cure the disease.",
-        "ja": "薬は症状を緩和できるが病気を治すことはできない。",
+        "ja": "薬は症状を緩和できますが、病気を治すことはできません。",
         "context": "医療"
       },
       {
         "en": "Volunteers worked tirelessly to alleviate the suffering of refugees.",
-        "ja": "ボランティアは難民の苦しみを緩和するために懸命に働いた。",
+        "ja": "ボランティアは難民の苦しみを緩和するために懸命に働きました。",
         "context": "社会"
       }
     ],
@@ -3430,17 +3430,17 @@
     "examples": [
       {
         "en": "He alluded to a secret plan.",
-        "ja": "彼は秘密の計画をほのめかした。",
+        "ja": "彼は秘密の計画をほのめかしました。",
         "context": "コミュニケーション"
       },
       {
         "en": "The poem alludes to mythology.",
-        "ja": "その詩は神話をほのめかしている。",
+        "ja": "その詩は神話をほのめかしています。",
         "context": "文学"
       },
       {
         "en": "She alluded to the problem.",
-        "ja": "彼女はその問題をほのめかした。",
+        "ja": "彼女はその問題をほのめかしました。",
         "context": "対話"
       }
     ],
@@ -3618,17 +3618,17 @@
     "examples": [
       {
         "en": "He amassed a great fortune.",
-        "ja": "彼は莫大な財産を蓄積した。",
+        "ja": "彼は莫大な財産を蓄積しました。",
         "context": "finance"
       },
       {
         "en": "The team amassed evidence over years.",
-        "ja": "チームは何年もかけて証拠を蓄積した。",
+        "ja": "チームは何年もかけて証拠を蓄積しました。",
         "context": "law"
       },
       {
         "en": "Data was amassed from multiple sources.",
-        "ja": "複数の情報源からデータが蓄積された。",
+        "ja": "複数の情報源からデータが蓄積されました。",
         "context": "research"
       }
     ],
@@ -5298,17 +5298,17 @@
     "examples": [
       {
         "en": "He tried to appease the crowd.",
-        "ja": "彼は群衆をなだめようとした。",
+        "ja": "彼は群衆をなだめようとしました。",
         "context": "政治"
       },
       {
         "en": "She appeased her angry boss.",
-        "ja": "彼女は怒った上司をなだめた。",
+        "ja": "彼女は怒った上司をなだめました。",
         "context": "職場"
       },
       {
         "en": "The gift appeased the child.",
-        "ja": "プレゼントは子供をなだめた。",
+        "ja": "プレゼントは子供をなだめました。",
         "context": "家庭"
       }
     ],
@@ -5833,17 +5833,17 @@
     "examples": [
       {
         "en": "The dispute was resolved through international arbitration.",
-        "ja": "紛争は国際仲裁を通じて解決された。",
+        "ja": "紛争は国際仲裁を通じて解決されました。",
         "context": "law"
       },
       {
         "en": "Many contracts include a clause requiring arbitration.",
-        "ja": "多くの契約書には仲裁を要求する条項が含まれている。",
+        "ja": "多くの契約書には仲裁を要求する条項が含まれています。",
         "context": "business"
       },
       {
         "en": "Labor arbitration helped avoid a nationwide strike.",
-        "ja": "労働仲裁は全国的なストライキを回避するのに役立った。",
+        "ja": "労働仲裁は全国的なストライキを回避するのに役立ちました。",
         "context": "economy"
       }
     ],
@@ -8022,17 +8022,17 @@
     "examples": [
       {
         "en": "Virtual reality can augment traditional classroom learning.",
-        "ja": "バーチャルリアリティは伝統的な教室学習を増強しうる。",
+        "ja": "バーチャルリアリティは伝統的な教室学習を増強することができます。",
         "context": "教育"
       },
       {
         "en": "Freelance work augmented her income during difficult times.",
-        "ja": "フリーランスの仕事が困難な時期に彼女の収入を増やした。",
+        "ja": "フリーランスの仕事が困難な時期に彼女の収入を増やしました。",
         "context": "ビジネス"
       },
       {
         "en": "Wearable devices augment human capabilities in various fields.",
-        "ja": "ウェアラブル端末はさまざまな分野で人間の能力を拡張する。",
+        "ja": "ウェアラブル端末はさまざまな分野で人間の能力を拡張します。",
         "context": "技術"
       }
     ],
@@ -8183,17 +8183,17 @@
     "examples": [
       {
         "en": "The government imposed austerity measures to reduce the debt.",
-        "ja": "政府は債務を減らすための緊縮政策を実施した。",
+        "ja": "政府は債務を減らすための緊縮政策を実施しました。",
         "context": "economy"
       },
       {
         "en": "Citizens protested against austerity cuts to public services.",
-        "ja": "市民は公共サービスへの緊縮削減に反対して抗議した。",
+        "ja": "市民は公共サービスへの緊縮削減に反対して抗議しました。",
         "context": "society"
       },
       {
         "en": "Austerity policies can reduce government spending but harm the poor.",
-        "ja": "緊縮政策は政府支出を削減できるが、貧困層を傷つけることがある。",
+        "ja": "緊縮政策は政府支出を削減できますが、貧困層を傷つけることがあります。",
         "context": "policy"
       }
     ],
@@ -8224,17 +8224,17 @@
     "examples": [
       {
         "en": "Experts authenticated the painting.",
-        "ja": "専門家がその絵画を真正と証明した。",
+        "ja": "専門家がその絵画を真正と証明しました。",
         "context": "art"
       },
       {
         "en": "The system authenticates user identity.",
-        "ja": "システムはユーザーの身元を認証する。",
+        "ja": "システムはユーザーの身元を認証します。",
         "context": "technology"
       },
       {
         "en": "She authenticated the ancient document.",
-        "ja": "彼女は古文書を真正と証明した。",
+        "ja": "彼女は古文書を真正と証明しました。",
         "context": "history"
       }
     ],
@@ -8343,17 +8343,17 @@
     "examples": [
       {
         "en": "The region gained the right to form an autonomous government.",
-        "ja": "その地域は自治政府を設立する権利を得た。",
+        "ja": "その地域は自治政府を設立する権利を得ました。",
         "context": "politics"
       },
       {
         "en": "Autonomous vehicles are being developed to improve road safety.",
-        "ja": "自律型車両は道路の安全性を向上させるために開発されている。",
+        "ja": "自律型車両は道路の安全性を向上させるために開発されています。",
         "context": "technology"
       },
       {
         "en": "The university operates as an autonomous institution with academic freedom.",
-        "ja": "大学は学問の自由を持つ自律的な機関として運営されている。",
+        "ja": "大学は学問の自由を持つ自律的な機関として運営されています。",
         "context": "education"
       }
     ],
@@ -8965,17 +8965,17 @@
     "examples": [
       {
         "en": "The government arranged a bailout for the failing bank.",
-        "ja": "政府は経営危機に陥った銀行の緊急救済を手配した。",
+        "ja": "政府は経営危機に陥った銀行の緊急救済を手配しました。",
         "context": "economy"
       },
       {
         "en": "The financial bailout of the auto industry saved thousands of jobs.",
-        "ja": "自動車産業の財政支援は何千もの雇用を守った。",
+        "ja": "自動車産業の財政支援は何千もの雇用を守りました。",
         "context": "economy"
       },
       {
         "en": "Critics questioned whether the taxpayer bailout was justified.",
-        "ja": "批評家たちは納税者による救済が正当化されるかを疑問視した。",
+        "ja": "批評家たちは納税者による救済が正当化されるかを疑問視しました。",
         "context": "policy"
       }
     ],
@@ -9869,17 +9869,17 @@
     "examples": [
       {
         "en": "The study sets a new benchmark for research.",
-        "ja": "その研究は研究の新たな基準を設定した。",
+        "ja": "その研究は研究の新たな基準を設定しました。",
         "context": "学術"
       },
       {
         "en": "Their performance became the industry benchmark.",
-        "ja": "彼らの業績は業界の基準となった。",
+        "ja": "彼らの業績は業界の基準となりました。",
         "context": "ビジネス"
       },
       {
         "en": "The test serves as a benchmark for evaluating skills.",
-        "ja": "そのテストはスキルを評価する基準として機能する。",
+        "ja": "そのテストはスキルを評価する基準として機能します。",
         "context": "教育"
       }
     ],
@@ -10950,17 +10950,17 @@
     "examples": [
       {
         "en": "New evidence bolstered the prosecution's case significantly.",
-        "ja": "新しい証拠が検察の訴訟を大きく強化した。",
+        "ja": "新しい証拠が検察の訴訟を大きく強化しました。",
         "context": "法律"
       },
       {
         "en": "Foreign investment will bolster the struggling local economy.",
-        "ja": "外国投資が苦戦する地元経済を強化するだろう。",
+        "ja": "外国投資が苦戦する地元経済を強化するでしょう。",
         "context": "経済"
       },
       {
         "en": "Regular training bolsters employee confidence and productivity.",
-        "ja": "定期的な研修は従業員の自信と生産性を強化する。",
+        "ja": "定期的な研修は従業員の自信と生産性を強化します。",
         "context": "ビジネス"
       }
     ],
@@ -12403,17 +12403,17 @@
     "examples": [
       {
         "en": "The minister gave a candid assessment of the crisis.",
-        "ja": "大臣は危機について率直な評価を述べた。",
+        "ja": "大臣は危機について率直な評価を述べました。",
         "context": "政治"
       },
       {
         "en": "Her candid interview revealed the challenges she faced.",
-        "ja": "彼女の率直なインタビューが直面した課題を明らかにした。",
+        "ja": "彼女の率直なインタビューが直面した課題を明らかにしました。",
         "context": "メディア"
       },
       {
         "en": "Candid feedback from customers improved the product quality.",
-        "ja": "顧客からの率直なフィードバックが製品品質を改善した。",
+        "ja": "顧客からの率直なフィードバックが製品品質を改善しました。",
         "context": "ビジネス"
       }
     ],
@@ -13560,17 +13560,17 @@
     "examples": [
       {
         "en": "Government censorship restricts freedom of expression.",
-        "ja": "政府の検閲は表現の自由を制限する。",
+        "ja": "政府の検閲は表現の自由を制限します。",
         "context": "rights"
       },
       {
         "en": "Internet censorship prevents citizens from accessing information.",
-        "ja": "インターネット検閲は市民が情報にアクセスするのを妨げる。",
+        "ja": "インターネット検閲は市民が情報にアクセスするのを妨げます。",
         "context": "technology"
       },
       {
         "en": "Wartime censorship was used to control public information.",
-        "ja": "戦時中の検閲は公的情報を管理するために使われた。",
+        "ja": "戦時中の検閲は公的情報を管理するために使われました。",
         "context": "history"
       }
     ],
@@ -15551,17 +15551,17 @@
     "examples": [
       {
         "en": "They collaborated on the project.",
-        "ja": "彼らはプロジェクトで協力した。",
+        "ja": "彼らはプロジェクトで協力しました。",
         "context": "仕事"
       },
       {
         "en": "Artists collaborated across borders.",
-        "ja": "アーティストは国境を越えて協力した。",
+        "ja": "アーティストは国境を越えて協力しました。",
         "context": "文化"
       },
       {
         "en": "She collaborated with researchers.",
-        "ja": "彼女は研究者と協力した。",
+        "ja": "彼女は研究者と協力しました。",
         "context": "学術"
       }
     ],
@@ -15598,17 +15598,17 @@
     "examples": [
       {
         "en": "The project succeeded through close collaboration between teams.",
-        "ja": "そのプロジェクトはチーム間の緊密な協力で成功した。",
+        "ja": "そのプロジェクトはチーム間の緊密な協力で成功しました。",
         "context": "ビジネス"
       },
       {
         "en": "Scientific collaboration across borders accelerated the research.",
-        "ja": "国境を越えた科学的協力が研究を加速させた。",
+        "ja": "国境を越えた科学的協力が研究を加速させました。",
         "context": "科学"
       },
       {
         "en": "Their collaboration produced a groundbreaking new vaccine.",
-        "ja": "彼らの協力が画期的な新ワクチンを生み出した。",
+        "ja": "彼らの協力が画期的な新ワクチンを生み出しました。",
         "context": "医療"
       }
     ],
@@ -16167,17 +16167,17 @@
     "examples": [
       {
         "en": "The ceremony will commence soon.",
-        "ja": "式典はまもなく始まる。",
+        "ja": "式典はまもなく始まります。",
         "context": "学校"
       },
       {
         "en": "Work commenced on the building.",
-        "ja": "建物の工事が始まった。",
+        "ja": "建物の工事が始まりました。",
         "context": "建設"
       },
       {
         "en": "Classes commenced in April.",
-        "ja": "授業は4月に始まった。",
+        "ja": "授業は4月に始まりました。",
         "context": "学校"
       }
     ],
@@ -16289,17 +16289,17 @@
     "examples": [
       {
         "en": "The professor provided detailed commentary.",
-        "ja": "教授は詳細な解説を提供した。",
+        "ja": "教授は詳細な解説を提供しました。",
         "context": "高2"
       },
       {
         "en": "Sports commentary helps viewers understand the game.",
-        "ja": "スポーツ解説は視聴者がゲームを理解するのを助ける。",
+        "ja": "スポーツ解説は視聴者がゲームを理解するのを助けます。",
         "context": "高2"
       },
       {
         "en": "Political commentary shapes public opinion.",
-        "ja": "政治解説は世論を形成する。",
+        "ja": "政治解説は世論を形成します。",
         "context": "高2"
       }
     ],
@@ -17303,17 +17303,17 @@
     "examples": [
       {
         "en": "Conceptual understanding is deeper than memorization.",
-        "ja": "概念的理解は暗記より深い。",
+        "ja": "概念的理解は暗記より深いです。",
         "context": "高3"
       },
       {
         "en": "She struggled with the conceptual framework.",
-        "ja": "彼女は概念的枠組みに苦労した。",
+        "ja": "彼女は概念的枠組みに苦労しました。",
         "context": "高3"
       },
       {
         "en": "A conceptual model was used to explain the process.",
-        "ja": "概念的モデルがプロセスを説明するために使われた。",
+        "ja": "概念的モデルがプロセスを説明するために使われました。",
         "context": "高3"
       }
     ],
@@ -18023,17 +18023,17 @@
     "examples": [
       {
         "en": "Individuals often feel pressure to conform to social norms.",
-        "ja": "個人はしばしば社会規範に従うよう圧力を感じる。",
+        "ja": "個人はしばしば社会規範に従うよう圧力を感じます。",
         "context": "society"
       },
       {
         "en": "The design must conform to international safety standards.",
-        "ja": "デザインは国際的な安全基準に適合しなければならない。",
+        "ja": "デザインは国際的な安全基準に適合しなければなりません。",
         "context": "technology"
       },
       {
         "en": "Some teenagers struggle to conform to adult expectations.",
-        "ja": "一部のティーンエイジャーは大人の期待に合わせることに苦労する。",
+        "ja": "一部のティーンエイジャーは大人の期待に合わせることに苦労します。",
         "context": "education"
       }
     ],
@@ -18360,17 +18360,17 @@
     "examples": [
       {
         "en": "The theory is mere conjecture.",
-        "ja": "その理論は単なる推測だ。",
+        "ja": "その理論は単なる推測です。",
         "context": "science"
       },
       {
         "en": "His conjecture proved to be correct.",
-        "ja": "彼の推測は正しいことが証明された。",
+        "ja": "彼の推測は正しいことが証明されました。",
         "context": "research"
       },
       {
         "en": "Avoid conjecture without evidence.",
-        "ja": "証拠のない推測は避けること。",
+        "ja": "証拠のない推測は避けてください。",
         "context": "logic"
       }
     ],
@@ -19117,17 +19117,17 @@
     "examples": [
       {
         "en": "The senator represents her constituency.",
-        "ja": "上院議員は選挙区を代表する。",
+        "ja": "上院議員は選挙区を代表します。",
         "context": "politics"
       },
       {
         "en": "She addressed her constituency directly.",
-        "ja": "彼女は選挙区民に直接語りかけた。",
+        "ja": "彼女は選挙区民に直接語りかけました。",
         "context": "government"
       },
       {
         "en": "The policy appeals to a wide constituency.",
-        "ja": "その政策は幅広い選挙区民に訴える。",
+        "ja": "その政策は幅広い選挙区民に訴えます。",
         "context": "election"
       }
     ],
@@ -19164,17 +19164,17 @@
     "examples": [
       {
         "en": "The court ruled that the new law was not constitutional.",
-        "ja": "裁判所はその新しい法律が合憲でないと判決した。",
+        "ja": "裁判所はその新しい法律が合憲でないと判決しました。",
         "context": "law"
       },
       {
         "en": "Freedom of the press is a constitutional right in democratic nations.",
-        "ja": "報道の自由は民主主義国家における憲法上の権利だ。",
+        "ja": "報道の自由は民主主義国家における憲法上の権利です。",
         "context": "rights"
       },
       {
         "en": "Constitutional reforms were required to allow the presidential term extension.",
-        "ja": "大統領任期の延長を認めるために憲法改正が必要だった。",
+        "ja": "大統領任期の延長を認めるために憲法改正が必要でした。",
         "context": "politics"
       }
     ],
@@ -19640,17 +19640,17 @@
     "examples": [
       {
         "en": "The government has contingency plans for natural disasters.",
-        "ja": "政府は自然災害に対する緊急計画を持っている。",
+        "ja": "政府は自然災害に対する緊急計画を持っています。",
         "context": "policy"
       },
       {
         "en": "Businesses must prepare for contingencies like economic downturns.",
-        "ja": "企業は経済的な不況などの不測の事態に備えなければならない。",
+        "ja": "企業は経済的な不況などの不測の事態に備えなければなりません。",
         "context": "business"
       },
       {
         "en": "The army trained for all possible contingencies in the field.",
-        "ja": "軍は現場でのあらゆる不測の事態に備えて訓練した。",
+        "ja": "軍は現場でのあらゆる不測の事態に備えて訓練しました。",
         "context": "military"
       }
     ],
@@ -19930,17 +19930,17 @@
     "examples": [
       {
         "en": "The UN Security Council convened an emergency session.",
-        "ja": "国連安全保障理事会は緊急会合を招集した。",
+        "ja": "国連安全保障理事会は緊急会合を招集しました。",
         "context": "politics"
       },
       {
         "en": "The board convened to discuss the financial crisis.",
-        "ja": "理事会は財政危機について話し合うために招集された。",
+        "ja": "理事会は財政危機について話し合うために招集されました。",
         "context": "business"
       },
       {
         "en": "Experts convened to address the growing threat of cybercrime.",
-        "ja": "専門家たちはサイバー犯罪の増大する脅威に対処するために集まった。",
+        "ja": "専門家たちはサイバー犯罪の増大する脅威に対処するために集まりました。",
         "context": "technology"
       }
     ],
@@ -20817,17 +20817,17 @@
     "examples": [
       {
         "en": "Evidence corroborates her statement.",
-        "ja": "証拠が彼女の発言を裏付ける。",
+        "ja": "証拠が彼女の発言を裏付けます。",
         "context": "law"
       },
       {
         "en": "Multiple witnesses corroborate the story.",
-        "ja": "複数の目撃者がその話を裏付けた。",
+        "ja": "複数の目撃者がその話を裏付けました。",
         "context": "court"
       },
       {
         "en": "The data corroborates the hypothesis.",
-        "ja": "データが仮説を裏付ける。",
+        "ja": "データが仮説を裏付けます。",
         "context": "research"
       }
     ],
@@ -21039,17 +21039,17 @@
     "examples": [
       {
         "en": "She met her counterpart from the partner firm.",
-        "ja": "彼女は提携先の対応する人物と会った。",
+        "ja": "彼女は提携先の対応する人物と会いました。",
         "context": "ビジネス"
       },
       {
         "en": "The Japanese counterpart of this role differs greatly.",
-        "ja": "この役割の日本側の対応者は大きく異なる。",
+        "ja": "この役割の日本側の対応者は大きく異なります。",
         "context": "文化"
       },
       {
         "en": "Each minister consulted with foreign counterparts.",
-        "ja": "各大臣は外国の対応する人物と協議した。",
+        "ja": "各大臣は外国の対応する人物と協議しました。",
         "context": "外交"
       }
     ],
@@ -21630,17 +21630,17 @@
     "examples": [
       {
         "en": "The scandal severely damaged the company's credibility.",
-        "ja": "そのスキャンダルは企業の信頼性を深刻に損なった。",
+        "ja": "そのスキャンダルは企業の信頼性を深刻に損ないました。",
         "context": "ビジネス"
       },
       {
         "en": "Journalists must protect their credibility above all else.",
-        "ja": "ジャーナリストは何よりも信頼性を守らなければならない。",
+        "ja": "ジャーナリストは何よりも信頼性を守らなければなりません。",
         "context": "メディア"
       },
       {
         "en": "Fact-checking strengthens the credibility of published reports.",
-        "ja": "事実確認が公表された報告書の信頼性を高める。",
+        "ja": "事実確認が公表された報告書の信頼性を高めます。",
         "context": "メディア"
       }
     ],
@@ -21830,17 +21830,17 @@
     "examples": [
       {
         "en": "A literary critique analyzes the author's intent.",
-        "ja": "文学批評は著者の意図を分析する。",
+        "ja": "文学批評は著者の意図を分析します。",
         "context": "高3"
       },
       {
         "en": "Her critique of the policy was thorough.",
-        "ja": "政策への彼女の批判は徹底的だった。",
+        "ja": "政策への彼女の批判は徹底的でした。",
         "context": "高3"
       },
       {
         "en": "Peer critique improves academic writing.",
-        "ja": "仲間による批評は学術文章を向上させる。",
+        "ja": "仲間による批評は学術文章を向上させます。",
         "context": "高3"
       }
     ],
@@ -22095,17 +22095,17 @@
     "examples": [
       {
         "en": "The cumulative effect of inflation is significant.",
-        "ja": "インフレの累積的影響は大きい。",
+        "ja": "インフレの累積的影響は大きいです。",
         "context": "金融"
       },
       {
         "en": "Cumulative returns exceeded expectations this fiscal year.",
-        "ja": "今会計年度の累積リターンは期待を上回った。",
+        "ja": "今会計年度の累積リターンは期待を上回りました。",
         "context": "金融"
       },
       {
         "en": "Small savings have a strong cumulative impact.",
-        "ja": "少額の貯蓄は強い累積効果を持つ。",
+        "ja": "少額の貯蓄は強い累積効果を持ちます。",
         "context": "金融"
       }
     ],
@@ -22320,17 +22320,17 @@
     "examples": [
       {
         "en": "They curtailed the budget.",
-        "ja": "彼らは予算を削減した。",
+        "ja": "彼らは予算を削減しました。",
         "context": "経済"
       },
       {
         "en": "Freedom was curtailed by law.",
-        "ja": "自由は法律によって制限された。",
+        "ja": "自由は法律によって制限されました。",
         "context": "権利"
       },
       {
         "en": "He curtailed his working hours.",
-        "ja": "彼は労働時間を削減した。",
+        "ja": "彼は労働時間を削減しました。",
         "context": "労働"
       }
     ],
@@ -22829,17 +22829,17 @@
     "examples": [
       {
         "en": "The election turned into a debacle for the party.",
-        "ja": "選挙はその政党にとって大失敗に終わった。",
+        "ja": "選挙はその政党にとって大失敗に終わりました。",
         "context": "政治"
       },
       {
         "en": "The product launch was a complete debacle.",
-        "ja": "その製品発売は完全な大失敗だった。",
+        "ja": "その製品発売は完全な大失敗でした。",
         "context": "ビジネス"
       },
       {
         "en": "Analysts blamed poor planning for the financial debacle.",
-        "ja": "アナリストは財務上の大失敗を計画の杜撰さのせいにした。",
+        "ja": "アナリストは財務上の大失敗を計画の杜撰さのせいにしました。",
         "context": "金融"
       }
     ],
@@ -26827,17 +26827,17 @@
     "examples": [
       {
         "en": "Skilled diplomacy prevented the dispute from escalating into conflict.",
-        "ja": "巧みな外交は紛争がエスカレートするのを防いだ。",
+        "ja": "巧みな外交は紛争がエスカレートするのを防ぎました。",
         "context": "politics"
       },
       {
         "en": "The minister praised the role of diplomacy in achieving peace.",
-        "ja": "大臣は平和達成における外交の役割を称えた。",
+        "ja": "大臣は平和達成における外交の役割を称えました。",
         "context": "politics"
       },
       {
         "en": "Economic diplomacy plays an important role in international relations.",
-        "ja": "経済外交は国際関係で重要な役割を果たす。",
+        "ja": "経済外交は国際関係で重要な役割を果たします。",
         "context": "economy"
       }
     ],
@@ -27572,17 +27572,17 @@
     "examples": [
       {
         "en": "Auditors found a discrepancy in the accounts.",
-        "ja": "監査人は会計に不一致を発見した。",
+        "ja": "監査人は会計に不一致を発見しました。",
         "context": "会計"
       },
       {
         "en": "There is a discrepancy between the two reports.",
-        "ja": "2つの報告書の間に不一致がある。",
+        "ja": "2つの報告書の間に不一致があります。",
         "context": "ビジネス"
       },
       {
         "en": "The data discrepancy must be resolved immediately.",
-        "ja": "そのデータの不一致は直ちに解消されなければならない。",
+        "ja": "そのデータの不一致は直ちに解消されなければなりません。",
         "context": "IT"
       }
     ],
@@ -28119,17 +28119,17 @@
     "examples": [
       {
         "en": "The government dispatched relief teams to the disaster area.",
-        "ja": "政府は災害地域に救援チームを派遣した。",
+        "ja": "政府は災害地域に救援チームを派遣しました。",
         "context": "politics"
       },
       {
         "en": "The airline dispatched a special flight to evacuate citizens.",
-        "ja": "航空会社は市民を避難させるために特別便を派遣した。",
+        "ja": "航空会社は市民を避難させるために特別便を派遣しました。",
         "context": "society"
       },
       {
         "en": "The commander dispatched soldiers to reinforce the border.",
-        "ja": "司令官は国境を強化するために兵士を派遣した。",
+        "ja": "司令官は国境を強化するために兵士を派遣しました。",
         "context": "history"
       }
     ],
@@ -28903,17 +28903,17 @@
     "examples": [
       {
         "en": "She completed her doctoral dissertation.",
-        "ja": "彼女は博士論文を完成させた。",
+        "ja": "彼女は博士論文を完成させました。",
         "context": "education"
       },
       {
         "en": "The dissertation took three years.",
-        "ja": "論文には3年かかった。",
+        "ja": "論文には3年かかりました。",
         "context": "academic"
       },
       {
         "en": "His dissertation was published later.",
-        "ja": "彼の論文は後に出版された。",
+        "ja": "彼の論文は後に出版されました。",
         "context": "research"
       }
     ],
@@ -29701,17 +29701,17 @@
     "examples": [
       {
         "en": "The whistleblower divulged classified information to reporters.",
-        "ja": "内部告発者は記者に機密情報を漏らした。",
+        "ja": "内部告発者は記者に機密情報を漏らしました。",
         "context": "メディア"
       },
       {
         "en": "Employees are prohibited from divulging trade secrets.",
-        "ja": "従業員は企業秘密を漏らすことを禁じられている。",
+        "ja": "従業員は企業秘密を漏らすことを禁じられています。",
         "context": "ビジネス"
       },
       {
         "en": "The witness reluctantly divulged details about the crime.",
-        "ja": "証人は渋々犯罪の詳細を漏らした。",
+        "ja": "証人は渋々犯罪の詳細を漏らしました。",
         "context": "法律"
       }
     ],
@@ -29924,17 +29924,17 @@
     "examples": [
       {
         "en": "Economic dominance shifts between nations.",
-        "ja": "経済的優位は国家間で移動する。",
+        "ja": "経済的優位は国家間で移動します。",
         "context": "高3"
       },
       {
         "en": "Male dominance in certain species is observed.",
-        "ja": "特定の種における雄の優位が観察される。",
+        "ja": "特定の種における雄の優位が観察されます。",
         "context": "高3"
       },
       {
         "en": "Cultural dominance affects minority groups.",
-        "ja": "文化的支配は少数派グループに影響する。",
+        "ja": "文化的支配は少数派グループに影響します。",
         "context": "高3"
       }
     ],
@@ -30285,17 +30285,17 @@
     "examples": [
       {
         "en": "The economic downturn affected many industries.",
-        "ja": "景気後退は多くの産業に影響を与えた。",
+        "ja": "景気後退は多くの産業に影響を与えました。",
         "context": "経済"
       },
       {
         "en": "Sales declined sharply during the downturn.",
-        "ja": "景気後退中、売上は急激に減少した。",
+        "ja": "景気後退中、売上は急激に減少しました。",
         "context": "ビジネス"
       },
       {
         "en": "Companies cut staff to survive the downturn.",
-        "ja": "企業は景気後退を乗り切るために人員を削減した。",
+        "ja": "企業は景気後退を乗り切るために人員を削減しました。",
         "context": "雇用"
       }
     ],
@@ -32563,17 +32563,17 @@
     "examples": [
       {
         "en": "The United Nations imposed an arms embargo on the conflict zone.",
-        "ja": "国連は紛争地帯への武器禁輸措置を課した。",
+        "ja": "国連は紛争地帯への武器禁輸措置を課しました。",
         "context": "politics"
       },
       {
         "en": "The trade embargo damaged the economy of the sanctioned country.",
-        "ja": "貿易禁輸は制裁を受けた国の経済を傷つけた。",
+        "ja": "貿易禁輸は制裁を受けた国の経済を傷つけました。",
         "context": "economy"
       },
       {
         "en": "The oil embargo caused fuel prices to skyrocket worldwide.",
-        "ja": "石油禁輸は世界中で燃料価格を急騰させた。",
+        "ja": "石油禁輸は世界中で燃料価格を急騰させました。",
         "context": "history"
       }
     ],
@@ -33026,17 +33026,17 @@
     "examples": [
       {
         "en": "Empathy allows people to understand and share others feelings.",
-        "ja": "共感は人々が他者の感情を理解し共有することを可能にする。",
+        "ja": "共感は人々が他者の感情を理解し共有することを可能にします。",
         "context": "psychology"
       },
       {
         "en": "Teachers who show empathy create more supportive classrooms.",
-        "ja": "共感を示す教師はより支持的な教室環境を作り出す。",
+        "ja": "共感を示す教師はより支持的な教室環境を作り出します。",
         "context": "education"
       },
       {
         "en": "Developing empathy in children is essential for social harmony.",
-        "ja": "子供たちの共感を育てることは社会的調和に不可欠だ。",
+        "ja": "子供たちの共感を育てることは社会的調和に不可欠です。",
         "context": "society"
       }
     ],
@@ -33115,17 +33115,17 @@
     "examples": [
       {
         "en": "Empirical evidence is necessary to support scientific claims.",
-        "ja": "科学的主張を支持するためには経験的証拠が必要だ。",
+        "ja": "科学的主張を支持するためには経験的証拠が必要です。",
         "context": "science"
       },
       {
         "en": "The policy was based on empirical data rather than assumptions.",
-        "ja": "その政策は仮定ではなく経験的データに基づいていた。",
+        "ja": "その政策は仮定ではなく経験的データに基づいていました。",
         "context": "policy"
       },
       {
         "en": "Empirical research shows a link between poverty and poor health outcomes.",
-        "ja": "経験的研究は貧困と健康状態の悪化との関連を示している。",
+        "ja": "経験的研究は貧困と健康状態の悪化との関連を示しています。",
         "context": "health"
       }
     ],
@@ -33840,17 +33840,17 @@
     "examples": [
       {
         "en": "The university received a large endowment.",
-        "ja": "大学は多額の寄付金を受け取った。",
+        "ja": "大学は多額の寄付金を受け取りました。",
         "context": "education"
       },
       {
         "en": "Natural endowment varies among individuals.",
-        "ja": "自然の才能は個人によって異なる。",
+        "ja": "自然の才能は個人によって異なります。",
         "context": "psychology"
       },
       {
         "en": "The endowment funded new research.",
-        "ja": "寄付金が新しい研究に資金を提供した。",
+        "ja": "寄付金が新しい研究に資金を提供しました。",
         "context": "finance"
       }
     ],
@@ -35333,17 +35333,17 @@
     "examples": [
       {
         "en": "An ecosystem requires equilibrium to function properly.",
-        "ja": "生態系は適切に機能するために均衡を必要とする。",
+        "ja": "生態系は適切に機能するために均衡を必要とします。",
         "context": "science"
       },
       {
         "en": "Economic equilibrium is achieved when supply matches demand.",
-        "ja": "供給が需要に一致したとき経済的均衡が達成される。",
+        "ja": "供給が需要に一致したとき経済的均衡が達成されます。",
         "context": "economy"
       },
       {
         "en": "The region maintained political equilibrium through careful diplomacy.",
-        "ja": "地域は慎重な外交によって政治的均衡を維持した。",
+        "ja": "地域は慎重な外交によって政治的均衡を維持しました。",
         "context": "politics"
       }
     ],
@@ -35418,17 +35418,17 @@
     "examples": [
       {
         "en": "Global efforts have nearly eradicated polio from most countries.",
-        "ja": "世界的な取り組みがほとんどの国からポリオを根絶しつつある。",
+        "ja": "世界的な取り組みがほとんどの国からポリオを根絶しつつあります。",
         "context": "医療"
       },
       {
         "en": "New herbicides promise to eradicate invasive plant species.",
-        "ja": "新しい除草剤は侵入植物種の根絶を約束する。",
+        "ja": "新しい除草剤は侵入植物種の根絶を約束します。",
         "context": "環境"
       },
       {
         "en": "The campaign seeks to eradicate illiteracy by next decade.",
-        "ja": "そのキャンペーンは次の10年までに非識字を根絶しようとしている。",
+        "ja": "そのキャンペーンは次の10年までに非識字を根絶しようとしています。",
         "context": "教育"
       }
     ],
@@ -35685,17 +35685,17 @@
     "examples": [
       {
         "en": "The professor espoused a radical approach to reform.",
-        "ja": "教授は改革への急進的なアプローチを支持した。",
+        "ja": "教授は改革への急進的なアプローチを支持しました。",
         "context": "学術"
       },
       {
         "en": "Many activists espouse nonviolent methods of protest.",
-        "ja": "多くの活動家が非暴力の抗議手段を支持する。",
+        "ja": "多くの活動家が非暴力の抗議手段を支持します。",
         "context": "社会"
       },
       {
         "en": "The party espouses equal rights for all citizens.",
-        "ja": "その政党は全市民の平等な権利を支持する。",
+        "ja": "その政党は全市民の平等な権利を支持します。",
         "context": "政治"
       }
     ],
@@ -39610,17 +39610,17 @@
     "examples": [
       {
         "en": "The plan is technically feasible but very costly.",
-        "ja": "その計画は技術的には実行可能だが非常に高価だ。",
+        "ja": "その計画は技術的には実行可能ですが、非常に高価です。",
         "context": "ビジネス"
       },
       {
         "en": "Renewable energy is becoming increasingly feasible.",
-        "ja": "再生可能エネルギーがますます実現可能になっている。",
+        "ja": "再生可能エネルギーがますます実現可能になっています。",
         "context": "環境"
       },
       {
         "en": "Engineers assessed whether the design was feasible.",
-        "ja": "技術者がその設計の実現可能性を評価した。",
+        "ja": "技術者がその設計の実現可能性を評価しました。",
         "context": "技術"
       }
     ],
@@ -40760,17 +40760,17 @@
     "examples": [
       {
         "en": "Price fluctuations affect consumer behavior.",
-        "ja": "価格変動は消費者行動に影響する。",
+        "ja": "価格変動は消費者行動に影響します。",
         "context": "高2"
       },
       {
         "en": "Temperature fluctuations can damage equipment.",
-        "ja": "温度変動は装置を損傷することがある。",
+        "ja": "温度変動は装置を損傷することがあります。",
         "context": "高2"
       },
       {
         "en": "Fluctuations in the exchange rate are common.",
-        "ja": "為替レートの変動は一般的だ。",
+        "ja": "為替レートの変動は一般的です。",
         "context": "高2"
       }
     ],
@@ -41903,17 +41903,17 @@
     "examples": [
       {
         "en": "Good teachers foster a love of learning in students.",
-        "ja": "良い教師は生徒の中に学ぶことへの愛着を育む。",
+        "ja": "良い教師は生徒の中に学ぶことへの愛着を育みます。",
         "context": "education"
       },
       {
         "en": "International exchange programs foster cultural understanding.",
-        "ja": "国際交流プログラムは文化的理解を育む。",
+        "ja": "国際交流プログラムは文化的理解を育みます。",
         "context": "culture"
       },
       {
         "en": "The government introduced policies to foster innovation.",
-        "ja": "政府はイノベーションを育成する政策を導入した。",
+        "ja": "政府はイノベーションを育成する政策を導入しました。",
         "context": "economy"
       }
     ],
@@ -42052,17 +42052,17 @@
     "examples": [
       {
         "en": "She opened a franchise of a popular fast food chain.",
-        "ja": "彼女は人気ファストフードチェーンのフランチャイズを開業した。",
+        "ja": "彼女は人気ファストフードチェーンのフランチャイズを開業しました。",
         "context": "金融"
       },
       {
         "en": "The sports franchise was sold to a new owner.",
-        "ja": "そのスポーツフランチャイズは新しいオーナーに売却された。",
+        "ja": "そのスポーツフランチャイズは新しいオーナーに売却されました。",
         "context": "ビジネス"
       },
       {
         "en": "Running a franchise requires following the parent company's rules.",
-        "ja": "フランチャイズの経営は親会社のルールに従う必要がある。",
+        "ja": "フランチャイズの経営は親会社のルールに従う必要があります。",
         "context": "金融"
       }
     ],
@@ -46953,17 +46953,17 @@
     "examples": [
       {
         "en": "Costs rose sharply; hence, profits declined.",
-        "ja": "費用が急騰した。したがって利益は減少した。",
+        "ja": "費用が急騰しました。したがって利益は減少しました。",
         "context": "経済"
       },
       {
         "en": "The bridge was damaged and hence closed to traffic.",
-        "ja": "橋が損傷し、そのため交通が遮断された。",
+        "ja": "橋が損傷し、そのため交通が遮断されました。",
         "context": "交通"
       },
       {
         "en": "She lacked evidence; hence, the claim was dismissed.",
-        "ja": "彼女には証拠がなかった。そのため主張は退けられた。",
+        "ja": "彼女には証拠がありませんでした。そのため主張は退けられました。",
         "context": "法律"
       }
     ],
@@ -49119,17 +49119,17 @@
     "examples": [
       {
         "en": "The Congress voted to impeach the president for misconduct.",
-        "ja": "議会は不正行為のために大統領を弾劾することに投票した。",
+        "ja": "議会は不正行為のために大統領を弾劾することに投票しました。",
         "context": "politics"
       },
       {
         "en": "The senator was impeached after evidence of bribery emerged.",
-        "ja": "贈収賄の証拠が出た後、上院議員は弾劾された。",
+        "ja": "贈収賄の証拠が出た後、上院議員は弾劾されました。",
         "context": "law"
       },
       {
         "en": "The possibility of impeachment increased pressure on the official.",
-        "ja": "弾劾の可能性は官僚への圧力を高めた。",
+        "ja": "弾劾の可能性は官僚への圧力を高めました。",
         "context": "politics"
       }
     ],
@@ -50856,17 +50856,17 @@
     "examples": [
       {
         "en": "The new president was inaugurated in a grand ceremony.",
-        "ja": "新大統領は盛大な式典で就任した。",
+        "ja": "新大統領は盛大な式典で就任しました。",
         "context": "politics"
       },
       {
         "en": "The mayor inaugurated the new public library last week.",
-        "ja": "市長は先週新しい公立図書館を開館した。",
+        "ja": "市長は先週新しい公立図書館を開館しました。",
         "context": "society"
       },
       {
         "en": "The factory was inaugurated to boost regional employment.",
-        "ja": "工場は地域の雇用を促進するために開設された。",
+        "ja": "工場は地域の雇用を促進するために開設されました。",
         "context": "economy"
       }
     ],
@@ -52197,17 +52197,17 @@
     "examples": [
       {
         "en": "Industrialization changed working conditions.",
-        "ja": "産業化は労働条件を変えた。",
+        "ja": "産業化は労働条件を変えました。",
         "context": "高2"
       },
       {
         "en": "Rapid industrialization caused pollution.",
-        "ja": "急速な産業化は汚染を引き起こした。",
+        "ja": "急速な産業化は汚染を引き起こしました。",
         "context": "高2"
       },
       {
         "en": "Industrialization began in 18th century Britain.",
-        "ja": "産業化は18世紀のイギリスで始まった。",
+        "ja": "産業化は18世紀のイギリスで始まりました。",
         "context": "高2"
       }
     ],
@@ -53113,17 +53113,17 @@
     "examples": [
       {
         "en": "Genetic inheritance determines many traits.",
-        "ja": "遺伝的継承は多くの形質を決定する。",
+        "ja": "遺伝的継承は多くの形質を決定します。",
         "context": "高3"
       },
       {
         "en": "She received a large inheritance from her aunt.",
-        "ja": "彼女は叔母から多くの遺産を受け取った。",
+        "ja": "彼女は叔母から多くの遺産を受け取りました。",
         "context": "高3"
       },
       {
         "en": "Cultural inheritance is passed through generations.",
-        "ja": "文化的継承は世代を超えて受け継がれる。",
+        "ja": "文化的継承は世代を超えて受け継がれます。",
         "context": "高3"
       }
     ],
@@ -53711,17 +53711,17 @@
     "examples": [
       {
         "en": "The company filed for bankruptcy after insolvency.",
-        "ja": "会社は支払い不能の後に破産を申請した。",
+        "ja": "会社は支払い不能の後に破産を申請しました。",
         "context": "company"
       },
       {
         "en": "Insolvency occurs when debts exceed assets.",
-        "ja": "支払い不能は負債が資産を超えると発生する。",
+        "ja": "支払い不能は負債が資産を超えると発生します。",
         "context": "debts"
       },
       {
         "en": "The insolvency of the bank shocked investors.",
-        "ja": "銀行の支払い不能は投資家を驚かせた。",
+        "ja": "銀行の支払い不能は投資家を驚かせました。",
         "context": "investors"
       }
     ],
@@ -54083,17 +54083,17 @@
     "examples": [
       {
         "en": "The practice was institutionalized.",
-        "ja": "その慣行は制度化された。",
+        "ja": "その慣行は制度化されました。",
         "context": "社会"
       },
       {
         "en": "Reform was institutionalized.",
-        "ja": "改革は制度化された。",
+        "ja": "改革は制度化されました。",
         "context": "政治"
       },
       {
         "en": "They institutionalized education.",
-        "ja": "彼らは教育を制度化した。",
+        "ja": "彼らは教育を制度化しました。",
         "context": "歴史"
       }
     ],
@@ -54355,17 +54355,17 @@
     "examples": [
       {
         "en": "Integration is the opposite of differentiation.",
-        "ja": "積分は微分の逆だ。",
+        "ja": "積分は微分の逆です。",
         "context": "academic"
       },
       {
         "en": "Social integration promotes equality.",
-        "ja": "社会統合は平等を促進する。",
+        "ja": "社会統合は平等を促進します。",
         "context": "academic"
       },
       {
         "en": "Integration of technology in classrooms has grown.",
-        "ja": "教室でのテクノロジーの統合が進んでいる。",
+        "ja": "教室でのテクノロジーの統合が進んでいます。",
         "context": "academic"
       }
     ],
@@ -59021,17 +59021,17 @@
     "examples": [
       {
         "en": "The company is liable for any damage caused by its products.",
-        "ja": "会社はその製品によって引き起こされた損害に責任がある。",
+        "ja": "会社はその製品によって引き起こされた損害に責任があります。",
         "context": "日常"
       },
       {
         "en": "If you break the contract, you are liable for penalties.",
-        "ja": "契約を破った場合、罰則の責任を負う。",
+        "ja": "契約を破った場合、罰則の責任を負います。",
         "context": "ビジネス"
       },
       {
         "en": "Drivers are liable for accidents caused by negligence.",
-        "ja": "ドライバーは不注意によって引き起こされた事故の責任を負う。",
+        "ja": "ドライバーは不注意によって引き起こされた事故の責任を負います。",
         "context": "日常"
       }
     ],
@@ -59838,17 +59838,17 @@
     "examples": [
       {
         "en": "The company faced years of costly litigation over the patent.",
-        "ja": "会社は特許をめぐって何年もの費用のかかる訴訟に直面した。",
+        "ja": "会社は特許をめぐって何年もの費用のかかる訴訟に直面しました。",
         "context": "日常"
       },
       {
         "en": "Many disputes are resolved through litigation in court.",
-        "ja": "多くの紛争は裁判所での訴訟を通じて解決される。",
+        "ja": "多くの紛争は裁判所での訴訟を通じて解決されます。",
         "context": "ビジネス"
       },
       {
         "en": "He wanted to avoid litigation and settle the case out of court.",
-        "ja": "彼は訴訟を避けて示談で解決したかった。",
+        "ja": "彼は訴訟を避けて示談で解決したいと思っていました。",
         "context": "日常"
       }
     ],
@@ -60013,17 +60013,17 @@
     "examples": [
       {
         "en": "Managing the logistics of a large event can be very complex.",
-        "ja": "大規模なイベントの物流管理は非常に複雑になりうる。",
+        "ja": "大規模なイベントの物流管理は非常に複雑になりえます。",
         "context": "日常"
       },
       {
         "en": "The company specializes in supply chain logistics.",
-        "ja": "その会社はサプライチェーン物流を専門としている。",
+        "ja": "その会社はサプライチェーン物流を専門としています。",
         "context": "旅行"
       },
       {
         "en": "Proper logistics planning ensures products arrive on time.",
-        "ja": "適切な物流計画は製品が時間通りに届くことを確保する。",
+        "ja": "適切な物流計画は製品が時間通りに届くことを確保します。",
         "context": "ビジネス"
       }
     ],
@@ -60996,17 +60996,17 @@
     "examples": [
       {
         "en": "Renewable energy is becoming mainstream worldwide now.",
-        "ja": "再生可能エネルギーは今、世界中で主流になりつつある。",
+        "ja": "再生可能エネルギーは今、世界中で主流になりつつあります。",
         "context": "環境"
       },
       {
         "en": "The idea was once radical but is mainstream.",
-        "ja": "その考えはかつて急進的だったが今は主流だ。",
+        "ja": "その考えはかつて急進的でしたが、今は主流です。",
         "context": "社会"
       },
       {
         "en": "Mainstream media covered the story extensively last week.",
-        "ja": "主流メディアは先週その話を大々的に報道した。",
+        "ja": "主流メディアは先週その話を大々的に報道しました。",
         "context": "メディア"
       }
     ],
@@ -61468,17 +61468,17 @@
     "examples": [
       {
         "en": "Wearing a seatbelt is mandatory in most countries.",
-        "ja": "ほとんどの国でシートベルトの着用が義務付けられている。",
+        "ja": "ほとんどの国でシートベルトの着用が義務付けられています。",
         "context": "日常"
       },
       {
         "en": "The company made safety training mandatory for all staff.",
-        "ja": "会社は全スタッフに安全訓練を義務付けた。",
+        "ja": "会社は全スタッフに安全訓練を義務付けました。",
         "context": "学校"
       },
       {
         "en": "Mandatory voting is practiced in some democracies.",
-        "ja": "いくつかの民主主義国では強制投票が行われている。",
+        "ja": "いくつかの民主主義国では強制投票が行われています。",
         "context": "ビジネス"
       }
     ],
@@ -61727,17 +61727,17 @@
     "examples": [
       {
         "en": "The improvement in test scores was only marginal.",
-        "ja": "テストの点数の改善はわずかなものだった。",
+        "ja": "テストの点数の改善はわずかなものでした。",
         "context": "日常"
       },
       {
         "en": "Farmers on marginal land struggle to produce enough food.",
-        "ja": "農地の端に位置する農家は十分な食料生産に苦労している。",
+        "ja": "農地の端に位置する農家は十分な食料生産に苦労しています。",
         "context": "学校"
       },
       {
         "en": "The plan had only marginal support from the committee.",
-        "ja": "その計画は委員会からわずかな支持しか得られなかった。",
+        "ja": "その計画は委員会からわずかな支持しか得られませんでした。",
         "context": "ビジネス"
       }
     ],
@@ -62299,17 +62299,17 @@
     "examples": [
       {
         "en": "The company maximized profits by cutting unnecessary costs.",
-        "ja": "会社は不要なコストを削減して利益を最大化した。",
+        "ja": "会社は不要なコストを削減して利益を最大化しました。",
         "context": "経営"
       },
       {
         "en": "Athletes train hard to maximize their performance.",
-        "ja": "選手はパフォーマンスを最大化するために懸命に訓練する。",
+        "ja": "選手はパフォーマンスを最大化するために懸命に訓練します。",
         "context": "スポーツ"
       },
       {
         "en": "The layout was designed to maximize natural light.",
-        "ja": "そのレイアウトは自然光を最大化するよう設計された。",
+        "ja": "そのレイアウトは自然光を最大化するよう設計されました。",
         "context": "建築"
       }
     ],
@@ -63582,17 +63582,17 @@
     "examples": [
       {
         "en": "Minimize errors by checking your work twice.",
-        "ja": "作業を2回確認することでエラーを最小化しなさい。",
+        "ja": "作業を2回確認することでエラーを最小化してください。",
         "context": "academic"
       },
       {
         "en": "We aim to minimize waste in production.",
-        "ja": "生産における廃棄物を最小化することを目指す。",
+        "ja": "生産における廃棄物を最小化することを目指します。",
         "context": "academic"
       },
       {
         "en": "Minimize the objective function.",
-        "ja": "目的関数を最小化しなさい。",
+        "ja": "目的関数を最小化してください。",
         "context": "academic"
       }
     ],
@@ -63899,17 +63899,17 @@
     "examples": [
       {
         "en": "The new policy will mitigate the effects of poverty.",
-        "ja": "新しい政策は貧困の影響を軽減するだろう。",
+        "ja": "新しい政策は貧困の影響を軽減するでしょう。",
         "context": "poverty"
       },
       {
         "en": "Exercise can mitigate the risk of heart disease.",
-        "ja": "運動は心臓病のリスクを軽減できる。",
+        "ja": "運動は心臓病のリスクを軽減できます。",
         "context": "exercise"
       },
       {
         "en": "He tried to mitigate the damage caused by the flood.",
-        "ja": "彼は洪水による被害を軽減しようとした。",
+        "ja": "彼は洪水による被害を軽減しようとしました。",
         "context": "flood"
       }
     ],
@@ -64371,17 +64371,17 @@
     "examples": [
       {
         "en": "The central bank adjusted its monetary policy to control inflation.",
-        "ja": "中央銀行はインフレを制御するために金融政策を調整した。",
+        "ja": "中央銀行はインフレを制御するために金融政策を調整しました。",
         "context": "金融"
       },
       {
         "en": "Monetary rewards are not the only motivation for workers.",
-        "ja": "金銭的な報酬は労働者の唯一の動機ではない。",
+        "ja": "金銭的な報酬は労働者の唯一の動機ではありません。",
         "context": "金融"
       },
       {
         "en": "International monetary cooperation is essential for stability.",
-        "ja": "国際的な金融協力は安定のために不可欠だ。",
+        "ja": "国際的な金融協力は安定のために不可欠です。",
         "context": "金融"
       }
     ],
@@ -67033,17 +67033,17 @@
     "examples": [
       {
         "en": "He is the nominal head of the company but has little real power.",
-        "ja": "彼は会社の名目上の代表だが、実権はほとんどない。",
+        "ja": "彼は会社の名目上の代表ですが、実権はほとんどありません。",
         "context": "日常"
       },
       {
         "en": "Students pay a nominal fee to use the campus gym.",
-        "ja": "学生はキャンパスジムを使用するために名目上の料金を支払う。",
+        "ja": "学生はキャンパスジムを使用するために名目上の料金を支払います。",
         "context": "金融"
       },
       {
         "en": "The change was nominal and had little impact on operations.",
-        "ja": "その変更は名目上のもので、業務への影響はほとんどなかった。",
+        "ja": "その変更は名目上のもので、業務への影響はほとんどありませんでした。",
         "context": "日常"
       }
     ],
@@ -67075,17 +67075,17 @@
     "examples": [
       {
         "en": "The board nominated her as the new chairperson.",
-        "ja": "取締役会は彼女を新しい議長に推薦した。",
+        "ja": "取締役会は彼女を新しい議長に推薦しました。",
         "context": "ビジネス"
       },
       {
         "en": "The film was nominated for several international awards.",
-        "ja": "その映画はいくつかの国際的な賞に推薦された。",
+        "ja": "その映画はいくつかの国際的な賞に推薦されました。",
         "context": "メディア"
       },
       {
         "en": "Members nominated candidates for the upcoming annual election.",
-        "ja": "会員は次の年次選挙の候補者を推薦した。",
+        "ja": "会員は次の年次選挙の候補者を推薦しました。",
         "context": "政治"
       }
     ],
@@ -67273,17 +67273,17 @@
     "examples": [
       {
         "en": "Punctuality is a social norm in many cultures.",
-        "ja": "時間厳守は多くの文化での社会的規範だ。",
+        "ja": "時間厳守は多くの文化での社会的規範です。",
         "context": "日常"
       },
       {
         "en": "The behavior fell outside the accepted norms of society.",
-        "ja": "その行動は社会の受け入れられた規範の外にあった。",
+        "ja": "その行動は社会の受け入れられた規範の外にありました。",
         "context": "文化"
       },
       {
         "en": "Working from home has become the new norm since the pandemic.",
-        "ja": "在宅勤務はパンデミック以来新しい規範になった。",
+        "ja": "在宅勤務はパンデミック以来新しい規範になりました。",
         "context": "会話"
       }
     ],
@@ -68480,17 +68480,17 @@
     "examples": [
       {
         "en": "The contract obligates both sides to cooperate.",
-        "ja": "その契約は双方に協力を義務づけている。",
+        "ja": "その契約は双方に協力を義務づけています。",
         "context": "ビジネス"
       },
       {
         "en": "The law obligates companies to report emissions.",
-        "ja": "法律は企業に排出量の報告を義務づけている。",
+        "ja": "法律は企業に排出量の報告を義務づけています。",
         "context": "環境"
       },
       {
         "en": "Members are obligated to attend monthly meetings.",
-        "ja": "メンバーは月例会への出席が義務づけられている。",
+        "ja": "メンバーは月例会への出席が義務づけられています。",
         "context": "組織"
       }
     ],
@@ -69902,17 +69902,17 @@
     "examples": [
       {
         "en": "The engineer optimized the system for faster processing.",
-        "ja": "技術者はより高速な処理のためにシステムを最適化した。",
+        "ja": "技術者はより高速な処理のためにシステムを最適化しました。",
         "context": "技術"
       },
       {
         "en": "Farmers optimized crop yields through advanced irrigation methods.",
-        "ja": "農家は先進的な灌漑方法で作物の収穫量を最適化した。",
+        "ja": "農家は先進的な灌漑方法で作物の収穫量を最適化しました。",
         "context": "農業"
       },
       {
         "en": "The website was optimized to improve the user experience.",
-        "ja": "そのウェブサイトはユーザー体験向上のために最適化された。",
+        "ja": "そのウェブサイトはユーザー体験向上のために最適化されました。",
         "context": "IT"
       }
     ],
@@ -71533,17 +71533,17 @@
     "examples": [
       {
         "en": "The president can override a congressional veto.",
-        "ja": "大統領は議会の拒否権を覆すことができる。",
+        "ja": "大統領は議会の拒否権を覆すことができます。",
         "context": "政治"
       },
       {
         "en": "Safety concerns override cost considerations.",
-        "ja": "安全上の懸念がコスト面の検討に優先する。",
+        "ja": "安全上の懸念がコスト面の検討に優先します。",
         "context": "ビジネス"
       },
       {
         "en": "The manager overrode the automatic system settings.",
-        "ja": "管理者はシステムの自動設定を手動で変更した。",
+        "ja": "管理者はシステムの自動設定を手動で変更しました。",
         "context": "技術"
       }
     ],
@@ -74547,17 +74547,17 @@
     "examples": [
       {
         "en": "Stereotypes are perpetuated through media.",
-        "ja": "ステレオタイプはメディアを通じて永続させられる。",
+        "ja": "ステレオタイプはメディアを通じて永続させられます。",
         "context": "media"
       },
       {
         "en": "Education should not perpetuate inequality.",
-        "ja": "教育は不平等を永続させるべきではない。",
+        "ja": "教育は不平等を永続させるべきではありません。",
         "context": "inequality"
       },
       {
         "en": "The ceremony perpetuated an ancient tradition.",
-        "ja": "式典は古い伝統を永続させた。",
+        "ja": "式典は古い伝統を永続させました。",
         "context": "ceremony"
       }
     ],
@@ -74817,17 +74817,17 @@
     "examples": [
       {
         "en": "The clause pertains to employee benefits only.",
-        "ja": "その条項は従業員の福利厚生にのみ関連する。",
+        "ja": "その条項は従業員の福利厚生にのみ関連します。",
         "context": "ビジネス"
       },
       {
         "en": "Questions pertaining to safety were addressed first.",
-        "ja": "安全に関する質問がまず取り上げられた。",
+        "ja": "安全に関する質問がまず取り上げられました。",
         "context": "行政"
       },
       {
         "en": "This guideline pertains to all new applicants.",
-        "ja": "この指針はすべての新規応募者に適用される。",
+        "ja": "この指針はすべての新規応募者に適用されます。",
         "context": "ビジネス"
       }
     ],
@@ -75326,17 +75326,17 @@
     "examples": [
       {
         "en": "His philanthropy helped build schools and hospitals.",
-        "ja": "彼の慈善活動は学校と病院の建設を助けた。",
+        "ja": "彼の慈善活動は学校と病院の建設を助けました。",
         "context": "schools"
       },
       {
         "en": "Philanthropy plays an important role in society.",
-        "ja": "慈善活動は社会で重要な役割を果たす。",
+        "ja": "慈善活動は社会で重要な役割を果たします。",
         "context": "society"
       },
       {
         "en": "Corporate philanthropy can benefit both business and communities.",
-        "ja": "企業の慈善活動はビジネスとコミュニティの両方に利益をもたらす。",
+        "ja": "企業の慈善活動はビジネスとコミュニティの両方に利益をもたらします。",
         "context": "corporate"
       }
     ],
@@ -75827,17 +75827,17 @@
     "examples": [
       {
         "en": "She gave a gift to placate her disappointed child.",
-        "ja": "彼女は失望した子供をなだめるためにプレゼントをあげた。",
+        "ja": "彼女は失望した子供をなだめるためにプレゼントをあげました。",
         "context": "child"
       },
       {
         "en": "The manager tried to placate the disgruntled employees.",
-        "ja": "マネージャーは不満を持つ従業員をなだめようとした。",
+        "ja": "マネージャーは不満を持つ従業員をなだめようとしました。",
         "context": "employees"
       },
       {
         "en": "An apology helped placate the offended party.",
-        "ja": "謝罪は気分を害した側をなだめるのに役立った。",
+        "ja": "謝罪は気分を害した側をなだめるのに役立ちました。",
         "context": "apology"
       }
     ],
@@ -77299,17 +77299,17 @@
     "examples": [
       {
         "en": "She has a diverse portfolio.",
-        "ja": "彼女は多様なポートフォリオを持つ。",
+        "ja": "彼女は多様なポートフォリオを持っています。",
         "context": "金融"
       },
       {
         "en": "The artist showed her portfolio.",
-        "ja": "芸術家はポートフォリオを見せた。",
+        "ja": "芸術家はポートフォリオを見せました。",
         "context": "芸術"
       },
       {
         "en": "His portfolio includes many projects.",
-        "ja": "彼のポートフォリオには多くのプロジェクトがある。",
+        "ja": "彼のポートフォリオには多くのプロジェクトがあります。",
         "context": "仕事"
       }
     ],
@@ -77871,17 +77871,17 @@
     "examples": [
       {
         "en": "She took a pragmatic approach to solving the budget problem.",
-        "ja": "彼女は予算問題を解決するために実用的なアプローチを取った。",
+        "ja": "彼女は予算問題を解決するために実用的なアプローチを取りました。",
         "context": "日常"
       },
       {
         "en": "A pragmatic leader focuses on results rather than ideals.",
-        "ja": "実用的なリーダーは理想よりも結果に焦点を当てる。",
+        "ja": "実用的なリーダーは理想よりも結果に焦点を当てます。",
         "context": "学校"
       },
       {
         "en": "We need to be pragmatic about what is achievable in the time available.",
-        "ja": "利用可能な時間内で何が達成できるかについて実用的でなければならない。",
+        "ja": "利用可能な時間内で何が達成できるかについて実用的でなければなりません。",
         "context": "ビジネス"
       }
     ],
@@ -79123,17 +79123,17 @@
     "examples": [
       {
         "en": "Math is a prerequisite for physics.",
-        "ja": "数学は物理の前提条件だ。",
+        "ja": "数学は物理の前提条件です。",
         "context": "教育"
       },
       {
         "en": "Trust is a prerequisite for cooperation.",
-        "ja": "信頼は協力の前提条件だ。",
+        "ja": "信頼は協力の前提条件です。",
         "context": "社会"
       },
       {
         "en": "The course has several prerequisites.",
-        "ja": "そのコースにはいくつかの前提条件がある。",
+        "ja": "そのコースにはいくつかの前提条件があります。",
         "context": "学習"
       }
     ],
@@ -79472,17 +79472,17 @@
     "examples": [
       {
         "en": "The suspect is presumed innocent until proven guilty.",
-        "ja": "容疑者は有罪が証明されるまで無罪と推定される。",
+        "ja": "容疑者は有罪が証明されるまで無罪と推定されます。",
         "context": "法律"
       },
       {
         "en": "We should not presume to know the outcome.",
-        "ja": "結果を知っているなどと思い込むべきではない。",
+        "ja": "結果を知っているなどと思い込むべきではありません。",
         "context": "論理"
       },
       {
         "en": "Experts presumed the trend would continue.",
-        "ja": "専門家はその傾向が続くと推定した。",
+        "ja": "専門家はその傾向が続くと推定しました。",
         "context": "学術"
       }
     ],
@@ -79549,17 +79549,17 @@
     "examples": [
       {
         "en": "It was presumptuous of him to assume he would win.",
-        "ja": "自分が勝つと思い込むのは生意気だった。",
+        "ja": "自分が勝つと思い込むのは生意気でした。",
         "context": "assume"
       },
       {
         "en": "She found his presumptuous attitude offensive.",
-        "ja": "彼女は彼の生意気な態度を不快に感じた。",
+        "ja": "彼女は彼の生意気な態度を不快に感じました。",
         "context": "attitude"
       },
       {
         "en": "The young employee's presumptuous behavior upset the manager.",
-        "ja": "若い従業員の生意気な行動はマネージャーを怒らせた。",
+        "ja": "若い従業員の生意気な行動はマネージャーを怒らせました。",
         "context": "behavior"
       }
     ],
@@ -79844,17 +79844,17 @@
     "examples": [
       {
         "en": "The manager prioritized safety over speed.",
-        "ja": "管理者は速さよりも安全を優先した。",
+        "ja": "管理者は速さよりも安全を優先しました。",
         "context": "職場"
       },
       {
         "en": "Students should prioritize core subjects first.",
-        "ja": "学生はまず主要科目を優先すべきだ。",
+        "ja": "学生はまず主要科目を優先すべきです。",
         "context": "学校"
       },
       {
         "en": "The committee prioritized funding for research.",
-        "ja": "委員会は研究への資金を優先した。",
+        "ja": "委員会は研究への資金を優先しました。",
         "context": "会議"
       }
     ],
@@ -80855,17 +80855,17 @@
     "examples": [
       {
         "en": "Social media platforms have proliferated over the past decade.",
-        "ja": "ソーシャルメディアプラットフォームは過去10年で急増した。",
+        "ja": "ソーシャルメディアプラットフォームは過去10年で急増しました。",
         "context": "技術"
       },
       {
         "en": "Nuclear proliferation remains a critical global security concern.",
-        "ja": "核拡散は依然として重大な世界安全保障上の懸念だ。",
+        "ja": "核拡散は依然として重大な世界安全保障上の懸念です。",
         "context": "政治"
       },
       {
         "en": "Online misinformation continues to proliferate at alarming rates.",
-        "ja": "オンラインの偽情報は警戒すべき速さで急増し続けている。",
+        "ja": "オンラインの偽情報は警戒すべき速さで急増し続けています。",
         "context": "社会"
       }
     ],
@@ -81111,17 +81111,17 @@
     "examples": [
       {
         "en": "The regime used state propaganda to control public opinion.",
-        "ja": "政権は世論を制御するために国家プロパガンダを使用した。",
+        "ja": "政権は世論を制御するために国家プロパガンダを使用しました。",
         "context": "日常"
       },
       {
         "en": "Citizens learned to identify propaganda in political media.",
-        "ja": "市民は政治的メディアのプロパガンダを識別することを学んだ。",
+        "ja": "市民は政治的メディアのプロパガンダを識別することを学びました。",
         "context": "会話"
       },
       {
         "en": "Both sides used propaganda during the cold war.",
-        "ja": "冷戦中、双方がプロパガンダを使用した。",
+        "ja": "冷戦中、双方がプロパガンダを使用しました。",
         "context": "文化"
       }
     ],
@@ -81154,17 +81154,17 @@
     "examples": [
       {
         "en": "The organization works to propagate democratic values abroad.",
-        "ja": "その組織は海外で民主的価値観を広める活動をしている。",
+        "ja": "その組織は海外で民主的価値観を広める活動をしています。",
         "context": "政治"
       },
       {
         "en": "Plants propagate through seeds, cuttings, or root division.",
-        "ja": "植物は種、挿し木、または株分けで繁殖する。",
+        "ja": "植物は種、挿し木、または株分けで繁殖します。",
         "context": "自然"
       },
       {
         "en": "Sound waves propagate faster through water than through air.",
-        "ja": "音波は空気中よりも水中で速く伝播する。",
+        "ja": "音波は空気中よりも水中で速く伝播します。",
         "context": "科学"
       }
     ],
@@ -81572,12 +81572,12 @@
       },
       {
         "en": "Diplomatic protocol was observed.",
-        "ja": "外交的手続きが守られた。",
+        "ja": "外交的手続きが守られました。",
         "context": "政治"
       },
       {
         "en": "The protocol ensures consistency.",
-        "ja": "手順は一貫性を確保する。",
+        "ja": "手順は一貫性を確保します。",
         "context": "仕事"
       }
     ],
@@ -81727,17 +81727,17 @@
     "examples": [
       {
         "en": "A provisional government was established after the crisis.",
-        "ja": "危機の後に暫定政府が樹立された。",
+        "ja": "危機の後に暫定政府が樹立されました。",
         "context": "政治"
       },
       {
         "en": "The budget figures are still provisional.",
-        "ja": "予算の数字はまだ暫定的なものだ。",
+        "ja": "予算の数字はまだ暫定的なものです。",
         "context": "ビジネス"
       },
       {
         "en": "She received a provisional license to practice.",
-        "ja": "彼女は仮免許を取得した。",
+        "ja": "彼女は仮免許を取得しました。",
         "context": "教育"
       }
     ],
@@ -82966,17 +82966,17 @@
     "examples": [
       {
         "en": "The import quota was reduced.",
-        "ja": "輸入割り当てが削減された。",
+        "ja": "輸入割り当てが削減されました。",
         "context": "経済"
       },
       {
         "en": "She met her sales quota.",
-        "ja": "彼女は販売割り当てを達成した。",
+        "ja": "彼女は販売割り当てを達成しました。",
         "context": "仕事"
       },
       {
         "en": "Quotas ensure equal representation.",
-        "ja": "割り当ては平等な代表を確保する。",
+        "ja": "割り当ては平等な代表を確保します。",
         "context": "政治"
       }
     ],
@@ -84206,17 +84206,17 @@
     "examples": [
       {
         "en": "The teacher rebuked the student for cheating.",
-        "ja": "先生は不正行為をした生徒を叱責した。",
+        "ja": "先生は不正行為をした生徒を叱責しました。",
         "context": "teacher"
       },
       {
         "en": "She was rebuked by her boss for missing the deadline.",
-        "ja": "彼女は締め切りを逃したためにボスに叱責された。",
+        "ja": "彼女は締め切りを逃したためにボスに叱責されました。",
         "context": "boss"
       },
       {
         "en": "The senator was publicly rebuked by his colleagues.",
-        "ja": "上院議員は同僚に公に叱責された。",
+        "ja": "上院議員は同僚に公に叱責されました。",
         "context": "senator"
       }
     ],
@@ -84585,17 +84585,17 @@
     "examples": [
       {
         "en": "The two parties were reconciled after the dispute.",
-        "ja": "二者は争いの後に和解した。",
+        "ja": "二者は争いの後に和解しました。",
         "context": "parties"
       },
       {
         "en": "It is difficult to reconcile freedom with security.",
-        "ja": "自由と安全を和解させることは難しい。",
+        "ja": "自由と安全を和解させることは難しいです。",
         "context": "freedom"
       },
       {
         "en": "The mediator helped reconcile the feuding families.",
-        "ja": "調停者は対立する家族を和解させるのに役立った。",
+        "ja": "調停者は対立する家族を和解させるのに役立ちました。",
         "context": "mediator"
       }
     ],
@@ -85243,17 +85243,17 @@
     "examples": [
       {
         "en": "A referendum was held on independence.",
-        "ja": "独立に関する国民投票が行われた。",
+        "ja": "独立に関する国民投票が行われました。",
         "context": "政治"
       },
       {
         "en": "Voters approved the referendum.",
-        "ja": "有権者は国民投票を承認した。",
+        "ja": "有権者は国民投票を承認しました。",
         "context": "民主主義"
       },
       {
         "en": "The referendum outcome was close.",
-        "ja": "国民投票の結果は接戦だった。",
+        "ja": "国民投票の結果は接戦でした。",
         "context": "社会"
       }
     ],
@@ -85327,17 +85327,17 @@
     "examples": [
       {
         "en": "The engineer refined the design over several months.",
-        "ja": "技術者は数か月かけて設計を洗練させた。",
+        "ja": "技術者は数か月かけて設計を洗練させました。",
         "context": "技術"
       },
       {
         "en": "She refined her argument before the presentation.",
-        "ja": "彼女は発表の前に主張を練り上げた。",
+        "ja": "彼女は発表の前に主張を練り上げました。",
         "context": "学術"
       },
       {
         "en": "The company refined its marketing strategy.",
-        "ja": "その会社はマーケティング戦略を改良した。",
+        "ja": "その会社はマーケティング戦略を改良しました。",
         "context": "ビジネス"
       }
     ],
@@ -86313,17 +86313,17 @@
     "examples": [
       {
         "en": "She had to relinquish her claim to the property.",
-        "ja": "彼女は財産への権利を手放さなければならなかった。",
+        "ja": "彼女は財産への権利を手放さなければなりませんでした。",
         "context": "claim"
       },
       {
         "en": "The general relinquished command of the army.",
-        "ja": "将軍は軍の指揮を手放した。",
+        "ja": "将軍は軍の指揮を手放しました。",
         "context": "command"
       },
       {
         "en": "He relinquished control of the company to his son.",
-        "ja": "彼は会社の支配権を息子に手放した。",
+        "ja": "彼は会社の支配権を息子に手放しました。",
         "context": "control"
       }
     ],
@@ -86359,17 +86359,17 @@
     "examples": [
       {
         "en": "She acted with reluctance.",
-        "ja": "彼女は気乗りしない様子で行動した。",
+        "ja": "彼女は気乗りしない様子で行動しました。",
         "context": "感情"
       },
       {
         "en": "He showed reluctance to participate.",
-        "ja": "彼は参加に乗り気でない様子を見せた。",
+        "ja": "彼は参加に乗り気でない様子を見せました。",
         "context": "社会"
       },
       {
         "en": "Reluctance to change is natural.",
-        "ja": "変化への消極さは自然なことだ。",
+        "ja": "変化への消極さは自然なことです。",
         "context": "心理"
       }
     ],
@@ -86729,17 +86729,17 @@
     "examples": [
       {
         "en": "Renewable energy sources include solar and wind.",
-        "ja": "再生可能エネルギー源には太陽光と風力が含まれる。",
+        "ja": "再生可能エネルギー源には太陽光と風力が含まれます。",
         "context": "academic"
       },
       {
         "en": "Investing in renewable energy reduces emissions.",
-        "ja": "再生可能エネルギーへの投資は排出を削減する。",
+        "ja": "再生可能エネルギーへの投資は排出を削減します。",
         "context": "academic"
       },
       {
         "en": "Countries are switching to renewable power.",
-        "ja": "各国は再生可能エネルギーへの転換を進めている。",
+        "ja": "各国は再生可能エネルギーへの転換を進めています。",
         "context": "academic"
       }
     ],
@@ -86957,17 +86957,17 @@
     "examples": [
       {
         "en": "The department was reorganized to improve efficiency.",
-        "ja": "その部門は効率改善のために再編された。",
+        "ja": "その部門は効率改善のために再編されました。",
         "context": "ビジネス"
       },
       {
         "en": "She reorganized her schedule to fit more tasks.",
-        "ja": "彼女はより多くの仕事を入れるため予定を再編した。",
+        "ja": "彼女はより多くの仕事を入れるため予定を再編しました。",
         "context": "日常"
       },
       {
         "en": "The army reorganized its command structure quickly.",
-        "ja": "軍は指揮系統を素早く再編した。",
+        "ja": "軍は指揮系統を素早く再編しました。",
         "context": "軍事"
       }
     ],
@@ -87619,17 +87619,17 @@
     "examples": [
       {
         "en": "The government repudiated the allegations of corruption firmly.",
-        "ja": "政府は汚職の主張を断固として拒絶した。",
+        "ja": "政府は汚職の主張を断固として拒絶しました。",
         "context": "政治"
       },
       {
         "en": "She repudiated her earlier statements under intense pressure.",
-        "ja": "彼女は強い圧力の下で以前の発言を撤回した。",
+        "ja": "彼女は強い圧力の下で以前の発言を撤回しました。",
         "context": "社会"
       },
       {
         "en": "The treaty was repudiated by the incoming administration.",
-        "ja": "その条約は新政権によって否認された。",
+        "ja": "その条約は新政権によって否認されました。",
         "context": "政治"
       }
     ],
@@ -87918,12 +87918,12 @@
       },
       {
         "en": "The executive's corporate residence is near the office.",
-        "ja": "役員の会社住居はオフィスの近くにある。",
+        "ja": "役員の会社住居はオフィスの近くにあります。",
         "context": "hr"
       },
       {
         "en": "Proof of residence is required for the application.",
-        "ja": "申請には居住証明が必要だ。",
+        "ja": "申請には居住証明が必要です。",
         "context": "business"
       }
     ],
@@ -88518,17 +88518,17 @@
     "examples": [
       {
         "en": "The firm restructured its debt to avoid bankruptcy.",
-        "ja": "会社は倒産回避のため負債を再構築した。",
+        "ja": "会社は倒産回避のため負債を再構築しました。",
         "context": "経営"
       },
       {
         "en": "The university restructured several academic programs.",
-        "ja": "大学はいくつかの学術プログラムを再構築した。",
+        "ja": "大学はいくつかの学術プログラムを再構築しました。",
         "context": "教育"
       },
       {
         "en": "The government restructured the healthcare system.",
-        "ja": "政府は医療制度を再構築した。",
+        "ja": "政府は医療制度を再構築しました。",
         "context": "政治"
       }
     ],
@@ -89146,17 +89146,17 @@
     "examples": [
       {
         "en": "The company reunion was held at a downtown hotel.",
-        "ja": "会社の同窓会はダウンタウンのホテルで開催された。",
+        "ja": "会社の同窓会はダウンタウンのホテルで開催されました。",
         "context": "business"
       },
       {
         "en": "The alumni reunion brought together former employees.",
-        "ja": "同窓会は元従業員を集めた。",
+        "ja": "同窓会は元従業員を集めました。",
         "context": "hr"
       },
       {
         "en": "A reunion dinner was organized to celebrate success.",
-        "ja": "成功を祝うために再会ディナーが計画された。",
+        "ja": "成功を祝うために再会ディナーが計画されました。",
         "context": "hr"
       }
     ],
@@ -89834,17 +89834,17 @@
     "examples": [
       {
         "en": "The rigorous testing process ensured product quality.",
-        "ja": "厳格なテストプロセスが製品の品質を確保した。",
+        "ja": "厳格なテストプロセスが製品の品質を確保しました。",
         "context": "testing"
       },
       {
         "en": "A rigorous academic program demands much of students.",
-        "ja": "厳格な学術プログラムは生徒に多くを求める。",
+        "ja": "厳格な学術プログラムは生徒に多くを求めます。",
         "context": "program"
       },
       {
         "en": "Rigorous training prepared the athletes for competition.",
-        "ja": "厳格なトレーニングは選手を競技に備えさせた。",
+        "ja": "厳格なトレーニングは選手を競技に備えさせました。",
         "context": "training"
       }
     ],
@@ -90020,17 +90020,17 @@
     "examples": [
       {
         "en": "The company reported robust earnings this quarter.",
-        "ja": "会社は今四半期に力強い収益を報告した。",
+        "ja": "会社は今四半期に力強い収益を報告しました。",
         "context": "金融"
       },
       {
         "en": "The system requires a more robust security framework.",
-        "ja": "そのシステムにはより堅牢なセキュリティが必要だ。",
+        "ja": "そのシステムにはより堅牢なセキュリティが必要です。",
         "context": "技術"
       },
       {
         "en": "He maintained robust health well into old age.",
-        "ja": "彼は老年に至るまで頑健な健康を保った。",
+        "ja": "彼は老年に至るまで頑健な健康を保ちました。",
         "context": "健康"
       }
     ],
@@ -92380,17 +92380,17 @@
     "examples": [
       {
         "en": "The plan came under scrutiny.",
-        "ja": "計画は精査を受けた。",
+        "ja": "計画は精査を受けました。",
         "context": "政治"
       },
       {
         "en": "Public scrutiny is important.",
-        "ja": "公の精査は重要だ。",
+        "ja": "公の精査は重要です。",
         "context": "民主主義"
       },
       {
         "en": "His actions faced intense scrutiny.",
-        "ja": "彼の行動は激しい精査を受けた。",
+        "ja": "彼の行動は激しい精査を受けました。",
         "context": "法律"
       }
     ],
@@ -93450,17 +93450,17 @@
     "examples": [
       {
         "en": "Public sentiment shifted in favor of the proposal.",
-        "ja": "世論はその提案に賛成する方向に変化した。",
+        "ja": "世論はその提案に賛成する方向に変化しました。",
         "context": "政治"
       },
       {
         "en": "The speech captured the sentiment of the nation.",
-        "ja": "その演説は国民の感情を捉えた。",
+        "ja": "その演説は国民の感情を捉えました。",
         "context": "社会"
       },
       {
         "en": "Market sentiment influences stock prices significantly every day.",
-        "ja": "市場心理は毎日株価に大きな影響を与える。",
+        "ja": "市場心理は毎日株価に大きな影響を与えます。",
         "context": "金融"
       }
     ],
@@ -96972,17 +96972,17 @@
     "examples": [
       {
         "en": "Workers showed solidarity by going on strike together.",
-        "ja": "労働者たちは一緒にストライキを行うことで連帯を示した。",
+        "ja": "労働者たちは一緒にストライキを行うことで連帯を示しました。",
         "context": "日常"
       },
       {
         "en": "International solidarity is vital in response to humanitarian crises.",
-        "ja": "人道的危機への対応において国際的連帯が不可欠だ。",
+        "ja": "人道的危機への対応において国際的連帯が不可欠です。",
         "context": "会話"
       },
       {
         "en": "Communities showed solidarity after the natural disaster.",
-        "ja": "コミュニティは自然災害後に連帯を示した。",
+        "ja": "コミュニティは自然災害後に連帯を示しました。",
         "context": "文化"
       }
     ],
@@ -98078,17 +98078,17 @@
     "examples": [
       {
         "en": "Economic stagnation lasted a decade.",
-        "ja": "経済停滞は10年続いた。",
+        "ja": "経済停滞は10年続きました。",
         "context": "経済"
       },
       {
         "en": "Stagnation in politics frustrated people.",
-        "ja": "政治の停滞が人々を苛立たせた。",
+        "ja": "政治の停滞が人々を苛立たせました。",
         "context": "社会"
       },
       {
         "en": "Cultural stagnation hinders growth.",
-        "ja": "文化の停滞は成長を妨げる。",
+        "ja": "文化の停滞は成長を妨げます。",
         "context": "社会"
       }
     ],
@@ -98348,17 +98348,17 @@
     "examples": [
       {
         "en": "Statistics is used to analyze research data.",
-        "ja": "統計学は研究データを分析するために使われる。",
+        "ja": "統計学は研究データを分析するために使われます。",
         "context": "academic"
       },
       {
         "en": "She studied statistics to support her research.",
-        "ja": "彼女は研究をサポートするために統計学を学んだ。",
+        "ja": "彼女は研究をサポートするために統計学を学びました。",
         "context": "academic"
       },
       {
         "en": "Statistics show a rise in global temperatures.",
-        "ja": "統計は地球気温の上昇を示す。",
+        "ja": "統計は地球気温の上昇を示します。",
         "context": "academic"
       }
     ],
@@ -98391,17 +98391,17 @@
     "examples": [
       {
         "en": "The statute was passed by parliament.",
-        "ja": "法令は議会で可決された。",
+        "ja": "法令は議会で可決されました。",
         "context": "法律"
       },
       {
         "en": "Statutes define legal obligations.",
-        "ja": "法令は法的義務を定める。",
+        "ja": "法令は法的義務を定めます。",
         "context": "社会"
       },
       {
         "en": "The statute of limitations expired.",
-        "ja": "時効が切れた。",
+        "ja": "時効が切れました。",
         "context": "法律"
       }
     ],
@@ -98763,17 +98763,17 @@
     "examples": [
       {
         "en": "We store important documents in the safe.",
-        "ja": "重要な書類は金庫に保管する。",
+        "ja": "重要な書類は金庫に保管します。",
         "context": "ビジネス"
       },
       {
         "en": "The farmer stores grain for the winter months.",
-        "ja": "農家は冬に備えて穀物を保管する。",
+        "ja": "農家は冬に備えて穀物を保管します。",
         "context": "農業"
       },
       {
         "en": "You can store files on the cloud server.",
-        "ja": "クラウドサーバーにファイルを保存できる。",
+        "ja": "クラウドサーバーにファイルを保存できます。",
         "context": "IT"
       }
     ],
@@ -98836,17 +98836,17 @@
     "examples": [
       {
         "en": "The instructions were clear and straightforward.",
-        "ja": "指示は明確で分かりやすかった。",
+        "ja": "指示は明確で分かりやすかったです。",
         "context": "日常"
       },
       {
         "en": "She gave a straightforward answer to the question.",
-        "ja": "彼女はその質問に率直に答えた。",
+        "ja": "彼女はその質問に率直に答えました。",
         "context": "コミュニケーション"
       },
       {
         "en": "The recipe is quite straightforward for beginners.",
-        "ja": "そのレシピは初心者にはかなり簡単だ。",
+        "ja": "そのレシピは初心者にはかなり簡単です。",
         "context": "料理"
       }
     ],
@@ -98882,17 +98882,17 @@
     "examples": [
       {
         "en": "The company made a strategic decision to expand abroad.",
-        "ja": "会社は海外進出の戦略的決定を下した。",
+        "ja": "会社は海外進出の戦略的決定を下しました。",
         "context": "ビジネス"
       },
       {
         "en": "The island holds a strategic military position.",
-        "ja": "その島は軍事的に戦略的な位置にある。",
+        "ja": "その島は軍事的に戦略的な位置にあります。",
         "context": "地理"
       },
       {
         "en": "Strategic planning is essential for long-term success.",
-        "ja": "戦略的計画は長期的成功に不可欠だ。",
+        "ja": "戦略的計画は長期的成功に不可欠です。",
         "context": "ビジネス"
       }
     ],
@@ -99099,17 +99099,17 @@
     "examples": [
       {
         "en": "The factory must meet stringent safety standards.",
-        "ja": "工場は厳しい安全基準を満たさねばならない。",
+        "ja": "工場は厳しい安全基準を満たさなければなりません。",
         "context": "ビジネス"
       },
       {
         "en": "Stringent regulations protect consumer data privacy.",
-        "ja": "厳しい規制が消費者のデータプライバシーを保護する。",
+        "ja": "厳しい規制が消費者のデータプライバシーを保護します。",
         "context": "IT"
       },
       {
         "en": "Stringent tests are required before drug approval.",
-        "ja": "薬の承認前に厳格な試験が求められる。",
+        "ja": "薬の承認前に厳格な試験が求められます。",
         "context": "医療"
       }
     ],
@@ -99142,17 +99142,17 @@
     "examples": [
       {
         "en": "She strives to improve her English every day.",
-        "ja": "彼女は毎日英語力の向上に努めている。",
+        "ja": "彼女は毎日英語力の向上に努めています。",
         "context": "学習"
       },
       {
         "en": "The team strives for excellence in every project.",
-        "ja": "チームは全プロジェクトで卓越を目指す。",
+        "ja": "チームは全プロジェクトで卓越を目指します。",
         "context": "ビジネス"
       },
       {
         "en": "We should strive to protect the environment.",
-        "ja": "環境保護に努めるべきだ。",
+        "ja": "環境保護に努めるべきです。",
         "context": "環境"
       }
     ],
@@ -99405,17 +99405,17 @@
     "examples": [
       {
         "en": "The corporation owns several overseas subsidiaries.",
-        "ja": "その企業はいくつかの海外子会社を所有している。",
+        "ja": "その企業はいくつかの海外子会社を所有しています。",
         "context": "経営"
       },
       {
         "en": "The subsidiary operates independently from headquarters.",
-        "ja": "その子会社は本社から独立して運営されている。",
+        "ja": "その子会社は本社から独立して運営されています。",
         "context": "ビジネス"
       },
       {
         "en": "Profits from the subsidiary exceeded expectations.",
-        "ja": "子会社からの利益は期待を上回った。",
+        "ja": "子会社からの利益は期待を上回りました。",
         "context": "財務"
       }
     ],
@@ -99446,17 +99446,17 @@
     "examples": [
       {
         "en": "The government subsidized farmers during the drought.",
-        "ja": "政府は干ばつ中に農家に補助金を出した。",
+        "ja": "政府は干ばつ中に農家に補助金を出しました。",
         "context": "farmers"
       },
       {
         "en": "The program was subsidized by private donations.",
-        "ja": "プログラムは民間の寄付によって補助金が出された。",
+        "ja": "プログラムは民間の寄付によって補助金が出されました。",
         "context": "donations"
       },
       {
         "en": "Renewable energy is subsidized to encourage its adoption.",
-        "ja": "再生可能エネルギーは普及を促進するために補助金が出される。",
+        "ja": "再生可能エネルギーは普及を促進するために補助金が出されます。",
         "context": "renewable"
       }
     ],
@@ -99578,17 +99578,17 @@
     "examples": [
       {
         "en": "Revenue has substantially increased over three years.",
-        "ja": "収益は3年間で大幅に増加した。",
+        "ja": "収益は3年間で大幅に増加しました。",
         "context": "ビジネス"
       },
       {
         "en": "The revised plan differs substantially from the original.",
-        "ja": "修正案は原案と大きく異なる。",
+        "ja": "修正案は原案と大きく異なります。",
         "context": "ビジネス"
       },
       {
         "en": "Living costs have risen substantially in urban areas.",
-        "ja": "都市部で生活費が大幅に上昇した。",
+        "ja": "都市部で生活費が大幅に上昇しました。",
         "context": "経済"
       }
     ],
@@ -100028,17 +100028,17 @@
     "examples": [
       {
         "en": "The manager supervises a team of twenty employees.",
-        "ja": "マネージャーは20人の従業員を監督する。",
+        "ja": "マネージャーは20人の従業員を監督します。",
         "context": "ビジネス"
       },
       {
         "en": "Parents should supervise young children near water.",
-        "ja": "親は水辺では幼い子供を監視すべきだ。",
+        "ja": "親は水辺では幼い子供を監視すべきです。",
         "context": "安全"
       },
       {
         "en": "An experienced engineer supervised the construction work.",
-        "ja": "経験豊富な技師が建設作業を監督した。",
+        "ja": "経験豊富な技師が建設作業を監督しました。",
         "context": "仕事"
       }
     ],
@@ -100355,17 +100355,17 @@
     "examples": [
       {
         "en": "Surveillance cameras watch the streets.",
-        "ja": "監視カメラが街路を見張る。",
+        "ja": "監視カメラが街路を見張ります。",
         "context": "社会"
       },
       {
         "en": "Mass surveillance raises concerns.",
-        "ja": "大規模監視は懸念を高める。",
+        "ja": "大規模監視は懸念を高めます。",
         "context": "権利"
       },
       {
         "en": "Intelligence agencies conduct surveillance.",
-        "ja": "情報機関は監視を行う。",
+        "ja": "情報機関は監視を行います。",
         "context": "政治"
       }
     ],
@@ -100573,17 +100573,17 @@
     "examples": [
       {
         "en": "The dove is symbolic of peace worldwide.",
-        "ja": "ハトは世界中で平和の象徴だ。",
+        "ja": "ハトは世界中で平和の象徴です。",
         "context": "文化"
       },
       {
         "en": "The ceremony had a symbolic meaning for everyone.",
-        "ja": "その式典は全員にとって象徴的な意味があった。",
+        "ja": "その式典は全員にとって象徴的な意味がありました。",
         "context": "社会"
       },
       {
         "en": "Her gesture was purely symbolic.",
-        "ja": "彼女の行為は純粋に象徴的なものだった。",
+        "ja": "彼女の行為は純粋に象徴的なものでした。",
         "context": "人間関係"
       }
     ],
@@ -100616,17 +100616,17 @@
     "examples": [
       {
         "en": "The teacher was sympathetic to the student.",
-        "ja": "先生はその生徒に同情的だった。",
+        "ja": "先生はその生徒に同情的でした。",
         "context": "学校"
       },
       {
         "en": "She gave him a sympathetic smile.",
-        "ja": "彼女は彼に同情的な笑みを向けた。",
+        "ja": "彼女は彼に同情的な笑みを向けました。",
         "context": "人間関係"
       },
       {
         "en": "Not everyone was sympathetic to their cause.",
-        "ja": "全員がその大義に共感したわけではなかった。",
+        "ja": "全員がその大義に共感したわけではありませんでした。",
         "context": "社会"
       }
     ],
@@ -100802,17 +100802,17 @@
     "examples": [
       {
         "en": "Synthesis of chemicals is controlled.",
-        "ja": "化学物質の合成は管理されている。",
+        "ja": "化学物質の合成は管理されています。",
         "context": "化学"
       },
       {
         "en": "A synthesis of ideas emerged.",
-        "ja": "考えの総合が生まれた。",
+        "ja": "考えの総合が生まれました。",
         "context": "学術"
       },
       {
         "en": "Photosynthesis is a natural synthesis.",
-        "ja": "光合成は自然な合成だ。",
+        "ja": "光合成は自然な合成です。",
         "context": "生物"
       }
     ],
@@ -100849,17 +100849,17 @@
     "examples": [
       {
         "en": "A systematic approach leads to better outcomes.",
-        "ja": "体系的なアプローチはより良い結果につながる。",
+        "ja": "体系的なアプローチはより良い結果につながります。",
         "context": "ビジネス"
       },
       {
         "en": "The research followed a systematic method.",
-        "ja": "その研究は体系的な方法に従った。",
+        "ja": "その研究は体系的な方法に従いました。",
         "context": "学問"
       },
       {
         "en": "We need a more systematic way of studying.",
-        "ja": "もっと体系的な勉強方法が必要だ。",
+        "ja": "もっと体系的な勉強方法が必要です。",
         "context": "学習"
       }
     ],
@@ -100931,12 +100931,12 @@
       },
       {
         "en": "She uses a tablet for online classes.",
-        "ja": "彼女はオンライン授業にタブレットを使う。",
+        "ja": "彼女はオンライン授業にタブレットを使います。",
         "context": "学校"
       },
       {
         "en": "The tablet screen cracked when it fell.",
-        "ja": "タブレットの画面が落ちた時にひび割れた。",
+        "ja": "タブレットの画面が落ちた時にひび割れました。",
         "context": "技術"
       }
     ],
@@ -100966,17 +100966,17 @@
     "examples": [
       {
         "en": "Tabloid newspapers often focus on celebrity gossip.",
-        "ja": "タブロイド紙はしばしば有名人のゴシップに焦点を当てる。",
+        "ja": "タブロイド紙はしばしば有名人のゴシップに焦点を当てます。",
         "context": "メディア"
       },
       {
         "en": "The story was covered only by tabloid media.",
-        "ja": "その記事はタブロイドメディアだけが報じた。",
+        "ja": "その記事はタブロイドメディアだけが報じました。",
         "context": "報道"
       },
       {
         "en": "She avoids reading tabloid headlines.",
-        "ja": "彼女はタブロイド紙の見出しを読むのを避ける。",
+        "ja": "彼女はタブロイド紙の見出しを読むのを避けます。",
         "context": "日常"
       }
     ],
@@ -101114,17 +101114,17 @@
     "examples": [
       {
         "en": "Children learn through tactile experiences.",
-        "ja": "子供は触覚的な体験を通じて学ぶ。",
+        "ja": "子供は触覚的な体験を通じて学びます。",
         "context": "教育"
       },
       {
         "en": "The fabric has a pleasant tactile quality.",
-        "ja": "その生地は心地よい手触りがある。",
+        "ja": "その生地は心地よい手触りがあります。",
         "context": "買い物"
       },
       {
         "en": "Tactile feedback makes the device easier to use.",
-        "ja": "触覚フィードバックで装置が使いやすくなる。",
+        "ja": "触覚フィードバックで装置が使いやすくなります。",
         "context": "技術"
       }
     ],
@@ -101323,17 +101323,17 @@
     "examples": [
       {
         "en": "My neighbor is very talkative and friendly.",
-        "ja": "私の隣人はとてもおしゃべりで親しみやすい。",
+        "ja": "私の隣人はとてもおしゃべりで親しみやすいです。",
         "context": "日常"
       },
       {
         "en": "The child becomes talkative around her friends.",
-        "ja": "その子は友達の前ではおしゃべりになる。",
+        "ja": "その子は友達の前ではおしゃべりになります。",
         "context": "学校"
       },
       {
         "en": "He was unusually talkative at the meeting today.",
-        "ja": "彼は今日の会議でいつになくよく話した。",
+        "ja": "彼は今日の会議でいつになくよく話しました。",
         "context": "仕事"
       }
     ],
@@ -101509,17 +101509,17 @@
     "examples": [
       {
         "en": "She came back from vacation looking tanned.",
-        "ja": "彼女は休暇から日焼けして帰ってきた。",
+        "ja": "彼女は休暇から日焼けして帰ってきました。",
         "context": "旅行"
       },
       {
         "en": "His tanned skin showed he spent time outdoors.",
-        "ja": "日焼けした肌が屋外で過ごしたことを示していた。",
+        "ja": "日焼けした肌が屋外で過ごしたことを示していました。",
         "context": "日常"
       },
       {
         "en": "The tanned leather bag looked very stylish.",
-        "ja": "なめした革のバッグはとてもおしゃれに見えた。",
+        "ja": "なめした革のバッグはとてもおしゃれに見えました。",
         "context": "買い物"
       }
     ],
@@ -101822,17 +101822,17 @@
     "examples": [
       {
         "en": "He ignored the taunts from the crowd.",
-        "ja": "彼は群衆からのあざけりを無視した。",
+        "ja": "彼は群衆からのあざけりを無視しました。",
         "context": "社会"
       },
       {
         "en": "The taunts made her feel angry and hurt.",
-        "ja": "そのあざけりは彼女を怒らせ傷つけた。",
+        "ja": "そのあざけりは彼女を怒らせ傷つけました。",
         "context": "感情"
       },
       {
         "en": "Children should not use taunts against others.",
-        "ja": "子供は他人をあざけるべきではない。",
+        "ja": "子供は他人をあざけるべきではありません。",
         "context": "教育"
       }
     ],
@@ -102000,17 +102000,17 @@
     "examples": [
       {
         "en": "Good teamwork leads to better results.",
-        "ja": "良いチームワークはより良い結果につながる。",
+        "ja": "良いチームワークはより良い結果につながります。",
         "context": "ビジネス"
       },
       {
         "en": "The project was completed through teamwork.",
-        "ja": "そのプロジェクトはチームワークで完成した。",
+        "ja": "そのプロジェクトはチームワークで完成しました。",
         "context": "仕事"
       },
       {
         "en": "Sports teach children the value of teamwork.",
-        "ja": "スポーツは子供にチームワークの価値を教える。",
+        "ja": "スポーツは子供にチームワークの価値を教えます。",
         "context": "教育"
       }
     ],
@@ -102038,17 +102038,17 @@
     "examples": [
       {
         "en": "His gentle tease made everyone laugh.",
-        "ja": "彼の優しいからかいは皆を笑わせた。",
+        "ja": "彼の優しいからかいは皆を笑わせました。",
         "context": "日常"
       },
       {
         "en": "She took the tease with a good spirit.",
-        "ja": "彼女はそのからかいを快く受け入れた。",
+        "ja": "彼女はそのからかいを快く受け入れました。",
         "context": "人間関係"
       },
       {
         "en": "The children meant no harm by their tease.",
-        "ja": "子供たちのからかいに悪意はなかった。",
+        "ja": "子供たちのからかいに悪意はありませんでした。",
         "context": "家庭"
       }
     ],
@@ -102143,17 +102143,17 @@
     "examples": [
       {
         "en": "He received a telegram with urgent news.",
-        "ja": "彼は緊急の知らせの電報を受け取った。",
+        "ja": "彼は緊急の知らせの電報を受け取りました。",
         "context": "通信"
       },
       {
         "en": "Before phones, people sent telegrams to communicate.",
-        "ja": "電話の前は人々は通信に電報を使った。",
+        "ja": "電話の前は人々は通信に電報を使いました。",
         "context": "歴史"
       },
       {
         "en": "The telegram arrived late in the evening.",
-        "ja": "電報は夕方遅くに届いた。",
+        "ja": "電報は夕方遅くに届きました。",
         "context": "日常"
       }
     ],
@@ -102252,17 +102252,17 @@
     "examples": [
       {
         "en": "The bank teller helped the elderly customer.",
-        "ja": "銀行窓口係は高齢の客を手伝った。",
+        "ja": "銀行窓口係は高齢の客を手伝いました。",
         "context": "金融"
       },
       {
         "en": "She is a wonderful storyteller.",
-        "ja": "彼女は素晴らしい語り手だ。",
+        "ja": "彼女は素晴らしい語り手です。",
         "context": "文化"
       },
       {
         "en": "The teller counted the money carefully.",
-        "ja": "窓口係は注意深くお金を数えた。",
+        "ja": "窓口係は注意深くお金を数えました。",
         "context": "仕事"
       }
     ],
@@ -102613,17 +102613,17 @@
     "examples": [
       {
         "en": "She made a tentative agreement to meet next week.",
-        "ja": "彼女は来週会う不確かな合意をした。",
+        "ja": "彼女は来週会う不確かな合意をしました。",
         "context": "agreement"
       },
       {
         "en": "His tentative steps toward reform were criticized.",
-        "ja": "改革への彼の不確かな歩みは批判された。",
+        "ja": "改革への彼の不確かな歩みは批判されました。",
         "context": "steps"
       },
       {
         "en": "A tentative schedule was drawn up for the project.",
-        "ja": "プロジェクトのための不確かなスケジュールが作成された。",
+        "ja": "プロジェクトのための不確かなスケジュールが作成されました。",
         "context": "schedule"
       }
     ],
@@ -102841,17 +102841,17 @@
     "examples": [
       {
         "en": "You did a terrific job on the presentation.",
-        "ja": "プレゼンテーションは素晴らしい出来だった。",
+        "ja": "プレゼンテーションは素晴らしい出来でした。",
         "context": "仕事"
       },
       {
         "en": "The weather was terrific for the outdoor event.",
-        "ja": "屋外イベントには素晴らしい天気だった。",
+        "ja": "屋外イベントには素晴らしい天気でした。",
         "context": "日常"
       },
       {
         "en": "She is a terrific singer with a powerful voice.",
-        "ja": "彼女は力強い声を持つ素晴らしい歌手だ。",
+        "ja": "彼女は力強い声を持つ素晴らしい歌手です。",
         "context": "文化"
       }
     ],
@@ -102980,17 +102980,17 @@
     "examples": [
       {
         "en": "The witness agreed to testify at the trial.",
-        "ja": "証人は裁判で証言することに同意した。",
+        "ja": "証人は裁判で証言することに同意しました。",
         "context": "法律"
       },
       {
         "en": "Several employees testified against the manager.",
-        "ja": "数人の社員が上司に不利な証言をした。",
+        "ja": "数人の社員が上司に不利な証言をしました。",
         "context": "仕事"
       },
       {
         "en": "She was asked to testify before the committee.",
-        "ja": "彼女は委員会の前で証言するよう求められた。",
+        "ja": "彼女は委員会の前で証言するよう求められました。",
         "context": "政治"
       }
     ],
@@ -103066,12 +103066,12 @@
       },
       {
         "en": "She felt thankful to be alive after the accident.",
-        "ja": "事故後、生きていることに感謝した。",
+        "ja": "事故後、生きていることに感謝しました。",
         "context": "感情"
       },
       {
         "en": "He was thankful that his family was safe.",
-        "ja": "家族が無事であることに感謝していた。",
+        "ja": "家族が無事であることに感謝していました。",
         "context": "家庭"
       }
     ],
@@ -103668,17 +103668,17 @@
     "examples": [
       {
         "en": "Thirdly, we must consider the budget carefully.",
-        "ja": "第三に、予算を慎重に検討すべきだ。",
+        "ja": "第三に、予算を慎重に検討すべきです。",
         "context": "ビジネス"
       },
       {
         "en": "Thirdly, the plan lacks proper research support.",
-        "ja": "第三に、その計画は調査が不十分だ。",
+        "ja": "第三に、その計画は調査が不十分です。",
         "context": "学術"
       },
       {
         "en": "Thirdly, safety standards need to be updated.",
-        "ja": "第三に、安全基準の更新が必要だ。",
+        "ja": "第三に、安全基準の更新が必要です。",
         "context": "規制"
       }
     ],
@@ -104531,17 +104531,17 @@
     "examples": [
       {
         "en": "The doctor's timely advice saved the patient's life.",
-        "ja": "医師の適切な助言が患者の命を救った。",
+        "ja": "医師の適切な助言が患者の命を救いました。",
         "context": "健康"
       },
       {
         "en": "The report provided timely information for investors.",
-        "ja": "その報告書は投資家に適時な情報を提供した。",
+        "ja": "その報告書は投資家に適時な情報を提供しました。",
         "context": "金融"
       },
       {
         "en": "A timely warning helped people evacuate the area.",
-        "ja": "適時の警告が人々の避難を助けた。",
+        "ja": "適時の警告が人々の避難を助けました。",
         "context": "防災"
       }
     ],
@@ -104668,17 +104668,17 @@
     "examples": [
       {
         "en": "The timing of the announcement was quite surprising.",
-        "ja": "発表のタイミングはとても驚きだった。",
+        "ja": "発表のタイミングはとても驚きでした。",
         "context": "ニュース"
       },
       {
         "en": "Good timing is crucial in comedy performances.",
-        "ja": "コメディではタイミングが極めて重要だ。",
+        "ja": "コメディではタイミングが極めて重要です。",
         "context": "芸術"
       },
       {
         "en": "The timing of the investment turned out perfectly.",
-        "ja": "投資のタイミングは完璧だった。",
+        "ja": "投資のタイミングは完璧でした。",
         "context": "金融"
       }
     ],
@@ -105626,17 +105626,17 @@
     "examples": [
       {
         "en": "The logo is a registered trademark worldwide.",
-        "ja": "そのロゴは世界中で登録商標だ。",
+        "ja": "そのロゴは世界中で登録商標です。",
         "context": "法律"
       },
       {
         "en": "Trademark infringement can lead to costly lawsuits.",
-        "ja": "商標侵害は高額な訴訟につながりうる。",
+        "ja": "商標侵害は高額な訴訟につながりえます。",
         "context": "法律"
       },
       {
         "en": "The company filed for trademark protection.",
-        "ja": "その会社は商標保護を申請した。",
+        "ja": "その会社は商標保護を申請しました。",
         "context": "ビジネス"
       }
     ],
@@ -105663,17 +105663,17 @@
     "examples": [
       {
         "en": "The trader sells fresh vegetables at the market.",
-        "ja": "その商人は市場で新鮮な野菜を売っている。",
+        "ja": "その商人は市場で新鮮な野菜を売っています。",
         "context": "ビジネス"
       },
       {
         "en": "Stock traders monitor the market all day.",
-        "ja": "株式トレーダーは一日中市場を監視する。",
+        "ja": "株式トレーダーは一日中市場を監視します。",
         "context": "金融"
       },
       {
         "en": "Ancient traders traveled along the Silk Road.",
-        "ja": "古代の商人はシルクロードを旅した。",
+        "ja": "古代の商人はシルクロードを旅しました。",
         "context": "歴史"
       }
     ],
@@ -105767,17 +105767,17 @@
     "examples": [
       {
         "en": "The trainee learned quickly under expert guidance.",
-        "ja": "研修生は専門家の指導の下ですぐに学んだ。",
+        "ja": "研修生は専門家の指導の下ですぐに学びました。",
         "context": "ビジネス"
       },
       {
         "en": "Each trainee must complete a six-month program.",
-        "ja": "各研修生は6か月のプログラムを修了する必要がある。",
+        "ja": "各研修生は6か月のプログラムを修了する必要があります。",
         "context": "教育"
       },
       {
         "en": "The company hired twenty new trainees this spring.",
-        "ja": "会社はこの春20人の新しい研修生を雇った。",
+        "ja": "会社はこの春20人の新しい研修生を雇いました。",
         "context": "ビジネス"
       }
     ],
@@ -106071,17 +106071,17 @@
     "examples": [
       {
         "en": "The court requested a full transcript of proceedings.",
-        "ja": "裁判所は訴訟手続きの完全な記録を要求した。",
+        "ja": "裁判所は訴訟手続きの完全な記録を要求しました。",
         "context": "法律"
       },
       {
         "en": "Students can order their academic transcript online.",
-        "ja": "学生はオンラインで成績証明書を注文できる。",
+        "ja": "学生はオンラインで成績証明書を注文できます。",
         "context": "学校"
       },
       {
         "en": "The journalist reviewed the interview transcript carefully.",
-        "ja": "記者はインタビューの記録を慎重に見直した。",
+        "ja": "記者はインタビューの記録を慎重に見直しました。",
         "context": "メディア"
       }
     ],
@@ -106252,17 +106252,17 @@
     "examples": [
       {
         "en": "The translator worked on three languages at once.",
-        "ja": "その翻訳者は3つの言語を同時に扱った。",
+        "ja": "その翻訳者は3つの言語を同時に扱いました。",
         "context": "仕事"
       },
       {
         "en": "A good translator captures the original meaning.",
-        "ja": "良い翻訳者は原文の意味を捉える。",
+        "ja": "良い翻訳者は原文の意味を捉えます。",
         "context": "言語"
       },
       {
         "en": "The conference hired a professional translator.",
-        "ja": "会議ではプロの翻訳者を雇った。",
+        "ja": "会議ではプロの翻訳者を雇いました。",
         "context": "ビジネス"
       }
     ],
@@ -106290,17 +106290,17 @@
     "examples": [
       {
         "en": "The satellite transmits signals back to the station.",
-        "ja": "衛星は基地局に信号を送信する。",
+        "ja": "衛星は基地局に信号を送信します。",
         "context": "技術"
       },
       {
         "en": "Mosquitoes can transmit dangerous diseases to humans.",
-        "ja": "蚊は人間に危険な病気を伝染させうる。",
+        "ja": "蚊は人間に危険な病気を伝染させることがあります。",
         "context": "健康"
       },
       {
         "en": "The radio station transmits news programs every morning.",
-        "ja": "そのラジオ局は毎朝ニュース番組を送信する。",
+        "ja": "そのラジオ局は毎朝ニュース番組を送信します。",
         "context": "メディア"
       }
     ],
@@ -106889,17 +106889,17 @@
     "examples": [
       {
         "en": "The math problem was trickier than she had expected.",
-        "ja": "数学の問題は彼女が予想したより厄介だった。",
+        "ja": "数学の問題は彼女が予想したより厄介でした。",
         "context": "学校"
       },
       {
         "en": "Parking in the city center can be very tricky.",
-        "ja": "市街地での駐車はとても厄介なことがある。",
+        "ja": "市街地での駐車はとても厄介なことがあります。",
         "context": "交通"
       },
       {
         "en": "The negotiation turned out to be extremely tricky.",
-        "ja": "交渉は極めて厄介であることがわかった。",
+        "ja": "交渉は極めて厄介であることがわかりました。",
         "context": "ビジネス"
       }
     ],
@@ -106993,17 +106993,17 @@
     "examples": [
       {
         "en": "The argument started over a very trivial matter.",
-        "ja": "口論はとても些細なことから始まった。",
+        "ja": "口論はとても些細なことから始まりました。",
         "context": "人間関係"
       },
       {
         "en": "Do not waste time on trivial details in meetings.",
-        "ja": "会議では些細な詳細に時間を浪費するな。",
+        "ja": "会議では些細な詳細に時間を浪費しないでください。",
         "context": "ビジネス"
       },
       {
         "en": "What seems trivial now may matter in the future.",
-        "ja": "今は些細に思えることが将来重要になるかもしれない。",
+        "ja": "今は些細に思えることが将来重要になるかもしれません。",
         "context": "日常"
       }
     ],
@@ -107035,17 +107035,17 @@
     "examples": [
       {
         "en": "She pushed the trolley through the busy supermarket.",
-        "ja": "彼女は混雑したスーパーでカートを押した。",
+        "ja": "彼女は混雑したスーパーでカートを押しました。",
         "context": "買い物"
       },
       {
         "en": "The luggage trolley was available near the entrance.",
-        "ja": "荷物用カートは入口付近にあった。",
+        "ja": "荷物用カートは入口付近にありました。",
         "context": "旅行"
       },
       {
         "en": "A tea trolley was wheeled into the conference room.",
-        "ja": "お茶のワゴンが会議室に運ばれた。",
+        "ja": "お茶のワゴンが会議室に運ばれました。",
         "context": "職場"
       }
     ],
@@ -107272,17 +107272,17 @@
     "examples": [
       {
         "en": "He always carried his trusty old leather briefcase.",
-        "ja": "彼はいつも頼りになる古い革のブリーフケースを持っていた。",
+        "ja": "彼はいつも頼りになる古い革のブリーフケースを持っていました。",
         "context": "日常"
       },
       {
         "en": "The explorer relied on his trusty compass throughout.",
-        "ja": "探検家はずっと頼りになるコンパスを頼りにした。",
+        "ja": "探検家はずっと頼りになるコンパスを頼りにしました。",
         "context": "冒険"
       },
       {
         "en": "Her trusty assistant handled all the difficult tasks.",
-        "ja": "彼女の頼りになるアシスタントが全ての難題をこなした。",
+        "ja": "彼女の頼りになるアシスタントが全ての難題をこなしました。",
         "context": "ビジネス"
       }
     ],
@@ -107309,17 +107309,17 @@
     "examples": [
       {
         "en": "The witness gave a truthful account of the event.",
-        "ja": "証人はその出来事の正直な説明をした。",
+        "ja": "証人はその出来事の正直な説明をしました。",
         "context": "法律"
       },
       {
         "en": "Children should learn to be truthful from childhood.",
-        "ja": "子どもたちは幼少期から正直であることを学ぶべきだ。",
+        "ja": "子どもたちは幼少期から正直であることを学ぶべきです。",
         "context": "教育"
       },
       {
         "en": "A truthful leader earns the deep respect of others.",
-        "ja": "正直なリーダーは他者の深い尊敬を得る。",
+        "ja": "正直なリーダーは他者の深い尊敬を得ます。",
         "context": "社会"
       }
     ],
@@ -107624,17 +107624,17 @@
     "examples": [
       {
         "en": "Take the second turning on the left after here.",
-        "ja": "ここから2番目の曲がり角を左に曲がりなさい。",
+        "ja": "ここから2番目の曲がり角を左に曲がってください。",
         "context": "道案内"
       },
       {
         "en": "The meeting marked a turning in company history.",
-        "ja": "その会議は会社の歴史の転機となった。",
+        "ja": "その会議は会社の歴史の転機となりました。",
         "context": "ビジネス"
       },
       {
         "en": "She missed the turning and drove past the station.",
-        "ja": "彼女は曲がり角を見逃して駅を通り過ぎた。",
+        "ja": "彼女は曲がり角を見逃して駅を通り過ぎました。",
         "context": "交通"
       }
     ],
@@ -107662,17 +107662,17 @@
     "examples": [
       {
         "en": "High staff turnover increases training costs.",
-        "ja": "高い離職率は研修コストを増加させる。",
+        "ja": "高い離職率は研修コストを増加させます。",
         "context": "経営"
       },
       {
         "en": "The company's annual turnover reached ten billion yen.",
-        "ja": "その会社の年間売上高は100億円に達した。",
+        "ja": "その会社の年間売上高は100億円に達しました。",
         "context": "財務"
       },
       {
         "en": "Reducing turnover is essential for team stability.",
-        "ja": "離職率を下げることはチームの安定に不可欠だ。",
+        "ja": "離職率を下げることはチームの安定に不可欠です。",
         "context": "人事"
       }
     ],
@@ -108257,17 +108257,17 @@
     "examples": [
       {
         "en": "She was completely unaware of the danger around her.",
-        "ja": "彼女は周囲の危険に全く気づいていなかった。",
+        "ja": "彼女は周囲の危険に全く気づいていませんでした。",
         "context": "日常"
       },
       {
         "en": "Many people are unaware of their own legal rights.",
-        "ja": "多くの人が自分の法的権利に気づいていない。",
+        "ja": "多くの人が自分の法的権利に気づいていません。",
         "context": "法律"
       },
       {
         "en": "The driver was unaware that the road was closed.",
-        "ja": "運転手はその道路が閉鎖されていることに気づかなかった。",
+        "ja": "運転手はその道路が閉鎖されていることに気づきませんでした。",
         "context": "交通"
       }
     ],
@@ -108327,17 +108327,17 @@
     "examples": [
       {
         "en": "The village has remained unchanged for over fifty years.",
-        "ja": "その村は50年以上変わらないままだ。",
+        "ja": "その村は50年以上変わらないままです。",
         "context": "社会"
       },
       {
         "en": "The policy remained unchanged despite strong public criticism.",
-        "ja": "強い批判にもかかわらず政策は変わらなかった。",
+        "ja": "強い批判にもかかわらず政策は変わりませんでした。",
         "context": "政治"
       },
       {
         "en": "Prices have stayed unchanged since the start of year.",
-        "ja": "価格は年初から変わっていない。",
+        "ja": "価格は年初から変わっていません。",
         "context": "経済"
       }
     ],
@@ -108364,17 +108364,17 @@
     "examples": [
       {
         "en": "The instructions on the form were very unclear.",
-        "ja": "用紙の説明はとても不明確だった。",
+        "ja": "用紙の説明はとても不明確でした。",
         "context": "日常"
       },
       {
         "en": "The reason for his sudden resignation remains unclear.",
-        "ja": "彼の突然の辞任の理由は不明確なままだ。",
+        "ja": "彼の突然の辞任の理由は不明確なままです。",
         "context": "ビジネス"
       },
       {
         "en": "The future of the project is still quite unclear.",
-        "ja": "プロジェクトの将来はまだかなり不明確だ。",
+        "ja": "プロジェクトの将来はまだかなり不明確です。",
         "context": "ビジネス"
       }
     ],
@@ -108401,17 +108401,17 @@
     "examples": [
       {
         "en": "The speaker spoke unclearly due to a bad microphone.",
-        "ja": "話者はマイクの不調で不明瞭に話した。",
+        "ja": "話者はマイクの不調で不明瞭に話しました。",
         "context": "イベント"
       },
       {
         "en": "The instructions were unclearly written in the manual.",
-        "ja": "説明書の指示は不明瞭に書かれていた。",
+        "ja": "説明書の指示は不明瞭に書かれていました。",
         "context": "日常"
       },
       {
         "en": "The rules were unclearly defined from the very start.",
-        "ja": "ルールは最初から不明瞭に定義されていた。",
+        "ja": "ルールは最初から不明瞭に定義されていました。",
         "context": "ビジネス"
       }
     ],
@@ -108438,17 +108438,17 @@
     "examples": [
       {
         "en": "Snow in this southern region is quite uncommon.",
-        "ja": "この南部地域での雪はかなり珍しい。",
+        "ja": "この南部地域での雪はかなり珍しいです。",
         "context": "天気"
       },
       {
         "en": "Such a generous donation is not at all uncommon.",
-        "ja": "そのような寛大な寄付は決して珍しくない。",
+        "ja": "そのような寛大な寄付は決して珍しくありません。",
         "context": "社会"
       },
       {
         "en": "The bird is uncommon but not completely extinct yet.",
-        "ja": "その鳥は珍しいが完全に絶滅はしていない。",
+        "ja": "その鳥は珍しいですが、完全に絶滅はしていません。",
         "context": "自然"
       }
     ],
@@ -108541,17 +108541,17 @@
     "examples": [
       {
         "en": "Never underestimate the power of consistent daily practice.",
-        "ja": "毎日の一貫した練習の力を過小評価してはいけない。",
+        "ja": "毎日の一貫した練習の力を過小評価してはいけません。",
         "context": "教育"
       },
       {
         "en": "The team underestimated their opponents and lost the match.",
-        "ja": "チームは相手を過小評価して試合に負けた。",
+        "ja": "チームは相手を過小評価して試合に負けました。",
         "context": "スポーツ"
       },
       {
         "en": "Many people underestimate the difficulty of learning languages.",
-        "ja": "多くの人が語学学習の難しさを過小評価している。",
+        "ja": "多くの人が語学学習の難しさを過小評価しています。",
         "context": "学校"
       }
     ],
@@ -108795,17 +108795,17 @@
     "examples": [
       {
         "en": "Technology has opened undreamed possibilities for all people.",
-        "ja": "テクノロジーは全ての人に夢にも思わぬ可能性を開いた。",
+        "ja": "テクノロジーは全ての人に夢にも思わぬ可能性を開きました。",
         "context": "技術"
       },
       {
         "en": "Success came in ways that were completely undreamed of.",
-        "ja": "成功は全く夢にも思わなかった形でやってきた。",
+        "ja": "成功は全く夢にも思わなかった形でやってきました。",
         "context": "ビジネス"
       },
       {
         "en": "The discovery led to undreamed advances in modern science.",
-        "ja": "その発見は科学での夢にも思わぬ進歩につながった。",
+        "ja": "その発見は科学での夢にも思わぬ進歩につながりました。",
         "context": "科学"
       }
     ],
@@ -108964,17 +108964,17 @@
     "examples": [
       {
         "en": "He has been unemployed since the factory closed down.",
-        "ja": "工場が閉鎖されてから彼は失業している。",
+        "ja": "工場が閉鎖されてから彼は失業しています。",
         "context": "社会"
       },
       {
         "en": "Many unemployed workers are seeking retraining opportunities now.",
-        "ja": "多くの失業した労働者が再訓練の機会を求めている。",
+        "ja": "多くの失業した労働者が再訓練の機会を求めています。",
         "context": "仕事"
       },
       {
         "en": "The government offers support programs for unemployed citizens.",
-        "ja": "政府は失業した市民に支援プログラムを提供している。",
+        "ja": "政府は失業した市民に支援プログラムを提供しています。",
         "context": "政治"
       }
     ],
@@ -109243,17 +109243,17 @@
     "examples": [
       {
         "en": "Unforeseen circumstances forced them to cancel the trip.",
-        "ja": "予期しない事情で旅行を中止せざるを得なかった。",
+        "ja": "予期しない事情で旅行を中止せざるを得ませんでした。",
         "context": "旅行"
       },
       {
         "en": "The project faced unforeseen delays due to weather.",
-        "ja": "プロジェクトは天候で予期しない遅延に直面した。",
+        "ja": "プロジェクトは天候で予期しない遅延に直面しました。",
         "context": "ビジネス"
       },
       {
         "en": "Unforeseen costs put pressure on the family budget.",
-        "ja": "予期しない出費が家計を圧迫した。",
+        "ja": "予期しない出費が家計を圧迫しました。",
         "context": "金融"
       }
     ],
@@ -109314,17 +109314,17 @@
     "examples": [
       {
         "en": "The receptionist gave us an unfriendly cold stare.",
-        "ja": "受付係は不親切な冷たい視線を向けた。",
+        "ja": "受付係は不親切な冷たい視線を向けました。",
         "context": "サービス"
       },
       {
         "en": "The new neighbor seemed unfriendly at first glance.",
-        "ja": "新しい隣人は一見不親切に見えた。",
+        "ja": "新しい隣人は一見不親切に見えました。",
         "context": "日常"
       },
       {
         "en": "Some online forums have an unfriendly atmosphere.",
-        "ja": "一部のネット掲示板は不親切な雰囲気がある。",
+        "ja": "一部のネット掲示板は不親切な雰囲気があります。",
         "context": "技術"
       }
     ],
@@ -109384,17 +109384,17 @@
     "examples": [
       {
         "en": "Such behavior was almost unheard of in this school.",
-        "ja": "そのような行動はこの学校ではほぼ前例がなかった。",
+        "ja": "そのような行動はこの学校ではほぼ前例がありませんでした。",
         "context": "学校"
       },
       {
         "en": "The disease was virtually unheard of ten years ago.",
-        "ja": "その病気は10年前にはほぼ知られていなかった。",
+        "ja": "その病気は10年前にはほぼ知られていませんでした。",
         "context": "健康"
       },
       {
         "en": "Working from home was once unheard of here.",
-        "ja": "在宅勤務はかつてここでは前例がなかった。",
+        "ja": "在宅勤務はかつてここでは前例がありませんでした。",
         "context": "ビジネス"
       }
     ],
@@ -109421,17 +109421,17 @@
     "examples": [
       {
         "en": "The staff at the counter were extremely unhelpful.",
-        "ja": "カウンターのスタッフは非常に役に立たなかった。",
+        "ja": "カウンターのスタッフは非常に役に立ちませんでした。",
         "context": "サービス"
       },
       {
         "en": "His vague response was unhelpful to the investigation.",
-        "ja": "彼の曖昧な返答は調査の役に立たなかった。",
+        "ja": "彼の曖昧な返答は調査の役に立ちませんでした。",
         "context": "事件"
       },
       {
         "en": "The manual was outdated and completely unhelpful.",
-        "ja": "そのマニュアルは古く全く役に立たなかった。",
+        "ja": "そのマニュアルは古く全く役に立ちませんでした。",
         "context": "ビジネス"
       }
     ],
@@ -109694,17 +109694,17 @@
     "examples": [
       {
         "en": "Her unkind words deeply hurt his feelings that day.",
-        "ja": "彼女の不親切な言葉がその日彼を深く傷つけた。",
+        "ja": "彼女の不親切な言葉がその日彼を深く傷つけました。",
         "context": "感情"
       },
       {
         "en": "The review was unkind but honest about the food.",
-        "ja": "そのレビューは不親切だが料理に正直だった。",
+        "ja": "そのレビューは不親切ですが料理に正直でした。",
         "context": "食事"
       },
       {
         "en": "Being unkind to animals is not acceptable behavior.",
-        "ja": "動物に不親切にするのは許されない行為だ。",
+        "ja": "動物に不親切にするのは許されない行為です。",
         "context": "倫理"
       }
     ],
@@ -109797,17 +109797,17 @@
     "examples": [
       {
         "en": "The plan offers unlimited data for a fixed price.",
-        "ja": "そのプランは定額で無制限のデータを提供する。",
+        "ja": "そのプランは定額で無制限のデータを提供します。",
         "context": "技術"
       },
       {
         "en": "Children seem to have unlimited energy during play.",
-        "ja": "子供たちは遊びの間無制限の体力があるようだ。",
+        "ja": "子供たちは遊びの間無制限の体力があるようです。",
         "context": "日常"
       },
       {
         "en": "The library provides unlimited access to online resources.",
-        "ja": "図書館はオンライン資料への無制限アクセスを提供する。",
+        "ja": "図書館はオンライン資料への無制限アクセスを提供します。",
         "context": "学校"
       }
     ],
@@ -110248,7 +110248,7 @@
     "examples": [
       {
         "en": "The two incidents turned out to be completely unrelated.",
-        "ja": "2つの事件は完全に無関係と判明した。",
+        "ja": "2つの事件は完全に無関係と判明しました。",
         "context": "事件"
       },
       {
@@ -110258,7 +110258,7 @@
       },
       {
         "en": "The symptoms were unrelated to his previous condition.",
-        "ja": "その症状は彼の以前の状態とは無関係だった。",
+        "ja": "その症状は彼の以前の状態とは無関係でした。",
         "context": "健康"
       }
     ],
@@ -111004,12 +111004,12 @@
       },
       {
         "en": "She decided to upload her travel photos online.",
-        "ja": "彼女は旅行写真をオンラインにアップロードすることにした。",
+        "ja": "彼女は旅行写真をオンラインにアップロードすることにしました。",
         "context": "技術"
       },
       {
         "en": "Students must upload their assignments before the deadline.",
-        "ja": "学生は締め切り前に課題をアップロードしなければならない。",
+        "ja": "学生は締め切り前に課題をアップロードしなければなりません。",
         "context": "学校"
       }
     ],
@@ -111235,17 +111235,17 @@
     "examples": [
       {
         "en": "The economy showed a significant upturn recently.",
-        "ja": "経済は最近大幅な好転を示した。",
+        "ja": "経済は最近大幅な好転を示しました。",
         "context": "経済"
       },
       {
         "en": "An upturn in sales boosted investor confidence.",
-        "ja": "売上の好転が投資家の信頼を高めた。",
+        "ja": "売上の好転が投資家の信頼を高めました。",
         "context": "ビジネス"
       },
       {
         "en": "Experts predict an upturn in the housing market.",
-        "ja": "専門家は住宅市場の好転を予測している。",
+        "ja": "専門家は住宅市場の好転を予測しています。",
         "context": "経済"
       }
     ],
@@ -111272,17 +111272,17 @@
     "examples": [
       {
         "en": "The company showed a steady upward trend in sales.",
-        "ja": "その会社は売上に着実な上向きの傾向を示した。",
+        "ja": "その会社は売上に着実な上向きの傾向を示しました。",
         "context": "ビジネス"
       },
       {
         "en": "An upward movement of warm air creates wind patterns.",
-        "ja": "暖かい空気の上向きの動きが風のパターンを作る。",
+        "ja": "暖かい空気の上向きの動きが風のパターンを作ります。",
         "context": "科学"
       },
       {
         "en": "Property prices continued their upward climb this year.",
-        "ja": "不動産価格は今年も上向きの上昇を続けた。",
+        "ja": "不動産価格は今年も上向きの上昇を続けました。",
         "context": "金融"
       }
     ],
@@ -111457,12 +111457,12 @@
       },
       {
         "en": "Software usage must comply with licensing terms.",
-        "ja": "ソフトウェアの使用はライセンス条件に従わなければならない。",
+        "ja": "ソフトウェアの使用はライセンス条件に従わなければなりません。",
         "context": "office"
       },
       {
         "en": "Energy usage in the office was reduced by 20%.",
-        "ja": "オフィスのエネルギー使用量は20%削減された。",
+        "ja": "オフィスのエネルギー使用量は20%削減されました。",
         "context": "office"
       }
     ],
@@ -111523,17 +111523,17 @@
     "examples": [
       {
         "en": "A staff member ushered us to our reserved seats.",
-        "ja": "スタッフが私たちを予約席に案内した。",
+        "ja": "スタッフが私たちを予約席に案内しました。",
         "context": "娯楽"
       },
       {
         "en": "The guide ushered the tourists through the museum.",
-        "ja": "ガイドが観光客を博物館に案内した。",
+        "ja": "ガイドが観光客を博物館に案内しました。",
         "context": "旅行"
       },
       {
         "en": "New technology ushered in an era of rapid change.",
-        "ja": "新技術が急速な変化の時代を導いた。",
+        "ja": "新技術が急速な変化の時代を導きました。",
         "context": "技術"
       }
     ],
@@ -111668,17 +111668,17 @@
     "examples": [
       {
         "en": "He did not utter a single word during dinner.",
-        "ja": "彼は夕食の間に一言も発しなかった。",
+        "ja": "彼は夕食の間に一言も発しませんでした。",
         "context": "日常"
       },
       {
         "en": "She could barely utter her thanks through the tears.",
-        "ja": "彼女は涙越しにかろうじて感謝の言葉を発した。",
+        "ja": "彼女は涙越しにかろうじて感謝の言葉を発しました。",
         "context": "感情"
       },
       {
         "en": "The witness uttered a surprising statement in court.",
-        "ja": "目撃者は法廷で驚くべき発言を発した。",
+        "ja": "目撃者は法廷で驚くべき発言をしました。",
         "context": "法律"
       }
     ],
@@ -111743,17 +111743,17 @@
     "examples": [
       {
         "en": "The hotel had no vacancy during the holiday season.",
-        "ja": "ホテルは休暇シーズン中に空きがなかった。",
+        "ja": "ホテルは休暇シーズン中に空きがありませんでした。",
         "context": "旅行"
       },
       {
         "en": "A vacancy in the department needs to be filled.",
-        "ja": "部門の空きポジションを埋める必要がある。",
+        "ja": "部門の空きポジションを埋める必要があります。",
         "context": "ビジネス"
       },
       {
         "en": "The sign outside read no vacancy for the night.",
-        "ja": "外の看板には今夜空きなしと書かれていた。",
+        "ja": "外の看板には今夜空きなしと書かれていました。",
         "context": "旅行"
       }
     ],
@@ -112514,17 +112514,17 @@
     "examples": [
       {
         "en": "Verbal communication skills are essential for leaders.",
-        "ja": "言葉によるコミュニケーション能力はリーダーに必須だ。",
+        "ja": "言葉によるコミュニケーション能力はリーダーに必須です。",
         "context": "ビジネス"
       },
       {
         "en": "The contract was only a verbal agreement then.",
-        "ja": "その契約は当時口頭の合意にすぎなかった。",
+        "ja": "その契約は当時口頭の合意にすぎませんでした。",
         "context": "法律"
       },
       {
         "en": "Children develop verbal abilities at different ages.",
-        "ja": "子供は異なる年齢で言語能力を発達させる。",
+        "ja": "子供は異なる年齢で言語能力を発達させます。",
         "context": "教育"
       }
     ],
@@ -112551,17 +112551,17 @@
     "examples": [
       {
         "en": "The agreement was made verbally without any documents.",
-        "ja": "その合意は書類なしに口頭で行われた。",
+        "ja": "その合意は書類なしに口頭で行われました。",
         "context": "ビジネス"
       },
       {
         "en": "She verbally confirmed her attendance at the meeting.",
-        "ja": "彼女は会議への出席を口頭で確認した。",
+        "ja": "彼女は会議への出席を口頭で確認しました。",
         "context": "仕事"
       },
       {
         "en": "The teacher verbally praised the student's effort.",
-        "ja": "教師は生徒の努力を口頭で称えた。",
+        "ja": "教師は生徒の努力を口頭で称えました。",
         "context": "学校"
       }
     ],
@@ -112850,17 +112850,17 @@
     "examples": [
       {
         "en": "A large cargo vessel arrived at the port today.",
-        "ja": "大型貨物船が今日港に到着した。",
+        "ja": "大型貨物船が今日港に到着しました。",
         "context": "交通"
       },
       {
         "en": "The fishing vessel returned with a huge catch.",
-        "ja": "漁船は大漁で戻ってきた。",
+        "ja": "漁船は大漁で戻ってきました。",
         "context": "産業"
       },
       {
         "en": "Blood vessels carry oxygen throughout the entire body.",
-        "ja": "血管は全身に酸素を運ぶ。",
+        "ja": "血管は全身に酸素を運びます。",
         "context": "科学"
       }
     ],
@@ -112890,17 +112890,17 @@
     "examples": [
       {
         "en": "The president used the veto.",
-        "ja": "大統領は拒否権を行使した。",
+        "ja": "大統領は拒否権を行使しました。",
         "context": "政治"
       },
       {
         "en": "A veto blocked the resolution.",
-        "ja": "拒否権が決議を阻止した。",
+        "ja": "拒否権が決議を阻止しました。",
         "context": "国際"
       },
       {
         "en": "He exercised his right of veto.",
-        "ja": "彼は拒否権を行使した。",
+        "ja": "彼は拒否権を行使しました。",
         "context": "法律"
       }
     ],
@@ -112934,17 +112934,17 @@
     "examples": [
       {
         "en": "Solar power is a viable alternative energy source.",
-        "ja": "太陽光発電は実現可能な代替エネルギー源だ。",
+        "ja": "太陽光発電は実現可能な代替エネルギー源です。",
         "context": "環境"
       },
       {
         "en": "The startup needs a viable business model.",
-        "ja": "そのスタートアップには実行可能なビジネスモデルが必要だ。",
+        "ja": "そのスタートアップには実行可能なビジネスモデルが必要です。",
         "context": "ビジネス"
       },
       {
         "en": "Only three candidates are considered politically viable.",
-        "ja": "政治的に有力とされる候補者は3人だけだ。",
+        "ja": "政治的に有力とされる候補者は3人だけです。",
         "context": "政治"
       }
     ],
@@ -113166,17 +113166,17 @@
     "examples": [
       {
         "en": "The show attracted over ten million viewers last night.",
-        "ja": "その番組は昨夜1千万人以上の視聴者を集めた。",
+        "ja": "その番組は昨夜1千万人以上の視聴者を集めました。",
         "context": "メディア"
       },
       {
         "en": "Many viewers complained about the program's violent content.",
-        "ja": "多くの視聴者がその番組の暴力的な内容に苦情を言った。",
+        "ja": "多くの視聴者がその番組の暴力的な内容に苦情を言いました。",
         "context": "メディア"
       },
       {
         "en": "Online viewers can watch the event live for free.",
-        "ja": "オンライン視聴者はそのイベントを無料でライブ視聴できる。",
+        "ja": "オンライン視聴者はそのイベントを無料でライブ視聴できます。",
         "context": "技術"
       }
     ],
@@ -113341,17 +113341,17 @@
     "examples": [
       {
         "en": "They rented a beautiful villa by the sea.",
-        "ja": "彼らは海辺の美しい別荘を借りた。",
+        "ja": "彼らは海辺の美しい別荘を借りました。",
         "context": "旅行"
       },
       {
         "en": "The villa has a large swimming pool and garden.",
-        "ja": "その別荘には大きなプールと庭がある。",
+        "ja": "その別荘には大きなプールと庭があります。",
         "context": "日常"
       },
       {
         "en": "Ancient Roman villas were found during the excavation.",
-        "ja": "発掘中に古代ローマの別荘が発見された。",
+        "ja": "発掘中に古代ローマの別荘が発見されました。",
         "context": "歴史"
       }
     ],
@@ -113548,17 +113548,17 @@
     "examples": [
       {
         "en": "Students attended a virtual class from their homes.",
-        "ja": "生徒たちは自宅からオンライン授業に参加した。",
+        "ja": "生徒たちは自宅からオンライン授業に参加しました。",
         "context": "教育"
       },
       {
         "en": "The company held a virtual meeting with overseas partners.",
-        "ja": "会社は海外パートナーとオンライン会議を開いた。",
+        "ja": "会社は海外パートナーとオンライン会議を開きました。",
         "context": "ビジネス"
       },
       {
         "en": "Virtual tours let you explore museums from anywhere.",
-        "ja": "バーチャルツアーでどこからでも博物館を探索できる。",
+        "ja": "バーチャルツアーでどこからでも博物館を探索できます。",
         "context": "技術"
       }
     ],
@@ -113655,17 +113655,17 @@
     "examples": [
       {
         "en": "The chart visually represents the sales data clearly.",
-        "ja": "そのグラフは売上データを視覚的に表している。",
+        "ja": "そのグラフは売上データを視覚的に表しています。",
         "context": "ビジネス"
       },
       {
         "en": "The garden was visually stunning in full bloom.",
-        "ja": "その庭は満開で視覚的に見事だった。",
+        "ja": "その庭は満開で視覚的に見事でした。",
         "context": "自然"
       },
       {
         "en": "The film is visually impressive with beautiful scenery.",
-        "ja": "その映画は美しい景色で視覚的に印象的だ。",
+        "ja": "その映画は美しい景色で視覚的に印象的です。",
         "context": "娯楽"
       }
     ],
@@ -113797,17 +113797,17 @@
     "examples": [
       {
         "en": "She vividly remembered her first day at school.",
-        "ja": "彼女は学校の初日を鮮明に覚えていた。",
+        "ja": "彼女は学校の初日を鮮明に覚えていました。",
         "context": "学校"
       },
       {
         "en": "The author vividly described the ancient city's beauty.",
-        "ja": "著者は古代都市の美しさを鮮明に描写した。",
+        "ja": "著者は古代都市の美しさを鮮明に描写しました。",
         "context": "文学"
       },
       {
         "en": "The sunset painted the sky vividly in orange.",
-        "ja": "夕日が空をオレンジ色に鮮やかに染めた。",
+        "ja": "夕日が空をオレンジ色に鮮やかに染めました。",
         "context": "自然"
       }
     ],
@@ -114084,17 +114084,17 @@
     "examples": [
       {
         "en": "The voyage across the Atlantic took about two weeks.",
-        "ja": "大西洋横断の航海は約2週間かかった。",
+        "ja": "大西洋横断の航海は約2週間かかりました。",
         "context": "旅行"
       },
       {
         "en": "Columbus set out on his famous voyage in fourteen-ninety-two.",
-        "ja": "コロンブスは1492年に有名な航海に出発した。",
+        "ja": "コロンブスは1492年に有名な航海に出発しました。",
         "context": "歴史"
       },
       {
         "en": "The ship began its maiden voyage from the harbor.",
-        "ja": "その船は港から処女航海を始めた。",
+        "ja": "その船は港から処女航海を始めました。",
         "context": "交通"
       }
     ],
@@ -114302,17 +114302,17 @@
     "examples": [
       {
         "en": "The tourists went on a walkabout through the town.",
-        "ja": "観光客は町を散策した。",
+        "ja": "観光客は町を散策しました。",
         "context": "旅行"
       },
       {
         "en": "The prince went on a walkabout to greet crowds.",
-        "ja": "王子は群衆に挨拶するため散策に出た。",
+        "ja": "王子は群衆に挨拶するため散策に出ました。",
         "context": "文化"
       },
       {
         "en": "A short walkabout revealed many beautiful hidden gardens.",
-        "ja": "短い散策で多くの美しい隠れた庭が見つかった。",
+        "ja": "短い散策で多くの美しい隠れた庭が見つかりました。",
         "context": "旅行"
       }
     ],
@@ -114573,17 +114573,17 @@
     "examples": [
       {
         "en": "The host warmly welcomed all the guests tonight.",
-        "ja": "主催者は今夜すべてのゲストを温かく迎えた。",
+        "ja": "主催者は今夜すべてのゲストを温かく迎えました。",
         "context": "社交"
       },
       {
         "en": "She smiled warmly at the nervous new student.",
-        "ja": "彼女は緊張する新入生に温かく微笑んだ。",
+        "ja": "彼女は緊張する新入生に温かく微笑みました。",
         "context": "学校"
       },
       {
         "en": "The audience warmly applauded the young performer's act.",
-        "ja": "観客は若い演者の演技に温かく拍手した。",
+        "ja": "観客は若い演者の演技に温かく拍手しました。",
         "context": "芸術"
       }
     ],
@@ -115185,17 +115185,17 @@
     "examples": [
       {
         "en": "Your suggestions are always welcome at our meetings.",
-        "ja": "あなたの提案は会議でいつでも歓迎される。",
+        "ja": "あなたの提案は会議でいつでも歓迎されます。",
         "context": "ビジネス"
       },
       {
         "en": "The cool breeze was a welcome relief from heat.",
-        "ja": "涼しい風は暑さからの歓迎すべき安らぎだった。",
+        "ja": "涼しい風は暑さからの歓迎すべき安らぎでした。",
         "context": "天気"
       },
       {
         "en": "New members are welcome to join the club anytime.",
-        "ja": "新しいメンバーはいつでもクラブに参加できる。",
+        "ja": "新しいメンバーはいつでもクラブに参加できます。",
         "context": "社交"
       }
     ],
@@ -115255,17 +115255,17 @@
     "examples": [
       {
         "en": "Many companies now offer employee wellness programs.",
-        "ja": "多くの企業が今、従業員の健康維持プログラムを提供している。",
+        "ja": "多くの企業が今、従業員の健康維持プログラムを提供しています。",
         "context": "ビジネス"
       },
       {
         "en": "Wellness encompasses both physical and mental health.",
-        "ja": "健康維持は身体と精神の両方の健康を含む。",
+        "ja": "健康維持は身体と精神の両方の健康を含みます。",
         "context": "健康"
       },
       {
         "en": "The resort specializes in wellness retreats for guests.",
-        "ja": "そのリゾートは宿泊客向けの健康リトリートを専門としている。",
+        "ja": "そのリゾートは宿泊客向けの健康リトリートを専門としています。",
         "context": "旅行"
       }
     ],
@@ -115293,17 +115293,17 @@
     "examples": [
       {
         "en": "The explorers traveled westward across the vast plains.",
-        "ja": "探検家たちは広大な平原を西方へ旅した。",
+        "ja": "探検家たちは広大な平原を西方へ旅しました。",
         "context": "歴史"
       },
       {
         "en": "The river flows westward toward the Pacific Ocean.",
-        "ja": "その川は太平洋に向かって西方へ流れる。",
+        "ja": "その川は太平洋に向かって西方へ流れます。",
         "context": "地理"
       },
       {
         "en": "Dark clouds moved westward throughout the afternoon.",
-        "ja": "暗い雲が午後を通して西方へ移動した。",
+        "ja": "暗い雲が午後を通して西方へ移動しました。",
         "context": "天気"
       }
     ],
@@ -115436,12 +115436,12 @@
       },
       {
         "en": "Whenever it rains, the roads become very slippery.",
-        "ja": "雨が降るたびに道路がとても滑りやすくなる。",
+        "ja": "雨が降るたびに道路がとても滑りやすくなります。",
         "context": "天気"
       },
       {
         "en": "She smiles whenever she sees her grandchildren.",
-        "ja": "彼女は孫に会うといつも微笑む。",
+        "ja": "彼女は孫に会うといつも微笑みます。",
         "context": "家庭"
       }
     ],
@@ -115745,17 +115745,17 @@
     "examples": [
       {
         "en": "Wholesale prices are lower than retail prices generally.",
-        "ja": "卸売価格は一般的に小売価格より低い。",
+        "ja": "卸売価格は一般的に小売価格より低いです。",
         "context": "ビジネス"
       },
       {
         "en": "The company operates as a wholesale food distributor.",
-        "ja": "その会社は食品の卸売業者として運営されている。",
+        "ja": "その会社は食品の卸売業者として運営されています。",
         "context": "経営"
       },
       {
         "en": "Buying wholesale saves money for small business owners.",
-        "ja": "卸売りで買うと中小企業の経営者の節約になる。",
+        "ja": "卸売りで買うと中小企業の経営者の節約になります。",
         "context": "経済"
       }
     ],
@@ -115783,17 +115783,17 @@
     "examples": [
       {
         "en": "The subsidiary is wholly owned by the parent company.",
-        "ja": "その子会社は親会社に完全に所有されている。",
+        "ja": "その子会社は親会社に完全に所有されています。",
         "context": "ビジネス"
       },
       {
         "en": "The claim is wholly unsupported by the data.",
-        "ja": "その主張はデータによって全く裏付けられていない。",
+        "ja": "その主張はデータによって全く裏付けられていません。",
         "context": "学術"
       },
       {
         "en": "Responsibility lies wholly with the management team.",
-        "ja": "責任は完全に経営陣にある。",
+        "ja": "責任は完全に経営陣にあります。",
         "context": "ビジネス"
       }
     ],
@@ -116019,17 +116019,17 @@
     "examples": [
       {
         "en": "She willingly offered to help with the project.",
-        "ja": "彼女は進んでプロジェクトの手伝いを申し出た。",
+        "ja": "彼女は進んでプロジェクトの手伝いを申し出ました。",
         "context": "ビジネス"
       },
       {
         "en": "He willingly accepted the new role at work.",
-        "ja": "彼は進んで職場の新しい役割を引き受けた。",
+        "ja": "彼は進んで職場の新しい役割を引き受けました。",
         "context": "ビジネス"
       },
       {
         "en": "The volunteers willingly gave up their free time.",
-        "ja": "ボランティアたちは進んで自由時間を捧げた。",
+        "ja": "ボランティアたちは進んで自由時間を捧げました。",
         "context": "社会"
       }
     ],
@@ -116639,17 +116639,17 @@
     "examples": [
       {
         "en": "The working conditions in that factory need improvement.",
-        "ja": "その工場の労働条件は改善が必要だ。",
+        "ja": "その工場の労働条件は改善が必要です。",
         "context": "ビジネス"
       },
       {
         "en": "Working parents often struggle to find affordable childcare.",
-        "ja": "働く親は手頃な保育を見つけるのに苦労する。",
+        "ja": "働く親は手頃な保育を見つけるのに苦労します。",
         "context": "社会"
       },
       {
         "en": "The team developed a working prototype of the device.",
-        "ja": "チームはその装置の実用的な試作品を開発した。",
+        "ja": "チームはその装置の実用的な試作品を開発しました。",
         "context": "技術"
       }
     ],
@@ -116744,17 +116744,17 @@
     "examples": [
       {
         "en": "Safety rules must be followed at every workplace.",
-        "ja": "安全規則はすべての職場で守らなければならない。",
+        "ja": "安全規則はすべての職場で守らなければなりません。",
         "context": "ビジネス"
       },
       {
         "en": "The workplace has become more diverse in recent years.",
-        "ja": "近年、職場はより多様化している。",
+        "ja": "近年、職場はより多様化しています。",
         "context": "社会"
       },
       {
         "en": "Stress at the workplace can affect your health.",
-        "ja": "職場のストレスは健康に影響を与えうる。",
+        "ja": "職場のストレスは健康に影響を与えることがあります。",
         "context": "健康"
       }
     ],
@@ -116781,17 +116781,17 @@
     "examples": [
       {
         "en": "The pottery workshop attracted many eager students last week.",
-        "ja": "その陶芸の作業場は先週多くの熱心な生徒を集めた。",
+        "ja": "その陶芸の作業場は先週多くの熱心な生徒を集めました。",
         "context": "趣味"
       },
       {
         "en": "He runs a small furniture workshop behind his house.",
-        "ja": "彼は家の裏で小さな家具の作業場を営んでいる。",
+        "ja": "彼は家の裏で小さな家具の作業場を営んでいます。",
         "context": "ビジネス"
       },
       {
         "en": "The company held a leadership workshop for all managers.",
-        "ja": "会社は全管理職向けのリーダーシップ研修を開催した。",
+        "ja": "会社は全管理職向けのリーダーシップ研修を開催しました。",
         "context": "ビジネス"
       }
     ],
@@ -116918,17 +116918,17 @@
     "examples": [
       {
         "en": "The company has a worldwide network of sales offices.",
-        "ja": "その会社は世界的な販売事務所のネットワークを持つ。",
+        "ja": "その会社は世界的な販売事務所のネットワークを持っています。",
         "context": "ビジネス"
       },
       {
         "en": "The pandemic caused a worldwide economic slowdown last year.",
-        "ja": "パンデミックは昨年世界的な経済減速を引き起こした。",
+        "ja": "パンデミックは昨年世界的な経済減速を引き起こしました。",
         "context": "経済"
       },
       {
         "en": "English is used as a worldwide language for communication.",
-        "ja": "英語はコミュニケーションのための世界的な言語として使われている。",
+        "ja": "英語はコミュニケーションのための世界的な言語として使われています。",
         "context": "教育"
       }
     ],
@@ -117155,17 +117155,17 @@
     "examples": [
       {
         "en": "The project is worthy of further research and funding.",
-        "ja": "そのプロジェクトはさらなる研究と資金の価値がある。",
+        "ja": "そのプロジェクトはさらなる研究と資金の価値があります。",
         "context": "学術"
       },
       {
         "en": "She proved herself worthy of the leadership position.",
-        "ja": "彼女はリーダーシップの地位にふさわしいと証明した。",
+        "ja": "彼女はリーダーシップの地位にふさわしいと証明しました。",
         "context": "ビジネス"
       },
       {
         "en": "The charity supports many worthy causes around the world.",
-        "ja": "その慈善団体は世界中の多くの価値ある活動を支援している。",
+        "ja": "その慈善団体は世界中の多くの価値ある活動を支援しています。",
         "context": "社会"
       }
     ],
@@ -117428,12 +117428,12 @@
       },
       {
         "en": "The written exam covers all topics from this semester.",
-        "ja": "筆記試験は今学期のすべての題目を含む。",
+        "ja": "筆記試験は今学期のすべての題目を含みます。",
         "context": "学校"
       },
       {
         "en": "A written agreement protects both parties in the deal.",
-        "ja": "書面の合意は取引の両当事者を保護する。",
+        "ja": "書面の合意は取引の両当事者を保護します。",
         "context": "法律"
       }
     ],
@@ -117461,17 +117461,17 @@
     "examples": [
       {
         "en": "The suspect was wrongly accused of the crime.",
-        "ja": "容疑者はその犯罪で誤って告発された。",
+        "ja": "容疑者はその犯罪で誤って告発されました。",
         "context": "法律"
       },
       {
         "en": "The package was wrongly delivered to another address.",
-        "ja": "荷物は誤って別の住所に届けられた。",
+        "ja": "荷物は誤って別の住所に届けられました。",
         "context": "日常"
       },
       {
         "en": "Many people wrongly believe this common myth today.",
-        "ja": "多くの人がこの一般的な神話を誤って信じている。",
+        "ja": "多くの人がこの一般的な神話を誤って信じています。",
         "context": "社会"
       }
     ],

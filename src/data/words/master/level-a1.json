@@ -7114,17 +7114,17 @@
     "examples": [
       {
         "en": "The judge showed no bias in court.",
-        "ja": "裁判官は法廷で偏りを示さなかった。",
+        "ja": "裁判官は法廷で偏りを示しませんでした。",
         "context": "学校"
       },
       {
         "en": "Media bias can affect public opinion.",
-        "ja": "メディアの偏りは世論に影響する。",
+        "ja": "メディアの偏りは世論に影響します。",
         "context": "会話"
       },
       {
         "en": "Everyone should be aware of their bias.",
-        "ja": "誰もが自分の偏見を自覚すべきだ。",
+        "ja": "誰もが自分の偏見を自覚すべきです。",
         "context": "文化"
       }
     ],

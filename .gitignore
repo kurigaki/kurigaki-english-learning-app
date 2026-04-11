@@ -45,6 +45,7 @@ next-env.d.ts
 .claude/launch.json
 .claire/
 PLAN.md
+.tmp/
 
 # IDE
 .idea/
