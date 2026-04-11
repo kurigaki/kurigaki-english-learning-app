@@ -13379,7 +13379,7 @@
   {
     "id": 30368,
     "word": "categorically",
-    "meaning": "無条件に",
+    "meaning": "断固として・明確に",
     "partOfSpeech": "adverb",
     "examples": [
       {
@@ -15229,7 +15229,7 @@
   {
     "id": 30419,
     "word": "cogent",
-    "meaning": "強力な",
+    "meaning": "説得力のある・論理的に強い",
     "partOfSpeech": "adjective",
     "examples": [
       {
@@ -18693,7 +18693,7 @@
   {
     "id": 30511,
     "word": "consecutive",
-    "meaning": "連番の",
+    "meaning": "連続した・立て続けの",
     "partOfSpeech": "adjective",
     "examples": [
       {
@@ -23559,7 +23559,7 @@
   {
     "id": 30641,
     "word": "deduction",
-    "meaning": "控除",
+    "meaning": "演繹・控除",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -23586,7 +23586,8 @@
     "courses": [
       {
         "course": "senior",
-        "stage": "3"
+        "stage": "3",
+        "meaning": "演繹"
       },
       {
         "course": "eiken",
@@ -23594,7 +23595,8 @@
       },
       {
         "course": "toeic",
-        "stage": "700"
+        "stage": "700",
+        "meaning": "控除"
       }
     ]
   },
@@ -24371,7 +24373,7 @@
   {
     "id": 30663,
     "word": "delineate",
-    "meaning": "描写する",
+    "meaning": "明確に述べる・輪郭を示す",
     "partOfSpeech": "verb",
     "examples": [
       {

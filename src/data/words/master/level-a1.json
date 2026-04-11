@@ -792,7 +792,7 @@
   {
     "id": 18,
     "word": "acquire",
-    "meaning": "習得する",
+    "meaning": "習得する・取得する・獲得する",
     "partOfSpeech": "verb",
     "examples": [
       {
@@ -807,7 +807,7 @@
       },
       {
         "en": "The company acquired new technology.",
-        "ja": "その会社は新しい技術を習得した。",
+        "ja": "その会社は新しい技術を取得した。",
         "context": "business"
       }
     ],
@@ -37387,7 +37387,7 @@
   {
     "id": 903,
     "word": "share",
-    "meaning": "共有する・分け合う・株式・シェア",
+    "meaning": "共有する・分け合う",
     "partOfSpeech": "verb",
     "examples": [
       {
@@ -37425,7 +37425,7 @@
       {
         "course": "toeic",
         "stage": "500",
-        "meaning": "株式・シェア"
+        "meaning": "共有する・分け合う"
       }
     ]
   },

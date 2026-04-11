@@ -1059,26 +1059,27 @@
   {
     "id": 50033,
     "word": "agnostic",
-    "meaning": "非依存の",
+    "meaning": "不可知論の・（技術的に）〜に依存しない",
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The library is framework-agnostic.",
-        "ja": "そのライブラリはフレームワーク非依存だ。",
+        "en": "She remained agnostic about the existence of an afterlife.",
+        "ja": "彼女は来世の存在について不可知論の立場を保ちました。",
+        "context": "宗教"
+      },
+      {
+        "en": "The framework is platform-agnostic and runs on any operating system.",
+        "ja": "そのフレームワークはプラットフォームに依存せず、どの OS でも動作します。",
         "context": "技術"
       },
       {
-        "en": "Build platform-agnostic solutions.",
-        "ja": "プラットフォーム非依存の構築を。",
-        "context": "技術"
-      },
-      {
-        "en": "This tool is language-agnostic.",
-        "ja": "このツールは言語非依存だ。",
-        "context": "技術"
+        "en": "Many scientists prefer an agnostic approach to unverified claims.",
+        "ja": "多くの科学者は未検証の主張に対して不可知論的な姿勢を好みます。",
+        "context": "学術"
       }
     ],
     "categories": [
+      "culture",
       "technology"
     ],
     "frequencyTier": 3,
@@ -42597,27 +42598,28 @@
   {
     "id": 51291,
     "word": "woodwork",
-    "meaning": "木工する",
-    "partOfSpeech": "verb",
+    "meaning": "木工細工・木製建具（家具・ドア・窓枠等）",
+    "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "He woodworks in his garage.",
-        "ja": "彼はガレージで木工をする。",
-        "context": "趣味"
+        "en": "The old house has beautiful woodwork in every room.",
+        "ja": "その古い家にはどの部屋にも美しい木工細工があります。",
+        "context": "建築"
       },
       {
-        "en": "She learned to woodwork from her father.",
-        "ja": "彼女は父から木工を学んだ。",
-        "context": "趣味"
+        "en": "Once the promotion was announced, rivals came out of the woodwork.",
+        "ja": "昇進が発表された途端、ライバルたちが湧いて出てきました。",
+        "context": "会話"
       },
       {
-        "en": "Woodworking requires precision.",
-        "ja": "木工には精密さが必要だ。",
-        "context": "趣味"
+        "en": "The carpenter repaired the woodwork around the windows.",
+        "ja": "大工は窓周りの木製建具を修理しました。",
+        "context": "建築"
       }
     ],
     "categories": [
-      "hobby"
+      "culture",
+      "daily"
     ],
     "frequencyTier": 3,
     "courses": [

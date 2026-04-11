@@ -16254,40 +16254,40 @@
   {
     "id": 20442,
     "word": "cabinet",
-    "meaning": "内閣・戸棚・キャビネット",
+    "meaning": "戸棚・キャビネット・内閣",
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Please store documents in the filing cabinet.",
+        "en": "Please store the documents in the filing cabinet.",
         "ja": "書類をファイルキャビネットに保管してください。",
         "context": "office"
       },
       {
-        "en": "The cabinet meeting was held to discuss strategy.",
-        "ja": "戦略を議論するために閣議が開催された。",
-        "context": "business"
+        "en": "He keeps office supplies in the cabinet by the door.",
+        "ja": "彼はドアのそばの戸棚に事務用品を保管しています。",
+        "context": "office"
       },
       {
         "en": "New cabinets were installed in the break room.",
-        "ja": "休憩室に新しい棚が設置された。",
+        "ja": "休憩室に新しい戸棚が設置されました。",
         "context": "office"
       }
     ],
     "categories": [
-      "business",
-      "daily"
+      "office",
+      "business"
     ],
     "frequencyTier": 3,
     "courses": [
       {
         "course": "eiken",
         "stage": "pre2",
-        "meaning": "内閣・戸棚"
+        "meaning": "戸棚・内閣"
       },
       {
         "course": "toeic",
         "stage": "600",
-        "meaning": "内閣"
+        "meaning": "戸棚・キャビネット"
       }
     ]
   },
@@ -33658,7 +33658,7 @@
   {
     "id": 20897,
     "word": "differentiation",
-    "meaning": "分化・微分",
+    "meaning": "分化・差別化・微分",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -33686,7 +33686,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "meaning": "微分"
+        "meaning": "分化・差別化"
       },
       {
         "course": "eiken",
@@ -66026,7 +66026,7 @@
   {
     "id": 21748,
     "word": "lame",
-    "meaning": "足の不自由な",
+    "meaning": "足の不自由な・しょうもない・ダサい（口語）",
     "partOfSpeech": "adjective",
     "examples": [
       {
@@ -90884,7 +90884,7 @@
   {
     "id": 22403,
     "word": "random",
-    "meaning": "無作為の・ランダムな",
+    "meaning": "無作為の・ランダムな・突拍子もない・唐突な（口語）",
     "partOfSpeech": "adjective",
     "examples": [
       {

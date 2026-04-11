@@ -48055,37 +48055,40 @@
   {
     "id": 11150,
     "word": "review",
-    "meaning": "復習する",
+    "meaning": "見直す・審査する・評価する・復習する",
     "partOfSpeech": "verb",
     "examples": [
       {
+        "en": "The manager reviewed the quarterly report carefully.",
+        "ja": "マネージャーは四半期報告書を慎重に見直しました。",
+        "context": "ビジネス"
+      },
+      {
+        "en": "The committee will review your proposal next week.",
+        "ja": "委員会は来週あなたの提案を審査します。",
+        "context": "ビジネス"
+      },
+      {
         "en": "She reviewed her notes before the exam.",
-        "ja": "彼女は試験前にノートを復習した。",
-        "context": "学校"
-      },
-      {
-        "en": "He reviews English vocabulary every night.",
-        "ja": "彼は毎晩英単語を復習する。",
-        "context": "家庭"
-      },
-      {
-        "en": "The class reviewed the last lesson together.",
-        "ja": "クラスで前回の授業を一緒に復習した。",
+        "ja": "彼女は試験前にノートを復習しました。",
         "context": "学校"
       }
     ],
     "categories": [
+      "business",
       "school"
     ],
     "frequencyTier": 1,
     "courses": [
       {
         "course": "eiken",
-        "stage": "4"
+        "stage": "4",
+        "meaning": "復習する"
       },
       {
         "course": "toeic",
-        "stage": "600"
+        "stage": "600",
+        "meaning": "見直す・審査する"
       }
     ]
   },
