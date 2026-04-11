@@ -9,7 +9,11 @@ export type WordLevelMode = "essential" | "standard" | "all";
 // クイズ設定の型
 export type QuizSettings = {
   course: Course | null;   // null は「全コース」
-  stage: Stage | null;     // null は「全ステージ」
+  stage: Stage | null;     // 上限ステージ（null は「全ステージ」）
+  // 下限ステージ（累積出題の開始級）。
+  // null または未指定の場合は stage と同一（単一ステージ出題）。
+  // 例: course="eiken", stage="3", stageFrom="5" → 5級〜3級の累積範囲で出題。
+  stageFrom?: Stage | null;
   categories: Category[];  // 空配列は「全カテゴリ」
   difficulties: number[];  // 空配列は「全難易度」
   includeBookmarksOnly: boolean;
@@ -28,6 +32,7 @@ export const defaultTypeRatios: QuestionTypeRatios = {
 export const defaultQuizSettings: QuizSettings = {
   course: null,
   stage: null,
+  stageFrom: null,
   categories: [],
   difficulties: [],
   includeBookmarksOnly: false,
@@ -92,6 +97,8 @@ export function loadQuizSettings(): QuizSettings {
       ? (p.course as Course) : null;
     const stage  = typeof p.stage  === "string" && VALID_STAGES.has(p.stage)
       ? (p.stage  as Stage)  : null;
+    const stageFrom = typeof p.stageFrom === "string" && VALID_STAGES.has(p.stageFrom)
+      ? (p.stageFrom as Stage) : null;
 
     const categories = Array.isArray(p.categories)
       ? (p.categories as unknown[]).filter((c): c is Category =>
@@ -123,7 +130,7 @@ export function loadQuizSettings(): QuizSettings {
     const wordLevel: WordLevelMode = typeof p.wordLevel === "string" && VALID_WORD_LEVELS.includes(p.wordLevel as WordLevelMode)
       ? (p.wordLevel as WordLevelMode) : "standard";
 
-    return { course, stage, categories, difficulties, includeBookmarksOnly, typeRatios, wordLevel };
+    return { course, stage, stageFrom, categories, difficulties, includeBookmarksOnly, typeRatios, wordLevel };
   } catch (e) {
     console.warn("[Quiz] Failed to load quiz settings:", e);
     return { ...defaultQuizSettings };

@@ -8,7 +8,7 @@
  */
 import { describe, it, expect } from "vitest";
 import { juniorWords, seniorWords, toeicWords, eikenWords, conversationWords, masterWords } from "../index";
-import { getWordsForCourse } from "../enrich";
+import { getWordsForCourse, getWordsForCourseStageRange, getStagesInRange } from "../enrich";
 import { DIFFICULTY_MAP } from "../difficulty";
 import type { Word, MasterWord } from "../types";
 
@@ -355,5 +355,107 @@ describe("getWordsForCourse", () => {
     expect(junior).toHaveLength(1);
     expect(eiken).toHaveLength(1);
     expect(toeic).toHaveLength(0);
+  });
+});
+
+// ═══════════════════════════════════════
+// 累積ステージ範囲（T-VQS-044）
+// ═══════════════════════════════════════
+
+describe("getStagesInRange", () => {
+  it("eiken: 5→3 を昇順で [5,4,3] として返す", () => {
+    expect(getStagesInRange("eiken", "5", "3")).toEqual(["5", "4", "3"]);
+  });
+
+  it("eiken: 3→5 を指定しても昇順 [5,4,3] に正規化する", () => {
+    expect(getStagesInRange("eiken", "3", "5")).toEqual(["5", "4", "3"]);
+  });
+
+  it("conversation: a1→b1 で [a1,a2,b1] を返す", () => {
+    expect(getStagesInRange("conversation", "a1", "b1")).toEqual(["a1", "a2", "b1"]);
+  });
+
+  it("同一ステージの場合は 1 要素の配列を返す", () => {
+    expect(getStagesInRange("eiken", "3", "3")).toEqual(["3"]);
+  });
+
+  it("存在しないステージを指定すると例外を投げる", () => {
+    expect(() => getStagesInRange("junior", "5" as never, "1")).toThrow();
+  });
+});
+
+describe("getWordsForCourseStageRange", () => {
+  // 複数ステージにまたがる語のサンプル
+  const multiStageMaster: MasterWord = {
+    id: 99998,
+    word: "book",
+    meaning: "本",
+    partOfSpeech: "noun",
+    examples: [
+      { en: "I read a book.", ja: "本を読みます。", context: "日常" },
+      { en: "This book is interesting.", ja: "この本は面白い。", context: "日常" },
+      { en: "Books are knowledge.", ja: "本は知識です。", context: "教育" },
+    ],
+    categories: ["school"],
+    frequencyTier: 1,
+    courses: [
+      { course: "eiken", stage: "5", tier: 1 },
+      { course: "eiken", stage: "4", tier: 2 },
+      { course: "eiken", stage: "3", tier: 3 },
+    ],
+  };
+
+  // 5級のみに所属する語
+  const fiveOnlyMaster: MasterWord = {
+    ...multiStageMaster,
+    id: 99997,
+    word: "pencil",
+    meaning: "鉛筆",
+    courses: [{ course: "eiken", stage: "5", tier: 1 }],
+  };
+
+  // 1級のみに所属する語（範囲外）
+  const oneOnlyMaster: MasterWord = {
+    ...multiStageMaster,
+    id: 99996,
+    word: "epistemology",
+    meaning: "認識論",
+    courses: [{ course: "eiken", stage: "1", tier: 1 }],
+  };
+
+  it("範囲内の全ステージ所属語を返す", () => {
+    const result = getWordsForCourseStageRange(
+      [multiStageMaster, fiveOnlyMaster, oneOnlyMaster],
+      "eiken",
+      "5",
+      "3",
+    );
+    const ids = result.map((w) => w.id).sort();
+    expect(ids).toEqual([99997, 99998]);
+  });
+
+  it("複数ステージに所属する語は範囲内で最上位の assignment を採用", () => {
+    // 5→3 の範囲では 3級の tier(=3) が採用されるはず
+    const [word] = getWordsForCourseStageRange([multiStageMaster], "eiken", "5", "3");
+    expect(word.stage).toBe("3");
+    expect(word.courseTier).toBe(3);
+  });
+
+  it("狭い範囲ではより狭いステージを採用", () => {
+    // 5→4 の範囲では 4級の tier(=2) が採用される
+    const [word] = getWordsForCourseStageRange([multiStageMaster], "eiken", "5", "4");
+    expect(word.stage).toBe("4");
+    expect(word.courseTier).toBe(2);
+  });
+
+  it("範囲外の語は含まれない", () => {
+    const result = getWordsForCourseStageRange([oneOnlyMaster], "eiken", "5", "3");
+    expect(result).toHaveLength(0);
+  });
+
+  it("同一ステージ指定時は単一ステージ出題と同じ結果になる", () => {
+    const single = getWordsForCourseStageRange([fiveOnlyMaster], "eiken", "5", "5");
+    expect(single).toHaveLength(1);
+    expect(single[0].stage).toBe("5");
   });
 });

@@ -160,6 +160,7 @@ export const QuizSetup = ({
                     ...prev,
                     course: prev.course === ct ? null : ct,
                     stage: null,
+                    stageFrom: null,
                   }))}
                   className={`px-2 py-1 rounded-md text-xs font-medium transition-all ${
                     quizSettings.course === ct
@@ -174,7 +175,7 @@ export const QuizSetup = ({
             {quizSettings.course && (
               <div className="flex flex-wrap gap-1">
                 <button
-                  onClick={() => setQuizSettings((prev) => ({ ...prev, stage: null }))}
+                  onClick={() => setQuizSettings((prev) => ({ ...prev, stage: null, stageFrom: null }))}
                   className={`px-2 py-0.5 rounded text-[11px] font-medium transition-all ${
                     quizSettings.stage === null
                       ? "bg-accent-500 text-white"
@@ -189,6 +190,7 @@ export const QuizSetup = ({
                     onClick={() => setQuizSettings((prev) => ({
                       ...prev,
                       stage: prev.stage === stg.stage ? null : stg.stage,
+                      stageFrom: null,
                     }))}
                     className={`px-2 py-0.5 rounded text-[11px] font-medium transition-all ${
                       quizSettings.stage === stg.stage
@@ -201,10 +203,48 @@ export const QuizSetup = ({
                 ))}
               </div>
             )}
+            {/* 累積範囲: 下位ステージがある場合に「◯◯から出題」を選べる (T-VQS-044) */}
+            {quizSettings.course && quizSettings.stage && (() => {
+              const stages = COURSE_DEFINITIONS[quizSettings.course].stages;
+              const toIdx = stages.findIndex((s) => s.stage === quizSettings.stage);
+              if (toIdx <= 0) return null; // 最下位級は累積選択肢なし
+              const lowerStages = stages.slice(0, toIdx);
+              const currentFrom = quizSettings.stageFrom ?? quizSettings.stage;
+              return (
+                <div className="mt-2 flex items-center gap-1.5 flex-wrap">
+                  <span className="text-[11px] font-medium text-slate-600 dark:text-slate-300">開始級:</span>
+                  {[...lowerStages, stages[toIdx]].map((stg) => (
+                    <button
+                      key={stg.stage}
+                      onClick={() => setQuizSettings((prev) => ({
+                        ...prev,
+                        stageFrom: stg.stage === prev.stage ? null : stg.stage,
+                      }))}
+                      className={`px-2 py-0.5 rounded text-[11px] font-medium transition-all ${
+                        currentFrom === stg.stage
+                          ? "bg-primary-500 text-white"
+                          : "bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700"
+                      }`}
+                    >
+                      {stg.displayName}から
+                    </button>
+                  ))}
+                </div>
+              );
+            })()}
             <p className="text-[10px] text-slate-400 dark:text-slate-500 mt-1">
               {quizSettings.course === null
                 ? "全コースから出題"
-                : `${COURSE_DEFINITIONS[quizSettings.course].name}${quizSettings.stage ? ` - ${COURSE_DEFINITIONS[quizSettings.course].stages.find((s) => s.stage === quizSettings.stage)?.displayName}` : ""}`}
+                : (() => {
+                    const c = COURSE_DEFINITIONS[quizSettings.course];
+                    if (!quizSettings.stage) return `${c.name}（全レベル）`;
+                    const toName = c.stages.find((s) => s.stage === quizSettings.stage)?.displayName ?? "";
+                    if (quizSettings.stageFrom && quizSettings.stageFrom !== quizSettings.stage) {
+                      const fromName = c.stages.find((s) => s.stage === quizSettings.stageFrom)?.displayName ?? "";
+                      return `${c.name} - ${fromName}〜${toName}（累積出題）`;
+                    }
+                    return `${c.name} - ${toName}`;
+                  })()}
             </p>
           </Card>
 

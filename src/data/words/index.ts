@@ -1,5 +1,5 @@
 import { masterWords } from "./master";
-import { getWordsForCourse } from "./enrich";
+import { getWordsForCourse, getWordsForCourseStageRange } from "./enrich";
 import type { Course, Stage } from "./types";
 
 // マスターリスト（13,311語、重複なし）
@@ -29,6 +29,18 @@ export function getWordsByCourse(course: Course, stage?: Stage) {
   return allWords.filter(
     (w) => w.course === course && (!stage || w.stage === stage),
   );
+}
+
+/**
+ * コース内のステージ範囲 [fromStage, toStage] に属する Word[] を返す。
+ * 下位級〜上位級までを累積出題するために使う（T-VQS-044）。
+ */
+export function getWordsByCourseRange(
+  course: Course,
+  fromStage: Stage,
+  toStage: Stage,
+) {
+  return getWordsForCourseStageRange(masterWords, course, fromStage, toStage);
 }
 
 // 型のエクスポート

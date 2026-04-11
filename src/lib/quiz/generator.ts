@@ -1,4 +1,4 @@
-import { Word, getWordsByCourse } from "@/data/words";
+import { Word, getWordsByCourse, getWordsByCourseRange } from "@/data/words";
 import { Question, QuestionType, QuestionTypeRatios } from "@/types";
 import { shuffleArray, pickRandom } from "@/lib/shuffle";
 import { QuizSettings, getAllowedTiers } from "./settings";
@@ -218,9 +218,12 @@ export function filterWordsBySettings(
 ): Word[] {
   let filtered = allWords;
 
-  // コースフィルター
+  // コースフィルター（累積範囲対応: stageFrom が設定され stage と異なる場合は range で取得）
   if (settings.course) {
-    const courseWords = getWordsByCourse(settings.course, settings.stage ?? undefined);
+    const courseWords =
+      settings.stage && settings.stageFrom && settings.stageFrom !== settings.stage
+        ? getWordsByCourseRange(settings.course, settings.stageFrom, settings.stage)
+        : getWordsByCourse(settings.course, settings.stage ?? undefined);
     const courseIds = new Set(courseWords.map((w) => w.id));
     filtered = filtered.filter((w) => courseIds.has(w.id));
   }
