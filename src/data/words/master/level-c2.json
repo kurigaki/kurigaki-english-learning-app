@@ -570,7 +570,7 @@
       {
         "en": "The acquisition is expected to be accretive to earnings within two years.",
         "ja": "その買収は2年以内に利益に付加価値を生むと予想される。",
-        "context": "M&A"
+        "context": "ビジネス"
       },
       {
         "en": "Only accretive investments will be considered by the board.",
@@ -8101,7 +8101,7 @@
       {
         "en": "Cloud storage has become a commoditized service with razor-thin margins.",
         "ja": "クラウドストレージは非常に薄い利益率のコモディティ化したサービスになった。",
-        "context": "IT"
+        "context": "技術"
       },
       {
         "en": "In a commoditized market, branding becomes a key differentiator.",
@@ -11013,7 +11013,7 @@
       {
         "en": "Tasks are dequeued in order of priority.",
         "ja": "タスクは優先度の順にデキューされる。",
-        "context": "OS"
+        "context": "技術"
       },
       {
         "en": "The worker dequeues jobs from the task queue every second.",
@@ -11381,7 +11381,7 @@
       {
         "en": "The build system deterministically produces the same output every time.",
         "ja": "ビルドシステムは毎回決定論的に同じ出力を生成する。",
-        "context": "CI/CD"
+        "context": "技術"
       }
     ],
     "categories": [
@@ -18180,12 +18180,12 @@
       {
         "en": "The classifier heuristically assigns categories to new documents.",
         "ja": "分類器は新しいドキュメントにヒューリスティックにカテゴリを割り当てる。",
-        "context": "AI"
+        "context": "技術"
       },
       {
         "en": "Memory is heuristically allocated based on usage patterns.",
         "ja": "メモリは使用パターンに基づいてヒューリスティックに割り当てられる。",
-        "context": "OS"
+        "context": "技術"
       }
     ],
     "categories": [
@@ -18703,12 +18703,12 @@
       {
         "en": "Idempotency ensures that retrying a request produces the same result.",
         "ja": "冪等性はリクエストの再試行が同じ結果を生むことを保証する。",
-        "context": "API設計"
+        "context": "技術"
       },
       {
         "en": "PUT requests should guarantee idempotency by design.",
         "ja": "PUTリクエストは設計上、冪等性を保証すべきである。",
-        "context": "REST"
+        "context": "技術"
       },
       {
         "en": "Idempotency keys prevent duplicate payment processing.",
@@ -24057,12 +24057,12 @@
       {
         "en": "Migrating from monolithic to microservices architecture took two years.",
         "ja": "モノリシックからマイクロサービスアーキテクチャへの移行に2年かかった。",
-        "context": "IT"
+        "context": "技術"
       },
       {
         "en": "Monolithic deployments require redeploying the entire application for any change.",
         "ja": "モノリシックなデプロイメントではいかなる変更でもアプリケーション全体の再デプロイが必要である。",
-        "context": "DevOps"
+        "context": "技術"
       }
     ],
     "categories": [
@@ -26236,7 +26236,7 @@
       {
         "en": "The platform makes it easy to onboard new users.",
         "ja": "そのプラットフォームは新規ユーザーのオンボーディングを容易にする。",
-        "context": "SaaS"
+        "context": "技術"
       },
       {
         "en": "We need to onboard the new team members before the project begins.",
@@ -29896,7 +29896,7 @@
       {
         "en": "Polymorphic methods allow different classes to share a common interface.",
         "ja": "多態性メソッドにより異なるクラスが共通のインターフェースを共有できる。",
-        "context": "OOP"
+        "context": "技術"
       },
       {
         "en": "The rendering engine uses polymorphic dispatch for shape drawing.",
@@ -35849,7 +35849,7 @@
       {
         "en": "Spatchcocked birds grill beautifully over high heat.",
         "ja": "スパッチコックにした鳥は強火でグリルすると美しく焼ける。",
-        "context": "BBQ"
+        "context": "食事"
       }
     ],
     "categories": [
@@ -37423,7 +37423,7 @@
       {
         "en": "The merger allowed both companies to synergize their strengths.",
         "ja": "合併により両社が強みの相乗効果を生むことができた。",
-        "context": "M&A"
+        "context": "ビジネス"
       },
       {
         "en": "Cross-functional teams synergize by combining diverse expertise.",
@@ -37456,7 +37456,7 @@
       {
         "en": "The merger created synergies that reduced operating costs by 30 percent.",
         "ja": "合併により運営コストを30パーセント削減する相乗効果が生まれた。",
-        "context": "M&A"
+        "context": "ビジネス"
       },
       {
         "en": "Cross-departmental synergy is essential for innovation.",
@@ -39436,7 +39436,7 @@
       {
         "en": "The NLP model tokenizes sentences into individual words.",
         "ja": "NLPモデルは文を個々の単語にトークン化する。",
-        "context": "AI"
+        "context": "技術"
       },
       {
         "en": "Credit card numbers are tokenized for secure processing.",
