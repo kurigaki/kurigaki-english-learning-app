@@ -250,6 +250,55 @@ export default function ProfilePage() {
                 </div>
               </label>
             </div>
+
+            {/* 参考文献・ライセンス */}
+            <div className="pt-6 border-t border-slate-200 dark:border-slate-700">
+              <h2 className="text-base font-bold text-slate-800 dark:text-slate-100 mb-3 flex items-center gap-2">
+                <span>📚</span>
+                <span>参考文献</span>
+              </h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mb-3 leading-relaxed">
+                本アプリの語彙データは以下のオープンライセンスリソースを参照しています。
+              </p>
+              <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                <li>
+                  <span className="font-semibold">CEFR-J Wordlist Version 1.5</span>
+                  <br />
+                  <span className="text-slate-500 dark:text-slate-400">Tono Lab, TUFS（東京外国語大学 投野研究室）</span>
+                </li>
+                <li>
+                  <span className="font-semibold">NGSL / TSL / NAWL / BSL / NGSL-Spoken</span>
+                  <br />
+                  <span className="text-slate-500 dark:text-slate-400">
+                    Browne, Culligan, Phillips — CC-BY-SA 4.0
+                    <br />
+                    <a
+                      href="https://www.newgeneralservicelist.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-600 dark:text-primary-400 hover:underline"
+                    >
+                      newgeneralservicelist.com
+                    </a>
+                  </span>
+                </li>
+                <li>
+                  <span className="font-semibold">Octanove Vocabulary Profile C1/C2 v1.0</span>
+                  <br />
+                  <span className="text-slate-500 dark:text-slate-400">CC-BY-SA 4.0</span>
+                </li>
+                <li>
+                  <span className="font-semibold">Words-CEFR-Dataset</span>
+                  <br />
+                  <span className="text-slate-500 dark:text-slate-400">MIT License（Maximax67）</span>
+                </li>
+                <li>
+                  <span className="font-semibold">subtlex-word-frequencies</span>
+                  <br />
+                  <span className="text-slate-500 dark:text-slate-400">ISC License（Brysbaert et al.）</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </Card>
       </div>

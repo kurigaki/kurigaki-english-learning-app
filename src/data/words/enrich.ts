@@ -39,6 +39,9 @@ export function getWordsForCourse(
         exampleJa: w.examples[0].ja,
         category: w.categories[0],
         categories: [...w.categories],
+        // コース別tier: assignment.tier があればそれを使用、なければ MasterWord.frequencyTier にフォールバック
+        // docs/tier-calibration-policy.md 参照
+        courseTier: assignment.tier ?? w.frequencyTier,
       };
     });
 }

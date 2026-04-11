@@ -56,10 +56,13 @@ export type CourseAssignment = {
   course: Course;
   stage: Stage;
   meaning?: string;  // コース固有のmeaning（省略時はMasterWordのmeaningを使用）
+  tier?: FrequencyTier;  // コース固有の頻出度ティア（省略時はMasterWord.frequencyTierにフォールバック）
 };
 
 // マスター型 — データの源泉。1語1エントリで複数コースに所属する
 // master/*.ts に格納
+// @note frequencyTier は MasterWord 共通の暫定値。コース別 tier は CourseAssignment.tier を優先する
+//       Phase 2.4 完了後に @deprecated 宣言予定（docs/tier-calibration-policy.md 参照）
 export type MasterWord = {
   id: number;
   word: string;
@@ -83,4 +86,5 @@ export type Word = MasterWord & {
   exampleJa: string;    // examples[0].ja
   difficulty: Difficulty;
   category: string;     // categories[0]
+  courseTier: FrequencyTier;  // コース別 tier（assignment.tier ?? MasterWord.frequencyTier）
 };
