@@ -15933,7 +15933,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "communication"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -38069,7 +38070,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -47456,7 +47458,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 2,
     "courses": [
@@ -53797,7 +53800,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -67070,7 +67074,7 @@
   {
     "id": 11368,
     "word": "treat",
-    "meaning": "扱う",
+    "meaning": "扱う・治療する",
     "partOfSpeech": "verb",
     "examples": [
       {
@@ -70666,6 +70670,106 @@
       "cefrj-v15",
       "ngsl",
       "subtlex"
+    ]
+  },
+  {
+    "id": 11448,
+    "word": "state",
+    "meaning": "状態・国家・声明",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "The old bridge is in a poor state of repair.",
+        "ja": "その古い橋は修繕状態が悪い。",
+        "context": "日常"
+      },
+      {
+        "en": "Texas is one of the largest states in the United States.",
+        "ja": "テキサスはアメリカで最も大きな州の一つだ。",
+        "context": "地理"
+      },
+      {
+        "en": "The prime minister issued an official state of the economy.",
+        "ja": "首相は経済に関する公式声明を発表した。",
+        "context": "政治"
+      }
+    ],
+    "categories": [
+      "school",
+      "business"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "3",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "4",
+        "tier": 1
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a2",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 11449,
+    "word": "state",
+    "meaning": "述べる・表明する",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "Please state your name and purpose of visit clearly.",
+        "ja": "お名前と訪問目的をはっきり述べてください。",
+        "context": "ビジネス"
+      },
+      {
+        "en": "The report clearly states that sales increased by twenty percent last quarter.",
+        "ja": "その報告書は前四半期の売上が20パーセント増加したと明確に述べている。",
+        "context": "ビジネス"
+      },
+      {
+        "en": "He stated his opposition to the new policy during the meeting.",
+        "ja": "彼は会議で新方針への反対を表明した。",
+        "context": "議論"
+      }
+    ],
+    "categories": [
+      "communication",
+      "business"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "3",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "4",
+        "tier": 1
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a2",
+        "tier": 1
+      }
     ]
   }
 ]

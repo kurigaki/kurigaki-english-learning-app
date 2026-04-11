@@ -1052,7 +1052,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "communication"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -4947,7 +4948,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -7527,7 +7529,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -14270,7 +14273,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -35819,7 +35823,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "nature"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -42025,7 +42030,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -70865,7 +70871,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -120062,7 +120069,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -126416,7 +126424,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [

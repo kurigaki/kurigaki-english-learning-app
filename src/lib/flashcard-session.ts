@@ -21,6 +21,7 @@ export type FlashcardSessionState = {
   currentIndex: number;
   selectedCourse: Course | null;
   selectedStage: Stage | null;
+  selectedStageFrom?: Stage | null; // 累積範囲の下限ステージ (T-VQS-044/050)
   selectedCategory: Category | "all";
   selectedDifficulty: number | "all";
   selectedMemory?: ManualMasteryLevel | "all";

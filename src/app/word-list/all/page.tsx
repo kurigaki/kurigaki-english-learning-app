@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import type { Course, Stage } from "@/data/words/types";
 import { COURSE_DEFINITIONS } from "@/data/words/courses";
-import { masterWords, categoryLabels, Category, getWordsByCourse } from "@/data/words";
+import { masterWords, categoryLabels, Category, getWordsByCourse, getWordsByCourseRange } from "@/data/words";
 import type { ContentFlag } from "@/data/words/types";
 import { DIFFICULTY_MAP } from "@/data/words/difficulty";
 import { useContentFilterEnabled } from "@/lib/content-filter";
@@ -124,6 +124,8 @@ export default function WordListPage() {
     initialCourse && Object.keys(COURSE_DEFINITIONS).includes(initialCourse) ? initialCourse : null
   );
   const [selectedStage, setSelectedStage] = useState<Stage | null>(null);
+  // 累積範囲の下限ステージ (T-VQS-050)。stage と同じ場合は単一出題と同等。
+  const [selectedStageFrom, setSelectedStageFrom] = useState<Stage | null>(null);
   const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
   const [selectedMemory, setSelectedMemory] = useState<ManualMasteryLevel | "all">(
     mapLegacyMasteryToMemory(["new", "learning", "familiar", "mastered"].includes(initialMastery) ? initialMastery as MasteryLevel : "all")
@@ -150,6 +152,7 @@ export default function WordListPage() {
     clearWordListFilter();
     setSelectedCourse(filterSession.selectedCourse);
     setSelectedStage(filterSession.selectedStage);
+    setSelectedStageFrom(filterSession.selectedStageFrom ?? null);
     setSelectedCategory(filterSession.selectedCategory);
     setSelectedDifficulty(filterSession.selectedDifficulty);
     setSelectedMemory(
@@ -303,9 +306,12 @@ export default function WordListPage() {
   // Course word IDs (shared between filteredWords and stats)
   const courseWordIds = useMemo(() => {
     if (!selectedCourse) return null;
-    const courseWords = getWordsByCourse(selectedCourse, selectedStage ?? undefined);
+    const courseWords =
+      selectedStage && selectedStageFrom && selectedStageFrom !== selectedStage
+        ? getWordsByCourseRange(selectedCourse, selectedStageFrom, selectedStage)
+        : getWordsByCourse(selectedCourse, selectedStage ?? undefined);
     return new Set(courseWords.map((w) => w.id));
-  }, [selectedCourse, selectedStage]);
+  }, [selectedCourse, selectedStage, selectedStageFrom]);
 
   // tier 解決ヘルパー: コース選択時は tierByCourse から、未選択時は frequencyTier
   const resolveTier = useCallback((word: WordWithStats): 1 | 2 | 3 => {
@@ -444,6 +450,7 @@ export default function WordListPage() {
     saveWordListFilter({
       selectedCourse,
       selectedStage,
+      selectedStageFrom,
       selectedCategory,
       selectedDifficulty,
       selectedMemory,
@@ -461,6 +468,7 @@ export default function WordListPage() {
     wordIndexMap,
     selectedCourse,
     selectedStage,
+    selectedStageFrom,
     selectedCategory,
     selectedDifficulty,
     selectedMemory,
@@ -603,7 +611,7 @@ export default function WordListPage() {
                     .map((ct) => (
                       <button
                         key={ct}
-                        onClick={() => { setSelectedCourse(selectedCourse === ct ? null : ct); setSelectedStage(null); }}
+                        onClick={() => { setSelectedCourse(selectedCourse === ct ? null : ct); setSelectedStage(null); setSelectedStageFrom(null); }}
                         className={`px-2 py-0.5 rounded-md text-[11px] font-medium whitespace-nowrap transition-all ${
                           selectedCourse === ct
                             ? "bg-primary-500 text-white"
@@ -642,7 +650,7 @@ export default function WordListPage() {
             {selectedCourse && (
               <div className="flex flex-wrap gap-1">
                 <button
-                  onClick={() => setSelectedStage(null)}
+                  onClick={() => { setSelectedStage(null); setSelectedStageFrom(null); }}
                   className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-all ${
                     selectedStage === null
                       ? "bg-accent-500 text-white"
@@ -654,7 +662,7 @@ export default function WordListPage() {
                 {COURSE_DEFINITIONS[selectedCourse].stages.map((stg) => (
                   <button
                     key={stg.stage}
-                    onClick={() => setSelectedStage(selectedStage === stg.stage ? null : stg.stage)}
+                    onClick={() => { setSelectedStage(selectedStage === stg.stage ? null : stg.stage); setSelectedStageFrom(null); }}
                     className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-all ${
                       selectedStage === stg.stage
                         ? "bg-accent-500 text-white"
@@ -666,6 +674,32 @@ export default function WordListPage() {
                 ))}
               </div>
             )}
+            {/* 累積範囲: stage が選択されていて下位ステージがある場合のみ表示 (T-VQS-050) */}
+            {selectedCourse && selectedStage && (() => {
+              const stages = COURSE_DEFINITIONS[selectedCourse].stages;
+              const toIdx = stages.findIndex((s) => s.stage === selectedStage);
+              if (toIdx <= 0) return null;
+              const candidates = stages.slice(0, toIdx + 1);
+              const currentFrom = selectedStageFrom ?? selectedStage;
+              return (
+                <div className="mt-1 flex flex-wrap items-center gap-1">
+                  <span className="text-[10px] font-medium text-slate-500 dark:text-slate-400">開始:</span>
+                  {candidates.map((stg) => (
+                    <button
+                      key={stg.stage}
+                      onClick={() => setSelectedStageFrom(stg.stage === selectedStage ? null : stg.stage)}
+                      className={`px-1.5 py-0.5 rounded text-[10px] font-medium transition-all ${
+                        currentFrom === stg.stage
+                          ? "bg-primary-500 text-white"
+                          : "bg-slate-50 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700"
+                      }`}
+                    >
+                      {stg.displayName}から
+                    </button>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
 
           {/* Category Filter */}

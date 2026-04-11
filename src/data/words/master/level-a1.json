@@ -796,7 +796,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "communication"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -9394,7 +9395,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "hobby"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -29476,7 +29478,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "school"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -29693,7 +29696,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "hobby"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -40789,7 +40793,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "school"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -47803,7 +47808,7 @@
   {
     "id": 978,
     "word": "study",
-    "meaning": "勉強する",
+    "meaning": "勉強する・研究する",
     "partOfSpeech": "verb",
     "examples": [
       {
@@ -53885,7 +53890,7 @@
   {
     "id": 1109,
     "word": "well",
-    "meaning": "上手に",
+    "meaning": "上手に・十分に",
     "partOfSpeech": "adverb",
     "examples": [
       {

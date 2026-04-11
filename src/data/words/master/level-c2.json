@@ -10481,7 +10481,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -21645,7 +21646,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "office"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -29503,7 +29505,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -35992,7 +35995,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -41140,7 +41144,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "finance"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -43398,7 +43403,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [

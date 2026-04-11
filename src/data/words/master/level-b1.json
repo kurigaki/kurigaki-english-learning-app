@@ -3366,7 +3366,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -13408,7 +13409,7 @@
   {
     "id": 20305,
     "word": "benefit",
-    "meaning": "利益",
+    "meaning": "利益・給付・恩恵",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -20020,7 +20021,7 @@
   {
     "id": 20464,
     "word": "career",
-    "meaning": "職業",
+    "meaning": "職業・経歴",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -28634,7 +28635,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "communication"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -28913,7 +28915,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 2,
     "courses": [
@@ -35864,7 +35867,7 @@
   {
     "id": 20815,
     "word": "decline",
-    "meaning": "衰退",
+    "meaning": "衰退・減少・辞退",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -40414,7 +40417,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "communication"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -49262,7 +49266,7 @@
   {
     "id": 21109,
     "word": "estimate",
-    "meaning": "見積もり",
+    "meaning": "見積もり・推定",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -50099,7 +50103,7 @@
   {
     "id": 21127,
     "word": "evidence",
-    "meaning": "証拠",
+    "meaning": "証拠・根拠",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -52595,7 +52599,7 @@
   {
     "id": 21177,
     "word": "extent",
-    "meaning": "程度",
+    "meaning": "程度・範囲",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -53142,7 +53146,7 @@
   {
     "id": 21189,
     "word": "factor",
-    "meaning": "要因",
+    "meaning": "要因・要素",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -55308,7 +55312,7 @@
   {
     "id": 21238,
     "word": "finance",
-    "meaning": "財政",
+    "meaning": "財政・金融",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -57028,7 +57032,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "office"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -59988,7 +59993,7 @@
   {
     "id": 21344,
     "word": "gain",
-    "meaning": "利益",
+    "meaning": "利益・増加",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -63964,7 +63969,7 @@
   {
     "id": 21437,
     "word": "guard",
-    "meaning": "警備員",
+    "meaning": "警備員・警備",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -65000,7 +65005,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "hobby"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -79194,7 +79200,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "communication"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -84198,7 +84205,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "school"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -102024,7 +102032,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "school"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -107498,7 +107507,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "opinion"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -116633,7 +116643,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "school"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -119151,7 +119162,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "technology"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -125783,7 +125795,7 @@
   {
     "id": 22811,
     "word": "tax",
-    "meaning": "税金",
+    "meaning": "税金・重い負担",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -137346,6 +137358,46 @@
     "sources": [
       "cefrj-v15",
       "subtlex"
+    ]
+  },
+  {
+    "id": 23064,
+    "word": "firm",
+    "meaning": "会社・企業",
+    "partOfSpeech": "noun",
+    "examples": [
+      {
+        "en": "She joined a prestigious law firm right after graduating.",
+        "ja": "彼女は卒業後すぐに名門の法律事務所に入った。",
+        "context": "ビジネス"
+      },
+      {
+        "en": "The accounting firm handles audits for dozens of multinational corporations.",
+        "ja": "その会計事務所は多数の多国籍企業の監査を担当している。",
+        "context": "ビジネス"
+      },
+      {
+        "en": "A small consulting firm can often provide more personalized service than a large one.",
+        "ja": "小規模なコンサルティング会社は大手よりも個別対応に優れていることが多い。",
+        "context": "ビジネス"
+      }
+    ],
+    "categories": [
+      "business",
+      "office"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "eiken",
+        "stage": "pre2",
+        "tier": 1
+      },
+      {
+        "course": "toeic",
+        "stage": "600",
+        "tier": 1
+      }
     ]
   }
 ]
