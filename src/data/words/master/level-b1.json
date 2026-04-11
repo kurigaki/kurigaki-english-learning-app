@@ -8,17 +8,17 @@
       {
         "en": "She spent a great deal of time studying.",
         "ja": "彼女は多くの時間を勉強に費やした。",
-        "context": "a great deal of"
+        "context": "日常"
       },
       {
         "en": "A great deal of effort was needed.",
         "ja": "多大な努力が必要だった。",
-        "context": "a great deal of"
+        "context": "会話"
       },
       {
         "en": "There is a great deal of work to do.",
         "ja": "やるべき仕事がたくさんある。",
-        "context": "a great deal of"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -41,17 +41,17 @@
       {
         "en": "A number of students were absent.",
         "ja": "何人かの生徒が欠席した。",
-        "context": "a number of"
+        "context": "日常"
       },
       {
         "en": "A number of issues arose at once.",
         "ja": "いくつかの問題が同時に生じた。",
-        "context": "a number of"
+        "context": "会話"
       },
       {
         "en": "She raised a number of questions.",
         "ja": "彼女はいくつかの質問を挙げた。",
-        "context": "a number of"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -74,17 +74,17 @@
       {
         "en": "She has a variety of hobbies.",
         "ja": "彼女は様々な趣味を持っている。",
-        "context": "a variety of"
+        "context": "日常"
       },
       {
         "en": "A variety of foods were served.",
         "ja": "様々な食べ物が提供された。",
-        "context": "a variety of"
+        "context": "会話"
       },
       {
         "en": "The shop offers a variety of products.",
         "ja": "その店は様々な製品を提供している。",
-        "context": "a variety of"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -227,17 +227,17 @@
       {
         "en": "The country abolished the death penalty.",
         "ja": "その国は死刑を廃止した。",
-        "context": "abolish"
+        "context": "学校"
       },
       {
         "en": "They voted to abolish the old tax system.",
         "ja": "彼らは古い税制を廃止するために投票した。",
-        "context": "abolish"
+        "context": "日常"
       },
       {
         "en": "Unfair rules should be abolished quickly.",
         "ja": "不公平なルールは早急に廃止されるべきだ。",
-        "context": "abolish"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -931,17 +931,17 @@
       {
         "en": "Dust accumulates on shelves quickly.",
         "ja": "埃は棚にすぐ溜まる。",
-        "context": "accumulate"
+        "context": "日常"
       },
       {
         "en": "She accumulated a lot of experience.",
         "ja": "彼女は多くの経験を積んだ。",
-        "context": "accumulate"
+        "context": "自然"
       },
       {
         "en": "Wealth accumulates over time.",
         "ja": "富は時間をかけて蓄積される。",
-        "context": "accumulate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -1231,17 +1231,17 @@
       {
         "en": "Acid can burn your skin.",
         "ja": "酸は皮膚を焼くことがある。",
-        "context": "acid"
+        "context": "自然"
       },
       {
         "en": "Lemon juice contains citric acid.",
         "ja": "レモン汁にはクエン酸が含まれる。",
-        "context": "acid"
+        "context": "自然"
       },
       {
         "en": "Acid rain damages forests.",
         "ja": "酸性雨は森林を傷める。",
-        "context": "acid"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -2052,17 +2052,17 @@
       {
         "en": "Adolescence is a time of change.",
         "ja": "青春期は変化の時期だ。",
-        "context": "adolescence"
+        "context": "日常"
       },
       {
         "en": "She had a difficult adolescence.",
         "ja": "彼女は難しい青春期を過ごした。",
-        "context": "adolescence"
+        "context": "会話"
       },
       {
         "en": "Adolescence lasts from 12 to 18.",
         "ja": "青春期は12歳から18歳まで続く。",
-        "context": "adolescence"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -2631,17 +2631,17 @@
       {
         "en": "She advocates for children's education rights.",
         "ja": "彼女は子供の教育権を擁護している。",
-        "context": "advocate"
+        "context": "学校"
       },
       {
         "en": "He advocates a more balanced approach.",
         "ja": "彼はより均衡のとれたアプローチを支持する。",
-        "context": "advocate"
+        "context": "日常"
       },
       {
         "en": "They advocated for cleaner energy sources.",
         "ja": "彼らはよりクリーンなエネルギー源を支持した。",
-        "context": "advocate"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -2929,17 +2929,17 @@
       {
         "en": "Aggression is not acceptable.",
         "ja": "攻撃性は許されない。",
-        "context": "aggression"
+        "context": "日常"
       },
       {
         "en": "Military aggression led to war.",
         "ja": "軍事的侵略が戦争につながった。",
-        "context": "aggression"
+        "context": "学校"
       },
       {
         "en": "Stress can lead to aggression.",
         "ja": "ストレスは攻撃的行動につながることがある。",
-        "context": "aggression"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -3578,17 +3578,17 @@
       {
         "en": "They formed an alliance against the enemy.",
         "ja": "彼らは敵に対抗する同盟を結んだ。",
-        "context": "alliance"
+        "context": "日常"
       },
       {
         "en": "The military alliance protected them.",
         "ja": "その軍事同盟が彼らを守った。",
-        "context": "alliance"
+        "context": "ビジネス"
       },
       {
         "en": "The two parties formed an alliance.",
         "ja": "2つの政党が同盟を結んだ。",
-        "context": "alliance"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -3620,17 +3620,17 @@
       {
         "en": "The budget was allocated to education.",
         "ja": "予算は教育に割り当てられた。",
-        "context": "allocate"
+        "context": "日常"
       },
       {
         "en": "Resources must be allocated wisely.",
         "ja": "資源は賢く配分されなければならない。",
-        "context": "allocate"
+        "context": "金融"
       },
       {
         "en": "Time should be allocated for rest.",
         "ja": "休息のための時間を確保すべきだ。",
-        "context": "allocate"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -4052,17 +4052,17 @@
       {
         "en": "The ambassador gave a speech.",
         "ja": "大使はスピーチを行った。",
-        "context": "ambassador"
+        "context": "日常"
       },
       {
         "en": "She was appointed as ambassador.",
         "ja": "彼女は大使に任命された。",
-        "context": "ambassador"
+        "context": "会話"
       },
       {
         "en": "The ambassador represented his country.",
         "ja": "大使は自国を代表した。",
-        "context": "ambassador"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -4136,17 +4136,17 @@
       {
         "en": "The law was amended by parliament.",
         "ja": "法律は議会によって改正された。",
-        "context": "amend"
+        "context": "日常"
       },
       {
         "en": "He amended his report after feedback.",
         "ja": "彼はフィードバックを受けて報告書を修正した。",
-        "context": "amend"
+        "context": "ビジネス"
       },
       {
         "en": "The constitution was amended.",
         "ja": "憲法が修正された。",
-        "context": "amend"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -4395,17 +4395,17 @@
       {
         "en": "He used an analogy to explain.",
         "ja": "彼は説明するために類推を使った。",
-        "context": "analogy"
+        "context": "日常"
       },
       {
         "en": "The analogy between the two cases is clear.",
         "ja": "2つのケースの類似点は明らかだ。",
-        "context": "analogy"
+        "context": "学校"
       },
       {
         "en": "She drew an analogy with water.",
         "ja": "彼女は水との類推を引いた。",
-        "context": "analogy"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -4442,17 +4442,17 @@
       {
         "en": "Our ancestors built this temple.",
         "ja": "私たちの祖先がこの寺を建てた。",
-        "context": "ancestor"
+        "context": "日常"
       },
       {
         "en": "She traced her ancestors to Japan.",
         "ja": "彼女の祖先は日本に遡る。",
-        "context": "ancestor"
+        "context": "文化"
       },
       {
         "en": "We should honor our ancestors.",
         "ja": "祖先を敬うべきだ。",
-        "context": "ancestor"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -5204,17 +5204,17 @@
       {
         "en": "Apart from math, she likes all subjects.",
         "ja": "数学を除いて、彼女はすべての教科が好きだ。",
-        "context": "apart from"
+        "context": "日常"
       },
       {
         "en": "Apart from that, the trip was fine.",
         "ja": "それを除けば、旅行は良かった。",
-        "context": "apart from"
+        "context": "会話"
       },
       {
         "en": "Apart from cost, the plan is good.",
         "ja": "費用を除けば、計画は良い。",
-        "context": "apart from"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -5440,17 +5440,17 @@
       {
         "en": "Exercise increases your appetite.",
         "ja": "運動すると食欲が増す。",
-        "context": "appetite"
+        "context": "日常"
       },
       {
         "en": "She has a great appetite for learning.",
         "ja": "彼女は学ぶことへの強い欲求がある。",
-        "context": "appetite"
+        "context": "食事"
       },
       {
         "en": "He lost his appetite when sick.",
         "ja": "彼は病気のとき食欲がなくなった。",
-        "context": "appetite"
+        "context": "健康"
       }
     ],
     "categories": [
@@ -7074,17 +7074,17 @@
       {
         "en": "She asserted her right to speak.",
         "ja": "彼女は発言する権利を主張した。",
-        "context": "assert"
+        "context": "日常"
       },
       {
         "en": "He asserted that he was innocent.",
         "ja": "彼は無実だと主張した。",
-        "context": "assert"
+        "context": "会話"
       },
       {
         "en": "Assert yourself in the meeting.",
         "ja": "会議で自分の意見をしっかり主張しなさい。",
-        "context": "assert"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -7463,17 +7463,17 @@
       {
         "en": "She attained her goal after years of effort.",
         "ja": "彼女は何年もの努力の末に目標を達成した。",
-        "context": "attain"
+        "context": "日常"
       },
       {
         "en": "He attained a high rank in the company.",
         "ja": "彼は会社で高い地位を得た。",
-        "context": "attain"
+        "context": "学校"
       },
       {
         "en": "They attained independence in 1945.",
         "ja": "彼らは1945年に独立を達成した。",
-        "context": "attain"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -7645,17 +7645,17 @@
       {
         "en": "She attributed her success to hard work.",
         "ja": "彼女は成功を努力のおかげだとした。",
-        "context": "attribute"
+        "context": "日常"
       },
       {
         "en": "The painting was attributed to Picasso.",
         "ja": "その絵はピカソの作とされた。",
-        "context": "attribute"
+        "context": "会話"
       },
       {
         "en": "He attributed the failure to bad luck.",
         "ja": "彼は失敗を不運のせいにした。",
-        "context": "attribute"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -7855,17 +7855,17 @@
       {
         "en": "The manager authorized the purchase.",
         "ja": "部長はその購入を承認した。",
-        "context": "authorize"
+        "context": "日常"
       },
       {
         "en": "Are you authorized to enter here?",
         "ja": "ここに入る権限がありますか？",
-        "context": "authorize"
+        "context": "ビジネス"
       },
       {
         "en": "The law authorizes police to search.",
         "ja": "法律は警察に捜索権限を与える。",
-        "context": "authorize"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -10388,17 +10388,17 @@
       {
         "en": "You are supposed to be here at nine.",
         "ja": "あなたは9時にここにいるはずだ。",
-        "context": "be supposed to"
+        "context": "日常"
       },
       {
         "en": "She is supposed to call back.",
         "ja": "彼女は折り返し電話するはずだ。",
-        "context": "be supposed to"
+        "context": "会話"
       },
       {
         "en": "He was supposed to finish by noon.",
         "ja": "彼は正午までに終えるはずだった。",
-        "context": "be supposed to"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -11710,17 +11710,17 @@
       {
         "en": "He betrayed his best friend.",
         "ja": "彼は親友を裏切った。",
-        "context": "betray"
+        "context": "日常"
       },
       {
         "en": "She felt betrayed by his lies.",
         "ja": "彼女は彼の嘘に裏切られたと感じた。",
-        "context": "betray"
+        "context": "感情"
       },
       {
         "en": "Don't betray their trust.",
         "ja": "彼らの信頼を裏切らないで。",
-        "context": "betray"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -14715,17 +14715,17 @@
       {
         "en": "The reform brought about great change.",
         "ja": "改革は大きな変化をもたらした。",
-        "context": "bring about"
+        "context": "日常"
       },
       {
         "en": "Technology brings about new problems.",
         "ja": "技術は新しい問題を引き起こす。",
-        "context": "bring about"
+        "context": "会話"
       },
       {
         "en": "Hard work brought about her success.",
         "ja": "努力が彼女の成功をもたらした。",
-        "context": "bring about"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -17074,12 +17074,12 @@
       {
         "en": "Choose a career that suits your interests.",
         "ja": "自分の興味に合ったキャリアを選んでください。",
-        "context": "career"
+        "context": "学校"
       },
       {
         "en": "He changed his career from law to teaching.",
         "ja": "彼は法律から教育へキャリアを変えた。",
-        "context": "career"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -17338,17 +17338,17 @@
       {
         "en": "She carried out the plan perfectly.",
         "ja": "彼女は計画を完璧に実行した。",
-        "context": "carry out"
+        "context": "日常"
       },
       {
         "en": "Please carry out your duties.",
         "ja": "職務を遂行してください。",
-        "context": "carry out"
+        "context": "会話"
       },
       {
         "en": "The research was carried out last year.",
         "ja": "その調査は昨年実施された。",
-        "context": "carry out"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -17439,17 +17439,17 @@
       {
         "en": "She carved her name into the tree.",
         "ja": "彼女は木に名前を彫った。",
-        "context": "carve"
+        "context": "日常"
       },
       {
         "en": "He carved a statue from stone.",
         "ja": "彼は石像を彫った。",
-        "context": "carve"
+        "context": "文化"
       },
       {
         "en": "The artist carved intricate patterns.",
         "ja": "芸術家は複雑な模様を彫った。",
-        "context": "carve"
+        "context": "趣味"
       }
     ],
     "categories": [
@@ -17645,17 +17645,17 @@
       {
         "en": "The war caused many casualties.",
         "ja": "戦争は多くの死傷者を出した。",
-        "context": "casualty"
+        "context": "日常"
       },
       {
         "en": "He was a casualty of the accident.",
         "ja": "彼は事故の犠牲者だった。",
-        "context": "casualty"
+        "context": "会話"
       },
       {
         "en": "Rescue teams helped the casualties.",
         "ja": "救助隊が死傷者を助けた。",
-        "context": "casualty"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -18092,17 +18092,17 @@
       {
         "en": "The fighting ceased at midnight.",
         "ja": "戦闘は深夜に停止した。",
-        "context": "cease"
+        "context": "日常"
       },
       {
         "en": "He ceased smoking last year.",
         "ja": "彼は去年タバコをやめた。",
-        "context": "cease"
+        "context": "会話"
       },
       {
         "en": "Operations ceased due to the storm.",
         "ja": "嵐により業務が停止した。",
-        "context": "cease"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -18273,17 +18273,17 @@
       {
         "en": "The census counts the population.",
         "ja": "国勢調査は人口を数える。",
-        "context": "census"
+        "context": "日常"
       },
       {
         "en": "A census is taken every ten years.",
         "ja": "国勢調査は10年ごとに行われる。",
-        "context": "census"
+        "context": "学校"
       },
       {
         "en": "The census data showed growth.",
         "ja": "国勢調査データは増加を示した。",
-        "context": "census"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -18700,17 +18700,17 @@
       {
         "en": "The storm caused total chaos.",
         "ja": "嵐は完全な混乱を引き起こした。",
-        "context": "chaos"
+        "context": "日常"
       },
       {
         "en": "The classroom was in chaos.",
         "ja": "教室は大混乱だった。",
-        "context": "chaos"
+        "context": "会話"
       },
       {
         "en": "After the earthquake, chaos spread.",
         "ja": "地震の後、混乱が広がった。",
-        "context": "chaos"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -19806,17 +19806,17 @@
       {
         "en": "Blood circulates through the body.",
         "ja": "血液は体内を循環する。",
-        "context": "circulate"
+        "context": "日常"
       },
       {
         "en": "Rumors were circulating at school.",
         "ja": "学校で噂が広まっていた。",
-        "context": "circulate"
+        "context": "ビジネス"
       },
       {
         "en": "Air circulates through the vents.",
         "ja": "空気は換気口を通って循環する。",
-        "context": "circulate"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -19974,17 +19974,17 @@
       {
         "en": "She cited several studies in her paper.",
         "ja": "彼女は論文でいくつかの研究を引用した。",
-        "context": "cite"
+        "context": "日常"
       },
       {
         "en": "He was cited for bravery.",
         "ja": "彼は勇敢さで表彰された。",
-        "context": "cite"
+        "context": "ビジネス"
       },
       {
         "en": "Please cite your sources.",
         "ja": "出典を明記してください。",
-        "context": "cite"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -20214,17 +20214,17 @@
       {
         "en": "Can you clarify what you mean?",
         "ja": "おっしゃっていることを明確にしてもらえますか？",
-        "context": "clarify"
+        "context": "日常"
       },
       {
         "en": "She clarified the rules of the game.",
         "ja": "彼女はゲームのルールを説明した。",
-        "context": "clarify"
+        "context": "会話"
       },
       {
         "en": "The teacher clarified the assignment.",
         "ja": "先生は課題を明確に説明した。",
-        "context": "clarify"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -20900,17 +20900,17 @@
       {
         "en": "The parties formed a coalition.",
         "ja": "政党は連立政権を組んだ。",
-        "context": "coalition"
+        "context": "日常"
       },
       {
         "en": "A broad coalition supported the bill.",
         "ja": "幅広い連立がその法案を支持した。",
-        "context": "coalition"
+        "context": "会話"
       },
       {
         "en": "The coalition government lasted two years.",
         "ja": "連立政権は2年間続いた。",
-        "context": "coalition"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -21986,17 +21986,17 @@
       {
         "en": "Oil is a valuable commodity.",
         "ja": "石油は価値ある商品だ。",
-        "context": "commodity"
+        "context": "日常"
       },
       {
         "en": "Rice is a basic commodity in Japan.",
         "ja": "米は日本の基本的な商品だ。",
-        "context": "commodity"
+        "context": "金融"
       },
       {
         "en": "Commodity prices rose sharply.",
         "ja": "商品価格が急上昇した。",
-        "context": "commodity"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -22318,17 +22318,17 @@
       {
         "en": "She showed great compassion for others.",
         "ja": "彼女は他者への大きな思いやりを示した。",
-        "context": "compassion"
+        "context": "日常"
       },
       {
         "en": "Compassion is a key human virtue.",
         "ja": "思いやりは重要な人間の美徳だ。",
-        "context": "compassion"
+        "context": "感情"
       },
       {
         "en": "He helped with compassion and care.",
         "ja": "彼は思いやりと配慮をもって助けた。",
-        "context": "compassion"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -22451,17 +22451,17 @@
       {
         "en": "The company compensated the victims.",
         "ja": "会社は被害者に補償した。",
-        "context": "compensate"
+        "context": "日常"
       },
       {
         "en": "He worked overtime to compensate.",
         "ja": "彼は補うために残業した。",
-        "context": "compensate"
+        "context": "ビジネス"
       },
       {
         "en": "Nothing can compensate for the loss.",
         "ja": "その損失を補うものは何もない。",
-        "context": "compensate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -22603,17 +22603,17 @@
       {
         "en": "She showed great competence at work.",
         "ja": "彼女は仕事で高い能力を示した。",
-        "context": "competence"
+        "context": "日常"
       },
       {
         "en": "The job requires technical competence.",
         "ja": "その仕事は技術的能力を必要とする。",
-        "context": "competence"
+        "context": "学校"
       },
       {
         "en": "Competence builds confidence.",
         "ja": "能力は自信を生む。",
-        "context": "competence"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -22743,17 +22743,17 @@
       {
         "en": "She compiled a list of resources.",
         "ja": "彼女はリソースのリストをまとめた。",
-        "context": "compile"
+        "context": "日常"
       },
       {
         "en": "The data was compiled into a report.",
         "ja": "データは報告書にまとめられた。",
-        "context": "compile"
+        "context": "学校"
       },
       {
         "en": "He compiled a dictionary of idioms.",
         "ja": "彼は慣用句の辞書を編纂した。",
-        "context": "compile"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -22885,17 +22885,17 @@
       {
         "en": "Don't complicate things unnecessarily.",
         "ja": "不必要に物事を複雑にしないで。",
-        "context": "complicate"
+        "context": "日常"
       },
       {
         "en": "The new rule complicated the process.",
         "ja": "新しいルールがプロセスを複雑にした。",
-        "context": "complicate"
+        "context": "会話"
       },
       {
         "en": "Bad weather complicated the rescue.",
         "ja": "悪天候が救助を複雑にした。",
-        "context": "complicate"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -22955,17 +22955,17 @@
       {
         "en": "You must comply with the regulations.",
         "ja": "規則に従わなければなりません。",
-        "context": "comply"
+        "context": "日常"
       },
       {
         "en": "The company failed to comply with the law.",
         "ja": "会社は法律に従わなかった。",
-        "context": "comply"
+        "context": "学校"
       },
       {
         "en": "All students must comply with school rules.",
         "ja": "全生徒は校則に従わなければならない。",
-        "context": "comply"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -23319,17 +23319,17 @@
       {
         "en": "He conceived a new business idea.",
         "ja": "彼は新しいビジネスのアイデアを思いついた。",
-        "context": "conceive"
+        "context": "日常"
       },
       {
         "en": "She conceived a plan to escape.",
         "ja": "彼女は脱出の計画を考えた。",
-        "context": "conceive"
+        "context": "会話"
       },
       {
         "en": "It's hard to conceive of such wealth.",
         "ja": "そんな富を想像するのは難しい。",
-        "context": "conceive"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -23422,17 +23422,17 @@
       {
         "en": "His conception of justice is different.",
         "ja": "彼の正義の概念は違う。",
-        "context": "conception"
+        "context": "日常"
       },
       {
         "en": "The conception of the project took months.",
         "ja": "プロジェクトの構想に何ヶ月もかかった。",
-        "context": "conception"
+        "context": "学校"
       },
       {
         "en": "Her conception of beauty is unique.",
         "ja": "彼女の美の概念は独自だ。",
-        "context": "conception"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -23907,17 +23907,17 @@
       {
         "en": "The university conferred a degree on her.",
         "ja": "大学は彼女に学位を授与した。",
-        "context": "confer"
+        "context": "日常"
       },
       {
         "en": "They conferred for hours about the plan.",
         "ja": "彼らは計画について何時間も協議した。",
-        "context": "confer"
+        "context": "会話"
       },
       {
         "en": "The medal was conferred by the president.",
         "ja": "勲章は大統領から授与された。",
-        "context": "confer"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -24115,17 +24115,17 @@
       {
         "en": "The prisoner was confined to his cell.",
         "ja": "囚人は独房に閉じ込められた。",
-        "context": "confine"
+        "context": "日常"
       },
       {
         "en": "Please confine your comments to the topic.",
         "ja": "発言をテーマに限定してください。",
-        "context": "confine"
+        "context": "健康"
       },
       {
         "en": "She was confined to bed after surgery.",
         "ja": "彼女は手術後に床に伏せていた。",
-        "context": "confine"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -24365,17 +24365,17 @@
       {
         "en": "Rome conquered much of Europe.",
         "ja": "ローマはヨーロッパの多くを征服した。",
-        "context": "conquer"
+        "context": "日常"
       },
       {
         "en": "She conquered her fear of heights.",
         "ja": "彼女は高所恐怖症を克服した。",
-        "context": "conquer"
+        "context": "会話"
       },
       {
         "en": "He conquered the mountain summit.",
         "ja": "彼は山頂を征服した。",
-        "context": "conquer"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -24526,17 +24526,17 @@
       {
         "en": "You need parental consent.",
         "ja": "保護者の同意が必要です。",
-        "context": "consent"
+        "context": "日常"
       },
       {
         "en": "She gave her consent reluctantly.",
         "ja": "彼女は渋々同意した。",
-        "context": "consent"
+        "context": "会話"
       },
       {
         "en": "Without consent, it is illegal.",
         "ja": "同意なしに行うのは違法だ。",
-        "context": "consent"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -24568,17 +24568,17 @@
       {
         "en": "She consented to the operation.",
         "ja": "彼女は手術に同意した。",
-        "context": "consent"
+        "context": "日常"
       },
       {
         "en": "You must consent to the terms.",
         "ja": "条件に同意しなければなりません。",
-        "context": "consent"
+        "context": "会話"
       },
       {
         "en": "He consented to help with the project.",
         "ja": "彼はプロジェクトへの協力に同意した。",
-        "context": "consent"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -24984,17 +24984,17 @@
       {
         "en": "The team consists of ten members.",
         "ja": "チームは10人のメンバーから成る。",
-        "context": "consist of"
+        "context": "日常"
       },
       {
         "en": "The meal consists of rice and soup.",
         "ja": "その食事はご飯と汁物から成る。",
-        "context": "consist of"
+        "context": "学校"
       },
       {
         "en": "The book consists of three parts.",
         "ja": "その本は3部から成っている。",
-        "context": "consist of"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -25111,17 +25111,17 @@
       {
         "en": "They uncovered a conspiracy.",
         "ja": "彼らは陰謀を暴いた。",
-        "context": "conspiracy"
+        "context": "日常"
       },
       {
         "en": "The conspiracy theory spread online.",
         "ja": "陰謀論がオンラインで広まった。",
-        "context": "conspiracy"
+        "context": "学校"
       },
       {
         "en": "He was arrested for conspiracy.",
         "ja": "彼は共謀で逮捕された。",
-        "context": "conspiracy"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -25227,17 +25227,17 @@
       {
         "en": "These rules constitute the law.",
         "ja": "これらのルールが法律を構成する。",
-        "context": "constitute"
+        "context": "日常"
       },
       {
         "en": "Women constitute half the population.",
         "ja": "女性は人口の半数を占める。",
-        "context": "constitute"
+        "context": "会話"
       },
       {
         "en": "That action constitutes a crime.",
         "ja": "その行為は犯罪を構成する。",
-        "context": "constitute"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -25307,17 +25307,17 @@
       {
         "en": "You should consult a doctor.",
         "ja": "医者に相談すべきです。",
-        "context": "consult"
+        "context": "日常"
       },
       {
         "en": "She consulted a lawyer before signing.",
         "ja": "彼女は署名前に弁護士に相談した。",
-        "context": "consult"
+        "context": "会話"
       },
       {
         "en": "He consulted the manual for help.",
         "ja": "彼はマニュアルを参照した。",
-        "context": "consult"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -25665,17 +25665,17 @@
       {
         "en": "His actions contradict his words.",
         "ja": "彼の行動は言葉と矛盾している。",
-        "context": "contradict"
+        "context": "日常"
       },
       {
         "en": "She contradicted everything he said.",
         "ja": "彼女は彼の言ったことすべてに反論した。",
-        "context": "contradict"
+        "context": "会話"
       },
       {
         "en": "The evidence contradicts the theory.",
         "ja": "証拠はその理論に矛盾する。",
-        "context": "contradict"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -26179,17 +26179,17 @@
       {
         "en": "He was convicted of theft.",
         "ja": "彼は窃盗で有罪判決を受けた。",
-        "context": "convict"
+        "context": "日常"
       },
       {
         "en": "The jury convicted the suspect.",
         "ja": "陪審員は容疑者を有罪とした。",
-        "context": "convict"
+        "context": "会話"
       },
       {
         "en": "She was convicted on two counts.",
         "ja": "彼女は二つの罪状で有罪となった。",
-        "context": "convict"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -26216,17 +26216,17 @@
       {
         "en": "She spoke with great conviction about justice.",
         "ja": "彼女は正義について強い信念を持って語った。",
-        "context": "conviction"
+        "context": "学校"
       },
       {
         "en": "His conviction for theft was overturned.",
         "ja": "彼の窃盗での有罪判決は覆された。",
-        "context": "conviction"
+        "context": "日常"
       },
       {
         "en": "Personal convictions guide our choices.",
         "ja": "個人的な信念が私たちの選択を導く。",
-        "context": "conviction"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -26572,17 +26572,17 @@
       {
         "en": "She coped with the stress well.",
         "ja": "彼女はストレスにうまく対処した。",
-        "context": "cope with"
+        "context": "日常"
       },
       {
         "en": "How do you cope with failure?",
         "ja": "失敗にどう対処しますか？",
-        "context": "cope with"
+        "context": "会話"
       },
       {
         "en": "He couldn't cope with the pressure.",
         "ja": "彼はプレッシャーに対処できなかった。",
-        "context": "cope with"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -26675,17 +26675,17 @@
       {
         "en": "Coral reefs are home to many fish.",
         "ja": "サンゴ礁は多くの魚の住処だ。",
-        "context": "coral"
+        "context": "自然"
       },
       {
         "en": "Bleaching kills coral reefs.",
         "ja": "白化現象がサンゴ礁を死滅させる。",
-        "context": "coral"
+        "context": "自然"
       },
       {
         "en": "Coral grows very slowly.",
         "ja": "サンゴはとてもゆっくり育つ。",
-        "context": "coral"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -27054,17 +27054,17 @@
       {
         "en": "Power can corrupt people.",
         "ja": "権力は人を腐敗させることがある。",
-        "context": "corrupt"
+        "context": "日常"
       },
       {
         "en": "The file was corrupted by a virus.",
         "ja": "ファイルはウイルスで破損した。",
-        "context": "corrupt"
+        "context": "会話"
       },
       {
         "en": "Greed corrupted the official.",
         "ja": "欲が官吏を腐敗させた。",
-        "context": "corrupt"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -27087,17 +27087,17 @@
       {
         "en": "Corruption in government leads to poverty.",
         "ja": "政府の腐敗は貧困につながる。",
-        "context": "corruption"
+        "context": "学校"
       },
       {
         "en": "The journalist uncovered widespread corruption.",
         "ja": "ジャーナリストが広範な汚職を暴いた。",
-        "context": "corruption"
+        "context": "日常"
       },
       {
         "en": "Fighting corruption requires transparency.",
         "ja": "腐敗と戦うには透明性が必要だ。",
-        "context": "corruption"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -28000,17 +28000,17 @@
       {
         "en": "She critiqued the proposal fairly.",
         "ja": "彼女は提案を公平に批評した。",
-        "context": "critique"
+        "context": "学校"
       },
       {
         "en": "Students were asked to critique each other's work.",
         "ja": "生徒はお互いの作品を批評するよう求められた。",
-        "context": "critique"
+        "context": "学校"
       },
       {
         "en": "His critique helped improve the final product.",
         "ja": "彼の批評が最終製品の改善に役立った。",
-        "context": "critique"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -28923,17 +28923,17 @@
       {
         "en": "She was awarded custody of the children.",
         "ja": "彼女は子どもの養育権を与えられた。",
-        "context": "custody"
+        "context": "日常"
       },
       {
         "en": "He is in police custody.",
         "ja": "彼は警察に拘留されている。",
-        "context": "custody"
+        "context": "会話"
       },
       {
         "en": "The custody battle lasted years.",
         "ja": "養育権争いは何年も続いた。",
-        "context": "custody"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -29926,17 +29926,17 @@
       {
         "en": "She dealt with the problem calmly.",
         "ja": "彼女は問題に冷静に対処した。",
-        "context": "deal with"
+        "context": "日常"
       },
       {
         "en": "You must deal with the consequences.",
         "ja": "結果に対処しなければならない。",
-        "context": "deal with"
+        "context": "会話"
       },
       {
         "en": "He deals with complaints every day.",
         "ja": "彼は毎日苦情に対処している。",
-        "context": "deal with"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -30582,17 +30582,17 @@
       {
         "en": "The king issued a decree.",
         "ja": "国王は命令を出した。",
-        "context": "decree"
+        "context": "日常"
       },
       {
         "en": "The decree was enforced immediately.",
         "ja": "命令はすぐに施行された。",
-        "context": "decree"
+        "context": "会話"
       },
       {
         "en": "A decree banned the practice.",
         "ja": "命令でその慣行が禁止された。",
-        "context": "decree"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -31050,17 +31050,17 @@
       {
         "en": "She defied her parents wishes.",
         "ja": "彼女は両親の望みに背いた。",
-        "context": "defy"
+        "context": "日常"
       },
       {
         "en": "He defied the law openly.",
         "ja": "彼は公然と法律に反抗した。",
-        "context": "defy"
+        "context": "会話"
       },
       {
         "en": "The results defy explanation.",
         "ja": "その結果は説明がつかない。",
-        "context": "defy"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -31093,17 +31093,17 @@
       {
         "en": "Each country sent a delegate.",
         "ja": "各国が代表者を送った。",
-        "context": "delegate"
+        "context": "日常"
       },
       {
         "en": "The delegate spoke at the conference.",
         "ja": "代表者は会議でスピーチした。",
-        "context": "delegate"
+        "context": "会話"
       },
       {
         "en": "She was chosen as a delegate.",
         "ja": "彼女は代表に選ばれた。",
-        "context": "delegate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -31997,17 +31997,17 @@
       {
         "en": "The painting depicts a battle scene.",
         "ja": "その絵画は戦闘の場面を描いている。",
-        "context": "depict"
+        "context": "日常"
       },
       {
         "en": "The novel depicts life in ancient Rome.",
         "ja": "その小説は古代ローマの生活を描いている。",
-        "context": "depict"
+        "context": "学校"
       },
       {
         "en": "The film depicts the struggles of immigrants.",
         "ja": "その映画は移民の苦労を描いている。",
-        "context": "depict"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -32127,17 +32127,17 @@
       {
         "en": "Poverty deprives children of education.",
         "ja": "貧困は子どもから教育を奪う。",
-        "context": "deprive"
+        "context": "日常"
       },
       {
         "en": "He was deprived of sleep.",
         "ja": "彼は睡眠を奪われた。",
-        "context": "deprive"
+        "context": "会話"
       },
       {
         "en": "War deprives people of their homes.",
         "ja": "戦争は人々から家を奪う。",
-        "context": "deprive"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -32201,17 +32201,17 @@
       {
         "en": "She derives pleasure from music.",
         "ja": "彼女は音楽から喜びを得る。",
-        "context": "derive"
+        "context": "日常"
       },
       {
         "en": "The word is derived from Latin.",
         "ja": "その言葉はラテン語に由来する。",
-        "context": "derive"
+        "context": "学校"
       },
       {
         "en": "He derived a formula from the data.",
         "ja": "彼はデータから公式を導き出した。",
-        "context": "derive"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -32285,17 +32285,17 @@
       {
         "en": "She is a descendant of a samurai.",
         "ja": "彼女は武士の子孫だ。",
-        "context": "descendant"
+        "context": "日常"
       },
       {
         "en": "His descendants still live in the area.",
         "ja": "彼の子孫はまだその地域に住んでいる。",
-        "context": "descendant"
+        "context": "会話"
       },
       {
         "en": "Humans are descendants of apes.",
         "ja": "人間は類人猿の子孫だ。",
-        "context": "descendant"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -32365,17 +32365,17 @@
       {
         "en": "This area is designated as a park.",
         "ja": "この地域は公園として指定されている。",
-        "context": "designate"
+        "context": "日常"
       },
       {
         "en": "She was designated as team leader.",
         "ja": "彼女はチームリーダーに指名された。",
-        "context": "designate"
+        "context": "学校"
       },
       {
         "en": "The building was designated historic.",
         "ja": "その建物は歴史的建造物に指定された。",
-        "context": "designate"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -32675,17 +32675,17 @@
       {
         "en": "She believed in her destiny.",
         "ja": "彼女は自分の運命を信じていた。",
-        "context": "destiny"
+        "context": "日常"
       },
       {
         "en": "He felt it was his destiny to lead.",
         "ja": "彼はリーダーになることが運命だと感じた。",
-        "context": "destiny"
+        "context": "会話"
       },
       {
         "en": "Our destiny is shaped by our choices.",
         "ja": "運命は選択によって形作られる。",
-        "context": "destiny"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -33231,17 +33231,17 @@
       {
         "en": "The doctor diagnosed her with flu.",
         "ja": "医者は彼女をインフルエンザと診断した。",
-        "context": "diagnose"
+        "context": "日常"
       },
       {
         "en": "He was diagnosed with diabetes.",
         "ja": "彼は糖尿病と診断された。",
-        "context": "diagnose"
+        "context": "ビジネス"
       },
       {
         "en": "Early diagnosis can save lives.",
         "ja": "早期診断が命を救うことがある。",
-        "context": "diagnose"
+        "context": "健康"
       }
     ],
     "categories": [
@@ -33274,17 +33274,17 @@
       {
         "en": "The diagnosis was cancer.",
         "ja": "診断結果はがんだった。",
-        "context": "diagnosis"
+        "context": "日常"
       },
       {
         "en": "Early diagnosis improves treatment.",
         "ja": "早期診断は治療を改善する。",
-        "context": "diagnosis"
+        "context": "自然"
       },
       {
         "en": "She received a positive diagnosis.",
         "ja": "彼女は陽性の診断を受けた。",
-        "context": "diagnosis"
+        "context": "健康"
       }
     ],
     "categories": [
@@ -33858,17 +33858,17 @@
       {
         "en": "Every person deserves to be treated with dignity.",
         "ja": "すべての人は尊厳をもって扱われるべきだ。",
-        "context": "dignity"
+        "context": "学校"
       },
       {
         "en": "She handled the difficult situation with dignity.",
         "ja": "彼女は困難な状況を品格を持って処理した。",
-        "context": "dignity"
+        "context": "日常"
       },
       {
         "en": "Dignity is a basic human right for all.",
         "ja": "尊厳はすべての人の基本的人権だ。",
-        "context": "dignity"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -33913,17 +33913,17 @@
       {
         "en": "She faced a moral dilemma.",
         "ja": "彼女は道徳的ジレンマに直面した。",
-        "context": "dilemma"
+        "context": "日常"
       },
       {
         "en": "The dilemma had no easy solution.",
         "ja": "そのジレンマに簡単な解決策はなかった。",
-        "context": "dilemma"
+        "context": "会話"
       },
       {
         "en": "He was caught in a dilemma.",
         "ja": "彼はジレンマに陥っていた。",
-        "context": "dilemma"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -34025,17 +34025,17 @@
       {
         "en": "The pain gradually diminished.",
         "ja": "痛みは徐々に和らいだ。",
-        "context": "diminish"
+        "context": "日常"
       },
       {
         "en": "Noise diminishes concentration.",
         "ja": "騒音は集中力を低下させる。",
-        "context": "diminish"
+        "context": "学校"
       },
       {
         "en": "Her confidence never diminished.",
         "ja": "彼女の自信は少しも衰えなかった。",
-        "context": "diminish"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -34268,17 +34268,17 @@
       {
         "en": "The diplomat negotiated a treaty.",
         "ja": "外交官が条約を交渉した。",
-        "context": "diplomat"
+        "context": "日常"
       },
       {
         "en": "She became a skilled diplomat.",
         "ja": "彼女は熟練した外交官になった。",
-        "context": "diplomat"
+        "context": "会話"
       },
       {
         "en": "Diplomats work to keep peace.",
         "ja": "外交官は平和を維持するために働く。",
-        "context": "diplomat"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -34381,17 +34381,17 @@
       {
         "en": "Look up the number in the directory.",
         "ja": "名簿で番号を調べてください。",
-        "context": "directory"
+        "context": "日常"
       },
       {
         "en": "The phone directory lists all numbers.",
         "ja": "電話帳はすべての番号を掲載している。",
-        "context": "directory"
+        "context": "ビジネス"
       },
       {
         "en": "She found his name in the company directory.",
         "ja": "彼女は会社名簿で彼の名前を見つけた。",
-        "context": "directory"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -34489,7 +34489,7 @@
       {
         "en": "The earthquake was a natural disaster.",
         "ja": "地震は自然災害だった。",
-        "context": "disaster"
+        "context": "自然"
       },
       {
         "en": "The government provided aid after the disaster.",
@@ -34574,17 +34574,17 @@
       {
         "en": "The factory discharges waste into the river.",
         "ja": "工場は廃水を川に放出する。",
-        "context": "discharge"
+        "context": "日常"
       },
       {
         "en": "He was discharged from the hospital.",
         "ja": "彼は退院した。",
-        "context": "discharge"
+        "context": "会話"
       },
       {
         "en": "The soldier was discharged from duty.",
         "ja": "その兵士は任務から除隊された。",
-        "context": "discharge"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -34673,17 +34673,17 @@
       {
         "en": "She disclosed the secret to no one.",
         "ja": "彼女は誰にも秘密を明かさなかった。",
-        "context": "disclose"
+        "context": "日常"
       },
       {
         "en": "The company disclosed its profits.",
         "ja": "会社は利益を公開した。",
-        "context": "disclose"
+        "context": "ビジネス"
       },
       {
         "en": "He was ordered to disclose his assets.",
         "ja": "彼は資産を開示するよう命じられた。",
-        "context": "disclose"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -34786,17 +34786,17 @@
       {
         "en": "Public discourse on the topic grew.",
         "ja": "そのテーマに関する公的論議が高まった。",
-        "context": "discourse"
+        "context": "日常"
       },
       {
         "en": "Academic discourse requires evidence.",
         "ja": "学術的言説は証拠を必要とする。",
-        "context": "discourse"
+        "context": "会話"
       },
       {
         "en": "She engaged in political discourse.",
         "ja": "彼女は政治的論議に参加した。",
-        "context": "discourse"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -35048,17 +35048,17 @@
       {
         "en": "Proper disposal of waste is essential.",
         "ja": "廃棄物の適切な処分は重要だ。",
-        "context": "disposal"
+        "context": "日常"
       },
       {
         "en": "The disposal of chemicals is regulated.",
         "ja": "化学物質の処分は規制されている。",
-        "context": "disposal"
+        "context": "ビジネス"
       },
       {
         "en": "She had all resources at her disposal.",
         "ja": "彼女はすべての資源を自由に使えた。",
-        "context": "disposal"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -35090,17 +35090,17 @@
       {
         "en": "Dispose of waste properly.",
         "ja": "廃棄物を適切に処分してください。",
-        "context": "dispose"
+        "context": "日常"
       },
       {
         "en": "She disposed of old newspapers.",
         "ja": "彼女は古い新聞を処分した。",
-        "context": "dispose"
+        "context": "学校"
       },
       {
         "en": "The chemicals were disposed safely.",
         "ja": "化学物質は安全に処分された。",
-        "context": "dispose"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -35130,17 +35130,17 @@
       {
         "en": "He disregarded the warning signs.",
         "ja": "彼は警告の兆候を無視した。",
-        "context": "disregard"
+        "context": "日常"
       },
       {
         "en": "She disregarded his advice.",
         "ja": "彼女は彼のアドバイスを無視した。",
-        "context": "disregard"
+        "context": "会話"
       },
       {
         "en": "Don't disregard the rules.",
         "ja": "ルールを無視しないでください。",
-        "context": "disregard"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -35163,17 +35163,17 @@
       {
         "en": "The strike caused major disruption.",
         "ja": "ストライキは大きな混乱を引き起こした。",
-        "context": "disruption"
+        "context": "日常"
       },
       {
         "en": "Digital technology causes disruption.",
         "ja": "デジタル技術は混乱をもたらす。",
-        "context": "disruption"
+        "context": "ビジネス"
       },
       {
         "en": "The disruption affected thousands.",
         "ja": "その混乱は何千人もに影響した。",
-        "context": "disruption"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -35709,17 +35709,17 @@
       {
         "en": "The church's doctrine guides behavior.",
         "ja": "教会の教義は行動を導く。",
-        "context": "doctrine"
+        "context": "日常"
       },
       {
         "en": "Political doctrine shapes policy.",
         "ja": "政治的教義が政策を形成する。",
-        "context": "doctrine"
+        "context": "学校"
       },
       {
         "en": "He followed his religion's doctrine.",
         "ja": "彼は宗教の教義に従った。",
-        "context": "doctrine"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -36473,17 +36473,17 @@
       {
         "en": "She drafted a letter of complaint.",
         "ja": "彼女は苦情の手紙の草案を書いた。",
-        "context": "draft"
+        "context": "日常"
       },
       {
         "en": "He drafted a new contract.",
         "ja": "彼は新しい契約書の草案を作った。",
-        "context": "draft"
+        "context": "ビジネス"
       },
       {
         "en": "The law was drafted last year.",
         "ja": "その法律は昨年起草された。",
-        "context": "draft"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -36998,17 +36998,17 @@
       {
         "en": "The drought destroyed the crops.",
         "ja": "干ばつが作物を破壊した。",
-        "context": "drought"
+        "context": "日常"
       },
       {
         "en": "Africa suffered from a long drought.",
         "ja": "アフリカは長い干ばつに苦しんだ。",
-        "context": "drought"
+        "context": "会話"
       },
       {
         "en": "Drought causes food shortages.",
         "ja": "干ばつは食料不足を引き起こす。",
-        "context": "drought"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -37250,17 +37250,17 @@
       {
         "en": "The two men fought a duel.",
         "ja": "二人の男が決闘した。",
-        "context": "duel"
+        "context": "日常"
       },
       {
         "en": "Duels were common in history.",
         "ja": "決闘は歴史上一般的だった。",
-        "context": "duel"
+        "context": "会話"
       },
       {
         "en": "They settled the dispute with a duel.",
         "ja": "彼らは決闘で争いを解決した。",
-        "context": "duel"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -37561,17 +37561,17 @@
       {
         "en": "They dwell in a small village.",
         "ja": "彼らは小さな村に住んでいる。",
-        "context": "dwell"
+        "context": "日常"
       },
       {
         "en": "Don't dwell on the past.",
         "ja": "過去にこだわらないで。",
-        "context": "dwell"
+        "context": "学校"
       },
       {
         "en": "Wild animals dwell in the forest.",
         "ja": "野生動物は森に生息する。",
-        "context": "dwell"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -37599,17 +37599,17 @@
       {
         "en": "The cave served as their dwelling.",
         "ja": "洞窟が彼らの住居だった。",
-        "context": "dwelling"
+        "context": "日常"
       },
       {
         "en": "He built a simple dwelling.",
         "ja": "彼はシンプルな住居を建てた。",
-        "context": "dwelling"
+        "context": "会話"
       },
       {
         "en": "The dwelling was warm and safe.",
         "ja": "住居は暖かく安全だった。",
-        "context": "dwelling"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -37719,17 +37719,17 @@
       {
         "en": "Group dynamics affect team performance.",
         "ja": "グループの力学がチームの成果に影響する。",
-        "context": "dynamics"
+        "context": "日常"
       },
       {
         "en": "She studied the dynamics of power.",
         "ja": "彼女は権力の力学を研究した。",
-        "context": "dynamics"
+        "context": "学校"
       },
       {
         "en": "The dynamics of the market changed.",
         "ja": "市場の力学が変わった。",
-        "context": "dynamics"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -38358,17 +38358,17 @@
       {
         "en": "Forests are complex ecosystems.",
         "ja": "森林は複雑な生態系だ。",
-        "context": "ecosystem"
+        "context": "自然"
       },
       {
         "en": "Pollution damages the ecosystem.",
         "ja": "汚染は生態系を破壊する。",
-        "context": "ecosystem"
+        "context": "自然"
       },
       {
         "en": "The coral reef ecosystem is fragile.",
         "ja": "サンゴ礁の生態系は脆弱だ。",
-        "context": "ecosystem"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -39113,17 +39113,17 @@
       {
         "en": "Only the elite attended the event.",
         "ja": "エリートだけがそのイベントに参加した。",
-        "context": "elite"
+        "context": "日常"
       },
       {
         "en": "She is part of the academic elite.",
         "ja": "彼女は学術エリートの一員だ。",
-        "context": "elite"
+        "context": "会話"
       },
       {
         "en": "The elite have much influence.",
         "ja": "エリートは大きな影響力を持つ。",
-        "context": "elite"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -39192,17 +39192,17 @@
       {
         "en": "They embarked on a new project.",
         "ja": "彼らは新しいプロジェクトに乗り出した。",
-        "context": "embark"
+        "context": "日常"
       },
       {
         "en": "She embarked on a long journey.",
         "ja": "彼女は長い旅に出発した。",
-        "context": "embark"
+        "context": "学校"
       },
       {
         "en": "The company embarked on expansion.",
         "ja": "会社は拡大に着手した。",
-        "context": "embark"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -39272,17 +39272,17 @@
       {
         "en": "She visited the Japanese embassy.",
         "ja": "彼女は日本大使館を訪れた。",
-        "context": "embassy"
+        "context": "日常"
       },
       {
         "en": "The embassy issued a travel warning.",
         "ja": "大使館は渡航警告を発した。",
-        "context": "embassy"
+        "context": "会話"
       },
       {
         "en": "The embassy is on the main street.",
         "ja": "大使館は大通りにある。",
-        "context": "embassy"
+        "context": "旅行"
       }
     ],
     "categories": [
@@ -39719,17 +39719,17 @@
       {
         "en": "The encounter changed his life.",
         "ja": "その出会いが彼の人生を変えた。",
-        "context": "encounter"
+        "context": "日常"
       },
       {
         "en": "She described the encounter with the bear.",
         "ja": "彼女はクマとの遭遇を語った。",
-        "context": "encounter"
+        "context": "会話"
       },
       {
         "en": "It was a brief but meaningful encounter.",
         "ja": "それは短いが意味のある出会いだった。",
-        "context": "encounter"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -39826,17 +39826,17 @@
       {
         "en": "Pollution endangers marine life.",
         "ja": "汚染は海洋生物を危険にさらす。",
-        "context": "endanger"
+        "context": "日常"
       },
       {
         "en": "Reckless driving endangers everyone.",
         "ja": "無謀な運転は全員を危険にさらす。",
-        "context": "endanger"
+        "context": "会話"
       },
       {
         "en": "The fire endangered the building.",
         "ja": "火事は建物を危険にさらした。",
-        "context": "endanger"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -39902,17 +39902,17 @@
       {
         "en": "The celebrity endorsed the product.",
         "ja": "その有名人は製品を支持した。",
-        "context": "endorse"
+        "context": "日常"
       },
       {
         "en": "She endorsed the candidate's policy.",
         "ja": "彼女は候補者の政策を支持した。",
-        "context": "endorse"
+        "context": "会話"
       },
       {
         "en": "He endorsed the check and cashed it.",
         "ja": "彼は小切手に裏書きして換金した。",
-        "context": "endorse"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -40361,17 +40361,17 @@
       {
         "en": "Travel enriches your mind.",
         "ja": "旅行は心を豊かにする。",
-        "context": "enrich"
+        "context": "日常"
       },
       {
         "en": "The program enriched students lives.",
         "ja": "そのプログラムは生徒の生活を豊かにした。",
-        "context": "enrich"
+        "context": "会話"
       },
       {
         "en": "Reading enriches your vocabulary.",
         "ja": "読書は語彙を豊かにする。",
-        "context": "enrich"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -40403,17 +40403,17 @@
       {
         "en": "She enrolled in a cooking class.",
         "ja": "彼女は料理教室に登録した。",
-        "context": "enroll"
+        "context": "日常"
       },
       {
         "en": "He enrolled at the university.",
         "ja": "彼は大学に入学した。",
-        "context": "enroll"
+        "context": "ビジネス"
       },
       {
         "en": "New students must enroll by Friday.",
         "ja": "新入生は金曜日までに登録しなければならない。",
-        "context": "enroll"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -40517,17 +40517,17 @@
       {
         "en": "She started a small enterprise.",
         "ja": "彼女は小さな企業を始めた。",
-        "context": "enterprise"
+        "context": "日常"
       },
       {
         "en": "Free enterprise drives innovation.",
         "ja": "自由企業は革新を推進する。",
-        "context": "enterprise"
+        "context": "ビジネス"
       },
       {
         "en": "The enterprise grew into a corporation.",
         "ja": "その企業は法人に成長した。",
-        "context": "enterprise"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -40930,17 +40930,17 @@
       {
         "en": "The epidemic spread rapidly.",
         "ja": "流行病は急速に広まった。",
-        "context": "epidemic"
+        "context": "日常"
       },
       {
         "en": "Health officials fought the epidemic.",
         "ja": "保健当局は流行病と戦った。",
-        "context": "epidemic"
+        "context": "健康"
       },
       {
         "en": "An epidemic of flu hit the region.",
         "ja": "その地域でインフルエンザが流行した。",
-        "context": "epidemic"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -40968,17 +40968,17 @@
       {
         "en": "Gender equality is an important social goal.",
         "ja": "男女平等は重要な社会的目標だ。",
-        "context": "equality"
+        "context": "学校"
       },
       {
         "en": "She fights for racial and social equality.",
         "ja": "彼女は人種的・社会的平等のために戦う。",
-        "context": "equality"
+        "context": "会話"
       },
       {
         "en": "True equality means fair opportunity for all.",
         "ja": "真の平等はすべての人への公平な機会を意味する。",
-        "context": "equality"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -41140,17 +41140,17 @@
       {
         "en": "Equity in education is important.",
         "ja": "教育における公平性は重要だ。",
-        "context": "equity"
+        "context": "日常"
       },
       {
         "en": "The company promoted equity among staff.",
         "ja": "会社はスタッフ間の公平性を促進した。",
-        "context": "equity"
+        "context": "会話"
       },
       {
         "en": "Equity and equality are different.",
         "ja": "公平性と平等は異なる。",
-        "context": "equity"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -41383,17 +41383,17 @@
       {
         "en": "They erected a new building.",
         "ja": "彼らは新しい建物を建てた。",
-        "context": "erect"
+        "context": "日常"
       },
       {
         "en": "A statue was erected in the square.",
         "ja": "広場に像が建てられた。",
-        "context": "erect"
+        "context": "会話"
       },
       {
         "en": "The tent was erected in minutes.",
         "ja": "テントは数分で立てられた。",
-        "context": "erect"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -41416,17 +41416,17 @@
       {
         "en": "Erosion wore away the cliffs.",
         "ja": "侵食が崖を削った。",
-        "context": "erosion"
+        "context": "自然"
       },
       {
         "en": "Soil erosion is a serious problem.",
         "ja": "土壌侵食は深刻な問題だ。",
-        "context": "erosion"
+        "context": "自然"
       },
       {
         "en": "Erosion caused the riverbank to collapse.",
         "ja": "侵食が川岸の崩壊を引き起こした。",
-        "context": "erosion"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -41457,17 +41457,17 @@
       {
         "en": "The volcano erupted violently.",
         "ja": "火山が激しく噴火した。",
-        "context": "erupt"
+        "context": "日常"
       },
       {
         "en": "Violence erupted in the streets.",
         "ja": "街頭で暴力が勃発した。",
-        "context": "erupt"
+        "context": "会話"
       },
       {
         "en": "Anger erupted during the meeting.",
         "ja": "会議中に怒りが爆発した。",
-        "context": "erupt"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -41778,17 +41778,17 @@
       {
         "en": "He inherited a large estate.",
         "ja": "彼は大きな不動産を相続した。",
-        "context": "estate"
+        "context": "日常"
       },
       {
         "en": "The estate included a mansion.",
         "ja": "その不動産には大邸宅が含まれていた。",
-        "context": "estate"
+        "context": "ビジネス"
       },
       {
         "en": "She managed her late father's estate.",
         "ja": "彼女は亡くなった父の遺産を管理した。",
-        "context": "estate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -42062,17 +42062,17 @@
       {
         "en": "Medical ethics guides doctors decisions.",
         "ja": "医療倫理は医師の決断を導く。",
-        "context": "ethics"
+        "context": "学校"
       },
       {
         "en": "She studied ethics as part of her degree.",
         "ja": "彼女は学位の一部として倫理を学んだ。",
-        "context": "ethics"
+        "context": "ビジネス"
       },
       {
         "en": "Good ethics are the foundation of trust.",
         "ja": "良い倫理は信頼の基盤だ。",
-        "context": "ethics"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -43926,17 +43926,17 @@
       {
         "en": "She exceeded everyone's expectations this year.",
         "ja": "彼女は今年全員の期待を超えた。",
-        "context": "expectations"
+        "context": "日常"
       },
       {
         "en": "Managing expectations is an important skill.",
         "ja": "期待を管理することは重要なスキルだ。",
-        "context": "expectations"
+        "context": "会話"
       },
       {
         "en": "The results did not meet his expectations.",
         "ja": "結果は彼の期待を満たさなかった。",
-        "context": "expectations"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -43959,17 +43959,17 @@
       {
         "en": "The expedition reached the summit.",
         "ja": "遠征隊は頂上に達した。",
-        "context": "expedition"
+        "context": "日常"
       },
       {
         "en": "She joined an Arctic expedition.",
         "ja": "彼女は北極探検に参加した。",
-        "context": "expedition"
+        "context": "会話"
       },
       {
         "en": "The scientific expedition lasted a month.",
         "ja": "科学的遠征は一ヶ月続いた。",
-        "context": "expedition"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -44299,17 +44299,17 @@
       {
         "en": "She was exploited by her unfair employer.",
         "ja": "彼女は不公平な雇用主に搾取された。",
-        "context": "exploit"
+        "context": "学校"
       },
       {
         "en": "We should exploit renewable energy more.",
         "ja": "私たちは再生可能エネルギーをもっと活用すべきだ。",
-        "context": "exploit"
+        "context": "日常"
       },
       {
         "en": "He exploited his skills to find a good job.",
         "ja": "彼はスキルを活用して良い仕事を見つけた。",
-        "context": "exploit"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -44957,17 +44957,17 @@
       {
         "en": "The fabric felt soft to the touch.",
         "ja": "その布は触ると柔らかかった。",
-        "context": "fabric"
+        "context": "日常"
       },
       {
         "en": "She chose a floral fabric.",
         "ja": "彼女は花柄の生地を選んだ。",
-        "context": "fabric"
+        "context": "ビジネス"
       },
       {
         "en": "The fabric of society must be preserved.",
         "ja": "社会の構造を守らなければならない。",
-        "context": "fabric"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -45045,17 +45045,17 @@
       {
         "en": "Two factions disagreed on the plan.",
         "ja": "二つの派閥が計画で対立した。",
-        "context": "faction"
+        "context": "日常"
       },
       {
         "en": "The ruling faction held great power.",
         "ja": "与党派閥は大きな権力を持っていた。",
-        "context": "faction"
+        "context": "学校"
       },
       {
         "en": "A faction broke away from the party.",
         "ja": "一派が党から分離した。",
-        "context": "faction"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -45460,17 +45460,17 @@
       {
         "en": "Famine struck the region.",
         "ja": "飢饉がその地域を襲った。",
-        "context": "famine"
+        "context": "日常"
       },
       {
         "en": "Millions died in the great famine.",
         "ja": "大飢饉で何百万人もが亡くなった。",
-        "context": "famine"
+        "context": "自然"
       },
       {
         "en": "Drought can lead to famine.",
         "ja": "干ばつは飢饉につながることがある。",
-        "context": "famine"
+        "context": "健康"
       }
     ],
     "categories": [
@@ -45851,17 +45851,17 @@
       {
         "en": "She accepted her fate calmly.",
         "ja": "彼女は落ち着いて運命を受け入れた。",
-        "context": "fate"
+        "context": "日常"
       },
       {
         "en": "Their fate was decided by the court.",
         "ja": "彼らの運命は法廷で決まった。",
-        "context": "fate"
+        "context": "会話"
       },
       {
         "en": "No one can escape their fate.",
         "ja": "誰も運命からは逃れられない。",
-        "context": "fate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -45893,17 +45893,17 @@
       {
         "en": "After the long hike, she was overcome with fatigue.",
         "ja": "長いハイキングの後、彼女は疲労に圧倒された。",
-        "context": "fatigue"
+        "context": "日常"
       },
       {
         "en": "Mental fatigue can be just as debilitating as physical fatigue.",
         "ja": "精神的疲労は肉体的疲労と同様に衰弱させる可能性がある。",
-        "context": "fatigue"
+        "context": "ビジネス"
       },
       {
         "en": "The soldiers suffered from extreme fatigue after the battle.",
         "ja": "兵士たちは戦闘後に極度の疲労に苦しんだ。",
-        "context": "fatigue"
+        "context": "健康"
       }
     ],
     "categories": [
@@ -46278,17 +46278,17 @@
       {
         "en": "The federation united many states.",
         "ja": "連邦は多くの州を統一した。",
-        "context": "federation"
+        "context": "日常"
       },
       {
         "en": "She works for a sports federation.",
         "ja": "彼女はスポーツ連盟で働いている。",
-        "context": "federation"
+        "context": "会話"
       },
       {
         "en": "The federation held its annual meeting.",
         "ja": "連邦は年次会議を開いた。",
-        "context": "federation"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -46778,17 +46778,17 @@
       {
         "en": "She finally figured out the answer.",
         "ja": "彼女はついに答えを理解した。",
-        "context": "figure out"
+        "context": "日常"
       },
       {
         "en": "Can you figure out how this works?",
         "ja": "これがどのように機能するか分かりますか？",
-        "context": "figure out"
+        "context": "会話"
       },
       {
         "en": "He figured out the problem quickly.",
         "ja": "彼はすぐに問題を解明した。",
-        "context": "figure out"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -48648,17 +48648,17 @@
       {
         "en": "The footage showed the crime clearly.",
         "ja": "映像は犯罪をはっきりと映していた。",
-        "context": "footage"
+        "context": "日常"
       },
       {
         "en": "Security footage was reviewed.",
         "ja": "防犯カメラの映像が確認された。",
-        "context": "footage"
+        "context": "会話"
       },
       {
         "en": "The documentary used old footage.",
         "ja": "ドキュメンタリーは古い映像を使用した。",
-        "context": "footage"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -48784,17 +48784,17 @@
       {
         "en": "Foreigners are welcome here.",
         "ja": "外国人はここに歓迎される。",
-        "context": "foreigner"
+        "context": "日常"
       },
       {
         "en": "She felt like a foreigner in her own city.",
         "ja": "彼女は自分の街で外国人のように感じた。",
-        "context": "foreigner"
+        "context": "会話"
       },
       {
         "en": "Many foreigners study in Japan.",
         "ja": "多くの外国人が日本で学んでいる。",
-        "context": "foreigner"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -49133,17 +49133,17 @@
       {
         "en": "She formulated a new theory.",
         "ja": "彼女は新しい理論を定式化した。",
-        "context": "formulate"
+        "context": "日常"
       },
       {
         "en": "The team formulated a strategy.",
         "ja": "チームは戦略を立案した。",
-        "context": "formulate"
+        "context": "学校"
       },
       {
         "en": "He formulated his argument carefully.",
         "ja": "彼は議論を慎重に組み立てた。",
-        "context": "formulate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -49300,17 +49300,17 @@
       {
         "en": "The fossil was millions of years old.",
         "ja": "その化石は何百万年も前のものだった。",
-        "context": "fossil"
+        "context": "自然"
       },
       {
         "en": "She found a fossil in the rock.",
         "ja": "彼女は岩の中に化石を見つけた。",
-        "context": "fossil"
+        "context": "技術"
       },
       {
         "en": "Fossil fuels cause pollution.",
         "ja": "化石燃料は汚染を引き起こす。",
-        "context": "fossil"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -49544,17 +49544,17 @@
       {
         "en": "Only a fraction of students passed.",
         "ja": "ごく一部の生徒だけが合格した。",
-        "context": "fraction"
+        "context": "日常"
       },
       {
         "en": "She bought it at a fraction of the price.",
         "ja": "彼女はその値段のわずかな価格で買った。",
-        "context": "fraction"
+        "context": "学校"
       },
       {
         "en": "A fraction of the budget was spent.",
         "ja": "予算のごく一部が使われた。",
-        "context": "fraction"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -50151,17 +50151,17 @@
       {
         "en": "The frontier between the two countries is open.",
         "ja": "2国間の国境は開いている。",
-        "context": "frontier"
+        "context": "日常"
       },
       {
         "en": "Space is the final frontier.",
         "ja": "宇宙は最後のフロンティアだ。",
-        "context": "frontier"
+        "context": "会話"
       },
       {
         "en": "Settlers pushed the frontier west.",
         "ja": "入植者は辺境を西へ押し広げた。",
-        "context": "frontier"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -50787,17 +50787,17 @@
       {
         "en": "She felt a surge of fury.",
         "ja": "彼女は怒りの波を感じた。",
-        "context": "fury"
+        "context": "日常"
       },
       {
         "en": "His fury was terrifying to see.",
         "ja": "彼の激怒は見ていて恐ろしかった。",
-        "context": "fury"
+        "context": "学校"
       },
       {
         "en": "The fury of the storm destroyed buildings.",
         "ja": "嵐の猛威が建物を破壊した。",
-        "context": "fury"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -51275,17 +51275,17 @@
       {
         "en": "Gender equality is a goal for all societies.",
         "ja": "男女平等はすべての社会の目標だ。",
-        "context": "gender"
+        "context": "学校"
       },
       {
         "en": "The study focused on gender differences.",
         "ja": "その研究は性別の違いに焦点を当てた。",
-        "context": "gender"
+        "context": "日常"
       },
       {
         "en": "Gender roles are changing in modern times.",
         "ja": "性別の役割は現代において変化している。",
-        "context": "gender"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -51541,17 +51541,17 @@
       {
         "en": "Genetics explains inherited traits.",
         "ja": "遺伝学は遺伝的特徴を説明する。",
-        "context": "genetics"
+        "context": "自然"
       },
       {
         "en": "She studied genetics at university.",
         "ja": "彼女は大学で遺伝学を学んだ。",
-        "context": "genetics"
+        "context": "会話"
       },
       {
         "en": "Advances in genetics have saved lives.",
         "ja": "遺伝学の進歩が命を救った。",
-        "context": "genetics"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -51616,17 +51616,17 @@
       {
         "en": "Genocide is a crime against humanity.",
         "ja": "大量虐殺は人道に対する罪だ。",
-        "context": "genocide"
+        "context": "日常"
       },
       {
         "en": "The genocide shocked the world.",
         "ja": "大量虐殺は世界に衝撃を与えた。",
-        "context": "genocide"
+        "context": "文化"
       },
       {
         "en": "They worked to prevent genocide.",
         "ja": "彼らは大量虐殺を防ぐために努力した。",
-        "context": "genocide"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -51862,17 +51862,17 @@
       {
         "en": "She got rid of old clothes.",
         "ja": "彼女は古い服を処分した。",
-        "context": "get rid of"
+        "context": "日常"
       },
       {
         "en": "How can we get rid of this problem?",
         "ja": "この問題をどうやって取り除けますか？",
-        "context": "get rid of"
+        "context": "会話"
       },
       {
         "en": "He got rid of the pests.",
         "ja": "彼は害虫を駆除した。",
-        "context": "get rid of"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -53225,17 +53225,17 @@
       {
         "en": "Good governance leads to a stable society.",
         "ja": "良い統治は安定した社会につながる。",
-        "context": "governance"
+        "context": "学校"
       },
       {
         "en": "She works on issues of urban governance.",
         "ja": "彼女は都市統治の問題に取り組んでいる。",
-        "context": "governance"
+        "context": "日常"
       },
       {
         "en": "Corporate governance protects shareholders.",
         "ja": "コーポレートガバナンスは株主を守る。",
-        "context": "governance"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -53536,17 +53536,17 @@
       {
         "en": "The documentary contained graphic images of war.",
         "ja": "そのドキュメンタリーには戦争の生々しい映像が含まれていた。",
-        "context": "graphic"
+        "context": "日常"
       },
       {
         "en": "The report gave a graphic account of the accident.",
         "ja": "報告書は事故の生々しい記述を提供した。",
-        "context": "graphic"
+        "context": "会話"
       },
       {
         "en": "The graphic violence in the film shocked many viewers.",
         "ja": "映画の生々しい暴力シーンは多くの視聴者を驚かせた。",
-        "context": "graphic"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -53834,17 +53834,17 @@
       {
         "en": "She grieved over her loss.",
         "ja": "彼女は喪失を悲しんだ。",
-        "context": "grieve"
+        "context": "日常"
       },
       {
         "en": "The family grieved for months.",
         "ja": "家族は何ヶ月も悲しんだ。",
-        "context": "grieve"
+        "context": "会話"
       },
       {
         "en": "It grieves me to hear the news.",
         "ja": "その知らせを聞いて悲しい。",
-        "context": "grieve"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -54636,17 +54636,17 @@
       {
         "en": "Deforestation destroys the natural habitat of many animals.",
         "ja": "森林破壊は多くの動物の自然の生息地を破壊する。",
-        "context": "habitat"
+        "context": "自然"
       },
       {
         "en": "Coral reefs provide habitat for a diverse range of marine life.",
         "ja": "サンゴ礁は多様な海洋生物に生息地を提供する。",
-        "context": "habitat"
+        "context": "会話"
       },
       {
         "en": "The organization works to protect endangered species habitats.",
         "ja": "その組織は絶滅危惧種の生息地を保護するために活動している。",
-        "context": "habitat"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -54823,17 +54823,17 @@
       {
         "en": "The train halted at the station.",
         "ja": "列車は駅で止まった。",
-        "context": "halt"
+        "context": "日常"
       },
       {
         "en": "Production was halted due to a fault.",
         "ja": "不具合により生産が停止した。",
-        "context": "halt"
+        "context": "学校"
       },
       {
         "en": "She halted in her tracks.",
         "ja": "彼女はその場で立ち止まった。",
-        "context": "halt"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -56658,17 +56658,17 @@
       {
         "en": "The company has a strict hierarchy.",
         "ja": "会社には厳格な階層がある。",
-        "context": "hierarchy"
+        "context": "日常"
       },
       {
         "en": "In the hierarchy, she is at the top.",
         "ja": "階層の中で彼女は頂点にいる。",
-        "context": "hierarchy"
+        "context": "ビジネス"
       },
       {
         "en": "Social hierarchy affects opportunity.",
         "ja": "社会的階層は機会に影響する。",
-        "context": "hierarchy"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -56970,17 +56970,17 @@
       {
         "en": "Bad weather hindered our progress.",
         "ja": "悪天候が私たちの進行を妨げた。",
-        "context": "hinder"
+        "context": "日常"
       },
       {
         "en": "Lack of funds hindered the project.",
         "ja": "資金不足がプロジェクトを妨げた。",
-        "context": "hinder"
+        "context": "学校"
       },
       {
         "en": "Shyness can hinder communication.",
         "ja": "内気さはコミュニケーションを妨げることがある。",
-        "context": "hinder"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -57491,17 +57491,17 @@
       {
         "en": "The sun set below the horizon.",
         "ja": "太陽は地平線の下に沈んだ。",
-        "context": "horizon"
+        "context": "日常"
       },
       {
         "en": "New opportunities appeared on the horizon.",
         "ja": "地平線上に新しい機会が現れた。",
-        "context": "horizon"
+        "context": "会話"
       },
       {
         "en": "She gazed at the distant horizon.",
         "ja": "彼女は遠くの地平線を見つめた。",
-        "context": "horizon"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -58011,17 +58011,17 @@
       {
         "en": "We should treat all animals in a humane manner.",
         "ja": "すべての動物を人道的な方法で扱うべきだ。",
-        "context": "humane"
+        "context": "日常"
       },
       {
         "en": "The organization campaigns for humane working conditions.",
         "ja": "その組織は人道的な労働条件のために活動している。",
-        "context": "humane"
+        "context": "会話"
       },
       {
         "en": "A humane approach to punishment focuses on rehabilitation.",
         "ja": "人道的な刑罰のアプローチはリハビリテーションに焦点を当てる。",
-        "context": "humane"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -58115,17 +58115,17 @@
       {
         "en": "He was humiliated in front of everyone.",
         "ja": "彼は皆の前で恥をかかされた。",
-        "context": "humiliate"
+        "context": "日常"
       },
       {
         "en": "Don't humiliate others for fun.",
         "ja": "楽しみで他人を辱めてはいけない。",
-        "context": "humiliate"
+        "context": "会話"
       },
       {
         "en": "She felt humiliated by the comment.",
         "ja": "彼女はその発言に屈辱を感じた。",
-        "context": "humiliate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -58823,17 +58823,17 @@
       {
         "en": "Political ideology shapes many decisions.",
         "ja": "政治的イデオロギーは多くの決断を形作る。",
-        "context": "ideology"
+        "context": "学校"
       },
       {
         "en": "The ideology of the party changed over time.",
         "ja": "その党のイデオロギーは時間とともに変わった。",
-        "context": "ideology"
+        "context": "日常"
       },
       {
         "en": "People often follow the ideology they grew up with.",
         "ja": "人々はしばしば育った環境のイデオロギーに従う。",
-        "context": "ideology"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -60578,17 +60578,17 @@
       {
         "en": "She is inclined to agree.",
         "ja": "彼女は同意する傾向がある。",
-        "context": "incline"
+        "context": "日常"
       },
       {
         "en": "The road inclines steeply.",
         "ja": "道は急に傾斜している。",
-        "context": "incline"
+        "context": "学校"
       },
       {
         "en": "He inclined his head in greeting.",
         "ja": "彼は挨拶として頭を傾けた。",
-        "context": "incline"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -61301,17 +61301,17 @@
       {
         "en": "Stress can induce illness.",
         "ja": "ストレスは病気を引き起こすことがある。",
-        "context": "induce"
+        "context": "日常"
       },
       {
         "en": "The medicine induced sleep.",
         "ja": "薬は眠気を誘った。",
-        "context": "induce"
+        "context": "学校"
       },
       {
         "en": "Nothing could induce him to stay.",
         "ja": "何も彼を留まらせることができなかった。",
-        "context": "induce"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -61342,17 +61342,17 @@
       {
         "en": "The industrial revolution transformed economies worldwide.",
         "ja": "産業革命は世界中の経済を変革した。",
-        "context": "industrial"
+        "context": "金融"
       },
       {
         "en": "The city's industrial zone is located near the river.",
         "ja": "その都市の産業地帯は川の近くにある。",
-        "context": "industrial"
+        "context": "ビジネス"
       },
       {
         "en": "Industrial pollution has damaged the local ecosystem.",
         "ja": "産業公害は地域の生態系を損なった。",
-        "context": "industrial"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -62064,17 +62064,17 @@
       {
         "en": "She inherited the family business.",
         "ja": "彼女は家業を引き継いだ。",
-        "context": "inherit"
+        "context": "日常"
       },
       {
         "en": "He inherited his father's talent.",
         "ja": "彼は父親の才能を受け継いだ。",
-        "context": "inherit"
+        "context": "家庭"
       },
       {
         "en": "They inherited a large sum of money.",
         "ja": "彼らは大金を相続した。",
-        "context": "inherit"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -62147,17 +62147,17 @@
       {
         "en": "She initiated the peace talks.",
         "ja": "彼女は和平交渉を開始した。",
-        "context": "initiate"
+        "context": "日常"
       },
       {
         "en": "He initiated a new program.",
         "ja": "彼は新しいプログラムを始めた。",
-        "context": "initiate"
+        "context": "ビジネス"
       },
       {
         "en": "The president initiated the reform.",
         "ja": "大統領は改革を始めた。",
-        "context": "initiate"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -62281,17 +62281,17 @@
       {
         "en": "She could not ignore the injustice she saw.",
         "ja": "彼女は目の前の不正義を無視できなかった。",
-        "context": "injustice"
+        "context": "学校"
       },
       {
         "en": "Fighting injustice is everyone's responsibility.",
         "ja": "不正義と戦うことは全員の責任だ。",
-        "context": "injustice"
+        "context": "日常"
       },
       {
         "en": "History is full of examples of injustice.",
         "ja": "歴史は不公正の例に満ちている。",
-        "context": "injustice"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -62397,17 +62397,17 @@
       {
         "en": "Companies must innovate to survive.",
         "ja": "企業は生き残るために革新しなければならない。",
-        "context": "innovate"
+        "context": "日常"
       },
       {
         "en": "She innovated new teaching methods.",
         "ja": "彼女は新しい教授法を革新した。",
-        "context": "innovate"
+        "context": "ビジネス"
       },
       {
         "en": "The team innovated constantly.",
         "ja": "チームは常に革新を続けた。",
-        "context": "innovate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -62483,17 +62483,17 @@
       {
         "en": "She inquired about the job opening.",
         "ja": "彼女は求人について問い合わせた。",
-        "context": "inquire"
+        "context": "日常"
       },
       {
         "en": "He inquired into the matter.",
         "ja": "彼はその件を調査した。",
-        "context": "inquire"
+        "context": "ビジネス"
       },
       {
         "en": "Please inquire at the front desk.",
         "ja": "フロントでお尋ねください。",
-        "context": "inquire"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -62995,17 +62995,17 @@
       {
         "en": "He is known for his personal integrity.",
         "ja": "彼は個人的な誠実さで知られている。",
-        "context": "integrity"
+        "context": "学校"
       },
       {
         "en": "Integrity is essential in public service.",
         "ja": "誠実さは公共サービスで不可欠だ。",
-        "context": "integrity"
+        "context": "日常"
       },
       {
         "en": "She acted with integrity in every case.",
         "ja": "彼女はすべての場合に誠実に行動した。",
-        "context": "integrity"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -63340,17 +63340,17 @@
       {
         "en": "Don't interfere in their argument.",
         "ja": "彼らの口論に干渉しないで。",
-        "context": "interfere"
+        "context": "日常"
       },
       {
         "en": "The noise interfered with my work.",
         "ja": "騒音が仕事の邪魔をした。",
-        "context": "interfere"
+        "context": "会話"
       },
       {
         "en": "He always interferes in others business.",
         "ja": "彼はいつも他人のことに干渉する。",
-        "context": "interfere"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -65780,17 +65780,17 @@
       {
         "en": "Manual labor is physically demanding work.",
         "ja": "肉体労働は体力を要する作業だ。",
-        "context": "labor"
+        "context": "学校"
       },
       {
         "en": "Labor unions protect workers rights.",
         "ja": "労働組合は労働者の権利を守る。",
-        "context": "labor"
+        "context": "ビジネス"
       },
       {
         "en": "Child labor is banned in most countries.",
         "ja": "児童労働はほとんどの国で禁止されている。",
-        "context": "labor"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -66136,17 +66136,17 @@
       {
         "en": "The Eiffel Tower is one of Paris's most famous landmarks.",
         "ja": "エッフェル塔はパリで最も有名なランドマークの一つだ。",
-        "context": "landmark"
+        "context": "日常"
       },
       {
         "en": "The court case was a landmark in the history of civil rights.",
         "ja": "その裁判事件は公民権の歴史における画期的な出来事だった。",
-        "context": "landmark"
+        "context": "会話"
       },
       {
         "en": "The new bridge became a landmark of modern architecture.",
         "ja": "新しい橋は現代建築のランドマークとなった。",
-        "context": "landmark"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -67123,12 +67123,12 @@
       {
         "en": "Every citizen has the legal right to vote in elections.",
         "ja": "すべての市民には選挙で投票する法的権利があります。",
-        "context": "legal"
+        "context": "日常"
       },
       {
         "en": "The company threatened to take legal action against them.",
         "ja": "その会社は彼らに対して法的措置を取ると脅しました。",
-        "context": "legal"
+        "context": "ビジネス"
       },
       {
         "en": "Understanding the legal system is important for every citizen.",
@@ -67439,17 +67439,17 @@
       {
         "en": "She served as a liaison between the two organizations.",
         "ja": "彼女は2つの組織間の連絡担当として働いた。",
-        "context": "liaison"
+        "context": "日常"
       },
       {
         "en": "The officer acted as a liaison between the army and the government.",
         "ja": "将校は軍と政府の間の連絡担当として行動した。",
-        "context": "liaison"
+        "context": "会話"
       },
       {
         "en": "Effective liaison is crucial for coordinating large projects.",
         "ja": "効果的な連絡は大きなプロジェクトを調整するために重要だ。",
-        "context": "liaison"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -67802,17 +67802,17 @@
       {
         "en": "Everyone has their own limitations to work with.",
         "ja": "誰もが対処すべき自分自身の限界を持っている。",
-        "context": "limitation"
+        "context": "学校"
       },
       {
         "en": "The project has some budget limitations.",
         "ja": "プロジェクトにはいくつかの予算制限がある。",
-        "context": "limitation"
+        "context": "日常"
       },
       {
         "en": "Understanding your limitations is important.",
         "ja": "自分の限界を理解することは重要だ。",
-        "context": "limitation"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -68526,17 +68526,17 @@
       {
         "en": "The energy company spent millions lobbying against the new law.",
         "ja": "エネルギー会社は新法に反対するロビー活動に何百万ドルも費やした。",
-        "context": "lobby"
+        "context": "日常"
       },
       {
         "en": "Powerful lobbies often influence government policy.",
         "ja": "強力なロビー団体はしばしば政府の政策に影響を与える。",
-        "context": "lobby"
+        "context": "旅行"
       },
       {
         "en": "The hotel lobby was decorated with flowers and artwork.",
         "ja": "ホテルのロビーは花と芸術作品で飾られていた。",
-        "context": "lobby"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -68910,17 +68910,17 @@
       {
         "en": "Police looked into the matter.",
         "ja": "警察は件を調査した。",
-        "context": "look into"
+        "context": "日常"
       },
       {
         "en": "She looked into the complaint.",
         "ja": "彼女は苦情を調査した。",
-        "context": "look into"
+        "context": "会話"
       },
       {
         "en": "We should look into this problem.",
         "ja": "この問題を調べるべきだ。",
-        "context": "look into"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -69924,17 +69924,17 @@
       {
         "en": "She made up for lost time.",
         "ja": "彼女は遅れを取り戻した。",
-        "context": "make up for"
+        "context": "日常"
       },
       {
         "en": "He made up for his mistake.",
         "ja": "彼は自分のミスを取り返した。",
-        "context": "make up for"
+        "context": "会話"
       },
       {
         "en": "Extra work made up for the absence.",
         "ja": "追加の仕事が欠席を補った。",
-        "context": "make up for"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -70214,17 +70214,17 @@
       {
         "en": "He manipulated the data to hide the truth.",
         "ja": "彼は真実を隠すためにデータを操作した。",
-        "context": "manipulate"
+        "context": "日常"
       },
       {
         "en": "She manipulated him into agreeing.",
         "ja": "彼女は彼を同意させるよう操った。",
-        "context": "manipulate"
+        "context": "ビジネス"
       },
       {
         "en": "Politicians sometimes manipulate public opinion.",
         "ja": "政治家は時に世論を操作する。",
-        "context": "manipulate"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -72179,17 +72179,17 @@
       {
         "en": "Birds migrate south in winter.",
         "ja": "鳥は冬に南へ移動する。",
-        "context": "migrate"
+        "context": "日常"
       },
       {
         "en": "Many people migrated to cities.",
         "ja": "多くの人が都市に移住した。",
-        "context": "migrate"
+        "context": "技術"
       },
       {
         "en": "The data was migrated to a new server.",
         "ja": "データは新しいサーバーに移行された。",
-        "context": "migrate"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -72929,17 +72929,17 @@
       {
         "en": "The government mobilized troops.",
         "ja": "政府は軍隊を動員した。",
-        "context": "mobilize"
+        "context": "日常"
       },
       {
         "en": "They mobilized volunteers for cleanup.",
         "ja": "彼らは清掃活動にボランティアを動員した。",
-        "context": "mobilize"
+        "context": "ビジネス"
       },
       {
         "en": "Resources were mobilized quickly.",
         "ja": "資源は素早く動員された。",
-        "context": "mobilize"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -73220,17 +73220,17 @@
       {
         "en": "The campaign gained momentum rapidly.",
         "ja": "キャンペーンは急速に勢いを増した。",
-        "context": "momentum"
+        "context": "学校"
       },
       {
         "en": "Keep the momentum going after success.",
         "ja": "成功後も勢いを維持し続けよう。",
-        "context": "momentum"
+        "context": "日常"
       },
       {
         "en": "Once you lose momentum, it's hard to restart.",
         "ja": "一度勢いを失うと再起動が難しい。",
-        "context": "momentum"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -73346,17 +73346,17 @@
       {
         "en": "One firm monopolizes the market.",
         "ja": "一社が市場を独占している。",
-        "context": "monopolize"
+        "context": "日常"
       },
       {
         "en": "He monopolized the conversation.",
         "ja": "彼は会話を独占した。",
-        "context": "monopolize"
+        "context": "ビジネス"
       },
       {
         "en": "The company monopolized the industry.",
         "ja": "その会社は業界を独占した。",
-        "context": "monopolize"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -73556,17 +73556,17 @@
       {
         "en": "Winning the first match boosted the team's morale.",
         "ja": "最初の試合に勝つことでチームの士気が高まった。",
-        "context": "morale"
+        "context": "日常"
       },
       {
         "en": "Low morale among employees led to a drop in productivity.",
         "ja": "従業員の低い士気は生産性の低下につながった。",
-        "context": "morale"
+        "context": "ビジネス"
       },
       {
         "en": "The commander worked hard to maintain morale among troops.",
         "ja": "司令官は部隊の士気を維持するために懸命に努力した。",
-        "context": "morale"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -76629,17 +76629,17 @@
       {
         "en": "Good food nourishes the body.",
         "ja": "良い食べ物は体を養う。",
-        "context": "nourish"
+        "context": "日常"
       },
       {
         "en": "She nourished her children well.",
         "ja": "彼女は子どもたちをよく養った。",
-        "context": "nourish"
+        "context": "健康"
       },
       {
         "en": "Books nourish the mind.",
         "ja": "本は心を育む。",
-        "context": "nourish"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -76743,17 +76743,17 @@
       {
         "en": "Parents nurture their children.",
         "ja": "親は子どもを育てる。",
-        "context": "nurture"
+        "context": "日常"
       },
       {
         "en": "She nurtured her talent for years.",
         "ja": "彼女は何年もかけて才能を育てた。",
-        "context": "nurture"
+        "context": "会話"
       },
       {
         "en": "The school nurtures creativity.",
         "ja": "学校は創造性を育む。",
-        "context": "nurture"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -77071,17 +77071,17 @@
       {
         "en": "The law obliges companies to pay taxes.",
         "ja": "法律は会社に納税を義務付ける。",
-        "context": "oblige"
+        "context": "日常"
       },
       {
         "en": "I am obliged to attend the meeting.",
         "ja": "私はその会議に出席する義務がある。",
-        "context": "oblige"
+        "context": "会話"
       },
       {
         "en": "She obliged him with a smile.",
         "ja": "彼女は笑顔で彼の頼みに応えた。",
-        "context": "oblige"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -77444,17 +77444,17 @@
       {
         "en": "The army occupied the city.",
         "ja": "軍は町を占領した。",
-        "context": "occupy"
+        "context": "日常"
       },
       {
         "en": "She occupied herself with reading.",
         "ja": "彼女は読書をして時間を過ごした。",
-        "context": "occupy"
+        "context": "ビジネス"
       },
       {
         "en": "The desk occupies too much space.",
         "ja": "そのデスクは場所を取りすぎる。",
-        "context": "occupy"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -77608,17 +77608,17 @@
       {
         "en": "His remark offended everyone.",
         "ja": "彼の発言はみんなを怒らせた。",
-        "context": "offend"
+        "context": "日常"
       },
       {
         "en": "She was offended by the joke.",
         "ja": "彼女はそのジョークに傷ついた。",
-        "context": "offend"
+        "context": "会話"
       },
       {
         "en": "He offended against the law.",
         "ja": "彼は法律に違反した。",
-        "context": "offend"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -77957,17 +77957,17 @@
       {
         "en": "She omitted the details.",
         "ja": "彼女は詳細を省いた。",
-        "context": "omit"
+        "context": "日常"
       },
       {
         "en": "Don't omit your name from the form.",
         "ja": "フォームから名前を省かないでください。",
-        "context": "omit"
+        "context": "ビジネス"
       },
       {
         "en": "Several chapters were omitted.",
         "ja": "いくつかの章が省略された。",
-        "context": "omit"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -78452,17 +78452,17 @@
       {
         "en": "She opposed the new policy.",
         "ja": "彼女は新しい政策に反対した。",
-        "context": "oppose"
+        "context": "日常"
       },
       {
         "en": "He opposed the decision firmly.",
         "ja": "彼はその決定に断固反対した。",
-        "context": "oppose"
+        "context": "会話"
       },
       {
         "en": "Many citizens opposed the plan.",
         "ja": "多くの市民が計画に反対した。",
-        "context": "oppose"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -78495,17 +78495,17 @@
       {
         "en": "The government oppressed minorities.",
         "ja": "政府は少数派を抑圧した。",
-        "context": "oppress"
+        "context": "日常"
       },
       {
         "en": "People should not be oppressed.",
         "ja": "人々は抑圧されるべきではない。",
-        "context": "oppress"
+        "context": "文化"
       },
       {
         "en": "The regime oppressed its citizens.",
         "ja": "政権は市民を弾圧した。",
-        "context": "oppress"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -78975,17 +78975,17 @@
       {
         "en": "Jazz originated in New Orleans.",
         "ja": "ジャズはニューオーリンズで生まれた。",
-        "context": "originate"
+        "context": "日常"
       },
       {
         "en": "The idea originated from a dream.",
         "ja": "そのアイデアは夢から生まれた。",
-        "context": "originate"
+        "context": "文化"
       },
       {
         "en": "Where did this tradition originate?",
         "ja": "この伝統はどこで生まれたのですか？",
-        "context": "originate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -79710,17 +79710,17 @@
       {
         "en": "He overlooked an important detail.",
         "ja": "彼は重要な詳細を見落とした。",
-        "context": "overlook"
+        "context": "日常"
       },
       {
         "en": "She overlooked his faults.",
         "ja": "彼女は彼の欠点を見て見ぬふりをした。",
-        "context": "overlook"
+        "context": "ビジネス"
       },
       {
         "en": "The window overlooks the garden.",
         "ja": "その窓は庭を見下ろしている。",
-        "context": "overlook"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -79906,17 +79906,17 @@
       {
         "en": "The flood overwhelmed the village.",
         "ja": "洪水は村を飲み込んだ。",
-        "context": "overwhelm"
+        "context": "日常"
       },
       {
         "en": "He was overwhelmed by the workload.",
         "ja": "彼は仕事量に圧倒された。",
-        "context": "overwhelm"
+        "context": "感情"
       },
       {
         "en": "The team was overwhelmed with requests.",
         "ja": "チームはリクエストに殺到された。",
-        "context": "overwhelm"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -80669,17 +80669,17 @@
       {
         "en": "The organization distributed pamphlets about health care.",
         "ja": "組織は医療に関するパンフレットを配布した。",
-        "context": "pamphlet"
+        "context": "日常"
       },
       {
         "en": "A pamphlet outlining the museum's history was given to visitors.",
         "ja": "博物館の歴史を概説したパンフレットが訪問者に手渡された。",
-        "context": "pamphlet"
+        "context": "ビジネス"
       },
       {
         "en": "The political party published a pamphlet attacking its rivals.",
         "ja": "政党はライバルを攻撃するパンフレットを出版した。",
-        "context": "pamphlet"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -82491,17 +82491,17 @@
       {
         "en": "The bullet penetrated the wall.",
         "ja": "弾丸は壁を貫通した。",
-        "context": "penetrate"
+        "context": "日常"
       },
       {
         "en": "Light penetrated through the curtain.",
         "ja": "光がカーテン越しに差し込んだ。",
-        "context": "penetrate"
+        "context": "ビジネス"
       },
       {
         "en": "The cold penetrated his coat.",
         "ja": "寒さがコートを突き抜けた。",
-        "context": "penetrate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -82568,17 +82568,17 @@
       {
         "en": "She perceived a change in his mood.",
         "ja": "彼女は彼の気分の変化に気づいた。",
-        "context": "perceive"
+        "context": "日常"
       },
       {
         "en": "How do you perceive the situation?",
         "ja": "あなたはその状況をどう見ていますか？",
-        "context": "perceive"
+        "context": "会話"
       },
       {
         "en": "He perceived a faint smell of gas.",
         "ja": "彼はかすかなガスの匂いを感じた。",
-        "context": "perceive"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -82870,17 +82870,17 @@
       {
         "en": "She persisted despite the difficulties.",
         "ja": "彼女は困難にも関わらず続けた。",
-        "context": "persist"
+        "context": "日常"
       },
       {
         "en": "The problem persisted for weeks.",
         "ja": "問題は何週間も続いた。",
-        "context": "persist"
+        "context": "会話"
       },
       {
         "en": "If symptoms persist, see a doctor.",
         "ja": "症状が続く場合は医師に相談してください。",
-        "context": "persist"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -83002,17 +83002,17 @@
       {
         "en": "Citizens petitioned the government.",
         "ja": "市民は政府に請願した。",
-        "context": "petition"
+        "context": "日常"
       },
       {
         "en": "She petitioned for a retrial.",
         "ja": "彼女は再審を申し立てた。",
-        "context": "petition"
+        "context": "会話"
       },
       {
         "en": "They petitioned against the new law.",
         "ja": "彼らは新しい法律に反対する請願をした。",
-        "context": "petition"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -83146,17 +83146,17 @@
       {
         "en": "Climate change is a global phenomenon.",
         "ja": "気候変動はグローバルな現象だ。",
-        "context": "phenomenon"
+        "context": "学校"
       },
       {
         "en": "The aurora is a natural light phenomenon.",
         "ja": "オーロラは自然の光の現象だ。",
-        "context": "phenomenon"
+        "context": "自然"
       },
       {
         "en": "Social media is a modern cultural phenomenon.",
         "ja": "ソーシャルメディアは現代の文化的現象だ。",
-        "context": "phenomenon"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -84302,17 +84302,17 @@
       {
         "en": "She pleaded for mercy.",
         "ja": "彼女は慈悲を求めた。",
-        "context": "plead"
+        "context": "日常"
       },
       {
         "en": "He pleaded guilty in court.",
         "ja": "彼は法廷で有罪を認めた。",
-        "context": "plead"
+        "context": "会話"
       },
       {
         "en": "She pleaded with him to stay.",
         "ja": "彼女は彼に留まるよう懇願した。",
-        "context": "plead"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -84386,17 +84386,17 @@
       {
         "en": "He pledged to support the cause.",
         "ja": "彼はその大義を支持することを誓った。",
-        "context": "pledge"
+        "context": "日常"
       },
       {
         "en": "She pledged her loyalty.",
         "ja": "彼女は忠誠を誓った。",
-        "context": "pledge"
+        "context": "ビジネス"
       },
       {
         "en": "The students pledged allegiance.",
         "ja": "生徒たちは忠誠を誓った。",
-        "context": "pledge"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -85412,17 +85412,17 @@
       {
         "en": "The film portrays life during the war.",
         "ja": "その映画は戦時中の生活を描いている。",
-        "context": "portray"
+        "context": "日常"
       },
       {
         "en": "She portrayed a strong character.",
         "ja": "彼女は強い人物を演じた。",
-        "context": "portray"
+        "context": "学校"
       },
       {
         "en": "The book portrays him as a villain.",
         "ja": "本は彼を悪役として描いている。",
-        "context": "portray"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -86252,17 +86252,17 @@
       {
         "en": "A warm-up should precede exercise.",
         "ja": "運動前にウォームアップをすべきだ。",
-        "context": "precede"
+        "context": "日常"
       },
       {
         "en": "This era preceded modern times.",
         "ja": "この時代は現代に先行した。",
-        "context": "precede"
+        "context": "会話"
       },
       {
         "en": "Thunder preceded the rain.",
         "ja": "雷は雨の前に鳴った。",
-        "context": "precede"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -86499,17 +86499,17 @@
       {
         "en": "Prejudice can harm innocent people unfairly.",
         "ja": "偏見は無実の人を不当に傷つけることがある。",
-        "context": "prejudice"
+        "context": "学校"
       },
       {
         "en": "She faced prejudice because of her background.",
         "ja": "彼女は出身のせいで偏見に直面した。",
-        "context": "prejudice"
+        "context": "日常"
       },
       {
         "en": "Fighting prejudice requires education and empathy.",
         "ja": "偏見と戦うには教育と共感が必要だ。",
-        "context": "prejudice"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -86923,17 +86923,17 @@
       {
         "en": "Good sense prevailed in the end.",
         "ja": "結局、良識が勝った。",
-        "context": "prevail"
+        "context": "日常"
       },
       {
         "en": "Justice will prevail.",
         "ja": "正義は勝利する。",
-        "context": "prevail"
+        "context": "ビジネス"
       },
       {
         "en": "Calm prevailed after the storm.",
         "ja": "嵐の後は静けさが続いた。",
-        "context": "prevail"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -87844,17 +87844,17 @@
       {
         "en": "The president proclaimed a holiday.",
         "ja": "大統領は祝日を宣言した。",
-        "context": "proclaim"
+        "context": "日常"
       },
       {
         "en": "He proclaimed his innocence.",
         "ja": "彼は無罪を宣言した。",
-        "context": "proclaim"
+        "context": "会話"
       },
       {
         "en": "Independence was proclaimed in 1776.",
         "ja": "独立は1776年に宣言された。",
-        "context": "proclaim"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -88527,17 +88527,17 @@
       {
         "en": "The news prompted him to act.",
         "ja": "そのニュースが彼を行動に駆り立てた。",
-        "context": "prompt"
+        "context": "日常"
       },
       {
         "en": "Her question prompted a discussion.",
         "ja": "彼女の質問が議論を促した。",
-        "context": "prompt"
+        "context": "会話"
       },
       {
         "en": "What prompted you to change jobs?",
         "ja": "転職のきっかけは何でしたか？",
-        "context": "prompt"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -88742,17 +88742,17 @@
       {
         "en": "She submitted a detailed proposal for the project.",
         "ja": "彼女はプロジェクトの詳細な提案を提出した。",
-        "context": "proposal"
+        "context": "学校"
       },
       {
         "en": "The committee reviewed the new proposal.",
         "ja": "委員会は新しい提案を審査した。",
-        "context": "proposal"
+        "context": "ビジネス"
       },
       {
         "en": "He accepted her marriage proposal with joy.",
         "ja": "彼は喜んで彼女の結婚の申し込みを受け入れた。",
-        "context": "proposal"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -88879,17 +88879,17 @@
       {
         "en": "The prospects for the company look bright.",
         "ja": "会社の見通しは明るく見える。",
-        "context": "prospect"
+        "context": "学校"
       },
       {
         "en": "She was excited about the prospect of travel.",
         "ja": "彼女は旅行の見込みに興奮していた。",
-        "context": "prospect"
+        "context": "ビジネス"
       },
       {
         "en": "Good education improves your career prospects.",
         "ja": "良い教育はキャリアの見通しを改善する。",
-        "context": "prospect"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -89293,17 +89293,17 @@
       {
         "en": "His comment provoked anger.",
         "ja": "彼の発言は怒りを引き起こした。",
-        "context": "provoke"
+        "context": "日常"
       },
       {
         "en": "She provoked him into a fight.",
         "ja": "彼女は彼を挑発してけんかになった。",
-        "context": "provoke"
+        "context": "会話"
       },
       {
         "en": "The speech provoked strong reaction.",
         "ja": "そのスピーチは強い反応を引き起こした。",
-        "context": "provoke"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -90309,17 +90309,17 @@
       {
         "en": "Racism is a serious problem in many societies.",
         "ja": "人種差別は多くの社会で深刻な問題だ。",
-        "context": "racism"
+        "context": "学校"
       },
       {
         "en": "She spoke out against racism at school.",
         "ja": "彼女は学校での人種差別に声を上げた。",
-        "context": "racism"
+        "context": "文化"
       },
       {
         "en": "Racism causes lasting harm to communities.",
         "ja": "人種差別はコミュニティに永続的な害を与える。",
-        "context": "racism"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -92398,17 +92398,17 @@
       {
         "en": "The company recruited new staff.",
         "ja": "会社は新しいスタッフを採用した。",
-        "context": "recruit"
+        "context": "日常"
       },
       {
         "en": "He was recruited from a rival firm.",
         "ja": "彼はライバル会社からヘッドハントされた。",
-        "context": "recruit"
+        "context": "ビジネス"
       },
       {
         "en": "They recruited volunteers for the event.",
         "ja": "彼らはイベントのためにボランティアを募った。",
-        "context": "recruit"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -92897,17 +92897,17 @@
       {
         "en": "The country welcomed thousands of refugees.",
         "ja": "その国は何千人もの難民を歓迎した。",
-        "context": "refugee"
+        "context": "学校"
       },
       {
         "en": "Refugee children need access to education.",
         "ja": "難民の子供には教育へのアクセスが必要だ。",
-        "context": "refugee"
+        "context": "日常"
       },
       {
         "en": "She worked at a refugee camp for two years.",
         "ja": "彼女は2年間難民キャンプで働いた。",
-        "context": "refugee"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -93241,17 +93241,17 @@
       {
         "en": "The government regulates the food industry.",
         "ja": "政府は食品産業を規制している。",
-        "context": "regulate"
+        "context": "学校"
       },
       {
         "en": "Laws regulate how businesses operate.",
         "ja": "法律は企業の運営方法を規制する。",
-        "context": "regulate"
+        "context": "日常"
       },
       {
         "en": "We need to regulate social media better.",
         "ja": "ソーシャルメディアをもっとうまく規制する必要がある。",
-        "context": "regulate"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -93345,17 +93345,17 @@
       {
         "en": "The lesson reinforced her understanding.",
         "ja": "そのレッスンは彼女の理解を強化した。",
-        "context": "reinforce"
+        "context": "日常"
       },
       {
         "en": "Steel beams reinforce the building.",
         "ja": "鉄骨が建物を補強している。",
-        "context": "reinforce"
+        "context": "ビジネス"
       },
       {
         "en": "Praise reinforces good behavior.",
         "ja": "褒めることは良い行動を強化する。",
-        "context": "reinforce"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -95137,17 +95137,17 @@
       {
         "en": "There was strong resistance to the changes.",
         "ja": "変化への強い抵抗があった。",
-        "context": "resistance"
+        "context": "学校"
       },
       {
         "en": "The bacteria developed resistance to antibiotics.",
         "ja": "バクテリアは抗生物質への耐性を発達させた。",
-        "context": "resistance"
+        "context": "会話"
       },
       {
         "en": "She showed great resistance under pressure.",
         "ja": "彼女はプレッシャーの下で強い抵抗を示した。",
-        "context": "resistance"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -95226,17 +95226,17 @@
       {
         "en": "A quick resolution to the conflict was needed.",
         "ja": "紛争の迅速な解決が必要だった。",
-        "context": "resolution"
+        "context": "学校"
       },
       {
         "en": "She made a New Year resolution to exercise.",
         "ja": "彼女は運動するという新年の決意をした。",
-        "context": "resolution"
+        "context": "会話"
       },
       {
         "en": "The UN passed a resolution on climate change.",
         "ja": "国連は気候変動に関する決議を可決した。",
-        "context": "resolution"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -95272,17 +95272,17 @@
       {
         "en": "He resorted to lying.",
         "ja": "彼は嘘をつくことに頼った。",
-        "context": "resort"
+        "context": "日常"
       },
       {
         "en": "They resorted to force.",
         "ja": "彼らは力に訴えた。",
-        "context": "resort"
+        "context": "会話"
       },
       {
         "en": "Do not resort to violence.",
         "ja": "暴力に訴えてはいけない。",
-        "context": "resort"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -95607,17 +95607,17 @@
       {
         "en": "She restrained her anger.",
         "ja": "彼女は怒りを抑えた。",
-        "context": "restrain"
+        "context": "日常"
       },
       {
         "en": "The police restrained the crowd.",
         "ja": "警察は群衆を抑えた。",
-        "context": "restrain"
+        "context": "ビジネス"
       },
       {
         "en": "He restrained himself from speaking.",
         "ja": "彼は発言を自制した。",
-        "context": "restrain"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -95700,17 +95700,17 @@
       {
         "en": "The accident resulted in injuries.",
         "ja": "事故は怪我をもたらした。",
-        "context": "result in"
+        "context": "日常"
       },
       {
         "en": "Hard work results in success.",
         "ja": "努力は成功をもたらす。",
-        "context": "result in"
+        "context": "会話"
       },
       {
         "en": "The storm resulted in flooding.",
         "ja": "嵐が洪水をもたらした。",
-        "context": "result in"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -95733,17 +95733,17 @@
       {
         "en": "She retained her title for three years.",
         "ja": "彼女は3年間タイトルを保持した。",
-        "context": "retain"
+        "context": "学校"
       },
       {
         "en": "The lawyer retained the documents.",
         "ja": "弁護士は書類を保管した。",
-        "context": "retain"
+        "context": "日常"
       },
       {
         "en": "He retained useful information.",
         "ja": "彼は有用な情報を覚えていた。",
-        "context": "retain"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -95828,17 +95828,17 @@
       {
         "en": "She retrieved her bag from lost and found.",
         "ja": "彼女は遺失物取扱所からバッグを取り戻した。",
-        "context": "retrieve"
+        "context": "日常"
       },
       {
         "en": "The dog retrieved the ball.",
         "ja": "犬はボールを取ってきた。",
-        "context": "retrieve"
+        "context": "技術"
       },
       {
         "en": "The deleted file was retrieved.",
         "ja": "削除されたファイルが復元された。",
-        "context": "retrieve"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -98100,17 +98100,17 @@
       {
         "en": "The UN imposed economic sanctions on the country.",
         "ja": "国連はその国に経済制裁を課した。",
-        "context": "sanction"
+        "context": "日常"
       },
       {
         "en": "Sanctions are often used as a diplomatic tool.",
         "ja": "制裁はしばしば外交的ツールとして使われる。",
-        "context": "sanction"
+        "context": "会話"
       },
       {
         "en": "The new sanctions targeted the oil and gas sector.",
         "ja": "新しい制裁は石油・ガスセクターを標的にした。",
-        "context": "sanction"
+        "context": "金融"
       }
     ],
     "categories": [
@@ -98454,17 +98454,17 @@
       {
         "en": "The wind scattered the leaves.",
         "ja": "風が葉を散らした。",
-        "context": "scatter"
+        "context": "日常"
       },
       {
         "en": "People scattered after the alarm.",
         "ja": "警報の後、人々は散り散りになった。",
-        "context": "scatter"
+        "context": "自然"
       },
       {
         "en": "Seeds were scattered across the field.",
         "ja": "種が野原に撒かれた。",
-        "context": "scatter"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -99318,17 +99318,17 @@
       {
         "en": "He seized the opportunity.",
         "ja": "彼はチャンスをつかんだ。",
-        "context": "seize"
+        "context": "日常"
       },
       {
         "en": "Police seized the stolen goods.",
         "ja": "警察は盗品を押収した。",
-        "context": "seize"
+        "context": "会話"
       },
       {
         "en": "She seized his hand.",
         "ja": "彼女は彼の手をつかんだ。",
-        "context": "seize"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -103066,17 +103066,17 @@
       {
         "en": "Analysts speculate on future prices.",
         "ja": "アナリストは将来の価格を推測する。",
-        "context": "speculate"
+        "context": "日常"
       },
       {
         "en": "He speculated that she was right.",
         "ja": "彼は彼女が正しいと推測した。",
-        "context": "speculate"
+        "context": "金融"
       },
       {
         "en": "People speculated about the cause.",
         "ja": "人々は原因を推測した。",
-        "context": "speculate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -103992,17 +103992,17 @@
       {
         "en": "Don't judge people based on stereotypes.",
         "ja": "固定観念に基づいて人を判断してはいけない。",
-        "context": "stereotype"
+        "context": "学校"
       },
       {
         "en": "She challenged the stereotype of a female scientist.",
         "ja": "彼女は女性科学者への固定観念に挑戦した。",
-        "context": "stereotype"
+        "context": "日常"
       },
       {
         "en": "Stereotypes can harm how people see themselves.",
         "ja": "固定観念は人々の自己認識を傷つけることがある。",
-        "context": "stereotype"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -104047,17 +104047,17 @@
       {
         "en": "Exercise stimulates the brain.",
         "ja": "運動は脳を刺激する。",
-        "context": "stimulate"
+        "context": "日常"
       },
       {
         "en": "The policy stimulated economic growth.",
         "ja": "その政策は経済成長を促した。",
-        "context": "stimulate"
+        "context": "ビジネス"
       },
       {
         "en": "Music stimulates creativity.",
         "ja": "音楽は創造性を刺激する。",
-        "context": "stimulate"
+        "context": "健康"
       }
     ],
     "categories": [
@@ -105376,17 +105376,17 @@
       {
         "en": "The government suppressed the protest.",
         "ja": "政府は抗議を弾圧した。",
-        "context": "suppress"
+        "context": "日常"
       },
       {
         "en": "She suppressed a laugh.",
         "ja": "彼女は笑いをこらえた。",
-        "context": "suppress"
+        "context": "健康"
       },
       {
         "en": "The drug suppresses pain.",
         "ja": "薬は痛みを抑える。",
-        "context": "suppress"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -105485,17 +105485,17 @@
       {
         "en": "The enemy surrendered after the battle.",
         "ja": "敵は戦闘の後に降伏した。",
-        "context": "surrender"
+        "context": "日常"
       },
       {
         "en": "She surrendered her passport at the border.",
         "ja": "彼女は国境でパスポートを提出した。",
-        "context": "surrender"
+        "context": "会話"
       },
       {
         "en": "He surrendered his pride for love.",
         "ja": "彼は愛のためにプライドを捨てた。",
-        "context": "surrender"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -105729,17 +105729,17 @@
       {
         "en": "The game was suspended due to rain.",
         "ja": "試合は雨のために中断された。",
-        "context": "suspend"
+        "context": "日常"
       },
       {
         "en": "He was suspended from school.",
         "ja": "彼は学校を停学になった。",
-        "context": "suspend"
+        "context": "ビジネス"
       },
       {
         "en": "The license was suspended temporarily.",
         "ja": "免許証は一時停止された。",
-        "context": "suspend"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -105963,17 +105963,17 @@
       {
         "en": "They tackled the problem head-on.",
         "ja": "彼らは問題に正面から取り組んだ。",
-        "context": "tackle"
+        "context": "学校"
       },
       {
         "en": "She tackled the homework right away.",
         "ja": "彼女はすぐに宿題に取り組んだ。",
-        "context": "tackle"
+        "context": "日常"
       },
       {
         "en": "The team tackled many challenges.",
         "ja": "チームは多くの課題に取り組んだ。",
-        "context": "tackle"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -107217,17 +107217,17 @@
       {
         "en": "She has a tendency to arrive late.",
         "ja": "彼女は遅刻する傾向がある。",
-        "context": "tendency"
+        "context": "学校"
       },
       {
         "en": "There is a growing tendency to work remotely.",
         "ja": "在宅勤務の傾向が高まっている。",
-        "context": "tendency"
+        "context": "日常"
       },
       {
         "en": "Strong emotions can lead to risky tendencies.",
         "ja": "強い感情は危険な傾向につながることがある。",
-        "context": "tendency"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -107437,17 +107437,17 @@
       {
         "en": "The contract was terminated.",
         "ja": "契約が終了した。",
-        "context": "terminate"
+        "context": "日常"
       },
       {
         "en": "He terminated the conversation abruptly.",
         "ja": "彼は会話を唐突に打ち切った。",
-        "context": "terminate"
+        "context": "ビジネス"
       },
       {
         "en": "The service was terminated at midnight.",
         "ja": "サービスは深夜に終了した。",
-        "context": "terminate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -108884,17 +108884,17 @@
       {
         "en": "He could not tolerate the noise.",
         "ja": "彼は騒音に耐えられなかった。",
-        "context": "tolerate"
+        "context": "日常"
       },
       {
         "en": "The school does not tolerate bullying.",
         "ja": "学校はいじめを容認しない。",
-        "context": "tolerate"
+        "context": "ビジネス"
       },
       {
         "en": "She tolerated his bad habits.",
         "ja": "彼女は彼の悪い習慣を大目に見た。",
-        "context": "tolerate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -109435,17 +109435,17 @@
       {
         "en": "The earthquake was a terrible tragedy.",
         "ja": "地震は恐ろしい悲劇だった。",
-        "context": "tragedy"
+        "context": "学校"
       },
       {
         "en": "Shakespeare wrote many famous tragedies.",
         "ja": "シェイクスピアは多くの有名な悲劇を書いた。",
-        "context": "tragedy"
+        "context": "文化"
       },
       {
         "en": "A personal tragedy shaped her outlook on life.",
         "ja": "個人的な悲劇が彼女の人生観を形成した。",
-        "context": "tragedy"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -109724,17 +109724,17 @@
       {
         "en": "The country went through a peaceful transition of power.",
         "ja": "その国は平和的な権力移行を経験した。",
-        "context": "transition"
+        "context": "学校"
       },
       {
         "en": "The transition from school to work can be challenging.",
         "ja": "学校から仕事への移行は難しいことがある。",
-        "context": "transition"
+        "context": "日常"
       },
       {
         "en": "The energy transition to renewables will take several decades.",
         "ja": "再生可能エネルギーへのエネルギー移行には数十年かかるだろう。",
-        "context": "transition"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -110257,17 +110257,17 @@
       {
         "en": "The event triggered a war.",
         "ja": "その出来事が戦争を引き起こした。",
-        "context": "trigger"
+        "context": "学校"
       },
       {
         "en": "Stress can trigger headaches.",
         "ja": "ストレスは頭痛を引き起こすことがある。",
-        "context": "trigger"
+        "context": "日常"
       },
       {
         "en": "The alarm was triggered by smoke.",
         "ja": "煙によってアラームが作動した。",
-        "context": "trigger"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -110684,17 +110684,17 @@
       {
         "en": "The plan turned out to be a failure.",
         "ja": "計画は失敗と判明した。",
-        "context": "turn out"
+        "context": "日常"
       },
       {
         "en": "She turned out to be very talented.",
         "ja": "彼女はとても才能があると判明した。",
-        "context": "turn out"
+        "context": "会話"
       },
       {
         "en": "It turned out that he was right.",
         "ja": "彼が正しかったと判明した。",
-        "context": "turn out"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -110891,17 +110891,17 @@
       {
         "en": "Ultimately, she made the right choice.",
         "ja": "最終的に彼女は正しい選択をした。",
-        "context": "ultimately"
+        "context": "学校"
       },
       {
         "en": "He ultimately agreed with her.",
         "ja": "彼は最終的に彼女に同意した。",
-        "context": "ultimately"
+        "context": "日常"
       },
       {
         "en": "What ultimately matters is health.",
         "ja": "最終的に重要なのは健康だ。",
-        "context": "ultimately"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -111176,17 +111176,17 @@
       {
         "en": "Gossip undermines trust.",
         "ja": "噂は信頼を損なう。",
-        "context": "undermine"
+        "context": "日常"
       },
       {
         "en": "The scandal undermined his reputation.",
         "ja": "スキャンダルが彼の評判を損なった。",
-        "context": "undermine"
+        "context": "会話"
       },
       {
         "en": "Lack of sleep undermines health.",
         "ja": "睡眠不足は健康を害する。",
-        "context": "undermine"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -111391,17 +111391,17 @@
       {
         "en": "The leader unified the nation.",
         "ja": "指導者は国を統一した。",
-        "context": "unify"
+        "context": "日常"
       },
       {
         "en": "Music unifies people across cultures.",
         "ja": "音楽は文化を超えて人々を結びつける。",
-        "context": "unify"
+        "context": "会話"
       },
       {
         "en": "They worked to unify the party.",
         "ja": "彼らは党を統一するために働いた。",
-        "context": "unify"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -111549,17 +111549,17 @@
       {
         "en": "Access to clean water should be universal.",
         "ja": "清潔な水へのアクセスは普遍的であるべきだ。",
-        "context": "universal"
+        "context": "学校"
       },
       {
         "en": "Music is often called a universal language.",
         "ja": "音楽はしばしば普遍的な言語と呼ばれる。",
-        "context": "universal"
+        "context": "日常"
       },
       {
         "en": "Universal values include peace and respect.",
         "ja": "普遍的な価値観には平和と尊重が含まれる。",
-        "context": "universal"
+        "context": "文化"
       }
     ],
     "categories": [
@@ -112039,17 +112039,17 @@
       {
         "en": "Urban living has both advantages and disadvantages.",
         "ja": "都会での生活には利点と欠点がある。",
-        "context": "urban"
+        "context": "学校"
       },
       {
         "en": "Urban areas grow quickly due to migration.",
         "ja": "都市部は移住により急速に成長する。",
-        "context": "urban"
+        "context": "日常"
       },
       {
         "en": "She prefers urban life to rural life.",
         "ja": "彼女は農村生活より都会生活を好む。",
-        "context": "urban"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -112133,17 +112133,17 @@
       {
         "en": "She urged him to see a doctor.",
         "ja": "彼女は彼に医者へ行くよう強く勧めた。",
-        "context": "urge"
+        "context": "学校"
       },
       {
         "en": "He urged caution in the matter.",
         "ja": "彼はその件について慎重にするよう促した。",
-        "context": "urge"
+        "context": "日常"
       },
       {
         "en": "The coach urged the team to fight.",
         "ja": "コーチはチームに戦うよう促した。",
-        "context": "urge"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -112284,17 +112284,17 @@
       {
         "en": "She utilized all available resources.",
         "ja": "彼女はすべての利用可能な資源を活用した。",
-        "context": "utilize"
+        "context": "日常"
       },
       {
         "en": "He utilized his free time wisely.",
         "ja": "彼は自由な時間を賢く活用した。",
-        "context": "utilize"
+        "context": "学校"
       },
       {
         "en": "We should utilize renewable energy.",
         "ja": "再生可能エネルギーを活用すべきだ。",
-        "context": "utilize"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -112400,17 +112400,17 @@
       {
         "en": "Is your passport still valid for travel?",
         "ja": "あなたのパスポートはまだ旅行に有効ですか？",
-        "context": "valid"
+        "context": "学校"
       },
       {
         "en": "She raised a valid point in the discussion.",
         "ja": "彼女は議論で妥当な点を提起した。",
-        "context": "valid"
+        "context": "日常"
       },
       {
         "en": "The argument is not valid without evidence.",
         "ja": "証拠なしでは議論は妥当でない。",
-        "context": "valid"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -112538,17 +112538,17 @@
       {
         "en": "The magician made the rabbit vanish.",
         "ja": "マジシャンはウサギを消した。",
-        "context": "vanish"
+        "context": "日常"
       },
       {
         "en": "The pain vanished after treatment.",
         "ja": "治療後に痛みが消えた。",
-        "context": "vanish"
+        "context": "会話"
       },
       {
         "en": "Her smile vanished suddenly.",
         "ja": "彼女の笑顔が突然消えた。",
-        "context": "vanish"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -112867,17 +112867,17 @@
       {
         "en": "Starting a new business is a risky venture.",
         "ja": "新しいビジネスを始めることはリスクのある冒険だ。",
-        "context": "venture"
+        "context": "学校"
       },
       {
         "en": "She ventured into the unknown with courage.",
         "ja": "彼女は勇気を持って未知の世界に踏み込んだ。",
-        "context": "venture"
+        "context": "ビジネス"
       },
       {
         "en": "The joint venture was successful for both companies.",
         "ja": "合弁事業は両社にとって成功だった。",
-        "context": "venture"
+        "context": "学校"
       }
     ],
     "categories": [
@@ -112954,17 +112954,17 @@
       {
         "en": "Please verify your email address.",
         "ja": "メールアドレスを確認してください。",
-        "context": "verify"
+        "context": "日常"
       },
       {
         "en": "The information was verified by experts.",
         "ja": "情報は専門家によって検証された。",
-        "context": "verify"
+        "context": "ビジネス"
       },
       {
         "en": "He verified the facts before publishing.",
         "ja": "彼は発表前に事実を確認した。",
-        "context": "verify"
+        "context": "技術"
       }
     ],
     "categories": [
@@ -113365,17 +113365,17 @@
       {
         "en": "He violated the traffic rules.",
         "ja": "彼は交通規則に違反した。",
-        "context": "violate"
+        "context": "日常"
       },
       {
         "en": "The action violated human rights.",
         "ja": "その行為は人権を侵害した。",
-        "context": "violate"
+        "context": "ビジネス"
       },
       {
         "en": "She violated the agreement.",
         "ja": "彼女は合意に違反した。",
-        "context": "violate"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -113415,17 +113415,17 @@
       {
         "en": "Parking here is a violation of traffic rules.",
         "ja": "ここへの駐車は交通ルール違反だ。",
-        "context": "violation"
+        "context": "学校"
       },
       {
         "en": "Human rights violations must be stopped.",
         "ja": "人権侵害は止めなければならない。",
-        "context": "violation"
+        "context": "日常"
       },
       {
         "en": "A data violation puts users at risk.",
         "ja": "データ侵害はユーザーをリスクにさらす。",
-        "context": "violation"
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -113858,17 +113858,17 @@
       {
         "en": "He voluntarily gave up his seat.",
         "ja": "彼は自発的に席を譲った。",
-        "context": "voluntarily"
+        "context": "日常"
       },
       {
         "en": "She voluntarily joined the team.",
         "ja": "彼女は自発的にチームに参加した。",
-        "context": "voluntarily"
+        "context": "会話"
       },
       {
         "en": "They voluntarily cleaned the park.",
         "ja": "彼らは自発的に公園を掃除した。",
-        "context": "voluntarily"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -114163,17 +114163,17 @@
       {
         "en": "Children are especially vulnerable to illness.",
         "ja": "子供たちは特に病気に対して脆弱だ。",
-        "context": "vulnerable"
+        "context": "学校"
       },
       {
         "en": "She felt vulnerable after the difficult news.",
         "ja": "つらいニュースの後、彼女は傷つきやすく感じた。",
-        "context": "vulnerable"
+        "context": "日常"
       },
       {
         "en": "Vulnerable groups need extra support from society.",
         "ja": "脆弱なグループは社会からの特別な支援が必要だ。",
-        "context": "vulnerable"
+        "context": "技術"
       }
     ],
     "categories": [
@@ -114218,17 +114218,17 @@
       {
         "en": "The minimum wage was increased last year.",
         "ja": "最低賃金は昨年引き上げられた。",
-        "context": "wage"
+        "context": "学校"
       },
       {
         "en": "She earns a fair wage for her work.",
         "ja": "彼女は仕事に対して公正な賃金を得ている。",
-        "context": "wage"
+        "context": "ビジネス"
       },
       {
         "en": "Workers demanded higher wages at the meeting.",
         "ja": "労働者は会合でより高い賃金を要求した。",
-        "context": "wage"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -114900,17 +114900,17 @@
       {
         "en": "Good sleep is essential for overall well-being.",
         "ja": "良い睡眠は全体的な健康状態に不可欠だ。",
-        "context": "well-being"
+        "context": "日常"
       },
       {
         "en": "Mental well-being is as important as physical.",
         "ja": "精神的な健康は身体的なものと同様に重要だ。",
-        "context": "well-being"
+        "context": "会話"
       },
       {
         "en": "She focused on the well-being of her students.",
         "ja": "彼女は生徒たちの健康状態に焦点を当てた。",
-        "context": "well-being"
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -115741,17 +115741,17 @@
       {
         "en": "He withdrew cash from the ATM outside.",
         "ja": "彼は外のATMから現金を引き出した。",
-        "context": "withdraw"
+        "context": "学校"
       },
       {
         "en": "The army withdrew from the conflict zone.",
         "ja": "軍は紛争地域から撤退した。",
-        "context": "withdraw"
+        "context": "日常"
       },
       {
         "en": "She withdrew her application at the last moment.",
         "ja": "彼女は最後の瞬間に申請を取り下げた。",
-        "context": "withdraw"
+        "context": "金融"
       }
     ],
     "categories": [
@@ -115830,17 +115830,17 @@
       {
         "en": "She witnessed the accident from her window.",
         "ja": "彼女は窓から事故を目撃した。",
-        "context": "witness"
+        "context": "学校"
       },
       {
         "en": "He was called as a witness in court.",
         "ja": "彼は法廷で証人として呼ばれた。",
-        "context": "witness"
+        "context": "日常"
       },
       {
         "en": "We all witness history in our own time.",
         "ja": "私たちは自分たちの時代に歴史を目撃する。",
-        "context": "witness"
+        "context": "学校"
       }
     ],
     "categories": [
