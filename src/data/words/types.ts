@@ -63,6 +63,18 @@ export type CourseAssignment = {
 // master/*.ts に格納
 // @note frequencyTier は MasterWord 共通の暫定値。コース別 tier は CourseAssignment.tier を優先する
 //       Phase 2.4 完了後に @deprecated 宣言予定（docs/tier-calibration-policy.md 参照）
+// 参考文献の識別子（data/vocab-sources/ の各ファイルに対応）
+// ライセンス帰属表示（/profile ページ）と data-sources.md に紐づく
+export type VocabSource =
+  | "cefrj-v15"
+  | "octanove-c1c2-v10"
+  | "ngsl"
+  | "tsl-v12"
+  | "bsl-v12"
+  | "nawl"
+  | "subtlex"
+  | "manual";
+
 export type MasterWord = {
   id: number;
   word: string;
@@ -72,6 +84,7 @@ export type MasterWord = {
   categories: [string, ...string[]];
   frequencyTier: FrequencyTier;
   contentFlags?: ContentFlag[];
+  sources?: VocabSource[];
   courses: CourseAssignment[];
 };
 

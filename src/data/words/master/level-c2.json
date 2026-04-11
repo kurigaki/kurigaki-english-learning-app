@@ -31,6 +31,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -65,6 +68,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -99,6 +105,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -133,6 +142,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -167,6 +179,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -201,6 +216,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -235,6 +253,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -269,6 +290,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -304,6 +328,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -338,6 +365,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -372,6 +402,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -406,6 +439,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -440,6 +476,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -474,6 +513,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -508,6 +550,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -542,6 +587,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -576,6 +624,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -610,6 +661,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -644,6 +698,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -678,6 +735,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -712,6 +772,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -746,6 +809,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -780,6 +846,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -814,6 +883,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -848,6 +920,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -882,6 +957,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "subtlex"
     ]
   },
   {
@@ -916,6 +995,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -950,6 +1032,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -984,6 +1069,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1018,6 +1106,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1052,6 +1143,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1086,6 +1180,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1121,6 +1218,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1155,6 +1255,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1189,6 +1292,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1223,6 +1329,10 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "bsl-v12",
+      "subtlex"
     ]
   },
   {
@@ -1257,6 +1367,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1291,6 +1404,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1325,6 +1441,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1359,6 +1478,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1393,6 +1515,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1427,6 +1552,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1461,6 +1589,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1495,6 +1626,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1529,6 +1663,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1563,6 +1700,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1597,6 +1737,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1631,6 +1774,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1665,6 +1811,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1699,6 +1848,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1733,6 +1885,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1767,6 +1922,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1801,6 +1959,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1835,6 +1996,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -1869,6 +2033,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1903,6 +2070,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -1937,6 +2107,12 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "octanove-c1c2-v10",
+      "ngsl",
+      "subtlex"
     ]
   },
   {
@@ -1971,6 +2147,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -2005,6 +2185,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2039,6 +2222,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2073,6 +2259,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2107,6 +2296,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -2141,6 +2333,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2175,6 +2370,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2209,6 +2407,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -2243,6 +2445,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2277,6 +2482,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2311,6 +2519,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2345,6 +2556,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -2379,6 +2593,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -2414,6 +2631,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2448,6 +2668,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2482,6 +2705,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2516,6 +2742,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2550,6 +2779,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2584,6 +2816,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2618,6 +2853,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2652,6 +2890,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2686,6 +2927,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -2720,6 +2964,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2754,6 +3001,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2788,6 +3038,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2822,6 +3075,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2856,6 +3112,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2890,6 +3149,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2924,6 +3186,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -2958,6 +3223,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -2992,6 +3260,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3026,6 +3297,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3060,6 +3334,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3094,6 +3371,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3128,6 +3408,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3162,6 +3445,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3196,6 +3482,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3230,6 +3519,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3264,6 +3556,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3299,6 +3594,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3333,6 +3631,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3367,6 +3668,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3401,6 +3705,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3435,6 +3742,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3469,6 +3779,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3503,6 +3816,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -3537,6 +3854,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3571,6 +3891,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3605,6 +3928,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3639,6 +3965,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3673,6 +4002,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3707,6 +4039,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3741,6 +4076,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3775,6 +4113,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3809,6 +4150,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3843,6 +4187,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3877,6 +4224,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -3911,6 +4261,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3945,6 +4298,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -3979,6 +4335,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4013,6 +4372,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -4047,6 +4410,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4081,6 +4447,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -4115,6 +4484,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4149,6 +4521,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -4183,6 +4558,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -4217,6 +4595,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -4251,6 +4632,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4285,6 +4669,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4319,6 +4706,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -4353,6 +4743,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4387,6 +4780,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4421,6 +4817,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4455,6 +4854,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4489,6 +4891,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -4523,6 +4928,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4557,6 +4965,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4591,6 +5002,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4625,6 +5039,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4659,6 +5076,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4693,6 +5113,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -4727,6 +5150,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -4761,6 +5188,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -4795,6 +5225,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4829,6 +5262,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4863,6 +5299,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4897,6 +5336,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4931,6 +5373,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -4965,6 +5410,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -4999,6 +5447,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5033,6 +5484,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5067,6 +5521,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5101,6 +5558,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5135,6 +5595,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5169,6 +5632,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5203,6 +5669,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5237,6 +5706,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5271,6 +5743,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5305,6 +5780,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5339,6 +5817,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10"
     ]
   },
   {
@@ -5373,6 +5854,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5407,6 +5891,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5441,6 +5928,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5475,6 +5965,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5509,6 +6002,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5543,6 +6039,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5577,6 +6076,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5611,6 +6113,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5645,6 +6150,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5679,6 +6187,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5713,6 +6224,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5747,6 +6261,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5781,6 +6298,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5815,6 +6335,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5849,6 +6372,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -5883,6 +6409,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5917,6 +6446,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5951,6 +6483,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -5985,6 +6520,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6019,6 +6557,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6053,6 +6594,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6087,6 +6631,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6121,6 +6668,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6155,6 +6705,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6189,6 +6742,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6223,6 +6779,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6257,6 +6816,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6291,6 +6853,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6325,6 +6890,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6359,6 +6927,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6393,6 +6964,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6427,6 +7001,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6461,6 +7038,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6495,6 +7075,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6529,6 +7112,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6563,6 +7149,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6597,6 +7186,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6631,6 +7223,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6665,6 +7260,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6699,6 +7297,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6733,6 +7334,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6767,6 +7371,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6801,6 +7408,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6836,6 +7446,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6870,6 +7483,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -6904,6 +7520,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6938,6 +7557,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -6972,6 +7594,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7006,6 +7631,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7040,6 +7668,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7074,6 +7705,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7109,6 +7743,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7143,6 +7780,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7177,6 +7817,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7211,6 +7854,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7245,6 +7891,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7280,6 +7929,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7314,6 +7966,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7348,6 +8003,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7382,6 +8040,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7416,6 +8077,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7450,6 +8114,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7484,6 +8151,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7518,6 +8188,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7552,6 +8225,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7586,6 +8262,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7620,6 +8299,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7654,6 +8336,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7688,6 +8373,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7722,6 +8410,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7756,6 +8447,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7790,6 +8484,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -7824,6 +8522,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -7858,6 +8559,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7892,6 +8596,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7927,6 +8634,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7961,6 +8671,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -7995,6 +8708,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -8029,6 +8746,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8063,6 +8783,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -8097,6 +8820,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8131,6 +8857,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -8165,6 +8894,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8199,6 +8931,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -8233,6 +8968,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8267,6 +9005,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -8301,6 +9042,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8335,6 +9079,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8369,6 +9116,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8403,6 +9153,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -8437,6 +9190,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -8471,6 +9227,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8505,6 +9264,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -8539,6 +9301,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -8573,6 +9338,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8607,6 +9375,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8641,6 +9412,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10"
     ]
   },
   {
@@ -8675,6 +9449,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -8709,6 +9487,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8743,6 +9524,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -8777,6 +9562,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8811,6 +9599,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -8845,6 +9636,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8879,6 +9673,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8913,6 +9710,10 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -8947,6 +9748,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -8981,6 +9785,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9015,6 +9822,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9049,6 +9859,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9083,6 +9896,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9117,6 +9933,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9151,6 +9970,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9185,6 +10007,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -9219,6 +10045,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9253,6 +10082,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9288,6 +10120,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9322,6 +10157,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9356,6 +10194,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9390,6 +10231,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9424,6 +10268,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9458,6 +10305,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9492,6 +10342,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9526,6 +10379,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "bsl-v12"
     ]
   },
   {
@@ -9560,6 +10416,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9594,6 +10453,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9628,6 +10490,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9662,6 +10527,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9696,6 +10564,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9730,6 +10601,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9764,6 +10638,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -9798,6 +10675,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -9832,6 +10713,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9866,6 +10750,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9900,6 +10787,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9934,6 +10824,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -9968,6 +10861,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10002,6 +10898,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "cefrj-v15"
     ]
   },
   {
@@ -10036,6 +10935,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10070,6 +10972,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10104,6 +11009,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10138,6 +11046,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10172,6 +11083,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10206,6 +11120,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10240,6 +11157,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10274,6 +11194,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10308,6 +11231,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10342,6 +11268,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10376,6 +11305,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10410,6 +11342,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10445,6 +11380,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10479,6 +11417,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10513,6 +11454,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10547,6 +11491,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10581,6 +11528,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10615,6 +11565,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10649,6 +11602,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10683,6 +11639,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10717,6 +11676,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10751,6 +11713,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10785,6 +11750,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10819,6 +11787,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10853,6 +11824,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10887,6 +11861,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -10921,6 +11898,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -10955,6 +11935,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -10989,6 +11973,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11023,6 +12010,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "bsl-v12"
     ]
   },
   {
@@ -11057,6 +12047,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11092,6 +12085,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -11126,6 +12122,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11160,6 +12159,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -11194,6 +12196,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11228,6 +12233,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11262,6 +12270,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11296,6 +12307,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11330,6 +12344,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -11364,6 +12382,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11398,6 +12419,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -11432,6 +12456,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11466,6 +12493,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11500,6 +12530,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11534,6 +12567,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11568,6 +12604,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11602,6 +12641,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11636,6 +12678,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11670,6 +12715,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11704,6 +12752,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -11738,6 +12789,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11772,6 +12826,10 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -11806,6 +12864,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -11840,6 +12901,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11874,6 +12938,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11908,6 +12975,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -11942,6 +13012,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -11976,6 +13049,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12010,6 +13086,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12045,6 +13124,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12079,6 +13161,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12113,6 +13198,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12147,6 +13235,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12181,6 +13272,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12215,6 +13309,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12249,6 +13346,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12283,6 +13383,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12317,6 +13420,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12351,6 +13457,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12385,6 +13494,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12419,6 +13531,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12453,6 +13568,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12487,6 +13605,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12521,6 +13642,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12555,6 +13679,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12589,6 +13716,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12623,6 +13753,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12657,6 +13790,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12691,6 +13827,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -12725,6 +13865,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12759,6 +13902,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12793,6 +13939,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12827,6 +13976,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12861,6 +14013,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -12895,6 +14050,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12929,6 +14087,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12963,6 +14124,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -12997,6 +14161,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13031,6 +14198,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13065,6 +14235,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -13099,6 +14272,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13133,6 +14309,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -13167,6 +14346,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -13201,6 +14383,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13235,6 +14420,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13269,6 +14457,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13303,6 +14494,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13337,6 +14531,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -13371,6 +14568,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13405,6 +14605,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13439,6 +14642,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13473,6 +14679,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13507,6 +14716,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -13541,6 +14753,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13575,6 +14790,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13609,6 +14827,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13643,6 +14864,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -13677,6 +14901,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13711,6 +14938,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -13745,6 +14975,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13779,6 +15012,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13813,6 +15049,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -13847,6 +15086,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -13881,6 +15124,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -13915,6 +15161,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13949,6 +15198,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -13983,6 +15235,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14017,6 +15272,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14051,6 +15309,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14085,6 +15346,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -14119,6 +15383,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -14153,6 +15420,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14187,6 +15457,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -14221,6 +15495,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14255,6 +15532,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14289,6 +15569,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14323,6 +15606,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -14357,6 +15643,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14391,6 +15680,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14425,6 +15717,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14459,6 +15754,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -14493,6 +15791,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14527,6 +15828,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -14561,6 +15865,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14595,6 +15902,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -14629,6 +15939,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14663,6 +15976,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -14697,6 +16014,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14731,6 +16051,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14766,6 +16089,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14800,6 +16126,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -14834,6 +16163,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14868,6 +16200,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10"
     ]
   },
   {
@@ -14902,6 +16237,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -14936,6 +16275,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -14970,6 +16312,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15005,6 +16350,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15039,6 +16387,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15073,6 +16424,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15107,6 +16461,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15141,6 +16498,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15175,6 +16535,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15209,6 +16572,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15243,6 +16609,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15277,6 +16646,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15311,6 +16683,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15345,6 +16720,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15379,6 +16757,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15413,6 +16794,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15447,6 +16831,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -15481,6 +16869,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15515,6 +16906,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15549,6 +16943,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15583,6 +16980,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15618,6 +17018,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15652,6 +17055,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15686,6 +17092,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15721,6 +17130,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15755,6 +17167,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15789,6 +17204,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15823,6 +17241,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15857,6 +17278,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15891,6 +17315,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -15925,6 +17352,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15959,6 +17389,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -15993,6 +17426,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16027,6 +17463,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -16061,6 +17500,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -16095,6 +17537,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16129,6 +17574,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16163,6 +17611,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16197,6 +17648,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16231,6 +17685,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16265,6 +17722,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16299,6 +17759,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -16333,6 +17796,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16367,6 +17833,12 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "tsl-v12",
+      "bsl-v12",
+      "subtlex"
     ]
   },
   {
@@ -16401,6 +17873,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16435,6 +17910,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16469,6 +17947,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16503,6 +17984,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -16537,6 +18021,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -16571,6 +18058,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16605,6 +18095,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16639,6 +18132,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16673,6 +18169,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16707,6 +18206,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16741,6 +18243,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16775,6 +18280,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16809,6 +18317,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16843,6 +18354,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -16877,6 +18391,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -16911,6 +18428,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -16945,6 +18465,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -16979,6 +18502,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "subtlex"
     ]
   },
   {
@@ -17013,6 +18540,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17047,6 +18577,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17081,6 +18614,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17115,6 +18651,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17150,6 +18689,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17184,6 +18726,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17218,6 +18763,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17252,6 +18800,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17286,6 +18837,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17320,6 +18874,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17354,6 +18911,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17388,6 +18948,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17422,6 +18985,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17456,6 +19022,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17490,6 +19059,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17524,6 +19096,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17558,6 +19133,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17592,6 +19170,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17626,6 +19207,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17660,6 +19244,10 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -17694,6 +19282,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17728,6 +19319,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17762,6 +19356,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17796,6 +19393,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17830,6 +19430,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -17864,6 +19467,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17898,6 +19504,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17932,6 +19541,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -17966,6 +19578,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18000,6 +19615,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18034,6 +19652,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18068,6 +19689,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18102,6 +19726,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18136,6 +19763,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18170,6 +19800,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18204,6 +19837,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18238,6 +19874,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18272,6 +19911,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18306,6 +19948,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18340,6 +19985,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18374,6 +20022,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18408,6 +20059,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18442,6 +20096,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18476,6 +20133,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18510,6 +20170,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18544,6 +20207,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18578,6 +20244,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18612,6 +20281,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18646,6 +20318,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18680,6 +20355,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18714,6 +20392,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18748,6 +20429,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18782,6 +20466,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18816,6 +20503,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18850,6 +20540,11 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "bsl-v12",
+      "subtlex"
     ]
   },
   {
@@ -18884,6 +20579,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -18918,6 +20616,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18952,6 +20653,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -18986,6 +20690,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19020,6 +20727,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19054,6 +20764,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19088,6 +20801,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19122,6 +20838,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19156,6 +20875,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19190,6 +20912,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19224,6 +20949,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19258,6 +20986,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19292,6 +21023,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19326,6 +21060,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19360,6 +21097,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -19394,6 +21135,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19428,6 +21172,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19462,6 +21209,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19496,6 +21246,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19530,6 +21283,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19564,6 +21320,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19598,6 +21357,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19632,6 +21394,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19666,6 +21431,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19700,6 +21468,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19734,6 +21505,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19768,6 +21542,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19802,6 +21579,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19836,6 +21616,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -19870,6 +21654,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -19904,6 +21691,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19938,6 +21728,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -19972,6 +21765,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20006,6 +21802,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20040,6 +21839,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20074,6 +21876,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20108,6 +21913,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20142,6 +21950,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20176,6 +21987,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20210,6 +22024,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20244,6 +22061,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20278,6 +22098,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20312,6 +22135,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20346,6 +22172,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -20380,6 +22209,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -20414,6 +22246,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20449,6 +22284,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20483,6 +22321,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -20517,6 +22358,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -20551,6 +22395,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20585,6 +22432,10 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -20619,6 +22470,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -20653,6 +22507,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20687,6 +22544,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -20721,6 +22581,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20755,6 +22618,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -20789,6 +22655,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20823,6 +22692,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20857,6 +22729,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -20891,6 +22767,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -20925,6 +22804,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -20959,6 +22841,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -20993,6 +22878,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21027,6 +22915,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21061,6 +22952,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21095,6 +22989,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21129,6 +23026,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21163,6 +23063,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21197,6 +23100,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "subtlex"
     ]
   },
   {
@@ -21231,6 +23138,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21265,6 +23175,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21299,6 +23212,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21333,6 +23249,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21367,6 +23286,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21401,6 +23323,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21435,6 +23360,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21469,6 +23397,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21503,6 +23434,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21537,6 +23471,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21572,6 +23509,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21606,6 +23546,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21640,6 +23583,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21674,6 +23620,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21708,6 +23657,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21742,6 +23694,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21776,6 +23731,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21810,6 +23768,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21844,6 +23805,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21878,6 +23842,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -21912,6 +23879,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21946,6 +23916,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -21980,6 +23953,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22014,6 +23990,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22048,6 +24027,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22082,6 +24064,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22116,6 +24101,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22150,6 +24138,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22184,6 +24175,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22218,6 +24212,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22252,6 +24249,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22286,6 +24286,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22320,6 +24323,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22354,6 +24360,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22388,6 +24397,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22422,6 +24434,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22456,6 +24471,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22490,6 +24508,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22524,6 +24545,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22558,6 +24582,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22592,6 +24619,10 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "subtlex"
     ]
   },
   {
@@ -22626,6 +24657,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22660,6 +24694,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "bsl-v12",
+      "subtlex"
     ]
   },
   {
@@ -22694,6 +24732,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22728,6 +24769,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22762,6 +24806,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22796,6 +24843,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22830,6 +24880,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22864,6 +24917,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -22898,6 +24954,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22932,6 +24991,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -22966,6 +25028,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23000,6 +25065,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23034,6 +25102,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23068,6 +25139,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23102,6 +25176,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23136,6 +25213,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23170,6 +25250,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23204,6 +25287,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23238,6 +25324,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23272,6 +25361,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23306,6 +25398,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23340,6 +25435,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23374,6 +25472,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23408,6 +25509,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23442,6 +25546,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23476,6 +25583,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23510,6 +25620,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23544,6 +25657,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -23578,6 +25695,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23612,6 +25732,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23646,6 +25769,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23681,6 +25807,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23715,6 +25844,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23749,6 +25881,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23783,6 +25918,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23817,6 +25955,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23851,6 +25992,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23885,6 +26029,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23919,6 +26066,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -23953,6 +26103,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -23987,6 +26140,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -24021,6 +26178,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -24055,6 +26215,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -24089,6 +26252,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24123,6 +26289,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24157,6 +26326,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -24191,6 +26363,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24225,6 +26400,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24259,6 +26437,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24293,6 +26474,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24327,6 +26511,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24361,6 +26548,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -24395,6 +26585,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24429,6 +26622,10 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -24463,6 +26660,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24497,6 +26697,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24531,6 +26734,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24565,6 +26771,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24599,6 +26808,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -24633,6 +26845,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -24667,6 +26882,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24701,6 +26919,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24735,6 +26956,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24769,6 +26993,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24803,6 +27030,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -24837,6 +27067,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24871,6 +27104,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24906,6 +27142,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -24940,6 +27179,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -24974,6 +27216,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -25008,6 +27253,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -25042,6 +27290,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -25076,6 +27327,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25110,6 +27364,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25144,6 +27401,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25178,6 +27438,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25212,6 +27475,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25246,6 +27512,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25280,6 +27549,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25314,6 +27586,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25348,6 +27623,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25382,6 +27660,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25416,6 +27697,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25450,6 +27734,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25484,6 +27771,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25518,6 +27808,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25552,6 +27845,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25586,6 +27882,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25620,6 +27919,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -25654,6 +27956,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25688,6 +27993,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -25722,6 +28030,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25756,6 +28067,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -25790,6 +28105,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25824,6 +28142,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25858,6 +28179,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25892,6 +28216,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25926,6 +28253,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -25960,6 +28290,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -25994,6 +28327,10 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -26028,6 +28365,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26062,6 +28402,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26096,6 +28439,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26130,6 +28476,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -26164,6 +28513,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -26198,6 +28550,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26232,6 +28587,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26266,6 +28624,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26300,6 +28661,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26334,6 +28698,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26368,6 +28735,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -26402,6 +28772,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26436,6 +28809,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26470,6 +28846,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26504,6 +28883,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26538,6 +28920,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -26572,6 +28957,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26606,6 +28994,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26640,6 +29031,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26674,6 +29068,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26708,6 +29105,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26742,6 +29142,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26776,6 +29179,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26810,6 +29216,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -26844,6 +29253,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26878,6 +29290,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26912,6 +29327,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26946,6 +29364,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -26980,6 +29401,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27014,6 +29438,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27048,6 +29475,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27082,6 +29512,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27116,6 +29549,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27150,6 +29586,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27184,6 +29623,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27218,6 +29660,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27252,6 +29697,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27286,6 +29734,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27320,6 +29771,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27354,6 +29808,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27388,6 +29845,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27422,6 +29882,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27456,6 +29919,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27490,6 +29956,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27524,6 +29993,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27558,6 +30030,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27592,6 +30067,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27626,6 +30104,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27660,6 +30141,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27694,6 +30178,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27728,6 +30215,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27762,6 +30252,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27796,6 +30289,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -27830,6 +30326,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27864,6 +30363,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27899,6 +30401,12 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "octanove-c1c2-v10",
+      "ngsl",
+      "subtlex"
     ]
   },
   {
@@ -27933,6 +30441,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -27967,6 +30478,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28001,6 +30515,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -28035,6 +30552,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28069,6 +30589,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28103,6 +30626,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28137,6 +30663,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28171,6 +30700,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -28205,6 +30737,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -28239,6 +30774,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28273,6 +30811,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28307,6 +30848,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28341,6 +30885,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28375,6 +30922,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28409,6 +30959,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28443,6 +30996,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28477,6 +31033,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28511,6 +31070,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -28545,6 +31107,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28579,6 +31144,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -28613,6 +31181,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28647,6 +31218,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -28681,6 +31255,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28715,6 +31292,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28749,6 +31329,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -28783,6 +31366,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28817,6 +31403,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28851,6 +31440,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -28885,6 +31477,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28919,6 +31514,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28953,6 +31551,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -28987,6 +31588,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29021,6 +31625,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29055,6 +31662,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29089,6 +31699,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29123,6 +31736,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29157,6 +31773,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29191,6 +31810,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -29225,6 +31847,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29259,6 +31884,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29293,6 +31921,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29327,6 +31958,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29361,6 +31995,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29395,6 +32032,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -29429,6 +32069,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29463,6 +32106,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29497,6 +32143,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -29531,6 +32180,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29565,6 +32217,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29600,6 +32255,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29634,6 +32292,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29668,6 +32329,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -29702,6 +32366,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -29736,6 +32403,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29770,6 +32440,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29804,6 +32477,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29838,6 +32514,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29872,6 +32551,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29906,6 +32588,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -29940,6 +32625,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -29974,6 +32662,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30008,6 +32699,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30042,6 +32736,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30076,6 +32773,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30110,6 +32810,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30144,6 +32847,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30178,6 +32884,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30212,6 +32921,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30246,6 +32958,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -30280,6 +32996,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30314,6 +33033,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30348,6 +33070,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30382,6 +33107,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30416,6 +33144,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30450,6 +33181,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30484,6 +33218,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30518,6 +33255,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30552,6 +33292,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30586,6 +33329,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30620,6 +33366,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30654,6 +33403,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30688,6 +33440,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30722,6 +33477,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30756,6 +33514,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30790,6 +33551,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30824,6 +33588,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30858,6 +33625,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30892,6 +33662,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -30926,6 +33699,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30960,6 +33736,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -30994,6 +33773,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -31028,6 +33810,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31062,6 +33847,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -31096,6 +33884,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31131,6 +33922,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31165,6 +33959,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -31199,6 +33996,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31233,6 +34033,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31268,6 +34071,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31302,6 +34108,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31336,6 +34145,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31370,6 +34182,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31404,6 +34219,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31438,6 +34256,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31472,6 +34293,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31506,6 +34330,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31540,6 +34367,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31574,6 +34404,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31608,6 +34441,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31642,6 +34478,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31676,6 +34515,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31710,6 +34552,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31744,6 +34589,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31778,6 +34626,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31812,6 +34663,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -31846,6 +34700,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31880,6 +34737,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31914,6 +34774,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -31948,6 +34811,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -31982,6 +34848,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32016,6 +34885,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32050,6 +34922,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32085,6 +34960,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32119,6 +34997,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32153,6 +35034,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32187,6 +35071,11 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "ngsl",
+      "subtlex"
     ]
   },
   {
@@ -32221,6 +35110,11 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "ngsl",
+      "subtlex"
     ]
   },
   {
@@ -32255,6 +35149,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32289,6 +35186,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32323,6 +35223,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32358,6 +35261,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32392,6 +35298,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32426,6 +35335,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32460,6 +35372,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32494,6 +35409,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32528,6 +35446,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32562,6 +35483,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32596,6 +35520,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32630,6 +35557,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32664,6 +35594,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32698,6 +35631,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32732,6 +35668,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32766,6 +35705,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32800,6 +35742,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32834,6 +35779,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32868,6 +35816,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32902,6 +35853,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -32936,6 +35890,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -32970,6 +35927,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -33004,6 +35964,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33038,6 +36001,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33072,6 +36038,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33106,6 +36075,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -33140,6 +36112,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -33174,6 +36149,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -33208,6 +36187,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -33242,6 +36225,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -33276,6 +36262,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33310,6 +36299,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33344,6 +36336,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33378,6 +36373,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33412,6 +36410,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33446,6 +36447,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33480,6 +36484,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33514,6 +36521,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33548,6 +36558,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33582,6 +36595,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33616,6 +36632,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33650,6 +36669,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -33684,6 +36706,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -33718,6 +36743,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -33752,6 +36781,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -33786,6 +36818,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33820,6 +36855,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -33854,6 +36892,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "bsl-v12"
     ]
   },
   {
@@ -33888,6 +36929,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -33922,6 +36966,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33956,6 +37003,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -33990,6 +37040,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34024,6 +37077,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34058,6 +37114,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34092,6 +37151,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34126,6 +37188,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34160,6 +37225,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34194,6 +37262,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34228,6 +37299,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34262,6 +37336,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34296,6 +37373,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34330,6 +37410,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34364,6 +37447,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34398,6 +37484,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34432,6 +37521,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34466,6 +37558,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34500,6 +37595,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34534,6 +37632,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34568,6 +37669,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34602,6 +37706,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34636,6 +37743,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34670,6 +37780,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34704,6 +37817,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34738,6 +37854,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34772,6 +37891,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34806,6 +37928,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34840,6 +37965,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34874,6 +38002,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34908,6 +38039,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -34942,6 +38076,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -34976,6 +38113,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35010,6 +38150,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35044,6 +38187,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35078,6 +38224,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35112,6 +38261,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35146,6 +38298,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35180,6 +38335,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35214,6 +38372,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35248,6 +38409,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35282,6 +38446,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35316,6 +38483,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35350,6 +38520,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35384,6 +38557,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35418,6 +38594,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35452,6 +38631,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35486,6 +38668,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35520,6 +38705,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35554,6 +38742,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35588,6 +38779,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35622,6 +38816,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35656,6 +38853,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35690,6 +38890,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35724,6 +38927,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35758,6 +38964,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35792,6 +39001,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35826,6 +39038,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35860,6 +39075,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35894,6 +39112,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35928,6 +39149,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -35962,6 +39186,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -35996,6 +39223,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36030,6 +39260,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36064,6 +39297,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36098,6 +39334,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36132,6 +39371,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36166,6 +39408,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36200,6 +39445,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36234,6 +39482,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36268,6 +39519,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36302,6 +39556,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36336,6 +39593,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36370,6 +39630,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36404,6 +39667,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36438,6 +39704,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36472,6 +39741,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36506,6 +39778,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36540,6 +39815,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36574,6 +39852,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36608,6 +39889,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36642,6 +39926,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36676,6 +39963,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36710,6 +40000,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36744,6 +40037,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36778,6 +40074,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36812,6 +40111,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36846,6 +40148,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36880,6 +40185,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36914,6 +40222,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -36948,6 +40259,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -36982,6 +40296,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -37016,6 +40333,11 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "bsl-v12",
+      "subtlex"
     ]
   },
   {
@@ -37050,6 +40372,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37084,6 +40409,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37118,6 +40446,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37152,6 +40483,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37186,6 +40520,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37220,6 +40557,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -37254,6 +40594,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -37288,6 +40631,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -37322,6 +40668,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -37356,6 +40705,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37390,6 +40742,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "bsl-v12"
     ]
   },
   {
@@ -37424,6 +40779,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37458,6 +40816,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37492,6 +40853,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37526,6 +40890,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37560,6 +40927,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -37594,6 +40964,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37628,6 +41001,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37662,6 +41038,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37696,6 +41075,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37730,6 +41112,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -37764,6 +41149,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37798,6 +41186,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37832,6 +41223,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -37866,6 +41260,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37900,6 +41297,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37934,6 +41334,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -37968,6 +41371,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38002,6 +41408,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38036,6 +41445,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38070,6 +41482,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38104,6 +41519,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38138,6 +41556,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38172,6 +41593,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38206,6 +41630,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38240,6 +41667,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38274,6 +41704,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38308,6 +41741,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38342,6 +41778,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38376,6 +41815,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38410,6 +41852,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38444,6 +41889,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38478,6 +41926,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38512,6 +41963,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38546,6 +42000,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38580,6 +42037,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38614,6 +42074,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "bsl-v12",
+      "subtlex"
     ]
   },
   {
@@ -38648,6 +42112,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38682,6 +42149,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38716,6 +42186,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38750,6 +42223,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38784,6 +42260,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38818,6 +42297,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38852,6 +42334,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38886,6 +42371,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38920,6 +42408,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -38954,6 +42445,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -38988,6 +42482,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39022,6 +42519,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39056,6 +42556,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39090,6 +42593,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -39124,6 +42630,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39158,6 +42667,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39192,6 +42704,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -39226,6 +42741,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -39260,6 +42778,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39294,6 +42815,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39328,6 +42852,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39362,6 +42889,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -39396,6 +42926,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -39430,6 +42963,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39464,6 +43000,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39498,6 +43037,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39532,6 +43074,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39566,6 +43111,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -39600,6 +43148,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -39634,6 +43185,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39668,6 +43222,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -39702,6 +43259,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39736,6 +43296,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39770,6 +43333,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39804,6 +43370,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39838,6 +43407,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39872,6 +43444,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39906,6 +43481,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39940,6 +43518,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -39974,6 +43555,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40008,6 +43592,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -40042,6 +43629,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -40076,6 +43666,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40110,6 +43703,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -40144,6 +43740,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -40178,6 +43777,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40212,6 +43814,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -40246,6 +43851,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40280,6 +43888,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40314,6 +43925,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -40348,6 +43962,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40382,6 +43999,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40416,6 +44036,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40450,6 +44073,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40484,6 +44110,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40518,6 +44147,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40552,6 +44184,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40586,6 +44221,10 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "cefrj-v15",
+      "subtlex"
     ]
   },
   {
@@ -40620,6 +44259,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40654,6 +44296,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40688,6 +44333,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -40722,6 +44370,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40756,6 +44407,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40790,6 +44444,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40824,6 +44481,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -40858,6 +44518,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -40892,6 +44556,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40926,6 +44593,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40960,6 +44630,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -40994,6 +44667,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -41028,6 +44704,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41062,6 +44741,10 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -41096,6 +44779,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41130,6 +44816,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41164,6 +44853,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -41198,6 +44890,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41232,6 +44927,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41266,6 +44964,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -41300,6 +45001,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -41334,6 +45038,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41368,6 +45075,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41402,6 +45112,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41436,6 +45149,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -41470,6 +45186,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41504,6 +45223,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41538,6 +45260,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41572,6 +45297,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41606,6 +45334,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -41640,6 +45371,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -41674,6 +45408,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41708,6 +45445,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41742,6 +45482,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41776,6 +45519,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41810,6 +45556,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41844,6 +45593,10 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "octanove-c1c2-v10",
+      "subtlex"
     ]
   },
   {
@@ -41878,6 +45631,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -41912,6 +45668,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41946,6 +45705,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -41980,6 +45742,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42014,6 +45779,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -42048,6 +45816,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42082,6 +45853,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42116,6 +45890,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42150,6 +45927,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42184,6 +45964,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -42218,6 +46001,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42252,6 +46038,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42286,6 +46075,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -42320,6 +46112,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42354,6 +46149,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42388,6 +46186,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -42422,6 +46223,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -42456,6 +46260,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42490,6 +46297,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -42524,6 +46334,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42558,6 +46371,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42592,6 +46408,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42626,6 +46445,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42660,6 +46482,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42694,6 +46519,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42728,6 +46556,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42762,6 +46593,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -42796,6 +46630,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42830,6 +46667,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42864,6 +46704,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -42898,6 +46741,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -42932,6 +46778,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -42966,6 +46815,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -43000,6 +46852,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43034,6 +46889,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43068,6 +46926,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43102,6 +46963,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43136,6 +47000,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -43170,6 +47037,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -43204,6 +47074,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43238,6 +47111,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -43272,6 +47148,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43306,6 +47185,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -43340,6 +47222,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43374,6 +47259,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43408,6 +47296,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43442,6 +47333,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43476,6 +47370,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43510,6 +47407,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43544,6 +47444,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43578,6 +47481,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43612,6 +47518,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -43646,6 +47555,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43680,6 +47592,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -43714,6 +47629,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43748,6 +47666,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43782,6 +47703,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43816,6 +47740,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43850,6 +47777,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43884,6 +47814,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43919,6 +47852,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -43953,6 +47889,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -43987,6 +47926,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -44021,6 +47963,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -44055,6 +48000,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -44089,6 +48037,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -44123,6 +48074,9 @@
         "stage": "c2",
         "tier": 2
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   },
   {
@@ -44157,6 +48111,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -44191,6 +48148,9 @@
         "stage": "c2",
         "tier": 3
       }
+    ],
+    "sources": [
+      "manual"
     ]
   },
   {
@@ -44225,6 +48185,9 @@
         "stage": "c2",
         "tier": 1
       }
+    ],
+    "sources": [
+      "subtlex"
     ]
   }
 ]
