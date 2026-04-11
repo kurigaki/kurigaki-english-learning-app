@@ -50406,5 +50406,1061 @@
         "tier": 1
       }
     ]
+  },
+  {
+    "id": 1154,
+    "word": "am",
+    "meaning": "〜です・いる（主語が I のとき）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "I am a student.",
+        "ja": "私は学生です。",
+        "context": "自己紹介"
+      },
+      {
+        "en": "I am happy today.",
+        "ja": "私は今日うれしいです。",
+        "context": "日常"
+      },
+      {
+        "en": "I am from Japan.",
+        "ja": "私は日本出身です。",
+        "context": "自己紹介"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1155,
+    "word": "is",
+    "meaning": "〜です・いる（主語が三人称単数のとき）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "She is my sister.",
+        "ja": "彼女は私の姉です。",
+        "context": "家庭"
+      },
+      {
+        "en": "This is my book.",
+        "ja": "これは私の本です。",
+        "context": "学校"
+      },
+      {
+        "en": "He is a teacher.",
+        "ja": "彼は先生です。",
+        "context": "学校"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1156,
+    "word": "are",
+    "meaning": "〜です・いる（主語が you/複数のとき）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "You are my friend.",
+        "ja": "あなたは私の友達です。",
+        "context": "会話"
+      },
+      {
+        "en": "We are in the same class.",
+        "ja": "私たちは同じクラスです。",
+        "context": "学校"
+      },
+      {
+        "en": "They are very kind.",
+        "ja": "彼らはとても親切です。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1157,
+    "word": "was",
+    "meaning": "〜でした・いた（is / am の過去形）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "I was tired yesterday.",
+        "ja": "私は昨日疲れていました。",
+        "context": "日常"
+      },
+      {
+        "en": "She was a nurse.",
+        "ja": "彼女は看護師でした。",
+        "context": "仕事"
+      },
+      {
+        "en": "The movie was fun.",
+        "ja": "その映画は楽しかったです。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1158,
+    "word": "were",
+    "meaning": "〜でした・いた（are の過去形）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "You were right.",
+        "ja": "あなたは正しかったです。",
+        "context": "会話"
+      },
+      {
+        "en": "We were at home.",
+        "ja": "私たちは家にいました。",
+        "context": "家庭"
+      },
+      {
+        "en": "They were busy last week.",
+        "ja": "彼らは先週忙しかったです。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1159,
+    "word": "I",
+    "meaning": "私・私は（主格）",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "I like music.",
+        "ja": "私は音楽が好きです。",
+        "context": "会話"
+      },
+      {
+        "en": "I go to school every day.",
+        "ja": "私は毎日学校に行きます。",
+        "context": "学校"
+      },
+      {
+        "en": "I have a dog.",
+        "ja": "私は犬を飼っています。",
+        "context": "家庭"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1160,
+    "word": "you",
+    "meaning": "あなた・あなたたち",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "You are kind.",
+        "ja": "あなたは親切です。",
+        "context": "会話"
+      },
+      {
+        "en": "Do you like pizza?",
+        "ja": "あなたはピザが好きですか？",
+        "context": "会話"
+      },
+      {
+        "en": "Thank you very much.",
+        "ja": "どうもありがとうございます。",
+        "context": "挨拶"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1161,
+    "word": "he",
+    "meaning": "彼・彼は",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "He is my brother.",
+        "ja": "彼は私の兄です。",
+        "context": "家庭"
+      },
+      {
+        "en": "He plays soccer well.",
+        "ja": "彼はサッカーが上手です。",
+        "context": "スポーツ"
+      },
+      {
+        "en": "He lives in Tokyo.",
+        "ja": "彼は東京に住んでいます。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1162,
+    "word": "she",
+    "meaning": "彼女・彼女は",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "She is very smart.",
+        "ja": "彼女はとても賢いです。",
+        "context": "学校"
+      },
+      {
+        "en": "She likes flowers.",
+        "ja": "彼女は花が好きです。",
+        "context": "日常"
+      },
+      {
+        "en": "She sings beautifully.",
+        "ja": "彼女は美しく歌います。",
+        "context": "音楽"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1163,
+    "word": "we",
+    "meaning": "私たち・私たちは",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "We are classmates.",
+        "ja": "私たちはクラスメートです。",
+        "context": "学校"
+      },
+      {
+        "en": "We play baseball after school.",
+        "ja": "私たちは放課後に野球をします。",
+        "context": "スポーツ"
+      },
+      {
+        "en": "We love animals.",
+        "ja": "私たちは動物が大好きです。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1164,
+    "word": "they",
+    "meaning": "彼ら・彼女ら・それら",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "They are my best friends.",
+        "ja": "彼らは私の親友です。",
+        "context": "会話"
+      },
+      {
+        "en": "They live near the park.",
+        "ja": "彼らは公園の近くに住んでいます。",
+        "context": "日常"
+      },
+      {
+        "en": "They are new students.",
+        "ja": "彼らは新入生です。",
+        "context": "学校"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1165,
+    "word": "my",
+    "meaning": "私の",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "This is my bag.",
+        "ja": "これは私のかばんです。",
+        "context": "学校"
+      },
+      {
+        "en": "My sister is a nurse.",
+        "ja": "私の姉は看護師です。",
+        "context": "家庭"
+      },
+      {
+        "en": "My name is Ken.",
+        "ja": "私の名前はケンです。",
+        "context": "自己紹介"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1166,
+    "word": "your",
+    "meaning": "あなたの・あなたたちの",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "What is your name?",
+        "ja": "あなたの名前は何ですか？",
+        "context": "自己紹介"
+      },
+      {
+        "en": "I like your dress.",
+        "ja": "私はあなたの服が好きです。",
+        "context": "会話"
+      },
+      {
+        "en": "Is this your pen?",
+        "ja": "これはあなたのペンですか？",
+        "context": "学校"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1167,
+    "word": "his",
+    "meaning": "彼の・彼のもの",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "His car is red.",
+        "ja": "彼の車は赤いです。",
+        "context": "日常"
+      },
+      {
+        "en": "That is his guitar.",
+        "ja": "あれは彼のギターです。",
+        "context": "音楽"
+      },
+      {
+        "en": "I know his father.",
+        "ja": "私は彼のお父さんを知っています。",
+        "context": "家庭"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1168,
+    "word": "her",
+    "meaning": "彼女の・彼女を",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "This is her notebook.",
+        "ja": "これは彼女のノートです。",
+        "context": "学校"
+      },
+      {
+        "en": "I saw her at the park.",
+        "ja": "私は公園で彼女を見ました。",
+        "context": "日常"
+      },
+      {
+        "en": "Her voice is beautiful.",
+        "ja": "彼女の声は美しいです。",
+        "context": "音楽"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1169,
+    "word": "its",
+    "meaning": "それの・その",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "The dog wags its tail.",
+        "ja": "犬はその尻尾を振ります。",
+        "context": "日常"
+      },
+      {
+        "en": "The cat drinks its milk.",
+        "ja": "猫はその牛乳を飲みます。",
+        "context": "家庭"
+      },
+      {
+        "en": "The bird opens its wings.",
+        "ja": "その鳥は翼を広げます。",
+        "context": "自然"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1170,
+    "word": "our",
+    "meaning": "私たちの",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "Our school is big.",
+        "ja": "私たちの学校は大きいです。",
+        "context": "学校"
+      },
+      {
+        "en": "This is our classroom.",
+        "ja": "ここは私たちの教室です。",
+        "context": "学校"
+      },
+      {
+        "en": "Our team won the game.",
+        "ja": "私たちのチームは試合に勝ちました。",
+        "context": "スポーツ"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1171,
+    "word": "their",
+    "meaning": "彼らの・彼女らの",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "Their house is new.",
+        "ja": "彼らの家は新しいです。",
+        "context": "日常"
+      },
+      {
+        "en": "I met their parents.",
+        "ja": "私は彼らの両親に会いました。",
+        "context": "家庭"
+      },
+      {
+        "en": "This is their dog.",
+        "ja": "これは彼らの犬です。",
+        "context": "家庭"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1172,
+    "word": "can",
+    "meaning": "〜できる（可能・許可）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "I can swim.",
+        "ja": "私は泳げます。",
+        "context": "スポーツ"
+      },
+      {
+        "en": "Can you help me?",
+        "ja": "手伝ってもらえますか？",
+        "context": "会話"
+      },
+      {
+        "en": "She can speak English.",
+        "ja": "彼女は英語を話せます。",
+        "context": "学校"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1173,
+    "word": "cannot",
+    "meaning": "〜できない（can の否定）",
+    "partOfSpeech": "other",
+    "examples": [
+      {
+        "en": "I cannot find my key.",
+        "ja": "私は鍵が見つかりません。",
+        "context": "日常"
+      },
+      {
+        "en": "He cannot come today.",
+        "ja": "彼は今日来られません。",
+        "context": "会話"
+      },
+      {
+        "en": "We cannot stay here.",
+        "ja": "私たちはここにいられません。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1174,
+    "word": "does",
+    "meaning": "する・行う（do の三人称単数現在形）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "She does her homework every day.",
+        "ja": "彼女は毎日宿題をします。",
+        "context": "学校"
+      },
+      {
+        "en": "Does he like music?",
+        "ja": "彼は音楽が好きですか？",
+        "context": "会話"
+      },
+      {
+        "en": "What does this word mean?",
+        "ja": "この単語はどういう意味ですか？",
+        "context": "学校"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1175,
+    "word": "did",
+    "meaning": "した・行った（do の過去形）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "I did my best.",
+        "ja": "私は最善を尽くしました。",
+        "context": "会話"
+      },
+      {
+        "en": "Did you see the movie?",
+        "ja": "あなたはその映画を見ましたか？",
+        "context": "会話"
+      },
+      {
+        "en": "She did not come.",
+        "ja": "彼女は来ませんでした。",
+        "context": "日常"
+      }
+    ],
+    "categories": [
+      "communication"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1176,
+    "word": "has",
+    "meaning": "持っている・食べる（have の三人称単数現在形）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "She has a blue car.",
+        "ja": "彼女は青い車を持っています。",
+        "context": "日常"
+      },
+      {
+        "en": "He has breakfast at seven.",
+        "ja": "彼は7時に朝食を食べます。",
+        "context": "家庭"
+      },
+      {
+        "en": "This book has many pictures.",
+        "ja": "この本には絵がたくさんあります。",
+        "context": "学校"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
+  },
+  {
+    "id": 1177,
+    "word": "had",
+    "meaning": "持っていた・食べた（have の過去形）",
+    "partOfSpeech": "verb",
+    "examples": [
+      {
+        "en": "I had a good time yesterday.",
+        "ja": "私は昨日楽しい時間を過ごしました。",
+        "context": "日常"
+      },
+      {
+        "en": "She had lunch at noon.",
+        "ja": "彼女は正午に昼食を食べました。",
+        "context": "家庭"
+      },
+      {
+        "en": "We had a party last night.",
+        "ja": "私たちは昨夜パーティーを開きました。",
+        "context": "社交"
+      }
+    ],
+    "categories": [
+      "daily"
+    ],
+    "frequencyTier": 1,
+    "courses": [
+      {
+        "course": "junior",
+        "stage": "1",
+        "tier": 1
+      },
+      {
+        "course": "eiken",
+        "stage": "5",
+        "tier": 1
+      },
+      {
+        "course": "conversation",
+        "stage": "a1",
+        "tier": 1
+      }
+    ]
   }
 ]
