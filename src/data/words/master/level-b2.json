@@ -97,7 +97,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -421,12 +421,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -465,7 +465,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -618,7 +618,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -1306,7 +1306,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -1607,7 +1607,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -2524,7 +2524,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -2741,7 +2741,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -2884,7 +2884,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -3237,12 +3237,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3377,7 +3377,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3412,7 +3412,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -3537,12 +3537,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4011,7 +4011,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -4052,7 +4052,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -4131,12 +4131,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4212,7 +4212,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -4252,7 +4252,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -4395,7 +4395,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4661,7 +4661,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4731,7 +4731,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -4810,12 +4810,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -4922,12 +4922,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4964,7 +4964,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -5048,7 +5048,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -5121,7 +5121,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5304,12 +5304,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -5378,7 +5378,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -5574,12 +5574,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5772,7 +5772,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5806,12 +5806,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5970,12 +5970,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -6009,7 +6009,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6178,7 +6178,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -6212,12 +6212,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6251,7 +6251,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -6325,7 +6325,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -6478,7 +6478,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -6613,7 +6613,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -6976,7 +6976,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -7016,7 +7016,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -7232,7 +7232,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7588,7 +7588,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -7598,7 +7598,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7824,7 +7824,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -7899,7 +7899,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -8199,7 +8199,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -8278,7 +8278,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -8288,7 +8288,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -8322,7 +8322,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -8427,7 +8427,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -8437,7 +8437,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -8472,12 +8472,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -8516,7 +8516,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -8557,7 +8557,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -8642,17 +8642,17 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -8687,7 +8687,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -8773,7 +8773,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -9000,7 +9000,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -9080,7 +9080,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -9171,12 +9171,12 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -10276,7 +10276,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -10499,7 +10499,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -10653,7 +10653,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -10692,7 +10692,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -10841,7 +10841,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -11378,12 +11378,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -11993,12 +11993,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -12787,7 +12787,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12821,12 +12821,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -13093,12 +13093,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -13167,12 +13167,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -13275,7 +13275,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -13319,7 +13319,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -13359,7 +13359,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -13451,7 +13451,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -13759,7 +13759,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -13873,7 +13873,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -13960,7 +13960,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -14030,7 +14030,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -14040,7 +14040,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -14143,7 +14143,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -14224,7 +14224,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -14258,7 +14258,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -14544,12 +14544,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -14922,7 +14922,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -14961,7 +14961,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -15035,7 +15035,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -15198,7 +15198,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -15316,7 +15316,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -15425,7 +15425,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -15503,7 +15503,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -15771,7 +15771,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -15806,7 +15806,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -15925,7 +15925,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -15965,12 +15965,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -16186,7 +16186,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -16437,7 +16437,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -16791,7 +16791,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -17035,7 +17035,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -17390,12 +17390,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -17440,7 +17440,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -18245,7 +18245,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -18279,7 +18279,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -18354,7 +18354,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -18393,7 +18393,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -18432,12 +18432,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -18476,7 +18476,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -18864,7 +18864,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19017,12 +19017,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19254,7 +19254,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -19298,7 +19298,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -19451,7 +19451,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -19933,12 +19933,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -20368,12 +20368,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -20408,7 +20408,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -20492,12 +20492,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -20866,7 +20866,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -20917,7 +20917,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -21245,7 +21245,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -21358,12 +21358,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21397,7 +21397,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21845,7 +21845,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -21855,12 +21855,12 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -21929,7 +21929,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -21969,7 +21969,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -22003,12 +22003,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -22042,7 +22042,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -22384,7 +22384,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -22829,12 +22829,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -23029,7 +23029,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23351,7 +23351,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -23385,12 +23385,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23436,7 +23436,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23874,7 +23874,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -23959,7 +23959,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -23969,7 +23969,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -24053,7 +24053,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -24088,7 +24088,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -24285,7 +24285,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -24403,7 +24403,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -24583,7 +24583,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -24776,12 +24776,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -25014,7 +25014,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -25049,7 +25049,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -25088,7 +25088,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -25201,7 +25201,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -25629,7 +25629,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -25780,7 +25780,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -26333,12 +26333,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -27121,7 +27121,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -27463,12 +27463,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -27541,7 +27541,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -27575,7 +27575,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -27615,7 +27615,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -27887,7 +27887,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -28468,17 +28468,17 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -28512,12 +28512,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -28904,7 +28904,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -28949,7 +28949,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -29472,12 +29472,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -29883,12 +29883,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -30425,7 +30425,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -30539,7 +30539,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -30879,7 +30879,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -31183,7 +31183,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -31193,7 +31193,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -31336,7 +31336,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -31839,7 +31839,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -32066,12 +32066,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -32313,7 +32313,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -32498,7 +32498,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -32572,7 +32572,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -32906,7 +32906,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -33086,12 +33086,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -33159,7 +33159,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -33204,7 +33204,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -33474,7 +33474,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -33976,7 +33976,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -33986,7 +33986,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34197,12 +34197,12 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -34310,7 +34310,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -34445,7 +34445,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -34518,12 +34518,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -34557,12 +34557,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -34682,12 +34682,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -34974,12 +34974,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -35379,12 +35379,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -35733,7 +35733,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -35893,7 +35893,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -35933,7 +35933,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -35943,7 +35943,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36046,7 +36046,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -36087,12 +36087,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -36584,7 +36584,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36819,12 +36819,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -36863,7 +36863,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -36942,7 +36942,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -36992,7 +36992,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -37158,7 +37158,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -37198,7 +37198,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -37208,7 +37208,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -37289,12 +37289,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -37328,12 +37328,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -37732,7 +37732,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -37767,12 +37767,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -37841,7 +37841,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -38120,7 +38120,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -38130,7 +38130,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -38473,12 +38473,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -38779,7 +38779,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -39159,7 +39159,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -39169,7 +39169,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -39203,12 +39203,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -39281,12 +39281,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -39928,7 +39928,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -40086,7 +40086,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40314,7 +40314,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -40324,7 +40324,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40359,7 +40359,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40398,7 +40398,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40432,7 +40432,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -40952,7 +40952,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -41065,7 +41065,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -41397,17 +41397,17 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -41482,7 +41482,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -41492,7 +41492,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -41566,7 +41566,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -41687,12 +41687,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -41768,7 +41768,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -41778,7 +41778,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -41812,7 +41812,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -42544,7 +42544,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -42898,7 +42898,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -43307,7 +43307,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -43415,7 +43415,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -43738,12 +43738,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -43858,12 +43858,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -43897,7 +43897,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -43975,7 +43975,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -44593,17 +44593,17 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -45212,7 +45212,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -45262,7 +45262,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -45437,7 +45437,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -45472,7 +45472,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -45669,7 +45669,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -46676,12 +46676,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -46828,7 +46828,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -46867,7 +46867,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -46947,17 +46947,17 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -47318,7 +47318,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -49035,7 +49035,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -49150,7 +49150,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -49262,7 +49262,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -49382,12 +49382,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -49965,7 +49965,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -50629,7 +50629,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -50669,7 +50669,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -50782,7 +50782,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -51100,12 +51100,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -51560,7 +51560,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -51595,7 +51595,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -51825,7 +51825,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -52007,7 +52007,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -52318,7 +52318,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -52590,7 +52590,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -53184,12 +53184,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -53223,7 +53223,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -53373,12 +53373,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -53446,7 +53446,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -53517,7 +53517,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -53602,7 +53602,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -53642,7 +53642,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -53794,7 +53794,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -53828,7 +53828,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -53977,7 +53977,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -54055,7 +54055,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -54164,7 +54164,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -54238,7 +54238,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -54277,7 +54277,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -54419,12 +54419,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -54897,7 +54897,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -54932,7 +54932,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -55187,7 +55187,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -55221,7 +55221,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -55910,7 +55910,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -56122,12 +56122,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -56251,7 +56251,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -56335,7 +56335,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -56345,7 +56345,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -56656,7 +56656,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -57316,7 +57316,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -57440,12 +57440,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -57480,12 +57480,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -57564,7 +57564,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -57677,7 +57677,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -57716,7 +57716,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -57726,7 +57726,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -57842,7 +57842,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -57881,7 +57881,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -58648,7 +58648,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -58854,7 +58854,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -58893,7 +58893,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -59088,7 +59088,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -59190,7 +59190,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -59339,17 +59339,17 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -59518,7 +59518,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -59930,7 +59930,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -60032,7 +60032,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -60072,7 +60072,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -60417,7 +60417,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -60452,12 +60452,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -61489,7 +61489,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -61920,7 +61920,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -63370,7 +63370,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -63785,7 +63785,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -63830,7 +63830,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -64175,7 +64175,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -64250,12 +64250,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -64329,7 +64329,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -64363,7 +64363,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -64569,7 +64569,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -65024,7 +65024,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -65346,7 +65346,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -65586,7 +65586,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -65705,7 +65705,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -65845,7 +65845,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -65889,7 +65889,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -66240,7 +66240,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -66285,7 +66285,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -66329,7 +66329,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -66368,7 +66368,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -66580,12 +66580,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -66842,7 +66842,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -66916,7 +66916,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -67217,7 +67217,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -67482,7 +67482,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -67785,7 +67785,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -68485,7 +68485,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -68525,7 +68525,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -69266,7 +69266,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -69512,7 +69512,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -70505,7 +70505,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -70786,7 +70786,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -70821,12 +70821,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -71397,7 +71397,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -71857,7 +71857,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -71891,12 +71891,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -71930,7 +71930,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -72189,12 +72189,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -72514,7 +72514,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -72703,7 +72703,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -72965,7 +72965,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -73113,7 +73113,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -73417,7 +73417,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -73519,7 +73519,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -73862,7 +73862,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -73896,7 +73896,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -73906,7 +73906,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -75042,7 +75042,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -75495,12 +75495,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -75682,7 +75682,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -75973,12 +75973,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -76094,7 +76094,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -76255,7 +76255,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -76397,7 +76397,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -76506,12 +76506,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -76898,7 +76898,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -77040,7 +77040,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -77601,7 +77601,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -77989,12 +77989,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -78476,7 +78476,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -78557,7 +78557,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -78962,7 +78962,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -79524,7 +79524,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -79534,12 +79534,12 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -80164,7 +80164,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -80352,17 +80352,17 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -81714,7 +81714,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -81788,12 +81788,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -81951,7 +81951,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -82001,7 +82001,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -82116,7 +82116,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -82266,12 +82266,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -82789,7 +82789,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -82985,12 +82985,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -83024,7 +83024,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -83429,7 +83429,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -83439,7 +83439,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -83743,7 +83743,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -83818,12 +83818,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -84556,7 +84556,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -85073,12 +85073,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -85115,7 +85115,7 @@
         "course": "senior",
         "stage": "3",
         "meaning": "伝播する",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -85125,7 +85125,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -85194,7 +85194,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -85204,7 +85204,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -85722,12 +85722,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -85766,7 +85766,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -86374,7 +86374,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -86591,7 +86591,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -86631,7 +86631,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -86711,7 +86711,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -86976,7 +86976,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -87428,7 +87428,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -87650,7 +87650,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -88198,7 +88198,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -88308,7 +88308,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -88511,7 +88511,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -88626,12 +88626,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -88706,12 +88706,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -88991,7 +88991,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -90514,12 +90514,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -91196,7 +91196,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -91378,7 +91378,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -91538,7 +91538,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -91886,7 +91886,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -91896,7 +91896,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -91965,7 +91965,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -92074,7 +92074,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -92119,7 +92119,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -92276,7 +92276,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -92354,7 +92354,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -92948,7 +92948,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -93067,7 +93067,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -93494,7 +93494,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -93863,7 +93863,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -94286,7 +94286,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -95143,7 +95143,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -95711,7 +95711,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -95721,7 +95721,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -96775,7 +96775,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -96815,12 +96815,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -96830,7 +96830,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -97431,7 +97431,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -98099,12 +98099,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -101413,7 +101413,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -101527,7 +101527,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -101648,12 +101648,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -102496,12 +102496,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -102645,7 +102645,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -102809,7 +102809,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -103210,7 +103210,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -103360,12 +103360,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -103411,7 +103411,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -103652,7 +103652,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -103875,12 +103875,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -103994,7 +103994,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -104069,7 +104069,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -104240,12 +104240,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -104388,7 +104388,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -104506,7 +104506,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -104815,12 +104815,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -104944,7 +104944,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -105157,12 +105157,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -105390,7 +105390,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -105723,7 +105723,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -105805,7 +105805,7 @@
         "course": "toeic",
         "stage": "900",
         "meaning": "錠剤",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -105880,7 +105880,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -106217,7 +106217,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -106922,7 +106922,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -107071,7 +107071,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -107187,7 +107187,7 @@
         "course": "toeic",
         "stage": "900",
         "meaning": "窓口係",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -107436,7 +107436,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -107557,17 +107557,17 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -108030,7 +108030,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -108200,7 +108200,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -108405,7 +108405,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -109551,7 +109551,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -110189,7 +110189,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -111097,12 +111097,12 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -111112,7 +111112,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -111186,7 +111186,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -113231,7 +113231,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -113246,7 +113246,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -113539,7 +113539,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -114166,7 +114166,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -114202,7 +114202,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -114529,7 +114529,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -114602,7 +114602,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -115499,7 +115499,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -116277,7 +116277,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -116560,7 +116560,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -116749,7 +116749,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -116857,7 +116857,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -117054,7 +117054,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -117929,7 +117929,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -118010,7 +118010,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -118210,7 +118210,7 @@
         "course": "toeic",
         "stage": "900",
         "meaning": "容器",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -118423,7 +118423,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -118792,7 +118792,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -118938,7 +118938,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -119050,7 +119050,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -119159,7 +119159,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -119198,7 +119198,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -119499,7 +119499,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -120006,7 +120006,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -120713,7 +120713,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -120753,7 +120753,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -121002,7 +121002,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -121138,7 +121138,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -121148,7 +121148,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -122258,7 +122258,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -122298,7 +122298,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -122684,7 +122684,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -123351,7 +123351,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -123361,7 +123361,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },

@@ -370,7 +370,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -404,7 +404,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -506,7 +506,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -710,7 +710,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -880,7 +880,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -982,7 +982,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -1016,7 +1016,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -1050,7 +1050,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -1119,7 +1119,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -1221,7 +1221,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -1323,7 +1323,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -1425,7 +1425,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -1459,7 +1459,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -1697,7 +1697,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -1799,7 +1799,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -1867,7 +1867,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -1901,7 +1901,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -1935,7 +1935,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -2105,7 +2105,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -2343,7 +2343,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -2377,7 +2377,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -2684,7 +2684,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -2956,7 +2956,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -3024,7 +3024,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -3126,7 +3126,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3194,7 +3194,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3228,7 +3228,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3262,7 +3262,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3467,7 +3467,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3535,7 +3535,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -3637,7 +3637,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3671,7 +3671,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3705,7 +3705,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -3739,7 +3739,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -3841,7 +3841,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -3875,7 +3875,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4079,7 +4079,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4147,7 +4147,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -4181,7 +4181,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4215,7 +4215,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -4317,7 +4317,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -4487,7 +4487,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4691,7 +4691,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -4759,7 +4759,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -4963,7 +4963,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -5133,7 +5133,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5167,7 +5167,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5235,7 +5235,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5269,7 +5269,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5371,7 +5371,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5405,7 +5405,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -5473,7 +5473,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -5575,7 +5575,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -5677,7 +5677,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -5745,7 +5745,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5779,7 +5779,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5881,7 +5881,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5915,7 +5915,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5949,7 +5949,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -5983,7 +5983,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -6085,7 +6085,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6119,7 +6119,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6187,7 +6187,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6255,7 +6255,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -6357,7 +6357,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6561,7 +6561,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6629,7 +6629,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6663,7 +6663,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6697,7 +6697,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -6731,7 +6731,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6834,7 +6834,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -6902,7 +6902,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -6936,7 +6936,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7038,7 +7038,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7072,7 +7072,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7107,7 +7107,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -7141,7 +7141,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7346,7 +7346,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7448,7 +7448,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7516,7 +7516,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -7584,7 +7584,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -7618,7 +7618,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7720,7 +7720,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -7822,7 +7822,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -8061,7 +8061,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -8129,7 +8129,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -8197,7 +8197,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -8265,7 +8265,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -8401,7 +8401,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -8435,7 +8435,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -8503,7 +8503,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -8537,7 +8537,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -8809,7 +8809,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -9081,7 +9081,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -9217,7 +9217,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -9320,7 +9320,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -9558,7 +9558,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -9592,7 +9592,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -9694,7 +9694,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -9830,7 +9830,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -9864,7 +9864,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -9898,7 +9898,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -9932,7 +9932,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -10068,7 +10068,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -10136,7 +10136,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -10204,7 +10204,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -10238,7 +10238,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -10306,7 +10306,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -10340,7 +10340,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -10579,7 +10579,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -10613,7 +10613,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -10817,7 +10817,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -10919,7 +10919,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -11090,7 +11090,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -11158,7 +11158,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -11396,7 +11396,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -11702,7 +11702,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -11804,7 +11804,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -11906,7 +11906,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12008,7 +12008,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12043,7 +12043,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12111,7 +12111,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12145,7 +12145,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12179,7 +12179,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12247,7 +12247,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12281,7 +12281,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -12485,7 +12485,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -12655,7 +12655,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12791,7 +12791,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -12859,7 +12859,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -13063,7 +13063,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -13131,7 +13131,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -13165,7 +13165,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -13335,7 +13335,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -13505,7 +13505,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -13641,7 +13641,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -13709,7 +13709,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -13811,7 +13811,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -13879,7 +13879,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -14083,7 +14083,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -14117,7 +14117,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -14321,7 +14321,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -14457,7 +14457,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -14525,7 +14525,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -14593,7 +14593,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -14798,7 +14798,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -15173,7 +15173,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -15309,7 +15309,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -15411,7 +15411,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -15513,7 +15513,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -15547,7 +15547,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -15616,7 +15616,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -15650,7 +15650,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -15753,7 +15753,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -15787,7 +15787,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -15821,7 +15821,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -15855,7 +15855,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -15889,7 +15889,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -16025,7 +16025,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -16059,7 +16059,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -16297,7 +16297,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -16365,7 +16365,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -16501,7 +16501,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -16535,7 +16535,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -16841,7 +16841,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -16909,7 +16909,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -16943,7 +16943,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -16977,7 +16977,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -17113,7 +17113,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -17182,7 +17182,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -17216,7 +17216,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -17352,7 +17352,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -17386,7 +17386,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -17420,7 +17420,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -17590,7 +17590,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -17692,7 +17692,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -17726,7 +17726,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -17760,7 +17760,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -17828,7 +17828,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -18066,7 +18066,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -18100,7 +18100,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -18168,7 +18168,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -18304,7 +18304,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -18338,7 +18338,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -18372,7 +18372,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -18406,7 +18406,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -18474,7 +18474,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -18508,7 +18508,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -18644,7 +18644,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -18814,7 +18814,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -18882,7 +18882,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19018,7 +19018,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -19188,7 +19188,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19256,7 +19256,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19392,7 +19392,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19426,7 +19426,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19664,7 +19664,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19698,7 +19698,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -19732,7 +19732,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19766,7 +19766,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -19868,7 +19868,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -20344,7 +20344,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -20378,7 +20378,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -20481,7 +20481,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -20515,7 +20515,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -20617,7 +20617,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -20685,7 +20685,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -20753,7 +20753,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -20889,7 +20889,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -20923,7 +20923,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -20991,7 +20991,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21161,7 +21161,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21195,7 +21195,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -21229,7 +21229,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21263,7 +21263,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -21297,7 +21297,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21331,7 +21331,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21399,7 +21399,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21433,7 +21433,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21706,7 +21706,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -21808,7 +21808,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -21876,7 +21876,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -21978,7 +21978,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -22046,7 +22046,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -22114,7 +22114,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -22182,7 +22182,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -22318,7 +22318,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -22386,7 +22386,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -22420,7 +22420,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -22454,7 +22454,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -22488,7 +22488,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -22590,7 +22590,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -22658,7 +22658,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -22862,7 +22862,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23032,7 +23032,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23202,7 +23202,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23236,7 +23236,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23304,7 +23304,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -23338,7 +23338,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23372,7 +23372,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23406,7 +23406,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23474,7 +23474,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -23508,7 +23508,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -23917,7 +23917,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -24019,7 +24019,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -24053,7 +24053,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -24155,7 +24155,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -24359,7 +24359,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -24597,7 +24597,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -24631,7 +24631,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -24801,7 +24801,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -24904,7 +24904,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -24972,7 +24972,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -25006,7 +25006,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -25040,7 +25040,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -25618,7 +25618,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -25686,7 +25686,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -25924,7 +25924,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -26128,7 +26128,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -26162,7 +26162,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -26366,7 +26366,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -26536,7 +26536,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -26808,7 +26808,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -27046,7 +27046,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -27148,7 +27148,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -27386,7 +27386,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -27420,7 +27420,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -27522,7 +27522,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -27658,7 +27658,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -27692,7 +27692,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -27828,7 +27828,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -27862,7 +27862,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -27931,7 +27931,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -27999,7 +27999,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -28169,7 +28169,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -28203,7 +28203,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -28509,7 +28509,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -28577,7 +28577,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -28645,7 +28645,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -28747,7 +28747,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -28849,7 +28849,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -29189,7 +29189,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -29393,7 +29393,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -29495,7 +29495,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -29666,7 +29666,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -29700,7 +29700,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -29938,7 +29938,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30006,7 +30006,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30040,7 +30040,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30074,7 +30074,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30108,7 +30108,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30346,7 +30346,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -30380,7 +30380,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -30448,7 +30448,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30516,7 +30516,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30550,7 +30550,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30822,7 +30822,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30924,7 +30924,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -30958,7 +30958,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -30992,7 +30992,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -31060,7 +31060,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -31162,7 +31162,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -31809,7 +31809,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -31945,7 +31945,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -32013,7 +32013,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -32116,7 +32116,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -32218,7 +32218,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -32286,7 +32286,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -32320,7 +32320,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -32423,7 +32423,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -32457,7 +32457,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -32559,7 +32559,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -32661,7 +32661,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -32763,7 +32763,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -32797,7 +32797,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -32899,7 +32899,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -32967,7 +32967,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -33103,7 +33103,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -33137,7 +33137,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -33239,7 +33239,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -33647,7 +33647,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -33681,7 +33681,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -33749,7 +33749,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -33817,7 +33817,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -33885,7 +33885,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -33987,7 +33987,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34021,7 +34021,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34089,7 +34089,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34191,7 +34191,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -34259,7 +34259,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -34293,7 +34293,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34327,7 +34327,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34361,7 +34361,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34463,7 +34463,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34497,7 +34497,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34531,7 +34531,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -34565,7 +34565,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34633,7 +34633,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34701,7 +34701,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -34735,7 +34735,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34939,7 +34939,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -34973,7 +34973,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -35007,7 +35007,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -35075,7 +35075,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -35143,7 +35143,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -35177,7 +35177,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -35245,7 +35245,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -35347,7 +35347,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -35483,7 +35483,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -35517,7 +35517,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -35551,7 +35551,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -35585,7 +35585,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -35653,7 +35653,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -35891,7 +35891,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -35925,7 +35925,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -36061,7 +36061,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -36095,7 +36095,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36163,7 +36163,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36265,7 +36265,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -36333,7 +36333,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -36367,7 +36367,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36401,7 +36401,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36435,7 +36435,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36503,7 +36503,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -36537,7 +36537,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -36571,7 +36571,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36639,7 +36639,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36707,7 +36707,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -36775,7 +36775,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -36911,7 +36911,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -36979,7 +36979,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -37217,7 +37217,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -37251,7 +37251,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -37285,7 +37285,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -37319,7 +37319,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -37557,7 +37557,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -37727,7 +37727,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -37829,7 +37829,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -38067,7 +38067,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -38101,7 +38101,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -38203,7 +38203,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -38237,7 +38237,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -38271,7 +38271,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -38407,7 +38407,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -38543,7 +38543,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -38611,7 +38611,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -38747,7 +38747,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -38781,7 +38781,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -38849,7 +38849,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -38883,7 +38883,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -38951,7 +38951,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -39087,7 +39087,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -39189,7 +39189,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -39223,7 +39223,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -39359,7 +39359,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -39393,7 +39393,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -39563,7 +39563,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -39597,7 +39597,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -40005,7 +40005,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -40039,7 +40039,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40107,7 +40107,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40141,7 +40141,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -40209,7 +40209,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40311,7 +40311,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40685,7 +40685,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40821,7 +40821,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -40991,7 +40991,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -41161,7 +41161,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -41263,7 +41263,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -41297,7 +41297,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -41433,7 +41433,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -41603,7 +41603,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -41637,7 +41637,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -41875,7 +41875,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -42011,7 +42011,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -42181,7 +42181,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -42283,7 +42283,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -42385,7 +42385,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -42419,7 +42419,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -42487,7 +42487,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -42759,7 +42759,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -42861,7 +42861,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -42929,7 +42929,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -42963,7 +42963,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -43133,7 +43133,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -43167,7 +43167,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -43235,7 +43235,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -43303,7 +43303,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -43609,7 +43609,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -43677,7 +43677,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -43916,7 +43916,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -44120,7 +44120,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -44222,7 +44222,7 @@
       {
         "course": "conversation",
         "stage": "c2",
-        "tier": 3
+        "tier": 1
       }
     ]
   }

@@ -3103,12 +3103,12 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -4783,12 +4783,12 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -7716,7 +7716,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",

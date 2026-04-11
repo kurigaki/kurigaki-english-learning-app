@@ -927,7 +927,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -1373,7 +1373,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -1945,7 +1945,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -3132,7 +3132,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -22194,7 +22194,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -27514,7 +27514,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -38374,13 +38374,13 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
         "stage": "900",
         "meaning": "下書きする",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -39505,7 +39505,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -39544,7 +39544,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -42433,7 +42433,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -43600,7 +43600,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -46368,7 +46368,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -47472,7 +47472,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -47910,7 +47910,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -53517,7 +53517,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -64266,7 +64266,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -65791,7 +65791,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -69283,13 +69283,13 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
         "stage": "900",
         "meaning": "労力",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -71766,7 +71766,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
@@ -77236,7 +77236,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -80789,17 +80789,17 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -95685,7 +95685,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -100459,7 +100459,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -103335,12 +103335,12 @@
         "course": "toeic",
         "stage": "900",
         "meaning": "認可・承認",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -103579,7 +103579,7 @@
         "course": "toeic",
         "stage": "900",
         "meaning": "規模",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -106230,7 +106230,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -108862,7 +108862,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -109305,7 +109305,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -109355,7 +109355,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -109677,7 +109677,7 @@
         "course": "toeic",
         "stage": "900",
         "meaning": "貯蔵",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -109723,7 +109723,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -110865,7 +110865,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -111177,7 +111177,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -111533,7 +111533,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -112467,7 +112467,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -112629,7 +112629,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -112669,7 +112669,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -112946,7 +112946,7 @@
         "course": "toeic",
         "stage": "900",
         "meaning": "傾向",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -113664,7 +113664,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -113988,7 +113988,7 @@
       {
         "course": "conversation",
         "stage": "c1",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -114219,7 +114219,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -115038,7 +115038,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -115474,7 +115474,7 @@
         "course": "toeic",
         "stage": "900",
         "meaning": "変換する",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -115526,7 +115526,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -115767,7 +115767,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -115962,7 +115962,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -116706,7 +116706,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -116854,7 +116854,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       }
     ]
   },
@@ -116894,7 +116894,7 @@
       {
         "course": "eiken",
         "stage": "pre1",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -116945,7 +116945,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       }
     ]
   },
@@ -117242,7 +117242,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -118583,7 +118583,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "eiken",
@@ -119378,7 +119378,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -119656,7 +119656,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
@@ -121855,7 +121855,7 @@
       {
         "course": "senior",
         "stage": "3",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "eiken",
@@ -122327,7 +122327,7 @@
       {
         "course": "toeic",
         "stage": "900",
-        "tier": 3
+        "tier": 2
       },
       {
         "course": "conversation",
