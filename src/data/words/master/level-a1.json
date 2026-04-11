@@ -2864,7 +2864,8 @@
       },
       {
         "course": "eiken",
-        "stage": "1"
+        "stage": "1",
+        "tier": 2
       },
       {
         "course": "toeic",
@@ -12610,7 +12611,8 @@
       },
       {
         "course": "eiken",
-        "stage": "1"
+        "stage": "1",
+        "tier": 1
       },
       {
         "course": "conversation",
@@ -16354,7 +16356,8 @@
       },
       {
         "course": "eiken",
-        "stage": "1"
+        "stage": "1",
+        "tier": 2
       }
     ]
   },
