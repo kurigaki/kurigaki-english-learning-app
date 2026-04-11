@@ -228,7 +228,7 @@
       },
       {
         "en": "He accepted the challenge.",
-        "ja": "彼はその挑戦を受け入れた。",
+        "ja": "彼はその挑戦を受け入れました。",
         "context": "日常"
       }
     ],
@@ -845,7 +845,7 @@
     "examples": [
       {
         "en": "Adults must show ID.",
-        "ja": "大人は身分証明書を見せなければならない。",
+        "ja": "大人は身分証明書を見せなければなりません。",
         "context": "法律"
       },
       {
@@ -940,8 +940,8 @@
       },
       {
         "en": "He loves outdoor adventures.",
-        "ja": "彼は野外の冒険が大好きだ。",
-        "context": "学校"
+        "ja": "彼は野外の冒険が大好きです。",
+        "context": "自然"
       },
       {
         "en": "The trip was a real adventure.",
@@ -1150,8 +1150,8 @@
       },
       {
         "en": "Climate change affects ecosystems.",
-        "ja": "気候変動は生態系に影響を与える。",
-        "context": "学術"
+        "ja": "気候変動は生態系に影響を与えます。",
+        "context": "環境"
       },
       {
         "en": "How does sleep affect memory?",
@@ -2064,8 +2064,8 @@
         "context": "感情"
       },
       {
-        "en": "Anger can hurt people.",
-        "ja": "怒りは人を傷つけることがある。",
+        "en": "Anger can hurt people around you.",
+        "ja": "怒りはあなたの周囲の人を傷つけることがあります。",
         "context": "感情"
       }
     ],
@@ -2182,8 +2182,8 @@
     "examples": [
       {
         "en": "The announcement surprised everyone.",
-        "ja": "発表は全員を驚かせた。",
-        "context": "高1"
+        "ja": "その発表は全員を驚かせました。",
+        "context": "学校"
       },
       {
         "en": "An official announcement was made at noon.",
@@ -2776,8 +2776,8 @@
       },
       {
         "en": "Modern appliances save time.",
-        "ja": "現代の家電は時間を節約する。",
-        "context": "会話"
+        "ja": "現代の家電は時間を節約してくれます。",
+        "context": "家庭"
       },
       {
         "en": "The broken appliance was repaired.",
@@ -2893,8 +2893,8 @@
       },
       {
         "en": "She studied architectural history.",
-        "ja": "建築の歴史を研究した。",
-        "context": "ビジネス"
+        "ja": "彼女は建築の歴史を研究しました。",
+        "context": "教育"
       },
       {
         "en": "The architectural style is unique.",
@@ -3016,7 +3016,7 @@
       },
       {
         "en": "She won the argument.",
-        "ja": "彼女は議論に勝った。",
+        "ja": "彼女は議論に勝ちました。",
         "context": "学校"
       },
       {
@@ -3949,7 +3949,7 @@
       },
       {
         "en": "Authentic leadership builds trust.",
-        "ja": "本物のリーダーシップは信頼を築く。",
+        "ja": "本物のリーダーシップは信頼を築きます。",
         "context": "ビジネス"
       }
     ],
@@ -4059,9 +4059,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "Electric automobiles are growing.",
-        "ja": "電気自動車が増えている。",
-        "context": "ビジネス"
+        "en": "Electric automobiles are growing in popularity.",
+        "ja": "電気自動車の人気が高まっています。",
+        "context": "テクノロジー"
       }
     ],
     "categories": [
@@ -4814,14 +4814,14 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Please confirm beforehand.",
-        "ja": "事前に確認してください。",
-        "context": "ビジネス"
+        "en": "Please confirm your reservation beforehand.",
+        "ja": "事前に予約を確認してください。",
+        "context": "旅行"
       },
       {
         "en": "She prepared everything beforehand.",
-        "ja": "全てを事前に準備した。",
-        "context": "ビジネス"
+        "ja": "彼女は全てを事前に準備しました。",
+        "context": "仕事"
       },
       {
         "en": "Notify us beforehand if you are late.",
@@ -6279,7 +6279,7 @@
       {
         "en": "Don't break the rules.",
         "ja": "ルールを破らないでください。",
-        "context": "法律"
+        "context": "学校"
       },
       {
         "en": "She broke the world record.",
@@ -6708,8 +6708,8 @@
         "context": "ビジネス"
       },
       {
-        "en": "Buffet-style dining is convenient.",
-        "ja": "ビュッフェスタイルの食事は便利だ。",
+        "en": "Buffet-style dining is convenient for large groups.",
+        "ja": "ビュッフェスタイルの食事は大人数に便利です。",
         "context": "食事"
       }
     ],
@@ -7567,8 +7567,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "national capital.",
-        "ja": "国の首都",
+        "en": "Washington D.C. is the national capital of the United States.",
+        "ja": "ワシントンD.C.はアメリカの首都です。",
         "context": "地理"
       },
       {
@@ -7691,13 +7691,13 @@
         "context": "日常"
       },
       {
-        "en": "careful planning.",
-        "ja": "慎重な計画",
+        "en": "Careful planning is key to success.",
+        "ja": "慎重な計画が成功の鍵です。",
         "context": "仕事"
       },
       {
-        "en": "careful driver.",
-        "ja": "注意深い運転者",
+        "en": "He is a careful driver who always checks mirrors.",
+        "ja": "彼は常にミラーを確認する注意深い運転者です。",
         "context": "安全"
       }
     ],
@@ -7776,8 +7776,8 @@
       },
       {
         "en": "She vacuumed the carpet.",
-        "ja": "彼女はじゅうたんに掃除機をかけた。",
-        "context": "日常"
+        "ja": "彼女はじゅうたんに掃除機をかけました。",
+        "context": "家事"
       },
       {
         "en": "Spill stains are hard to remove from carpet.",
@@ -7932,19 +7932,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "product catalog.",
-        "ja": "製品カタログ",
-        "context": "ビジネス"
+        "en": "The product catalog lists all available items.",
+        "ja": "製品カタログには全ての取扱商品が掲載されています。",
+        "context": "買い物"
       },
       {
-        "en": "online catalog.",
-        "ja": "オンライン目録",
-        "context": "技術"
+        "en": "You can browse our online catalog anytime.",
+        "ja": "いつでもオンラインカタログを閲覧できます。",
+        "context": "インターネット"
       },
       {
-        "en": "library catalog.",
-        "ja": "図書目録",
-        "context": "教育"
+        "en": "She searched the library catalog for science books.",
+        "ja": "彼女は図書カタログで科学の本を探しました。",
+        "context": "図書館"
       }
     ],
     "categories": [
@@ -8087,7 +8087,7 @@
       },
       {
         "en": "We celebrate scientific discoveries.",
-        "ja": "私たちは科学的発見を祝う。",
+        "ja": "私たちは科学的発見を祝います。",
         "context": "学術"
       },
       {
@@ -8286,8 +8286,8 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "central government.",
-        "ja": "中央政府",
+        "en": "The central government controls national policy.",
+        "ja": "中央政府は国家政策を管理します。",
         "context": "政治"
       },
       {
@@ -8296,9 +8296,9 @@
         "context": "学術"
       },
       {
-        "en": "central location.",
-        "ja": "中心的な場所",
-        "context": "地理"
+        "en": "The hotel is in a central location near the station.",
+        "ja": "ホテルは駅の近くの中心的な場所にあります。",
+        "context": "旅行"
       }
     ],
     "categories": [
@@ -8412,19 +8412,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "board chairman.",
-        "ja": "取締役会長",
+        "en": "The board chairman opened the meeting.",
+        "ja": "取締役会長が会議を開始しました。",
         "context": "ビジネス"
       },
       {
-        "en": "act as chairman.",
-        "ja": "議長を務める",
-        "context": "仕事"
+        "en": "She was asked to act as chairman for the day.",
+        "ja": "彼女はその日の議長を務めるよう頼まれました。",
+        "context": "会議"
       },
       {
-        "en": "former chairman.",
-        "ja": "前会長",
-        "context": "報道"
+        "en": "The former chairman gave a speech at the ceremony.",
+        "ja": "前会長が式典でスピーチを行いました。",
+        "context": "式典"
       }
     ],
     "categories": [
@@ -8459,8 +8459,8 @@
         "context": "政治"
       },
       {
-        "en": "chamber of commerce.",
-        "ja": "商工会議所",
+        "en": "The local chamber of commerce supports small businesses.",
+        "ja": "地元の商工会議所は中小企業を支援しています。",
         "context": "ビジネス"
       },
       {
@@ -8530,19 +8530,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "world championship.",
-        "ja": "世界選手権",
+        "en": "Japan hosted the world championship last year.",
+        "ja": "日本は昨年、世界選手権を開催しました。",
         "context": "スポーツ"
       },
       {
-        "en": "win a championship.",
-        "ja": "選手権を勝ち取る",
+        "en": "She trained hard to win a championship.",
+        "ja": "彼女は選手権を勝ち取るために懸命に練習しました。",
         "context": "スポーツ"
       },
       {
-        "en": "championship game.",
-        "ja": "選手権試合",
-        "context": "スポーツ"
+        "en": "Millions watched the championship game on TV.",
+        "ja": "何百万人もの人がテレビで選手権試合を観戦しました。",
+        "context": "観戦"
       }
     ],
     "categories": [
@@ -8775,7 +8775,7 @@
       },
       {
         "en": "Leadership requires strong characteristics.",
-        "ja": "リーダーシップには強い特徴が必要だ。",
+        "ja": "リーダーシップには強い特性が必要です。",
         "context": "ビジネス"
       }
     ],
@@ -8820,9 +8820,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "free of charge.",
-        "ja": "無料で",
-        "context": "日常"
+        "en": "This service is available free of charge.",
+        "ja": "このサービスは無料でご利用いただけます。",
+        "context": "サービス"
       },
       {
         "en": "She is in charge of the marketing department.",
@@ -8951,9 +8951,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "chat with friends.",
-        "ja": "友達とおしゃべりする",
-        "context": "日常"
+        "en": "She likes to chat with friends after school.",
+        "ja": "彼女は放課後に友達とおしゃべりするのが好きです。",
+        "context": "学校"
       },
       {
         "en": "Students can ask questions through the online chat.",
@@ -9169,19 +9169,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "dangerous chemical.",
-        "ja": "危険な化学物質",
+        "en": "Workers must handle dangerous chemicals with care.",
+        "ja": "作業員は危険な化学物質を注意して取り扱わなければなりません。",
         "context": "安全"
       },
       {
-        "en": "chemical reaction.",
-        "ja": "化学反応",
+        "en": "A chemical reaction produces heat and light.",
+        "ja": "化学反応は熱と光を生み出します。",
         "context": "科学"
       },
       {
-        "en": "chemical plant.",
-        "ja": "化学工場",
-        "context": "ビジネス"
+        "en": "The chemical plant was built near the river.",
+        "ja": "化学工場は川の近くに建設されました。",
+        "context": "工業"
       }
     ],
     "categories": [
@@ -9252,8 +9252,8 @@
         "context": "法律"
       },
       {
-        "en": "chief executive.",
-        "ja": "最高責任者",
+        "en": "She became the chief executive of a major company.",
+        "ja": "彼女は大企業の最高責任者になりました。",
         "context": "ビジネス"
       },
       {
@@ -9286,8 +9286,8 @@
       },
       {
         "en": "Childhood memories are precious.",
-        "ja": "子供の頃の思い出は大切だ。",
-        "context": "会話"
+        "ja": "子供の頃の思い出は大切です。",
+        "context": "思い出"
       },
       {
         "en": "He often talks about his childhood.",
@@ -9491,14 +9491,14 @@
         "context": "文学"
       },
       {
-        "en": "classic design.",
-        "ja": "古典的なデザイン",
-        "context": "芸術"
+        "en": "This jacket has a classic design that never goes out of style.",
+        "ja": "このジャケットは廃れることのない古典的なデザインです。",
+        "context": "ファッション"
       },
       {
-        "en": "classic example.",
-        "ja": "典型的な例",
-        "context": "学術"
+        "en": "This is a classic example of poor planning.",
+        "ja": "これは計画不足の典型的な例です。",
+        "context": "説明"
       }
     ],
     "categories": [
@@ -9594,7 +9594,7 @@
       {
         "en": "Please speak more clearly.",
         "ja": "もっとはっきり話してください。",
-        "context": "学校"
+        "context": "授業"
       },
       {
         "en": "The stars shone clearly in the sky.",
@@ -9813,8 +9813,8 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "closely related.",
-        "ja": "密接に関連した",
+        "en": "The two topics are closely related.",
+        "ja": "この二つのテーマは密接に関連しています。",
         "context": "学術"
       },
       {
@@ -9823,9 +9823,9 @@
         "context": "日常"
       },
       {
-        "en": "closely examine.",
-        "ja": "詳しく調べる",
-        "context": "学術"
+        "en": "The doctor closely examined the patient.",
+        "ja": "医師は患者を詳しく調べました。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -9926,13 +9926,13 @@
         "context": "日常"
       },
       {
-        "en": "clothing store.",
-        "ja": "衣料品店",
+        "en": "She found a good deal at a clothing store.",
+        "ja": "彼女は衣料品店でお得な買い物をしました。",
         "context": "買い物"
       },
       {
-        "en": "traditional clothing.",
-        "ja": "伝統的な衣服",
+        "en": "They wore traditional clothing at the festival.",
+        "ja": "彼らは祭りで伝統的な衣服を着ていました。",
         "context": "文化"
       }
     ],
@@ -10133,8 +10133,8 @@
         "context": "社会"
       },
       {
-        "en": "code of conduct.",
-        "ja": "行動規範",
+        "en": "Every employee must follow the code of conduct.",
+        "ja": "全ての従業員は行動規範に従わなければなりません。",
         "context": "職場"
       },
       {
@@ -10172,19 +10172,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "art collection.",
-        "ja": "美術コレクション",
-        "context": "芸術"
+        "en": "He has a large art collection at home.",
+        "ja": "彼は自宅に大きな美術コレクションを持っています。",
+        "context": "趣味"
       },
       {
-        "en": "garbage collection.",
-        "ja": "ごみ収集",
-        "context": "日常"
+        "en": "Garbage collection happens every Tuesday morning.",
+        "ja": "ごみ収集は毎週火曜の朝に行われます。",
+        "context": "地域"
       },
       {
-        "en": "data collection.",
-        "ja": "データ収集",
-        "context": "学術"
+        "en": "Data collection is the first step in the research.",
+        "ja": "データ収集は研究の最初のステップです。",
+        "context": "研究"
       }
     ],
     "categories": [
@@ -10280,19 +10280,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "winning combination.",
-        "ja": "勝利の組み合わせ",
+        "en": "Speed and accuracy is a winning combination.",
+        "ja": "速さと正確さは勝利の組み合わせです。",
+        "context": "スポーツ"
+      },
+      {
+        "en": "Success depends on a combination of factors.",
+        "ja": "成功は要因の組み合わせに左右されます。",
         "context": "ビジネス"
       },
       {
-        "en": "combination of factors.",
-        "ja": "要因の組み合わせ",
-        "context": "学術"
-      },
-      {
-        "en": "color combination.",
-        "ja": "色の組み合わせ",
-        "context": "芸術"
+        "en": "She chose a beautiful color combination for the room.",
+        "ja": "彼女は部屋のために美しい色の組み合わせを選びました。",
+        "context": "インテリア"
       }
     ],
     "categories": [
@@ -10507,19 +10507,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "comfortable seat.",
-        "ja": "快適な座席",
+        "en": "This comfortable seat made the long flight easy.",
+        "ja": "この快適な座席のおかげで長いフライトが楽でした。",
         "context": "旅行"
       },
       {
-        "en": "feel comfortable.",
-        "ja": "快適に感じる",
-        "context": "日常"
+        "en": "I feel comfortable speaking English now.",
+        "ja": "今では快適に英語を話せます。",
+        "context": "学習"
       },
       {
-        "en": "comfortable home.",
-        "ja": "居心地のよい家",
-        "context": "日常"
+        "en": "They have a comfortable home near the park.",
+        "ja": "彼らは公園の近くに居心地のよい家があります。",
+        "context": "住宅"
       }
     ],
     "categories": [
@@ -10553,9 +10553,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "leave a comment.",
-        "ja": "コメントを残す",
-        "context": "社会"
+        "en": "Please leave a comment on the post.",
+        "ja": "その投稿にコメントを残してください。",
+        "context": "通信"
       },
       {
         "en": "The politician said no comment when asked about the scandal.",
@@ -10563,9 +10563,9 @@
         "context": "報道"
       },
       {
-        "en": "positive comment.",
-        "ja": "肯定的なコメント",
-        "context": "仕事"
+        "en": "Her teacher gave her a positive comment.",
+        "ja": "先生が彼女に肯定的なコメントをくれました。",
+        "context": "学校"
       }
     ],
     "categories": [
@@ -10598,18 +10598,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "government commission.",
-        "ja": "政府委員会",
+        "en": "The government commission reviewed the report.",
+        "ja": "政府委員会が報告書を審査しました。",
         "context": "政治"
       },
       {
-        "en": "sales commission.",
-        "ja": "販売手数料",
+        "en": "Sales agents earn a commission on every deal.",
+        "ja": "営業担当者は取引ごとに販売手数料を得ます。",
         "context": "ビジネス"
       },
       {
-        "en": "investigate commission.",
-        "ja": "調査委員会",
+        "en": "An investigation commission was set up after the accident.",
+        "ja": "事故後に調査委員会が設置されました。",
         "context": "法律"
       }
     ],
@@ -10736,19 +10736,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "effective communication.",
-        "ja": "効果的な意思疎通",
+        "en": "Effective communication is essential at work.",
+        "ja": "職場では効果的なコミュニケーションが不可欠です。",
         "context": "職場"
       },
       {
-        "en": "communication skills.",
-        "ja": "コミュニケーション能力",
-        "context": "教育"
+        "en": "Good communication skills help you make friends.",
+        "ja": "コミュニケーション能力が高いと友達ができやすいです。",
+        "context": "学校"
       },
       {
-        "en": "mass communication.",
-        "ja": "大衆通信",
-        "context": "報道"
+        "en": "Television is a powerful tool for mass communication.",
+        "ja": "テレビは大衆通信の強力な手段です。",
+        "context": "メディア"
       }
     ],
     "categories": [
@@ -10822,13 +10822,13 @@
         "context": "ビジネス"
       },
       {
-        "en": "start a company.",
-        "ja": "会社を始める",
-        "context": "ビジネス"
+        "en": "He plans to start a company after college.",
+        "ja": "彼は大学卒業後に会社を始める計画があります。",
+        "context": "起業"
       },
       {
-        "en": "company policy.",
-        "ja": "会社の方針",
+        "en": "All staff must follow the company policy.",
+        "ja": "全スタッフは会社の方針に従わなければなりません。",
         "context": "職場"
       }
     ],
@@ -10868,7 +10868,7 @@
       {
         "en": "Compare these two pictures.",
         "ja": "この2枚の絵を比べてください。",
-        "context": "学校"
+        "context": "授業"
       },
       {
         "en": "She compared the prices at two shops.",
@@ -10922,14 +10922,14 @@
         "context": "学術"
       },
       {
-        "en": "price comparison.",
-        "ja": "価格比較",
+        "en": "She did a price comparison before buying.",
+        "ja": "彼女は購入前に価格比較をしました。",
         "context": "買い物"
       },
       {
-        "en": "make a comparison.",
-        "ja": "比較する",
-        "context": "学術"
+        "en": "The teacher asked us to make a comparison between the two texts.",
+        "ja": "先生は私たちに二つのテキストを比較するよう求めました。",
+        "context": "授業"
       }
     ],
     "categories": [
@@ -10964,19 +10964,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "competitive market.",
-        "ja": "競争の激しい市場",
-        "context": "ビジネス"
+        "en": "The job market is very competitive.",
+        "ja": "就職市場はとても競争が激しいです。",
+        "context": "就職"
       },
       {
-        "en": "highly competitive.",
-        "ja": "非常に競争的な",
-        "context": "ビジネス"
+        "en": "The entrance exam is highly competitive.",
+        "ja": "入学試験は非常に競争的です。",
+        "context": "受験"
       },
       {
-        "en": "competitive salary.",
-        "ja": "競争力のある給与",
-        "context": "職場"
+        "en": "The company offers a competitive salary.",
+        "ja": "その会社は競争力のある給与を提供しています。",
+        "context": "就職"
       }
     ],
     "categories": [
@@ -11096,18 +11096,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "complete the task.",
-        "ja": "課題を完成させる",
-        "context": "日常"
+        "en": "She worked hard to complete the task.",
+        "ja": "彼女は課題を完成させるために懸命に取り組みました。",
+        "context": "学校"
       },
       {
-        "en": "complete a form.",
-        "ja": "書類を記入する",
-        "context": "日常"
+        "en": "Please complete this form and hand it in.",
+        "ja": "この書類に記入して提出してください。",
+        "context": "手続き"
       },
       {
-        "en": "fully complete.",
-        "ja": "完全に完成した",
+        "en": "The project is now fully complete.",
+        "ja": "プロジェクトは完全に完成しました。",
         "context": "仕事"
       }
     ],
@@ -11166,19 +11166,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "growing complexity.",
-        "ja": "増大する複雑さ",
-        "context": "学術"
-      },
-      {
-        "en": "manage complexity.",
-        "ja": "複雑さを管理する",
-        "context": "仕事"
-      },
-      {
-        "en": "technical complexity.",
-        "ja": "技術的複雑さ",
+        "en": "The growing complexity of modern technology is a challenge.",
+        "ja": "現代技術の増大する複雑さは課題です。",
         "context": "技術"
+      },
+      {
+        "en": "Good leaders know how to manage complexity.",
+        "ja": "優れたリーダーは複雑さを管理する方法を知っています。",
+        "context": "リーダーシップ"
+      },
+      {
+        "en": "The technical complexity of the system surprised the team.",
+        "ja": "システムの技術的複雑さはチームを驚かせました。",
+        "context": "開発"
       }
     ],
     "categories": [
@@ -11214,18 +11214,18 @@
     "examples": [
       {
         "en": "She complimented his work.",
-        "ja": "彼の仕事を褒めた。",
-        "context": "ビジネス"
+        "ja": "彼女は彼の仕事を褒めました。",
+        "context": "職場"
       },
       {
-        "en": "He received many compliments.",
-        "ja": "多くの称賛を受けた。",
-        "context": "ビジネス"
+        "en": "He received many compliments on his cooking.",
+        "ja": "彼は料理について多くの称賛を受けました。",
+        "context": "食事"
       },
       {
-        "en": "Please accept my compliments.",
-        "ja": "称賛を受け取ってください。",
-        "context": "ビジネス"
+        "en": "Please accept my compliments on your performance.",
+        "ja": "あなたの演技への称賛をお受け取りください。",
+        "context": "芸術"
       }
     ],
     "categories": [
@@ -11251,14 +11251,14 @@
         "context": "技術"
       },
       {
-        "en": "electronic component.",
-        "ja": "電子部品",
-        "context": "技術"
+        "en": "He replaced a broken electronic component.",
+        "ja": "彼は壊れた電子部品を交換しました。",
+        "context": "修理"
       },
       {
-        "en": "component of system.",
-        "ja": "システムの構成要素",
-        "context": "学術"
+        "en": "Trust is a key component of any strong team.",
+        "ja": "信頼は強いチームの重要な構成要素です。",
+        "context": "チームワーク"
       }
     ],
     "categories": [
@@ -11301,18 +11301,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "lose concentration.",
-        "ja": "集中力を失う",
-        "context": "日常"
+        "en": "Loud noise can make you lose concentration.",
+        "ja": "騒音は集中力を失わせることがあります。",
+        "context": "学習"
       },
       {
-        "en": "high concentration.",
-        "ja": "高濃度",
+        "en": "There is a high concentration of salt in the water.",
+        "ja": "水の中には塩の高い濃度があります。",
         "context": "科学"
       },
       {
-        "en": "concentration of power.",
-        "ja": "権力の集中",
+        "en": "The new law prevents the concentration of power.",
+        "ja": "新しい法律は権力の集中を防ぎます。",
         "context": "政治"
       }
     ],
@@ -11357,9 +11357,9 @@
         "context": "学術"
       },
       {
-        "en": "grasp the concept.",
-        "ja": "概念を理解する",
-        "context": "学校"
+        "en": "It took time to grasp the concept.",
+        "ja": "その概念を理解するのに時間がかかりました。",
+        "context": "授業"
       }
     ],
     "categories": [
@@ -11398,14 +11398,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "growing concern.",
-        "ja": "高まる懸念",
-        "context": "報道"
+        "en": "There is growing concern about climate change.",
+        "ja": "気候変動への懸念が高まっています。",
+        "context": "環境"
       },
       {
-        "en": "express concern.",
-        "ja": "懸念を表明する",
-        "context": "日常"
+        "en": "The mayor expressed concern about rising crime.",
+        "ja": "市長は犯罪増加への懸念を表明しました。",
+        "context": "地域"
       },
       {
         "en": "Air pollution is a major concern in many large cities.",
@@ -11911,19 +11911,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "consistent results.",
-        "ja": "一貫した結果",
-        "context": "学術"
+        "en": "The team produced consistent results all season.",
+        "ja": "チームはシーズンを通じて一貫した結果を出しました。",
+        "context": "スポーツ"
       },
       {
-        "en": "remain consistent.",
-        "ja": "一貫性を保つ",
-        "context": "日常"
+        "en": "You must remain consistent with your training.",
+        "ja": "トレーニングに一貫性を保つ必要があります。",
+        "context": "練習"
       },
       {
-        "en": "consistent effort.",
-        "ja": "一貫した努力",
-        "context": "仕事"
+        "en": "Consistent effort leads to great results over time.",
+        "ja": "一貫した努力は時間をかけて素晴らしい結果につながります。",
+        "context": "学習"
       }
     ],
     "categories": [
@@ -11963,8 +11963,8 @@
     "examples": [
       {
         "en": "She performs consistently well.",
-        "ja": "一貫して良いパフォーマンスをする。",
-        "context": "ビジネス"
+        "ja": "彼女は一貫して良いパフォーマンスをします。",
+        "context": "職場"
       },
       {
         "en": "He consistently meets his targets.",
@@ -12176,18 +12176,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "consumer goods.",
-        "ja": "消費財",
+        "en": "Consumer goods are in high demand this season.",
+        "ja": "今シーズンは消費財の需要が高いです。",
         "context": "経済"
       },
       {
-        "en": "consumer rights.",
-        "ja": "消費者の権利",
+        "en": "The law protects consumer rights.",
+        "ja": "法律は消費者の権利を守っています。",
         "context": "法律"
       },
       {
-        "en": "protect consumers.",
-        "ja": "消費者を保護する",
+        "en": "Governments work to protect consumers from fraud.",
+        "ja": "政府は詐欺から消費者を保護するために取り組んでいます。",
         "context": "社会"
       }
     ],
@@ -12264,19 +12264,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "contact the office.",
-        "ja": "事務所に連絡する",
-        "context": "日常"
+        "en": "Please contact the office if you have questions.",
+        "ja": "ご質問がある場合は事務所に連絡してください。",
+        "context": "サービス"
       },
       {
-        "en": "contact information.",
-        "ja": "連絡先情報",
-        "context": "日常"
+        "en": "Please write your contact information on this form.",
+        "ja": "この用紙に連絡先情報を記入してください。",
+        "context": "手続き"
       },
       {
-        "en": "stay in contact.",
-        "ja": "連絡を保つ",
-        "context": "社会"
+        "en": "They stayed in contact after moving to different cities.",
+        "ja": "彼らは別々の都市に引っ越した後も連絡を保ちました。",
+        "context": "友人関係"
       }
     ],
     "categories": [
@@ -12302,19 +12302,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "online content.",
-        "ja": "オンラインコンテンツ",
-        "context": "技術"
+        "en": "She creates online content every week.",
+        "ja": "彼女は毎週オンラインコンテンツを作成しています。",
+        "context": "通信"
       },
       {
-        "en": "course content.",
-        "ja": "授業内容",
-        "context": "教育"
+        "en": "The course content was very interesting.",
+        "ja": "授業内容はとても興味深かったです。",
+        "context": "授業"
       },
       {
-        "en": "digital content.",
-        "ja": "デジタルコンテンツ",
-        "context": "報道"
+        "en": "Streaming services offer a lot of digital content.",
+        "ja": "ストリーミングサービスは多くのデジタルコンテンツを提供しています。",
+        "context": "エンタメ"
       }
     ],
     "categories": [
@@ -12403,8 +12403,8 @@
       },
       {
         "en": "All contestants were talented.",
-        "ja": "全ての参加者が才能があった。",
-        "context": "ビジネス"
+        "ja": "全ての参加者が才能を持っていました。",
+        "context": "コンテスト"
       }
     ],
     "categories": [
@@ -12521,19 +12521,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "sign a contract.",
-        "ja": "契約に署名する",
+        "en": "Both sides agreed to sign the contract.",
+        "ja": "両者は契約に署名することに合意しました。",
         "context": "ビジネス"
       },
       {
-        "en": "break a contract.",
-        "ja": "契約を破る",
+        "en": "It is illegal to break a contract.",
+        "ja": "契約を破ることは違法です。",
         "context": "法律"
       },
       {
-        "en": "employment contract.",
-        "ja": "雇用契約",
-        "context": "職場"
+        "en": "She signed an employment contract with the company.",
+        "ja": "彼女はその会社と雇用契約を結びました。",
+        "context": "就職"
       }
     ],
     "categories": [
@@ -12739,19 +12739,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "social convention.",
-        "ja": "社会的慣習",
-        "context": "社会"
+        "en": "Bowing is a social convention in Japan.",
+        "ja": "お辞儀は日本の社会的慣習です。",
+        "context": "文化"
       },
       {
-        "en": "international convention.",
-        "ja": "国際条約",
-        "context": "政治"
+        "en": "Many countries signed the international convention.",
+        "ja": "多くの国が国際条約に署名しました。",
+        "context": "外交"
       },
       {
-        "en": "follow convention.",
-        "ja": "慣習に従う",
-        "context": "社会"
+        "en": "She decided not to follow convention and wore something unique.",
+        "ja": "彼女は慣習に従わずにユニークな服を着ることにしました。",
+        "context": "ファッション"
       }
     ],
     "categories": [
@@ -12986,9 +12986,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Please copy this sentence.",
-        "ja": "この文をコピーしてください。",
-        "context": "学校"
+        "en": "Please copy this sentence into your notebook.",
+        "ja": "この文をノートにコピーしてください。",
+        "context": "授業"
       },
       {
         "en": "She copied his notes after class.",
@@ -13065,19 +13065,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "large corporation.",
-        "ja": "大企業",
-        "context": "ビジネス"
+        "en": "She works for a large corporation in the city.",
+        "ja": "彼女は市内の大企業で働いています。",
+        "context": "職場"
       },
       {
-        "en": "multinational corporation.",
-        "ja": "多国籍企業",
-        "context": "ビジネス"
+        "en": "The multinational corporation operates in fifty countries.",
+        "ja": "その多国籍企業は50カ国で事業を展開しています。",
+        "context": "グローバル"
       },
       {
-        "en": "corporation tax.",
-        "ja": "法人税",
-        "context": "金融"
+        "en": "Corporation tax rates vary by country.",
+        "ja": "法人税率は国によって異なります。",
+        "context": "税制"
       }
     ],
     "categories": [
@@ -13154,19 +13154,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "correspond to reality.",
-        "ja": "現実に対応する",
-        "context": "学術"
+        "en": "The results do not correspond to reality.",
+        "ja": "その結果は現実に対応していません。",
+        "context": "研究"
       },
       {
-        "en": "correspond with facts.",
-        "ja": "事実と一致する",
-        "context": "学術"
+        "en": "Her story does not correspond with the facts.",
+        "ja": "彼女の話は事実と一致しません。",
+        "context": "調査"
       },
       {
-        "en": "closely correspond.",
-        "ja": "密接に対応する",
-        "context": "学術"
+        "en": "The two samples closely correspond in their results.",
+        "ja": "その二つのサンプルは結果が密接に対応しています。",
+        "context": "科学"
       }
     ],
     "categories": [
@@ -13421,8 +13421,8 @@
         "context": "法律"
       },
       {
-        "en": "counsel the client.",
-        "ja": "依頼人に助言する",
+        "en": "A lawyer was hired to counsel the client.",
+        "ja": "弁護士が依頼人に助言するために雇われました。",
         "context": "法律"
       },
       {
@@ -13613,19 +13613,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "media coverage.",
-        "ja": "メディア報道",
+        "en": "The event received extensive media coverage.",
+        "ja": "そのイベントは広範なメディア報道を受けました。",
         "context": "報道"
       },
       {
-        "en": "health coverage.",
-        "ja": "医療保険",
+        "en": "The insurance plan provides good health coverage.",
+        "ja": "その保険プランは良い医療保険を提供しています。",
         "context": "健康"
       },
       {
-        "en": "insurance coverage.",
-        "ja": "保険の適用範囲",
-        "context": "金融"
+        "en": "Please check your insurance coverage before traveling.",
+        "ja": "旅行前に保険の適用範囲を確認してください。",
+        "context": "旅行"
       }
     ],
     "categories": [
@@ -13907,19 +13907,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "selection criterion.",
-        "ja": "選考基準",
-        "context": "教育"
+        "en": "The main selection criterion is academic performance.",
+        "ja": "主な選考基準は学業成績です。",
+        "context": "入試"
       },
       {
-        "en": "meet the criterion.",
-        "ja": "基準を満たす",
-        "context": "学術"
+        "en": "All applicants must meet the criterion.",
+        "ja": "全ての応募者は基準を満たさなければなりません。",
+        "context": "採用"
       },
       {
-        "en": "evaluation criterion.",
-        "ja": "評価基準",
-        "context": "学術"
+        "en": "The evaluation criterion was explained clearly.",
+        "ja": "評価基準は明確に説明されました。",
+        "context": "試験"
       }
     ],
     "categories": [
@@ -13965,8 +13965,8 @@
         "context": "報道"
       },
       {
-        "en": "literary critic.",
-        "ja": "文芸批評家",
+        "en": "The literary critic praised the novel's style.",
+        "ja": "文芸批評家はその小説の文体を称賛しました。",
         "context": "文学"
       },
       {
@@ -14006,19 +14006,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "criticize the plan.",
-        "ja": "計画を批判する",
-        "context": "日常"
+        "en": "Several experts criticized the plan.",
+        "ja": "何人かの専門家がその計画を批判しました。",
+        "context": "討論"
       },
       {
-        "en": "publicly criticize.",
-        "ja": "公に批判する",
-        "context": "報道"
+        "en": "The politician was publicly criticized for the decision.",
+        "ja": "その政治家はその決定について公に批判されました。",
+        "context": "政治"
       },
       {
-        "en": "criticize harshly.",
-        "ja": "厳しく批判する",
-        "context": "社会"
+        "en": "The coach criticized the team harshly after the loss.",
+        "ja": "コーチは敗戦後にチームを厳しく批判しました。",
+        "context": "スポーツ"
       }
     ],
     "categories": [
@@ -14347,19 +14347,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "cultural heritage.",
-        "ja": "文化遺産",
-        "context": "歴史"
+        "en": "Kyoto is known for its rich cultural heritage.",
+        "ja": "京都は豊かな文化遺産で知られています。",
+        "context": "観光"
       },
       {
-        "en": "cultural difference.",
-        "ja": "文化的差異",
-        "context": "社会"
+        "en": "There are many cultural differences between countries.",
+        "ja": "国によって多くの文化的差異があります。",
+        "context": "国際"
       },
       {
-        "en": "cultural event.",
-        "ja": "文化的イベント",
-        "context": "社会"
+        "en": "The city holds a cultural event every summer.",
+        "ja": "その市では毎夏に文化的なイベントを開催しています。",
+        "context": "地域"
       }
     ],
     "categories": [
@@ -14547,14 +14547,14 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "current situation.",
-        "ja": "現在の状況",
-        "context": "日常"
+        "en": "What is the current situation in the country?",
+        "ja": "その国の現在の状況はどうですか？",
+        "context": "報道"
       },
       {
-        "en": "current affairs.",
-        "ja": "時事問題",
-        "context": "報道"
+        "en": "She reads the newspaper to stay updated on current affairs.",
+        "ja": "彼女は時事問題を把握するために新聞を読んでいます。",
+        "context": "情報収集"
       },
       {
         "en": "The current trend in fashion is casual and comfortable.",
@@ -14732,8 +14732,8 @@
         "context": "科学"
       },
       {
-        "en": "economic cycle.",
-        "ja": "経済循環",
+        "en": "The country is going through an economic cycle.",
+        "ja": "その国は経済循環を経験しています。",
         "context": "経済"
       },
       {
@@ -14817,8 +14817,8 @@
     "examples": [
       {
         "en": "She sensed danger nearby.",
-        "ja": "彼女は近くに危険を感じた。",
-        "context": "日常"
+        "ja": "彼女は近くに危険を感じました。",
+        "context": "安全"
       },
       {
         "en": "Don't put yourself in danger.",
@@ -15017,9 +15017,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "deal with problems.",
-        "ja": "問題に対処する",
-        "context": "日常"
+        "en": "She learned to deal with problems calmly.",
+        "ja": "彼女は問題に落ち着いて対処することを学びました。",
+        "context": "成長"
       },
       {
         "en": "Winning the prize was a big deal for the young scientist.",
@@ -15198,19 +15198,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "decrease in sales.",
-        "ja": "売上が減少する",
+        "en": "There was a decrease in sales last month.",
+        "ja": "先月は売上が減少しました。",
         "context": "ビジネス"
       },
       {
-        "en": "sharply decrease.",
-        "ja": "急激に減少する",
-        "context": "学術"
+        "en": "The number of visitors decreased sharply.",
+        "ja": "訪問者数が急激に減少しました。",
+        "context": "観光"
       },
       {
-        "en": "decrease costs.",
-        "ja": "費用を削減する",
-        "context": "ビジネス"
+        "en": "The company found ways to decrease costs.",
+        "ja": "その会社は費用を削減する方法を見つけました。",
+        "context": "経営"
       }
     ],
     "categories": [
@@ -15345,8 +15345,8 @@
       },
       {
         "en": "National defense is important.",
-        "ja": "国防は重要だ。",
-        "context": "政治"
+        "ja": "国防は重要です。",
+        "context": "安全保障"
       },
       {
         "en": "He played defense in the game.",
@@ -15372,14 +15372,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "clear definition.",
-        "ja": "明確な定義",
-        "context": "学術"
+        "en": "Please give a clear definition of the term.",
+        "ja": "その用語の明確な定義を示してください。",
+        "context": "授業"
       },
       {
-        "en": "dictionary definition.",
-        "ja": "辞書の定義",
-        "context": "言語"
+        "en": "I looked up the dictionary definition of the word.",
+        "ja": "私はその単語の辞書の定義を調べました。",
+        "context": "学習"
       },
       {
         "en": "A triangle, by definition, has exactly three sides.",
@@ -15424,14 +15424,14 @@
         "context": "学術"
       },
       {
-        "en": "university degree.",
-        "ja": "大学の学位",
+        "en": "She earned a university degree in biology.",
+        "ja": "彼女は生物学の大学の学位を取得しました。",
         "context": "教育"
       },
       {
-        "en": "degree of risk.",
-        "ja": "リスクの程度",
-        "context": "学術"
+        "en": "Every investor must consider the degree of risk.",
+        "ja": "すべての投資家はリスクの程度を考慮しなければなりません。",
+        "context": "投資"
       }
     ],
     "categories": [
@@ -15642,7 +15642,7 @@
       },
       {
         "en": "She ordered home delivery.",
-        "ja": "彼女は宅配を注文した。",
+        "ja": "彼女は宅配を注文しました。",
         "context": "買い物"
       },
       {
@@ -15682,19 +15682,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "democratic society.",
-        "ja": "民主的な社会",
+        "en": "We live in a democratic society.",
+        "ja": "私たちは民主的な社会に生きています。",
         "context": "政治"
       },
       {
-        "en": "democratic election.",
-        "ja": "民主的な選挙",
+        "en": "The country held a fair and democratic election.",
+        "ja": "その国は公正で民主的な選挙を行いました。",
         "context": "政治"
       },
       {
-        "en": "democratic values.",
-        "ja": "民主主義の価値",
-        "context": "政治"
+        "en": "Citizens must protect democratic values.",
+        "ja": "市民は民主主義の価値を守らなければなりません。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -15728,19 +15728,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "public demonstration.",
-        "ja": "公開示威運動",
-        "context": "政治"
-      },
-      {
-        "en": "product demonstration.",
-        "ja": "製品デモ",
-        "context": "ビジネス"
-      },
-      {
-        "en": "peaceful demonstration.",
-        "ja": "平和的デモ",
+        "en": "A public demonstration was held in the city center.",
+        "ja": "市内中心部で公開示威運動が行われました。",
         "context": "社会"
+      },
+      {
+        "en": "The salesperson gave a product demonstration.",
+        "ja": "販売員が製品のデモを行いました。",
+        "context": "販売"
+      },
+      {
+        "en": "Thousands joined the peaceful demonstration.",
+        "ja": "数千人が平和的なデモに参加しました。",
+        "context": "社会運動"
       }
     ],
     "categories": [
@@ -15894,7 +15894,7 @@
       },
       {
         "en": "His departure surprised everyone.",
-        "ja": "彼の出発は皆を驚かせた。",
+        "ja": "彼の出発は皆を驚かせました。",
         "context": "旅行"
       },
       {
@@ -15930,14 +15930,14 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "dependent on oil.",
-        "ja": "石油に依存した",
+        "en": "The economy is dependent on oil exports.",
+        "ja": "その経済は石油輸出に依存しています。",
         "context": "経済"
       },
       {
-        "en": "financially dependent.",
-        "ja": "経済的に依存した",
-        "context": "社会"
+        "en": "Young adults should not be financially dependent on their parents.",
+        "ja": "若い成人は経済的に親に依存すべきではありません。",
+        "context": "生活"
       },
       {
         "en": "The risk of this disease is age dependent.",
@@ -16019,9 +16019,9 @@
         "context": "自然"
       },
       {
-        "en": "depth of knowledge.",
-        "ja": "知識の深さ",
-        "context": "教育"
+        "en": "His depth of knowledge impressed everyone.",
+        "ja": "彼の知識の深さは全員を感心させました。",
+        "context": "学術"
       },
       {
         "en": "The professor explained the topic in depth during the lecture.",
@@ -16160,19 +16160,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "fashion designer.",
-        "ja": "ファッションデザイナー",
-        "context": "買い物"
+        "en": "She wants to become a fashion designer.",
+        "ja": "彼女はファッションデザイナーになりたいです。",
+        "context": "夢"
       },
       {
-        "en": "graphic designer.",
-        "ja": "グラフィックデザイナー",
-        "context": "技術"
+        "en": "The company hired a skilled graphic designer.",
+        "ja": "その会社は優秀なグラフィックデザイナーを採用しました。",
+        "context": "採用"
       },
       {
-        "en": "interior designer.",
-        "ja": "インテリアデザイナー",
-        "context": "家庭"
+        "en": "An interior designer transformed the small apartment.",
+        "ja": "インテリアデザイナーが小さなアパートを一変させました。",
+        "context": "住宅"
       }
     ],
     "categories": [
@@ -16379,18 +16379,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "determine the cause.",
-        "ja": "原因を決定する",
-        "context": "学術"
+        "en": "Scientists worked to determine the cause of the disease.",
+        "ja": "科学者たちは病気の原因を特定するために取り組みました。",
+        "context": "医学"
       },
       {
-        "en": "help determine.",
-        "ja": "決定するのを助ける",
-        "context": "学術"
+        "en": "More research is needed to help determine the answer.",
+        "ja": "答えを決定するにはさらなる研究が必要です。",
+        "context": "研究"
       },
       {
-        "en": "determine policy.",
-        "ja": "政策を決定する",
+        "en": "The committee will determine policy next month.",
+        "ja": "委員会は来月に政策を決定します。",
         "context": "政治"
       }
     ],
@@ -16691,14 +16691,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "opinions differ.",
-        "ja": "意見が異なる",
-        "context": "社会"
+        "en": "Opinions differ on this issue.",
+        "ja": "この問題については意見が異なります。",
+        "context": "討論"
       },
       {
-        "en": "differ from others.",
-        "ja": "他と異なる",
-        "context": "学術"
+        "en": "Her approach differs from others in the class.",
+        "ja": "彼女のアプローチはクラスの他の人と異なります。",
+        "context": "授業"
       },
       {
         "en": "Opinions on this matter widely differ among experts.",
@@ -16822,14 +16822,14 @@
         "context": "技術"
       },
       {
-        "en": "digital device.",
-        "ja": "デジタル機器",
-        "context": "技術"
+        "en": "He uses a digital device to study every day.",
+        "ja": "彼は毎日デジタル機器を使って勉強しています。",
+        "context": "学習"
       },
       {
-        "en": "digital content.",
-        "ja": "デジタルコンテンツ",
-        "context": "報道"
+        "en": "The library offers a wide range of digital content.",
+        "ja": "その図書館は幅広いデジタルコンテンツを提供しています。",
+        "context": "図書館"
       }
     ],
     "categories": [
@@ -16868,19 +16868,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "wrong direction.",
-        "ja": "間違った方向",
-        "context": "日常"
+        "en": "She was walking in the wrong direction.",
+        "ja": "彼女は間違った方向に歩いていました。",
+        "context": "移動"
       },
       {
-        "en": "give directions.",
-        "ja": "道案内をする",
-        "context": "日常"
+        "en": "He asked a police officer to give directions.",
+        "ja": "彼は警察官に道案内を頼みました。",
+        "context": "旅行"
       },
       {
-        "en": "change direction.",
-        "ja": "方向を変える",
-        "context": "日常"
+        "en": "The wind changed direction suddenly.",
+        "ja": "風が突然方向を変えました。",
+        "context": "天気"
       }
     ],
     "categories": [
@@ -16923,14 +16923,14 @@
         "context": "報道"
       },
       {
-        "en": "managing director.",
-        "ja": "代表取締役",
+        "en": "She became managing director of the firm.",
+        "ja": "彼女はその会社の代表取締役になりました。",
         "context": "ビジネス"
       },
       {
-        "en": "board director.",
-        "ja": "取締役",
-        "context": "ビジネス"
+        "en": "The board director gave a speech at the event.",
+        "ja": "取締役がイベントでスピーチを行いました。",
+        "context": "会議"
       }
     ],
     "categories": [
@@ -16961,19 +16961,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "suddenly disappear.",
-        "ja": "突然消える",
-        "context": "日常"
+        "en": "The sun will suddenly disappear during the eclipse.",
+        "ja": "日食の間、太陽は突然消えます。",
+        "context": "天文"
       },
       {
-        "en": "disappear without trace.",
-        "ja": "跡形もなく消える",
-        "context": "日常"
+        "en": "The thief disappeared without leaving a trace.",
+        "ja": "泥棒は跡形もなく消えました。",
+        "context": "事件"
       },
       {
-        "en": "make problems disappear.",
-        "ja": "問題を消す",
-        "context": "日常"
+        "en": "A good leader can make problems disappear quickly.",
+        "ja": "優れたリーダーは問題を素早く解決できます。",
+        "context": "リーダーシップ"
       }
     ],
     "categories": [
@@ -17041,7 +17041,7 @@
     "examples": [
       {
         "en": "Columbus discovered America.",
-        "ja": "コロンブスはアメリカを発見した。",
+        "ja": "コロンブスはアメリカを発見しました。",
         "context": "歴史"
       },
       {
@@ -17139,19 +17139,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "open discussion.",
-        "ja": "オープンな議論",
-        "context": "社会"
+        "en": "The class had an open discussion about the topic.",
+        "ja": "クラスでそのトピックについてオープンな議論をしました。",
+        "context": "授業"
       },
       {
-        "en": "hold a discussion.",
-        "ja": "議論を行う",
-        "context": "日常"
+        "en": "The team held a discussion before making the decision.",
+        "ja": "チームは決断を下す前に議論を行いました。",
+        "context": "仕事"
       },
       {
-        "en": "topic of discussion.",
-        "ja": "議論のテーマ",
-        "context": "学術"
+        "en": "Climate change became the main topic of discussion.",
+        "ja": "気候変動が主な議論のテーマになりました。",
+        "context": "環境"
       }
     ],
     "categories": [
@@ -17261,19 +17261,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "mental disorder.",
-        "ja": "精神障害",
+        "en": "He was diagnosed with a mental disorder.",
+        "ja": "彼は精神障害と診断されました。",
+        "context": "医療"
+      },
+      {
+        "en": "She received treatment for an eating disorder.",
+        "ja": "彼女は摂食障害の治療を受けました。",
         "context": "健康"
       },
       {
-        "en": "eating disorder.",
-        "ja": "摂食障害",
-        "context": "健康"
-      },
-      {
-        "en": "sleep disorder.",
-        "ja": "睡眠障害",
-        "context": "健康"
+        "en": "Many people suffer from a sleep disorder.",
+        "ja": "多くの人が睡眠障害に悩んでいます。",
+        "context": "生活習慣"
       }
     ],
     "categories": [
@@ -17352,14 +17352,14 @@
         "context": "ビジネス"
       },
       {
-        "en": "resolve a dispute.",
-        "ja": "論争を解決する",
-        "context": "法律"
+        "en": "Both sides tried to resolve the dispute peacefully.",
+        "ja": "双方は平和的に論争を解決しようとしました。",
+        "context": "交渉"
       },
       {
-        "en": "international dispute.",
-        "ja": "国際紛争",
-        "context": "政治"
+        "en": "The two countries are involved in an international dispute.",
+        "ja": "その2カ国は国際紛争に巻き込まれています。",
+        "context": "外交"
       }
     ],
     "categories": [
@@ -17443,19 +17443,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "make a distinction.",
-        "ja": "区別をつける",
-        "context": "学術"
+        "en": "We need to make a distinction between fact and opinion.",
+        "ja": "事実と意見の区別をつける必要があります。",
+        "context": "思考力"
       },
       {
-        "en": "clear distinction.",
-        "ja": "明確な区別",
-        "context": "学術"
+        "en": "There is a clear distinction between the two policies.",
+        "ja": "その二つの政策の間には明確な区別があります。",
+        "context": "政治"
       },
       {
-        "en": "important distinction.",
-        "ja": "重要な区別",
-        "context": "学術"
+        "en": "Noticing the important distinction helped her understand the text.",
+        "ja": "重要な区別に気づくことで彼女はテキストを理解できました。",
+        "context": "読解"
       }
     ],
     "categories": [
@@ -17505,7 +17505,7 @@
       },
       {
         "en": "Wealth is unevenly distributed.",
-        "ja": "富は不均等に分配されている。",
+        "ja": "富は不均等に分配されています。",
         "context": "経済"
       }
     ],
@@ -17596,18 +17596,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "cultural diversity.",
-        "ja": "文化的多様性",
+        "en": "Japan is learning to embrace cultural diversity.",
+        "ja": "日本は文化的多様性を受け入れることを学んでいます。",
         "context": "社会"
       },
       {
-        "en": "promote diversity.",
-        "ja": "多様性を促進する",
+        "en": "The company promotes diversity in the workplace.",
+        "ja": "その会社は職場での多様性を促進しています。",
         "context": "職場"
       },
       {
-        "en": "biological diversity.",
-        "ja": "生物多様性",
+        "en": "The rainforest is known for its biological diversity.",
+        "ja": "熱帯雨林はその生物多様性で知られています。",
         "context": "自然"
       }
     ],
@@ -17690,13 +17690,13 @@
         "context": "科学"
       },
       {
-        "en": "social division.",
-        "ja": "社会的分断",
+        "en": "Social division between rich and poor is growing.",
+        "ja": "富裕層と貧困層の間の社会的分断が広がっています。",
         "context": "社会"
       },
       {
-        "en": "division of labor.",
-        "ja": "労働分業",
+        "en": "The division of labor makes production more efficient.",
+        "ja": "労働分業によって生産効率が上がります。",
         "context": "経済"
       }
     ],
@@ -17773,18 +17773,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "dominate the market.",
-        "ja": "市場を支配する",
+        "en": "That company has come to dominate the smartphone market.",
+        "ja": "その会社はスマートフォン市場を支配するようになりました。",
         "context": "ビジネス"
       },
       {
-        "en": "dominate the conversation.",
-        "ja": "会話を独占する",
+        "en": "He tends to dominate every conversation at the dinner table.",
+        "ja": "彼は夕食のテーブルでの会話を独占しがちです。",
         "context": "社会"
       },
       {
-        "en": "one country dominates.",
-        "ja": "一国が支配する",
+        "en": "One country should not dominate the others in the region.",
+        "ja": "一国がその地域の他国を支配すべきではありません。",
         "context": "政治"
       }
     ],
@@ -18040,18 +18040,18 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "change dramatically.",
-        "ja": "劇的に変化する",
+        "en": "The situation changed dramatically after the new policy was introduced.",
+        "ja": "新しい政策が導入された後、状況は劇的に変化しました。",
         "context": "社会"
       },
       {
-        "en": "increase dramatically.",
-        "ja": "劇的に増加する",
+        "en": "The number of online users has increased dramatically over the past decade.",
+        "ja": "過去10年間でオンラインユーザー数は劇的に増加しました。",
         "context": "技術"
       },
       {
-        "en": "improve dramatically.",
-        "ja": "劇的に改善する",
+        "en": "The new software dramatically improved our team's productivity.",
+        "ja": "新しいソフトウェアによってチームの生産性が劇的に改善しました。",
         "context": "ビジネス"
       }
     ],
@@ -18156,8 +18156,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "prescription drug.",
-        "ja": "処方薬",
+        "en": "The doctor prescribed a new drug for her condition.",
+        "ja": "医師は彼女の症状に新しい処方薬を出しました。",
         "context": "健康"
       },
       {
@@ -19370,18 +19370,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "full employment.",
-        "ja": "完全雇用",
+        "en": "The government aims to achieve full employment by next year.",
+        "ja": "政府は来年までに完全雇用を達成することを目指しています。",
         "context": "経済"
       },
       {
-        "en": "seek employment.",
-        "ja": "雇用を求める",
+        "en": "Many graduates are seeking employment in the tech industry.",
+        "ja": "多くの卒業生がIT業界での雇用を求めています。",
         "context": "日常"
       },
       {
-        "en": "employment rate.",
-        "ja": "雇用率",
+        "en": "The employment rate rose to its highest level in years.",
+        "ja": "雇用率は数年ぶりの最高水準に達しました。",
         "context": "経済"
       }
     ],
@@ -19760,7 +19760,7 @@
       },
       {
         "en": "She entered the contest.",
-        "ja": "彼女はコンテストに参加した。",
+        "ja": "彼女はコンテストに参加しました。",
         "context": "社交"
       },
       {
@@ -20144,7 +20144,7 @@
       },
       {
         "en": "She read my essay.",
-        "ja": "彼女は私の作文を読んだ。",
+        "ja": "彼女は私の作文を読みました。",
         "context": "学校"
       },
       {
@@ -20490,7 +20490,7 @@
     "examples": [
       {
         "en": "Everyone came except Tom.",
-        "ja": "トムを除いて全員来た。",
+        "ja": "トムを除いて全員来ました。",
         "context": "日常"
       },
       {
@@ -20659,7 +20659,7 @@
       },
       {
         "en": "She exercises every morning.",
-        "ja": "彼女は毎朝運動する。",
+        "ja": "彼女は毎朝運動します。",
         "context": "健康"
       },
       {
@@ -20695,12 +20695,12 @@
     "examples": [
       {
         "en": "She exercises every morning.",
-        "ja": "彼女は毎朝運動する。",
+        "ja": "彼女は毎朝運動します。",
         "context": "健康"
       },
       {
         "en": "You should exercise regularly.",
-        "ja": "定期的に運動すべきだ。",
+        "ja": "定期的に運動すべきです。",
         "context": "健康"
       },
       {
@@ -21639,13 +21639,13 @@
         "context": "日常"
       },
       {
-        "en": "familiar with topic.",
-        "ja": "話題に詳しい",
+        "en": "She is already familiar with the topic we discussed.",
+        "ja": "彼女はすでに私たちが話し合ったテーマに詳しいです。",
         "context": "学術"
       },
       {
-        "en": "familiar place.",
-        "ja": "見慣れた場所",
+        "en": "He stopped at a familiar place he visited as a child.",
+        "ja": "彼は子どもの頃に訪れた見慣れた場所に立ち寄りました。",
         "context": "日常"
       }
     ],
@@ -21786,7 +21786,7 @@
       },
       {
         "en": "Fashion changes every year.",
-        "ja": "流行は毎年変わる。",
+        "ja": "流行は毎年変わます。",
         "context": "日常"
       },
       {
@@ -22623,7 +22623,7 @@
       },
       {
         "en": "Fire trucks arrived quickly.",
-        "ja": "消防車がすぐに到着した。",
+        "ja": "消防車がすぐに到着しました。",
         "context": "安全"
       }
     ],
@@ -22950,7 +22950,7 @@
     "examples": [
       {
         "en": "Wood floats on water.",
-        "ja": "木は水に浮かぶ。",
+        "ja": "木は水に浮かびます。",
         "context": "科学"
       },
       {
@@ -23036,7 +23036,7 @@
       },
       {
         "en": "Water flows downhill.",
-        "ja": "水は下へ流れる。",
+        "ja": "水は下へ流れます。",
         "context": "科学"
       },
       {
@@ -23386,7 +23386,7 @@
     "examples": [
       {
         "en": "She studies foreign languages.",
-        "ja": "彼女は外国語を勉強している。",
+        "ja": "彼女は外国語を勉強しています。",
         "context": "日常"
       },
       {
@@ -23555,18 +23555,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "rock formation.",
-        "ja": "岩石の形成",
+        "en": "The geologist studied the unusual rock formation in the canyon.",
+        "ja": "地質学者は渓谷にある珍しい岩石の形成を研究しました。",
         "context": "科学"
       },
       {
-        "en": "team formation.",
-        "ja": "チーム編成",
+        "en": "The coach changed the team formation before the second half.",
+        "ja": "コーチは後半前にチーム編成を変更しました。",
         "context": "スポーツ"
       },
       {
-        "en": "cloud formation.",
-        "ja": "雲の形成",
+        "en": "Meteorologists study cloud formation to predict weather.",
+        "ja": "気象学者は天気を予測するために雲の形成を研究します。",
         "context": "自然"
       }
     ],
@@ -23907,18 +23907,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "high frequency.",
-        "ja": "高頻度",
+        "en": "Earthquakes occur with high frequency in this region.",
+        "ja": "この地域では高頻度で地震が発生します。",
         "context": "学術"
       },
       {
-        "en": "word frequency.",
-        "ja": "語の頻度",
+        "en": "Studying word frequency helps you learn vocabulary faster.",
+        "ja": "語の頻度を調べると語彙をより速く覚えることができます。",
         "context": "言語"
       },
       {
-        "en": "radio frequency.",
-        "ja": "電波周波数",
+        "en": "This radio station broadcasts on a frequency of 89.5 MHz.",
+        "ja": "このラジオ局は89.5MHzの電波周波数で放送しています。",
         "context": "技術"
       }
     ],
@@ -24009,7 +24009,7 @@
     "examples": [
       {
         "en": "Friendship is very important.",
-        "ja": "友情はとても大切だ。",
+        "ja": "友情はとても大切です。",
         "context": "日常"
       },
       {
@@ -24065,7 +24065,7 @@
       },
       {
         "en": "She bought frozen vegetables.",
-        "ja": "彼女は冷凍野菜を買った。",
+        "ja": "彼女は冷凍野菜を買いました。",
         "context": "自然"
       },
       {
@@ -24264,8 +24264,8 @@
         "context": "金融"
       },
       {
-        "en": "emergency fund.",
-        "ja": "緊急資金",
+        "en": "Everyone should save money in an emergency fund.",
+        "ja": "誰もが緊急資金として貯金しておくべきです。",
         "context": "金融"
       }
     ],
@@ -24310,8 +24310,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "office furniture.",
-        "ja": "オフィス家具",
+        "en": "The company ordered new office furniture for the remodeled space.",
+        "ja": "会社はリモデルしたスペースに新しいオフィス家具を注文しました。",
         "context": "職場"
       },
       {
@@ -24320,8 +24320,8 @@
         "context": "日常"
       },
       {
-        "en": "antique furniture.",
-        "ja": "アンティーク家具",
+        "en": "The shop sells antique furniture from the 19th century.",
+        "ja": "その店は19世紀のアンティーク家具を販売しています。",
         "context": "家庭"
       }
     ],
@@ -24446,8 +24446,8 @@
         "context": "報道"
       },
       {
-        "en": "visit a gallery.",
-        "ja": "美術館を訪問する",
+        "en": "We decided to visit a gallery on our day off.",
+        "ja": "私たちは休みの日に美術館を訪問することにしました。",
         "context": "娯楽"
       }
     ],
@@ -24852,18 +24852,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "genetic disorder.",
-        "ja": "遺伝性疾患",
+        "en": "The doctor confirmed that the child has a rare genetic disorder.",
+        "ja": "医師はその子供が珍しい遺伝性疾患を持つことを確認しました。",
         "context": "健康"
       },
       {
-        "en": "genetic research.",
-        "ja": "遺伝子研究",
+        "en": "Scientists are conducting genetic research to find new treatments.",
+        "ja": "科学者たちは新しい治療法を見つけるために遺伝子研究を行っています。",
         "context": "科学"
       },
       {
-        "en": "genetic makeup.",
-        "ja": "遺伝的構成",
+        "en": "Each person's genetic makeup determines many physical traits.",
+        "ja": "各人の遺伝的構成が多くの身体的特徴を決定します。",
         "context": "科学"
       }
     ],
@@ -26400,7 +26400,7 @@
       },
       {
         "en": "She has grown children.",
-        "ja": "彼女には成人した子供たちがいる。",
+        "ja": "彼女には成人した子供たちがいます。",
         "context": "日常"
       }
     ],
@@ -26909,7 +26909,7 @@
     "examples": [
       {
         "en": "Money can't buy happiness.",
-        "ja": "お金で幸福は買えない。",
+        "ja": "お金で幸福は買えません。",
         "context": "日常"
       },
       {
@@ -26919,7 +26919,7 @@
       },
       {
         "en": "Sharing brings happiness.",
-        "ja": "分かち合うことは幸福をもたらす。",
+        "ja": "分かち合うことは幸福をもたらします。",
         "context": "感情"
       }
     ],
@@ -27879,7 +27879,7 @@
       },
       {
         "en": "Bees produce honey.",
-        "ja": "ミツバチははちみつを作る。",
+        "ja": "ミツバチははちみつを作ます。",
         "context": "自然"
       },
       {
@@ -28045,7 +28045,7 @@
       },
       {
         "en": "The smell was horrible.",
-        "ja": "その臭いはひどかった。",
+        "ja": "その臭いはひどかったです。",
         "context": "日常"
       }
     ],
@@ -28326,7 +28326,7 @@
       },
       {
         "en": "She studies human behavior.",
-        "ja": "彼女は人間の行動を研究している。",
+        "ja": "彼女は人間の行動を研究しています。",
         "context": "科学"
       },
       {
@@ -28760,7 +28760,7 @@
       },
       {
         "en": "His illness got better.",
-        "ja": "彼の病気は良くなった。",
+        "ja": "彼の病気は良くなりました。",
         "context": "健康"
       },
       {
@@ -29017,18 +29017,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "policy implementation.",
-        "ja": "政策の実施",
+        "en": "The government announced the implementation of a new education policy.",
+        "ja": "政府は新しい教育政策の実施を発表しました。",
         "context": "政治"
       },
       {
-        "en": "system implementation.",
-        "ja": "システム導入",
+        "en": "The system implementation took three months to complete.",
+        "ja": "システム導入は完了するまで3ヶ月かかりました。",
         "context": "技術"
       },
       {
-        "en": "full implementation.",
-        "ja": "完全実施",
+        "en": "Full implementation of the plan requires cooperation from all departments.",
+        "ja": "計画の完全実施にはすべての部門からの協力が必要です。",
         "context": "ビジネス"
       }
     ],
@@ -30584,8 +30584,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "health insurance.",
-        "ja": "健康保険",
+        "en": "All employees receive health insurance as part of their benefits.",
+        "ja": "すべての従業員は福利厚生の一環として健康保険を受けます。",
         "context": "健康"
       },
       {
@@ -30594,8 +30594,8 @@
         "context": "日常"
       },
       {
-        "en": "life insurance.",
-        "ja": "生命保険",
+        "en": "He purchased life insurance to protect his family's future.",
+        "ja": "彼は家族の将来を守るために生命保険に加入しました。",
         "context": "金融"
       }
     ],
@@ -30788,18 +30788,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "social interaction.",
-        "ja": "社会的交流",
+        "en": "Positive social interaction is essential for children's development.",
+        "ja": "良好な社会的交流は子どもの発達に不可欠です。",
         "context": "社会"
       },
       {
-        "en": "human interaction.",
-        "ja": "人間同士の交流",
+        "en": "Daily human interaction helps reduce feelings of loneliness.",
+        "ja": "日々の人間同士の交流は孤独感を軽減するのに役立ちます。",
         "context": "学術"
       },
       {
-        "en": "digital interaction.",
-        "ja": "デジタル交流",
+        "en": "Digital interaction through social media has changed how we communicate.",
+        "ja": "ソーシャルメディアを通じたデジタル交流がコミュニケーションの仕方を変えました。",
         "context": "技術"
       }
     ],
@@ -31689,7 +31689,7 @@
       },
       {
         "en": "Jeans are popular worldwide.",
-        "ja": "ジーンズは世界中で人気がある。",
+        "ja": "ジーンズは世界中で人気があます。",
         "context": "買い物"
       },
       {
@@ -32542,7 +32542,7 @@
     "examples": [
       {
         "en": "Knowledge is power.",
-        "ja": "知識は力だ。",
+        "ja": "知識は力です。",
         "context": "教育"
       },
       {
@@ -32552,7 +32552,7 @@
       },
       {
         "en": "Reading builds your knowledge.",
-        "ja": "読書は知識を築く。",
+        "ja": "読書は知識を築きます。",
         "context": "学校"
       }
     ],
@@ -32701,7 +32701,7 @@
     "examples": [
       {
         "en": "The plane landed safely.",
-        "ja": "飛行機は安全に着陸した。",
+        "ja": "飛行機は安全に着陸しました。",
         "context": "旅行"
       },
       {
@@ -33721,7 +33721,7 @@
       },
       {
         "en": "Her business license expired.",
-        "ja": "彼女のビジネス許可証が期限切れになった。",
+        "ja": "彼女のビジネス許可証が期限切れになりました。",
         "context": "ビジネス"
       }
     ],
@@ -35258,7 +35258,7 @@
       },
       {
         "en": "Japan manufactures high-quality goods.",
-        "ja": "日本は高品質の商品を製造する。",
+        "ja": "日本は高品質の商品を製造します。",
         "context": "経済"
       }
     ],
@@ -36186,7 +36186,7 @@
       },
       {
         "en": "The snow melted quickly.",
-        "ja": "雪はすぐに溶けた。",
+        "ja": "雪はすぐに溶けました。",
         "context": "天気"
       },
       {
@@ -36862,7 +36862,7 @@
     "examples": [
       {
         "en": "Everyone makes mistakes.",
-        "ja": "誰もが間違いをする。",
+        "ja": "誰もが間違いをします。",
         "context": "哲学"
       },
       {
@@ -37185,12 +37185,12 @@
       },
       {
         "en": "Modern technology is amazing.",
-        "ja": "現代の技術は素晴らしい。",
+        "ja": "現代の技術は素晴らしいです。",
         "context": "文化"
       },
       {
         "en": "She likes modern art.",
-        "ja": "彼女は現代アートが好きだ。",
+        "ja": "彼女は現代アートが好きです。",
         "context": "日常"
       }
     ],
@@ -37642,7 +37642,7 @@
       },
       {
         "en": "Costs are mounting rapidly.",
-        "ja": "コストが急速に増加している。",
+        "ja": "コストが急速に増加しています。",
         "context": "学校"
       }
     ],
@@ -37957,7 +37957,7 @@
       },
       {
         "en": "She prefers natural food.",
-        "ja": "彼女は自然食品を好む。",
+        "ja": "彼女は自然食品を好みます。",
         "context": "自然"
       },
       {
@@ -38187,7 +38187,7 @@
     "examples": [
       {
         "en": "She neglected her duties.",
-        "ja": "彼女は職務を怠った。",
+        "ja": "彼女は職務を怠りました。",
         "context": "学校"
       },
       {
@@ -38197,7 +38197,7 @@
       },
       {
         "en": "Don't neglect your health.",
-        "ja": "健康を疎かにしないで。",
+        "ja": "健康を疎かにしないでください。",
         "context": "ビジネス"
       }
     ],
@@ -38766,7 +38766,7 @@
       },
       {
         "en": "It's not exactly straightforward.",
-        "ja": "必ずしも単純ではない。",
+        "ja": "必ずしも単純ではありません。",
         "context": "仕事"
       }
     ],
@@ -39046,7 +39046,7 @@
       },
       {
         "en": "His days are numbered.",
-        "ja": "彼の日々は限られている。",
+        "ja": "彼の日々は限られています。",
         "context": "日常"
       }
     ],
@@ -39272,7 +39272,7 @@
       },
       {
         "en": "Classroom observation improves teaching.",
-        "ja": "授業観察は教育を向上させる。",
+        "ja": "授業観察は教育を向上させます。",
         "context": "学術"
       }
     ],
@@ -39786,7 +39786,7 @@
       },
       {
         "en": "He met friends online.",
-        "ja": "彼はネットで友達と会った。",
+        "ja": "彼はネットで友達と会いました。",
         "context": "日常"
       }
     ],
@@ -40546,7 +40546,7 @@
       },
       {
         "en": "He overcame many obstacles.",
-        "ja": "彼は多くの障害を乗り越えた。",
+        "ja": "彼は多くの障害を乗り越えました。",
         "context": "日常"
       },
       {
@@ -41193,7 +41193,7 @@
       },
       {
         "en": "Passengers must wear seatbelts.",
-        "ja": "乗客はシートベルトを着用しなければならない。",
+        "ja": "乗客はシートベルトを着用しなければなりません。",
         "context": "安全"
       },
       {
@@ -41765,7 +41765,7 @@
       },
       {
         "en": "Red pepper is spicy.",
-        "ja": "赤いペッパーは辛い。",
+        "ja": "赤いペッパーは辛いです。",
         "context": "食事"
       }
     ],
@@ -41942,7 +41942,7 @@
     "examples": [
       {
         "en": "Her answer was perfect.",
-        "ja": "彼女の答えは完璧だった。",
+        "ja": "彼女の答えは完璧でした。",
         "context": "日常"
       },
       {
@@ -42552,7 +42552,7 @@
       },
       {
         "en": "He likes plain food.",
-        "ja": "彼はシンプルな食べ物が好きだ。",
+        "ja": "彼はシンプルな食べ物が好きです。",
         "context": "家庭"
       }
     ],
@@ -43035,12 +43035,12 @@
       },
       {
         "en": "Water pollution harms fish.",
-        "ja": "水質汚染は魚を傷つける。",
+        "ja": "水質汚染は魚を傷つけます。",
         "context": "自然"
       },
       {
         "en": "We should reduce pollution.",
-        "ja": "私たちは汚染を減らすべきだ。",
+        "ja": "私たちは汚染を減らすべきです。",
         "context": "社会"
       }
     ],
@@ -43109,18 +43109,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "world population.",
-        "ja": "世界人口",
+        "en": "The world population has reached eight billion people.",
+        "ja": "世界人口は80億人に達しました。",
         "context": "地理"
       },
       {
-        "en": "population growth.",
-        "ja": "人口増加",
+        "en": "Population growth in cities is putting pressure on infrastructure.",
+        "ja": "都市での人口増加がインフラに圧力をかけています。",
         "context": "社会"
       },
       {
-        "en": "aging population.",
-        "ja": "高齢化人口",
+        "en": "Japan's aging population is a major social challenge.",
+        "ja": "日本の高齢化人口は大きな社会的課題です。",
         "context": "社会"
       }
     ],
@@ -43536,7 +43536,7 @@
     "examples": [
       {
         "en": "The powerful engine roared.",
-        "ja": "力強いエンジンが轟音を立てた。",
+        "ja": "力強いエンジンが轟音を立てました。",
         "context": "日常"
       },
       {
@@ -43876,7 +43876,7 @@
       },
       {
         "en": "Exercise helps prevent disease.",
-        "ja": "運動は病気の予防に役立つ。",
+        "ja": "運動は病気の予防に役立ちます。",
         "context": "健康"
       },
       {
@@ -44304,7 +44304,7 @@
     "examples": [
       {
         "en": "This factory produces cars.",
-        "ja": "この工場は車を生産する。",
+        "ja": "この工場は車を生産します。",
         "context": "ビジネス"
       },
       {
@@ -44898,7 +44898,7 @@
       },
       {
         "en": "Public transportation is convenient.",
-        "ja": "公共交通機関は便利だ。",
+        "ja": "公共交通機関は便利です。",
         "context": "家庭"
       }
     ],
@@ -44933,12 +44933,12 @@
     "examples": [
       {
         "en": "The publication sold well.",
-        "ja": "その出版物はよく売れた。",
+        "ja": "その出版物はよく売れました。",
         "context": "文化"
       },
       {
         "en": "Academic publication is rigorous.",
-        "ja": "学術出版は厳格だ。",
+        "ja": "学術出版は厳格です。",
         "context": "学術"
       },
       {
@@ -45806,7 +45806,7 @@
       },
       {
         "en": "He collects rare coins.",
-        "ja": "彼は珍しいコインを収集している。",
+        "ja": "彼は珍しいコインを収集しています。",
         "context": "日常"
       }
     ],
@@ -46376,7 +46376,7 @@
       },
       {
         "en": "Exercise helps reduce stress.",
-        "ja": "運動はストレスを減らすのに役立つ。",
+        "ja": "運動はストレスを減らすのに役立ちます。",
         "context": "健康"
       }
     ],
@@ -46939,7 +46939,7 @@
       },
       {
         "en": "The question remains unanswered.",
-        "ja": "その質問は未回答のままだ。",
+        "ja": "その質問は未回答のままです。",
         "context": "学校"
       }
     ],
@@ -47971,7 +47971,7 @@
     "examples": [
       {
         "en": "He returned home late.",
-        "ja": "彼は遅く家に戻った。",
+        "ja": "彼は遅く家に戻りました。",
         "context": "日常"
       },
       {
@@ -49942,7 +49942,7 @@
       },
       {
         "en": "She visited several countries.",
-        "ja": "彼女はいくつかの国を訪れた。",
+        "ja": "彼女はいくつかの国を訪れました。",
         "context": "会話"
       },
       {
@@ -50326,7 +50326,7 @@
     "examples": [
       {
         "en": "The news shocked everyone.",
-        "ja": "そのニュースは皆に衝撃を与えた。",
+        "ja": "そのニュースは皆に衝撃を与えました。",
         "context": "日常"
       },
       {
@@ -50406,7 +50406,7 @@
       },
       {
         "en": "She shouted for help.",
-        "ja": "彼女は助けを求めて叫んだ。",
+        "ja": "彼女は助けを求めて叫んです。",
         "context": "日常"
       },
       {
@@ -50672,7 +50672,7 @@
     "examples": [
       {
         "en": "Follow the road signs.",
-        "ja": "道路標識に従って。",
+        "ja": "道路標識に従ってください。",
         "context": "交通"
       },
       {
@@ -50926,7 +50926,7 @@
       },
       {
         "en": "The twins look similar.",
-        "ja": "双子は似ている。",
+        "ja": "双子は似ています。",
         "context": "家庭"
       }
     ],
@@ -51347,12 +51347,12 @@
     "examples": [
       {
         "en": "She has smooth skin.",
-        "ja": "彼女は滑らかな肌をしている。",
+        "ja": "彼女は滑らかな肌をしています。",
         "context": "日常"
       },
       {
         "en": "Sunscreen protects your skin.",
-        "ja": "日焼け止めが肌を守る。",
+        "ja": "日焼け止めが肌を守ます。",
         "context": "健康"
       },
       {
@@ -51726,7 +51726,7 @@
       },
       {
         "en": "She has smooth skin.",
-        "ja": "彼女は滑らかな肌をしている。",
+        "ja": "彼女は滑らかな肌をしています。",
         "context": "会話"
       },
       {
@@ -51767,7 +51767,7 @@
       },
       {
         "en": "Some snakes are poisonous.",
-        "ja": "毒を持つヘビもいる。",
+        "ja": "毒を持つヘビもいます。",
         "context": "自然"
       },
       {
@@ -52284,7 +52284,7 @@
       },
       {
         "en": "The milk went sour.",
-        "ja": "牛乳が酸っぱくなった。",
+        "ja": "牛乳が酸っぱくなりました。",
         "context": "日常"
       }
     ],
@@ -52692,7 +52692,7 @@
       },
       {
         "en": "News spread quickly online.",
-        "ja": "ニュースはオンラインで素早く広まった。",
+        "ja": "ニュースはオンラインで素早く広まりました。",
         "context": "報道"
       },
       {
@@ -52851,7 +52851,7 @@
       },
       {
         "en": "Workers staged a protest.",
-        "ja": "労働者は抗議を行った。",
+        "ja": "労働者は抗議を行いました。",
         "context": "社会"
       }
     ],
@@ -53109,7 +53109,7 @@
     "examples": [
       {
         "en": "Someone stole my bicycle.",
-        "ja": "誰かが私の自転車を盗んだ。",
+        "ja": "誰かが私の自転車を盗んです。",
         "context": "法律"
       },
       {
@@ -53494,7 +53494,7 @@
       },
       {
         "en": "Exercise helps reduce stress.",
-        "ja": "運動はストレスを減らすのに役立つ。",
+        "ja": "運動はストレスを減らすのに役立ちます。",
         "context": "感情"
       },
       {
@@ -53607,7 +53607,7 @@
       },
       {
         "en": "She follows strict rules.",
-        "ja": "彼女は厳格なルールに従う。",
+        "ja": "彼女は厳格なルールに従います。",
         "context": "ビジネス"
       },
       {
@@ -53781,7 +53781,7 @@
       },
       {
         "en": "She celebrated her success.",
-        "ja": "彼女は成功を祝った。",
+        "ja": "彼女は成功を祝いました。",
         "context": "会話"
       },
       {
@@ -54011,18 +54011,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "make a suggestion.",
-        "ja": "提案をする",
+        "en": "She stood up to make a suggestion at the meeting.",
+        "ja": "彼女は会議で提案をするために立ち上がりました。",
         "context": "日常"
       },
       {
-        "en": "helpful suggestion.",
-        "ja": "役立つ提案",
+        "en": "The manager gave us a helpful suggestion for improving our report.",
+        "ja": "上司はレポートを改善するための役立つ提案をしてくれました。",
         "context": "仕事"
       },
       {
-        "en": "open to suggestions.",
-        "ja": "提案を歓迎する",
+        "en": "Our teacher is always open to suggestions from students.",
+        "ja": "私たちの先生はいつも生徒からの提案を歓迎しています。",
         "context": "社会"
       }
     ],
@@ -54509,7 +54509,7 @@
     "examples": [
       {
         "en": "The result was surprising.",
-        "ja": "その結果は驚くべきものだった。",
+        "ja": "その結果は驚くべきものでした。",
         "context": "日常"
       },
       {
@@ -54754,7 +54754,7 @@
       },
       {
         "en": "The computer system crashed.",
-        "ja": "コンピュータシステムがクラッシュした。",
+        "ja": "コンピュータシステムがクラッシュしました。",
         "context": "会話"
       },
       {
@@ -54936,7 +54936,7 @@
       },
       {
         "en": "He showed great talent.",
-        "ja": "彼は素晴らしい才能を見せた。",
+        "ja": "彼は素晴らしい才能を見せました。",
         "context": "芸術"
       },
       {
@@ -55084,7 +55084,7 @@
     "examples": [
       {
         "en": "This soup tastes delicious.",
-        "ja": "このスープは美味しい味がする。",
+        "ja": "このスープは美味しい味がします。",
         "context": "食事"
       },
       {
@@ -56103,7 +56103,7 @@
     "examples": [
       {
         "en": "Many tourists visit Kyoto.",
-        "ja": "多くの観光客が京都を訪れる。",
+        "ja": "多くの観光客が京都を訪れます。",
         "context": "日常"
       },
       {
@@ -57238,7 +57238,7 @@
       },
       {
         "en": "This painting is unique.",
-        "ja": "この絵は唯一無二だ。",
+        "ja": "この絵は唯一無二です。",
         "context": "会話"
       },
       {
@@ -57330,7 +57330,7 @@
       },
       {
         "en": "She worked until midnight.",
-        "ja": "彼女は夜中まで働いた。",
+        "ja": "彼女は夜中まで働きました。",
         "context": "会話"
       },
       {
@@ -57648,7 +57648,7 @@
     "examples": [
       {
         "en": "She values her friendship.",
-        "ja": "彼女は友情を大切にしている。",
+        "ja": "彼女は友情を大切にしています。",
         "context": "日常"
       },
       {
@@ -57719,7 +57719,7 @@
       },
       {
         "en": "She has various hobbies.",
-        "ja": "彼女は様々な趣味を持っている。",
+        "ja": "彼女は様々な趣味を持っています。",
         "context": "会話"
       },
       {
@@ -57920,7 +57920,7 @@
       },
       {
         "en": "The argument became violent.",
-        "ja": "議論は暴力的になった。",
+        "ja": "議論は暴力的になりました。",
         "context": "日常"
       }
     ],
@@ -57956,7 +57956,7 @@
     "examples": [
       {
         "en": "The virus spread quickly.",
-        "ja": "ウイルスは素早く広がった。",
+        "ja": "ウイルスは素早く広がりました。",
         "context": "健康"
       },
       {
@@ -58475,7 +58475,7 @@
     "examples": [
       {
         "en": "He carried no weapon.",
-        "ja": "彼は武器を持っていなかった。",
+        "ja": "彼は武器を持っていませんでした。",
         "context": "日常"
       },
       {
@@ -58762,7 +58762,7 @@
     "examples": [
       {
         "en": "She likes western music.",
-        "ja": "彼女は西洋音楽が好きだ。",
+        "ja": "彼女は西洋音楽が好きです。",
         "context": "日常"
       },
       {
@@ -58772,7 +58772,7 @@
       },
       {
         "en": "He studied western history.",
-        "ja": "彼は西洋史を学んだ。",
+        "ja": "彼は西洋史を学んです。",
         "context": "学校"
       }
     ],

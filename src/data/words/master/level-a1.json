@@ -94,17 +94,17 @@
     "examples": [
       {
         "en": "She had an abortion.",
-        "ja": "彼女は中絶した。",
+        "ja": "彼女は中絶しました。",
         "context": "医療"
       },
       {
         "en": "The abortion debate continues.",
-        "ja": "中絶論争が続く。",
+        "ja": "中絶論争が続いています。",
         "context": "社会"
       },
       {
         "en": "Abortion laws vary widely.",
-        "ja": "中絶法は様々だ。",
+        "ja": "中絶に関する法律は様々です。",
         "context": "法律"
       }
     ],
@@ -270,19 +270,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "absolute power.",
-        "ja": "絶対的な権力",
+        "en": "The king had absolute power over his people.",
+        "ja": "王は民衆に対して絶対的な権力を持っていました。",
         "context": "政治"
       },
       {
-        "en": "an absolute truth.",
-        "ja": "絶対的な真実",
+        "en": "She spoke with absolute truth in her heart.",
+        "ja": "彼女は心の中に絶対的な真実を持って語りました。",
         "context": "哲学"
       },
       {
-        "en": "absolute silence.",
-        "ja": "完全な静寂",
-        "context": "日常"
+        "en": "The library was in absolute silence during the exam.",
+        "ja": "試験中、図書館は完全な静寂に包まれていました。",
+        "context": "学校"
       }
     ],
     "categories": [
@@ -320,13 +320,13 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "abstract thinking.",
-        "ja": "抽象的な思考",
+        "en": "Children develop abstract thinking as they grow up.",
+        "ja": "子供たちは成長するにつれて抽象的な思考を身につけます。",
         "context": "教育"
       },
       {
-        "en": "an abstract concept.",
-        "ja": "抽象的な概念",
+        "en": "Freedom is an abstract concept that is hard to define.",
+        "ja": "自由は定義が難しい抽象的な概念です。",
         "context": "学術"
       },
       {
@@ -424,19 +424,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "academic research.",
-        "ja": "学術研究",
+        "en": "She conducts academic research at the university.",
+        "ja": "彼女は大学で学術研究をしています。",
         "context": "教育"
       },
       {
-        "en": "academic performance.",
-        "ja": "学業成績",
+        "en": "His academic performance improved a lot this year.",
+        "ja": "彼の学業成績は今年大幅に向上しました。",
         "context": "学校"
       },
       {
-        "en": "academic writing.",
-        "ja": "学術的な文章",
-        "context": "教育"
+        "en": "Good academic writing is clear and well organized.",
+        "ja": "良い学術的な文章は明確で整理されています。",
+        "context": "学習"
       }
     ],
     "categories": [
@@ -525,7 +525,7 @@
       },
       {
         "en": "She accessed her email.",
-        "ja": "メールにアクセスした。",
+        "ja": "彼女はメールにアクセスしました。",
         "context": "職場"
       },
       {
@@ -567,7 +567,7 @@
       },
       {
         "en": "Music accompanied the dance.",
-        "ja": "音楽がダンスに伴奏した。",
+        "ja": "音楽がダンスに伴奏しました。",
         "context": "会話"
       }
     ],
@@ -659,13 +659,13 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "account for the cost.",
-        "ja": "費用を説明する",
+        "en": "The manager had to account for the extra cost.",
+        "ja": "マネージャーは余分な費用を説明しなければなりませんでした。",
         "context": "ビジネス"
       },
       {
-        "en": "account for 30%.",
-        "ja": "30%を占める",
+        "en": "Online sales account for 30% of our total revenue.",
+        "ja": "オンライン販売は総収益の30%を占めています。",
         "context": "技術"
       },
       {
@@ -742,18 +742,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "acknowledge a mistake.",
-        "ja": "誤りを認める",
+        "en": "She acknowledged her mistake and said sorry.",
+        "ja": "彼女は自分の誤りを認めて謝りました。",
         "context": "日常"
       },
       {
-        "en": "acknowledge his work.",
-        "ja": "彼の仕事を認める",
+        "en": "The boss acknowledged his hard work at the meeting.",
+        "ja": "上司は会議で彼の仕事を認めました。",
         "context": "職場"
       },
       {
-        "en": "acknowledge the fact.",
-        "ja": "事実を認める",
+        "en": "We must acknowledge the fact that mistakes happen.",
+        "ja": "私たちはミスが起きるという事実を認めなければなりません。",
         "context": "学術"
       }
     ],
@@ -846,18 +846,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "language acquisition.",
-        "ja": "言語習得",
+        "en": "Language acquisition is faster for young children.",
+        "ja": "言語習得は幼い子供のほうが早いです。",
         "context": "教育"
       },
       {
-        "en": "acquisition of skills.",
-        "ja": "技術の習得",
+        "en": "The acquisition of new skills takes time and practice.",
+        "ja": "新しい技術の習得には時間と練習が必要です。",
         "context": "職場"
       },
       {
-        "en": "company acquisition.",
-        "ja": "企業買収",
+        "en": "The company announced a major acquisition last week.",
+        "ja": "その会社は先週大きな企業買収を発表しました。",
         "context": "ビジネス"
       }
     ],
@@ -944,8 +944,8 @@
         "context": "ビジネス"
       },
       {
-        "en": "call to action.",
-        "ja": "行動の呼びかけ",
+        "en": "The charity made a call to action on its website.",
+        "ja": "その慈善団体はウェブサイトで行動の呼びかけを行いました。",
         "context": "社会"
       }
     ],
@@ -1030,18 +1030,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "adapt to change.",
-        "ja": "変化に適応する",
+        "en": "It is not easy to adapt to change in a new place.",
+        "ja": "新しい場所での変化に適応するのは簡単ではありません。",
         "context": "日常"
       },
       {
-        "en": "adapt the design.",
-        "ja": "デザインを改変する",
+        "en": "The team had to adapt the design to fit the new budget.",
+        "ja": "チームは新しい予算に合わせてデザインを改変しなければなりませんでした。",
         "context": "仕事"
       },
       {
-        "en": "animals adapt well.",
-        "ja": "動物はよく適応する",
+        "en": "Animals adapt well to different environments.",
+        "ja": "動物は様々な環境にうまく適応します。",
         "context": "自然"
       }
     ],
@@ -1136,18 +1136,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "salary adjustment.",
-        "ja": "給与調整",
+        "en": "The company made a salary adjustment for all staff.",
+        "ja": "会社は全スタッフの給与調整を行いました。",
         "context": "ビジネス"
       },
       {
-        "en": "make adjustments.",
-        "ja": "調整を行う",
+        "en": "She made some adjustments to her daily schedule.",
+        "ja": "彼女は毎日のスケジュールにいくつかの調整を行いました。",
         "context": "日常"
       },
       {
-        "en": "adjustment period.",
-        "ja": "適応期間",
+        "en": "The adjustment period after moving abroad can be tough.",
+        "ja": "海外に引っ越した後の適応期間は大変なことがあります。",
         "context": "社会"
       }
     ],
@@ -1281,13 +1281,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "financial adviser.",
-        "ja": "財務顧問",
+        "en": "She hired a financial adviser to manage her savings.",
+        "ja": "彼女は貯蓄を管理するために財務顧問を雇いました。",
         "context": "ビジネス"
       },
       {
-        "en": "political adviser.",
-        "ja": "政治顧問",
+        "en": "He works as a political adviser for the government.",
+        "ja": "彼は政府の政治顧問として働いています。",
         "context": "政治"
       },
       {
@@ -1323,18 +1323,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "foreign affairs.",
-        "ja": "外交問題",
+        "en": "The minister is in charge of foreign affairs.",
+        "ja": "その大臣は外交問題を担当しています。",
         "context": "政治"
       },
       {
-        "en": "current affairs.",
-        "ja": "時事問題",
+        "en": "She always watches the news to stay up on current affairs.",
+        "ja": "彼女はいつも時事問題に詳しくなるようにニュースを見ています。",
         "context": "報道"
       },
       {
-        "en": "private affair.",
-        "ja": "個人的な事柄",
+        "en": "What I do on weekends is a private affair.",
+        "ja": "週末に何をするかは個人的な事柄です。",
         "context": "日常"
       }
     ],
@@ -1536,7 +1536,7 @@
       },
       {
         "en": "She fell asleep again.",
-        "ja": "彼女は再び眠りについた。",
+        "ja": "彼女は再び眠りにつきました。",
         "context": "会話"
       },
       {
@@ -1674,13 +1674,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "meeting agenda.",
-        "ja": "会議の議題",
+        "en": "The team reviewed the meeting agenda before starting.",
+        "ja": "チームは始める前に会議の議題を確認しました。",
         "context": "ビジネス"
       },
       {
-        "en": "set the agenda.",
-        "ja": "議題を設定する",
+        "en": "The chair helped the group set the agenda for the day.",
+        "ja": "司会者がグループのその日の議題を設定するのを手伝いました。",
         "context": "政治"
       },
       {
@@ -1725,8 +1725,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "real estate agent.",
-        "ja": "不動産業者",
+        "en": "He called a real estate agent to find a new home.",
+        "ja": "彼は新しい家を見つけるために不動産業者に電話しました。",
         "context": "ビジネス"
       },
       {
@@ -1772,18 +1772,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "aggressive behavior.",
-        "ja": "攻撃的な行動",
+        "en": "The dog showed aggressive behavior toward strangers.",
+        "ja": "その犬は見知らぬ人に対して攻撃的な行動を示しました。",
         "context": "社会"
       },
       {
-        "en": "aggressive marketing.",
-        "ja": "積極的な販売",
+        "en": "The company used aggressive marketing to boost sales.",
+        "ja": "その会社は売上を増やすために積極的な販売戦略を使いました。",
         "context": "ビジネス"
       },
       {
-        "en": "aggressive tone.",
-        "ja": "攻撃的な口調",
+        "en": "He spoke in an aggressive tone during the argument.",
+        "ja": "彼は口論中に攻撃的な口調で話しました。",
         "context": "日常"
       }
     ],
@@ -2013,18 +2013,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "commercial aircraft.",
-        "ja": "商用航空機",
+        "en": "A commercial aircraft landed safely at the airport.",
+        "ja": "商用航空機が空港に無事着陸しました。",
         "context": "旅行"
       },
       {
-        "en": "military aircraft.",
-        "ja": "軍用機",
+        "en": "The country has many military aircraft at its bases.",
+        "ja": "その国は基地に多くの軍用機を持っています。",
         "context": "軍事"
       },
       {
-        "en": "aircraft engine.",
-        "ja": "航空機エンジン",
+        "en": "Engineers work hard to improve the aircraft engine.",
+        "ja": "エンジニアたちは航空機エンジンを改良するために懸命に働いています。",
         "context": "技術"
       }
     ],
@@ -2384,18 +2384,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "allege misconduct.",
-        "ja": "不正行為を主張する",
+        "en": "The employee alleged misconduct by the supervisor.",
+        "ja": "その従業員は上司による不正行為を主張しました。",
         "context": "法律"
       },
       {
-        "en": "allegedly stolen.",
-        "ja": "盗まれたと主張される",
+        "en": "The bag was allegedly stolen from the store yesterday.",
+        "ja": "そのバッグは昨日店から盗まれたと主張されています。",
         "context": "法律"
       },
       {
-        "en": "allege a crime.",
-        "ja": "犯罪を主張する",
+        "en": "The witness alleged a crime had taken place that night.",
+        "ja": "証人はその夜犯罪があったと主張しました。",
         "context": "法律"
       }
     ],
@@ -2441,8 +2441,8 @@
         "context": "軍事"
       },
       {
-        "en": "become an ally.",
-        "ja": "同盟を結ぶ",
+        "en": "The two countries decided to become an ally in the war.",
+        "ja": "その二国は戦争で同盟を結ぶことを決めました。",
         "context": "政治"
       }
     ],
@@ -2524,7 +2524,7 @@
       },
       {
         "en": "She has already left.",
-        "ja": "彼女はすでに出発した。",
+        "ja": "彼女はすでに出発しました。",
         "context": "会話"
       },
       {
@@ -2833,18 +2833,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "constitutional amendment.",
-        "ja": "憲法修正",
+        "en": "Congress voted on the constitutional amendment last year.",
+        "ja": "議会は昨年、憲法修正について投票しました。",
         "context": "政治"
       },
       {
-        "en": "propose an amendment.",
-        "ja": "修正案を提案する",
+        "en": "A senator proposed an amendment to the new law.",
+        "ja": "ある上院議員が新しい法律への修正案を提案しました。",
         "context": "法律"
       },
       {
-        "en": "first amendment.",
-        "ja": "修正第一条",
+        "en": "The first amendment protects freedom of speech.",
+        "ja": "修正第一条は言論の自由を守っています。",
         "context": "法律"
       }
     ],
@@ -2933,13 +2933,13 @@
         "context": "技術"
       },
       {
-        "en": "market analysis.",
-        "ja": "市場分析",
+        "en": "The team did a market analysis before launching the product.",
+        "ja": "チームは製品を発売する前に市場分析を行いました。",
         "context": "ビジネス"
       },
       {
-        "en": "in-depth analysis.",
-        "ja": "詳細な分析",
+        "en": "The professor presented an in-depth analysis of the data.",
+        "ja": "教授はデータの詳細な分析を発表しました。",
         "context": "学術"
       }
     ],
@@ -2979,18 +2979,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "financial analyst.",
-        "ja": "金融アナリスト",
+        "en": "She works as a financial analyst at a large bank.",
+        "ja": "彼女は大きな銀行で金融アナリストとして働いています。",
         "context": "ビジネス"
       },
       {
-        "en": "political analyst.",
-        "ja": "政治アナリスト",
+        "en": "A political analyst commented on the election results.",
+        "ja": "政治アナリストが選挙結果についてコメントしました。",
         "context": "政治"
       },
       {
-        "en": "systems analyst.",
-        "ja": "システム分析者",
+        "en": "He became a systems analyst after finishing his degree.",
+        "ja": "彼は学位を取得した後にシステム分析者になりました。",
         "context": "技術"
       }
     ],
@@ -3040,8 +3040,8 @@
         "context": "科学"
       },
       {
-        "en": "view from another angle.",
-        "ja": "別の角度から見る",
+        "en": "Try to view the problem from another angle.",
+        "ja": "問題を別の角度から見てみてください。",
         "context": "日常"
       }
     ],
@@ -3222,12 +3222,12 @@
       },
       {
         "en": "Let's try another way.",
-        "ja": "別の方法を試そう。",
+        "ja": "別の方法を試しましょう。",
         "context": "学校"
       },
       {
         "en": "She bought another book.",
-        "ja": "彼女はもう一冊本を買った。",
+        "ja": "彼女はもう一冊本を買いました。",
         "context": "買い物"
       }
     ],
@@ -3554,18 +3554,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "job application.",
-        "ja": "就職応募",
+        "en": "He sent a job application to three companies.",
+        "ja": "彼は3社に就職の応募書類を送りました。",
         "context": "職場"
       },
       {
-        "en": "application form.",
-        "ja": "申込書",
+        "en": "Please fill in the application form carefully.",
+        "ja": "申込書に丁寧に記入してください。",
         "context": "日常"
       },
       {
-        "en": "mobile application.",
-        "ja": "モバイルアプリ",
+        "en": "She downloaded a mobile application to track her steps.",
+        "ja": "彼女は歩数を記録するためにモバイルアプリをダウンロードしました。",
         "context": "技術"
       }
     ],
@@ -3605,18 +3605,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "appoint a manager.",
-        "ja": "管理者を任命する",
+        "en": "The CEO decided to appoint a new manager for the team.",
+        "ja": "CEOはチームに新しいマネージャーを任命することを決めました。",
         "context": "ビジネス"
       },
       {
-        "en": "appoint as director.",
-        "ja": "取締役に任命する",
+        "en": "She was appointed as director of the new department.",
+        "ja": "彼女は新しい部署の取締役に任命されました。",
         "context": "職場"
       },
       {
-        "en": "newly appointed.",
-        "ja": "新たに任命された",
+        "en": "The newly appointed teacher started class on Monday.",
+        "ja": "新たに任命された先生は月曜日に授業を始めました。",
         "context": "報道"
       }
     ],
@@ -3656,18 +3656,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "doctor appointment.",
-        "ja": "医者の予約",
+        "en": "I have a doctor appointment at three o'clock.",
+        "ja": "3時に医者の予約があります。",
         "context": "健康"
       },
       {
-        "en": "make an appointment.",
-        "ja": "予約を取る",
+        "en": "She called to make an appointment with the dentist.",
+        "ja": "彼女は歯医者の予約を取るために電話しました。",
         "context": "日常"
       },
       {
-        "en": "cancel appointment.",
-        "ja": "予約を取り消す",
+        "en": "He had to cancel his appointment because he was sick.",
+        "ja": "彼は体調が悪かったので予約を取り消さなければなりませんでした。",
         "context": "日常"
       }
     ],
@@ -3810,8 +3810,8 @@
         "context": "ビジネス"
       },
       {
-        "en": "approval rating.",
-        "ja": "支持率",
+        "en": "The president's approval rating went up after the speech.",
+        "ja": "大統領の支持率はスピーチの後に上がりました。",
         "context": "政治"
       },
       {
@@ -3894,18 +3894,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "problems arise.",
-        "ja": "問題が生じる",
+        "en": "Problems sometimes arise when people don't communicate.",
+        "ja": "人々がコミュニケーションを取らないと問題が生じることがあります。",
         "context": "日常"
       },
       {
-        "en": "arise from conflict.",
-        "ja": "紛争から生じる",
+        "en": "New tensions can arise from conflict between neighbors.",
+        "ja": "隣国間の紛争から新たな緊張が生じることがあります。",
         "context": "社会"
       },
       {
-        "en": "issues may arise.",
-        "ja": "問題が生じるかもしれない",
+        "en": "Technical issues may arise during the software update.",
+        "ja": "ソフトウェアのアップデート中に技術的な問題が生じるかもしれません。",
         "context": "日常"
       }
     ],
@@ -3946,7 +3946,7 @@
       },
       {
         "en": "He has strong arms.",
-        "ja": "彼は腕が強い。",
+        "ja": "彼は腕が強いです。",
         "context": "日常"
       },
       {
@@ -4387,18 +4387,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "valuable asset.",
-        "ja": "貴重な資産",
+        "en": "Her language skills are a valuable asset at work.",
+        "ja": "彼女の語学力は職場で貴重な資産です。",
         "context": "ビジネス"
       },
       {
-        "en": "financial asset.",
-        "ja": "金融資産",
+        "en": "Real estate is considered a stable financial asset.",
+        "ja": "不動産は安定した金融資産と考えられています。",
         "context": "金融"
       },
       {
-        "en": "asset management.",
-        "ja": "資産管理",
+        "en": "Good asset management helps companies stay profitable.",
+        "ja": "優れた資産管理は企業が利益を維持するのに役立ちます。",
         "context": "ビジネス"
       }
     ],
@@ -4439,7 +4439,7 @@
     "examples": [
       {
         "en": "The teacher assigned homework.",
-        "ja": "先生は宿題を出した。",
+        "ja": "先生は宿題を出しました。",
         "context": "学校"
       },
       {
@@ -4489,18 +4489,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "financial assistance.",
-        "ja": "財政援助",
+        "en": "The government provided financial assistance to flood victims.",
+        "ja": "政府は洪水の被害者に財政援助を提供しました。",
         "context": "社会"
       },
       {
-        "en": "request assistance.",
-        "ja": "援助を求める",
+        "en": "She raised her hand to request assistance from the teacher.",
+        "ja": "彼女は先生に援助を求めるために手を挙げました。",
         "context": "日常"
       },
       {
-        "en": "provide assistance.",
-        "ja": "援助を提供する",
+        "en": "Volunteers came to provide assistance after the earthquake.",
+        "ja": "地震の後、ボランティアが援助を提供しに来ました。",
         "context": "日常"
       }
     ],
@@ -4539,18 +4539,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "teaching assistant.",
-        "ja": "教員助手",
+        "en": "She works as a teaching assistant in the science class.",
+        "ja": "彼女は理科の授業で教員助手として働いています。",
         "context": "教育"
       },
       {
-        "en": "assistant manager.",
-        "ja": "副部長",
+        "en": "He was promoted to assistant manager last spring.",
+        "ja": "彼は昨年の春に副部長に昇進しました。",
         "context": "職場"
       },
       {
-        "en": "personal assistant.",
-        "ja": "個人秘書",
+        "en": "The executive hired a personal assistant to manage the schedule.",
+        "ja": "その役員はスケジュールを管理するために個人秘書を雇いました。",
         "context": "職場"
       }
     ],
@@ -4572,18 +4572,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "associate with crime.",
-        "ja": "犯罪と関連付ける",
+        "en": "People often associate the color red with danger.",
+        "ja": "人々はよく赤い色を危険と関連付けます。",
         "context": "社会"
       },
       {
-        "en": "closely associated.",
-        "ja": "密接に関連している",
+        "en": "The two topics are closely associated in research.",
+        "ja": "その二つのテーマは研究において密接に関連しています。",
         "context": "学術"
       },
       {
-        "en": "associate ideas.",
-        "ja": "考えを結びつける",
+        "en": "Good teachers help students associate ideas in creative ways.",
+        "ja": "良い先生は生徒が創造的な方法で考えを結びつけるのを助けます。",
         "context": "学術"
       }
     ],
@@ -4622,18 +4622,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "trade association.",
-        "ja": "業界団体",
+        "en": "He joined a trade association to connect with other businesses.",
+        "ja": "彼は他の企業とつながるために業界団体に加入しました。",
         "context": "ビジネス"
       },
       {
-        "en": "student association.",
-        "ja": "学生会",
+        "en": "The student association organized a sports event this weekend.",
+        "ja": "学生会は今週末スポーツイベントを企画しました。",
         "context": "教育"
       },
       {
-        "en": "neighborhood association.",
-        "ja": "町内会",
+        "en": "Our neighborhood association meets once a month to discuss local issues.",
+        "ja": "町内会は地域の問題を話し合うために月に一度集まります。",
         "context": "社会"
       }
     ],
@@ -4667,18 +4667,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "make an assumption.",
-        "ja": "仮定を立てる",
+        "en": "Don't make an assumption without checking the facts first.",
+        "ja": "まず事実を確認せずに仮定を立ててはいけません。",
         "context": "学術"
       },
       {
-        "en": "false assumption.",
-        "ja": "誤った仮定",
+        "en": "The plan failed because it was based on a false assumption.",
+        "ja": "その計画は誤った仮定に基づいていたため失敗しました。",
         "context": "学術"
       },
       {
-        "en": "basic assumption.",
-        "ja": "基本的な仮定",
+        "en": "Honesty is a basic assumption in any good friendship.",
+        "ja": "誠実さはどんな良い友情においても基本的な仮定です。",
         "context": "学術"
       }
     ],
@@ -4728,8 +4728,8 @@
         "context": "日常"
       },
       {
-        "en": "assure quality.",
-        "ja": "品質を保証する",
+        "en": "We work hard to assure quality in every product we make.",
+        "ja": "私たちは作るすべての製品の品質を保証するために懸命に働いています。",
         "context": "ビジネス"
       }
     ],
@@ -4943,8 +4943,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "attack the enemy.",
-        "ja": "敵を攻撃する",
+        "en": "The soldiers were ordered to attack the enemy camp.",
+        "ja": "兵士たちは敵の陣営を攻撃するよう命令されました。",
         "context": "軍事"
       },
       {
@@ -4980,18 +4980,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "school attendance.",
-        "ja": "学校出席",
+        "en": "Regular school attendance is important for learning.",
+        "ja": "定期的な学校出席は学習において大切です。",
         "context": "教育"
       },
       {
-        "en": "attendance record.",
-        "ja": "出席記録",
+        "en": "The teacher checks the attendance record every morning.",
+        "ja": "先生は毎朝出席記録を確認します。",
         "context": "学校"
       },
       {
-        "en": "poor attendance.",
-        "ja": "出席率が低い",
+        "en": "Her poor attendance caused her to fail the class.",
+        "ja": "彼女の出席率の低さが原因で授業に落第しました。",
         "context": "教育"
       }
     ],
@@ -5022,18 +5022,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "tourist attraction.",
-        "ja": "観光名所",
+        "en": "The castle is a popular tourist attraction in this city.",
+        "ja": "そのお城はこの街で人気の観光名所です。",
         "context": "旅行"
       },
       {
-        "en": "main attraction.",
-        "ja": "メインの魅力",
+        "en": "The fireworks show was the main attraction of the festival.",
+        "ja": "花火ショーがお祭りのメインの魅力でした。",
         "context": "社交"
       },
       {
-        "en": "physical attraction.",
-        "ja": "肉体的魅力",
+        "en": "Physical attraction is just one part of a healthy relationship.",
+        "ja": "肉体的魅力は健全な関係の一部に過ぎません。",
         "context": "社会"
       }
     ],
@@ -5207,13 +5207,13 @@
         "context": "文学"
       },
       {
-        "en": "author of the book.",
-        "ja": "本の著者",
+        "en": "Do you know who is the author of the book?",
+        "ja": "その本の著者が誰か知っていますか？",
         "context": "学術"
       },
       {
-        "en": "best-selling author.",
-        "ja": "ベストセラー作家",
+        "en": "She became a best-selling author after her first novel.",
+        "ja": "彼女は初めての小説でベストセラー作家になりました。",
         "context": "報道"
       }
     ],
@@ -5435,7 +5435,7 @@
       },
       {
         "en": "She ran away quickly.",
-        "ja": "彼女はすぐに逃げた。",
+        "ja": "彼女はすぐに逃げました。",
         "context": "日常"
       },
       {
@@ -5565,7 +5565,7 @@
       },
       {
         "en": "Look back and wave.",
-        "ja": "振り返って手を振って。",
+        "ja": "振り返って手を振ってください。",
         "context": "日常"
       },
       {
@@ -5748,7 +5748,7 @@
       },
       {
         "en": "Monkeys love bananas.",
-        "ja": "サルはバナナが大好きだ。",
+        "ja": "サルはバナナが大好きです。",
         "context": "食事"
       },
       {
@@ -5835,8 +5835,8 @@
         "context": "日常"
       },
       {
-        "en": "bar of chocolate.",
-        "ja": "板チョコ",
+        "en": "She bought a bar of chocolate at the convenience store.",
+        "ja": "彼女はコンビニで板チョコを買いました。",
         "context": "食事"
       },
       {
@@ -5985,8 +5985,8 @@
         "context": "ビジネス"
       },
       {
-        "en": "knowledge base.",
-        "ja": "知識の基盤",
+        "en": "Reading is the knowledge base for all other subjects.",
+        "ja": "読書はすべての他の教科の知識の基盤です。",
         "context": "学術"
       }
     ],
@@ -6110,8 +6110,8 @@
         "context": "社会"
       },
       {
-        "en": "basic knowledge.",
-        "ja": "基礎知識",
+        "en": "Students need basic knowledge of math and science.",
+        "ja": "生徒は数学と理科の基礎知識が必要です。",
         "context": "教育"
       }
     ],
@@ -6151,8 +6151,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "on a daily basis.",
-        "ja": "毎日",
+        "en": "She exercises on a daily basis to stay healthy.",
+        "ja": "彼女は健康を維持するために毎日運動しています。",
         "context": "日常"
       },
       {
@@ -6161,8 +6161,8 @@
         "context": "法律"
       },
       {
-        "en": "basis of theory.",
-        "ja": "理論の基盤",
+        "en": "Observation is the basis of theory in science.",
+        "ja": "観察は科学における理論の基盤です。",
         "context": "学術"
       }
     ],
@@ -6245,7 +6245,7 @@
       },
       {
         "en": "The bath is ready.",
-        "ja": "お風呂が準備できた。",
+        "ja": "お風呂が準備できました。",
         "context": "家庭"
       },
       {
@@ -6476,13 +6476,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "natural beauty.",
-        "ja": "自然の美しさ",
+        "en": "The mountains are full of natural beauty in autumn.",
+        "ja": "山は秋に自然の美しさで溢れています。",
         "context": "自然"
       },
       {
-        "en": "beauty product.",
-        "ja": "美容製品",
+        "en": "She bought a beauty product from the pharmacy.",
+        "ja": "彼女は薬局で美容製品を買いました。",
         "context": "買い物"
       },
       {
@@ -6919,7 +6919,7 @@
     "examples": [
       {
         "en": "The bell rang loudly.",
-        "ja": "ベルが大きく鳴った。",
+        "ja": "ベルが大きく鳴りました。",
         "context": "学校"
       },
       {
@@ -7210,8 +7210,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "bid for contract.",
-        "ja": "契約に入札する",
+        "en": "Three companies decided to bid for the contract.",
+        "ja": "3社がその契約に入札することを決めました。",
         "context": "ビジネス"
       },
       {
@@ -7220,8 +7220,8 @@
         "context": "ビジネス"
       },
       {
-        "en": "bid on project.",
-        "ja": "事業に応札する",
+        "en": "Our company wants to bid on the big construction project.",
+        "ja": "私たちの会社はその大きな建設事業に応札したいと思っています。",
         "context": "ビジネス"
       }
     ],
@@ -7384,7 +7384,7 @@
       },
       {
         "en": "Strong traditions bind communities.",
-        "ja": "強い伝統がコミュニティを結びつける。",
+        "ja": "強い伝統がコミュニティを結びつけます。",
         "context": "文化"
       }
     ],
@@ -7655,7 +7655,7 @@
     "examples": [
       {
         "en": "The cat is black.",
-        "ja": "その猫は黒い。",
+        "ja": "その猫は黒いです。",
         "context": "日常"
       },
       {
@@ -7765,8 +7765,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "bless the meal.",
-        "ja": "食事を祝福する",
+        "en": "The priest came to bless the meal before dinner.",
+        "ja": "夕食の前に聖職者が食事を祝福しに来ました。",
         "context": "宗教"
       },
       {
@@ -7850,7 +7850,7 @@
       },
       {
         "en": "She has blue eyes.",
-        "ja": "彼女は青い目をしている。",
+        "ja": "彼女は青い目をしています。",
         "context": "会話"
       },
       {
@@ -8244,7 +8244,7 @@
       },
       {
         "en": "Praise boosts children's confidence.",
-        "ja": "褒めることは子供の自信を高める。",
+        "ja": "褒めることは子供の自信を高めます。",
         "context": "学校"
       }
     ],
@@ -8397,12 +8397,12 @@
     "examples": [
       {
         "en": "Both answers are correct.",
-        "ja": "両方の答えが正しい。",
+        "ja": "両方の答えが正しいです。",
         "context": "学校"
       },
       {
         "en": "They both like sports.",
-        "ja": "二人ともスポーツが好きだ。",
+        "ja": "二人ともスポーツが好きです。",
         "context": "日常"
       },
       {
@@ -8429,18 +8429,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "don't bother me.",
-        "ja": "邪魔しないで",
+        "en": "Please don't bother me while I'm studying.",
+        "ja": "勉強中は邪魔しないでください。",
         "context": "日常"
       },
       {
-        "en": "bother to call.",
-        "ja": "わざわざ電話する",
+        "en": "She didn't bother to call before dropping by.",
+        "ja": "彼女は立ち寄る前にわざわざ電話しませんでした。",
         "context": "日常"
       },
       {
-        "en": "it doesn't bother me.",
-        "ja": "気にしない",
+        "en": "It doesn't bother me when plans change suddenly.",
+        "ja": "突然計画が変わっても気にしません。",
         "context": "日常"
       }
     ],
@@ -8685,8 +8685,8 @@
         "context": "職場"
       },
       {
-        "en": "branch of science.",
-        "ja": "学問の分野",
+        "en": "Biology is a branch of science that studies living things.",
+        "ja": "生物学は生き物を研究する学問の分野です。",
         "context": "学術"
       }
     ],
@@ -8944,8 +8944,8 @@
         "context": "自然"
       },
       {
-        "en": "breed conflict.",
-        "ja": "対立を生む",
+        "en": "Inequality can breed conflict in a society.",
+        "ja": "不平等は社会において対立を生むことがあります。",
         "context": "社会"
       },
       {
@@ -9258,12 +9258,12 @@
     "examples": [
       {
         "en": "The bear is brown.",
-        "ja": "クマは茶色だ。",
+        "ja": "クマは茶色です。",
         "context": "日常"
       },
       {
         "en": "She has brown hair.",
-        "ja": "彼女は茶色い髪をしている。",
+        "ja": "彼女は茶色い髪をしています。",
         "context": "会話"
       },
       {
@@ -9660,8 +9660,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "run a business.",
-        "ja": "事業を経営する",
+        "en": "He works hard to run a small business in his town.",
+        "ja": "彼は地元で小さな事業を経営するために懸命に働いています。",
         "context": "日常"
       },
       {
@@ -9670,8 +9670,8 @@
         "context": "職場"
       },
       {
-        "en": "mind your own business.",
-        "ja": "余計なお世話",
+        "en": "Stop asking about my plans — mind your own business!",
+        "ja": "私の計画を聞くのはやめて — 余計なお世話です！",
         "context": "日常"
       }
     ],
@@ -9870,13 +9870,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "potential buyer.",
-        "ja": "潜在的購入者",
+        "en": "A potential buyer visited the house this afternoon.",
+        "ja": "今日の午後、潜在的購入者が家を見に来ました。",
         "context": "ビジネス"
       },
       {
-        "en": "first-time buyer.",
-        "ja": "初めての購入者",
+        "en": "As a first-time buyer, she asked the agent many questions.",
+        "ja": "初めての購入者として、彼女は業者に多くの質問をしました。",
         "context": "家庭"
       },
       {
@@ -11246,7 +11246,7 @@
     "examples": [
       {
         "en": "Change is sometimes difficult.",
-        "ja": "変化は時として難しい。",
+        "ja": "変化は時として難しいものです。",
         "context": "日常"
       },
       {
@@ -11256,7 +11256,7 @@
       },
       {
         "en": "She welcomed the change.",
-        "ja": "彼女は変化を歓迎した。",
+        "ja": "彼女は変化を歓迎しました。",
         "context": "買い物"
       }
     ],
@@ -11909,7 +11909,7 @@
     "examples": [
       {
         "en": "She loves dark chocolate.",
-        "ja": "彼女はダークチョコレートが大好きだ。",
+        "ja": "彼女はダークチョコレートが大好きです。",
         "context": "食事"
       },
       {
@@ -12220,8 +12220,8 @@
         "context": "法律"
       },
       {
-        "en": "She claimed the prize.",
-        "ja": "彼女は賞を受け取った。",
+        "en": "She claimed the prize at the ceremony.",
+        "ja": "彼女は式典で賞を受け取りました。",
         "context": "イベント"
       },
       {
@@ -12449,9 +12449,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Let's clean the classroom.",
-        "ja": "教室を掃除しましょう。",
-        "context": "日常"
+        "en": "Let's clean the classroom together.",
+        "ja": "みんなで教室を掃除しましょう。",
+        "context": "学校"
       },
       {
         "en": "She cleaned her room this morning.",
@@ -12625,8 +12625,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Look at the clock.",
-        "ja": "時計を見なさい。",
+        "en": "Look at the clock on the wall.",
+        "ja": "壁の時計を見てください。",
         "context": "日常"
       },
       {
@@ -12749,8 +12749,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Put on warm clothes.",
-        "ja": "暖かい服を着なさい。",
+        "en": "Put on warm clothes today.",
+        "ja": "今日は暖かい服を着なさい。",
         "context": "日常"
       },
       {
@@ -12759,8 +12759,8 @@
         "context": "家庭"
       },
       {
-        "en": "She bought new clothes.",
-        "ja": "彼女は新しい服を買った。",
+        "en": "She bought new clothes at the shop.",
+        "ja": "彼女はお店で新しい服を買いました。",
         "context": "買い物"
       }
     ],
@@ -12833,8 +12833,8 @@
     "examples": [
       {
         "en": "It is cloudy today.",
-        "ja": "今日は曇っている。",
-        "context": "自然"
+        "ja": "今日は曇っています。",
+        "context": "天気"
       },
       {
         "en": "The cloudy sky made the day dark.",
@@ -12880,7 +12880,7 @@
       },
       {
         "en": "Grapes grow in clusters.",
-        "ja": "ブドウは房になって実る。",
+        "ja": "ブドウは房になって実ります。",
         "context": "食事"
       }
     ],
@@ -12947,8 +12947,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "My father drinks coffee.",
-        "ja": "父はコーヒーを飲みます。",
+        "en": "My father drinks coffee every morning.",
+        "ja": "父は毎朝コーヒーを飲みます。",
         "context": "食事"
       },
       {
@@ -12999,8 +12999,8 @@
         "context": "日常"
       },
       {
-        "en": "She dropped the coin.",
-        "ja": "彼女はコインを落とした。",
+        "en": "She dropped the coin on the floor.",
+        "ja": "彼女はコインを床に落としました。",
         "context": "日常"
       }
     ],
@@ -13539,8 +13539,8 @@
       },
       {
         "en": "Music composition requires creativity.",
-        "ja": "音楽の作曲には創造性が必要だ。",
-        "context": "学術"
+        "ja": "音楽の作曲には創造性が必要です。",
+        "context": "音楽"
       }
     ],
     "categories": [
@@ -13818,9 +13818,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Budget constraints limited options.",
-        "ja": "予算の制約が選択肢を限定した。",
-        "context": "ビジネス"
+        "en": "Budget constraints limited our options.",
+        "ja": "予算の制約が選択肢を限定しました。",
+        "context": "学校"
       },
       {
         "en": "She worked within time constraints.",
@@ -14006,9 +14006,9 @@
         "context": "食事"
       },
       {
-        "en": "Let's cook together!",
-        "ja": "一緒に料理しましょう！",
-        "context": "食事"
+        "en": "Let's cook dinner together tonight.",
+        "ja": "今夜は一緒に夕食を作りましょう。",
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -14407,8 +14407,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "I live in Japan.",
-        "ja": "私は日本に住んでいます。",
+        "en": "Japan is my home country.",
+        "ja": "日本は私の母国です。",
         "context": "地理"
       },
       {
@@ -14541,7 +14541,7 @@
     "examples": [
       {
         "en": "The cow eats grass.",
-        "ja": "牛は草を食べる。",
+        "ja": "牛は草を食べます。",
         "context": "自然"
       },
       {
@@ -14551,7 +14551,7 @@
       },
       {
         "en": "Cows give us milk.",
-        "ja": "牛は牛乳を与えてくれる。",
+        "ja": "牛は私たちに牛乳を与えてくれます。",
         "context": "自然"
       }
     ],
@@ -15552,8 +15552,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "I like to dance.",
-        "ja": "踊るのが好きです。",
+        "en": "I like to dance at parties.",
+        "ja": "パーティーで踊るのが好きです。",
         "context": "趣味"
       },
       {
@@ -15593,8 +15593,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She enjoys dancing.",
-        "ja": "彼女はダンスを楽しんでいます。",
+        "en": "She enjoys dancing every weekend.",
+        "ja": "彼女は毎週末ダンスを楽しんでいます。",
         "context": "趣味"
       },
       {
@@ -15752,7 +15752,7 @@
     "examples": [
       {
         "en": "My daughter likes music.",
-        "ja": "娘は音楽が好きだ。",
+        "ja": "娘は音楽が好きです。",
         "context": "家庭"
       },
       {
@@ -16004,7 +16004,7 @@
     "examples": [
       {
         "en": "Christmas is in December.",
-        "ja": "クリスマスは12月だ。",
+        "ja": "クリスマスは12月です。",
         "context": "日常"
       },
       {
@@ -17421,7 +17421,7 @@
       {
         "en": "Please call a doctor!",
         "ja": "医者を呼んでください！",
-        "context": "家庭"
+        "context": "健康"
       }
     ],
     "categories": [
@@ -17549,7 +17549,7 @@
       {
         "en": "What are you doing?",
         "ja": "何をしていますか？",
-        "context": "質問"
+        "context": "会話"
       },
       {
         "en": "He is doing his homework.",
@@ -17755,18 +17755,18 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Sit down, please.",
+        "en": "Please sit down.",
         "ja": "座ってください。",
         "context": "学校"
       },
       {
         "en": "The sun went down.",
-        "ja": "太陽が沈んだ。",
+        "ja": "太陽が沈みました。",
         "context": "自然"
       },
       {
         "en": "Please write it down.",
-        "ja": "それを書き留めて。",
+        "ja": "それを書き留めてください。",
         "context": "学校"
       }
     ],
@@ -18100,9 +18100,9 @@
         "context": "交通"
       },
       {
-        "en": "Drive carefully!",
-        "ja": "気をつけて運転してください！",
-        "context": "安全"
+        "en": "Please drive carefully on the road.",
+        "ja": "道路では気をつけて運転してください。",
+        "context": "交通"
       }
     ],
     "categories": [
@@ -18379,7 +18379,7 @@
       {
         "en": "She has many DVDs.",
         "ja": "彼女はたくさんのDVDを持っています。",
-        "context": "コレクション"
+        "context": "趣味"
       },
       {
         "en": "He rented a DVD from the store.",
@@ -18772,7 +18772,7 @@
       {
         "en": "Elephants have long noses.",
         "ja": "ゾウは長い鼻を持っています。",
-        "context": "日常"
+        "context": "自然"
       }
     ],
     "categories": [
@@ -19038,8 +19038,8 @@
     "examples": [
       {
         "en": "I enjoy playing soccer.",
-        "ja": "私はサッカーを楽しんでいる。",
-        "context": "日常"
+        "ja": "私はサッカーを楽しんでいます。",
+        "context": "趣味"
       },
       {
         "en": "Did you enjoy the movie?",
@@ -19094,7 +19094,7 @@
       },
       {
         "en": "We have enough food.",
-        "ja": "食べ物は十分ある。",
+        "ja": "食べ物は十分あります。",
         "context": "家庭"
       }
     ],
@@ -19442,7 +19442,7 @@
     "examples": [
       {
         "en": "I study every day.",
-        "ja": "毎日勉強する。",
+        "ja": "毎日勉強します。",
         "context": "学校"
       },
       {
@@ -19452,7 +19452,7 @@
       },
       {
         "en": "She visits every weekend.",
-        "ja": "毎週末訪れる。",
+        "ja": "彼女は毎週末訪れます。",
         "context": "日常"
       }
     ],
@@ -19566,9 +19566,9 @@
         "context": "学術"
       },
       {
-        "en": "Examination techniques affect performance.",
-        "ja": "試験テクニックは成績に影響する。",
-        "context": "学術"
+        "en": "My examination techniques improved my score.",
+        "ja": "試験のテクニックが点数を上げてくれました。",
+        "context": "学校"
       }
     ],
     "categories": [
@@ -20009,7 +20009,7 @@
       },
       {
         "en": "His face turned red.",
-        "ja": "彼の顔は赤くなりました。",
+        "ja": "彼の顔が赤くなりました。",
         "context": "感情"
       }
     ],
@@ -20305,9 +20305,9 @@
         "context": "家庭"
       },
       {
-        "en": "Family is important.",
-        "ja": "家族は大切です。",
-        "context": "哲学"
+        "en": "My family eats dinner together.",
+        "ja": "私の家族は一緒に夕食を食べます。",
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -20772,8 +20772,8 @@
         "context": "感情"
       },
       {
-        "en": "She feels cold.",
-        "ja": "彼女は寒く感じています。",
+        "en": "She feels cold outside.",
+        "ja": "外では寒く感じています。",
         "context": "天気"
       },
       {
@@ -21033,7 +21033,7 @@
       {
         "en": "I'm fine, thank you.",
         "ja": "元気です、ありがとう。",
-        "context": "日常"
+        "context": "あいさつ"
       },
       {
         "en": "The weather is fine today.",
@@ -21087,7 +21087,7 @@
       },
       {
         "en": "Count on your fingers.",
-        "ja": "指で数えて。",
+        "ja": "指で数えてみてください。",
         "context": "日常"
       },
       {
@@ -21317,9 +21317,9 @@
         "context": "会話"
       },
       {
-        "en": "She ran five laps.",
-        "ja": "彼女は5周走った。",
-        "context": "家庭"
+        "en": "She ran five laps around the track.",
+        "ja": "彼女はトラックを5周走りました。",
+        "context": "スポーツ"
       }
     ],
     "categories": [
@@ -21626,8 +21626,8 @@
         "context": "会話"
       },
       {
-        "en": "Healthy food is important.",
-        "ja": "健康的な食べ物は大切です。",
+        "en": "Healthy food is good for you.",
+        "ja": "健康的な食べ物は体に良いです。",
         "context": "健康"
       }
     ],
@@ -21783,12 +21783,12 @@
     "examples": [
       {
         "en": "Don't forget your umbrella.",
-        "ja": "傘を忘れないで。",
+        "ja": "傘を忘れないでください。",
         "context": "日常"
       },
       {
         "en": "I forgot his name.",
-        "ja": "私は彼の名前を忘れた。",
+        "ja": "私は彼の名前を忘れました。",
         "context": "学校"
       },
       {
@@ -21863,9 +21863,9 @@
         "context": "日常"
       },
       {
-        "en": "She drew four circles.",
-        "ja": "彼女は4つの丸を描いた。",
-        "context": "会話"
+        "en": "She drew four circles on the paper.",
+        "ja": "彼女は紙に4つの丸を描きました。",
+        "context": "学校"
       },
       {
         "en": "I sleep four hours on school nights.",
@@ -21938,8 +21938,8 @@
         "context": "教室"
       },
       {
-        "en": "She read fourteen pages.",
-        "ja": "彼女は14ページ読みました。",
+        "en": "She read fourteen pages today.",
+        "ja": "彼女は今日14ページ読みました。",
         "context": "読書"
       }
     ],
@@ -22097,7 +22097,7 @@
       {
         "en": "I love Fridays!",
         "ja": "金曜日が大好きです！",
-        "context": "感情"
+        "context": "日常"
       },
       {
         "en": "We have a test on Friday.",
@@ -22284,13 +22284,13 @@
       },
       {
         "en": "She likes tropical fruit.",
-        "ja": "彼女は熱帯の果物が好き。",
-        "context": "日常"
+        "ja": "彼女は熱帯の果物が好きです。",
+        "context": "食事"
       },
       {
         "en": "Fresh fruit is healthy.",
-        "ja": "新鮮な果物は健康によい。",
-        "context": "日常"
+        "ja": "新鮮な果物は体に良いです。",
+        "context": "健康"
       }
     ],
     "categories": [
@@ -22406,7 +22406,7 @@
       },
       {
         "en": "Learning English is fun.",
-        "ja": "英語を学ぶのは楽しい。",
+        "ja": "英語を学ぶのは楽しいです。",
         "context": "学校"
       },
       {
@@ -22489,7 +22489,7 @@
       },
       {
         "en": "The game was exciting.",
-        "ja": "試合は興奮しました。",
+        "ja": "試合はとても盛り上がりました。",
         "context": "スポーツ"
       }
     ],
@@ -22732,9 +22732,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "He introduced his girlfriend.",
-        "ja": "彼は彼女を紹介しました。",
-        "context": "紹介"
+        "en": "He introduced his girlfriend to us.",
+        "ja": "彼は私たちに彼女を紹介しました。",
+        "context": "社交"
       },
       {
         "en": "My girlfriend likes music.",
@@ -22897,9 +22897,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She wears glasses.",
-        "ja": "彼女はメガネをかけています。",
-        "context": "外見"
+        "en": "She wears glasses every day.",
+        "ja": "彼女は毎日メガネをかけています。",
+        "context": "日常"
       },
       {
         "en": "I can't see without my glasses.",
@@ -23019,7 +23019,7 @@
         "context": "許可"
       },
       {
-        "en": "Go ahead and order.",
+        "en": "Go ahead and order first.",
         "ja": "先に注文してください。",
         "context": "レストラン"
       }
@@ -23053,7 +23053,7 @@
       },
       {
         "en": "Gold is very valuable.",
-        "ja": "金はとても価値がある。",
+        "ja": "金はとても価値があります。",
         "context": "日常"
       }
     ],
@@ -23223,7 +23223,7 @@
     "examples": [
       {
         "en": "Goodbye! See you tomorrow.",
-        "ja": "さようなら！また明日。",
+        "ja": "さようなら！また明日ね。",
         "context": "日常"
       },
       {
@@ -23436,7 +23436,7 @@
     "examples": [
       {
         "en": "The grass is green.",
-        "ja": "草は緑だ。",
+        "ja": "草は緑です。",
         "context": "自然"
       },
       {
@@ -23484,8 +23484,8 @@
       },
       {
         "en": "The elephant is gray.",
-        "ja": "象は灰色だ。",
-        "context": "会話"
+        "ja": "象は灰色です。",
+        "context": "自然"
       },
       {
         "en": "He wore a gray sweater.",
@@ -23705,8 +23705,8 @@
       },
       {
         "en": "That's a good guess!",
-        "ja": "いい推測だ！",
-        "context": "日常"
+        "ja": "いい推測ですね！",
+        "context": "会話"
       }
     ],
     "categories": [
@@ -23902,8 +23902,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "I need a haircut.",
-        "ja": "散髪が必要です。",
+        "en": "I need a haircut soon.",
+        "ja": "そろそろ散髪が必要です。",
         "context": "日常"
       },
       {
@@ -23914,7 +23914,7 @@
       {
         "en": "Your haircut looks great!",
         "ja": "髪型すてきですね！",
-        "context": "褒める"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -23984,7 +23984,7 @@
       {
         "en": "She held my hand.",
         "ja": "彼女は私の手を握りました。",
-        "context": "社会"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -24056,13 +24056,13 @@
       },
       {
         "en": "Accidents can happen anywhere.",
-        "ja": "事故はどこでも起こりうる。",
-        "context": "会話"
+        "ja": "事故はどこでも起こりえます。",
+        "context": "安全"
       },
       {
         "en": "Something strange happened today.",
-        "ja": "今日、不思議なことが起こった。",
-        "context": "家庭"
+        "ja": "今日、不思議なことが起きました。",
+        "context": "日常"
       }
     ],
     "categories": [
@@ -24226,7 +24226,7 @@
       {
         "en": "She has two brothers.",
         "ja": "彼女には兄弟が2人います。",
-        "context": "日常"
+        "context": "家庭"
       },
       {
         "en": "Do you have a pen?",
@@ -24592,7 +24592,7 @@
       {
         "en": "Hello! How are you?",
         "ja": "こんにちは！お元気ですか？",
-        "context": "日常"
+        "context": "あいさつ"
       },
       {
         "en": "She said hello to her teacher.",
@@ -25260,7 +25260,7 @@
       },
       {
         "en": "There is always hope.",
-        "ja": "いつも希望はある。",
+        "ja": "いつも希望はあります。",
         "context": "感情"
       },
       {
@@ -25346,7 +25346,7 @@
       {
         "en": "She loves horses.",
         "ja": "彼女は馬が大好きです。",
-        "context": "自然"
+        "context": "趣味"
       }
     ],
     "categories": [
@@ -25588,7 +25588,7 @@
       {
         "en": "How are you today?",
         "ja": "今日の調子はどうですか？",
-        "context": "日常"
+        "context": "あいさつ"
       },
       {
         "en": "How do you spell your name?",
@@ -25705,8 +25705,8 @@
       },
       {
         "en": "The dog looks hungry.",
-        "ja": "その犬はお腹がすいているように見える。",
-        "context": "食事"
+        "ja": "その犬はお腹がすいているように見えます。",
+        "context": "日常"
       }
     ],
     "categories": [
@@ -25738,8 +25738,8 @@
     "examples": [
       {
         "en": "Wolves hunt in groups.",
-        "ja": "オオカミは群れで狩りをする。",
-        "context": "中1"
+        "ja": "オオカミは群れで狩りをします。",
+        "context": "自然"
       },
       {
         "en": "Early humans hunted animals for food.",
@@ -26574,7 +26574,7 @@
       {
         "en": "Let's jump rope together.",
         "ja": "一緒に縄跳びをしましょう。",
-        "context": "日常"
+        "context": "スポーツ"
       }
     ],
     "categories": [
@@ -26650,14 +26650,14 @@
         "context": "日常"
       },
       {
-        "en": "She just arrived.",
-        "ja": "彼女はちょうど到着したところだ。",
-        "context": "会話"
+        "en": "She just arrived at school.",
+        "ja": "彼女はちょうど学校に到着したところです。",
+        "context": "学校"
       },
       {
         "en": "Just a moment, please.",
         "ja": "少しお待ちください。",
-        "context": "家庭"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -26689,8 +26689,8 @@
         "context": "日常"
       },
       {
-        "en": "Please keep quiet.",
-        "ja": "静かにしてください。",
+        "en": "Please keep quiet in class.",
+        "ja": "授業中は静かにしてください。",
         "context": "学校"
       },
       {
@@ -26864,8 +26864,8 @@
       },
       {
         "en": "Be kind to others.",
-        "ja": "他の人に親切にしなさい。",
-        "context": "哲学"
+        "ja": "他の人に親切にしましょう。",
+        "context": "日常"
       },
       {
         "en": "My teacher is kind.",
@@ -26957,8 +26957,8 @@
       },
       {
         "en": "A kiss shows love.",
-        "ja": "キスは愛情を示す。",
-        "context": "日常"
+        "ja": "キスは愛情を示します。",
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -27032,7 +27032,7 @@
       },
       {
         "en": "The kitchen smells good.",
-        "ja": "キッチンは良い香りがします。",
+        "ja": "キッチンから良い香りがします。",
         "context": "家庭"
       },
       {
@@ -27113,7 +27113,7 @@
       {
         "en": "Please bend your knees.",
         "ja": "膝を曲げてください。",
-        "context": "健康"
+        "context": "体育"
       }
     ],
     "categories": [
@@ -27187,7 +27187,7 @@
       {
         "en": "Do you know her?",
         "ja": "彼女を知っていますか？",
-        "context": "社会"
+        "context": "会話"
       },
       {
         "en": "She knows a lot about animals.",
@@ -27483,8 +27483,8 @@
       },
       {
         "en": "Don't laugh at others.",
-        "ja": "他人を笑ってはいけない。",
-        "context": "会話"
+        "ja": "他人を笑ってはいけません。",
+        "context": "マナー"
       },
       {
         "en": "She laughed when she heard the story.",
@@ -27696,7 +27696,7 @@
       },
       {
         "en": "Use your left hand.",
-        "ja": "左手を使って。",
+        "ja": "左手を使ってください。",
         "context": "日常"
       }
     ],
@@ -27763,8 +27763,8 @@
       },
       {
         "en": "She has long legs.",
-        "ja": "彼女は足が長い。",
-        "context": "健康"
+        "ja": "彼女は足が長いです。",
+        "context": "日常"
       }
     ],
     "categories": [
@@ -28012,12 +28012,12 @@
       },
       {
         "en": "Life is wonderful.",
-        "ja": "人生は素晴らしい。",
-        "context": "日常"
+        "ja": "人生は素晴らしいです。",
+        "context": "感情"
       },
       {
         "en": "She saved his life.",
-        "ja": "彼女は彼の命を救った。",
+        "ja": "彼女は彼の命を救いました。",
         "context": "日常"
       }
     ],
@@ -28092,7 +28092,7 @@
       {
         "en": "Do you like music?",
         "ja": "音楽は好きですか？",
-        "context": "日常"
+        "context": "会話"
       },
       {
         "en": "She likes reading books.",
@@ -28289,7 +28289,7 @@
     "examples": [
       {
         "en": "I live in Tokyo.",
-        "ja": "私は東京に住んでいる。",
+        "ja": "私は東京に住んでいます。",
         "context": "日常"
       },
       {
@@ -28300,7 +28300,7 @@
       {
         "en": "Where do you live?",
         "ja": "あなたはどこに住んでいますか？",
-        "context": "家庭"
+        "context": "会話"
       }
     ],
     "categories": [
@@ -28425,8 +28425,8 @@
         "context": "感情"
       },
       {
-        "en": "Look, a rainbow!",
-        "ja": "見て、虹だ！",
+        "en": "Look, there is a rainbow!",
+        "ja": "見て、虹がでています！",
         "context": "自然"
       }
     ],
@@ -28467,8 +28467,8 @@
       },
       {
         "en": "Don't lose hope.",
-        "ja": "希望を失わないで。",
-        "context": "家庭"
+        "ja": "希望を失わないでください。",
+        "context": "励まし"
       }
     ],
     "categories": [
@@ -28515,7 +28515,7 @@
       },
       {
         "en": "She talks a lot.",
-        "ja": "彼女はよくしゃべる。",
+        "ja": "彼女はよくしゃべります。",
         "context": "日常"
       }
     ],
@@ -28784,8 +28784,8 @@
     "examples": [
       {
         "en": "She reads fashion magazines.",
-        "ja": "彼女はファッション雑誌を読む。",
-        "context": "日常"
+        "ja": "彼女はファッション雑誌を読みます。",
+        "context": "趣味"
       },
       {
         "en": "I found this recipe in a magazine.",
@@ -28921,9 +28921,9 @@
         "context": "感情"
       },
       {
-        "en": "Let's make a cake.",
-        "ja": "ケーキを作りましょう。",
-        "context": "食事"
+        "en": "Let's make a cake together.",
+        "ja": "一緒にケーキを作りましょう。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -29038,7 +29038,7 @@
       },
       {
         "en": "She has many friends.",
-        "ja": "彼女には友達がたくさんいる。",
+        "ja": "彼女には友達がたくさんいます。",
         "context": "日常"
       }
     ],
@@ -29117,7 +29117,7 @@
       },
       {
         "en": "Spring comes in March.",
-        "ja": "春は3月に来る。",
+        "ja": "春は3月に来ます。",
         "context": "日常"
       }
     ],
@@ -29232,7 +29232,7 @@
       },
       {
         "en": "Maybe you are right.",
-        "ja": "たぶん君が正しい。",
+        "ja": "たぶん君が正しいですよ。",
         "context": "会話"
       },
       {
@@ -29355,7 +29355,7 @@
       {
         "en": "Nice to meet you!",
         "ja": "はじめまして！",
-        "context": "挨拶"
+        "context": "あいさつ"
       },
       {
         "en": "Let's meet at the park.",
@@ -29365,7 +29365,7 @@
       {
         "en": "I met her yesterday.",
         "ja": "昨日彼女に会いました。",
-        "context": "歴史"
+        "context": "日常"
       }
     ],
     "categories": [
@@ -29448,8 +29448,8 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "Merry Christmas!",
-        "ja": "メリークリスマス！",
+        "en": "Merry Christmas to everyone!",
+        "ja": "みんな、メリークリスマス！",
         "context": "クリスマス"
       },
       {
@@ -29650,7 +29650,7 @@
       {
         "en": "Did you miss me?",
         "ja": "私が恋しかったですか？",
-        "context": "日常"
+        "context": "再会"
       }
     ],
     "categories": [
@@ -29764,7 +29764,7 @@
     "examples": [
       {
         "en": "Mommy, I'm hungry.",
-        "ja": "ママ、おなかすいた。",
+        "ja": "ママ、お腹がすいたよ。",
         "context": "家庭"
       },
       {
@@ -29806,9 +29806,9 @@
         "context": "学校"
       },
       {
-        "en": "See you on Monday.",
-        "ja": "月曜日に会いましょう。",
-        "context": "挨拶"
+        "en": "My club meets every Monday.",
+        "ja": "私のクラブは毎週月曜日に集まります。",
+        "context": "クラブ活動"
       }
     ],
     "categories": [
@@ -30044,9 +30044,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "My mother cooks well.",
-        "ja": "私の母は料理が上手です。",
-        "context": "家庭"
+        "en": "My mother wakes up early every day.",
+        "ja": "私の母は毎日早く起きます。",
+        "context": "朝の家庭"
       },
       {
         "en": "My mother is a teacher.",
@@ -30054,9 +30054,9 @@
         "context": "家庭"
       },
       {
-        "en": "I help my mother.",
-        "ja": "母の手伝いをします。",
-        "context": "家庭"
+        "en": "I gave my mother a birthday card.",
+        "ja": "母に誕生日カードをあげました。",
+        "context": "プレゼント"
       }
     ],
     "categories": [
@@ -30086,9 +30086,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "We climbed the mountain.",
-        "ja": "山に登りました。",
-        "context": "日常"
+        "en": "I want to climb that mountain.",
+        "ja": "あの山に登りたいです。",
+        "context": "アウトドア"
       },
       {
         "en": "The mountain is covered with snow.",
@@ -30168,9 +30168,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Open your mouth wide.",
-        "ja": "口を大きく開けなさい。",
-        "context": "健康"
+        "en": "She covered her mouth when she coughed.",
+        "ja": "彼女は咳をするとき口を覆いました。",
+        "context": "マナー"
       },
       {
         "en": "Don't talk with food in your mouth.",
@@ -30247,9 +30247,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Please move your chair.",
-        "ja": "椅子を動かしてください。",
-        "context": "日常"
+        "en": "The puppy moved its tail quickly.",
+        "ja": "子犬はしっぽを素早く動かしました。",
+        "context": "動物"
       },
       {
         "en": "The clouds moved slowly across the sky.",
@@ -30338,9 +30338,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "Good morning, Mr. Smith.",
-        "ja": "おはようございます、スミスさん。",
-        "context": "あいさつ"
+        "en": "Mr. Kim is our new science teacher.",
+        "ja": "キム先生は私たちの新しい理科の先生です。",
+        "context": "学校"
       },
       {
         "en": "Mr. Brown is our English teacher.",
@@ -30377,14 +30377,14 @@
         "context": "人物"
       },
       {
-        "en": "Good morning, Mrs. Sato.",
-        "ja": "おはようございます、佐藤さん。",
-        "context": "あいさつ"
+        "en": "Mrs. White smiled at all the students.",
+        "ja": "ホワイト先生は全生徒に微笑みかけました。",
+        "context": "学校"
       },
       {
-        "en": "Mrs. Johnson teaches math.",
-        "ja": "ジョンソンさんは数学を教えています。",
-        "context": "学校"
+        "en": "Mrs. Park lives next door to us.",
+        "ja": "パクさんは私たちの隣に住んでいます。",
+        "context": "近所"
       }
     ],
     "categories": [
@@ -30406,13 +30406,13 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Thank you very much.",
-        "ja": "どうもありがとう。",
-        "context": "日常"
+        "en": "I like this book very much.",
+        "ja": "私はこの本がとても好きです。",
+        "context": "読書"
       },
       {
-        "en": "How much is this?",
-        "ja": "これはいくらですか。",
+        "en": "How much does the ticket cost?",
+        "ja": "チケットはいくらですか。",
         "context": "買い物"
       },
       {
@@ -30476,9 +30476,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "We visited the museum.",
-        "ja": "博物館を訪れました。",
-        "context": "日常"
+        "en": "Our class went to the science museum.",
+        "ja": "私たちのクラスは科学博物館に行きました。",
+        "context": "課外学習"
       },
       {
         "en": "The museum has old things.",
@@ -30524,9 +30524,9 @@
         "context": "趣味"
       },
       {
-        "en": "Music makes me happy.",
-        "ja": "音楽は私を幸せにします。",
-        "context": "感情"
+        "en": "I listen to music while doing homework.",
+        "ja": "宿題をしながら音楽を聴きます。",
+        "context": "勉強"
       }
     ],
     "categories": [
@@ -30715,14 +30715,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "What is your nationality?",
-        "ja": "あなたの国籍は何ですか？",
-        "context": "自己紹介"
+        "en": "Please write your nationality on this form.",
+        "ja": "この用紙に国籍を書いてください。",
+        "context": "手続き"
       },
       {
-        "en": "She has Japanese nationality.",
-        "ja": "彼女は日本国籍です。",
-        "context": "個人情報"
+        "en": "My friend has dual nationality.",
+        "ja": "私の友人は二重国籍を持っています。",
+        "context": "文化"
       },
       {
         "en": "Students of many nationalities study here.",
@@ -30834,9 +30834,9 @@
         "context": "自然"
       },
       {
-        "en": "She needs more time.",
-        "ja": "彼女にはもっと時間が必要です。",
-        "context": "日常"
+        "en": "I need a pen to write this down.",
+        "ja": "これを書き留めるためにペンが必要です。",
+        "context": "学校"
       }
     ],
     "categories": [
@@ -30866,19 +30866,19 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "I never skip breakfast.",
-        "ja": "朝食を決して抜きません。",
-        "context": "健康"
+        "en": "He never forgets to brush his teeth.",
+        "ja": "彼は決して歯磨きを忘れません。",
+        "context": "習慣"
       },
       {
-        "en": "She never gives up.",
-        "ja": "彼女は決して諦めません。",
-        "context": "文学"
+        "en": "I never eat spicy food.",
+        "ja": "私は辛い食べ物を決して食べません。",
+        "context": "食事"
       },
       {
-        "en": "Never talk to strangers.",
-        "ja": "見知らぬ人に話しかけてはいけません。",
-        "context": "安全"
+        "en": "You should never run in the hallway.",
+        "ja": "廊下では決して走ってはいけません。",
+        "context": "学校のルール"
       }
     ],
     "categories": [
@@ -30921,9 +30921,9 @@
         "context": "日常"
       },
       {
-        "en": "Never mind the mess.",
-        "ja": "散らかってるのは気にしないで。",
-        "context": "家"
+        "en": "Never mind, I already fixed it.",
+        "ja": "気にしないで、もう直しました。",
+        "context": "日常会話"
       }
     ],
     "categories": [
@@ -31106,9 +31106,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "What a nice day!",
-        "ja": "なんて良い天気でしょう！",
-        "context": "天気"
+        "en": "You have a nice smile.",
+        "ja": "あなたは素敵な笑顔ですね。",
+        "context": "褒め言葉"
       },
       {
         "en": "She is a nice person.",
@@ -31116,9 +31116,9 @@
         "context": "文学"
       },
       {
-        "en": "That's a nice idea.",
-        "ja": "それは良いアイデアです。",
-        "context": "会話"
+        "en": "This is a nice place to sit.",
+        "ja": "ここは座るのに良い場所です。",
+        "context": "公園"
       }
     ],
     "categories": [
@@ -31269,9 +31269,9 @@
         "context": "教室"
       },
       {
-        "en": "He scored nineteen points.",
-        "ja": "彼は19ポイントを獲得しました。",
-        "context": "スポーツ"
+        "en": "My brother is nineteen years old.",
+        "ja": "私の兄は19歳です。",
+        "context": "家族"
       }
     ],
     "categories": [
@@ -31332,8 +31332,8 @@
         "context": "日常"
       },
       {
-        "en": "No, that's not right.",
-        "ja": "「いいえ、それは違います。」",
+        "en": "No, that is not my bag.",
+        "ja": "いいえ、それは私のかばんではありません。",
         "context": "会話"
       },
       {
@@ -31374,9 +31374,9 @@
         "context": "親切"
       },
       {
-        "en": "No problem at all.",
-        "ja": "全く問題ありませんよ。",
-        "context": "返答"
+        "en": "No problem, I can carry that for you.",
+        "ja": "問題ありません、それを持ちますよ。",
+        "context": "手伝い"
       },
       {
         "en": "Thanks for waiting. — No problem!",
@@ -31481,9 +31481,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "My nose is running.",
-        "ja": "鼻水が出ています。",
-        "context": "健康"
+        "en": "The baby has a small, cute nose.",
+        "ja": "赤ちゃんは小さくてかわいい鼻をしています。",
+        "context": "外見"
       },
       {
         "en": "The dog has a big nose.",
@@ -31491,9 +31491,9 @@
         "context": "自然"
       },
       {
-        "en": "She touched her nose.",
-        "ja": "彼女は鼻に触れました。",
-        "context": "健康"
+        "en": "He blew his nose into a tissue.",
+        "ja": "彼はティッシュで鼻をかみました。",
+        "context": "体調"
       }
     ],
     "categories": [
@@ -31639,9 +31639,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "November is getting cold.",
-        "ja": "11月は寒くなってくる。",
-        "context": "日常"
+        "en": "My birthday is in November.",
+        "ja": "私の誕生日は11月です。",
+        "context": "自己紹介"
       },
       {
         "en": "Autumn leaves peak in November.",
@@ -31690,9 +31690,9 @@
         "context": "食事"
       },
       {
-        "en": "Come here now, please.",
-        "ja": "今すぐここに来てください。",
-        "context": "日常"
+        "en": "We must leave now or we will be late.",
+        "ja": "今すぐ出発しないと遅れます。",
+        "context": "外出"
       }
     ],
     "categories": [
@@ -31800,9 +31800,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "It is three o'clock.",
-        "ja": "3時です。",
-        "context": "時刻"
+        "en": "Lunch starts at twelve o'clock.",
+        "ja": "昼食は12時に始まります。",
+        "context": "学校"
       },
       {
         "en": "School starts at eight o'clock.",
@@ -31875,9 +31875,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Halloween is in October.",
-        "ja": "ハロウィンは10月だ。",
-        "context": "日常"
+        "en": "Sports day is held in October.",
+        "ja": "運動会は10月に行われます。",
+        "context": "学校行事"
       },
       {
         "en": "The leaves change color in October.",
@@ -32006,9 +32006,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "OK, I understand.",
-        "ja": "了解、わかりました。",
-        "context": "同意"
+        "en": "OK, I will be there by three.",
+        "ja": "了解、3時までに行きます。",
+        "context": "約束"
       },
       {
         "en": "You look tired today. Are you OK?",
@@ -32040,9 +32040,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "Okay, let's go!",
-        "ja": "わかった、行きましょう！",
-        "context": "日常"
+        "en": "Okay, I will try my best.",
+        "ja": "わかった、頑張ります。",
+        "context": "激励"
       },
       {
         "en": "Is this okay with you?",
@@ -32088,9 +32088,9 @@
         "context": "日常"
       },
       {
-        "en": "My grandfather is old.",
-        "ja": "祖父は年取っています。",
-        "context": "家庭"
+        "en": "This old bridge is still very strong.",
+        "ja": "この古い橋はまだとても丈夫です。",
+        "context": "建物"
       }
     ],
     "categories": [
@@ -32191,14 +32191,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "I have one sister.",
-        "ja": "私には妹が一人いる。",
-        "context": "日常"
+        "en": "I have one brother in high school.",
+        "ja": "私には高校生の兄が一人います。",
+        "context": "家族"
       },
       {
-        "en": "She ate one apple.",
-        "ja": "彼女はリンゴを1つ食べた。",
-        "context": "会話"
+        "en": "She bought one loaf of bread.",
+        "ja": "彼女はパンを一斤買いました。",
+        "context": "買い物"
       },
       {
         "en": "Give me one more, please.",
@@ -32267,9 +32267,9 @@
         "context": "日常"
       },
       {
-        "en": "She only eats vegetables.",
-        "ja": "彼女は野菜しか食べない。",
-        "context": "会話"
+        "en": "There is only one seat left.",
+        "ja": "残り一席しかありません。",
+        "context": "電車"
       },
       {
         "en": "There is only one left.",
@@ -32308,9 +32308,9 @@
         "context": "学校"
       },
       {
-        "en": "Please open the window.",
-        "ja": "窓を開けてください。",
-        "context": "家庭"
+        "en": "The library opens at nine every morning.",
+        "ja": "図書館は毎朝9時に開きます。",
+        "context": "学校"
       },
       {
         "en": "The shop opens at nine.",
@@ -32398,14 +32398,14 @@
         "context": "学校"
       },
       {
-        "en": "The other students left.",
-        "ja": "他の生徒たちは帰った。",
-        "context": "学校"
+        "en": "The other team won the game.",
+        "ja": "相手チームが試合に勝ちました。",
+        "context": "スポーツ"
       },
       {
-        "en": "They helped each other.",
-        "ja": "彼らはお互いに助け合った。",
-        "context": "日常"
+        "en": "We share books with each other.",
+        "ja": "私たちはお互いに本を貸し合います。",
+        "context": "学校"
       }
     ],
     "categories": [
@@ -32436,9 +32436,9 @@
         "context": "日常"
       },
       {
-        "en": "The light went out.",
-        "ja": "明かりが消えた。",
-        "context": "日常"
+        "en": "She went out to buy some milk.",
+        "ja": "彼女は牛乳を買いに外に出ました。",
+        "context": "買い物"
       }
     ],
     "categories": [
@@ -32492,9 +32492,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The steak was overcooked.",
-        "ja": "ステーキは焼きすぎでした。",
-        "context": "レストラン"
+        "en": "The chicken was a little overcooked.",
+        "ja": "チキンが少し焼きすぎでした。",
+        "context": "食事"
       },
       {
         "en": "Overcooked pasta is too soft.",
@@ -32712,8 +32712,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She likes painting.",
-        "ja": "彼女は絵を描くのが好きです。",
+        "en": "My grandmother enjoys painting on weekends.",
+        "ja": "祖母は週末に絵を描くのを楽しんでいます。",
         "context": "趣味"
       },
       {
@@ -33088,9 +33088,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Write with a pen.",
-        "ja": "ペンで書きなさい。",
-        "context": "学校"
+        "en": "Please sign your name with this pen.",
+        "ja": "このペンでお名前をサインしてください。",
+        "context": "手続き"
       },
       {
         "en": "Can I borrow your pen?",
@@ -33177,9 +33177,9 @@
         "context": "社会"
       },
       {
-        "en": "People from different countries.",
-        "ja": "異なる国からの人々。",
-        "context": "社会"
+        "en": "Many people visit this park on weekends.",
+        "ja": "週末にはたくさんの人々がこの公園を訪れます。",
+        "context": "公園"
       },
       {
         "en": "People need food and water.",
@@ -33349,9 +33349,9 @@
         "context": "芸術"
       },
       {
-        "en": "The piano sounds beautiful.",
-        "ja": "ピアノの音は美しい。",
-        "context": "芸術"
+        "en": "My sister practices piano after school.",
+        "ja": "姉は放課後にピアノの練習をします。",
+        "context": "習い事"
       }
     ],
     "categories": [
@@ -33461,9 +33461,9 @@
         "context": "芸術"
       },
       {
-        "en": "Let's take a picture!",
-        "ja": "写真を撮りましょう！",
-        "context": "日常"
+        "en": "She drew a picture of a sunny day.",
+        "ja": "彼女は晴れた日の絵を描きました。",
+        "context": "美術"
       },
       {
         "en": "She has many pictures on the wall.",
@@ -33609,9 +33609,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "She loves pink flowers.",
-        "ja": "彼女はピンクの花が大好きだ。",
-        "context": "日常"
+        "en": "She wore a pink hat to the park.",
+        "ja": "彼女は公園にピンクの帽子をかぶっていきました。",
+        "context": "お出かけ"
       },
       {
         "en": "Her room is painted pink.",
@@ -33655,9 +33655,9 @@
         "context": "食事"
       },
       {
-        "en": "She loves cheese pizza.",
-        "ja": "彼女はチーズピザが大好きだ。",
-        "context": "食事"
+        "en": "We ordered a large pizza for the party.",
+        "ja": "パーティーのために大きなピザを注文しました。",
+        "context": "パーティー"
       },
       {
         "en": "How many slices of pizza did you eat?",
@@ -33696,9 +33696,9 @@
         "context": "旅行"
       },
       {
-        "en": "Where is this place?",
-        "ja": "この場所はどこですか？",
-        "context": "会話"
+        "en": "The library is a quiet place to study.",
+        "ja": "図書館は勉強するのに静かな場所です。",
+        "context": "学校"
       },
       {
         "en": "Let's find a good place to eat.",
@@ -33790,9 +33790,9 @@
         "context": "日常"
       },
       {
-        "en": "She washed the plates.",
-        "ja": "彼女は皿を洗った。",
-        "context": "日常"
+        "en": "Please put your plate in the sink.",
+        "ja": "お皿をシンクに置いてください。",
+        "context": "食事後"
       },
       {
         "en": "The plate is very hot.",
@@ -33833,14 +33833,14 @@
         "context": "スポーツ"
       },
       {
-        "en": "She plays the piano.",
-        "ja": "彼女はピアノを弾きます。",
-        "context": "音楽"
+        "en": "He plays basketball with his friends.",
+        "ja": "彼は友達とバスケットボールをします。",
+        "context": "放課後"
       },
       {
-        "en": "Let's play outside.",
-        "ja": "外で遊びましょう。",
-        "context": "日常"
+        "en": "The children love to play in the park.",
+        "ja": "子供たちは公園で遊ぶのが大好きです。",
+        "context": "休日"
       }
     ],
     "categories": [
@@ -33874,9 +33874,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "Please sit down.",
-        "ja": "どうぞ座ってください。",
-        "context": "日常"
+        "en": "Please close the door when you leave.",
+        "ja": "出るときはドアを閉めてください。",
+        "context": "教室"
       },
       {
         "en": "Could you help me, please?",
@@ -33884,9 +33884,9 @@
         "context": "会話"
       },
       {
-        "en": "Please come in.",
-        "ja": "どうぞお入りください。",
-        "context": "日常"
+        "en": "Speak louder, please.",
+        "ja": "もっと大きな声で話してください。",
+        "context": "授業"
       }
     ],
     "categories": [
@@ -34214,14 +34214,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "I like mashed potatoes.",
-        "ja": "私はマッシュポテトが好きだ。",
-        "context": "食事"
+        "en": "My mother baked some potatoes for dinner.",
+        "ja": "母は夕食にジャガイモを焼きました。",
+        "context": "夕食"
       },
       {
-        "en": "She fried some potatoes.",
-        "ja": "彼女はジャガイモを揚げた。",
-        "context": "食事"
+        "en": "He peeled the potatoes before cooking.",
+        "ja": "彼は料理する前にジャガイモの皮をむきました。",
+        "context": "料理"
       },
       {
         "en": "Potatoes are used in many dishes.",
@@ -34260,9 +34260,9 @@
         "context": "日常"
       },
       {
-        "en": "Knowledge is power.",
-        "ja": "知識は力なり。",
-        "context": "学校"
+        "en": "The wind has great power.",
+        "ja": "風はとても大きな力を持っています。",
+        "context": "自然"
       },
       {
         "en": "Solar power is clean energy.",
@@ -34350,8 +34350,8 @@
         "context": "日常"
       },
       {
-        "en": "The flower is pretty.",
-        "ja": "その花はきれいです。",
+        "en": "The sunset was really pretty tonight.",
+        "ja": "今夜の夕焼けはとてもきれいでした。",
         "context": "自然"
       },
       {
@@ -34823,9 +34823,9 @@
         "context": "学校"
       },
       {
-        "en": "Put your hands up.",
-        "ja": "手を上げて。",
-        "context": "学校"
+        "en": "Please put your shoes by the door.",
+        "ja": "靴をドアのそばに置いてください。",
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -35127,8 +35127,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "It rained heavily yesterday.",
-        "ja": "昨日は大雨だった。",
+        "en": "It rained all morning today.",
+        "ja": "今日は朝の間ずっと雨が降りました。",
         "context": "天気"
       },
       {
@@ -35165,9 +35165,9 @@
         "context": "自然"
       },
       {
-        "en": "She loves rainy days.",
-        "ja": "彼女は雨の日が好きだ。",
-        "context": "自然"
+        "en": "I read a book on rainy days.",
+        "ja": "雨の日は本を読みます。",
+        "context": "趣味"
       },
       {
         "en": "The rainy season starts in June.",
@@ -35207,9 +35207,9 @@
         "context": "学校"
       },
       {
-        "en": "She reads fast.",
-        "ja": "彼女は読むのが早いです。",
-        "context": "日常"
+        "en": "My father reads the newspaper every morning.",
+        "ja": "父は毎朝新聞を読みます。",
+        "context": "朝の習慣"
       }
     ],
     "categories": [
@@ -35236,9 +35236,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Reading is my hobby.",
-        "ja": "読書は私の趣味です。",
-        "context": "趣味"
+        "en": "Reading in bed is my favorite habit.",
+        "ja": "寝る前の読書が私のお気に入りの習慣です。",
+        "context": "就寝前"
       },
       {
         "en": "She enjoys reading before bed.",
@@ -35280,9 +35280,9 @@
         "context": "会話"
       },
       {
-        "en": "I'm ready! Let's start.",
-        "ja": "準備ができた！始めましょう。",
-        "context": "家庭"
+        "en": "Dinner is ready, come to the table.",
+        "ja": "夕食の準備ができたので、テーブルに来てください。",
+        "context": "夕食"
       }
     ],
     "categories": [
@@ -35360,14 +35360,14 @@
         "context": "日常"
       },
       {
-        "en": "She was really surprised.",
-        "ja": "彼女は本当に驚いた。",
-        "context": "会話"
+        "en": "This cake is really delicious.",
+        "ja": "このケーキは本当においしいです。",
+        "context": "食事"
       },
       {
-        "en": "Is that really true?",
-        "ja": "それは本当に本当ですか？",
-        "context": "家庭"
+        "en": "Are you really going to do that?",
+        "ja": "本当にそれをするつもりですか？",
+        "context": "会話"
       }
     ],
     "categories": [
@@ -35516,9 +35516,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Please repeat after me.",
-        "ja": "私の後に繰り返してください。",
-        "context": "日常"
+        "en": "Could you repeat that more slowly?",
+        "ja": "もっとゆっくり繰り返してもらえますか？",
+        "context": "英語授業"
       },
       {
         "en": "She repeated the word several times.",
@@ -35644,14 +35644,14 @@
         "context": "食事"
       },
       {
-        "en": "Japanese rice is delicious.",
-        "ja": "日本のお米はおいしいです。",
-        "context": "食事"
+        "en": "My family eats rice for breakfast.",
+        "ja": "私の家族は朝食にご飯を食べます。",
+        "context": "朝食"
       },
       {
-        "en": "She cooked white rice.",
-        "ja": "彼女は白いご飯を炊きました。",
-        "context": "食事"
+        "en": "She mixed the rice with vegetables.",
+        "ja": "彼女はご飯と野菜を混ぜました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -35900,9 +35900,9 @@
         "context": "健康"
       },
       {
-        "en": "The river is deep.",
-        "ja": "川は深いです。",
-        "context": "自然"
+        "en": "We fished by the river on Sunday.",
+        "ja": "私たちは日曜日に川のそばで釣りをしました。",
+        "context": "休日"
       }
     ],
     "categories": [
@@ -36179,14 +36179,14 @@
         "context": "健康"
       },
       {
-        "en": "The dog runs fast.",
-        "ja": "犬は速く走ります。",
-        "context": "自然"
+        "en": "She runs three kilometers every morning.",
+        "ja": "彼女は毎朝3キロ走ります。",
+        "context": "健康"
       },
       {
-        "en": "Let's run to school!",
-        "ja": "学校まで走ろう！",
-        "context": "学校"
+        "en": "We ran to the bus stop together.",
+        "ja": "私たちは一緒にバス停まで走りました。",
+        "context": "通学"
       }
     ],
     "categories": [
@@ -36266,9 +36266,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "This neighborhood is safe.",
-        "ja": "この地区は安全だ。",
-        "context": "日常"
+        "en": "Always wear a helmet to stay safe.",
+        "ja": "安全のために必ずヘルメットをかぶってください。",
+        "context": "自転車"
       },
       {
         "en": "Drive safely on rainy days.",
@@ -36320,9 +36320,9 @@
         "context": "服装"
       },
       {
-        "en": "Sailors work on ships.",
-        "ja": "船乗りは船で働きます。",
-        "context": "職業"
+        "en": "My grandfather was a sailor for thirty years.",
+        "ja": "私の祖父は30年間船乗りでした。",
+        "context": "家族の仕事"
       }
     ],
     "categories": [
@@ -36681,9 +36681,9 @@
         "context": "旅行"
       },
       {
-        "en": "I like my school.",
-        "ja": "私は学校が好きです。",
-        "context": "学校"
+        "en": "My school has a big library.",
+        "ja": "私の学校には大きな図書館があります。",
+        "context": "学校紹介"
       }
     ],
     "categories": [
@@ -36798,9 +36798,9 @@
         "context": "スポーツ"
       },
       {
-        "en": "Our team scored first.",
-        "ja": "私たちのチームが最初に得点した。",
-        "context": "日常"
+        "en": "She scored a goal in the last minute.",
+        "ja": "彼女は最後の1分で得点しました。",
+        "context": "サッカー"
       }
     ],
     "categories": [
@@ -36831,9 +36831,9 @@
         "context": "健康"
       },
       {
-        "en": "The sea is beautiful.",
-        "ja": "海はきれいです。",
-        "context": "自然"
+        "en": "We watched the sea from the cliff.",
+        "ja": "私たちは崖から海を眺めました。",
+        "context": "旅行"
       },
       {
         "en": "We can see the sea from here.",
@@ -36913,9 +36913,9 @@
         "context": "自然"
       },
       {
-        "en": "See you tomorrow!",
-        "ja": "また明日！",
-        "context": "挨拶"
+        "en": "I can see the mountains from my window.",
+        "ja": "私の窓から山が見えます。",
+        "context": "景色"
       },
       {
         "en": "I can see the sea.",
@@ -36949,13 +36949,13 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "She seems happy today.",
-        "ja": "彼女は今日幸せそうだ。",
-        "context": "日常"
+        "en": "You seem tired after the game.",
+        "ja": "試合のあと疲れているようですね。",
+        "context": "スポーツ後"
       },
       {
-        "en": "It seems like rain.",
-        "ja": "雨が降りそうだ。",
+        "en": "The sky seems cloudy today.",
+        "ja": "今日は空が曇っているようです。",
         "context": "天気"
       },
       {
@@ -36995,14 +36995,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "They sell books here.",
-        "ja": "ここで本を売っています。",
-        "context": "買い物"
+        "en": "This store sells fresh vegetables.",
+        "ja": "このお店は新鮮な野菜を売っています。",
+        "context": "市場"
       },
       {
-        "en": "She sells homemade cookies.",
-        "ja": "彼女は手作りクッキーを売っています。",
-        "context": "食事"
+        "en": "My sister sells flowers at the market.",
+        "ja": "姉は市場で花を売っています。",
+        "context": "仕事"
       },
       {
         "en": "Do they sell tickets here?",
@@ -37224,9 +37224,9 @@
         "context": "会話"
       },
       {
-        "en": "He ate seven cookies.",
-        "ja": "彼はクッキーを7枚食べた。",
-        "context": "家庭"
+        "en": "I wake up at seven on school days.",
+        "ja": "学校がある日は7時に起きます。",
+        "context": "朝の習慣"
       }
     ],
     "categories": [
@@ -37294,9 +37294,9 @@
         "context": "誕生日"
       },
       {
-        "en": "She finished seventeen problems.",
-        "ja": "彼女は17問を終えました。",
-        "context": "勉強"
+        "en": "My cousin turned seventeen last week.",
+        "ja": "私のいとこは先週17歳になりました。",
+        "context": "誕生日"
       }
     ],
     "categories": [
@@ -37328,9 +37328,9 @@
         "context": "テスト"
       },
       {
-        "en": "About seventy people came.",
-        "ja": "約70人が来ました。",
-        "context": "イベント"
+        "en": "My grandfather just turned seventy.",
+        "ja": "祖父はついに70歳になりました。",
+        "context": "家族"
       }
     ],
     "categories": [
@@ -37391,9 +37391,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Let's share the pizza.",
-        "ja": "ピザを分け合いましょう。",
-        "context": "日常"
+        "en": "Let us share the cookies with everyone.",
+        "ja": "みんなにクッキーを分け合いましょう。",
+        "context": "おやつ"
       },
       {
         "en": "She shared her notes with the class.",
@@ -37510,9 +37510,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "We ship products worldwide.",
-        "ja": "私たちは世界中に商品を出荷している。",
-        "context": "ビジネス"
+        "en": "They ship orders within two days.",
+        "ja": "注文は2日以内に出荷されます。",
+        "context": "オンラインショップ"
       },
       {
         "en": "The order will be shipped tomorrow.",
@@ -37673,9 +37673,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Let's go shopping!",
-        "ja": "買い物に行きましょう！",
-        "context": "お出かけ"
+        "en": "She does her shopping on Saturday mornings.",
+        "ja": "彼女は土曜日の午前中に買い物をします。",
+        "context": "週末"
       },
       {
         "en": "She enjoys shopping on weekends.",
@@ -37707,9 +37707,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "She has short hair.",
-        "ja": "彼女は短い髪をしています。",
-        "context": "日常"
+        "en": "My pencil is too short to use.",
+        "ja": "私の鉛筆は使うには短すぎます。",
+        "context": "学校"
       },
       {
         "en": "The lesson is too short.",
@@ -37826,9 +37826,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Show me your homework.",
-        "ja": "宿題を見せてください。",
-        "context": "学校"
+        "en": "Please show me how to use this.",
+        "ja": "これの使い方を見せてください。",
+        "context": "教室"
       },
       {
         "en": "She showed me her photos.",
@@ -37836,9 +37836,9 @@
         "context": "社会"
       },
       {
-        "en": "Show me the way.",
-        "ja": "道を教えてください。",
-        "context": "技術"
+        "en": "The teacher showed us a video clip.",
+        "ja": "先生は私たちにビデオクリップを見せました。",
+        "context": "授業"
       }
     ],
     "categories": [
@@ -37963,14 +37963,14 @@
         "context": "音楽"
       },
       {
-        "en": "She sings very well.",
-        "ja": "彼女はとても上手に歌います。",
-        "context": "音楽"
+        "en": "The students sang a song at the concert.",
+        "ja": "生徒たちはコンサートで歌を歌いました。",
+        "context": "学校行事"
       },
       {
-        "en": "Let's sing together!",
-        "ja": "一緒に歌いましょう！",
-        "context": "音楽"
+        "en": "My little brother sings in the bath.",
+        "ja": "弟はお風呂の中で歌います。",
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -38000,14 +38000,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "My sister loves music.",
-        "ja": "姉は音楽が大好きです。",
+        "en": "My sister helped me with my homework.",
+        "ja": "姉が宿題を手伝ってくれました。",
         "context": "家庭"
       },
       {
-        "en": "I have two sisters.",
-        "ja": "姉妹が2人います。",
-        "context": "家庭"
+        "en": "My two sisters like different colors.",
+        "ja": "私の二人の姉妹はそれぞれ違う色が好きです。",
+        "context": "家族"
       },
       {
         "en": "My sister and I walk to school.",
@@ -38094,9 +38094,9 @@
         "context": "会話"
       },
       {
-        "en": "She has six pets.",
-        "ja": "彼女は6匹のペットを飼っている。",
-        "context": "家庭"
+        "en": "There are six chairs around the table.",
+        "ja": "テーブルの周りに椅子が6脚あります。",
+        "context": "食卓"
       }
     ],
     "categories": [
@@ -38164,9 +38164,9 @@
         "context": "数"
       },
       {
-        "en": "He has sixteen classmates.",
-        "ja": "彼には16人のクラスメートがいます。",
-        "context": "学校"
+        "en": "She got sixteen correct answers on the test.",
+        "ja": "彼女はテストで16問正解しました。",
+        "context": "テスト"
       }
     ],
     "categories": [
@@ -38232,8 +38232,8 @@
         "context": "買い物"
       },
       {
-        "en": "The size is perfect.",
-        "ja": "サイズはぴったりです。",
+        "en": "Do you have this shirt in a larger size?",
+        "ja": "このシャツのもっと大きいサイズはありますか？",
         "context": "買い物"
       }
     ],
@@ -38418,13 +38418,13 @@
         "context": "日常"
       },
       {
-        "en": "The baby is sleeping.",
-        "ja": "赤ちゃんが眠っています。",
-        "context": "家庭"
+        "en": "The cat is sleeping in the sunny spot.",
+        "ja": "猫は日当たりのよい場所で眠っています。",
+        "context": "日常"
       },
       {
-        "en": "Don't sleep in class!",
-        "ja": "授業中に眠ってはいけません！",
+        "en": "Try not to sleep during class.",
+        "ja": "授業中には眠らないようにしてください。",
         "context": "学校"
       }
     ],
@@ -38491,19 +38491,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The turtle is slow.",
-        "ja": "亀は遅いです。",
-        "context": "自然"
+        "en": "The old computer is very slow.",
+        "ja": "古いコンピューターはとても遅いです。",
+        "context": "テクノロジー"
       },
       {
-        "en": "Don't drive too slow.",
-        "ja": "あまりゆっくり運転しないでください。",
+        "en": "Please walk slowly on the stairs.",
+        "ja": "階段ではゆっくり歩いてください。",
+        "context": "安全"
+      },
+      {
+        "en": "The bus is running a bit slow today.",
+        "ja": "今日のバスは少し遅れています。",
         "context": "交通"
-      },
-      {
-        "en": "This class is slow.",
-        "ja": "この授業はゆっくりです。",
-        "context": "学校"
       }
     ],
     "categories": [
@@ -38565,8 +38565,8 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "My room is small.",
-        "ja": "私の部屋は小さいです。",
+        "en": "We have a small garden at home.",
+        "ja": "私たちの家には小さな庭があります。",
         "context": "家庭"
       },
       {
@@ -39020,9 +39020,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "I want some water.",
-        "ja": "水が欲しいです。",
-        "context": "日常"
+        "en": "Would you like some orange juice?",
+        "ja": "オレンジジュースはいかがですか？",
+        "context": "おもてなし"
       },
       {
         "en": "Some students are absent today.",
@@ -39057,9 +39057,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "I sometimes eat out.",
-        "ja": "時々外食します。",
-        "context": "食事"
+        "en": "I sometimes walk to school instead of taking the bus.",
+        "ja": "バスの代わりに時々歩いて学校に行きます。",
+        "context": "通学"
       },
       {
         "en": "She sometimes sings at school.",
@@ -39108,9 +39108,9 @@
         "context": "家庭"
       },
       {
-        "en": "She has two sons.",
-        "ja": "彼女には息子が二人いる。",
-        "context": "家庭"
+        "en": "Their son plays soccer every weekend.",
+        "ja": "彼らの息子は毎週末サッカーをします。",
+        "context": "家族"
       },
       {
         "en": "His son goes to this school.",
@@ -39192,9 +39192,9 @@
         "context": "日常"
       },
       {
-        "en": "She will arrive soon.",
-        "ja": "彼女はすぐに到着する。",
-        "context": "会話"
+        "en": "The summer holiday will start soon.",
+        "ja": "夏休みがもうすぐ始まります。",
+        "context": "学校"
       },
       {
         "en": "See you soon! I will come back next weekend.",
@@ -39308,9 +39308,9 @@
         "context": "約束"
       },
       {
-        "en": "Sounds good to me.",
-        "ja": "私はそれでいいです。",
-        "context": "同意"
+        "en": "Sounds good, let us meet at three.",
+        "ja": "いいね、3時に会いましょう。",
+        "context": "待ち合わせ"
       },
       {
         "en": "Pizza for dinner? Sounds good!",
@@ -39554,14 +39554,14 @@
         "context": "スポーツ"
       },
       {
-        "en": "She plays many sports.",
-        "ja": "彼女はいろんなスポーツをします。",
-        "context": "スポーツ"
+        "en": "Swimming is my favorite sport.",
+        "ja": "水泳は私の一番好きなスポーツです。",
+        "context": "自己紹介"
       },
       {
-        "en": "Sports keep you healthy.",
-        "ja": "スポーツは健康を保ちます。",
-        "context": "健康"
+        "en": "Doing sports after school is fun.",
+        "ja": "放課後にスポーツをするのは楽しいです。",
+        "context": "放課後"
       }
     ],
     "categories": [
@@ -39586,9 +39586,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "I love spring flowers.",
-        "ja": "春の花が大好きです。",
-        "context": "自然"
+        "en": "Cherry blossoms bloom every spring.",
+        "ja": "桜は毎年春に咲きます。",
+        "context": "季節"
       },
       {
         "en": "It is warm in spring.",
@@ -39842,9 +39842,9 @@
         "context": "社会"
       },
       {
-        "en": "Which station is next?",
-        "ja": "次はどの駅ですか？",
-        "context": "交通"
+        "en": "I always meet my friends at the station.",
+        "ja": "私はいつも駅で友達と待ち合わせします。",
+        "context": "放課後"
       }
     ],
     "categories": [
@@ -39953,9 +39953,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "My stomach hurts.",
-        "ja": "お腹が痛い。",
-        "context": "健康"
+        "en": "My stomach hurt after eating too much.",
+        "ja": "食べすぎてお腹が痛くなりました。",
+        "context": "体調"
       },
       {
         "en": "Don't eat too much or your stomach will hurt.",
@@ -40078,9 +40078,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Tell me a story.",
-        "ja": "お話をして。",
-        "context": "家庭"
+        "en": "My teacher told us a funny story.",
+        "ja": "先生は私たちに面白い物語を話してくれました。",
+        "context": "授業"
       },
       {
         "en": "This is a true story.",
@@ -40198,14 +40198,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Walk down this street.",
-        "ja": "この通りを歩いて行きなさい。",
-        "context": "技術"
+        "en": "The bakery is on the next street.",
+        "ja": "パン屋は次の通りにあります。",
+        "context": "道案内"
       },
       {
-        "en": "The street is busy.",
-        "ja": "道路は混んでいます。",
-        "context": "交通"
+        "en": "Children play on this quiet street.",
+        "ja": "子供たちはこの静かな通りで遊びます。",
+        "context": "近所"
       },
       {
         "en": "She lives on a quiet street.",
@@ -40324,13 +40324,13 @@
         "context": "学校"
       },
       {
-        "en": "The students study hard.",
-        "ja": "生徒たちは一生懸命勉強します。",
+        "en": "Every student in our class has a textbook.",
+        "ja": "私たちのクラスの生徒全員が教科書を持っています。",
         "context": "学校"
       },
       {
-        "en": "All students have homework.",
-        "ja": "生徒全員に宿題があります。",
+        "en": "The new student joined our class today.",
+        "ja": "今日新しい生徒が私たちのクラスに入りました。",
         "context": "学校"
       }
     ],
@@ -40369,9 +40369,9 @@
         "context": "学校"
       },
       {
-        "en": "Let's study together.",
-        "ja": "一緒に勉強しましょう。",
-        "context": "学校"
+        "en": "I study English for thirty minutes every day.",
+        "ja": "毎日30分英語を勉強します。",
+        "context": "学習習慣"
       },
       {
         "en": "She studies math at night.",
@@ -40512,9 +40512,9 @@
         "context": "日常"
       },
       {
-        "en": "Summer vacation is long.",
-        "ja": "夏休みは長いです。",
-        "context": "学校"
+        "en": "Summer is my favorite season.",
+        "ja": "夏は私の一番好きな季節です。",
+        "context": "季節"
       }
     ],
     "categories": [
@@ -40587,9 +40587,9 @@
         "context": "日常"
       },
       {
-        "en": "I rest on Sunday.",
-        "ja": "日曜日に休みます。",
-        "context": "日常"
+        "en": "On Sunday, my family has breakfast together.",
+        "ja": "日曜日は家族一緒に朝食を食べます。",
+        "context": "家庭"
       },
       {
         "en": "Sunday is my favorite day.",
@@ -40694,9 +40694,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "That's super cool!",
-        "ja": "それはすごくかっこいい！",
-        "context": "褒める"
+        "en": "Your drawing is super cute!",
+        "ja": "あなたの絵はすごくかわいいですね！",
+        "context": "褒め言葉"
       },
       {
         "en": "She did a super job.",
@@ -40961,9 +40961,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Swimming is good exercise.",
-        "ja": "水泳はよい運動です。",
-        "context": "健康"
+        "en": "I practice swimming three times a week.",
+        "ja": "私は週に3回水泳を練習します。",
+        "context": "習い事"
       },
       {
         "en": "She goes swimming every Saturday.",
@@ -41229,14 +41229,14 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "He is very tall.",
-        "ja": "彼はとても背が高いです。",
-        "context": "日常"
+        "en": "My older brother is very tall.",
+        "ja": "兄はとても背が高いです。",
+        "context": "家族"
       },
       {
-        "en": "That tree is tall.",
-        "ja": "あの木は高いです。",
-        "context": "自然"
+        "en": "There is a tall tree in the schoolyard.",
+        "ja": "校庭に背の高い木があります。",
+        "context": "学校"
       },
       {
         "en": "She is the tallest in the class.",
@@ -41304,9 +41304,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Let's take a taxi.",
-        "ja": "タクシーに乗りましょう。",
-        "context": "交通"
+        "en": "We took a taxi to the airport.",
+        "ja": "空港までタクシーに乗りました。",
+        "context": "旅行"
       },
       {
         "en": "Call a taxi for me.",
@@ -41346,9 +41346,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "I like green tea.",
-        "ja": "緑茶が好きです。",
-        "context": "日常"
+        "en": "My grandmother drinks green tea every morning.",
+        "ja": "祖母は毎朝緑茶を飲みます。",
+        "context": "朝の習慣"
       },
       {
         "en": "Would you like some tea?",
@@ -41388,9 +41388,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "She teaches English.",
-        "ja": "彼女は英語を教えています。",
-        "context": "学校"
+        "en": "Mr. Tanaka teaches us Japanese history.",
+        "ja": "田中先生は私たちに日本の歴史を教えています。",
+        "context": "授業"
       },
       {
         "en": "My father teaches me math.",
@@ -41398,9 +41398,9 @@
         "context": "家庭"
       },
       {
-        "en": "Who teaches your class?",
-        "ja": "誰があなたのクラスを教えていますか？",
-        "context": "学校"
+        "en": "She taught me how to cook rice.",
+        "ja": "彼女はご飯の炊き方を教えてくれました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -41511,9 +41511,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She answered the telephone.",
-        "ja": "彼女は電話に出た。",
-        "context": "日常"
+        "en": "He used the telephone to call his mother.",
+        "ja": "彼は電話で母に連絡しました。",
+        "context": "連絡"
       },
       {
         "en": "He made a telephone call.",
@@ -41521,9 +41521,9 @@
         "context": "日常"
       },
       {
-        "en": "The telephone rang loudly.",
-        "ja": "電話が大きく鳴った。",
-        "context": "日常"
+        "en": "The old telephone on the wall is broken.",
+        "ja": "壁にある古い電話は壊れています。",
+        "context": "家庭"
       }
     ],
     "categories": [
@@ -41630,9 +41630,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Count to ten slowly.",
-        "ja": "ゆっくり10まで数えて。",
-        "context": "日常"
+        "en": "We have ten minutes before class starts.",
+        "ja": "授業が始まるまで10分あります。",
+        "context": "学校"
       },
       {
         "en": "She got ten points on the quiz.",
@@ -41640,9 +41640,9 @@
         "context": "会話"
       },
       {
-        "en": "I need ten minutes.",
-        "ja": "10分必要だ。",
-        "context": "家庭"
+        "en": "She counted ten fish in the tank.",
+        "ja": "彼女は水槽の中の魚を10匹数えました。",
+        "context": "水族館"
       }
     ],
     "categories": [
@@ -41743,9 +41743,9 @@
         "context": "日常"
       },
       {
-        "en": "That movie was terrible.",
-        "ja": "あの映画はひどかった。",
-        "context": "会話"
+        "en": "I felt terrible when I missed the bus.",
+        "ja": "バスに乗り遅れてとても嫌な気持ちになりました。",
+        "context": "通学"
       },
       {
         "en": "She felt terrible after eating the food.",
@@ -41789,8 +41789,8 @@
         "context": "学校"
       },
       {
-        "en": "Study for the test.",
-        "ja": "テストに向けて勉強しなさい。",
+        "en": "We have a math test next Friday.",
+        "ja": "来週の金曜日に数学のテストがあります。",
         "context": "学校"
       }
     ],
@@ -41820,9 +41820,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Thank you very much!",
-        "ja": "どうもありがとうございます！",
-        "context": "挨拶"
+        "en": "I want to thank you for your kind words.",
+        "ja": "あなたの優しい言葉に感謝したいです。",
+        "context": "感謝"
       },
       {
         "en": "She thanked me for the help.",
@@ -41872,9 +41872,9 @@
         "context": "会話"
       },
       {
-        "en": "Thank you very much!",
-        "ja": "本当にありがとうございます！",
-        "context": "家庭"
+        "en": "Thank you for carrying my bag.",
+        "ja": "かばんを持ってくれてありがとうございます。",
+        "context": "手伝い"
       }
     ],
     "categories": [
@@ -41895,9 +41895,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Thanks for helping me.",
-        "ja": "手伝ってくれてありがとうございます。",
-        "context": "感謝"
+        "en": "Thanks for waiting for me.",
+        "ja": "待っていてくれてありがとうございます。",
+        "context": "待ち合わせ"
       },
       {
         "en": "Many thanks for your kindness.",
@@ -41961,9 +41961,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Look over there.",
-        "ja": "あそこを見て。",
-        "context": "日常"
+        "en": "Put the box over there, please.",
+        "ja": "あそこに箱を置いてください。",
+        "context": "整理整頓"
       },
       {
         "en": "Is there a hospital near here?",
@@ -42084,9 +42084,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "What is that thing?",
-        "ja": "あれは何ですか。",
-        "context": "日常"
+        "en": "What is that shiny thing on the desk?",
+        "ja": "机の上のあの光っているものは何ですか。",
+        "context": "教室"
       },
       {
         "en": "The most important thing is health.",
@@ -42127,9 +42127,9 @@
         "context": "会話"
       },
       {
-        "en": "What do you think?",
-        "ja": "どう思いますか？",
-        "context": "会話"
+        "en": "I think this answer is correct.",
+        "ja": "この答えは正しいと思います。",
+        "context": "授業"
       },
       {
         "en": "She thinks about her future.",
@@ -42211,9 +42211,9 @@
         "context": "学校"
       },
       {
-        "en": "He ate thirteen grapes.",
-        "ja": "彼はブドウを13粒食べました。",
-        "context": "食事"
+        "en": "The team scored thirteen points.",
+        "ja": "チームは13点を獲得しました。",
+        "context": "スポーツ"
       }
     ],
     "categories": [
@@ -42344,9 +42344,9 @@
         "context": "日常"
       },
       {
-        "en": "She got three presents.",
-        "ja": "彼女はプレゼントを3つもらった。",
-        "context": "会話"
+        "en": "I have three classes on Monday.",
+        "ja": "月曜日には3時間授業があります。",
+        "context": "時間割"
       },
       {
         "en": "I need three more minutes.",
@@ -42571,9 +42571,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "What time is it?",
-        "ja": "今何時ですか？",
-        "context": "会話"
+        "en": "What time does the library close?",
+        "ja": "図書館は何時に閉まりますか？",
+        "context": "放課後"
       },
       {
         "en": "I don't have much time.",
@@ -42581,9 +42581,9 @@
         "context": "会話"
       },
       {
-        "en": "Time flies fast.",
-        "ja": "時間はあっという間に過ぎます。",
-        "context": "日常"
+        "en": "I don't have time to watch TV today.",
+        "ja": "今日はテレビを見る時間がありません。",
+        "context": "忙しい日"
       }
     ],
     "categories": [
@@ -42695,9 +42695,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Today is Monday.",
-        "ja": "今日は月曜日です。",
-        "context": "日常"
+        "en": "Today is my mother's birthday.",
+        "ja": "今日は母の誕生日です。",
+        "context": "家庭"
       },
       {
         "en": "What are you doing today?",
@@ -42736,19 +42736,19 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Let's study together.",
-        "ja": "一緒に勉強しましょう。",
-        "context": "日常"
+        "en": "We sang together at the school festival.",
+        "ja": "私たちは文化祭で一緒に歌いました。",
+        "context": "学校行事"
       },
       {
-        "en": "They walked home together.",
-        "ja": "彼らは一緒に家に帰った。",
-        "context": "会話"
-      },
-      {
-        "en": "We work better together.",
-        "ja": "私たちは一緒に取り組む方がうまくいく。",
+        "en": "My family eats dinner together every night.",
+        "ja": "私の家族は毎晩一緒に夕食を食べます。",
         "context": "家庭"
+      },
+      {
+        "en": "We cleaned the classroom together.",
+        "ja": "私たちは一緒に教室を掃除しました。",
+        "context": "学校"
       }
     ],
     "categories": [
@@ -42855,19 +42855,19 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "See you tomorrow!",
-        "ja": "また明日！",
-        "context": "挨拶"
+        "en": "See you tomorrow at the school gate.",
+        "ja": "明日、校門で会いましょう。",
+        "context": "約束"
       },
       {
-        "en": "I will study tomorrow.",
-        "ja": "明日勉強します。",
-        "context": "学校"
+        "en": "I will finish my homework tomorrow morning.",
+        "ja": "明日の朝に宿題を終わらせます。",
+        "context": "計画"
       },
       {
-        "en": "Tomorrow is Tuesday.",
-        "ja": "明日は火曜日です。",
-        "context": "日常"
+        "en": "Tomorrow is a holiday, so I can sleep in.",
+        "ja": "明日は祝日なので、ゆっくり寝られます。",
+        "context": "休日"
       }
     ],
     "categories": [
@@ -42893,9 +42893,9 @@
         "context": "日常"
       },
       {
-        "en": "He can come tomorrow.",
-        "ja": "彼は明日来ることができます。",
-        "context": "約束"
+        "en": "The field trip is scheduled for tomorrow.",
+        "ja": "遠足は明日に予定されています。",
+        "context": "学校行事"
       },
       {
         "en": "She finishes the work tomorrow.",
@@ -42977,9 +42977,9 @@
         "context": "会話"
       },
       {
-        "en": "Can I come too?",
-        "ja": "私も一緒に来ていいですか？",
-        "context": "家庭"
+        "en": "My friend wants to join the club too.",
+        "ja": "私の友達もそのクラブに入りたがっています。",
+        "context": "クラブ活動"
       }
     ],
     "categories": [
@@ -43238,9 +43238,9 @@
         "context": "音楽"
       },
       {
-        "en": "We toured the factory.",
-        "ja": "工場を見学した。",
-        "context": "仕事"
+        "en": "We toured the castle during our trip.",
+        "ja": "旅行中にお城を見学して回りました。",
+        "context": "旅行"
       }
     ],
     "categories": [
@@ -43336,9 +43336,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "My town is small.",
-        "ja": "私の町は小さいです。",
-        "context": "旅行"
+        "en": "Our town has a beautiful old church.",
+        "ja": "私たちの町には美しい古い教会があります。",
+        "context": "町の紹介"
       },
       {
         "en": "There are many parks in this town.",
@@ -43383,9 +43383,9 @@
         "context": "日常"
       },
       {
-        "en": "The toy is broken.",
-        "ja": "おもちゃが壊れた。",
-        "context": "日常"
+        "en": "His favorite toy is a red fire truck.",
+        "ja": "彼のお気に入りのおもちゃは赤い消防車です。",
+        "context": "子供部屋"
       }
     ],
     "categories": [
@@ -43421,9 +43421,9 @@
         "context": "交通"
       },
       {
-        "en": "The train is fast.",
-        "ja": "電車は速いです。",
-        "context": "交通"
+        "en": "The bullet train travels very fast.",
+        "ja": "新幹線はとても速く走ります。",
+        "context": "乗り物"
       },
       {
         "en": "The train leaves at nine.",
@@ -43554,9 +43554,9 @@
         "context": "自然"
       },
       {
-        "en": "She climbed the tree.",
-        "ja": "彼女は木に登りました。",
-        "context": "日常"
+        "en": "A bird made a nest in the tree.",
+        "ja": "鳥が木の中に巣を作りました。",
+        "context": "自然"
       },
       {
         "en": "The leaves fall from the tree.",
@@ -43633,9 +43633,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "He bought new trousers.",
-        "ja": "彼は新しいズボンを買いました。",
-        "context": "買い物"
+        "en": "He put on his trousers and went out.",
+        "ja": "彼はズボンをはいて外出しました。",
+        "context": "日常"
       },
       {
         "en": "These trousers are too long.",
@@ -43755,14 +43755,14 @@
         "context": "学校"
       },
       {
-        "en": "See you on Tuesday.",
-        "ja": "火曜日に会いましょう。",
-        "context": "挨拶"
+        "en": "We have English class every Tuesday.",
+        "ja": "毎週火曜日に英語の授業があります。",
+        "context": "時間割"
       },
       {
-        "en": "Tuesday comes after Monday.",
-        "ja": "火曜日は月曜日の次です。",
-        "context": "日常"
+        "en": "The meeting is on Tuesday afternoon.",
+        "ja": "ミーティングは火曜日の午後です。",
+        "context": "予定"
       }
     ],
     "categories": [
@@ -43831,14 +43831,14 @@
         "context": "日常"
       },
       {
-        "en": "Wait for your turn.",
-        "ja": "自分の番を待ちなさい。",
-        "context": "会話"
+        "en": "Please wait for your turn in line.",
+        "ja": "列で自分の番を待ってください。",
+        "context": "行列"
       },
       {
-        "en": "Whose turn is it?",
-        "ja": "誰の番ですか？",
-        "context": "家庭"
+        "en": "It is my turn to read aloud.",
+        "ja": "今度は私が音読する番です。",
+        "context": "授業"
       }
     ],
     "categories": [
@@ -43913,13 +43913,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Let's watch TV.",
-        "ja": "テレビを見ましょう。",
+        "en": "We watch TV together after dinner.",
+        "ja": "夕食後に一緒にテレビを見ます。",
         "context": "家庭"
       },
       {
-        "en": "The TV is broken.",
-        "ja": "テレビが壊れている。",
+        "en": "The TV in the living room is very big.",
+        "ja": "リビングのテレビはとても大きいです。",
         "context": "家庭"
       },
       {
@@ -43956,9 +43956,9 @@
         "context": "年齢"
       },
       {
-        "en": "We have twelve eggs.",
-        "ja": "卵が12個あります。",
-        "context": "料理"
+        "en": "She got twelve correct on the quiz.",
+        "ja": "彼女はクイズで12問正解しました。",
+        "context": "テスト"
       }
     ],
     "categories": [
@@ -43990,9 +43990,9 @@
         "context": "教室"
       },
       {
-        "en": "She ran twenty kilometers.",
-        "ja": "彼女は20キロ走りました。",
-        "context": "スポーツ"
+        "en": "There are twenty students in my class.",
+        "ja": "私のクラスには20人の生徒がいます。",
+        "context": "学校"
       }
     ],
     "categories": [
@@ -44014,9 +44014,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "I have two dogs.",
-        "ja": "私には犬が2匹いる。",
-        "context": "日常"
+        "en": "I have two close friends in my class.",
+        "ja": "私はクラスに仲良しの友達が二人います。",
+        "context": "学校"
       },
       {
         "en": "There are two apples on the table.",
@@ -44171,9 +44171,9 @@
         "context": "家庭"
       },
       {
-        "en": "She visited her uncle.",
-        "ja": "彼女はおじを訪ねた。",
-        "context": "家庭"
+        "en": "My uncle takes us fishing every summer.",
+        "ja": "おじは毎年夏に私たちを釣りに連れていきます。",
+        "context": "家族"
       },
       {
         "en": "My uncle is a doctor.",
@@ -44325,9 +44325,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Stand up, please.",
-        "ja": "立ってください。",
-        "context": "学校"
+        "en": "Pick up your bag from the floor.",
+        "ja": "床からかばんを拾い上げてください。",
+        "context": "教室"
       },
       {
         "en": "I wake up at seven.",
@@ -44527,9 +44527,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "She is very kind.",
-        "ja": "彼女はとても親切です。",
-        "context": "文学"
+        "en": "This puzzle is very difficult.",
+        "ja": "このパズルはとても難しいです。",
+        "context": "遊び"
       },
       {
         "en": "I am very happy today.",
@@ -44698,9 +44698,9 @@
         "context": "日常"
       },
       {
-        "en": "Please raise your voice.",
-        "ja": "声を大きくしてください。",
-        "context": "学校"
+        "en": "Please use a soft voice in the library.",
+        "ja": "図書館では静かな声を使ってください。",
+        "context": "図書館"
       }
     ],
     "categories": [
@@ -44776,9 +44776,9 @@
         "context": "日常"
       },
       {
-        "en": "Wake up! It's morning.",
-        "ja": "起きて！朝ですよ。",
-        "context": "日常"
+        "en": "My alarm clock woke me up at six.",
+        "ja": "目覚まし時計が6時に私を起こしました。",
+        "context": "朝"
       },
       {
         "en": "She woke up early today.",
@@ -45126,9 +45126,9 @@
         "context": "食事"
       },
       {
-        "en": "The water is cold.",
-        "ja": "水は冷たいです。",
-        "context": "食事"
+        "en": "Please water the plants every morning.",
+        "ja": "毎朝植物に水をあげてください。",
+        "context": "家庭"
       },
       {
         "en": "Can I have some water?",
@@ -45384,9 +45384,9 @@
         "context": "学校"
       },
       {
-        "en": "See you next week!",
-        "ja": "また来週！",
-        "context": "挨拶"
+        "en": "My birthday is next week.",
+        "ja": "私の誕生日は来週です。",
+        "context": "誕生日"
       }
     ],
     "categories": [
@@ -45460,9 +45460,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "Welcome to our school!",
-        "ja": "私たちの学校へようこそ！",
-        "context": "日常"
+        "en": "Welcome to our classroom, everyone.",
+        "ja": "みなさん、私たちの教室へようこそ。",
+        "context": "入学"
       },
       {
         "en": "You are welcome to stay.",
@@ -45498,9 +45498,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "She sings very well.",
-        "ja": "彼女はとても上手に歌う。",
-        "context": "日常"
+        "en": "He plays the guitar very well.",
+        "ja": "彼はギターをとても上手に弾きます。",
+        "context": "音楽"
       },
       {
         "en": "Did you sleep well last night?",
@@ -45508,9 +45508,9 @@
         "context": "会話"
       },
       {
-        "en": "He speaks English well.",
-        "ja": "彼は英語を上手に話す。",
-        "context": "家庭"
+        "en": "She writes English very well.",
+        "ja": "彼女は英語をとても上手に書きます。",
+        "context": "英語"
       }
     ],
     "categories": [
@@ -45647,9 +45647,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "What is your name?",
-        "ja": "あなたの名前は何ですか？",
-        "context": "日常"
+        "en": "What is your favorite subject at school?",
+        "ja": "学校で一番好きな科目は何ですか？",
+        "context": "自己紹介"
       },
       {
         "en": "What time is it now?",
@@ -45756,9 +45756,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "When is your birthday?",
-        "ja": "あなたの誕生日はいつですか？",
-        "context": "日常"
+        "en": "When does the next train arrive?",
+        "ja": "次の電車はいつ来ますか？",
+        "context": "交通"
       },
       {
         "en": "When does the movie start?",
@@ -45794,9 +45794,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "Where do you live?",
-        "ja": "あなたはどこに住んでいますか？",
-        "context": "日常"
+        "en": "Where is the nearest convenience store?",
+        "ja": "一番近いコンビニはどこですか？",
+        "context": "道案内"
       },
       {
         "en": "Where is the nearest station?",
@@ -45804,9 +45804,9 @@
         "context": "会話"
       },
       {
-        "en": "Where are you going?",
-        "ja": "どこに行くのですか？",
-        "context": "日常"
+        "en": "Where did you put my pencil case?",
+        "ja": "私の筆箱をどこに置きましたか？",
+        "context": "教室"
       }
     ],
     "categories": [
@@ -45837,8 +45837,8 @@
         "context": "買い物"
       },
       {
-        "en": "Which is your seat?",
-        "ja": "どれがあなたの席ですか？",
+        "en": "Which bag belongs to you?",
+        "ja": "どのかばんがあなたのものですか？",
         "context": "学校"
       },
       {
@@ -45907,9 +45907,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "Who is that girl?",
-        "ja": "あの女の子は誰ですか？",
-        "context": "日常"
+        "en": "Who is the new student in class 2?",
+        "ja": "2組の新しい生徒は誰ですか？",
+        "context": "学校"
       },
       {
         "en": "Who is your favorite teacher?",
@@ -45945,9 +45945,9 @@
     "partOfSpeech": "other",
     "examples": [
       {
-        "en": "Why are you crying?",
-        "ja": "なぜ泣いているのですか？",
-        "context": "日常"
+        "en": "Why did you come home so late?",
+        "ja": "なぜこんなに帰りが遅かったのですか？",
+        "context": "家庭"
       },
       {
         "en": "Why do you like science?",
@@ -45955,9 +45955,9 @@
         "context": "会話"
       },
       {
-        "en": "Why is she late?",
-        "ja": "彼女はなぜ遅れているのですか？",
-        "context": "日常"
+        "en": "Why is the classroom so noisy today?",
+        "ja": "今日なぜ教室がこんなにうるさいのですか？",
+        "context": "教室"
       }
     ],
     "categories": [
@@ -46080,8 +46080,8 @@
         "context": "日常"
       },
       {
-        "en": "She loves wild birds.",
-        "ja": "彼女は野生の鳥が大好きだ。",
+        "en": "A wild rabbit ran across the path.",
+        "ja": "野生のウサギが道を横切って走っていきました。",
         "context": "自然"
       }
     ],
@@ -46200,19 +46200,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Please open the window.",
-        "ja": "窓を開けてください。",
+        "en": "Please close the window before you leave.",
+        "ja": "出る前に窓を閉めてください。",
         "context": "家庭"
       },
       {
-        "en": "Look out the window.",
-        "ja": "窓の外を見てください。",
-        "context": "家庭"
+        "en": "I love to look out the window on the train.",
+        "ja": "電車の中で窓の外を見るのが好きです。",
+        "context": "電車"
       },
       {
-        "en": "The window is broken.",
-        "ja": "窓が壊れています。",
-        "context": "家庭"
+        "en": "Sunlight came in through the window.",
+        "ja": "窓から日差しが入ってきました。",
+        "context": "朝"
       }
     ],
     "categories": [
@@ -46278,9 +46278,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Winter is cold.",
-        "ja": "冬は寒いです。",
-        "context": "天気"
+        "en": "Winter in Hokkaido is very cold.",
+        "ja": "北海道の冬はとても寒いです。",
+        "context": "季節・地域"
       },
       {
         "en": "We play in the snow in winter.",
@@ -46477,9 +46477,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "What a wonderful day!",
-        "ja": "なんて素晴らしい日だ！",
-        "context": "日常"
+        "en": "We had a wonderful time at the festival.",
+        "ja": "お祭りで素晴らしい時間を過ごしました。",
+        "context": "イベント"
       },
       {
         "en": "She had a wonderful time at the party.",
@@ -46524,9 +46524,9 @@
         "context": "日常"
       },
       {
-        "en": "He chopped the wood.",
-        "ja": "彼は木を切った。",
-        "context": "日常"
+        "en": "The cabin walls are made of wood.",
+        "ja": "山小屋の壁は木でできています。",
+        "context": "建物"
       },
       {
         "en": "We need wood for the fire.",
@@ -46610,9 +46610,9 @@
         "context": "学校"
       },
       {
-        "en": "The plan works well.",
-        "ja": "その計画はうまく機能します。",
-        "context": "日常"
+        "en": "Hard work always brings good results.",
+        "ja": "一生懸命働けば必ず良い結果が出ます。",
+        "context": "学校"
       }
     ],
     "categories": [
@@ -46841,9 +46841,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "That answer is wrong.",
-        "ja": "その答えは間違っている。",
-        "context": "日常"
+        "en": "I wrote the wrong date on my homework.",
+        "ja": "宿題に間違った日付を書いてしまいました。",
+        "context": "学校"
       },
       {
         "en": "I turned the wrong way.",
@@ -46958,9 +46958,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "This year is exciting.",
-        "ja": "今年は楽しいです。",
-        "context": "日常"
+        "en": "This year I joined the tennis club.",
+        "ja": "今年私はテニス部に入りました。",
+        "context": "クラブ活動"
       },
       {
         "en": "I am thirteen years old.",
@@ -46968,9 +46968,9 @@
         "context": "日常"
       },
       {
-        "en": "Happy New Year!",
-        "ja": "明けましておめでとうございます！",
-        "context": "挨拶"
+        "en": "We send New Year cards to our friends.",
+        "ja": "私たちは友達に年賀状を送ります。",
+        "context": "お正月"
       }
     ],
     "categories": [
@@ -47004,7 +47004,7 @@
     "examples": [
       {
         "en": "The banana is yellow.",
-        "ja": "バナナは黄色い。",
+        "ja": "バナナは黄色いです。",
         "context": "日常"
       },
       {
@@ -47207,9 +47207,9 @@
         "context": "天気"
       },
       {
-        "en": "Start from zero.",
-        "ja": "ゼロから始めよう。",
-        "context": "日常"
+        "en": "We need to start from zero and try again.",
+        "ja": "ゼロから始めてもう一度挑戦する必要があります。",
+        "context": "挑戦"
       },
       {
         "en": "He got zero on the test.",

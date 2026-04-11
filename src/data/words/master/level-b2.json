@@ -39,19 +39,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Apply for tax abatement.",
-        "ja": "税金軽減を申請して。",
-        "context": "金融"
+        "en": "Small business owners can apply for tax abatement through the local office.",
+        "ja": "中小企業のオーナーは地域の窓口を通じて税金の軽減を申請することができます。",
+        "context": "税務"
       },
       {
-        "en": "She received an abatement.",
-        "ja": "軽減を受けた。",
-        "context": "日常"
+        "en": "She received a significant noise abatement grant from the city council.",
+        "ja": "彼女は市議会から相当な騒音軽減の助成金を受け取りました。",
+        "context": "行政"
       },
       {
-        "en": "He negotiated abatement.",
-        "ja": "軽減を交渉した。",
-        "context": "日常"
+        "en": "He successfully negotiated an abatement on his annual property taxes.",
+        "ja": "彼は年間固定資産税の軽減を交渉によってうまく獲得しました。",
+        "context": "不動産"
       }
     ],
     "categories": [
@@ -468,13 +468,13 @@
         "context": "芸術"
       },
       {
-        "en": "The abstraction confused students.",
-        "ja": "抽象概念が生徒を混乱させた。",
+        "en": "The level of abstraction in the lecture confused many undergraduate students.",
+        "ja": "講義の抽象度の高さが多くの学部生を混乱させました。",
         "context": "教育"
       },
       {
-        "en": "Philosophy explores abstractions.",
-        "ja": "哲学は抽象概念を探求する。",
+        "en": "Philosophy systematically explores fundamental abstractions like truth, beauty, and justice.",
+        "ja": "哲学は真実・美・正義といった根本的な抽象概念を体系的に探求します。",
         "context": "哲学"
       }
     ],
@@ -859,9 +859,9 @@
         "context": "宿泊"
       },
       {
-        "en": "We accommodated their requests.",
-        "ja": "私たちは彼らの要求に応じた。",
-        "context": "対応"
+        "en": "The manager went out of her way to accommodate their special requests.",
+        "ja": "マネージャーは彼らの特別な要望に応えるために特別な努力をしました。",
+        "context": "接客"
       },
       {
         "en": "The room accommodates six people.",
@@ -1654,8 +1654,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The meeting was adjourned.",
-        "ja": "会議は延期された。",
+        "en": "The committee meeting was adjourned due to a lack of quorum.",
+        "ja": "定足数が満たなかったため委員会の会議は延期されました。",
         "context": "会議"
       },
       {
@@ -2208,13 +2208,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She thrived despite adversity.",
-        "ja": "彼女は逆境にもかかわらず成長した。",
+        "en": "She thrived as an entrepreneur despite considerable personal adversity.",
+        "ja": "彼女はかなりの個人的な逆境にもかかわらず起業家として成長しました。",
         "context": "感情"
       },
       {
-        "en": "Adversity builds character.",
-        "ja": "逆境は人格を形成する。",
+        "en": "Many philosophers argue that adversity ultimately builds strength of character.",
+        "ja": "多くの哲学者は逆境が最終的に人格の強さを形成すると主張します。",
         "context": "哲学"
       },
       {
@@ -2430,13 +2430,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "State your professional affiliation.",
-        "ja": "職業上の所属を述べてください。",
+        "en": "Please clearly state your professional affiliation when submitting the research paper.",
+        "ja": "研究論文を提出する際は職業上の所属を明確に記載してください。",
         "context": "学術"
       },
       {
-        "en": "Political affiliation affects voting.",
-        "ja": "政治的所属は投票に影響します。",
+        "en": "Political affiliation significantly affects how individuals perceive and interpret policy.",
+        "ja": "政治的所属は個人が政策をどのように認識・解釈するかに大きく影響します。",
         "context": "政治"
       },
       {
@@ -2730,8 +2730,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Stress aggravates the condition.",
-        "ja": "ストレスは状態を悪化させる。",
+        "en": "Chronic stress tends to aggravate existing health conditions over time.",
+        "ja": "慢性的なストレスは時間とともに既存の健康状態を悪化させる傾向があります。",
         "context": "健康"
       },
       {
@@ -2811,9 +2811,9 @@
         "context": "仕事"
       },
       {
-        "en": "She agreed, albeit reluctantly.",
-        "ja": "渋々同意した。",
-        "context": "日常"
+        "en": "She agreed to join the team, albeit with some reluctance at first.",
+        "ja": "彼女は最初は多少渋りながらも、チームへの参加に同意しました。",
+        "context": "職場"
       },
       {
         "en": "The plan worked, albeit with issues.",
@@ -3113,13 +3113,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The allegation was investigated.",
-        "ja": "申し立ては調査された。",
-        "context": "法律"
+        "en": "The serious allegation against the manager was thoroughly investigated.",
+        "ja": "マネージャーへの深刻な申し立ては徹底的に調査されました。",
+        "context": "職場"
       },
       {
-        "en": "He denied all allegations.",
-        "ja": "彼はすべての申し立てを否定した。",
+        "en": "He firmly denied all allegations and demanded a fair public hearing.",
+        "ja": "彼はすべての申し立てを強く否定し、公正な公聴会を求めました。",
         "context": "法律"
       },
       {
@@ -3997,8 +3997,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The accident caused amnesia.",
-        "ja": "事故は記憶喪失を引き起こした。",
+        "en": "The severe head injury sustained in the accident caused complete amnesia.",
+        "ja": "事故で負った深刻な頭部外傷が完全な記憶喪失を引き起こしました。",
         "context": "医療"
       },
       {
@@ -4007,8 +4007,8 @@
         "context": "健康"
       },
       {
-        "en": "Trauma sometimes triggers amnesia.",
-        "ja": "トラウマが記憶喪失を引き起こすことがある。",
+        "en": "Severe psychological trauma sometimes triggers dissociative amnesia in patients.",
+        "ja": "深刻な心理的トラウマは患者に解離性記憶喪失を引き起こすことがあります。",
         "context": "学術"
       }
     ],
@@ -4614,13 +4614,13 @@
         "context": "学校"
       },
       {
-        "en": "Researchers annotate scientific papers.",
-        "ja": "研究者は科学論文に注釈をつける。",
+        "en": "Researchers carefully annotate scientific papers to clarify complex terminology.",
+        "ja": "研究者たちは複雑な専門用語を明確にするために科学論文を丁寧に注釈します。",
         "context": "研究"
       },
       {
-        "en": "Please annotate your bibliography.",
-        "ja": "参考文献に注釈をつけてください。",
+        "en": "Students are required to annotate their bibliography with brief summaries.",
+        "ja": "学生は簡単な要約とともに参考文献に注釈をつけることが求められます。",
         "context": "学術"
       }
     ],
@@ -5185,8 +5185,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The antonym of 'hot is 'cold.'",
-        "ja": "'hot'の反意語は'cold'です。",
+        "en": "The antonym of 'hot' is 'cold,' and learning word pairs improves vocabulary.",
+        "ja": "「hot」の反意語は「cold」であり、単語ペアを学ぶことで語彙力が向上します。",
         "context": "学校"
       },
       {
@@ -5410,8 +5410,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Resources were apportioned fairly.",
-        "ja": "資源は公平に割り当てられた。",
+        "en": "Budget resources were apportioned fairly among all competing departments.",
+        "ja": "予算リソースはすべての競合する部署に公平に配分されました。",
         "context": "ビジネス"
       },
       {
@@ -5485,14 +5485,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Police apprehended the suspect.",
-        "ja": "警察は容疑者を逮捕した。",
+        "en": "Officers apprehended the suspect near the scene of the robbery.",
+        "ja": "警察官は強盗現場近くで容疑者を逮捕しました。",
         "context": "犯罪"
       },
       {
-        "en": "They apprehended the criminal.",
-        "ja": "彼らは犯人を逮捕した。",
-        "context": "法律"
+        "en": "Detectives worked overnight and finally apprehended the serial criminal.",
+        "ja": "刑事たちは一晩中働いてついに連続犯罪者を逮捕しました。",
+        "context": "捜査"
       },
       {
         "en": "He was apprehended at the border.",
@@ -5683,8 +5683,8 @@
         "context": "教育"
       },
       {
-        "en": "Aptitude tests measure potential.",
-        "ja": "適性検査は潜在能力を測定する。",
+        "en": "Standardized aptitude tests are designed to measure a student's academic potential.",
+        "ja": "標準化された適性検査は生徒の学業潜在能力を測定するために設計されています。",
         "context": "学術"
       },
       {
@@ -5720,13 +5720,13 @@
         "context": "法律"
       },
       {
-        "en": "She was arbitrarily dismissed.",
-        "ja": "彼女は恣意的に解雇された。",
+        "en": "The employee was arbitrarily dismissed without any formal explanation.",
+        "ja": "その従業員は正式な説明なしに恣意的に解雇されました。",
         "context": "職場"
       },
       {
-        "en": "Power was arbitrarily wielded.",
-        "ja": "権力は恣意的に行使された。",
+        "en": "Under authoritarian rule, power was arbitrarily wielded against political opponents.",
+        "ja": "権威主義的な支配下では、権力が政治的な反対勢力に対して恣意的に行使されました。",
         "context": "政治"
       }
     ],
@@ -6725,8 +6725,8 @@
         "context": "社会"
       },
       {
-        "en": "Education fuels social aspiration.",
-        "ja": "教育は社会的志望を育む。",
+        "en": "Quality education fuels social aspiration and expands career opportunities.",
+        "ja": "質の高い教育は社会的な志望を育み職業の機会を広げます。",
         "context": "教育"
       }
     ],
@@ -7921,8 +7921,8 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "He audaciously challenged authority.",
-        "ja": "彼は大胆にも権威に挑んだ。",
+        "en": "He audaciously challenged the established authority and demanded structural reform.",
+        "ja": "彼は大胆にも既成の権威に挑み、構造的改革を要求しました。",
         "context": "歴史"
       },
       {
@@ -8106,9 +8106,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "The project began auspiciously.",
-        "ja": "プロジェクトは縁起よく始まった。",
-        "context": "学校"
+        "en": "The international project began auspiciously with strong support from all partners.",
+        "ja": "その国際プロジェクトはすべてのパートナーからの強い支持を受けて縁起よく始まりました。",
+        "context": "ビジネス"
       },
       {
         "en": "The ceremony started auspiciously.",
@@ -10257,9 +10257,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The question bewildered him.",
-        "ja": "その質問は彼を困惑させた。",
-        "context": "対話"
+        "en": "The professor's complex question bewildered even the brightest students.",
+        "ja": "教授の複雑な問いは最も優秀な学生さえも当惑させました。",
+        "context": "授業"
       },
       {
         "en": "The map bewildered the tourists.",
@@ -11486,8 +11486,8 @@
         "context": "不正"
       },
       {
-        "en": "The company bribed inspectors.",
-        "ja": "その会社は検査官に賄賂を贈った。",
+        "en": "The construction company secretly bribed building inspectors to pass safety checks.",
+        "ja": "建設会社は安全検査を通過させるために建物検査官にひそかに賄賂を贈りました。",
         "context": "企業"
       }
     ],
@@ -12264,8 +12264,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Scientists calibrate the instrument.",
-        "ja": "科学者は機器を調整する。",
+        "en": "Laboratory scientists calibrate instruments carefully before conducting each experiment.",
+        "ja": "実験室の科学者たちは各実験を行う前に慎重に機器を較正します。",
         "context": "実験"
       },
       {
@@ -12274,9 +12274,9 @@
         "context": "技術"
       },
       {
-        "en": "The machine needs calibrating.",
-        "ja": "その機械は調整が必要だ。",
-        "context": "工業"
+        "en": "The technician noted that the old machine urgently needs calibrating.",
+        "ja": "技術者はその古い機械が早急に較正を必要としていると指摘しました。",
+        "context": "工場"
       }
     ],
     "categories": [
@@ -12826,9 +12826,9 @@
         "context": "芸術"
       },
       {
-        "en": "His speech captivated everyone.",
-        "ja": "彼のスピーチは全員を魅了した。",
-        "context": "演説"
+        "en": "His passionate speech about climate change captivated the entire audience.",
+        "ja": "気候変動についての彼の情熱的なスピーチは聴衆全員を魅了しました。",
+        "context": "講演"
       }
     ],
     "categories": [
@@ -14197,14 +14197,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Chromosomes carry genetic information.",
-        "ja": "染色体は遺伝情報を担う。",
-        "context": "高2"
+        "en": "Each chromosome carries thousands of genes that determine physical traits.",
+        "ja": "各染色体は身体的特徴を決定する何千もの遺伝子を持っています。",
+        "context": "生物"
       },
       {
-        "en": "Humans have 46 chromosomes.",
-        "ja": "人間には46本の染色体がある。",
-        "context": "高2"
+        "en": "Humans typically inherit 46 chromosomes, 23 from each parent.",
+        "ja": "人間は通常、各親から23本ずつ、合計46本の染色体を受け継ぎます。",
+        "context": "遺伝"
       },
       {
         "en": "Chromosome abnormalities cause certain diseases.",
@@ -14493,19 +14493,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "He circumvented the rules.",
-        "ja": "彼はルールを回避した。",
-        "context": "法律"
+        "en": "The contractor attempted to circumvent building regulations to cut costs.",
+        "ja": "請負業者はコストを削減するために建築規制を回避しようとしました。",
+        "context": "建設"
       },
       {
-        "en": "They circumvented the obstacle.",
-        "ja": "彼らは障害を回避した。",
-        "context": "戦略"
+        "en": "The explorers found a longer path to circumvent the dangerous obstacle.",
+        "ja": "探検家たちは危険な障害物を回避するためにより長い道を見つけました。",
+        "context": "冒険"
       },
       {
-        "en": "She circumvented the system.",
-        "ja": "彼女はシステムを回避した。",
-        "context": "技術"
+        "en": "Hackers tried to circumvent the firewall to access confidential data.",
+        "ja": "ハッカーたちは機密データにアクセスするためにファイアウォールを回避しようとしました。",
+        "context": "セキュリティ"
       }
     ],
     "categories": [
@@ -14657,9 +14657,9 @@
         "context": "高2"
       },
       {
-        "en": "Classification helps organize information.",
-        "ja": "分類は情報を整理するのに役立つ。",
-        "context": "高2"
+        "en": "A clear classification system helps researchers organize and retrieve information.",
+        "ja": "明確な分類システムは研究者が情報を整理して取り出すのに役立ちます。",
+        "context": "研究"
       }
     ],
     "categories": [
@@ -15008,9 +15008,9 @@
         "context": "高2"
       },
       {
-        "en": "Correlation coefficients measure relationships.",
-        "ja": "相関係数は関係性を測定する。",
-        "context": "高2"
+        "en": "A high correlation coefficient indicates a strong relationship between variables.",
+        "ja": "高い相関係数は変数間の強い関係を示しています。",
+        "context": "統計"
       },
       {
         "en": "The drag coefficient affects aerodynamics.",
@@ -15046,9 +15046,9 @@
         "context": "権力"
       },
       {
-        "en": "They coerced the witness.",
-        "ja": "彼らは証人を強制した。",
-        "context": "法律"
+        "en": "The defense argued that officials had coerced the witness into testifying.",
+        "ja": "弁護側は当局が証人に証言するよう強制したと主張しました。",
+        "context": "法廷"
       },
       {
         "en": "Workers were coerced to comply.",
@@ -15319,14 +15319,14 @@
         "context": "学術"
       },
       {
-        "en": "The argument lacks coherence.",
-        "ja": "議論には一貫性が欠けている。",
-        "context": "会話"
+        "en": "The essay received low marks because its argument lacked coherence.",
+        "ja": "その論文は議論に一貫性が欠けていたため低い評価を受けました。",
+        "context": "ライティング"
       },
       {
-        "en": "Policy coherence improves outcomes.",
-        "ja": "政策の一貫性は成果を改善する。",
-        "context": "政治"
+        "en": "Better policy coherence between ministries consistently improves public health outcomes.",
+        "ja": "省庁間のより良い政策の一貫性は公衆衛生の成果を一貫して改善します。",
+        "context": "行政"
       }
     ],
     "categories": [
@@ -15555,13 +15555,13 @@
         "context": "仕事"
       },
       {
-        "en": "Artists collaborated across borders.",
-        "ja": "アーティストは国境を越えて協力しました。",
-        "context": "文化"
+        "en": "Musicians from different countries collaborated to create a unique fusion album.",
+        "ja": "異なる国のミュージシャンたちが独自のフュージョンアルバムを作るために協力しました。",
+        "context": "音楽"
       },
       {
-        "en": "She collaborated with researchers.",
-        "ja": "彼女は研究者と協力しました。",
+        "en": "She collaborated with overseas researchers to publish a joint study.",
+        "ja": "彼女は共同研究を発表するために海外の研究者たちと協力しました。",
         "context": "学術"
       }
     ],
@@ -15683,9 +15683,9 @@
         "context": "宇宙"
       },
       {
-        "en": "Their views collided sharply.",
-        "ja": "彼らの意見は激しく衝突した。",
-        "context": "対話"
+        "en": "Their opposing political views collided sharply during the committee meeting.",
+        "ja": "彼らの対立する政治的見解は委員会の会議中に激しく衝突しました。",
+        "context": "議論"
       }
     ],
     "categories": [
@@ -16176,8 +16176,8 @@
         "context": "建設"
       },
       {
-        "en": "Classes commenced in April.",
-        "ja": "授業は4月に始まりました。",
+        "en": "New classes commenced in April after the spring break period.",
+        "ja": "春休みの後、4月に新しい授業が始まりました。",
         "context": "学校"
       }
     ],
@@ -16705,8 +16705,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Wine complements the meal.",
-        "ja": "ワインは食事を補完する。",
+        "en": "A glass of red wine perfectly complements a well-seasoned steak dinner.",
+        "ja": "赤ワイン一杯がよく味付けされたステーキディナーを完璧に補完します。",
         "context": "食文化"
       },
       {
@@ -16715,9 +16715,9 @@
         "context": "デザイン"
       },
       {
-        "en": "Her skills complement his.",
-        "ja": "彼女のスキルは彼のものを補完する。",
-        "context": "協力"
+        "en": "Her creative skills nicely complement his analytical strengths in the team.",
+        "ja": "彼女の創造的なスキルはチームでの彼の分析的な強みを上手く補完します。",
+        "context": "チームワーク"
       }
     ],
     "categories": [
@@ -17002,9 +17002,9 @@
         "context": "高2"
       },
       {
-        "en": "Language comprehension requires context.",
-        "ja": "言語理解は文脈を必要とする。",
-        "context": "高2"
+        "en": "Language comprehension requires a deep understanding of cultural context.",
+        "ja": "言語理解は文化的な文脈への深い理解を必要とします。",
+        "context": "言語学習"
       }
     ],
     "categories": [
@@ -17215,13 +17215,13 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "He conceded defeat gracefully.",
-        "ja": "彼は潔く敗北を認めた。",
+        "en": "The losing candidate conceded defeat gracefully in a televised speech.",
+        "ja": "敗れた候補者はテレビ演説で潔く敗北を認めました。",
         "context": "選挙"
       },
       {
-        "en": "She conceded the point.",
-        "ja": "彼女はその点を認めた。",
+        "en": "After a long debate, she finally conceded that the opposing point was valid.",
+        "ja": "長い議論の後、彼女はついに反対側の論点が有効であることを認めました。",
         "context": "議論"
       },
       {
@@ -17848,9 +17848,9 @@
         "context": "信頼"
       },
       {
-        "en": "She confided her fears.",
-        "ja": "彼女は恐れを打ち明けた。",
-        "context": "感情"
+        "en": "She confided her deepest fears only to her closest childhood friend.",
+        "ja": "彼女は最も深い恐れを幼なじみの親友だけに打ち明けました。",
+        "context": "友情"
       }
     ],
     "categories": [
@@ -18472,9 +18472,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The music conjures memories.",
-        "ja": "音楽は記憶を呼び起こす。",
-        "context": "芸術"
+        "en": "The old photograph conjures vivid memories of her school days.",
+        "ja": "その古い写真は学校時代の鮮明な記憶を呼び起こします。",
+        "context": "思い出"
       },
       {
         "en": "He conjured an image of home.",
@@ -18482,8 +18482,8 @@
         "context": "感情"
       },
       {
-        "en": "The name conjures mystery.",
-        "ja": "その名前は神秘を呼び起こす。",
+        "en": "The mysterious place name conjures images of adventure and hidden treasure.",
+        "ja": "その不思議な地名は冒険と隠された宝物のイメージを呼び起こします。",
         "context": "文学"
       }
     ],
@@ -19083,8 +19083,8 @@
         "context": "歴史"
       },
       {
-        "en": "He conspired with criminals.",
-        "ja": "彼は犯罪者と共謀した。",
+        "en": "Two corrupt officers secretly conspired with local criminals to extort money.",
+        "ja": "2人の腐敗した警察官が地域の犯罪者とひそかに共謀して金を脅し取りました。",
         "context": "犯罪"
       },
       {
@@ -19238,9 +19238,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Budget constraints limited options.",
-        "ja": "予算の制限が選択肢を狭めた。",
-        "context": "経済"
+        "en": "Tight budget constraints forced the team to abandon several promising projects.",
+        "ja": "厳しい予算の制約により、チームはいくつかの有望なプロジェクトを断念せざるを得ませんでした。",
+        "context": "ビジネス"
       },
       {
         "en": "She felt constrained by the rules.",
@@ -19977,9 +19977,9 @@
         "context": "学術"
       },
       {
-        "en": "She challenged conventional thinking.",
-        "ja": "彼女は従来の考え方に挑戦した。",
-        "context": "学術"
+        "en": "She challenged conventional thinking by proposing an entirely different approach.",
+        "ja": "彼女はまったく異なるアプローチを提案することで従来の考え方に挑戦しました。",
+        "context": "研究"
       },
       {
         "en": "Conventional wisdom may sometimes be wrong.",
@@ -22169,9 +22169,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Curiosity drives scientific discovery.",
-        "ja": "好奇心は科学的発見を促進する。",
-        "context": "高2"
+        "en": "A scientist's curiosity drives the discovery of groundbreaking new knowledge.",
+        "ja": "科学者の好奇心が画期的な新しい知識の発見を促進します。",
+        "context": "学術"
       },
       {
         "en": "Children show natural curiosity about the world.",
@@ -22319,9 +22319,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "They curtailed the budget.",
-        "ja": "彼らは予算を削減しました。",
-        "context": "経済"
+        "en": "The government curtailed social spending to reduce the budget deficit.",
+        "ja": "政府は財政赤字を減らすために社会支出を削減しました。",
+        "context": "財政"
       },
       {
         "en": "Freedom was curtailed by law.",
@@ -22908,8 +22908,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Scientists debunked the myth.",
-        "ja": "科学者たちは神話を暴いた。",
+        "en": "Researchers debunked the popular myth that humans only use ten percent of their brains.",
+        "ja": "研究者たちは人間が脳の10パーセントしか使っていないという広く信じられた俗説を暴きました。",
         "context": "科学"
       },
       {
@@ -23096,9 +23096,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The advertisement was deceptive.",
-        "ja": "その広告は欺瞞的だった。",
-        "context": "報道"
+        "en": "The company's advertisement was found to be deceptive and misleading.",
+        "ja": "その会社の広告は欺瞞的で誤解を招くものであることが判明しました。",
+        "context": "広告"
       },
       {
         "en": "His calm manner was deceptive.",
@@ -23106,9 +23106,9 @@
         "context": "文学"
       },
       {
-        "en": "Deceptive practices harm consumers.",
-        "ja": "欺瞞的な慣行は消費者を傷つける。",
-        "context": "ビジネス"
+        "en": "Regulators cracked down on deceptive practices that harmed vulnerable consumers.",
+        "ja": "規制当局は脆弱な消費者を傷つける欺瞞的な慣行を取り締まりました。",
+        "context": "消費者保護"
       }
     ],
     "categories": [
@@ -23180,14 +23180,14 @@
         "context": "歴史"
       },
       {
-        "en": "He deciphered the code.",
-        "ja": "彼はコードを解読した。",
-        "context": "技術"
+        "en": "The historian spent years trying to decipher the ancient coded manuscript.",
+        "ja": "その歴史家は古代の暗号化された写本を解読しようと何年も費やしました。",
+        "context": "歴史"
       },
       {
-        "en": "They deciphered the message.",
-        "ja": "彼らはメッセージを解読した。",
-        "context": "通信"
+        "en": "Intelligence analysts worked together to decipher the intercepted enemy message.",
+        "ja": "情報分析官たちが協力して傍受した敵のメッセージを解読しました。",
+        "context": "安全保障"
       }
     ],
     "categories": [
@@ -23288,13 +23288,13 @@
         "context": "自然"
       },
       {
-        "en": "Organic matter decomposes slowly.",
-        "ja": "有機物はゆっくり分解される。",
-        "context": "環境"
+        "en": "Fallen leaves and organic matter decompose slowly in cold winter soil.",
+        "ja": "落ち葉や有機物は冬の冷たい土の中でゆっくりと分解されます。",
+        "context": "生態"
       },
       {
-        "en": "Bacteria decompose dead organisms.",
-        "ja": "バクテリアは死んだ生物を分解する。",
+        "en": "Soil bacteria decompose dead organisms and return nutrients to the ground.",
+        "ja": "土壌中の細菌が死んだ生物を分解し栄養素を土に戻します。",
         "context": "生物"
       }
     ],
@@ -23498,8 +23498,8 @@
         "context": "経済"
       },
       {
-        "en": "She deducted the expenses.",
-        "ja": "彼女は経費を差し引いた。",
+        "en": "The accountant carefully deducted all eligible business expenses from the total revenue.",
+        "ja": "会計士はすべての控除対象となる事業費を総収益から慎重に差し引きました。",
         "context": "会計"
       },
       {
@@ -23682,9 +23682,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "She deferred the decision.",
-        "ja": "彼女は決断を先送りにした。",
-        "context": "判断"
+        "en": "The committee deferred the final decision until more data was available.",
+        "ja": "委員会はより多くのデータが得られるまで最終決定を先延ばしにしました。",
+        "context": "会議"
       },
       {
         "en": "He deferred to his senior.",
@@ -23692,9 +23692,9 @@
         "context": "礼儀"
       },
       {
-        "en": "The meeting was deferred.",
-        "ja": "会議は先送りにされた。",
-        "context": "仕事"
+        "en": "Due to budget issues, the meeting was deferred to the following month.",
+        "ja": "予算上の問題により、会議は翌月に先送りにされました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -23942,14 +23942,14 @@
         "context": "戦争"
       },
       {
-        "en": "He deflected the criticism.",
-        "ja": "彼は批判をそらした。",
-        "context": "対話"
+        "en": "The politician tried to deflect criticism by changing the subject abruptly.",
+        "ja": "その政治家は突然話題を変えることで批判をそらそうとしました。",
+        "context": "政治"
       },
       {
-        "en": "The surface deflects heat.",
-        "ja": "表面は熱をそらす。",
-        "context": "物理"
+        "en": "The special coating on the roof deflects excessive heat during summer.",
+        "ja": "屋根の特殊コーティングが夏の過剰な熱をそらします。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -24097,8 +24097,8 @@
         "context": "組織"
       },
       {
-        "en": "Managers delegate responsibility.",
-        "ja": "管理者は責任を委任する。",
+        "en": "Effective managers always delegate responsibility clearly to the right people.",
+        "ja": "効果的な管理者は常に適切な人材に責任を明確に委任します。",
         "context": "経営"
       }
     ],
@@ -24169,9 +24169,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "He deliberated before deciding.",
-        "ja": "彼は決断する前に熟慮した。",
-        "context": "思考"
+        "en": "She deliberated carefully before making any final decision about the job offer.",
+        "ja": "彼女は仕事のオファーについて最終決定を下す前に慎重に熟慮しました。",
+        "context": "就職"
       },
       {
         "en": "The jury deliberated for hours.",
@@ -24823,8 +24823,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Overuse depletes natural resources.",
-        "ja": "過剰使用は天然資源を使い果たす。",
+        "en": "Excessive fishing rapidly depletes natural marine resources beyond recovery.",
+        "ja": "過剰漁業は自然の海洋資源を回復不能なほど急速に枯渇させます。",
         "context": "環境"
       },
       {
@@ -24833,9 +24833,9 @@
         "context": "自然"
       },
       {
-        "en": "His energy was depleted.",
-        "ja": "彼のエネルギーは使い果たされた。",
-        "context": "健康"
+        "en": "Running a marathon in summer heat left his energy completely depleted.",
+        "ja": "夏の暑さの中でマラソンを走ったことで彼のエネルギーは完全に使い果たされました。",
+        "context": "スポーツ"
       }
     ],
     "categories": [
@@ -24867,9 +24867,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "She deplored the violence.",
-        "ja": "彼女は暴力を嘆いた。",
-        "context": "社会"
+        "en": "Community leaders gathered to deplore the rising violence in the neighborhood.",
+        "ja": "地域のリーダーたちは地区で増加する暴力を嘆くために集まりました。",
+        "context": "地域社会"
       },
       {
         "en": "He deplored the lack of progress.",
@@ -24877,9 +24877,9 @@
         "context": "批判"
       },
       {
-        "en": "Leaders deplored the tragedy.",
-        "ja": "指導者たちは悲劇を嘆いた。",
-        "context": "政治"
+        "en": "World leaders united to deplore the devastating tragedy caused by the disaster.",
+        "ja": "世界のリーダーたちは災害によって引き起こされた壊滅的な悲劇を嘆くために結束しました。",
+        "context": "国際"
       }
     ],
     "categories": [
@@ -25493,9 +25493,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Police detained the suspect.",
-        "ja": "警察は容疑者を拘留した。",
-        "context": "法律"
+        "en": "Airport security detained the passenger for carrying prohibited items in his bag.",
+        "ja": "空港のセキュリティは鞄に禁止品を所持していた乗客を拘留しました。",
+        "context": "空港"
       },
       {
         "en": "He was detained at the border.",
@@ -25503,9 +25503,9 @@
         "context": "入国"
       },
       {
-        "en": "They detained the protesters.",
-        "ja": "彼らは抗議者を拘留した。",
-        "context": "権利"
+        "en": "Authorities briefly detained the protesters before releasing them without charges.",
+        "ja": "当局は抗議者たちを一時的に拘留した後、不起訴で釈放しました。",
+        "context": "人権"
       }
     ],
     "categories": [
@@ -26575,9 +26575,9 @@
         "context": "日常"
       },
       {
-        "en": "Information diffuses quickly online.",
-        "ja": "情報はオンラインで素早く拡散する。",
-        "context": "技術"
+        "en": "Viral content can diffuse across social media platforms within hours.",
+        "ja": "バイラルコンテンツは数時間以内にソーシャルメディアプラットフォーム全体に拡散することがあります。",
+        "context": "通信"
       }
     ],
     "categories": [
@@ -26608,14 +26608,14 @@
         "context": "会話"
       },
       {
-        "en": "Digressions weaken academic writing.",
-        "ja": "脱線は学術論文を弱める。",
+        "en": "Frequent digressions make an essay difficult to follow.",
+        "ja": "頻繁な脱線はエッセイを読みにくくします。",
         "context": "学術"
       },
       {
-        "en": "His digression was entertaining.",
-        "ja": "彼の脱線は楽しかった。",
-        "context": "学校"
+        "en": "The professor's brief digression about ancient Rome captivated the class.",
+        "ja": "教授の古代ローマについての短い脱線がクラスを魅了しました。",
+        "context": "教育"
       }
     ],
     "categories": [
@@ -27487,14 +27487,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The scandal discredited him.",
-        "ja": "スキャンダルが彼の信頼を失わせた。",
-        "context": "政治"
+        "en": "The financial scandal discredited the CEO and led to his resignation.",
+        "ja": "その財務スキャンダルはCEOの信用を傷つけ辞任につながりました。",
+        "context": "企業"
       },
       {
-        "en": "She discredited the witness.",
-        "ja": "彼女は証人の信用を傷つけた。",
-        "context": "法律"
+        "en": "The lawyer successfully discredited the witness by exposing contradictions in his testimony.",
+        "ja": "弁護士は証言の矛盾を明らかにすることで証人の信用を損ねることに成功しました。",
+        "context": "法廷"
       },
       {
         "en": "The report discredited the claim.",
@@ -27618,14 +27618,14 @@
         "context": "権利"
       },
       {
-        "en": "The law prohibits discriminating.",
-        "ja": "法律は差別を禁じている。",
+        "en": "Employment law strictly prohibits discriminating against applicants based on gender.",
+        "ja": "雇用法は性別を理由に応募者を差別することを厳しく禁じています。",
         "context": "法律"
       },
       {
-        "en": "She was discriminated against.",
-        "ja": "彼女は差別を受けた。",
-        "context": "社会"
+        "en": "She discovered she had been discriminated against when applying for promotion.",
+        "ja": "彼女は昇進を申請した際に差別を受けていたことを知りました。",
+        "context": "職場"
       }
     ],
     "categories": [
@@ -27935,9 +27935,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Rain dislodged the rocks.",
-        "ja": "雨が岩を動かした。",
-        "context": "自然"
+        "en": "Heavy rain dislodged several large rocks onto the mountain road.",
+        "ja": "大雨が山道にいくつかの大きな岩を押し流しました。",
+        "context": "自然災害"
       },
       {
         "en": "He dislodged the enemy troops.",
@@ -27945,8 +27945,8 @@
         "context": "戦争"
       },
       {
-        "en": "Wind dislodged the tiles.",
-        "ja": "風がタイルを外した。",
+        "en": "The strong autumn storm dislodged several tiles from the old roof.",
+        "ja": "強い秋の嵐が古い屋根からいくつかのタイルを外しました。",
         "context": "建物"
       }
     ],
@@ -28011,9 +28011,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The news dismayed everyone.",
-        "ja": "ニュースは全員を落胆させた。",
-        "context": "感情"
+        "en": "The unexpected job cuts dismayed workers throughout the entire company.",
+        "ja": "予期せぬ人員削減は会社全体の従業員を落胆させました。",
+        "context": "職場"
       },
       {
         "en": "She was dismayed by the result.",
@@ -28236,8 +28236,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Police dispersed the crowd.",
-        "ja": "警察は群衆を散らした。",
+        "en": "Police used barriers to disperse the crowd after the demonstration ended.",
+        "ja": "警察はデモが終わった後に群衆を散らすために柵を使いました。",
         "context": "社会"
       },
       {
@@ -28437,9 +28437,9 @@
         "context": "仕事"
       },
       {
-        "en": "Disposition is partly genetic.",
-        "ja": "気質は部分的に遺伝的だ。",
-        "context": "学術"
+        "en": "Her calm disposition helped her navigate even the most hostile negotiations.",
+        "ja": "彼女の落ち着いた気質は、最も険悪な交渉でも乗り越える助けになりました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -28469,9 +28469,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Minorities are disproportionately affected.",
-        "ja": "少数派は不均衡に影響を受けている。",
-        "context": "社会"
+        "en": "Low-income communities are disproportionately affected by environmental pollution.",
+        "ja": "低所得コミュニティは環境汚染によって不均衡に影響を受けています。",
+        "context": "環境"
       },
       {
         "en": "The poor bear disproportionately high costs.",
@@ -29208,14 +29208,14 @@
         "context": "教育"
       },
       {
-        "en": "Scientists distinguish between species.",
-        "ja": "科学者は種を区別する。",
-        "context": "生物"
+        "en": "Trained biologists can easily distinguish between closely related animal species.",
+        "ja": "訓練を受けた生物学者は近縁の動物種を簡単に区別できます。",
+        "context": "研究"
       },
       {
-        "en": "His work distinguished him.",
-        "ja": "彼の業績が彼を際立たせた。",
-        "context": "社会"
+        "en": "Her groundbreaking research distinguished her as a leader in the field.",
+        "ja": "彼女の画期的な研究がその分野のリーダーとして彼女を際立たせました。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -29585,13 +29585,13 @@
         "context": "経済"
       },
       {
-        "en": "He diversified his investments.",
-        "ja": "彼は投資を多様化した。",
-        "context": "金融"
+        "en": "A financial adviser recommended that he diversify his investment portfolio.",
+        "ja": "ファイナンシャルアドバイザーは投資ポートフォリオを多様化するよう彼に勧めました。",
+        "context": "投資"
       },
       {
-        "en": "Schools diversify learning methods.",
-        "ja": "学校は学習方法を多様化する。",
+        "en": "Progressive schools diversify learning methods to engage all types of students.",
+        "ja": "進歩的な学校はあらゆるタイプの生徒に対応するために学習方法を多様化します。",
         "context": "教育"
       }
     ],
@@ -30771,19 +30771,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Resources are dwindling fast.",
-        "ja": "資源は急速に減りつつある。",
+        "en": "Wild bird populations in the region are dwindling due to habitat loss.",
+        "ja": "生息地の喪失により、この地域の野鳥の個体数は徐々に減っています。",
         "context": "環境"
       },
       {
-        "en": "The population dwindled.",
-        "ja": "人口は徐々に減少した。",
-        "context": "社会"
+        "en": "The rural town's population has dwindled steadily over the past two decades.",
+        "ja": "その地方の町の人口は過去20年間で着実に減少しました。",
+        "context": "地域社会"
       },
       {
-        "en": "His savings dwindled away.",
-        "ja": "彼の貯蓄は徐々に消えた。",
-        "context": "経済"
+        "en": "His carefully saved money dwindled away after months of unemployment.",
+        "ja": "丁寧に貯めたお金は何ヶ月もの失業の後に徐々に消えていきました。",
+        "context": "生活"
       }
     ],
     "categories": [
@@ -31062,9 +31062,9 @@
         "context": "高2"
       },
       {
-        "en": "Ecological research studies ecosystems.",
-        "ja": "生態学研究は生態系を研究する。",
-        "context": "高2"
+        "en": "Ecological research helps us understand how ecosystems respond to climate change.",
+        "ja": "生態学研究は生態系が気候変動にどう反応するかの理解を助けます。",
+        "context": "環境科学"
       },
       {
         "en": "Human activities have ecological consequences.",
@@ -31712,9 +31712,9 @@
         "context": "仕事"
       },
       {
-        "en": "He elaborated his argument.",
-        "ja": "彼は議論を詳しく展開した。",
-        "context": "対話"
+        "en": "He elaborated his original argument with new data from recent studies.",
+        "ja": "彼は最近の研究の新しいデータで最初の議論を詳しく展開しました。",
+        "context": "研究"
       }
     ],
     "categories": [
@@ -32406,14 +32406,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The thief eluded police.",
-        "ja": "泥棒は警察から逃れた。",
+        "en": "The clever thief eluded police by disguising himself as a delivery driver.",
+        "ja": "賢い泥棒は配達員に変装して警察から逃れました。",
         "context": "犯罪"
       },
       {
-        "en": "The answer eludes me.",
-        "ja": "答えは私に掴めない。",
-        "context": "学習"
+        "en": "A complete solution to the complex problem still eludes the researchers.",
+        "ja": "その複雑な問題の完全な解決策はまだ研究者たちの手が届きません。",
+        "context": "研究"
       },
       {
         "en": "He eluded capture for years.",
@@ -32486,19 +32486,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Lincoln emancipated the slaves.",
-        "ja": "リンカーンは奴隷を解放した。",
+        "en": "President Lincoln emancipated enslaved people with a historic proclamation in 1863.",
+        "ja": "リンカーン大統領は1863年に歴史的な宣言で奴隷化された人々を解放しました。",
         "context": "歴史"
       },
       {
-        "en": "Women were emancipated legally.",
-        "ja": "女性は法的に解放された。",
+        "en": "Women were gradually emancipated through decades of legal reforms.",
+        "ja": "女性たちは数十年にわたる法的改革を通じて徐々に解放されていきました。",
         "context": "権利"
       },
       {
-        "en": "Education emancipates the mind.",
-        "ja": "教育は心を解放する。",
-        "context": "哲学"
+        "en": "Access to quality education can emancipate people from cycles of poverty.",
+        "ja": "質の高い教育へのアクセスは人々を貧困の連鎖から解放することができます。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -33231,14 +33231,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Education empowers individuals.",
-        "ja": "教育は個人に力を与える。",
-        "context": "社会"
+        "en": "Vocational training programs empower individuals to build better careers.",
+        "ja": "職業訓練プログラムは個人がより良い職業を築く力を与えます。",
+        "context": "教育"
       },
       {
-        "en": "The law empowered citizens.",
-        "ja": "法律は市民に権限を与えた。",
-        "context": "政治"
+        "en": "The new labor law empowered citizens to challenge unfair working conditions.",
+        "ja": "新しい労働法は市民が不公正な労働条件に異議を唱える権限を与えました。",
+        "context": "法律"
       },
       {
         "en": "She felt empowered by the speech.",
@@ -33618,14 +33618,14 @@
         "context": "金融"
       },
       {
-        "en": "She encumbered the property.",
-        "ja": "財産に負担を課した。",
-        "context": "日常"
+        "en": "She was warned not to encumber the property with additional loans.",
+        "ja": "彼女は追加のローンで不動産に負担を課さないよう警告されました。",
+        "context": "不動産"
       },
       {
-        "en": "He avoided encumbering it.",
-        "ja": "負担を課すことを避けた。",
-        "context": "日常"
+        "en": "He carefully avoided encumbering the asset with unnecessary financial obligations.",
+        "ja": "彼は不必要な財務的義務で資産に負担を課すことを慎重に避けました。",
+        "context": "投資"
       }
     ],
     "categories": [
@@ -33965,9 +33965,9 @@
         "context": "権利"
       },
       {
-        "en": "Enfranchising minorities strengthened democracy.",
-        "ja": "少数派に参政権を与えることが民主主義を強化しました。",
-        "context": "政治"
+        "en": "The reform aimed to enfranchise marginalized communities long excluded from civic life.",
+        "ja": "その改革は、市民生活から長く排除されてきた周縁化されたコミュニティに参政権を与えることを目指していました。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -34328,9 +34328,9 @@
         "context": "社会"
       },
       {
-        "en": "Historical enmity persists today.",
-        "ja": "歴史的な敵対心が今日も続いている。",
-        "context": "歴史"
+        "en": "The border dispute stirred deep enmity between the two neighboring nations.",
+        "ja": "国境紛争が隣接する二国間に深い憎悪をかき立てました。",
+        "context": "国際"
       },
       {
         "en": "The enmity was fueled by jealousy.",
@@ -34753,14 +34753,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The practice was entrenched.",
-        "ja": "その慣行は根付いた。",
-        "context": "文化"
+        "en": "Outdated bureaucratic procedures have become deeply entrenched in the organization.",
+        "ja": "時代遅れの官僚的な手続きが組織に深く根付いてしまっています。",
+        "context": "組織"
       },
       {
-        "en": "Old habits become entrenched.",
-        "ja": "古い習慣は定着する。",
-        "context": "心理"
+        "en": "Bad study habits often become entrenched if not corrected early.",
+        "ja": "悪い学習習慣は早期に修正されないとしばしば定着してしまいます。",
+        "context": "学習"
       },
       {
         "en": "The army entrenched its position.",
@@ -34796,9 +34796,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "Entrepreneurs drive economic innovation.",
-        "ja": "起業家は経済的革新を推進する。",
-        "context": "経済"
+        "en": "Young entrepreneurs in the tech sector are driving major economic innovation.",
+        "ja": "テクノロジー分野の若い起業家たちが主要な経済的革新を推進しています。",
+        "context": "ビジネス"
       },
       {
         "en": "Young entrepreneurs are rising globally.",
@@ -34870,19 +34870,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "She enumerated her reasons.",
-        "ja": "彼女は理由を列挙した。",
-        "context": "説明"
+        "en": "During the meeting, she clearly enumerated all her reasons for resigning.",
+        "ja": "会議中、彼女は辞職する理由をすべて明確に列挙しました。",
+        "context": "職場"
       },
       {
-        "en": "The law enumerates rights.",
-        "ja": "法律は権利を列挙する。",
+        "en": "The constitution enumerates the fundamental rights of every citizen.",
+        "ja": "憲法はすべての市民の基本的な権利を列挙しています。",
         "context": "法律"
       },
       {
-        "en": "He enumerated the items.",
-        "ja": "彼は項目を列挙した。",
-        "context": "学習"
+        "en": "The teacher asked students to enumerate the main causes of World War One.",
+        "ja": "教師は生徒に第一次世界大戦の主な原因を列挙するよう求めました。",
+        "context": "歴史"
       }
     ],
     "categories": [
@@ -35266,9 +35266,9 @@
         "context": "学術"
       },
       {
-        "en": "Einstein's equation changed physics.",
-        "ja": "アインシュタインの方程式は物理学を変えた。",
-        "context": "学術"
+        "en": "Einstein's famous equation changed humanity's understanding of energy and matter.",
+        "ja": "アインシュタインの有名な方程式はエネルギーと物質に対する人類の理解を変えました。",
+        "context": "物理学"
       }
     ],
     "categories": [
@@ -35299,9 +35299,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Piaget described cognitive equilibration.",
-        "ja": "ピアジェは認知的均衡化を説明した。",
-        "context": "高3"
+        "en": "Piaget argued that equilibration drives cognitive development in children.",
+        "ja": "ピアジェは、均衡化が子どもの認知発達を促進すると主張しました。",
+        "context": "心理学"
       },
       {
         "en": "Equilibration restores balance after disturbance.",
@@ -36064,14 +36064,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Residents evacuated the area.",
-        "ja": "住民は地域から避難した。",
+        "en": "Thousands of residents were ordered to evacuate the flood-prone coastal area.",
+        "ja": "数千人の住民が洪水の危険がある沿岸地域から避難するよう命じられました。",
         "context": "災害"
       },
       {
-        "en": "They evacuated the building.",
-        "ja": "彼らは建物から避難した。",
-        "context": "安全"
+        "en": "Firefighters rushed in to evacuate the building before flames spread further.",
+        "ja": "消防士たちは炎がさらに広がる前に建物から人を避難させるために急いで入りました。",
+        "context": "消防"
       },
       {
         "en": "The city was evacuated quickly.",
@@ -36483,14 +36483,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Archaeologists excavated the site.",
-        "ja": "考古学者はその場所を発掘した。",
-        "context": "歴史"
+        "en": "Archaeologists carefully excavated the ancient burial site over several seasons.",
+        "ja": "考古学者たちは数シーズンにわたって古代の埋葬地を丁寧に発掘しました。",
+        "context": "考古学"
       },
       {
-        "en": "Workers excavated the ruins.",
-        "ja": "作業員は遺跡を発掘した。",
-        "context": "文化"
+        "en": "Construction workers excavated the ruins accidentally while digging the foundation.",
+        "ja": "建設作業員たちは基礎を掘削中に偶然遺跡を発掘しました。",
+        "context": "建設"
       },
       {
         "en": "They excavated a buried city.",
@@ -36664,9 +36664,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "She excerpted key passages.",
-        "ja": "彼女は重要な節を抜粋した。",
-        "context": "学習"
+        "en": "The professor excerpted the most important passages for students to analyze.",
+        "ja": "教授は学生が分析するために最も重要な節を抜粋しました。",
+        "context": "授業"
       },
       {
         "en": "The book excerpted famous speeches.",
@@ -36674,9 +36674,9 @@
         "context": "文学"
       },
       {
-        "en": "He excerpted the report.",
-        "ja": "彼は報告書を抜粋した。",
-        "context": "仕事"
+        "en": "He excerpted the most relevant sections of the lengthy annual report.",
+        "ja": "彼は長い年次報告書の最も関連性の高い部分を抜粋しました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -37925,14 +37925,14 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "The data grew exponentially.",
-        "ja": "データは指数関数的に増加した。",
-        "context": "学術"
+        "en": "The number of internet users grew exponentially throughout the 1990s.",
+        "ja": "インターネットユーザー数は1990年代を通じて指数関数的に増加しました。",
+        "context": "歴史"
       },
       {
-        "en": "Technology advances exponentially.",
-        "ja": "テクノロジーは指数関数的に進歩する。",
-        "context": "科学"
+        "en": "Renewable energy capacity has expanded exponentially over the past decade.",
+        "ja": "再生可能エネルギーの容量は過去10年で指数関数的に拡大しました。",
+        "context": "環境"
       },
       {
         "en": "Costs rose exponentially with complexity.",
@@ -37995,9 +37995,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The jewelry was exquisite.",
-        "ja": "そのジュエリーは精巧だった。",
-        "context": "芸術"
+        "en": "The handcrafted jewelry displayed in the gallery window was truly exquisite.",
+        "ja": "ギャラリーのウィンドウに展示された手作りのジュエリーは実に精巧でした。",
+        "context": "工芸"
       },
       {
         "en": "She had exquisite taste in fashion.",
@@ -38301,8 +38301,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The criminal was extradited.",
-        "ja": "犯人は引き渡された。",
+        "en": "The suspect was extradited to face charges abroad.",
+        "ja": "容疑者は海外で起訴されるために引き渡されました。",
         "context": "国際"
       },
       {
@@ -38311,8 +38311,8 @@
         "context": "法律"
       },
       {
-        "en": "Countries extradite fugitives.",
-        "ja": "国々は逃亡者を引き渡す。",
+        "en": "The two nations agreed to extradite criminal suspects.",
+        "ja": "両国は犯罪容疑者を引き渡すことに合意しました。",
         "context": "政治"
       }
     ],
@@ -38536,9 +38536,9 @@
         "context": "文学"
       },
       {
-        "en": "His exuberance was infectious.",
-        "ja": "彼の活気は人に伝染した。",
-        "context": "社会"
+        "en": "The child's exuberance at the theme park was impossible to contain.",
+        "ja": "テーマパークでの子どもの活力はどうにも抑えられないほどでした。",
+        "context": "日常"
       }
     ],
     "categories": [
@@ -41422,8 +41422,8 @@
         "context": "スポーツ"
       },
       {
-        "en": "She forfeited her deposit.",
-        "ja": "彼女は保証金を失った。",
+        "en": "She forfeited her deposit by canceling the reservation.",
+        "ja": "彼女は予約をキャンセルしたことで保証金を失いました。",
         "context": "経済"
       }
     ],
@@ -41946,8 +41946,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "He fractured his arm.",
-        "ja": "彼は腕を骨折した。",
+        "en": "He fractured his arm during the fall.",
+        "ja": "彼は転倒して腕を骨折しました。",
         "context": "医療"
       },
       {
@@ -42943,8 +42943,8 @@
         "context": "社会"
       },
       {
-        "en": "Metal fuses when heated.",
-        "ja": "金属は熱せられると溶ける。",
+        "en": "Metal fuses together when exposed to extreme heat.",
+        "ja": "金属は極度の熱にさらされると融合します。",
         "context": "工業"
       }
     ],
@@ -46664,13 +46664,13 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Hedge against currency risk.",
-        "ja": "為替リスクをヘッジして。",
-        "context": "日常"
+        "en": "The company decided to hedge against currency risk by diversifying its assets.",
+        "ja": "その会社は資産を分散させることで為替リスクを回避することにしました。",
+        "context": "金融"
       },
       {
-        "en": "She hedged her investment.",
-        "ja": "投資をヘッジした。",
+        "en": "She hedged her investment by purchasing government bonds.",
+        "ja": "彼女は国債を購入して投資リスクをヘッジしました。",
         "context": "日常"
       },
       {
@@ -47244,8 +47244,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "They hoisted the flag.",
-        "ja": "彼らは旗を掲げた。",
+        "en": "They hoisted the flag at the opening ceremony.",
+        "ja": "彼らは開会式で旗を掲げました。",
         "context": "文化"
       },
       {
@@ -48056,13 +48056,13 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Scientists hypothesize causes.",
-        "ja": "科学者は原因の仮説を立てる。",
+        "en": "Scientists hypothesize causes based on experimental evidence.",
+        "ja": "科学者たちは実験的証拠に基づいて原因の仮説を立てます。",
         "context": "研究"
       },
       {
-        "en": "She hypothesized a solution.",
-        "ja": "彼女は解決策の仮説を立てた。",
+        "en": "She hypothesized a solution that no one had considered before.",
+        "ja": "彼女は誰も考えたことがなかった解決策の仮説を立てました。",
         "context": "学術"
       },
       {
@@ -48556,8 +48556,8 @@
         "context": "教育"
       },
       {
-        "en": "Candles illuminated the church.",
-        "ja": "ろうそくが教会を照らした。",
+        "en": "Candles illuminated the old church during the evening service.",
+        "ja": "夕べの礼拝の間、ろうそくが古い教会を照らしました。",
         "context": "宗教"
       }
     ],
@@ -49555,8 +49555,8 @@
         "context": "法律"
       },
       {
-        "en": "They implored for help.",
-        "ja": "彼らは助けを懇願した。",
+        "en": "They implored the authorities for urgent help.",
+        "ja": "彼らは当局に緊急の援助を懇願しました。",
         "context": "緊急"
       }
     ],
@@ -49682,9 +49682,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "War impoverishes communities.",
-        "ja": "戦争はコミュニティを貧しくする。",
-        "context": "社会"
+        "en": "Prolonged conflict tends to impoverish entire generations.",
+        "ja": "長引く紛争は世代全体を貧しくする傾向があります。",
+        "context": "国際"
       },
       {
         "en": "The policy impoverished rural areas.",
@@ -49692,9 +49692,9 @@
         "context": "経済"
       },
       {
-        "en": "Neglect impoverishes cultural heritage.",
-        "ja": "無視は文化遺産を貧しくする。",
-        "context": "文化"
+        "en": "Years of budget cuts have impoverished public libraries across the country.",
+        "ja": "何年もの予算削減が全国の公立図書館を貧しくしてきました。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -49995,18 +49995,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "She improvised a speech.",
-        "ja": "彼女はスピーチを即興した。",
+        "en": "She improvised a speech when the prepared notes went missing.",
+        "ja": "彼女は準備したメモがなくなったとき、スピーチを即興しました。",
         "context": "対話"
       },
       {
-        "en": "Jazz musicians often improvise.",
-        "ja": "ジャズミュージシャンはよく即興する。",
+        "en": "Jazz musicians often improvise during live performances.",
+        "ja": "ジャズミュージシャンはライブ演奏中によく即興します。",
         "context": "音楽"
       },
       {
-        "en": "He improvised a shelter.",
-        "ja": "彼は避難所を即興で作った。",
+        "en": "He improvised a shelter using fallen branches.",
+        "ja": "彼は倒れた枝を使って避難所を即興で作りました。",
         "context": "生存"
       }
     ],
@@ -51522,9 +51522,9 @@
         "context": "会話"
       },
       {
-        "en": "The audience was incredulous.",
-        "ja": "聴衆は疑い深かった。",
-        "context": "仕事"
+        "en": "She remained incredulous even after seeing the evidence with her own eyes.",
+        "ja": "彼女は自分の目で証拠を見た後でも疑い深いままでした。",
+        "context": "日常"
       }
     ],
     "categories": [
@@ -52196,14 +52196,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Industrialization changed working conditions.",
-        "ja": "産業化は労働条件を変えました。",
-        "context": "高2"
+        "en": "Industrialization dramatically changed working conditions in the 19th century.",
+        "ja": "産業化は19世紀の労働条件を劇的に変えました。",
+        "context": "歴史"
       },
       {
-        "en": "Rapid industrialization caused pollution.",
-        "ja": "急速な産業化は汚染を引き起こしました。",
-        "context": "高2"
+        "en": "Rapid industrialization caused severe air and water pollution.",
+        "ja": "急速な産業化は深刻な大気・水質汚染を引き起こしました。",
+        "context": "環境"
       },
       {
         "en": "Industrialization began in 18th century Britain.",
@@ -52617,8 +52617,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Infidelity destroyed their marriage.",
-        "ja": "不貞行為が彼らの結婚を破壊した。",
+        "en": "His infidelity shattered the trust they had carefully built over fifteen years.",
+        "ja": "彼の不貞行為は、二人が15年かけて丁寧に築いてきた信頼を打ち砕きました。",
         "context": "家庭"
       },
       {
@@ -52650,8 +52650,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Spies infiltrated the group.",
-        "ja": "スパイはグループに潜入した。",
+        "en": "Undercover agents infiltrated the criminal organization.",
+        "ja": "潜入捜査官が犯罪組織に潜入しました。",
         "context": "政治"
       },
       {
@@ -53154,13 +53154,13 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Cold inhibits bacterial growth.",
-        "ja": "寒さはバクテリアの増殖を抑制する。",
+        "en": "Cold temperatures inhibit bacterial growth effectively.",
+        "ja": "低温はバクテリアの増殖を効果的に抑制します。",
         "context": "生物"
       },
       {
-        "en": "Fear inhibits creativity.",
-        "ja": "恐れは創造性を抑制する。",
+        "en": "Constant fear inhibits creative thinking in the workplace.",
+        "ja": "絶え間ない恐れは職場での創造的思考を抑制します。",
         "context": "心理"
       },
       {
@@ -53969,18 +53969,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "He instigated the riot.",
-        "ja": "彼は暴動を扇動した。",
+        "en": "The radical leader instigated the riot that spread across the city.",
+        "ja": "過激派の指導者が都市全体に広がった暴動を扇動しました。",
         "context": "歴史"
       },
       {
-        "en": "She instigated the conflict.",
-        "ja": "彼女は紛争を扇動した。",
+        "en": "The opposition party instigated the border conflict through provocative rhetoric.",
+        "ja": "野党は挑発的な言辞を用いて国境紛争を扇動しました。",
         "context": "政治"
       },
       {
-        "en": "Media instigated public anger.",
-        "ja": "メディアは世論の怒りを扇動した。",
+        "en": "Certain media outlets instigated public anger with misleading reports.",
+        "ja": "一部のメディアは誤解を招く報道で世論の怒りを扇動しました。",
         "context": "情報"
       }
     ],
@@ -54082,18 +54082,18 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The practice was institutionalized.",
-        "ja": "その慣行は制度化されました。",
+        "en": "The new safety practice was institutionalized across all departments.",
+        "ja": "新しい安全慣行はすべての部署で制度化されました。",
         "context": "社会"
       },
       {
-        "en": "Reform was institutionalized.",
-        "ja": "改革は制度化されました。",
+        "en": "Political reform was institutionalized through a series of new laws.",
+        "ja": "政治改革は一連の新法を通じて制度化されました。",
         "context": "政治"
       },
       {
-        "en": "They institutionalized education.",
-        "ja": "彼らは教育を制度化しました。",
+        "en": "They institutionalized public education to ensure access for all children.",
+        "ja": "彼らはすべての子供たちの就学機会を確保するために公教育を制度化しました。",
         "context": "歴史"
       }
     ],
@@ -54359,8 +54359,8 @@
         "context": "学術"
       },
       {
-        "en": "Social integration promotes equality.",
-        "ja": "社会統合は平等を促進します。",
+        "en": "Social integration of diverse communities promotes equality and mutual respect.",
+        "ja": "多様なコミュニティの社会統合は平等と相互尊重を促進します。",
         "context": "学術"
       },
       {
@@ -54560,14 +54560,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Global interdependence is growing.",
-        "ja": "グローバルな相互依存が高まっている。",
-        "context": "高3"
+        "en": "The pandemic exposed the profound interdependence of modern supply chains.",
+        "ja": "パンデミックは、現代のサプライチェーンの深い相互依存を露わにしました。",
+        "context": "経済"
       },
       {
-        "en": "Ecological interdependence sustains ecosystems.",
-        "ja": "生態学的相互依存は生態系を維持する。",
-        "context": "高3"
+        "en": "Biologists study the interdependence of species within coral reef ecosystems.",
+        "ja": "生物学者はサンゴ礁の生態系における種の相互依存を研究しています。",
+        "context": "科学"
       },
       {
         "en": "Nations recognize their economic interdependence.",
@@ -54829,8 +54829,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Police interrogated the suspect.",
-        "ja": "警察は容疑者を尋問した。",
+        "en": "Police interrogated the suspect for several hours at the station.",
+        "ja": "警察は容疑者を署で数時間にわたり尋問しました。",
         "context": "法律"
       },
       {
@@ -54839,8 +54839,8 @@
         "context": "捜査"
       },
       {
-        "en": "Agents interrogated the prisoner.",
-        "ja": "工作員は囚人を尋問した。",
+        "en": "Intelligence agents interrogated the prisoner to gather vital information.",
+        "ja": "情報工作員は重要な情報を収集するために囚人を尋問しました。",
         "context": "戦争"
       }
     ],
@@ -54904,13 +54904,13 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "He intimidated the witnesses.",
-        "ja": "彼は証人を脅かした。",
+        "en": "The defendant attempted to intimidate the witnesses before the trial.",
+        "ja": "被告は裁判前に証人を脅迫しようとしました。",
         "context": "法律"
       },
       {
-        "en": "Bullies intimidate weaker students.",
-        "ja": "いじめっ子は弱い生徒を脅かす。",
+        "en": "Bullies often intimidate weaker students to assert their dominance.",
+        "ja": "いじめっ子はしばしば優位性を示すために弱い生徒を威嚇します。",
         "context": "学校"
       },
       {
@@ -55327,8 +55327,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Floods inundated the town.",
-        "ja": "洪水は町を氾濫させた。",
+        "en": "Seasonal floods inundated the low-lying town each spring.",
+        "ja": "季節的な洪水が毎春その低地の町を浸水させました。",
         "context": "自然"
       },
       {
@@ -55660,8 +55660,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "He inverted the image.",
-        "ja": "彼は画像を逆にした。",
+        "en": "He inverted the image to create a visual contrast.",
+        "ja": "彼は視覚的なコントラストを作るために画像を反転させました。",
         "context": "技術"
       },
       {
@@ -58614,9 +58614,9 @@
         "context": "自然"
       },
       {
-        "en": "Leopards are excellent climbers.",
-        "ja": "ヒョウは優れた木登りの名手です。",
-        "context": "動物"
+        "en": "A leopard can haul prey twice its own weight up a tree.",
+        "ja": "ヒョウは自分の体重の2倍の獲物を木の上まで運ぶことができます。",
+        "context": "自然"
       },
       {
         "en": "The zoo welcomed a baby leopard last week.",
@@ -59062,9 +59062,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Liberalism values individual rights.",
-        "ja": "自由主義は個人の権利を重視する。",
-        "context": "高2"
+        "en": "Classical liberalism values individual rights and limited government.",
+        "ja": "古典的自由主義は個人の権利と政府の制限を重視します。",
+        "context": "政治"
       },
       {
         "en": "Political liberalism emerged in the Enlightenment.",
@@ -59945,9 +59945,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Buy food grown locally.",
-        "ja": "地元で育てられた食べ物を買いなさい。",
-        "context": "環境"
+        "en": "Restaurants that source ingredients locally tend to have fresher menus.",
+        "ja": "食材を地元で調達するレストランは、より新鮮なメニューを持つ傾向があります。",
+        "context": "食"
       },
       {
         "en": "The problem was solved locally.",
@@ -59955,8 +59955,8 @@
         "context": "社会"
       },
       {
-        "en": "She is well-known locally.",
-        "ja": "彼女は地元でよく知られている。",
+        "en": "The initiative was funded locally without any support from the central government.",
+        "ja": "その取り組みは、中央政府からの支援なしに地元で資金を集めて実施されました。",
         "context": "社会"
       }
     ],
@@ -60609,9 +60609,9 @@
         "context": "安全"
       },
       {
-        "en": "Agricultural machinery saves time.",
-        "ja": "農業機械は時間を節約する。",
-        "context": "日常"
+        "en": "The factory installed new machinery to double its production capacity.",
+        "ja": "工場は生産能力を2倍にするために新しい機械設備を導入しました。",
+        "context": "産業"
       }
     ],
     "categories": [
@@ -63591,9 +63591,9 @@
         "context": "学術"
       },
       {
-        "en": "Minimize the objective function.",
-        "ja": "目的関数を最小化してください。",
-        "context": "学術"
+        "en": "The new algorithm was designed to minimize computational errors in data processing.",
+        "ja": "新しいアルゴリズムは、データ処理における計算エラーを最小化するよう設計されました。",
+        "context": "技術"
       }
     ],
     "categories": [
@@ -67839,8 +67839,8 @@
         "context": "日常"
       },
       {
-        "en": "Notwithstanding criticism, he continued.",
-        "ja": "批判にもかかわらず、彼は続けた。",
+        "en": "Notwithstanding sharp criticism, he continued pursuing his policy.",
+        "ja": "厳しい批判にもかかわらず、彼は自分の政策を追求し続けました。",
         "context": "会話"
       }
     ],
@@ -73087,8 +73087,8 @@
         "context": "建物"
       },
       {
-        "en": "Partition caused great suffering.",
-        "ja": "分割は大きな苦しみをもたらした。",
+        "en": "The partition of the territory caused great suffering among local residents.",
+        "ja": "領土の分割は地元住民に大きな苦しみをもたらしました。",
         "context": "社会"
       }
     ],
@@ -73274,8 +73274,8 @@
         "context": "経済"
       },
       {
-        "en": "Patents protect intellectual property.",
-        "ja": "特許は知的財産を守る。",
+        "en": "Patents protect intellectual property and reward innovation.",
+        "ja": "特許は知的財産を保護し、イノベーションに報います。",
         "context": "法律"
       }
     ],
@@ -73838,8 +73838,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Peasants worked the land.",
-        "ja": "農民は土地を耕した。",
+        "en": "Peasants worked the land from dawn to dusk under feudal rule.",
+        "ja": "農民たちは封建制度のもとで夜明けから日没まで土地を耕しました。",
         "context": "歴史"
       },
       {
@@ -74602,8 +74602,8 @@
         "context": "権利"
       },
       {
-        "en": "Refugees fled persecution.",
-        "ja": "難民は迫害から逃げた。",
+        "en": "Many refugees fled their homeland to escape religious persecution.",
+        "ja": "多くの難民が宗教的迫害から逃れるために故郷を離れました。",
         "context": "社会"
       }
     ],
@@ -75036,13 +75036,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She signed the petition.",
-        "ja": "彼女は請願書に署名した。",
+        "en": "She signed the petition to protect the neighborhood park.",
+        "ja": "彼女は近所の公園を守るための請願書に署名しました。",
         "context": "権利"
       },
       {
-        "en": "Citizens submitted a petition.",
-        "ja": "市民は請願書を提出した。",
+        "en": "Thousands of citizens submitted a petition to the local government.",
+        "ja": "数千人の市民が地方政府に請願書を提出しました。",
         "context": "政治"
       },
       {
@@ -75654,8 +75654,8 @@
         "context": "文化"
       },
       {
-        "en": "Pilgrims travel great distances.",
-        "ja": "巡礼者は長距離を旅する。",
+        "en": "Devoted pilgrims travel great distances to reach sacred sites.",
+        "ja": "敬虔な巡礼者たちは聖地に到達するために長距離を旅します。",
         "context": "歴史"
       }
     ],
@@ -76552,8 +76552,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The army committed plunder.",
-        "ja": "軍は略奪を行った。",
+        "en": "The invading army committed widespread plunder across the region.",
+        "ja": "侵略軍はその地域全体で広範な略奪を行いました。",
         "context": "歴史"
       },
       {
@@ -76562,8 +76562,8 @@
         "context": "歴史"
       },
       {
-        "en": "Colonizers engaged in plunder.",
-        "ja": "植民地支配者は略奪を行った。",
+        "en": "European colonizers systematically engaged in the plunder of indigenous lands.",
+        "ja": "ヨーロッパの植民地支配者たちは先住民の土地の略奪を組織的に行いました。",
         "context": "社会"
       }
     ],
@@ -76780,9 +76780,9 @@
         "context": "高3"
       },
       {
-        "en": "Social polarization deepens inequality.",
-        "ja": "社会的二極化は不平等を深める。",
-        "context": "高3"
+        "en": "Economic polarization has widened the gap between urban and rural communities.",
+        "ja": "経済的二極化が都市と農村のコミュニティの格差を広げてきました。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -77227,8 +77227,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The populace demanded change.",
-        "ja": "民衆は変化を要求した。",
+        "en": "The oppressed populace finally demanded sweeping political change.",
+        "ja": "抑圧された民衆はついに抜本的な政治改革を要求しました。",
         "context": "政治"
       },
       {
@@ -77237,8 +77237,8 @@
         "context": "社会"
       },
       {
-        "en": "The populace was discontent.",
-        "ja": "民衆は不満を持っていた。",
+        "en": "The populace grew increasingly discontent with the government's inaction.",
+        "ja": "政府の不作為に民衆はますます不満を募らせました。",
         "context": "歴史"
       }
     ],
@@ -77647,8 +77647,8 @@
         "context": "学術"
       },
       {
-        "en": "Euclid's postulates are fundamental.",
-        "ja": "ユークリッドの仮定は基本的だ。",
+        "en": "Euclid's five postulates form the foundation of classical geometry.",
+        "ja": "ユークリッドの5つの仮定は古典幾何学の基礎を形成しています。",
         "context": "数学"
       },
       {
@@ -78077,8 +78077,8 @@
         "context": "選挙"
       },
       {
-        "en": "Police patrol every precinct.",
-        "ja": "警察はすべての管轄区域を巡回する。",
+        "en": "Officers regularly patrol every precinct to maintain public safety.",
+        "ja": "警察官は公共の安全を維持するために全管轄区域を定期的に巡回します。",
         "context": "治安"
       },
       {
@@ -78115,8 +78115,8 @@
         "context": "自然"
       },
       {
-        "en": "High precipitation causes flooding.",
-        "ja": "高い降水量は洪水を引き起こす。",
+        "en": "Unusually high precipitation this season has caused widespread flooding.",
+        "ja": "今季の異常に高い降水量が広範な洪水を引き起こしました。",
         "context": "環境"
       }
     ],
@@ -79280,13 +79280,13 @@
         "context": "医療"
       },
       {
-        "en": "She filled her prescription.",
-        "ja": "彼女は処方箋の薬を受け取った。",
+        "en": "She visited the pharmacy to fill her prescription after the doctor's appointment.",
+        "ja": "彼女は診察後に処方箋の薬を受け取るために薬局を訪れました。",
         "context": "薬"
       },
       {
-        "en": "Prescriptions regulate drug use.",
-        "ja": "処方箋は薬の使用を規制する。",
+        "en": "Strict prescriptions regulate the distribution of controlled drugs.",
+        "ja": "厳格な処方箋が規制薬物の配布を管理します。",
         "context": "法律"
       }
     ],
@@ -79361,8 +79361,8 @@
         "context": "環境"
       },
       {
-        "en": "Cultural preservation matters.",
-        "ja": "文化の保存は重要だ。",
+        "en": "Cultural preservation of traditional crafts matters greatly to local communities.",
+        "ja": "伝統工芸の文化的保存は地域コミュニティにとって非常に重要です。",
         "context": "文化"
       },
       {
@@ -80099,8 +80099,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Proceeds went to charity.",
-        "ja": "収益は慈善団体に寄付された。",
+        "en": "All proceeds from the concert went directly to charity.",
+        "ja": "コンサートの収益はすべて慈善団体に直接寄付されました。",
         "context": "経済"
       },
       {
@@ -80170,8 +80170,8 @@
         "context": "政治"
       },
       {
-        "en": "The proclamation ended slavery.",
-        "ja": "その宣言は奴隷制を終わらせた。",
+        "en": "Lincoln's historic proclamation effectively ended slavery in the Confederate states.",
+        "ja": "リンカーンの歴史的な宣言は南部連合諸州の奴隷制を実質的に終わらせました。",
         "context": "歴史"
       },
       {
@@ -80775,8 +80775,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Economic projections were positive.",
-        "ja": "経済予測は前向きだった。",
+        "en": "The government's economic projections for next year were surprisingly positive.",
+        "ja": "来年の政府の経済予測は驚くほど前向きでした。",
         "context": "経済"
       },
       {
@@ -81015,8 +81015,8 @@
         "context": "ビジネス"
       },
       {
-        "en": "Promotional offers attract customers.",
-        "ja": "販促オファーが顧客を引き付ける。",
+        "en": "Well-designed promotional offers consistently attract new customers.",
+        "ja": "よく設計された販促オファーは継続的に新しい顧客を引き付けます。",
         "context": "ビジネス"
       }
     ],
@@ -81197,8 +81197,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The prophecy came true.",
-        "ja": "予言は現実になった。",
+        "en": "The ancient prophecy finally came true after centuries of waiting.",
+        "ja": "その古代の予言は何世紀もの待機の末についに現実となりました。",
         "context": "宗教"
       },
       {
@@ -81207,8 +81207,8 @@
         "context": "文化"
       },
       {
-        "en": "She fulfilled the prophecy.",
-        "ja": "彼女は予言を果たした。",
+        "en": "She fulfilled the prophecy by restoring peace to the divided kingdom.",
+        "ja": "彼女は分断された王国に平和を取り戻すことで予言を果たしました。",
         "context": "文学"
       }
     ],
@@ -81386,8 +81386,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The prosecution presented evidence.",
-        "ja": "起訴側は証拠を提出した。",
+        "en": "The prosecution presented compelling evidence to the jury.",
+        "ja": "検察側は陪審員に説得力ある証拠を提示しました。",
         "context": "法律"
       },
       {
@@ -81396,8 +81396,8 @@
         "context": "犯罪"
       },
       {
-        "en": "The prosecution argued strongly.",
-        "ja": "起訴側は強く主張した。",
+        "en": "The prosecution argued strongly that the accused had acted with premeditation.",
+        "ja": "検察側は被告が計画的に行動したと強く主張しました。",
         "context": "裁判"
       }
     ],
@@ -81566,18 +81566,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Follow the safety protocol.",
-        "ja": "安全手順に従ってください。",
+        "en": "All laboratory staff must strictly follow the safety protocol.",
+        "ja": "すべての研究室スタッフは安全手順を厳守しなければなりません。",
         "context": "科学"
       },
       {
-        "en": "Diplomatic protocol was observed.",
-        "ja": "外交的手続きが守られました。",
+        "en": "Diplomatic protocol was carefully observed throughout the summit meeting.",
+        "ja": "首脳会議を通じて外交的礼儀作法が丁寧に守られました。",
         "context": "政治"
       },
       {
-        "en": "The protocol ensures consistency.",
-        "ja": "手順は一貫性を確保します。",
+        "en": "The standardized protocol ensures consistency across all research sites.",
+        "ja": "標準化された手順はすべての研究拠点での一貫性を確保します。",
         "context": "仕事"
       }
     ],
@@ -81677,8 +81677,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The provision protects citizens.",
-        "ja": "その条項は市民を守る。",
+        "en": "The new legal provision protects citizens from unfair eviction.",
+        "ja": "新しい法的条項は市民を不当な立ち退きから守ります。",
         "context": "法律"
       },
       {
@@ -81886,8 +81886,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She voted by proxy.",
-        "ja": "彼女は代理で投票した。",
+        "en": "Unable to attend the meeting, she voted by proxy.",
+        "ja": "会議に出席できなかったため、彼女は代理で投票しました。",
         "context": "政治"
       },
       {
@@ -81896,8 +81896,8 @@
         "context": "仕事"
       },
       {
-        "en": "Proxy wars were common.",
-        "ja": "代理戦争は一般的だった。",
+        "en": "During the Cold War, proxy wars were fought on behalf of superpowers.",
+        "ja": "冷戦中、代理戦争が超大国に代わって戦われました。",
         "context": "歴史"
       }
     ],
@@ -82975,8 +82975,8 @@
         "context": "仕事"
       },
       {
-        "en": "Quotas ensure equal representation.",
-        "ja": "割り当ては平等な代表を確保します。",
+        "en": "Gender quotas are designed to ensure equal representation in parliament.",
+        "ja": "ジェンダー割当制度は議会での平等な代表を確保するために設計されています。",
         "context": "政治"
       }
     ],
@@ -83729,8 +83729,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She explained the rationale.",
-        "ja": "彼女は根拠を説明した。",
+        "en": "She clearly explained the rationale behind her decision to the board.",
+        "ja": "彼女は取締役会に自分の決定の論理的根拠を明確に説明しました。",
         "context": "学習"
       },
       {
@@ -83819,9 +83819,9 @@
         "context": "学術"
       },
       {
-        "en": "Rationality guides decision-making processes.",
-        "ja": "合理性は意思決定プロセスを導く。",
-        "context": "学術"
+        "en": "Critics argue that pure rationality fails to account for emotional drivers of behavior.",
+        "ja": "批評家たちは、純粋な合理性では行動の感情的動因を説明できないと主張しています。",
+        "context": "哲学"
       }
     ],
     "categories": [
@@ -84105,8 +84105,8 @@
         "context": "社会"
       },
       {
-        "en": "The rebellion sought freedom.",
-        "ja": "反乱は自由を求めた。",
+        "en": "The armed rebellion sought freedom from decades of colonial rule.",
+        "ja": "武装反乱は数十年にわたる植民地支配からの自由を求めました。",
         "context": "政治"
       }
     ],
@@ -84247,18 +84247,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "Track the accounts receivable.",
-        "ja": "売掛金を追跡して。",
+        "en": "The finance team updates the accounts receivable ledger every Monday.",
+        "ja": "財務チームは毎月曜日に売掛金台帳を更新します。",
         "context": "金融"
       },
       {
-        "en": "She collected receivables.",
-        "ja": "売掛金を回収した。",
+        "en": "She diligently collected all outstanding receivables before the quarter ended.",
+        "ja": "彼女は四半期が終わる前に未収の売掛金をすべて丁寧に回収しました。",
         "context": "金融"
       },
       {
-        "en": "He reported on receivables.",
-        "ja": "売掛金を報告した。",
+        "en": "He submitted a detailed report on the company's receivables to management.",
+        "ja": "彼は会社の売掛金に関する詳細な報告書を経営陣に提出しました。",
         "context": "金融"
       }
     ],
@@ -85247,8 +85247,8 @@
         "context": "政治"
       },
       {
-        "en": "Voters approved the referendum.",
-        "ja": "有権者は国民投票を承認しました。",
+        "en": "A majority of voters approved the referendum on constitutional reform.",
+        "ja": "有権者の過半数が憲法改正に関する国民投票を承認しました。",
         "context": "民主主義"
       },
       {
@@ -85441,18 +85441,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The Reformation changed Christianity.",
-        "ja": "宗教改革はキリスト教を変えた。",
+        "en": "The Protestant Reformation changed the course of Christianity in Europe.",
+        "ja": "プロテスタント宗教改革はヨーロッパのキリスト教の歩みを変えました。",
         "context": "歴史"
       },
       {
-        "en": "Social reformation takes generations.",
-        "ja": "社会改革には世代を超えた時間がかかる。",
+        "en": "Meaningful social reformation takes more than one generation to achieve.",
+        "ja": "意味のある社会改革を達成するには一世代以上かかります。",
         "context": "社会"
       },
       {
-        "en": "Educational reformation is ongoing.",
-        "ja": "教育改革は進行中だ。",
+        "en": "Educational reformation aimed at closing the achievement gap is ongoing.",
+        "ja": "学力格差を縮めることを目指した教育改革は現在も進行中です。",
         "context": "教育"
       }
     ],
@@ -85823,8 +85823,8 @@
         "context": "医療"
       },
       {
-        "en": "Rehabilitation helps ex-convicts.",
-        "ja": "更生は元受刑者を助ける。",
+        "en": "Community-based rehabilitation programs help ex-convicts reintegrate into society.",
+        "ja": "地域に根ざしたリハビリプログラムは元受刑者が社会に再統合するのを助けます。",
         "context": "社会"
       },
       {
@@ -86358,8 +86358,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She acted with reluctance.",
-        "ja": "彼女は気乗りしない様子で行動しました。",
+        "en": "She acted with obvious reluctance when asked to lead the new project.",
+        "ja": "彼女は新しいプロジェクトを率いるよう求められたとき、明らかに気乗りしない様子で行動しました。",
         "context": "感情"
       },
       {
@@ -86597,9 +86597,9 @@
         "context": "歴史"
       },
       {
-        "en": "Only a remnant remained.",
-        "ja": "残存物だけが残った。",
-        "context": "日常"
+        "en": "After the fire, only a small remnant of the ancient manuscript remained.",
+        "ja": "火災の後、古代写本のわずかな残存物だけが残りました。",
+        "context": "歴史"
       }
     ],
     "categories": [
@@ -86658,8 +86658,8 @@
         "context": "歴史"
       },
       {
-        "en": "A cultural renaissance occurred.",
-        "ja": "文化的復興が起きた。",
+        "en": "A remarkable cultural renaissance occurred in the city during the 1990s.",
+        "ja": "1990年代にその都市で目覚ましい文化的復興が起きました。",
         "context": "芸術"
       },
       {
@@ -86807,18 +86807,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The building underwent renovation.",
-        "ja": "建物は改修を受けた。",
+        "en": "The historic building underwent extensive renovation to restore its original beauty.",
+        "ja": "その歴史的建物は元の美しさを取り戻すために大規模な改修を行いました。",
         "context": "建築"
       },
       {
-        "en": "Renovation improved the school.",
-        "ja": "改修によって学校が改善された。",
+        "en": "Renovation of the old school building significantly improved the learning environment.",
+        "ja": "古い校舎の改修によって学習環境が著しく改善されました。",
         "context": "教育"
       },
       {
-        "en": "Major renovation was needed.",
-        "ja": "大規模な改修が必要だった。",
+        "en": "Major renovation was needed to bring the aging facility up to safety standards.",
+        "ja": "老朽化した施設を安全基準に適合させるには大規模な改修が必要でした。",
         "context": "日常"
       }
     ],
@@ -86850,8 +86850,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She achieved international renown.",
-        "ja": "国際的な名声を得た。",
+        "en": "She achieved international renown for her groundbreaking research in genetics.",
+        "ja": "彼女は遺伝学における画期的な研究で国際的な名声を得ました。",
         "context": "ビジネス"
       },
       {
@@ -87064,8 +87064,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Germany paid war reparations.",
-        "ja": "ドイツは戦争賠償金を支払った。",
+        "en": "Germany was required to pay substantial war reparations after World War I.",
+        "ja": "ドイツは第一次世界大戦後に多額の戦争賠償金を支払うことが求められました。",
         "context": "歴史"
       },
       {
@@ -87074,8 +87074,8 @@
         "context": "社会"
       },
       {
-        "en": "The company made reparations.",
-        "ja": "会社は賠償を行った。",
+        "en": "The company made reparations to communities harmed by its environmental negligence.",
+        "ja": "その会社は環境上の過失によって被害を受けたコミュニティに賠償を行いました。",
         "context": "法律"
       }
     ],
@@ -87101,19 +87101,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Repatriate the profits.",
-        "ja": "利益を本国送還して。",
+        "en": "The multinational decided to repatriate its overseas profits to reduce tax burden.",
+        "ja": "その多国籍企業は税負担を軽減するために海外利益を本国送還することにしました。",
+        "context": "金融"
+      },
+      {
+        "en": "She repatriated the investment funds after the project was completed.",
+        "ja": "彼女はプロジェクト完了後に投資資金を本国送還しました。",
         "context": "日常"
       },
       {
-        "en": "She repatriated the funds.",
-        "ja": "資金を本国送還した。",
-        "context": "日常"
-      },
-      {
-        "en": "He repatriated earnings.",
-        "ja": "収益を本国送還した。",
-        "context": "日常"
+        "en": "He repatriated his overseas earnings to reinvest in domestic operations.",
+        "ja": "彼は国内事業への再投資のために海外収益を本国送還しました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -87396,18 +87396,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Repression silences opposition.",
-        "ja": "抑圧は反対意見を黙らせる。",
+        "en": "Political repression silences dissenting voices in authoritarian regimes.",
+        "ja": "政治的抑圧は権威主義的な体制における反対意見を黙らせます。",
         "context": "政治"
       },
       {
-        "en": "Political repression was widespread.",
-        "ja": "政治的抑圧は広まっていた。",
+        "en": "Political repression was widespread under the military dictatorship.",
+        "ja": "軍事独裁政権下では政治的抑圧が広まっていました。",
         "context": "歴史"
       },
       {
-        "en": "Psychological repression causes harm.",
-        "ja": "心理的抑圧は害をもたらす。",
+        "en": "Psychological repression of traumatic memories can cause long-term harm.",
+        "ja": "外傷的記憶の心理的抑圧は長期的な害をもたらす可能性があります。",
         "context": "心理"
       }
     ],
@@ -87515,8 +87515,8 @@
         "context": "芸術"
       },
       {
-        "en": "Unauthorized reproduction is illegal.",
-        "ja": "無断複製は違法だ。",
+        "en": "Unauthorized reproduction of copyrighted material is strictly illegal.",
+        "ja": "著作権で保護された素材の無断複製は厳しく違法です。",
         "context": "法律"
       }
     ],
@@ -87580,8 +87580,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "France is a republic.",
-        "ja": "フランスは共和国だ。",
+        "en": "France is a republic where citizens elect their president directly.",
+        "ja": "フランスは市民が大統領を直接選出する共和国です。",
         "context": "政治"
       },
       {
@@ -87836,8 +87836,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "He felt deep resentment.",
-        "ja": "彼は深い恨みを感じた。",
+        "en": "He felt deep resentment toward those who had betrayed his trust.",
+        "ja": "彼は自分の信頼を裏切った人々に対して深い憤りを感じました。",
         "context": "感情"
       },
       {
@@ -87846,8 +87846,8 @@
         "context": "心理"
       },
       {
-        "en": "Her resentment was justified.",
-        "ja": "彼女の恨みは正当だった。",
+        "en": "Her resentment toward the unfair treatment was entirely justified.",
+        "ja": "不公平な扱いに対する彼女の憤りはまったく正当でした。",
         "context": "社会"
       }
     ],
@@ -87884,8 +87884,8 @@
         "context": "自然"
       },
       {
-        "en": "The reservoir stores energy.",
-        "ja": "その貯水池はエネルギーを蓄える。",
+        "en": "The hydroelectric plant uses the reservoir to store energy as potential power.",
+        "ja": "水力発電所はその貯水池を位置エネルギーとしてエネルギーを蓄えるために使用します。",
         "context": "技術"
       }
     ],
@@ -88061,13 +88061,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Chemical residue was found.",
-        "ja": "化学的な残留物が発見された。",
+        "en": "Investigators found chemical residue at the scene that linked the suspect to the crime.",
+        "ja": "捜査官は現場で容疑者と犯罪を結びつける化学的残留物を発見しました。",
         "context": "化学"
       },
       {
-        "en": "Residue remained after burning.",
-        "ja": "燃焼後に残留物が残った。",
+        "en": "A black residue remained on the pan after the experiment was complete.",
+        "ja": "実験が完了した後、鍋に黒い残留物が残りました。",
         "context": "科学"
       },
       {
@@ -88409,13 +88409,13 @@
         "context": "法律"
       },
       {
-        "en": "The court ordered restitution.",
-        "ja": "裁判所は弁償を命じた。",
+        "en": "The judge ordered full restitution to compensate the victims for their losses.",
+        "ja": "裁判官は被害者の損害を補償するための全額弁償を命じました。",
         "context": "裁判"
       },
       {
-        "en": "Restitution helps restore justice.",
-        "ja": "弁償は正義の回復を助ける。",
+        "en": "Requiring restitution rather than imprisonment helps restore justice for victims.",
+        "ja": "投獄の代わりに弁償を求めることは被害者にとって正義の回復を助けます。",
         "context": "社会"
       }
     ],
@@ -88480,18 +88480,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She showed great restraint.",
-        "ja": "彼女は大きな自制心を示した。",
+        "en": "She showed remarkable restraint in responding to the provocative remarks.",
+        "ja": "彼女は挑発的な言葉に応じる際に目覚ましい自制心を示しました。",
         "context": "心理"
       },
       {
-        "en": "Physical restraint was used.",
-        "ja": "物理的な拘束が使われた。",
+        "en": "Physical restraint was used only as a last resort by the security staff.",
+        "ja": "物理的な拘束は警備スタッフによって最後の手段としてのみ使用されました。",
         "context": "法律"
       },
       {
-        "en": "Restraint is a virtue.",
-        "ja": "自制は美徳だ。",
+        "en": "Many philosophers argue that exercising restraint is a fundamental virtue.",
+        "ja": "多くの哲学者は自制心を発揮することが基本的な美徳であると主張します。",
         "context": "道徳"
       }
     ],
@@ -88592,8 +88592,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Easter celebrates the resurrection.",
-        "ja": "イースターは復活を祝う。",
+        "en": "Christians celebrate the resurrection of Jesus Christ at Easter.",
+        "ja": "キリスト教徒はイースターにイエス・キリストの復活を祝います。",
         "context": "宗教"
       },
       {
@@ -88602,8 +88602,8 @@
         "context": "文化"
       },
       {
-        "en": "Economic resurrection took years.",
-        "ja": "経済の復活には何年もかかった。",
+        "en": "The country's economic resurrection took many years of sustained reform.",
+        "ja": "その国の経済的復活には長年の持続的な改革が必要でした。",
         "context": "経済"
       }
     ],
@@ -88781,13 +88781,13 @@
         "context": "道徳"
       },
       {
-        "en": "Military retaliation followed.",
-        "ja": "軍事的報復が続いた。",
+        "en": "Swift military retaliation followed the unprovoked attack on the border.",
+        "ja": "国境への不当な攻撃の後、迅速な軍事的報復が続きました。",
         "context": "戦争"
       },
       {
-        "en": "She feared retaliation.",
-        "ja": "彼女は報復を恐れた。",
+        "en": "The whistleblower feared retaliation from the company after exposing the fraud.",
+        "ja": "内部告発者は不正を暴露した後に会社からの報復を恐れました。",
         "context": "感情"
       }
     ],
@@ -91104,13 +91104,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The church offered sanctuary.",
-        "ja": "教会は聖域を提供した。",
+        "en": "The medieval church offered sanctuary to those fleeing persecution.",
+        "ja": "中世の教会は迫害から逃れる人々に聖域を提供しました。",
         "context": "宗教"
       },
       {
-        "en": "Wildlife sanctuaries protect animals.",
-        "ja": "野生生物保護区は動物を守る。",
+        "en": "Protected wildlife sanctuaries allow endangered animals to breed safely.",
+        "ja": "保護された野生生物保護区では絶滅危惧種の動物が安全に繁殖できます。",
         "context": "環境"
       },
       {
@@ -92384,8 +92384,8 @@
         "context": "政治"
       },
       {
-        "en": "Public scrutiny is important.",
-        "ja": "公の精査は重要です。",
+        "en": "In a healthy democracy, public scrutiny of government decisions is essential.",
+        "ja": "健全な民主主義において、政府の決定に対する公の精査は不可欠です。",
         "context": "民主主義"
       },
       {
@@ -92675,13 +92675,13 @@
         "context": "歴史"
       },
       {
-        "en": "Secession movements are controversial.",
-        "ja": "分離運動は物議をかもす。",
+        "en": "Secession movements often provoke fierce controversy and political instability.",
+        "ja": "分離独立運動はしばしば激しい論争と政治的不安定をもたらします。",
         "context": "政治"
       },
       {
-        "en": "The region declared secession.",
-        "ja": "地域は分離を宣言した。",
+        "en": "The breakaway region formally declared its secession from the central government.",
+        "ja": "分離した地域は中央政府からの独立を正式に宣言しました。",
         "context": "社会"
       }
     ],
@@ -93027,13 +93027,13 @@
         "context": "歴史"
       },
       {
-        "en": "Segregation caused deep inequality.",
-        "ja": "人種差別は深い不平等をもたらした。",
+        "en": "Racial segregation caused profound and long-lasting inequality in society.",
+        "ja": "人種的隔離は社会に深刻で長期にわたる不平等をもたらしました。",
         "context": "社会"
       },
       {
-        "en": "Segregation was declared illegal.",
-        "ja": "人種差別は違法と宣言された。",
+        "en": "The Supreme Court ruled that racial segregation in schools was unconstitutional.",
+        "ja": "最高裁判所は学校における人種的隔離が違憲であると判決を下しました。",
         "context": "法律"
       }
     ],
@@ -93233,13 +93233,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Semiconductors power modern devices.",
-        "ja": "半導体は現代のデバイスを動かす。",
+        "en": "Tiny semiconductors power virtually every modern electronic device.",
+        "ja": "小さな半導体が現代のほぼすべての電子デバイスを動かしています。",
         "context": "技術"
       },
       {
-        "en": "Silicon is a semiconductor.",
-        "ja": "シリコンは半導体だ。",
+        "en": "Silicon is widely used as a semiconductor in electronics manufacturing.",
+        "ja": "シリコンは電子機器製造において半導体として広く使用されています。",
         "context": "物理"
       },
       {
@@ -93930,8 +93930,8 @@
         "context": "人事"
       },
       {
-        "en": "Severance pay is negotiable.",
-        "ja": "退職金は交渉可能だ。",
+        "en": "The terms of severance pay are always negotiable in employment contracts.",
+        "ja": "退職金の条件は雇用契約において常に交渉の余地があります。",
         "context": "人事"
       },
       {
@@ -95263,8 +95263,8 @@
         "context": "戦争"
       },
       {
-        "en": "A siege prevented supplies.",
-        "ja": "包囲は物資の補給を阻止した。",
+        "en": "The prolonged siege effectively prevented vital supplies from reaching the city.",
+        "ja": "長期にわたる包囲攻撃は必要不可欠な物資が都市に届くのを効果的に阻止しました。",
         "context": "軍事"
       }
     ],
@@ -95912,8 +95912,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Scientific skepticism drives progress.",
-        "ja": "科学的懐疑論は進歩を促す。",
+        "en": "Healthy scientific skepticism drives meaningful progress in research.",
+        "ja": "健全な科学的懐疑主義は研究における意味のある進歩を促します。",
         "context": "科学"
       },
       {
@@ -95922,8 +95922,8 @@
         "context": "哲学"
       },
       {
-        "en": "Public skepticism grew.",
-        "ja": "一般大衆の懐疑心が高まった。",
+        "en": "Public skepticism about the government's claims grew steadily after the scandal.",
+        "ja": "スキャンダル後、政府の主張に対する世論の懐疑心が着実に高まりました。",
         "context": "社会"
       }
     ],
@@ -97525,8 +97525,8 @@
         "context": "生物"
       },
       {
-        "en": "Rare specimens are collected.",
-        "ja": "珍しい標本が収集される。",
+        "en": "Rare botanical specimens are carefully collected and preserved for future study.",
+        "ja": "珍しい植物標本は将来の研究のために丁寧に収集・保存されます。",
         "context": "科学"
       },
       {
@@ -97687,8 +97687,8 @@
         "context": "会話"
       },
       {
-        "en": "He acted as spokesperson.",
-        "ja": "広報担当者として行動した。",
+        "en": "He acted as official spokesperson for the ministry during the press conference.",
+        "ja": "彼は記者会見で省庁の公式広報担当者として行動しました。",
         "context": "ビジネス"
       }
     ],
@@ -98087,8 +98087,8 @@
         "context": "社会"
       },
       {
-        "en": "Cultural stagnation hinders growth.",
-        "ja": "文化の停滞は成長を妨げます。",
+        "en": "Cultural stagnation seriously hinders a society's ability to adapt and grow.",
+        "ja": "文化的停滞は社会が適応・成長する能力を深刻に妨げます。",
         "context": "社会"
       }
     ],
@@ -98395,8 +98395,8 @@
         "context": "法律"
       },
       {
-        "en": "Statutes define legal obligations.",
-        "ja": "法令は法的義務を定めます。",
+        "en": "Statutes clearly define the legal obligations of both employers and employees.",
+        "ja": "法令は雇用主と従業員双方の法的義務を明確に定めます。",
         "context": "社会"
       },
       {
@@ -100217,8 +100217,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Military supremacy was contested.",
-        "ja": "軍事的覇権は争われた。",
+        "en": "Military supremacy was bitterly contested between the two rival nations.",
+        "ja": "軍事的覇権は対立する2つの国の間で激しく争われました。",
         "context": "歴史"
       },
       {
@@ -100227,8 +100227,8 @@
         "context": "社会"
       },
       {
-        "en": "Technological supremacy matters today.",
-        "ja": "今日では技術的覇権が重要だ。",
+        "en": "Technological supremacy has become one of the most critical geopolitical factors today.",
+        "ja": "技術的覇権は今日最も重要な地政学的要素の一つになっています。",
         "context": "科学"
       }
     ],
@@ -100359,13 +100359,13 @@
         "context": "社会"
       },
       {
-        "en": "Mass surveillance raises concerns.",
-        "ja": "大規模監視は懸念を高めます。",
+        "en": "The expansion of mass surveillance raises serious concerns about civil liberties.",
+        "ja": "大規模監視の拡大は市民的自由に関する深刻な懸念を高めます。",
         "context": "権利"
       },
       {
-        "en": "Intelligence agencies conduct surveillance.",
-        "ja": "情報機関は監視を行います。",
+        "en": "Intelligence agencies routinely conduct surveillance on suspected terrorist networks.",
+        "ja": "情報機関はテロ組織と疑われるネットワークの監視を日常的に行います。",
         "context": "政治"
       }
     ],
@@ -100443,8 +100443,8 @@
         "context": "技術"
       },
       {
-        "en": "Bridge suspension allows flexibility.",
-        "ja": "橋の吊り構造は柔軟性を可能にする。",
+        "en": "The innovative suspension system of the bridge allows for considerable flexibility.",
+        "ja": "その橋の革新的な吊り構造は相当な柔軟性を可能にします。",
         "context": "建築"
       }
     ],
@@ -100731,18 +100731,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Form a banking syndicate.",
-        "ja": "銀行シンジケートを形成して。",
+        "en": "Several major banks formed a syndicate to finance the infrastructure project.",
+        "ja": "数の大手銀行がインフラプロジェクトに資金を提供するためにシンジケートを形成しました。",
         "context": "ビジネス"
       },
       {
-        "en": "She joined the syndicate.",
-        "ja": "シンジケートに参加した。",
+        "en": "She joined the investment syndicate to diversify her portfolio.",
+        "ja": "彼女はポートフォリオを多様化するために投資シンジケートに参加しました。",
         "context": "ビジネス"
       },
       {
-        "en": "He led the syndicate.",
-        "ja": "シンジケートを率いた。",
+        "en": "He led the media syndicate that distributed content across dozens of publications.",
+        "ja": "彼は数十の出版物にコンテンツを配信するメディアシンジケートを率いました。",
         "context": "ビジネス"
       }
     ],
@@ -101617,13 +101617,13 @@
         "context": "経済"
       },
       {
-        "en": "Tariffs protect local industries.",
-        "ja": "関税は地元産業を守る。",
+        "en": "The government imposed high tariffs to protect struggling local industries.",
+        "ja": "政府は苦境に立つ地元産業を守るために高い関税を課しました。",
         "context": "政治"
       },
       {
-        "en": "Trade wars involve tariffs.",
-        "ja": "貿易戦争は関税を伴う。",
+        "en": "Escalating trade wars between nations typically involve the imposition of tariffs.",
+        "ja": "国家間で激化する貿易戦争は通常、関税の賦課を伴います。",
         "context": "国際"
       }
     ],
@@ -101864,9 +101864,9 @@
         "context": "言語"
       },
       {
-        "en": "Good writers avoid tautology.",
-        "ja": "優れた作家は同語反復を避けます。",
-        "context": "文章"
+        "en": "Editors are trained to identify and eliminate tautology in published manuscripts.",
+        "ja": "編集者は出版原稿の同語反復を識別して排除するよう訓練されています。",
+        "context": "出版"
       },
       {
         "en": "The argument was dismissed as a mere tautology.",
@@ -101892,9 +101892,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Taxonomy classifies living organisms.",
-        "ja": "分類学は生物を分類する。",
-        "context": "高3"
+        "en": "Carl Linnaeus established the modern taxonomy used to classify all known species.",
+        "ja": "カール・リンネはすべての既知の種を分類するために使われる現代の分類学を確立しました。",
+        "context": "科学"
       },
       {
         "en": "Bloom's taxonomy is used in education.",
@@ -103017,18 +103017,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The witness gave testimony.",
-        "ja": "証人は証言した。",
+        "en": "The eyewitness gave compelling testimony that swayed the jury's decision.",
+        "ja": "目撃者は陪審員の決定を左右する説得力ある証言をしました。",
         "context": "法律"
       },
       {
-        "en": "Her testimony was credible.",
-        "ja": "彼女の証言は信頼できた。",
+        "en": "Her detailed testimony proved credible and consistent throughout the trial.",
+        "ja": "彼女の詳細な証言は裁判を通じて信頼性が高く一貫していることが証明されました。",
         "context": "裁判"
       },
       {
-        "en": "Written testimony was submitted.",
-        "ja": "書面による証言が提出された。",
+        "en": "Written testimony was submitted to the committee in advance of the hearing.",
+        "ja": "聴聞会に先立ち、書面による証言が委員会に提出されました。",
         "context": "法律"
       }
     ],
@@ -103814,8 +103814,8 @@
         "context": "社会"
       },
       {
-        "en": "Temperature threshold triggers alarms.",
-        "ja": "温度のしきい値がアラームを起動する。",
+        "en": "When the temperature exceeds the threshold, the safety alarm is automatically triggered.",
+        "ja": "温度が閾値を超えると、安全アラームが自動的に作動します。",
         "context": "技術"
       }
     ],
@@ -106108,9 +106108,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Social transgressions challenge norms.",
-        "ja": "社会的違反は規範に挑戦する。",
-        "context": "高3"
+        "en": "The diplomat's transgression of diplomatic protocol caused an international incident.",
+        "ja": "外交官の外交プロトコル違反が国際的な問題を引き起こしました。",
+        "context": "国際"
       },
       {
         "en": "Moral transgression leads to punishment.",
@@ -106337,8 +106337,8 @@
         "context": "日常"
       },
       {
-        "en": "Transparent communication reduces misunderstandings.",
-        "ja": "透明なコミュニケーションが誤解を減らします。",
+        "en": "Transparent communication among team members significantly reduces misunderstandings.",
+        "ja": "チームメンバー間の透明なコミュニケーションが誤解を著しく減らします。",
         "context": "組織"
       }
     ],
@@ -107586,8 +107586,8 @@
         "context": "政治"
       },
       {
-        "en": "Economic turmoil spread worldwide.",
-        "ja": "経済的混乱は世界中に広まった。",
+        "en": "The financial crisis triggered severe economic turmoil that spread worldwide.",
+        "ja": "金融危機は世界中に広まった深刻な経済的混乱を引き起こしました。",
         "context": "経済"
       },
       {
@@ -108000,13 +108000,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Tyranny oppresses the people.",
-        "ja": "専制政治は人々を抑圧する。",
+        "en": "Unchecked tyranny ultimately oppresses every segment of the population.",
+        "ja": "野放しの圧政は最終的に国民のあらゆる層を抑圧します。",
         "context": "政治"
       },
       {
-        "en": "He fought against tyranny.",
-        "ja": "彼は専制政治に抗った。",
+        "en": "He dedicated his life to fighting against the tyranny of the regime.",
+        "ja": "彼は体制の圧政に抗うことに生涯を捧げました。",
         "context": "歴史"
       },
       {
@@ -108129,8 +108129,8 @@
         "context": "感情"
       },
       {
-        "en": "The ultimatum was rejected.",
-        "ja": "最終通告は拒否された。",
+        "en": "The enemy nation flatly rejected the ultimatum and prepared for conflict.",
+        "ja": "敵国は最後通告をきっぱりと拒否し、紛争に備えました。",
         "context": "歴史"
       }
     ],
@@ -108733,13 +108733,13 @@
         "context": "ビジネス"
       },
       {
-        "en": "She undervalued her skills.",
-        "ja": "スキルを過小評価した。",
+        "en": "She consistently undervalued her own skills during salary negotiations.",
+        "ja": "彼女は給与交渉で自分のスキルを常に過小評価しました。",
         "context": "ビジネス"
       },
       {
-        "en": "He undervalued the assets.",
-        "ja": "資産を過小評価した。",
+        "en": "The accountant was accused of deliberately undervaluing the company's assets.",
+        "ja": "その会計士は会社の資産を意図的に過小評価したとして告発されました。",
         "context": "金融"
       }
     ],
@@ -110860,13 +110860,13 @@
         "context": "歴史"
       },
       {
-        "en": "Social upheaval reshaped society.",
-        "ja": "社会的変動が社会を再形成した。",
+        "en": "The industrial revolution caused a profound social upheaval that reshaped society.",
+        "ja": "産業革命は社会を再形成した深刻な社会的変動をもたらしました。",
         "context": "社会"
       },
       {
-        "en": "Economic upheaval hurt millions.",
-        "ja": "経済的変動は何百万人もを傷つけた。",
+        "en": "The global pandemic triggered an unprecedented economic upheaval that hurt millions.",
+        "ja": "世界的なパンデミックは何百万人もを傷つけた前例のない経済的変動を引き起こしました。",
         "context": "経済"
       }
     ],
@@ -111818,13 +111818,13 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Vaccination prevents many diseases.",
-        "ja": "予防接種は多くの病気を防ぐ。",
+        "en": "Widespread vaccination effectively prevents many life-threatening infectious diseases.",
+        "ja": "広範な予防接種は多くの生命を脅かす感染症を効果的に防ぎます。",
         "context": "医療"
       },
       {
-        "en": "Childhood vaccination is recommended.",
-        "ja": "小児期の予防接種が推奨される。",
+        "en": "Childhood vaccination against measles and polio is strongly recommended by doctors.",
+        "ja": "麻疹とポリオに対する小児期の予防接種は医師によって強く推奨されます。",
         "context": "健康"
       },
       {
@@ -112007,8 +112007,8 @@
         "context": "法律"
       },
       {
-        "en": "Validity tests confirm accuracy.",
-        "ja": "妥当性試験は正確さを確認する。",
+        "en": "Standardized validity tests are conducted to confirm the accuracy of measurements.",
+        "ja": "測定の正確さを確認するために標準化された妥当性試験が実施されます。",
         "context": "科学"
       }
     ],
@@ -112348,14 +112348,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "The machine vends snacks.",
-        "ja": "機械がスナックを販売する。",
-        "context": "食事"
+        "en": "The automated machine vends a variety of snacks and beverages around the clock.",
+        "ja": "その自動販売機は24時間さまざまなスナックや飲料を販売します。",
+        "context": "ビジネス"
       },
       {
-        "en": "She vends handmade goods.",
-        "ja": "手作り品を販売している。",
-        "context": "食事"
+        "en": "She vends handmade ceramic goods at the weekend craft fair.",
+        "ja": "彼女は週末のクラフトフェアで手作りの陶芸品を販売しています。",
+        "context": "ビジネス"
       },
       {
         "en": "He vends products at the market.",
@@ -112631,8 +112631,8 @@
         "context": "法律"
       },
       {
-        "en": "The verdict surprised many.",
-        "ja": "評決は多くの人を驚かせた。",
+        "en": "The unexpected verdict surprised many legal observers who had predicted a conviction.",
+        "ja": "有罪判決を予想していた多くの法律専門家がその予期せぬ評決に驚きました。",
         "context": "社会"
       },
       {
@@ -112750,8 +112750,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Her versatility impressed everyone.",
-        "ja": "彼女の多才さは全員を感動させた。",
+        "en": "Her remarkable versatility as a performer impressed audiences and critics alike.",
+        "ja": "パフォーマーとしての彼女の驚くべき多才さは観客と批評家の双方を感動させました。",
         "context": "芸術"
       },
       {
@@ -115221,9 +115221,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "They welcomed us warmly.",
-        "ja": "彼らは温かく歓迎してくれた。",
-        "context": "社交"
+        "en": "The city welcomed the refugees with open arms and immediate assistance.",
+        "ja": "市は難民たちを両手を広げて、即座の支援とともに歓迎しました。",
+        "context": "社会"
       },
       {
         "en": "The school welcomes new students.",
@@ -115231,9 +115231,9 @@
         "context": "学校"
       },
       {
-        "en": "She welcomed the opportunity.",
-        "ja": "彼女はその機会を歓迎した。",
-        "context": "仕事"
+        "en": "The committee welcomed the proposed amendments as a constructive step forward.",
+        "ja": "委員会は提案された修正案を建設的な前進として歓迎しました。",
+        "context": "会議"
       }
     ],
     "categories": [
@@ -116369,9 +116369,9 @@
         "context": "日常"
       },
       {
-        "en": "Stay within your budget.",
-        "ja": "予算内に収めなさい。",
-        "context": "金融"
+        "en": "The project must be completed within the allocated budget and timeline.",
+        "ja": "プロジェクトは割り当てられた予算と期間内に完了しなければなりません。",
+        "context": "ビジネス"
       },
       {
         "en": "The answer is within your reach.",
@@ -116605,8 +116605,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Please complete the workbook.",
-        "ja": "ワークブックを完成させてください。",
+        "en": "Please complete the workbook exercises before attending the next training session.",
+        "ja": "次のトレーニングセッションに参加する前にワークブックの演習を完成させてください。",
         "context": "学校"
       },
       {
@@ -117196,14 +117196,14 @@
         "context": "感情"
       },
       {
-        "en": "He wounded her feelings.",
-        "ja": "彼女の感情を傷つけた。",
+        "en": "His harsh criticism deeply wounded her feelings and damaged their friendship.",
+        "ja": "彼の厳しい批判は彼女の感情を深く傷つけ、二人の友情を損ないました。",
         "context": "感情"
       },
       {
-        "en": "The soldier was wounded.",
-        "ja": "兵士が負傷した。",
-        "context": "感情"
+        "en": "The soldier was severely wounded during the ambush and required emergency surgery.",
+        "ja": "兵士は待ち伏せ攻撃で重傷を負い、緊急手術が必要でした。",
+        "context": "戦争"
       }
     ],
     "categories": [
@@ -117708,9 +117708,9 @@
         "context": "日常"
       },
       {
-        "en": "Believe in yourself always.",
-        "ja": "常に自分を信じなさい。",
-        "context": "社会"
+        "en": "You should trust yourself even when others express doubt.",
+        "ja": "他の人が疑いを表明しているときでも、自分自身を信頼すべきです。",
+        "context": "日常"
       },
       {
         "en": "You should take care of yourself.",

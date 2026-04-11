@@ -16,9 +16,9 @@
         "context": "仕事"
       },
       {
-        "en": "That's a classic catch-22.",
-        "ja": "典型的なジレンマだ。",
-        "context": "日常"
+        "en": "Needing experience to get a job but needing a job to gain experience is a catch-22.",
+        "ja": "仕事を得るために経験が必要だが、経験を得るには仕事が必要というのは板挟みです。",
+        "context": "キャリア"
       }
     ],
     "categories": [
@@ -512,9 +512,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding abulia requires patience.",
-        "ja": "意志欠如を理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "Clinicians often mistake abulia for depression because both involve loss of motivation.",
+        "ja": "abulia（意志欠如）とうつ病はどちらもやる気の喪失を伴うため、臨床医はしばしば混同します。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -1040,9 +1040,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "Cultural aggiornamento revitalizes traditions.",
-        "ja": "文化的刷新は伝統を再活性化する。",
-        "context": "文化"
+        "en": "The institution's aggiornamento brought long-overdue reforms to its governance structure.",
+        "ja": "その機関の現代化により、統治構造に待ちに待った改革がもたらされました。",
+        "context": "組織"
       }
     ],
     "categories": [
@@ -1107,9 +1107,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding aioli requires patience.",
-        "ja": "アイオリを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The chef served grilled sea bass with a saffron aioli drizzled on top.",
+        "ja": "シェフはサフランのアイオリをかけたグリルのスズキを提供しました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -1371,9 +1371,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding allocution requires patience.",
-        "ja": "訓示を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The general delivered a solemn allocution before the troops departed for the front.",
+        "ja": "将軍は部隊が前線に向かう前に厳粛な訓示を行いました。",
+        "context": "軍事"
       }
     ],
     "categories": [
@@ -1526,9 +1526,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "The custom survives anachronistically.",
-        "ja": "その慣習は時代錯誤的に残っている。",
-        "context": "文化"
+        "en": "The novel is set in modern Tokyo but anachronistically features samurai culture.",
+        "ja": "その小説は現代の東京を舞台にしていますが、時代錯誤的に侍文化を取り上げています。",
+        "context": "文学"
       },
       {
         "en": "He dressed anachronistically for the event.",
@@ -1536,9 +1536,9 @@
         "context": "文化"
       },
       {
-        "en": "The law applies anachronistically.",
-        "ja": "その法律は時代錯誤的に適用される。",
-        "context": "文化"
+        "en": "The institution continued anachronistically to enforce dress codes abandoned elsewhere.",
+        "ja": "その機関は他では廃止された服装規定を時代錯誤的に施行し続けました。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -1701,9 +1701,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding anaphora requires patience.",
-        "ja": "首句反復を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Churchill's wartime speeches deployed anaphora masterfully to rally public resolve.",
+        "ja": "チャーチルの戦時スピーチは国民の決意を鼓舞するために首句反復を見事に駆使しました。",
+        "context": "修辞"
       }
     ],
     "categories": [
@@ -1800,9 +1800,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding aneurysm requires patience.",
-        "ja": "動脈瘤を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "A ruptured brain aneurysm can cause a hemorrhagic stroke within minutes.",
+        "ja": "脳動脈瘤の破裂は数分以内に出血性脳卒中を引き起こす可能性があります。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -1833,9 +1833,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding angioplasty requires patience.",
-        "ja": "血管形成術を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Coronary angioplasty restores blood flow to the heart by widening blocked arteries.",
+        "ja": "冠動脈血管形成術は閉塞した動脈を広げることで心臓への血流を回復させます。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -1866,9 +1866,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding angling requires patience.",
-        "ja": "釣りを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "He took up angling as a way to unwind after years of high-pressure work.",
+        "ja": "彼は長年の高プレッシャーな仕事の後にリラックスする方法として釣りを始めました。",
+        "context": "趣味"
       }
     ],
     "categories": [
@@ -1899,9 +1899,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding angst requires patience.",
-        "ja": "不安を理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "Her debut novel captured the existential angst of young professionals in the city.",
+        "ja": "彼女のデビュー小説は都市に暮らす若いプロフェッショナルたちの実存的な不安を捉えていました。",
+        "context": "文学"
       }
     ],
     "categories": [
@@ -2186,8 +2186,8 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "Anthropogenic emissions drive warming.",
-        "ja": "人為的排出が温暖化を促進する。",
+        "en": "Scientists attribute recent glacier retreat largely to anthropogenic climate change.",
+        "ja": "科学者たちは近年の氷河後退を主に人為的な気候変動に起因するとしています。",
         "context": "環境"
       },
       {
@@ -2362,9 +2362,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding apiculture requires patience.",
-        "ja": "養蜂を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Apiculture supports local ecosystems by sustaining wild pollinator populations.",
+        "ja": "養蜂は野生の送粉者の個体数を維持することで地域の生態系を支えます。",
+        "context": "環境"
       }
     ],
     "categories": [
@@ -2451,9 +2451,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Mathematics proves theorems apodictically.",
-        "ja": "数学は定理を必然的に証明します。",
-        "context": "学問"
+        "en": "Logical theorems can be demonstrated apodictically, leaving no room for counterexample.",
+        "ja": "論理的な定理は反例の余地なく公理的に証明することができます。",
+        "context": "哲学"
       },
       {
         "en": "He stated his conclusion apodictically, leaving no room for doubt.",
@@ -2956,9 +2956,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding apse requires patience.",
-        "ja": "後陣を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The mosaic-covered apse behind the altar depicted the Last Supper in vivid color.",
+        "ja": "祭壇の後ろのモザイクで覆われた後陣は最後の晩餐を鮮やかな色彩で描いていました。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -2989,9 +2989,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding aquascaping requires patience.",
-        "ja": "水景造りを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Competitive aquascaping requires mastery of plant arrangement, lighting, and water chemistry.",
+        "ja": "競技レベルの水景造りには植物の配置、照明、水質化学の習熟が必要です。",
+        "context": "趣味"
       }
     ],
     "categories": [
@@ -3154,9 +3154,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding architrave requires patience.",
-        "ja": "額縁を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The painted architrave above the doorway dated back to the eighteenth century.",
+        "ja": "ドアウェイの上の塗装された額縁は18世紀にまで遡るものでした。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -3216,13 +3216,13 @@
         "context": "食"
       },
       {
-        "en": "She prefers artisanal cheese.",
-        "ja": "彼女は手作りチーズを好む。",
-        "context": "食"
+        "en": "Consumers increasingly prefer artisanal products over mass-produced alternatives.",
+        "ja": "消費者は大量生産品よりも職人の製品をますます好むようになっています。",
+        "context": "消費"
       },
       {
-        "en": "Artisanal products cost more.",
-        "ja": "職人の製品はより高価だ。",
+        "en": "The market stall sold artisanal chocolates made from single-origin cacao.",
+        "ja": "その市場の屋台は単一産地のカカオから作られた職人のチョコレートを販売していました。",
         "context": "食"
       }
     ],
@@ -3584,9 +3584,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding atoll requires patience.",
-        "ja": "環礁を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "Rising sea levels threaten to submerge low-lying atoll nations in the Pacific.",
+        "ja": "海面上昇は太平洋の低地の環礁国家を水没させると脅かしています。",
+        "context": "環境"
       }
     ],
     "categories": [
@@ -3683,8 +3683,8 @@
         "context": "医療"
       },
       {
-        "en": "Always auscultate before diagnosing.",
-        "ja": "診断前に必ず聴診すること。",
+        "en": "Medical students learn to auscultate heart sounds during their clinical training.",
+        "ja": "医学生は臨床研修中に心音を聴診する方法を学びます。",
         "context": "医療"
       }
     ],
@@ -3782,8 +3782,8 @@
         "context": "文化"
       },
       {
-        "en": "Autochthonous species were protected.",
-        "ja": "土着種が保護された。",
+        "en": "The festival celebrated autochthonous traditions that predated colonial settlement.",
+        "ja": "そのフェスティバルは植民地入植以前の土着の伝統を祝うものでした。",
         "context": "文化"
       }
     ],
@@ -3848,9 +3848,9 @@
         "context": "学術"
       },
       {
-        "en": "Autodidactic learners are resourceful.",
-        "ja": "独学者は機知に富んでいる。",
-        "context": "学術"
+        "en": "Many celebrated inventors were autodidactic thinkers who taught themselves outside formal education.",
+        "ja": "多くの著名な発明家は正規教育の外で独学した独学の思想家でした。",
+        "context": "教育"
       }
     ],
     "categories": [
@@ -3904,9 +3904,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "He approached it axiomatically.",
-        "ja": "彼は公理的にそれに取り組んだ。",
-        "context": "学術"
+        "en": "The philosopher argued axiomatically from first principles without empirical evidence.",
+        "ja": "その哲学者は経験的証拠なしに第一原理から公理的に論じました。",
+        "context": "哲学"
       },
       {
         "en": "The problem was axiomatically solved.",
@@ -3947,9 +3947,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding badinage requires patience.",
-        "ja": "軽妙な冗談を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The two diplomats engaged in lighthearted badinage before settling down to serious talks.",
+        "ja": "二人の外交官は本題の話し合いに入る前に軽妙な冗談のやり取りを楽しみました。",
+        "context": "外交"
       }
     ],
     "categories": [
@@ -4013,9 +4013,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding balderdash requires patience.",
-        "ja": "たわごとを理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The journalist called the official's denial complete balderdash given the documented evidence.",
+        "ja": "そのジャーナリストは文書化された証拠を前に、当局者の否定は完全なたわごとだと述べました。",
+        "context": "報道"
       }
     ],
     "categories": [
@@ -4145,9 +4145,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding barchan requires patience.",
-        "ja": "バルハン砂丘を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Geographers track barchan migration to understand the dynamics of desert expansion.",
+        "ja": "地理学者はバルハン砂丘の移動を追跡して砂漠拡大のダイナミクスを理解しようとしています。",
+        "context": "地理"
       }
     ],
     "categories": [
@@ -4178,9 +4178,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding basilica requires patience.",
-        "ja": "バシリカを理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The ancient basilica served as both a place of worship and a civic gathering hall.",
+        "ja": "その古代バシリカは礼拝の場と市民の集会場の両方として機能しました。",
+        "context": "歴史"
       }
     ],
     "categories": [
@@ -4277,9 +4277,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding bathymetry requires patience.",
-        "ja": "深度測量を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Advanced bathymetry revealed a previously unknown underwater mountain range.",
+        "ja": "高度な深度測量により、以前は知られていなかった海底山脈が明らかになりました。",
+        "context": "科学"
       }
     ],
     "categories": [
@@ -4343,9 +4343,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding batik requires patience.",
-        "ja": "バティック染めを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The museum exhibited traditional batik fabric alongside contemporary reinterpretations.",
+        "ja": "その博物館は現代的な再解釈と並んで伝統的なバティック染めの布を展示しました。",
+        "context": "芸術"
       }
     ],
     "categories": [
@@ -4442,9 +4442,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding bechamel requires patience.",
-        "ja": "ベシャメルソースを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "A properly made bechamel should be smooth, creamy, and lightly seasoned with nutmeg.",
+        "ja": "正しく作られたベシャメルソースはなめらかでクリーミーで、ナツメグで軽く味付けされているべきです。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -4508,9 +4508,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding beignet requires patience.",
-        "ja": "ベニエを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The New Orleans café served piping hot beignets dusted with powdered sugar.",
+        "ja": "ニューオーリンズのカフェは粉砂糖をまぶしたできたてのベニエを提供しました。",
+        "context": "食"
       }
     ],
     "categories": [
@@ -4574,8 +4574,8 @@
         "context": "感情"
       },
       {
-        "en": "The community was bereft.",
-        "ja": "コミュニティは悲嘆にくれた。",
+        "en": "She felt utterly bereft after losing both her mentor and her closest colleague.",
+        "ja": "彼女は師と最も親しい同僚の両方を失い、完全に喪失感に包まれました。",
         "context": "感情"
       }
     ],
@@ -4607,9 +4607,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding berth requires patience.",
-        "ja": "停泊地を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The cargo ship waited three days before a berth at the port became available.",
+        "ja": "貨物船は港の停泊地が空くまで3日間待ちました。",
+        "context": "海運"
       }
     ],
     "categories": [
@@ -4739,9 +4739,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding bibliophile requires patience.",
-        "ja": "愛書家を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "A dedicated bibliophile, he spent weekends hunting for rare first editions.",
+        "ja": "熱心な愛書家として、彼は週末に希少な初版本を探して歩きました。",
+        "context": "趣味"
       }
     ],
     "categories": [
@@ -4767,14 +4767,14 @@
         "context": "趣味"
       },
       {
-        "en": "The bibliophilic community gathered.",
-        "ja": "愛書家のコミュニティが集まった。",
+        "en": "Her bibliophilic obsession filled every wall of her apartment with shelves of books.",
+        "ja": "彼女の愛書家的な偏愛によってアパートの壁全面が本棚で埋め尽くされました。",
         "context": "趣味"
       },
       {
-        "en": "She has bibliophilic tendencies.",
-        "ja": "彼女には愛書家的傾向がある。",
-        "context": "趣味"
+        "en": "The bibliophilic professor donated his personal collection to the university library.",
+        "ja": "愛書家的なその教授は自分の個人コレクションを大学図書館に寄贈しました。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -4871,8 +4871,8 @@
         "context": "環境"
       },
       {
-        "en": "Pesticides bioaccumulate in predators.",
-        "ja": "農薬が捕食者に生物濃縮する。",
+        "en": "Heavy metals tend to bioaccumulate in organisms at the top of the food chain.",
+        "ja": "重金属は食物連鎖の頂点にいる生物に生物濃縮する傾向があります。",
         "context": "環境"
       }
     ],
@@ -4894,9 +4894,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Biogeochemical cycles sustain life.",
-        "ja": "生物地球化学的循環が生命を維持する。",
-        "context": "自然"
+        "en": "Disrupting biogeochemical cycles can have cascading effects on entire ecosystems.",
+        "ja": "生物地球化学的循環を乱すと生態系全体に連鎖的な影響をもたらす可能性があります。",
+        "context": "環境"
       },
       {
         "en": "The biogeochemical process was disrupted.",
@@ -4904,9 +4904,9 @@
         "context": "自然"
       },
       {
-        "en": "Study biogeochemical interactions.",
-        "ja": "生物地球化学的相互作用を研究せよ。",
-        "context": "自然"
+        "en": "The nitrogen cycle is one of the most critical biogeochemical processes on Earth.",
+        "ja": "窒素循環は地球上で最も重要な生物地球化学的プロセスの一つです。",
+        "context": "科学"
       }
     ],
     "categories": [
@@ -5036,9 +5036,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding blatherskite requires patience.",
-        "ja": "たわごとを理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The committee dismissed the lobbyist as a blatherskite who never delivered facts.",
+        "ja": "委員会はそのロビイストを事実を一切示さないたわごと者として退けました。",
+        "context": "政治"
       }
     ],
     "categories": [
@@ -5201,8 +5201,8 @@
         "context": "日常"
       },
       {
-        "en": "Understanding bonsai requires patience.",
-        "ja": "盆栽を理解するには忍耐が必要だ。",
+        "en": "Cultivating bonsai requires years of patient observation and careful pruning.",
+        "ja": "盆栽の育成には何年もの忍耐強い観察と丁寧な剪定が必要です。",
         "context": "文化"
       }
     ],
@@ -5267,9 +5267,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding bootloader requires patience.",
-        "ja": "ブートローダーを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Developers must unlock the bootloader before installing a custom operating system.",
+        "ja": "開発者はカスタムOSをインストールする前にブートローダーをアンロックしなければなりません。",
+        "context": "技術"
       }
     ],
     "categories": [
@@ -5333,9 +5333,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding bootstrapping requires patience.",
-        "ja": "自力起業を理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "Their successful bootstrapping story inspired countless entrepreneurs to pursue their ideas.",
+        "ja": "彼らの成功した自力起業の話は数え切れないほどの起業家にアイデアを追求する意欲を与えました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -5399,9 +5399,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding bouillon requires patience.",
-        "ja": "ブイヨンを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "A rich beef bouillon forms the base of many classic French sauces.",
+        "ja": "濃厚な牛肉ブイヨンは多くのクラシックなフランスソースのベースになります。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -5597,9 +5597,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding broadside requires patience.",
-        "ja": "激しい非難を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The editorial launched a broadside against the government's handling of the crisis.",
+        "ja": "その社説は政府の危機対応に対して激しい非難を浴びせました。",
+        "context": "報道"
       }
     ],
     "categories": [
@@ -5663,9 +5663,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding brunoise requires patience.",
-        "ja": "ブリュノワーズを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The recipe called for a fine brunoise of shallots sautéed in clarified butter.",
+        "ja": "そのレシピは澄ましバターで炒めた細かく切ったエシャロットのブリュノワーズを求めていました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -5729,9 +5729,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding bulkhead requires patience.",
-        "ja": "隔壁を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The ship's watertight bulkhead prevented the flooding from spreading to adjacent compartments.",
+        "ja": "船の水密隔壁が浸水の隣接区画への拡大を防ぎました。",
+        "context": "海運"
       }
     ],
     "categories": [
@@ -5795,9 +5795,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding butte requires patience.",
-        "ja": "残丘を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The iconic butte in the distance had been a landmark for desert travelers for centuries.",
+        "ja": "遠くに見える象徴的な残丘は何世紀にもわたって砂漠の旅人の目印になっていました。",
+        "context": "地理"
       }
     ],
     "categories": [
@@ -5828,9 +5828,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding bytecode requires patience.",
-        "ja": "バイトコードを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Java compiles source code into bytecode that runs on any compatible virtual machine.",
+        "ja": "Javaはソースコードをどの互換仮想マシン上でも実行できるバイトコードにコンパイルします。",
+        "context": "技術"
       }
     ],
     "categories": [
@@ -6049,9 +6049,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Calisthenics requires no equipment.",
-        "ja": "自重トレは器具が不要だ。",
-        "context": "スポーツ"
+        "en": "Daily calisthenics helped him maintain fitness without access to a gym.",
+        "ja": "毎日の自重トレーニングはジムに行けなくても体力を維持するのに役立ちました。",
+        "context": "健康"
       },
       {
         "en": "She does calisthenics every morning.",
@@ -6059,9 +6059,9 @@
         "context": "スポーツ"
       },
       {
-        "en": "Calisthenics builds functional strength.",
-        "ja": "自重トレが機能的な筋力を作る。",
-        "context": "スポーツ"
+        "en": "Military recruits perform calisthenics every morning to build endurance and strength.",
+        "ja": "軍の新兵は持久力と筋力を鍛えるために毎朝自重トレーニングを行います。",
+        "context": "軍事"
       }
     ],
     "categories": [
@@ -6125,9 +6125,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding campanile requires patience.",
-        "ja": "鐘楼を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "Tourists climbed the campanile to enjoy a panoramic view of the medieval city.",
+        "ja": "観光客は中世都市のパノラマビューを楽しむために鐘楼に登りました。",
+        "context": "旅行"
       }
     ],
     "categories": [
@@ -6422,9 +6422,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding cartographer requires patience.",
-        "ja": "地図製作者を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The cartographer spent decades compiling maps of unexplored river systems in the Amazon.",
+        "ja": "その地図製作者はアマゾンの未開拓河川系の地図をまとめるのに何十年も費やしました。",
+        "context": "地理"
       }
     ],
     "categories": [
@@ -6554,9 +6554,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding caryatid requires patience.",
-        "ja": "女像柱を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The architect incorporated a row of marble caryatids to give the façade a classical feel.",
+        "ja": "建築家はファサードにクラシカルな雰囲気を与えるために大理石の女像柱の列を取り入れました。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -6644,8 +6644,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Catachresis stretches word meanings.",
-        "ja": "転用修辞が語義を拡張する。",
+        "en": "The phrase \"the heart of the argument\" relies on catachresis to extend a physical concept.",
+        "ja": "「議論の核心」というフレーズは身体的な概念を拡張するために転用修辞に頼っています。",
         "context": "修辞"
       },
       {
@@ -6654,9 +6654,9 @@
         "context": "修辞"
       },
       {
-        "en": "Poets employ catachresis deliberately.",
-        "ja": "詩人は意図的に転用修辞を使う。",
-        "context": "修辞"
+        "en": "Modernist poets deliberately embraced catachresis to defamiliarize everyday language.",
+        "ja": "モダニスト詩人たちは日常言語を異化するために意図的に転用修辞を採用しました。",
+        "context": "文学"
       }
     ],
     "categories": [
@@ -6687,9 +6687,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding catechism requires patience.",
-        "ja": "教理問答を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "The catechism was taught to confirm students' understanding of core religious doctrine.",
+        "ja": "教理問答は学生たちの宗教的教義の核心の理解を確認するために教えられました。",
+        "context": "宗教"
       }
     ],
     "categories": [
@@ -6819,9 +6819,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding causeway requires patience.",
-        "ja": "土手道を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The causeway connecting the two islands was frequently impassable during storm surges.",
+        "ja": "二つの島をつなぐ土手道は高潮の際にしばしば通行不能になりました。",
+        "context": "地理"
       }
     ],
     "categories": [
@@ -7085,9 +7085,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding cenotaph requires patience.",
-        "ja": "慰霊碑を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "A marble cenotaph was erected in the town square to honor the fallen soldiers.",
+        "ja": "戦没した兵士たちを称えるために町の広場に大理石の慰霊碑が建てられました。",
+        "context": "歴史"
       }
     ],
     "categories": [
@@ -7118,9 +7118,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding chagrin requires patience.",
-        "ja": "悔しさを理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "Much to his chagrin, the speech he spent weeks preparing was cut to three minutes.",
+        "ja": "彼の大きな悔しさに、何週間もかけて準備したスピーチは3分に短縮されてしまいました。",
+        "context": "日常"
       }
     ],
     "categories": [
@@ -7151,9 +7151,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding chancel requires patience.",
-        "ja": "内陣を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The bishop consecrated the newly restored chancel in a ceremony attended by hundreds.",
+        "ja": "司教は何百人もが参加した式典で新たに修復された内陣を聖別しました。",
+        "context": "宗教"
       }
     ],
     "categories": [
@@ -7184,8 +7184,8 @@
         "context": "食"
       },
       {
-        "en": "Artisan charcuterie is popular.",
-        "ja": "職人のシャルキュトリーが人気だ。",
+        "en": "The deli offered an impressive selection of imported and locally made charcuterie.",
+        "ja": "そのデリは輸入品と地元産のシャルキュトリーの印象的な品揃えを提供していました。",
         "context": "食"
       }
     ],
@@ -7250,9 +7250,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding checksum requires patience.",
-        "ja": "チェックサムを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Always verify the checksum after downloading software to detect any file corruption.",
+        "ja": "ファイルの破損を検出するためにソフトウェアをダウンロードした後は必ずチェックサムを確認してください。",
+        "context": "技術"
       }
     ],
     "categories": [
@@ -7349,9 +7349,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding chiffonade requires patience.",
-        "ja": "シフォナードを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The chef garnished the soup with a delicate chiffonade of fresh mint.",
+        "ja": "シェフはフレッシュミントの繊細なシフォナードでスープを飾り付けました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -7509,9 +7509,9 @@
         "context": "日常"
       },
       {
-        "en": "Politicians often circumlocute.",
-        "ja": "政治家はしばしば遠回しに言う。",
-        "context": "日常"
+        "en": "When pressed for an answer, the politician began to circumlocute at length.",
+        "ja": "回答を迫られると、その政治家は長々と遠回しな言い方を始めました。",
+        "context": "政治"
       },
       {
         "en": "He circumlocuted to avoid the topic.",
@@ -7746,9 +7746,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding cloister requires patience.",
-        "ja": "回廊を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "Scholars retreated to the monastery's cloister to read and meditate in silence.",
+        "ja": "学者たちは沈黙の中で読書と瞑想をするために修道院の回廊に引きこもりました。",
+        "context": "宗教"
       }
     ],
     "categories": [
@@ -7878,9 +7878,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding col requires patience.",
-        "ja": "鞍部を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The expedition camped overnight at the col before their final push to the summit.",
+        "ja": "探検隊は頂上への最終アタック前に鞍部で一夜を過ごしました。",
+        "context": "登山"
       }
     ],
     "categories": [
@@ -7911,9 +7911,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding collagraph requires patience.",
-        "ja": "コラグラフを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Her collagraph print combined dried leaves, sand, and torn fabric for rich texture.",
+        "ja": "彼女のコラグラフの版画は豊かなテクスチャーを出すために乾燥した葉、砂、ちぎった布を組み合わせていました。",
+        "context": "芸術"
       }
     ],
     "categories": [
@@ -7944,9 +7944,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding collywobbles requires patience.",
-        "ja": "腹痛を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The collywobbles before the job interview made it hard to eat breakfast.",
+        "ja": "就職面接前の腹痛のせいで朝食を食べるのが難しくなりました。",
+        "context": "日常"
       }
     ],
     "categories": [
@@ -7977,9 +7977,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding colonnade requires patience.",
-        "ja": "列柱を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The colonnade running the length of the square provided shade during summer festivals.",
+        "ja": "広場の全長にわたる列柱は夏祭りの間に日陰を提供しました。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -8005,8 +8005,8 @@
         "context": "感情"
       },
       {
-        "en": "The flavors commingled beautifully.",
-        "ja": "風味が美しく入り混じった。",
+        "en": "At the farewell party, nostalgia and excitement commingled in the air.",
+        "ja": "お別れのパーティーでは、郷愁と期待感が空気の中で入り混じっていました。",
         "context": "感情"
       },
       {
@@ -8142,9 +8142,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding communique requires patience.",
-        "ja": "公式声明を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The foreign ministers released a joint communique reaffirming their bilateral security pact.",
+        "ja": "外相たちは二国間安全保障協定を再確認する共同公式声明を発表しました。",
+        "context": "外交"
       }
     ],
     "categories": [
@@ -8274,9 +8274,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding concourse requires patience.",
-        "ja": "コンコースを理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The renovation transformed the station's concourse into a bright, welcoming public space.",
+        "ja": "改装により駅のコンコースが明るく歓迎感のある公共空間に変わりました。",
+        "context": "都市"
       }
     ],
     "categories": [
@@ -8406,9 +8406,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding confabulation requires patience.",
-        "ja": "雑談を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Brief confabulation in the hallway often leads to more creative ideas than formal meetings.",
+        "ja": "廊下での短い雑談がフォーマルな会議よりも創造的なアイデアにつながることが多いです。",
+        "context": "職場"
       }
     ],
     "categories": [
@@ -8670,9 +8670,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding consomme requires patience.",
-        "ja": "コンソメを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The chef strained the consomme three times to achieve its characteristic crystal clarity.",
+        "ja": "シェフは特徴的な透明感を出すためにコンソメを3回こしました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -8693,18 +8693,18 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Containerization revolutionized deployment.",
-        "ja": "コンテナ化がデプロイを革新した。",
+        "en": "Containerization has streamlined software deployment across diverse cloud environments.",
+        "ja": "コンテナ化は多様なクラウド環境全体でのソフトウェアデプロイを効率化しました。",
         "context": "技術"
       },
       {
-        "en": "Containerization isolates applications.",
-        "ja": "コンテナ化がアプリを分離する。",
+        "en": "Teams adopt containerization to eliminate inconsistencies between development and production.",
+        "ja": "チームは開発環境と本番環境間の不整合をなくすためにコンテナ化を採用します。",
         "context": "技術"
       },
       {
-        "en": "Adopt containerization for scalability.",
-        "ja": "拡張性のためコンテナ化を採用せよ。",
+        "en": "Full containerization of the pipeline reduced deployment time from hours to minutes.",
+        "ja": "パイプラインの完全なコンテナ化によりデプロイ時間が数時間から数分に短縮されました。",
         "context": "技術"
       }
     ],
@@ -8759,9 +8759,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "The government spent contracyclically.",
-        "ja": "政府は反循環的に支出した。",
-        "context": "金融"
+        "en": "The central bank acted contracyclically by cutting rates during the recession.",
+        "ja": "中央銀行は景気後退期に金利を引き下げることで反循環的に行動しました。",
+        "context": "経済"
       },
       {
         "en": "Reserves should be built contracyclically.",
@@ -8769,9 +8769,9 @@
         "context": "金融"
       },
       {
-        "en": "Acting contracyclically stabilizes economies.",
-        "ja": "反循環的な行動が経済を安定させる。",
-        "context": "金融"
+        "en": "Investing contracyclically in infrastructure during downturns can accelerate recovery.",
+        "ja": "景気低迷期にインフラに反循環的に投資することで回復を加速できます。",
+        "context": "経済"
       }
     ],
     "categories": [
@@ -8802,8 +8802,8 @@
         "context": "医療"
       },
       {
-        "en": "The treatment was contraindicated.",
-        "ja": "その治療は禁忌とされた。",
+        "en": "Aspirin is contraindicated in children with viral infections due to the risk of Reye's syndrome.",
+        "ja": "アスピリンはライ症候群のリスクのためウイルス感染した子どもには禁忌です。",
         "context": "医療"
       }
     ],
@@ -8868,9 +8868,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding corbel requires patience.",
-        "ja": "持送りを理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The medieval corbel carved into the shape of a grotesque face supported a heavy stone beam.",
+        "ja": "グロテスクな顔の形に彫刻された中世の持送りが重い石梁を支えていました。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -9161,14 +9161,14 @@
         "context": "金融"
       },
       {
-        "en": "They invested countercyclically.",
-        "ja": "彼らは反景気循環的に投資した。",
-        "context": "金融"
+        "en": "Savvy investors who buy countercyclically often profit when markets recover.",
+        "ja": "反景気循環的に買い付ける賢明な投資家は市場が回復するときに利益を得ることが多いです。",
+        "context": "投資"
       },
       {
-        "en": "Spending countercyclically cushions recessions.",
-        "ja": "反景気循環的な支出が不況を和らげる。",
-        "context": "金融"
+        "en": "Governments that spend countercyclically tend to shorten the duration of economic downturns.",
+        "ja": "反景気循環的に支出する政府は経済低迷の期間を短縮する傾向があります。",
+        "context": "経済"
       }
     ],
     "categories": [
@@ -9194,9 +9194,9 @@
         "context": "金融"
       },
       {
-        "en": "Counterfactual scenarios help planning.",
-        "ja": "反事実シナリオは計画に役立つ。",
-        "context": "金融"
+        "en": "Economists use counterfactual modeling to estimate what would have happened without intervention.",
+        "ja": "経済学者は介入なしに何が起きていたかを推定するために反事実モデリングを使用します。",
+        "context": "経済"
       },
       {
         "en": "The counterfactual outcome is unknown.",
@@ -9232,8 +9232,8 @@
         "context": "金融"
       },
       {
-        "en": "Each counterparty has obligations.",
-        "ja": "各取引相手に義務がある。",
+        "en": "Due diligence requires verifying that your counterparty has the capacity to fulfill obligations.",
+        "ja": "デューデリジェンスでは取引相手が義務を履行する能力を持つことを確認する必要があります。",
         "context": "金融"
       }
     ],
@@ -9265,9 +9265,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding crevasse requires patience.",
-        "ja": "クレバスを理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The guide roped the climbers together before crossing the glacier's treacherous crevasse field.",
+        "ja": "ガイドは氷河の危険なクレバス地帯を横断する前に登山者たちをロープでつなぎました。",
+        "context": "登山"
       }
     ],
     "categories": [
@@ -9298,9 +9298,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding croquette requires patience.",
-        "ja": "コロッケを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Spanish croquettes filled with jamón ibérico are a beloved tapas bar staple.",
+        "ja": "イベリコハムを詰めたスペインのコロッケはタパスバーの人気の定番料理です。",
+        "context": "食"
       }
     ],
     "categories": [
@@ -9397,9 +9397,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding cryptography requires patience.",
-        "ja": "暗号学を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Public-key cryptography underpins the security of virtually all modern digital transactions.",
+        "ja": "公開鍵暗号学は事実上すべての現代デジタル取引のセキュリティを支えています。",
+        "context": "技術"
       }
     ],
     "categories": [
@@ -9463,9 +9463,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding cupola requires patience.",
-        "ja": "丸屋根を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The dome's ornate cupola was visible from every corner of the historic city center.",
+        "ja": "ドームの装飾的な丸屋根は歴史的な市街地のあらゆる場所から見えました。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -9590,8 +9590,8 @@
         "context": "技術"
       },
       {
-        "en": "Restart the logging daemon.",
-        "ja": "ログデーモンを再起動せよ。",
+        "en": "The server runs a scheduling daemon that manages all background maintenance tasks.",
+        "ja": "サーバーはすべてのバックグラウンドメンテナンスタスクを管理するスケジューリングデーモンを実行しています。",
         "context": "技術"
       },
       {
@@ -9760,9 +9760,9 @@
         "context": "技術"
       },
       {
-        "en": "Political deadlock stalled legislation.",
-        "ja": "政治的行き詰まりが立法を停滞させた。",
-        "context": "政治"
+        "en": "The labor dispute reached a deadlock when neither side would compromise on wages.",
+        "ja": "どちらの側も賃金について妥協しようとしなかったため、労使紛争は行き詰まりました。",
+        "context": "労働"
       }
     ],
     "categories": [
@@ -9925,9 +9925,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding debridement requires patience.",
-        "ja": "創面切除を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Surgical debridement removes necrotic tissue to promote healthy wound healing.",
+        "ja": "外科的創面切除は壊死した組織を除去して健全な傷の治癒を促進します。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -10157,9 +10157,9 @@
         "context": "文化"
       },
       {
-        "en": "They decolonized the curriculum.",
-        "ja": "彼らはカリキュラムを脱植民地化した。",
-        "context": "文化"
+        "en": "The university pledged to decolonize its reading lists by including more non-Western texts.",
+        "ja": "大学は非西洋のテキストをより多く含めることで読書リストを脱植民地化することを誓いました。",
+        "context": "教育"
       }
     ],
     "categories": [
@@ -10190,9 +10190,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding deconstructionism requires patience.",
-        "ja": "脱構築主義を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "Deconstructionism emerged in France during the 1960s as a radical challenge to structuralism.",
+        "ja": "脱構築主義は1960年代のフランスで構造主義への根本的な挑戦として生まれました。",
+        "context": "哲学"
       }
     ],
     "categories": [
@@ -10289,9 +10289,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding decoupage requires patience.",
-        "ja": "デコパージュを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "She learned decoupage at a craft workshop and soon transformed old furniture at home.",
+        "ja": "彼女はクラフトワークショップでデコパージュを習い、やがて自宅の古い家具を変身させました。",
+        "context": "趣味"
       }
     ],
     "categories": [
@@ -10874,9 +10874,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Scholars demythologize ancient texts.",
-        "ja": "学者が古代文献を脱神話化する。",
-        "context": "学術"
+        "en": "The biography sought to demythologize the founder and reveal the person behind the legend.",
+        "ja": "その伝記は創業者を脱神話化し、伝説の裏にある人物を明らかにしようとしました。",
+        "context": "文学"
       },
       {
         "en": "The book demythologizes the hero.",
@@ -10917,8 +10917,8 @@
         "context": "科学"
       },
       {
-        "en": "Understanding denudation requires patience.",
-        "ja": "浸食を理解するには忍耐が必要だ。",
+        "en": "Deforestation accelerates denudation by removing the vegetation that binds topsoil.",
+        "ja": "森林伐採は表土を固定する植生を除去することで浸食を加速させます。",
         "context": "環境"
       }
     ],
@@ -10945,9 +10945,9 @@
         "context": "環境"
       },
       {
-        "en": "Erosion denuded the topsoil.",
-        "ja": "浸食が表土を剥ぎ取った。",
-        "context": "自然"
+        "en": "Decades of overgrazing denuded the hillsides, triggering severe soil erosion.",
+        "ja": "何十年もの過放牧が丘の斜面を丸裸にし、深刻な土壌侵食を引き起こしました。",
+        "context": "環境"
       },
       {
         "en": "Winter storms denuded the branches of leaves.",
@@ -11171,8 +11171,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Overgrazing desertified the region.",
-        "ja": "過放牧がその地域を砂漠化した。",
+        "en": "Continued drought and deforestation may desertify large parts of the region.",
+        "ja": "続く干ばつと森林伐採がその地域の大部分を砂漠化させる可能性があります。",
         "context": "環境"
       },
       {
@@ -11341,8 +11341,8 @@
         "context": "技術"
       },
       {
-        "en": "Deterministic tests are reliable.",
-        "ja": "決定論的テストは信頼性が高い。",
+        "en": "A deterministic algorithm always produces the same output for a given input.",
+        "ja": "決定論的なアルゴリズムは与えられた入力に対して常に同じ出力を生成します。",
         "context": "技術"
       },
       {
@@ -11473,9 +11473,9 @@
         "context": "文化"
       },
       {
-        "en": "Diachronic analysis spans centuries.",
-        "ja": "通時的分析は何世紀にもわたる。",
-        "context": "文化"
+        "en": "A diachronic study of English reveals how drastically the language has shifted over centuries.",
+        "ja": "英語の通時的研究は、言語が何世紀にもわたってどれほど劇的に変化したかを明らかにします。",
+        "context": "言語学"
       },
       {
         "en": "The diachronic perspective is essential.",
@@ -11633,9 +11633,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Modern didactics emphasizes interaction.",
-        "ja": "現代の教授法は相互作用を重視する。",
-        "context": "学術"
+        "en": "Contemporary didactics draws on cognitive science to design more effective learning experiences.",
+        "ja": "現代の教授法は認知科学を活用してより効果的な学習体験を設計しています。",
+        "context": "教育"
       },
       {
         "en": "She studied didactics at university.",
@@ -11643,9 +11643,9 @@
         "context": "学術"
       },
       {
-        "en": "Didactics shapes classroom practice.",
-        "ja": "教授法が授業実践を形作る。",
-        "context": "学術"
+        "en": "Contemporary didactics draws on cognitive science to design more effective curricula.",
+        "ja": "現代の教授法は、より効果的なカリキュラムを設計するために認知科学を活用しています。",
+        "context": "教育学"
       }
     ],
     "categories": [
@@ -11700,19 +11700,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "His approach was dilettantish.",
-        "ja": "彼のアプローチは素人的だった。",
-        "context": "趣味"
+        "en": "The critic dismissed his sculptures as dilettantish efforts lacking any technical mastery.",
+        "ja": "批評家は彼の彫刻を、技術的な熟練を欠いた素人的な試みと一蹴しました。",
+        "context": "芸術批評"
       },
       {
-        "en": "Avoid dilettantish efforts.",
-        "ja": "素人的な取り組みを避けよ。",
-        "context": "趣味"
+        "en": "A dilettantish approach to investment often leads to costly mistakes in volatile markets.",
+        "ja": "投資への素人的なアプローチは、変動する市場で高くつく失敗につながることが多いです。",
+        "context": "金融"
       },
       {
-        "en": "The work seemed dilettantish.",
-        "ja": "その作品は素人的に見えた。",
-        "context": "趣味"
+        "en": "His dilettantish grasp of philosophy frustrated colleagues who had spent decades in the field.",
+        "ja": "哲学への彼の素人的な理解は、その分野で数十年を費やした同僚たちをいらだたせました。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -11832,19 +11832,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Context helps disambiguate meaning.",
-        "ja": "文脈が意味の曖昧さを除去する。",
-        "context": "学術"
+        "en": "The editor added footnotes to disambiguate the author's ambiguous references to historical events.",
+        "ja": "編集者は、歴史的事件への著者の曖昧な言及の曖昧さを除くために注釈を追加しました。",
+        "context": "出版"
       },
       {
-        "en": "The algorithm disambiguates terms.",
-        "ja": "アルゴリズムが用語の曖昧性を除去する。",
-        "context": "学術"
+        "en": "Computational linguists use syntactic parsers to disambiguate structurally complex sentences.",
+        "ja": "計算言語学者は統語論的パーサーを使用して構造的に複雑な文の曖昧さを除きます。",
+        "context": "言語学"
       },
       {
-        "en": "Readers disambiguate through inference.",
-        "ja": "読者は推論で曖昧さを解消する。",
-        "context": "学術"
+        "en": "The legal team struggled to disambiguate the contractual clause before the arbitration deadline.",
+        "ja": "法律チームは仲裁期限前に契約条項の曖昧さを除くのに苦労しました。",
+        "context": "法律"
       }
     ],
     "categories": [
@@ -11997,19 +11997,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Disconsolation filled the room.",
-        "ja": "深い悲嘆が部屋を満たした。",
-        "context": "感情"
+        "en": "A profound disconsolation overtook her when she realized the manuscript had been irretrievably lost.",
+        "ja": "原稿が取り返しのつかない形で失われたと気づいたとき、深い悲嘆が彼女を包みました。",
+        "context": "文学"
       },
       {
-        "en": "Her disconsolation was palpable.",
-        "ja": "彼女の深い悲嘆は明白だった。",
-        "context": "感情"
+        "en": "The disconsolation etched into his face after the verdict moved even the prosecuting attorney.",
+        "ja": "判決後に彼の顔に刻まれた深い悲嘆は、検察側の弁護士さえも動かしました。",
+        "context": "法律"
       },
       {
-        "en": "He sank into disconsolation.",
-        "ja": "彼は深い悲嘆に沈んだ。",
-        "context": "感情"
+        "en": "The philosopher argued that disconsolation, fully embraced, can itself become a path to self-knowledge.",
+        "ja": "哲学者は、深い悲嘆を完全に受け入れることが自己認識への道そのものになりうると主張しました。",
+        "context": "哲学"
       }
     ],
     "categories": [
@@ -12073,9 +12073,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "Understanding diseconomy requires patience.",
-        "ja": "規模の不経済を理解するには忍耐が必要だ。",
-        "context": "経済"
+        "en": "The merger created a significant diseconomy of scale as bureaucratic layers multiplied across both organizations.",
+        "ja": "合併により、両組織に官僚的な階層が増殖したことで、大きな規模の不経済が生じました。",
+        "context": "経営学"
       }
     ],
     "categories": [
@@ -12129,19 +12129,19 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Fintech companies disintermediate banks.",
-        "ja": "フィンテック企業が銀行の仲介を排除する。",
-        "context": "金融"
+        "en": "Peer-to-peer lending platforms disintermediate traditional banks by connecting borrowers directly with investors.",
+        "ja": "ピアツーピア融資プラットフォームは、借り手と投資家を直接つなぐことで従来の銀行の仲介を排除します。",
+        "context": "金融テクノロジー"
       },
       {
-        "en": "The platform disintermediates brokers.",
-        "ja": "そのプラットフォームは仲介業者を排除する。",
-        "context": "金融"
+        "en": "Streaming services have successfully disintermediated record labels in the music distribution chain.",
+        "ja": "ストリーミングサービスは音楽流通チェーンにおいてレコードレーベルの仲介を排除することに成功しました。",
+        "context": "メディア"
       },
       {
-        "en": "Blockchain can disintermediate institutions.",
-        "ja": "ブロックチェーンは機関の仲介を排除できる。",
-        "context": "金融"
+        "en": "Smart contracts on decentralized networks can disintermediate escrow services in real estate transactions.",
+        "ja": "分散型ネットワーク上のスマートコントラクトは、不動産取引においてエスクローサービスの仲介を排除できます。",
+        "context": "法律・テクノロジー"
       }
     ],
     "categories": [
@@ -12162,19 +12162,19 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Disintermediation threatens traditional banks.",
-        "ja": "仲介排除が従来の銀行を脅かす。",
+        "en": "The rise of robo-advisors has accelerated disintermediation within the wealth management industry.",
+        "ja": "ロボアドバイザーの台頭により、資産管理業界における仲介排除が加速しています。",
         "context": "金融"
       },
       {
-        "en": "Financial disintermediation is accelerating.",
-        "ja": "金融の仲介排除が加速している。",
-        "context": "金融"
+        "en": "Critics warn that unchecked disintermediation could undermine consumer protections built into regulated markets.",
+        "ja": "批評家たちは、規制されない仲介排除が規制市場に組み込まれた消費者保護を損なう恐れがあると警告しています。",
+        "context": "経済政策"
       },
       {
-        "en": "Blockchain enables disintermediation.",
-        "ja": "ブロックチェーンが仲介排除を可能にする。",
-        "context": "金融"
+        "en": "Blockchain-driven disintermediation challenges the viability of correspondent banking across emerging markets.",
+        "ja": "ブロックチェーンによる仲介排除は、新興市場全体にわたるコルレス銀行業務の存続可能性に課題をもたらしています。",
+        "context": "国際金融"
       }
     ],
     "categories": [
@@ -12205,9 +12205,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding disputatio requires patience.",
-        "ja": "討論を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "The medieval disputatio trained scholars to defend theses against skilled adversaries in formal public debate.",
+        "ja": "中世の討論は、学者たちが公式の公開討論で熟達した論敵に対して論題を弁護する訓練をしました。",
+        "context": "学術史"
       }
     ],
     "categories": [
@@ -12238,9 +12238,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding disquietude requires patience.",
-        "ja": "不安を理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "A vague disquietude lingered long after she read the preliminary audit report late that evening.",
+        "ja": "その夜遅くに予備監査報告書を読んだ後、漠然とした不安がずっとつきまとっていました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -12271,9 +12271,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding disruptor requires patience.",
-        "ja": "破壊的企業を理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "Airbnb emerged as a formidable disruptor that forced traditional hotel chains to fundamentally rethink their offerings.",
+        "ja": "エアビーアンドビーは、伝統的なホテルチェーンにそのサービスを根本から見直すことを迫る強大な破壊的企業として台頭しました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -12403,9 +12403,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding divestitures requires patience.",
-        "ja": "事業売却を理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "The conglomerate's strategic divestitures unlocked shareholder value by shedding underperforming divisions.",
+        "ja": "その複合企業の戦略的な事業売却は、業績不振部門を切り離すことで株主価値を解放しました。",
+        "context": "企業戦略"
       }
     ],
     "categories": [
@@ -12431,9 +12431,9 @@
         "context": "文化"
       },
       {
-        "en": "Don't follow rules dogmatically.",
-        "ja": "規則に独断的に従うな。",
-        "context": "文化"
+        "en": "She dogmatically adhered to a single methodological framework, dismissing contradictory empirical evidence without scrutiny.",
+        "ja": "彼女は単一の方法論的枠組みに独断的にこだわり、相反する経験的証拠を精査せずに退けました。",
+        "context": "学術"
       },
       {
         "en": "She rejected the idea dogmatically.",
@@ -12469,9 +12469,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding doldrums requires patience.",
-        "ja": "沈滞を理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "After the initial product launch excitement faded, the company drifted into creative doldrums for over a year.",
+        "ja": "初期の製品発売の興奮が冷めた後、会社は1年以上にわたって創造的な沈滞に漂いました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -12525,14 +12525,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Dollarization stabilized the economy.",
-        "ja": "ドル化が経済を安定させた。",
-        "context": "金融"
+        "en": "Ecuador's full dollarization in 2000 curbed hyperinflation but permanently surrendered its monetary policy autonomy.",
+        "ja": "2000年のエクアドルの完全なドル化はハイパーインフレを抑制しましたが、金融政策の自律性を永続的に手放しました。",
+        "context": "経済政策"
       },
       {
-        "en": "Full dollarization has drawbacks.",
-        "ja": "完全なドル化には欠点がある。",
-        "context": "金融"
+        "en": "Informal dollarization often precedes official policy adoption in economies ravaged by chronic currency instability.",
+        "ja": "慢性的な通貨不安定に苦しむ経済では、非公式のドル化が公式の政策採用に先行することが多いです。",
+        "context": "マクロ経済学"
       },
       {
         "en": "Dollarization is debated among economists.",
@@ -12700,9 +12700,9 @@
         "context": "金融"
       },
       {
-        "en": "The drawdown exceeded expectations.",
-        "ja": "下落幅が予想を超えた。",
-        "context": "金融"
+        "en": "Risk managers capped the allowable drawdown at ten percent to protect the fund during market turbulence.",
+        "ja": "リスクマネージャーは市場の混乱時にファンドを守るため、許容される下落幅を10パーセントに制限しました。",
+        "context": "リスク管理"
       }
     ],
     "categories": [
@@ -12832,9 +12832,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding duxelles requires patience.",
-        "ja": "デュクセルを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The chef prepared a richly seasoned duxelles to spread over the tenderloin before wrapping it in puff pastry.",
+        "ja": "シェフはパイ生地で包む前にヒレ肉に塗るため、風味豊かに味付けしたデュクセルを用意しました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -12865,8 +12865,8 @@
         "context": "医療"
       },
       {
-        "en": "Speech therapists treat dysphagia.",
-        "ja": "言語療法士が嚥下障害を治療する。",
+        "en": "Post-operative dysphagia requiring modified diet textures was documented in nearly a third of the surgical cases reviewed.",
+        "ja": "審査した外科症例の約3分の1で、食事形態の調整を要する術後の嚥下障害が記録されました。",
         "context": "医療"
       }
     ],
@@ -12888,9 +12888,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Dysphasia impairs language production.",
-        "ja": "言語障害が言語産出を損なう。",
-        "context": "医療"
+        "en": "Broca's area lesions typically produce dysphasia characterized by halting speech and impaired sentence construction.",
+        "ja": "ブローカ野の病変は通常、途切れがちな発話と文構築の障害を特徴とする言語障害を引き起こします。",
+        "context": "神経医学"
       },
       {
         "en": "He was diagnosed with dysphasia.",
@@ -12898,8 +12898,8 @@
         "context": "医療"
       },
       {
-        "en": "Dysphasia requires speech therapy.",
-        "ja": "言語障害には言語療法が必要だ。",
+        "en": "Intensive speech therapy sessions gradually alleviated the dysphasia he developed following the ischemic stroke.",
+        "ja": "集中的な言語療法セッションが、虚血性脳卒中後に発症した言語障害を徐々に改善しました。",
         "context": "医療"
       }
     ],
@@ -12964,9 +12964,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding echolalia requires patience.",
-        "ja": "反響言語を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The therapist carefully distinguished communicative echolalia from non-functional repetition when designing the intervention plan.",
+        "ja": "療法士は介入計画を設計する際に、機能的な反響言語と非機能的な反復を慎重に区別しました。",
+        "context": "臨床心理"
       }
     ],
     "categories": [
@@ -13030,9 +13030,9 @@
         "context": "自然"
       },
       {
-        "en": "Ecotonal habitats are fragile.",
-        "ja": "推移帯の生息地は脆弱だ。",
-        "context": "自然"
+        "en": "The ecotonal zone where forest meets wetland supports a disproportionately high level of avian biodiversity.",
+        "ja": "森林と湿地が接する推移帯の地帯は、不釣り合いに高い鳥類の生物多様性を支えています。",
+        "context": "生態学"
       }
     ],
     "categories": [
@@ -13096,9 +13096,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding edema requires patience.",
-        "ja": "浮腫を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Cardiologists ordered diuretics to reduce the pulmonary edema that was compromising the patient's respiratory function.",
+        "ja": "心臓専門医は患者の呼吸機能を損なっていた肺浮腫を軽減するために利尿剤を処方しました。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -13195,9 +13195,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding efflorescence requires patience.",
-        "ja": "開花を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The Renaissance represented a remarkable efflorescence of artistic and intellectual achievement across the Italian city-states.",
+        "ja": "ルネサンスはイタリアの都市国家全体における芸術的・知的達成の目覚ましい開花を象徴しています。",
+        "context": "文化史"
       }
     ],
     "categories": [
@@ -13294,9 +13294,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding embolism requires patience.",
-        "ja": "塞栓症を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "The anticoagulation protocol was prescribed to reduce the recurrence risk of deep vein embolism after surgery.",
+        "ja": "抗凝固プロトコルは術後の深部静脈塞栓症の再発リスクを低減するために処方されました。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -13421,14 +13421,14 @@
         "context": "料理"
       },
       {
-        "en": "Lecithin helps emulsify ingredients.",
-        "ja": "レシチンが材料の乳化を助ける。",
+        "en": "Adding the oil drop by drop while whisking vigorously helps emulsify the dressing into a stable sauce.",
+        "ja": "激しくかき混ぜながら油を少しずつ加えることで、ドレッシングを安定したソースに乳化させることができます。",
         "context": "料理"
       },
       {
-        "en": "Blend until fully emulsified.",
-        "ja": "完全に乳化するまで混ぜよ。",
-        "context": "料理"
+        "en": "Egg yolk contains lecithin, which naturally emulsifies fat and water to create smooth, stable sauces.",
+        "ja": "卵黄にはレシチンが含まれており、脂肪と水を自然に乳化させてなめらかで安定したソースを作ります。",
+        "context": "食品科学"
       }
     ],
     "categories": [
@@ -13459,9 +13459,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding emulsion requires patience.",
-        "ja": "乳化液を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Hollandaise relies on a delicate emulsion of clarified butter and egg yolk that breaks easily if overheated.",
+        "ja": "オランデーズソースは澄ましバターと卵黄の繊細な乳化液に依存しており、加熱しすぎると簡単に分離します。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -13525,9 +13525,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding encaustic requires patience.",
-        "ja": "蝋画法を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Working with encaustic demands precise temperature control, as the molten wax medium solidifies almost instantly on the cool panel.",
+        "ja": "蝋画法の作業は精密な温度管理を要求します。溶けた蝋の媒材が冷たいパネル上でほぼ瞬時に固まるためです。",
+        "context": "美術"
       }
     ],
     "categories": [
@@ -13558,9 +13558,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding endpoint requires patience.",
-        "ja": "エンドポイントを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The security team discovered a misconfigured endpoint that was inadvertently exposing sensitive user credentials to the internet.",
+        "ja": "セキュリティチームは、機密性の高いユーザー認証情報をインターネットに意図せず公開していた設定ミスのエンドポイントを発見しました。",
+        "context": "情報セキュリティ"
       }
     ],
     "categories": [
@@ -13855,9 +13855,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding epiphyte requires patience.",
-        "ja": "着生植物を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Many tropical epiphytes absorb moisture and nutrients entirely from the surrounding atmosphere and rainfall rather than soil.",
+        "ja": "多くの熱帯性着生植物は、土壌ではなく周囲の大気と雨水だけから水分と栄養素を完全に吸収します。",
+        "context": "植物学"
       }
     ],
     "categories": [
@@ -13921,9 +13921,9 @@
         "context": "学術"
       },
       {
-        "en": "We must think epistemologically.",
-        "ja": "認識論的に考えなければならない。",
-        "context": "学術"
+        "en": "Epistemologically speaking, empirical science and metaphysics operate under fundamentally different justificatory frameworks.",
+        "ja": "認識論的に言えば、経験科学と形而上学は根本的に異なる正当化の枠組みのもとで機能しています。",
+        "context": "哲学"
       }
     ],
     "categories": [
@@ -14185,9 +14185,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding esker requires patience.",
-        "ja": "エスカーを理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The sinuous esker stretching across the boreal plain was deposited by a subglacial meltwater stream thousands of years ago.",
+        "ja": "北方平野を横断する蛇行したエスカーは、何千年も前に氷河底の融解水流によって堆積したものです。",
+        "context": "地形学"
       }
     ],
     "categories": [
@@ -14218,9 +14218,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding etching requires patience.",
-        "ja": "エッチングを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "His meticulous etching of maritime scenes earned him a devoted following among collectors of old master prints.",
+        "ja": "海洋の情景を描いた彼の精緻なエッチングは、旧来の巨匠の版画収集家たちの間に熱烈な支持者をもたらしました。",
+        "context": "美術史"
       }
     ],
     "categories": [
@@ -14274,9 +14274,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Ethnolinguistic diversity is declining.",
-        "ja": "民族言語の多様性が減少している。",
-        "context": "文化"
+        "en": "The region's complex ethnolinguistic landscape complicates efforts to standardize a national education curriculum.",
+        "ja": "その地域の複雑な民族言語学的状況は、国家教育カリキュラムを標準化する努力を困難にしています。",
+        "context": "教育政策"
       },
       {
         "en": "The region has ethnolinguistic tensions.",
@@ -14284,9 +14284,9 @@
         "context": "文化"
       },
       {
-        "en": "Ethnolinguistic research is vital.",
-        "ja": "民族言語学研究は不可欠だ。",
-        "context": "文化"
+        "en": "Ethnolinguistic minorities frequently face institutional barriers that restrict access to legal and administrative services.",
+        "ja": "民族言語学的少数派はしばしば、法的・行政的サービスへのアクセスを制限する制度的障壁に直面します。",
+        "context": "社会学"
       }
     ],
     "categories": [
@@ -14307,9 +14307,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Plants etiolate without sunlight.",
-        "ja": "植物は日光なしで白化します。",
-        "context": "植物"
+        "en": "Seedlings kept in windowless storage rooms etiolate rapidly, producing pale, elongated stems unfit for transplanting.",
+        "ja": "窓のない保管室に置かれた苗は急速に白化し、移植に適さない淡色の細長い茎を生じます。",
+        "context": "農業"
       },
       {
         "en": "Years of isolation etiolated his creativity.",
@@ -14379,14 +14379,14 @@
         "context": "医療"
       },
       {
-        "en": "Research into etiopathogenesis continues.",
-        "ja": "病因の研究が続いている。",
-        "context": "医療"
+        "en": "The etiopathogenesis of autoimmune hepatitis involves a complex interplay between genetic susceptibility and environmental triggers.",
+        "ja": "自己免疫性肝炎の病因・発症機序は、遺伝的感受性と環境的誘因の複雑な相互作用を含みます。",
+        "context": "医学研究"
       },
       {
-        "en": "Understanding etiopathogenesis aids treatment.",
-        "ja": "発症機序の理解が治療に役立つ。",
-        "context": "医療"
+        "en": "Clarifying the etiopathogenesis of treatment-resistant depression remains one of psychiatry's most urgent research priorities.",
+        "ja": "治療抵抗性うつ病の病因・発症機序の解明は、精神医学において最も緊急性の高い研究課題の一つです。",
+        "context": "精神医学"
       }
     ],
     "categories": [
@@ -14441,18 +14441,18 @@
     "examples": [
       {
         "en": "The company euphemistically called the layoffs \"workforce restructuring.\"",
-        "ja": "会社は解雇を婉曲的に「人員再編」と呼んだ。",
+        "ja": "会社は解雇を婉曲的に「人員再編」と呼んです。",
         "context": "ビジネス"
       },
       {
         "en": "Death is euphemistically referred to as \"passing away.\"",
-        "ja": "死は婉曲的に「他界」と言い換えられる。",
+        "ja": "死は婉曲的に「他界」と言い換えられます。",
         "context": "日常"
       },
       {
         "en": "The failure was euphemistically described as a \"learning opportunity.\"",
-        "ja": "その失敗は婉曲的に「学びの機会」と表現された。",
-        "context": "仕事"
+        "ja": "その失敗は婉曲的に「学びの機会」と表現されました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -14616,9 +14616,9 @@
         "context": "旅行"
       },
       {
-        "en": "His behavior was execrable.",
-        "ja": "彼の振る舞いはひどく悪かったです。",
-        "context": "人間関係"
+        "en": "The senator's execrable conduct during the hearing drew widespread condemnation from both parties.",
+        "ja": "公聴会中の上院議員のひどく悪い振る舞いは、両党から広く非難を受けました。",
+        "context": "政治"
       }
     ],
     "categories": [
@@ -14677,9 +14677,9 @@
         "context": "学術"
       },
       {
-        "en": "Exegetical scholarship has evolved.",
-        "ja": "注釈学は進化してきた。",
-        "context": "学術"
+        "en": "Her exegetical commentary on the medieval legal text illuminated interpretive disputes that had persisted for centuries.",
+        "ja": "中世の法典に関する彼女の注釈的解説は、何世紀もの間続いてきた解釈上の論争に光を当てました。",
+        "context": "法学史"
       },
       {
         "en": "The exegetical tradition is ancient.",
@@ -14875,9 +14875,9 @@
         "context": "コミュニケーション"
       },
       {
-        "en": "The comedian performed extemporaneously.",
-        "ja": "コメディアンは即興で演じた。",
-        "context": "エンターテインメント"
+        "en": "Responding extemporaneously to hostile questions at the press conference, she demonstrated remarkable composure and depth of knowledge.",
+        "ja": "記者会見での敵対的な質問に即興で答えながら、彼女は驚くべき冷静さと深い知識を示しました。",
+        "context": "ビジネス"
       },
       {
         "en": "He answered the questions extemporaneously.",
@@ -15078,9 +15078,9 @@
         "context": "感情"
       },
       {
-        "en": "Their exultation was infectious.",
-        "ja": "彼らの歓喜は伝染性だった。",
-        "context": "感情"
+        "en": "The nation erupted in exultation when the final whistle confirmed the historic championship victory.",
+        "ja": "最終ホイッスルが歴史的な優勝を確認すると、国民は歓喜に沸き立ちました。",
+        "context": "スポーツ"
       }
     ],
     "categories": [
@@ -15178,9 +15178,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding falconry requires patience.",
-        "ja": "鷹狩りを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Recognized as an intangible cultural heritage by UNESCO, falconry continues to be practiced by dedicated communities worldwide.",
+        "ja": "ユネスコの無形文化遺産として認定された鷹狩りは、世界中の献身的なコミュニティによって今も実践されています。",
+        "context": "文化遺産"
       }
     ],
     "categories": [
@@ -15443,9 +15443,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding ferrotype requires patience.",
-        "ja": "鉄板写真を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The museum acquired a remarkable collection of ferrotype portraits documenting everyday life in nineteenth-century America.",
+        "ja": "博物館は19世紀アメリカの日常生活を記録した驚くべき鉄板写真の肖像画コレクションを収蔵しました。",
+        "context": "写真史"
       }
     ],
     "categories": [
@@ -15471,9 +15471,9 @@
         "context": "文化"
       },
       {
-        "en": "Don't fetishize technology blindly.",
-        "ja": "技術を盲目的に崇拝するな。",
-        "context": "文化"
+        "en": "Contemporary consumer culture tends to fetishize novelty, discarding functional products long before they reach the end of their useful life.",
+        "ja": "現代の消費者文化は新奇さを偶像化する傾向があり、実用的な製品をその耐用年数が尽きるずっと前に廃棄します。",
+        "context": "文化批評"
       },
       {
         "en": "They fetishized the notion of purity.",
@@ -15542,9 +15542,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding fibrillation requires patience.",
-        "ja": "細動を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "The cardiologist prescribed anticoagulants to reduce stroke risk in patients with persistent atrial fibrillation.",
+        "ja": "心臓専門医は持続性心房細動の患者の脳卒中リスクを低減するために抗凝固薬を処方しました。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -15575,9 +15575,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding fibrosis requires patience.",
-        "ja": "線維症を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Chronic liver fibrosis, if left untreated, progresses inexorably toward cirrhosis and eventual organ failure.",
+        "ja": "慢性肝線維症は治療しなければ、肝硬変とやがての臓器不全へと容赦なく進行します。",
+        "context": "医学"
       }
     ],
     "categories": [
@@ -15707,9 +15707,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding fiefdom requires patience.",
-        "ja": "縄張りを理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "The executive's department had become a personal fiefdom where promotions depended entirely on personal loyalty rather than merit.",
+        "ja": "その役員の部署は、昇進が実力ではなく個人的な忠誠心にのみ依存する個人的な縄張りと化していました。",
+        "context": "組織"
       }
     ],
     "categories": [
@@ -15773,9 +15773,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding finial requires patience.",
-        "ja": "尖塔飾りを理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The restorers painstakingly recreated the missing finial atop the Victorian clock tower using period photographs as reference.",
+        "ja": "修復師たちは時代の写真を参考に、ビクトリア朝の時計塔の頂上の失われた尖塔飾りを丹念に復元しました。",
+        "context": "建築修復"
       }
     ],
     "categories": [
@@ -15806,9 +15806,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding firmware requires patience.",
-        "ja": "ファームウェアを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The manufacturer issued an emergency firmware patch after a critical vulnerability was discovered in the device's bootloader.",
+        "ja": "デバイスのブートローダーに重大な脆弱性が発見された後、メーカーは緊急ファームウェアパッチを発行しました。",
+        "context": "情報セキュリティ"
       }
     ],
     "categories": [
@@ -15938,9 +15938,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding fjordland requires patience.",
-        "ja": "フィヨルド地域を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "New Zealand's fjordland, carved by glaciers over millions of years, now draws visitors from across the globe.",
+        "ja": "何百万年もの間氷河によって刻まれたニュージーランドのフィヨルド地域は、今や世界中から訪問者を引き寄せています。",
+        "context": "観光"
       }
     ],
     "categories": [
@@ -16004,9 +16004,9 @@
         "context": "趣味"
       },
       {
-        "en": "Always flambe with caution.",
-        "ja": "フランベは必ず注意して行え。",
-        "context": "趣味"
+        "en": "The experienced chef taught apprentices to flambe spirits safely by tilting the pan away from the body before igniting.",
+        "ja": "経験豊富なシェフは、点火前にパンを体から遠ざけて傾けることで安全にフランベする方法を見習いに教えました。",
+        "context": "調理技術"
       }
     ],
     "categories": [
@@ -16037,9 +16037,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding flibbertigibbet requires patience.",
-        "ja": "おしゃべりな人を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "Despite her reputation as a flibbertigibbet, she possessed a sharp analytical mind that consistently delivered results under pressure.",
+        "ja": "おしゃべりな人という評判にもかかわらず、彼女はプレッシャーの下で一貫して結果を出す鋭い分析的思考を持っていました。",
+        "context": "職場"
       }
     ],
     "categories": [
@@ -16301,9 +16301,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding franchisor requires patience.",
-        "ja": "フランチャイザーを理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "The franchisor retained the right to terminate agreements with licensees who failed to uphold brand standards.",
+        "ja": "フランチャイザーはブランド基準を守れない加盟店との契約を解除する権利を保持していました。",
+        "context": "ビジネス法"
       }
     ],
     "categories": [
@@ -16334,9 +16334,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding frieze requires patience.",
-        "ja": "フリーズ装飾を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The Elgin Marbles controversy centers largely on the carved frieze panels removed from the Parthenon in the early nineteenth century.",
+        "ja": "エルギン・マーブルス論争は主に、19世紀初頭にパルテノン神殿から取り外された彫刻フリーズ装飾パネルをめぐるものです。",
+        "context": "文化政策"
       }
     ],
     "categories": [
@@ -16400,9 +16400,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding frond requires patience.",
-        "ja": "シダの葉を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The delicate frond of the tree fern unfurled slowly in the damp morning air of the rainforest understory.",
+        "ja": "木生シダの繊細な葉は、熱帯雨林の林床の湿った朝の空気の中でゆっくりと広がりました。",
+        "context": "植物学"
       }
     ],
     "categories": [
@@ -16565,9 +16565,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding fumarole requires patience.",
-        "ja": "噴気孔を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Geochemists analyze gas emissions from active fumaroles to monitor volcanic activity and forecast potential eruptions.",
+        "ja": "地球化学者たちは火山活動を監視し噴火の可能性を予測するために、活発な噴気孔からのガス放出を分析します。",
+        "context": "地球科学"
       }
     ],
     "categories": [
@@ -16626,9 +16626,9 @@
         "context": "スピーチ"
       },
       {
-        "en": "Fustian language obscures meaning.",
-        "ja": "大げさな言葉は意味を曖昧にします。",
-        "context": "文章"
+        "en": "The professor dismissed the politician's speech as fustian rhetoric that substituted grandiloquence for genuine policy substance.",
+        "ja": "教授は政治家の演説を、真の政策内容の代わりに大げさな修辞で誤魔化す大仰な言葉として退けました。",
+        "context": "政治"
       },
       {
         "en": "The editorial was dismissed as fustian.",
@@ -16665,9 +16665,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding gadabout requires patience.",
-        "ja": "遊び好きな人を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The notorious gadabout accumulated an enviable network of acquaintances across five continents during years of restless travel.",
+        "ja": "その有名な遊び好きな人は、落ち着きのない旅の数年間で五大陸にわたる羨ましいほどの知人ネットワークを築きました。",
+        "context": "旅行"
       }
     ],
     "categories": [
@@ -16698,9 +16698,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding gadfly requires patience.",
-        "ja": "うるさい人を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "Socrates cast himself as a gadfly whose persistent questioning was intended to awaken Athens from its moral complacency.",
+        "ja": "ソクラテスは、アテネを道徳的な怠慢から覚醒させることを意図した執拗な問いかけを行ううるさい人として自らを位置づけました。",
+        "context": "哲学"
       }
     ],
     "categories": [
@@ -16797,9 +16797,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding ganache requires patience.",
-        "ja": "ガナッシュを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "She infused the ganache with earl grey tea and cardamom to create a complex, aromatic truffle filling.",
+        "ja": "彼女はアールグレーティーとカルダモンをガナッシュに染み込ませ、複雑で芳しいトリュフのフィリングを作りました。",
+        "context": "菓子製造"
       }
     ],
     "categories": [
@@ -16830,9 +16830,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding gangway requires patience.",
-        "ja": "通路を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "A crew member stood at the foot of the gangway to check boarding passes before passengers embarked.",
+        "ja": "乗客が乗船する前に搭乗券を確認するため、乗組員が通路の入り口に立っていました。",
+        "context": "海運"
       }
     ],
     "categories": [
@@ -16863,9 +16863,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding gargoyle requires patience.",
-        "ja": "ガーゴイルを理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The medieval gargoyle served the dual purpose of channeling rainwater away from the cathedral walls and warding off evil spirits.",
+        "ja": "中世のガーゴイルは、雨水を大聖堂の壁から誘導すると同時に悪霊を追い払うという二重の目的を果たしていました。",
+        "context": "建築史"
       }
     ],
     "categories": [
@@ -17094,9 +17094,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding gemuetlichkeit requires patience.",
-        "ja": "居心地のよさを理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "The Bavarian inn radiated an unmistakable gemuetlichkeit that made every guest feel immediately at ease.",
+        "ja": "バイエルンの旅館は、すべての客をすぐにくつろいだ気分にさせる紛れもない居心地のよさを放っていました。",
+        "context": "旅行・文化"
       }
     ],
     "categories": [
@@ -17226,9 +17226,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding glossary requires patience.",
-        "ja": "用語集を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "The legal contract included a detailed glossary defining each technical term as it would be interpreted under the agreement.",
+        "ja": "その法的契約書には、契約の下で解釈されるべき各専門用語を定義した詳細な用語集が含まれていました。",
+        "context": "法律"
       }
     ],
     "categories": [
@@ -17546,14 +17546,14 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The marathon was grueling.",
-        "ja": "そのマラソンは過酷だった。",
+        "en": "The grueling seven-stage race across the Sahara tested both the physical endurance and the mental fortitude of every competitor.",
+        "ja": "サハラを横断する7ステージに及ぶ過酷なレースは、すべての出場者の身体的耐久力と精神的強さを試しました。",
         "context": "スポーツ"
       },
       {
-        "en": "They endured grueling training.",
-        "ja": "彼らは過酷な練習に耐えた。",
-        "context": "スポーツ"
+        "en": "The mountaineering team endured grueling conditions, including frostbite, altitude sickness, and a near-fatal avalanche.",
+        "ja": "登山隊は凍傷、高山病、そして死にそうになった雪崩を含む過酷な状況に耐えました。",
+        "context": "アドベンチャースポーツ"
       },
       {
         "en": "It was a grueling competition.",
@@ -17655,9 +17655,9 @@
         "context": "メディア"
       },
       {
-        "en": "Hagiographic accounts distort history.",
-        "ja": "美化した記述は歴史を歪める。",
-        "context": "歴史"
+        "en": "Reviewers criticized the authorized biography as a hagiographic celebration rather than a balanced account of the founder's legacy.",
+        "ja": "評者たちは公認の伝記を、創業者の遺産のバランスのとれた記述ではなく聖人伝的な賛美と批判しました。",
+        "context": "出版"
       }
     ],
     "categories": [
@@ -17688,9 +17688,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding halophyte requires patience.",
-        "ja": "塩生植物を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Coastal wetland restoration projects increasingly rely on halophyte species to stabilize salt-saturated shorelines.",
+        "ja": "沿岸湿地の復元プロジェクトは、塩分で飽和した海岸線を安定させるために塩生植物の種に依存することが増えています。",
+        "context": "環境保全"
       }
     ],
     "categories": [
@@ -17787,9 +17787,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding headcount requires patience.",
-        "ja": "人員数を理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "The CFO warned that further revenue shortfalls would necessitate a mandatory headcount reduction across all divisions.",
+        "ja": "最高財務責任者は、さらなる収益不足が全部門にわたる強制的な人員数削減を必要とすることになると警告しました。",
+        "context": "経営"
       }
     ],
     "categories": [
@@ -17876,9 +17876,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Alexander hellenized vast territories.",
-        "ja": "アレクサンダーが広大な領土をギリシャ化した。",
-        "context": "歴史"
+        "en": "Alexander the Great sought to hellenize the Persian heartland by founding Greek cities and encouraging mixed marriages.",
+        "ja": "アレクサンドロス大王はギリシャの都市を建設し混血婚を奨励することでペルシャ中枢部をギリシャ化しようとしました。",
+        "context": "古代史"
       },
       {
         "en": "The region was hellenized over centuries.",
@@ -17886,9 +17886,9 @@
         "context": "歴史"
       },
       {
-        "en": "They hellenized local customs.",
-        "ja": "彼らは地元の慣習をギリシャ化した。",
-        "context": "歴史"
+        "en": "Some Jewish communities resisted pressure to hellenize their religious practices during the Seleucid occupation.",
+        "ja": "一部のユダヤ人コミュニティはセレウコス朝占領中に宗教的慣習をギリシャ化させる圧力に抵抗しました。",
+        "context": "宗教史"
       }
     ],
     "categories": [
@@ -17919,9 +17919,9 @@
         "context": "医療"
       },
       {
-        "en": "Proper hemostasis prevents complications.",
-        "ja": "適切な止血が合併症を防ぐ。",
-        "context": "医療"
+        "en": "Surgeons must achieve reliable hemostasis before closing the wound to prevent dangerous postoperative hemorrhage.",
+        "ja": "外科医は危険な術後出血を防ぐために、創を閉じる前に確実な止血を達成しなければなりません。",
+        "context": "外科"
       }
     ],
     "categories": [
@@ -18018,9 +18018,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding heraldry requires patience.",
-        "ja": "紋章学を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The college employed a specialist in heraldry to design a coat of arms symbolizing its institutional history and values.",
+        "ja": "その大学は、機関の歴史と価値観を象徴する紋章を設計するために紋章学の専門家を雇いました。",
+        "context": "文化・教育"
       }
     ],
     "categories": [
@@ -18216,9 +18216,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding hiraeth requires patience.",
-        "ja": "望郷の念を理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "The Welsh concept of hiraeth describes an ineffable longing for a homeland or past that may no longer exist.",
+        "ja": "ウェールズの概念である望郷の念は、もはや存在しないかもしれない故郷や過去への言葉では表せない渇望を表します。",
+        "context": "文化・哲学"
       }
     ],
     "categories": [
@@ -18272,9 +18272,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "This was hitherto unknown.",
-        "ja": "これは今まで知られていなかった。",
-        "context": "仕事"
+        "en": "The archaeologists uncovered a hitherto unknown settlement that predates the earliest recorded civilizations in the region.",
+        "ja": "考古学者たちはその地域で記録された最古の文明に先行する、これまで知られていなかった集落を発見しました。",
+        "context": "考古学"
       },
       {
         "en": "Hitherto, no cure had existed.",
@@ -18282,9 +18282,9 @@
         "context": "仕事"
       },
       {
-        "en": "Hitherto unseen evidence emerged.",
-        "ja": "未発見の証拠が出た。",
-        "context": "仕事"
+        "en": "The declassified documents revealed a hitherto suppressed chapter of wartime diplomacy that reshaped historical understanding.",
+        "ja": "機密解除された文書は、歴史的理解を塗り替えた戦時外交のこれまで抑圧されてきた章を明らかにしました。",
+        "context": "歴史"
       }
     ],
     "categories": [
@@ -18414,9 +18414,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding hostelry requires patience.",
-        "ja": "旅館を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The pilgrims sought refuge each night in a modest roadside hostelry, grateful for warmth and a simple meal.",
+        "ja": "巡礼者たちは温かさと質素な食事に感謝しながら、毎晩質素な道端の旅館に避難を求めました。",
+        "context": "文化史"
       }
     ],
     "categories": [
@@ -18480,8 +18480,8 @@
         "context": "言語"
       },
       {
-        "en": "Poets frequently employ hypallage.",
-        "ja": "詩人はしばしば転移修飾を使用する。",
+        "en": "Shakespeare employs hypallage masterfully when he writes of a 'sleepy night' to evoke the drowsiness of the observer.",
+        "ja": "シェイクスピアは観察者の眠気を喚起するために「眠そうな夜」と書くとき、巧みに転移修飾を使っています。",
         "context": "文学"
       }
     ],
@@ -18513,9 +18513,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding hypertrophy requires patience.",
-        "ja": "肥大を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Pathological cardiac hypertrophy, unlike exercise-induced adaptation, can lead to stiffened ventricular walls and impaired function.",
+        "ja": "運動による適応と異なり、病的な心臓肥大は心室壁の硬化と機能障害をもたらすことがあります。",
+        "context": "心臓医学"
       }
     ],
     "categories": [
@@ -18645,9 +18645,9 @@
         "context": "医療"
       },
       {
-        "en": "Damage was iatrogenically inflicted.",
-        "ja": "損傷が医原性に引き起こされた。",
-        "context": "医療"
+        "en": "The patient's persistent anxiety may have been iatrogenically amplified by the physician's overly alarming prognosis.",
+        "ja": "患者の持続的な不安は、医師の過度に脅かすような予後説明によって医原性に増幅されたかもしれません。",
+        "context": "医療倫理"
       }
     ],
     "categories": [
@@ -18975,8 +18975,8 @@
         "context": "日常"
       },
       {
-        "en": "Understanding ikebana requires patience.",
-        "ja": "生け花を理解するには忍耐が必要だ。",
+        "en": "Unlike Western flower arranging, ikebana emphasizes negative space and the harmony between plant, vessel, and setting.",
+        "ja": "西洋の生け花と異なり、生け花は余白と植物・器・空間の調和を重視します。",
         "context": "文化"
       }
     ],
@@ -19064,18 +19064,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "Immunosuppressive drugs prevent rejection.",
-        "ja": "免疫抑制剤が拒絶反応を防ぐ。",
+        "en": "Patients receiving immunosuppressive therapy following organ transplantation are at significantly elevated risk of opportunistic infections.",
+        "ja": "臓器移植後に免疫抑制療法を受けている患者は、日和見感染症のリスクが著しく高まっています。",
         "context": "医療"
       },
       {
-        "en": "The therapy is immunosuppressive.",
-        "ja": "その治療は免疫抑制的だ。",
+        "en": "The rheumatologist prescribed an immunosuppressive regimen to control the inflammatory cascade driving the patient's condition.",
+        "ja": "リウマチ専門医は、患者の病状を引き起こしている炎症カスケードを制御するために免疫抑制療法を処方しました。",
         "context": "医療"
       },
       {
-        "en": "Immunosuppressive effects are monitored.",
-        "ja": "免疫抑制効果が監視される。",
+        "en": "Long-term immunosuppressive treatment requires regular monitoring of blood counts to detect early signs of toxicity.",
+        "ja": "長期的な免疫抑制治療は、毒性の早期兆候を検出するために定期的な血球数のモニタリングを必要とします。",
         "context": "医療"
       }
     ],
@@ -19862,9 +19862,9 @@
         "context": "日常"
       },
       {
-        "en": "She is indubitably talented.",
-        "ja": "彼女は疑いなく有能だ。",
-        "context": "仕事"
+        "en": "The symphony's third movement is indubitably the most technically demanding passage the ensemble had ever rehearsed.",
+        "ja": "その交響曲の第三楽章は、アンサンブルがこれまでリハーサルした中で疑いなく最も技術的に要求の高い楽章です。",
+        "context": "音楽"
       },
       {
         "en": "The result is indubitably correct.",
@@ -19928,9 +19928,9 @@
         "context": "仕事"
       },
       {
-        "en": "Time ineluctably marches forward.",
-        "ja": "時間は避けられず前に進みます。",
-        "context": "哲学"
+        "en": "Economic globalization has ineluctably reshaped labor markets in ways that even its most ardent proponents did not anticipate.",
+        "ja": "経済のグローバル化は、最も熱心な支持者さえも予期しなかった形で労働市場を避けられないほど変貌させました。",
+        "context": "経済学"
       },
       {
         "en": "Societies are ineluctably shaped by their histories.",
@@ -19956,19 +19956,19 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "He inexplicably vanished overnight.",
-        "ja": "彼はなぜか一晩で消えた。",
-        "context": "日常"
+        "en": "The trial data inexplicably showed a reversal of the treatment effect in the final cohort, baffling the research team.",
+        "ja": "試験データは最終コホートで治療効果の逆転を不思議に示し、研究チームを困惑させました。",
+        "context": "医学研究"
       },
       {
-        "en": "The machine inexplicably stopped.",
-        "ja": "機械が不思議に止まった。",
-        "context": "仕事"
+        "en": "The trading algorithm inexplicably began placing orders in the wrong direction, triggering an internal investigation.",
+        "ja": "取引アルゴリズムはなぜか逆方向に注文を出し始め、内部調査が始まりました。",
+        "context": "金融テクノロジー"
       },
       {
-        "en": "She felt inexplicably sad.",
-        "ja": "なぜか悲しくなった。",
-        "context": "日常"
+        "en": "After decades of escalating tension, the two rival factions inexplicably agreed to a permanent ceasefire overnight.",
+        "ja": "数十年にわたる緊張の高まりの後、二つのライバル派閥はなぜか一夜にして永続的な停戦に合意しました。",
+        "context": "国際政治"
       }
     ],
     "categories": [
@@ -20098,9 +20098,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding inselberg requires patience.",
-        "ja": "残丘を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The Matobo Hills of Zimbabwe are dotted with spectacular inselbergs that hold great spiritual significance for local communities.",
+        "ja": "ジンバブエのマトボ丘陵は、地域コミュニティにとって大きな精神的意義を持つ壮観な残丘が点在しています。",
+        "context": "地理・文化"
       }
     ],
     "categories": [
@@ -20390,9 +20390,9 @@
         "context": "技術"
       },
       {
-        "en": "Standards ensure interoperability.",
-        "ja": "標準規格が相互運用性を保証する。",
-        "context": "技術"
+        "en": "Healthcare systems struggle with interoperability because competing vendors adopt proprietary data formats rather than open standards.",
+        "ja": "医療システムは相互運用性に苦労しています。競合するベンダーがオープンスタンダードではなく独自のデータフォーマットを採用しているためです。",
+        "context": "医療情報"
       },
       {
         "en": "Lack of interoperability causes issues.",
@@ -20489,9 +20489,9 @@
         "context": "学術"
       },
       {
-        "en": "Intertextual analysis reveals connections.",
-        "ja": "間テクスト分析が関連を明らかにする。",
-        "context": "学術"
+        "en": "The intertextual allusions embedded in her poetry reward readers who are steeped in classical and modernist traditions.",
+        "ja": "彼女の詩に埋め込まれた間テクスト的な引喩は、古典主義とモダニズムの伝統に精通した読者に報いるものです。",
+        "context": "文学批評"
       },
       {
         "en": "The poem is deeply intertextual.",
@@ -20626,9 +20626,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding intubation requires patience.",
-        "ja": "挿管を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Rapid sequence intubation is a critical skill that emergency physicians must execute flawlessly under extreme time pressure.",
+        "ja": "迅速導入法による挿管は、救急医が極度の時間的プレッシャーの下で完璧に実行しなければならない重要な技術です。",
+        "context": "救急医療"
       }
     ],
     "categories": [
@@ -20758,9 +20758,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding ischemia requires patience.",
-        "ja": "虚血を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Transient cerebral ischemia, commonly called a mini-stroke, often serves as a warning sign of impending major stroke.",
+        "ja": "一般的にミニ脳卒中と呼ばれる一過性脳虚血は、しばしば差し迫った大きな脳卒中の警告サインとなります。",
+        "context": "神経医学"
       }
     ],
     "categories": [
@@ -20791,9 +20791,9 @@
         "context": "スポーツ"
       },
       {
-        "en": "Planks are isometric exercises.",
-        "ja": "プランクは等尺性運動だ。",
-        "context": "スポーツ"
+        "en": "Physiotherapists prescribe isometric exercises for patients with joint injuries because they build strength without joint movement.",
+        "ja": "理学療法士は関節運動なしで筋力を養うため、関節損傷のある患者に等尺性運動を処方します。",
+        "context": "リハビリ医療"
       }
     ],
     "categories": [
@@ -21089,9 +21089,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding jeremiad requires patience.",
-        "ja": "嘆きの言葉を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The retiring professor's farewell address descended into a prolonged jeremiad lamenting the commercialization of higher education.",
+        "ja": "退職する教授の別れの挨拶は、高等教育の商業化を嘆く長々とした嘆きの言葉へと変わっていきました。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -21122,9 +21122,9 @@
         "context": "哲学"
       },
       {
-        "en": "Understanding jingoism requires patience.",
-        "ja": "好戦的愛国主義を理解するには忍耐が必要だ。",
-        "context": "社会"
+        "en": "The historian argued that unchecked jingoism paved the way for the catastrophic military adventurism of the early twentieth century.",
+        "ja": "歴史家は、抑制されない好戦的愛国主義が20世紀初頭の壊滅的な軍事的冒険主義への道を開いたと主張しました。",
+        "context": "歴史"
       }
     ],
     "categories": [
@@ -21287,9 +21287,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding kerfuffle requires patience.",
-        "ja": "騒ぎを理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "A minor kerfuffle erupted backstage when two performers discovered they had been assigned the same dressing room.",
+        "ja": "2人の出演者が同じ楽屋を割り当てられていることに気づいたとき、舞台裏で小さな騒ぎが起きました。",
+        "context": "芸能"
       }
     ],
     "categories": [
@@ -21320,9 +21320,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding kernel requires patience.",
-        "ja": "カーネルを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Understanding how the operating system kernel arbitrates hardware access is fundamental to writing efficient system-level code.",
+        "ja": "オペレーティングシステムのカーネルがハードウェアアクセスを調停する方法を理解することは、効率的なシステムレベルのコードを書くための基本です。",
+        "context": "コンピューターサイエンス"
       }
     ],
     "categories": [
@@ -21419,9 +21419,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding kintsugi requires patience.",
-        "ja": "金継ぎを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The philosophy of kintsugi teaches that breakage and repair become part of an object's history rather than something to conceal.",
+        "ja": "金継ぎの哲学は、破損と修理が隠すべきものではなく物の歴史の一部になるということを教えています。",
+        "context": "哲学・文化"
       }
     ],
     "categories": [
@@ -21541,9 +21541,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "He laconically replied, 'If.'",
-        "ja": "彼は簡潔に「もしも」と答えました。",
-        "context": "歴史"
+        "en": "When asked about his negotiating strategy, the veteran diplomat laconically replied that silence was his most powerful tool.",
+        "ja": "交渉戦略について尋ねられると、ベテラン外交官は沈黙が最も強力なツールだと簡潔に答えました。",
+        "context": "外交"
       },
       {
         "en": "She laconically summarized a decade of research in one page.",
@@ -21650,9 +21650,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding languor requires patience.",
-        "ja": "けだるさを理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "The tropical heat induced a pleasant languor that made even the most industrious travellers reluctant to leave their hammocks.",
+        "ja": "熱帯の暑さが心地よいけだるさを引き起こし、最も勤勉な旅人でさえハンモックを離れたがらなくなりました。",
+        "context": "旅行"
       }
     ],
     "categories": [
@@ -21744,9 +21744,9 @@
         "context": "自然"
       },
       {
-        "en": "Chemicals leach into groundwater.",
-        "ja": "化学物質が地下水に浸出する。",
-        "context": "環境"
+        "en": "Industrial fertilizers leach through permeable soils into aquifers, causing nitrate contamination that can persist for decades.",
+        "ja": "産業用肥料は透水性の土壌を通り抜けて帯水層に浸出し、数十年続くことがある硝酸塩汚染を引き起こします。",
+        "context": "環境科学"
       },
       {
         "en": "Nutrients leach from degraded land.",
@@ -21848,9 +21848,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding lemma requires patience.",
-        "ja": "補題を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "The mathematician proved the central theorem in three steps, each step depending on a lemma established earlier in the paper.",
+        "ja": "数学者は中心定理を3段階で証明しました。各段階は論文の前半で確立された補題に依存していました。",
+        "context": "数学"
       }
     ],
     "categories": [
@@ -22013,9 +22013,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding lexicography requires patience.",
-        "ja": "辞書編纂学を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "The Oxford English Dictionary represents one of the most ambitious undertakings in the history of English lexicography.",
+        "ja": "オックスフォード英語辞典は、英語の辞書編纂学の歴史において最も野心的な試みの一つを代表しています。",
+        "context": "言語学"
       }
     ],
     "categories": [
@@ -22112,9 +22112,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding linocut requires patience.",
-        "ja": "リノカットを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The printmaker produced bold linocut illustrations that conveyed a striking visual rhythm through stark contrasts of black and white.",
+        "ja": "その版画家は黒と白の鮮烈な対比を通じて印象的な視覚的リズムを伝える大胆なリノカットの挿絵を制作しました。",
+        "context": "版画芸術"
       }
     ],
     "categories": [
@@ -22343,9 +22343,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding loam requires patience.",
-        "ja": "壌土を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The vineyard's exceptional terroir derives partly from the deep loam that retains just enough moisture during the summer dry season.",
+        "ja": "そのワイン農園の卓越したテロワールは、夏の乾燥期に適度な水分を保持する深い壌土に一部由来しています。",
+        "context": "農業・ワイン"
       }
     ],
     "categories": [
@@ -22409,9 +22409,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding loggia requires patience.",
-        "ja": "開廊を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The Renaissance palazzo featured a colonnaded loggia where scholars gathered to debate philosophy in the evening breeze.",
+        "ja": "そのルネサンスの館には柱廊の開廊があり、夕べの風の中で学者たちが哲学を論じるために集まりました。",
+        "context": "建築・文化史"
       }
     ],
     "categories": [
@@ -22442,9 +22442,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding logocentrism requires patience.",
-        "ja": "ロゴス中心主義を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "Derrida's deconstruction systematically dismantled logocentrism by exposing the metaphysical assumptions underlying Western philosophical discourse.",
+        "ja": "デリダの脱構築は、西洋の哲学的言説の根底にある形而上学的仮定を明らかにすることでロゴス中心主義を体系的に解体しました。",
+        "context": "哲学"
       }
     ],
     "categories": [
@@ -22706,9 +22706,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding lyceum requires patience.",
-        "ja": "学園を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "The nineteenth-century lyceum movement transformed American intellectual life by bringing lectures and debates to small towns.",
+        "ja": "19世紀の学園運動は、講演や討論を小さな町にもたらすことでアメリカの知的生活を変革しました。",
+        "context": "教育史"
       }
     ],
     "categories": [
@@ -22734,14 +22734,14 @@
         "context": "料理"
       },
       {
-        "en": "She macerated berries overnight.",
-        "ja": "彼女はベリーを一晩漬けた。",
-        "context": "料理"
+        "en": "She macerated the cherries in kirsch for forty-eight hours before folding them into the cream filling.",
+        "ja": "彼女はクリームフィリングに加える前に、さくらんぼをキルシュに48時間漬けました。",
+        "context": "菓子製造"
       },
       {
-        "en": "Macerate for enhanced flavor.",
-        "ja": "風味増強のため浸漬せよ。",
-        "context": "料理"
+        "en": "To macerate the dried herbs before extraction enhances the bioavailability of the active compounds considerably.",
+        "ja": "抽出前に乾燥ハーブを浸漬することで、活性化合物の生体利用能が著しく向上します。",
+        "context": "薬学"
       }
     ],
     "categories": [
@@ -22805,9 +22805,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding macrame requires patience.",
-        "ja": "マクラメ編みを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The revival of macrame among younger crafters reflects a broader cultural appetite for tactile, screen-free creative practices.",
+        "ja": "若い手工芸家の間でのマクラメ編みの復活は、触覚的でスクリーンフリーな創造的実践に対するより広い文化的欲求を反映しています。",
+        "context": "文化トレンド"
       }
     ],
     "categories": [
@@ -23235,9 +23235,9 @@
         "context": "技術"
       },
       {
-        "en": "Memoizing reduces redundant computation.",
-        "ja": "メモ化で冗長な計算を減らす。",
-        "context": "技術"
+        "en": "The developer chose to memoize the recursive Fibonacci function to avoid the catastrophic exponential slowdown on large inputs.",
+        "ja": "開発者は大きな入力での壊滅的な指数関数的遅延を避けるため、再帰的フィボナッチ関数をメモ化することを選びました。",
+        "context": "コンピューターサイエンス"
       }
     ],
     "categories": [
@@ -23357,19 +23357,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "Metacognitive skills improve learning.",
-        "ja": "メタ認知スキルが学習を向上させる。",
-        "context": "学術"
+        "en": "Students who develop strong metacognitive habits consistently outperform peers who rely solely on rote memorization strategies.",
+        "ja": "強いメタ認知習慣を身につけた学生は、暗記のみに頼る同級生を一貫して上回ります。",
+        "context": "教育学"
       },
       {
-        "en": "She used metacognitive strategies.",
-        "ja": "彼女はメタ認知戦略を用いた。",
-        "context": "学術"
+        "en": "The teacher trained her students in metacognitive journaling to help them identify recurring gaps in their understanding.",
+        "ja": "教師は生徒たちが理解の繰り返すギャップを特定できるよう、メタ認知的な日誌記録の訓練をしました。",
+        "context": "教育"
       },
       {
-        "en": "Metacognitive awareness is key.",
-        "ja": "メタ認知の意識が鍵だ。",
-        "context": "学術"
+        "en": "Expert practitioners in any domain display a high degree of metacognitive awareness that novices typically lack.",
+        "ja": "どの分野においても熟練した実践者は、初心者が通常持ち合わせていない高い程度のメタ認知の意識を示します。",
+        "context": "心理学"
       }
     ],
     "categories": [
@@ -23390,9 +23390,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Metalepsis crosses narrative boundaries.",
-        "ja": "メタレプシスは物語の境界を超える。",
-        "context": "文学"
+        "en": "Metalepsis disrupts narrative immersion by collapsing the boundary between the story world and the act of narration itself.",
+        "ja": "メタレプシスは物語世界と語り行為自体の境界を崩すことで物語への没入を妨げます。",
+        "context": "文学理論"
       },
       {
         "en": "The author used metalepsis to break the fourth wall.",
@@ -23433,9 +23433,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding metastasis requires patience.",
-        "ja": "転移を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Oncologists confirmed that lymph node involvement indicated metastasis, necessitating an immediate change to systemic therapy.",
+        "ja": "腫瘍専門医はリンパ節の関与が転移を示し、全身療法への即座の変更を必要とすることを確認しました。",
+        "context": "腫瘍学"
       }
     ],
     "categories": [
@@ -23532,9 +23532,9 @@
         "context": "技術"
       },
       {
-        "en": "Deploy each microservice independently.",
-        "ja": "各マイクロサービスを独立してデプロイする。",
-        "context": "技術"
+        "en": "Deploying each microservice in its own container simplifies fault isolation and enables teams to update components independently.",
+        "ja": "各マイクロサービスを独自のコンテナにデプロイすることで、障害の分離が容易になり、チームが独立してコンポーネントを更新できます。",
+        "context": "ソフトウェア工学"
       }
     ],
     "categories": [
@@ -23631,9 +23631,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding minaret requires patience.",
-        "ja": "ミナレットを理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The slender minaret of the blue mosque soared above the Istanbul skyline, its silhouette defining the city's iconic profile.",
+        "ja": "ブルーモスクの細いミナレットはイスタンブールのスカイラインの上にそびえ立ち、その輪郭が街のアイコニックな姿を形作っていました。",
+        "context": "建築・文化"
       }
     ],
     "categories": [
@@ -23664,9 +23664,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding minification requires patience.",
-        "ja": "最小化を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Automated minification of JavaScript files is a standard build-pipeline step that reduces page load times measurably.",
+        "ja": "JavaScriptファイルの自動最小化は、ページ読み込み時間を測定可能な形で短縮するビルドパイプラインの標準的なステップです。",
+        "context": "ウェブ開発"
       }
     ],
     "categories": [
@@ -23763,9 +23763,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding mirepoix requires patience.",
-        "ja": "ミルポワを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "French classical cooking begins almost every braise or stock with a slowly sweated mirepoix as its aromatic base.",
+        "ja": "フランスの古典料理は、ほぼすべてのブレイズやストックをその香り高い基底としてゆっくりと炒めたミルポワから始めます。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -23862,9 +23862,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding missive requires patience.",
-        "ja": "書簡を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The barrister dispatched a formal missive to opposing counsel demanding disclosure of all relevant financial documents.",
+        "ja": "法廷弁護士は相手方弁護人に対し、関連するすべての財務書類の開示を求める正式な書簡を送りました。",
+        "context": "法律"
       }
     ],
     "categories": [
@@ -23994,9 +23994,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "Understanding monetarist requires patience.",
-        "ja": "マネタリストを理解するには忍耐が必要だ。",
-        "context": "経済"
+        "en": "Milton Friedman, the most influential monetarist of the twentieth century, famously argued that inflation is always a monetary phenomenon.",
+        "ja": "20世紀で最も影響力のあるマネタリストであるミルトン・フリードマンは、インフレは常に貨幣的現象であると有名な主張をしました。",
+        "context": "経済学史"
       }
     ],
     "categories": [
@@ -24017,9 +24017,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Monoculture depletes soil nutrients.",
-        "ja": "単作は土壌の栄養を枯渇させる。",
-        "context": "環境"
+        "en": "Ireland's reliance on monoculture potato farming made the population catastrophically vulnerable to the fungal blight of the 1840s.",
+        "ja": "アイルランドのジャガイモ単作農業への依存は、1840年代の菌類による病害に対して壊滅的に脆弱な状態にしました。",
+        "context": "歴史・農業"
       },
       {
         "en": "The shift to monoculture was harmful.",
@@ -24027,9 +24027,9 @@
         "context": "環境"
       },
       {
-        "en": "Monoculture reduces biodiversity.",
-        "ja": "単作は生物多様性を減らす。",
-        "context": "環境"
+        "en": "Critics of Silicon Valley argue that its cognitive monoculture suppresses heterodox thinking and produces dangerously homogeneous solutions.",
+        "ja": "シリコンバレーの批評家たちは、その認知的単作が異端の思考を抑圧し、危険なほど均質な解決策を生み出すと主張しています。",
+        "context": "ビジネス文化"
       }
     ],
     "categories": [
@@ -24259,9 +24259,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding mortification requires patience.",
-        "ja": "屈辱を理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "The ambassador's mortification was visible to all as he fumbled with the wrong speech notes before a packed assembly hall.",
+        "ja": "大使は満員の会議場の前で間違ったスピーチ原稿をまごまごしながら、その屈辱はすべての人に見て取れました。",
+        "context": "外交"
       }
     ],
     "categories": [
@@ -24358,9 +24358,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding muskeg requires patience.",
-        "ja": "泥炭湿地を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Pipeline engineers face enormous logistical challenges when routing infrastructure through vast expanses of northern muskeg.",
+        "ja": "パイプラインエンジニアは、広大な北部の泥炭湿地帯にインフラを敷設する際に大きな兵站上の課題に直面します。",
+        "context": "土木工学"
       }
     ],
     "categories": [
@@ -24523,9 +24523,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding mycology requires patience.",
-        "ja": "菌学を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Advances in mycology have revealed that fungal networks play a far more central role in forest ecosystems than previously understood.",
+        "ja": "菌学の進歩により、菌類ネットワークが森林生態系においてこれまで理解されていたよりもはるかに中心的な役割を果たしていることが明らかになりました。",
+        "context": "生態学"
       }
     ],
     "categories": [
@@ -24650,9 +24650,9 @@
         "context": "文化"
       },
       {
-        "en": "The mythologization distorted history.",
-        "ja": "神話化が歴史を歪めた。",
-        "context": "文化"
+        "en": "The mythologization of the revolutionary leader obscured the brutal pragmatism that had characterized his political career.",
+        "ja": "革命的指導者の神話化は、彼の政治的経歴を特徴づけていた残酷な実用主義を覆い隠しました。",
+        "context": "歴史学"
       },
       {
         "en": "Resist mythologization of the past.",
@@ -24711,9 +24711,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Tolkien's works are mythopoeia.",
-        "ja": "トールキンの作品は神話創作だ。",
-        "context": "学術"
+        "en": "Tolkien regarded mythopoeia as a sacred creative act through which human beings participate in the ongoing work of divine creation.",
+        "ja": "トールキンは神話創作を、人間が神聖な創造の継続的な営みに参加する神聖な創造行為と見なしていました。",
+        "context": "文学"
       },
       {
         "en": "Mythopoeia merges fiction and myth.",
@@ -24754,9 +24754,9 @@
         "context": "日常"
       },
       {
-        "en": "A mythopoetic narrative emerged.",
-        "ja": "神話創造的な物語が生まれた。",
-        "context": "日常"
+        "en": "The indigenous oral tradition preserved a rich mythopoetic vision of the landscape that scientists later found ecologically accurate.",
+        "ja": "先住民の口承の伝統は、後に科学者が生態学的に正確であることを発見した豊かな神話創造的な景観の見方を保存していました。",
+        "context": "文化人類学"
       }
     ],
     "categories": [
@@ -24787,9 +24787,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding namespace requires patience.",
-        "ja": "名前空間を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Using a consistent namespace convention across a large codebase prevents collision between identically named functions in different modules.",
+        "ja": "大規模なコードベース全体で一貫した名前空間の規則を使用することで、異なるモジュールで同じ名前の関数の衝突を防ぎます。",
+        "context": "ソフトウェア工学"
       }
     ],
     "categories": [
@@ -24853,9 +24853,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding nave requires patience.",
-        "ja": "身廊を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The vast gothic nave of Cologne Cathedral, stretching over a hundred metres in length, overwhelms visitors with its vertical grandeur.",
+        "ja": "ケルン大聖堂の長さ100メートル以上に及ぶ広大なゴシック様式の身廊は、その垂直的な壮大さで訪問者を圧倒します。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -24919,9 +24919,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding necrosis requires patience.",
-        "ja": "壊死を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Delayed debridement of gangrenous tissue allowed the necrosis to spread rapidly into adjacent healthy muscle.",
+        "ja": "壊疽組織の処置が遅れたことで、壊死が隣接する健常な筋肉へと急速に広がりました。",
+        "context": "外科医学"
       }
     ],
     "categories": [
@@ -24952,9 +24952,9 @@
         "context": "日常"
       },
       {
-        "en": "Tech creates many neologisms.",
-        "ja": "テクノロジーが多くの新造語を生む。",
-        "context": "日常"
+        "en": "The Oxford English Dictionary documents each neologism's first recorded usage and traces its subsequent evolution through written sources.",
+        "ja": "オックスフォード英語辞典は各新造語の最初の記録された使用例を記録し、書面による資料を通じてその後の変遷を辿ります。",
+        "context": "言語学"
       }
     ],
     "categories": [
@@ -25051,9 +25051,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding nivation requires patience.",
-        "ja": "雪蝕を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Geomorphologists study nivation as a key periglacial process responsible for forming shallow basins on subarctic hillsides.",
+        "ja": "地形学者は亜北極の丘陵地帯に浅い盆地を形成させる主要な周氷河プロセスとして雪蝕を研究しています。",
+        "context": "地形学"
       }
     ],
     "categories": [
@@ -25084,9 +25084,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding noctambulist requires patience.",
-        "ja": "夢遊病者を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "Her family installed safety latches on the doors after discovering she was a habitual noctambulist who wandered outdoors at night.",
+        "ja": "彼女が夜間に戸外をさまよう常習的な夢遊病者であることが分かったため、家族はドアに安全錠を取り付けました。",
+        "context": "医療・日常"
       }
     ],
     "categories": [
@@ -25272,19 +25272,19 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "The test fails nondeterministically.",
-        "ja": "テストが非決定論的に失敗する。",
-        "context": "技術"
+        "en": "Concurrent programs can behave nondeterministically when thread scheduling produces different execution orders on each run.",
+        "ja": "並行プログラムは、スレッドのスケジューリングが実行ごとに異なる実行順序をもたらすとき、非決定論的に振る舞うことがあります。",
+        "context": "コンピューターサイエンス"
       },
       {
-        "en": "Tasks execute nondeterministically.",
-        "ja": "タスクが非決定論的に実行される。",
-        "context": "技術"
+        "en": "Quantum systems evolve nondeterministically, meaning measurement outcomes can only be predicted in terms of probability distributions.",
+        "ja": "量子系は非決定論的に発展するため、測定結果は確率分布の観点でしか予測できません。",
+        "context": "物理学"
       },
       {
-        "en": "Values are assigned nondeterministically.",
-        "ja": "値が非決定論的に割り当てられる。",
-        "context": "技術"
+        "en": "The compiler assigns register allocation nondeterministically in some optimization modes, making timing-dependent bugs extremely difficult to reproduce.",
+        "ja": "コンパイラは一部の最適化モードで非決定論的にレジスタ割り当てを行うため、タイミング依存のバグの再現が非常に困難になります。",
+        "context": "コンピューターサイエンス"
       }
     ],
     "categories": [
@@ -25678,9 +25678,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding numismatist requires patience.",
-        "ja": "貨幣収集家を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "A dedicated numismatist can read decades of economic and political history from the condition and mintage of a single coin.",
+        "ja": "熱心な貨幣収集家は、一枚の硬貨の状態と鋳造から数十年の経済的・政治的歴史を読み取ることができます。",
+        "context": "歴史・趣味"
       }
     ],
     "categories": [
@@ -25777,9 +25777,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding obfuscation requires patience.",
-        "ja": "難読化を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Deliberate obfuscation of corporate earnings reports enabled the fraud to go undetected by auditors for nearly five years.",
+        "ja": "企業の収益報告書の意図的な難読化により、不正が監査人によって約5年間発覚しませんでした。",
+        "context": "企業不正"
       }
     ],
     "categories": [
@@ -26041,9 +26041,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding offtake requires patience.",
-        "ja": "引き取り契約を理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "The renewable energy developer secured a twenty-year offtake agreement with a utility company before breaking ground.",
+        "ja": "再生可能エネルギー開発業者は着工前に電力会社との20年間の引き取り契約を確保しました。",
+        "context": "エネルギー"
       }
     ],
     "categories": [
@@ -26371,9 +26371,9 @@
         "context": "学術"
       },
       {
-        "en": "Operationalize the variables clearly.",
-        "ja": "変数を明確に運用可能化せよ。",
-        "context": "学術"
+        "en": "The challenge in behavioral economics is to operationalize abstract concepts like loss aversion into measurable experimental variables.",
+        "ja": "行動経済学における課題は、損失回避のような抽象的な概念を測定可能な実験変数として運用可能にすることです。",
+        "context": "学術研究"
       }
     ],
     "categories": [
@@ -26536,9 +26536,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding orienteering requires patience.",
-        "ja": "オリエンテーリングを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Orienteering appeals to those who relish the cognitive challenge of navigating unfamiliar terrain entirely by map and compass.",
+        "ja": "オリエンテーリングは、地図とコンパスだけで見知らぬ地形を踏破する認知的な挑戦を楽しむ人々を引きつけます。",
+        "context": "スポーツ"
       }
     ],
     "categories": [
@@ -26569,9 +26569,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding origami requires patience.",
-        "ja": "折り紙を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Advanced origami practitioners fold complex polyhedral forms from a single uncut sheet, relying entirely on geometric precision.",
+        "ja": "上級の折り紙実践者は、完全に幾何学的精密さに頼り、一枚の切らないシートから複雑な多面体を折ります。",
+        "context": "工芸"
       }
     ],
     "categories": [
@@ -26602,9 +26602,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding ornithology requires patience.",
-        "ja": "鳥類学を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Citizen science has transformed ornithology by enabling amateur birdwatchers to contribute systematic migration data at an unprecedented scale.",
+        "ja": "市民科学は、アマチュアのバードウォッチャーが前例のない規模で体系的な渡り鳥のデータを提供できるようにすることで鳥類学を変革しました。",
+        "context": "科学"
       }
     ],
     "categories": [
@@ -26635,9 +26635,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding orography requires patience.",
-        "ja": "山岳学を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Orography profoundly shapes regional precipitation patterns, as moisture-laden air rises and cools against mountain barriers.",
+        "ja": "山岳学は地域的な降水パターンを大きく形成します。水分を多く含んだ空気が山岳の障壁に対して上昇し冷却されるためです。",
+        "context": "気象学"
       }
     ],
     "categories": [
@@ -26927,8 +26927,8 @@
         "context": "金融"
       },
       {
-        "en": "Don't overleverage your portfolio.",
-        "ja": "ポートフォリオを過剰借入するな。",
+        "en": "Hedge funds that overleverage their positions during bull markets often face catastrophic margin calls when volatility spikes.",
+        "ja": "強気市場中にポジションを過剰借入するヘッジファンドは、ボラティリティが急上昇したときに壊滅的な追証を受けることが多いです。",
         "context": "金融"
       },
       {
@@ -26960,14 +26960,14 @@
         "context": "金融"
       },
       {
-        "en": "Overleveraged banks collapsed.",
-        "ja": "過剰債務の銀行が破綻した。",
+        "en": "Overleveraged property developers struggled to service their debts when credit markets froze during the financial crisis.",
+        "ja": "過剰債務の不動産開発業者は、金融危機中に信用市場が凍結したとき、債務の返済に苦労しました。",
         "context": "金融"
       },
       {
-        "en": "Avoid becoming overleveraged.",
-        "ja": "過剰債務にならないようにせよ。",
-        "context": "金融"
+        "en": "Regulators now require stress tests to identify financial institutions that may be dangerously overleveraged relative to their capital base.",
+        "ja": "規制当局は現在、自己資本に対して危険なほど過剰債務になっているかもしれない金融機関を特定するためにストレステストを義務付けています。",
+        "context": "金融規制"
       }
     ],
     "categories": [
@@ -26988,14 +26988,14 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The stock appears overvalued.",
-        "ja": "その株は過大評価に見える。",
+        "en": "Several analysts argued the tech sector was dangerously overvalued, drawing comparisons to the dot-com bubble of the late 1990s.",
+        "ja": "複数のアナリストは、テクノロジーセクターが1990年代後半のドットコムバブルとの比較を引き合いに出して危険なほど過大評価されていると主張しました。",
         "context": "金融"
       },
       {
-        "en": "Overvalued assets pose risks.",
-        "ja": "過大評価された資産はリスクを伴う。",
-        "context": "金融"
+        "en": "When overvalued assets are suddenly repriced by the market, the resulting write-downs can destabilize an entire balance sheet.",
+        "ja": "過大評価された資産が市場によって突然再評価されると、その結果生じる評価損が貸借対照表全体を不安定にすることがあります。",
+        "context": "会計"
       },
       {
         "en": "The currency is significantly overvalued.",
@@ -27031,9 +27031,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding oxbow requires patience.",
-        "ja": "三日月湖を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The silted oxbow lake now serves as a critical habitat for amphibians and migratory waterbirds in the floodplain reserve.",
+        "ja": "泥で埋まった三日月湖は今では洪水原保護区において両生類と渡り水鳥の重要な生息地として機能しています。",
+        "context": "生態学"
       }
     ],
     "categories": [
@@ -27131,9 +27131,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding palaeography requires patience.",
-        "ja": "古文書学を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "Without specialist training in medieval palaeography, deciphering the cramped script of a twelfth-century charter is virtually impossible.",
+        "ja": "中世の古文書学の専門的な訓練なしに、12世紀の勅許状の詰め込まれた文字を解読することはほぼ不可能です。",
+        "context": "歴史学"
       }
     ],
     "categories": [
@@ -27197,9 +27197,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding palilalia requires patience.",
-        "ja": "反復言語症を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Speech-language pathologists distinguish palilalia from stuttering because the repetition occurs at the phrase level rather than the syllable level.",
+        "ja": "言語聴覚士は反復が音節レベルではなく句レベルで起きるため、反復言語症を吃音と区別します。",
+        "context": "言語医学"
       }
     ],
     "categories": [
@@ -27329,9 +27329,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding palpation requires patience.",
-        "ja": "触診を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "The physical examination relies on careful palpation to assess organ size, tenderness, and the presence of abnormal masses.",
+        "ja": "身体診察は、臓器の大きさ、圧痛、および異常な腫瘤の存在を評価するために丁寧な触診に頼ります。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -27362,9 +27362,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding pampas requires patience.",
-        "ja": "パンパ草原を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The vast, treeless pampas stretching across the Southern Cone supports one of the most productive agricultural regions on earth.",
+        "ja": "南米南部地域を横断する広大な樹木のないパンパ草原は、地球上で最も生産性の高い農業地域の一つを支えています。",
+        "context": "地理"
       }
     ],
     "categories": [
@@ -27484,9 +27484,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "We parallelized the computation.",
-        "ja": "計算を並列化した。",
-        "context": "技術"
+        "en": "The data engineers rewrote the batch jobs to parallelize processing across sixteen worker nodes, cutting run time by ninety percent.",
+        "ja": "データエンジニアはバッチジョブを書き直して16のワーカーノードにわたって処理を並列化し、実行時間を90パーセント削減しました。",
+        "context": "データ工学"
       },
       {
         "en": "Can this algorithm be parallelized?",
@@ -27621,9 +27621,9 @@
         "context": "医療"
       },
       {
-        "en": "Nutrients were delivered parenterally.",
-        "ja": "栄養が非経口的に供給された。",
-        "context": "医療"
+        "en": "Patients unable to absorb sufficient nutrients orally must receive balanced nutrition parenterally through central venous access.",
+        "ja": "経口で十分な栄養素を吸収できない患者は、中心静脈アクセスを通じて非経口的にバランスの取れた栄養を受け取らなければなりません。",
+        "context": "集中治療"
       },
       {
         "en": "Parenterally given fluids bypass the gut.",
@@ -27716,7 +27716,7 @@
     "examples": [
       {
         "en": "In legal parlance, this is known as \"force majeure.\"",
-        "ja": "法律用語では、これは「不可抗力」として知られている。",
+        "ja": "法律用語では、これは「不可抗力」として知られています。",
         "context": "法律"
       },
       {
@@ -27726,7 +27726,7 @@
       },
       {
         "en": "Silicon Valley parlance is full of terms like \"pivot\" and \"disrupt.\"",
-        "ja": "シリコンバレーの用語は「ピボット」や「ディスラプト」のような言葉に満ちている。",
+        "ja": "シリコンバレーの用語は「ピボット」や「ディスラプト」のような言葉に満ちています。",
         "context": "ビジネス"
       }
     ],
@@ -27923,9 +27923,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding pathogenesis requires patience.",
-        "ja": "発病機序を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Unraveling the pathogenesis of type 1 diabetes requires understanding the precise autoimmune mechanisms that destroy insulin-producing cells.",
+        "ja": "1型糖尿病の発病機序を解明するには、インスリン産生細胞を破壊する正確な自己免疫メカニズムを理解する必要があります。",
+        "context": "医学研究"
       }
     ],
     "categories": [
@@ -27951,9 +27951,9 @@
         "context": "医療"
       },
       {
-        "en": "Pathophysiological changes were noted.",
-        "ja": "病態生理学的変化が記録された。",
-        "context": "医療"
+        "en": "A comprehensive review of the pathophysiological mechanisms underlying chronic pain informed the development of novel analgesic targets.",
+        "ja": "慢性疼痛の根底にある病態生理学的メカニズムの包括的なレビューが、新しい鎮痛ターゲットの開発に情報を提供しました。",
+        "context": "医学研究"
       },
       {
         "en": "A pathophysiological approach is needed.",
@@ -28055,9 +28055,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "Understanding patrimony requires patience.",
-        "ja": "世襲財産を理解するには忍耐が必要だ。",
-        "context": "経済"
+        "en": "The legal dispute over the patrimony dragged on for years, as distant relatives contested the validity of the original will.",
+        "ja": "遠い親族が遺言書の有効性を争ったため、世襲財産をめぐる法的紛争は何年も長引きました。",
+        "context": "相続法"
       }
     ],
     "categories": [
@@ -28088,9 +28088,9 @@
         "context": "政治"
       },
       {
-        "en": "Strict auditing prevents peculation.",
-        "ja": "厳格な監査が公金横領を防ぐ。",
-        "context": "会計"
+        "en": "The tribunal found systematic peculation spanning nearly a decade, implicating officials at every level of the procurement division.",
+        "ja": "法廷は調達部門のあらゆる階層の職員を巻き込む、10年近くにわたる組織的な公金横領を認定しました。",
+        "context": "法律・公共政策"
       }
     ],
     "categories": [
@@ -28215,9 +28215,9 @@
         "context": "学術"
       },
       {
-        "en": "Don't pedagogize art excessively.",
-        "ja": "芸術を過度に教育的に扱うな。",
-        "context": "学術"
+        "en": "Critics argue that attempts to pedagogize the experience of art reduce aesthetic encounter to mere cognitive instruction.",
+        "ja": "批評家たちは、芸術体験を教育論的に扱おうとする試みが美的な出会いを単なる認知的な指導に貶めると主張しています。",
+        "context": "美学"
       },
       {
         "en": "They pedagogized the curriculum reform.",
@@ -28253,9 +28253,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding pediment requires patience.",
-        "ja": "ペディメントを理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "Neoclassical government buildings across Washington adopted the triangular pediment as a symbol of civic authority and Roman gravitas.",
+        "ja": "ワシントン全体のネオクラシック様式の政府建物は、市民的権威とローマ的重厚さの象徴として三角形のペディメントを採用しました。",
+        "context": "建築史"
       }
     ],
     "categories": [
@@ -28281,9 +28281,9 @@
         "context": "文化"
       },
       {
-        "en": "Pedological research is expanding.",
-        "ja": "土壌学の研究が拡大している。",
-        "context": "文化"
+        "en": "Pedological surveys conducted before the infrastructure project revealed significant variation in soil bearing capacity across the site.",
+        "ja": "インフラプロジェクト前に実施された土壌学的調査は、サイト全体の土壌支持力に著しいばらつきがあることを明らかにしました。",
+        "context": "土木工学"
       },
       {
         "en": "The pedological classification was updated.",
@@ -28517,8 +28517,8 @@
         "context": "スポーツ"
       },
       {
-        "en": "Pentathlon athletes are versatile.",
-        "ja": "五種競技の選手は多才だ。",
+        "en": "The modern pentathlon demands extraordinary athletic versatility, combining fencing, swimming, equestrian, shooting, and cross-country running.",
+        "ja": "近代五種競技はフェンシング、水泳、馬術、射撃、クロスカントリーランニングを組み合わせた並外れた運動的な多才さを要求します。",
         "context": "スポーツ"
       }
     ],
@@ -28905,7 +28905,7 @@
     "examples": [
       {
         "en": "\"The place where I lay my head at night\" is a periphrasis for \"home.\"",
-        "ja": "「夜に頭を横たえる場所」は「家」の迂言法である。",
+        "ja": "「夜に頭を横たえる場所」は「家」の迂言法です。",
         "context": "言語"
       },
       {
@@ -28942,9 +28942,9 @@
         "context": "日常"
       },
       {
-        "en": "Avoid periphrastic expressions.",
-        "ja": "迂言的な表現を避けよ。",
-        "context": "日常"
+        "en": "The periphrastic construction he favored drained his arguments of urgency, leaving readers frustrated by the lack of directness.",
+        "ja": "彼が好んだ迂言的な構文は議論から緊迫感を奪い、直接性の欠如に読者をいらだたせました。",
+        "context": "修辞学"
       },
       {
         "en": "The letter was needlessly periphrastic.",
@@ -29079,9 +29079,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding persifleur requires patience.",
-        "ja": "冗談好きを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The celebrated persifleur deployed his wit so deftly that his targets rarely realized they were being gently mocked.",
+        "ja": "その名高い冗談好きは機知を巧みに振るい、標的となった人たちはほとんど自分がそっと揶揄されていることに気づきませんでした。",
+        "context": "社交"
       }
     ],
     "categories": [
@@ -29239,9 +29239,9 @@
         "context": "文化"
       },
       {
-        "en": "Phenological shifts affect agriculture.",
-        "ja": "生物季節学的変化が農業に影響する。",
-        "context": "文化"
+        "en": "Long-term phenological records from botanical gardens provide compelling evidence of climate-induced shifts in seasonal flowering cycles.",
+        "ja": "植物園からの長期的な生物季節学的記録は、気候に誘発された季節的な開花サイクルのシフトの説得力のある証拠を提供しています。",
+        "context": "気候科学"
       },
       {
         "en": "Phenological observations date back centuries.",
@@ -29277,9 +29277,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding philatelist requires patience.",
-        "ja": "切手収集家を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "An experienced philatelist can detect forgeries by examining minute printing irregularities invisible to the untrained eye.",
+        "ja": "経験豊富な切手収集家は、訓練されていない目には見えない微細な印刷の不規則性を調べることで偽造品を見抜くことができます。",
+        "context": "趣味"
       }
     ],
     "categories": [
@@ -29376,9 +29376,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding philology requires patience.",
-        "ja": "文献学を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "Comparative philology in the nineteenth century laid the foundations for modern historical linguistics by reconstructing proto-Indo-European.",
+        "ja": "19世紀の比較文献学は原インド・ヨーロッパ語を再構築することで現代の歴史言語学の基礎を築きました。",
+        "context": "言語学史"
       }
     ],
     "categories": [
@@ -29437,9 +29437,9 @@
         "context": "食"
       },
       {
-        "en": "She enjoys piquant dishes.",
-        "ja": "彼女はピリッとした料理が好きだ。",
-        "context": "食"
+        "en": "The chef balanced the richness of the duck confit with a piquant sauce of capers, shallots, and aged sherry vinegar.",
+        "ja": "シェフはカモのコンフィの濃厚さを、ケイパー、シャロット、熟成シェリービネガーのピリッとしたソースで均衡させました。",
+        "context": "料理"
       },
       {
         "en": "The piquant aroma filled the kitchen.",
@@ -29508,9 +29508,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding pivoting requires patience.",
-        "ja": "方向転換を理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "Successful pivoting requires founders to abandon sunk-cost thinking and follow the data wherever it leads, even into unfamiliar territory.",
+        "ja": "成功する方向転換は、創業者がサンクコスト思考を捨て、たとえ未知の領域でもデータが示す方向についていくことを要求します。",
+        "context": "スタートアップ経営"
       }
     ],
     "categories": [
@@ -29574,9 +29574,9 @@
         "context": "趣味"
       },
       {
-        "en": "Impressionists championed plein-air techniques.",
-        "ja": "印象派は戸外制作の技法を擁護した。",
-        "context": "歴史"
+        "en": "The Barbizon painters pioneered plein-air landscape studies that directly influenced the development of French Impressionism.",
+        "ja": "バルビゾン派の画家たちは、フランス印象主義の発展に直接影響を与えた戸外制作の風景研究を開拓しました。",
+        "context": "美術史"
       }
     ],
     "categories": [
@@ -29762,9 +29762,9 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "Plyometric exercises improve explosiveness.",
-        "ja": "プライオ運動が瞬発力を向上させる。",
-        "context": "スポーツ"
+        "en": "Incorporating plyometric box jumps into a training programme significantly enhances fast-twitch muscle recruitment in sprint athletes.",
+        "ja": "トレーニングプログラムにプライオメトリクスのボックスジャンプを取り入れることで、スプリント選手の速筋の動員が大幅に向上します。",
+        "context": "スポーツ科学"
       },
       {
         "en": "Add plyometric drills to your routine.",
@@ -29772,9 +29772,9 @@
         "context": "スポーツ"
       },
       {
-        "en": "Plyometric training is demanding.",
-        "ja": "プライオトレーニングはきつい。",
-        "context": "スポーツ"
+        "en": "Poorly executed plyometric training on hard surfaces increases the risk of stress fractures in young developing athletes.",
+        "ja": "硬い地面での不適切なプライオメトリクストレーニングは、発育期の若いアスリートの疲労骨折リスクを高めます。",
+        "context": "スポーツ医学"
       }
     ],
     "categories": [
@@ -29960,14 +29960,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Polysemy complicates translation.",
-        "ja": "多義性が翻訳を複雑にする。",
-        "context": "学術"
+        "en": "Polysemy poses a fundamental challenge for machine translation because context alone must resolve which sense is intended.",
+        "ja": "多義性は機械翻訳に根本的な課題をもたらします。文脈だけでどの意味が意図されているかを解決しなければならないためです。",
+        "context": "計算言語学"
       },
       {
-        "en": "The word exhibits polysemy.",
-        "ja": "その単語は多義性を示す。",
-        "context": "学術"
+        "en": "The word 'bank' exemplifies radical polysemy, encompassing financial institutions, river margins, and the act of tilting an aircraft.",
+        "ja": "「bank」という単語は金融機関、川岸、そして飛行機を傾ける行為を包含する抜本的な多義性の典型例です。",
+        "context": "言語学"
       },
       {
         "en": "Polysemy is common in natural language.",
@@ -30003,9 +30003,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding portage requires patience.",
-        "ja": "陸路運搬を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The expedition crew hauled their canoes overland along the muddy portage trail between lakes.",
+        "ja": "探検隊は湖と湖の間の泥だらけの陸路運搬路に沿って、カヌーを陸上で引きずって運びました。",
+        "context": "探検"
       }
     ],
     "categories": [
@@ -30036,9 +30036,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding portico requires patience.",
-        "ja": "柱廊を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "Senators gathered beneath the marble portico of the senate house to debate the latest legislation.",
+        "ja": "元老院議員たちは最新の法案を議論するために元老院議事堂の大理石の柱廊の下に集まりました。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -30489,8 +30489,8 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Scholars problematize simple narratives.",
-        "ja": "学者は単純な物語を問題化する。",
+        "en": "The sociologist sought to problematize the assumption that poverty stems solely from individual failure.",
+        "ja": "その社会学者は、貧困が個人の失敗だけに起因するという前提を問題化しようとしました。",
         "context": "学術"
       },
       {
@@ -30555,19 +30555,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "Procyclical policies amplify booms.",
-        "ja": "景気順応的な政策は好景気を増幅する。",
-        "context": "金融"
+        "en": "Critics warned that the government's procyclical spending would amplify the next economic downturn.",
+        "ja": "批評家たちは、政府の景気順応的な財政支出が次の景気後退を増幅させると警告しました。",
+        "context": "経済政策"
       },
       {
-        "en": "Lending is often procyclical.",
-        "ja": "融資はしばしば景気順応的だ。",
-        "context": "金融"
+        "en": "Banks that tighten lending standards during recessions engage in procyclical behavior.",
+        "ja": "景気後退期に貸付基準を厳格化する銀行は景気順応的な行動を取っています。",
+        "context": "金融規制"
       },
       {
-        "en": "Procyclical behavior worsens downturns.",
-        "ja": "景気順応的行動が景気後退を悪化させる。",
-        "context": "金融"
+        "en": "Automatic stabilizers were designed precisely to counteract the procyclical tendencies of private investment.",
+        "ja": "自動安定装置は、民間投資の景気順応的な傾向を打ち消すために設計されました。",
+        "context": "財政政策"
       }
     ],
     "categories": [
@@ -30654,9 +30654,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Generate reports programmatically.",
-        "ja": "レポートをプログラム的に生成する。",
-        "context": "技術"
+        "en": "The DevOps team configured all cloud resources programmatically using infrastructure-as-code templates.",
+        "ja": "DevOpsチームはインフラのコード化テンプレートを使ってすべてのクラウドリソースをプログラム的に設定しました。",
+        "context": "開発"
       },
       {
         "en": "The resources are created programmatically.",
@@ -30697,9 +30697,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding prolegomenon requires patience.",
-        "ja": "緒論を理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The philosopher's prolegomenon challenged readers to suspend every assumption before engaging with the main argument.",
+        "ja": "その哲学者の緒論は、読者が本論に入る前にあらゆる前提を保留するよう求めるものでした。",
+        "context": "哲学"
       }
     ],
     "categories": [
@@ -30923,14 +30923,14 @@
         "context": "学術"
       },
       {
-        "en": "The course covers propaedeutics.",
-        "ja": "その講座は予備教育学を扱う。",
-        "context": "学術"
+        "en": "The university required a year of propaedeutics before students could enroll in advanced philosophy seminars.",
+        "ja": "その大学は、学生が上級哲学ゼミに登録する前に1年間の予備教育学を必修としました。",
+        "context": "高等教育"
       },
       {
-        "en": "Propaedeutics is often overlooked.",
-        "ja": "予備教育学はしばしば見落とされる。",
-        "context": "学術"
+        "en": "Medieval scholars viewed propaedeutics as the essential foundation for any serious intellectual pursuit.",
+        "ja": "中世の学者たちは、予備教育学をあらゆる真剣な知的探求に不可欠な基礎と見なしていました。",
+        "context": "教育史"
       }
     ],
     "categories": [
@@ -30951,14 +30951,14 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "Antibiotics were given prophylactically.",
-        "ja": "抗生物質が予防的に投与された。",
+        "en": "Surgeons administered antibiotics prophylactically before the procedure to minimize infection risk.",
+        "ja": "外科医は感染リスクを最小化するために処置前に予防的に抗生物質を投与しました。",
         "context": "医療"
       },
       {
-        "en": "The vaccine works prophylactically.",
-        "ja": "ワクチンは予防的に作用する。",
-        "context": "医療"
+        "en": "Travelers to malaria-prone regions are advised to take antimalarials prophylactically throughout their stay.",
+        "ja": "マラリア危険地域への旅行者は、滞在中を通じて予防的に抗マラリア薬を服用するよう勧められます。",
+        "context": "旅行医学"
       },
       {
         "en": "She took the medication prophylactically.",
@@ -31083,9 +31083,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Missionaries proselytized across continents.",
-        "ja": "宣教師が大陸を越え改宗活動した。",
-        "context": "文化"
+        "en": "The startup founder relentlessly proselytized for agile methodology at every industry conference he attended.",
+        "ja": "そのスタートアップの創業者は、参加するあらゆる業界カンファレンスでアジャイル手法を精力的に広めました。",
+        "context": "ビジネス"
       },
       {
         "en": "He was proselytizing for his beliefs.",
@@ -31193,9 +31193,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding provender requires patience.",
-        "ja": "食糧を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The innkeeper stocked ample provender for both the travelers and their horses before the mountain crossing.",
+        "ja": "宿屋の主人は山越えの前に、旅人とその馬のために十分な食糧を蓄えました。",
+        "context": "旅"
       }
     ],
     "categories": [
@@ -31226,9 +31226,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding provisioner requires patience.",
-        "ja": "プロビジョナーを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The platform's built-in provisioner automates certificate renewal and user account creation across all tenants.",
+        "ja": "そのプラットフォームの組み込みプロビジョナーは、すべてのテナントにまたがる証明書更新とユーザーアカウント作成を自動化します。",
+        "context": "クラウド基盤"
       }
     ],
     "categories": [
@@ -31259,9 +31259,9 @@
         "context": "技術"
       },
       {
-        "en": "Network provisioning ensures connectivity.",
-        "ja": "ネットワークプロビジョニングは接続性を確保する。",
-        "context": "技術"
+        "en": "Dynamic provisioning of virtual machines allows the platform to scale capacity within seconds of a demand spike.",
+        "ja": "仮想マシンの動的プロビジョニングにより、プラットフォームは需要急増から数秒以内にキャパシティを拡張できます。",
+        "context": "クラウド技術"
       }
     ],
     "categories": [
@@ -31557,9 +31557,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding pyrography requires patience.",
-        "ja": "焼き絵を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "She mastered pyrography over years of practice, burning intricate Celtic knotwork onto maple panels.",
+        "ja": "彼女は長年の練習を経て焼き絵を習得し、メープルパネルに複雑なケルト結び目模様を焼き付けました。",
+        "context": "工芸"
       }
     ],
     "categories": [
@@ -31623,9 +31623,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding quadrivium requires patience.",
-        "ja": "四科を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "Mastery of the quadrivium—arithmetic, geometry, music, and astronomy—was once considered the mark of an educated person.",
+        "ja": "算術・幾何学・音楽・天文学からなる四科の習得は、かつて教養ある人物の証とされていました。",
+        "context": "教育史"
       }
     ],
     "categories": [
@@ -31788,9 +31788,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding quilling requires patience.",
-        "ja": "ペーパークイリングを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The artisan produced a delicate quilling portrait by coiling hundreds of paper strips into intricate shapes.",
+        "ja": "その職人は何百もの紙の細片を複雑な形状に巻いて、繊細なペーパークイリングの肖像画を制作しました。",
+        "context": "手工芸"
       }
     ],
     "categories": [
@@ -31986,9 +31986,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding ragamuffin requires patience.",
-        "ja": "ぼろを着た子を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The kind shopkeeper quietly handed bread to the ragamuffin huddled in the alley behind the bakery.",
+        "ja": "心優しい店主はパン屋の裏の路地にうずくまっているぼろを着た子に、そっとパンを手渡しました。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -32019,9 +32019,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding raillery requires patience.",
-        "ja": "からかいを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The veterans' reunion dissolved into warm raillery as old friends recalled each other's most embarrassing blunders.",
+        "ja": "同窓会は、旧友たちが互いの最も恥ずかしい失敗を思い出しながら温かいからかいで解けていきました。",
+        "context": "交流"
       }
     ],
     "categories": [
@@ -32085,9 +32085,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding ramekin requires patience.",
-        "ja": "ラメキンを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The pastry chef baked individual crème brûlées in small ramekins and served them still warm from the oven.",
+        "ja": "パティシエは小さなラメキンに個別のクレームブリュレを焼き、オーブンからまだ温かいうちに提供しました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -32151,9 +32151,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding rancor requires patience.",
-        "ja": "深い恨みを理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "After decades of litigation, the rancor between the two corporations had poisoned any hope of partnership.",
+        "ja": "数十年の訴訟の後、二つの企業間の深い恨みはパートナーシップへのいかなる希望をも台無しにしていました。",
+        "context": "ビジネス関係"
       }
     ],
     "categories": [
@@ -32174,14 +32174,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "She listened in rapture.",
-        "ja": "彼女は恍惚として聴いた。",
-        "context": "感情"
+        "en": "The conductor lifted his baton and the audience sank into rapture as the symphony's opening movement unfolded.",
+        "ja": "指揮者が指揮棒を挙げると、交響曲の第一楽章が展開されるにつれて聴衆は恍惚に沈んでいきました。",
+        "context": "音楽"
       },
       {
-        "en": "The music brought rapture.",
-        "ja": "音楽が恍惚をもたらした。",
-        "context": "感情"
+        "en": "Standing at the edge of the Grand Canyon, she was seized by a rapture too profound for words.",
+        "ja": "グランドキャニオンの縁に立ち、彼女は言葉に尽くせないほど深い恍惚に捉えられました。",
+        "context": "自然体験"
       },
       {
         "en": "He gazed at the sunset in rapture.",
@@ -32217,9 +32217,9 @@
         "context": "日常"
       },
       {
-        "en": "The review was rapturous.",
-        "ja": "その批評は絶賛だった。",
-        "context": "日常"
+        "en": "The debut novel received rapturous reviews from critics who declared it the finest debut in a decade.",
+        "ja": "そのデビュー小説は、十年で最高のデビュー作と評した批評家から絶賛の批評を受けました。",
+        "context": "文芸批評"
       }
     ],
     "categories": [
@@ -32278,14 +32278,14 @@
         "context": "仕事"
       },
       {
-        "en": "It's rather unfortunate timing.",
-        "ja": "タイミングが残念だ。",
-        "context": "仕事"
+        "en": "It is rather unfortunate that the venue cancelled the event just two days before the conference.",
+        "ja": "会議のわずか2日前に会場がイベントをキャンセルしたのは残念なことです。",
+        "context": "イベント"
       },
       {
-        "en": "Rather unfortunate, but expected.",
-        "ja": "残念だが予想通りだ。",
-        "context": "仕事"
+        "en": "The timing of the announcement was rather unfortunate, coinciding with the company's worst quarterly results.",
+        "ja": "その発表のタイミングは、会社の最悪の四半期業績と重なった残念なものでした。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -32339,14 +32339,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Artists recontextualize everyday objects.",
-        "ja": "芸術家が日常品を再文脈化する。",
-        "context": "文化"
+        "en": "The curator chose to recontextualize colonial artifacts by pairing them with accounts from colonized communities.",
+        "ja": "学芸員は植民地化されたコミュニティの記述と並べることで、植民地時代の遺物を再文脈化することを選びました。",
+        "context": "博物館"
       },
       {
-        "en": "The quote was recontextualized.",
-        "ja": "その引用は再文脈化された。",
-        "context": "会話"
+        "en": "Filmmakers often recontextualize archival footage by juxtaposing it with contemporary interviews.",
+        "ja": "映画製作者はしばしば現代のインタビューと並置することでアーカイブ映像を再文脈化します。",
+        "context": "映像制作"
       },
       {
         "en": "Recontextualize the data for clarity.",
@@ -32537,9 +32537,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Banks rehypothecate client assets.",
-        "ja": "銀行は顧客資産を再担保にする。",
-        "context": "金融"
+        "en": "Prime brokers are permitted to rehypothecate client collateral up to a regulated percentage of the portfolio.",
+        "ja": "プライムブローカーは顧客担保をポートフォリオの規制された割合まで再担保にすることが認められています。",
+        "context": "金融規制"
       },
       {
         "en": "It is risky to rehypothecate collateral.",
@@ -32547,9 +32547,9 @@
         "context": "金融"
       },
       {
-        "en": "They rehypothecated the securities.",
-        "ja": "彼らは証券を再担保にした。",
-        "context": "金融"
+        "en": "Hedge funds that allow brokers to rehypothecate their assets face elevated counterparty risk during market stress.",
+        "ja": "ブローカーに資産を再担保にすることを許可するヘッジファンドは、市場ストレス時に高まったカウンターパーティリスクに直面します。",
+        "context": "リスク管理"
       }
     ],
     "categories": [
@@ -32570,14 +32570,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Rehypothecation increases systemic risk.",
-        "ja": "再担保はシステミックリスクを高める。",
-        "context": "金融"
+        "en": "Unlimited rehypothecation of client assets contributed to the cascade of failures during the 2008 financial crisis.",
+        "ja": "顧客資産の無制限な再担保が2008年金融危機の連鎖的な失敗に寄与しました。",
+        "context": "金融危機"
       },
       {
-        "en": "Regulations limit rehypothecation.",
-        "ja": "規制が再担保を制限している。",
-        "context": "金融"
+        "en": "Post-crisis regulations capped rehypothecation at 140 percent of a client's outstanding debt.",
+        "ja": "危機後の規制は、顧客の未返済債務の140パーセントを上限として再担保を制限しました。",
+        "context": "金融規制"
       },
       {
         "en": "Rehypothecation was a factor in the crisis.",
@@ -32608,14 +32608,14 @@
         "context": "文化"
       },
       {
-        "en": "Reification simplifies complex theories.",
-        "ja": "具象化が複雑な理論を単純化する。",
-        "context": "文化"
+        "en": "Critics argue that the reification of data into rankings obscures the complex social realities they claim to measure.",
+        "ja": "批評家たちは、データをランキングに具象化することが、測定を主張する複雑な社会的現実を覆い隠すと論じます。",
+        "context": "社会科学"
       },
       {
-        "en": "Avoid reification of stereotypes.",
-        "ja": "固定観念の物象化を避けよ。",
-        "context": "文化"
+        "en": "The philosopher warned against the reification of abstract concepts such as 'the market' as if they possessed independent agency.",
+        "ja": "その哲学者は、「市場」のような抽象概念が独立した主体性を持つかのように物象化することに対して警告しました。",
+        "context": "哲学"
       }
     ],
     "categories": [
@@ -32745,9 +32745,9 @@
         "context": "議論"
       },
       {
-        "en": "Understanding repartee requires patience.",
-        "ja": "機知に富んだ受け答えを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The veteran diplomat's quick repartee defused the tension and redirected the summit toward productive dialogue.",
+        "ja": "その老練な外交官の機知に富んだ受け答えが緊張を和らげ、首脳会談を生産的な対話へと方向転換させました。",
+        "context": "外交"
       }
     ],
     "categories": [
@@ -32844,9 +32844,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "Understanding revaluation requires patience.",
-        "ja": "再評価を理解するには忍耐が必要だ。",
-        "context": "経済"
+        "en": "China's controlled revaluation of the yuan sparked intense debate among economists about its impact on global trade imbalances.",
+        "ja": "中国の人民元の管理された再評価は、世界貿易不均衡への影響について経済学者の間で激しい議論を引き起こしました。",
+        "context": "国際金融"
       }
     ],
     "categories": [
@@ -32943,9 +32943,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding rightsizing requires patience.",
-        "ja": "適正化を理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "The board approved a strategic rightsizing plan that eliminated redundant management layers while protecting front-line staff.",
+        "ja": "取締役会は、現場スタッフを守りながら冗長な管理層を排除する戦略的適正化計画を承認しました。",
+        "context": "経営戦略"
       }
     ],
     "categories": [
@@ -33009,9 +33009,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding rill requires patience.",
-        "ja": "小川を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Hikers followed the sound of a rill through dense woodland until they found its mossy source spring.",
+        "ja": "ハイカーたちは苔むした源泉を見つけるまで、密な森の中を小川の音を頼りに進みました。",
+        "context": "自然"
       }
     ],
     "categories": [
@@ -33032,14 +33032,14 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "Riparian zones protect waterways.",
-        "ja": "河畔帯が水路を保護する。",
-        "context": "自然"
+        "en": "Restoring riparian vegetation along the riverbank significantly reduced nutrient runoff into the waterway.",
+        "ja": "川岸沿いの河畔植生を回復させることで、水路への栄養塩の流出を大幅に減少させました。",
+        "context": "環境保全"
       },
       {
-        "en": "Riparian vegetation prevents erosion.",
-        "ja": "河畔植生が浸食を防ぐ。",
-        "context": "自然"
+        "en": "The riparian corridor provides critical habitat linking isolated woodland fragments across the agricultural landscape.",
+        "ja": "その河畔回廊は、農業景観を横断して孤立した森林の断片をつなぐ重要な生息地を提供しています。",
+        "context": "生態学"
       },
       {
         "en": "The riparian habitat supports wildlife.",
@@ -33075,9 +33075,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding rivulet requires patience.",
-        "ja": "細流を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "A rivulet of condensation traced a path down the cold windowpane as the guests huddled inside.",
+        "ja": "客たちが室内に身を寄せる中、結露の細流が冷たい窓ガラスを伝って流れていきました。",
+        "context": "情景描写"
       }
     ],
     "categories": [
@@ -33108,9 +33108,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding rockhound requires patience.",
-        "ja": "鉱物収集家を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The seasoned rockhound identified the milky quartz vein and predicted where agate nodules might be hiding nearby.",
+        "ja": "経験豊富な鉱物収集家は乳白色の石英脈を見極め、近くに瑪瑙の塊が潜む場所を予測しました。",
+        "context": "趣味"
       }
     ],
     "categories": [
@@ -33240,9 +33240,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding rotunda requires patience.",
-        "ja": "円形建築を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "Visitors entering the museum are immediately dwarfed by the soaring dome of its neoclassical rotunda.",
+        "ja": "博物館に入館した来客は、新古典主義様式の円形建築の高々とそびえるドームにすぐに圧倒されます。",
+        "context": "建築"
       }
     ],
     "categories": [
@@ -33306,9 +33306,9 @@
         "context": "学術"
       },
       {
-        "en": "Follow the rubric carefully.",
-        "ja": "評価基準に注意深く従え。",
-        "context": "学術"
+        "en": "The professor designed a detailed rubric that assigned separate point values to argument, evidence, and writing mechanics.",
+        "ja": "教授は論証・証拠・文章表現に個別の配点を割り当てた詳細な評価基準を設計しました。",
+        "context": "教育"
       }
     ],
     "categories": [
@@ -33339,8 +33339,8 @@
         "context": "感情"
       },
       {
-        "en": "You'll rue this choice.",
-        "ja": "この選択を後悔するだろう。",
+        "en": "He would come to rue the hasty resignation letter he fired off in a moment of wounded pride.",
+        "ja": "傷ついたプライドの瞬間に勢いで送った軽率な辞表を、彼はのちに後悔することになりました。",
         "context": "感情"
       }
     ],
@@ -33438,9 +33438,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding sacristy requires patience.",
-        "ja": "聖具室を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The aged chalice was kept locked in the sacristy and brought out only for the most solemn liturgies.",
+        "ja": "その古びた聖杯は聖具室に鍵をかけて保管され、最も厳粛な典礼のときだけ取り出されました。",
+        "context": "宗教"
       }
     ],
     "categories": [
@@ -33669,9 +33669,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding sarcophagus requires patience.",
-        "ja": "石棺を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "Archaeologists carefully lifted the lid of the sarcophagus to reveal a mummified figure surrounded by votive offerings.",
+        "ja": "考古学者たちは石棺の蓋を慎重に持ち上げると、奉納品に囲まれたミイラ化した姿が現れました。",
+        "context": "考古学"
       }
     ],
     "categories": [
@@ -33768,9 +33768,9 @@
         "context": "文学"
       },
       {
-        "en": "Understanding saudade requires patience.",
-        "ja": "郷愁を理解するには忍耐が必要だ。",
-        "context": "心理"
+        "en": "The exile's letters home were saturated with saudade for the scent of bread and the sound of village bells.",
+        "ja": "故郷へのその亡命者の手紙は、パンの香りと村の鐘の音への郷愁に満ちあふれていました。",
+        "context": "感情・文化"
       }
     ],
     "categories": [
@@ -33801,9 +33801,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding sautoir requires patience.",
-        "ja": "ソテー鍋を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Using a wide sautoir rather than a conventional skillet allowed the chef to reduce the sauce evenly without scorching.",
+        "ja": "通常のスキレットではなく幅広のソテー鍋を使うことで、シェフは焦がすことなくソースを均一に煮詰めることができました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -33999,9 +33999,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding scintigraphy requires patience.",
-        "ja": "シンチグラフィーを理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Thyroid scintigraphy revealed a cold nodule that warranted a biopsy to rule out malignancy.",
+        "ja": "甲状腺シンチグラフィーにより、悪性腫瘍を除外するために生検が必要な冷結節が明らかになりました。",
+        "context": "医療診断"
       }
     ],
     "categories": [
@@ -34032,9 +34032,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding sclerosis requires patience.",
-        "ja": "硬化症を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Progressive sclerosis of the arterial walls raised the patient's risk of stroke dramatically over time.",
+        "ja": "動脈壁の進行性の硬化症により、患者の脳卒中リスクは時間とともに劇的に高まりました。",
+        "context": "医療"
       }
     ],
     "categories": [
@@ -34098,9 +34098,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding scree requires patience.",
-        "ja": "岩屑斜面を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "The trail guidebook warned that loose scree below the ridge demanded trekking poles and slow, deliberate footwork.",
+        "ja": "トレイルのガイドブックは、稜線下の不安定な岩屑斜面にはトレッキングポールとゆっくり慎重な足さばきが必要だと警告していました。",
+        "context": "登山"
       }
     ],
     "categories": [
@@ -34164,9 +34164,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding scriptorium requires patience.",
-        "ja": "写字室を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The illuminated manuscripts produced in the monastery's scriptorium attracted pilgrims from across medieval Europe.",
+        "ja": "修道院の写字室で制作された彩飾写本は、中世ヨーロッパ各地から巡礼者を引き寄せました。",
+        "context": "歴史・文化"
       }
     ],
     "categories": [
@@ -34197,9 +34197,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding sedimentation requires patience.",
-        "ja": "堆積作用を理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Accelerated sedimentation behind the dam threatened to choke the turbines within fifty years if left unchecked.",
+        "ja": "ダム後方での加速する堆積作用は、放置すれば50年以内にタービンを詰まらせる恐れがありました。",
+        "context": "環境工学"
       }
     ],
     "categories": [
@@ -34296,9 +34296,9 @@
         "context": "技術"
       },
       {
-        "en": "Semaphores coordinate process synchronization.",
-        "ja": "セマフォはプロセス同期を調整する。",
-        "context": "技術"
+        "en": "The operating system uses a semaphore to prevent two threads from writing to the same memory region simultaneously.",
+        "ja": "オペレーティングシステムはセマフォを使用して、二つのスレッドが同時に同じメモリ領域に書き込むのを防ぎます。",
+        "context": "プログラミング"
       }
     ],
     "categories": [
@@ -34352,9 +34352,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "The membrane filters semipermeably.",
-        "ja": "膜が半透過的に濾過する。",
-        "context": "自然"
+        "en": "The dialysis membrane functions semipermeably, allowing waste molecules to pass while retaining essential proteins.",
+        "ja": "透析膜は半透過的に機能し、老廃物の分子を通過させながら必須タンパク質を保持します。",
+        "context": "医療"
       },
       {
         "en": "Water passes semipermeably through cells.",
@@ -34362,9 +34362,9 @@
         "context": "自然"
       },
       {
-        "en": "Nutrients enter semipermeably.",
-        "ja": "栄養素が半透過的に入る。",
-        "context": "自然"
+        "en": "The root cells absorb mineral ions semipermeably, selecting which solutes enter based on electrochemical gradients.",
+        "ja": "根細胞は電気化学的な勾配に基づいてどの溶質を取り込むかを選択しながら、鉱物イオンを半透過的に吸収します。",
+        "context": "植物生理学"
       }
     ],
     "categories": [
@@ -34385,9 +34385,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "He sententiously reminded everyone that \"time waits for no one.\"",
-        "ja": "彼はもったいぶって皆に「時は人を待たず」と念を押した。",
-        "context": "日常"
+        "en": "The mentor sententiously declared that failure is merely tuition paid to the school of experience.",
+        "ja": "その師は格言めかして、失敗とは経験という学校に支払う授業料に過ぎないと宣言しました。",
+        "context": "指導"
       },
       {
         "en": "She sententiously lectured her children on the value of hard work.",
@@ -34428,9 +34428,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding sepsis requires patience.",
-        "ja": "敗血症を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "Prompt recognition of sepsis and immediate administration of broad-spectrum antibiotics can dramatically reduce mortality.",
+        "ja": "敗血症の迅速な認識と広域スペクトル抗生物質の即時投与は、死亡率を劇的に低下させることができます。",
+        "context": "救急医療"
       }
     ],
     "categories": [
@@ -34451,9 +34451,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Septicemia can be life-threatening.",
-        "ja": "敗血症は命に関わる。",
-        "context": "医療"
+        "en": "Untreated septicemia can progress to septic shock within hours, requiring immediate intensive care intervention.",
+        "ja": "未治療の敗血症は数時間以内に敗血症性ショックに進行する可能性があり、直ちに集中治療の介入が必要です。",
+        "context": "救急医療"
       },
       {
         "en": "The infection progressed to septicemia.",
@@ -34560,9 +34560,9 @@
         "context": "技術"
       },
       {
-        "en": "Custom serialization improves efficiency.",
-        "ja": "カスタム直列化で効率が向上する。",
-        "context": "技術"
+        "en": "Protocol Buffers offer more compact serialization than JSON by encoding data in a binary format.",
+        "ja": "プロトコルバッファーはデータをバイナリ形式でエンコードすることで、JSONよりもコンパクトな直列化を提供します。",
+        "context": "ソフトウェア開発"
       }
     ],
     "categories": [
@@ -34725,9 +34725,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding sgraffito requires patience.",
-        "ja": "掻き落とし装飾を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The Renaissance façade's sgraffito motifs—scenes of mythological battles—have survived remarkably intact.",
+        "ja": "そのルネサンス様式の建物正面の掻き落とし装飾の文様—神話的な戦闘場面—は驚くほど良好な状態で残っています。",
+        "context": "建築・芸術"
       }
     ],
     "categories": [
@@ -34753,9 +34753,9 @@
         "context": "スポーツ"
       },
       {
-        "en": "Shadowboxing builds technique.",
-        "ja": "シャドーボクシングが技術を磨く。",
-        "context": "スポーツ"
+        "en": "The champion would shadowbox for ten minutes before every bout to sharpen her focus and loosen her shoulders.",
+        "ja": "そのチャンピオンは集中力を研ぎ澄まし肩をほぐすために、試合前に必ず10分間シャドーボクシングをしました。",
+        "context": "ボクシング"
       },
       {
         "en": "She shadowboxed for thirty minutes.",
@@ -35022,9 +35022,9 @@
         "context": "日常"
       },
       {
-        "en": "Don't sidestep responsibility.",
-        "ja": "責任を回避するな。",
-        "context": "日常"
+        "en": "The senator skillfully sidestepped the reporter's pointed question about the leaked memo.",
+        "ja": "その上院議員は漏洩したメモについての記者の鋭い質問を巧みに回避しました。",
+        "context": "政治"
       }
     ],
     "categories": [
@@ -35187,9 +35187,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding singleton requires patience.",
-        "ja": "シングルトンを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Implementing the logger as a singleton ensures that all modules write to a single consistent output stream.",
+        "ja": "ロガーをシングルトンとして実装することで、すべてのモジュールが単一の一貫した出力ストリームに書き込むことが保証されます。",
+        "context": "ソフトウェア設計"
       }
     ],
     "categories": [
@@ -35286,9 +35286,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding skulduggery requires patience.",
-        "ja": "不正行為を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The parliamentary committee was convened to investigate allegations of skulduggery in the procurement process.",
+        "ja": "議会委員会は調達プロセスにおける不正行為の疑惑を調査するために招集されました。",
+        "context": "政治・法律"
       }
     ],
     "categories": [
@@ -35352,9 +35352,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding slugabed requires patience.",
-        "ja": "朝寝坊を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The confirmed slugabed finally dragged himself to the breakfast table as the clock struck eleven.",
+        "ja": "筋金入りの朝寝坊はとうとう時計が11時を打つとともに朝食のテーブルに自分を引きずっていきました。",
+        "context": "日常"
       }
     ],
     "categories": [
@@ -35484,9 +35484,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding sojourner requires patience.",
-        "ja": "一時滞在者を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The sojourner spent six weeks in Kyoto attending tea ceremonies and sketching temple gardens before continuing east.",
+        "ja": "その一時滞在者は東方に向かって旅を続ける前に、京都で6週間を茶道の体験と寺院庭園のスケッチに費やしました。",
+        "context": "旅"
       }
     ],
     "categories": [
@@ -35781,9 +35781,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding spandrel requires patience.",
-        "ja": "スパンドレルを理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The Byzantine mosaic filling each spandrel of the nave depicted a different episode from the Old Testament.",
+        "ja": "身廊の各スパンドレルを埋めたビザンチン様式のモザイクは、旧約聖書の異なるエピソードを描いていました。",
+        "context": "建築・宗教芸術"
       }
     ],
     "categories": [
@@ -35946,9 +35946,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding speleologist requires patience.",
-        "ja": "洞窟探検家を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The veteran speleologist descended alone into the uncharted cave and returned with sketches of chambers never before seen.",
+        "ja": "その経験豊富な洞窟探検家は未踏の洞窟に単独で降り、これまで誰も見たことのない空間のスケッチを持って戻りました。",
+        "context": "探検・科学"
       }
     ],
     "categories": [
@@ -36073,9 +36073,9 @@
         "context": "修辞"
       },
       {
-        "en": "Spoonerisms cause unintentional humor.",
-        "ja": "語頭音転換は意図せぬ笑いを生む。",
-        "context": "修辞"
+        "en": "The announcer's nervous spoonerism drew laughter from the crowd when he called the award a 'shining wit.'",
+        "ja": "司会者が緊張のあまり語頭音転換してアワードを「輝く機知」と呼んだとき、観客から笑いが起きました。",
+        "context": "スピーチ"
       },
       {
         "en": "He made a spoonerism during his speech.",
@@ -36106,14 +36106,14 @@
         "context": "技術"
       },
       {
-        "en": "Stateless services scale easily.",
-        "ja": "ステートレスなサービスは容易に拡張できる。",
-        "context": "技術"
+        "en": "Designing the authentication service as stateless enabled horizontal scaling without expensive session synchronization overhead.",
+        "ja": "認証サービスをステートレスに設計することで、コストの高いセッション同期のオーバーヘッドなしに水平スケーリングが可能になりました。",
+        "context": "ソフトウェアアーキテクチャ"
       },
       {
-        "en": "Keep the function stateless.",
-        "ja": "関数をステートレスに保て。",
-        "context": "技術"
+        "en": "A stateless function always returns the same output for the same input, making it trivially testable.",
+        "ja": "ステートレスな関数は同じ入力に対して常に同じ出力を返すため、テストが容易です。",
+        "context": "プログラミング"
       }
     ],
     "categories": [
@@ -36144,9 +36144,9 @@
         "context": "スポーツ"
       },
       {
-        "en": "Steeplechase requires endurance.",
-        "ja": "障害物競走は持久力を要する。",
-        "context": "スポーツ"
+        "en": "She cleared every water jump in the 3000-metre steeplechase and crossed the finish line a full second ahead.",
+        "ja": "彼女は3000メートル障害物競走の全ての水壕を越え、丸1秒差でゴールラインを切りました。",
+        "context": "陸上競技"
       }
     ],
     "categories": [
@@ -36177,9 +36177,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding stenosis requires patience.",
-        "ja": "狭窄症を理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "The cardiologist used echocardiography to assess the severity of the patient's mitral stenosis before recommending surgery.",
+        "ja": "心臓専門医は手術を勧める前に心エコー検査で患者の僧帽弁狭窄症の重症度を評価しました。",
+        "context": "循環器医学"
       }
     ],
     "categories": [
@@ -36210,9 +36210,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding steppe requires patience.",
-        "ja": "大草原を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The archaeological site on the Kazakh steppe revealed burial mounds dating back to the Bronze Age.",
+        "ja": "カザフの大草原の考古学的遺跡で、青銅器時代にさかのぼる古墳が発見されました。",
+        "context": "考古学・歴史"
       }
     ],
     "categories": [
@@ -36365,9 +36365,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Cultural stultification harms society.",
-        "ja": "文化の形骸化が社会に害を与える。",
-        "context": "文化"
+        "en": "Critics blamed the rigid curriculum for the intellectual stultification of students who entered university bursting with curiosity.",
+        "ja": "批評家たちは、好奇心旺盛で大学に入学した学生たちの知的形骸化の原因として硬直したカリキュラムを非難しました。",
+        "context": "教育"
       },
       {
         "en": "The stultification of discourse is alarming.",
@@ -36601,8 +36601,8 @@
         "context": "医療"
       },
       {
-        "en": "Subcutaneous fat provides insulation.",
-        "ja": "皮下脂肪は断熱の役割を果たす。",
+        "en": "Patients with diabetes often administer insulin via subcutaneous injection into the abdomen or outer thigh.",
+        "ja": "糖尿病患者はしばしば腹部や太ももの外側への皮下注射でインスリンを投与します。",
         "context": "医療"
       },
       {
@@ -36705,9 +36705,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding subroutine requires patience.",
-        "ja": "サブルーチンを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Every time the game detects a collision, it calls the physics subroutine to calculate the resulting trajectory.",
+        "ja": "ゲームが衝突を検出するたびに、物理エンジンのサブルーチンを呼び出して結果の軌道を計算します。",
+        "context": "ゲームプログラミング"
       }
     ],
     "categories": [
@@ -36969,9 +36969,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding switchback requires patience.",
-        "ja": "つづら折りを理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The road ascended the escarpment through a series of tight switchbacks that tested even experienced mountain drivers.",
+        "ja": "その道路は急な崖を連続した急なつづら折りで登り、経験豊富な山岳ドライバーでも試される道でした。",
+        "context": "道路・地形"
       }
     ],
     "categories": [
@@ -37157,9 +37157,9 @@
     "partOfSpeech": "adverb",
     "examples": [
       {
-        "en": "The organisms live symbiotically.",
-        "ja": "その生物は共生的に生きている。",
-        "context": "自然"
+        "en": "Mycorrhizal fungi and forest trees live symbiotically, exchanging mineral nutrients for photosynthetically produced sugars.",
+        "ja": "菌根菌と森林樹木は共生的に生き、鉱物栄養素を光合成で生産された糖と交換します。",
+        "context": "生態学"
       },
       {
         "en": "They interact symbiotically with fungi.",
@@ -37327,9 +37327,9 @@
         "context": "文化"
       },
       {
-        "en": "Cultures syncretize through contact.",
-        "ja": "文化は接触を通じて融合する。",
-        "context": "文化"
+        "en": "Caribbean religions often syncretize African spiritual traditions with Catholic iconography in distinctive hybrid practices.",
+        "ja": "カリブ海の宗教はしばしばアフリカの精神的伝統とカトリックの図像を独特の混合的実践の中で融合させます。",
+        "context": "宗教・文化人類学"
       },
       {
         "en": "They syncretized Eastern and Western ideas.",
@@ -37365,9 +37365,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding syndicator requires patience.",
-        "ja": "シンジケーターを理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "The syndicator secured international distribution deals that brought the animated series to audiences in sixty-five markets.",
+        "ja": "そのシンジケーターは65の市場の視聴者にアニメシリーズを届ける国際配信契約を獲得しました。",
+        "context": "メディア・エンターテインメント"
       }
     ],
     "categories": [
@@ -37563,9 +37563,9 @@
         "context": "科学"
       },
       {
-        "en": "Understanding taiga requires patience.",
-        "ja": "タイガを理解するには忍耐が必要だ。",
-        "context": "環境"
+        "en": "Wolverines range across the boreal taiga, covering enormous distances in search of carrion and prey.",
+        "ja": "クズリは腐肉と獲物を求めて広大な距離を移動しながら、北方の針葉樹林のタイガを闊歩します。",
+        "context": "自然"
       }
     ],
     "categories": [
@@ -37629,9 +37629,9 @@
         "context": "健康"
       },
       {
-        "en": "Understanding tamponade requires patience.",
-        "ja": "タンポナーデを理解するには忍耐が必要だ。",
-        "context": "科学"
+        "en": "The trauma surgeon diagnosed cardiac tamponade and performed emergency pericardiocentesis to drain the pericardial effusion.",
+        "ja": "外傷外科医は心タンポナーデを診断し、心膜液を排出するための緊急心嚢穿刺を実施しました。",
+        "context": "外傷医療"
       }
     ],
     "categories": [
@@ -37662,9 +37662,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "Understanding tariffication requires patience.",
-        "ja": "関税化を理解するには忍耐が必要だ。",
-        "context": "経済"
+        "en": "Tariffication replaced opaque import quotas with transparent fixed-rate tariffs that trading partners could more easily negotiate.",
+        "ja": "関税化は不透明な輸入割当を、貿易相手国がより容易に交渉できる透明な固定税率の関税に置き換えました。",
+        "context": "国際貿易"
       }
     ],
     "categories": [
@@ -37695,9 +37695,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding tarmac requires patience.",
-        "ja": "舗装路を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The aircraft sat idle on the tarmac for three hours while engineers inspected a faulty landing gear sensor.",
+        "ja": "エンジニアが故障した着陸装置センサーを点検する間、機体は3時間舗装路に停止したままでした。",
+        "context": "航空"
       }
     ],
     "categories": [
@@ -37761,9 +37761,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding tarradiddle requires patience.",
-        "ja": "たわごとを理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The committee saw through his convoluted tarradiddle and pressed him for a direct account of the missing funds.",
+        "ja": "委員会は彼の複雑に絡み合ったたわごとを見抜き、消えた資金についての直接の説明を迫りました。",
+        "context": "ビジネス・法律"
       }
     ],
     "categories": [
@@ -37794,9 +37794,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding tartare requires patience.",
-        "ja": "タルタルを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The chef seasoned the salmon tartare with lime zest and dill, then mounded it in a ring mold.",
+        "ja": "シェフはサーモンのタルタルをライムの皮とディルで味付けし、リング型に盛り付けました。",
+        "context": "料理"
       }
     ],
     "categories": [
@@ -37827,9 +37827,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding tatterdemalion requires patience.",
-        "ja": "ぼろぼろの人を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The novelist's opening chapter introduced a tatterdemalion protagonist whose threadbare clothes belied his fierce intelligence.",
+        "ja": "その小説の第一章は、すり切れた衣服とは裏腹に鋭い知性を秘めたぼろぼろの人の主人公を紹介しました。",
+        "context": "文学"
       }
     ],
     "categories": [
@@ -37893,9 +37893,9 @@
         "context": "学術"
       },
       {
-        "en": "Don't reason tautologically.",
-        "ja": "同語反復的に論じるな。",
-        "context": "会話"
+        "en": "The review board objected that the policy was justified tautologically: it worked because it had always been done that way.",
+        "ja": "審査委員会は、その政策が「常にそのように行われてきたから機能する」という同語反復的な理由で正当化されていると異議を唱えました。",
+        "context": "議論・ロジック"
       }
     ],
     "categories": [
@@ -37916,14 +37916,14 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "Taxidermy preserves animals realistically.",
-        "ja": "剥製術が動物をリアルに保存する。",
-        "context": "趣味"
+        "en": "The natural history museum commissioned taxidermy specimens so lifelike that visitors instinctively stepped back.",
+        "ja": "自然史博物館は、来館者が思わず後ずさりするほどリアルな剥製標本を委託制作しました。",
+        "context": "博物館"
       },
       {
-        "en": "The museum displays taxidermy.",
-        "ja": "博物館が剥製を展示している。",
-        "context": "趣味"
+        "en": "Victorian taxidermy often arranged animals in absurd domestic scenes, reflecting the era's fascination with novelty.",
+        "ja": "ビクトリア朝の剥製術はしばしば動物を滑稽な家庭的場面に配置し、当時の目新しさへの熱狂を反映していました。",
+        "context": "歴史・文化"
       },
       {
         "en": "He studied taxidermy as a hobby.",
@@ -37959,9 +37959,9 @@
         "context": "学術"
       },
       {
-        "en": "It was classified taxonomically.",
-        "ja": "それは分類学的に分類された。",
-        "context": "学術"
+        "en": "The newly sequenced genome revealed that the organism was taxonomically closer to archaea than to any known bacterium.",
+        "ja": "新たに解読されたゲノムにより、その生物は分類学的にいかなる既知の細菌よりも古細菌に近いことが明らかになりました。",
+        "context": "生物学"
       }
     ],
     "categories": [
@@ -37982,9 +37982,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Scientists taxonomize new species.",
-        "ja": "科学者が新種を分類する。",
-        "context": "学術"
+        "en": "The research team worked to taxonomize the newly documented deep-sea invertebrates discovered during the expedition.",
+        "ja": "研究チームは探検中に発見された新たに記録された深海無脊椎動物を分類する作業に取り組みました。",
+        "context": "生物学研究"
       },
       {
         "en": "We taxonomized the data by type.",
@@ -38157,9 +38157,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding telnet requires patience.",
-        "ja": "テルネットを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Legacy industrial controllers still communicated over telnet, posing serious security risks in an era of persistent threats.",
+        "ja": "レガシーの産業用コントローラーはいまだにテルネットで通信しており、持続的脅威の時代に深刻なセキュリティリスクをもたらしていました。",
+        "context": "セキュリティ"
       }
     ],
     "categories": [
@@ -38388,9 +38388,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding terrarium requires patience.",
-        "ja": "テラリウムを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The naturalist designed a self-sustaining terrarium that required no intervention beyond an occasional misting.",
+        "ja": "その自然観察者は、時々の霧吹き以外に手入れを必要としない自立型のテラリウムを設計しました。",
+        "context": "趣味・自然"
       }
     ],
     "categories": [
@@ -38449,9 +38449,9 @@
         "context": "食"
       },
       {
-        "en": "Terroir affects crop flavor.",
-        "ja": "テロワールが作物の風味に影響する。",
-        "context": "自然"
+        "en": "Winemakers argue that terroir—soil, climate, and topography combined—cannot be replicated anywhere else on earth.",
+        "ja": "醸造家たちは、土壌・気候・地形を組み合わせたテロワールは地球上のどこにも再現できないと主張します。",
+        "context": "ワイン・農業"
       },
       {
         "en": "Each region has a unique terroir.",
@@ -38982,9 +38982,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding throughline requires patience.",
-        "ja": "一貫したテーマを理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "The documentary's throughline—an immigrant family's century-long pursuit of dignity—gave each episode emotional coherence.",
+        "ja": "そのドキュメンタリーの一貫したテーマ—移民家族の尊厳を求める百年の歩み—は各エピソードに感情的な一貫性を与えました。",
+        "context": "映像制作"
       }
     ],
     "categories": [
@@ -39081,9 +39081,9 @@
         "context": "ビジネス"
       },
       {
-        "en": "Understanding tithe requires patience.",
-        "ja": "十分の一税を理解するには忍耐が必要だ。",
-        "context": "経済"
+        "en": "Some evangelical congregations still encourage members to give a tithe of their gross income to the church.",
+        "ja": "一部の福音主義的な教会はいまだに信徒に総収入の十分の一税を教会に捧げるよう勧めています。",
+        "context": "宗教"
       }
     ],
     "categories": [
@@ -39104,9 +39104,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Titrate the dosage gradually.",
-        "ja": "投与量を徐々に調整せよ。",
-        "context": "日常"
+        "en": "The pharmacologist needed to titrate the dosage carefully to achieve therapeutic levels without triggering toxic side effects.",
+        "ja": "薬理学者は毒性のある副作用を引き起こさずに治療的レベルを達成するために、慎重に投与量を調整する必要がありました。",
+        "context": "薬理学"
       },
       {
         "en": "She titrated the solution carefully.",
@@ -39477,9 +39477,9 @@
         "context": "会話"
       },
       {
-        "en": "Understanding tomfoolery requires patience.",
-        "ja": "ばかげた行為を理解するには忍耐が必要だ。",
-        "context": "生活"
+        "en": "The board of directors had no patience for the CEO's tomfoolery during an investor relations presentation.",
+        "ja": "投資家向け説明会でのCEOのばかげた行為に対して、取締役会はまったく忍耐を持てませんでした。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -39609,9 +39609,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding topiary requires patience.",
-        "ja": "刈り込み園芸を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The estate's head gardener spent twenty years coaxing the yew hedges into the elaborate animal topiary they are today.",
+        "ja": "その邸宅の主任庭師は20年かけてイチイの生垣を今日の精巧な動物の刈り込み園芸へと育てました。",
+        "context": "造園"
       }
     ],
     "categories": [
@@ -39873,9 +39873,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding transept requires patience.",
-        "ja": "翼廊を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The medieval bishop chose to be buried in the northern transept of the cathedral he had commissioned.",
+        "ja": "その中世の司教は自分が建設を依頼した大聖堂の北翼廊に埋葬されることを選びました。",
+        "context": "建築・歴史"
       }
     ],
     "categories": [
@@ -39896,14 +39896,14 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "They translocated endangered species.",
-        "ja": "絶滅危惧種を移植した。",
-        "context": "自然"
+        "en": "Conservation managers decided to translocate the last remaining population of the rare lizard to a predator-free island.",
+        "ja": "保全管理者たちは希少なトカゲの最後の残存個体群を捕食者のいない島に移植することを決定しました。",
+        "context": "自然保護"
       },
       {
-        "en": "Plants translocate nutrients internally.",
-        "ja": "植物は内部で栄養を転位させる。",
-        "context": "自然"
+        "en": "Phloem vessels translocate photosynthetically produced sugars from the leaves down to the roots and growing tips.",
+        "ja": "師部の管は光合成で生産された糖を葉から根や成長点へと転位させます。",
+        "context": "植物生理学"
       },
       {
         "en": "The animals were translocated safely.",
@@ -39972,9 +39972,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding transpilation requires patience.",
-        "ja": "トランスパイルを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "Babel's transpilation pipeline converts cutting-edge ECMAScript proposals into syntax older browsers can safely execute.",
+        "ja": "Babelのトランスパイルパイプラインは最先端のECMAScript提案を古いブラウザが安全に実行できる構文に変換します。",
+        "context": "フロントエンド開発"
       }
     ],
     "categories": [
@@ -39995,9 +39995,9 @@
     "partOfSpeech": "verb",
     "examples": [
       {
-        "en": "Babel transpiles modern JavaScript.",
-        "ja": "BabelがモダンJSを変換する。",
-        "context": "技術"
+        "en": "The build pipeline uses esbuild to transpile TypeScript and bundle all modules in under a second.",
+        "ja": "ビルドパイプラインはesbuildを使ってTypeScriptを変換コンパイルし、1秒以内にすべてのモジュールをバンドルします。",
+        "context": "フロントエンド開発"
       },
       {
         "en": "We transpile TypeScript to JavaScript.",
@@ -40033,9 +40033,9 @@
         "context": "学術"
       },
       {
-        "en": "The treatise influenced generations.",
-        "ja": "その論文は世代を超えて影響を与えた。",
-        "context": "学術"
+        "en": "Her groundbreaking treatise on contract law reshaped how courts in three countries interpret ambiguous commercial clauses.",
+        "ja": "契約法に関する彼女の画期的な学術書は、三か国の裁判所が曖昧な商業条項を解釈する方法を変えました。",
+        "context": "法学"
       },
       {
         "en": "She wrote an exhaustive treatise.",
@@ -40236,9 +40236,9 @@
         "context": "教育"
       },
       {
-        "en": "Understanding trivium requires patience.",
-        "ja": "三学を理解するには忍耐が必要だ。",
-        "context": "議論"
+        "en": "The tutor insisted his pupil command the trivium before embarking on any specialized philosophical inquiry.",
+        "ja": "その家庭教師は弟子が専門的な哲学的探求に着手する前に三学を習得することを主張しました。",
+        "context": "教育史"
       }
     ],
     "categories": [
@@ -40401,9 +40401,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding trousseau requires patience.",
-        "ja": "嫁入り道具を理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The bride's grandmother oversaw the weaving of each piece in the trousseau according to generations-old tradition.",
+        "ja": "花嫁の祖母は世代に受け継がれた伝統に従い、嫁入り道具の各品の織り上げを監督しました。",
+        "context": "文化・結婚"
       }
     ],
     "categories": [
@@ -40655,19 +40655,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The bank was undercapitalized.",
-        "ja": "その銀行は資本不足だった。",
-        "context": "金融"
+        "en": "Regulators placed the undercapitalized lender under supervision and mandated an immediate rights issue.",
+        "ja": "規制当局は資本不足の貸金業者を監督下に置き、即時の増資を義務付けました。",
+        "context": "金融規制"
       },
       {
-        "en": "Undercapitalized firms face closure.",
-        "ja": "資本不足の企業は閉鎖の危機に瀕する。",
-        "context": "金融"
+        "en": "The venture was chronically undercapitalized, forcing the founders to defer their own salaries for two years.",
+        "ja": "その事業は慢性的に資本不足で、創業者たちは自分たちの給与を2年間先送りせざるを得ませんでした。",
+        "context": "スタートアップ"
       },
       {
-        "en": "Many startups are undercapitalized.",
-        "ja": "多くのスタートアップは資本不足だ。",
-        "context": "金融"
+        "en": "Analysts warned that the insurance subsidiary remained undercapitalized relative to the catastrophic risks it had underwritten.",
+        "ja": "アナリストは保険子会社が引き受けた壊滅的リスクに対して依然として資本不足であると警告しました。",
+        "context": "保険・金融"
       }
     ],
     "categories": [
@@ -40731,9 +40731,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding underperformer requires patience.",
-        "ja": "期待外れの人を理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "Rather than dismissing the underperformer outright, the team leader offered structured coaching over three months.",
+        "ja": "チームリーダーは期待外れの人をすぐに解雇するのではなく、3か月間の体系的なコーチングを提供しました。",
+        "context": "人事管理"
       }
     ],
     "categories": [
@@ -40764,9 +40764,9 @@
         "context": "経営"
       },
       {
-        "en": "Understanding unicorn requires patience.",
-        "ja": "ユニコーン企業を理解するには忍耐が必要だ。",
-        "context": "仕事"
+        "en": "Investors scrambled to back the payments unicorn before its anticipated IPO valued it at thirty billion dollars.",
+        "ja": "投資家たちは、300億ドルの評価額が見込まれるIPOを前に、その決済ユニコーン企業への出資機会を競い合いました。",
+        "context": "ベンチャー投資"
       }
     ],
     "categories": [
@@ -41457,9 +41457,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding vexillology requires patience.",
-        "ja": "旗章学を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "His lectures on vexillology traced how national flags encode political ideology, colonial history, and cultural identity.",
+        "ja": "旗章学に関する彼の講義は、国旗がどのように政治的イデオロギー・植民地史・文化的アイデンティティを体現しているかをたどりました。",
+        "context": "学術・文化"
       }
     ],
     "categories": [
@@ -41683,14 +41683,14 @@
         "context": "食事"
       },
       {
-        "en": "Honey is naturally viscous.",
-        "ja": "蜂蜜は自然に粘性がある。",
-        "context": "食事"
+        "en": "Molten basalt flows more slowly than water because its silica content makes it highly viscous.",
+        "ja": "溶けた玄武岩は珪酸塩含有量によって非常に粘性が高くなるため、水よりもゆっくりと流れます。",
+        "context": "地質学"
       },
       {
-        "en": "Viscous fluids flow slowly.",
-        "ja": "粘性のある流体はゆっくり流れる。",
-        "context": "科学"
+        "en": "The lubricant must remain viscous enough at high temperatures to prevent metal-on-metal contact in the engine.",
+        "ja": "その潤滑剤はエンジン内の金属同士の直接接触を防ぐために、高温でも十分な粘性を保ち続けなければなりません。",
+        "context": "機械工学"
       }
     ],
     "categories": [
@@ -41721,9 +41721,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding viticulture requires patience.",
-        "ja": "ブドウ栽培を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The estate invested in precision viticulture, using drone mapping and soil sensors to optimize vine management.",
+        "ja": "その農園はドローンマッピングと土壌センサーを使ってブドウ樹の管理を最適化する精密ブドウ栽培に投資しました。",
+        "context": "農業・ワイン"
       }
     ],
     "categories": [
@@ -41919,9 +41919,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding wabi-sabi requires patience.",
-        "ja": "侘び寂びを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The potter embraced wabi-sabi, leaving a deliberate crack in the glaze to honor the imperfection of the clay.",
+        "ja": "その陶芸家は侘び寂びを体現し、粘土の不完全さを称えるために釉薬に意図的な亀裂を残しました。",
+        "context": "美学・工芸"
       }
     ],
     "categories": [
@@ -42084,9 +42084,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding wayfinding requires patience.",
-        "ja": "経路探索を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The hospital hired a specialist to overhaul its wayfinding signage after patients routinely missed critical appointments.",
+        "ja": "患者が重要な予約を日常的に逃すようになった後、病院は経路探索の案内サインを刷新するために専門家を雇いました。",
+        "context": "施設設計"
       }
     ],
     "categories": [
@@ -42117,9 +42117,9 @@
         "context": "地理"
       },
       {
-        "en": "Understanding waystation requires patience.",
-        "ja": "中継地点を理解するには忍耐が必要だ。",
-        "context": "日常"
+        "en": "The mountain refuge served as a vital waystation for hikers crossing the high plateau in deteriorating weather.",
+        "ja": "その山の避難所は、悪化する天候の中で高原を横断するハイカーにとって不可欠な中継地点として機能しました。",
+        "context": "登山"
       }
     ],
     "categories": [
@@ -42150,9 +42150,9 @@
         "context": "開発"
       },
       {
-        "en": "Understanding webhook requires patience.",
-        "ja": "ウェブフックを理解するには忍耐が必要だ。",
-        "context": "ビジネス"
+        "en": "The deployment pipeline fires a webhook to notify the monitoring dashboard whenever a new build is pushed to production.",
+        "ja": "デプロイパイプラインは新しいビルドが本番環境にプッシュされるたびにウェブフックを発火させて監視ダッシュボードに通知します。",
+        "context": "技術"
       }
     ],
     "categories": [
@@ -42315,9 +42315,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding whittling requires patience.",
-        "ja": "木彫りを理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "Through patient whittling, she transformed a rough-cut branch into a smooth wooden spoon over a single afternoon.",
+        "ja": "辛抱強い木彫りを通じて、彼女は一午後の間に荒削りの枝を滑らかな木製スプーンに変えました。",
+        "context": "手工芸"
       }
     ],
     "categories": [
@@ -42579,9 +42579,9 @@
         "context": "日常"
       },
       {
-        "en": "Understanding woodcut requires patience.",
-        "ja": "木版画を理解するには忍耐が必要だ。",
-        "context": "文化"
+        "en": "The printmaker carved the dense forest scene into a cherry-wood block and produced fifty identical woodcut impressions.",
+        "ja": "その版画家は密な森の情景を桜の木版に彫り込み、50枚の同一の木版画を制作しました。",
+        "context": "版画芸術"
       }
     ],
     "categories": [
@@ -42707,14 +42707,14 @@
         "context": "自然"
       },
       {
-        "en": "Cacti are xerophytic species.",
-        "ja": "サボテンは乾生種だ。",
-        "context": "自然"
+        "en": "The landscape architects selected xerophytic ground cover to reduce irrigation costs in the arid urban plaza.",
+        "ja": "造園家たちは乾燥した都市広場の灌漑コストを削減するために乾生のグラウンドカバーを選択しました。",
+        "context": "造園"
       },
       {
-        "en": "Xerophytic adaptations conserve water.",
-        "ja": "乾生適応が水を節約する。",
-        "context": "自然"
+        "en": "Xerophytic succulents store water in thick, waxy leaves that resist desiccation during prolonged droughts.",
+        "ja": "乾生の多肉植物は厚くワックス質の葉に水を蓄え、長期的な干ばつの際の乾燥に抵抗します。",
+        "context": "植物学"
       }
     ],
     "categories": [
@@ -42910,9 +42910,9 @@
         "context": "歴史"
       },
       {
-        "en": "Understanding ziggurat requires patience.",
-        "ja": "ジグラットを理解するには忍耐が必要だ。",
-        "context": "芸術"
+        "en": "The stepped profile of the ziggurat served both as a sacred mountain and a monumental symbol of royal authority.",
+        "ja": "ジグラットの階段状の外形は、聖なる山として、また王権の壮大なシンボルとしての両方の役割を果たしました。",
+        "context": "古代史・建築"
       }
     ],
     "categories": [
