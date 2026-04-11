@@ -91556,6 +91556,11 @@
         "course": "eiken",
         "stage": "3",
         "tier": 1
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ],
     "sources": [
@@ -108775,6 +108780,11 @@
         "course": "eiken",
         "stage": "3",
         "tier": 2
+      },
+      {
+        "course": "toeic",
+        "stage": "600",
+        "tier": 1
       }
     ],
     "sources": [
@@ -128864,6 +128874,11 @@
         "course": "eiken",
         "stage": "pre2",
         "tier": 2
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ],
     "sources": [

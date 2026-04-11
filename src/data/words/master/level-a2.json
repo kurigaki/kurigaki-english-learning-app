@@ -14573,6 +14573,11 @@
         "course": "senior",
         "stage": "1",
         "tier": 1
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ],
     "sources": [
@@ -50485,6 +50490,11 @@
         "course": "conversation",
         "stage": "a2",
         "tier": 2
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ],
     "sources": [
@@ -52779,6 +52789,11 @@
         "course": "eiken",
         "stage": "4",
         "tier": 3
+      },
+      {
+        "course": "toeic",
+        "stage": "700",
+        "tier": 1
       }
     ],
     "sources": [
@@ -52818,6 +52833,11 @@
         "course": "eiken",
         "stage": "4",
         "tier": 3
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ],
     "sources": [
@@ -65628,6 +65648,11 @@
         "course": "eiken",
         "stage": "4",
         "tier": 3
+      },
+      {
+        "course": "toeic",
+        "stage": "500",
+        "tier": 1
       }
     ],
     "sources": [
