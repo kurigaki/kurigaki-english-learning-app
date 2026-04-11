@@ -23439,7 +23439,7 @@
   {
     "id": 10475,
     "word": "enter",
-    "meaning": "入る",
+    "meaning": "入る・入力する",
     "partOfSpeech": "verb",
     "examples": [
       {
@@ -36975,7 +36975,7 @@
   {
     "id": 10743,
     "word": "introduce",
-    "meaning": "紹介する",
+    "meaning": "紹介する・導入する",
     "partOfSpeech": "verb",
     "examples": [
       {
@@ -40543,7 +40543,7 @@
   {
     "id": 10816,
     "word": "load",
-    "meaning": "荷物",
+    "meaning": "荷物・積載量",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -46783,7 +46783,7 @@
   {
     "id": 10946,
     "word": "offer",
-    "meaning": "申し出る",
+    "meaning": "申し出る・提供する",
     "partOfSpeech": "verb",
     "examples": [
       {
@@ -52701,7 +52701,7 @@
   {
     "id": 11065,
     "word": "project",
-    "meaning": "計画",
+    "meaning": "計画・プロジェクト",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -58310,7 +58310,7 @@
   {
     "id": 11179,
     "word": "schedule",
-    "meaning": "スケジュール",
+    "meaning": "スケジュール・予定表",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -61772,7 +61772,7 @@
   {
     "id": 11253,
     "word": "sort",
-    "meaning": "種類",
+    "meaning": "種類・分類",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -66636,7 +66636,7 @@
   {
     "id": 11359,
     "word": "trade",
-    "meaning": "貿易",
+    "meaning": "貿易・取引",
     "partOfSpeech": "noun",
     "examples": [
       {
