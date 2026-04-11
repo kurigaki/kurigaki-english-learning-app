@@ -44086,7 +44086,7 @@
   {
     "id": 21000,
     "word": "duty",
-    "meaning": "義務",
+    "meaning": "義務・関税",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -107090,7 +107090,7 @@
   {
     "id": 22404,
     "word": "range",
-    "meaning": "範囲",
+    "meaning": "範囲・品揃え",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -109558,7 +109558,7 @@
   {
     "id": 22458,
     "word": "regard",
-    "meaning": "敬意",
+    "meaning": "敬意・配慮",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -120961,7 +120961,7 @@
   {
     "id": 22709,
     "word": "source",
-    "meaning": "源",
+    "meaning": "源・情報源・仕入れ先",
     "partOfSpeech": "noun",
     "examples": [
       {
@@ -136166,7 +136166,7 @@
   {
     "id": 23037,
     "word": "wire",
-    "meaning": "電線",
+    "meaning": "電線・電信送金",
     "partOfSpeech": "noun",
     "examples": [
       {
