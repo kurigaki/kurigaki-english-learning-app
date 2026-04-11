@@ -1619,7 +1619,8 @@
     ],
     "categories": [
       "daily",
-      "business"
+      "business",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -4600,7 +4601,8 @@
     "categories": [
       "daily",
       "communication",
-      "school"
+      "school",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -15346,7 +15348,8 @@
       }
     ],
     "categories": [
-      "communication"
+      "communication",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -20761,7 +20764,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -21225,7 +21229,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "greeting"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -22541,7 +22546,8 @@
     ],
     "categories": [
       "daily",
-      "communication"
+      "communication",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -24857,7 +24863,8 @@
     ],
     "categories": [
       "daily",
-      "communication"
+      "communication",
+      "greeting"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -26309,7 +26316,8 @@
     ],
     "categories": [
       "daily",
-      "communication"
+      "communication",
+      "greeting"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -26353,7 +26361,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -26389,7 +26398,8 @@
     "categories": [
       "daily",
       "communication",
-      "school"
+      "school",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -29803,7 +29813,8 @@
     ],
     "categories": [
       "daily",
-      "communication"
+      "communication",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -31204,7 +31215,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -32077,7 +32089,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -32946,7 +32959,8 @@
     ],
     "categories": [
       "daily",
-      "school"
+      "school",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -33247,7 +33261,8 @@
     ],
     "categories": [
       "daily",
-      "communication"
+      "communication",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -33291,7 +33306,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -36178,7 +36194,9 @@
     ],
     "categories": [
       "daily",
-      "communication"
+      "communication",
+      "greeting",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -41855,7 +41873,8 @@
     ],
     "categories": [
       "communication",
-      "daily"
+      "daily",
+      "greeting"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -41899,7 +41918,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "greeting"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -44662,7 +44682,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "greeting"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -45541,7 +45562,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -45712,7 +45734,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -45746,7 +45769,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -47905,7 +47929,8 @@
     ],
     "categories": [
       "daily",
-      "shopping"
+      "shopping",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -48300,7 +48325,8 @@
     ],
     "categories": [
       "daily",
-      "nature"
+      "nature",
+      "smalltalk"
     ],
     "frequencyTier": 2,
     "courses": [
@@ -48432,7 +48458,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -48477,7 +48504,8 @@
     ],
     "categories": [
       "daily",
-      "communication"
+      "communication",
+      "greeting"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -49892,7 +49920,8 @@
       }
     ],
     "categories": [
-      "communication"
+      "communication",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -50234,7 +50263,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "smalltalk"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -51222,7 +51252,8 @@
       }
     ],
     "categories": [
-      "communication"
+      "communication",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [

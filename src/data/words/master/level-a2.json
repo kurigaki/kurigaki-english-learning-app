@@ -39049,7 +39049,8 @@
     ],
     "categories": [
       "daily",
-      "emotion"
+      "emotion",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -39090,7 +39091,8 @@
       }
     ],
     "categories": [
-      "communication"
+      "communication",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -40743,7 +40745,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -45679,7 +45682,9 @@
     ],
     "categories": [
       "emotion",
-      "communication"
+      "communication",
+      "greeting",
+      "request"
     ],
     "frequencyTier": 1,
     "courses": [

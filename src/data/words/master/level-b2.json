@@ -120627,7 +120627,8 @@
       }
     ],
     "categories": [
-      "communication"
+      "communication",
+      "greeting"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -120666,7 +120667,8 @@
       }
     ],
     "categories": [
-      "communication"
+      "communication",
+      "greeting"
     ],
     "frequencyTier": 1,
     "courses": [
