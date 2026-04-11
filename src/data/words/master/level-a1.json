@@ -8426,7 +8426,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "health"
     ],
     "frequencyTier": 2,
     "courses": [
@@ -10373,7 +10374,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "travel"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -12909,7 +12911,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "culture"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -18146,7 +18149,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "food"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -18692,7 +18696,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "health"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -23993,7 +23998,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "emotion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -28912,7 +28918,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "food"
     ],
     "frequencyTier": 2,
     "courses": [
@@ -31754,7 +31761,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "technology"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -33957,7 +33965,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "health"
     ],
     "frequencyTier": 2,
     "courses": [
@@ -40974,7 +40983,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "health"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -41498,7 +41508,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "sports"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -42215,7 +42226,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "sports"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -42779,7 +42791,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "culture"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -44510,7 +44523,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "sports"
     ],
     "frequencyTier": 2,
     "courses": [

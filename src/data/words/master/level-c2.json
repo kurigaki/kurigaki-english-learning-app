@@ -31121,7 +31121,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "emotion"
     ],
     "frequencyTier": 3,
     "courses": [

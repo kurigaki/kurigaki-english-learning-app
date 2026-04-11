@@ -2985,7 +2985,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "food"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -9341,7 +9342,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "health"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -22342,7 +22344,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "shopping"
     ],
     "frequencyTier": 1,
     "courses": [
@@ -26365,7 +26368,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "family"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -27495,7 +27499,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "health"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -38613,7 +38618,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "emotion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -43042,7 +43048,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "sports"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -46601,7 +46608,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "family"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -46708,7 +46716,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "family"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -47862,7 +47871,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "shopping"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -48076,7 +48086,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "culture"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -49851,7 +49862,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "travel"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -69579,7 +69591,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "health"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -75749,7 +75762,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "food"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -79634,7 +79648,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "travel"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -81781,7 +81796,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "emotion"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -107024,7 +107040,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "technology"
     ],
     "frequencyTier": 3,
     "courses": [
@@ -115161,7 +115178,8 @@
       }
     ],
     "categories": [
-      "daily"
+      "daily",
+      "nature"
     ],
     "frequencyTier": 3,
     "courses": [
