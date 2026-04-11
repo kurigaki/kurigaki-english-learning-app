@@ -39,7 +39,8 @@ type WordWithStats = {
   isBookmarked: boolean;
   example?: string;
   exampleJa?: string;
-  frequencyTier: 1 | 2 | 3;
+  frequencyTier: 1 | 2 | 3;  // 旧 tier（後方互換。コース未選択時や単語詳細バッジに使用）
+  tierByCourse: Record<string, 1 | 2 | 3>;  // "course:stage" → コース固有 tier
   contentFlags?: ContentFlag[];
   courseNames?: string[];
 };
@@ -73,7 +74,7 @@ const memoryFilterOptions: { key: ManualMasteryLevel | "all"; label: string }[] 
 
 const TIER_BUTTONS: { key: 1 | 2 | 3 | "all"; label: string; activeClass: string }[] = [
   { key: "all", label: "全て",  activeClass: "bg-primary-500 text-white shadow-sm" },
-  { key: 1,     label: "★頻出", activeClass: "bg-orange-500 text-white shadow-sm" },
+  { key: 1,     label: "★コア", activeClass: "bg-orange-500 text-white shadow-sm" },
   { key: 2,     label: "標準",  activeClass: "bg-primary-500 text-white shadow-sm" },
   { key: 3,     label: "発展",  activeClass: "bg-slate-500 text-white shadow-sm" },
 ];
@@ -191,6 +192,12 @@ export default function WordListPage() {
           })
         );
 
+        // コース別 tier マップを構築（policy: assignment.tier ?? frequencyTier）
+        const tierByCourse: Record<string, 1 | 2 | 3> = {};
+        for (const c of word.courses) {
+          tierByCourse[`${c.course}:${c.stage}`] = c.tier ?? word.frequencyTier;
+        }
+
         return {
           id: word.id,
           word: word.word,
@@ -205,6 +212,7 @@ export default function WordListPage() {
           example: word.examples[0].en,
           exampleJa: word.examples[0].ja,
           frequencyTier: word.frequencyTier,
+          tierByCourse,
           contentFlags: word.contentFlags,
           courseNames: Array.from(new Set(word.courses.map((c) => c.course))),
         };
@@ -299,6 +307,35 @@ export default function WordListPage() {
     return new Set(courseWords.map((w) => w.id));
   }, [selectedCourse, selectedStage]);
 
+  // tier 解決ヘルパー: コース選択時は tierByCourse から、未選択時は frequencyTier
+  const resolveTier = useCallback((word: WordWithStats): 1 | 2 | 3 => {
+    if (selectedCourse && selectedStage) {
+      const key = `${selectedCourse}:${selectedStage}`;
+      return word.tierByCourse[key] ?? word.frequencyTier;
+    }
+    if (selectedCourse) {
+      // ステージ未指定: そのコースの最小 tier（最も重要とされる）を採用
+      const courseKeys = Object.keys(word.tierByCourse).filter((k) => k.startsWith(`${selectedCourse}:`));
+      if (courseKeys.length > 0) {
+        return Math.min(...courseKeys.map((k) => word.tierByCourse[k])) as 1 | 2 | 3;
+      }
+    }
+    return word.frequencyTier;
+  }, [selectedCourse, selectedStage]);
+
+  // UI フォールバック: tier1 が選択中のコース/ステージで 5% 未満なら tier1+tier2 を表示
+  // （docs/tier-calibration-policy.md §4 参照）
+  const tier1CoverageLow = useMemo(() => {
+    if (!selectedCourse || !selectedStage) return false;
+    if (selectedTier !== 1) return false;
+    // courseWordIds に含まれる全語の tier を数える
+    if (!courseWordIds) return false;
+    const stageWords = wordsWithStats.filter((w) => courseWordIds.has(w.id));
+    if (stageWords.length === 0) return false;
+    const tier1Count = stageWords.filter((w) => resolveTier(w) === 1).length;
+    return tier1Count / stageWords.length < 0.05;
+  }, [wordsWithStats, courseWordIds, selectedCourse, selectedStage, selectedTier, resolveTier]);
+
   // 正答率・記憶度フィルターを除く全フィルターを適用したベースリスト
   // filteredWords / filteredAccuracyCounts / filteredMemoryCounts の共通母集団
   const baseFilteredWords = useMemo(() => {
@@ -313,7 +350,15 @@ export default function WordListPage() {
         if (!wordCategories.includes(selectedCategory)) return false;
       }
       if (selectedDifficulty !== "all" && word.difficulty !== selectedDifficulty) return false;
-      if (selectedTier !== "all" && word.frequencyTier !== selectedTier) return false;
+      if (selectedTier !== "all") {
+        const t = resolveTier(word);
+        // フォールバック: tier1 選択中で tier1 が 5% 未満なら tier1+tier2 を表示
+        if (tier1CoverageLow && selectedTier === 1) {
+          if (t > 2) return false;
+        } else if (t !== selectedTier) {
+          return false;
+        }
+      }
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
         return (
@@ -323,7 +368,7 @@ export default function WordListPage() {
       }
       return true;
     });
-  }, [wordsWithStats, contentFilterEnabled, courseWordIds, showBookmarksOnly, selectedCategory, selectedDifficulty, selectedTier, searchQuery]);
+  }, [wordsWithStats, contentFilterEnabled, courseWordIds, showBookmarksOnly, selectedCategory, selectedDifficulty, selectedTier, searchQuery, resolveTier, tier1CoverageLow]);
 
   // Filter words based on search, category, difficulty, bookmarks, accuracy, and memory
   const filteredWords = useMemo(() => {
@@ -762,8 +807,15 @@ export default function WordListPage() {
             {searchQuery && ` (「${searchQuery}」)`}
             {courseLabel && ` / ${courseLabel}${stageLabel ? ` - ${stageLabel}` : ""}`}
             {selectedDifficulty !== "all" && ` / 難易度${selectedDifficulty}`}
-            {selectedTier !== "all" && ` / ${selectedTier === 1 ? "★頻出" : selectedTier === 2 ? "標準" : "発展"}`}
+            {selectedTier !== "all" && ` / ${selectedTier === 1 ? "★コア" : selectedTier === 2 ? "標準" : "発展"}`}
           </p>
+
+          {/* tier1 カバレッジ低のフォールバック通知 */}
+          {tier1CoverageLow && (
+            <div className="mt-1 text-[11px] bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/40 text-amber-800 dark:text-amber-300 rounded-md px-2 py-1">
+              ⓘ このステージではコアレベルの語が少ないため、標準レベルまで含めて表示しています
+            </div>
+          )}
         </div>
 
         {/* 中央スクロール: Word List */}
@@ -851,8 +903,12 @@ export default function WordListPage() {
                           <div className="flex-1 min-w-0">
                             <p className="font-bold text-base sm:text-sm text-slate-800 dark:text-slate-100 group-hover/link:text-primary-600 transition-colors break-words">
                               {word.word}
-                              {word.frequencyTier === 1 && <span className="ml-1 text-[10px] text-orange-500 font-normal">★頻出</span>}
-                              {word.frequencyTier === 3 && <span className="ml-1 text-[10px] text-slate-400 font-normal">発展</span>}
+                              {(() => {
+                                const t = resolveTier(word);
+                                if (t === 1) return <span className="ml-1 text-[10px] text-orange-500 font-normal">★コア</span>;
+                                if (t === 3) return <span className="ml-1 text-[10px] text-slate-400 font-normal">発展</span>;
+                                return null;
+                              })()}
                             </p>
                             <p className="text-sm sm:text-xs text-slate-500 dark:text-slate-400 break-words">
                               {word.meaning}

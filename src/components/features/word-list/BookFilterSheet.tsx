@@ -12,7 +12,7 @@ const MASTERY_OPTIONS: { key: ManualMasteryLevel; label: string }[] = [
 ];
 
 const TIER_OPTIONS: { key: 1 | 2 | 3; label: string; activeClass: string }[] = [
-  { key: 1, label: "★頻出", activeClass: "bg-orange-500 border-orange-500 text-white" },
+  { key: 1, label: "★コア", activeClass: "bg-orange-500 border-orange-500 text-white" },
   { key: 2, label: "標準",   activeClass: "bg-primary-500 border-primary-500 text-white" },
   { key: 3, label: "発展",   activeClass: "bg-slate-500 border-slate-500 text-white" },
 ];

@@ -35,7 +35,7 @@ type BookWord = {
   id: number;
   word: string;
   meaning: string;
-  frequencyTier: 1 | 2 | 3;
+  tier: 1 | 2 | 3;  // コース本は courseTier、その他は frequencyTier にフォールバック
   contentFlags?: ContentFlag[];
 };
 
@@ -64,11 +64,20 @@ function resolveBookWords(
   const parts = bookId.split(":");
   const type = parts[0];
 
-  const toBookWord = (w: { id: number; word: string; meaning: string; frequencyTier: 1 | 2 | 3; contentFlags?: ContentFlag[] }): BookWord => ({
+  // コース本: courseTier を使う
+  const toBookWordFromCourse = (w: { id: number; word: string; meaning: string; courseTier: 1 | 2 | 3; contentFlags?: ContentFlag[] }): BookWord => ({
     id: w.id,
     word: w.word,
     meaning: w.meaning,
-    frequencyTier: w.frequencyTier,
+    tier: w.courseTier,
+    contentFlags: w.contentFlags,
+  });
+  // 非コース本（my / mastery / accuracy）: frequencyTier にフォールバック
+  const toBookWordFromGlobal = (w: { id: number; word: string; meaning: string; frequencyTier: 1 | 2 | 3; contentFlags?: ContentFlag[] }): BookWord => ({
+    id: w.id,
+    word: w.word,
+    meaning: w.meaning,
+    tier: w.frequencyTier,
     contentFlags: w.contentFlags,
   });
 
@@ -76,14 +85,14 @@ function resolveBookWords(
     const course = parts[1] as Course;
     const stage = parts[2];
     const raw = getWordsByCourse(course, stage as Parameters<typeof getWordsByCourse>[1]);
-    return raw.map(toBookWord);
+    return raw.map(toBookWordFromCourse);
   }
 
   if (type === "mastery") {
     const level = parts[1] as ManualMasteryLevel;
     return allWordList
       .filter((w) => getDisplayedManualMastery(w.id, statsMap, manualMap) === level)
-      .map(toBookWord);
+      .map(toBookWordFromGlobal);
   }
 
   if (type === "accuracy") {
@@ -95,7 +104,7 @@ function resolveBookWords(
           const stats = statsMap.get(w.id);
           return stats && stats.totalAttempts > 0 && stats.accuracy === 100;
         })
-        .map(toBookWord);
+        .map(toBookWordFromGlobal);
     }
     const [lo, hi] = range.split("-").map(Number);
     return allWordList
@@ -105,7 +114,7 @@ function resolveBookWords(
         const acc = stats.accuracy;
         return acc >= lo && acc < hi;
       })
-      .map(toBookWord);
+      .map(toBookWordFromGlobal);
   }
 
   if (type === "recommended") {
@@ -115,7 +124,7 @@ function resolveBookWords(
     const wordSet = new Map<number, BookWord>();
     for (const course of recBook.courses) {
       for (const w of getWordsByCourse(course as Course)) {
-        wordSet.set(w.id, toBookWord(w));
+        wordSet.set(w.id, toBookWordFromCourse(w));
       }
     }
     return Array.from(wordSet.values());
@@ -129,7 +138,7 @@ function resolveBookWords(
     return myBook.wordIds
       .map((wid) => wordById.get(wid))
       .filter((w): w is NonNullable<typeof w> => !!w)
-      .map(toBookWord);
+      .map(toBookWordFromGlobal);
   }
 
   return [];
@@ -261,7 +270,13 @@ export default function BookDetailPage() {
 
     // 5. 頻出度ティアフィルター
     if (listFilter.tiers.length > 0) {
-      result = result.filter((w) => listFilter.tiers.includes(w.frequencyTier));
+      // tier1 カバレッジ低のフォールバック: bookWords 全体で tier1 が 5% 未満なら tier1→tier1+tier2
+      const tier1Count = bookWords.filter((w) => w.tier === 1).length;
+      const lowTier1 = bookWords.length > 0 && tier1Count / bookWords.length < 0.05;
+      const effectiveTiers = lowTier1 && listFilter.tiers.length === 1 && listFilter.tiers[0] === 1
+        ? [1, 2]
+        : listFilter.tiers;
+      result = result.filter((w) => effectiveTiers.includes(w.tier));
     }
 
     // 6. ソート

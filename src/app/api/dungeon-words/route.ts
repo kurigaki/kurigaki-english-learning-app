@@ -39,10 +39,10 @@ export async function GET(request: NextRequest) {
     pool = pool.filter((w) => !w.contentFlags || w.contentFlags.length === 0);
   }
 
-  // 頻出度ティアフィルタ
+  // 頻出度ティアフィルタ（コース別 courseTier を優先）
   if (wordLevel !== "all") {
     const maxTier = wordLevel === "essential" ? 1 : 2;
-    pool = pool.filter((w) => w.frequencyTier <= maxTier);
+    pool = pool.filter((w) => w.courseTier <= maxTier);
   }
   if (wordIdsParam) {
     const ids = new Set(wordIdsParam.split(",").map(Number).filter((n) => !Number.isNaN(n)));

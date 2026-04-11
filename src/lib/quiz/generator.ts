@@ -240,10 +240,10 @@ export function filterWordsBySettings(
     filtered = filtered.filter((w) => settings.difficulties.includes(w.difficulty));
   }
 
-  // 頻出度ティアフィルター
+  // 頻出度ティアフィルター（コース別 courseTier を優先）
   if (settings.wordLevel && settings.wordLevel !== "all") {
     const allowedTiers = getAllowedTiers(settings.wordLevel);
-    filtered = filtered.filter((w) => allowedTiers.has(w.frequencyTier));
+    filtered = filtered.filter((w) => allowedTiers.has(w.courseTier));
   }
 
   // ブックマークのみ
