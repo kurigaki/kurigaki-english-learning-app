@@ -237,19 +237,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite abecedarian.",
-        "ja": "結果はかなり初歩のだった。",
-        "context": "学術"
-      },
-      {
-        "en": "It seemed remarkably abecedarian.",
-        "ja": "それは驚くほど初歩のように見えた。",
+        "en": "His abecedarian grasp of grammar frustrated the advanced class.",
+        "ja": "彼の文法に対する初歩的な理解が上級クラスを困惑させました。",
         "context": "教育"
       },
       {
-        "en": "The abecedarian quality stood out.",
-        "ja": "初歩の特質が際立っていた。",
-        "context": "議論"
+        "en": "Even abecedarian mistakes can derail a critical negotiation.",
+        "ja": "初歩的なミスでも重要な交渉を台なしにすることがあります。",
+        "context": "ビジネス"
+      },
+      {
+        "en": "Scholars dismissed the essay as abecedarian and poorly sourced.",
+        "ja": "学者たちはその論文を初歩的で出典も不十分だと一蹴しました。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -502,9 +502,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of abulia is fascinating.",
-        "ja": "意志欠如の概念は魅力的だ。",
-        "context": "日常"
+        "en": "Severe abulia left him unable to initiate even simple tasks.",
+        "ja": "重篤な意志欠如により、彼は簡単な作業すら始められませんでした。",
+        "context": "医療"
       },
       {
         "en": "We studied the abulia in detail.",
@@ -898,18 +898,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite aeolian.",
-        "ja": "結果はかなり風成のだった。",
+        "en": "Aeolian deposits shaped the vast dune fields of the Sahara.",
+        "ja": "風成堆積物がサハラの広大な砂丘地帯を形成しました。",
         "context": "自然"
       },
       {
-        "en": "It seemed remarkably aeolian.",
-        "ja": "それは驚くほど風成のように見えた。",
-        "context": "科学"
+        "en": "Geologists study aeolian processes to reconstruct ancient climates.",
+        "ja": "地質学者は古代の気候を復元するために風成プロセスを研究します。",
+        "context": "学術"
       },
       {
-        "en": "The aeolian quality stood out.",
-        "ja": "風成の特質が際立っていた。",
+        "en": "Aeolian erosion poses a serious threat to agricultural land in arid regions.",
+        "ja": "風成侵食は乾燥地帯の農地に深刻な脅威をもたらしています。",
         "context": "環境"
       }
     ],
@@ -1097,8 +1097,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of aioli is fascinating.",
-        "ja": "アイオリの概念は魅力的だ。",
+        "en": "She drizzled homemade aioli over the grilled vegetables.",
+        "ja": "彼女は焼き野菜の上に手製のアイオリをたらしました。",
         "context": "料理"
       },
       {
@@ -1361,9 +1361,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of allocution is fascinating.",
-        "ja": "訓示の概念は魅力的だ。",
-        "context": "会話"
+        "en": "The judge delivered a solemn allocution before sentencing.",
+        "ja": "裁判官は判決を下す前に厳粛な訓示を述べました。",
+        "context": "法律"
       },
       {
         "en": "We studied the allocution in detail.",
@@ -1691,9 +1691,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of anaphora is fascinating.",
-        "ja": "首句反復の概念は魅力的だ。",
-        "context": "会話"
+        "en": "King's speech used anaphora to build emotional momentum.",
+        "ja": "キング牧師のスピーチは首句反復を使って感情的な高まりを生み出しました。",
+        "context": "学術"
       },
       {
         "en": "We studied the anaphora in detail.",
@@ -1790,8 +1790,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of aneurysm is fascinating.",
-        "ja": "動脈瘤の概念は魅力的だ。",
+        "en": "Surgeons successfully clipped the ruptured aneurysm in his brain.",
+        "ja": "外科医たちは彼の脳内で破裂した動脈瘤のクリッピングに成功しました。",
         "context": "医療"
       },
       {
@@ -1823,8 +1823,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of angioplasty is fascinating.",
-        "ja": "血管形成術の概念は魅力的だ。",
+        "en": "After the heart attack, he underwent emergency angioplasty.",
+        "ja": "心臓発作の後、彼は緊急の血管形成術を受けました。",
         "context": "医療"
       },
       {
@@ -1856,8 +1856,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of angling is fascinating.",
-        "ja": "釣りの概念は魅力的だ。",
+        "en": "He spent peaceful Sunday mornings angling by the river.",
+        "ja": "彼は穏やかな日曜の朝を川辺での釣りに費やしました。",
         "context": "趣味"
       },
       {
@@ -1889,9 +1889,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of angst is fascinating.",
-        "ja": "不安の概念は魅力的だ。",
-        "context": "日常"
+        "en": "Adolescent angst often surfaces as unexplained irritability.",
+        "ja": "思春期の不安はしばしば原因不明のいらだちとして現れます。",
+        "context": "社会"
       },
       {
         "en": "We studied the angst in detail.",
@@ -2352,9 +2352,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of apiculture is fascinating.",
-        "ja": "養蜂の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "Apiculture has revived interest among urban hobbyists.",
+        "ja": "養蜂は都市部の趣味人の間で関心を集めています。",
+        "context": "社会"
       },
       {
         "en": "We studied the apiculture in detail.",
@@ -2880,18 +2880,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite apriori.",
-        "ja": "結果はかなり先験的なだった。",
+        "en": "Kant argued that mathematical knowledge is apriori and independent of experience.",
+        "ja": "カントは数学的知識が先験的で経験に依存しないと主張しました。",
         "context": "学術"
       },
       {
-        "en": "It seemed remarkably apriori.",
-        "ja": "それは驚くほど先験的なように見えた。",
-        "context": "教育"
+        "en": "Assuming apriori that all employees are dishonest undermines workplace morale.",
+        "ja": "すべての従業員が不誠実だと先験的に仮定することは職場の士気を損ないます。",
+        "context": "ビジネス"
       },
       {
-        "en": "The apriori quality stood out.",
-        "ja": "先験的な特質が際立っていた。",
+        "en": "An apriori rejection of new evidence weakens any philosophical argument.",
+        "ja": "新たな証拠を先験的に排除することは哲学的議論を弱めます。",
         "context": "議論"
       }
     ],
@@ -2946,8 +2946,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of apse is fascinating.",
-        "ja": "後陣の概念は魅力的だ。",
+        "en": "The altar stood within the semicircular apse at the east end.",
+        "ja": "祭壇は東端の半円形の後陣の中に置かれていました。",
         "context": "文化"
       },
       {
@@ -2979,8 +2979,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of aquascaping is fascinating.",
-        "ja": "水景造りの概念は魅力的だ。",
+        "en": "She spent hours perfecting the aquascaping in her tank.",
+        "ja": "彼女は水槽の水景造りを完璧にするために何時間も費やしました。",
         "context": "趣味"
       },
       {
@@ -3144,8 +3144,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of architrave is fascinating.",
-        "ja": "額縁の概念は魅力的だ。",
+        "en": "The carved architrave framed the entrance with classical elegance.",
+        "ja": "彫刻された額縁が古典的な優雅さで入口を縁取っていました。",
         "context": "文化"
       },
       {
@@ -3574,9 +3574,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of atoll is fascinating.",
-        "ja": "環礁の概念は魅力的だ。",
-        "context": "旅行"
+        "en": "The tiny atoll sheltered a thriving coral reef ecosystem.",
+        "ja": "その小さな環礁は豊かなサンゴ礁の生態系を育んでいました。",
+        "context": "自然"
       },
       {
         "en": "We studied the atoll in detail.",
@@ -3937,8 +3937,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of badinage is fascinating.",
-        "ja": "軽妙な冗談の概念は魅力的だ。",
+        "en": "Their badinage at dinner kept the whole table laughing.",
+        "ja": "夕食での軽妙な冗談のやり取りはテーブル全員を笑わせ続けました。",
         "context": "会話"
       },
       {
@@ -4003,9 +4003,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of balderdash is fascinating.",
-        "ja": "たわごとの概念は魅力的だ。",
-        "context": "日常"
+        "en": "He dismissed the politician's claims as absolute balderdash.",
+        "ja": "彼は政治家の主張を完全なたわごとだと一蹴しました。",
+        "context": "会話"
       },
       {
         "en": "We studied the balderdash in detail.",
@@ -4135,8 +4135,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of barchan is fascinating.",
-        "ja": "バルハン砂丘の概念は魅力的だ。",
+        "en": "Wind slowly reshaped the barchan into a crescent form.",
+        "ja": "風がバルハン砂丘をゆっくりと三日月形に変えていきました。",
         "context": "自然"
       },
       {
@@ -4168,8 +4168,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of basilica is fascinating.",
-        "ja": "バシリカの概念は魅力的だ。",
+        "en": "Pilgrims gathered at the basilica for the Easter service.",
+        "ja": "巡礼者たちはイースターの礼拝のためにバシリカに集まりました。",
         "context": "文化"
       },
       {
@@ -4267,9 +4267,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bathymetry is fascinating.",
-        "ja": "深度測量の概念は魅力的だ。",
-        "context": "自然"
+        "en": "Precise bathymetry revealed an unknown trench on the ocean floor.",
+        "ja": "精密な深度測量により、海底に未知の海溝が発見されました。",
+        "context": "学術"
       },
       {
         "en": "We studied the bathymetry in detail.",
@@ -4333,9 +4333,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of batik is fascinating.",
-        "ja": "バティック染めの概念は魅力的だ。",
-        "context": "趣味"
+        "en": "She learned traditional batik dyeing during her trip to Java.",
+        "ja": "彼女はジャワへの旅でバティック染めの伝統技法を学びました。",
+        "context": "文化"
       },
       {
         "en": "We studied the batik in detail.",
@@ -4432,8 +4432,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bechamel is fascinating.",
-        "ja": "ベシャメルソースの概念は魅力的だ。",
+        "en": "A velvety bechamel is the foundation of a classic lasagne.",
+        "ja": "なめらかなベシャメルソースはクラシックなラザーニャの土台です。",
         "context": "料理"
       },
       {
@@ -4498,8 +4498,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of beignet is fascinating.",
-        "ja": "ベニエの概念は魅力的だ。",
+        "en": "Fresh beignets dusted with powdered sugar melted in her mouth.",
+        "ja": "粉砂糖をまぶした揚げたてのベニエが口の中でとろけました。",
         "context": "料理"
       },
       {
@@ -4531,18 +4531,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite benthic.",
-        "ja": "結果はかなり底生のだった。",
+        "en": "Benthic organisms thrive in the sediment at the ocean floor.",
+        "ja": "底生生物は海底の堆積物の中で繁殖しています。",
         "context": "自然"
       },
       {
-        "en": "It seemed remarkably benthic.",
-        "ja": "それは驚くほど底生のように見えた。",
-        "context": "科学"
+        "en": "Researchers deployed sensors to monitor benthic oxygen levels year-round.",
+        "ja": "研究者たちは底生域の酸素濃度を通年監視するためにセンサーを設置しました。",
+        "context": "学術"
       },
       {
-        "en": "The benthic quality stood out.",
-        "ja": "底生の特質が際立っていた。",
+        "en": "Pollution disrupts benthic ecosystems long before surface effects become visible.",
+        "ja": "汚染は表面上の影響が見えるよりずっと前に底生生態系を破壊します。",
         "context": "環境"
       }
     ],
@@ -4597,8 +4597,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of berth is fascinating.",
-        "ja": "停泊地の概念は魅力的だ。",
+        "en": "The cruise ship secured its berth at the dock at dawn.",
+        "ja": "クルーズ船は夜明けに埠頭の停泊地に係留しました。",
         "context": "旅行"
       },
       {
@@ -4696,8 +4696,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of beurre blanc is fascinating.",
-        "ja": "白バターソースの概念は魅力的だ。",
+        "en": "The chef finished the sea bass with a delicate beurre blanc.",
+        "ja": "シェフはスズキに繊細な白バターソースを添えて仕上げました。",
         "context": "料理"
       },
       {
@@ -4729,8 +4729,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bibliophile is fascinating.",
-        "ja": "愛書家の概念は魅力的だ。",
+        "en": "As a passionate bibliophile, she haunted antiquarian bookshops.",
+        "ja": "熱心な愛書家として、彼女は古書店を渡り歩いていました。",
         "context": "趣味"
       },
       {
@@ -4927,19 +4927,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite bitwise.",
-        "ja": "結果はかなりビット単位のだった。",
+        "en": "Bitwise operations allow programmers to manipulate individual bits efficiently.",
+        "ja": "ビット演算によってプログラマーは個々のビットを効率的に操作できます。",
         "context": "技術"
       },
       {
-        "en": "It seemed remarkably bitwise.",
-        "ja": "それは驚くほどビット単位のように見えた。",
+        "en": "Using bitwise AND, the developer extracted the lower four bits of the byte.",
+        "ja": "ビット単位のAND演算を使って、開発者はバイトの下位4ビットを取り出しました。",
         "context": "開発"
       },
       {
-        "en": "The bitwise quality stood out.",
-        "ja": "ビット単位の特質が際立っていた。",
-        "context": "ビジネス"
+        "en": "Embedded systems often rely on bitwise masking for hardware register control.",
+        "ja": "組み込みシステムはハードウェアレジスタ制御のためにビットマスクに頼ることが多いです。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -5026,9 +5026,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of blatherskite is fascinating.",
-        "ja": "たわごとの概念は魅力的だ。",
-        "context": "日常"
+        "en": "Nobody trusted the blatherskite who rambled on at every meeting.",
+        "ja": "会議のたびに無駄口をたたくたわごと者を誰も信用しませんでした。",
+        "context": "会話"
       },
       {
         "en": "We studied the blatherskite in detail.",
@@ -5125,9 +5125,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bon mot is fascinating.",
-        "ja": "気の利いた言葉の概念は魅力的だ。",
-        "context": "会話"
+        "en": "Oscar Wilde was celebrated for his devastating bon mot.",
+        "ja": "オスカー・ワイルドはその鋭い気の利いた言葉で名声を博しました。",
+        "context": "文化"
       },
       {
         "en": "We studied the bon mot in detail.",
@@ -5191,9 +5191,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bonsai is fascinating.",
-        "ja": "盆栽の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "He pruned the ancient bonsai with meticulous care each spring.",
+        "ja": "彼は毎春、丁寧な手つきで古い盆栽を剪定しました。",
+        "context": "文化"
       },
       {
         "en": "We studied the bonsai in detail.",
@@ -5257,8 +5257,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bootloader is fascinating.",
-        "ja": "ブートローダーの概念は魅力的だ。",
+        "en": "Corrupted bootloader code prevented the device from starting up.",
+        "ja": "ブートローダーコードが破損していたため、デバイスが起動できませんでした。",
         "context": "技術"
       },
       {
@@ -5323,8 +5323,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bootstrapping is fascinating.",
-        "ja": "自力起業の概念は魅力的だ。",
+        "en": "She built the company through bootstrapping without any investor funding.",
+        "ja": "彼女は投資家の資金を一切使わない自力起業で会社を築きました。",
         "context": "ビジネス"
       },
       {
@@ -5389,8 +5389,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bouillon is fascinating.",
-        "ja": "ブイヨンの概念は魅力的だ。",
+        "en": "She simmered chicken bouillon for hours to deepen the flavor.",
+        "ja": "彼女は風味を深めるために鶏のブイヨンを何時間も煮込みました。",
         "context": "料理"
       },
       {
@@ -5587,9 +5587,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of broadside is fascinating.",
-        "ja": "激しい非難の概念は魅力的だ。",
-        "context": "会話"
+        "en": "The opposition launched a broadside against the minister's policy.",
+        "ja": "野党は大臣の政策に対して激しい非難を浴びせました。",
+        "context": "社会"
       },
       {
         "en": "We studied the broadside in detail.",
@@ -5620,19 +5620,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite brownfield.",
-        "ja": "結果はかなり再開発のだった。",
+        "en": "The city council approved a brownfield redevelopment plan for the former factory site.",
+        "ja": "市議会は旧工場跡地のブラウンフィールド再開発計画を承認しました。",
+        "context": "社会"
+      },
+      {
+        "en": "Brownfield investments carry environmental cleanup costs that greenfield sites avoid.",
+        "ja": "再開発投資には、未開発地では不要な環境浄化コストが伴います。",
         "context": "ビジネス"
       },
       {
-        "en": "It seemed remarkably brownfield.",
-        "ja": "それは驚くほど再開発のように見えた。",
-        "context": "経営"
-      },
-      {
-        "en": "The brownfield quality stood out.",
-        "ja": "再開発の特質が際立っていた。",
-        "context": "仕事"
+        "en": "Engineers prefer brownfield upgrades when existing infrastructure can be reused.",
+        "ja": "エンジニアは既存インフラを再利用できる場合、再開発型のアップグレードを好みます。",
+        "context": "技術"
       }
     ],
     "categories": [
@@ -5653,8 +5653,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of brunoise is fascinating.",
-        "ja": "ブリュノワーズの概念は魅力的だ。",
+        "en": "He cut the carrots into a fine brunoise for the sauce.",
+        "ja": "彼はソース用に人参を細かいブリュノワーズに切りました。",
         "context": "料理"
       },
       {
@@ -5719,9 +5719,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bulkhead is fascinating.",
-        "ja": "隔壁の概念は魅力的だ。",
-        "context": "旅行"
+        "en": "The watertight bulkhead prevented flooding from spreading further.",
+        "ja": "水密隔壁が浸水のそれ以上の拡大を防ぎました。",
+        "context": "技術"
       },
       {
         "en": "We studied the bulkhead in detail.",
@@ -5785,8 +5785,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of butte is fascinating.",
-        "ja": "残丘の概念は魅力的だ。",
+        "en": "An isolated butte rose dramatically from the desert plain.",
+        "ja": "孤立した残丘が砂漠の平原から劇的にそびえ立っていました。",
         "context": "自然"
       },
       {
@@ -5818,8 +5818,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of bytecode is fascinating.",
-        "ja": "バイトコードの概念は魅力的だ。",
+        "en": "The compiler converts source code into platform-independent bytecode.",
+        "ja": "コンパイラはソースコードをプラットフォームに依存しないバイトコードに変換します。",
         "context": "技術"
       },
       {
@@ -6115,8 +6115,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of campanile is fascinating.",
-        "ja": "鐘楼の概念は魅力的だ。",
+        "en": "The campanile's bells rang out across the Venetian lagoon.",
+        "ja": "鐘楼の鐘がヴェネツィアの潟に響き渡りました。",
         "context": "文化"
       },
       {
@@ -6346,19 +6346,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite carcinogenic.",
-        "ja": "結果はかなり発がん性のだった。",
+        "en": "Several carcinogenic compounds were detected in the contaminated groundwater.",
+        "ja": "汚染された地下水から複数の発がん性物質が検出されました。",
         "context": "医療"
       },
       {
-        "en": "It seemed remarkably carcinogenic.",
-        "ja": "それは驚くほど発がん性のように見えた。",
-        "context": "健康"
+        "en": "Regulators banned the carcinogenic additive from all food products immediately.",
+        "ja": "規制当局はすべての食品から発がん性添加物を直ちに禁止しました。",
+        "context": "法律"
       },
       {
-        "en": "The carcinogenic quality stood out.",
-        "ja": "発がん性の特質が際立っていた。",
-        "context": "科学"
+        "en": "Long-term exposure to carcinogenic substances significantly elevates cancer risk.",
+        "ja": "発がん性物質への長期曝露はがんリスクを著しく高めます。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -6412,9 +6412,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of cartographer is fascinating.",
-        "ja": "地図製作者の概念は魅力的だ。",
-        "context": "旅行"
+        "en": "The cartographer painstakingly charted unexplored coastal regions.",
+        "ja": "地図製作者は未踏の沿岸地域を丹念に地図に記しました。",
+        "context": "学術"
       },
       {
         "en": "We studied the cartographer in detail.",
@@ -6544,8 +6544,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of caryatid is fascinating.",
-        "ja": "女像柱の概念は魅力的だ。",
+        "en": "Six marble caryatids support the porch of the Erechtheion.",
+        "ja": "六体の大理石の女像柱がエレクテイオンのポーチを支えています。",
         "context": "文化"
       },
       {
@@ -6677,9 +6677,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of catechism is fascinating.",
-        "ja": "教理問答の概念は魅力的だ。",
-        "context": "学術"
+        "en": "Children memorized the catechism before their first communion.",
+        "ja": "子どもたちは初聖体拝領の前に教理問答を暗記しました。",
+        "context": "文化"
       },
       {
         "en": "We studied the catechism in detail.",
@@ -6776,19 +6776,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite cattywampus.",
-        "ja": "結果はかなり斜めのだった。",
+        "en": "The picture frame was hanging cattywampus and needed straightening.",
+        "ja": "額縁が斜めに傾いていたので、まっすぐに直す必要がありました。",
         "context": "日常"
       },
       {
-        "en": "It seemed remarkably cattywampus.",
-        "ja": "それは驚くほど斜めのように見えた。",
-        "context": "会話"
+        "en": "Everything went cattywampus once the lead designer resigned mid-project.",
+        "ja": "主任デザイナーがプロジェクトの途中で辞めてから、すべてが狂い始めました。",
+        "context": "ビジネス"
       },
       {
-        "en": "The cattywampus quality stood out.",
-        "ja": "斜めの特質が際立っていた。",
-        "context": "生活"
+        "en": "The new shelves were installed cattywampus, so the contractor had to redo them.",
+        "ja": "新しい棚が傾いて設置されていたため、業者はやり直す羽目になりました。",
+        "context": "会話"
       }
     ],
     "categories": [
@@ -6809,8 +6809,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of causeway is fascinating.",
-        "ja": "土手道の概念は魅力的だ。",
+        "en": "The causeway linking the island flooded during high tide.",
+        "ja": "島をつなぐ土手道は満潮時に水没しました。",
         "context": "旅行"
       },
       {
@@ -7075,9 +7075,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of cenotaph is fascinating.",
-        "ja": "慰霊碑の概念は魅力的だ。",
-        "context": "文化"
+        "en": "Crowds gathered at the cenotaph on Remembrance Day.",
+        "ja": "記念日に人々が慰霊碑に集まりました。",
+        "context": "社会"
       },
       {
         "en": "We studied the cenotaph in detail.",
@@ -7108,9 +7108,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of chagrin is fascinating.",
-        "ja": "悔しさの概念は魅力的だ。",
-        "context": "日常"
+        "en": "To her chagrin, the promotion went to a junior colleague.",
+        "ja": "悔しいことに、昇進は後輩の同僚に行ってしまいました。",
+        "context": "ビジネス"
       },
       {
         "en": "We studied the chagrin in detail.",
@@ -7141,8 +7141,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of chancel is fascinating.",
-        "ja": "内陣の概念は魅力的だ。",
+        "en": "The choir stood in the chancel throughout the service.",
+        "ja": "聖歌隊は礼拝の間ずっと内陣に立っていました。",
         "context": "文化"
       },
       {
@@ -7240,8 +7240,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of checksum is fascinating.",
-        "ja": "チェックサムの概念は魅力的だ。",
+        "en": "A failed checksum indicated the downloaded file was corrupted.",
+        "ja": "チェックサムの失敗は、ダウンロードしたファイルが破損していることを示しました。",
         "context": "技術"
       },
       {
@@ -7339,8 +7339,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of chiffonade is fascinating.",
-        "ja": "シフォナードの概念は魅力的だ。",
+        "en": "She finished the soup with a chiffonade of fresh basil.",
+        "ja": "彼女は新鮮なバジルのシフォナードでスープを仕上げました。",
         "context": "料理"
       },
       {
@@ -7736,8 +7736,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of cloister is fascinating.",
-        "ja": "回廊の概念は魅力的だ。",
+        "en": "Monks walked in silent contemplation around the cloister.",
+        "ja": "修道士たちは回廊の周りを沈黙の瞑想のうちに歩きました。",
         "context": "文化"
       },
       {
@@ -7835,19 +7835,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite cognoscible.",
-        "ja": "結果はかなり認識可能なだった。",
+        "en": "Philosophers debate whether ultimate reality is cognoscible by human reason alone.",
+        "ja": "哲学者たちは究極の実在が人間の理性だけで認識可能かどうかを論じています。",
         "context": "学術"
       },
       {
-        "en": "It seemed remarkably cognoscible.",
-        "ja": "それは驚くほど認識可能なように見えた。",
-        "context": "教育"
+        "en": "Not all phenomena are cognoscible through empirical observation.",
+        "ja": "すべての現象が経験的観察によって認識可能なわけではありません。",
+        "context": "議論"
       },
       {
-        "en": "The cognoscible quality stood out.",
-        "ja": "認識可能な特質が際立っていた。",
-        "context": "議論"
+        "en": "Teaching should focus on making abstract concepts cognoscible to young learners.",
+        "ja": "指導では抽象的な概念を幼い学習者が認識できるようにすることに注力すべきです。",
+        "context": "教育"
       }
     ],
     "categories": [
@@ -7868,9 +7868,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of col is fascinating.",
-        "ja": "鞍部の概念は魅力的だ。",
-        "context": "自然"
+        "en": "Climbers rested at the col before their final ascent.",
+        "ja": "登山者たちは最終的な登攀の前に鞍部で休憩しました。",
+        "context": "趣味"
       },
       {
         "en": "We studied the col in detail.",
@@ -7901,8 +7901,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of collagraph is fascinating.",
-        "ja": "コラグラフの概念は魅力的だ。",
+        "en": "She created a collagraph by layering textured materials on board.",
+        "ja": "彼女はボードにテクスチャー素材を重ねてコラグラフを制作しました。",
         "context": "趣味"
       },
       {
@@ -7934,9 +7934,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of collywobbles is fascinating.",
-        "ja": "腹痛の概念は魅力的だ。",
-        "context": "日常"
+        "en": "She had collywobbles before stepping onto the stage.",
+        "ja": "彼女は舞台に上がる前に腹痛を感じました。",
+        "context": "会話"
       },
       {
         "en": "We studied the collywobbles in detail.",
@@ -7967,8 +7967,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of colonnade is fascinating.",
-        "ja": "列柱の概念は魅力的だ。",
+        "en": "A grand colonnade lined the approach to the palace.",
+        "ja": "宮殿へのアプローチに沿って壮大な列柱が並んでいました。",
         "context": "文化"
       },
       {
@@ -8132,9 +8132,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of communique is fascinating.",
-        "ja": "公式声明の概念は魅力的だ。",
-        "context": "会話"
+        "en": "The summit ended with a joint communique on climate action.",
+        "ja": "サミットは気候変動対策に関する共同公式声明で閉幕しました。",
+        "context": "社会"
       },
       {
         "en": "We studied the communique in detail.",
@@ -8264,8 +8264,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of concourse is fascinating.",
-        "ja": "コンコースの概念は魅力的だ。",
+        "en": "Passengers rushed through the airport concourse to catch their flights.",
+        "ja": "乗客たちはフライトに乗り遅れまいと空港のコンコースを急ぎました。",
         "context": "旅行"
       },
       {
@@ -8396,9 +8396,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of confabulation is fascinating.",
-        "ja": "雑談の概念は魅力的だ。",
-        "context": "会話"
+        "en": "After the meeting, they enjoyed brief confabulation over coffee.",
+        "ja": "会議の後、彼らはコーヒーを飲みながら短い雑談を楽しみました。",
+        "context": "ビジネス"
       },
       {
         "en": "We studied the confabulation in detail.",
@@ -8495,19 +8495,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite confiscatory.",
-        "ja": "結果はかなり没収的なだった。",
-        "context": "金融"
-      },
-      {
-        "en": "It seemed remarkably confiscatory.",
-        "ja": "それは驚くほど没収的なように見えた。",
-        "context": "ビジネス"
-      },
-      {
-        "en": "The confiscatory quality stood out.",
-        "ja": "没収的な特質が際立っていた。",
+        "en": "Critics called the new wealth tax confiscatory and economically damaging.",
+        "ja": "批評家たちは新たな富裕税を没収的であり経済的に有害だと批判しました。",
         "context": "経済"
+      },
+      {
+        "en": "Courts struck down the confiscatory tariff as unconstitutional overreach.",
+        "ja": "裁判所は没収的な関税を違憲の権限逸脱として無効にしました。",
+        "context": "法律"
+      },
+      {
+        "en": "Investors fled markets where confiscatory regulation threatened their returns.",
+        "ja": "没収的な規制が利益を脅かす市場から投資家たちは撤退しました。",
+        "context": "金融"
       }
     ],
     "categories": [
@@ -8660,8 +8660,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of consomme is fascinating.",
-        "ja": "コンソメの概念は魅力的だ。",
+        "en": "A perfectly clear consomme is the hallmark of classical French cuisine.",
+        "ja": "完璧に澄んだコンソメは古典的なフランス料理の証です。",
         "context": "料理"
       },
       {
@@ -8858,8 +8858,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of corbel is fascinating.",
-        "ja": "持送りの概念は魅力的だ。",
+        "en": "Each corbel projecting from the wall bore intricate carvings.",
+        "ja": "壁から突き出た各持送りには精巧な彫刻が施されていました。",
         "context": "文化"
       },
       {
@@ -9255,9 +9255,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of crevasse is fascinating.",
-        "ja": "クレバスの概念は魅力的だ。",
-        "context": "自然"
+        "en": "The mountaineer narrowly avoided plunging into a hidden crevasse.",
+        "ja": "登山家は隠れたクレバスへの転落をかろうじて免れました。",
+        "context": "趣味"
       },
       {
         "en": "We studied the crevasse in detail.",
@@ -9288,8 +9288,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of croquette is fascinating.",
-        "ja": "コロッケの概念は魅力的だ。",
+        "en": "Golden croquettes filled with béchamel were served as starters.",
+        "ja": "ベシャメルを詰めた黄金色のコロッケが前菜として出されました。",
         "context": "料理"
       },
       {
@@ -9387,8 +9387,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of cryptography is fascinating.",
-        "ja": "暗号学の概念は魅力的だ。",
+        "en": "Modern cryptography secures everything from email to online banking.",
+        "ja": "現代の暗号学はメールからオンラインバンキングまであらゆるものを守ります。",
         "context": "技術"
       },
       {
@@ -9453,8 +9453,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of cupola is fascinating.",
-        "ja": "丸屋根の概念は魅力的だ。",
+        "en": "The gilded cupola glittered above the city skyline at sunset.",
+        "ja": "金色の丸屋根が夕暮れ時に都市のスカイラインの上で輝いていました。",
         "context": "文化"
       },
       {
@@ -9552,19 +9552,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite cutthroat.",
-        "ja": "結果はかなり熾烈なだった。",
+        "en": "Cutthroat pricing among retailers drove several smaller shops out of business.",
+        "ja": "小売業者間の熾烈な価格競争により、中小規模の店舗は何軒か廃業に追い込まれました。",
         "context": "ビジネス"
       },
       {
-        "en": "It seemed remarkably cutthroat.",
-        "ja": "それは驚くほど熾烈なように見えた。",
-        "context": "経営"
+        "en": "The cutthroat academic job market deters many talented researchers from pursuing careers.",
+        "ja": "熾烈な学術職市場が多くの優秀な研究者をキャリア追求から遠ざけています。",
+        "context": "学術"
       },
       {
-        "en": "The cutthroat quality stood out.",
-        "ja": "熾烈な特質が際立っていた。",
-        "context": "仕事"
+        "en": "In cutthroat industries, ethical shortcuts become dangerously tempting.",
+        "ja": "熾烈な業界では倫理的な近道が危険なほど魅力的に見えてきます。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -9915,8 +9915,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of debridement is fascinating.",
-        "ja": "創面切除の概念は魅力的だ。",
+        "en": "The nurse performed careful debridement to clean the infected wound.",
+        "ja": "看護師は感染した傷口を清潔にするために丁寧な創面切除を行いました。",
         "context": "医療"
       },
       {
@@ -10180,8 +10180,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of deconstructionism is fascinating.",
-        "ja": "脱構築主義の概念は魅力的だ。",
+        "en": "Deconstructionism challenges every assumed center of meaning in a text.",
+        "ja": "脱構築主義はテキストのあらゆる意味の中心と見なされるものに異議を唱えます。",
         "context": "学術"
       },
       {
@@ -10279,8 +10279,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of decoupage is fascinating.",
-        "ja": "デコパージュの概念は魅力的だ。",
+        "en": "She decorated the old trunk using vintage paper and decoupage.",
+        "ja": "彼女はヴィンテージの紙とデコパージュで古いトランクを飾りました。",
         "context": "趣味"
       },
       {
@@ -10576,19 +10576,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite delectable.",
-        "ja": "結果はかなりとても美味しいだった。",
+        "en": "The chef presented a delectable tasting menu of eight seasonal courses.",
+        "ja": "シェフは8品の旬素材によるとても美味しいテイスティングメニューを提供しました。",
         "context": "料理"
       },
       {
-        "en": "It seemed remarkably delectable.",
-        "ja": "それは驚くほどとても美味しいように見えた。",
-        "context": "日常"
+        "en": "Guests found every dish delectable, from the amuse-bouche to the dessert.",
+        "ja": "アミューズから デザートまで、すべての料理がとても美味しいと好評でした。",
+        "context": "文化"
       },
       {
-        "en": "The delectable quality stood out.",
-        "ja": "とても美味しい特質が際立っていた。",
-        "context": "文化"
+        "en": "A delectable aroma of slow-roasted garlic filled the entire kitchen.",
+        "ja": "ゆっくり焼いたニンニクのとても美味しそうな香りがキッチン全体に広がりました。",
+        "context": "日常"
       }
     ],
     "categories": [
@@ -10907,8 +10907,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of denudation is fascinating.",
-        "ja": "浸食の概念は魅力的だ。",
+        "en": "Centuries of denudation have stripped the mountains bare.",
+        "ja": "何世紀にもわたる浸食が山々を剥き出しにしてきました。",
         "context": "自然"
       },
       {
@@ -10973,18 +10973,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite deprecated.",
-        "ja": "結果はかなり非推奨のだった。",
+        "en": "The deprecated API will be removed entirely in the next major release.",
+        "ja": "非推奨のAPIは次のメジャーリリースで完全に削除されます。",
         "context": "技術"
       },
       {
-        "en": "It seemed remarkably deprecated.",
-        "ja": "それは驚くほど非推奨のように見えた。",
+        "en": "Developers must migrate away from deprecated functions before the deadline.",
+        "ja": "開発者たちは期限までに非推奨の関数から移行しなければなりません。",
         "context": "開発"
       },
       {
-        "en": "The deprecated quality stood out.",
-        "ja": "非推奨の特質が際立っていた。",
+        "en": "Using deprecated libraries exposes applications to unpatched security vulnerabilities.",
+        "ja": "非推奨のライブラリを使い続けると、パッチ未適用のセキュリティ脆弱性にさらされます。",
         "context": "ビジネス"
       }
     ],
@@ -12063,9 +12063,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of diseconomy is fascinating.",
-        "ja": "規模の不経済の概念は魅力的だ。",
-        "context": "金融"
+        "en": "Rapid expansion led to diseconomy as coordination costs surged.",
+        "ja": "急速な拡大は調整コストの急騰による規模の不経済を招きました。",
+        "context": "ビジネス"
       },
       {
         "en": "We studied the diseconomy in detail.",
@@ -12195,8 +12195,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of disputatio is fascinating.",
-        "ja": "討論の概念は魅力的だ。",
+        "en": "Medieval scholars practiced disputatio to sharpen their logical arguments.",
+        "ja": "中世の学者たちは論理的な議論を磨くために討論を実践しました。",
         "context": "学術"
       },
       {
@@ -12228,9 +12228,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of disquietude is fascinating.",
-        "ja": "不安の概念は魅力的だ。",
-        "context": "日常"
+        "en": "A deep disquietude settled over her as the deadline neared.",
+        "ja": "締め切りが近づくにつれ、深い不安が彼女を覆いました。",
+        "context": "ビジネス"
       },
       {
         "en": "We studied the disquietude in detail.",
@@ -12261,8 +12261,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of disruptor is fascinating.",
-        "ja": "破壊的企業の概念は魅力的だ。",
+        "en": "The startup positioned itself as a disruptor in the taxi industry.",
+        "ja": "そのスタートアップはタクシー業界の破壊的企業として位置づけました。",
         "context": "ビジネス"
       },
       {
@@ -12393,8 +12393,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of divestitures is fascinating.",
-        "ja": "事業売却の概念は魅力的だ。",
+        "en": "The company announced divestitures of three non-core business units.",
+        "ja": "同社は三つの非中核事業の事業売却を発表しました。",
         "context": "ビジネス"
       },
       {
@@ -12459,9 +12459,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of doldrums is fascinating.",
-        "ja": "沈滞の概念は魅力的だ。",
-        "context": "日常"
+        "en": "The economy fell into the doldrums after the banking crisis.",
+        "ja": "銀行危機後、経済は沈滞に陥りました。",
+        "context": "社会"
       },
       {
         "en": "We studied the doldrums in detail.",
@@ -12822,8 +12822,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of duxelles is fascinating.",
-        "ja": "デュクセルの概念は魅力的だ。",
+        "en": "He spread duxelles over the beef before wrapping it in pastry.",
+        "ja": "彼は生地で包む前に牛肉の上にデュクセルを塗りました。",
         "context": "料理"
       },
       {
@@ -12954,9 +12954,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of echolalia is fascinating.",
-        "ja": "反響言語の概念は魅力的だ。",
-        "context": "会話"
+        "en": "Therapists often encounter echolalia in children with autism spectrum disorder.",
+        "ja": "療法士は自閉症スペクトラム障害の子どもたちによく反響言語に出会います。",
+        "context": "医療"
       },
       {
         "en": "We studied the echolalia in detail.",
@@ -13086,8 +13086,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of edema is fascinating.",
-        "ja": "浮腫の概念は魅力的だ。",
+        "en": "Ankle edema can signal underlying heart or kidney disease.",
+        "ja": "足首の浮腫は潜在的な心臓や腎臓の疾患を示すことがあります。",
         "context": "医療"
       },
       {
@@ -13185,8 +13185,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of efflorescence is fascinating.",
-        "ja": "開花の概念は魅力的だ。",
+        "en": "Spring brought an efflorescence of cherry blossoms across the hillside.",
+        "ja": "春が来ると斜面一面に桜の開花が広がりました。",
         "context": "自然"
       },
       {
@@ -13284,8 +13284,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of embolism is fascinating.",
-        "ja": "塞栓症の概念は魅力的だ。",
+        "en": "A pulmonary embolism can be fatal if not treated promptly.",
+        "ja": "肺塞栓症は迅速に治療しなければ致命的になりえます。",
         "context": "医療"
       },
       {
@@ -13449,8 +13449,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of emulsion is fascinating.",
-        "ja": "乳化液の概念は魅力的だ。",
+        "en": "Mayonnaise is a stable emulsion of oil and egg yolk.",
+        "ja": "マヨネーズは油と卵黄の安定した乳化液です。",
         "context": "料理"
       },
       {
@@ -13482,19 +13482,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite en croute.",
-        "ja": "結果はかなりパイ包みだった。",
+        "en": "The restaurant served salmon en croute with a dill cream sauce.",
+        "ja": "レストランはディルクリームソースを添えたサーモンのパイ包みを提供しました。",
         "context": "料理"
       },
       {
-        "en": "It seemed remarkably en croute.",
-        "ja": "それは驚くほどパイ包みように見えた。",
-        "context": "日常"
+        "en": "Beef Wellington is essentially a tenderloin en croute wrapped in mushroom duxelles.",
+        "ja": "ビーフウェリントンは本質的にマッシュルームのデュクセルで包んだパイ包みのヒレ肉です。",
+        "context": "文化"
       },
       {
-        "en": "The en croute quality stood out.",
-        "ja": "パイ包み特質が際立っていた。",
-        "context": "文化"
+        "en": "Preparing a delicate fish en croute requires precise timing to avoid soggy pastry.",
+        "ja": "繊細な魚のパイ包みを作るには、パイ生地がべちゃべちゃにならないよう正確なタイミングが必要です。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -13515,8 +13515,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of encaustic is fascinating.",
-        "ja": "蝋画法の概念は魅力的だ。",
+        "en": "She fused pigment into the wax using encaustic techniques.",
+        "ja": "彼女は蝋画法の技法を使って顔料を蝋に融合させました。",
         "context": "趣味"
       },
       {
@@ -13548,8 +13548,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of endpoint is fascinating.",
-        "ja": "エンドポイントの概念は魅力的だ。",
+        "en": "The API exposes a dedicated endpoint for user authentication.",
+        "ja": "そのAPIはユーザー認証専用のエンドポイントを公開しています。",
         "context": "技術"
       },
       {
@@ -13845,8 +13845,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of epiphyte is fascinating.",
-        "ja": "着生植物の概念は魅力的だ。",
+        "en": "Orchids growing on the tree trunk are classic epiphytes.",
+        "ja": "木の幹に生えるランは典型的な着生植物です。",
         "context": "自然"
       },
       {
@@ -13944,19 +13944,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite epistolary.",
-        "ja": "結果はかなり書簡体のだった。",
+        "en": "The epistolary novel fell out of fashion with the rise of modern narrative techniques.",
+        "ja": "書簡体小説は近代的な語り手法の台頭とともに廃れていきました。",
+        "context": "文化"
+      },
+      {
+        "en": "Historians rely on epistolary evidence to reconstruct diplomatic exchanges of the era.",
+        "ja": "歴史家たちはその時代の外交のやり取りを復元するために書簡体の証拠に頼ります。",
+        "context": "学術"
+      },
+      {
+        "en": "Their epistolary friendship spanned three decades and two continents.",
+        "ja": "彼らの書簡体の友情は30年と2つの大陸にまたがりました。",
         "context": "会話"
-      },
-      {
-        "en": "It seemed remarkably epistolary.",
-        "ja": "それは驚くほど書簡体のように見えた。",
-        "context": "議論"
-      },
-      {
-        "en": "The epistolary quality stood out.",
-        "ja": "書簡体の特質が際立っていた。",
-        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -13977,19 +13977,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite equanimous.",
-        "ja": "結果はかなり平静なだった。",
-        "context": "日常"
+        "en": "She remained equanimous throughout the grueling cross-examination.",
+        "ja": "彼女は厳しい反対尋問の間中、終始平静を保ちました。",
+        "context": "法律"
       },
       {
-        "en": "It seemed remarkably equanimous.",
-        "ja": "それは驚くほど平静なように見えた。",
-        "context": "文学"
+        "en": "An equanimous leader inspires confidence even during organizational crises.",
+        "ja": "平静なリーダーは組織の危機の最中でも信頼感を与えます。",
+        "context": "ビジネス"
       },
       {
-        "en": "The equanimous quality stood out.",
-        "ja": "平静な特質が際立っていた。",
-        "context": "心理"
+        "en": "Mindfulness practices help practitioners cultivate a more equanimous disposition.",
+        "ja": "マインドフルネスの実践は、より平静な心の持ち方を養うのに役立ちます。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -14175,9 +14175,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of esker is fascinating.",
-        "ja": "エスカーの概念は魅力的だ。",
-        "context": "自然"
+        "en": "The long winding esker was deposited by a glacial stream.",
+        "ja": "長く蛇行するエスカーは氷河の流れによって堆積したものです。",
+        "context": "学術"
       },
       {
         "en": "We studied the esker in detail.",
@@ -14208,9 +14208,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of etching is fascinating.",
-        "ja": "エッチングの概念は魅力的だ。",
-        "context": "趣味"
+        "en": "Rembrandt's etchings are admired for their extraordinary tonal depth.",
+        "ja": "レンブラントのエッチングはその並外れたトーンの深みで称えられています。",
+        "context": "文化"
       },
       {
         "en": "We studied the etching in detail.",
@@ -14837,19 +14837,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite extemporaneous.",
-        "ja": "結果はかなり即興のだった。",
-        "context": "学術"
+        "en": "His extemporaneous remarks at the press conference caused a diplomatic incident.",
+        "ja": "記者会見での彼の即興の発言は外交問題を引き起こしました。",
+        "context": "社会"
       },
       {
-        "en": "It seemed remarkably extemporaneous.",
-        "ja": "それは驚くほど即興のように見えた。",
+        "en": "Training in extemporaneous speaking builds confidence and critical thinking.",
+        "ja": "即興スピーチの訓練は自信と批判的思考力を育てます。",
         "context": "教育"
       },
       {
-        "en": "The extemporaneous quality stood out.",
-        "ja": "即興の特質が際立っていた。",
-        "context": "議論"
+        "en": "The jazz pianist shifted seamlessly into an extemporaneous twelve-bar solo.",
+        "ja": "そのジャズピアニストはシームレスに即興の12小節ソロへと移行しました。",
+        "context": "文化"
       }
     ],
     "categories": [
@@ -14969,19 +14969,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite extracurricular.",
-        "ja": "結果はかなり課外のだった。",
-        "context": "学術"
-      },
-      {
-        "en": "It seemed remarkably extracurricular.",
-        "ja": "それは驚くほど課外のように見えた。",
+        "en": "Extracurricular activities build social skills that formal lessons rarely develop.",
+        "ja": "課外活動は正規の授業ではなかなか育まれない社会的スキルを養います。",
         "context": "教育"
       },
       {
-        "en": "The extracurricular quality stood out.",
-        "ja": "課外の特質が際立っていた。",
-        "context": "議論"
+        "en": "Universities consider extracurricular involvement when evaluating admissions candidates.",
+        "ja": "大学は入学審査の際に課外活動への参加を考慮します。",
+        "context": "学術"
+      },
+      {
+        "en": "Balancing extracurricular commitments with academic work challenges many students.",
+        "ja": "課外活動と学業のバランスを保つことは多くの学生にとって難題です。",
+        "context": "会話"
       }
     ],
     "categories": [
@@ -15168,9 +15168,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of falconry is fascinating.",
-        "ja": "鷹狩りの概念は魅力的だ。",
-        "context": "趣味"
+        "en": "Falconry has been practiced in the Arabian Peninsula for millennia.",
+        "ja": "鷹狩りはアラビア半島で何千年もの間行われてきました。",
+        "context": "文化"
       },
       {
         "en": "We studied the falconry in detail.",
@@ -15433,9 +15433,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of ferrotype is fascinating.",
-        "ja": "鉄板写真の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "Civil War soldiers often carried a ferrotype portrait of loved ones.",
+        "ja": "南北戦争の兵士たちはよく愛する人の鉄板写真を持ち歩いていました。",
+        "context": "文化"
       },
       {
         "en": "We studied the ferrotype in detail.",
@@ -15532,8 +15532,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of fibrillation is fascinating.",
-        "ja": "細動の概念は魅力的だ。",
+        "en": "Atrial fibrillation significantly raises the risk of stroke.",
+        "ja": "心房細動は脳卒中のリスクを大幅に高めます。",
         "context": "医療"
       },
       {
@@ -15565,8 +15565,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of fibrosis is fascinating.",
-        "ja": "線維症の概念は魅力的だ。",
+        "en": "Progressive fibrosis gradually stiffened the tissue in his lungs.",
+        "ja": "進行する線維症が彼の肺の組織を徐々に硬化させていきました。",
         "context": "医療"
       },
       {
@@ -15697,8 +15697,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of fiefdom is fascinating.",
-        "ja": "縄張りの概念は魅力的だ。",
+        "en": "Each department operated as its own fiefdom, resisting collaboration.",
+        "ja": "各部門は独自の縄張りとして機能し、協力を拒んでいました。",
         "context": "ビジネス"
       },
       {
@@ -15763,8 +15763,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of finial is fascinating.",
-        "ja": "尖塔飾りの概念は魅力的だ。",
+        "en": "A gilded finial crowned the steeple of the old church.",
+        "ja": "金色に輝く尖塔飾りが古い教会の塔頂を飾っていました。",
         "context": "文化"
       },
       {
@@ -15796,8 +15796,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of firmware is fascinating.",
-        "ja": "ファームウェアの概念は魅力的だ。",
+        "en": "Updating the router's firmware fixed several security vulnerabilities.",
+        "ja": "ルーターのファームウェアを更新したことでいくつかのセキュリティ脆弱性が修正されました。",
         "context": "技術"
       },
       {
@@ -15928,8 +15928,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of fjordland is fascinating.",
-        "ja": "フィヨルド地域の概念は魅力的だ。",
+        "en": "The cruise through fjordland offered breathtaking views of sheer cliffs.",
+        "ja": "フィヨルド地域をめぐるクルーズは絶壁の息をのむ景色を提供しました。",
         "context": "旅行"
       },
       {
@@ -16027,9 +16027,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of flibbertigibbet is fascinating.",
-        "ja": "おしゃべりな人の概念は魅力的だ。",
-        "context": "日常"
+        "en": "Her aunt was a charming flibbertigibbet who never finished a story.",
+        "ja": "彼女の叔母は話を決して最後まで語らない愛嬌のあるおしゃべりな人でした。",
+        "context": "会話"
       },
       {
         "en": "We studied the flibbertigibbet in detail.",
@@ -16291,8 +16291,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of franchisor is fascinating.",
-        "ja": "フランチャイザーの概念は魅力的だ。",
+        "en": "The franchisor provided strict operational guidelines to all licensees.",
+        "ja": "フランチャイザーはすべての加盟店に厳格な運営ガイドラインを提供しました。",
         "context": "ビジネス"
       },
       {
@@ -16324,8 +16324,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of frieze is fascinating.",
-        "ja": "フリーズ装飾の概念は魅力的だ。",
+        "en": "The Parthenon's frieze depicts the Panathenaic procession in marble.",
+        "ja": "パルテノン神殿のフリーズ装飾は大理石でパナテナイア行列を描いています。",
         "context": "文化"
       },
       {
@@ -16390,8 +16390,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of frond is fascinating.",
-        "ja": "シダの葉の概念は魅力的だ。",
+        "en": "Giant fronds arched over the jungle path like a green canopy.",
+        "ja": "巨大なシダの葉がジャングルの小道の上に緑の天蓋のように弧を描いていました。",
         "context": "自然"
       },
       {
@@ -16555,8 +16555,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of fumarole is fascinating.",
-        "ja": "噴気孔の概念は魅力的だ。",
+        "en": "Sulfurous gas hissed continuously from the active fumarole.",
+        "ja": "硫黄のガスが活発な噴気孔からしゅうしゅうと絶えず噴き出していました。",
         "context": "自然"
       },
       {
@@ -16655,9 +16655,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of gadabout is fascinating.",
-        "ja": "遊び好きな人の概念は魅力的だ。",
-        "context": "日常"
+        "en": "As a confirmed gadabout, she rarely stayed home two nights running.",
+        "ja": "根っからの遊び好きな人として、彼女は二晩続けて家にいることはほとんどありませんでした。",
+        "context": "会話"
       },
       {
         "en": "We studied the gadabout in detail.",
@@ -16688,9 +16688,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of gadfly is fascinating.",
-        "ja": "うるさい人の概念は魅力的だ。",
-        "context": "日常"
+        "en": "The journalist acted as a gadfly, exposing government complacency.",
+        "ja": "そのジャーナリストは政府の怠慢を暴くうるさい人として行動しました。",
+        "context": "社会"
       },
       {
         "en": "We studied the gadfly in detail.",
@@ -16787,8 +16787,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of ganache is fascinating.",
-        "ja": "ガナッシュの概念は魅力的だ。",
+        "en": "She poured warm ganache over the cake for a glossy finish.",
+        "ja": "彼女は光沢ある仕上げのためにケーキに温かいガナッシュをかけました。",
         "context": "料理"
       },
       {
@@ -16820,8 +16820,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of gangway is fascinating.",
-        "ja": "通路の概念は魅力的だ。",
+        "en": "Passengers filed down the gangway as the ferry docked.",
+        "ja": "フェリーが接岸すると、乗客たちが通路を列をなして降りていきました。",
         "context": "旅行"
       },
       {
@@ -16853,8 +16853,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of gargoyle is fascinating.",
-        "ja": "ガーゴイルの概念は魅力的だ。",
+        "en": "A grotesque gargoyle perched at the corner of the cathedral roof.",
+        "ja": "異様なガーゴイルが大聖堂の屋根の隅にとまっていました。",
         "context": "文化"
       },
       {
@@ -17084,9 +17084,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of gemuetlichkeit is fascinating.",
-        "ja": "居心地のよさの概念は魅力的だ。",
-        "context": "日常"
+        "en": "The tavern's warm atmosphere radiated true gemuetlichkeit.",
+        "ja": "その居酒屋の温かい雰囲気は真の居心地のよさを放っていました。",
+        "context": "文化"
       },
       {
         "en": "We studied the gemuetlichkeit in detail.",
@@ -17216,8 +17216,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of glossary is fascinating.",
-        "ja": "用語集の概念は魅力的だ。",
+        "en": "The textbook included a comprehensive glossary of technical terms.",
+        "ja": "その教科書には専門用語の包括的な用語集が含まれていました。",
         "context": "学術"
       },
       {
@@ -17315,19 +17315,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite gobsmacked.",
-        "ja": "結果はかなり度肝を抜かれただった。",
-        "context": "日常"
+        "en": "I was absolutely gobsmacked when they announced the merger at the all-hands meeting.",
+        "ja": "全体会議で合併が発表されたとき、私は度肝を抜かれました。",
+        "context": "ビジネス"
       },
       {
-        "en": "It seemed remarkably gobsmacked.",
-        "ja": "それは驚くほど度肝を抜かれたように見えた。",
+        "en": "She stood gobsmacked as her surprise party guests jumped out from hiding.",
+        "ja": "サプライズパーティーのゲストが隠れ場所から飛び出してきたとき、彼女は度肝を抜かれて立ち尽くしました。",
         "context": "会話"
       },
       {
-        "en": "The gobsmacked quality stood out.",
-        "ja": "度肝を抜かれた特質が際立っていた。",
-        "context": "生活"
+        "en": "Critics were gobsmacked by the audacity of the artist's final installation.",
+        "ja": "批評家たちはそのアーティストの最後のインスタレーションの大胆さに度肝を抜かれました。",
+        "context": "文化"
       }
     ],
     "categories": [
@@ -17513,19 +17513,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite greenfield.",
-        "ja": "結果はかなり未開発のだった。",
+        "en": "A greenfield investment allows companies to build infrastructure exactly to specification.",
+        "ja": "未開発地への投資により、企業は仕様通りにインフラをゼロから構築できます。",
         "context": "ビジネス"
       },
       {
-        "en": "It seemed remarkably greenfield.",
-        "ja": "それは驚くほど未開発のように見えた。",
-        "context": "経営"
+        "en": "The government offered tax incentives to attract greenfield manufacturing projects.",
+        "ja": "政府は未開発地への製造業プロジェクトを誘致するために税制優遇措置を提供しました。",
+        "context": "経済"
       },
       {
-        "en": "The greenfield quality stood out.",
-        "ja": "未開発の特質が際立っていた。",
-        "context": "仕事"
+        "en": "Starting a greenfield software project means making every architectural decision from scratch.",
+        "ja": "未開発のソフトウェアプロジェクトを始めるとは、すべての設計判断をゼロから下すことを意味します。",
+        "context": "技術"
       }
     ],
     "categories": [
@@ -17678,8 +17678,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of halophyte is fascinating.",
-        "ja": "塩生植物の概念は魅力的だ。",
+        "en": "Mangroves are remarkable halophytes that thrive in saltwater conditions.",
+        "ja": "マングローブは塩水環境で育つ注目すべき塩生植物です。",
         "context": "自然"
       },
       {
@@ -17744,19 +17744,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite hardscrabble.",
-        "ja": "結果はかなり貧しいだった。",
-        "context": "日常"
+        "en": "He grew up in a hardscrabble mining town with few prospects for advancement.",
+        "ja": "彼は出世の見込みもほとんどない、貧しい炭鉱の町で育ちました。",
+        "context": "社会"
       },
       {
-        "en": "It seemed remarkably hardscrabble.",
-        "ja": "それは驚くほど貧しいように見えた。",
+        "en": "Her hardscrabble childhood instilled a resilience that served her throughout her career.",
+        "ja": "貧しい幼少期が彼女にキャリアを通じて役立つ逞しさを育んでくれました。",
         "context": "会話"
       },
       {
-        "en": "The hardscrabble quality stood out.",
-        "ja": "貧しい特質が際立っていた。",
-        "context": "生活"
+        "en": "The novel vividly depicts the hardscrabble existence of Depression-era farmers.",
+        "ja": "その小説は大恐慌時代の農民たちの貧しい暮らしを鮮明に描いています。",
+        "context": "文化"
       }
     ],
     "categories": [
@@ -17777,8 +17777,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of headcount is fascinating.",
-        "ja": "人員数の概念は魅力的だ。",
+        "en": "Management froze headcount following a sharp drop in revenue.",
+        "ja": "収益の急落を受けて経営陣は人員数を凍結しました。",
         "context": "ビジネス"
       },
       {
@@ -17810,19 +17810,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite headless.",
-        "ja": "結果はかなりヘッドレスのだった。",
+        "en": "A headless CMS decouples content management from front-end presentation entirely.",
+        "ja": "ヘッドレスCMSはコンテンツ管理とフロントエンドの表示を完全に切り離します。",
         "context": "技術"
       },
       {
-        "en": "It seemed remarkably headless.",
-        "ja": "それは驚くほどヘッドレスのように見えた。",
+        "en": "The team switched to a headless architecture to support multiple client platforms.",
+        "ja": "チームは複数のクライアントプラットフォームに対応するためにヘッドレスアーキテクチャへ移行しました。",
         "context": "開発"
       },
       {
-        "en": "The headless quality stood out.",
-        "ja": "ヘッドレスの特質が際立っていた。",
-        "context": "ビジネス"
+        "en": "Headless browsers run automated tests without rendering a visible user interface.",
+        "ja": "ヘッドレスブラウザは目に見えるユーザーインターフェースを表示せずに自動テストを実行します。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -18008,8 +18008,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of heraldry is fascinating.",
-        "ja": "紋章学の概念は魅力的だ。",
+        "en": "He traced his family's coat of arms through the study of heraldry.",
+        "ja": "彼は紋章学の研究を通じて家の紋章を辿りました。",
         "context": "文化"
       },
       {
@@ -18206,9 +18206,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of hiraeth is fascinating.",
-        "ja": "望郷の念の概念は魅力的だ。",
-        "context": "日常"
+        "en": "Living abroad intensified her hiraeth for the valleys of Wales.",
+        "ja": "海外生活がウェールズの谷へのの望郷の念を強めました。",
+        "context": "会話"
       },
       {
         "en": "We studied the hiraeth in detail.",
@@ -18404,8 +18404,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of hostelry is fascinating.",
-        "ja": "旅館の概念は魅力的だ。",
+        "en": "Weary travellers found warmth and shelter at the roadside hostelry.",
+        "ja": "疲れた旅人たちは道端の旅館で温もりと宿を見つけました。",
         "context": "旅行"
       },
       {
@@ -18503,8 +18503,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of hypertrophy is fascinating.",
-        "ja": "肥大の概念は魅力的だ。",
+        "en": "Resistance training induces muscle hypertrophy through repeated overload.",
+        "ja": "筋力トレーニングは繰り返しの過負荷によって筋肉の肥大を引き起こします。",
         "context": "医療"
       },
       {
@@ -18965,9 +18965,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of ikebana is fascinating.",
-        "ja": "生け花の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "She arranged the flowers according to the principles of ikebana.",
+        "ja": "彼女は生け花の原則に従って花を生けました。",
+        "context": "文化"
       },
       {
         "en": "We studied the ikebana in detail.",
@@ -19757,19 +19757,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite inconsolable.",
-        "ja": "結果はかなり慰めようのないだった。",
+        "en": "The child was inconsolable after her beloved pet rabbit died.",
+        "ja": "大好きなペットのウサギが亡くなった後、その子どもは慰めようがありませんでした。",
         "context": "日常"
       },
       {
-        "en": "It seemed remarkably inconsolable.",
-        "ja": "それは驚くほど慰めようのないように見えた。",
-        "context": "文学"
+        "en": "Witnesses described the grieving widow as inconsolable at the funeral.",
+        "ja": "目撃者たちは葬儀での悲しむ未亡人を慰めようのない状態だと描写しました。",
+        "context": "社会"
       },
       {
-        "en": "The inconsolable quality stood out.",
-        "ja": "慰めようのない特質が際立っていた。",
-        "context": "心理"
+        "en": "He remained inconsolable for weeks following the collapse of the business he had built.",
+        "ja": "自分が築いた事業が崩壊してから何週間も、彼は慰めようのない状態が続きました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -20088,8 +20088,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of inselberg is fascinating.",
-        "ja": "残丘の概念は魅力的だ。",
+        "en": "Uluru is perhaps the world's most famous inselberg.",
+        "ja": "ウルルはおそらく世界で最も有名な残丘です。",
         "context": "自然"
       },
       {
@@ -20418,18 +20418,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite interoperable.",
-        "ja": "結果はかなり相互運用可能なだった。",
+        "en": "Healthcare systems must be interoperable to share patient data across providers.",
+        "ja": "医療システムは患者データを医療機関間で共有するために相互運用可能でなければなりません。",
+        "context": "医療"
+      },
+      {
+        "en": "The standard was designed to make devices from different manufacturers interoperable.",
+        "ja": "その規格は異なるメーカーのデバイスを相互運用可能にするために設計されました。",
         "context": "技術"
       },
       {
-        "en": "It seemed remarkably interoperable.",
-        "ja": "それは驚くほど相互運用可能なように見えた。",
-        "context": "開発"
-      },
-      {
-        "en": "The interoperable quality stood out.",
-        "ja": "相互運用可能な特質が際立っていた。",
+        "en": "Building interoperable APIs reduces vendor lock-in and supports long-term flexibility.",
+        "ja": "相互運用可能なAPIを構築することでベンダーロックインが減り、長期的な柔軟性が高まります。",
         "context": "ビジネス"
       }
     ],
@@ -20451,19 +20451,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite interprocess.",
-        "ja": "結果はかなりプロセス間のだった。",
+        "en": "Interprocess communication enables separate programs to exchange data efficiently.",
+        "ja": "プロセス間通信により、別々のプログラムがデータを効率的にやり取りできます。",
         "context": "技術"
       },
       {
-        "en": "It seemed remarkably interprocess.",
-        "ja": "それは驚くほどプロセス間のように見えた。",
+        "en": "A race condition occurred in the interprocess synchronization logic.",
+        "ja": "プロセス間の同期ロジックで競合状態が発生しました。",
         "context": "開発"
       },
       {
-        "en": "The interprocess quality stood out.",
-        "ja": "プロセス間の特質が際立っていた。",
-        "context": "ビジネス"
+        "en": "Secure interprocess channels prevent unauthorized data leakage between applications.",
+        "ja": "安全なプロセス間チャネルはアプリケーション間の不正なデータ漏洩を防ぎます。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -20517,19 +20517,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite intramuscular.",
-        "ja": "結果はかなり筋肉内のだった。",
+        "en": "Intramuscular injections deliver medication directly into muscle tissue for rapid absorption.",
+        "ja": "筋肉内注射は迅速な吸収のために薬剤を筋肉組織に直接投与します。",
         "context": "医療"
       },
       {
-        "en": "It seemed remarkably intramuscular.",
-        "ja": "それは驚くほど筋肉内のように見えた。",
+        "en": "The flu vaccine is typically administered via intramuscular injection into the deltoid.",
+        "ja": "インフルエンザワクチンは通常、三角筋への筋肉内注射によって接種されます。",
         "context": "健康"
       },
       {
-        "en": "The intramuscular quality stood out.",
-        "ja": "筋肉内の特質が際立っていた。",
-        "context": "科学"
+        "en": "Researchers studied intramuscular fat distribution as a predictor of insulin resistance.",
+        "ja": "研究者たちはインスリン抵抗性の予測因子として筋肉内脂肪の分布を研究しました。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -20616,8 +20616,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of intubation is fascinating.",
-        "ja": "挿管の概念は魅力的だ。",
+        "en": "Emergency intubation kept the unconscious patient breathing.",
+        "ja": "緊急挿管により意識不明の患者の呼吸が維持されました。",
         "context": "医療"
       },
       {
@@ -20748,8 +20748,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of ischemia is fascinating.",
-        "ja": "虚血の概念は魅力的だ。",
+        "en": "Myocardial ischemia occurs when the heart muscle receives insufficient blood.",
+        "ja": "心筋虚血は心筋への血流が不足したときに起こります。",
         "context": "医療"
       },
       {
@@ -21079,9 +21079,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of jeremiad is fascinating.",
-        "ja": "嘆きの言葉の概念は魅力的だ。",
-        "context": "会話"
+        "en": "His editorial was a lengthy jeremiad about declining public standards.",
+        "ja": "彼の論説は公共水準の低下についての長々とした嘆きの言葉でした。",
+        "context": "社会"
       },
       {
         "en": "We studied the jeremiad in detail.",
@@ -21112,9 +21112,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of jingoism is fascinating.",
-        "ja": "好戦的愛国主義の概念は魅力的だ。",
-        "context": "議論"
+        "en": "Wartime propaganda often stokes jingoism among the civilian population.",
+        "ja": "戦時中のプロパガンダはしばしば市民の間の好戦的愛国主義を煽ります。",
+        "context": "社会"
       },
       {
         "en": "We studied the jingoism in detail.",
@@ -21277,9 +21277,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of kerfuffle is fascinating.",
-        "ja": "騒ぎの概念は魅力的だ。",
-        "context": "日常"
+        "en": "The seating mix-up caused quite a kerfuffle at the ceremony.",
+        "ja": "席の混乱が式典でかなりの騒ぎを引き起こしました。",
+        "context": "会話"
       },
       {
         "en": "We studied the kerfuffle in detail.",
@@ -21310,8 +21310,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of kernel is fascinating.",
-        "ja": "カーネルの概念は魅力的だ。",
+        "en": "The Linux kernel manages hardware resources efficiently.",
+        "ja": "Linuxカーネルはハードウェアリソースを効率的に管理します。",
         "context": "技術"
       },
       {
@@ -21409,9 +21409,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of kintsugi is fascinating.",
-        "ja": "金継ぎの概念は魅力的だ。",
-        "context": "趣味"
+        "en": "She restored the cracked bowl using kintsugi, filling the fractures with gold.",
+        "ja": "彼女は金継ぎを使い、割れた器の亀裂を金で埋めて修復しました。",
+        "context": "文化"
       },
       {
         "en": "We studied the kintsugi in detail.",
@@ -21508,19 +21508,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite lackadaisical.",
-        "ja": "結果はかなり気乗りしないだった。",
-        "context": "日常"
+        "en": "His lackadaisical attitude toward deadlines cost the team a major contract.",
+        "ja": "締め切りに対する彼の気乗りしない態度がチームに大きな契約の損失をもたらしました。",
+        "context": "ビジネス"
       },
       {
-        "en": "It seemed remarkably lackadaisical.",
-        "ja": "それは驚くほど気乗りしないように見えた。",
+        "en": "A lackadaisical approach to revision rarely produces polished academic writing.",
+        "ja": "気乗りしない態度での見直しからは洗練された学術的な文章が生まれることはほとんどありません。",
+        "context": "教育"
+      },
+      {
+        "en": "She grew lackadaisical about exercise once the initial excitement wore off.",
+        "ja": "最初の興奮が冷めると、彼女は運動に対して気乗りしなくなりました。",
         "context": "会話"
-      },
-      {
-        "en": "The lackadaisical quality stood out.",
-        "ja": "気乗りしない特質が際立っていた。",
-        "context": "生活"
       }
     ],
     "categories": [
@@ -21607,18 +21607,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite lacustrine.",
-        "ja": "結果はかなり湖のだった。",
+        "en": "Lacustrine sediments preserve detailed records of past environmental changes.",
+        "ja": "湖の堆積物は過去の環境変化の詳細な記録を保存しています。",
+        "context": "学術"
+      },
+      {
+        "en": "The valley's lacustrine ecosystem supports dozens of endemic fish species.",
+        "ja": "その谷の湖沼生態系は数十種の固有魚種を支えています。",
         "context": "自然"
       },
       {
-        "en": "It seemed remarkably lacustrine.",
-        "ja": "それは驚くほど湖のように見えた。",
-        "context": "科学"
-      },
-      {
-        "en": "The lacustrine quality stood out.",
-        "ja": "湖の特質が際立っていた。",
+        "en": "Rising temperatures are altering lacustrine chemistry in high-altitude Alpine lakes.",
+        "ja": "気温の上昇が高標高のアルプスの湖における湖沼の化学組成を変えています。",
         "context": "環境"
       }
     ],
@@ -21640,9 +21640,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of languor is fascinating.",
-        "ja": "けだるさの概念は魅力的だ。",
-        "context": "日常"
+        "en": "A pleasant languor settled over her after the long afternoon swim.",
+        "ja": "長い午後の水泳の後、心地よいけだるさが彼女を包みました。",
+        "context": "会話"
       },
       {
         "en": "We studied the languor in detail.",
@@ -21838,8 +21838,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of lemma is fascinating.",
-        "ja": "補題の概念は魅力的だ。",
+        "en": "The proof relied on a key lemma established in the previous chapter.",
+        "ja": "その証明は前章で確立された重要な補題に依拠していました。",
         "context": "学術"
       },
       {
@@ -22003,8 +22003,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of lexicography is fascinating.",
-        "ja": "辞書編纂学の概念は魅力的だ。",
+        "en": "Modern lexicography increasingly draws on large digital corpora.",
+        "ja": "現代の辞書編纂学は大規模なデジタルコーパスを活用することが多くなっています。",
         "context": "学術"
       },
       {
@@ -22102,8 +22102,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of linocut is fascinating.",
-        "ja": "リノカットの概念は魅力的だ。",
+        "en": "She carved a bold floral design into the linoleum block for her linocut.",
+        "ja": "彼女はリノカットのためにリノリウム板に大胆な花柄を彫り込みました。",
         "context": "趣味"
       },
       {
@@ -22333,8 +22333,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of loam is fascinating.",
-        "ja": "壌土の概念は魅力的だ。",
+        "en": "Vegetables thrive in rich loam that drains well yet retains moisture.",
+        "ja": "野菜は水はけがよく水分を保持する肥沃な壌土でよく育ちます。",
         "context": "自然"
       },
       {
@@ -22399,8 +22399,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of loggia is fascinating.",
-        "ja": "開廊の概念は魅力的だ。",
+        "en": "Guests gathered in the shaded loggia to escape the midday heat.",
+        "ja": "客たちは真昼の暑さを避けるため、日陰の開廊に集まりました。",
         "context": "文化"
       },
       {
@@ -22432,8 +22432,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of logocentrism is fascinating.",
-        "ja": "ロゴス中心主義の概念は魅力的だ。",
+        "en": "Derrida challenged logocentrism by questioning the primacy of speech over writing.",
+        "ja": "デリダは書記より音声を優位とするロゴス中心主義に異議を唱えました。",
         "context": "学術"
       },
       {
@@ -22696,8 +22696,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of lyceum is fascinating.",
-        "ja": "学園の概念は魅力的だ。",
+        "en": "Aristotle taught his students while walking through the lyceum in Athens.",
+        "ja": "アリストテレスはアテネの学園を歩きながら弟子たちに教えました。",
         "context": "学術"
       },
       {
@@ -22795,8 +22795,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of macrame is fascinating.",
-        "ja": "マクラメ編みの概念は魅力的だ。",
+        "en": "She spent the weekend knotting macrame wall hangings for her new apartment.",
+        "ja": "彼女は週末、新しいアパートのためのマクラメ編みのウォールハンギングを結んで過ごしました。",
         "context": "趣味"
       },
       {
@@ -22861,19 +22861,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite magisterial.",
-        "ja": "結果はかなり権威あるだった。",
+        "en": "His magisterial biography of Lincoln remains the definitive scholarly account.",
+        "ja": "彼のリンカーンに関する権威ある伝記は今でも決定版の学術的記録とみなされています。",
         "context": "学術"
       },
       {
-        "en": "It seemed remarkably magisterial.",
-        "ja": "それは驚くほど権威あるように見えた。",
-        "context": "教育"
+        "en": "The conductor's magisterial interpretation silenced every critic in the hall.",
+        "ja": "その指揮者の権威ある解釈はホールにいたすべての批評家を黙らせました。",
+        "context": "文化"
       },
       {
-        "en": "The magisterial quality stood out.",
-        "ja": "権威ある特質が際立っていた。",
-        "context": "議論"
+        "en": "She delivered a magisterial closing argument that swayed the entire jury.",
+        "ja": "彼女は陪審員全員を動かした権威ある最終弁論を行いました。",
+        "context": "法律"
       }
     ],
     "categories": [
@@ -22894,19 +22894,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite magniloquent.",
-        "ja": "結果はかなり誇大なだった。",
-        "context": "会話"
+        "en": "His magniloquent campaign speeches dazzled audiences but offered little substance.",
+        "ja": "彼の誇大な選挙演説は聴衆を魅了しましたが、中身はほとんどありませんでした。",
+        "context": "社会"
       },
       {
-        "en": "It seemed remarkably magniloquent.",
-        "ja": "それは驚くほど誇大なように見えた。",
-        "context": "議論"
+        "en": "Critics panned the documentary as magniloquent and intellectually dishonest.",
+        "ja": "批評家たちはそのドキュメンタリーを誇大で知的に不誠実だと酷評しました。",
+        "context": "文化"
       },
       {
-        "en": "The magniloquent quality stood out.",
-        "ja": "誇大な特質が際立っていた。",
-        "context": "ビジネス"
+        "en": "The professor's magniloquent prose obscured rather than illuminated the argument.",
+        "ja": "教授の誇大な文体は議論を明確にするどころかかえって不明瞭にしていました。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -23423,8 +23423,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of metastasis is fascinating.",
-        "ja": "転移の概念は魅力的だ。",
+        "en": "Early detection significantly reduces the risk of metastasis to other organs.",
+        "ja": "早期発見により、他臓器への転移リスクが大幅に低下します。",
         "context": "医療"
       },
       {
@@ -23621,8 +23621,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of minaret is fascinating.",
-        "ja": "ミナレットの概念は魅力的だ。",
+        "en": "The muezzin's call to prayer echoed from the slender minaret at dawn.",
+        "ja": "夜明け、細いミナレットからムアッジンの礼拝の呼びかけが響き渡りました。",
         "context": "文化"
       },
       {
@@ -23654,8 +23654,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of minification is fascinating.",
-        "ja": "最小化の概念は魅力的だ。",
+        "en": "CSS minification reduced the stylesheet size by forty percent.",
+        "ja": "CSSの最小化により、スタイルシートのサイズが40パーセント削減されました。",
         "context": "技術"
       },
       {
@@ -23753,8 +23753,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of mirepoix is fascinating.",
-        "ja": "ミルポワの概念は魅力的だ。",
+        "en": "He sweated the mirepoix slowly until the onions turned translucent.",
+        "ja": "彼は玉ねぎが透き通るまでミルポワをじっくりと炒めました。",
         "context": "料理"
       },
       {
@@ -23852,9 +23852,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of missive is fascinating.",
-        "ja": "書簡の概念は魅力的だ。",
-        "context": "会話"
+        "en": "She received an urgent missive from the ambassador requesting an immediate reply.",
+        "ja": "彼女は大使から即座の返答を求める緊急書簡を受け取りました。",
+        "context": "ビジネス"
       },
       {
         "en": "We studied the missive in detail.",
@@ -23984,8 +23984,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of monetarist is fascinating.",
-        "ja": "マネタリストの概念は魅力的だ。",
+        "en": "As a committed monetarist, she argued for strict control of the money supply.",
+        "ja": "確固たるマネタリストとして、彼女は貨幣供給の厳格な管理を主張しました。",
         "context": "金融"
       },
       {
@@ -24083,19 +24083,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite monopolistic.",
-        "ja": "結果はかなり独占的なだった。",
+        "en": "Regulators launched an investigation into the company's monopolistic pricing practices.",
+        "ja": "規制当局はその企業の独占的な価格設定慣行に対して調査を開始しました。",
+        "context": "法律"
+      },
+      {
+        "en": "Monopolistic control over supply chains stifles innovation and harms consumers.",
+        "ja": "サプライチェーンに対する独占的な支配はイノベーションを阻害し消費者を損ないます。",
+        "context": "経済"
+      },
+      {
+        "en": "Startups struggle to enter markets dominated by monopolistic incumbents with vast resources.",
+        "ja": "スタートアップ企業は豊富な資源を持つ独占的な既存企業に支配された市場への参入に苦戦しています。",
         "context": "ビジネス"
-      },
-      {
-        "en": "It seemed remarkably monopolistic.",
-        "ja": "それは驚くほど独占的なように見えた。",
-        "context": "経営"
-      },
-      {
-        "en": "The monopolistic quality stood out.",
-        "ja": "独占的な特質が際立っていた。",
-        "context": "仕事"
       }
     ],
     "categories": [
@@ -24249,9 +24249,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of mortification is fascinating.",
-        "ja": "屈辱の概念は魅力的だ。",
-        "context": "日常"
+        "en": "His mortification was complete when he realized he had mispronounced the client's name.",
+        "ja": "クライアントの名前を誤って発音していたと気づいたとき、彼の屈辱は頂点に達しました。",
+        "context": "会話"
       },
       {
         "en": "We studied the mortification in detail.",
@@ -24348,8 +24348,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of muskeg is fascinating.",
-        "ja": "泥炭湿地の概念は魅力的だ。",
+        "en": "The construction crew struggled to lay a stable road across the waterlogged muskeg.",
+        "ja": "建設クルーは水浸しの泥炭湿地を横断する安定した道路の敷設に苦労しました。",
         "context": "自然"
       },
       {
@@ -24513,9 +24513,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of mycology is fascinating.",
-        "ja": "菌学の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "Her passion for mycology led her to identify over two hundred local fungal species.",
+        "ja": "菌学への情熱から、彼女は地域の菌類200種以上を同定するに至りました。",
+        "context": "学術"
       },
       {
         "en": "We studied the mycology in detail.",
@@ -24777,8 +24777,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of namespace is fascinating.",
-        "ja": "名前空間の概念は魅力的だ。",
+        "en": "Wrapping the code in a namespace prevents conflicts with third-party libraries.",
+        "ja": "コードを名前空間で包むことで、サードパーティライブラリとの衝突を防げます。",
         "context": "技術"
       },
       {
@@ -24843,8 +24843,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of nave is fascinating.",
-        "ja": "身廊の概念は魅力的だ。",
+        "en": "Hundreds of worshippers filled the cathedral's vast nave for the Christmas service.",
+        "ja": "クリスマスの礼拝に、何百人もの礼拝者が大聖堂の広大な身廊を埋め尽くしました。",
         "context": "文化"
       },
       {
@@ -24909,8 +24909,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of necrosis is fascinating.",
-        "ja": "壊死の概念は魅力的だ。",
+        "en": "The surgeon removed the tissue affected by necrosis to prevent further infection.",
+        "ja": "外科医はさらなる感染を防ぐため、壊死した組織を除去しました。",
         "context": "医療"
       },
       {
@@ -25041,9 +25041,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of nivation is fascinating.",
-        "ja": "雪蝕の概念は魅力的だ。",
-        "context": "自然"
+        "en": "The shallow hollows on the hillside were formed gradually by nivation over centuries.",
+        "ja": "丘の斜面の浅い窪みは、何世紀もかけて雪蝕によって形成されました。",
+        "context": "学術"
       },
       {
         "en": "We studied the nivation in detail.",
@@ -25074,9 +25074,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of noctambulist is fascinating.",
-        "ja": "夢遊病者の概念は魅力的だ。",
-        "context": "日常"
+        "en": "The child was a confirmed noctambulist who wandered the house every night.",
+        "ja": "その子は毎晩家の中を歩き回る筋金入りの夢遊病者でした。",
+        "context": "医療"
       },
       {
         "en": "We studied the noctambulist in detail.",
@@ -25338,19 +25338,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite nonplussed.",
-        "ja": "結果はかなり当惑しただった。",
+        "en": "The interviewer looked nonplussed when the candidate burst into song mid-answer.",
+        "ja": "候補者が答えの途中で歌い始めたとき、面接官は当惑した表情を見せました。",
+        "context": "ビジネス"
+      },
+      {
+        "en": "She was nonplussed by the sudden change of plans and said nothing for a moment.",
+        "ja": "突然の計画変更に当惑して、彼女はしばらく黙っていました。",
         "context": "日常"
       },
       {
-        "en": "It seemed remarkably nonplussed.",
-        "ja": "それは驚くほど当惑したように見えた。",
-        "context": "文学"
-      },
-      {
-        "en": "The nonplussed quality stood out.",
-        "ja": "当惑した特質が際立っていた。",
-        "context": "心理"
+        "en": "Critics were nonplussed by the director's decision to cast against type so radically.",
+        "ja": "批評家たちは監督がそこまで大胆にイメージに反したキャスティングをした決断に当惑しました。",
+        "context": "文化"
       }
     ],
     "categories": [
@@ -25668,8 +25668,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of numismatist is fascinating.",
-        "ja": "貨幣収集家の概念は魅力的だ。",
+        "en": "The numismatist appraised the rare silver coin at several thousand dollars.",
+        "ja": "その貨幣収集家は希少な銀貨を数千ドルと鑑定しました。",
         "context": "趣味"
       },
       {
@@ -25767,8 +25767,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of obfuscation is fascinating.",
-        "ja": "難読化の概念は魅力的だ。",
+        "en": "The security team applied obfuscation to the source code before releasing the app.",
+        "ja": "セキュリティチームはアプリのリリース前にソースコードに難読化を施しました。",
         "context": "技術"
       },
       {
@@ -26031,8 +26031,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of offtake is fascinating.",
-        "ja": "引き取り契約の概念は魅力的だ。",
+        "en": "The mining company secured a long-term offtake agreement with a Japanese steel producer.",
+        "ja": "その鉱業会社は日本の鉄鋼メーカーと長期の引き取り契約を締結しました。",
         "context": "ビジネス"
       },
       {
@@ -26526,8 +26526,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of orienteering is fascinating.",
-        "ja": "オリエンテーリングの概念は魅力的だ。",
+        "en": "She navigated dense forest using only a map and compass during the orienteering race.",
+        "ja": "彼女はオリエンテーリングの競技中、地図とコンパスだけで密林を踏破しました。",
         "context": "趣味"
       },
       {
@@ -26559,9 +26559,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of origami is fascinating.",
-        "ja": "折り紙の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "He folded a hundred cranes in origami as a gift for the newlyweds.",
+        "ja": "彼は新婚夫婦へのプレゼントとして折り紙で鶴を百羽折りました。",
+        "context": "文化"
       },
       {
         "en": "We studied the origami in detail.",
@@ -26592,9 +26592,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of ornithology is fascinating.",
-        "ja": "鳥類学の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "His lifelong pursuit of ornithology took him to wetlands across six continents.",
+        "ja": "鳥類学への生涯をかけた探求が、彼を六大陸の湿地帯へと連れていきました。",
+        "context": "学術"
       },
       {
         "en": "We studied the ornithology in detail.",
@@ -26625,9 +26625,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of orography is fascinating.",
-        "ja": "山岳学の概念は魅力的だ。",
-        "context": "自然"
+        "en": "Orography explains why the windward slopes of mountain ranges receive far more rainfall.",
+        "ja": "山岳学は、山脈の風上斜面がはるかに多くの降雨を受ける理由を説明します。",
+        "context": "学術"
       },
       {
         "en": "We studied the orography in detail.",
@@ -27021,8 +27021,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of oxbow is fascinating.",
-        "ja": "三日月湖の概念は魅力的だ。",
+        "en": "The river cut a new channel, leaving an oxbow lake isolated on the floodplain.",
+        "ja": "川は新たな流路を切り開き、洪水平野に三日月湖を孤立させました。",
         "context": "自然"
       },
       {
@@ -27121,8 +27121,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of palaeography is fascinating.",
-        "ja": "古文書学の概念は魅力的だ。",
+        "en": "Her expertise in palaeography allowed her to date the manuscript to the twelfth century.",
+        "ja": "古文書学の専門知識により、彼女はその写本を12世紀のものと年代特定しました。",
         "context": "学術"
       },
       {
@@ -27187,9 +27187,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of palilalia is fascinating.",
-        "ja": "反復言語症の概念は魅力的だ。",
-        "context": "会話"
+        "en": "Palilalia, the compulsive repetition of one's own words, can accompany certain neurological conditions.",
+        "ja": "自分の言葉を強迫的に繰り返す反復言語症は、特定の神経疾患に伴うことがあります。",
+        "context": "医療"
       },
       {
         "en": "We studied the palilalia in detail.",
@@ -27319,8 +27319,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of palpation is fascinating.",
-        "ja": "触診の概念は魅力的だ。",
+        "en": "Through careful palpation, the doctor detected an enlarged lymph node near the jaw.",
+        "ja": "丁寧な触診により、医師は顎の近くにリンパ節の腫脹を検出しました。",
         "context": "医療"
       },
       {
@@ -27352,8 +27352,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of pampas is fascinating.",
-        "ja": "パンパ草原の概念は魅力的だ。",
+        "en": "Gauchos have herded cattle across the vast pampas of Argentina for centuries.",
+        "ja": "ガウチョたちは何世紀もの間、アルゼンチンの広大なパンパ草原で牛を追ってきました。",
         "context": "旅行"
       },
       {
@@ -27913,8 +27913,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of pathogenesis is fascinating.",
-        "ja": "発病機序の概念は魅力的だ。",
+        "en": "Researchers are still investigating the pathogenesis of long COVID in affected patients.",
+        "ja": "研究者たちは今もロングCOVIDの発病機序を患者において調査しています。",
         "context": "医療"
       },
       {
@@ -28045,9 +28045,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of patrimony is fascinating.",
-        "ja": "世襲財産の概念は魅力的だ。",
-        "context": "金融"
+        "en": "The eldest son inherited the entire patrimony, including the family estate and vineyards.",
+        "ja": "長男は家屋敷とぶどう園を含む全世襲財産を相続しました。",
+        "context": "法律"
       },
       {
         "en": "We studied the patrimony in detail.",
@@ -28243,8 +28243,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of pediment is fascinating.",
-        "ja": "ペディメントの概念は魅力的だ。",
+        "en": "The bank's classical facade was crowned by a triangular pediment adorned with carved figures.",
+        "ja": "その銀行の古典的な正面は、彫刻が施された三角形のペディメントで冠されていました。",
         "context": "文化"
       },
       {
@@ -28309,19 +28309,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite peevish.",
-        "ja": "結果はかなり気難しいだった。",
-        "context": "日常"
+        "en": "He became peevish whenever meetings ran past their scheduled end time.",
+        "ja": "会議が予定の終了時刻を過ぎると、彼はいつも気難しくなりました。",
+        "context": "ビジネス"
       },
       {
-        "en": "It seemed remarkably peevish.",
-        "ja": "それは驚くほど気難しいように見えた。",
-        "context": "文学"
+        "en": "The peevish tone of his review alienated readers who might otherwise have agreed.",
+        "ja": "彼のレビューの気難しい口調は、そうでなければ同意していたかもしれない読者を遠ざけました。",
+        "context": "文化"
       },
       {
-        "en": "The peevish quality stood out.",
-        "ja": "気難しい特質が際立っていた。",
-        "context": "心理"
+        "en": "Children often grow peevish when overtired or overstimulated in crowded environments.",
+        "ja": "子どもたちは疲れすぎたり、混雑した環境で刺激が過剰になったりすると気難しくなることがよくあります。",
+        "context": "教育"
       }
     ],
     "categories": [
@@ -29069,8 +29069,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of persifleur is fascinating.",
-        "ja": "冗談好きの概念は魅力的だ。",
+        "en": "The notorious persifleur kept the dinner party laughing with his gentle mockery of everyone present.",
+        "ja": "その有名な冗談好きは、その場にいる全員を優しくからかい続け、ディナーパーティを笑いに包みました。",
         "context": "会話"
       },
       {
@@ -29267,8 +29267,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of philatelist is fascinating.",
-        "ja": "切手収集家の概念は魅力的だ。",
+        "en": "The philatelist paid a premium for a rare Victorian stamp still in mint condition.",
+        "ja": "その切手収集家は未使用の状態のまま残る希少なヴィクトリア朝の切手に高値を支払いました。",
         "context": "趣味"
       },
       {
@@ -29366,8 +29366,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of philology is fascinating.",
-        "ja": "文献学の概念は魅力的だ。",
+        "en": "Classical philology helped scholars reconstruct the original text of corrupted manuscripts.",
+        "ja": "古典文献学は学者たちが破損した写本の原典を再構築するのに役立ちました。",
         "context": "学術"
       },
       {
@@ -29498,8 +29498,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of pivoting is fascinating.",
-        "ja": "方向転換の概念は魅力的だ。",
+        "en": "After losing its core market, the startup survived by pivoting to enterprise software.",
+        "ja": "コア市場を失った後、そのスタートアップはエンタープライズソフトウェアへの方向転換で生き延びました。",
         "context": "ビジネス"
       },
       {
@@ -29696,18 +29696,18 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite pluvial.",
-        "ja": "結果はかなり多雨のだった。",
-        "context": "自然"
+        "en": "Pluvial flooding overwhelmed drainage systems after three days of torrential rain.",
+        "ja": "3日間の豪雨の後、多雨による洪水が排水システムを圧倒しました。",
+        "context": "社会"
       },
       {
-        "en": "It seemed remarkably pluvial.",
-        "ja": "それは驚くほど多雨のように見えた。",
-        "context": "科学"
+        "en": "Geologists identified a pluvial period when vast lakes covered the Atacama Desert.",
+        "ja": "地質学者たちは広大な湖がアタカマ砂漠を覆っていた多雨期を特定しました。",
+        "context": "学術"
       },
       {
-        "en": "The pluvial quality stood out.",
-        "ja": "多雨の特質が際立っていた。",
+        "en": "Climate models predict more frequent pluvial events as atmospheric moisture increases.",
+        "ja": "気候モデルは大気中の水分が増加するにつれて多雨現象がより頻繁になると予測しています。",
         "context": "環境"
       }
     ],
@@ -29993,8 +29993,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of portage is fascinating.",
-        "ja": "陸路運搬の概念は魅力的だ。",
+        "en": "The canoeists carried their boats overland during the portage around the waterfall.",
+        "ja": "カヌー漕ぎ手たちは滝を迂回する陸路運搬の間、ボートを陸上で運びました。",
         "context": "旅行"
       },
       {
@@ -30026,8 +30026,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of portico is fascinating.",
-        "ja": "柱廊の概念は魅力的だ。",
+        "en": "The museum's grand portico welcomes visitors with its row of tall marble columns.",
+        "ja": "博物館の壮大な柱廊は、列をなす高い大理石の柱で来館者を迎えます。",
         "context": "文化"
       },
       {
@@ -30687,9 +30687,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of prolegomenon is fascinating.",
-        "ja": "緒論の概念は魅力的だ。",
-        "context": "会話"
+        "en": "The author's prolegomenon outlined the philosophical assumptions underlying the entire work.",
+        "ja": "著者の緒論は、著作全体の根底にある哲学的前提を概説していました。",
+        "context": "学術"
       },
       {
         "en": "We studied the prolegomenon in detail.",
@@ -31183,9 +31183,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of provender is fascinating.",
-        "ja": "食糧の概念は魅力的だ。",
-        "context": "料理"
+        "en": "The expedition team stored enough provender to last three months in the wilderness.",
+        "ja": "探検隊は荒野での3か月分の食糧を蓄えました。",
+        "context": "旅行"
       },
       {
         "en": "We studied the provender in detail.",
@@ -31216,8 +31216,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of provisioner is fascinating.",
-        "ja": "プロビジョナーの概念は魅力的だ。",
+        "en": "The DevOps team configured a provisioner to automate server setup across all environments.",
+        "ja": "DevOpsチームはすべての環境でサーバーセットアップを自動化するプロビジョナーを設定しました。",
         "context": "技術"
       },
       {
@@ -31547,8 +31547,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of pyrography is fascinating.",
-        "ja": "焼き絵の概念は魅力的だ。",
+        "en": "Using a heated stylus, she burned an intricate landscape into the wooden panel through pyrography.",
+        "ja": "彼女は加熱したペンを用い、焼き絵技法で木製パネルに精巧な風景を焼き付けました。",
         "context": "趣味"
       },
       {
@@ -31613,8 +31613,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of quadrivium is fascinating.",
-        "ja": "四科の概念は魅力的だ。",
+        "en": "Medieval university students mastered the quadrivium before advancing to theology or law.",
+        "ja": "中世の大学生は神学や法学へ進む前に四科を習得しました。",
         "context": "学術"
       },
       {
@@ -31778,8 +31778,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of quilling is fascinating.",
-        "ja": "ペーパークイリングの概念は魅力的だ。",
+        "en": "She rolled and shaped paper strips into delicate flowers through quilling for the greeting card.",
+        "ja": "彼女はグリーティングカードのためにペーパークイリングで紙の細片を丸めて繊細な花に成形しました。",
         "context": "趣味"
       },
       {
@@ -31976,9 +31976,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of ragamuffin is fascinating.",
-        "ja": "ぼろを着た子の概念は魅力的だ。",
-        "context": "日常"
+        "en": "The little ragamuffin appeared at the door, his coat torn and his shoes mismatched.",
+        "ja": "そのぼろを着た小さな子は、コートが破れ靴がちぐはぐなままドアに現れました。",
+        "context": "社会"
       },
       {
         "en": "We studied the ragamuffin in detail.",
@@ -32009,8 +32009,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of raillery is fascinating.",
-        "ja": "からかいの概念は魅力的だ。",
+        "en": "Their raillery was affectionate, the kind only old friends can get away with.",
+        "ja": "彼らのからかいは愛情深いもので、旧友だけが許されるような種類のものでした。",
         "context": "会話"
       },
       {
@@ -32075,8 +32075,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of ramekin is fascinating.",
-        "ja": "ラメキンの概念は魅力的だ。",
+        "en": "She served the individual chocolate soufflés straight from the oven in ceramic ramekins.",
+        "ja": "彼女は個別のチョコレートスフレをセラミックのラメキンに入れたままオーブンから直接提供しました。",
         "context": "料理"
       },
       {
@@ -32108,19 +32108,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite ramshackle.",
-        "ja": "結果はかなりおんぼろのだった。",
+        "en": "They converted a ramshackle barn into a stylish family home over two years.",
+        "ja": "彼らは2年かけておんぼろの納屋をおしゃれな一戸建て住宅に改装しました。",
         "context": "日常"
       },
       {
-        "en": "It seemed remarkably ramshackle.",
-        "ja": "それは驚くほどおんぼろのように見えた。",
-        "context": "会話"
+        "en": "The new government inherited a ramshackle bureaucracy riddled with inefficiencies.",
+        "ja": "新政府は非効率で問題だらけのおんぼろの官僚機構を引き継ぎました。",
+        "context": "社会"
       },
       {
-        "en": "The ramshackle quality stood out.",
-        "ja": "おんぼろの特質が際立っていた。",
-        "context": "生活"
+        "en": "Investors avoided the ramshackle infrastructure left behind by decades of neglect.",
+        "ja": "投資家たちは数十年の放置によって残されたおんぼろのインフラを敬遠しました。",
+        "context": "経済"
       }
     ],
     "categories": [
@@ -32141,9 +32141,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of rancor is fascinating.",
-        "ja": "深い恨みの概念は魅力的だ。",
-        "context": "日常"
+        "en": "Years of unresolved grievances had bred deep rancor between the two families.",
+        "ja": "解決されない不満が積み重なり、二つの家族の間に深い恨みを育てていました。",
+        "context": "社会"
       },
       {
         "en": "We studied the rancor in detail.",
@@ -32735,8 +32735,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of repartee is fascinating.",
-        "ja": "機知に富んだ受け答えの概念は魅力的だ。",
+        "en": "His sharp repartee left the interviewer momentarily speechless with admiration.",
+        "ja": "彼の鋭い機知に富んだ受け答えは、インタビュアーを感嘆のあまり一瞬絶句させました。",
         "context": "会話"
       },
       {
@@ -32834,8 +32834,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of revaluation is fascinating.",
-        "ja": "再評価の概念は魅力的だ。",
+        "en": "The currency revaluation made exports more expensive but strengthened domestic purchasing power.",
+        "ja": "通貨の再評価により輸出品の価格が上昇しましたが、国内購買力は強化されました。",
         "context": "金融"
       },
       {
@@ -32933,8 +32933,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of rightsizing is fascinating.",
-        "ja": "適正化の概念は魅力的だ。",
+        "en": "The CFO proposed rightsizing the workforce to align costs with the new revenue forecast.",
+        "ja": "CFOは新しい収益予測に合わせたコスト調整のため、従業員数の適正化を提案しました。",
         "context": "ビジネス"
       },
       {
@@ -32999,8 +32999,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of rill is fascinating.",
-        "ja": "小川の概念は魅力的だ。",
+        "en": "A narrow rill trickled down the hillside, its banks lined with ferns.",
+        "ja": "細い小川が丘の斜面を流れ下り、その両岸にはシダが生い茂っていました。",
         "context": "自然"
       },
       {
@@ -33065,8 +33065,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of rivulet is fascinating.",
-        "ja": "細流の概念は魅力的だ。",
+        "en": "Rivulets of melted snow wound through the meadow as spring arrived.",
+        "ja": "春の訪れとともに、雪解け水の細流が草原を縫うように流れました。",
         "context": "自然"
       },
       {
@@ -33098,8 +33098,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of rockhound is fascinating.",
-        "ja": "鉱物収集家の概念は魅力的だ。",
+        "en": "Every weekend the dedicated rockhound scoured riverbeds for agates and jasper.",
+        "ja": "熱心な鉱物収集家は毎週末、瑪瑙やジャスパーを求めて川底を探し回りました。",
         "context": "趣味"
       },
       {
@@ -33230,8 +33230,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of rotunda is fascinating.",
-        "ja": "円形建築の概念は魅力的だ。",
+        "en": "The state capitol's imposing rotunda rises nearly sixty meters above the ground floor.",
+        "ja": "州議事堂の堂々たる円形建築は地上から約60メートルの高さに達します。",
         "context": "文化"
       },
       {
@@ -33362,19 +33362,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite rueful.",
-        "ja": "結果はかなり後悔しただった。",
-        "context": "日常"
+        "en": "She gave a rueful smile when asked about the career she had abandoned.",
+        "ja": "断念したキャリアについて尋ねられると、彼女は後悔したような微笑みを浮かべました。",
+        "context": "会話"
       },
       {
-        "en": "It seemed remarkably rueful.",
-        "ja": "それは驚くほど後悔したように見えた。",
-        "context": "文学"
+        "en": "The character's rueful narration gives the novel its bittersweet emotional tone.",
+        "ja": "その登場人物の後悔を帯びた語りが小説に甘苦い感情的な色調を与えています。",
+        "context": "文化"
       },
       {
-        "en": "The rueful quality stood out.",
-        "ja": "後悔した特質が際立っていた。",
-        "context": "心理"
+        "en": "He was rueful about dismissing early warnings that could have prevented the crisis.",
+        "ja": "危機を防ぐことができたかもしれない初期の警告を無視したことを彼は後悔していました。",
+        "context": "ビジネス"
       }
     ],
     "categories": [
@@ -33428,8 +33428,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of sacristy is fascinating.",
-        "ja": "聖具室の概念は魅力的だ。",
+        "en": "The priest vested in the sacristy before processing into the church for mass.",
+        "ja": "司祭はミサのために聖堂に入堂する前に聖具室で法衣を着けました。",
         "context": "文化"
       },
       {
@@ -33461,19 +33461,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite saline.",
-        "ja": "結果はかなり塩水のだった。",
-        "context": "自然"
+        "en": "Nurses flushed the wound with saline solution to prevent infection.",
+        "ja": "看護師たちは感染を防ぐために傷口を生理食塩水で洗浄しました。",
+        "context": "医療"
       },
       {
-        "en": "It seemed remarkably saline.",
-        "ja": "それは驚くほど塩水のように見えた。",
-        "context": "科学"
-      },
-      {
-        "en": "The saline quality stood out.",
-        "ja": "塩水の特質が際立っていた。",
+        "en": "Saline groundwater intrusion is rendering coastal agricultural land unproductive.",
+        "ja": "塩水の地下水浸入が沿岸の農地を不毛にしています。",
         "context": "環境"
+      },
+      {
+        "en": "The lake's saline concentration has doubled since water diversion began decades ago.",
+        "ja": "数十年前に導水が始まってから、その湖の塩分濃度は2倍になりました。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -33659,8 +33659,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of sarcophagus is fascinating.",
-        "ja": "石棺の概念は魅力的だ。",
+        "en": "The pharaoh's gilded sarcophagus was discovered sealed inside the inner burial chamber.",
+        "ja": "ファラオの金箔を施した石棺は、内側の埋葬室の中で封印されたまま発見されました。",
         "context": "文化"
       },
       {
@@ -33758,9 +33758,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of saudade is fascinating.",
-        "ja": "郷愁の概念は魅力的だ。",
-        "context": "日常"
+        "en": "Fado music is often said to embody saudade, a longing for what can never return.",
+        "ja": "ファドの音楽は、二度と戻らないものへの憧憬たる郷愁を体現すると言われることが多いです。",
+        "context": "文化"
       },
       {
         "en": "We studied the saudade in detail.",
@@ -33791,8 +33791,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of sautoir is fascinating.",
-        "ja": "ソテー鍋の概念は魅力的だ。",
+        "en": "The chef deglazed the sautoir with white wine after browning the shallots.",
+        "ja": "シェフはエシャロットを炒めた後、ソテー鍋を白ワインでデグレーズしました。",
         "context": "料理"
       },
       {
@@ -33989,8 +33989,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of scintigraphy is fascinating.",
-        "ja": "シンチグラフィーの概念は魅力的だ。",
+        "en": "Bone scintigraphy revealed abnormal uptake in the patient's spine, prompting further investigation.",
+        "ja": "骨シンチグラフィーにより患者の脊椎に異常集積が示され、さらなる精査が促されました。",
         "context": "医療"
       },
       {
@@ -34022,8 +34022,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of sclerosis is fascinating.",
-        "ja": "硬化症の概念は魅力的だ。",
+        "en": "Multiple sclerosis disrupts nerve signal transmission, causing a wide range of neurological symptoms.",
+        "ja": "多発性硬化症は神経信号の伝達を妨げ、多岐にわたる神経症状を引き起こします。",
         "context": "医療"
       },
       {
@@ -34088,8 +34088,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of scree is fascinating.",
-        "ja": "岩屑斜面の概念は魅力的だ。",
+        "en": "The climbers picked their way cautiously across the loose scree below the summit.",
+        "ja": "登山者たちは山頂下の不安定な岩屑斜面を慎重に歩き渡りました。",
         "context": "自然"
       },
       {
@@ -34154,8 +34154,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of scriptorium is fascinating.",
-        "ja": "写字室の概念は魅力的だ。",
+        "en": "Monks labored in the monastery's scriptorium, copying sacred texts by candlelight.",
+        "ja": "修道士たちは修道院の写字室でろうそくの灯りのもと、聖典を書き写す作業に励みました。",
         "context": "文化"
       },
       {
@@ -34187,8 +34187,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of sedimentation is fascinating.",
-        "ja": "堆積作用の概念は魅力的だ。",
+        "en": "Sedimentation in the reservoir has reduced its effective storage capacity by a third.",
+        "ja": "貯水池における堆積作用により、有効貯水量が三分の一減少しました。",
         "context": "自然"
       },
       {
@@ -34418,8 +34418,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of sepsis is fascinating.",
-        "ja": "敗血症の概念は魅力的だ。",
+        "en": "The patient was rushed to intensive care after showing signs of sepsis.",
+        "ja": "患者は敗血症の兆候を示した後、集中治療室に緊急搬送されました。",
         "context": "医療"
       },
       {
@@ -34616,19 +34616,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite serverless.",
-        "ja": "結果はかなりサーバーレスのだった。",
+        "en": "Serverless computing lets developers focus on code without managing infrastructure.",
+        "ja": "サーバーレスコンピューティングにより、開発者はインフラ管理なしにコードに集中できます。",
         "context": "技術"
       },
       {
-        "en": "It seemed remarkably serverless.",
-        "ja": "それは驚くほどサーバーレスのように見えた。",
-        "context": "開発"
+        "en": "The team migrated its batch processing pipeline to a serverless architecture to cut costs.",
+        "ja": "チームはコスト削減のためにバッチ処理パイプラインをサーバーレスアーキテクチャに移行しました。",
+        "context": "ビジネス"
       },
       {
-        "en": "The serverless quality stood out.",
-        "ja": "サーバーレスの特質が際立っていた。",
-        "context": "ビジネス"
+        "en": "Serverless functions scale automatically under heavy traffic without manual intervention.",
+        "ja": "サーバーレス関数は手動介入なしに高負荷時に自動的にスケールします。",
+        "context": "開発"
       }
     ],
     "categories": [
@@ -34715,9 +34715,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of sgraffito is fascinating.",
-        "ja": "掻き落とし装飾の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "The artisan applied sgraffito to the wet plaster, revealing a contrasting pattern beneath.",
+        "ja": "職人は湿った漆喰に掻き落とし装飾を施し、下地の対照的な文様を露わにしました。",
+        "context": "文化"
       },
       {
         "en": "We studied the sgraffito in detail.",
@@ -35177,8 +35177,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of singleton is fascinating.",
-        "ja": "シングルトンの概念は魅力的だ。",
+        "en": "The database connection pool was implemented as a singleton to avoid duplicate connections.",
+        "ja": "データベース接続プールは重複接続を避けるためシングルトンとして実装されました。",
         "context": "技術"
       },
       {
@@ -35276,9 +35276,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of skulduggery is fascinating.",
-        "ja": "不正行為の概念は魅力的だ。",
-        "context": "日常"
+        "en": "The auditors uncovered years of financial skulduggery hidden behind falsified records.",
+        "ja": "監査人は改ざんされた記録の裏に隠された長年の財務不正行為を暴きました。",
+        "context": "ビジネス"
       },
       {
         "en": "We studied the skulduggery in detail.",
@@ -35309,19 +35309,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite slapdash.",
-        "ja": "結果はかなりいいかげんなだった。",
+        "en": "A slapdash repair job on the roof caused further damage during the next storm.",
+        "ja": "屋根のいいかげんな修理が次の嵐でさらなる損害を引き起こしました。",
         "context": "日常"
       },
       {
-        "en": "It seemed remarkably slapdash.",
-        "ja": "それは驚くほどいいかげんなように見えた。",
-        "context": "会話"
+        "en": "The report was clearly slapdash, full of typos and unsupported claims.",
+        "ja": "その報告書は明らかにいいかげんで、誤字や裏付けのない主張で溢れていました。",
+        "context": "ビジネス"
       },
       {
-        "en": "The slapdash quality stood out.",
-        "ja": "いいかげんな特質が際立っていた。",
-        "context": "生活"
+        "en": "Slapdash legislation often leads to unintended consequences that take years to fix.",
+        "ja": "いいかげんな立法はしばしば修正に何年もかかる意図せぬ結果をもたらします。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -35342,8 +35342,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of slugabed is fascinating.",
-        "ja": "朝寝坊の概念は魅力的だ。",
+        "en": "Her reputation as a slugabed meant she always arrived late to morning meetings.",
+        "ja": "朝寝坊として知られた彼女は、午前の会議にいつも遅れて到着しました。",
         "context": "日常"
       },
       {
@@ -35474,8 +35474,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of sojourner is fascinating.",
-        "ja": "一時滞在者の概念は魅力的だ。",
+        "en": "As a sojourner in Tokyo, she spent three months immersing herself in Japanese culture.",
+        "ja": "東京への一時滞在者として、彼女は3か月間日本文化に浸りました。",
         "context": "旅行"
       },
       {
@@ -35771,8 +35771,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of spandrel is fascinating.",
-        "ja": "スパンドレルの概念は魅力的だ。",
+        "en": "The architect decorated the spandrel between two arches with intricate geometric carvings.",
+        "ja": "建築家は二つのアーチ間のスパンドレルに精巧な幾何学模様の彫刻を施しました。",
         "context": "文化"
       },
       {
@@ -35903,19 +35903,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite speculative.",
-        "ja": "結果はかなり投機的なだった。",
+        "en": "Speculative investments in cryptocurrency carry substantial risk of total loss.",
+        "ja": "暗号通貨への投機的な投資は全額損失という相当なリスクを伴います。",
         "context": "金融"
       },
       {
-        "en": "It seemed remarkably speculative.",
-        "ja": "それは驚くほど投機的なように見えた。",
+        "en": "The analyst dismissed the forecast as speculative without supporting data.",
+        "ja": "そのアナリストは裏付けデータなしに予測は投機的だと退けました。",
         "context": "ビジネス"
       },
       {
-        "en": "The speculative quality stood out.",
-        "ja": "投機的な特質が際立っていた。",
-        "context": "経済"
+        "en": "The paper advances a speculative hypothesis that warrants further empirical testing.",
+        "ja": "その論文はさらなる実証的検証が必要な投機的な仮説を提示しています。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -35936,9 +35936,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of speleologist is fascinating.",
-        "ja": "洞窟探検家の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "The speleologist mapped a previously unknown cave system deep beneath the karst plateau.",
+        "ja": "その洞窟探検家はカルスト台地の深部にある未知の洞窟系を調査測量しました。",
+        "context": "学術"
       },
       {
         "en": "We studied the speleologist in detail.",
@@ -36167,8 +36167,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of stenosis is fascinating.",
-        "ja": "狭窄症の概念は魅力的だ。",
+        "en": "Aortic stenosis restricts blood flow from the heart and often requires surgical intervention.",
+        "ja": "大動脈狭窄症は心臓からの血流を制限し、しばしば外科的介入を要します。",
         "context": "医療"
       },
       {
@@ -36200,9 +36200,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of steppe is fascinating.",
-        "ja": "大草原の概念は魅力的だ。",
-        "context": "旅行"
+        "en": "Nomadic herders have crossed the Eurasian steppe with their livestock for millennia.",
+        "ja": "遊牧民は数千年にわたり家畜を連れてユーラシア大草原を横断してきました。",
+        "context": "社会"
       },
       {
         "en": "We studied the steppe in detail.",
@@ -36695,8 +36695,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of subroutine is fascinating.",
-        "ja": "サブルーチンの概念は魅力的だ。",
+        "en": "The programmer extracted the repeated logic into a reusable subroutine to reduce duplication.",
+        "ja": "プログラマーは重複を減らすため、繰り返されるロジックを再利用可能なサブルーチンに抽出しました。",
         "context": "技術"
       },
       {
@@ -36959,8 +36959,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of switchback is fascinating.",
-        "ja": "つづら折りの概念は魅力的だ。",
+        "en": "The narrow mountain road climbed in a series of sharp switchbacks toward the summit.",
+        "ja": "細い山道は頂上に向かって急なつづら折りを連ねながら登っていました。",
         "context": "旅行"
       },
       {
@@ -37355,8 +37355,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of syndicator is fascinating.",
-        "ja": "シンジケーターの概念は魅力的だ。",
+        "en": "The syndicator packaged and sold the TV series rights to broadcasters in forty countries.",
+        "ja": "そのシンジケーターはテレビシリーズの権利を40か国の放送局にパッケージ販売しました。",
         "context": "ビジネス"
       },
       {
@@ -37553,8 +37553,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of taiga is fascinating.",
-        "ja": "タイガの概念は魅力的だ。",
+        "en": "The Siberian taiga stretches for thousands of kilometres, forming the world's largest forest.",
+        "ja": "シベリアのタイガは数千キロメートルにわたって広がり、世界最大の森林を形成しています。",
         "context": "自然"
       },
       {
@@ -37619,8 +37619,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of tamponade is fascinating.",
-        "ja": "タンポナーデの概念は魅力的だ。",
+        "en": "Emergency pericardiocentesis relieved the cardiac tamponade that was compressing the patient's heart.",
+        "ja": "緊急の心嚢穿刺により、患者の心臓を圧迫していた心タンポナーデが解除されました。",
         "context": "医療"
       },
       {
@@ -37652,8 +37652,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of tariffication is fascinating.",
-        "ja": "関税化の概念は魅力的だ。",
+        "en": "The WTO agreement required member states to complete tariffication of agricultural import barriers.",
+        "ja": "WTO協定は加盟国に農産物輸入障壁の関税化の完了を求めました。",
         "context": "金融"
       },
       {
@@ -37685,8 +37685,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of tarmac is fascinating.",
-        "ja": "舗装路の概念は魅力的だ。",
+        "en": "Passengers waited on the tarmac while ground crew loaded the final bags.",
+        "ja": "地上スタッフが最後の荷物を積み込む間、乗客たちは舗装路で待機しました。",
         "context": "旅行"
       },
       {
@@ -37751,9 +37751,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of tarradiddle is fascinating.",
-        "ja": "たわごとの概念は魅力的だ。",
-        "context": "日常"
+        "en": "Nobody believed his elaborate tarradiddle about why he missed the deadline.",
+        "ja": "彼が締め切りに間に合わなかった理由についての作り込まれたたわごとを誰も信じませんでした。",
+        "context": "会話"
       },
       {
         "en": "We studied the tarradiddle in detail.",
@@ -37784,8 +37784,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of tartare is fascinating.",
-        "ja": "タルタルの概念は魅力的だ。",
+        "en": "The steak tartare was seasoned with capers, shallots, and a raw egg yolk.",
+        "ja": "そのタルタルステーキはケイパー、エシャロット、生卵の黄身で味付けされていました。",
         "context": "料理"
       },
       {
@@ -37817,9 +37817,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of tatterdemalion is fascinating.",
-        "ja": "ぼろぼろの人の概念は魅力的だ。",
-        "context": "日常"
+        "en": "The tatterdemalion shuffled through the market, ignored by the well-dressed shoppers around him.",
+        "ja": "そのぼろぼろの人は市場をよろよろと歩き、周囲の小ぎれいな買い物客たちに無視されました。",
+        "context": "社会"
       },
       {
         "en": "We studied the tatterdemalion in detail.",
@@ -38147,8 +38147,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of telnet is fascinating.",
-        "ja": "テルネットの概念は魅力的だ。",
+        "en": "System administrators once used telnet to log in remotely before SSH became the standard.",
+        "ja": "SSHが標準になる以前、システム管理者たちはリモートログインにテルネットを使用していました。",
         "context": "技術"
       },
       {
@@ -38378,8 +38378,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of terrarium is fascinating.",
-        "ja": "テラリウムの概念は魅力的だ。",
+        "en": "He built a closed terrarium with mosses and ferns that requires almost no watering.",
+        "ja": "彼はほぼ水やりを必要としない苔とシダを使った密閉テラリウムを作りました。",
         "context": "趣味"
       },
       {
@@ -38840,19 +38840,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite threadbare.",
-        "ja": "結果はかなりすり切れただった。",
-        "context": "日常"
+        "en": "His threadbare coat betrayed a poverty he was too proud to acknowledge.",
+        "ja": "彼のすり切れたコートは、彼が認めるには誇り高すぎた貧しさを露わにしていました。",
+        "context": "文化"
       },
       {
-        "en": "It seemed remarkably threadbare.",
-        "ja": "それは驚くほどすり切れたように見えた。",
-        "context": "会話"
+        "en": "The defence presented threadbare evidence that convinced no one in the courtroom.",
+        "ja": "弁護側は法廷内の誰も納得させないすり切れた証拠を提出しました。",
+        "context": "法律"
       },
       {
-        "en": "The threadbare quality stood out.",
-        "ja": "すり切れた特質が際立っていた。",
-        "context": "生活"
+        "en": "After decades of underfunding, the public health system had become truly threadbare.",
+        "ja": "数十年の財政不足の後、公衆衛生システムは本当にすり切れた状態になっていました。",
+        "context": "社会"
       }
     ],
     "categories": [
@@ -38972,8 +38972,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of throughline is fascinating.",
-        "ja": "一貫したテーマの概念は魅力的だ。",
+        "en": "The editor asked the author to strengthen the throughline connecting each chapter's argument.",
+        "ja": "編集者は各章の論旨をつなぐ一貫したテーマを強化するよう著者に求めました。",
         "context": "ビジネス"
       },
       {
@@ -39071,9 +39071,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of tithe is fascinating.",
-        "ja": "十分の一税の概念は魅力的だ。",
-        "context": "金融"
+        "en": "Medieval peasants were legally obliged to pay a tithe to the local church each year.",
+        "ja": "中世の農民は毎年地元の教会に十分の一税を納める法的義務を負っていました。",
+        "context": "社会"
       },
       {
         "en": "We studied the tithe in detail.",
@@ -39467,8 +39467,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of tomfoolery is fascinating.",
-        "ja": "ばかげた行為の概念は魅力的だ。",
+        "en": "The teacher stopped the lesson to address the tomfoolery disrupting the back row.",
+        "ja": "教師は後列を乱しているばかげた行為に対処するために授業を止めました。",
         "context": "日常"
       },
       {
@@ -39599,9 +39599,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of topiary is fascinating.",
-        "ja": "刈り込み園芸の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "The formal garden featured elaborate topiary shaped into peacocks and geometric spirals.",
+        "ja": "その整形式庭園には、孔雀や幾何学模様の螺旋に刈り込まれた精巧な刈り込み園芸が並んでいました。",
+        "context": "文化"
       },
       {
         "en": "We studied the topiary in detail.",
@@ -39830,19 +39830,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite transatlantic.",
-        "ja": "結果はかなり大西洋横断のだった。",
-        "context": "旅行"
+        "en": "Transatlantic trade negotiations stalled over disagreements on agricultural subsidies.",
+        "ja": "農業補助金に関する意見の相違から大西洋横断貿易交渉は行き詰まりました。",
+        "context": "経済"
       },
       {
-        "en": "It seemed remarkably transatlantic.",
-        "ja": "それは驚くほど大西洋横断のように見えた。",
-        "context": "地理"
+        "en": "Their transatlantic collaboration produced a groundbreaking study on climate migration.",
+        "ja": "彼らの大西洋横断的な共同研究は気候移住に関する画期的な研究成果を生み出しました。",
+        "context": "学術"
       },
       {
-        "en": "The transatlantic quality stood out.",
-        "ja": "大西洋横断の特質が際立っていた。",
-        "context": "日常"
+        "en": "She maintained a transatlantic long-distance relationship for three years before relocating.",
+        "ja": "彼女は移住する前の3年間、大西洋を挟んだ遠距離恋愛を続けました。",
+        "context": "会話"
       }
     ],
     "categories": [
@@ -39863,8 +39863,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of transept is fascinating.",
-        "ja": "翼廊の概念は魅力的だ。",
+        "en": "The choir assembled in the transept before processing into the main body of the cathedral.",
+        "ja": "聖歌隊は大聖堂の身廊へ入堂する前に翼廊に集合しました。",
         "context": "文化"
       },
       {
@@ -39962,8 +39962,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of transpilation is fascinating.",
-        "ja": "トランスパイルの概念は魅力的だ。",
+        "en": "TypeScript relies on transpilation to convert its typed code into browser-compatible JavaScript.",
+        "ja": "TypeScriptは型付きコードをブラウザ互換のJavaScriptに変換するためにトランスパイルに依存しています。",
         "context": "技術"
       },
       {
@@ -40226,8 +40226,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of trivium is fascinating.",
-        "ja": "三学の概念は魅力的だ。",
+        "en": "Medieval scholars mastered the trivium—grammar, rhetoric, and logic—as the foundation of learning.",
+        "ja": "中世の学者たちは学習の基礎として文法・修辞学・論理学からなる三学を習得しました。",
         "context": "学術"
       },
       {
@@ -40391,8 +40391,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of trousseau is fascinating.",
-        "ja": "嫁入り道具の概念は魅力的だ。",
+        "en": "Her mother spent months assembling a trousseau of fine linen and embroidered tablecloths.",
+        "ja": "母親は上質なリネンと刺繍入りテーブルクロスの嫁入り道具を揃えるために数か月を費やしました。",
         "context": "文化"
       },
       {
@@ -40721,8 +40721,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of underperformer is fascinating.",
-        "ja": "期待外れの人の概念は魅力的だ。",
+        "en": "The manager met privately with each underperformer to identify obstacles and set clearer targets.",
+        "ja": "マネージャーは障害を把握し明確な目標を設定するため、期待外れの人それぞれと個別面談しました。",
         "context": "ビジネス"
       },
       {
@@ -40754,8 +40754,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of unicorn is fascinating.",
-        "ja": "ユニコーン企業の概念は魅力的だ。",
+        "en": "The fintech startup achieved unicorn status within four years of its founding.",
+        "ja": "そのフィンテックスタートアップは創業からわずか4年でユニコーン企業の地位を獲得しました。",
         "context": "ビジネス"
       },
       {
@@ -41447,9 +41447,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of vexillology is fascinating.",
-        "ja": "旗章学の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "Her fascination with vexillology led her to catalog flags of every nation.",
+        "ja": "旗章学への興味から、彼女はあらゆる国の旗を分類しました。",
+        "context": "学術"
       },
       {
         "en": "We studied the vexillology in detail.",
@@ -41711,9 +41711,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of viticulture is fascinating.",
-        "ja": "ブドウ栽培の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "The region's warm days and cool nights create ideal conditions for viticulture.",
+        "ja": "その地域の暑い昼と涼しい夜がブドウ栽培に理想的な条件を生み出しています。",
+        "context": "自然"
       },
       {
         "en": "We studied the viticulture in detail.",
@@ -41909,9 +41909,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of wabi-sabi is fascinating.",
-        "ja": "侘び寂びの概念は魅力的だ。",
-        "context": "趣味"
+        "en": "The tea master arranged dried leaves and cracked bowls to embody wabi-sabi.",
+        "ja": "茶道の師は侘び寂びを体現するために枯れた葉と傷のある器を取り合わせました。",
+        "context": "文化"
       },
       {
         "en": "We studied the wabi-sabi in detail.",
@@ -42074,8 +42074,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of wayfinding is fascinating.",
-        "ja": "経路探索の概念は魅力的だ。",
+        "en": "The airport redesigned its wayfinding system to reduce passenger confusion at transit gates.",
+        "ja": "空港は乗継ゲートでの旅客の混乱を減らすため、経路探索システムを再設計しました。",
         "context": "旅行"
       },
       {
@@ -42107,8 +42107,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of waystation is fascinating.",
-        "ja": "中継地点の概念は魅力的だ。",
+        "en": "The remote village served as a waystation for caravans crossing the desert trade route.",
+        "ja": "その辺鄙な村は砂漠の交易路を越える隊商の中継地点として機能していました。",
         "context": "旅行"
       },
       {
@@ -42140,8 +42140,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of webhook is fascinating.",
-        "ja": "ウェブフックの概念は魅力的だ。",
+        "en": "The payment gateway sends a webhook to the server whenever a transaction is completed.",
+        "ja": "決済ゲートウェイはトランザクションが完了するたびにサーバーにウェブフックを送信します。",
         "context": "技術"
       },
       {
@@ -42305,8 +42305,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of whittling is fascinating.",
-        "ja": "木彫りの概念は魅力的だ。",
+        "en": "He spent rainy afternoons whittling small woodland animals from birch branches.",
+        "ja": "彼は雨の午後、白樺の枝から小さな森の動物を木彫りして過ごしました。",
         "context": "趣味"
       },
       {
@@ -42371,19 +42371,19 @@
     "partOfSpeech": "adjective",
     "examples": [
       {
-        "en": "The result was quite windward.",
-        "ja": "結果はかなり風上のだった。",
-        "context": "旅行"
+        "en": "Sailors always approach an anchorage from the windward side for better control.",
+        "ja": "船乗りはより良い操船のために常に風上側から錨泊地に近づきます。",
+        "context": "文化"
       },
       {
-        "en": "It seemed remarkably windward.",
-        "ja": "それは驚くほど風上のように見えた。",
-        "context": "地理"
+        "en": "The windward slopes receive twice the annual rainfall of the leeward valleys below.",
+        "ja": "風上側の斜面は風下の谷の2倍の年間降水量を受けます。",
+        "context": "自然"
       },
       {
-        "en": "The windward quality stood out.",
-        "ja": "風上の特質が際立っていた。",
-        "context": "日常"
+        "en": "Building on the windward slope exposes structures to persistent erosive forces.",
+        "ja": "風上の斜面に建設することで、構造物は持続的な侵食力にさらされます。",
+        "context": "学術"
       }
     ],
     "categories": [
@@ -42569,9 +42569,9 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of woodcut is fascinating.",
-        "ja": "木版画の概念は魅力的だ。",
-        "context": "趣味"
+        "en": "Hokusai's bold woodcut prints revolutionized Western artists' understanding of composition.",
+        "ja": "北斎の大胆な木版画は西洋の芸術家たちの構図理解に革命をもたらしました。",
+        "context": "文化"
       },
       {
         "en": "We studied the woodcut in detail.",
@@ -42900,8 +42900,8 @@
     "partOfSpeech": "noun",
     "examples": [
       {
-        "en": "The concept of ziggurat is fascinating.",
-        "ja": "ジグラットの概念は魅力的だ。",
+        "en": "The ancient ziggurat of Ur once towered over the surrounding Mesopotamian plain.",
+        "ja": "古代ウルのジグラットはかつてメソポタミア平原を見下ろすように聳え立っていました。",
         "context": "文化"
       },
       {
